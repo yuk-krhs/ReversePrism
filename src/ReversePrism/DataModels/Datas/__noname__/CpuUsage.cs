@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Last                                     000186666050 ModelPrimitiveType float float float Single
-    // 014 Average                                  000186666050 ModelPrimitiveType float float float Single
-    // 018 Peak                                     000186666050 ModelPrimitiveType float float float Single
+    // 010 Last                                     ModelPrimitiveType float float float Single
+    // 014 Average                                  ModelPrimitiveType float float float Single
+    // 018 Peak                                     ModelPrimitiveType float float float Single
     public partial class CpuUsage : DataModel
     {
         public float                                    Last                                    { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CpuUsage() { Pointer= p0 };
 
-            value.Last                                      = GetSingle(new IntPtr(p + 0x010)); // 024660F850D0 0x10 Last                        ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Average                                   = GetSingle(new IntPtr(p + 0x014)); // 024660F850F0 0x14 Average                     ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Peak                                      = GetSingle(new IntPtr(p + 0x018)); // 024660F85110 0x18 Peak                        ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Last                                      = GetSingle(new IntPtr(p + 0x010)); // 0x10 Last                        ( ModelPrimitiveType float float float Single )
+            value.Average                                   = GetSingle(new IntPtr(p + 0x014)); // 0x14 Average                     ( ModelPrimitiveType float float float Single )
+            value.Peak                                      = GetSingle(new IntPtr(p + 0x018)); // 0x18 Peak                        ( ModelPrimitiveType float float float Single )
 
             return value;
         }

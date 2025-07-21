@@ -8,24 +8,24 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 NegativeButton                           0001865140C0 ModelClassType Button Button Button Pointer
-    // 028 PositiveButton                           0001865140C0 ModelClassType Button Button Button Pointer
-    // 030 NegativeButtonText                       000186631C00 ModelClassType Text Text Text Pointer
-    // 038 PositiveButtonText                       000186631C00 ModelClassType Text Text Text Pointer
-    // 040 ProductIcon                              000186613190 ModelClassType RawImage RawImage RawImage Pointer
-    // 048 ProductTitle                             000186631C00 ModelClassType Text Text Text Pointer
-    // 050 ProductPoint                             000186631C00 ModelClassType Text Text Text Pointer
-    // 058 AvailablePoint                           000186631C00 ModelClassType Text Text Text Pointer
-    // 060 PeriodTimeDescription                    000186631C00 ModelClassType Text Text Text Pointer
-    // 068 TermOfPayment                            0001865140C0 ModelClassType Button Button Button Pointer
-    // 070 TermOfDelivery                           0001865140C0 ModelClassType Button Button Button Pointer
-    // 078 ReturnPolicy                             0001865140C0 ModelClassType Button Button Button Pointer
-    // 080 PointShortage                            0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 088 DeveloperPayload                         0001866CA730 ModelClassType DeveloperPayload DeveloperPayload DeveloperPayload Pointer
+    // 020 NegativeButton                           ModelClassType Button Button Button Pointer
+    // 028 PositiveButton                           ModelClassType Button Button Button Pointer
+    // 030 NegativeButtonText                       ModelClassType Text Text Text Pointer
+    // 038 PositiveButtonText                       ModelClassType Text Text Text Pointer
+    // 040 ProductIcon                              ModelClassType RawImage RawImage RawImage Pointer
+    // 048 ProductTitle                             ModelClassType Text Text Text Pointer
+    // 050 ProductPoint                             ModelClassType Text Text Text Pointer
+    // 058 AvailablePoint                           ModelClassType Text Text Text Pointer
+    // 060 PeriodTimeDescription                    ModelClassType Text Text Text Pointer
+    // 068 TermOfPayment                            ModelClassType Button Button Button Pointer
+    // 070 TermOfDelivery                           ModelClassType Button Button Button Pointer
+    // 078 ReturnPolicy                             ModelClassType Button Button Button Pointer
+    // 080 PointShortage                            ModelClassType GameObject GameObject GameObject Pointer
+    // 088 DeveloperPayload                         ModelClassType DeveloperPayload DeveloperPayload DeveloperPayload Pointer
     // 000 Path                                     string IL2CPP_TYPE_STRING
     // 000 _dialog                                  GameObject IL2CPP_TYPE_CLASS
     // 008 _instance                                ShowOrderDialog IL2CPP_TYPE_CLASS
-    // 090 Logo                                     0001866CCDB0 ModelClassType Image Image Image Pointer
+    // 090 Logo                                     ModelClassType Image Image Image Pointer
     public partial class ShowOrderDialog : DataModel
     {
         public Button?                                  NegativeButton                          { get; set; }
@@ -52,21 +52,21 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ShowOrderDialog() { Pointer= p0 };
 
-            value.NegativeButton                            = GetObject<Button>(new IntPtr(p + 0x020), ReversePrism.DataModels.Button.FromPointer); // 02466B4EBAB8 0x20 NegativeButton              ( 0001865140C0 ModelClassType Button Button Button Pointer )
-            value.PositiveButton                            = GetObject<Button>(new IntPtr(p + 0x028), ReversePrism.DataModels.Button.FromPointer); // 02466B4EBAD8 0x28 PositiveButton              ( 0001865140C0 ModelClassType Button Button Button Pointer )
-            value.NegativeButtonText                        = GetObject<Text>(new IntPtr(p + 0x030), ReversePrism.DataModels.Text.FromPointer); // 02466B4EBAF8 0x30 NegativeButtonText          ( 000186631C00 ModelClassType Text Text Text Pointer )
-            value.PositiveButtonText                        = GetObject<Text>(new IntPtr(p + 0x038), ReversePrism.DataModels.Text.FromPointer); // 02466B4EBB18 0x38 PositiveButtonText          ( 000186631C00 ModelClassType Text Text Text Pointer )
-            value.ProductIcon                               = GetObject<RawImage>(new IntPtr(p + 0x040), ReversePrism.DataModels.RawImage.FromPointer); // 02466B4EBB38 0x40 ProductIcon                 ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.ProductTitle                              = GetObject<Text>(new IntPtr(p + 0x048), ReversePrism.DataModels.Text.FromPointer); // 02466B4EBB58 0x48 ProductTitle                ( 000186631C00 ModelClassType Text Text Text Pointer )
-            value.ProductPoint                              = GetObject<Text>(new IntPtr(p + 0x050), ReversePrism.DataModels.Text.FromPointer); // 02466B4EBB78 0x50 ProductPoint                ( 000186631C00 ModelClassType Text Text Text Pointer )
-            value.AvailablePoint                            = GetObject<Text>(new IntPtr(p + 0x058), ReversePrism.DataModels.Text.FromPointer); // 02466B4EBB98 0x58 AvailablePoint              ( 000186631C00 ModelClassType Text Text Text Pointer )
-            value.PeriodTimeDescription                     = GetObject<Text>(new IntPtr(p + 0x060), ReversePrism.DataModels.Text.FromPointer); // 02466B4EBBB8 0x60 PeriodTimeDescription       ( 000186631C00 ModelClassType Text Text Text Pointer )
-            value.TermOfPayment                             = GetObject<Button>(new IntPtr(p + 0x068), ReversePrism.DataModels.Button.FromPointer); // 02466B4EBBD8 0x68 TermOfPayment               ( 0001865140C0 ModelClassType Button Button Button Pointer )
-            value.TermOfDelivery                            = GetObject<Button>(new IntPtr(p + 0x070), ReversePrism.DataModels.Button.FromPointer); // 02466B4EBBF8 0x70 TermOfDelivery              ( 0001865140C0 ModelClassType Button Button Button Pointer )
-            value.ReturnPolicy                              = GetObject<Button>(new IntPtr(p + 0x078), ReversePrism.DataModels.Button.FromPointer); // 02466B4EBC18 0x78 ReturnPolicy                ( 0001865140C0 ModelClassType Button Button Button Pointer )
-            value.PointShortage                             = GetObject<GameObject>(new IntPtr(p + 0x080), ReversePrism.DataModels.GameObject.FromPointer); // 02466B4EBC38 0x80 PointShortage               ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.DeveloperPayload                          = GetObject<DeveloperPayload>(new IntPtr(p + 0x088), ReversePrism.DataModels.DeveloperPayload.FromPointer); // 02466B4EBC58 0x88 DeveloperPayload            ( 0001866CA730 ModelClassType DeveloperPayload DeveloperPayload DeveloperPayload Pointer )
-            value.Logo                                      = GetObject<Image>(new IntPtr(p + 0x090), ReversePrism.DataModels.Image.FromPointer); // 02466B4EBCD8 0x90 Logo                        ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
+            value.NegativeButton                            = GetObject<Button>(new IntPtr(p + 0x020), ReversePrism.DataModels.Button.FromPointer); // 0x20 NegativeButton              ( ModelClassType Button Button Button Pointer )
+            value.PositiveButton                            = GetObject<Button>(new IntPtr(p + 0x028), ReversePrism.DataModels.Button.FromPointer); // 0x28 PositiveButton              ( ModelClassType Button Button Button Pointer )
+            value.NegativeButtonText                        = GetObject<Text>(new IntPtr(p + 0x030), ReversePrism.DataModels.Text.FromPointer); // 0x30 NegativeButtonText          ( ModelClassType Text Text Text Pointer )
+            value.PositiveButtonText                        = GetObject<Text>(new IntPtr(p + 0x038), ReversePrism.DataModels.Text.FromPointer); // 0x38 PositiveButtonText          ( ModelClassType Text Text Text Pointer )
+            value.ProductIcon                               = GetObject<RawImage>(new IntPtr(p + 0x040), ReversePrism.DataModels.RawImage.FromPointer); // 0x40 ProductIcon                 ( ModelClassType RawImage RawImage RawImage Pointer )
+            value.ProductTitle                              = GetObject<Text>(new IntPtr(p + 0x048), ReversePrism.DataModels.Text.FromPointer); // 0x48 ProductTitle                ( ModelClassType Text Text Text Pointer )
+            value.ProductPoint                              = GetObject<Text>(new IntPtr(p + 0x050), ReversePrism.DataModels.Text.FromPointer); // 0x50 ProductPoint                ( ModelClassType Text Text Text Pointer )
+            value.AvailablePoint                            = GetObject<Text>(new IntPtr(p + 0x058), ReversePrism.DataModels.Text.FromPointer); // 0x58 AvailablePoint              ( ModelClassType Text Text Text Pointer )
+            value.PeriodTimeDescription                     = GetObject<Text>(new IntPtr(p + 0x060), ReversePrism.DataModels.Text.FromPointer); // 0x60 PeriodTimeDescription       ( ModelClassType Text Text Text Pointer )
+            value.TermOfPayment                             = GetObject<Button>(new IntPtr(p + 0x068), ReversePrism.DataModels.Button.FromPointer); // 0x68 TermOfPayment               ( ModelClassType Button Button Button Pointer )
+            value.TermOfDelivery                            = GetObject<Button>(new IntPtr(p + 0x070), ReversePrism.DataModels.Button.FromPointer); // 0x70 TermOfDelivery              ( ModelClassType Button Button Button Pointer )
+            value.ReturnPolicy                              = GetObject<Button>(new IntPtr(p + 0x078), ReversePrism.DataModels.Button.FromPointer); // 0x78 ReturnPolicy                ( ModelClassType Button Button Button Pointer )
+            value.PointShortage                             = GetObject<GameObject>(new IntPtr(p + 0x080), ReversePrism.DataModels.GameObject.FromPointer); // 0x80 PointShortage               ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.DeveloperPayload                          = GetObject<DeveloperPayload>(new IntPtr(p + 0x088), ReversePrism.DataModels.DeveloperPayload.FromPointer); // 0x88 DeveloperPayload            ( ModelClassType DeveloperPayload DeveloperPayload DeveloperPayload Pointer )
+            value.Logo                                      = GetObject<Image>(new IntPtr(p + 0x090), ReversePrism.DataModels.Image.FromPointer); // 0x90 Logo                        ( ModelClassType Image Image Image Pointer )
 
             return value;
         }

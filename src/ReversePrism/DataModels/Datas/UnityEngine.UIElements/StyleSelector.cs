@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Parts                                  000185CA7FC8 ModelEnumListType StyleSelectorPart[] StyleSelectorPart[] List<StyleSelectorPart> Pointer
-    // 018 M_PreviousRelationship                   0001865CC720 ModelEnumType StyleSelectorRelationship StyleSelectorRelationship StyleSelectorRelationship Int32
-    // 01C PseudoStateMask                          0001865F2F90 ModelPrimitiveType int int int Int32
-    // 020 NegatedPseudoStateMask                   0001865F2F90 ModelPrimitiveType int int int Int32
+    // 010 M_Parts                                  ModelEnumListType StyleSelectorPart[] StyleSelectorPart[] List<StyleSelectorPart> Pointer
+    // 018 M_PreviousRelationship                   ModelEnumType StyleSelectorRelationship StyleSelectorRelationship StyleSelectorRelationship Int32
+    // 01C PseudoStateMask                          ModelPrimitiveType int int int Int32
+    // 020 NegatedPseudoStateMask                   ModelPrimitiveType int int int Int32
     public partial class StyleSelector : DataModel
     {
         public List<StyleSelectorPart>?                 M_Parts                                 { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StyleSelector() { Pointer= p0 };
 
-            value.M_Parts                                   = GetEnumList<StyleSelectorPart>(new IntPtr(p + 0x010)); // 0245A68040F0 0x10 M_Parts                     ( 000185CA7FC8 ModelEnumListType StyleSelectorPart[] StyleSelectorPart[] List<StyleSelectorPart> Pointer )
-            value.M_PreviousRelationship                    = (StyleSelectorRelationship)GetInt32(new IntPtr(p + 0x018)); // 0245A6804110 0x18 M_PreviousRelationship      ( 0001865CC720 ModelEnumType StyleSelectorRelationship StyleSelectorRelationship StyleSelectorRelationship Int32 )
-            value.PseudoStateMask                           = GetInt32(new IntPtr(p + 0x01C)); // 0245A6804130 0x1C PseudoStateMask             ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.NegatedPseudoStateMask                    = GetInt32(new IntPtr(p + 0x020)); // 0245A6804150 0x20 NegatedPseudoStateMask      ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.M_Parts                                   = GetEnumList<StyleSelectorPart>(new IntPtr(p + 0x010)); // 0x10 M_Parts                     ( ModelEnumListType StyleSelectorPart[] StyleSelectorPart[] List<StyleSelectorPart> Pointer )
+            value.M_PreviousRelationship                    = (StyleSelectorRelationship)GetInt32(new IntPtr(p + 0x018)); // 0x18 M_PreviousRelationship      ( ModelEnumType StyleSelectorRelationship StyleSelectorRelationship StyleSelectorRelationship Int32 )
+            value.PseudoStateMask                           = GetInt32(new IntPtr(p + 0x01C)); // 0x1C PseudoStateMask             ( ModelPrimitiveType int int int Int32 )
+            value.NegatedPseudoStateMask                    = GetInt32(new IntPtr(p + 0x020)); // 0x20 NegatedPseudoStateMask      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

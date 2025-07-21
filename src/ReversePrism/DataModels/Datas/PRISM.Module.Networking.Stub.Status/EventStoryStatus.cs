@@ -11,19 +11,19 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<EventStoryStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 StoryFieldNumber                         int IL2CPP_TYPE_I4
-    // 018 Story                                    0001865A4D90 ModelClassType StoryStatus StoryStatus StoryStatus Pointer
+    // 018 Story                                    ModelClassType StoryStatus StoryStatus StoryStatus Pointer
     // 000 MstEventIdFieldNumber                    int IL2CPP_TYPE_I4
-    // 020 MstEventId                               0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 MstEventId                               ModelPrimitiveType int int int Int32
     // 000 EventPeriodFieldNumber                   int IL2CPP_TYPE_I4
-    // 028 EventPeriod                              000186734A00 ModelClassType PeriodStatus PeriodStatus PeriodStatus Pointer
+    // 028 EventPeriod                              ModelClassType PeriodStatus PeriodStatus PeriodStatus Pointer
     // 000 EventTypeFieldNumber                     int IL2CPP_TYPE_I4
-    // 030 EventType                                0001865E85A0 ModelEnumType GameEventType GameEventType GameEventType Int32
+    // 030 EventType                                ModelEnumType GameEventType GameEventType GameEventType Int32
     // 000 MstUnitIdFieldNumber                     int IL2CPP_TYPE_I4
-    // 034 MstUnitId                                0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 034 MstUnitId                                ModelPrimitiveType int int int Int32
     // 000 UnlockPremiseMstEventStoryIdFieldNumber  int IL2CPP_TYPE_I4
-    // 038 UnlockPremiseMstEventStoryId             0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 038 UnlockPremiseMstEventStoryId             ModelPrimitiveType int int int Int32
     // 000 UnlockPremiseEventPointFieldNumber       int IL2CPP_TYPE_I4
-    // 03C UnlockPremiseEventPoint                  0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 03C UnlockPremiseEventPoint                  ModelPrimitiveType int int int Int32
     public partial class EventStoryStatus : DataModel
     {
         public StoryStatus?                             Story                                   { get; set; }
@@ -42,13 +42,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EventStoryStatus() { Pointer= p0 };
 
-            value.Story                                     = GetObject<StoryStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoryStatus.FromPointer); // 0246629BD448 0x18 Story                       ( 0001865A4D90 ModelClassType StoryStatus StoryStatus StoryStatus Pointer )
-            value.MstEventId                                = GetInt32(new IntPtr(p + 0x020)); // 0246629BD488 0x20 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.EventPeriod                               = GetObject<PeriodStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.PeriodStatus.FromPointer); // 0246629BD4C8 0x28 EventPeriod                 ( 000186734A00 ModelClassType PeriodStatus PeriodStatus PeriodStatus Pointer )
-            value.EventType                                 = (GameEventType)GetInt32(new IntPtr(p + 0x030)); // 0246629BD508 0x30 EventType                   ( 0001865E85A0 ModelEnumType GameEventType GameEventType GameEventType Int32 )
-            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x034)); // 0246629BD548 0x34 MstUnitId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UnlockPremiseMstEventStoryId              = GetInt32(new IntPtr(p + 0x038)); // 0246629BD588 0x38 UnlockPremiseMstEventStoryId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UnlockPremiseEventPoint                   = GetInt32(new IntPtr(p + 0x03C)); // 0246629BD5C8 0x3C UnlockPremiseEventPoint     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Story                                     = GetObject<StoryStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoryStatus.FromPointer); // 0x18 Story                       ( ModelClassType StoryStatus StoryStatus StoryStatus Pointer )
+            value.MstEventId                                = GetInt32(new IntPtr(p + 0x020)); // 0x20 MstEventId                  ( ModelPrimitiveType int int int Int32 )
+            value.EventPeriod                               = GetObject<PeriodStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.PeriodStatus.FromPointer); // 0x28 EventPeriod                 ( ModelClassType PeriodStatus PeriodStatus PeriodStatus Pointer )
+            value.EventType                                 = (GameEventType)GetInt32(new IntPtr(p + 0x030)); // 0x30 EventType                   ( ModelEnumType GameEventType GameEventType GameEventType Int32 )
+            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x034)); // 0x34 MstUnitId                   ( ModelPrimitiveType int int int Int32 )
+            value.UnlockPremiseMstEventStoryId              = GetInt32(new IntPtr(p + 0x038)); // 0x38 UnlockPremiseMstEventStoryId ( ModelPrimitiveType int int int Int32 )
+            value.UnlockPremiseEventPoint                   = GetInt32(new IntPtr(p + 0x03C)); // 0x3C UnlockPremiseEventPoint     ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

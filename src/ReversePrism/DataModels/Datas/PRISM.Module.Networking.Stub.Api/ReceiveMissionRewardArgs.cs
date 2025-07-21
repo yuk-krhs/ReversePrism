@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstMissionIdListFieldNumber              int IL2CPP_TYPE_I4
     // 008 _repeated_mstMissionIdList_codec         FieldCodec`1<int> IL2CPP_TYPE_GENERICINST
-    // 018 MstMissionIdList                         000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer
+    // 018 MstMissionIdList                         ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer
     public partial class ReceiveMissionRewardArgs : DataModel
     {
         public List<int>?                               MstMissionIdList                        { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ReceiveMissionRewardArgs() { Pointer= p0 };
 
-            value.MstMissionIdList                          = GetInt32List(new IntPtr(p + 0x018)); // 024662255690 0x18 MstMissionIdList            ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.MstMissionIdList                          = GetInt32List(new IntPtr(p + 0x018)); // 0x18 MstMissionIdList            ( ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 SheetName                                string IL2CPP_TYPE_STRING
     // 000 GetStar                                  SoundKey IL2CPP_TYPE_VALUETYPE
-    // 010 Kirari                                   000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32
+    // 010 Kirari                                   ModelEnumType SoundKey SoundKey SoundKey Int32
     public partial class ChallengeTourSeConst : DataModel
     {
         public SoundKey                                 Kirari                                  { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChallengeTourSeConst() { Pointer= p0 };
 
-            value.Kirari                                    = (SoundKey)GetInt32(new IntPtr(p + 0x010)); // 02466A121610 0x10 Kirari                      ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.Kirari                                    = (SoundKey)GetInt32(new IntPtr(p + 0x010)); // 0x10 Kirari                      ( ModelEnumType SoundKey SoundKey SoundKey Int32 )
 
             return value;
         }

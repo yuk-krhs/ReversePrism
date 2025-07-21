@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 DisplayMenuHandledOSX                    000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 DisplayMenuHandledOSX                    ModelPrimitiveType bool bool bool Bool
     public partial class ContextualMenuManager : DataModel
     {
         public bool                                     DisplayMenuHandledOSX                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ContextualMenuManager() { Pointer= p0 };
 
-            value.DisplayMenuHandledOSX                     = GetBool(new IntPtr(p + 0x010)); // 0245A66B11F0 0x10 DisplayMenuHandledOSX       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.DisplayMenuHandledOSX                     = GetBool(new IntPtr(p + 0x010)); // 0x10 DisplayMenuHandledOSX       ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

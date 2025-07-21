@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ProducePolicyModel                       000186564DE0 ModelClassType ProducePolicyModel ProducePolicyModel ProducePolicyModel Pointer
-    // 018 ProducePolicyViewModel                   000186565F80 ModelClassType ProducePolicyViewModel ProducePolicyViewModel ProducePolicyViewModel Pointer
-    // 020 ProducePolicyView                        0001865F0120 ModelClassType IProducePolicyView IProducePolicyView IProducePolicyView Pointer
-    // 028 OnInActivateTitleView                    0001866792B0 ModelClassType Action Action Action Pointer
-    // 030 Cts                                      0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
+    // 010 ProducePolicyModel                       ModelClassType ProducePolicyModel ProducePolicyModel ProducePolicyModel Pointer
+    // 018 ProducePolicyViewModel                   ModelClassType ProducePolicyViewModel ProducePolicyViewModel ProducePolicyViewModel Pointer
+    // 020 ProducePolicyView                        ModelClassType IProducePolicyView IProducePolicyView IProducePolicyView Pointer
+    // 028 OnInActivateTitleView                    ModelClassType Action Action Action Pointer
+    // 030 Cts                                      ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
     // 038 onClickProducePolicyButton               Action`1<int> IL2CPP_TYPE_GENERICINST
     public partial class ProducePolicyPresenter : DataModel
     {
@@ -30,11 +30,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProducePolicyPresenter() { Pointer= p0 };
 
-            value.ProducePolicyModel                        = GetObject<ProducePolicyModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.ProducePolicyModel.FromPointer); // 0246665FEBB8 0x10 ProducePolicyModel          ( 000186564DE0 ModelClassType ProducePolicyModel ProducePolicyModel ProducePolicyModel Pointer )
-            value.ProducePolicyViewModel                    = GetObject<ProducePolicyViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProducePolicyViewModel.FromPointer); // 0246665FEBD8 0x18 ProducePolicyViewModel      ( 000186565F80 ModelClassType ProducePolicyViewModel ProducePolicyViewModel ProducePolicyViewModel Pointer )
-            value.ProducePolicyView                         = GetObject<IProducePolicyView>(new IntPtr(p + 0x020), ReversePrism.DataModels.IProducePolicyView.FromPointer); // 0246665FEBF8 0x20 ProducePolicyView           ( 0001865F0120 ModelClassType IProducePolicyView IProducePolicyView IProducePolicyView Pointer )
-            value.OnInActivateTitleView                     = GetObject<Action>(new IntPtr(p + 0x028), ReversePrism.DataModels.Action.FromPointer); // 0246665FEC18 0x28 OnInActivateTitleView       ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x030), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0246665FEC38 0x30 Cts                         ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.ProducePolicyModel                        = GetObject<ProducePolicyModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.ProducePolicyModel.FromPointer); // 0x10 ProducePolicyModel          ( ModelClassType ProducePolicyModel ProducePolicyModel ProducePolicyModel Pointer )
+            value.ProducePolicyViewModel                    = GetObject<ProducePolicyViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProducePolicyViewModel.FromPointer); // 0x18 ProducePolicyViewModel      ( ModelClassType ProducePolicyViewModel ProducePolicyViewModel ProducePolicyViewModel Pointer )
+            value.ProducePolicyView                         = GetObject<IProducePolicyView>(new IntPtr(p + 0x020), ReversePrism.DataModels.IProducePolicyView.FromPointer); // 0x20 ProducePolicyView           ( ModelClassType IProducePolicyView IProducePolicyView IProducePolicyView Pointer )
+            value.OnInActivateTitleView                     = GetObject<Action>(new IntPtr(p + 0x028), ReversePrism.DataModels.Action.FromPointer); // 0x28 OnInActivateTitleView       ( ModelClassType Action Action Action Pointer )
+            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x030), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0x30 Cts                         ( ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
 
             return value;
         }

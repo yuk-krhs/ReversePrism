@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 RootRect                                 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
-    // 028 SelfCharaIcon                            0001866F3FB0 ModelClassType SDCharaIconInfo SDCharaIconInfo SDCharaIconInfo Pointer
-    // 030 FriendCharaIcon                          0001866F3FB0 ModelClassType SDCharaIconInfo SDCharaIconInfo SDCharaIconInfo Pointer
+    // 020 RootRect                                 ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 028 SelfCharaIcon                            ModelClassType SDCharaIconInfo SDCharaIconInfo SDCharaIconInfo Pointer
+    // 030 FriendCharaIcon                          ModelClassType SDCharaIconInfo SDCharaIconInfo SDCharaIconInfo Pointer
     public partial class SCharaEditSDCharaIconView : DataModel
     {
         public RectTransform?                           RootRect                                { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SCharaEditSDCharaIconView() { Pointer= p0 };
 
-            value.RootRect                                  = GetObject<RectTransform>(new IntPtr(p + 0x020), ReversePrism.DataModels.RectTransform.FromPointer); // 02466A157D30 0x20 RootRect                    ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.SelfCharaIcon                             = GetObject<SDCharaIconInfo>(new IntPtr(p + 0x028), ReversePrism.DataModels.SDCharaIconInfo.FromPointer); // 02466A157D50 0x28 SelfCharaIcon               ( 0001866F3FB0 ModelClassType SDCharaIconInfo SDCharaIconInfo SDCharaIconInfo Pointer )
-            value.FriendCharaIcon                           = GetObject<SDCharaIconInfo>(new IntPtr(p + 0x030), ReversePrism.DataModels.SDCharaIconInfo.FromPointer); // 02466A157D70 0x30 FriendCharaIcon             ( 0001866F3FB0 ModelClassType SDCharaIconInfo SDCharaIconInfo SDCharaIconInfo Pointer )
+            value.RootRect                                  = GetObject<RectTransform>(new IntPtr(p + 0x020), ReversePrism.DataModels.RectTransform.FromPointer); // 0x20 RootRect                    ( ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.SelfCharaIcon                             = GetObject<SDCharaIconInfo>(new IntPtr(p + 0x028), ReversePrism.DataModels.SDCharaIconInfo.FromPointer); // 0x28 SelfCharaIcon               ( ModelClassType SDCharaIconInfo SDCharaIconInfo SDCharaIconInfo Pointer )
+            value.FriendCharaIcon                           = GetObject<SDCharaIconInfo>(new IntPtr(p + 0x030), ReversePrism.DataModels.SDCharaIconInfo.FromPointer); // 0x30 FriendCharaIcon             ( ModelClassType SDCharaIconInfo SDCharaIconInfo SDCharaIconInfo Pointer )
 
             return value;
         }

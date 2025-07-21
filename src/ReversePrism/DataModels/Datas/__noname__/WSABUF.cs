@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Len                                      0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 Len                                      ModelPrimitiveType int int int Int32
     // 018 buf                                      <int> IL2CPP_TYPE_I
     public partial class WSABUF : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new WSABUF() { Pointer= p0 };
 
-            value.Len                                       = GetInt32(new IntPtr(p + 0x010)); // 024667B4FE80 0x10 Len                         ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Len                                       = GetInt32(new IntPtr(p + 0x010)); // 0x10 Len                         ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

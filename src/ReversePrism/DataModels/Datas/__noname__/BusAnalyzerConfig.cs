@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Interval                                 0001865F36C0 ModelPrimitiveType int int int Int32
-    // 014 PeakHoldTime                             0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 Interval                                 ModelPrimitiveType int int int Int32
+    // 014 PeakHoldTime                             ModelPrimitiveType int int int Int32
     public partial class BusAnalyzerConfig : DataModel
     {
         public int                                      Interval                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BusAnalyzerConfig() { Pointer= p0 };
 
-            value.Interval                                  = GetInt32(new IntPtr(p + 0x010)); // 02466ACD6A08 0x10 Interval                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.PeakHoldTime                              = GetInt32(new IntPtr(p + 0x014)); // 02466ACD6A28 0x14 PeakHoldTime                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Interval                                  = GetInt32(new IntPtr(p + 0x010)); // 0x10 Interval                    ( ModelPrimitiveType int int int Int32 )
+            value.PeakHoldTime                              = GetInt32(new IntPtr(p + 0x014)); // 0x14 PeakHoldTime                ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

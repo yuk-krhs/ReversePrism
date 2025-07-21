@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 TabType                                  00018673E250 ModelEnumType PieceArchiveTabType PieceArchiveTabType PieceArchiveTabType Int32
+    // 010 TabType                                  ModelEnumType PieceArchiveTabType PieceArchiveTabType PieceArchiveTabType Int32
     public partial class PieceArchiveArgument : DataModel
     {
         public PieceArchiveTabType                      TabType                                 { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PieceArchiveArgument() { Pointer= p0 };
 
-            value.TabType                                   = (PieceArchiveTabType)GetInt32(new IntPtr(p + 0x010)); // 024665F79F58 0x10 TabType                     ( 00018673E250 ModelEnumType PieceArchiveTabType PieceArchiveTabType PieceArchiveTabType Int32 )
+            value.TabType                                   = (PieceArchiveTabType)GetInt32(new IntPtr(p + 0x010)); // 0x10 TabType                     ( ModelEnumType PieceArchiveTabType PieceArchiveTabType PieceArchiveTabType Int32 )
 
             return value;
         }

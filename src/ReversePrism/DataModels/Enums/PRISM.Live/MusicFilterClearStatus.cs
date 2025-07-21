@@ -15,5 +15,6 @@ namespace ReversePrism.DataModels
         FullComboNotReached,
         AllGreatNotReached,
         AllPerfectNotReached,
+        AllShinyNotReached,
     }
 }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 060 ItemPrefab                               00018675D150 ModelClassType ShopGoodsSetItem ShopGoodsSetItem ShopGoodsSetItem Pointer
-    // 068 ItemParent                               0001866AA150 ModelClassType Transform Transform Transform Pointer
+    // 060 ItemPrefab                               ModelClassType ShopGoodsSetItem ShopGoodsSetItem ShopGoodsSetItem Pointer
+    // 068 ItemParent                               ModelClassType Transform Transform Transform Pointer
     public partial class ShopReceiveBonusContent : DataModel
     {
         public ShopGoodsSetItem?                        ItemPrefab                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ShopReceiveBonusContent() { Pointer= p0 };
 
-            value.ItemPrefab                                = GetObject<ShopGoodsSetItem>(new IntPtr(p + 0x060), ReversePrism.DataModels.ShopGoodsSetItem.FromPointer); // 0246655AC788 0x60 ItemPrefab                  ( 00018675D150 ModelClassType ShopGoodsSetItem ShopGoodsSetItem ShopGoodsSetItem Pointer )
-            value.ItemParent                                = GetObject<Transform>(new IntPtr(p + 0x068), ReversePrism.DataModels.Transform.FromPointer); // 0246655AC7A8 0x68 ItemParent                  ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.ItemPrefab                                = GetObject<ShopGoodsSetItem>(new IntPtr(p + 0x060), ReversePrism.DataModels.ShopGoodsSetItem.FromPointer); // 0x60 ItemPrefab                  ( ModelClassType ShopGoodsSetItem ShopGoodsSetItem ShopGoodsSetItem Pointer )
+            value.ItemParent                                = GetObject<Transform>(new IntPtr(p + 0x068), ReversePrism.DataModels.Transform.FromPointer); // 0x68 ItemParent                  ( ModelClassType Transform Transform Transform Pointer )
 
             return value;
         }

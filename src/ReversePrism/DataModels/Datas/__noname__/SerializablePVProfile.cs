@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 SceneGUID                                0001866722E0 ModelPrimitiveType string string string String
-    // 018 Profile                                  00018651F180 ModelClassType ProbeReferenceVolumeProfile ProbeReferenceVolumeProfile ProbeReferenceVolumeProfile Pointer
+    // 010 SceneGUID                                ModelPrimitiveType string string string String
+    // 018 Profile                                  ModelClassType ProbeReferenceVolumeProfile ProbeReferenceVolumeProfile ProbeReferenceVolumeProfile Pointer
     public partial class SerializablePVProfile : DataModel
     {
         public string                                   SceneGUID                               { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SerializablePVProfile() { Pointer= p0 };
 
-            value.SceneGUID                                 = GetString(new IntPtr(p + 0x010)); // 024669287220 0x10 SceneGUID                   ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Profile                                   = GetObject<ProbeReferenceVolumeProfile>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProbeReferenceVolumeProfile.FromPointer); // 024669287240 0x18 Profile                     ( 00018651F180 ModelClassType ProbeReferenceVolumeProfile ProbeReferenceVolumeProfile ProbeReferenceVolumeProfile Pointer )
+            value.SceneGUID                                 = GetString(new IntPtr(p + 0x010)); // 0x10 SceneGUID                   ( ModelPrimitiveType string string string String )
+            value.Profile                                   = GetObject<ProbeReferenceVolumeProfile>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProbeReferenceVolumeProfile.FromPointer); // 0x18 Profile                     ( ModelClassType ProbeReferenceVolumeProfile ProbeReferenceVolumeProfile ProbeReferenceVolumeProfile Pointer )
 
             return value;
         }

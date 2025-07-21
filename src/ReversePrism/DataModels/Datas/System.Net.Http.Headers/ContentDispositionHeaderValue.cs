@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 DispositionType                          000186671910 ModelPrimitiveType string string string String
-    // 018 Parameters                               000185CF5918 ModelClassListType List`1<NameValueHeaderValue> List`1<NameValueHeaderValue> List<NameValueHeaderValue> Pointer
+    // 010 DispositionType                          ModelPrimitiveType string string string String
+    // 018 Parameters                               ModelClassListType List`1<NameValueHeaderValue> List`1<NameValueHeaderValue> List<NameValueHeaderValue> Pointer
     public partial class ContentDispositionHeaderValue : DataModel
     {
         public string                                   DispositionType                         { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ContentDispositionHeaderValue() { Pointer= p0 };
 
-            value.DispositionType                           = GetString(new IntPtr(p + 0x010)); // 02466B8DDF30 0x10 DispositionType             ( 000186671910 ModelPrimitiveType string string string String )
-            value.Parameters                                = GetObjectList<NameValueHeaderValue>(new IntPtr(p + 0x018), ReversePrism.DataModels.NameValueHeaderValue.FromPointer); // 02466B8DDF50 0x18 Parameters                  ( 000185CF5918 ModelClassListType List`1<NameValueHeaderValue> List`1<NameValueHeaderValue> List<NameValueHeaderValue> Pointer )
+            value.DispositionType                           = GetString(new IntPtr(p + 0x010)); // 0x10 DispositionType             ( ModelPrimitiveType string string string String )
+            value.Parameters                                = GetObjectList<NameValueHeaderValue>(new IntPtr(p + 0x018), ReversePrism.DataModels.NameValueHeaderValue.FromPointer); // 0x18 Parameters                  ( ModelClassListType List`1<NameValueHeaderValue> List`1<NameValueHeaderValue> List<NameValueHeaderValue> Pointer )
 
             return value;
         }

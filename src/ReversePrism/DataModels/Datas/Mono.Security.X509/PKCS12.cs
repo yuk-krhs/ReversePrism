@@ -8,16 +8,16 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Password                                 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 018 KeyBags                                  00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer
-    // 020 SecretBags                               00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer
-    // 028 Certs                                    0001865651A0 ModelClassType X509CertificateCollection X509CertificateCollection X509CertificateCollection Pointer
-    // 030 KeyBagsChanged                           000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 031 SecretBagsChanged                        000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 032 CertsChanged                             000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 034 Iterations                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 038 SafeBags                                 00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer
-    // 040 Rng                                      00018660A680 ModelClassType RandomNumberGenerator RandomNumberGenerator RandomNumberGenerator Pointer
+    // 010 Password                                 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 018 KeyBags                                  ModelClassType ArrayList ArrayList ArrayList Pointer
+    // 020 SecretBags                               ModelClassType ArrayList ArrayList ArrayList Pointer
+    // 028 Certs                                    ModelClassType X509CertificateCollection X509CertificateCollection X509CertificateCollection Pointer
+    // 030 KeyBagsChanged                           ModelPrimitiveType bool bool bool Bool
+    // 031 SecretBagsChanged                        ModelPrimitiveType bool bool bool Bool
+    // 032 CertsChanged                             ModelPrimitiveType bool bool bool Bool
+    // 034 Iterations                               ModelPrimitiveType int int int Int32
+    // 038 SafeBags                                 ModelClassType ArrayList ArrayList ArrayList Pointer
+    // 040 Rng                                      ModelClassType RandomNumberGenerator RandomNumberGenerator RandomNumberGenerator Pointer
     // 000 password_max_length                      int IL2CPP_TYPE_I4
     public partial class PKCS12 : DataModel
     {
@@ -40,16 +40,16 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PKCS12() { Pointer= p0 };
 
-            value.Password                                  = GetSByteList(new IntPtr(p + 0x010)); // 02466B4082A8 0x10 Password                    ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.KeyBags                                   = GetObject<ArrayList>(new IntPtr(p + 0x018), ReversePrism.DataModels.ArrayList.FromPointer); // 02466B4082C8 0x18 KeyBags                     ( 00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer )
-            value.SecretBags                                = GetObject<ArrayList>(new IntPtr(p + 0x020), ReversePrism.DataModels.ArrayList.FromPointer); // 02466B4082E8 0x20 SecretBags                  ( 00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer )
-            value.Certs                                     = GetObject<X509CertificateCollection>(new IntPtr(p + 0x028), ReversePrism.DataModels.X509CertificateCollection.FromPointer); // 02466B408308 0x28 Certs                       ( 0001865651A0 ModelClassType X509CertificateCollection X509CertificateCollection X509CertificateCollection Pointer )
-            value.KeyBagsChanged                            = GetBool(new IntPtr(p + 0x030)); // 02466B408328 0x30 KeyBagsChanged              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SecretBagsChanged                         = GetBool(new IntPtr(p + 0x031)); // 02466B408348 0x31 SecretBagsChanged           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CertsChanged                              = GetBool(new IntPtr(p + 0x032)); // 02466B408368 0x32 CertsChanged                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Iterations                                = GetInt32(new IntPtr(p + 0x034)); // 02466B408388 0x34 Iterations                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SafeBags                                  = GetObject<ArrayList>(new IntPtr(p + 0x038), ReversePrism.DataModels.ArrayList.FromPointer); // 02466B4083A8 0x38 SafeBags                    ( 00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer )
-            value.Rng                                       = GetObject<RandomNumberGenerator>(new IntPtr(p + 0x040), ReversePrism.DataModels.RandomNumberGenerator.FromPointer); // 02466B4083C8 0x40 Rng                         ( 00018660A680 ModelClassType RandomNumberGenerator RandomNumberGenerator RandomNumberGenerator Pointer )
+            value.Password                                  = GetSByteList(new IntPtr(p + 0x010)); // 0x10 Password                    ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.KeyBags                                   = GetObject<ArrayList>(new IntPtr(p + 0x018), ReversePrism.DataModels.ArrayList.FromPointer); // 0x18 KeyBags                     ( ModelClassType ArrayList ArrayList ArrayList Pointer )
+            value.SecretBags                                = GetObject<ArrayList>(new IntPtr(p + 0x020), ReversePrism.DataModels.ArrayList.FromPointer); // 0x20 SecretBags                  ( ModelClassType ArrayList ArrayList ArrayList Pointer )
+            value.Certs                                     = GetObject<X509CertificateCollection>(new IntPtr(p + 0x028), ReversePrism.DataModels.X509CertificateCollection.FromPointer); // 0x28 Certs                       ( ModelClassType X509CertificateCollection X509CertificateCollection X509CertificateCollection Pointer )
+            value.KeyBagsChanged                            = GetBool(new IntPtr(p + 0x030)); // 0x30 KeyBagsChanged              ( ModelPrimitiveType bool bool bool Bool )
+            value.SecretBagsChanged                         = GetBool(new IntPtr(p + 0x031)); // 0x31 SecretBagsChanged           ( ModelPrimitiveType bool bool bool Bool )
+            value.CertsChanged                              = GetBool(new IntPtr(p + 0x032)); // 0x32 CertsChanged                ( ModelPrimitiveType bool bool bool Bool )
+            value.Iterations                                = GetInt32(new IntPtr(p + 0x034)); // 0x34 Iterations                  ( ModelPrimitiveType int int int Int32 )
+            value.SafeBags                                  = GetObject<ArrayList>(new IntPtr(p + 0x038), ReversePrism.DataModels.ArrayList.FromPointer); // 0x38 SafeBags                    ( ModelClassType ArrayList ArrayList ArrayList Pointer )
+            value.Rng                                       = GetObject<RandomNumberGenerator>(new IntPtr(p + 0x040), ReversePrism.DataModels.RandomNumberGenerator.FromPointer); // 0x40 Rng                         ( ModelClassType RandomNumberGenerator RandomNumberGenerator RandomNumberGenerator Pointer )
 
             return value;
         }

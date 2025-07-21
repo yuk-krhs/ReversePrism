@@ -10,12 +10,12 @@ namespace ReversePrism.DataModels
 
     // 000 _userPathExists                          bool IL2CPP_TYPE_BOOLEAN
     // 008 _userPath                                string IL2CPP_TYPE_STRING
-    // 010 MachinePathExists                        000186595C30 ModelPrimitiveType bool bool bool Bool
-    // 018 MachinePath                              000186672530 ModelPrimitiveType string string string String
-    // 010 Params                                   000186660E70 ModelClassType CspParameters CspParameters CspParameters Pointer
-    // 018 Keyvalue                                 000186671910 ModelPrimitiveType string string string String
-    // 020 Filename                                 000186671910 ModelPrimitiveType string string string String
-    // 028 Container                                000186671910 ModelPrimitiveType string string string String
+    // 010 MachinePathExists                        ModelPrimitiveType bool bool bool Bool
+    // 018 MachinePath                              ModelPrimitiveType string string string String
+    // 010 Params                                   ModelClassType CspParameters CspParameters CspParameters Pointer
+    // 018 Keyvalue                                 ModelPrimitiveType string string string String
+    // 020 Filename                                 ModelPrimitiveType string string string String
+    // 028 Container                                ModelPrimitiveType string string string String
     // 020 lockobj                                  <object> IL2CPP_TYPE_OBJECT
     public partial class KeyPairPersistence : DataModel
     {
@@ -34,12 +34,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new KeyPairPersistence() { Pointer= p0 };
 
-            value.MachinePathExists                         = GetBool(new IntPtr(p + 0x010)); // 0246669ACBD8 0x10 MachinePathExists           ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
-            value.MachinePath                               = GetString(new IntPtr(p + 0x018)); // 0246669ACBF8 0x18 MachinePath                 ( 000186672530 ModelPrimitiveType string string string String )
-            value.Params                                    = GetObject<CspParameters>(new IntPtr(p + 0x010), ReversePrism.DataModels.CspParameters.FromPointer); // 0246669ACC18 0x10 Params                      ( 000186660E70 ModelClassType CspParameters CspParameters CspParameters Pointer )
-            value.Keyvalue                                  = GetString(new IntPtr(p + 0x018)); // 0246669ACC38 0x18 Keyvalue                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.Filename                                  = GetString(new IntPtr(p + 0x020)); // 0246669ACC58 0x20 Filename                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.Container                                 = GetString(new IntPtr(p + 0x028)); // 0246669ACC78 0x28 Container                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.MachinePathExists                         = GetBool(new IntPtr(p + 0x010)); // 0x10 MachinePathExists           ( ModelPrimitiveType bool bool bool Bool )
+            value.MachinePath                               = GetString(new IntPtr(p + 0x018)); // 0x18 MachinePath                 ( ModelPrimitiveType string string string String )
+            value.Params                                    = GetObject<CspParameters>(new IntPtr(p + 0x010), ReversePrism.DataModels.CspParameters.FromPointer); // 0x10 Params                      ( ModelClassType CspParameters CspParameters CspParameters Pointer )
+            value.Keyvalue                                  = GetString(new IntPtr(p + 0x018)); // 0x18 Keyvalue                    ( ModelPrimitiveType string string string String )
+            value.Filename                                  = GetString(new IntPtr(p + 0x020)); // 0x20 Filename                    ( ModelPrimitiveType string string string String )
+            value.Container                                 = GetString(new IntPtr(p + 0x028)); // 0x28 Container                   ( ModelPrimitiveType string string string String )
 
             return value;
         }

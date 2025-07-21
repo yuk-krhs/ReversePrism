@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_RenderTextureInstanceID                0001865F2F90 ModelPrimitiveType int int int Int32
+    // 010 M_RenderTextureInstanceID                ModelPrimitiveType int int int Int32
     // 018 m_BufferPtr                              <int> IL2CPP_TYPE_I
     public partial class RenderBuffer : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RenderBuffer() { Pointer= p0 };
 
-            value.M_RenderTextureInstanceID                 = GetInt32(new IntPtr(p + 0x010)); // 0245A686BEE8 0x10 M_RenderTextureInstanceID   ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.M_RenderTextureInstanceID                 = GetInt32(new IntPtr(p + 0x010)); // 0x10 M_RenderTextureInstanceID   ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

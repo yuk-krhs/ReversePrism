@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 AnimCurve                                000186587470 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer
+    // 010 AnimCurve                                ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer
     public partial class EaseCurve : DataModel
     {
         public AnimationCurve?                          AnimCurve                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EaseCurve() { Pointer= p0 };
 
-            value.AnimCurve                                 = GetObject<AnimationCurve>(new IntPtr(p + 0x010), ReversePrism.DataModels.AnimationCurve.FromPointer); // 02466B148D88 0x10 AnimCurve                   ( 000186587470 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
+            value.AnimCurve                                 = GetObject<AnimationCurve>(new IntPtr(p + 0x010), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0x10 AnimCurve                   ( ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
 
             return value;
         }

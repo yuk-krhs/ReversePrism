@@ -8,16 +8,16 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 BaseTransform0                           0001866AA650 ModelClassType Transform Transform Transform Pointer
-    // 028 Rate0                                    000186666050 ModelPrimitiveType float float float Single
-    // 02C X0                                       000186595960 ModelPrimitiveType bool bool bool Bool
-    // 02D Y0                                       000186595960 ModelPrimitiveType bool bool bool Bool
-    // 02E Z0                                       000186595960 ModelPrimitiveType bool bool bool Bool
-    // 030 BaseTransform1                           0001866AA650 ModelClassType Transform Transform Transform Pointer
-    // 038 Rate1                                    000186666050 ModelPrimitiveType float float float Single
-    // 03C X1                                       000186595960 ModelPrimitiveType bool bool bool Bool
-    // 03D Y1                                       000186595960 ModelPrimitiveType bool bool bool Bool
-    // 03E Z1                                       000186595960 ModelPrimitiveType bool bool bool Bool
+    // 020 BaseTransform0                           ModelClassType Transform Transform Transform Pointer
+    // 028 Rate0                                    ModelPrimitiveType float float float Single
+    // 02C X0                                       ModelPrimitiveType bool bool bool Bool
+    // 02D Y0                                       ModelPrimitiveType bool bool bool Bool
+    // 02E Z0                                       ModelPrimitiveType bool bool bool Bool
+    // 030 BaseTransform1                           ModelClassType Transform Transform Transform Pointer
+    // 038 Rate1                                    ModelPrimitiveType float float float Single
+    // 03C X1                                       ModelPrimitiveType bool bool bool Bool
+    // 03D Y1                                       ModelPrimitiveType bool bool bool Bool
+    // 03E Z1                                       ModelPrimitiveType bool bool bool Bool
     public partial class TwoBoneConstrain : DataModel
     {
         public Transform?                               BaseTransform0                          { get; set; }
@@ -39,16 +39,16 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TwoBoneConstrain() { Pointer= p0 };
 
-            value.BaseTransform0                            = GetObject<Transform>(new IntPtr(p + 0x020), ReversePrism.DataModels.Transform.FromPointer); // 0245A69CE888 0x20 BaseTransform0              ( 0001866AA650 ModelClassType Transform Transform Transform Pointer )
-            value.Rate0                                     = GetSingle(new IntPtr(p + 0x028)); // 0245A69CE8A8 0x28 Rate0                       ( 000186666050 ModelPrimitiveType float float float Single )
-            value.X0                                        = GetBool(new IntPtr(p + 0x02C)); // 0245A69CE8C8 0x2C X0                          ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Y0                                        = GetBool(new IntPtr(p + 0x02D)); // 0245A69CE8E8 0x2D Y0                          ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Z0                                        = GetBool(new IntPtr(p + 0x02E)); // 0245A69CE908 0x2E Z0                          ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.BaseTransform1                            = GetObject<Transform>(new IntPtr(p + 0x030), ReversePrism.DataModels.Transform.FromPointer); // 0245A69CE928 0x30 BaseTransform1              ( 0001866AA650 ModelClassType Transform Transform Transform Pointer )
-            value.Rate1                                     = GetSingle(new IntPtr(p + 0x038)); // 0245A69CE948 0x38 Rate1                       ( 000186666050 ModelPrimitiveType float float float Single )
-            value.X1                                        = GetBool(new IntPtr(p + 0x03C)); // 0245A69CE968 0x3C X1                          ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Y1                                        = GetBool(new IntPtr(p + 0x03D)); // 0245A69CE988 0x3D Y1                          ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Z1                                        = GetBool(new IntPtr(p + 0x03E)); // 0245A69CE9A8 0x3E Z1                          ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.BaseTransform0                            = GetObject<Transform>(new IntPtr(p + 0x020), ReversePrism.DataModels.Transform.FromPointer); // 0x20 BaseTransform0              ( ModelClassType Transform Transform Transform Pointer )
+            value.Rate0                                     = GetSingle(new IntPtr(p + 0x028)); // 0x28 Rate0                       ( ModelPrimitiveType float float float Single )
+            value.X0                                        = GetBool(new IntPtr(p + 0x02C)); // 0x2C X0                          ( ModelPrimitiveType bool bool bool Bool )
+            value.Y0                                        = GetBool(new IntPtr(p + 0x02D)); // 0x2D Y0                          ( ModelPrimitiveType bool bool bool Bool )
+            value.Z0                                        = GetBool(new IntPtr(p + 0x02E)); // 0x2E Z0                          ( ModelPrimitiveType bool bool bool Bool )
+            value.BaseTransform1                            = GetObject<Transform>(new IntPtr(p + 0x030), ReversePrism.DataModels.Transform.FromPointer); // 0x30 BaseTransform1              ( ModelClassType Transform Transform Transform Pointer )
+            value.Rate1                                     = GetSingle(new IntPtr(p + 0x038)); // 0x38 Rate1                       ( ModelPrimitiveType float float float Single )
+            value.X1                                        = GetBool(new IntPtr(p + 0x03C)); // 0x3C X1                          ( ModelPrimitiveType bool bool bool Bool )
+            value.Y1                                        = GetBool(new IntPtr(p + 0x03D)); // 0x3D Y1                          ( ModelPrimitiveType bool bool bool Bool )
+            value.Z1                                        = GetBool(new IntPtr(p + 0x03E)); // 0x3E Z1                          ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

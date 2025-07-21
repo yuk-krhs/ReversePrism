@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 BackgroundObjects                        000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
-    // 028 FadeCanvasGroup                          000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
-    // 030 FadeCurve                                000186586CC0 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer
-    // 038 FadeTimeDisposable                       0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 020 BackgroundObjects                        ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
+    // 028 FadeCanvasGroup                          ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
+    // 030 FadeCurve                                ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer
+    // 038 FadeTimeDisposable                       ModelClassType IDisposable IDisposable IDisposable Pointer
     public partial class ProducePreparationEpisodeSelectUnitBackgroundView : DataModel
     {
         public List<GameObject>?                        BackgroundObjects                       { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProducePreparationEpisodeSelectUnitBackgroundView() { Pointer= p0 };
 
-            value.BackgroundObjects                         = GetObjectList<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 024665A51878 0x20 BackgroundObjects           ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
-            value.FadeCanvasGroup                           = GetObject<CanvasGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.CanvasGroup.FromPointer); // 024665A51898 0x28 FadeCanvasGroup             ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.FadeCurve                                 = GetObject<AnimationCurve>(new IntPtr(p + 0x030), ReversePrism.DataModels.AnimationCurve.FromPointer); // 024665A518B8 0x30 FadeCurve                   ( 000186586CC0 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
-            value.FadeTimeDisposable                        = GetObject<IDisposable>(new IntPtr(p + 0x038), ReversePrism.DataModels.IDisposable.FromPointer); // 024665A518D8 0x38 FadeTimeDisposable          ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.BackgroundObjects                         = GetObjectList<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0x20 BackgroundObjects           ( ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.FadeCanvasGroup                           = GetObject<CanvasGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0x28 FadeCanvasGroup             ( ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.FadeCurve                                 = GetObject<AnimationCurve>(new IntPtr(p + 0x030), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0x30 FadeCurve                   ( ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
+            value.FadeTimeDisposable                        = GetObject<IDisposable>(new IntPtr(p + 0x038), ReversePrism.DataModels.IDisposable.FromPointer); // 0x38 FadeTimeDisposable          ( ModelClassType IDisposable IDisposable IDisposable Pointer )
 
             return value;
         }

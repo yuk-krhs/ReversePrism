@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<GetProfileReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ProfileStatusFieldNumber                 int IL2CPP_TYPE_I4
-    // 018 ProfileStatus                            0001865C39B0 ModelClassType ProfileStatus ProfileStatus ProfileStatus Pointer
+    // 018 ProfileStatus                            ModelClassType ProfileStatus ProfileStatus ProfileStatus Pointer
     // 000 FriendStateFieldNumber                   int IL2CPP_TYPE_I4
-    // 020 FriendState                              0001865CB0A0 ModelEnumType FriendState FriendState FriendState Int32
+    // 020 FriendState                              ModelEnumType FriendState FriendState FriendState Int32
     public partial class GetProfileReply : DataModel
     {
         public ProfileStatus?                           ProfileStatus                           { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetProfileReply() { Pointer= p0 };
 
-            value.ProfileStatus                             = GetObject<ProfileStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProfileStatus.FromPointer); // 024662CCE680 0x18 ProfileStatus               ( 0001865C39B0 ModelClassType ProfileStatus ProfileStatus ProfileStatus Pointer )
-            value.FriendState                               = (FriendState)GetInt32(new IntPtr(p + 0x020)); // 024662CCE6C0 0x20 FriendState                 ( 0001865CB0A0 ModelEnumType FriendState FriendState FriendState Int32 )
+            value.ProfileStatus                             = GetObject<ProfileStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProfileStatus.FromPointer); // 0x18 ProfileStatus               ( ModelClassType ProfileStatus ProfileStatus ProfileStatus Pointer )
+            value.FriendState                               = (FriendState)GetInt32(new IntPtr(p + 0x020)); // 0x20 FriendState                 ( ModelEnumType FriendState FriendState FriendState Int32 )
 
             return value;
         }

@@ -8,13 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_currentCount                           0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 014 M_maxCount                               0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 M_waitCount                              0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 M_currentCount                           ModelPrimitiveType int int int Int32
+    // 014 M_maxCount                               ModelPrimitiveType int int int Int32
+    // 018 M_waitCount                              ModelPrimitiveType int int int Int32
     // 020 m_lockObj                                <object> IL2CPP_TYPE_OBJECT
-    // 028 M_waitHandle                             00018660A400 ModelClassType ManualResetEvent ManualResetEvent ManualResetEvent Pointer
-    // 030 M_asyncHead                              00018675CB60 ModelClassType TaskNode TaskNode TaskNode Pointer
-    // 038 M_asyncTail                              00018675CB60 ModelClassType TaskNode TaskNode TaskNode Pointer
+    // 028 M_waitHandle                             ModelClassType ManualResetEvent ManualResetEvent ManualResetEvent Pointer
+    // 030 M_asyncHead                              ModelClassType TaskNode TaskNode TaskNode Pointer
+    // 038 M_asyncTail                              ModelClassType TaskNode TaskNode TaskNode Pointer
     // 000 s_trueTask                               Task`1<bool> IL2CPP_TYPE_GENERICINST
     // 008 s_falseTask                              Task`1<bool> IL2CPP_TYPE_GENERICINST
     // 000 NO_MAXIMUM                               int IL2CPP_TYPE_I4
@@ -36,12 +36,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SemaphoreSlim() { Pointer= p0 };
 
-            value.M_currentCount                            = GetInt32(new IntPtr(p + 0x010)); // 024660E20BB0 0x10 M_currentCount              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_maxCount                                = GetInt32(new IntPtr(p + 0x014)); // 024660E20BD0 0x14 M_maxCount                  ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.M_waitCount                               = GetInt32(new IntPtr(p + 0x018)); // 024660E20BF0 0x18 M_waitCount                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_waitHandle                              = GetObject<ManualResetEvent>(new IntPtr(p + 0x028), ReversePrism.DataModels.ManualResetEvent.FromPointer); // 024660E20C30 0x28 M_waitHandle                ( 00018660A400 ModelClassType ManualResetEvent ManualResetEvent ManualResetEvent Pointer )
-            value.M_asyncHead                               = GetObject<TaskNode>(new IntPtr(p + 0x030), ReversePrism.DataModels.TaskNode.FromPointer); // 024660E20C50 0x30 M_asyncHead                 ( 00018675CB60 ModelClassType TaskNode TaskNode TaskNode Pointer )
-            value.M_asyncTail                               = GetObject<TaskNode>(new IntPtr(p + 0x038), ReversePrism.DataModels.TaskNode.FromPointer); // 024660E20C70 0x38 M_asyncTail                 ( 00018675CB60 ModelClassType TaskNode TaskNode TaskNode Pointer )
+            value.M_currentCount                            = GetInt32(new IntPtr(p + 0x010)); // 0x10 M_currentCount              ( ModelPrimitiveType int int int Int32 )
+            value.M_maxCount                                = GetInt32(new IntPtr(p + 0x014)); // 0x14 M_maxCount                  ( ModelPrimitiveType int int int Int32 )
+            value.M_waitCount                               = GetInt32(new IntPtr(p + 0x018)); // 0x18 M_waitCount                 ( ModelPrimitiveType int int int Int32 )
+            value.M_waitHandle                              = GetObject<ManualResetEvent>(new IntPtr(p + 0x028), ReversePrism.DataModels.ManualResetEvent.FromPointer); // 0x28 M_waitHandle                ( ModelClassType ManualResetEvent ManualResetEvent ManualResetEvent Pointer )
+            value.M_asyncHead                               = GetObject<TaskNode>(new IntPtr(p + 0x030), ReversePrism.DataModels.TaskNode.FromPointer); // 0x30 M_asyncHead                 ( ModelClassType TaskNode TaskNode TaskNode Pointer )
+            value.M_asyncTail                               = GetObject<TaskNode>(new IntPtr(p + 0x038), ReversePrism.DataModels.TaskNode.FromPointer); // 0x38 M_asyncTail                 ( ModelClassType TaskNode TaskNode TaskNode Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 EnableUpaCheck                           000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 EnableUpaCheck                           ModelPrimitiveType bool bool bool Bool
     public partial class XmlSchemaCompilationSettings : DataModel
     {
         public bool                                     EnableUpaCheck                          { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlSchemaCompilationSettings() { Pointer= p0 };
 
-            value.EnableUpaCheck                            = GetBool(new IntPtr(p + 0x010)); // 02466753F498 0x10 EnableUpaCheck              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.EnableUpaCheck                            = GetBool(new IntPtr(p + 0x010)); // 0x10 EnableUpaCheck              ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 068 NormalCellSize                           0001866656B0 ModelPrimitiveType float float float Single
-    // 06C MoreButtonCellSize                       0001866656B0 ModelPrimitiveType float float float Single
+    // 058 NormalCellSize                           ModelPrimitiveType float float float Single
+    // 05C MoreButtonCellSize                       ModelPrimitiveType float float float Single
     public partial class AnnounceListView : DataModel
     {
         public float                                    NormalCellSize                          { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AnnounceListView() { Pointer= p0 };
 
-            value.NormalCellSize                            = GetSingle(new IntPtr(p + 0x068)); // 02466BE61880 0x68 NormalCellSize              ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.MoreButtonCellSize                        = GetSingle(new IntPtr(p + 0x06C)); // 02466BE618A0 0x6C MoreButtonCellSize          ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.NormalCellSize                            = GetSingle(new IntPtr(p + 0x058)); // 0x58 NormalCellSize              ( ModelPrimitiveType float float float Single )
+            value.MoreButtonCellSize                        = GetSingle(new IntPtr(p + 0x05C)); // 0x5C MoreButtonCellSize          ( ModelPrimitiveType float float float Single )
 
             return value;
         }

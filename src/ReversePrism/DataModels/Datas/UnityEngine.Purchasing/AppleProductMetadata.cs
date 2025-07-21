@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 040 IsFamilyShareable                        0001865965D0 ModelPrimitiveType bool bool bool Bool
+    // 040 IsFamilyShareable                        ModelPrimitiveType bool bool bool Bool
     public partial class AppleProductMetadata : DataModel
     {
         public bool                                     IsFamilyShareable                       { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AppleProductMetadata() { Pointer= p0 };
 
-            value.IsFamilyShareable                         = GetBool(new IntPtr(p + 0x040)); // 0245A68D6790 0x40 IsFamilyShareable           ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.IsFamilyShareable                         = GetBool(new IntPtr(p + 0x040)); // 0x40 IsFamilyShareable           ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

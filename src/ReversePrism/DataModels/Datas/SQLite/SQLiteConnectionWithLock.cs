@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 068 _lockPoint                               <object> IL2CPP_TYPE_OBJECT
-    // 070 SkipLock                                 000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 070 SkipLock                                 ModelPrimitiveType bool bool bool Bool
     public partial class SQLiteConnectionWithLock : DataModel
     {
         public bool                                     SkipLock                                { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SQLiteConnectionWithLock() { Pointer= p0 };
 
-            value.SkipLock                                  = GetBool(new IntPtr(p + 0x070)); // 02466B38F3D0 0x70 SkipLock                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.SkipLock                                  = GetBool(new IntPtr(p + 0x070)); // 0x70 SkipLock                    ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

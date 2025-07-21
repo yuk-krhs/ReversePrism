@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 080 HistoryToggles                           000185CAC0A8 ModelClassListType Toggle[] Toggle[] List<Toggle> Pointer
+    // 080 HistoryToggles                           ModelClassListType Toggle[] Toggle[] List<Toggle> Pointer
     // 000 k_XOffset                                float IL2CPP_TYPE_R4
     public partial class DebugUIHandlerToggleHistory : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DebugUIHandlerToggleHistory() { Pointer= p0 };
 
-            value.HistoryToggles                            = GetObjectList<Toggle>(new IntPtr(p + 0x080), ReversePrism.DataModels.Toggle.FromPointer); // 02466939C438 0x80 HistoryToggles              ( 000185CAC0A8 ModelClassListType Toggle[] Toggle[] List<Toggle> Pointer )
+            value.HistoryToggles                            = GetObjectList<Toggle>(new IntPtr(p + 0x080), ReversePrism.DataModels.Toggle.FromPointer); // 0x80 HistoryToggles              ( ModelClassListType Toggle[] Toggle[] List<Toggle> Pointer )
 
             return value;
         }

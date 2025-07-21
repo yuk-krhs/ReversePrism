@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Index                                    0001865F36C0 ModelPrimitiveType int int int Int32
-    // 014 Position                                 0001865A5240 ModelEnumType CaretPosition CaretPosition CaretPosition Int32
+    // 010 Index                                    ModelPrimitiveType int int int Int32
+    // 014 Position                                 ModelEnumType CaretPosition CaretPosition CaretPosition Int32
     public partial class CaretInfo : DataModel
     {
         public int                                      Index                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CaretInfo() { Pointer= p0 };
 
-            value.Index                                     = GetInt32(new IntPtr(p + 0x010)); // 02466A6CAA50 0x10 Index                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Position                                  = (CaretPosition)GetInt32(new IntPtr(p + 0x014)); // 02466A6CAA70 0x14 Position                    ( 0001865A5240 ModelEnumType CaretPosition CaretPosition CaretPosition Int32 )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x010)); // 0x10 Index                       ( ModelPrimitiveType int int int Int32 )
+            value.Position                                  = (CaretPosition)GetInt32(new IntPtr(p + 0x014)); // 0x14 Position                    ( ModelEnumType CaretPosition CaretPosition CaretPosition Int32 )
 
             return value;
         }

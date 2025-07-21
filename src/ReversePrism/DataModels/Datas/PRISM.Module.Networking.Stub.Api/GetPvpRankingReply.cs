@@ -11,10 +11,10 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<GetPvpRankingReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 RankingFieldNumber                       int IL2CPP_TYPE_I4
-    // 018 Ranking                                  000186762860 ModelClassType EventRankingStatus EventRankingStatus EventRankingStatus Pointer
+    // 018 Ranking                                  ModelClassType EventRankingStatus EventRankingStatus EventRankingStatus Pointer
     // 000 RankedUserListFieldNumber                int IL2CPP_TYPE_I4
     // 008 _repeated_rankedUserList_codec           FieldCodec`1<PvpRankedUserStatus> IL2CPP_TYPE_GENERICINST
-    // 020 RankedUserList                           000185CEE0D8 ModelClassListType RepeatedField`1<PvpRankedUserStatus> RepeatedField`1<PvpRankedUserStatus> List<PvpRankedUserStatus> Pointer
+    // 020 RankedUserList                           ModelClassListType RepeatedField`1<PvpRankedUserStatus> RepeatedField`1<PvpRankedUserStatus> List<PvpRankedUserStatus> Pointer
     public partial class GetPvpRankingReply : DataModel
     {
         public EventRankingStatus?                      Ranking                                 { get; set; }
@@ -28,8 +28,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetPvpRankingReply() { Pointer= p0 };
 
-            value.Ranking                                   = GetObject<EventRankingStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.EventRankingStatus.FromPointer); // 024660FA6AE0 0x18 Ranking                     ( 000186762860 ModelClassType EventRankingStatus EventRankingStatus EventRankingStatus Pointer )
-            value.RankedUserList                            = GetObjectList<PvpRankedUserStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.PvpRankedUserStatus.FromPointer); // 024660FA6B40 0x20 RankedUserList              ( 000185CEE0D8 ModelClassListType RepeatedField`1<PvpRankedUserStatus> RepeatedField`1<PvpRankedUserStatus> List<PvpRankedUserStatus> Pointer )
+            value.Ranking                                   = GetObject<EventRankingStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.EventRankingStatus.FromPointer); // 0x18 Ranking                     ( ModelClassType EventRankingStatus EventRankingStatus EventRankingStatus Pointer )
+            value.RankedUserList                            = GetObjectList<PvpRankedUserStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.PvpRankedUserStatus.FromPointer); // 0x20 RankedUserList              ( ModelClassListType RepeatedField`1<PvpRankedUserStatus> RepeatedField`1<PvpRankedUserStatus> List<PvpRankedUserStatus> Pointer )
 
             return value;
         }

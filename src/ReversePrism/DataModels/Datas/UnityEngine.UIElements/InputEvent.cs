@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 088 PreviousData                             000186671910 ModelPrimitiveType string string string String
-    // 090 NewData                                  000186671910 ModelPrimitiveType string string string String
+    // 088 PreviousData                             ModelPrimitiveType string string string String
+    // 090 NewData                                  ModelPrimitiveType string string string String
     public partial class InputEvent : DataModel
     {
         public string                                   PreviousData                            { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InputEvent() { Pointer= p0 };
 
-            value.PreviousData                              = GetString(new IntPtr(p + 0x088)); // 0245A67309A8 0x88 PreviousData                ( 000186671910 ModelPrimitiveType string string string String )
-            value.NewData                                   = GetString(new IntPtr(p + 0x090)); // 0245A67309C8 0x90 NewData                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.PreviousData                              = GetString(new IntPtr(p + 0x088)); // 0x88 PreviousData                ( ModelPrimitiveType string string string String )
+            value.NewData                                   = GetString(new IntPtr(p + 0x090)); // 0x90 NewData                     ( ModelPrimitiveType string string string String )
 
             return value;
         }

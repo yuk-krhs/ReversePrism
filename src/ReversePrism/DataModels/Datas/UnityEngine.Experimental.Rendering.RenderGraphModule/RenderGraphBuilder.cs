@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_RenderPass                             000186654C50 ModelClassType RenderGraphPass RenderGraphPass RenderGraphPass Pointer
-    // 018 M_Resources                              000186655FC0 ModelClassType RenderGraphResourceRegistry RenderGraphResourceRegistry RenderGraphResourceRegistry Pointer
-    // 020 M_RenderGraph                            000186651FC0 ModelClassType RenderGraph RenderGraph RenderGraph Pointer
-    // 028 M_Disposed                               000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 M_RenderPass                             ModelClassType RenderGraphPass RenderGraphPass RenderGraphPass Pointer
+    // 018 M_Resources                              ModelClassType RenderGraphResourceRegistry RenderGraphResourceRegistry RenderGraphResourceRegistry Pointer
+    // 020 M_RenderGraph                            ModelClassType RenderGraph RenderGraph RenderGraph Pointer
+    // 028 M_Disposed                               ModelPrimitiveType bool bool bool Bool
     public partial class RenderGraphBuilder : DataModel
     {
         public RenderGraphPass?                         M_RenderPass                            { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RenderGraphBuilder() { Pointer= p0 };
 
-            value.M_RenderPass                              = GetObject<RenderGraphPass>(new IntPtr(p + 0x010), ReversePrism.DataModels.RenderGraphPass.FromPointer); // 024669107AE8 0x10 M_RenderPass                ( 000186654C50 ModelClassType RenderGraphPass RenderGraphPass RenderGraphPass Pointer )
-            value.M_Resources                               = GetObject<RenderGraphResourceRegistry>(new IntPtr(p + 0x018), ReversePrism.DataModels.RenderGraphResourceRegistry.FromPointer); // 024669107B08 0x18 M_Resources                 ( 000186655FC0 ModelClassType RenderGraphResourceRegistry RenderGraphResourceRegistry RenderGraphResourceRegistry Pointer )
-            value.M_RenderGraph                             = GetObject<RenderGraph>(new IntPtr(p + 0x020), ReversePrism.DataModels.RenderGraph.FromPointer); // 024669107B28 0x20 M_RenderGraph               ( 000186651FC0 ModelClassType RenderGraph RenderGraph RenderGraph Pointer )
-            value.M_Disposed                                = GetBool(new IntPtr(p + 0x028)); // 024669107B48 0x28 M_Disposed                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_RenderPass                              = GetObject<RenderGraphPass>(new IntPtr(p + 0x010), ReversePrism.DataModels.RenderGraphPass.FromPointer); // 0x10 M_RenderPass                ( ModelClassType RenderGraphPass RenderGraphPass RenderGraphPass Pointer )
+            value.M_Resources                               = GetObject<RenderGraphResourceRegistry>(new IntPtr(p + 0x018), ReversePrism.DataModels.RenderGraphResourceRegistry.FromPointer); // 0x18 M_Resources                 ( ModelClassType RenderGraphResourceRegistry RenderGraphResourceRegistry RenderGraphResourceRegistry Pointer )
+            value.M_RenderGraph                             = GetObject<RenderGraph>(new IntPtr(p + 0x020), ReversePrism.DataModels.RenderGraph.FromPointer); // 0x20 M_RenderGraph               ( ModelClassType RenderGraph RenderGraph RenderGraph Pointer )
+            value.M_Disposed                                = GetBool(new IntPtr(p + 0x028)); // 0x28 M_Disposed                  ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

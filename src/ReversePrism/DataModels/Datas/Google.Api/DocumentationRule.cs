@@ -11,11 +11,11 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<DocumentationRule> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 SelectorFieldNumber                      int IL2CPP_TYPE_I4
-    // 018 Selector                                 000186671910 ModelPrimitiveType string string string String
+    // 018 Selector                                 ModelPrimitiveType string string string String
     // 000 DescriptionFieldNumber                   int IL2CPP_TYPE_I4
-    // 020 Description                              000186671910 ModelPrimitiveType string string string String
+    // 020 Description                              ModelPrimitiveType string string string String
     // 000 DeprecationDescriptionFieldNumber        int IL2CPP_TYPE_I4
-    // 028 DeprecationDescription                   000186671910 ModelPrimitiveType string string string String
+    // 028 DeprecationDescription                   ModelPrimitiveType string string string String
     public partial class DocumentationRule : DataModel
     {
         public string                                   Selector                                { get; set; }
@@ -30,9 +30,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DocumentationRule() { Pointer= p0 };
 
-            value.Selector                                  = GetString(new IntPtr(p + 0x018)); // 02466A825F98 0x18 Selector                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.Description                               = GetString(new IntPtr(p + 0x020)); // 02466A825FD8 0x20 Description                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.DeprecationDescription                    = GetString(new IntPtr(p + 0x028)); // 02466A826018 0x28 DeprecationDescription      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Selector                                  = GetString(new IntPtr(p + 0x018)); // 0x18 Selector                    ( ModelPrimitiveType string string string String )
+            value.Description                               = GetString(new IntPtr(p + 0x020)); // 0x20 Description                 ( ModelPrimitiveType string string string String )
+            value.DeprecationDescription                    = GetString(new IntPtr(p + 0x028)); // 0x28 DeprecationDescription      ( ModelPrimitiveType string string string String )
 
             return value;
         }

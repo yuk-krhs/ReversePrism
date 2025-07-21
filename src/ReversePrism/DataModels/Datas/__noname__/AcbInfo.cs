@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Name                                     0001866722E0 ModelPrimitiveType string string string String
-    // 018 Size                                     0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 01C Version                                  0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 020 CharacterEncoding                        00018653E590 ModelEnumType CharacterEncoding CharacterEncoding CharacterEncoding Int32
-    // 024 Volume                                   000186666050 ModelPrimitiveType float float float Single
-    // 028 NumCues                                  0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 Name                                     ModelPrimitiveType string string string String
+    // 018 Size                                     ModelPrimitiveType uint uint uint UInt32
+    // 01C Version                                  ModelPrimitiveType uint uint uint UInt32
+    // 020 CharacterEncoding                        ModelEnumType CharacterEncoding CharacterEncoding CharacterEncoding Int32
+    // 024 Volume                                   ModelPrimitiveType float float float Single
+    // 028 NumCues                                  ModelPrimitiveType int int int Int32
     public partial class AcbInfo : DataModel
     {
         public string                                   Name                                    { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AcbInfo() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 02466AD2A7F0 0x10 Name                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Size                                      = GetUInt32(new IntPtr(p + 0x018)); // 02466AD2A810 0x18 Size                        ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.Version                                   = GetUInt32(new IntPtr(p + 0x01C)); // 02466AD2A830 0x1C Version                     ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.CharacterEncoding                         = (CharacterEncoding)GetInt32(new IntPtr(p + 0x020)); // 02466AD2A850 0x20 CharacterEncoding           ( 00018653E590 ModelEnumType CharacterEncoding CharacterEncoding CharacterEncoding Int32 )
-            value.Volume                                    = GetSingle(new IntPtr(p + 0x024)); // 02466AD2A870 0x24 Volume                      ( 000186666050 ModelPrimitiveType float float float Single )
-            value.NumCues                                   = GetInt32(new IntPtr(p + 0x028)); // 02466AD2A890 0x28 NumCues                     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Name                        ( ModelPrimitiveType string string string String )
+            value.Size                                      = GetUInt32(new IntPtr(p + 0x018)); // 0x18 Size                        ( ModelPrimitiveType uint uint uint UInt32 )
+            value.Version                                   = GetUInt32(new IntPtr(p + 0x01C)); // 0x1C Version                     ( ModelPrimitiveType uint uint uint UInt32 )
+            value.CharacterEncoding                         = (CharacterEncoding)GetInt32(new IntPtr(p + 0x020)); // 0x20 CharacterEncoding           ( ModelEnumType CharacterEncoding CharacterEncoding CharacterEncoding Int32 )
+            value.Volume                                    = GetSingle(new IntPtr(p + 0x024)); // 0x24 Volume                      ( ModelPrimitiveType float float float Single )
+            value.NumCues                                   = GetInt32(new IntPtr(p + 0x028)); // 0x28 NumCues                     ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 7D8 RootCanvas                               00018653FDA0 ModelClassType Canvas Canvas Canvas Pointer
-    // 7E0 ClickableEntries                         000185D1EEA8 ModelEnumListType List`1<ClickableEntry> List`1<ClickableEntry> List<ClickableEntry> Pointer
+    // 7D8 RootCanvas                               ModelClassType Canvas Canvas Canvas Pointer
+    // 7E0 ClickableEntries                         ModelEnumListType List`1<ClickableEntry> List`1<ClickableEntry> List<ClickableEntry> Pointer
     public partial class AttributeTextBase : DataModel
     {
         public Canvas?                                  RootCanvas                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AttributeTextBase() { Pointer= p0 };
 
-            value.RootCanvas                                = GetObject<Canvas>(new IntPtr(p + 0x7D8), ReversePrism.DataModels.Canvas.FromPointer); // 024664B997E0 0x7D8 RootCanvas                  ( 00018653FDA0 ModelClassType Canvas Canvas Canvas Pointer )
-            value.ClickableEntries                          = GetEnumList<ClickableEntry>(new IntPtr(p + 0x7E0)); // 024664B99800 0x7E0 ClickableEntries            ( 000185D1EEA8 ModelEnumListType List`1<ClickableEntry> List`1<ClickableEntry> List<ClickableEntry> Pointer )
+            value.RootCanvas                                = GetObject<Canvas>(new IntPtr(p + 0x7D8), ReversePrism.DataModels.Canvas.FromPointer); // 0x7D8 RootCanvas                  ( ModelClassType Canvas Canvas Canvas Pointer )
+            value.ClickableEntries                          = GetEnumList<ClickableEntry>(new IntPtr(p + 0x7E0)); // 0x7E0 ClickableEntries            ( ModelEnumListType List`1<ClickableEntry> List`1<ClickableEntry> List<ClickableEntry> Pointer )
 
             return value;
         }

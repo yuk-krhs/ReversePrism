@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Next                                     000186631CC0 ModelClassType ListEntry ListEntry ListEntry Pointer
+    // 010 Next                                     ModelClassType ListEntry ListEntry ListEntry Pointer
     // 018 _key                                     <object> IL2CPP_TYPE_OBJECT
-    // 020 Handler                                  0001866BAB20 ModelClassType Delegate Delegate Delegate Pointer
+    // 020 Handler                                  ModelClassType Delegate Delegate Delegate Pointer
     public partial class ListEntry : DataModel
     {
         public ListEntry?                               Next                                    { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ListEntry() { Pointer= p0 };
 
-            value.Next                                      = GetObject<ListEntry>(new IntPtr(p + 0x010), ReversePrism.DataModels.ListEntry.FromPointer); // 024667B7C550 0x10 Next                        ( 000186631CC0 ModelClassType ListEntry ListEntry ListEntry Pointer )
-            value.Handler                                   = GetObject<Delegate>(new IntPtr(p + 0x020), ReversePrism.DataModels.Delegate.FromPointer); // 024667B7C590 0x20 Handler                     ( 0001866BAB20 ModelClassType Delegate Delegate Delegate Pointer )
+            value.Next                                      = GetObject<ListEntry>(new IntPtr(p + 0x010), ReversePrism.DataModels.ListEntry.FromPointer); // 0x10 Next                        ( ModelClassType ListEntry ListEntry ListEntry Pointer )
+            value.Handler                                   = GetObject<Delegate>(new IntPtr(p + 0x020), ReversePrism.DataModels.Delegate.FromPointer); // 0x20 Handler                     ( ModelClassType Delegate Delegate Delegate Pointer )
 
             return value;
         }

@@ -12,10 +12,9 @@ namespace ReversePrism.DataModels
     // 028 onClickRetryButtonSubject                Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 030 onClickGiveUpButtonSubject               Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 038 onHidePopupSubject                       Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 040 factory                                  PopupViewFactory`1<IProduceInGamePausePopupView> IL2CPP_TYPE_GENERICINST
-    // 048 ViewModel                                00018655A5A0 ModelClassType ProduceInGamePausePopupViewModel ProduceInGamePausePopupViewModel ProduceInGamePausePopupViewModel Pointer
-    // 050 IsShowPopup                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 051 IsClosingPopup                           000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 040 ViewModel                                ModelClassType ProduceInGamePausePopupViewModel ProduceInGamePausePopupViewModel ProduceInGamePausePopupViewModel Pointer
+    // 048 IsShowPopup                              ModelPrimitiveType bool bool bool Bool
+    // 049 IsClosingPopup                           ModelPrimitiveType bool bool bool Bool
     public partial class ProduceInGamePausePopupCallerImplement : DataModel
     {
         public ProduceInGamePausePopupViewModel?        ViewModel                               { get; set; }
@@ -30,9 +29,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceInGamePausePopupCallerImplement() { Pointer= p0 };
 
-            value.ViewModel                                 = GetObject<ProduceInGamePausePopupViewModel>(new IntPtr(p + 0x048), ReversePrism.DataModels.ProduceInGamePausePopupViewModel.FromPointer); // 02466BA680E0 0x48 ViewModel                   ( 00018655A5A0 ModelClassType ProduceInGamePausePopupViewModel ProduceInGamePausePopupViewModel ProduceInGamePausePopupViewModel Pointer )
-            value.IsShowPopup                               = GetBool(new IntPtr(p + 0x050)); // 02466BA68100 0x50 IsShowPopup                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsClosingPopup                            = GetBool(new IntPtr(p + 0x051)); // 02466BA68120 0x51 IsClosingPopup              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ViewModel                                 = GetObject<ProduceInGamePausePopupViewModel>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProduceInGamePausePopupViewModel.FromPointer); // 0x40 ViewModel                   ( ModelClassType ProduceInGamePausePopupViewModel ProduceInGamePausePopupViewModel ProduceInGamePausePopupViewModel Pointer )
+            value.IsShowPopup                               = GetBool(new IntPtr(p + 0x048)); // 0x48 IsShowPopup                 ( ModelPrimitiveType bool bool bool Bool )
+            value.IsClosingPopup                            = GetBool(new IntPtr(p + 0x049)); // 0x49 IsClosingPopup              ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

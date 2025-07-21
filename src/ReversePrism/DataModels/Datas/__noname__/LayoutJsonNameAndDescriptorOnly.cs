@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Name                                     0001866722E0 ModelPrimitiveType string string string String
-    // 018 Extend                                   0001866722E0 ModelPrimitiveType string string string String
-    // 020 ExtendMultiple                           000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 028 Device                                   00018662CF60 ModelEnumType MatcherJson MatcherJson MatcherJson Int32
+    // 010 Name                                     ModelPrimitiveType string string string String
+    // 018 Extend                                   ModelPrimitiveType string string string String
+    // 020 ExtendMultiple                           ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 028 Device                                   ModelEnumType MatcherJson MatcherJson MatcherJson Int32
     public partial class LayoutJsonNameAndDescriptorOnly : DataModel
     {
         public string                                   Name                                    { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LayoutJsonNameAndDescriptorOnly() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0245A33CA218 0x10 Name                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Extend                                    = GetString(new IntPtr(p + 0x018)); // 0245A33CA238 0x18 Extend                      ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ExtendMultiple                            = GetStringList(new IntPtr(p + 0x020)); // 0245A33CA258 0x20 ExtendMultiple              ( 000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.Device                                    = (MatcherJson)GetInt32(new IntPtr(p + 0x028)); // 0245A33CA278 0x28 Device                      ( 00018662CF60 ModelEnumType MatcherJson MatcherJson MatcherJson Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Name                        ( ModelPrimitiveType string string string String )
+            value.Extend                                    = GetString(new IntPtr(p + 0x018)); // 0x18 Extend                      ( ModelPrimitiveType string string string String )
+            value.ExtendMultiple                            = GetStringList(new IntPtr(p + 0x020)); // 0x20 ExtendMultiple              ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.Device                                    = (MatcherJson)GetInt32(new IntPtr(p + 0x028)); // 0x28 Device                      ( ModelEnumType MatcherJson MatcherJson MatcherJson Int32 )
 
             return value;
         }

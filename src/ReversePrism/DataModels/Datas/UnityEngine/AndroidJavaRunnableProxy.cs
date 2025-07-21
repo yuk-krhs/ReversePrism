@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 MRunnable                                0001866AE3F0 ModelClassType AndroidJavaRunnable AndroidJavaRunnable AndroidJavaRunnable Pointer
+    // 020 MRunnable                                ModelClassType AndroidJavaRunnable AndroidJavaRunnable AndroidJavaRunnable Pointer
     public partial class AndroidJavaRunnableProxy : DataModel
     {
         public AndroidJavaRunnable?                     MRunnable                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AndroidJavaRunnableProxy() { Pointer= p0 };
 
-            value.MRunnable                                 = GetObject<AndroidJavaRunnable>(new IntPtr(p + 0x020), ReversePrism.DataModels.AndroidJavaRunnable.FromPointer); // 0245A68F7118 0x20 MRunnable                   ( 0001866AE3F0 ModelClassType AndroidJavaRunnable AndroidJavaRunnable AndroidJavaRunnable Pointer )
+            value.MRunnable                                 = GetObject<AndroidJavaRunnable>(new IntPtr(p + 0x020), ReversePrism.DataModels.AndroidJavaRunnable.FromPointer); // 0x20 MRunnable                   ( ModelClassType AndroidJavaRunnable AndroidJavaRunnable AndroidJavaRunnable Pointer )
 
             return value;
         }

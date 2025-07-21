@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Uwr                                      00018672DF10 ModelClassType UnityWebRequest UnityWebRequest UnityWebRequest Pointer
-    // 018 AssetBundle                              0001866E34F0 ModelClassType AssetBundle AssetBundle AssetBundle Pointer
+    // 010 Uwr                                      ModelClassType UnityWebRequest UnityWebRequest UnityWebRequest Pointer
+    // 018 AssetBundle                              ModelClassType AssetBundle AssetBundle AssetBundle Pointer
     // 020 _responseHeaders                         Dictionary`2<string, string> IL2CPP_TYPE_GENERICINST
     public partial class WWW : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new WWW() { Pointer= p0 };
 
-            value.Uwr                                       = GetObject<UnityWebRequest>(new IntPtr(p + 0x010), ReversePrism.DataModels.UnityWebRequest.FromPointer); // 0245A692CD18 0x10 Uwr                         ( 00018672DF10 ModelClassType UnityWebRequest UnityWebRequest UnityWebRequest Pointer )
-            value.AssetBundle                               = GetObject<AssetBundle>(new IntPtr(p + 0x018), ReversePrism.DataModels.AssetBundle.FromPointer); // 0245A692CD38 0x18 AssetBundle                 ( 0001866E34F0 ModelClassType AssetBundle AssetBundle AssetBundle Pointer )
+            value.Uwr                                       = GetObject<UnityWebRequest>(new IntPtr(p + 0x010), ReversePrism.DataModels.UnityWebRequest.FromPointer); // 0x10 Uwr                         ( ModelClassType UnityWebRequest UnityWebRequest UnityWebRequest Pointer )
+            value.AssetBundle                               = GetObject<AssetBundle>(new IntPtr(p + 0x018), ReversePrism.DataModels.AssetBundle.FromPointer); // 0x18 AssetBundle                 ( ModelClassType AssetBundle AssetBundle AssetBundle Pointer )
 
             return value;
         }

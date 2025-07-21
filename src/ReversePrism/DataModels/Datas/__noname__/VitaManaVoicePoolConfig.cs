@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 NumberOfManaDecoders                     0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 NumberOfManaDecoders                     ModelPrimitiveType int int int Int32
     public partial class VitaManaVoicePoolConfig : DataModel
     {
         public int                                      NumberOfManaDecoders                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new VitaManaVoicePoolConfig() { Pointer= p0 };
 
-            value.NumberOfManaDecoders                      = GetInt32(new IntPtr(p + 0x010)); // 024660F5ED40 0x10 NumberOfManaDecoders        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.NumberOfManaDecoders                      = GetInt32(new IntPtr(p + 0x010)); // 0x10 NumberOfManaDecoders        ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

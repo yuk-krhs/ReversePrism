@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 ProducePolicyID                          0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 01C ProducePolicyTypeID                      0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 ProducePolicyID                          ModelPrimitiveType int int int Int32
+    // 01C ProducePolicyTypeID                      ModelPrimitiveType int int int Int32
     public partial class LogAccordionOnProducePolicyViewModel : DataModel
     {
         public int                                      ProducePolicyID                         { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LogAccordionOnProducePolicyViewModel() { Pointer= p0 };
 
-            value.ProducePolicyID                           = GetInt32(new IntPtr(p + 0x018)); // 024666576810 0x18 ProducePolicyID             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ProducePolicyTypeID                       = GetInt32(new IntPtr(p + 0x01C)); // 024666576830 0x1C ProducePolicyTypeID         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ProducePolicyID                           = GetInt32(new IntPtr(p + 0x018)); // 0x18 ProducePolicyID             ( ModelPrimitiveType int int int Int32 )
+            value.ProducePolicyTypeID                       = GetInt32(new IntPtr(p + 0x01C)); // 0x1C ProducePolicyTypeID         ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

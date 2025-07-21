@@ -49,26 +49,32 @@ namespace ReversePrism.DataModels
     // 130 __Marshaller_api_StartMVReply            Marshaller`1<StartMVReply> IL2CPP_TYPE_GENERICINST
     // 138 __Marshaller_api_GetEventListArgs        Marshaller`1<GetEventListArgs> IL2CPP_TYPE_GENERICINST
     // 140 __Marshaller_api_GetEventListReply       Marshaller`1<GetEventListReply> IL2CPP_TYPE_GENERICINST
-    // 148 __Method_GetSongList                     Method`2<GetSongListArgs, GetSongListReply> IL2CPP_TYPE_GENERICINST
-    // 150 __Method_GetSongRatingList               Method`2<GetSongRatingListArgs, GetSongRatingListReply> IL2CPP_TYPE_GENERICINST
-    // 158 __Method_SetFavoriteSong                 Method`2<SetFavoriteSongArgs, SetFavoriteSongReply> IL2CPP_TYPE_GENERICINST
-    // 160 __Method_GetLiveUnit                     Method`2<GetLiveUnitArgs, GetLiveUnitReply> IL2CPP_TYPE_GENERICINST
-    // 168 __Method_SetLiveUnit                     Method`2<SetLiveUnitArgs, SetLiveUnitReply> IL2CPP_TYPE_GENERICINST
-    // 170 __Method_SetLiveUnitName                 Method`2<SetLiveUnitNameArgs, SetLiveUnitNameReply> IL2CPP_TYPE_GENERICINST
-    // 178 __Method_GetLivePlayRewardList           Method`2<GetLivePlayRewardListArgs, GetLivePlayRewardListReply> IL2CPP_TYPE_GENERICINST
-    // 180 __Method_StartLive                       Method`2<StartLiveArgs, StartLiveReply> IL2CPP_TYPE_GENERICINST
-    // 188 __Method_FinishLive                      Method`2<FinishLiveArgs, FinishLiveReply> IL2CPP_TYPE_GENERICINST
-    // 190 __Method_BreakLive                       Method`2<BreakLiveArgs, BreakLiveReply> IL2CPP_TYPE_GENERICINST
-    // 198 __Method_GetStartLiveInfo                Method`2<GetStartLiveInfoArgs, GetStartLiveInfoReply> IL2CPP_TYPE_GENERICINST
-    // 1A0 __Method_SkipLive                        Method`2<SkipLiveArgs, SkipLiveReply> IL2CPP_TYPE_GENERICINST
-    // 1A8 __Method_GetMvUnitList                   Method`2<GetMvUnitListArgs, GetMvUnitListReply> IL2CPP_TYPE_GENERICINST
-    // 1B0 __Method_SetMvUnit                       Method`2<SetMvUnitArgs, SetMvUnitReply> IL2CPP_TYPE_GENERICINST
-    // 1B8 __Method_SetMvUnitName                   Method`2<SetMvUnitNameArgs, SetMvUnitNameReply> IL2CPP_TYPE_GENERICINST
-    // 1C0 __Method_SetMvOriginalMember             Method`2<SetMvOriginalMemberArgs, SetMvOriginalMemberReply> IL2CPP_TYPE_GENERICINST
-    // 1C8 __Method_GetLiveHighScoreRanking         Method`2<GetLiveHighScoreRankingArgs, GetLiveHighScoreRankingReply> IL2CPP_TYPE_GENERICINST
-    // 1D0 __Method_GetLiveEnable                   Method`2<GetLiveEnableArgs, GetLiveEnableReply> IL2CPP_TYPE_GENERICINST
-    // 1D8 __Method_StartMV                         Method`2<StartMVArgs, StartMVReply> IL2CPP_TYPE_GENERICINST
-    // 1E0 __Method_GetEventList                    Method`2<GetEventListArgs, GetEventListReply> IL2CPP_TYPE_GENERICINST
+    // 148 __Marshaller_api_ResetLiveUnitArgs       Marshaller`1<ResetLiveUnitArgs> IL2CPP_TYPE_GENERICINST
+    // 150 __Marshaller_api_ResetLiveUnitReply      Marshaller`1<ResetLiveUnitReply> IL2CPP_TYPE_GENERICINST
+    // 158 __Marshaller_api_ResetMvUnitArgs         Marshaller`1<ResetMvUnitArgs> IL2CPP_TYPE_GENERICINST
+    // 160 __Marshaller_api_ResetMvUnitReply        Marshaller`1<ResetMvUnitReply> IL2CPP_TYPE_GENERICINST
+    // 168 __Method_GetSongList                     Method`2<GetSongListArgs, GetSongListReply> IL2CPP_TYPE_GENERICINST
+    // 170 __Method_GetSongRatingList               Method`2<GetSongRatingListArgs, GetSongRatingListReply> IL2CPP_TYPE_GENERICINST
+    // 178 __Method_SetFavoriteSong                 Method`2<SetFavoriteSongArgs, SetFavoriteSongReply> IL2CPP_TYPE_GENERICINST
+    // 180 __Method_GetLiveUnit                     Method`2<GetLiveUnitArgs, GetLiveUnitReply> IL2CPP_TYPE_GENERICINST
+    // 188 __Method_SetLiveUnit                     Method`2<SetLiveUnitArgs, SetLiveUnitReply> IL2CPP_TYPE_GENERICINST
+    // 190 __Method_SetLiveUnitName                 Method`2<SetLiveUnitNameArgs, SetLiveUnitNameReply> IL2CPP_TYPE_GENERICINST
+    // 198 __Method_GetLivePlayRewardList           Method`2<GetLivePlayRewardListArgs, GetLivePlayRewardListReply> IL2CPP_TYPE_GENERICINST
+    // 1A0 __Method_StartLive                       Method`2<StartLiveArgs, StartLiveReply> IL2CPP_TYPE_GENERICINST
+    // 1A8 __Method_FinishLive                      Method`2<FinishLiveArgs, FinishLiveReply> IL2CPP_TYPE_GENERICINST
+    // 1B0 __Method_BreakLive                       Method`2<BreakLiveArgs, BreakLiveReply> IL2CPP_TYPE_GENERICINST
+    // 1B8 __Method_GetStartLiveInfo                Method`2<GetStartLiveInfoArgs, GetStartLiveInfoReply> IL2CPP_TYPE_GENERICINST
+    // 1C0 __Method_SkipLive                        Method`2<SkipLiveArgs, SkipLiveReply> IL2CPP_TYPE_GENERICINST
+    // 1C8 __Method_GetMvUnitList                   Method`2<GetMvUnitListArgs, GetMvUnitListReply> IL2CPP_TYPE_GENERICINST
+    // 1D0 __Method_SetMvUnit                       Method`2<SetMvUnitArgs, SetMvUnitReply> IL2CPP_TYPE_GENERICINST
+    // 1D8 __Method_SetMvUnitName                   Method`2<SetMvUnitNameArgs, SetMvUnitNameReply> IL2CPP_TYPE_GENERICINST
+    // 1E0 __Method_SetMvOriginalMember             Method`2<SetMvOriginalMemberArgs, SetMvOriginalMemberReply> IL2CPP_TYPE_GENERICINST
+    // 1E8 __Method_GetLiveHighScoreRanking         Method`2<GetLiveHighScoreRankingArgs, GetLiveHighScoreRankingReply> IL2CPP_TYPE_GENERICINST
+    // 1F0 __Method_GetLiveEnable                   Method`2<GetLiveEnableArgs, GetLiveEnableReply> IL2CPP_TYPE_GENERICINST
+    // 1F8 __Method_StartMV                         Method`2<StartMVArgs, StartMVReply> IL2CPP_TYPE_GENERICINST
+    // 200 __Method_GetEventList                    Method`2<GetEventListArgs, GetEventListReply> IL2CPP_TYPE_GENERICINST
+    // 208 __Method_ResetLiveUnit                   Method`2<ResetLiveUnitArgs, ResetLiveUnitReply> IL2CPP_TYPE_GENERICINST
+    // 210 __Method_ResetMvUnit                     Method`2<ResetMvUnitArgs, ResetMvUnitReply> IL2CPP_TYPE_GENERICINST
     public partial class LiveService : DataModel
     {
 

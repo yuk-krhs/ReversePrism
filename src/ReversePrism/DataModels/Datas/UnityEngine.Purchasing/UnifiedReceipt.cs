@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Payload                                  0001866722E0 ModelPrimitiveType string string string String
-    // 018 Store                                    0001866722E0 ModelPrimitiveType string string string String
-    // 020 TransactionID                            0001866722E0 ModelPrimitiveType string string string String
+    // 010 Payload                                  ModelPrimitiveType string string string String
+    // 018 Store                                    ModelPrimitiveType string string string String
+    // 020 TransactionID                            ModelPrimitiveType string string string String
     public partial class UnifiedReceipt : DataModel
     {
         public string                                   Payload                                 { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnifiedReceipt() { Pointer= p0 };
 
-            value.Payload                                   = GetString(new IntPtr(p + 0x010)); // 0245A68F2C68 0x10 Payload                     ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Store                                     = GetString(new IntPtr(p + 0x018)); // 0245A68F2C88 0x18 Store                       ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.TransactionID                             = GetString(new IntPtr(p + 0x020)); // 0245A68F2CA8 0x20 TransactionID               ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Payload                                   = GetString(new IntPtr(p + 0x010)); // 0x10 Payload                     ( ModelPrimitiveType string string string String )
+            value.Store                                     = GetString(new IntPtr(p + 0x018)); // 0x18 Store                       ( ModelPrimitiveType string string string String )
+            value.TransactionID                             = GetString(new IntPtr(p + 0x020)); // 0x20 TransactionID               ( ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -9,15 +9,14 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 onClosed                                 Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 028 ProduceIdolTabView                       0001865511C0 ModelClassType ProduceIdolTabView ProduceIdolTabView ProduceIdolTabView Pointer
-    // 030 SupportSkillTabView                      0001865F7BE0 ModelClassType SupportSkillTabView SupportSkillTabView SupportSkillTabView Pointer
-    // 038 SupportEffectTabView                     0001865F1A10 ModelClassType SupportEffectTabView SupportEffectTabView SupportEffectTabView Pointer
-    // 040 ProduceInfoTabView                       00018655B4A0 ModelClassType ProduceInfoTabView ProduceInfoTabView ProduceInfoTabView Pointer
-    // 048 TabGroup                                 0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer
-    // 050 sCharaDetailPopupViewFactory             SerializableInterface`1<ISCharaDetailPopupViewFactory> IL2CPP_TYPE_GENERICINST
-    // 058 onShowSelfSCharaDetailPopup              IObservable`1<int> IL2CPP_TYPE_GENERICINST
-    // 060 onShowFriendSCharaDetailPopup            IObservable`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 068 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
+    // 028 ProduceIdolTabView                       ModelClassType ProduceIdolTabView ProduceIdolTabView ProduceIdolTabView Pointer
+    // 030 SupportSkillTabView                      ModelClassType SupportSkillTabView SupportSkillTabView SupportSkillTabView Pointer
+    // 038 SupportEffectTabView                     ModelClassType SupportEffectTabView SupportEffectTabView SupportEffectTabView Pointer
+    // 040 ProduceInfoTabView                       ModelClassType ProduceInfoTabView ProduceInfoTabView ProduceInfoTabView Pointer
+    // 048 TabGroup                                 ModelClassType UITabGroup UITabGroup UITabGroup Pointer
+    // 050 onShowSelfSCharaDetailPopup              IObservable`1<int> IL2CPP_TYPE_GENERICINST
+    // 058 onShowFriendSCharaDetailPopup            IObservable`1<Unit> IL2CPP_TYPE_GENERICINST
+    // 060 Parent                                   ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
     public partial class ProduceEditInformationPopupView : DataModel
     {
         public ProduceIdolTabView?                      ProduceIdolTabView                      { get; set; }
@@ -35,12 +34,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceEditInformationPopupView() { Pointer= p0 };
 
-            value.ProduceIdolTabView                        = GetObject<ProduceIdolTabView>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProduceIdolTabView.FromPointer); // 02466A1458B8 0x28 ProduceIdolTabView          ( 0001865511C0 ModelClassType ProduceIdolTabView ProduceIdolTabView ProduceIdolTabView Pointer )
-            value.SupportSkillTabView                       = GetObject<SupportSkillTabView>(new IntPtr(p + 0x030), ReversePrism.DataModels.SupportSkillTabView.FromPointer); // 02466A1458D8 0x30 SupportSkillTabView         ( 0001865F7BE0 ModelClassType SupportSkillTabView SupportSkillTabView SupportSkillTabView Pointer )
-            value.SupportEffectTabView                      = GetObject<SupportEffectTabView>(new IntPtr(p + 0x038), ReversePrism.DataModels.SupportEffectTabView.FromPointer); // 02466A1458F8 0x38 SupportEffectTabView        ( 0001865F1A10 ModelClassType SupportEffectTabView SupportEffectTabView SupportEffectTabView Pointer )
-            value.ProduceInfoTabView                        = GetObject<ProduceInfoTabView>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProduceInfoTabView.FromPointer); // 02466A145918 0x40 ProduceInfoTabView          ( 00018655B4A0 ModelClassType ProduceInfoTabView ProduceInfoTabView ProduceInfoTabView Pointer )
-            value.TabGroup                                  = GetObject<UITabGroup>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITabGroup.FromPointer); // 02466A145938 0x48 TabGroup                    ( 0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x068), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466A1459B8 0x68 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.ProduceIdolTabView                        = GetObject<ProduceIdolTabView>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProduceIdolTabView.FromPointer); // 0x28 ProduceIdolTabView          ( ModelClassType ProduceIdolTabView ProduceIdolTabView ProduceIdolTabView Pointer )
+            value.SupportSkillTabView                       = GetObject<SupportSkillTabView>(new IntPtr(p + 0x030), ReversePrism.DataModels.SupportSkillTabView.FromPointer); // 0x30 SupportSkillTabView         ( ModelClassType SupportSkillTabView SupportSkillTabView SupportSkillTabView Pointer )
+            value.SupportEffectTabView                      = GetObject<SupportEffectTabView>(new IntPtr(p + 0x038), ReversePrism.DataModels.SupportEffectTabView.FromPointer); // 0x38 SupportEffectTabView        ( ModelClassType SupportEffectTabView SupportEffectTabView SupportEffectTabView Pointer )
+            value.ProduceInfoTabView                        = GetObject<ProduceInfoTabView>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProduceInfoTabView.FromPointer); // 0x40 ProduceInfoTabView          ( ModelClassType ProduceInfoTabView ProduceInfoTabView ProduceInfoTabView Pointer )
+            value.TabGroup                                  = GetObject<UITabGroup>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITabGroup.FromPointer); // 0x48 TabGroup                    ( ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x060), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0x60 Parent                      ( ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

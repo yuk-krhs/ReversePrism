@@ -10,7 +10,6 @@ namespace ReversePrism.DataModels
 
     // 000 OnceMaxItems                             int IL2CPP_TYPE_I4
     // 000 HistoryMasItems                          int IL2CPP_TYPE_I4
-    // 000 ResourceTagName                          string IL2CPP_TYPE_STRING
     public partial class PresentBoxConst : DataModel
     {
 

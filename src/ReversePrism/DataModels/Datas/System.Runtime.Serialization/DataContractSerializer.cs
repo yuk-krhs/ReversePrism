@@ -8,20 +8,20 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 RootType                                 000186692850 ModelClassType Type Type Type Pointer
-    // 018 RootContract                             0001865B6200 ModelClassType DataContract DataContract DataContract Pointer
-    // 020 NeedsContractNsAtRoot                    000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 028 RootName                                 0001866BA170 ModelClassType XmlDictionaryString XmlDictionaryString XmlDictionaryString Pointer
-    // 030 RootNamespace                            0001866BA170 ModelClassType XmlDictionaryString XmlDictionaryString XmlDictionaryString Pointer
-    // 038 MaxItemsInObjectGraph                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 03C IgnoreExtensionDataObject                000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 03D PreserveObjectReferences                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 040 DataContractSurrogate                    00018674A640 ModelClassType IDataContractSurrogate IDataContractSurrogate IDataContractSurrogate Pointer
+    // 010 RootType                                 ModelClassType Type Type Type Pointer
+    // 018 RootContract                             ModelClassType DataContract DataContract DataContract Pointer
+    // 020 NeedsContractNsAtRoot                    ModelPrimitiveType bool bool bool Bool
+    // 028 RootName                                 ModelClassType XmlDictionaryString XmlDictionaryString XmlDictionaryString Pointer
+    // 030 RootNamespace                            ModelClassType XmlDictionaryString XmlDictionaryString XmlDictionaryString Pointer
+    // 038 MaxItemsInObjectGraph                    ModelPrimitiveType int int int Int32
+    // 03C IgnoreExtensionDataObject                ModelPrimitiveType bool bool bool Bool
+    // 03D PreserveObjectReferences                 ModelPrimitiveType bool bool bool Bool
+    // 040 DataContractSurrogate                    ModelClassType IDataContractSurrogate IDataContractSurrogate IDataContractSurrogate Pointer
     // 048 knownTypeCollection                      ReadOnlyCollection`1<Type> IL2CPP_TYPE_GENERICINST
     // 050 knownTypeList                            IList`1<Type> IL2CPP_TYPE_GENERICINST
     // 058 knownDataContracts                       Dictionary`2<XmlQualifiedName, DataContract> IL2CPP_TYPE_GENERICINST
-    // 060 DataContractResolver                     000186678590 ModelClassType DataContractResolver DataContractResolver DataContractResolver Pointer
-    // 068 SerializeReadOnlyTypes                   000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 060 DataContractResolver                     ModelClassType DataContractResolver DataContractResolver DataContractResolver Pointer
+    // 068 SerializeReadOnlyTypes                   ModelPrimitiveType bool bool bool Bool
     public partial class DataContractSerializer : DataModel
     {
         public Type?                                    RootType                                { get; set; }
@@ -44,17 +44,17 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DataContractSerializer() { Pointer= p0 };
 
-            value.RootType                                  = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 024667D47D70 0x10 RootType                    ( 000186692850 ModelClassType Type Type Type Pointer )
-            value.RootContract                              = GetObject<DataContract>(new IntPtr(p + 0x018), ReversePrism.DataModels.DataContract.FromPointer); // 024667D47D90 0x18 RootContract                ( 0001865B6200 ModelClassType DataContract DataContract DataContract Pointer )
-            value.NeedsContractNsAtRoot                     = GetBool(new IntPtr(p + 0x020)); // 024667D47DB0 0x20 NeedsContractNsAtRoot       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.RootName                                  = GetObject<XmlDictionaryString>(new IntPtr(p + 0x028), ReversePrism.DataModels.XmlDictionaryString.FromPointer); // 024667D47DD0 0x28 RootName                    ( 0001866BA170 ModelClassType XmlDictionaryString XmlDictionaryString XmlDictionaryString Pointer )
-            value.RootNamespace                             = GetObject<XmlDictionaryString>(new IntPtr(p + 0x030), ReversePrism.DataModels.XmlDictionaryString.FromPointer); // 024667D47DF0 0x30 RootNamespace               ( 0001866BA170 ModelClassType XmlDictionaryString XmlDictionaryString XmlDictionaryString Pointer )
-            value.MaxItemsInObjectGraph                     = GetInt32(new IntPtr(p + 0x038)); // 024667D47E10 0x38 MaxItemsInObjectGraph       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IgnoreExtensionDataObject                 = GetBool(new IntPtr(p + 0x03C)); // 024667D47E30 0x3C IgnoreExtensionDataObject   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.PreserveObjectReferences                  = GetBool(new IntPtr(p + 0x03D)); // 024667D47E50 0x3D PreserveObjectReferences    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.DataContractSurrogate                     = GetObject<IDataContractSurrogate>(new IntPtr(p + 0x040), ReversePrism.DataModels.IDataContractSurrogate.FromPointer); // 024667D47E70 0x40 DataContractSurrogate       ( 00018674A640 ModelClassType IDataContractSurrogate IDataContractSurrogate IDataContractSurrogate Pointer )
-            value.DataContractResolver                      = GetObject<DataContractResolver>(new IntPtr(p + 0x060), ReversePrism.DataModels.DataContractResolver.FromPointer); // 024667D47EF0 0x60 DataContractResolver        ( 000186678590 ModelClassType DataContractResolver DataContractResolver DataContractResolver Pointer )
-            value.SerializeReadOnlyTypes                    = GetBool(new IntPtr(p + 0x068)); // 024667D47F10 0x68 SerializeReadOnlyTypes      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.RootType                                  = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0x10 RootType                    ( ModelClassType Type Type Type Pointer )
+            value.RootContract                              = GetObject<DataContract>(new IntPtr(p + 0x018), ReversePrism.DataModels.DataContract.FromPointer); // 0x18 RootContract                ( ModelClassType DataContract DataContract DataContract Pointer )
+            value.NeedsContractNsAtRoot                     = GetBool(new IntPtr(p + 0x020)); // 0x20 NeedsContractNsAtRoot       ( ModelPrimitiveType bool bool bool Bool )
+            value.RootName                                  = GetObject<XmlDictionaryString>(new IntPtr(p + 0x028), ReversePrism.DataModels.XmlDictionaryString.FromPointer); // 0x28 RootName                    ( ModelClassType XmlDictionaryString XmlDictionaryString XmlDictionaryString Pointer )
+            value.RootNamespace                             = GetObject<XmlDictionaryString>(new IntPtr(p + 0x030), ReversePrism.DataModels.XmlDictionaryString.FromPointer); // 0x30 RootNamespace               ( ModelClassType XmlDictionaryString XmlDictionaryString XmlDictionaryString Pointer )
+            value.MaxItemsInObjectGraph                     = GetInt32(new IntPtr(p + 0x038)); // 0x38 MaxItemsInObjectGraph       ( ModelPrimitiveType int int int Int32 )
+            value.IgnoreExtensionDataObject                 = GetBool(new IntPtr(p + 0x03C)); // 0x3C IgnoreExtensionDataObject   ( ModelPrimitiveType bool bool bool Bool )
+            value.PreserveObjectReferences                  = GetBool(new IntPtr(p + 0x03D)); // 0x3D PreserveObjectReferences    ( ModelPrimitiveType bool bool bool Bool )
+            value.DataContractSurrogate                     = GetObject<IDataContractSurrogate>(new IntPtr(p + 0x040), ReversePrism.DataModels.IDataContractSurrogate.FromPointer); // 0x40 DataContractSurrogate       ( ModelClassType IDataContractSurrogate IDataContractSurrogate IDataContractSurrogate Pointer )
+            value.DataContractResolver                      = GetObject<DataContractResolver>(new IntPtr(p + 0x060), ReversePrism.DataModels.DataContractResolver.FromPointer); // 0x60 DataContractResolver        ( ModelClassType DataContractResolver DataContractResolver DataContractResolver Pointer )
+            value.SerializeReadOnlyTypes                    = GetBool(new IntPtr(p + 0x068)); // 0x68 SerializeReadOnlyTypes      ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

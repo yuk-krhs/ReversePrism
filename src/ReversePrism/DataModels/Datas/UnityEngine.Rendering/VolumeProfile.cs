@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 Components                               000185D1C438 ModelClassListType List`1<VolumeComponent> List`1<VolumeComponent> List<VolumeComponent> Pointer
-    // 020 IsDirty                                  000186597BE0 ModelPrimitiveType bool bool bool Bool
+    // 018 Components                               ModelClassListType List`1<VolumeComponent> List`1<VolumeComponent> List<VolumeComponent> Pointer
+    // 020 IsDirty                                  ModelPrimitiveType bool bool bool Bool
     public partial class VolumeProfile : DataModel
     {
         public List<VolumeComponent>?                   Components                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new VolumeProfile() { Pointer= p0 };
 
-            value.Components                                = GetObjectList<VolumeComponent>(new IntPtr(p + 0x018), ReversePrism.DataModels.VolumeComponent.FromPointer); // 024669324C10 0x18 Components                  ( 000185D1C438 ModelClassListType List`1<VolumeComponent> List`1<VolumeComponent> List<VolumeComponent> Pointer )
-            value.IsDirty                                   = GetBool(new IntPtr(p + 0x020)); // 024669324C30 0x20 IsDirty                     ( 000186597BE0 ModelPrimitiveType bool bool bool Bool )
+            value.Components                                = GetObjectList<VolumeComponent>(new IntPtr(p + 0x018), ReversePrism.DataModels.VolumeComponent.FromPointer); // 0x18 Components                  ( ModelClassListType List`1<VolumeComponent> List`1<VolumeComponent> List<VolumeComponent> Pointer )
+            value.IsDirty                                   = GetBool(new IntPtr(p + 0x020)); // 0x20 IsDirty                     ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

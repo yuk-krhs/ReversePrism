@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 050 Values                                   000185CA5848 ModelEnumListType SqlDecimal[] SqlDecimal[] List<SqlDecimal> Pointer
+    // 050 Values                                   ModelEnumListType SqlDecimal[] SqlDecimal[] List<SqlDecimal> Pointer
     public partial class SqlDecimalStorage : DataModel
     {
         public List<SqlDecimal>?                        Values                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SqlDecimalStorage() { Pointer= p0 };
 
-            value.Values                                    = GetEnumList<SqlDecimal>(new IntPtr(p + 0x050)); // 024668A460D8 0x50 Values                      ( 000185CA5848 ModelEnumListType SqlDecimal[] SqlDecimal[] List<SqlDecimal> Pointer )
+            value.Values                                    = GetEnumList<SqlDecimal>(new IntPtr(p + 0x050)); // 0x50 Values                      ( ModelEnumListType SqlDecimal[] SqlDecimal[] List<SqlDecimal> Pointer )
 
             return value;
         }

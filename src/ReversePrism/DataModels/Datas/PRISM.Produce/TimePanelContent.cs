@@ -8,14 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 TimeUIs                                  000185CC4638 ModelClassListType TimeUI[] TimeUI[] List<TimeUI> Pointer
-    // 028 CurrentState                             000186604A80 ModelEnumType TimeState TimeState TimeState Int32
-    // 030 AnimEffectText                           0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 038 EffectAnimator                           0001866B8DE0 ModelClassType Animator Animator Animator Pointer
-    // 040 LastCountDownTime                        0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 048 LastCountDownAnimator                    0001866B8DE0 ModelClassType Animator Animator Animator Pointer
-    // 050 IsLesson                                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 054 LastTime                                 0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 TimeUIs                                  ModelClassListType TimeUI[] TimeUI[] List<TimeUI> Pointer
+    // 028 CurrentState                             ModelEnumType TimeState TimeState TimeState Int32
+    // 030 AnimEffectText                           ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 038 EffectAnimator                           ModelClassType Animator Animator Animator Pointer
+    // 040 LastCountDownTime                        ModelPrimitiveType int int int Int32
+    // 048 LastCountDownAnimator                    ModelClassType Animator Animator Animator Pointer
+    // 050 IsLesson                                 ModelPrimitiveType bool bool bool Bool
+    // 054 LastTime                                 ModelPrimitiveType int int int Int32
     public partial class TimePanelContent : DataModel
     {
         public List<TimeUI>?                            TimeUIs                                 { get; set; }
@@ -35,14 +35,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TimePanelContent() { Pointer= p0 };
 
-            value.TimeUIs                                   = GetObjectList<TimeUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.TimeUI.FromPointer); // 024665CDB558 0x20 TimeUIs                     ( 000185CC4638 ModelClassListType TimeUI[] TimeUI[] List<TimeUI> Pointer )
-            value.CurrentState                              = (TimeState)GetInt32(new IntPtr(p + 0x028)); // 024665CDB578 0x28 CurrentState                ( 000186604A80 ModelEnumType TimeState TimeState TimeState Int32 )
-            value.AnimEffectText                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665CDB598 0x30 AnimEffectText              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.EffectAnimator                            = GetObject<Animator>(new IntPtr(p + 0x038), ReversePrism.DataModels.Animator.FromPointer); // 024665CDB5B8 0x38 EffectAnimator              ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
-            value.LastCountDownTime                         = GetInt32(new IntPtr(p + 0x040)); // 024665CDB5D8 0x40 LastCountDownTime           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.LastCountDownAnimator                     = GetObject<Animator>(new IntPtr(p + 0x048), ReversePrism.DataModels.Animator.FromPointer); // 024665CDB5F8 0x48 LastCountDownAnimator       ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
-            value.IsLesson                                  = GetBool(new IntPtr(p + 0x050)); // 024665CDB618 0x50 IsLesson                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.LastTime                                  = GetInt32(new IntPtr(p + 0x054)); // 024665CDB638 0x54 LastTime                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TimeUIs                                   = GetObjectList<TimeUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.TimeUI.FromPointer); // 0x20 TimeUIs                     ( ModelClassListType TimeUI[] TimeUI[] List<TimeUI> Pointer )
+            value.CurrentState                              = (TimeState)GetInt32(new IntPtr(p + 0x028)); // 0x28 CurrentState                ( ModelEnumType TimeState TimeState TimeState Int32 )
+            value.AnimEffectText                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x30 AnimEffectText              ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.EffectAnimator                            = GetObject<Animator>(new IntPtr(p + 0x038), ReversePrism.DataModels.Animator.FromPointer); // 0x38 EffectAnimator              ( ModelClassType Animator Animator Animator Pointer )
+            value.LastCountDownTime                         = GetInt32(new IntPtr(p + 0x040)); // 0x40 LastCountDownTime           ( ModelPrimitiveType int int int Int32 )
+            value.LastCountDownAnimator                     = GetObject<Animator>(new IntPtr(p + 0x048), ReversePrism.DataModels.Animator.FromPointer); // 0x48 LastCountDownAnimator       ( ModelClassType Animator Animator Animator Pointer )
+            value.IsLesson                                  = GetBool(new IntPtr(p + 0x050)); // 0x50 IsLesson                    ( ModelPrimitiveType bool bool bool Bool )
+            value.LastTime                                  = GetInt32(new IntPtr(p + 0x054)); // 0x54 LastTime                    ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

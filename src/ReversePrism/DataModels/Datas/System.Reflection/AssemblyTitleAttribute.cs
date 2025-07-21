@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Title                                    000186672F10 ModelPrimitiveType string string string String
+    // 010 Title                                    ModelPrimitiveType string string string String
     public partial class AssemblyTitleAttribute : DataModel
     {
         public string                                   Title                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AssemblyTitleAttribute() { Pointer= p0 };
 
-            value.Title                                     = GetString(new IntPtr(p + 0x010)); // 024666D38E30 0x10 Title                       ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Title                                     = GetString(new IntPtr(p + 0x010)); // 0x10 Title                       ( ModelPrimitiveType string string string String )
 
             return value;
         }

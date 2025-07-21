@@ -9,15 +9,15 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Format                                   FourCC IL2CPP_TYPE_VALUETYPE
-    // 010 LeftStickX                               00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    // 011 LeftStickY                               00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    // 012 RightStickX                              00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    // 013 RightStickY                              00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    // 014 LeftTrigger                              00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    // 015 RightTrigger                             00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    // 016 Buttons0                                 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    // 017 Buttons1                                 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    // 018 Buttons2                                 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 010 LeftStickX                               ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 011 LeftStickY                               ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 012 RightStickX                              ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 013 RightStickY                              ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 014 LeftTrigger                              ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 015 RightTrigger                             ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 016 Buttons0                                 ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 017 Buttons1                                 ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 018 Buttons2                                 ModelPrimitiveType sbyte sbyte sbyte SByte
     public partial class DualSenseHIDInputReport : DataModel
     {
         public sbyte                                    LeftStickX                              { get; set; }
@@ -38,15 +38,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DualSenseHIDInputReport() { Pointer= p0 };
 
-            value.LeftStickX                                = GetSByte(new IntPtr(p + 0x010)); // 024667850E28 0x10 LeftStickX                  ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.LeftStickY                                = GetSByte(new IntPtr(p + 0x011)); // 024667850E48 0x11 LeftStickY                  ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.RightStickX                               = GetSByte(new IntPtr(p + 0x012)); // 024667850E68 0x12 RightStickX                 ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.RightStickY                               = GetSByte(new IntPtr(p + 0x013)); // 024667850E88 0x13 RightStickY                 ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.LeftTrigger                               = GetSByte(new IntPtr(p + 0x014)); // 024667850EA8 0x14 LeftTrigger                 ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.RightTrigger                              = GetSByte(new IntPtr(p + 0x015)); // 024667850EC8 0x15 RightTrigger                ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Buttons0                                  = GetSByte(new IntPtr(p + 0x016)); // 024667850EE8 0x16 Buttons0                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Buttons1                                  = GetSByte(new IntPtr(p + 0x017)); // 024667850F08 0x17 Buttons1                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Buttons2                                  = GetSByte(new IntPtr(p + 0x018)); // 024667850F28 0x18 Buttons2                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.LeftStickX                                = GetSByte(new IntPtr(p + 0x010)); // 0x10 LeftStickX                  ( ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.LeftStickY                                = GetSByte(new IntPtr(p + 0x011)); // 0x11 LeftStickY                  ( ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.RightStickX                               = GetSByte(new IntPtr(p + 0x012)); // 0x12 RightStickX                 ( ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.RightStickY                               = GetSByte(new IntPtr(p + 0x013)); // 0x13 RightStickY                 ( ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.LeftTrigger                               = GetSByte(new IntPtr(p + 0x014)); // 0x14 LeftTrigger                 ( ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.RightTrigger                              = GetSByte(new IntPtr(p + 0x015)); // 0x15 RightTrigger                ( ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Buttons0                                  = GetSByte(new IntPtr(p + 0x016)); // 0x16 Buttons0                    ( ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Buttons1                                  = GetSByte(new IntPtr(p + 0x017)); // 0x17 Buttons1                    ( ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Buttons2                                  = GetSByte(new IntPtr(p + 0x018)); // 0x18 Buttons2                    ( ModelPrimitiveType sbyte sbyte sbyte SByte )
 
             return value;
         }

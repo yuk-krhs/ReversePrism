@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 View                                     00018667C510 ModelClassType TitleView TitleView TitleView Pointer
+    // 020 View                                     ModelClassType TitleView TitleView TitleView Pointer
     public partial class TitleBuilder : DataModel
     {
         public TitleView?                               View                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TitleBuilder() { Pointer= p0 };
 
-            value.View                                      = GetObject<TitleView>(new IntPtr(p + 0x020), ReversePrism.DataModels.TitleView.FromPointer); // 0245A43FEB70 0x20 View                        ( 00018667C510 ModelClassType TitleView TitleView TitleView Pointer )
+            value.View                                      = GetObject<TitleView>(new IntPtr(p + 0x020), ReversePrism.DataModels.TitleView.FromPointer); // 0x20 View                        ( ModelClassType TitleView TitleView TitleView Pointer )
 
             return value;
         }

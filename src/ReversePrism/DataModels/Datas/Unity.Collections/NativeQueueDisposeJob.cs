@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Data                                     0001866900F0 ModelEnumType NativeQueueDispose NativeQueueDispose NativeQueueDispose Int32
+    // 010 Data                                     ModelEnumType NativeQueueDispose NativeQueueDispose NativeQueueDispose Int32
     public partial class NativeQueueDisposeJob : DataModel
     {
         public NativeQueueDispose                       Data                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NativeQueueDisposeJob() { Pointer= p0 };
 
-            value.Data                                      = (NativeQueueDispose)GetInt32(new IntPtr(p + 0x010)); // 0246608B0D18 0x10 Data                        ( 0001866900F0 ModelEnumType NativeQueueDispose NativeQueueDispose NativeQueueDispose Int32 )
+            value.Data                                      = (NativeQueueDispose)GetInt32(new IntPtr(p + 0x010)); // 0x10 Data                        ( ModelEnumType NativeQueueDispose NativeQueueDispose NativeQueueDispose Int32 )
 
             return value;
         }

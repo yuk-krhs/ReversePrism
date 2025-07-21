@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Enable                                   000186595960 ModelPrimitiveType bool bool bool Bool
-    // 014 QualityLevel                             000186607E40 ModelEnumType RadialBlurQuality RadialBlurQuality RadialBlurQuality Int32
-    // 018 BlurRadius                               000186666050 ModelPrimitiveType float float float Single
-    // 01C RadialCenterX                            000186666050 ModelPrimitiveType float float float Single
-    // 020 RadialCenterY                            000186666050 ModelPrimitiveType float float float Single
-    // 024 RotateIntensity                          000186666050 ModelPrimitiveType float float float Single
+    // 010 Enable                                   ModelPrimitiveType bool bool bool Bool
+    // 014 QualityLevel                             ModelEnumType RadialBlurQuality RadialBlurQuality RadialBlurQuality Int32
+    // 018 BlurRadius                               ModelPrimitiveType float float float Single
+    // 01C RadialCenterX                            ModelPrimitiveType float float float Single
+    // 020 RadialCenterY                            ModelPrimitiveType float float float Single
+    // 024 RotateIntensity                          ModelPrimitiveType float float float Single
     public partial class RadialBlurBehaviour : DataModel
     {
         public bool                                     Enable                                  { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RadialBlurBehaviour() { Pointer= p0 };
 
-            value.Enable                                    = GetBool(new IntPtr(p + 0x010)); // 0246650D93E0 0x10 Enable                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.QualityLevel                              = (RadialBlurQuality)GetInt32(new IntPtr(p + 0x014)); // 0246650D9400 0x14 QualityLevel                ( 000186607E40 ModelEnumType RadialBlurQuality RadialBlurQuality RadialBlurQuality Int32 )
-            value.BlurRadius                                = GetSingle(new IntPtr(p + 0x018)); // 0246650D9420 0x18 BlurRadius                  ( 000186666050 ModelPrimitiveType float float float Single )
-            value.RadialCenterX                             = GetSingle(new IntPtr(p + 0x01C)); // 0246650D9440 0x1C RadialCenterX               ( 000186666050 ModelPrimitiveType float float float Single )
-            value.RadialCenterY                             = GetSingle(new IntPtr(p + 0x020)); // 0246650D9460 0x20 RadialCenterY               ( 000186666050 ModelPrimitiveType float float float Single )
-            value.RotateIntensity                           = GetSingle(new IntPtr(p + 0x024)); // 0246650D9480 0x24 RotateIntensity             ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Enable                                    = GetBool(new IntPtr(p + 0x010)); // 0x10 Enable                      ( ModelPrimitiveType bool bool bool Bool )
+            value.QualityLevel                              = (RadialBlurQuality)GetInt32(new IntPtr(p + 0x014)); // 0x14 QualityLevel                ( ModelEnumType RadialBlurQuality RadialBlurQuality RadialBlurQuality Int32 )
+            value.BlurRadius                                = GetSingle(new IntPtr(p + 0x018)); // 0x18 BlurRadius                  ( ModelPrimitiveType float float float Single )
+            value.RadialCenterX                             = GetSingle(new IntPtr(p + 0x01C)); // 0x1C RadialCenterX               ( ModelPrimitiveType float float float Single )
+            value.RadialCenterY                             = GetSingle(new IntPtr(p + 0x020)); // 0x20 RadialCenterY               ( ModelPrimitiveType float float float Single )
+            value.RotateIntensity                           = GetSingle(new IntPtr(p + 0x024)); // 0x24 RotateIntensity             ( ModelPrimitiveType float float float Single )
 
             return value;
         }

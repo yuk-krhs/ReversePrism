@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 TargetPhase                              0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 TargetPhase                              ModelPrimitiveType int int int Int32
     public partial class UpdatePhaseSequence : DataModel
     {
         public int                                      TargetPhase                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UpdatePhaseSequence() { Pointer= p0 };
 
-            value.TargetPhase                               = GetInt32(new IntPtr(p + 0x010)); // 0245A5743000 0x10 TargetPhase                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TargetPhase                               = GetInt32(new IntPtr(p + 0x010)); // 0x10 TargetPhase                 ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

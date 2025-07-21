@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Length                                   000186698B70 ModelPrimitiveType uint uint uint UInt32
-    // 018 Data                                     000185B83830 ModelPrimitiveListType uint[] uint[] List<uint> Pointer
+    // 010 Length                                   ModelPrimitiveType uint uint uint UInt32
+    // 018 Data                                     ModelPrimitiveListType uint[] uint[] List<uint> Pointer
     // 000 smallPrimes                              uint[] IL2CPP_TYPE_SZARRAY
     // 008 rng                                      RandomNumberGenerator IL2CPP_TYPE_CLASS
     public partial class BigInteger : DataModel
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BigInteger() { Pointer= p0 };
 
-            value.Length                                    = GetUInt32(new IntPtr(p + 0x010)); // 02466B4390B8 0x10 Length                      ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
-            value.Data                                      = GetUInt32List(new IntPtr(p + 0x018)); // 02466B4390D8 0x18 Data                        ( 000185B83830 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.Length                                    = GetUInt32(new IntPtr(p + 0x010)); // 0x10 Length                      ( ModelPrimitiveType uint uint uint UInt32 )
+            value.Data                                      = GetUInt32List(new IntPtr(p + 0x018)); // 0x18 Data                        ( ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
 
             return value;
         }

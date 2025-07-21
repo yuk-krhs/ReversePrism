@@ -9,14 +9,14 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 kEpsilon                                 float IL2CPP_TYPE_R4
-    // 010 X                                        000186666050 ModelPrimitiveType float float float Single
-    // 014 Y                                        000186666050 ModelPrimitiveType float float float Single
-    // 018 Z                                        000186666050 ModelPrimitiveType float float float Single
-    // 01C W                                        000186666050 ModelPrimitiveType float float float Single
+    // 010 X                                        ModelPrimitiveType float float float Single
+    // 014 Y                                        ModelPrimitiveType float float float Single
+    // 018 Z                                        ModelPrimitiveType float float float Single
+    // 01C W                                        ModelPrimitiveType float float float Single
     // 000 zeroVector                               Vector4 IL2CPP_TYPE_VALUETYPE
-    // 010 OneVector                                0001866AF510 ModelEnumType Vector4 Vector4 Vector4 Int32
-    // 020 PositiveInfinityVector                   0001866AF510 ModelEnumType Vector4 Vector4 Vector4 Int32
-    // 030 NegativeInfinityVector                   0001866AF510 ModelEnumType Vector4 Vector4 Vector4 Int32
+    // 010 OneVector                                ModelEnumType Vector4 Vector4 Vector4 Int32
+    // 020 PositiveInfinityVector                   ModelEnumType Vector4 Vector4 Vector4 Int32
+    // 030 NegativeInfinityVector                   ModelEnumType Vector4 Vector4 Vector4 Int32
     public partial class Vector4 : DataModel
     {
         public float                                    X                                       { get; set; }
@@ -35,13 +35,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Vector4() { Pointer= p0 };
 
-            value.X                                         = GetSingle(new IntPtr(p + 0x010)); // 0245A15F6D58 0x10 X                           ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Y                                         = GetSingle(new IntPtr(p + 0x014)); // 0245A15F6D78 0x14 Y                           ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Z                                         = GetSingle(new IntPtr(p + 0x018)); // 0245A15F6D98 0x18 Z                           ( 000186666050 ModelPrimitiveType float float float Single )
-            value.W                                         = GetSingle(new IntPtr(p + 0x01C)); // 0245A15F6DB8 0x1C W                           ( 000186666050 ModelPrimitiveType float float float Single )
-            value.OneVector                                 = (Vector4)GetInt32(new IntPtr(p + 0x010)); // 0245A15F6DF8 0x10 OneVector                   ( 0001866AF510 ModelEnumType Vector4 Vector4 Vector4 Int32 )
-            value.PositiveInfinityVector                    = (Vector4)GetInt32(new IntPtr(p + 0x020)); // 0245A15F6E18 0x20 PositiveInfinityVector      ( 0001866AF510 ModelEnumType Vector4 Vector4 Vector4 Int32 )
-            value.NegativeInfinityVector                    = (Vector4)GetInt32(new IntPtr(p + 0x030)); // 0245A15F6E38 0x30 NegativeInfinityVector      ( 0001866AF510 ModelEnumType Vector4 Vector4 Vector4 Int32 )
+            value.X                                         = GetSingle(new IntPtr(p + 0x010)); // 0x10 X                           ( ModelPrimitiveType float float float Single )
+            value.Y                                         = GetSingle(new IntPtr(p + 0x014)); // 0x14 Y                           ( ModelPrimitiveType float float float Single )
+            value.Z                                         = GetSingle(new IntPtr(p + 0x018)); // 0x18 Z                           ( ModelPrimitiveType float float float Single )
+            value.W                                         = GetSingle(new IntPtr(p + 0x01C)); // 0x1C W                           ( ModelPrimitiveType float float float Single )
+            value.OneVector                                 = (Vector4)GetInt32(new IntPtr(p + 0x010)); // 0x10 OneVector                   ( ModelEnumType Vector4 Vector4 Vector4 Int32 )
+            value.PositiveInfinityVector                    = (Vector4)GetInt32(new IntPtr(p + 0x020)); // 0x20 PositiveInfinityVector      ( ModelEnumType Vector4 Vector4 Vector4 Int32 )
+            value.NegativeInfinityVector                    = (Vector4)GetInt32(new IntPtr(p + 0x030)); // 0x30 NegativeInfinityVector      ( ModelEnumType Vector4 Vector4 Vector4 Int32 )
 
             return value;
         }

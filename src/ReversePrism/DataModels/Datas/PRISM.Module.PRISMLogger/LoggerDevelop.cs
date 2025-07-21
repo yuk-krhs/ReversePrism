@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Formatter                                0001865AFBD0 ModelClassType IMessageFormatter IMessageFormatter IMessageFormatter Pointer
-    // 018 EditorMode                               0001865965D0 ModelPrimitiveType bool bool bool Bool
+    // 010 Formatter                                ModelClassType IMessageFormatter IMessageFormatter IMessageFormatter Pointer
+    // 018 EditorMode                               ModelPrimitiveType bool bool bool Bool
     // 020 categoryFilter                           HashSet`1<Category> IL2CPP_TYPE_GENERICINST
     // 028 levelFilter                              HashSet`1<Level> IL2CPP_TYPE_GENERICINST
-    // 030 Analysis                                 0001865A23A0 ModelClassType ILoggerAnalysis ILoggerAnalysis ILoggerAnalysis Pointer
-    // 038 UnityLogger                              0001867178C0 ModelClassType UnityLogHandlerWrapper UnityLogHandlerWrapper UnityLogHandlerWrapper Pointer
+    // 030 Analysis                                 ModelClassType ILoggerAnalysis ILoggerAnalysis ILoggerAnalysis Pointer
+    // 038 UnityLogger                              ModelClassType UnityLogHandlerWrapper UnityLogHandlerWrapper UnityLogHandlerWrapper Pointer
     public partial class LoggerDevelop : DataModel
     {
         public IMessageFormatter?                       Formatter                               { get; set; }
@@ -29,10 +29,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LoggerDevelop() { Pointer= p0 };
 
-            value.Formatter                                 = GetObject<IMessageFormatter>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMessageFormatter.FromPointer); // 02466BF60628 0x10 Formatter                   ( 0001865AFBD0 ModelClassType IMessageFormatter IMessageFormatter IMessageFormatter Pointer )
-            value.EditorMode                                = GetBool(new IntPtr(p + 0x018)); // 02466BF60648 0x18 EditorMode                  ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.Analysis                                  = GetObject<ILoggerAnalysis>(new IntPtr(p + 0x030), ReversePrism.DataModels.ILoggerAnalysis.FromPointer); // 02466BF606A8 0x30 Analysis                    ( 0001865A23A0 ModelClassType ILoggerAnalysis ILoggerAnalysis ILoggerAnalysis Pointer )
-            value.UnityLogger                               = GetObject<UnityLogHandlerWrapper>(new IntPtr(p + 0x038), ReversePrism.DataModels.UnityLogHandlerWrapper.FromPointer); // 02466BF606C8 0x38 UnityLogger                 ( 0001867178C0 ModelClassType UnityLogHandlerWrapper UnityLogHandlerWrapper UnityLogHandlerWrapper Pointer )
+            value.Formatter                                 = GetObject<IMessageFormatter>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMessageFormatter.FromPointer); // 0x10 Formatter                   ( ModelClassType IMessageFormatter IMessageFormatter IMessageFormatter Pointer )
+            value.EditorMode                                = GetBool(new IntPtr(p + 0x018)); // 0x18 EditorMode                  ( ModelPrimitiveType bool bool bool Bool )
+            value.Analysis                                  = GetObject<ILoggerAnalysis>(new IntPtr(p + 0x030), ReversePrism.DataModels.ILoggerAnalysis.FromPointer); // 0x30 Analysis                    ( ModelClassType ILoggerAnalysis ILoggerAnalysis ILoggerAnalysis Pointer )
+            value.UnityLogger                               = GetObject<UnityLogHandlerWrapper>(new IntPtr(p + 0x038), ReversePrism.DataModels.UnityLogHandlerWrapper.FromPointer); // 0x38 UnityLogger                 ( ModelClassType UnityLogHandlerWrapper UnityLogHandlerWrapper UnityLogHandlerWrapper Pointer )
 
             return value;
         }

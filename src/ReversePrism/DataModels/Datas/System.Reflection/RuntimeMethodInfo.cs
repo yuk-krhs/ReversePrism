@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 mhandle                                  <int> IL2CPP_TYPE_I
-    // 018 Name                                     000186671910 ModelPrimitiveType string string string String
-    // 020 Reftype                                  000186692850 ModelClassType Type Type Type Pointer
+    // 018 Name                                     ModelPrimitiveType string string string String
+    // 020 Reftype                                  ModelClassType Type Type Type Pointer
     public partial class RuntimeMethodInfo : DataModel
     {
         public string                                   Name                                    { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RuntimeMethodInfo() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0245A349E0A0 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Reftype                                   = GetObject<Type>(new IntPtr(p + 0x020), ReversePrism.DataModels.Type.FromPointer); // 0245A349E0C0 0x20 Reftype                     ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0x18 Name                        ( ModelPrimitiveType string string string String )
+            value.Reftype                                   = GetObject<Type>(new IntPtr(p + 0x020), ReversePrism.DataModels.Type.FromPointer); // 0x20 Reftype                     ( ModelClassType Type Type Type Pointer )
 
             return value;
         }

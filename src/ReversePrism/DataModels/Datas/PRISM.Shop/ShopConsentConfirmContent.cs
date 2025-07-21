@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 060 TermsButton                              0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 068 TermsButtonLabel                         0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 060 TermsButton                              ModelClassType UIButton UIButton UIButton Pointer
+    // 068 TermsButtonLabel                         ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     public partial class ShopConsentConfirmContent : DataModel
     {
         public UIButton?                                TermsButton                             { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ShopConsentConfirmContent() { Pointer= p0 };
 
-            value.TermsButton                               = GetObject<UIButton>(new IntPtr(p + 0x060), ReversePrism.DataModels.UIButton.FromPointer); // 024665574F18 0x60 TermsButton                 ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.TermsButtonLabel                          = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x068), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665574F38 0x68 TermsButtonLabel            ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TermsButton                               = GetObject<UIButton>(new IntPtr(p + 0x060), ReversePrism.DataModels.UIButton.FromPointer); // 0x60 TermsButton                 ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.TermsButtonLabel                          = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x068), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x68 TermsButtonLabel            ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

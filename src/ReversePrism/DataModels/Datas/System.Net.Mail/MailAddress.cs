@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 DisplayNameEncoding                      00018672E680 ModelClassType Encoding Encoding Encoding Pointer
-    // 018 DisplayName                              000186672F10 ModelPrimitiveType string string string String
-    // 020 UserName                                 000186672F10 ModelPrimitiveType string string string String
-    // 028 Host                                     000186672F10 ModelPrimitiveType string string string String
+    // 010 DisplayNameEncoding                      ModelClassType Encoding Encoding Encoding Pointer
+    // 018 DisplayName                              ModelPrimitiveType string string string String
+    // 020 UserName                                 ModelPrimitiveType string string string String
+    // 028 Host                                     ModelPrimitiveType string string string String
     // 000 s_encoderFactory                         EncodedStreamFactory IL2CPP_TYPE_CLASS
     public partial class MailAddress : DataModel
     {
@@ -28,10 +28,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MailAddress() { Pointer= p0 };
 
-            value.DisplayNameEncoding                       = GetObject<Encoding>(new IntPtr(p + 0x010), ReversePrism.DataModels.Encoding.FromPointer); // 024667B7A8B8 0x10 DisplayNameEncoding         ( 00018672E680 ModelClassType Encoding Encoding Encoding Pointer )
-            value.DisplayName                               = GetString(new IntPtr(p + 0x018)); // 024667B7A8D8 0x18 DisplayName                 ( 000186672F10 ModelPrimitiveType string string string String )
-            value.UserName                                  = GetString(new IntPtr(p + 0x020)); // 024667B7A8F8 0x20 UserName                    ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Host                                      = GetString(new IntPtr(p + 0x028)); // 024667B7A918 0x28 Host                        ( 000186672F10 ModelPrimitiveType string string string String )
+            value.DisplayNameEncoding                       = GetObject<Encoding>(new IntPtr(p + 0x010), ReversePrism.DataModels.Encoding.FromPointer); // 0x10 DisplayNameEncoding         ( ModelClassType Encoding Encoding Encoding Pointer )
+            value.DisplayName                               = GetString(new IntPtr(p + 0x018)); // 0x18 DisplayName                 ( ModelPrimitiveType string string string String )
+            value.UserName                                  = GetString(new IntPtr(p + 0x020)); // 0x20 UserName                    ( ModelPrimitiveType string string string String )
+            value.Host                                      = GetString(new IntPtr(p + 0x028)); // 0x28 Host                        ( ModelPrimitiveType string string string String )
 
             return value;
         }

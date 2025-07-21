@@ -8,17 +8,17 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_UnappliedScalers                       000185CCB898 ModelClassListType List`1<AdaptivePerformanceScaler> List`1<AdaptivePerformanceScaler> List<AdaptivePerformanceScaler> Pointer
-    // 018 M_AppliedScalers                         000185CCB898 ModelClassListType List`1<AdaptivePerformanceScaler> List`1<AdaptivePerformanceScaler> List<AdaptivePerformanceScaler> Pointer
-    // 020 M_DisabledScalers                        000185CCB898 ModelClassListType List`1<AdaptivePerformanceScaler> List`1<AdaptivePerformanceScaler> List<AdaptivePerformanceScaler> Pointer
-    // 028 M_ThermalStateTracker                    000186659F50 ModelClassType ThermalStateTracker ThermalStateTracker ThermalStateTracker Pointer
-    // 030 M_PerformanceStateTracker                000186734540 ModelClassType PerformanceStateTracker PerformanceStateTracker PerformanceStateTracker Pointer
-    // 038 M_ScalerEfficiencyTracker                000186686FA0 ModelClassType AdaptivePerformanceScalerEfficiencyTracker AdaptivePerformanceScalerEfficiencyTracker AdaptivePerformanceScalerEfficiencyTracker Pointer
-    // 040 M_Settings                               0001865E0E70 ModelClassType IAdaptivePerformanceSettings IAdaptivePerformanceSettings IAdaptivePerformanceSettings Pointer
+    // 010 M_UnappliedScalers                       ModelClassListType List`1<AdaptivePerformanceScaler> List`1<AdaptivePerformanceScaler> List<AdaptivePerformanceScaler> Pointer
+    // 018 M_AppliedScalers                         ModelClassListType List`1<AdaptivePerformanceScaler> List`1<AdaptivePerformanceScaler> List<AdaptivePerformanceScaler> Pointer
+    // 020 M_DisabledScalers                        ModelClassListType List`1<AdaptivePerformanceScaler> List`1<AdaptivePerformanceScaler> List<AdaptivePerformanceScaler> Pointer
+    // 028 M_ThermalStateTracker                    ModelClassType ThermalStateTracker ThermalStateTracker ThermalStateTracker Pointer
+    // 030 M_PerformanceStateTracker                ModelClassType PerformanceStateTracker PerformanceStateTracker PerformanceStateTracker Pointer
+    // 038 M_ScalerEfficiencyTracker                ModelClassType AdaptivePerformanceScalerEfficiencyTracker AdaptivePerformanceScalerEfficiencyTracker AdaptivePerformanceScalerEfficiencyTracker Pointer
+    // 040 M_Settings                               ModelClassType IAdaptivePerformanceSettings IAdaptivePerformanceSettings IAdaptivePerformanceSettings Pointer
     // 000 m_FeatureName                            string IL2CPP_TYPE_STRING
-    // 048 TimeUntilNextAction                      0001866656B0 ModelPrimitiveType float float float Single
-    // 04C ThermalAction                            000186581890 ModelEnumType StateAction StateAction StateAction Int32
-    // 050 PerformanceAction                        000186581890 ModelEnumType StateAction StateAction StateAction Int32
+    // 048 TimeUntilNextAction                      ModelPrimitiveType float float float Single
+    // 04C ThermalAction                            ModelEnumType StateAction StateAction StateAction Int32
+    // 050 PerformanceAction                        ModelEnumType StateAction StateAction StateAction Int32
     public partial class AdaptivePerformanceIndexer : DataModel
     {
         public List<AdaptivePerformanceScaler>?         M_UnappliedScalers                      { get; set; }
@@ -40,16 +40,16 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AdaptivePerformanceIndexer() { Pointer= p0 };
 
-            value.M_UnappliedScalers                        = GetObjectList<AdaptivePerformanceScaler>(new IntPtr(p + 0x010), ReversePrism.DataModels.AdaptivePerformanceScaler.FromPointer); // 02466B6EDF88 0x10 M_UnappliedScalers          ( 000185CCB898 ModelClassListType List`1<AdaptivePerformanceScaler> List`1<AdaptivePerformanceScaler> List<AdaptivePerformanceScaler> Pointer )
-            value.M_AppliedScalers                          = GetObjectList<AdaptivePerformanceScaler>(new IntPtr(p + 0x018), ReversePrism.DataModels.AdaptivePerformanceScaler.FromPointer); // 02466B6EDFA8 0x18 M_AppliedScalers            ( 000185CCB898 ModelClassListType List`1<AdaptivePerformanceScaler> List`1<AdaptivePerformanceScaler> List<AdaptivePerformanceScaler> Pointer )
-            value.M_DisabledScalers                         = GetObjectList<AdaptivePerformanceScaler>(new IntPtr(p + 0x020), ReversePrism.DataModels.AdaptivePerformanceScaler.FromPointer); // 02466B6EDFC8 0x20 M_DisabledScalers           ( 000185CCB898 ModelClassListType List`1<AdaptivePerformanceScaler> List`1<AdaptivePerformanceScaler> List<AdaptivePerformanceScaler> Pointer )
-            value.M_ThermalStateTracker                     = GetObject<ThermalStateTracker>(new IntPtr(p + 0x028), ReversePrism.DataModels.ThermalStateTracker.FromPointer); // 02466B6EDFE8 0x28 M_ThermalStateTracker       ( 000186659F50 ModelClassType ThermalStateTracker ThermalStateTracker ThermalStateTracker Pointer )
-            value.M_PerformanceStateTracker                 = GetObject<PerformanceStateTracker>(new IntPtr(p + 0x030), ReversePrism.DataModels.PerformanceStateTracker.FromPointer); // 02466B6EE008 0x30 M_PerformanceStateTracker   ( 000186734540 ModelClassType PerformanceStateTracker PerformanceStateTracker PerformanceStateTracker Pointer )
-            value.M_ScalerEfficiencyTracker                 = GetObject<AdaptivePerformanceScalerEfficiencyTracker>(new IntPtr(p + 0x038), ReversePrism.DataModels.AdaptivePerformanceScalerEfficiencyTracker.FromPointer); // 02466B6EE028 0x38 M_ScalerEfficiencyTracker   ( 000186686FA0 ModelClassType AdaptivePerformanceScalerEfficiencyTracker AdaptivePerformanceScalerEfficiencyTracker AdaptivePerformanceScalerEfficiencyTracker Pointer )
-            value.M_Settings                                = GetObject<IAdaptivePerformanceSettings>(new IntPtr(p + 0x040), ReversePrism.DataModels.IAdaptivePerformanceSettings.FromPointer); // 02466B6EE048 0x40 M_Settings                  ( 0001865E0E70 ModelClassType IAdaptivePerformanceSettings IAdaptivePerformanceSettings IAdaptivePerformanceSettings Pointer )
-            value.TimeUntilNextAction                       = GetSingle(new IntPtr(p + 0x048)); // 02466B6EE088 0x48 TimeUntilNextAction         ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.ThermalAction                             = (StateAction)GetInt32(new IntPtr(p + 0x04C)); // 02466B6EE0A8 0x4C ThermalAction               ( 000186581890 ModelEnumType StateAction StateAction StateAction Int32 )
-            value.PerformanceAction                         = (StateAction)GetInt32(new IntPtr(p + 0x050)); // 02466B6EE0C8 0x50 PerformanceAction           ( 000186581890 ModelEnumType StateAction StateAction StateAction Int32 )
+            value.M_UnappliedScalers                        = GetObjectList<AdaptivePerformanceScaler>(new IntPtr(p + 0x010), ReversePrism.DataModels.AdaptivePerformanceScaler.FromPointer); // 0x10 M_UnappliedScalers          ( ModelClassListType List`1<AdaptivePerformanceScaler> List`1<AdaptivePerformanceScaler> List<AdaptivePerformanceScaler> Pointer )
+            value.M_AppliedScalers                          = GetObjectList<AdaptivePerformanceScaler>(new IntPtr(p + 0x018), ReversePrism.DataModels.AdaptivePerformanceScaler.FromPointer); // 0x18 M_AppliedScalers            ( ModelClassListType List`1<AdaptivePerformanceScaler> List`1<AdaptivePerformanceScaler> List<AdaptivePerformanceScaler> Pointer )
+            value.M_DisabledScalers                         = GetObjectList<AdaptivePerformanceScaler>(new IntPtr(p + 0x020), ReversePrism.DataModels.AdaptivePerformanceScaler.FromPointer); // 0x20 M_DisabledScalers           ( ModelClassListType List`1<AdaptivePerformanceScaler> List`1<AdaptivePerformanceScaler> List<AdaptivePerformanceScaler> Pointer )
+            value.M_ThermalStateTracker                     = GetObject<ThermalStateTracker>(new IntPtr(p + 0x028), ReversePrism.DataModels.ThermalStateTracker.FromPointer); // 0x28 M_ThermalStateTracker       ( ModelClassType ThermalStateTracker ThermalStateTracker ThermalStateTracker Pointer )
+            value.M_PerformanceStateTracker                 = GetObject<PerformanceStateTracker>(new IntPtr(p + 0x030), ReversePrism.DataModels.PerformanceStateTracker.FromPointer); // 0x30 M_PerformanceStateTracker   ( ModelClassType PerformanceStateTracker PerformanceStateTracker PerformanceStateTracker Pointer )
+            value.M_ScalerEfficiencyTracker                 = GetObject<AdaptivePerformanceScalerEfficiencyTracker>(new IntPtr(p + 0x038), ReversePrism.DataModels.AdaptivePerformanceScalerEfficiencyTracker.FromPointer); // 0x38 M_ScalerEfficiencyTracker   ( ModelClassType AdaptivePerformanceScalerEfficiencyTracker AdaptivePerformanceScalerEfficiencyTracker AdaptivePerformanceScalerEfficiencyTracker Pointer )
+            value.M_Settings                                = GetObject<IAdaptivePerformanceSettings>(new IntPtr(p + 0x040), ReversePrism.DataModels.IAdaptivePerformanceSettings.FromPointer); // 0x40 M_Settings                  ( ModelClassType IAdaptivePerformanceSettings IAdaptivePerformanceSettings IAdaptivePerformanceSettings Pointer )
+            value.TimeUntilNextAction                       = GetSingle(new IntPtr(p + 0x048)); // 0x48 TimeUntilNextAction         ( ModelPrimitiveType float float float Single )
+            value.ThermalAction                             = (StateAction)GetInt32(new IntPtr(p + 0x04C)); // 0x4C ThermalAction               ( ModelEnumType StateAction StateAction StateAction Int32 )
+            value.PerformanceAction                         = (StateAction)GetInt32(new IntPtr(p + 0x050)); // 0x50 PerformanceAction           ( ModelEnumType StateAction StateAction StateAction Int32 )
 
             return value;
         }

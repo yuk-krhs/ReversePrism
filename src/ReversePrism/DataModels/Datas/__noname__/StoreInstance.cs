@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 StoreName                                000186672F10 ModelPrimitiveType string string string String
-    // 018 Instance                                 0001866587B0 ModelClassType IStore IStore IStore Pointer
+    // 010 StoreName                                ModelPrimitiveType string string string String
+    // 018 Instance                                 ModelClassType IStore IStore IStore Pointer
     public partial class StoreInstance : DataModel
     {
         public string                                   StoreName                               { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StoreInstance() { Pointer= p0 };
 
-            value.StoreName                                 = GetString(new IntPtr(p + 0x010)); // 0245A68DF018 0x10 StoreName                   ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Instance                                  = GetObject<IStore>(new IntPtr(p + 0x018), ReversePrism.DataModels.IStore.FromPointer); // 0245A68DF038 0x18 Instance                    ( 0001866587B0 ModelClassType IStore IStore IStore Pointer )
+            value.StoreName                                 = GetString(new IntPtr(p + 0x010)); // 0x10 StoreName                   ( ModelPrimitiveType string string string String )
+            value.Instance                                  = GetObject<IStore>(new IntPtr(p + 0x018), ReversePrism.DataModels.IStore.FromPointer); // 0x18 Instance                    ( ModelClassType IStore IStore IStore Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 Datas                                    000185D252A8 ModelClassListType List`1<HowToPlayProduceManual> List`1<HowToPlayProduceManual> List<HowToPlayProduceManual> Pointer
+    // 018 Datas                                    ModelClassListType List`1<HowToPlayProduceManual> List`1<HowToPlayProduceManual> List<HowToPlayProduceManual> Pointer
     public partial class HowToPlayProduceManualData : DataModel
     {
         public List<HowToPlayProduceManual>?            Datas                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HowToPlayProduceManualData() { Pointer= p0 };
 
-            value.Datas                                     = GetObjectList<HowToPlayProduceManual>(new IntPtr(p + 0x018), ReversePrism.DataModels.HowToPlayProduceManual.FromPointer); // 024665A5D118 0x18 Datas                       ( 000185D252A8 ModelClassListType List`1<HowToPlayProduceManual> List`1<HowToPlayProduceManual> List<HowToPlayProduceManual> Pointer )
+            value.Datas                                     = GetObjectList<HowToPlayProduceManual>(new IntPtr(p + 0x018), ReversePrism.DataModels.HowToPlayProduceManual.FromPointer); // 0x18 Datas                       ( ModelClassListType List`1<HowToPlayProduceManual> List`1<HowToPlayProduceManual> List<HowToPlayProduceManual> Pointer )
 
             return value;
         }

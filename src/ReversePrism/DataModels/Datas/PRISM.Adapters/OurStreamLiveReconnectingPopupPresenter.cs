@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 View                                     0001865CACF0 ModelClassType IOurStreamLiveReconnectingPopupView IOurStreamLiveReconnectingPopupView IOurStreamLiveReconnectingPopupView Pointer
-    // 018 IsShowing                                000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 View                                     ModelClassType IOurStreamLiveReconnectingPopupView IOurStreamLiveReconnectingPopupView IOurStreamLiveReconnectingPopupView Pointer
+    // 018 IsShowing                                ModelPrimitiveType bool bool bool Bool
     public partial class OurStreamLiveReconnectingPopupPresenter : DataModel
     {
         public IOurStreamLiveReconnectingPopupView?     View                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new OurStreamLiveReconnectingPopupPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<IOurStreamLiveReconnectingPopupView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IOurStreamLiveReconnectingPopupView.FromPointer); // 024666467678 0x10 View                        ( 0001865CACF0 ModelClassType IOurStreamLiveReconnectingPopupView IOurStreamLiveReconnectingPopupView IOurStreamLiveReconnectingPopupView Pointer )
-            value.IsShowing                                 = GetBool(new IntPtr(p + 0x018)); // 024666467698 0x18 IsShowing                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.View                                      = GetObject<IOurStreamLiveReconnectingPopupView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IOurStreamLiveReconnectingPopupView.FromPointer); // 0x10 View                        ( ModelClassType IOurStreamLiveReconnectingPopupView IOurStreamLiveReconnectingPopupView IOurStreamLiveReconnectingPopupView Pointer )
+            value.IsShowing                                 = GetBool(new IntPtr(p + 0x018)); // 0x18 IsShowing                   ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

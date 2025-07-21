@@ -8,13 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ScheduleSelection                        0001865C7930 ModelEnumType ScheduleSelectionType ScheduleSelectionType ScheduleSelectionType Int32
-    // 014 System                                   0001865C80A0 ModelEnumType SystemType SystemType SystemType Int32
-    // 018 RecoveryTiming                           0001865C7210 ModelEnumType RecoveryTimingType RecoveryTimingType RecoveryTimingType Int32
-    // 01C RankUpBalance                            0001865C6AC0 ModelEnumType RankUpBalanceType RankUpBalanceType RankUpBalanceType Int32
-    // 020 CardDelete                               0001865C5CA0 ModelEnumType CardDeleteType CardDeleteType CardDeleteType Int32
-    // 024 CardCostBalance                          0001865C5580 ModelEnumType CardCostBalanceType CardCostBalanceType CardCostBalanceType Int32
-    // 028 DeckPolicy                               0001865C63B0 ModelEnumType DeckPolicyType DeckPolicyType DeckPolicyType Int32
+    // 010 ScheduleSelection                        ModelEnumType ScheduleSelectionType ScheduleSelectionType ScheduleSelectionType Int32
+    // 014 System                                   ModelEnumType SystemType SystemType SystemType Int32
+    // 018 RecoveryTiming                           ModelEnumType RecoveryTimingType RecoveryTimingType RecoveryTimingType Int32
+    // 01C RankUpBalance                            ModelEnumType RankUpBalanceType RankUpBalanceType RankUpBalanceType Int32
+    // 020 CardDelete                               ModelEnumType CardDeleteType CardDeleteType CardDeleteType Int32
+    // 024 CardCostBalance                          ModelEnumType CardCostBalanceType CardCostBalanceType CardCostBalanceType Int32
+    // 028 DeckPolicy                               ModelEnumType DeckPolicyType DeckPolicyType DeckPolicyType Int32
+    // 030 SelectSubSeasonDictionary                Dictionary`2<ValueTuple`2<int, int>, ValueTuple`2<int, int>> IL2CPP_TYPE_GENERICINST
+    // 038 SelectSubSeasonDatas                     ModelClassListType SelectSubSeasonData[] SelectSubSeasonData[] List<SelectSubSeasonData> Pointer
     public partial class ProduceAutoSettingModel : DataModel
     {
         public ScheduleSelectionType                    ScheduleSelection                       { get; set; }
@@ -24,6 +26,7 @@ namespace ReversePrism.DataModels
         public CardDeleteType                           CardDelete                              { get; set; }
         public CardCostBalanceType                      CardCostBalance                         { get; set; }
         public DeckPolicyType                           DeckPolicy                              { get; set; }
+        public List<SelectSubSeasonData>?               SelectSubSeasonDatas                    { get; set; }
 
         public static ProduceAutoSettingModel? FromPointer(IntPtr p0)
         {
@@ -33,13 +36,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceAutoSettingModel() { Pointer= p0 };
 
-            value.ScheduleSelection                         = (ScheduleSelectionType)GetInt32(new IntPtr(p + 0x010)); // 0245A3A79398 0x10 ScheduleSelection           ( 0001865C7930 ModelEnumType ScheduleSelectionType ScheduleSelectionType ScheduleSelectionType Int32 )
-            value.System                                    = (SystemType)GetInt32(new IntPtr(p + 0x014)); // 0245A3A793B8 0x14 System                      ( 0001865C80A0 ModelEnumType SystemType SystemType SystemType Int32 )
-            value.RecoveryTiming                            = (RecoveryTimingType)GetInt32(new IntPtr(p + 0x018)); // 0245A3A793D8 0x18 RecoveryTiming              ( 0001865C7210 ModelEnumType RecoveryTimingType RecoveryTimingType RecoveryTimingType Int32 )
-            value.RankUpBalance                             = (RankUpBalanceType)GetInt32(new IntPtr(p + 0x01C)); // 0245A3A793F8 0x1C RankUpBalance               ( 0001865C6AC0 ModelEnumType RankUpBalanceType RankUpBalanceType RankUpBalanceType Int32 )
-            value.CardDelete                                = (CardDeleteType)GetInt32(new IntPtr(p + 0x020)); // 0245A3A79418 0x20 CardDelete                  ( 0001865C5CA0 ModelEnumType CardDeleteType CardDeleteType CardDeleteType Int32 )
-            value.CardCostBalance                           = (CardCostBalanceType)GetInt32(new IntPtr(p + 0x024)); // 0245A3A79438 0x24 CardCostBalance             ( 0001865C5580 ModelEnumType CardCostBalanceType CardCostBalanceType CardCostBalanceType Int32 )
-            value.DeckPolicy                                = (DeckPolicyType)GetInt32(new IntPtr(p + 0x028)); // 0245A3A79458 0x28 DeckPolicy                  ( 0001865C63B0 ModelEnumType DeckPolicyType DeckPolicyType DeckPolicyType Int32 )
+            value.ScheduleSelection                         = (ScheduleSelectionType)GetInt32(new IntPtr(p + 0x010)); // 0x10 ScheduleSelection           ( ModelEnumType ScheduleSelectionType ScheduleSelectionType ScheduleSelectionType Int32 )
+            value.System                                    = (SystemType)GetInt32(new IntPtr(p + 0x014)); // 0x14 System                      ( ModelEnumType SystemType SystemType SystemType Int32 )
+            value.RecoveryTiming                            = (RecoveryTimingType)GetInt32(new IntPtr(p + 0x018)); // 0x18 RecoveryTiming              ( ModelEnumType RecoveryTimingType RecoveryTimingType RecoveryTimingType Int32 )
+            value.RankUpBalance                             = (RankUpBalanceType)GetInt32(new IntPtr(p + 0x01C)); // 0x1C RankUpBalance               ( ModelEnumType RankUpBalanceType RankUpBalanceType RankUpBalanceType Int32 )
+            value.CardDelete                                = (CardDeleteType)GetInt32(new IntPtr(p + 0x020)); // 0x20 CardDelete                  ( ModelEnumType CardDeleteType CardDeleteType CardDeleteType Int32 )
+            value.CardCostBalance                           = (CardCostBalanceType)GetInt32(new IntPtr(p + 0x024)); // 0x24 CardCostBalance             ( ModelEnumType CardCostBalanceType CardCostBalanceType CardCostBalanceType Int32 )
+            value.DeckPolicy                                = (DeckPolicyType)GetInt32(new IntPtr(p + 0x028)); // 0x28 DeckPolicy                  ( ModelEnumType DeckPolicyType DeckPolicyType DeckPolicyType Int32 )
+            value.SelectSubSeasonDatas                      = GetObjectList<SelectSubSeasonData>(new IntPtr(p + 0x038), ReversePrism.DataModels.SelectSubSeasonData.FromPointer); // 0x38 SelectSubSeasonDatas        ( ModelClassListType SelectSubSeasonData[] SelectSubSeasonData[] List<SelectSubSeasonData> Pointer )
 
             return value;
         }

@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Message                                  0001866722E0 ModelPrimitiveType string string string String
-    // 018 Class                                    0001866722E0 ModelPrimitiveType string string string String
-    // 020 StackTraces                              000185D0C388 ModelClassListType List`1<StackTraceElement> List`1<StackTraceElement> List<StackTraceElement> Pointer
-    // 028 Cause                                    0001865C8690 ModelClassType Error Error Error Pointer
+    // 010 Message                                  ModelPrimitiveType string string string String
+    // 018 Class                                    ModelPrimitiveType string string string String
+    // 020 StackTraces                              ModelClassListType List`1<StackTraceElement> List`1<StackTraceElement> List<StackTraceElement> Pointer
+    // 028 Cause                                    ModelClassType Error Error Error Pointer
     public partial class Error : DataModel
     {
         public string                                   Message                                 { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Error() { Pointer= p0 };
 
-            value.Message                                   = GetString(new IntPtr(p + 0x010)); // 02466B530780 0x10 Message                     ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Class                                     = GetString(new IntPtr(p + 0x018)); // 02466B5307A0 0x18 Class                       ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.StackTraces                               = GetObjectList<StackTraceElement>(new IntPtr(p + 0x020), ReversePrism.DataModels.StackTraceElement.FromPointer); // 02466B5307C0 0x20 StackTraces                 ( 000185D0C388 ModelClassListType List`1<StackTraceElement> List`1<StackTraceElement> List<StackTraceElement> Pointer )
-            value.Cause                                     = GetObject<Error>(new IntPtr(p + 0x028), ReversePrism.DataModels.Error.FromPointer); // 02466B5307E0 0x28 Cause                       ( 0001865C8690 ModelClassType Error Error Error Pointer )
+            value.Message                                   = GetString(new IntPtr(p + 0x010)); // 0x10 Message                     ( ModelPrimitiveType string string string String )
+            value.Class                                     = GetString(new IntPtr(p + 0x018)); // 0x18 Class                       ( ModelPrimitiveType string string string String )
+            value.StackTraces                               = GetObjectList<StackTraceElement>(new IntPtr(p + 0x020), ReversePrism.DataModels.StackTraceElement.FromPointer); // 0x20 StackTraces                 ( ModelClassListType List`1<StackTraceElement> List`1<StackTraceElement> List<StackTraceElement> Pointer )
+            value.Cause                                     = GetObject<Error>(new IntPtr(p + 0x028), ReversePrism.DataModels.Error.FromPointer); // 0x28 Cause                       ( ModelClassType Error Error Error Pointer )
 
             return value;
         }

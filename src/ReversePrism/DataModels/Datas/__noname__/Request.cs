@@ -11,30 +11,30 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<Request> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 IdFieldNumber                            int IL2CPP_TYPE_I4
-    // 018 Id                                       000186671910 ModelPrimitiveType string string string String
+    // 018 Id                                       ModelPrimitiveType string string string String
     // 000 MethodFieldNumber                        int IL2CPP_TYPE_I4
-    // 020 Method                                   000186671910 ModelPrimitiveType string string string String
+    // 020 Method                                   ModelPrimitiveType string string string String
     // 000 HeadersFieldNumber                       int IL2CPP_TYPE_I4
     // 008 _map_headers_codec                       Codec<string, string> IL2CPP_TYPE_GENERICINST
     // 028 headers_                                 MapField`2<string, string> IL2CPP_TYPE_GENERICINST
     // 000 PathFieldNumber                          int IL2CPP_TYPE_I4
-    // 030 Path                                     000186671910 ModelPrimitiveType string string string String
+    // 030 Path                                     ModelPrimitiveType string string string String
     // 000 HostFieldNumber                          int IL2CPP_TYPE_I4
-    // 038 Host                                     000186671910 ModelPrimitiveType string string string String
+    // 038 Host                                     ModelPrimitiveType string string string String
     // 000 SchemeFieldNumber                        int IL2CPP_TYPE_I4
-    // 040 Scheme                                   000186671910 ModelPrimitiveType string string string String
+    // 040 Scheme                                   ModelPrimitiveType string string string String
     // 000 QueryFieldNumber                         int IL2CPP_TYPE_I4
-    // 048 Query                                    000186671910 ModelPrimitiveType string string string String
+    // 048 Query                                    ModelPrimitiveType string string string String
     // 000 TimeFieldNumber                          int IL2CPP_TYPE_I4
-    // 050 _Time                                    000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
+    // 050 _Time                                    ModelClassType Timestamp Timestamp Timestamp Pointer
     // 000 SizeFieldNumber                          int IL2CPP_TYPE_I4
-    // 058 Size                                     0001865F7700 ModelPrimitiveType long long long Int64
+    // 058 Size                                     ModelPrimitiveType long long long Int64
     // 000 ProtocolFieldNumber                      int IL2CPP_TYPE_I4
-    // 060 Protocol                                 000186671910 ModelPrimitiveType string string string String
+    // 060 Protocol                                 ModelPrimitiveType string string string String
     // 000 ReasonFieldNumber                        int IL2CPP_TYPE_I4
-    // 068 Reason                                   000186671910 ModelPrimitiveType string string string String
+    // 068 Reason                                   ModelPrimitiveType string string string String
     // 000 AuthFieldNumber                          int IL2CPP_TYPE_I4
-    // 070 Auth                                     0001867645A0 ModelClassType Auth Auth Auth Pointer
+    // 070 Auth                                     ModelClassType Auth Auth Auth Pointer
     public partial class Request : DataModel
     {
         public string                                   Id                                      { get; set; }
@@ -57,17 +57,17 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Request() { Pointer= p0 };
 
-            value.Id                                        = GetString(new IntPtr(p + 0x018)); // 02466A770BC8 0x18 Id                          ( 000186671910 ModelPrimitiveType string string string String )
-            value.Method                                    = GetString(new IntPtr(p + 0x020)); // 02466A770C08 0x20 Method                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Path                                      = GetString(new IntPtr(p + 0x030)); // 02466A770CA8 0x30 Path                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Host                                      = GetString(new IntPtr(p + 0x038)); // 02466A770CE8 0x38 Host                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Scheme                                    = GetString(new IntPtr(p + 0x040)); // 02466A770D28 0x40 Scheme                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Query                                     = GetString(new IntPtr(p + 0x048)); // 02466A770D68 0x48 Query                       ( 000186671910 ModelPrimitiveType string string string String )
-            value._Time                                     = GetObject<Timestamp>(new IntPtr(p + 0x050), ReversePrism.DataModels.Timestamp.FromPointer); // 02466A770DA8 0x50 _Time                       ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.Size                                      = GetInt64(new IntPtr(p + 0x058)); // 02466A770DE8 0x58 Size                        ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.Protocol                                  = GetString(new IntPtr(p + 0x060)); // 02466A770E28 0x60 Protocol                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.Reason                                    = GetString(new IntPtr(p + 0x068)); // 02466A770E68 0x68 Reason                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Auth                                      = GetObject<Auth>(new IntPtr(p + 0x070), ReversePrism.DataModels.Auth.FromPointer); // 02466A770EA8 0x70 Auth                        ( 0001867645A0 ModelClassType Auth Auth Auth Pointer )
+            value.Id                                        = GetString(new IntPtr(p + 0x018)); // 0x18 Id                          ( ModelPrimitiveType string string string String )
+            value.Method                                    = GetString(new IntPtr(p + 0x020)); // 0x20 Method                      ( ModelPrimitiveType string string string String )
+            value.Path                                      = GetString(new IntPtr(p + 0x030)); // 0x30 Path                        ( ModelPrimitiveType string string string String )
+            value.Host                                      = GetString(new IntPtr(p + 0x038)); // 0x38 Host                        ( ModelPrimitiveType string string string String )
+            value.Scheme                                    = GetString(new IntPtr(p + 0x040)); // 0x40 Scheme                      ( ModelPrimitiveType string string string String )
+            value.Query                                     = GetString(new IntPtr(p + 0x048)); // 0x48 Query                       ( ModelPrimitiveType string string string String )
+            value._Time                                     = GetObject<Timestamp>(new IntPtr(p + 0x050), ReversePrism.DataModels.Timestamp.FromPointer); // 0x50 _Time                       ( ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.Size                                      = GetInt64(new IntPtr(p + 0x058)); // 0x58 Size                        ( ModelPrimitiveType long long long Int64 )
+            value.Protocol                                  = GetString(new IntPtr(p + 0x060)); // 0x60 Protocol                    ( ModelPrimitiveType string string string String )
+            value.Reason                                    = GetString(new IntPtr(p + 0x068)); // 0x68 Reason                      ( ModelPrimitiveType string string string String )
+            value.Auth                                      = GetObject<Auth>(new IntPtr(p + 0x070), ReversePrism.DataModels.Auth.FromPointer); // 0x70 Auth                        ( ModelClassType Auth Auth Auth Pointer )
 
             return value;
         }

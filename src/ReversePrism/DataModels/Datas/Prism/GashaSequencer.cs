@@ -8,60 +8,61 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 GashaScharaEffectsDirection              0001866195B0 ModelClassType GashaScharaEffectsDirection GashaScharaEffectsDirection GashaScharaEffectsDirection Pointer
-    // 028 GashaNamePlateEx                         0001866089D0 ModelClassType GashaNamePlateEx GashaNamePlateEx GashaNamePlateEx Pointer
-    // 030 GashaNamePlateS                          0001866090A0 ModelClassType GashaNamePlateS GashaNamePlateS GashaNamePlateS Pointer
-    // 038 Handup                                   0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 040 GashaHandup                              000186603E90 ModelClassType GashaHandup GashaHandup GashaHandup Pointer
-    // 048 ScharaEffect                             0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 050 Phase1Area                               0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 058 Phase2Area                               0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 060 Phase3_S3Area                            0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 068 Phase3_S9Area                            0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 070 PGashaEffectArea                         0001866AA150 ModelClassType Transform Transform Transform Pointer
-    // 078 Btnskip                                  000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer
-    // 080 BtnTouch                                 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer
-    // 088 FadeDuration                             0001866656B0 ModelPrimitiveType float float float Single
+    // 020 GashaScharaEffectsDirection              ModelClassType GashaScharaEffectsDirection GashaScharaEffectsDirection GashaScharaEffectsDirection Pointer
+    // 028 GashaNamePlateP                          ModelClassType GashaNamePlateP GashaNamePlateP GashaNamePlateP Pointer
+    // 030 GashaNamePlateS                          ModelClassType GashaNamePlateS GashaNamePlateS GashaNamePlateS Pointer
+    // 038 Handup                                   ModelClassType GameObject GameObject GameObject Pointer
+    // 040 GashaHandup                              ModelClassType GashaHandup GashaHandup GashaHandup Pointer
+    // 048 ScharaEffect                             ModelClassType GameObject GameObject GameObject Pointer
+    // 050 Phase1Area                               ModelClassType GameObject GameObject GameObject Pointer
+    // 058 Phase2Area                               ModelClassType GameObject GameObject GameObject Pointer
+    // 060 Phase3_S3Area                            ModelClassType GameObject GameObject GameObject Pointer
+    // 068 Phase3_S9Area                            ModelClassType GameObject GameObject GameObject Pointer
+    // 070 PGashaEffectArea                         ModelClassType Transform Transform Transform Pointer
+    // 078 Btnskip                                  ModelClassType ButtonBase ButtonBase ButtonBase Pointer
+    // 080 BtnTouch                                 ModelClassType ButtonBase ButtonBase ButtonBase Pointer
+    // 088 FadeDuration                             ModelPrimitiveType float float float Single
     // 000 conditionList                            Condition[] IL2CPP_TYPE_SZARRAY
     // 008 originalConditionList                    Dictionary`2<string, Condition[]> IL2CPP_TYPE_GENERICINST
-    // 010 ListGashaScene                           000185D24618 ModelClassListType List`1<GashaSceneData> List`1<GashaSceneData> List<GashaSceneData> Pointer
-    // 018 IsPreLoaded                              000186595C30 ModelPrimitiveType bool bool bool Bool
+    // 010 ListGashaScene                           ModelClassListType List`1<GashaSceneData> List`1<GashaSceneData> List<GashaSceneData> Pointer
+    // 018 IsPreLoaded                              ModelPrimitiveType bool bool bool Bool
     // 000 baseCutSceneMargin                       int IL2CPP_TYPE_I4
-    // 090 SkipToGameObjectName                     000186671910 ModelPrimitiveType string string string String
-    // 098 SkipToLoopStart                          000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 0A0 OnTapCallBack                            0001866792B0 ModelClassType Action Action Action Pointer
-    // 0A8 BaseGashaInstance                        0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 0B0 BasePostProcess                          00018676E4B0 ModelClassType PostProcessVolume PostProcessVolume PostProcessVolume Pointer
-    // 0B8 CharacterParents                         0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 0C0 characterTables                          Character[][] IL2CPP_TYPE_SZARRAY
-    // 0C8 BaseScene                                00018666E600 ModelClassType CutScene CutScene CutScene Pointer
-    // 0D0 BaseCameraObject                         0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 0D8 MainCamera                               0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 0E0 EffectPlayer                             0001867210F0 ModelClassType EffectPlayer EffectPlayer EffectPlayer Pointer
-    // 0E8 CamEventBase                             0001865398B0 ModelClassType CameraWorkEvent CameraWorkEvent CameraWorkEvent Pointer
-    // 0F0 TimelineController                       00018666EA20 ModelClassType TimelineController TimelineController TimelineController Pointer
-    // 0F8 ScreenEffect                             0001866F24C0 ModelClassType ScreenEffectEx ScreenEffectEx ScreenEffectEx Pointer
-    // 100 IsInitializeEnd                          000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 101 IsSequenceEnd                            000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 102 IsPause                                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 103 IsMovieStop                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 108 OnSequenceEnd                            0001866792B0 ModelClassType Action Action Action Pointer
-    // 110 SequenceFrame                            0001866656B0 ModelPrimitiveType float float float Single
-    // 114 CurrentSceneIndex                        0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 118 SceneIndexOld                            0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 11C CurrentStartFrame                        0001866656B0 ModelPrimitiveType float float float Single
-    // 120 LoopNextFlag                             000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 128 CutInstanceGameObjects                   000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
-    // 130 CamEvents                                000185B72FE0 ModelClassListType CameraWorkEvent[] CameraWorkEvent[] List<CameraWorkEvent> Pointer
-    // 138 SceneTypes                               000185CC2718 ModelEnumListType SceneType[] SceneType[] List<SceneType> Pointer
-    // 140 CutScenes                                000185B78690 ModelClassListType CutScene[] CutScene[] List<CutScene> Pointer
-    // 148 CutCharacterDirs                         000185CACE28 ModelClassListType Transform[] Transform[] List<Transform> Pointer
-    // 150 SoundResources                           000186677C40 ModelClassType MvCutSceneSoundResources MvCutSceneSoundResources MvCutSceneSoundResources Pointer
-    // 01C PlayGashaSequenceNo                      0001867228B0 ModelEnumType Sequence Sequence Sequence Int32
+    // 090 SkipToGameObjectName                     ModelPrimitiveType string string string String
+    // 098 SkipToLoopStart                          ModelPrimitiveType bool bool bool Bool
+    // 0A0 OnTapCallBack                            ModelClassType Action Action Action Pointer
+    // 0A8 IsPlayFirstTime                          ModelPrimitiveType bool bool bool Bool
+    // 0B0 BaseGashaInstance                        ModelClassType GameObject GameObject GameObject Pointer
+    // 0B8 BasePostProcess                          ModelClassType PostProcessVolume PostProcessVolume PostProcessVolume Pointer
+    // 0C0 CharacterParents                         ModelClassType GameObject GameObject GameObject Pointer
+    // 0C8 characterTables                          Character[][] IL2CPP_TYPE_SZARRAY
+    // 0D0 BaseScene                                ModelClassType CutScene CutScene CutScene Pointer
+    // 0D8 BaseCameraObject                         ModelClassType GameObject GameObject GameObject Pointer
+    // 0E0 MainCamera                               ModelClassType GameObject GameObject GameObject Pointer
+    // 0E8 EffectPlayer                             ModelClassType EffectPlayer EffectPlayer EffectPlayer Pointer
+    // 0F0 CamEventBase                             ModelClassType CameraWorkEvent CameraWorkEvent CameraWorkEvent Pointer
+    // 0F8 TimelineController                       ModelClassType TimelineController TimelineController TimelineController Pointer
+    // 100 ScreenEffect                             ModelClassType ScreenEffectEx ScreenEffectEx ScreenEffectEx Pointer
+    // 108 IsInitializeEnd                          ModelPrimitiveType bool bool bool Bool
+    // 109 IsSequenceEnd                            ModelPrimitiveType bool bool bool Bool
+    // 10A IsPause                                  ModelPrimitiveType bool bool bool Bool
+    // 10B IsMovieStop                              ModelPrimitiveType bool bool bool Bool
+    // 110 OnSequenceEnd                            ModelClassType Action Action Action Pointer
+    // 118 SequenceFrame                            ModelPrimitiveType float float float Single
+    // 11C CurrentSceneIndex                        ModelPrimitiveType int int int Int32
+    // 120 SceneIndexOld                            ModelPrimitiveType int int int Int32
+    // 124 CurrentStartFrame                        ModelPrimitiveType float float float Single
+    // 128 LoopNextFlag                             ModelPrimitiveType bool bool bool Bool
+    // 130 CutInstanceGameObjects                   ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
+    // 138 CamEvents                                ModelClassListType CameraWorkEvent[] CameraWorkEvent[] List<CameraWorkEvent> Pointer
+    // 140 SceneTypes                               ModelEnumListType SceneType[] SceneType[] List<SceneType> Pointer
+    // 148 CutScenes                                ModelClassListType CutScene[] CutScene[] List<CutScene> Pointer
+    // 150 CutCharacterDirs                         ModelClassListType Transform[] Transform[] List<Transform> Pointer
+    // 158 SoundResources                           ModelClassType MvCutSceneSoundResources MvCutSceneSoundResources MvCutSceneSoundResources Pointer
+    // 01C PlayGashaSequenceNo                      ModelEnumType Sequence Sequence Sequence Int32
     public partial class GashaSequencer : DataModel
     {
         public GashaScharaEffectsDirection?             GashaScharaEffectsDirection             { get; set; }
-        public GashaNamePlateEx?                        GashaNamePlateEx                        { get; set; }
+        public GashaNamePlateP?                         GashaNamePlateP                         { get; set; }
         public GashaNamePlateS?                         GashaNamePlateS                         { get; set; }
         public GameObject?                              Handup                                  { get; set; }
         public GashaHandup?                             GashaHandup                             { get; set; }
@@ -79,6 +80,7 @@ namespace ReversePrism.DataModels
         public string                                   SkipToGameObjectName                    { get; set; }
         public bool                                     SkipToLoopStart                         { get; set; }
         public Action?                                  OnTapCallBack                           { get; set; }
+        public bool                                     IsPlayFirstTime                         { get; set; }
         public GameObject?                              BaseGashaInstance                       { get; set; }
         public PostProcessVolume?                       BasePostProcess                         { get; set; }
         public GameObject?                              CharacterParents                        { get; set; }
@@ -115,52 +117,53 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GashaSequencer() { Pointer= p0 };
 
-            value.GashaScharaEffectsDirection               = GetObject<GashaScharaEffectsDirection>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaScharaEffectsDirection.FromPointer); // 024664E25F70 0x20 GashaScharaEffectsDirection ( 0001866195B0 ModelClassType GashaScharaEffectsDirection GashaScharaEffectsDirection GashaScharaEffectsDirection Pointer )
-            value.GashaNamePlateEx                          = GetObject<GashaNamePlateEx>(new IntPtr(p + 0x028), ReversePrism.DataModels.GashaNamePlateEx.FromPointer); // 024664E25F90 0x28 GashaNamePlateEx            ( 0001866089D0 ModelClassType GashaNamePlateEx GashaNamePlateEx GashaNamePlateEx Pointer )
-            value.GashaNamePlateS                           = GetObject<GashaNamePlateS>(new IntPtr(p + 0x030), ReversePrism.DataModels.GashaNamePlateS.FromPointer); // 024664E25FB0 0x30 GashaNamePlateS             ( 0001866090A0 ModelClassType GashaNamePlateS GashaNamePlateS GashaNamePlateS Pointer )
-            value.Handup                                    = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 024664E25FD0 0x38 Handup                      ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.GashaHandup                               = GetObject<GashaHandup>(new IntPtr(p + 0x040), ReversePrism.DataModels.GashaHandup.FromPointer); // 024664E25FF0 0x40 GashaHandup                 ( 000186603E90 ModelClassType GashaHandup GashaHandup GashaHandup Pointer )
-            value.ScharaEffect                              = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 024664E26010 0x48 ScharaEffect                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.Phase1Area                                = GetObject<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 024664E26030 0x50 Phase1Area                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.Phase2Area                                = GetObject<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 024664E26050 0x58 Phase2Area                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.Phase3_S3Area                             = GetObject<GameObject>(new IntPtr(p + 0x060), ReversePrism.DataModels.GameObject.FromPointer); // 024664E26070 0x60 Phase3_S3Area               ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.Phase3_S9Area                             = GetObject<GameObject>(new IntPtr(p + 0x068), ReversePrism.DataModels.GameObject.FromPointer); // 024664E26090 0x68 Phase3_S9Area               ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.PGashaEffectArea                          = GetObject<Transform>(new IntPtr(p + 0x070), ReversePrism.DataModels.Transform.FromPointer); // 024664E260B0 0x70 PGashaEffectArea            ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.Btnskip                                   = GetObject<ButtonBase>(new IntPtr(p + 0x078), ReversePrism.DataModels.ButtonBase.FromPointer); // 024664E260D0 0x78 Btnskip                     ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.BtnTouch                                  = GetObject<ButtonBase>(new IntPtr(p + 0x080), ReversePrism.DataModels.ButtonBase.FromPointer); // 024664E260F0 0x80 BtnTouch                    ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.FadeDuration                              = GetSingle(new IntPtr(p + 0x088)); // 024664E26110 0x88 FadeDuration                ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.ListGashaScene                            = GetObjectList<GashaSceneData>(new IntPtr(p + 0x010), ReversePrism.DataModels.GashaSceneData.FromPointer); // 024664E26170 0x10 ListGashaScene              ( 000185D24618 ModelClassListType List`1<GashaSceneData> List`1<GashaSceneData> List<GashaSceneData> Pointer )
-            value.IsPreLoaded                               = GetBool(new IntPtr(p + 0x018)); // 024664E26190 0x18 IsPreLoaded                 ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
-            value.SkipToGameObjectName                      = GetString(new IntPtr(p + 0x090)); // 024664E261D0 0x90 SkipToGameObjectName        ( 000186671910 ModelPrimitiveType string string string String )
-            value.SkipToLoopStart                           = GetBool(new IntPtr(p + 0x098)); // 024664E261F0 0x98 SkipToLoopStart             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.OnTapCallBack                             = GetObject<Action>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.Action.FromPointer); // 024664E26210 0xA0 OnTapCallBack               ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.BaseGashaInstance                         = GetObject<GameObject>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.GameObject.FromPointer); // 024664E26230 0xA8 BaseGashaInstance           ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.BasePostProcess                           = GetObject<PostProcessVolume>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.PostProcessVolume.FromPointer); // 024664E26250 0xB0 BasePostProcess             ( 00018676E4B0 ModelClassType PostProcessVolume PostProcessVolume PostProcessVolume Pointer )
-            value.CharacterParents                          = GetObject<GameObject>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.GameObject.FromPointer); // 024664E26270 0xB8 CharacterParents            ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.BaseScene                                 = GetObject<CutScene>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.CutScene.FromPointer); // 024664E262B0 0xC8 BaseScene                   ( 00018666E600 ModelClassType CutScene CutScene CutScene Pointer )
-            value.BaseCameraObject                          = GetObject<GameObject>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.GameObject.FromPointer); // 024664E262D0 0xD0 BaseCameraObject            ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.MainCamera                                = GetObject<GameObject>(new IntPtr(p + 0x0D8), ReversePrism.DataModels.GameObject.FromPointer); // 024664E262F0 0xD8 MainCamera                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.EffectPlayer                              = GetObject<EffectPlayer>(new IntPtr(p + 0x0E0), ReversePrism.DataModels.EffectPlayer.FromPointer); // 024664E26310 0xE0 EffectPlayer                ( 0001867210F0 ModelClassType EffectPlayer EffectPlayer EffectPlayer Pointer )
-            value.CamEventBase                              = GetObject<CameraWorkEvent>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.CameraWorkEvent.FromPointer); // 024664E26330 0xE8 CamEventBase                ( 0001865398B0 ModelClassType CameraWorkEvent CameraWorkEvent CameraWorkEvent Pointer )
-            value.TimelineController                        = GetObject<TimelineController>(new IntPtr(p + 0x0F0), ReversePrism.DataModels.TimelineController.FromPointer); // 024664E26350 0xF0 TimelineController          ( 00018666EA20 ModelClassType TimelineController TimelineController TimelineController Pointer )
-            value.ScreenEffect                              = GetObject<ScreenEffectEx>(new IntPtr(p + 0x0F8), ReversePrism.DataModels.ScreenEffectEx.FromPointer); // 024664E26370 0xF8 ScreenEffect                ( 0001866F24C0 ModelClassType ScreenEffectEx ScreenEffectEx ScreenEffectEx Pointer )
-            value.IsInitializeEnd                           = GetBool(new IntPtr(p + 0x100)); // 024664E26390 0x100 IsInitializeEnd             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsSequenceEnd                             = GetBool(new IntPtr(p + 0x101)); // 024664E263B0 0x101 IsSequenceEnd               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsPause                                   = GetBool(new IntPtr(p + 0x102)); // 024664E263D0 0x102 IsPause                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsMovieStop                               = GetBool(new IntPtr(p + 0x103)); // 024664E263F0 0x103 IsMovieStop                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.OnSequenceEnd                             = GetObject<Action>(new IntPtr(p + 0x108), ReversePrism.DataModels.Action.FromPointer); // 024664E26410 0x108 OnSequenceEnd               ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.SequenceFrame                             = GetSingle(new IntPtr(p + 0x110)); // 024664E26430 0x110 SequenceFrame               ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.CurrentSceneIndex                         = GetInt32(new IntPtr(p + 0x114)); // 024664E26450 0x114 CurrentSceneIndex           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SceneIndexOld                             = GetInt32(new IntPtr(p + 0x118)); // 024664E26470 0x118 SceneIndexOld               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CurrentStartFrame                         = GetSingle(new IntPtr(p + 0x11C)); // 024664E26490 0x11C CurrentStartFrame           ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.LoopNextFlag                              = GetBool(new IntPtr(p + 0x120)); // 024664E264B0 0x120 LoopNextFlag                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CutInstanceGameObjects                    = GetObjectList<GameObject>(new IntPtr(p + 0x128), ReversePrism.DataModels.GameObject.FromPointer); // 024664E264D0 0x128 CutInstanceGameObjects      ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
-            value.CamEvents                                 = GetObjectList<CameraWorkEvent>(new IntPtr(p + 0x130), ReversePrism.DataModels.CameraWorkEvent.FromPointer); // 024664E264F0 0x130 CamEvents                   ( 000185B72FE0 ModelClassListType CameraWorkEvent[] CameraWorkEvent[] List<CameraWorkEvent> Pointer )
-            value.SceneTypes                                = GetEnumList<SceneType>(new IntPtr(p + 0x138)); // 024664E26510 0x138 SceneTypes                  ( 000185CC2718 ModelEnumListType SceneType[] SceneType[] List<SceneType> Pointer )
-            value.CutScenes                                 = GetObjectList<CutScene>(new IntPtr(p + 0x140), ReversePrism.DataModels.CutScene.FromPointer); // 024664E26530 0x140 CutScenes                   ( 000185B78690 ModelClassListType CutScene[] CutScene[] List<CutScene> Pointer )
-            value.CutCharacterDirs                          = GetObjectList<Transform>(new IntPtr(p + 0x148), ReversePrism.DataModels.Transform.FromPointer); // 024664E26550 0x148 CutCharacterDirs            ( 000185CACE28 ModelClassListType Transform[] Transform[] List<Transform> Pointer )
-            value.SoundResources                            = GetObject<MvCutSceneSoundResources>(new IntPtr(p + 0x150), ReversePrism.DataModels.MvCutSceneSoundResources.FromPointer); // 024664E26570 0x150 SoundResources              ( 000186677C40 ModelClassType MvCutSceneSoundResources MvCutSceneSoundResources MvCutSceneSoundResources Pointer )
-            value.PlayGashaSequenceNo                       = (Sequence)GetInt32(new IntPtr(p + 0x01C)); // 024664E26590 0x1C PlayGashaSequenceNo         ( 0001867228B0 ModelEnumType Sequence Sequence Sequence Int32 )
+            value.GashaScharaEffectsDirection               = GetObject<GashaScharaEffectsDirection>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaScharaEffectsDirection.FromPointer); // 0x20 GashaScharaEffectsDirection ( ModelClassType GashaScharaEffectsDirection GashaScharaEffectsDirection GashaScharaEffectsDirection Pointer )
+            value.GashaNamePlateP                           = GetObject<GashaNamePlateP>(new IntPtr(p + 0x028), ReversePrism.DataModels.GashaNamePlateP.FromPointer); // 0x28 GashaNamePlateP             ( ModelClassType GashaNamePlateP GashaNamePlateP GashaNamePlateP Pointer )
+            value.GashaNamePlateS                           = GetObject<GashaNamePlateS>(new IntPtr(p + 0x030), ReversePrism.DataModels.GashaNamePlateS.FromPointer); // 0x30 GashaNamePlateS             ( ModelClassType GashaNamePlateS GashaNamePlateS GashaNamePlateS Pointer )
+            value.Handup                                    = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0x38 Handup                      ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.GashaHandup                               = GetObject<GashaHandup>(new IntPtr(p + 0x040), ReversePrism.DataModels.GashaHandup.FromPointer); // 0x40 GashaHandup                 ( ModelClassType GashaHandup GashaHandup GashaHandup Pointer )
+            value.ScharaEffect                              = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 0x48 ScharaEffect                ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.Phase1Area                                = GetObject<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 0x50 Phase1Area                  ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.Phase2Area                                = GetObject<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 0x58 Phase2Area                  ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.Phase3_S3Area                             = GetObject<GameObject>(new IntPtr(p + 0x060), ReversePrism.DataModels.GameObject.FromPointer); // 0x60 Phase3_S3Area               ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.Phase3_S9Area                             = GetObject<GameObject>(new IntPtr(p + 0x068), ReversePrism.DataModels.GameObject.FromPointer); // 0x68 Phase3_S9Area               ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.PGashaEffectArea                          = GetObject<Transform>(new IntPtr(p + 0x070), ReversePrism.DataModels.Transform.FromPointer); // 0x70 PGashaEffectArea            ( ModelClassType Transform Transform Transform Pointer )
+            value.Btnskip                                   = GetObject<ButtonBase>(new IntPtr(p + 0x078), ReversePrism.DataModels.ButtonBase.FromPointer); // 0x78 Btnskip                     ( ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.BtnTouch                                  = GetObject<ButtonBase>(new IntPtr(p + 0x080), ReversePrism.DataModels.ButtonBase.FromPointer); // 0x80 BtnTouch                    ( ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.FadeDuration                              = GetSingle(new IntPtr(p + 0x088)); // 0x88 FadeDuration                ( ModelPrimitiveType float float float Single )
+            value.ListGashaScene                            = GetObjectList<GashaSceneData>(new IntPtr(p + 0x010), ReversePrism.DataModels.GashaSceneData.FromPointer); // 0x10 ListGashaScene              ( ModelClassListType List`1<GashaSceneData> List`1<GashaSceneData> List<GashaSceneData> Pointer )
+            value.IsPreLoaded                               = GetBool(new IntPtr(p + 0x018)); // 0x18 IsPreLoaded                 ( ModelPrimitiveType bool bool bool Bool )
+            value.SkipToGameObjectName                      = GetString(new IntPtr(p + 0x090)); // 0x90 SkipToGameObjectName        ( ModelPrimitiveType string string string String )
+            value.SkipToLoopStart                           = GetBool(new IntPtr(p + 0x098)); // 0x98 SkipToLoopStart             ( ModelPrimitiveType bool bool bool Bool )
+            value.OnTapCallBack                             = GetObject<Action>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.Action.FromPointer); // 0xA0 OnTapCallBack               ( ModelClassType Action Action Action Pointer )
+            value.IsPlayFirstTime                           = GetBool(new IntPtr(p + 0x0A8)); // 0xA8 IsPlayFirstTime             ( ModelPrimitiveType bool bool bool Bool )
+            value.BaseGashaInstance                         = GetObject<GameObject>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.GameObject.FromPointer); // 0xB0 BaseGashaInstance           ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.BasePostProcess                           = GetObject<PostProcessVolume>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.PostProcessVolume.FromPointer); // 0xB8 BasePostProcess             ( ModelClassType PostProcessVolume PostProcessVolume PostProcessVolume Pointer )
+            value.CharacterParents                          = GetObject<GameObject>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.GameObject.FromPointer); // 0xC0 CharacterParents            ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.BaseScene                                 = GetObject<CutScene>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.CutScene.FromPointer); // 0xD0 BaseScene                   ( ModelClassType CutScene CutScene CutScene Pointer )
+            value.BaseCameraObject                          = GetObject<GameObject>(new IntPtr(p + 0x0D8), ReversePrism.DataModels.GameObject.FromPointer); // 0xD8 BaseCameraObject            ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.MainCamera                                = GetObject<GameObject>(new IntPtr(p + 0x0E0), ReversePrism.DataModels.GameObject.FromPointer); // 0xE0 MainCamera                  ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.EffectPlayer                              = GetObject<EffectPlayer>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.EffectPlayer.FromPointer); // 0xE8 EffectPlayer                ( ModelClassType EffectPlayer EffectPlayer EffectPlayer Pointer )
+            value.CamEventBase                              = GetObject<CameraWorkEvent>(new IntPtr(p + 0x0F0), ReversePrism.DataModels.CameraWorkEvent.FromPointer); // 0xF0 CamEventBase                ( ModelClassType CameraWorkEvent CameraWorkEvent CameraWorkEvent Pointer )
+            value.TimelineController                        = GetObject<TimelineController>(new IntPtr(p + 0x0F8), ReversePrism.DataModels.TimelineController.FromPointer); // 0xF8 TimelineController          ( ModelClassType TimelineController TimelineController TimelineController Pointer )
+            value.ScreenEffect                              = GetObject<ScreenEffectEx>(new IntPtr(p + 0x100), ReversePrism.DataModels.ScreenEffectEx.FromPointer); // 0x100 ScreenEffect                ( ModelClassType ScreenEffectEx ScreenEffectEx ScreenEffectEx Pointer )
+            value.IsInitializeEnd                           = GetBool(new IntPtr(p + 0x108)); // 0x108 IsInitializeEnd             ( ModelPrimitiveType bool bool bool Bool )
+            value.IsSequenceEnd                             = GetBool(new IntPtr(p + 0x109)); // 0x109 IsSequenceEnd               ( ModelPrimitiveType bool bool bool Bool )
+            value.IsPause                                   = GetBool(new IntPtr(p + 0x10A)); // 0x10A IsPause                     ( ModelPrimitiveType bool bool bool Bool )
+            value.IsMovieStop                               = GetBool(new IntPtr(p + 0x10B)); // 0x10B IsMovieStop                 ( ModelPrimitiveType bool bool bool Bool )
+            value.OnSequenceEnd                             = GetObject<Action>(new IntPtr(p + 0x110), ReversePrism.DataModels.Action.FromPointer); // 0x110 OnSequenceEnd               ( ModelClassType Action Action Action Pointer )
+            value.SequenceFrame                             = GetSingle(new IntPtr(p + 0x118)); // 0x118 SequenceFrame               ( ModelPrimitiveType float float float Single )
+            value.CurrentSceneIndex                         = GetInt32(new IntPtr(p + 0x11C)); // 0x11C CurrentSceneIndex           ( ModelPrimitiveType int int int Int32 )
+            value.SceneIndexOld                             = GetInt32(new IntPtr(p + 0x120)); // 0x120 SceneIndexOld               ( ModelPrimitiveType int int int Int32 )
+            value.CurrentStartFrame                         = GetSingle(new IntPtr(p + 0x124)); // 0x124 CurrentStartFrame           ( ModelPrimitiveType float float float Single )
+            value.LoopNextFlag                              = GetBool(new IntPtr(p + 0x128)); // 0x128 LoopNextFlag                ( ModelPrimitiveType bool bool bool Bool )
+            value.CutInstanceGameObjects                    = GetObjectList<GameObject>(new IntPtr(p + 0x130), ReversePrism.DataModels.GameObject.FromPointer); // 0x130 CutInstanceGameObjects      ( ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.CamEvents                                 = GetObjectList<CameraWorkEvent>(new IntPtr(p + 0x138), ReversePrism.DataModels.CameraWorkEvent.FromPointer); // 0x138 CamEvents                   ( ModelClassListType CameraWorkEvent[] CameraWorkEvent[] List<CameraWorkEvent> Pointer )
+            value.SceneTypes                                = GetEnumList<SceneType>(new IntPtr(p + 0x140)); // 0x140 SceneTypes                  ( ModelEnumListType SceneType[] SceneType[] List<SceneType> Pointer )
+            value.CutScenes                                 = GetObjectList<CutScene>(new IntPtr(p + 0x148), ReversePrism.DataModels.CutScene.FromPointer); // 0x148 CutScenes                   ( ModelClassListType CutScene[] CutScene[] List<CutScene> Pointer )
+            value.CutCharacterDirs                          = GetObjectList<Transform>(new IntPtr(p + 0x150), ReversePrism.DataModels.Transform.FromPointer); // 0x150 CutCharacterDirs            ( ModelClassListType Transform[] Transform[] List<Transform> Pointer )
+            value.SoundResources                            = GetObject<MvCutSceneSoundResources>(new IntPtr(p + 0x158), ReversePrism.DataModels.MvCutSceneSoundResources.FromPointer); // 0x158 SoundResources              ( ModelClassType MvCutSceneSoundResources MvCutSceneSoundResources MvCutSceneSoundResources Pointer )
+            value.PlayGashaSequenceNo                       = (Sequence)GetInt32(new IntPtr(p + 0x01C)); // 0x1C PlayGashaSequenceNo         ( ModelEnumType Sequence Sequence Sequence Int32 )
 
             return value;
         }

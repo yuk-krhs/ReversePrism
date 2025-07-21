@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 CellBase                                 00018655BB00 ModelClassType ChainTalkCellBase ChainTalkCellBase ChainTalkCellBase Pointer
-    // 028 TypingBalloon                            0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 030 LayoutElement                            00018650C2A0 ModelClassType LayoutElement LayoutElement LayoutElement Pointer
-    // 038 CurrentCellData                          00018655D1E0 ModelClassType ChainTalkCellDataForUnreadScroller ChainTalkCellDataForUnreadScroller ChainTalkCellDataForUnreadScroller Pointer
+    // 020 CellBase                                 ModelClassType ChainTalkCellBase ChainTalkCellBase ChainTalkCellBase Pointer
+    // 028 TypingBalloon                            ModelClassType GameObject GameObject GameObject Pointer
+    // 030 LayoutElement                            ModelClassType LayoutElement LayoutElement LayoutElement Pointer
+    // 038 CurrentCellData                          ModelClassType ChainTalkCellDataForUnreadScroller ChainTalkCellDataForUnreadScroller ChainTalkCellDataForUnreadScroller Pointer
     public partial class ChainTalkCellForUnreadScroller : DataModel
     {
         public ChainTalkCellBase?                       CellBase                                { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChainTalkCellForUnreadScroller() { Pointer= p0 };
 
-            value.CellBase                                  = GetObject<ChainTalkCellBase>(new IntPtr(p + 0x020), ReversePrism.DataModels.ChainTalkCellBase.FromPointer); // 02466B174D70 0x20 CellBase                    ( 00018655BB00 ModelClassType ChainTalkCellBase ChainTalkCellBase ChainTalkCellBase Pointer )
-            value.TypingBalloon                             = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 02466B174D90 0x28 TypingBalloon               ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.LayoutElement                             = GetObject<LayoutElement>(new IntPtr(p + 0x030), ReversePrism.DataModels.LayoutElement.FromPointer); // 02466B174DB0 0x30 LayoutElement               ( 00018650C2A0 ModelClassType LayoutElement LayoutElement LayoutElement Pointer )
-            value.CurrentCellData                           = GetObject<ChainTalkCellDataForUnreadScroller>(new IntPtr(p + 0x038), ReversePrism.DataModels.ChainTalkCellDataForUnreadScroller.FromPointer); // 02466B174DD0 0x38 CurrentCellData             ( 00018655D1E0 ModelClassType ChainTalkCellDataForUnreadScroller ChainTalkCellDataForUnreadScroller ChainTalkCellDataForUnreadScroller Pointer )
+            value.CellBase                                  = GetObject<ChainTalkCellBase>(new IntPtr(p + 0x020), ReversePrism.DataModels.ChainTalkCellBase.FromPointer); // 0x20 CellBase                    ( ModelClassType ChainTalkCellBase ChainTalkCellBase ChainTalkCellBase Pointer )
+            value.TypingBalloon                             = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0x28 TypingBalloon               ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.LayoutElement                             = GetObject<LayoutElement>(new IntPtr(p + 0x030), ReversePrism.DataModels.LayoutElement.FromPointer); // 0x30 LayoutElement               ( ModelClassType LayoutElement LayoutElement LayoutElement Pointer )
+            value.CurrentCellData                           = GetObject<ChainTalkCellDataForUnreadScroller>(new IntPtr(p + 0x038), ReversePrism.DataModels.ChainTalkCellDataForUnreadScroller.FromPointer); // 0x38 CurrentCellData             ( ModelClassType ChainTalkCellDataForUnreadScroller ChainTalkCellDataForUnreadScroller ChainTalkCellDataForUnreadScroller Pointer )
 
             return value;
         }

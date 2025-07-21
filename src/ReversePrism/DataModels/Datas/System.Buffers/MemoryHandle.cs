@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 _pointer                                 IntPtr IL2CPP_TYPE_PTR
-    // 018 Handle                                   0001865D9120 ModelEnumType GCHandle GCHandle GCHandle Int32
-    // 020 Pinnable                                 0001865D6830 ModelClassType IPinnable IPinnable IPinnable Pointer
+    // 018 Handle                                   ModelEnumType GCHandle GCHandle GCHandle Int32
+    // 020 Pinnable                                 ModelClassType IPinnable IPinnable IPinnable Pointer
     public partial class MemoryHandle : DataModel
     {
         public GCHandle                                 Handle                                  { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MemoryHandle() { Pointer= p0 };
 
-            value.Handle                                    = (GCHandle)GetInt32(new IntPtr(p + 0x018)); // 024666A126B8 0x18 Handle                      ( 0001865D9120 ModelEnumType GCHandle GCHandle GCHandle Int32 )
-            value.Pinnable                                  = GetObject<IPinnable>(new IntPtr(p + 0x020), ReversePrism.DataModels.IPinnable.FromPointer); // 024666A126D8 0x20 Pinnable                    ( 0001865D6830 ModelClassType IPinnable IPinnable IPinnable Pointer )
+            value.Handle                                    = (GCHandle)GetInt32(new IntPtr(p + 0x018)); // 0x18 Handle                      ( ModelEnumType GCHandle GCHandle GCHandle Int32 )
+            value.Pinnable                                  = GetObject<IPinnable>(new IntPtr(p + 0x020), ReversePrism.DataModels.IPinnable.FromPointer); // 0x20 Pinnable                    ( ModelClassType IPinnable IPinnable IPinnable Pointer )
 
             return value;
         }

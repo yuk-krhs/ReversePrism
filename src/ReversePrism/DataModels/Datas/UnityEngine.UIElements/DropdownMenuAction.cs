@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Name                                     000186672F10 ModelPrimitiveType string string string String
-    // 018 Status                                   0001865C3600 ModelEnumType Status Status Status Int32
-    // 020 EventInfo                                000186708110 ModelClassType DropdownMenuEventInfo DropdownMenuEventInfo DropdownMenuEventInfo Pointer
+    // 010 Name                                     ModelPrimitiveType string string string String
+    // 018 Status                                   ModelEnumType Status Status Status Int32
+    // 020 EventInfo                                ModelClassType DropdownMenuEventInfo DropdownMenuEventInfo DropdownMenuEventInfo Pointer
     // 028 <userData>k__BackingField                <object> IL2CPP_TYPE_OBJECT
     // 030 actionCallback                           Action`1<DropdownMenuAction> IL2CPP_TYPE_GENERICINST
     // 038 actionStatusCallback                     Func`2<DropdownMenuAction, Status> IL2CPP_TYPE_GENERICINST
@@ -28,9 +28,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DropdownMenuAction() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0245A671A0E8 0x10 Name                        ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Status                                    = (Status)GetInt32(new IntPtr(p + 0x018)); // 0245A671A108 0x18 Status                      ( 0001865C3600 ModelEnumType Status Status Status Int32 )
-            value.EventInfo                                 = GetObject<DropdownMenuEventInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.DropdownMenuEventInfo.FromPointer); // 0245A671A128 0x20 EventInfo                   ( 000186708110 ModelClassType DropdownMenuEventInfo DropdownMenuEventInfo DropdownMenuEventInfo Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Name                        ( ModelPrimitiveType string string string String )
+            value.Status                                    = (Status)GetInt32(new IntPtr(p + 0x018)); // 0x18 Status                      ( ModelEnumType Status Status Status Int32 )
+            value.EventInfo                                 = GetObject<DropdownMenuEventInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.DropdownMenuEventInfo.FromPointer); // 0x20 EventInfo                   ( ModelClassType DropdownMenuEventInfo DropdownMenuEventInfo DropdownMenuEventInfo Pointer )
 
             return value;
         }

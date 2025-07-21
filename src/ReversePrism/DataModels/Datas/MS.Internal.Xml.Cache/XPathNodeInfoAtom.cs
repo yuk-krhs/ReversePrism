@@ -8,15 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 LocalName                                000186671910 ModelPrimitiveType string string string String
-    // 018 NamespaceUri                             000186671910 ModelPrimitiveType string string string String
-    // 020 Prefix                                   000186671910 ModelPrimitiveType string string string String
-    // 028 PageParent                               000185B84EC0 ModelEnumListType XPathNode[] XPathNode[] List<XPathNode> Pointer
-    // 030 PageSibling                              000185B84EC0 ModelEnumListType XPathNode[] XPathNode[] List<XPathNode> Pointer
-    // 038 Doc                                      00018657DB50 ModelClassType XPathDocument XPathDocument XPathDocument Pointer
-    // 040 LineNumBase                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 044 LinePosBase                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 048 PageInfo                                 00018657FBA0 ModelClassType XPathNodePageInfo XPathNodePageInfo XPathNodePageInfo Pointer
+    // 010 LocalName                                ModelPrimitiveType string string string String
+    // 018 NamespaceUri                             ModelPrimitiveType string string string String
+    // 020 Prefix                                   ModelPrimitiveType string string string String
+    // 028 PageParent                               ModelEnumListType XPathNode[] XPathNode[] List<XPathNode> Pointer
+    // 030 PageSibling                              ModelEnumListType XPathNode[] XPathNode[] List<XPathNode> Pointer
+    // 038 Doc                                      ModelClassType XPathDocument XPathDocument XPathDocument Pointer
+    // 040 LineNumBase                              ModelPrimitiveType int int int Int32
+    // 044 LinePosBase                              ModelPrimitiveType int int int Int32
+    // 048 PageInfo                                 ModelClassType XPathNodePageInfo XPathNodePageInfo XPathNodePageInfo Pointer
     public partial class XPathNodeInfoAtom : DataModel
     {
         public string                                   LocalName                               { get; set; }
@@ -37,15 +37,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XPathNodeInfoAtom() { Pointer= p0 };
 
-            value.LocalName                                 = GetString(new IntPtr(p + 0x010)); // 02466769FDD0 0x10 LocalName                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.NamespaceUri                              = GetString(new IntPtr(p + 0x018)); // 02466769FDF0 0x18 NamespaceUri                ( 000186671910 ModelPrimitiveType string string string String )
-            value.Prefix                                    = GetString(new IntPtr(p + 0x020)); // 02466769FE10 0x20 Prefix                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.PageParent                                = GetEnumList<XPathNode>(new IntPtr(p + 0x028)); // 02466769FE30 0x28 PageParent                  ( 000185B84EC0 ModelEnumListType XPathNode[] XPathNode[] List<XPathNode> Pointer )
-            value.PageSibling                               = GetEnumList<XPathNode>(new IntPtr(p + 0x030)); // 02466769FE50 0x30 PageSibling                 ( 000185B84EC0 ModelEnumListType XPathNode[] XPathNode[] List<XPathNode> Pointer )
-            value.Doc                                       = GetObject<XPathDocument>(new IntPtr(p + 0x038), ReversePrism.DataModels.XPathDocument.FromPointer); // 02466769FE70 0x38 Doc                         ( 00018657DB50 ModelClassType XPathDocument XPathDocument XPathDocument Pointer )
-            value.LineNumBase                               = GetInt32(new IntPtr(p + 0x040)); // 02466769FE90 0x40 LineNumBase                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.LinePosBase                               = GetInt32(new IntPtr(p + 0x044)); // 02466769FEB0 0x44 LinePosBase                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.PageInfo                                  = GetObject<XPathNodePageInfo>(new IntPtr(p + 0x048), ReversePrism.DataModels.XPathNodePageInfo.FromPointer); // 02466769FED0 0x48 PageInfo                    ( 00018657FBA0 ModelClassType XPathNodePageInfo XPathNodePageInfo XPathNodePageInfo Pointer )
+            value.LocalName                                 = GetString(new IntPtr(p + 0x010)); // 0x10 LocalName                   ( ModelPrimitiveType string string string String )
+            value.NamespaceUri                              = GetString(new IntPtr(p + 0x018)); // 0x18 NamespaceUri                ( ModelPrimitiveType string string string String )
+            value.Prefix                                    = GetString(new IntPtr(p + 0x020)); // 0x20 Prefix                      ( ModelPrimitiveType string string string String )
+            value.PageParent                                = GetEnumList<XPathNode>(new IntPtr(p + 0x028)); // 0x28 PageParent                  ( ModelEnumListType XPathNode[] XPathNode[] List<XPathNode> Pointer )
+            value.PageSibling                               = GetEnumList<XPathNode>(new IntPtr(p + 0x030)); // 0x30 PageSibling                 ( ModelEnumListType XPathNode[] XPathNode[] List<XPathNode> Pointer )
+            value.Doc                                       = GetObject<XPathDocument>(new IntPtr(p + 0x038), ReversePrism.DataModels.XPathDocument.FromPointer); // 0x38 Doc                         ( ModelClassType XPathDocument XPathDocument XPathDocument Pointer )
+            value.LineNumBase                               = GetInt32(new IntPtr(p + 0x040)); // 0x40 LineNumBase                 ( ModelPrimitiveType int int int Int32 )
+            value.LinePosBase                               = GetInt32(new IntPtr(p + 0x044)); // 0x44 LinePosBase                 ( ModelPrimitiveType int int int Int32 )
+            value.PageInfo                                  = GetObject<XPathNodePageInfo>(new IntPtr(p + 0x048), ReversePrism.DataModels.XPathNodePageInfo.FromPointer); // 0x48 PageInfo                    ( ModelClassType XPathNodePageInfo XPathNodePageInfo XPathNodePageInfo Pointer )
 
             return value;
         }

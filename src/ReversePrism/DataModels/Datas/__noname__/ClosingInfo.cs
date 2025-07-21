@@ -8,16 +8,16 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 NeedsClosing                             000186595960 ModelPrimitiveType bool bool bool Bool
-    // 011 PopViewMatrix                            000186595960 ModelPrimitiveType bool bool bool Bool
-    // 012 PopScissorClip                           000186595960 ModelPrimitiveType bool bool bool Bool
-    // 013 BlitAndPopRenderTexture                  000186595960 ModelPrimitiveType bool bool bool Bool
-    // 014 PopDefaultMaterial                       000186595960 ModelPrimitiveType bool bool bool Bool
-    // 018 ClipUnregisterDrawCommand                0001866549D0 ModelClassType RenderChainCommand RenderChainCommand RenderChainCommand Pointer
+    // 010 NeedsClosing                             ModelPrimitiveType bool bool bool Bool
+    // 011 PopViewMatrix                            ModelPrimitiveType bool bool bool Bool
+    // 012 PopScissorClip                           ModelPrimitiveType bool bool bool Bool
+    // 013 BlitAndPopRenderTexture                  ModelPrimitiveType bool bool bool Bool
+    // 014 PopDefaultMaterial                       ModelPrimitiveType bool bool bool Bool
+    // 018 ClipUnregisterDrawCommand                ModelClassType RenderChainCommand RenderChainCommand RenderChainCommand Pointer
     // 020 clipperRegisterVertices                  NativeSlice`1<Vertex> IL2CPP_TYPE_GENERICINST
     // 030 clipperRegisterIndices                   NativeSlice`1<ushort> IL2CPP_TYPE_GENERICINST
-    // 040 ClipperRegisterIndexOffset               0001865F36C0 ModelPrimitiveType int int int Int32
-    // 044 MaskStencilRef                           0001865F36C0 ModelPrimitiveType int int int Int32
+    // 040 ClipperRegisterIndexOffset               ModelPrimitiveType int int int Int32
+    // 044 MaskStencilRef                           ModelPrimitiveType int int int Int32
     public partial class ClosingInfo : DataModel
     {
         public bool                                     NeedsClosing                            { get; set; }
@@ -37,14 +37,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ClosingInfo() { Pointer= p0 };
 
-            value.NeedsClosing                              = GetBool(new IntPtr(p + 0x010)); // 0245A6841558 0x10 NeedsClosing                ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.PopViewMatrix                             = GetBool(new IntPtr(p + 0x011)); // 0245A6841578 0x11 PopViewMatrix               ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.PopScissorClip                            = GetBool(new IntPtr(p + 0x012)); // 0245A6841598 0x12 PopScissorClip              ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.BlitAndPopRenderTexture                   = GetBool(new IntPtr(p + 0x013)); // 0245A68415B8 0x13 BlitAndPopRenderTexture     ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.PopDefaultMaterial                        = GetBool(new IntPtr(p + 0x014)); // 0245A68415D8 0x14 PopDefaultMaterial          ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.ClipUnregisterDrawCommand                 = GetObject<RenderChainCommand>(new IntPtr(p + 0x018), ReversePrism.DataModels.RenderChainCommand.FromPointer); // 0245A68415F8 0x18 ClipUnregisterDrawCommand   ( 0001866549D0 ModelClassType RenderChainCommand RenderChainCommand RenderChainCommand Pointer )
-            value.ClipperRegisterIndexOffset                = GetInt32(new IntPtr(p + 0x040)); // 0245A6841658 0x40 ClipperRegisterIndexOffset  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.MaskStencilRef                            = GetInt32(new IntPtr(p + 0x044)); // 0245A6841678 0x44 MaskStencilRef              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.NeedsClosing                              = GetBool(new IntPtr(p + 0x010)); // 0x10 NeedsClosing                ( ModelPrimitiveType bool bool bool Bool )
+            value.PopViewMatrix                             = GetBool(new IntPtr(p + 0x011)); // 0x11 PopViewMatrix               ( ModelPrimitiveType bool bool bool Bool )
+            value.PopScissorClip                            = GetBool(new IntPtr(p + 0x012)); // 0x12 PopScissorClip              ( ModelPrimitiveType bool bool bool Bool )
+            value.BlitAndPopRenderTexture                   = GetBool(new IntPtr(p + 0x013)); // 0x13 BlitAndPopRenderTexture     ( ModelPrimitiveType bool bool bool Bool )
+            value.PopDefaultMaterial                        = GetBool(new IntPtr(p + 0x014)); // 0x14 PopDefaultMaterial          ( ModelPrimitiveType bool bool bool Bool )
+            value.ClipUnregisterDrawCommand                 = GetObject<RenderChainCommand>(new IntPtr(p + 0x018), ReversePrism.DataModels.RenderChainCommand.FromPointer); // 0x18 ClipUnregisterDrawCommand   ( ModelClassType RenderChainCommand RenderChainCommand RenderChainCommand Pointer )
+            value.ClipperRegisterIndexOffset                = GetInt32(new IntPtr(p + 0x040)); // 0x40 ClipperRegisterIndexOffset  ( ModelPrimitiveType int int int Int32 )
+            value.MaskStencilRef                            = GetInt32(new IntPtr(p + 0x044)); // 0x44 MaskStencilRef              ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,6 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
+    // 010 m_Ptr                                    <int> IL2CPP_TYPE_I
     public partial class AutoScope : DataModel
     {
 

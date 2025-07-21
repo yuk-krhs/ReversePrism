@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<ReceiveMissionGaugeRewardArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstMissionGroupIdFieldNumber             int IL2CPP_TYPE_I4
-    // 018 MstMissionGroupId                        0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MstMissionGroupId                        ModelPrimitiveType int int int Int32
     public partial class ReceiveMissionGaugeRewardArgs : DataModel
     {
         public int                                      MstMissionGroupId                       { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ReceiveMissionGaugeRewardArgs() { Pointer= p0 };
 
-            value.MstMissionGroupId                         = GetInt32(new IntPtr(p + 0x018)); // 024662253848 0x18 MstMissionGroupId           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstMissionGroupId                         = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstMissionGroupId           ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

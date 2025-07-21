@@ -12,5 +12,6 @@ namespace ReversePrism.DataModels
     {
         Proto2,
         Proto3,
+        Editions,
     }
 }

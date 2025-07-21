@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 LoadingViewType                          0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 LoadingViewType                          ModelPrimitiveType int int int Int32
     public partial class TitleArgument : DataModel
     {
         public int                                      LoadingViewType                         { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TitleArgument() { Pointer= p0 };
 
-            value.LoadingViewType                           = GetInt32(new IntPtr(p + 0x010)); // 0245A44A0A30 0x10 LoadingViewType             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.LoadingViewType                           = GetInt32(new IntPtr(p + 0x010)); // 0x10 LoadingViewType             ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

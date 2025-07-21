@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CharacterInfoIdRP                        000186714660 ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer
-    // 018 ProduceIdolIdRP                          000186714660 ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer
+    // 010 CharacterInfoIdRP                        ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer
+    // 018 ProduceIdolIdRP                          ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer
     // 020 voDaViMeRP                               ReactiveProperty`1<VoDaViMeViewModel> IL2CPP_TYPE_GENERICINST
     // 028 idolSkillRP                              ReactiveProperty`1<IIdolSkillStatus> IL2CPP_TYPE_GENERICINST
-    // 030 StandingOrder                            0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 030 StandingOrder                            ModelPrimitiveType int int int Int32
     public partial class ProduceUnitEditIdolViewModel : DataModel
     {
         public IntReactiveProperty?                     CharacterInfoIdRP                       { get; set; }
@@ -27,9 +27,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceUnitEditIdolViewModel() { Pointer= p0 };
 
-            value.CharacterInfoIdRP                         = GetObject<IntReactiveProperty>(new IntPtr(p + 0x010), ReversePrism.DataModels.IntReactiveProperty.FromPointer); // 0246661F8700 0x10 CharacterInfoIdRP           ( 000186714660 ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer )
-            value.ProduceIdolIdRP                           = GetObject<IntReactiveProperty>(new IntPtr(p + 0x018), ReversePrism.DataModels.IntReactiveProperty.FromPointer); // 0246661F8720 0x18 ProduceIdolIdRP             ( 000186714660 ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer )
-            value.StandingOrder                             = GetInt32(new IntPtr(p + 0x030)); // 0246661F8780 0x30 StandingOrder               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CharacterInfoIdRP                         = GetObject<IntReactiveProperty>(new IntPtr(p + 0x010), ReversePrism.DataModels.IntReactiveProperty.FromPointer); // 0x10 CharacterInfoIdRP           ( ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer )
+            value.ProduceIdolIdRP                           = GetObject<IntReactiveProperty>(new IntPtr(p + 0x018), ReversePrism.DataModels.IntReactiveProperty.FromPointer); // 0x18 ProduceIdolIdRP             ( ModelClassType IntReactiveProperty IntReactiveProperty IntReactiveProperty Pointer )
+            value.StandingOrder                             = GetInt32(new IntPtr(p + 0x030)); // 0x30 StandingOrder               ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

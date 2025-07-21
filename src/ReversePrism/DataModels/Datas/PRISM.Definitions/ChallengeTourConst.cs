@@ -8,9 +8,6 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 000 TopResourceTagName                       string IL2CPP_TYPE_STRING
-    // 000 DetailResourceTagName                    string IL2CPP_TYPE_STRING
-    // 000 UnitEditResourceTagName                  string IL2CPP_TYPE_STRING
     // 000 FilterTitle                              string IL2CPP_TYPE_STRING
     // 000 ResultAnimGet                            string IL2CPP_TYPE_STRING
     // 000 ResultAnimStar                           string IL2CPP_TYPE_STRING

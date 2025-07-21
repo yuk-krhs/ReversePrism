@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 Default                                  YogaConfig IL2CPP_TYPE_CLASS
     // 010 _ygConfig                                <int> IL2CPP_TYPE_I
-    // 018 Logger                                   0001865B1F80 ModelClassType Logger Logger Logger Pointer
+    // 018 Logger                                   ModelClassType Logger Logger Logger Pointer
     public partial class YogaConfig : DataModel
     {
         public Logger?                                  Logger                                  { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new YogaConfig() { Pointer= p0 };
 
-            value.Logger                                    = GetObject<Logger>(new IntPtr(p + 0x018), ReversePrism.DataModels.Logger.FromPointer); // 0245A669CB70 0x18 Logger                      ( 0001865B1F80 ModelClassType Logger Logger Logger Pointer )
+            value.Logger                                    = GetObject<Logger>(new IntPtr(p + 0x018), ReversePrism.DataModels.Logger.FromPointer); // 0x18 Logger                      ( ModelClassType Logger Logger Logger Pointer )
 
             return value;
         }

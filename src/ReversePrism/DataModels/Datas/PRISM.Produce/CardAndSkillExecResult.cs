@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ExecuteEffectDisplayIDs                  000185CECF28 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer
-    // 018 Executor                                 0001866D6F30 ModelClassType InGamePlayerExecActionResult InGamePlayerExecActionResult InGamePlayerExecActionResult Pointer
-    // 020 Opponent                                 0001866D6F30 ModelClassType InGamePlayerExecActionResult InGamePlayerExecActionResult InGamePlayerExecActionResult Pointer
+    // 010 ExecuteEffectDisplayIDs                  ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer
+    // 018 Executor                                 ModelClassType InGamePlayerExecActionResult InGamePlayerExecActionResult InGamePlayerExecActionResult Pointer
+    // 020 Opponent                                 ModelClassType InGamePlayerExecActionResult InGamePlayerExecActionResult InGamePlayerExecActionResult Pointer
     public partial class CardAndSkillExecResult : DataModel
     {
         public List<int>?                               ExecuteEffectDisplayIDs                 { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CardAndSkillExecResult() { Pointer= p0 };
 
-            value.ExecuteEffectDisplayIDs                   = GetInt32List(new IntPtr(p + 0x010)); // 024665A25710 0x10 ExecuteEffectDisplayIDs     ( 000185CECF28 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
-            value.Executor                                  = GetObject<InGamePlayerExecActionResult>(new IntPtr(p + 0x018), ReversePrism.DataModels.InGamePlayerExecActionResult.FromPointer); // 024665A25730 0x18 Executor                    ( 0001866D6F30 ModelClassType InGamePlayerExecActionResult InGamePlayerExecActionResult InGamePlayerExecActionResult Pointer )
-            value.Opponent                                  = GetObject<InGamePlayerExecActionResult>(new IntPtr(p + 0x020), ReversePrism.DataModels.InGamePlayerExecActionResult.FromPointer); // 024665A25750 0x20 Opponent                    ( 0001866D6F30 ModelClassType InGamePlayerExecActionResult InGamePlayerExecActionResult InGamePlayerExecActionResult Pointer )
+            value.ExecuteEffectDisplayIDs                   = GetInt32List(new IntPtr(p + 0x010)); // 0x10 ExecuteEffectDisplayIDs     ( ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
+            value.Executor                                  = GetObject<InGamePlayerExecActionResult>(new IntPtr(p + 0x018), ReversePrism.DataModels.InGamePlayerExecActionResult.FromPointer); // 0x18 Executor                    ( ModelClassType InGamePlayerExecActionResult InGamePlayerExecActionResult InGamePlayerExecActionResult Pointer )
+            value.Opponent                                  = GetObject<InGamePlayerExecActionResult>(new IntPtr(p + 0x020), ReversePrism.DataModels.InGamePlayerExecActionResult.FromPointer); // 0x20 Opponent                    ( ModelClassType InGamePlayerExecActionResult InGamePlayerExecActionResult InGamePlayerExecActionResult Pointer )
 
             return value;
         }

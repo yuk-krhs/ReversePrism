@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 078 M_TelemetryMetricsService                00018666FD70 ModelClassType ITelemetryMetricsService ITelemetryMetricsService ITelemetryMetricsService Pointer
-    // 080 M_TelemetryDiagnostics                   00018666E030 ModelClassType ITelemetryDiagnostics ITelemetryDiagnostics ITelemetryDiagnostics Pointer
+    // 078 M_TelemetryMetricsService                ModelClassType ITelemetryMetricsService ITelemetryMetricsService ITelemetryMetricsService Pointer
+    // 080 M_TelemetryDiagnostics                   ModelClassType ITelemetryDiagnostics ITelemetryDiagnostics ITelemetryDiagnostics Pointer
     public partial class MetricizedGooglePlayStoreService : DataModel
     {
         public ITelemetryMetricsService?                M_TelemetryMetricsService               { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MetricizedGooglePlayStoreService() { Pointer= p0 };
 
-            value.M_TelemetryMetricsService                 = GetObject<ITelemetryMetricsService>(new IntPtr(p + 0x078), ReversePrism.DataModels.ITelemetryMetricsService.FromPointer); // 0245A68C9920 0x78 M_TelemetryMetricsService   ( 00018666FD70 ModelClassType ITelemetryMetricsService ITelemetryMetricsService ITelemetryMetricsService Pointer )
-            value.M_TelemetryDiagnostics                    = GetObject<ITelemetryDiagnostics>(new IntPtr(p + 0x080), ReversePrism.DataModels.ITelemetryDiagnostics.FromPointer); // 0245A68C9940 0x80 M_TelemetryDiagnostics      ( 00018666E030 ModelClassType ITelemetryDiagnostics ITelemetryDiagnostics ITelemetryDiagnostics Pointer )
+            value.M_TelemetryMetricsService                 = GetObject<ITelemetryMetricsService>(new IntPtr(p + 0x078), ReversePrism.DataModels.ITelemetryMetricsService.FromPointer); // 0x78 M_TelemetryMetricsService   ( ModelClassType ITelemetryMetricsService ITelemetryMetricsService ITelemetryMetricsService Pointer )
+            value.M_TelemetryDiagnostics                    = GetObject<ITelemetryDiagnostics>(new IntPtr(p + 0x080), ReversePrism.DataModels.ITelemetryDiagnostics.FromPointer); // 0x80 M_TelemetryDiagnostics      ( ModelClassType ITelemetryDiagnostics ITelemetryDiagnostics ITelemetryDiagnostics Pointer )
 
             return value;
         }

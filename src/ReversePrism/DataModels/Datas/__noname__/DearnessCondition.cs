@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 RequiredDearness                         0001865F36C0 ModelPrimitiveType int int int Int32
-    // 01C Dearness                                 0001865F36C0 ModelPrimitiveType int int int Int32
-    // 020 MstIdolId                                0001865F36C0 ModelPrimitiveType int int int Int32
+    // 018 RequiredDearness                         ModelPrimitiveType int int int Int32
+    // 01C Dearness                                 ModelPrimitiveType int int int Int32
+    // 020 MstIdolId                                ModelPrimitiveType int int int Int32
     public partial class DearnessCondition : DataModel
     {
         public int                                      RequiredDearness                        { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DearnessCondition() { Pointer= p0 };
 
-            value.RequiredDearness                          = GetInt32(new IntPtr(p + 0x018)); // 024664D94318 0x18 RequiredDearness            ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Dearness                                  = GetInt32(new IntPtr(p + 0x01C)); // 024664D94338 0x1C Dearness                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x020)); // 024664D94358 0x20 MstIdolId                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.RequiredDearness                          = GetInt32(new IntPtr(p + 0x018)); // 0x18 RequiredDearness            ( ModelPrimitiveType int int int Int32 )
+            value.Dearness                                  = GetInt32(new IntPtr(p + 0x01C)); // 0x1C Dearness                    ( ModelPrimitiveType int int int Int32 )
+            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x020)); // 0x20 MstIdolId                   ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

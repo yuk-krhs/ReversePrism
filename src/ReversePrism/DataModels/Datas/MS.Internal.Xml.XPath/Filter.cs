@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Input                                    0001866E9E90 ModelClassType AstNode AstNode AstNode Pointer
-    // 018 Condition                                0001866E9E90 ModelClassType AstNode AstNode AstNode Pointer
+    // 010 Input                                    ModelClassType AstNode AstNode AstNode Pointer
+    // 018 Condition                                ModelClassType AstNode AstNode AstNode Pointer
     public partial class Filter : DataModel
     {
         public AstNode?                                 Input                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Filter() { Pointer= p0 };
 
-            value.Input                                     = GetObject<AstNode>(new IntPtr(p + 0x010), ReversePrism.DataModels.AstNode.FromPointer); // 024667665580 0x10 Input                       ( 0001866E9E90 ModelClassType AstNode AstNode AstNode Pointer )
-            value.Condition                                 = GetObject<AstNode>(new IntPtr(p + 0x018), ReversePrism.DataModels.AstNode.FromPointer); // 0246676655A0 0x18 Condition                   ( 0001866E9E90 ModelClassType AstNode AstNode AstNode Pointer )
+            value.Input                                     = GetObject<AstNode>(new IntPtr(p + 0x010), ReversePrism.DataModels.AstNode.FromPointer); // 0x10 Input                       ( ModelClassType AstNode AstNode AstNode Pointer )
+            value.Condition                                 = GetObject<AstNode>(new IntPtr(p + 0x018), ReversePrism.DataModels.AstNode.FromPointer); // 0x18 Condition                   ( ModelClassType AstNode AstNode AstNode Pointer )
 
             return value;
         }

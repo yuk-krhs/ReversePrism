@@ -10,14 +10,14 @@ namespace ReversePrism.DataModels
 
     // 000 s_expandoTryGetValue                     MethodInfo IL2CPP_TYPE_CLASS
     // 008 s_expandoTrySetValue                     MethodInfo IL2CPP_TYPE_CLASS
-    // 010 S_expandoTryDeleteValue                  0001866144A0 ModelClassType MethodInfo MethodInfo MethodInfo Pointer
-    // 018 S_expandoPromoteClass                    0001866144A0 ModelClassType MethodInfo MethodInfo MethodInfo Pointer
-    // 020 S_expandoCheckVersion                    0001866144A0 ModelClassType MethodInfo MethodInfo MethodInfo Pointer
+    // 010 S_expandoTryDeleteValue                  ModelClassType MethodInfo MethodInfo MethodInfo Pointer
+    // 018 S_expandoPromoteClass                    ModelClassType MethodInfo MethodInfo MethodInfo Pointer
+    // 020 S_expandoCheckVersion                    ModelClassType MethodInfo MethodInfo MethodInfo Pointer
     // 010 LockObject                               <object> IL2CPP_TYPE_OBJECT
-    // 018 Data                                     000186665450 ModelClassType ExpandoData ExpandoData ExpandoData Pointer
-    // 020 Count                                    0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 Data                                     ModelClassType ExpandoData ExpandoData ExpandoData Pointer
+    // 020 Count                                    ModelPrimitiveType int int int Int32
     // 028 Uninitialized                            <object> IL2CPP_TYPE_OBJECT
-    // 028 PropertyChanged                          0001865D1C20 ModelClassType PropertyChangedEventHandler PropertyChangedEventHandler PropertyChangedEventHandler Pointer
+    // 028 PropertyChanged                          ModelClassType PropertyChangedEventHandler PropertyChangedEventHandler PropertyChangedEventHandler Pointer
     public partial class ExpandoObject : DataModel
     {
         public MethodInfo?                              S_expandoTryDeleteValue                 { get; set; }
@@ -35,12 +35,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExpandoObject() { Pointer= p0 };
 
-            value.S_expandoTryDeleteValue                   = GetObject<MethodInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.MethodInfo.FromPointer); // 02466A0ADF70 0x10 S_expandoTryDeleteValue     ( 0001866144A0 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
-            value.S_expandoPromoteClass                     = GetObject<MethodInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.MethodInfo.FromPointer); // 02466A0ADF90 0x18 S_expandoPromoteClass       ( 0001866144A0 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
-            value.S_expandoCheckVersion                     = GetObject<MethodInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.MethodInfo.FromPointer); // 02466A0ADFB0 0x20 S_expandoCheckVersion       ( 0001866144A0 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
-            value.Data                                      = GetObject<ExpandoData>(new IntPtr(p + 0x018), ReversePrism.DataModels.ExpandoData.FromPointer); // 02466A0ADFF0 0x18 Data                        ( 000186665450 ModelClassType ExpandoData ExpandoData ExpandoData Pointer )
-            value.Count                                     = GetInt32(new IntPtr(p + 0x020)); // 02466A0AE010 0x20 Count                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.PropertyChanged                           = GetObject<PropertyChangedEventHandler>(new IntPtr(p + 0x028), ReversePrism.DataModels.PropertyChangedEventHandler.FromPointer); // 02466A0AE050 0x28 PropertyChanged             ( 0001865D1C20 ModelClassType PropertyChangedEventHandler PropertyChangedEventHandler PropertyChangedEventHandler Pointer )
+            value.S_expandoTryDeleteValue                   = GetObject<MethodInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.MethodInfo.FromPointer); // 0x10 S_expandoTryDeleteValue     ( ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
+            value.S_expandoPromoteClass                     = GetObject<MethodInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.MethodInfo.FromPointer); // 0x18 S_expandoPromoteClass       ( ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
+            value.S_expandoCheckVersion                     = GetObject<MethodInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.MethodInfo.FromPointer); // 0x20 S_expandoCheckVersion       ( ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
+            value.Data                                      = GetObject<ExpandoData>(new IntPtr(p + 0x018), ReversePrism.DataModels.ExpandoData.FromPointer); // 0x18 Data                        ( ModelClassType ExpandoData ExpandoData ExpandoData Pointer )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x020)); // 0x20 Count                       ( ModelPrimitiveType int int int Int32 )
+            value.PropertyChanged                           = GetObject<PropertyChangedEventHandler>(new IntPtr(p + 0x028), ReversePrism.DataModels.PropertyChangedEventHandler.FromPointer); // 0x28 PropertyChanged             ( ModelClassType PropertyChangedEventHandler PropertyChangedEventHandler PropertyChangedEventHandler Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CacheStartSupportCooperationEventReply   000186656CD0 ModelClassType IStartSupportCooperationEventReply IStartSupportCooperationEventReply IStartSupportCooperationEventReply Pointer
+    // 010 CacheStartSupportCooperationEventReply   ModelClassType IStartSupportCooperationEventReply IStartSupportCooperationEventReply IStartSupportCooperationEventReply Pointer
     public partial class StartSupportCooperationEventModel : DataModel
     {
         public IStartSupportCooperationEventReply?      CacheStartSupportCooperationEventReply  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StartSupportCooperationEventModel() { Pointer= p0 };
 
-            value.CacheStartSupportCooperationEventReply    = GetObject<IStartSupportCooperationEventReply>(new IntPtr(p + 0x010), ReversePrism.DataModels.IStartSupportCooperationEventReply.FromPointer); // 024666631C58 0x10 CacheStartSupportCooperationEventReply ( 000186656CD0 ModelClassType IStartSupportCooperationEventReply IStartSupportCooperationEventReply IStartSupportCooperationEventReply Pointer )
+            value.CacheStartSupportCooperationEventReply    = GetObject<IStartSupportCooperationEventReply>(new IntPtr(p + 0x010), ReversePrism.DataModels.IStartSupportCooperationEventReply.FromPointer); // 0x10 CacheStartSupportCooperationEventReply ( ModelClassType IStartSupportCooperationEventReply IStartSupportCooperationEventReply IStartSupportCooperationEventReply Pointer )
 
             return value;
         }

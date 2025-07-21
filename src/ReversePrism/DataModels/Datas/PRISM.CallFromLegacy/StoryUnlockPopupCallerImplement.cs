@@ -8,7 +8,6 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 factory                                  PopupViewFactory`1<IStoryUnlockPopupView> IL2CPP_TYPE_GENERICINST
     public partial class StoryUnlockPopupCallerImplement : DataModel
     {
 

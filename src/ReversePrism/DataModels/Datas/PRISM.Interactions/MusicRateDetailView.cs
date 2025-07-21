@@ -8,11 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 UserInfoView                             00018666E2D0 ModelClassType MusicRateOverlayUserInfoView MusicRateOverlayUserInfoView MusicRateOverlayUserInfoView Pointer
-    // 030 TabGroup                                 0001866F5B90 ModelClassType UITabGroupEx UITabGroupEx UITabGroupEx Pointer
-    // 038 RewardListView                           00018666FD80 ModelClassType MusicRateRewardListView MusicRateRewardListView MusicRateRewardListView Pointer
-    // 040 TargetMusicListView                      000186670730 ModelClassType MusicRateTargetMusicListView MusicRateTargetMusicListView MusicRateTargetMusicListView Pointer
-    // 048 IsTargetMusicListInitialized             000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 028 UserInfoView                             ModelClassType MusicRateOverlayUserInfoView MusicRateOverlayUserInfoView MusicRateOverlayUserInfoView Pointer
+    // 030 TabGroup                                 ModelClassType UITabGroupEx UITabGroupEx UITabGroupEx Pointer
+    // 038 RewardListView                           ModelClassType MusicRateRewardListView MusicRateRewardListView MusicRateRewardListView Pointer
+    // 040 TargetMusicListView                      ModelClassType MusicRateTargetMusicListView MusicRateTargetMusicListView MusicRateTargetMusicListView Pointer
+    // 048 IsRewardListInitialized                  ModelPrimitiveType bool bool bool Bool
+    // 049 IsTargetMusicListInitialized             ModelPrimitiveType bool bool bool Bool
     // 050 playMusicSubject                         Subject`1<ValueTuple`2<int, SongDifficultyLevel>> IL2CPP_TYPE_GENERICINST
     public partial class MusicRateDetailView : DataModel
     {
@@ -20,6 +21,7 @@ namespace ReversePrism.DataModels
         public UITabGroupEx?                            TabGroup                                { get; set; }
         public MusicRateRewardListView?                 RewardListView                          { get; set; }
         public MusicRateTargetMusicListView?            TargetMusicListView                     { get; set; }
+        public bool                                     IsRewardListInitialized                 { get; set; }
         public bool                                     IsTargetMusicListInitialized            { get; set; }
 
         public static MusicRateDetailView? FromPointer(IntPtr p0)
@@ -30,11 +32,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MusicRateDetailView() { Pointer= p0 };
 
-            value.UserInfoView                              = GetObject<MusicRateOverlayUserInfoView>(new IntPtr(p + 0x028), ReversePrism.DataModels.MusicRateOverlayUserInfoView.FromPointer); // 02466B467760 0x28 UserInfoView                ( 00018666E2D0 ModelClassType MusicRateOverlayUserInfoView MusicRateOverlayUserInfoView MusicRateOverlayUserInfoView Pointer )
-            value.TabGroup                                  = GetObject<UITabGroupEx>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITabGroupEx.FromPointer); // 02466B467780 0x30 TabGroup                    ( 0001866F5B90 ModelClassType UITabGroupEx UITabGroupEx UITabGroupEx Pointer )
-            value.RewardListView                            = GetObject<MusicRateRewardListView>(new IntPtr(p + 0x038), ReversePrism.DataModels.MusicRateRewardListView.FromPointer); // 02466B4677A0 0x38 RewardListView              ( 00018666FD80 ModelClassType MusicRateRewardListView MusicRateRewardListView MusicRateRewardListView Pointer )
-            value.TargetMusicListView                       = GetObject<MusicRateTargetMusicListView>(new IntPtr(p + 0x040), ReversePrism.DataModels.MusicRateTargetMusicListView.FromPointer); // 02466B4677C0 0x40 TargetMusicListView         ( 000186670730 ModelClassType MusicRateTargetMusicListView MusicRateTargetMusicListView MusicRateTargetMusicListView Pointer )
-            value.IsTargetMusicListInitialized              = GetBool(new IntPtr(p + 0x048)); // 02466B4677E0 0x48 IsTargetMusicListInitialized ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.UserInfoView                              = GetObject<MusicRateOverlayUserInfoView>(new IntPtr(p + 0x028), ReversePrism.DataModels.MusicRateOverlayUserInfoView.FromPointer); // 0x28 UserInfoView                ( ModelClassType MusicRateOverlayUserInfoView MusicRateOverlayUserInfoView MusicRateOverlayUserInfoView Pointer )
+            value.TabGroup                                  = GetObject<UITabGroupEx>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITabGroupEx.FromPointer); // 0x30 TabGroup                    ( ModelClassType UITabGroupEx UITabGroupEx UITabGroupEx Pointer )
+            value.RewardListView                            = GetObject<MusicRateRewardListView>(new IntPtr(p + 0x038), ReversePrism.DataModels.MusicRateRewardListView.FromPointer); // 0x38 RewardListView              ( ModelClassType MusicRateRewardListView MusicRateRewardListView MusicRateRewardListView Pointer )
+            value.TargetMusicListView                       = GetObject<MusicRateTargetMusicListView>(new IntPtr(p + 0x040), ReversePrism.DataModels.MusicRateTargetMusicListView.FromPointer); // 0x40 TargetMusicListView         ( ModelClassType MusicRateTargetMusicListView MusicRateTargetMusicListView MusicRateTargetMusicListView Pointer )
+            value.IsRewardListInitialized                   = GetBool(new IntPtr(p + 0x048)); // 0x48 IsRewardListInitialized     ( ModelPrimitiveType bool bool bool Bool )
+            value.IsTargetMusicListInitialized              = GetBool(new IntPtr(p + 0x049)); // 0x49 IsTargetMusicListInitialized ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

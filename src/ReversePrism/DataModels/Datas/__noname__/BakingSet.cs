@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Name                                     0001866722E0 ModelPrimitiveType string string string String
-    // 018 SceneGUIDs                               000185D0D6C8 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
-    // 020 Settings                                 000186520410 ModelEnumType ProbeVolumeBakingProcessSettings ProbeVolumeBakingProcessSettings ProbeVolumeBakingProcessSettings Int32
-    // 050 Profile                                  00018651F180 ModelClassType ProbeReferenceVolumeProfile ProbeReferenceVolumeProfile ProbeReferenceVolumeProfile Pointer
-    // 058 LightingScenarios                        000185D0D6C8 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
+    // 010 Name                                     ModelPrimitiveType string string string String
+    // 018 SceneGUIDs                               ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
+    // 020 Settings                                 ModelEnumType ProbeVolumeBakingProcessSettings ProbeVolumeBakingProcessSettings ProbeVolumeBakingProcessSettings Int32
+    // 050 Profile                                  ModelClassType ProbeReferenceVolumeProfile ProbeReferenceVolumeProfile ProbeReferenceVolumeProfile Pointer
+    // 058 LightingScenarios                        ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
     public partial class BakingSet : DataModel
     {
         public string                                   Name                                    { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BakingSet() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0246692872A0 0x10 Name                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.SceneGUIDs                                = GetStringList(new IntPtr(p + 0x018)); // 0246692872C0 0x18 SceneGUIDs                  ( 000185D0D6C8 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
-            value.Settings                                  = (ProbeVolumeBakingProcessSettings)GetInt32(new IntPtr(p + 0x020)); // 0246692872E0 0x20 Settings                    ( 000186520410 ModelEnumType ProbeVolumeBakingProcessSettings ProbeVolumeBakingProcessSettings ProbeVolumeBakingProcessSettings Int32 )
-            value.Profile                                   = GetObject<ProbeReferenceVolumeProfile>(new IntPtr(p + 0x050), ReversePrism.DataModels.ProbeReferenceVolumeProfile.FromPointer); // 024669287300 0x50 Profile                     ( 00018651F180 ModelClassType ProbeReferenceVolumeProfile ProbeReferenceVolumeProfile ProbeReferenceVolumeProfile Pointer )
-            value.LightingScenarios                         = GetStringList(new IntPtr(p + 0x058)); // 024669287320 0x58 LightingScenarios           ( 000185D0D6C8 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Name                        ( ModelPrimitiveType string string string String )
+            value.SceneGUIDs                                = GetStringList(new IntPtr(p + 0x018)); // 0x18 SceneGUIDs                  ( ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.Settings                                  = (ProbeVolumeBakingProcessSettings)GetInt32(new IntPtr(p + 0x020)); // 0x20 Settings                    ( ModelEnumType ProbeVolumeBakingProcessSettings ProbeVolumeBakingProcessSettings ProbeVolumeBakingProcessSettings Int32 )
+            value.Profile                                   = GetObject<ProbeReferenceVolumeProfile>(new IntPtr(p + 0x050), ReversePrism.DataModels.ProbeReferenceVolumeProfile.FromPointer); // 0x50 Profile                     ( ModelClassType ProbeReferenceVolumeProfile ProbeReferenceVolumeProfile ProbeReferenceVolumeProfile Pointer )
+            value.LightingScenarios                         = GetStringList(new IntPtr(p + 0x058)); // 0x58 LightingScenarios           ( ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
 
             return value;
         }

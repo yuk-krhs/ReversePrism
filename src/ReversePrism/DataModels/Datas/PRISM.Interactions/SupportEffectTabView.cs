@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 SelfSCharaIconViews                      000185CA2A68 ModelClassListType SCharaIconView[] SCharaIconView[] List<SCharaIconView> Pointer
-    // 028 FriendSCharaIconView                     0001866ABAC0 ModelClassType SCharaIconView SCharaIconView SCharaIconView Pointer
-    // 030 SlotCountText                            0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 038 SupportEffectListView                    0001866DCD80 ModelClassType InProduceSupportEffectContentListView InProduceSupportEffectContentListView InProduceSupportEffectContentListView Pointer
+    // 020 SelfSCharaIconViews                      ModelClassListType SCharaIconView[] SCharaIconView[] List<SCharaIconView> Pointer
+    // 028 FriendSCharaIconView                     ModelClassType SCharaIconView SCharaIconView SCharaIconView Pointer
+    // 030 SlotCountText                            ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 038 SupportEffectListView                    ModelClassType InProduceSupportEffectContentListView InProduceSupportEffectContentListView InProduceSupportEffectContentListView Pointer
     // 040 onShowSelfSCharaDetailPopup              Subject`1<int> IL2CPP_TYPE_GENERICINST
     // 048 onShowFriendSCharaDetailPopup            Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     public partial class SupportEffectTabView : DataModel
@@ -29,10 +29,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SupportEffectTabView() { Pointer= p0 };
 
-            value.SelfSCharaIconViews                       = GetObjectList<SCharaIconView>(new IntPtr(p + 0x020), ReversePrism.DataModels.SCharaIconView.FromPointer); // 02466A145D40 0x20 SelfSCharaIconViews         ( 000185CA2A68 ModelClassListType SCharaIconView[] SCharaIconView[] List<SCharaIconView> Pointer )
-            value.FriendSCharaIconView                      = GetObject<SCharaIconView>(new IntPtr(p + 0x028), ReversePrism.DataModels.SCharaIconView.FromPointer); // 02466A145D60 0x28 FriendSCharaIconView        ( 0001866ABAC0 ModelClassType SCharaIconView SCharaIconView SCharaIconView Pointer )
-            value.SlotCountText                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A145D80 0x30 SlotCountText               ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.SupportEffectListView                     = GetObject<InProduceSupportEffectContentListView>(new IntPtr(p + 0x038), ReversePrism.DataModels.InProduceSupportEffectContentListView.FromPointer); // 02466A145DA0 0x38 SupportEffectListView       ( 0001866DCD80 ModelClassType InProduceSupportEffectContentListView InProduceSupportEffectContentListView InProduceSupportEffectContentListView Pointer )
+            value.SelfSCharaIconViews                       = GetObjectList<SCharaIconView>(new IntPtr(p + 0x020), ReversePrism.DataModels.SCharaIconView.FromPointer); // 0x20 SelfSCharaIconViews         ( ModelClassListType SCharaIconView[] SCharaIconView[] List<SCharaIconView> Pointer )
+            value.FriendSCharaIconView                      = GetObject<SCharaIconView>(new IntPtr(p + 0x028), ReversePrism.DataModels.SCharaIconView.FromPointer); // 0x28 FriendSCharaIconView        ( ModelClassType SCharaIconView SCharaIconView SCharaIconView Pointer )
+            value.SlotCountText                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x30 SlotCountText               ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.SupportEffectListView                     = GetObject<InProduceSupportEffectContentListView>(new IntPtr(p + 0x038), ReversePrism.DataModels.InProduceSupportEffectContentListView.FromPointer); // 0x38 SupportEffectListView       ( ModelClassType InProduceSupportEffectContentListView InProduceSupportEffectContentListView InProduceSupportEffectContentListView Pointer )
 
             return value;
         }

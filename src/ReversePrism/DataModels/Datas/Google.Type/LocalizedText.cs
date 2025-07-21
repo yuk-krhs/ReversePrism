@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<LocalizedText> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 TextFieldNumber                          int IL2CPP_TYPE_I4
-    // 018 Text                                     000186671910 ModelPrimitiveType string string string String
+    // 018 Text                                     ModelPrimitiveType string string string String
     // 000 LanguageCodeFieldNumber                  int IL2CPP_TYPE_I4
-    // 020 LanguageCode                             000186671910 ModelPrimitiveType string string string String
+    // 020 LanguageCode                             ModelPrimitiveType string string string String
     public partial class LocalizedText : DataModel
     {
         public string                                   Text                                    { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LocalizedText() { Pointer= p0 };
 
-            value.Text                                      = GetString(new IntPtr(p + 0x018)); // 02466A7026B0 0x18 Text                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.LanguageCode                              = GetString(new IntPtr(p + 0x020)); // 02466A7026F0 0x20 LanguageCode                ( 000186671910 ModelPrimitiveType string string string String )
+            value.Text                                      = GetString(new IntPtr(p + 0x018)); // 0x18 Text                        ( ModelPrimitiveType string string string String )
+            value.LanguageCode                              = GetString(new IntPtr(p + 0x020)); // 0x20 LanguageCode                ( ModelPrimitiveType string string string String )
 
             return value;
         }

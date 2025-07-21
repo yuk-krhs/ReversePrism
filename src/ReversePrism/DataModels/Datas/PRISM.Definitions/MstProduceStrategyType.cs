@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Id                                       0001865F4260 ModelPrimitiveType int int int Int32
+    // 010 Id                                       ModelPrimitiveType int int int Int32
     public partial class MstProduceStrategyType : DataModel
     {
         public int                                      Id                                      { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MstProduceStrategyType() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A461C618 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0x10 Id                          ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

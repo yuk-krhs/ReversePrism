@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 030 AtomEx3DsourceForAmbisonics              0001866445E0 ModelClassType CriAtomEx3dSource CriAtomEx3dSource CriAtomEx3dSource Pointer
-    // 038 AmbisonicSourceOrientationFront          0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32
-    // 044 AmbisonicSourceOrientationTop            0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32
-    // 050 LastEulerOfAmbisonicSource               0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 030 AtomEx3DsourceForAmbisonics              ModelClassType CriAtomEx3dSource CriAtomEx3dSource CriAtomEx3dSource Pointer
+    // 038 AmbisonicSourceOrientationFront          ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 044 AmbisonicSourceOrientationTop            ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 050 LastEulerOfAmbisonicSource               ModelEnumType Vector3 Vector3 Vector3 Int32
     public partial class CriManaAmbisonicSource : DataModel
     {
         public CriAtomEx3dSource?                       AtomEx3DsourceForAmbisonics             { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CriManaAmbisonicSource() { Pointer= p0 };
 
-            value.AtomEx3DsourceForAmbisonics               = GetObject<CriAtomEx3dSource>(new IntPtr(p + 0x030), ReversePrism.DataModels.CriAtomEx3dSource.FromPointer); // 02466AD257B0 0x30 AtomEx3DsourceForAmbisonics ( 0001866445E0 ModelClassType CriAtomEx3dSource CriAtomEx3dSource CriAtomEx3dSource Pointer )
-            value.AmbisonicSourceOrientationFront           = (Vector3)GetInt32(new IntPtr(p + 0x038)); // 02466AD257D0 0x38 AmbisonicSourceOrientationFront ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.AmbisonicSourceOrientationTop             = (Vector3)GetInt32(new IntPtr(p + 0x044)); // 02466AD257F0 0x44 AmbisonicSourceOrientationTop ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.LastEulerOfAmbisonicSource                = (Vector3)GetInt32(new IntPtr(p + 0x050)); // 02466AD25810 0x50 LastEulerOfAmbisonicSource  ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.AtomEx3DsourceForAmbisonics               = GetObject<CriAtomEx3dSource>(new IntPtr(p + 0x030), ReversePrism.DataModels.CriAtomEx3dSource.FromPointer); // 0x30 AtomEx3DsourceForAmbisonics ( ModelClassType CriAtomEx3dSource CriAtomEx3dSource CriAtomEx3dSource Pointer )
+            value.AmbisonicSourceOrientationFront           = (Vector3)GetInt32(new IntPtr(p + 0x038)); // 0x38 AmbisonicSourceOrientationFront ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.AmbisonicSourceOrientationTop             = (Vector3)GetInt32(new IntPtr(p + 0x044)); // 0x44 AmbisonicSourceOrientationTop ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.LastEulerOfAmbisonicSource                = (Vector3)GetInt32(new IntPtr(p + 0x050)); // 0x50 LastEulerOfAmbisonicSource  ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
 
             return value;
         }

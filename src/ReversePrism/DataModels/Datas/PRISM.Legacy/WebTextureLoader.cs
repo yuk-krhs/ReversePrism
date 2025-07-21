@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 CacheDirectoryName                       string IL2CPP_TYPE_STRING
     // 010 downloadings                             HashSet`1<string> IL2CPP_TYPE_GENERICINST
     // 018 loadedTextures                           Dictionary`2<string, Texture2D> IL2CPP_TYPE_GENERICINST
-    // 020 Disposed                                 000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 020 Disposed                                 ModelPrimitiveType bool bool bool Bool
     public partial class WebTextureLoader : DataModel
     {
         public bool                                     Disposed                                { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new WebTextureLoader() { Pointer= p0 };
 
-            value.Disposed                                  = GetBool(new IntPtr(p + 0x020)); // 0245A5AF24C8 0x20 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Disposed                                  = GetBool(new IntPtr(p + 0x020)); // 0x20 Disposed                    ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

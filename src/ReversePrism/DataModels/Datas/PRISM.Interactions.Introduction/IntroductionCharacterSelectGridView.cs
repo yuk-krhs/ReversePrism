@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 090 CellPrefab                               000186724F80 ModelClassType IntroductionCharacterSelectGridViewCell IntroductionCharacterSelectGridViewCell IntroductionCharacterSelectGridViewCell Pointer
+    // 090 CellPrefab                               ModelClassType IntroductionCharacterSelectGridViewCell IntroductionCharacterSelectGridViewCell IntroductionCharacterSelectGridViewCell Pointer
     public partial class IntroductionCharacterSelectGridView : DataModel
     {
         public IntroductionCharacterSelectGridViewCell? CellPrefab                              { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IntroductionCharacterSelectGridView() { Pointer= p0 };
 
-            value.CellPrefab                                = GetObject<IntroductionCharacterSelectGridViewCell>(new IntPtr(p + 0x090), ReversePrism.DataModels.IntroductionCharacterSelectGridViewCell.FromPointer); // 02466BCB2BE8 0x90 CellPrefab                  ( 000186724F80 ModelClassType IntroductionCharacterSelectGridViewCell IntroductionCharacterSelectGridViewCell IntroductionCharacterSelectGridViewCell Pointer )
+            value.CellPrefab                                = GetObject<IntroductionCharacterSelectGridViewCell>(new IntPtr(p + 0x090), ReversePrism.DataModels.IntroductionCharacterSelectGridViewCell.FromPointer); // 0x90 CellPrefab                  ( ModelClassType IntroductionCharacterSelectGridViewCell IntroductionCharacterSelectGridViewCell IntroductionCharacterSelectGridViewCell Pointer )
 
             return value;
         }

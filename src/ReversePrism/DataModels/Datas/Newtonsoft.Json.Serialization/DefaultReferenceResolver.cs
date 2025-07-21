@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ReferenceCount                           0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 ReferenceCount                           ModelPrimitiveType int int int Int32
     public partial class DefaultReferenceResolver : DataModel
     {
         public int                                      ReferenceCount                          { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DefaultReferenceResolver() { Pointer= p0 };
 
-            value.ReferenceCount                            = GetInt32(new IntPtr(p + 0x010)); // 0246687C3970 0x10 ReferenceCount              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ReferenceCount                            = GetInt32(new IntPtr(p + 0x010)); // 0x10 ReferenceCount              ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

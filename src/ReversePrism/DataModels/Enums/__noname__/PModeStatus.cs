@@ -13,5 +13,7 @@ namespace ReversePrism.DataModels
         Rehearsal,
         OnAir,
         End,
+        BeforeOnAir,
+        AfterOnAir,
     }
 }

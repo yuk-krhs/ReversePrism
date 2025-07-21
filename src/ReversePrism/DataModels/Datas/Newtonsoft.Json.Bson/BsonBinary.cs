@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 030 BinaryType                               00018659B100 ModelEnumType BsonBinaryType BsonBinaryType BsonBinaryType Int32
+    // 030 BinaryType                               ModelEnumType BsonBinaryType BsonBinaryType BsonBinaryType Int32
     public partial class BsonBinary : DataModel
     {
         public BsonBinaryType                           BinaryType                              { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BsonBinary() { Pointer= p0 };
 
-            value.BinaryType                                = (BsonBinaryType)GetInt32(new IntPtr(p + 0x030)); // 0246688F7208 0x30 BinaryType                  ( 00018659B100 ModelEnumType BsonBinaryType BsonBinaryType BsonBinaryType Int32 )
+            value.BinaryType                                = (BsonBinaryType)GetInt32(new IntPtr(p + 0x030)); // 0x30 BinaryType                  ( ModelEnumType BsonBinaryType BsonBinaryType BsonBinaryType Int32 )
 
             return value;
         }

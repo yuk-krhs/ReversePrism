@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Button                                   0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 028 NoticeBadge                              0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 030 NameText                                 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 020 Button                                   ModelClassType UIButton UIButton UIButton Pointer
+    // 028 NoticeBadge                              ModelClassType GameObject GameObject GameObject Pointer
+    // 030 NameText                                 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     public partial class MobileCategoryButton : DataModel
     {
         public UIButton?                                Button                                  { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MobileCategoryButton() { Pointer= p0 };
 
-            value.Button                                    = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 02466B17C4C0 0x20 Button                      ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.NoticeBadge                               = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 02466B17C4E0 0x28 NoticeBadge                 ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.NameText                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B17C500 0x30 NameText                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Button                                    = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 0x20 Button                      ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.NoticeBadge                               = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0x28 NoticeBadge                 ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.NameText                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x30 NameText                    ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

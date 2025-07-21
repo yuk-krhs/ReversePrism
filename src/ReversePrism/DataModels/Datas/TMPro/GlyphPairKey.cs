@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 FirstGlyphIndex                          0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 014 SecondGlyphIndex                         0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 018 Key                                      0001866992B0 ModelPrimitiveType uint uint uint UInt32
+    // 010 FirstGlyphIndex                          ModelPrimitiveType uint uint uint UInt32
+    // 014 SecondGlyphIndex                         ModelPrimitiveType uint uint uint UInt32
+    // 018 Key                                      ModelPrimitiveType uint uint uint UInt32
     public partial class GlyphPairKey : DataModel
     {
         public uint                                     FirstGlyphIndex                         { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GlyphPairKey() { Pointer= p0 };
 
-            value.FirstGlyphIndex                           = GetUInt32(new IntPtr(p + 0x010)); // 02466A6951A0 0x10 FirstGlyphIndex             ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.SecondGlyphIndex                          = GetUInt32(new IntPtr(p + 0x014)); // 02466A6951C0 0x14 SecondGlyphIndex            ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.Key                                       = GetUInt32(new IntPtr(p + 0x018)); // 02466A6951E0 0x18 Key                         ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.FirstGlyphIndex                           = GetUInt32(new IntPtr(p + 0x010)); // 0x10 FirstGlyphIndex             ( ModelPrimitiveType uint uint uint UInt32 )
+            value.SecondGlyphIndex                          = GetUInt32(new IntPtr(p + 0x014)); // 0x14 SecondGlyphIndex            ( ModelPrimitiveType uint uint uint UInt32 )
+            value.Key                                       = GetUInt32(new IntPtr(p + 0x018)); // 0x18 Key                         ( ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

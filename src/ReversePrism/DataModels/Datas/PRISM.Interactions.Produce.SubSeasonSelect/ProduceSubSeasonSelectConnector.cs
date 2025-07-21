@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 090 AdvUI                                    000186669720 ModelClassType ADVUI ADVUI ADVUI Pointer
+    // 088 AdvUI                                    ModelClassType AdvScreenView AdvScreenView AdvScreenView Pointer
     public partial class ProduceSubSeasonSelectConnector : DataModel
     {
-        public ADVUI?                                   AdvUI                                   { get; set; }
+        public AdvScreenView?                           AdvUI                                   { get; set; }
 
         public static ProduceSubSeasonSelectConnector? FromPointer(IntPtr p0)
         {
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceSubSeasonSelectConnector() { Pointer= p0 };
 
-            value.AdvUI                                     = GetObject<ADVUI>(new IntPtr(p + 0x090), ReversePrism.DataModels.ADVUI.FromPointer); // 02466A282770 0x90 AdvUI                       ( 000186669720 ModelClassType ADVUI ADVUI ADVUI Pointer )
+            value.AdvUI                                     = GetObject<AdvScreenView>(new IntPtr(p + 0x088), ReversePrism.DataModels.AdvScreenView.FromPointer); // 0x88 AdvUI                       ( ModelClassType AdvScreenView AdvScreenView AdvScreenView Pointer )
 
             return value;
         }

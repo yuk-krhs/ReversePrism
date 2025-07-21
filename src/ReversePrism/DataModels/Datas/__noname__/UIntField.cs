@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 060 min                                      Func`1<uint> IL2CPP_TYPE_GENERICINST
     // 068 max                                      Func`1<uint> IL2CPP_TYPE_GENERICINST
-    // 070 IncStep                                  0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 074 IntStepMult                              0001866992B0 ModelPrimitiveType uint uint uint UInt32
+    // 070 IncStep                                  ModelPrimitiveType uint uint uint UInt32
+    // 074 IntStepMult                              ModelPrimitiveType uint uint uint UInt32
     public partial class UIntField : DataModel
     {
         public uint                                     IncStep                                 { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UIntField() { Pointer= p0 };
 
-            value.IncStep                                   = GetUInt32(new IntPtr(p + 0x070)); // 0246691DDF40 0x70 IncStep                     ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.IntStepMult                               = GetUInt32(new IntPtr(p + 0x074)); // 0246691DDF60 0x74 IntStepMult                 ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.IncStep                                   = GetUInt32(new IntPtr(p + 0x070)); // 0x70 IncStep                     ( ModelPrimitiveType uint uint uint UInt32 )
+            value.IntStepMult                               = GetUInt32(new IntPtr(p + 0x074)); // 0x74 IntStepMult                 ( ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

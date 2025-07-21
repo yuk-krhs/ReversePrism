@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Text                                     000186672F10 ModelPrimitiveType string string string String
-    // 018 IsBottom                                 0001865965D0 ModelPrimitiveType bool bool bool Bool
+    // 010 Text                                     ModelPrimitiveType string string string String
+    // 018 IsBottom                                 ModelPrimitiveType bool bool bool Bool
     public partial class StepUpGashaRatesNotesCellViewModel : DataModel
     {
         public string                                   Text                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StepUpGashaRatesNotesCellViewModel() { Pointer= p0 };
 
-            value.Text                                      = GetString(new IntPtr(p + 0x010)); // 024665458C88 0x10 Text                        ( 000186672F10 ModelPrimitiveType string string string String )
-            value.IsBottom                                  = GetBool(new IntPtr(p + 0x018)); // 024665458CA8 0x18 IsBottom                    ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.Text                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Text                        ( ModelPrimitiveType string string string String )
+            value.IsBottom                                  = GetBool(new IntPtr(p + 0x018)); // 0x18 IsBottom                    ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

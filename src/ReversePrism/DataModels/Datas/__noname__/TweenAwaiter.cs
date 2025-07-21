@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Tween                                    0001866BF4B0 ModelClassType Tween Tween Tween Pointer
+    // 010 Tween                                    ModelClassType Tween Tween Tween Pointer
     public partial class TweenAwaiter : DataModel
     {
         public Tween?                                   Tween                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TweenAwaiter() { Pointer= p0 };
 
-            value.Tween                                     = GetObject<Tween>(new IntPtr(p + 0x010), ReversePrism.DataModels.Tween.FromPointer); // 0245A5AF1938 0x10 Tween                       ( 0001866BF4B0 ModelClassType Tween Tween Tween Pointer )
+            value.Tween                                     = GetObject<Tween>(new IntPtr(p + 0x010), ReversePrism.DataModels.Tween.FromPointer); // 0x10 Tween                       ( ModelClassType Tween Tween Tween Pointer )
 
             return value;
         }

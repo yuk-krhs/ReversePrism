@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Proxy                                    0001866ED980 ModelClassType ScopedSavedataProxy ScopedSavedataProxy ScopedSavedataProxy Pointer
+    // 010 Proxy                                    ModelClassType ScopedSavedataProxy ScopedSavedataProxy ScopedSavedataProxy Pointer
     public partial class SavedataBase : DataModel
     {
         public ScopedSavedataProxy?                     Proxy                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SavedataBase() { Pointer= p0 };
 
-            value.Proxy                                     = GetObject<ScopedSavedataProxy>(new IntPtr(p + 0x010), ReversePrism.DataModels.ScopedSavedataProxy.FromPointer); // 0245A3DCAEA0 0x10 Proxy                       ( 0001866ED980 ModelClassType ScopedSavedataProxy ScopedSavedataProxy ScopedSavedataProxy Pointer )
+            value.Proxy                                     = GetObject<ScopedSavedataProxy>(new IntPtr(p + 0x010), ReversePrism.DataModels.ScopedSavedataProxy.FromPointer); // 0x10 Proxy                       ( ModelClassType ScopedSavedataProxy ScopedSavedataProxy ScopedSavedataProxy Pointer )
 
             return value;
         }

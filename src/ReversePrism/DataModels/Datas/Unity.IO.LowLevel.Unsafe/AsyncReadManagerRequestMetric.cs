@@ -8,21 +8,21 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 AssetName                                000186672F10 ModelPrimitiveType string string string String
-    // 018 FileName                                 000186672F10 ModelPrimitiveType string string string String
-    // 020 OffsetBytes                              00018669C270 ModelPrimitiveType ulong ulong ulong UInt64
-    // 028 SizeBytes                                00018669C270 ModelPrimitiveType ulong ulong ulong UInt64
-    // 030 AssetTypeId                              00018669C270 ModelPrimitiveType ulong ulong ulong UInt64
-    // 038 CurrentBytesRead                         00018669C270 ModelPrimitiveType ulong ulong ulong UInt64
-    // 040 BatchReadCount                           000186699A20 ModelPrimitiveType uint uint uint UInt32
-    // 044 IsBatchRead                              0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 048 State                                    000186525790 ModelEnumType ProcessingState ProcessingState ProcessingState Int32
-    // 04C ReadType                                 00018657BE60 ModelEnumType FileReadType FileReadType FileReadType Int32
-    // 050 PriorityLevel                            000186515050 ModelEnumType Priority Priority Priority Int32
-    // 054 Subsystem                                0001866E7500 ModelEnumType AssetLoadingSubsystem AssetLoadingSubsystem AssetLoadingSubsystem Int32
-    // 058 RequestTimeMicroseconds                  0001865C35C0 ModelPrimitiveType double double double Double
-    // 060 TimeInQueueMicroseconds                  0001865C35C0 ModelPrimitiveType double double double Double
-    // 068 TotalTimeMicroseconds                    0001865C35C0 ModelPrimitiveType double double double Double
+    // 010 AssetName                                ModelPrimitiveType string string string String
+    // 018 FileName                                 ModelPrimitiveType string string string String
+    // 020 OffsetBytes                              ModelPrimitiveType ulong ulong ulong UInt64
+    // 028 SizeBytes                                ModelPrimitiveType ulong ulong ulong UInt64
+    // 030 AssetTypeId                              ModelPrimitiveType ulong ulong ulong UInt64
+    // 038 CurrentBytesRead                         ModelPrimitiveType ulong ulong ulong UInt64
+    // 040 BatchReadCount                           ModelPrimitiveType uint uint uint UInt32
+    // 044 IsBatchRead                              ModelPrimitiveType bool bool bool Bool
+    // 048 State                                    ModelEnumType ProcessingState ProcessingState ProcessingState Int32
+    // 04C ReadType                                 ModelEnumType FileReadType FileReadType FileReadType Int32
+    // 050 PriorityLevel                            ModelEnumType Priority Priority Priority Int32
+    // 054 Subsystem                                ModelEnumType AssetLoadingSubsystem AssetLoadingSubsystem AssetLoadingSubsystem Int32
+    // 058 RequestTimeMicroseconds                  ModelPrimitiveType double double double Double
+    // 060 TimeInQueueMicroseconds                  ModelPrimitiveType double double double Double
+    // 068 TotalTimeMicroseconds                    ModelPrimitiveType double double double Double
     public partial class AsyncReadManagerRequestMetric : DataModel
     {
         public string                                   AssetName                               { get; set; }
@@ -49,21 +49,21 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AsyncReadManagerRequestMetric() { Pointer= p0 };
 
-            value.AssetName                                 = GetString(new IntPtr(p + 0x010)); // 0245A22FB598 0x10 AssetName                   ( 000186672F10 ModelPrimitiveType string string string String )
-            value.FileName                                  = GetString(new IntPtr(p + 0x018)); // 0245A22FB5B8 0x18 FileName                    ( 000186672F10 ModelPrimitiveType string string string String )
-            value.OffsetBytes                               = GetUInt64(new IntPtr(p + 0x020)); // 0245A22FB5D8 0x20 OffsetBytes                 ( 00018669C270 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.SizeBytes                                 = GetUInt64(new IntPtr(p + 0x028)); // 0245A22FB5F8 0x28 SizeBytes                   ( 00018669C270 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.AssetTypeId                               = GetUInt64(new IntPtr(p + 0x030)); // 0245A22FB618 0x30 AssetTypeId                 ( 00018669C270 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.CurrentBytesRead                          = GetUInt64(new IntPtr(p + 0x038)); // 0245A22FB638 0x38 CurrentBytesRead            ( 00018669C270 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.BatchReadCount                            = GetUInt32(new IntPtr(p + 0x040)); // 0245A22FB658 0x40 BatchReadCount              ( 000186699A20 ModelPrimitiveType uint uint uint UInt32 )
-            value.IsBatchRead                               = GetBool(new IntPtr(p + 0x044)); // 0245A22FB678 0x44 IsBatchRead                 ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.State                                     = (ProcessingState)GetInt32(new IntPtr(p + 0x048)); // 0245A22FB698 0x48 State                       ( 000186525790 ModelEnumType ProcessingState ProcessingState ProcessingState Int32 )
-            value.ReadType                                  = (FileReadType)GetInt32(new IntPtr(p + 0x04C)); // 0245A22FB6B8 0x4C ReadType                    ( 00018657BE60 ModelEnumType FileReadType FileReadType FileReadType Int32 )
-            value.PriorityLevel                             = (Priority)GetInt32(new IntPtr(p + 0x050)); // 0245A22FB6D8 0x50 PriorityLevel               ( 000186515050 ModelEnumType Priority Priority Priority Int32 )
-            value.Subsystem                                 = (AssetLoadingSubsystem)GetInt32(new IntPtr(p + 0x054)); // 0245A22FB6F8 0x54 Subsystem                   ( 0001866E7500 ModelEnumType AssetLoadingSubsystem AssetLoadingSubsystem AssetLoadingSubsystem Int32 )
-            value.RequestTimeMicroseconds                   = GetDouble(new IntPtr(p + 0x058)); // 0245A22FB718 0x58 RequestTimeMicroseconds     ( 0001865C35C0 ModelPrimitiveType double double double Double )
-            value.TimeInQueueMicroseconds                   = GetDouble(new IntPtr(p + 0x060)); // 0245A22FB738 0x60 TimeInQueueMicroseconds     ( 0001865C35C0 ModelPrimitiveType double double double Double )
-            value.TotalTimeMicroseconds                     = GetDouble(new IntPtr(p + 0x068)); // 0245A22FB758 0x68 TotalTimeMicroseconds       ( 0001865C35C0 ModelPrimitiveType double double double Double )
+            value.AssetName                                 = GetString(new IntPtr(p + 0x010)); // 0x10 AssetName                   ( ModelPrimitiveType string string string String )
+            value.FileName                                  = GetString(new IntPtr(p + 0x018)); // 0x18 FileName                    ( ModelPrimitiveType string string string String )
+            value.OffsetBytes                               = GetUInt64(new IntPtr(p + 0x020)); // 0x20 OffsetBytes                 ( ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.SizeBytes                                 = GetUInt64(new IntPtr(p + 0x028)); // 0x28 SizeBytes                   ( ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.AssetTypeId                               = GetUInt64(new IntPtr(p + 0x030)); // 0x30 AssetTypeId                 ( ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.CurrentBytesRead                          = GetUInt64(new IntPtr(p + 0x038)); // 0x38 CurrentBytesRead            ( ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.BatchReadCount                            = GetUInt32(new IntPtr(p + 0x040)); // 0x40 BatchReadCount              ( ModelPrimitiveType uint uint uint UInt32 )
+            value.IsBatchRead                               = GetBool(new IntPtr(p + 0x044)); // 0x44 IsBatchRead                 ( ModelPrimitiveType bool bool bool Bool )
+            value.State                                     = (ProcessingState)GetInt32(new IntPtr(p + 0x048)); // 0x48 State                       ( ModelEnumType ProcessingState ProcessingState ProcessingState Int32 )
+            value.ReadType                                  = (FileReadType)GetInt32(new IntPtr(p + 0x04C)); // 0x4C ReadType                    ( ModelEnumType FileReadType FileReadType FileReadType Int32 )
+            value.PriorityLevel                             = (Priority)GetInt32(new IntPtr(p + 0x050)); // 0x50 PriorityLevel               ( ModelEnumType Priority Priority Priority Int32 )
+            value.Subsystem                                 = (AssetLoadingSubsystem)GetInt32(new IntPtr(p + 0x054)); // 0x54 Subsystem                   ( ModelEnumType AssetLoadingSubsystem AssetLoadingSubsystem AssetLoadingSubsystem Int32 )
+            value.RequestTimeMicroseconds                   = GetDouble(new IntPtr(p + 0x058)); // 0x58 RequestTimeMicroseconds     ( ModelPrimitiveType double double double Double )
+            value.TimeInQueueMicroseconds                   = GetDouble(new IntPtr(p + 0x060)); // 0x60 TimeInQueueMicroseconds     ( ModelPrimitiveType double double double Double )
+            value.TotalTimeMicroseconds                     = GetDouble(new IntPtr(p + 0x068)); // 0x68 TotalTimeMicroseconds       ( ModelPrimitiveType double double double Double )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<UInt64Value> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ValueFieldNumber                         int IL2CPP_TYPE_I4
-    // 018 Value                                    00018669B890 ModelPrimitiveType ulong ulong ulong UInt64
+    // 018 Value                                    ModelPrimitiveType ulong ulong ulong UInt64
     public partial class UInt64Value : DataModel
     {
         public ulong                                    Value                                   { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UInt64Value() { Pointer= p0 };
 
-            value.Value                                     = GetUInt64(new IntPtr(p + 0x018)); // 02466A536480 0x18 Value                       ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.Value                                     = GetUInt64(new IntPtr(p + 0x018)); // 0x18 Value                       ( ModelPrimitiveType ulong ulong ulong UInt64 )
 
             return value;
         }

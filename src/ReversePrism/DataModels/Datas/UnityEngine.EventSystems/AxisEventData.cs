@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 MoveVector                               0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
-    // 028 MoveDir                                  000186654C40 ModelEnumType MoveDirection MoveDirection MoveDirection Int32
+    // 020 MoveVector                               ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 028 MoveDir                                  ModelEnumType MoveDirection MoveDirection MoveDirection Int32
     public partial class AxisEventData : DataModel
     {
         public Vector2                                  MoveVector                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AxisEventData() { Pointer= p0 };
 
-            value.MoveVector                                = (Vector2)GetInt32(new IntPtr(p + 0x020)); // 0245A68A7828 0x20 MoveVector                  ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.MoveDir                                   = (MoveDirection)GetInt32(new IntPtr(p + 0x028)); // 0245A68A7848 0x28 MoveDir                     ( 000186654C40 ModelEnumType MoveDirection MoveDirection MoveDirection Int32 )
+            value.MoveVector                                = (Vector2)GetInt32(new IntPtr(p + 0x020)); // 0x20 MoveVector                  ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.MoveDir                                   = (MoveDirection)GetInt32(new IntPtr(p + 0x028)); // 0x28 MoveDir                     ( ModelEnumType MoveDirection MoveDirection MoveDirection Int32 )
 
             return value;
         }

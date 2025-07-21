@@ -8,7 +8,6 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 factory                                  PopupViewFactory`1<IFesDataPossessionLimitPopupView> IL2CPP_TYPE_GENERICINST
     public partial class FesDataPossessionLimitPopupImplement : DataModel
     {
 

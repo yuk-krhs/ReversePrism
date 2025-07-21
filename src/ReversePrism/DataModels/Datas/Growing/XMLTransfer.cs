@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 defaultTextColorCode                     string IL2CPP_TYPE_STRING
     // 008 fullWidthSpace                           string IL2CPP_TYPE_STRING
     // 000 DEFAULT_PADDING_PIXEL                    int IL2CPP_TYPE_I4
-    // 010 Replacer                                 000186723120 ModelClassType XMLTransferSourceReplacer XMLTransferSourceReplacer XMLTransferSourceReplacer Pointer
+    // 010 Replacer                                 ModelClassType XMLTransferSourceReplacer XMLTransferSourceReplacer XMLTransferSourceReplacer Pointer
     public partial class XMLTransfer : DataModel
     {
         public XMLTransferSourceReplacer?               Replacer                                { get; set; }
@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XMLTransfer() { Pointer= p0 };
 
-            value.Replacer                                  = GetObject<XMLTransferSourceReplacer>(new IntPtr(p + 0x010), ReversePrism.DataModels.XMLTransferSourceReplacer.FromPointer); // 024664BB8840 0x10 Replacer                    ( 000186723120 ModelClassType XMLTransferSourceReplacer XMLTransferSourceReplacer XMLTransferSourceReplacer Pointer )
+            value.Replacer                                  = GetObject<XMLTransferSourceReplacer>(new IntPtr(p + 0x010), ReversePrism.DataModels.XMLTransferSourceReplacer.FromPointer); // 0x10 Replacer                    ( ModelClassType XMLTransferSourceReplacer XMLTransferSourceReplacer XMLTransferSourceReplacer Pointer )
 
             return value;
         }

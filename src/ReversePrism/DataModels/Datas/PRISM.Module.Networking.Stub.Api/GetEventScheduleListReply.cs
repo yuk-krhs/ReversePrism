@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 EventScheduleListFieldNumber             int IL2CPP_TYPE_I4
     // 008 _repeated_eventScheduleList_codec        FieldCodec`1<EventScheduleStatus> IL2CPP_TYPE_GENERICINST
-    // 018 EventScheduleList                        000185CD5D88 ModelClassListType RepeatedField`1<EventScheduleStatus> RepeatedField`1<EventScheduleStatus> List<EventScheduleStatus> Pointer
+    // 018 EventScheduleList                        ModelClassListType RepeatedField`1<EventScheduleStatus> RepeatedField`1<EventScheduleStatus> List<EventScheduleStatus> Pointer
     public partial class GetEventScheduleListReply : DataModel
     {
         public List<EventScheduleStatus>?               EventScheduleList                       { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetEventScheduleListReply() { Pointer= p0 };
 
-            value.EventScheduleList                         = GetObjectList<EventScheduleStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.EventScheduleStatus.FromPointer); // 024661031020 0x18 EventScheduleList           ( 000185CD5D88 ModelClassListType RepeatedField`1<EventScheduleStatus> RepeatedField`1<EventScheduleStatus> List<EventScheduleStatus> Pointer )
+            value.EventScheduleList                         = GetObjectList<EventScheduleStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.EventScheduleStatus.FromPointer); // 0x18 EventScheduleList           ( ModelClassListType RepeatedField`1<EventScheduleStatus> RepeatedField`1<EventScheduleStatus> List<EventScheduleStatus> Pointer )
 
             return value;
         }

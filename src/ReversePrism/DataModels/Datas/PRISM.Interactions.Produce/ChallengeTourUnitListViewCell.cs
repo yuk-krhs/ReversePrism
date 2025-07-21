@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 040 UnitIconImage                            0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 048 Canceller                                000186724470 ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32
+    // 040 UnitIconImage                            ModelClassType UIImage UIImage UIImage Pointer
+    // 048 Canceller                                ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32
     public partial class ChallengeTourUnitListViewCell : DataModel
     {
         public UIImage?                                 UnitIconImage                           { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChallengeTourUnitListViewCell() { Pointer= p0 };
 
-            value.UnitIconImage                             = GetObject<UIImage>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIImage.FromPointer); // 02466A23D878 0x40 UnitIconImage               ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.Canceller                                 = (AutoCancellationTokenSource)GetInt32(new IntPtr(p + 0x048)); // 02466A23D898 0x48 Canceller                   ( 000186724470 ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32 )
+            value.UnitIconImage                             = GetObject<UIImage>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIImage.FromPointer); // 0x40 UnitIconImage               ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.Canceller                                 = (AutoCancellationTokenSource)GetInt32(new IntPtr(p + 0x048)); // 0x48 Canceller                   ( ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32 )
 
             return value;
         }

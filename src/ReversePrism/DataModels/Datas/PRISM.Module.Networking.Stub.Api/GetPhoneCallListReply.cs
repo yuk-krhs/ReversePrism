@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 PhoneInfoListFieldNumber                 int IL2CPP_TYPE_I4
     // 008 _repeated_phoneInfoList_codec            FieldCodec`1<PhoneInfoStatus> IL2CPP_TYPE_GENERICINST
-    // 018 PhoneInfoList                            000185CE8CA8 ModelClassListType RepeatedField`1<PhoneInfoStatus> RepeatedField`1<PhoneInfoStatus> List<PhoneInfoStatus> Pointer
+    // 018 PhoneInfoList                            ModelClassListType RepeatedField`1<PhoneInfoStatus> RepeatedField`1<PhoneInfoStatus> List<PhoneInfoStatus> Pointer
     public partial class GetPhoneCallListReply : DataModel
     {
         public List<PhoneInfoStatus>?                   PhoneInfoList                           { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetPhoneCallListReply() { Pointer= p0 };
 
-            value.PhoneInfoList                             = GetObjectList<PhoneInfoStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.PhoneInfoStatus.FromPointer); // 02466226BC70 0x18 PhoneInfoList               ( 000185CE8CA8 ModelClassListType RepeatedField`1<PhoneInfoStatus> RepeatedField`1<PhoneInfoStatus> List<PhoneInfoStatus> Pointer )
+            value.PhoneInfoList                             = GetObjectList<PhoneInfoStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.PhoneInfoStatus.FromPointer); // 0x18 PhoneInfoList               ( ModelClassListType RepeatedField`1<PhoneInfoStatus> RepeatedField`1<PhoneInfoStatus> List<PhoneInfoStatus> Pointer )
 
             return value;
         }

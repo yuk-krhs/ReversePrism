@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 090 CacheDeleteProduceCardList               000185CE71C8 ModelClassListType List`1<IProduceCardStatus> List`1<IProduceCardStatus> List<IProduceCardStatus> Pointer
-    // 098 CacheProduceBaseInfo                     0001865E3190 ModelClassType IProduceBaseInfoStatus IProduceBaseInfoStatus IProduceBaseInfoStatus Pointer
-    // 0A0 CacheDeleteCardAmount                    0001865F36C0 ModelPrimitiveType int int int Int32
-    // 0A4 CacheMaxDeleteCardAmount                 0001865F36C0 ModelPrimitiveType int int int Int32
-    // 0A8 BasePopupClose                           000186679A00 ModelClassType Action Action Action Pointer
+    // 090 CacheDeleteProduceCardList               ModelClassListType List`1<IProduceCardStatus> List`1<IProduceCardStatus> List<IProduceCardStatus> Pointer
+    // 098 CacheProduceBaseInfo                     ModelClassType IProduceBaseInfoStatus IProduceBaseInfoStatus IProduceBaseInfoStatus Pointer
+    // 0A0 CacheDeleteCardAmount                    ModelPrimitiveType int int int Int32
+    // 0A4 CacheMaxDeleteCardAmount                 ModelPrimitiveType int int int Int32
+    // 0A8 BasePopupClose                           ModelClassType Action Action Action Pointer
     public partial class DeleteProduceCardConfirmPopupParam : DataModel
     {
         public List<IProduceCardStatus>?                CacheDeleteProduceCardList              { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DeleteProduceCardConfirmPopupParam() { Pointer= p0 };
 
-            value.CacheDeleteProduceCardList                = GetObjectList<IProduceCardStatus>(new IntPtr(p + 0x090), ReversePrism.DataModels.IProduceCardStatus.FromPointer); // 024665D1C520 0x90 CacheDeleteProduceCardList  ( 000185CE71C8 ModelClassListType List`1<IProduceCardStatus> List`1<IProduceCardStatus> List<IProduceCardStatus> Pointer )
-            value.CacheProduceBaseInfo                      = GetObject<IProduceBaseInfoStatus>(new IntPtr(p + 0x098), ReversePrism.DataModels.IProduceBaseInfoStatus.FromPointer); // 024665D1C540 0x98 CacheProduceBaseInfo        ( 0001865E3190 ModelClassType IProduceBaseInfoStatus IProduceBaseInfoStatus IProduceBaseInfoStatus Pointer )
-            value.CacheDeleteCardAmount                     = GetInt32(new IntPtr(p + 0x0A0)); // 024665D1C560 0xA0 CacheDeleteCardAmount       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.CacheMaxDeleteCardAmount                  = GetInt32(new IntPtr(p + 0x0A4)); // 024665D1C580 0xA4 CacheMaxDeleteCardAmount    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.BasePopupClose                            = GetObject<Action>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.Action.FromPointer); // 024665D1C5A0 0xA8 BasePopupClose              ( 000186679A00 ModelClassType Action Action Action Pointer )
+            value.CacheDeleteProduceCardList                = GetObjectList<IProduceCardStatus>(new IntPtr(p + 0x090), ReversePrism.DataModels.IProduceCardStatus.FromPointer); // 0x90 CacheDeleteProduceCardList  ( ModelClassListType List`1<IProduceCardStatus> List`1<IProduceCardStatus> List<IProduceCardStatus> Pointer )
+            value.CacheProduceBaseInfo                      = GetObject<IProduceBaseInfoStatus>(new IntPtr(p + 0x098), ReversePrism.DataModels.IProduceBaseInfoStatus.FromPointer); // 0x98 CacheProduceBaseInfo        ( ModelClassType IProduceBaseInfoStatus IProduceBaseInfoStatus IProduceBaseInfoStatus Pointer )
+            value.CacheDeleteCardAmount                     = GetInt32(new IntPtr(p + 0x0A0)); // 0xA0 CacheDeleteCardAmount       ( ModelPrimitiveType int int int Int32 )
+            value.CacheMaxDeleteCardAmount                  = GetInt32(new IntPtr(p + 0x0A4)); // 0xA4 CacheMaxDeleteCardAmount    ( ModelPrimitiveType int int int Int32 )
+            value.BasePopupClose                            = GetObject<Action>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.Action.FromPointer); // 0xA8 BasePopupClose              ( ModelClassType Action Action Action Pointer )
 
             return value;
         }

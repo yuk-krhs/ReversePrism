@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 View                                     000186585D50 ModelClassType IIntroductionCharacterSelectView IIntroductionCharacterSelectView IIntroductionCharacterSelectView Pointer
-    // 018 ViewModel                                000186725E60 ModelClassType IntroductionCharacterSelectViewModel IntroductionCharacterSelectViewModel IntroductionCharacterSelectViewModel Pointer
-    // 020 Disposables                              0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
+    // 010 View                                     ModelClassType IIntroductionCharacterSelectView IIntroductionCharacterSelectView IIntroductionCharacterSelectView Pointer
+    // 018 ViewModel                                ModelClassType IntroductionCharacterSelectViewModel IntroductionCharacterSelectViewModel IntroductionCharacterSelectViewModel Pointer
+    // 020 Disposables                              ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
     public partial class IntroductionCharacterSelectPresenter : DataModel
     {
         public IIntroductionCharacterSelectView?        View                                    { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IntroductionCharacterSelectPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<IIntroductionCharacterSelectView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IIntroductionCharacterSelectView.FromPointer); // 02466640B578 0x10 View                        ( 000186585D50 ModelClassType IIntroductionCharacterSelectView IIntroductionCharacterSelectView IIntroductionCharacterSelectView Pointer )
-            value.ViewModel                                 = GetObject<IntroductionCharacterSelectViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.IntroductionCharacterSelectViewModel.FromPointer); // 02466640B598 0x18 ViewModel                   ( 000186725E60 ModelClassType IntroductionCharacterSelectViewModel IntroductionCharacterSelectViewModel IntroductionCharacterSelectViewModel Pointer )
-            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x020), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 02466640B5B8 0x20 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.View                                      = GetObject<IIntroductionCharacterSelectView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IIntroductionCharacterSelectView.FromPointer); // 0x10 View                        ( ModelClassType IIntroductionCharacterSelectView IIntroductionCharacterSelectView IIntroductionCharacterSelectView Pointer )
+            value.ViewModel                                 = GetObject<IntroductionCharacterSelectViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.IntroductionCharacterSelectViewModel.FromPointer); // 0x18 ViewModel                   ( ModelClassType IntroductionCharacterSelectViewModel IntroductionCharacterSelectViewModel IntroductionCharacterSelectViewModel Pointer )
+            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x020), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0x20 Disposables                 ( ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 WORD_BREAK                               string IL2CPP_TYPE_STRING
-    // 010 Json                                     0001865C1E60 ModelClassType StringReader StringReader StringReader Pointer
+    // 010 Json                                     ModelClassType StringReader StringReader StringReader Pointer
     public partial class Parser : DataModel
     {
         public StringReader?                            Json                                    { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Parser() { Pointer= p0 };
 
-            value.Json                                      = GetObject<StringReader>(new IntPtr(p + 0x010), ReversePrism.DataModels.StringReader.FromPointer); // 0245A6941890 0x10 Json                        ( 0001865C1E60 ModelClassType StringReader StringReader StringReader Pointer )
+            value.Json                                      = GetObject<StringReader>(new IntPtr(p + 0x010), ReversePrism.DataModels.StringReader.FromPointer); // 0x10 Json                        ( ModelClassType StringReader StringReader StringReader Pointer )
 
             return value;
         }

@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Target                                 0001866C2CB0 ModelClassType FloatTweenCallback FloatTweenCallback FloatTweenCallback Pointer
-    // 018 M_StartValue                             0001866656B0 ModelPrimitiveType float float float Single
-    // 01C M_TargetValue                            0001866656B0 ModelPrimitiveType float float float Single
-    // 020 M_Duration                               0001866656B0 ModelPrimitiveType float float float Single
-    // 024 M_IgnoreTimeScale                        000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 M_Target                                 ModelClassType FloatTweenCallback FloatTweenCallback FloatTweenCallback Pointer
+    // 018 M_StartValue                             ModelPrimitiveType float float float Single
+    // 01C M_TargetValue                            ModelPrimitiveType float float float Single
+    // 020 M_Duration                               ModelPrimitiveType float float float Single
+    // 024 M_IgnoreTimeScale                        ModelPrimitiveType bool bool bool Bool
     public partial class FloatTween : DataModel
     {
         public FloatTweenCallback?                      M_Target                                { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FloatTween() { Pointer= p0 };
 
-            value.M_Target                                  = GetObject<FloatTweenCallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.FloatTweenCallback.FromPointer); // 0245A68A54D0 0x10 M_Target                    ( 0001866C2CB0 ModelClassType FloatTweenCallback FloatTweenCallback FloatTweenCallback Pointer )
-            value.M_StartValue                              = GetSingle(new IntPtr(p + 0x018)); // 0245A68A54F0 0x18 M_StartValue                ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_TargetValue                             = GetSingle(new IntPtr(p + 0x01C)); // 0245A68A5510 0x1C M_TargetValue               ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_Duration                                = GetSingle(new IntPtr(p + 0x020)); // 0245A68A5530 0x20 M_Duration                  ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_IgnoreTimeScale                         = GetBool(new IntPtr(p + 0x024)); // 0245A68A5550 0x24 M_IgnoreTimeScale           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_Target                                  = GetObject<FloatTweenCallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.FloatTweenCallback.FromPointer); // 0x10 M_Target                    ( ModelClassType FloatTweenCallback FloatTweenCallback FloatTweenCallback Pointer )
+            value.M_StartValue                              = GetSingle(new IntPtr(p + 0x018)); // 0x18 M_StartValue                ( ModelPrimitiveType float float float Single )
+            value.M_TargetValue                             = GetSingle(new IntPtr(p + 0x01C)); // 0x1C M_TargetValue               ( ModelPrimitiveType float float float Single )
+            value.M_Duration                                = GetSingle(new IntPtr(p + 0x020)); // 0x20 M_Duration                  ( ModelPrimitiveType float float float Single )
+            value.M_IgnoreTimeScale                         = GetBool(new IntPtr(p + 0x024)); // 0x24 M_IgnoreTimeScale           ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -12,13 +12,17 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 SelectProduceCardIdListFieldNumber       int IL2CPP_TYPE_I4
     // 008 _repeated_selectProduceCardIdList_codec  FieldCodec`1<string> IL2CPP_TYPE_GENERICINST
-    // 018 SelectProduceCardIdList                  000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
+    // 018 SelectProduceCardIdList                  ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
     // 000 SelectionSupportSkillFieldNumber         int IL2CPP_TYPE_I4
-    // 020 SelectionSupportSkill                    000186720D60 ModelClassType SelectionSupportSkillStatus SelectionSupportSkillStatus SelectionSupportSkillStatus Pointer
+    // 020 SelectionSupportSkill                    ModelClassType SelectionSupportSkillStatus SelectionSupportSkillStatus SelectionSupportSkillStatus Pointer
+    // 000 SelectedSupportSkillListFieldNumber      int IL2CPP_TYPE_I4
+    // 010 _repeated_selectedSupportSkillList_codec FieldCodec`1<SelectionSupportSkillStatus> IL2CPP_TYPE_GENERICINST
+    // 028 SelectedSupportSkillList                 ModelClassListType RepeatedField`1<SelectionSupportSkillStatus> RepeatedField`1<SelectionSupportSkillStatus> List<SelectionSupportSkillStatus> Pointer
     public partial class FinishProduceAdvArgs : DataModel
     {
         public List<string>?                            SelectProduceCardIdList                 { get; set; }
         public SelectionSupportSkillStatus?             SelectionSupportSkill                   { get; set; }
+        public List<SelectionSupportSkillStatus>?       SelectedSupportSkillList                { get; set; }
 
         public static FinishProduceAdvArgs? FromPointer(IntPtr p0)
         {
@@ -28,8 +32,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FinishProduceAdvArgs() { Pointer= p0 };
 
-            value.SelectProduceCardIdList                   = GetStringList(new IntPtr(p + 0x018)); // 024662518AD8 0x18 SelectProduceCardIdList     ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
-            value.SelectionSupportSkill                     = GetObject<SelectionSupportSkillStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.SelectionSupportSkillStatus.FromPointer); // 024662518B18 0x20 SelectionSupportSkill       ( 000186720D60 ModelClassType SelectionSupportSkillStatus SelectionSupportSkillStatus SelectionSupportSkillStatus Pointer )
+            value.SelectProduceCardIdList                   = GetStringList(new IntPtr(p + 0x018)); // 0x18 SelectProduceCardIdList     ( ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.SelectionSupportSkill                     = GetObject<SelectionSupportSkillStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.SelectionSupportSkillStatus.FromPointer); // 0x20 SelectionSupportSkill       ( ModelClassType SelectionSupportSkillStatus SelectionSupportSkillStatus SelectionSupportSkillStatus Pointer )
+            value.SelectedSupportSkillList                  = GetObjectList<SelectionSupportSkillStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.SelectionSupportSkillStatus.FromPointer); // 0x28 SelectedSupportSkillList    ( ModelClassListType RepeatedField`1<SelectionSupportSkillStatus> RepeatedField`1<SelectionSupportSkillStatus> List<SelectionSupportSkillStatus> Pointer )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Default                                  DescriptionAttribute IL2CPP_TYPE_CLASS
-    // 010 DescriptionValue                         000186671910 ModelPrimitiveType string string string String
+    // 010 DescriptionValue                         ModelPrimitiveType string string string String
     public partial class DescriptionAttribute : DataModel
     {
         public string                                   DescriptionValue                        { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DescriptionAttribute() { Pointer= p0 };
 
-            value.DescriptionValue                          = GetString(new IntPtr(p + 0x010)); // 0246679EF120 0x10 DescriptionValue            ( 000186671910 ModelPrimitiveType string string string String )
+            value.DescriptionValue                          = GetString(new IntPtr(p + 0x010)); // 0x10 DescriptionValue            ( ModelPrimitiveType string string string String )
 
             return value;
         }

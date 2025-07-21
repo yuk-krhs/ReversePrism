@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Node                                     000186650D70 ModelClassType TypeDescriptionNode TypeDescriptionNode TypeDescriptionNode Pointer
+    // 010 Node                                     ModelClassType TypeDescriptionNode TypeDescriptionNode TypeDescriptionNode Pointer
     // 018 _instance                                <object> IL2CPP_TYPE_OBJECT
     public partial class DefaultExtendedTypeDescriptor : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DefaultExtendedTypeDescriptor() { Pointer= p0 };
 
-            value.Node                                      = GetObject<TypeDescriptionNode>(new IntPtr(p + 0x010), ReversePrism.DataModels.TypeDescriptionNode.FromPointer); // 024667BA4E08 0x10 Node                        ( 000186650D70 ModelClassType TypeDescriptionNode TypeDescriptionNode TypeDescriptionNode Pointer )
+            value.Node                                      = GetObject<TypeDescriptionNode>(new IntPtr(p + 0x010), ReversePrism.DataModels.TypeDescriptionNode.FromPointer); // 0x10 Node                        ( ModelClassType TypeDescriptionNode TypeDescriptionNode TypeDescriptionNode Pointer )
 
             return value;
         }

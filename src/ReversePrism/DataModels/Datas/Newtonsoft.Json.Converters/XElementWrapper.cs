@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Attributes                               000185CEA488 ModelClassListType List`1<IXmlNode> List`1<IXmlNode> List<IXmlNode> Pointer
+    // 020 Attributes                               ModelClassListType List`1<IXmlNode> List`1<IXmlNode> List<IXmlNode> Pointer
     public partial class XElementWrapper : DataModel
     {
         public List<IXmlNode>?                          Attributes                              { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XElementWrapper() { Pointer= p0 };
 
-            value.Attributes                                = GetObjectList<IXmlNode>(new IntPtr(p + 0x020), ReversePrism.DataModels.IXmlNode.FromPointer); // 0246688C4E80 0x20 Attributes                  ( 000185CEA488 ModelClassListType List`1<IXmlNode> List`1<IXmlNode> List<IXmlNode> Pointer )
+            value.Attributes                                = GetObjectList<IXmlNode>(new IntPtr(p + 0x020), ReversePrism.DataModels.IXmlNode.FromPointer); // 0x20 Attributes                  ( ModelClassListType List`1<IXmlNode> List`1<IXmlNode> List<IXmlNode> Pointer )
 
             return value;
         }

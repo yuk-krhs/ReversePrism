@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 NextSink                                 0001865B0830 ModelClassType IMessageSink IMessageSink IMessageSink Pointer
+    // 010 NextSink                                 ModelClassType IMessageSink IMessageSink IMessageSink Pointer
     public partial class LeaseSink : DataModel
     {
         public IMessageSink?                            NextSink                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LeaseSink() { Pointer= p0 };
 
-            value.NextSink                                  = GetObject<IMessageSink>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMessageSink.FromPointer); // 024666C36230 0x10 NextSink                    ( 0001865B0830 ModelClassType IMessageSink IMessageSink IMessageSink Pointer )
+            value.NextSink                                  = GetObject<IMessageSink>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMessageSink.FromPointer); // 0x10 NextSink                    ( ModelClassType IMessageSink IMessageSink IMessageSink Pointer )
 
             return value;
         }

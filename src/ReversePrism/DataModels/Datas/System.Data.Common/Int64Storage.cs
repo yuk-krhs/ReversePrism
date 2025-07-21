@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 050 Values                                   000185B7E2C0 ModelPrimitiveListType long[] long[] List<long> Pointer
+    // 050 Values                                   ModelPrimitiveListType long[] long[] List<long> Pointer
     public partial class Int64Storage : DataModel
     {
         public List<long>?                              Values                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Int64Storage() { Pointer= p0 };
 
-            value.Values                                    = GetInt64List(new IntPtr(p + 0x050)); // 024668A3C418 0x50 Values                      ( 000185B7E2C0 ModelPrimitiveListType long[] long[] List<long> Pointer )
+            value.Values                                    = GetInt64List(new IntPtr(p + 0x050)); // 0x50 Values                      ( ModelPrimitiveListType long[] long[] List<long> Pointer )
 
             return value;
         }

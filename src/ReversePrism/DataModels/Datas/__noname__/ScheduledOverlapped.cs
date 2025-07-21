@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 nativeOverlapped                         IntPtr IL2CPP_TYPE_PTR
-    // 018 Scheduler                                0001865C7570 ModelClassType IOThreadScheduler IOThreadScheduler IOThreadScheduler Pointer
+    // 018 Scheduler                                ModelClassType IOThreadScheduler IOThreadScheduler IOThreadScheduler Pointer
     public partial class ScheduledOverlapped : DataModel
     {
         public IOThreadScheduler?                       Scheduler                               { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ScheduledOverlapped() { Pointer= p0 };
 
-            value.Scheduler                                 = GetObject<IOThreadScheduler>(new IntPtr(p + 0x018), ReversePrism.DataModels.IOThreadScheduler.FromPointer); // 02466BAB25C8 0x18 Scheduler                   ( 0001865C7570 ModelClassType IOThreadScheduler IOThreadScheduler IOThreadScheduler Pointer )
+            value.Scheduler                                 = GetObject<IOThreadScheduler>(new IntPtr(p + 0x018), ReversePrism.DataModels.IOThreadScheduler.FromPointer); // 0x18 Scheduler                   ( ModelClassType IOThreadScheduler IOThreadScheduler IOThreadScheduler Pointer )
 
             return value;
         }

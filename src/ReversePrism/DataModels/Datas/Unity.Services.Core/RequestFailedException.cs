@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 090 ErrorCode                                0001865F4260 ModelPrimitiveType int int int Int32
+    // 090 ErrorCode                                ModelPrimitiveType int int int Int32
     public partial class RequestFailedException : DataModel
     {
         public int                                      ErrorCode                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RequestFailedException() { Pointer= p0 };
 
-            value.ErrorCode                                 = GetInt32(new IntPtr(p + 0x090)); // 02466B83F8A0 0x90 ErrorCode                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.ErrorCode                                 = GetInt32(new IntPtr(p + 0x090)); // 0x90 ErrorCode                   ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 AtomicConverter                          0001865D4D90 ModelClassType XmlValueConverter XmlValueConverter XmlValueConverter Pointer
+    // 028 AtomicConverter                          ModelClassType XmlValueConverter XmlValueConverter XmlValueConverter Pointer
     public partial class XmlListConverter : DataModel
     {
         public XmlValueConverter?                       AtomicConverter                         { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlListConverter() { Pointer= p0 };
 
-            value.AtomicConverter                           = GetObject<XmlValueConverter>(new IntPtr(p + 0x028), ReversePrism.DataModels.XmlValueConverter.FromPointer); // 02466765A280 0x28 AtomicConverter             ( 0001865D4D90 ModelClassType XmlValueConverter XmlValueConverter XmlValueConverter Pointer )
+            value.AtomicConverter                           = GetObject<XmlValueConverter>(new IntPtr(p + 0x028), ReversePrism.DataModels.XmlValueConverter.FromPointer); // 0x28 AtomicConverter             ( ModelClassType XmlValueConverter XmlValueConverter XmlValueConverter Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_callbackInfo                           00018653C470 ModelClassType CancellationCallbackInfo CancellationCallbackInfo CancellationCallbackInfo Pointer
+    // 010 M_callbackInfo                           ModelClassType CancellationCallbackInfo CancellationCallbackInfo CancellationCallbackInfo Pointer
     // 018 m_registrationInfo                       SparselyPopulatedArrayAddInfo`1<CancellationCallbackInfo> IL2CPP_TYPE_GENERICINST
     public partial class CancellationTokenRegistration : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CancellationTokenRegistration() { Pointer= p0 };
 
-            value.M_callbackInfo                            = GetObject<CancellationCallbackInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.CancellationCallbackInfo.FromPointer); // 024661AC00F0 0x10 M_callbackInfo              ( 00018653C470 ModelClassType CancellationCallbackInfo CancellationCallbackInfo CancellationCallbackInfo Pointer )
+            value.M_callbackInfo                            = GetObject<CancellationCallbackInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.CancellationCallbackInfo.FromPointer); // 0x10 M_callbackInfo              ( ModelClassType CancellationCallbackInfo CancellationCallbackInfo CancellationCallbackInfo Pointer )
 
             return value;
         }

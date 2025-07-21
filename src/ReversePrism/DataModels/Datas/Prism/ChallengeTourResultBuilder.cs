@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 View                                     00018657CD80 ModelClassType ChallengeTourResultView ChallengeTourResultView ChallengeTourResultView Pointer
+    // 020 View                                     ModelClassType ChallengeTourResultView ChallengeTourResultView ChallengeTourResultView Pointer
     public partial class ChallengeTourResultBuilder : DataModel
     {
         public ChallengeTourResultView?                 View                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChallengeTourResultBuilder() { Pointer= p0 };
 
-            value.View                                      = GetObject<ChallengeTourResultView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ChallengeTourResultView.FromPointer); // 02466B6B1E60 0x20 View                        ( 00018657CD80 ModelClassType ChallengeTourResultView ChallengeTourResultView ChallengeTourResultView Pointer )
+            value.View                                      = GetObject<ChallengeTourResultView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ChallengeTourResultView.FromPointer); // 0x20 View                        ( ModelClassType ChallengeTourResultView ChallengeTourResultView ChallengeTourResultView Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Expression                               0001865CF210 ModelClassType Expression Expression Expression Pointer
+    // 020 Expression                               ModelClassType Expression Expression Expression Pointer
     public partial class MemberAssignment : DataModel
     {
         public Expression?                              Expression                              { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MemberAssignment() { Pointer= p0 };
 
-            value.Expression                                = GetObject<Expression>(new IntPtr(p + 0x020), ReversePrism.DataModels.Expression.FromPointer); // 024669FCED18 0x20 Expression                  ( 0001865CF210 ModelClassType Expression Expression Expression Pointer )
+            value.Expression                                = GetObject<Expression>(new IntPtr(p + 0x020), ReversePrism.DataModels.Expression.FromPointer); // 0x20 Expression                  ( ModelClassType Expression Expression Expression Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 050 Values                                   000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 050 Values                                   ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     public partial class ByteStorage : DataModel
     {
         public List<sbyte>?                             Values                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ByteStorage() { Pointer= p0 };
 
-            value.Values                                    = GetSByteList(new IntPtr(p + 0x050)); // 024668A124F8 0x50 Values                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Values                                    = GetSByteList(new IntPtr(p + 0x050)); // 0x50 Values                      ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

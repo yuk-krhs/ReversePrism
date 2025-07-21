@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 DisplayUI                                0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 018 DisplayButtons                           000185D25748 ModelEnumListType List`1<ButtonType> List`1<ButtonType> List<ButtonType> Pointer
+    // 010 DisplayUI                                ModelClassType GameObject GameObject GameObject Pointer
+    // 018 DisplayButtons                           ModelEnumListType List`1<ButtonType> List`1<ButtonType> List<ButtonType> Pointer
     public partial class DisplayUIInfo : DataModel
     {
         public GameObject?                              DisplayUI                               { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DisplayUIInfo() { Pointer= p0 };
 
-            value.DisplayUI                                 = GetObject<GameObject>(new IntPtr(p + 0x010), ReversePrism.DataModels.GameObject.FromPointer); // 024665CBF650 0x10 DisplayUI                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.DisplayButtons                            = GetEnumList<ButtonType>(new IntPtr(p + 0x018)); // 024665CBF670 0x18 DisplayButtons              ( 000185D25748 ModelEnumListType List`1<ButtonType> List`1<ButtonType> List<ButtonType> Pointer )
+            value.DisplayUI                                 = GetObject<GameObject>(new IntPtr(p + 0x010), ReversePrism.DataModels.GameObject.FromPointer); // 0x10 DisplayUI                   ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.DisplayButtons                            = GetEnumList<ButtonType>(new IntPtr(p + 0x018)); // 0x18 DisplayButtons              ( ModelEnumListType List`1<ButtonType> List`1<ButtonType> List<ButtonType> Pointer )
 
             return value;
         }

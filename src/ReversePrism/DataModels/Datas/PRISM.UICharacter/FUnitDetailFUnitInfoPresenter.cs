@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 View                                     000186549220 ModelClassType FUnitDetailFUnitInfoView FUnitDetailFUnitInfoView FUnitDetailFUnitInfoView Pointer
+    // 020 View                                     ModelClassType FUnitDetailFUnitInfoView FUnitDetailFUnitInfoView FUnitDetailFUnitInfoView Pointer
     public partial class FUnitDetailFUnitInfoPresenter : DataModel
     {
         public FUnitDetailFUnitInfoView?                View                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FUnitDetailFUnitInfoPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<FUnitDetailFUnitInfoView>(new IntPtr(p + 0x020), ReversePrism.DataModels.FUnitDetailFUnitInfoView.FromPointer); // 024665E1DA00 0x20 View                        ( 000186549220 ModelClassType FUnitDetailFUnitInfoView FUnitDetailFUnitInfoView FUnitDetailFUnitInfoView Pointer )
+            value.View                                      = GetObject<FUnitDetailFUnitInfoView>(new IntPtr(p + 0x020), ReversePrism.DataModels.FUnitDetailFUnitInfoView.FromPointer); // 0x20 View                        ( ModelClassType FUnitDetailFUnitInfoView FUnitDetailFUnitInfoView FUnitDetailFUnitInfoView Pointer )
 
             return value;
         }

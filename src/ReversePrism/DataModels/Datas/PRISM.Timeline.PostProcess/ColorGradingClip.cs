@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 Behaviour                                0001865CE070 ModelClassType ColorGradingBehaviour ColorGradingBehaviour ColorGradingBehaviour Pointer
+    // 018 Behaviour                                ModelClassType ColorGradingBehaviour ColorGradingBehaviour ColorGradingBehaviour Pointer
     public partial class ColorGradingClip : DataModel
     {
         public ColorGradingBehaviour?                   Behaviour                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ColorGradingClip() { Pointer= p0 };
 
-            value.Behaviour                                 = GetObject<ColorGradingBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.ColorGradingBehaviour.FromPointer); // 0246650D8770 0x18 Behaviour                   ( 0001865CE070 ModelClassType ColorGradingBehaviour ColorGradingBehaviour ColorGradingBehaviour Pointer )
+            value.Behaviour                                 = GetObject<ColorGradingBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.ColorGradingBehaviour.FromPointer); // 0x18 Behaviour                   ( ModelClassType ColorGradingBehaviour ColorGradingBehaviour ColorGradingBehaviour Pointer )
 
             return value;
         }

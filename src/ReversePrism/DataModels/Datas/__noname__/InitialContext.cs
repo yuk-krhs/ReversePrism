@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Crashlytics                              000186540EF0 ModelClassType FBCrashlytics FBCrashlytics FBCrashlytics Pointer
-    // 018 Analytics                                0001865409B0 ModelClassType FBAnalytics FBAnalytics FBAnalytics Pointer
-    // 020 Installer                                0001865B3CF0 ModelClassType LoggerInstaller LoggerInstaller LoggerInstaller Pointer
-    // 028 Firebase                                 0001865947E0 ModelClassType FirebaseAPI FirebaseAPI FirebaseAPI Pointer
+    // 010 Crashlytics                              ModelClassType FBCrashlytics FBCrashlytics FBCrashlytics Pointer
+    // 018 Analytics                                ModelClassType FBAnalytics FBAnalytics FBAnalytics Pointer
+    // 020 Installer                                ModelClassType LoggerInstaller LoggerInstaller LoggerInstaller Pointer
+    // 028 Firebase                                 ModelClassType FirebaseAPI FirebaseAPI FirebaseAPI Pointer
     public partial class InitialContext : DataModel
     {
         public FBCrashlytics?                           Crashlytics                             { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InitialContext() { Pointer= p0 };
 
-            value.Crashlytics                               = GetObject<FBCrashlytics>(new IntPtr(p + 0x010), ReversePrism.DataModels.FBCrashlytics.FromPointer); // 0245A3C78958 0x10 Crashlytics                 ( 000186540EF0 ModelClassType FBCrashlytics FBCrashlytics FBCrashlytics Pointer )
-            value.Analytics                                 = GetObject<FBAnalytics>(new IntPtr(p + 0x018), ReversePrism.DataModels.FBAnalytics.FromPointer); // 0245A3C78978 0x18 Analytics                   ( 0001865409B0 ModelClassType FBAnalytics FBAnalytics FBAnalytics Pointer )
-            value.Installer                                 = GetObject<LoggerInstaller>(new IntPtr(p + 0x020), ReversePrism.DataModels.LoggerInstaller.FromPointer); // 0245A3C78998 0x20 Installer                   ( 0001865B3CF0 ModelClassType LoggerInstaller LoggerInstaller LoggerInstaller Pointer )
-            value.Firebase                                  = GetObject<FirebaseAPI>(new IntPtr(p + 0x028), ReversePrism.DataModels.FirebaseAPI.FromPointer); // 0245A3C789B8 0x28 Firebase                    ( 0001865947E0 ModelClassType FirebaseAPI FirebaseAPI FirebaseAPI Pointer )
+            value.Crashlytics                               = GetObject<FBCrashlytics>(new IntPtr(p + 0x010), ReversePrism.DataModels.FBCrashlytics.FromPointer); // 0x10 Crashlytics                 ( ModelClassType FBCrashlytics FBCrashlytics FBCrashlytics Pointer )
+            value.Analytics                                 = GetObject<FBAnalytics>(new IntPtr(p + 0x018), ReversePrism.DataModels.FBAnalytics.FromPointer); // 0x18 Analytics                   ( ModelClassType FBAnalytics FBAnalytics FBAnalytics Pointer )
+            value.Installer                                 = GetObject<LoggerInstaller>(new IntPtr(p + 0x020), ReversePrism.DataModels.LoggerInstaller.FromPointer); // 0x20 Installer                   ( ModelClassType LoggerInstaller LoggerInstaller LoggerInstaller Pointer )
+            value.Firebase                                  = GetObject<FirebaseAPI>(new IntPtr(p + 0x028), ReversePrism.DataModels.FirebaseAPI.FromPointer); // 0x28 Firebase                    ( ModelClassType FirebaseAPI FirebaseAPI FirebaseAPI Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 040 OriginalInnerStream                      000186670BE0 ModelClassType Stream Stream Stream Pointer
+    // 040 OriginalInnerStream                      ModelClassType Stream Stream Stream Pointer
     public partial class ContentDecodeStream : DataModel
     {
         public Stream?                                  OriginalInnerStream                     { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ContentDecodeStream() { Pointer= p0 };
 
-            value.OriginalInnerStream                       = GetObject<Stream>(new IntPtr(p + 0x040), ReversePrism.DataModels.Stream.FromPointer); // 024667AB57D0 0x40 OriginalInnerStream         ( 000186670BE0 ModelClassType Stream Stream Stream Pointer )
+            value.OriginalInnerStream                       = GetObject<Stream>(new IntPtr(p + 0x040), ReversePrism.DataModels.Stream.FromPointer); // 0x40 OriginalInnerStream         ( ModelClassType Stream Stream Stream Pointer )
 
             return value;
         }

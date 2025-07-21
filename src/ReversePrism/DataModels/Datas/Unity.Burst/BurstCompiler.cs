@@ -11,8 +11,8 @@ namespace ReversePrism.DataModels
     // FFFFFFFF _cmdBuilder                              CommandBuilder IL2CPP_TYPE_CLASS
     // 000 _IsEnabled                               bool IL2CPP_TYPE_BOOLEAN
     // 008 Options                                  BurstCompilerOptions IL2CPP_TYPE_CLASS
-    // 010 OnCompileILPPMethod2                     000186679EC0 ModelClassType Action Action Action Pointer
-    // 018 DummyMethodInfo                          0001866144A0 ModelClassType MethodInfo MethodInfo MethodInfo Pointer
+    // 010 OnCompileILPPMethod2                     ModelClassType Action Action Action Pointer
+    // 018 DummyMethodInfo                          ModelClassType MethodInfo MethodInfo MethodInfo Pointer
     public partial class BurstCompiler : DataModel
     {
         public Action?                                  OnCompileILPPMethod2                    { get; set; }
@@ -26,8 +26,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BurstCompiler() { Pointer= p0 };
 
-            value.OnCompileILPPMethod2                      = GetObject<Action>(new IntPtr(p + 0x010), ReversePrism.DataModels.Action.FromPointer); // 0245A3499FB8 0x10 OnCompileILPPMethod2        ( 000186679EC0 ModelClassType Action Action Action Pointer )
-            value.DummyMethodInfo                           = GetObject<MethodInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.MethodInfo.FromPointer); // 0245A3499FD8 0x18 DummyMethodInfo             ( 0001866144A0 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
+            value.OnCompileILPPMethod2                      = GetObject<Action>(new IntPtr(p + 0x010), ReversePrism.DataModels.Action.FromPointer); // 0x10 OnCompileILPPMethod2        ( ModelClassType Action Action Action Pointer )
+            value.DummyMethodInfo                           = GetObject<MethodInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.MethodInfo.FromPointer); // 0x18 DummyMethodInfo             ( ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
 
             return value;
         }

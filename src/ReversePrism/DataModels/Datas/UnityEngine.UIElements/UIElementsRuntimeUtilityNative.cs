@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 RepaintOverlayPanelsCallback             Action IL2CPP_TYPE_CLASS
     // 008 UpdateRuntimePanelsCallback              Action IL2CPP_TYPE_CLASS
-    // 010 RepaintOffscreenPanelsCallback           000186679EC0 ModelClassType Action Action Action Pointer
+    // 010 RepaintOffscreenPanelsCallback           ModelClassType Action Action Action Pointer
     public partial class UIElementsRuntimeUtilityNative : DataModel
     {
         public Action?                                  RepaintOffscreenPanelsCallback          { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UIElementsRuntimeUtilityNative() { Pointer= p0 };
 
-            value.RepaintOffscreenPanelsCallback            = GetObject<Action>(new IntPtr(p + 0x010), ReversePrism.DataModels.Action.FromPointer); // 0245A22B8428 0x10 RepaintOffscreenPanelsCallback ( 000186679EC0 ModelClassType Action Action Action Pointer )
+            value.RepaintOffscreenPanelsCallback            = GetObject<Action>(new IntPtr(p + 0x010), ReversePrism.DataModels.Action.FromPointer); // 0x10 RepaintOffscreenPanelsCallback ( ModelClassType Action Action Action Pointer )
 
             return value;
         }

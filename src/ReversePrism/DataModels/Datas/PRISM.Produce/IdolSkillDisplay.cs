@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 IconBase                                 0001866BCF80 ModelClassType IdolSkillIcon IdolSkillIcon IdolSkillIcon Pointer
+    // 028 IconBase                                 ModelClassType IdolSkillIcon IdolSkillIcon IdolSkillIcon Pointer
     public partial class IdolSkillDisplay : DataModel
     {
         public IdolSkillIcon?                           IconBase                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IdolSkillDisplay() { Pointer= p0 };
 
-            value.IconBase                                  = GetObject<IdolSkillIcon>(new IntPtr(p + 0x028), ReversePrism.DataModels.IdolSkillIcon.FromPointer); // 024665CED038 0x28 IconBase                    ( 0001866BCF80 ModelClassType IdolSkillIcon IdolSkillIcon IdolSkillIcon Pointer )
+            value.IconBase                                  = GetObject<IdolSkillIcon>(new IntPtr(p + 0x028), ReversePrism.DataModels.IdolSkillIcon.FromPointer); // 0x28 IconBase                    ( ModelClassType IdolSkillIcon IdolSkillIcon IdolSkillIcon Pointer )
 
             return value;
         }

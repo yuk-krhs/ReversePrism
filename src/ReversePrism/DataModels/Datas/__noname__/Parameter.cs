@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Ducker                                   00018654AD80 ModelEnumType ReactDuckerParameter ReactDuckerParameter ReactDuckerParameter Int32
-    // 010 AisacModulation                          00018654A310 ModelEnumType ReactAisacModulationParameter ReactAisacModulationParameter ReactAisacModulationParameter Int32
+    // 010 Ducker                                   ModelEnumType ReactDuckerParameter ReactDuckerParameter ReactDuckerParameter Int32
+    // 010 AisacModulation                          ModelEnumType ReactAisacModulationParameter ReactAisacModulationParameter ReactAisacModulationParameter Int32
     public partial class Parameter : DataModel
     {
         public ReactDuckerParameter                     Ducker                                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Parameter() { Pointer= p0 };
 
-            value.Ducker                                    = (ReactDuckerParameter)GetInt32(new IntPtr(p + 0x010)); // 02466ACD6820 0x10 Ducker                      ( 00018654AD80 ModelEnumType ReactDuckerParameter ReactDuckerParameter ReactDuckerParameter Int32 )
-            value.AisacModulation                           = (ReactAisacModulationParameter)GetInt32(new IntPtr(p + 0x010)); // 02466ACD6840 0x10 AisacModulation             ( 00018654A310 ModelEnumType ReactAisacModulationParameter ReactAisacModulationParameter ReactAisacModulationParameter Int32 )
+            value.Ducker                                    = (ReactDuckerParameter)GetInt32(new IntPtr(p + 0x010)); // 0x10 Ducker                      ( ModelEnumType ReactDuckerParameter ReactDuckerParameter ReactDuckerParameter Int32 )
+            value.AisacModulation                           = (ReactAisacModulationParameter)GetInt32(new IntPtr(p + 0x010)); // 0x10 AisacModulation             ( ModelEnumType ReactAisacModulationParameter ReactAisacModulationParameter ReactAisacModulationParameter Int32 )
 
             return value;
         }

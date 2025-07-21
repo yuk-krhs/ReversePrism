@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 IsLongReference                          000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 018 GcHandle                                 0001865D9120 ModelEnumType GCHandle GCHandle GCHandle Int32
+    // 010 IsLongReference                          ModelPrimitiveType bool bool bool Bool
+    // 018 GcHandle                                 ModelEnumType GCHandle GCHandle GCHandle Int32
     public partial class WeakReference : DataModel
     {
         public bool                                     IsLongReference                         { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new WeakReference() { Pointer= p0 };
 
-            value.IsLongReference                           = GetBool(new IntPtr(p + 0x010)); // 0245A4D39500 0x10 IsLongReference             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.GcHandle                                  = (GCHandle)GetInt32(new IntPtr(p + 0x018)); // 0245A4D39520 0x18 GcHandle                    ( 0001865D9120 ModelEnumType GCHandle GCHandle GCHandle Int32 )
+            value.IsLongReference                           = GetBool(new IntPtr(p + 0x010)); // 0x10 IsLongReference             ( ModelPrimitiveType bool bool bool Bool )
+            value.GcHandle                                  = (GCHandle)GetInt32(new IntPtr(p + 0x018)); // 0x18 GcHandle                    ( ModelEnumType GCHandle GCHandle GCHandle Int32 )
 
             return value;
         }

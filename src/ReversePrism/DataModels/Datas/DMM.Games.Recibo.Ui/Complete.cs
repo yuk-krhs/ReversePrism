@@ -11,10 +11,10 @@ namespace ReversePrism.DataModels
     // 000 Path                                     string IL2CPP_TYPE_STRING
     // 000 _dialog                                  GameObject IL2CPP_TYPE_CLASS
     // 008 _finish                                  Action IL2CPP_TYPE_CLASS
-    // 020 Image                                    0001866CCDB0 ModelClassType Image Image Image Pointer
-    // 028 Amount                                   0001866656B0 ModelPrimitiveType float float float Single
-    // 010 Instance                                 0001865F06D0 ModelClassType Complete Complete Complete Pointer
-    // 030 Logo                                     0001866CCDB0 ModelClassType Image Image Image Pointer
+    // 020 Image                                    ModelClassType Image Image Image Pointer
+    // 028 Amount                                   ModelPrimitiveType float float float Single
+    // 010 Instance                                 ModelClassType Complete Complete Complete Pointer
+    // 030 Logo                                     ModelClassType Image Image Image Pointer
     public partial class Complete : DataModel
     {
         public Image?                                   Image                                   { get; set; }
@@ -30,10 +30,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Complete() { Pointer= p0 };
 
-            value.Image                                     = GetObject<Image>(new IntPtr(p + 0x020), ReversePrism.DataModels.Image.FromPointer); // 02466B4E7098 0x20 Image                       ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.Amount                                    = GetSingle(new IntPtr(p + 0x028)); // 02466B4E70B8 0x28 Amount                      ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.Instance                                  = GetObject<Complete>(new IntPtr(p + 0x010), ReversePrism.DataModels.Complete.FromPointer); // 02466B4E70D8 0x10 Instance                    ( 0001865F06D0 ModelClassType Complete Complete Complete Pointer )
-            value.Logo                                      = GetObject<Image>(new IntPtr(p + 0x030), ReversePrism.DataModels.Image.FromPointer); // 02466B4E70F8 0x30 Logo                        ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
+            value.Image                                     = GetObject<Image>(new IntPtr(p + 0x020), ReversePrism.DataModels.Image.FromPointer); // 0x20 Image                       ( ModelClassType Image Image Image Pointer )
+            value.Amount                                    = GetSingle(new IntPtr(p + 0x028)); // 0x28 Amount                      ( ModelPrimitiveType float float float Single )
+            value.Instance                                  = GetObject<Complete>(new IntPtr(p + 0x010), ReversePrism.DataModels.Complete.FromPointer); // 0x10 Instance                    ( ModelClassType Complete Complete Complete Pointer )
+            value.Logo                                      = GetObject<Image>(new IntPtr(p + 0x030), ReversePrism.DataModels.Image.FromPointer); // 0x30 Logo                        ( ModelClassType Image Image Image Pointer )
 
             return value;
         }

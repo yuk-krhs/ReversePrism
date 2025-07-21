@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 050 MinOccurs                                0001865C0970 ModelEnumType Decimal Decimal Decimal Int32
-    // 060 MaxOccurs                                0001865C0970 ModelEnumType Decimal Decimal Decimal Int32
-    // 070 Flags                                    00018673D7D0 ModelEnumType Occurs Occurs Occurs Int32
+    // 050 MinOccurs                                ModelEnumType Decimal Decimal Decimal Int32
+    // 060 MaxOccurs                                ModelEnumType Decimal Decimal Decimal Int32
+    // 070 Flags                                    ModelEnumType Occurs Occurs Occurs Int32
     // 000 Empty                                    XmlSchemaParticle IL2CPP_TYPE_CLASS
     public partial class XmlSchemaParticle : DataModel
     {
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlSchemaParticle() { Pointer= p0 };
 
-            value.MinOccurs                                 = (Decimal)GetInt32(new IntPtr(p + 0x050)); // 0246673DF0D8 0x50 MinOccurs                   ( 0001865C0970 ModelEnumType Decimal Decimal Decimal Int32 )
-            value.MaxOccurs                                 = (Decimal)GetInt32(new IntPtr(p + 0x060)); // 0246673DF0F8 0x60 MaxOccurs                   ( 0001865C0970 ModelEnumType Decimal Decimal Decimal Int32 )
-            value.Flags                                     = (Occurs)GetInt32(new IntPtr(p + 0x070)); // 0246673DF118 0x70 Flags                       ( 00018673D7D0 ModelEnumType Occurs Occurs Occurs Int32 )
+            value.MinOccurs                                 = (Decimal)GetInt32(new IntPtr(p + 0x050)); // 0x50 MinOccurs                   ( ModelEnumType Decimal Decimal Decimal Int32 )
+            value.MaxOccurs                                 = (Decimal)GetInt32(new IntPtr(p + 0x060)); // 0x60 MaxOccurs                   ( ModelEnumType Decimal Decimal Decimal Int32 )
+            value.Flags                                     = (Occurs)GetInt32(new IntPtr(p + 0x070)); // 0x70 Flags                       ( ModelEnumType Occurs Occurs Occurs Int32 )
 
             return value;
         }

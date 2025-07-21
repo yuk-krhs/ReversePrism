@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Value                                  000186671910 ModelPrimitiveType string string string String
-    // 018 M_Type                                   0001865CCEB0 ModelEnumType StyleSelectorType StyleSelectorType StyleSelectorType Int32
+    // 010 M_Value                                  ModelPrimitiveType string string string String
+    // 018 M_Type                                   ModelEnumType StyleSelectorType StyleSelectorType StyleSelectorType Int32
     // 020 tempData                                 <object> IL2CPP_TYPE_OBJECT
     public partial class StyleSelectorPart : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StyleSelectorPart() { Pointer= p0 };
 
-            value.M_Value                                   = GetString(new IntPtr(p + 0x010)); // 0245A6804488 0x10 M_Value                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_Type                                    = (StyleSelectorType)GetInt32(new IntPtr(p + 0x018)); // 0245A68044A8 0x18 M_Type                      ( 0001865CCEB0 ModelEnumType StyleSelectorType StyleSelectorType StyleSelectorType Int32 )
+            value.M_Value                                   = GetString(new IntPtr(p + 0x010)); // 0x10 M_Value                     ( ModelPrimitiveType string string string String )
+            value.M_Type                                    = (StyleSelectorType)GetInt32(new IntPtr(p + 0x018)); // 0x18 M_Type                      ( ModelEnumType StyleSelectorType StyleSelectorType StyleSelectorType Int32 )
 
             return value;
         }

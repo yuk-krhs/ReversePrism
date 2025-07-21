@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 Guid                                     0001866722E0 ModelPrimitiveType string string string String
-    // 030 Selector                                 0001866722E0 ModelPrimitiveType string string string String
-    // 038 Fields                                   000185D0D6C8 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
-    // 040 Count                                    0001865F36C0 ModelPrimitiveType int int int Int32
-    // 044 StartIndex                               0001865F36C0 ModelPrimitiveType int int int Int32
-    // 048 Filter                                   00018657F900 ModelClassType Filter Filter Filter Pointer
+    // 028 Guid                                     ModelPrimitiveType string string string String
+    // 030 Selector                                 ModelPrimitiveType string string string String
+    // 038 Fields                                   ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
+    // 040 Count                                    ModelPrimitiveType int int int Int32
+    // 044 StartIndex                               ModelPrimitiveType int int int Int32
+    // 048 Filter                                   ModelClassType Filter Filter Filter Pointer
     public partial class PeopleParameter : DataModel
     {
         public string                                   Guid                                    { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PeopleParameter() { Pointer= p0 };
 
-            value.Guid                                      = GetString(new IntPtr(p + 0x028)); // 02466B517170 0x28 Guid                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Selector                                  = GetString(new IntPtr(p + 0x030)); // 02466B517190 0x30 Selector                    ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Fields                                    = GetStringList(new IntPtr(p + 0x038)); // 02466B5171B0 0x38 Fields                      ( 000185D0D6C8 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
-            value.Count                                     = GetInt32(new IntPtr(p + 0x040)); // 02466B5171D0 0x40 Count                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.StartIndex                                = GetInt32(new IntPtr(p + 0x044)); // 02466B5171F0 0x44 StartIndex                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Filter                                    = GetObject<Filter>(new IntPtr(p + 0x048), ReversePrism.DataModels.Filter.FromPointer); // 02466B517210 0x48 Filter                      ( 00018657F900 ModelClassType Filter Filter Filter Pointer )
+            value.Guid                                      = GetString(new IntPtr(p + 0x028)); // 0x28 Guid                        ( ModelPrimitiveType string string string String )
+            value.Selector                                  = GetString(new IntPtr(p + 0x030)); // 0x30 Selector                    ( ModelPrimitiveType string string string String )
+            value.Fields                                    = GetStringList(new IntPtr(p + 0x038)); // 0x38 Fields                      ( ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x040)); // 0x40 Count                       ( ModelPrimitiveType int int int Int32 )
+            value.StartIndex                                = GetInt32(new IntPtr(p + 0x044)); // 0x44 StartIndex                  ( ModelPrimitiveType int int int Int32 )
+            value.Filter                                    = GetObject<Filter>(new IntPtr(p + 0x048), ReversePrism.DataModels.Filter.FromPointer); // 0x48 Filter                      ( ModelClassType Filter Filter Filter Pointer )
 
             return value;
         }

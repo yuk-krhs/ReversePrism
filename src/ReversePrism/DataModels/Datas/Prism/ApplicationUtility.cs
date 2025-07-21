@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 onSoftwareReset                          Action IL2CPP_TYPE_CLASS
     // 008 SoftwareResetFunc                        Func`2<<object>, UniTask> IL2CPP_TYPE_GENERICINST
-    // 010 IsResetting                              000186595C30 ModelPrimitiveType bool bool bool Bool
+    // 010 IsResetting                              ModelPrimitiveType bool bool bool Bool
     public partial class ApplicationUtility : DataModel
     {
         public bool                                     IsResetting                             { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ApplicationUtility() { Pointer= p0 };
 
-            value.IsResetting                               = GetBool(new IntPtr(p + 0x010)); // 0245A3A3CE50 0x10 IsResetting                 ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.IsResetting                               = GetBool(new IntPtr(p + 0x010)); // 0x10 IsResetting                 ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

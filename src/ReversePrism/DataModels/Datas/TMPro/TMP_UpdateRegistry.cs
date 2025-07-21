@@ -9,9 +9,9 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_Instance                               TMP_UpdateRegistry IL2CPP_TYPE_CLASS
-    // 010 M_LayoutRebuildQueue                     000185CE1518 ModelClassListType List`1<ICanvasElement> List`1<ICanvasElement> List<ICanvasElement> Pointer
+    // 010 M_LayoutRebuildQueue                     ModelClassListType List`1<ICanvasElement> List`1<ICanvasElement> List<ICanvasElement> Pointer
     // 018 m_LayoutQueueLookup                      HashSet`1<int> IL2CPP_TYPE_GENERICINST
-    // 020 M_GraphicRebuildQueue                    000185CE1518 ModelClassListType List`1<ICanvasElement> List`1<ICanvasElement> List<ICanvasElement> Pointer
+    // 020 M_GraphicRebuildQueue                    ModelClassListType List`1<ICanvasElement> List`1<ICanvasElement> List<ICanvasElement> Pointer
     // 028 m_GraphicQueueLookup                     HashSet`1<int> IL2CPP_TYPE_GENERICINST
     public partial class TMP_UpdateRegistry : DataModel
     {
@@ -26,8 +26,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TMP_UpdateRegistry() { Pointer= p0 };
 
-            value.M_LayoutRebuildQueue                      = GetObjectList<ICanvasElement>(new IntPtr(p + 0x010), ReversePrism.DataModels.ICanvasElement.FromPointer); // 02466A6CABD0 0x10 M_LayoutRebuildQueue        ( 000185CE1518 ModelClassListType List`1<ICanvasElement> List`1<ICanvasElement> List<ICanvasElement> Pointer )
-            value.M_GraphicRebuildQueue                     = GetObjectList<ICanvasElement>(new IntPtr(p + 0x020), ReversePrism.DataModels.ICanvasElement.FromPointer); // 02466A6CAC10 0x20 M_GraphicRebuildQueue       ( 000185CE1518 ModelClassListType List`1<ICanvasElement> List`1<ICanvasElement> List<ICanvasElement> Pointer )
+            value.M_LayoutRebuildQueue                      = GetObjectList<ICanvasElement>(new IntPtr(p + 0x010), ReversePrism.DataModels.ICanvasElement.FromPointer); // 0x10 M_LayoutRebuildQueue        ( ModelClassListType List`1<ICanvasElement> List`1<ICanvasElement> List<ICanvasElement> Pointer )
+            value.M_GraphicRebuildQueue                     = GetObjectList<ICanvasElement>(new IntPtr(p + 0x020), ReversePrism.DataModels.ICanvasElement.FromPointer); // 0x20 M_GraphicRebuildQueue       ( ModelClassListType List`1<ICanvasElement> List`1<ICanvasElement> List<ICanvasElement> Pointer )
 
             return value;
         }

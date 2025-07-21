@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_value                                  00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 010 M_value                                  ModelPrimitiveType sbyte sbyte sbyte SByte
     // 000 True                                     SqlBoolean IL2CPP_TYPE_VALUETYPE
     // 001 False                                    SqlBoolean IL2CPP_TYPE_VALUETYPE
     // 002 Null                                     SqlBoolean IL2CPP_TYPE_VALUETYPE
@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SqlBoolean() { Pointer= p0 };
 
-            value.M_value                                   = GetSByte(new IntPtr(p + 0x010)); // 0246689EA7C0 0x10 M_value                     ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.M_value                                   = GetSByte(new IntPtr(p + 0x010)); // 0x10 M_value                     ( ModelPrimitiveType sbyte sbyte sbyte SByte )
 
             return value;
         }

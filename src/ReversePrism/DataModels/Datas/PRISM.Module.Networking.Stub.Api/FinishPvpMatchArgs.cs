@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<FinishPvpMatchArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 InGameResultFieldNumber                  int IL2CPP_TYPE_I4
-    // 018 InGameResult                             0001865E7180 ModelClassType PvpInGameResultStatus PvpInGameResultStatus PvpInGameResultStatus Pointer
+    // 018 InGameResult                             ModelClassType PvpInGameResultStatus PvpInGameResultStatus PvpInGameResultStatus Pointer
     public partial class FinishPvpMatchArgs : DataModel
     {
         public PvpInGameResultStatus?                   InGameResult                            { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FinishPvpMatchArgs() { Pointer= p0 };
 
-            value.InGameResult                              = GetObject<PvpInGameResultStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.PvpInGameResultStatus.FromPointer); // 0246626B8EB0 0x18 InGameResult                ( 0001865E7180 ModelClassType PvpInGameResultStatus PvpInGameResultStatus PvpInGameResultStatus Pointer )
+            value.InGameResult                              = GetObject<PvpInGameResultStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.PvpInGameResultStatus.FromPointer); // 0x18 InGameResult                ( ModelClassType PvpInGameResultStatus PvpInGameResultStatus PvpInGameResultStatus Pointer )
 
             return value;
         }

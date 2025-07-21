@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ProductKey                               0001865A2670 ModelEnumType ProductKey ProductKey ProductKey Int32
-    // 018 Master                                   000186740010 ModelClassType ICostume ICostume ICostume Pointer
+    // 010 ProductKey                               ModelEnumType ProductKey ProductKey ProductKey Int32
+    // 018 Master                                   ModelClassType ICostume ICostume ICostume Pointer
     public partial class CostumeDetailPopupViewModel : DataModel
     {
         public ProductKey                               ProductKey                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CostumeDetailPopupViewModel() { Pointer= p0 };
 
-            value.ProductKey                                = (ProductKey)GetInt32(new IntPtr(p + 0x010)); // 024665F8C308 0x10 ProductKey                  ( 0001865A2670 ModelEnumType ProductKey ProductKey ProductKey Int32 )
-            value.Master                                    = GetObject<ICostume>(new IntPtr(p + 0x018), ReversePrism.DataModels.ICostume.FromPointer); // 024665F8C328 0x18 Master                      ( 000186740010 ModelClassType ICostume ICostume ICostume Pointer )
+            value.ProductKey                                = (ProductKey)GetInt32(new IntPtr(p + 0x010)); // 0x10 ProductKey                  ( ModelEnumType ProductKey ProductKey ProductKey Int32 )
+            value.Master                                    = GetObject<ICostume>(new IntPtr(p + 0x018), ReversePrism.DataModels.ICostume.FromPointer); // 0x18 Master                      ( ModelClassType ICostume ICostume ICostume Pointer )
 
             return value;
         }

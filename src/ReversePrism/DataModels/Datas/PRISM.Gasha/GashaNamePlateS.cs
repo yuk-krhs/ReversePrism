@@ -8,15 +8,16 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 AniNamePlate                             0001866B8DE0 ModelClassType Animator Animator Animator Pointer
-    // 028 ConditionName                            000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 030 TxtNickName                              000185CAE588 ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer
-    // 038 TxtName                                  000185CAE588 ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer
-    // 040 GoNew                                    0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 048 PieceItem                                0001865BC1A0 ModelClassType CmnItem CmnItem CmnItem Pointer
-    // 050 TxtPieceDetail                           0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 058 RainbowItem                              0001865BC1A0 ModelClassType CmnItem CmnItem CmnItem Pointer
-    // 060 GashaSign                                00018661B650 ModelClassType GashaSign GashaSign GashaSign Pointer
+    // 020 AniNamePlate                             ModelClassType Animator Animator Animator Pointer
+    // 028 ConditionName                            ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 030 TxtNickName                              ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer
+    // 038 TxtName                                  ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer
+    // 040 GoNew                                    ModelClassType GameObject GameObject GameObject Pointer
+    // 048 PieceItem                                ModelClassType RewardItem RewardItem RewardItem Pointer
+    // 050 PieceAmountText                          ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 058 TxtPieceDetail                           ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 060 RainbowItem                              ModelClassType RewardItem RewardItem RewardItem Pointer
+    // 068 GashaSign                                ModelClassType GashaSign GashaSign GashaSign Pointer
     public partial class GashaNamePlateS : DataModel
     {
         public Animator?                                AniNamePlate                            { get; set; }
@@ -24,9 +25,10 @@ namespace ReversePrism.DataModels
         public List<UITextMeshProUGUI>?                 TxtNickName                             { get; set; }
         public List<UITextMeshProUGUI>?                 TxtName                                 { get; set; }
         public GameObject?                              GoNew                                   { get; set; }
-        public CmnItem?                                 PieceItem                               { get; set; }
+        public RewardItem?                              PieceItem                               { get; set; }
+        public UITextMeshProUGUI?                       PieceAmountText                         { get; set; }
         public UITextMeshProUGUI?                       TxtPieceDetail                          { get; set; }
-        public CmnItem?                                 RainbowItem                             { get; set; }
+        public RewardItem?                              RainbowItem                             { get; set; }
         public GashaSign?                               GashaSign                               { get; set; }
 
         public static GashaNamePlateS? FromPointer(IntPtr p0)
@@ -37,15 +39,16 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GashaNamePlateS() { Pointer= p0 };
 
-            value.AniNamePlate                              = GetObject<Animator>(new IntPtr(p + 0x020), ReversePrism.DataModels.Animator.FromPointer); // 024664E27BB0 0x20 AniNamePlate                ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
-            value.ConditionName                             = GetStringList(new IntPtr(p + 0x028)); // 024664E27BD0 0x28 ConditionName               ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.TxtNickName                               = GetObjectList<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024664E27BF0 0x30 TxtNickName                 ( 000185CAE588 ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer )
-            value.TxtName                                   = GetObjectList<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024664E27C10 0x38 TxtName                     ( 000185CAE588 ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer )
-            value.GoNew                                     = GetObject<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 024664E27C30 0x40 GoNew                       ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.PieceItem                                 = GetObject<CmnItem>(new IntPtr(p + 0x048), ReversePrism.DataModels.CmnItem.FromPointer); // 024664E27C50 0x48 PieceItem                   ( 0001865BC1A0 ModelClassType CmnItem CmnItem CmnItem Pointer )
-            value.TxtPieceDetail                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024664E27C70 0x50 TxtPieceDetail              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.RainbowItem                               = GetObject<CmnItem>(new IntPtr(p + 0x058), ReversePrism.DataModels.CmnItem.FromPointer); // 024664E27C90 0x58 RainbowItem                 ( 0001865BC1A0 ModelClassType CmnItem CmnItem CmnItem Pointer )
-            value.GashaSign                                 = GetObject<GashaSign>(new IntPtr(p + 0x060), ReversePrism.DataModels.GashaSign.FromPointer); // 024664E27CB0 0x60 GashaSign                   ( 00018661B650 ModelClassType GashaSign GashaSign GashaSign Pointer )
+            value.AniNamePlate                              = GetObject<Animator>(new IntPtr(p + 0x020), ReversePrism.DataModels.Animator.FromPointer); // 0x20 AniNamePlate                ( ModelClassType Animator Animator Animator Pointer )
+            value.ConditionName                             = GetStringList(new IntPtr(p + 0x028)); // 0x28 ConditionName               ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.TxtNickName                               = GetObjectList<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x30 TxtNickName                 ( ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer )
+            value.TxtName                                   = GetObjectList<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x38 TxtName                     ( ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer )
+            value.GoNew                                     = GetObject<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 0x40 GoNew                       ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.PieceItem                                 = GetObject<RewardItem>(new IntPtr(p + 0x048), ReversePrism.DataModels.RewardItem.FromPointer); // 0x48 PieceItem                   ( ModelClassType RewardItem RewardItem RewardItem Pointer )
+            value.PieceAmountText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x50 PieceAmountText             ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtPieceDetail                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x058), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x58 TxtPieceDetail              ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.RainbowItem                               = GetObject<RewardItem>(new IntPtr(p + 0x060), ReversePrism.DataModels.RewardItem.FromPointer); // 0x60 RainbowItem                 ( ModelClassType RewardItem RewardItem RewardItem Pointer )
+            value.GashaSign                                 = GetObject<GashaSign>(new IntPtr(p + 0x068), ReversePrism.DataModels.GashaSign.FromPointer); // 0x68 GashaSign                   ( ModelClassType GashaSign GashaSign GashaSign Pointer )
 
             return value;
         }

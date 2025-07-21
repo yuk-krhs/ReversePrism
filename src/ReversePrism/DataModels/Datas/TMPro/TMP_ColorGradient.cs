@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 ColorMode                                0001865CFC80 ModelEnumType ColorMode ColorMode ColorMode Int32
-    // 01C TopLeft                                  0001865AB0A0 ModelEnumType Color Color Color Int32
-    // 02C TopRight                                 0001865AB0A0 ModelEnumType Color Color Color Int32
-    // 03C BottomLeft                               0001865AB0A0 ModelEnumType Color Color Color Int32
-    // 04C BottomRight                              0001865AB0A0 ModelEnumType Color Color Color Int32
+    // 018 ColorMode                                ModelEnumType ColorMode ColorMode ColorMode Int32
+    // 01C TopLeft                                  ModelEnumType Color Color Color Int32
+    // 02C TopRight                                 ModelEnumType Color Color Color Int32
+    // 03C BottomLeft                               ModelEnumType Color Color Color Int32
+    // 04C BottomRight                              ModelEnumType Color Color Color Int32
     // 000 k_DefaultColorMode                       ColorMode IL2CPP_TYPE_VALUETYPE
     // 000 k_DefaultColor                           Color IL2CPP_TYPE_VALUETYPE
     public partial class TMP_ColorGradient : DataModel
@@ -31,11 +31,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TMP_ColorGradient() { Pointer= p0 };
 
-            value.ColorMode                                 = (ColorMode)GetInt32(new IntPtr(p + 0x018)); // 02466094BDB0 0x18 ColorMode                   ( 0001865CFC80 ModelEnumType ColorMode ColorMode ColorMode Int32 )
-            value.TopLeft                                   = (Color)GetInt32(new IntPtr(p + 0x01C)); // 02466094BDD0 0x1C TopLeft                     ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.TopRight                                  = (Color)GetInt32(new IntPtr(p + 0x02C)); // 02466094BDF0 0x2C TopRight                    ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.BottomLeft                                = (Color)GetInt32(new IntPtr(p + 0x03C)); // 02466094BE10 0x3C BottomLeft                  ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.BottomRight                               = (Color)GetInt32(new IntPtr(p + 0x04C)); // 02466094BE30 0x4C BottomRight                 ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
+            value.ColorMode                                 = (ColorMode)GetInt32(new IntPtr(p + 0x018)); // 0x18 ColorMode                   ( ModelEnumType ColorMode ColorMode ColorMode Int32 )
+            value.TopLeft                                   = (Color)GetInt32(new IntPtr(p + 0x01C)); // 0x1C TopLeft                     ( ModelEnumType Color Color Color Int32 )
+            value.TopRight                                  = (Color)GetInt32(new IntPtr(p + 0x02C)); // 0x2C TopRight                    ( ModelEnumType Color Color Color Int32 )
+            value.BottomLeft                                = (Color)GetInt32(new IntPtr(p + 0x03C)); // 0x3C BottomLeft                  ( ModelEnumType Color Color Color Int32 )
+            value.BottomRight                               = (Color)GetInt32(new IntPtr(p + 0x04C)); // 0x4C BottomRight                 ( ModelEnumType Color Color Color Int32 )
 
             return value;
         }

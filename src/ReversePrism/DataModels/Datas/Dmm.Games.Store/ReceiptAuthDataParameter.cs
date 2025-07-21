@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 SdkCommand                               0001866722E0 ModelPrimitiveType string string string String
+    // 010 SdkCommand                               ModelPrimitiveType string string string String
     public partial class ReceiptAuthDataParameter : DataModel
     {
         public string                                   SdkCommand                              { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ReceiptAuthDataParameter() { Pointer= p0 };
 
-            value.SdkCommand                                = GetString(new IntPtr(p + 0x010)); // 02466B544A28 0x10 SdkCommand                  ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.SdkCommand                                = GetString(new IntPtr(p + 0x010)); // 0x10 SdkCommand                  ( ModelPrimitiveType string string string String )
 
             return value;
         }

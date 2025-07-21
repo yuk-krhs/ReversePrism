@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 018 idolStoriesCache                         Dictionary`2<int, IIdolStoryStatus> IL2CPP_TYPE_GENERICINST
     // 020 eventStoriesCache                        Dictionary`2<int, IEventStoryStatus> IL2CPP_TYPE_GENERICINST
     // 028 extraStoriesCache                        Dictionary`2<int, IExtraStoryStatus> IL2CPP_TYPE_GENERICINST
-    // 030 IsReady                                  000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 030 IsReady                                  ModelPrimitiveType bool bool bool Bool
     public partial class StoryCache : DataModel
     {
         public bool                                     IsReady                                 { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StoryCache() { Pointer= p0 };
 
-            value.IsReady                                   = GetBool(new IntPtr(p + 0x030)); // 0245A4AE1CB8 0x30 IsReady                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsReady                                   = GetBool(new IntPtr(p + 0x030)); // 0x30 IsReady                     ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

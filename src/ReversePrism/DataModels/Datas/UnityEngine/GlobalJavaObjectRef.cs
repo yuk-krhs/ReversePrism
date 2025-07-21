@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_disposed                               000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 M_disposed                               ModelPrimitiveType bool bool bool Bool
     // 018 m_jobject                                <int> IL2CPP_TYPE_I
     public partial class GlobalJavaObjectRef : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GlobalJavaObjectRef() { Pointer= p0 };
 
-            value.M_disposed                                = GetBool(new IntPtr(p + 0x010)); // 0245A68F6FA0 0x10 M_disposed                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_disposed                                = GetBool(new IntPtr(p + 0x010)); // 0x10 M_disposed                  ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

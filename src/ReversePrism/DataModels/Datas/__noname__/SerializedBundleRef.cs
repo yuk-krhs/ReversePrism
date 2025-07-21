@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 AssemblyQualifiedName                    0001866722E0 ModelPrimitiveType string string string String
-    // 018 Bundle                                   00018676A300 ModelClassType PostProcessBundle PostProcessBundle PostProcessBundle Pointer
+    // 010 AssemblyQualifiedName                    ModelPrimitiveType string string string String
+    // 018 Bundle                                   ModelClassType PostProcessBundle PostProcessBundle PostProcessBundle Pointer
     public partial class SerializedBundleRef : DataModel
     {
         public string                                   AssemblyQualifiedName                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SerializedBundleRef() { Pointer= p0 };
 
-            value.AssemblyQualifiedName                     = GetString(new IntPtr(p + 0x010)); // 024663333C88 0x10 AssemblyQualifiedName       ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Bundle                                    = GetObject<PostProcessBundle>(new IntPtr(p + 0x018), ReversePrism.DataModels.PostProcessBundle.FromPointer); // 024663333CA8 0x18 Bundle                      ( 00018676A300 ModelClassType PostProcessBundle PostProcessBundle PostProcessBundle Pointer )
+            value.AssemblyQualifiedName                     = GetString(new IntPtr(p + 0x010)); // 0x10 AssemblyQualifiedName       ( ModelPrimitiveType string string string String )
+            value.Bundle                                    = GetObject<PostProcessBundle>(new IntPtr(p + 0x018), ReversePrism.DataModels.PostProcessBundle.FromPointer); // 0x18 Bundle                      ( ModelClassType PostProcessBundle PostProcessBundle PostProcessBundle Pointer )
 
             return value;
         }

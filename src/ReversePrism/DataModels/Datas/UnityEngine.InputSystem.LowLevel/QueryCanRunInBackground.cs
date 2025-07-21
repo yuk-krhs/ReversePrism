@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 kSize                                    int IL2CPP_TYPE_I4
-    // 010 BaseCommand                              0001865ECDD0 ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32
-    // 018 CanRunInBackground                       000186595960 ModelPrimitiveType bool bool bool Bool
+    // 010 BaseCommand                              ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32
+    // 018 CanRunInBackground                       ModelPrimitiveType bool bool bool Bool
     public partial class QueryCanRunInBackground : DataModel
     {
         public InputDeviceCommand                       BaseCommand                             { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new QueryCanRunInBackground() { Pointer= p0 };
 
-            value.BaseCommand                               = (InputDeviceCommand)GetInt32(new IntPtr(p + 0x010)); // 024667853120 0x10 BaseCommand                 ( 0001865ECDD0 ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32 )
-            value.CanRunInBackground                        = GetBool(new IntPtr(p + 0x018)); // 024667853140 0x18 CanRunInBackground          ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.BaseCommand                               = (InputDeviceCommand)GetInt32(new IntPtr(p + 0x010)); // 0x10 BaseCommand                 ( ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32 )
+            value.CanRunInBackground                        = GetBool(new IntPtr(p + 0x018)); // 0x18 CanRunInBackground          ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

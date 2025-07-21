@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 SceneHash                                0001865F36C0 ModelPrimitiveType int int int Int32
-    // 018 CellDataAsset                            0001866353B0 ModelClassType TextAsset TextAsset TextAsset Pointer
-    // 020 CellOptionalDataAsset                    0001866353B0 ModelClassType TextAsset TextAsset TextAsset Pointer
+    // 010 SceneHash                                ModelPrimitiveType int int int Int32
+    // 018 CellDataAsset                            ModelClassType TextAsset TextAsset TextAsset Pointer
+    // 020 CellOptionalDataAsset                    ModelClassType TextAsset TextAsset TextAsset Pointer
     public partial class PerScenarioData : DataModel
     {
         public int                                      SceneHash                               { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PerScenarioData() { Pointer= p0 };
 
-            value.SceneHash                                 = GetInt32(new IntPtr(p + 0x010)); // 02466927D828 0x10 SceneHash                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.CellDataAsset                             = GetObject<TextAsset>(new IntPtr(p + 0x018), ReversePrism.DataModels.TextAsset.FromPointer); // 02466927D848 0x18 CellDataAsset               ( 0001866353B0 ModelClassType TextAsset TextAsset TextAsset Pointer )
-            value.CellOptionalDataAsset                     = GetObject<TextAsset>(new IntPtr(p + 0x020), ReversePrism.DataModels.TextAsset.FromPointer); // 02466927D868 0x20 CellOptionalDataAsset       ( 0001866353B0 ModelClassType TextAsset TextAsset TextAsset Pointer )
+            value.SceneHash                                 = GetInt32(new IntPtr(p + 0x010)); // 0x10 SceneHash                   ( ModelPrimitiveType int int int Int32 )
+            value.CellDataAsset                             = GetObject<TextAsset>(new IntPtr(p + 0x018), ReversePrism.DataModels.TextAsset.FromPointer); // 0x18 CellDataAsset               ( ModelClassType TextAsset TextAsset TextAsset Pointer )
+            value.CellOptionalDataAsset                     = GetObject<TextAsset>(new IntPtr(p + 0x020), ReversePrism.DataModels.TextAsset.FromPointer); // 0x20 CellOptionalDataAsset       ( ModelClassType TextAsset TextAsset TextAsset Pointer )
 
             return value;
         }

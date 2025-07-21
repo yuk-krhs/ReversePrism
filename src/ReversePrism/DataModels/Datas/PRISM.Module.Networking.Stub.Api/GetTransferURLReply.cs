@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<GetTransferURLReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 UrlFieldNumber                           int IL2CPP_TYPE_I4
-    // 018 Url                                      000186671910 ModelPrimitiveType string string string String
+    // 018 Url                                      ModelPrimitiveType string string string String
     public partial class GetTransferURLReply : DataModel
     {
         public string                                   Url                                     { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetTransferURLReply() { Pointer= p0 };
 
-            value.Url                                       = GetString(new IntPtr(p + 0x018)); // 024660B5AE30 0x18 Url                         ( 000186671910 ModelPrimitiveType string string string String )
+            value.Url                                       = GetString(new IntPtr(p + 0x018)); // 0x18 Url                         ( ModelPrimitiveType string string string String )
 
             return value;
         }

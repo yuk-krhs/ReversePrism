@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 C0                                       0001866C40F0 ModelEnumType double3 double3 double3 Int32
-    // 028 C1                                       0001866C40F0 ModelEnumType double3 double3 double3 Int32
+    // 010 C0                                       ModelEnumType double3 double3 double3 Int32
+    // 028 C1                                       ModelEnumType double3 double3 double3 Int32
     // 000 zero                                     double3x2 IL2CPP_TYPE_VALUETYPE
     public partial class double3x2 : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new double3x2() { Pointer= p0 };
 
-            value.C0                                        = (double3)GetInt32(new IntPtr(p + 0x010)); // 024667EC9930 0x10 C0                          ( 0001866C40F0 ModelEnumType double3 double3 double3 Int32 )
-            value.C1                                        = (double3)GetInt32(new IntPtr(p + 0x028)); // 024667EC9950 0x28 C1                          ( 0001866C40F0 ModelEnumType double3 double3 double3 Int32 )
+            value.C0                                        = (double3)GetInt32(new IntPtr(p + 0x010)); // 0x10 C0                          ( ModelEnumType double3 double3 double3 Int32 )
+            value.C1                                        = (double3)GetInt32(new IntPtr(p + 0x028)); // 0x28 C1                          ( ModelEnumType double3 double3 double3 Int32 )
 
             return value;
         }

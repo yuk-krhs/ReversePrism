@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Element                                0001866B34A0 ModelClassType VisualElement VisualElement VisualElement Pointer
+    // 010 M_Element                                ModelClassType VisualElement VisualElement VisualElement Pointer
     public partial class VisualElementStyleSheetSet : DataModel
     {
         public VisualElement?                           M_Element                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new VisualElementStyleSheetSet() { Pointer= p0 };
 
-            value.M_Element                                 = GetObject<VisualElement>(new IntPtr(p + 0x010), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A681E5D8 0x10 M_Element                   ( 0001866B34A0 ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.M_Element                                 = GetObject<VisualElement>(new IntPtr(p + 0x010), ReversePrism.DataModels.VisualElement.FromPointer); // 0x10 M_Element                   ( ModelClassType VisualElement VisualElement VisualElement Pointer )
 
             return value;
         }

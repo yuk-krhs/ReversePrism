@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 NormalTab                                0001866CCDB0 ModelClassType Image Image Image Pointer
-    // 028 SelectedTab                              0001866CCDB0 ModelClassType Image Image Image Pointer
-    // 030 ExpireBadge                              0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
+    // 020 NormalTab                                ModelClassType Image Image Image Pointer
+    // 028 SelectedTab                              ModelClassType Image Image Image Pointer
+    // 030 ExpireBadge                              ModelClassType UIImage UIImage UIImage Pointer
     public partial class ItemListTabButton : DataModel
     {
         public Image?                                   NormalTab                               { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ItemListTabButton() { Pointer= p0 };
 
-            value.NormalTab                                 = GetObject<Image>(new IntPtr(p + 0x020), ReversePrism.DataModels.Image.FromPointer); // 02466535AE08 0x20 NormalTab                   ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.SelectedTab                               = GetObject<Image>(new IntPtr(p + 0x028), ReversePrism.DataModels.Image.FromPointer); // 02466535AE28 0x28 SelectedTab                 ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.ExpireBadge                               = GetObject<UIImage>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIImage.FromPointer); // 02466535AE48 0x30 ExpireBadge                 ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.NormalTab                                 = GetObject<Image>(new IntPtr(p + 0x020), ReversePrism.DataModels.Image.FromPointer); // 0x20 NormalTab                   ( ModelClassType Image Image Image Pointer )
+            value.SelectedTab                               = GetObject<Image>(new IntPtr(p + 0x028), ReversePrism.DataModels.Image.FromPointer); // 0x28 SelectedTab                 ( ModelClassType Image Image Image Pointer )
+            value.ExpireBadge                               = GetObject<UIImage>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIImage.FromPointer); // 0x30 ExpireBadge                 ( ModelClassType UIImage UIImage UIImage Pointer )
 
             return value;
         }

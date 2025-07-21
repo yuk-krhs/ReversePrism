@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Status                                   0001866F2E80 ModelEnumType InitializeResult InitializeResult InitializeResult Int32
-    // 018 Error                                    0001865C8690 ModelClassType Error Error Error Pointer
+    // 010 Status                                   ModelEnumType InitializeResult InitializeResult InitializeResult Int32
+    // 018 Error                                    ModelClassType Error Error Error Pointer
     public partial class InitializeData : DataModel
     {
         public InitializeResult                         Status                                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InitializeData() { Pointer= p0 };
 
-            value.Status                                    = (InitializeResult)GetInt32(new IntPtr(p + 0x010)); // 02466B515350 0x10 Status                      ( 0001866F2E80 ModelEnumType InitializeResult InitializeResult InitializeResult Int32 )
-            value.Error                                     = GetObject<Error>(new IntPtr(p + 0x018), ReversePrism.DataModels.Error.FromPointer); // 02466B515370 0x18 Error                       ( 0001865C8690 ModelClassType Error Error Error Pointer )
+            value.Status                                    = (InitializeResult)GetInt32(new IntPtr(p + 0x010)); // 0x10 Status                      ( ModelEnumType InitializeResult InitializeResult InitializeResult Int32 )
+            value.Error                                     = GetObject<Error>(new IntPtr(p + 0x018), ReversePrism.DataModels.Error.FromPointer); // 0x18 Error                       ( ModelClassType Error Error Error Pointer )
 
             return value;
         }

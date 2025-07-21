@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 k_AndroidBillingClientStateListenerClassName string IL2CPP_TYPE_STRING
-    // 020 M_OnConnected                            0001866792B0 ModelClassType Action Action Action Pointer
+    // 020 M_OnConnected                            ModelClassType Action Action Action Pointer
     // 028 m_Disconnect                             Action`1<GoogleBillingResponseCode> IL2CPP_TYPE_GENERICINST
     public partial class BillingClientStateListener : DataModel
     {
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BillingClientStateListener() { Pointer= p0 };
 
-            value.M_OnConnected                             = GetObject<Action>(new IntPtr(p + 0x020), ReversePrism.DataModels.Action.FromPointer); // 0245A68C8150 0x20 M_OnConnected               ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.M_OnConnected                             = GetObject<Action>(new IntPtr(p + 0x020), ReversePrism.DataModels.Action.FromPointer); // 0x20 M_OnConnected               ( ModelClassType Action Action Action Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Array                                    000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer
+    // 010 Array                                    ModelPrimitiveListType int[] int[] List<int> Pointer
     public partial class IntArray : DataModel
     {
         public List<int>?                               Array                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IntArray() { Pointer= p0 };
 
-            value.Array                                     = GetInt32List(new IntPtr(p + 0x010)); // 024667C9EBC0 0x10 Array                       ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.Array                                     = GetInt32List(new IntPtr(p + 0x010)); // 0x10 Array                       ( ModelPrimitiveListType int[] int[] List<int> Pointer )
 
             return value;
         }

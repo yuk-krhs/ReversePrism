@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 C0                                       0001866CBBB0 ModelEnumType uint4 uint4 uint4 Int32
-    // 020 C1                                       0001866CBBB0 ModelEnumType uint4 uint4 uint4 Int32
+    // 010 C0                                       ModelEnumType uint4 uint4 uint4 Int32
+    // 020 C1                                       ModelEnumType uint4 uint4 uint4 Int32
     // 000 zero                                     uint4x2 IL2CPP_TYPE_VALUETYPE
     public partial class uint4x2 : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new uint4x2() { Pointer= p0 };
 
-            value.C0                                        = (uint4)GetInt32(new IntPtr(p + 0x010)); // 024667F02648 0x10 C0                          ( 0001866CBBB0 ModelEnumType uint4 uint4 uint4 Int32 )
-            value.C1                                        = (uint4)GetInt32(new IntPtr(p + 0x020)); // 024667F02668 0x20 C1                          ( 0001866CBBB0 ModelEnumType uint4 uint4 uint4 Int32 )
+            value.C0                                        = (uint4)GetInt32(new IntPtr(p + 0x010)); // 0x10 C0                          ( ModelEnumType uint4 uint4 uint4 Int32 )
+            value.C1                                        = (uint4)GetInt32(new IntPtr(p + 0x020)); // 0x20 C1                          ( ModelEnumType uint4 uint4 uint4 Int32 )
 
             return value;
         }

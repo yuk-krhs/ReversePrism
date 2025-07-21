@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Player                                   0001866F3450 ModelClassType ScreenTapSkipAnimationPlayer ScreenTapSkipAnimationPlayer ScreenTapSkipAnimationPlayer Pointer
+    // 020 Player                                   ModelClassType ScreenTapSkipAnimationPlayer ScreenTapSkipAnimationPlayer ScreenTapSkipAnimationPlayer Pointer
     public partial class ScreenTapSkipAnimationPlayerCallerImplement : DataModel
     {
         public ScreenTapSkipAnimationPlayer?            Player                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ScreenTapSkipAnimationPlayerCallerImplement() { Pointer= p0 };
 
-            value.Player                                    = GetObject<ScreenTapSkipAnimationPlayer>(new IntPtr(p + 0x020), ReversePrism.DataModels.ScreenTapSkipAnimationPlayer.FromPointer); // 02466BA6BF50 0x20 Player                      ( 0001866F3450 ModelClassType ScreenTapSkipAnimationPlayer ScreenTapSkipAnimationPlayer ScreenTapSkipAnimationPlayer Pointer )
+            value.Player                                    = GetObject<ScreenTapSkipAnimationPlayer>(new IntPtr(p + 0x020), ReversePrism.DataModels.ScreenTapSkipAnimationPlayer.FromPointer); // 0x20 Player                      ( ModelClassType ScreenTapSkipAnimationPlayer ScreenTapSkipAnimationPlayer ScreenTapSkipAnimationPlayer Pointer )
 
             return value;
         }

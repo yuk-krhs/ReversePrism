@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Type                                     00018675CA30 ModelEnumType OptionType OptionType OptionType Int32
-    // 018 Name                                     000186672F10 ModelPrimitiveType string string string String
-    // 020 IntValue                                 0001865F4260 ModelPrimitiveType int int int Int32
-    // 028 StringValue                              000186672F10 ModelPrimitiveType string string string String
+    // 010 Type                                     ModelEnumType OptionType OptionType OptionType Int32
+    // 018 Name                                     ModelPrimitiveType string string string String
+    // 020 IntValue                                 ModelPrimitiveType int int int Int32
+    // 028 StringValue                              ModelPrimitiveType string string string String
     public partial class ChannelOption : DataModel
     {
         public OptionType                               Type                                    { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChannelOption() { Pointer= p0 };
 
-            value.Type                                      = (OptionType)GetInt32(new IntPtr(p + 0x010)); // 024660E232B0 0x10 Type                        ( 00018675CA30 ModelEnumType OptionType OptionType OptionType Int32 )
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 024660E232D0 0x18 Name                        ( 000186672F10 ModelPrimitiveType string string string String )
-            value.IntValue                                  = GetInt32(new IntPtr(p + 0x020)); // 024660E232F0 0x20 IntValue                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.StringValue                               = GetString(new IntPtr(p + 0x028)); // 024660E23310 0x28 StringValue                 ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Type                                      = (OptionType)GetInt32(new IntPtr(p + 0x010)); // 0x10 Type                        ( ModelEnumType OptionType OptionType OptionType Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0x18 Name                        ( ModelPrimitiveType string string string String )
+            value.IntValue                                  = GetInt32(new IntPtr(p + 0x020)); // 0x20 IntValue                    ( ModelPrimitiveType int int int Int32 )
+            value.StringValue                               = GetString(new IntPtr(p + 0x028)); // 0x28 StringValue                 ( ModelPrimitiveType string string string String )
 
             return value;
         }

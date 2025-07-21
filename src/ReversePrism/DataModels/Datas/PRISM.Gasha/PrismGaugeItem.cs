@@ -8,12 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 CmnItem                                  0001865BC1A0 ModelClassType CmnItem CmnItem CmnItem Pointer
-    // 028 TxtPrismPoint                            0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 030 GoDone                                   0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
+    // 020 RewardItem                               ModelClassType RewardItem RewardItem RewardItem Pointer
+    // 028 GlowEffect                               ModelClassType GameObject GameObject GameObject Pointer
+    // 030 TxtPrismPoint                            ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 038 GoDone                                   ModelClassType GameObject GameObject GameObject Pointer
     public partial class PrismGaugeItem : DataModel
     {
-        public CmnItem?                                 CmnItem                                 { get; set; }
+        public RewardItem?                              RewardItem                              { get; set; }
+        public GameObject?                              GlowEffect                              { get; set; }
         public UITextMeshProUGUI?                       TxtPrismPoint                           { get; set; }
         public GameObject?                              GoDone                                  { get; set; }
 
@@ -25,9 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PrismGaugeItem() { Pointer= p0 };
 
-            value.CmnItem                                   = GetObject<CmnItem>(new IntPtr(p + 0x020), ReversePrism.DataModels.CmnItem.FromPointer); // 024665458C28 0x20 CmnItem                     ( 0001865BC1A0 ModelClassType CmnItem CmnItem CmnItem Pointer )
-            value.TxtPrismPoint                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665458C48 0x28 TxtPrismPoint               ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.GoDone                                    = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 024665458C68 0x30 GoDone                      ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.RewardItem                                = GetObject<RewardItem>(new IntPtr(p + 0x020), ReversePrism.DataModels.RewardItem.FromPointer); // 0x20 RewardItem                  ( ModelClassType RewardItem RewardItem RewardItem Pointer )
+            value.GlowEffect                                = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0x28 GlowEffect                  ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.TxtPrismPoint                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x30 TxtPrismPoint               ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.GoDone                                    = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0x38 GoDone                      ( ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 PresentViewModelList                     000185CFAE08 ModelClassListType List`1<PresentBoxListViewModel> List`1<PresentBoxListViewModel> List<PresentBoxListViewModel> Pointer
-    // 018 HistoryViewModelList                     000185CFAE08 ModelClassListType List`1<PresentBoxListViewModel> List`1<PresentBoxListViewModel> List<PresentBoxListViewModel> Pointer
-    // 020 PageCursor                               000186671910 ModelPrimitiveType string string string String
-    // 028 ReceivePresentIdList                     000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
+    // 010 PresentViewModelList                     ModelClassListType List`1<PresentBoxListViewModel> List`1<PresentBoxListViewModel> List<PresentBoxListViewModel> Pointer
+    // 018 HistoryViewModelList                     ModelClassListType List`1<PresentBoxListViewModel> List`1<PresentBoxListViewModel> List<PresentBoxListViewModel> Pointer
+    // 020 PageCursor                               ModelPrimitiveType string string string String
+    // 028 ReceivePresentIdList                     ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
     public partial class PresentBoxViewModel : DataModel
     {
         public List<PresentBoxListViewModel>?           PresentViewModelList                    { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PresentBoxViewModel() { Pointer= p0 };
 
-            value.PresentViewModelList                      = GetObjectList<PresentBoxListViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.PresentBoxListViewModel.FromPointer); // 024666261568 0x10 PresentViewModelList        ( 000185CFAE08 ModelClassListType List`1<PresentBoxListViewModel> List`1<PresentBoxListViewModel> List<PresentBoxListViewModel> Pointer )
-            value.HistoryViewModelList                      = GetObjectList<PresentBoxListViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.PresentBoxListViewModel.FromPointer); // 024666261588 0x18 HistoryViewModelList        ( 000185CFAE08 ModelClassListType List`1<PresentBoxListViewModel> List`1<PresentBoxListViewModel> List<PresentBoxListViewModel> Pointer )
-            value.PageCursor                                = GetString(new IntPtr(p + 0x020)); // 0246662615A8 0x20 PageCursor                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.ReceivePresentIdList                      = GetStringList(new IntPtr(p + 0x028)); // 0246662615C8 0x28 ReceivePresentIdList        ( 000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.PresentViewModelList                      = GetObjectList<PresentBoxListViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.PresentBoxListViewModel.FromPointer); // 0x10 PresentViewModelList        ( ModelClassListType List`1<PresentBoxListViewModel> List`1<PresentBoxListViewModel> List<PresentBoxListViewModel> Pointer )
+            value.HistoryViewModelList                      = GetObjectList<PresentBoxListViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.PresentBoxListViewModel.FromPointer); // 0x18 HistoryViewModelList        ( ModelClassListType List`1<PresentBoxListViewModel> List`1<PresentBoxListViewModel> List<PresentBoxListViewModel> Pointer )
+            value.PageCursor                                = GetString(new IntPtr(p + 0x020)); // 0x20 PageCursor                  ( ModelPrimitiveType string string string String )
+            value.ReceivePresentIdList                      = GetStringList(new IntPtr(p + 0x028)); // 0x28 ReceivePresentIdList        ( ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
 
             return value;
         }

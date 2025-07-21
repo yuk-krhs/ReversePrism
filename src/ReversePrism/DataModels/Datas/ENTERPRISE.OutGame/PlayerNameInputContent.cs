@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 098 IsChange                                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 0A0 InputString                              000186671910 ModelPrimitiveType string string string String
+    // 098 IsChange                                 ModelPrimitiveType bool bool bool Bool
+    // 0A0 InputString                              ModelPrimitiveType string string string String
     public partial class PlayerNameInputContent : DataModel
     {
         public bool                                     IsChange                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PlayerNameInputContent() { Pointer= p0 };
 
-            value.IsChange                                  = GetBool(new IntPtr(p + 0x098)); // 0245A44093E0 0x98 IsChange                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.InputString                               = GetString(new IntPtr(p + 0x0A0)); // 0245A4409400 0xA0 InputString                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsChange                                  = GetBool(new IntPtr(p + 0x098)); // 0x98 IsChange                    ( ModelPrimitiveType bool bool bool Bool )
+            value.InputString                               = GetString(new IntPtr(p + 0x0A0)); // 0xA0 InputString                 ( ModelPrimitiveType string string string String )
 
             return value;
         }

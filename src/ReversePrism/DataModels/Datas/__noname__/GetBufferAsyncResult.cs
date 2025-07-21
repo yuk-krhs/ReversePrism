@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 070 Writer                                   0001865CBC80 ModelClassType XmlStreamNodeWriter XmlStreamNodeWriter XmlStreamNodeWriter Pointer
-    // 078 Offset                                   0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 07C Count                                    0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 070 Writer                                   ModelClassType XmlStreamNodeWriter XmlStreamNodeWriter XmlStreamNodeWriter Pointer
+    // 078 Offset                                   ModelPrimitiveType int int int Int32
+    // 07C Count                                    ModelPrimitiveType int int int Int32
     // 000 onComplete                               AsyncCompletion IL2CPP_TYPE_CLASS
     public partial class GetBufferAsyncResult : DataModel
     {
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetBufferAsyncResult() { Pointer= p0 };
 
-            value.Writer                                    = GetObject<XmlStreamNodeWriter>(new IntPtr(p + 0x070), ReversePrism.DataModels.XmlStreamNodeWriter.FromPointer); // 024667D09998 0x70 Writer                      ( 0001865CBC80 ModelClassType XmlStreamNodeWriter XmlStreamNodeWriter XmlStreamNodeWriter Pointer )
-            value.Offset                                    = GetInt32(new IntPtr(p + 0x078)); // 024667D099B8 0x78 Offset                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Count                                     = GetInt32(new IntPtr(p + 0x07C)); // 024667D099D8 0x7C Count                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Writer                                    = GetObject<XmlStreamNodeWriter>(new IntPtr(p + 0x070), ReversePrism.DataModels.XmlStreamNodeWriter.FromPointer); // 0x70 Writer                      ( ModelClassType XmlStreamNodeWriter XmlStreamNodeWriter XmlStreamNodeWriter Pointer )
+            value.Offset                                    = GetInt32(new IntPtr(p + 0x078)); // 0x78 Offset                      ( ModelPrimitiveType int int int Int32 )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x07C)); // 0x7C Count                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

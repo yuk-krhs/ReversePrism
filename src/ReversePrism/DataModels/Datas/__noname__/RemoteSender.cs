@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 SenderId                                 0001865F36C0 ModelPrimitiveType int int int Int32
-    // 018 Layouts                                  000185B8E660 ModelEnumListType InternedString[] InternedString[] List<InternedString> Pointer
-    // 020 Devices                                  000185CBE028 ModelEnumListType RemoteInputDevice[] RemoteInputDevice[] List<RemoteInputDevice> Pointer
+    // 010 SenderId                                 ModelPrimitiveType int int int Int32
+    // 018 Layouts                                  ModelEnumListType InternedString[] InternedString[] List<InternedString> Pointer
+    // 020 Devices                                  ModelEnumListType RemoteInputDevice[] RemoteInputDevice[] List<RemoteInputDevice> Pointer
     public partial class RemoteSender : DataModel
     {
         public int                                      SenderId                                { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RemoteSender() { Pointer= p0 };
 
-            value.SenderId                                  = GetInt32(new IntPtr(p + 0x010)); // 024667770C78 0x10 SenderId                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Layouts                                   = GetEnumList<InternedString>(new IntPtr(p + 0x018)); // 024667770C98 0x18 Layouts                     ( 000185B8E660 ModelEnumListType InternedString[] InternedString[] List<InternedString> Pointer )
-            value.Devices                                   = GetEnumList<RemoteInputDevice>(new IntPtr(p + 0x020)); // 024667770CB8 0x20 Devices                     ( 000185CBE028 ModelEnumListType RemoteInputDevice[] RemoteInputDevice[] List<RemoteInputDevice> Pointer )
+            value.SenderId                                  = GetInt32(new IntPtr(p + 0x010)); // 0x10 SenderId                    ( ModelPrimitiveType int int int Int32 )
+            value.Layouts                                   = GetEnumList<InternedString>(new IntPtr(p + 0x018)); // 0x18 Layouts                     ( ModelEnumListType InternedString[] InternedString[] List<InternedString> Pointer )
+            value.Devices                                   = GetEnumList<RemoteInputDevice>(new IntPtr(p + 0x020)); // 0x20 Devices                     ( ModelEnumListType RemoteInputDevice[] RemoteInputDevice[] List<RemoteInputDevice> Pointer )
 
             return value;
         }

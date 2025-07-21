@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 000 s_Instance                               BakingCamera IL2CPP_TYPE_CLASS
     // 008 s_OrthoPosition                          Vector3 IL2CPP_TYPE_VALUETYPE
-    // 014 S_OrthoRotation                          00018664A820 ModelEnumType Quaternion Quaternion Quaternion Int32
-    // 020 Camera                                   0001865A1C90 ModelClassType Camera Camera Camera Pointer
+    // 014 S_OrthoRotation                          ModelEnumType Quaternion Quaternion Quaternion Int32
+    // 020 Camera                                   ModelClassType Camera Camera Camera Pointer
     public partial class BakingCamera : DataModel
     {
         public Quaternion                               S_OrthoRotation                         { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BakingCamera() { Pointer= p0 };
 
-            value.S_OrthoRotation                           = (Quaternion)GetInt32(new IntPtr(p + 0x014)); // 02466BDAE350 0x14 S_OrthoRotation             ( 00018664A820 ModelEnumType Quaternion Quaternion Quaternion Int32 )
-            value.Camera                                    = GetObject<Camera>(new IntPtr(p + 0x020), ReversePrism.DataModels.Camera.FromPointer); // 02466BDAE370 0x20 Camera                      ( 0001865A1C90 ModelClassType Camera Camera Camera Pointer )
+            value.S_OrthoRotation                           = (Quaternion)GetInt32(new IntPtr(p + 0x014)); // 0x14 S_OrthoRotation             ( ModelEnumType Quaternion Quaternion Quaternion Int32 )
+            value.Camera                                    = GetObject<Camera>(new IntPtr(p + 0x020), ReversePrism.DataModels.Camera.FromPointer); // 0x20 Camera                      ( ModelClassType Camera Camera Camera Pointer )
 
             return value;
         }

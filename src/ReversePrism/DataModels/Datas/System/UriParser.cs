@@ -8,32 +8,48 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
+    // 000 SchemeOnlyFlags                          UriSyntaxFlags IL2CPP_TYPE_VALUETYPE
     // 000 m_Table                                  Dictionary`2<string, UriParser> IL2CPP_TYPE_GENERICINST
     // 008 m_TempTable                              Dictionary`2<string, UriParser> IL2CPP_TYPE_GENERICINST
-    // 010 M_Flags                                  0001867483E0 ModelEnumType UriSyntaxFlags UriSyntaxFlags UriSyntaxFlags Int32
-    // 014 M_UpdatableFlags                         0001867483E0 ModelEnumType UriSyntaxFlags UriSyntaxFlags UriSyntaxFlags Int32
-    // 018 M_UpdatableFlagsUsed                     000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 01C M_Port                                   0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 020 M_Scheme                                 000186671910 ModelPrimitiveType string string string String
-    // 010 HttpUri                                  0001866A6220 ModelClassType UriParser UriParser UriParser Pointer
-    // 018 HttpsUri                                 0001866A6220 ModelClassType UriParser UriParser UriParser Pointer
-    // 020 WsUri                                    0001866A6220 ModelClassType UriParser UriParser UriParser Pointer
-    // 028 WssUri                                   0001866A6220 ModelClassType UriParser UriParser UriParser Pointer
-    // 030 FtpUri                                   0001866A6220 ModelClassType UriParser UriParser UriParser Pointer
-    // 038 FileUri                                  0001866A6220 ModelClassType UriParser UriParser UriParser Pointer
-    // 040 GopherUri                                0001866A6220 ModelClassType UriParser UriParser UriParser Pointer
-    // 048 NntpUri                                  0001866A6220 ModelClassType UriParser UriParser UriParser Pointer
-    // 050 NewsUri                                  0001866A6220 ModelClassType UriParser UriParser UriParser Pointer
-    // 058 MailToUri                                0001866A6220 ModelClassType UriParser UriParser UriParser Pointer
-    // 060 UuidUri                                  0001866A6220 ModelClassType UriParser UriParser UriParser Pointer
-    // 068 TelnetUri                                0001866A6220 ModelClassType UriParser UriParser UriParser Pointer
-    // 070 LdapUri                                  0001866A6220 ModelClassType UriParser UriParser UriParser Pointer
-    // 078 NetTcpUri                                0001866A6220 ModelClassType UriParser UriParser UriParser Pointer
-    // 080 NetPipeUri                               0001866A6220 ModelClassType UriParser UriParser UriParser Pointer
-    // 088 VsMacrosUri                              0001866A6220 ModelClassType UriParser UriParser UriParser Pointer
-    // 090 S_QuirksVersion                          0001866C09A0 ModelEnumType UriQuirksVersion UriQuirksVersion UriQuirksVersion Int32
-    // 094 HttpSyntaxFlags                          000186748600 ModelEnumType UriSyntaxFlags UriSyntaxFlags UriSyntaxFlags Int32
-    // 098 FileSyntaxFlags                          000186748600 ModelEnumType UriSyntaxFlags UriSyntaxFlags UriSyntaxFlags Int32
+    // 010 M_Flags                                  ModelEnumType UriSyntaxFlags UriSyntaxFlags UriSyntaxFlags Int32
+    // 014 M_UpdatableFlags                         ModelEnumType UriSyntaxFlags UriSyntaxFlags UriSyntaxFlags Int32
+    // 018 M_UpdatableFlagsUsed                     ModelPrimitiveType bool bool bool Bool
+    // 000 c_UpdatableFlags                         UriSyntaxFlags IL2CPP_TYPE_VALUETYPE
+    // 01C M_Port                                   ModelPrimitiveType int int int Int32
+    // 020 M_Scheme                                 ModelPrimitiveType string string string String
+    // 000 NoDefaultPort                            int IL2CPP_TYPE_I4
+    // 000 c_InitialTableSize                       int IL2CPP_TYPE_I4
+    // 010 HttpUri                                  ModelClassType UriParser UriParser UriParser Pointer
+    // 018 HttpsUri                                 ModelClassType UriParser UriParser UriParser Pointer
+    // 020 WsUri                                    ModelClassType UriParser UriParser UriParser Pointer
+    // 028 WssUri                                   ModelClassType UriParser UriParser UriParser Pointer
+    // 030 FtpUri                                   ModelClassType UriParser UriParser UriParser Pointer
+    // 038 FileUri                                  ModelClassType UriParser UriParser UriParser Pointer
+    // 040 GopherUri                                ModelClassType UriParser UriParser UriParser Pointer
+    // 048 NntpUri                                  ModelClassType UriParser UriParser UriParser Pointer
+    // 050 NewsUri                                  ModelClassType UriParser UriParser UriParser Pointer
+    // 058 MailToUri                                ModelClassType UriParser UriParser UriParser Pointer
+    // 060 UuidUri                                  ModelClassType UriParser UriParser UriParser Pointer
+    // 068 TelnetUri                                ModelClassType UriParser UriParser UriParser Pointer
+    // 070 LdapUri                                  ModelClassType UriParser UriParser UriParser Pointer
+    // 078 NetTcpUri                                ModelClassType UriParser UriParser UriParser Pointer
+    // 080 NetPipeUri                               ModelClassType UriParser UriParser UriParser Pointer
+    // 088 VsMacrosUri                              ModelClassType UriParser UriParser UriParser Pointer
+    // 090 S_QuirksVersion                          ModelEnumType UriQuirksVersion UriQuirksVersion UriQuirksVersion Int32
+    // 000 c_MaxCapacity                            int IL2CPP_TYPE_I4
+    // 000 UnknownV1SyntaxFlags                     UriSyntaxFlags IL2CPP_TYPE_VALUETYPE
+    // 094 HttpSyntaxFlags                          ModelEnumType UriSyntaxFlags UriSyntaxFlags UriSyntaxFlags Int32
+    // 000 FtpSyntaxFlags                           UriSyntaxFlags IL2CPP_TYPE_VALUETYPE
+    // 098 FileSyntaxFlags                          ModelEnumType UriSyntaxFlags UriSyntaxFlags UriSyntaxFlags Int32
+    // 000 VsmacrosSyntaxFlags                      UriSyntaxFlags IL2CPP_TYPE_VALUETYPE
+    // 000 GopherSyntaxFlags                        UriSyntaxFlags IL2CPP_TYPE_VALUETYPE
+    // 000 NewsSyntaxFlags                          UriSyntaxFlags IL2CPP_TYPE_VALUETYPE
+    // 000 NntpSyntaxFlags                          UriSyntaxFlags IL2CPP_TYPE_VALUETYPE
+    // 000 TelnetSyntaxFlags                        UriSyntaxFlags IL2CPP_TYPE_VALUETYPE
+    // 000 LdapSyntaxFlags                          UriSyntaxFlags IL2CPP_TYPE_VALUETYPE
+    // 000 MailtoSyntaxFlags                        UriSyntaxFlags IL2CPP_TYPE_VALUETYPE
+    // 000 NetPipeSyntaxFlags                       UriSyntaxFlags IL2CPP_TYPE_VALUETYPE
+    // 000 NetTcpSyntaxFlags                        UriSyntaxFlags IL2CPP_TYPE_VALUETYPE
     public partial class UriParser : DataModel
     {
         public UriSyntaxFlags                           M_Flags                                 { get; set; }
@@ -69,30 +85,30 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UriParser() { Pointer= p0 };
 
-            value.M_Flags                                   = (UriSyntaxFlags)GetInt32(new IntPtr(p + 0x010)); // 0245A4C577E0 0x10 M_Flags                     ( 0001867483E0 ModelEnumType UriSyntaxFlags UriSyntaxFlags UriSyntaxFlags Int32 )
-            value.M_UpdatableFlags                          = (UriSyntaxFlags)GetInt32(new IntPtr(p + 0x014)); // 0245A4C57800 0x14 M_UpdatableFlags            ( 0001867483E0 ModelEnumType UriSyntaxFlags UriSyntaxFlags UriSyntaxFlags Int32 )
-            value.M_UpdatableFlagsUsed                      = GetBool(new IntPtr(p + 0x018)); // 0245A4C57820 0x18 M_UpdatableFlagsUsed        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_Port                                    = GetInt32(new IntPtr(p + 0x01C)); // 0245A4C57840 0x1C M_Port                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_Scheme                                  = GetString(new IntPtr(p + 0x020)); // 0245A4C57860 0x20 M_Scheme                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.HttpUri                                   = GetObject<UriParser>(new IntPtr(p + 0x010), ReversePrism.DataModels.UriParser.FromPointer); // 0245A4C57880 0x10 HttpUri                     ( 0001866A6220 ModelClassType UriParser UriParser UriParser Pointer )
-            value.HttpsUri                                  = GetObject<UriParser>(new IntPtr(p + 0x018), ReversePrism.DataModels.UriParser.FromPointer); // 0245A4C578A0 0x18 HttpsUri                    ( 0001866A6220 ModelClassType UriParser UriParser UriParser Pointer )
-            value.WsUri                                     = GetObject<UriParser>(new IntPtr(p + 0x020), ReversePrism.DataModels.UriParser.FromPointer); // 0245A4C578C0 0x20 WsUri                       ( 0001866A6220 ModelClassType UriParser UriParser UriParser Pointer )
-            value.WssUri                                    = GetObject<UriParser>(new IntPtr(p + 0x028), ReversePrism.DataModels.UriParser.FromPointer); // 0245A4C578E0 0x28 WssUri                      ( 0001866A6220 ModelClassType UriParser UriParser UriParser Pointer )
-            value.FtpUri                                    = GetObject<UriParser>(new IntPtr(p + 0x030), ReversePrism.DataModels.UriParser.FromPointer); // 0245A4C57900 0x30 FtpUri                      ( 0001866A6220 ModelClassType UriParser UriParser UriParser Pointer )
-            value.FileUri                                   = GetObject<UriParser>(new IntPtr(p + 0x038), ReversePrism.DataModels.UriParser.FromPointer); // 0245A4C57920 0x38 FileUri                     ( 0001866A6220 ModelClassType UriParser UriParser UriParser Pointer )
-            value.GopherUri                                 = GetObject<UriParser>(new IntPtr(p + 0x040), ReversePrism.DataModels.UriParser.FromPointer); // 0245A4C57940 0x40 GopherUri                   ( 0001866A6220 ModelClassType UriParser UriParser UriParser Pointer )
-            value.NntpUri                                   = GetObject<UriParser>(new IntPtr(p + 0x048), ReversePrism.DataModels.UriParser.FromPointer); // 0245A4C57960 0x48 NntpUri                     ( 0001866A6220 ModelClassType UriParser UriParser UriParser Pointer )
-            value.NewsUri                                   = GetObject<UriParser>(new IntPtr(p + 0x050), ReversePrism.DataModels.UriParser.FromPointer); // 0245A4C57980 0x50 NewsUri                     ( 0001866A6220 ModelClassType UriParser UriParser UriParser Pointer )
-            value.MailToUri                                 = GetObject<UriParser>(new IntPtr(p + 0x058), ReversePrism.DataModels.UriParser.FromPointer); // 0245A4C579A0 0x58 MailToUri                   ( 0001866A6220 ModelClassType UriParser UriParser UriParser Pointer )
-            value.UuidUri                                   = GetObject<UriParser>(new IntPtr(p + 0x060), ReversePrism.DataModels.UriParser.FromPointer); // 0245A4C579C0 0x60 UuidUri                     ( 0001866A6220 ModelClassType UriParser UriParser UriParser Pointer )
-            value.TelnetUri                                 = GetObject<UriParser>(new IntPtr(p + 0x068), ReversePrism.DataModels.UriParser.FromPointer); // 0245A4C579E0 0x68 TelnetUri                   ( 0001866A6220 ModelClassType UriParser UriParser UriParser Pointer )
-            value.LdapUri                                   = GetObject<UriParser>(new IntPtr(p + 0x070), ReversePrism.DataModels.UriParser.FromPointer); // 0245A4C57A00 0x70 LdapUri                     ( 0001866A6220 ModelClassType UriParser UriParser UriParser Pointer )
-            value.NetTcpUri                                 = GetObject<UriParser>(new IntPtr(p + 0x078), ReversePrism.DataModels.UriParser.FromPointer); // 0245A4C57A20 0x78 NetTcpUri                   ( 0001866A6220 ModelClassType UriParser UriParser UriParser Pointer )
-            value.NetPipeUri                                = GetObject<UriParser>(new IntPtr(p + 0x080), ReversePrism.DataModels.UriParser.FromPointer); // 0245A4C57A40 0x80 NetPipeUri                  ( 0001866A6220 ModelClassType UriParser UriParser UriParser Pointer )
-            value.VsMacrosUri                               = GetObject<UriParser>(new IntPtr(p + 0x088), ReversePrism.DataModels.UriParser.FromPointer); // 0245A4C57A60 0x88 VsMacrosUri                 ( 0001866A6220 ModelClassType UriParser UriParser UriParser Pointer )
-            value.S_QuirksVersion                           = (UriQuirksVersion)GetInt32(new IntPtr(p + 0x090)); // 0245A4C57A80 0x90 S_QuirksVersion             ( 0001866C09A0 ModelEnumType UriQuirksVersion UriQuirksVersion UriQuirksVersion Int32 )
-            value.HttpSyntaxFlags                           = (UriSyntaxFlags)GetInt32(new IntPtr(p + 0x094)); // 0245A4C57AA0 0x94 HttpSyntaxFlags             ( 000186748600 ModelEnumType UriSyntaxFlags UriSyntaxFlags UriSyntaxFlags Int32 )
-            value.FileSyntaxFlags                           = (UriSyntaxFlags)GetInt32(new IntPtr(p + 0x098)); // 0245A4C57AC0 0x98 FileSyntaxFlags             ( 000186748600 ModelEnumType UriSyntaxFlags UriSyntaxFlags UriSyntaxFlags Int32 )
+            value.M_Flags                                   = (UriSyntaxFlags)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_Flags                     ( ModelEnumType UriSyntaxFlags UriSyntaxFlags UriSyntaxFlags Int32 )
+            value.M_UpdatableFlags                          = (UriSyntaxFlags)GetInt32(new IntPtr(p + 0x014)); // 0x14 M_UpdatableFlags            ( ModelEnumType UriSyntaxFlags UriSyntaxFlags UriSyntaxFlags Int32 )
+            value.M_UpdatableFlagsUsed                      = GetBool(new IntPtr(p + 0x018)); // 0x18 M_UpdatableFlagsUsed        ( ModelPrimitiveType bool bool bool Bool )
+            value.M_Port                                    = GetInt32(new IntPtr(p + 0x01C)); // 0x1C M_Port                      ( ModelPrimitiveType int int int Int32 )
+            value.M_Scheme                                  = GetString(new IntPtr(p + 0x020)); // 0x20 M_Scheme                    ( ModelPrimitiveType string string string String )
+            value.HttpUri                                   = GetObject<UriParser>(new IntPtr(p + 0x010), ReversePrism.DataModels.UriParser.FromPointer); // 0x10 HttpUri                     ( ModelClassType UriParser UriParser UriParser Pointer )
+            value.HttpsUri                                  = GetObject<UriParser>(new IntPtr(p + 0x018), ReversePrism.DataModels.UriParser.FromPointer); // 0x18 HttpsUri                    ( ModelClassType UriParser UriParser UriParser Pointer )
+            value.WsUri                                     = GetObject<UriParser>(new IntPtr(p + 0x020), ReversePrism.DataModels.UriParser.FromPointer); // 0x20 WsUri                       ( ModelClassType UriParser UriParser UriParser Pointer )
+            value.WssUri                                    = GetObject<UriParser>(new IntPtr(p + 0x028), ReversePrism.DataModels.UriParser.FromPointer); // 0x28 WssUri                      ( ModelClassType UriParser UriParser UriParser Pointer )
+            value.FtpUri                                    = GetObject<UriParser>(new IntPtr(p + 0x030), ReversePrism.DataModels.UriParser.FromPointer); // 0x30 FtpUri                      ( ModelClassType UriParser UriParser UriParser Pointer )
+            value.FileUri                                   = GetObject<UriParser>(new IntPtr(p + 0x038), ReversePrism.DataModels.UriParser.FromPointer); // 0x38 FileUri                     ( ModelClassType UriParser UriParser UriParser Pointer )
+            value.GopherUri                                 = GetObject<UriParser>(new IntPtr(p + 0x040), ReversePrism.DataModels.UriParser.FromPointer); // 0x40 GopherUri                   ( ModelClassType UriParser UriParser UriParser Pointer )
+            value.NntpUri                                   = GetObject<UriParser>(new IntPtr(p + 0x048), ReversePrism.DataModels.UriParser.FromPointer); // 0x48 NntpUri                     ( ModelClassType UriParser UriParser UriParser Pointer )
+            value.NewsUri                                   = GetObject<UriParser>(new IntPtr(p + 0x050), ReversePrism.DataModels.UriParser.FromPointer); // 0x50 NewsUri                     ( ModelClassType UriParser UriParser UriParser Pointer )
+            value.MailToUri                                 = GetObject<UriParser>(new IntPtr(p + 0x058), ReversePrism.DataModels.UriParser.FromPointer); // 0x58 MailToUri                   ( ModelClassType UriParser UriParser UriParser Pointer )
+            value.UuidUri                                   = GetObject<UriParser>(new IntPtr(p + 0x060), ReversePrism.DataModels.UriParser.FromPointer); // 0x60 UuidUri                     ( ModelClassType UriParser UriParser UriParser Pointer )
+            value.TelnetUri                                 = GetObject<UriParser>(new IntPtr(p + 0x068), ReversePrism.DataModels.UriParser.FromPointer); // 0x68 TelnetUri                   ( ModelClassType UriParser UriParser UriParser Pointer )
+            value.LdapUri                                   = GetObject<UriParser>(new IntPtr(p + 0x070), ReversePrism.DataModels.UriParser.FromPointer); // 0x70 LdapUri                     ( ModelClassType UriParser UriParser UriParser Pointer )
+            value.NetTcpUri                                 = GetObject<UriParser>(new IntPtr(p + 0x078), ReversePrism.DataModels.UriParser.FromPointer); // 0x78 NetTcpUri                   ( ModelClassType UriParser UriParser UriParser Pointer )
+            value.NetPipeUri                                = GetObject<UriParser>(new IntPtr(p + 0x080), ReversePrism.DataModels.UriParser.FromPointer); // 0x80 NetPipeUri                  ( ModelClassType UriParser UriParser UriParser Pointer )
+            value.VsMacrosUri                               = GetObject<UriParser>(new IntPtr(p + 0x088), ReversePrism.DataModels.UriParser.FromPointer); // 0x88 VsMacrosUri                 ( ModelClassType UriParser UriParser UriParser Pointer )
+            value.S_QuirksVersion                           = (UriQuirksVersion)GetInt32(new IntPtr(p + 0x090)); // 0x90 S_QuirksVersion             ( ModelEnumType UriQuirksVersion UriQuirksVersion UriQuirksVersion Int32 )
+            value.HttpSyntaxFlags                           = (UriSyntaxFlags)GetInt32(new IntPtr(p + 0x094)); // 0x94 HttpSyntaxFlags             ( ModelEnumType UriSyntaxFlags UriSyntaxFlags UriSyntaxFlags Int32 )
+            value.FileSyntaxFlags                           = (UriSyntaxFlags)GetInt32(new IntPtr(p + 0x098)); // 0x98 FileSyntaxFlags             ( ModelEnumType UriSyntaxFlags UriSyntaxFlags UriSyntaxFlags Int32 )
 
             return value;
         }

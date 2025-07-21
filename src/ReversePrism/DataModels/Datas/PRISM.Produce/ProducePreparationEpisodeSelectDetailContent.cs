@@ -8,16 +8,16 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Title                                    0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 028 SynopsisText                             0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 030 Thumbnail                                0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 038 VoAttributeIcon                          000186567D60 ModelClassType ProducePreparationEpisodeSelectAttributeIcon ProducePreparationEpisodeSelectAttributeIcon ProducePreparationEpisodeSelectAttributeIcon Pointer
-    // 040 DaAttributeIcon                          000186567D60 ModelClassType ProducePreparationEpisodeSelectAttributeIcon ProducePreparationEpisodeSelectAttributeIcon ProducePreparationEpisodeSelectAttributeIcon Pointer
-    // 048 ViAttributeIcon                          000186567D60 ModelClassType ProducePreparationEpisodeSelectAttributeIcon ProducePreparationEpisodeSelectAttributeIcon ProducePreparationEpisodeSelectAttributeIcon Pointer
-    // 050 DifficultyButtons                        000185B9CB30 ModelClassListType ProduceEpisodeEpisodeSelectDifficultyButton[] ProduceEpisodeEpisodeSelectDifficultyButton[] List<ProduceEpisodeEpisodeSelectDifficultyButton> Pointer
-    // 058 FadeCanvasGroup                          000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
-    // 060 FadeCurve                                000186586CC0 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer
-    // 068 FadeTimeDisposable                       0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 020 Title                                    ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 028 SynopsisText                             ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 030 Thumbnail                                ModelClassType UIImage UIImage UIImage Pointer
+    // 038 VoAttributeIcon                          ModelClassType ProducePreparationEpisodeSelectAttributeIcon ProducePreparationEpisodeSelectAttributeIcon ProducePreparationEpisodeSelectAttributeIcon Pointer
+    // 040 DaAttributeIcon                          ModelClassType ProducePreparationEpisodeSelectAttributeIcon ProducePreparationEpisodeSelectAttributeIcon ProducePreparationEpisodeSelectAttributeIcon Pointer
+    // 048 ViAttributeIcon                          ModelClassType ProducePreparationEpisodeSelectAttributeIcon ProducePreparationEpisodeSelectAttributeIcon ProducePreparationEpisodeSelectAttributeIcon Pointer
+    // 050 DifficultyButtons                        ModelClassListType ProduceEpisodeEpisodeSelectDifficultyButton[] ProduceEpisodeEpisodeSelectDifficultyButton[] List<ProduceEpisodeEpisodeSelectDifficultyButton> Pointer
+    // 058 FadeCanvasGroup                          ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
+    // 060 FadeCurve                                ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer
+    // 068 FadeTimeDisposable                       ModelClassType IDisposable IDisposable IDisposable Pointer
     public partial class ProducePreparationEpisodeSelectDetailContent : DataModel
     {
         public UITextMeshProUGUI?                       Title                                   { get; set; }
@@ -39,16 +39,16 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProducePreparationEpisodeSelectDetailContent() { Pointer= p0 };
 
-            value.Title                                     = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665A3E970 0x20 Title                       ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.SynopsisText                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665A3E990 0x28 SynopsisText                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.Thumbnail                                 = GetObject<UIImage>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIImage.FromPointer); // 024665A3E9B0 0x30 Thumbnail                   ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.VoAttributeIcon                           = GetObject<ProducePreparationEpisodeSelectAttributeIcon>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProducePreparationEpisodeSelectAttributeIcon.FromPointer); // 024665A3E9D0 0x38 VoAttributeIcon             ( 000186567D60 ModelClassType ProducePreparationEpisodeSelectAttributeIcon ProducePreparationEpisodeSelectAttributeIcon ProducePreparationEpisodeSelectAttributeIcon Pointer )
-            value.DaAttributeIcon                           = GetObject<ProducePreparationEpisodeSelectAttributeIcon>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProducePreparationEpisodeSelectAttributeIcon.FromPointer); // 024665A3E9F0 0x40 DaAttributeIcon             ( 000186567D60 ModelClassType ProducePreparationEpisodeSelectAttributeIcon ProducePreparationEpisodeSelectAttributeIcon ProducePreparationEpisodeSelectAttributeIcon Pointer )
-            value.ViAttributeIcon                           = GetObject<ProducePreparationEpisodeSelectAttributeIcon>(new IntPtr(p + 0x048), ReversePrism.DataModels.ProducePreparationEpisodeSelectAttributeIcon.FromPointer); // 024665A3EA10 0x48 ViAttributeIcon             ( 000186567D60 ModelClassType ProducePreparationEpisodeSelectAttributeIcon ProducePreparationEpisodeSelectAttributeIcon ProducePreparationEpisodeSelectAttributeIcon Pointer )
-            value.DifficultyButtons                         = GetObjectList<ProduceEpisodeEpisodeSelectDifficultyButton>(new IntPtr(p + 0x050), ReversePrism.DataModels.ProduceEpisodeEpisodeSelectDifficultyButton.FromPointer); // 024665A3EA30 0x50 DifficultyButtons           ( 000185B9CB30 ModelClassListType ProduceEpisodeEpisodeSelectDifficultyButton[] ProduceEpisodeEpisodeSelectDifficultyButton[] List<ProduceEpisodeEpisodeSelectDifficultyButton> Pointer )
-            value.FadeCanvasGroup                           = GetObject<CanvasGroup>(new IntPtr(p + 0x058), ReversePrism.DataModels.CanvasGroup.FromPointer); // 024665A3EA50 0x58 FadeCanvasGroup             ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.FadeCurve                                 = GetObject<AnimationCurve>(new IntPtr(p + 0x060), ReversePrism.DataModels.AnimationCurve.FromPointer); // 024665A3EA70 0x60 FadeCurve                   ( 000186586CC0 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
-            value.FadeTimeDisposable                        = GetObject<IDisposable>(new IntPtr(p + 0x068), ReversePrism.DataModels.IDisposable.FromPointer); // 024665A3EA90 0x68 FadeTimeDisposable          ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.Title                                     = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x20 Title                       ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.SynopsisText                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x28 SynopsisText                ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Thumbnail                                 = GetObject<UIImage>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIImage.FromPointer); // 0x30 Thumbnail                   ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.VoAttributeIcon                           = GetObject<ProducePreparationEpisodeSelectAttributeIcon>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProducePreparationEpisodeSelectAttributeIcon.FromPointer); // 0x38 VoAttributeIcon             ( ModelClassType ProducePreparationEpisodeSelectAttributeIcon ProducePreparationEpisodeSelectAttributeIcon ProducePreparationEpisodeSelectAttributeIcon Pointer )
+            value.DaAttributeIcon                           = GetObject<ProducePreparationEpisodeSelectAttributeIcon>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProducePreparationEpisodeSelectAttributeIcon.FromPointer); // 0x40 DaAttributeIcon             ( ModelClassType ProducePreparationEpisodeSelectAttributeIcon ProducePreparationEpisodeSelectAttributeIcon ProducePreparationEpisodeSelectAttributeIcon Pointer )
+            value.ViAttributeIcon                           = GetObject<ProducePreparationEpisodeSelectAttributeIcon>(new IntPtr(p + 0x048), ReversePrism.DataModels.ProducePreparationEpisodeSelectAttributeIcon.FromPointer); // 0x48 ViAttributeIcon             ( ModelClassType ProducePreparationEpisodeSelectAttributeIcon ProducePreparationEpisodeSelectAttributeIcon ProducePreparationEpisodeSelectAttributeIcon Pointer )
+            value.DifficultyButtons                         = GetObjectList<ProduceEpisodeEpisodeSelectDifficultyButton>(new IntPtr(p + 0x050), ReversePrism.DataModels.ProduceEpisodeEpisodeSelectDifficultyButton.FromPointer); // 0x50 DifficultyButtons           ( ModelClassListType ProduceEpisodeEpisodeSelectDifficultyButton[] ProduceEpisodeEpisodeSelectDifficultyButton[] List<ProduceEpisodeEpisodeSelectDifficultyButton> Pointer )
+            value.FadeCanvasGroup                           = GetObject<CanvasGroup>(new IntPtr(p + 0x058), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0x58 FadeCanvasGroup             ( ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.FadeCurve                                 = GetObject<AnimationCurve>(new IntPtr(p + 0x060), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0x60 FadeCurve                   ( ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
+            value.FadeTimeDisposable                        = GetObject<IDisposable>(new IntPtr(p + 0x068), ReversePrism.DataModels.IDisposable.FromPointer); // 0x68 FadeTimeDisposable          ( ModelClassType IDisposable IDisposable IDisposable Pointer )
 
             return value;
         }

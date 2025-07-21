@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 K_ClientIdHeaderValue                    000186672F10 ModelPrimitiveType string string string String
+    // 010 K_ClientIdHeaderValue                    ModelPrimitiveType string string string String
     public partial class WebRequestHelper : DataModel
     {
         public string                                   K_ClientIdHeaderValue                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new WebRequestHelper() { Pointer= p0 };
 
-            value.K_ClientIdHeaderValue                     = GetString(new IntPtr(p + 0x010)); // 0245A6683B08 0x10 K_ClientIdHeaderValue       ( 000186672F10 ModelPrimitiveType string string string String )
+            value.K_ClientIdHeaderValue                     = GetString(new IntPtr(p + 0x010)); // 0x10 K_ClientIdHeaderValue       ( ModelPrimitiveType string string string String )
 
             return value;
         }

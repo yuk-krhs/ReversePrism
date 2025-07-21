@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ScrollPosition                           0001866656B0 ModelPrimitiveType float float float Single
-    // 014 TwestaUserId                             0001865F4260 ModelPrimitiveType int int int Int32
+    // 010 ScrollPosition                           ModelPrimitiveType float float float Single
+    // 014 TwestaUserId                             ModelPrimitiveType int int int Int32
     public partial class TwestaProfileParameter : DataModel
     {
         public float                                    ScrollPosition                          { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TwestaProfileParameter() { Pointer= p0 };
 
-            value.ScrollPosition                            = GetSingle(new IntPtr(p + 0x010)); // 02466694DEF0 0x10 ScrollPosition              ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.TwestaUserId                              = GetInt32(new IntPtr(p + 0x014)); // 02466694DF10 0x14 TwestaUserId                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.ScrollPosition                            = GetSingle(new IntPtr(p + 0x010)); // 0x10 ScrollPosition              ( ModelPrimitiveType float float float Single )
+            value.TwestaUserId                              = GetInt32(new IntPtr(p + 0x014)); // 0x14 TwestaUserId                ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

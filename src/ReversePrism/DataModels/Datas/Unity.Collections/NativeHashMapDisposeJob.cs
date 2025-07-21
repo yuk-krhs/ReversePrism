@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Data                                     000186688F60 ModelEnumType NativeHashMapDispose NativeHashMapDispose NativeHashMapDispose Int32
+    // 010 Data                                     ModelEnumType NativeHashMapDispose NativeHashMapDispose NativeHashMapDispose Int32
     public partial class NativeHashMapDisposeJob : DataModel
     {
         public NativeHashMapDispose                     Data                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NativeHashMapDisposeJob() { Pointer= p0 };
 
-            value.Data                                      = (NativeHashMapDispose)GetInt32(new IntPtr(p + 0x010)); // 0245A3567618 0x10 Data                        ( 000186688F60 ModelEnumType NativeHashMapDispose NativeHashMapDispose NativeHashMapDispose Int32 )
+            value.Data                                      = (NativeHashMapDispose)GetInt32(new IntPtr(p + 0x010)); // 0x10 Data                        ( ModelEnumType NativeHashMapDispose NativeHashMapDispose NativeHashMapDispose Int32 )
 
             return value;
         }

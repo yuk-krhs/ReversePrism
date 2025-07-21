@@ -8,9 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 090 EffectDuration                           0001866656B0 ModelPrimitiveType float float float Single
+    // 058 UnlockShinyCellSize                      ModelPrimitiveType float float float Single
+    // 060 UnlockShinyCell                          ModelClassType MusicRateRewardListUnlockShinyCell MusicRateRewardListUnlockShinyCell MusicRateRewardListUnlockShinyCell Pointer
+    // 068 EffectDuration                           ModelPrimitiveType float float float Single
     public partial class MusicRateRewardListView : DataModel
     {
+        public float                                    UnlockShinyCellSize                     { get; set; }
+        public MusicRateRewardListUnlockShinyCell?      UnlockShinyCell                         { get; set; }
         public float                                    EffectDuration                          { get; set; }
 
         public static MusicRateRewardListView? FromPointer(IntPtr p0)
@@ -21,7 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MusicRateRewardListView() { Pointer= p0 };
 
-            value.EffectDuration                            = GetSingle(new IntPtr(p + 0x090)); // 02466B46F630 0x90 EffectDuration              ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.UnlockShinyCellSize                       = GetSingle(new IntPtr(p + 0x058)); // 0x58 UnlockShinyCellSize         ( ModelPrimitiveType float float float Single )
+            value.UnlockShinyCell                           = GetObject<MusicRateRewardListUnlockShinyCell>(new IntPtr(p + 0x060), ReversePrism.DataModels.MusicRateRewardListUnlockShinyCell.FromPointer); // 0x60 UnlockShinyCell             ( ModelClassType MusicRateRewardListUnlockShinyCell MusicRateRewardListUnlockShinyCell MusicRateRewardListUnlockShinyCell Pointer )
+            value.EffectDuration                            = GetSingle(new IntPtr(p + 0x068)); // 0x68 EffectDuration              ( ModelPrimitiveType float float float Single )
 
             return value;
         }

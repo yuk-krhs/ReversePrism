@@ -9,10 +9,10 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 MaxAutoRetryCount                        int IL2CPP_TYPE_I4
-    // 010 TotalRequests                            0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 Provider                                 000186755E00 ModelClassType IDownloadJobProvider IDownloadJobProvider IDownloadJobProvider Pointer
+    // 010 TotalRequests                            ModelPrimitiveType int int int Int32
+    // 018 Provider                                 ModelClassType IDownloadJobProvider IDownloadJobProvider IDownloadJobProvider Pointer
     // 020 itemMap                                  Dictionary`2<int, INativeDownloadJob> IL2CPP_TYPE_GENERICINST
-    // 028 Aborted                                  000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 028 Aborted                                  ModelPrimitiveType bool bool bool Bool
     // 030 errorItems                               Queue`1<INativeDownloadJob> IL2CPP_TYPE_GENERICINST
     // 038 retryItems                               Queue`1<INativeDownloadJob> IL2CPP_TYPE_GENERICINST
     // 040 OnRequestPenaltyChange                   Action`2<INativeDownloadJob, bool> IL2CPP_TYPE_GENERICINST
@@ -30,9 +30,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NativeDownloadHandler() { Pointer= p0 };
 
-            value.TotalRequests                             = GetInt32(new IntPtr(p + 0x010)); // 0245A3E364C0 0x10 TotalRequests               ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Provider                                  = GetObject<IDownloadJobProvider>(new IntPtr(p + 0x018), ReversePrism.DataModels.IDownloadJobProvider.FromPointer); // 0245A3E364E0 0x18 Provider                    ( 000186755E00 ModelClassType IDownloadJobProvider IDownloadJobProvider IDownloadJobProvider Pointer )
-            value.Aborted                                   = GetBool(new IntPtr(p + 0x028)); // 0245A3E36520 0x28 Aborted                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.TotalRequests                             = GetInt32(new IntPtr(p + 0x010)); // 0x10 TotalRequests               ( ModelPrimitiveType int int int Int32 )
+            value.Provider                                  = GetObject<IDownloadJobProvider>(new IntPtr(p + 0x018), ReversePrism.DataModels.IDownloadJobProvider.FromPointer); // 0x18 Provider                    ( ModelClassType IDownloadJobProvider IDownloadJobProvider IDownloadJobProvider Pointer )
+            value.Aborted                                   = GetBool(new IntPtr(p + 0x028)); // 0x28 Aborted                     ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

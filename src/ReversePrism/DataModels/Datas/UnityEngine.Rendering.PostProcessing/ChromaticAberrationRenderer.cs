@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 M_InternalSpectralLut                    000186685A20 ModelClassType Texture2D Texture2D Texture2D Pointer
+    // 020 M_InternalSpectralLut                    ModelClassType Texture2D Texture2D Texture2D Pointer
     public partial class ChromaticAberrationRenderer : DataModel
     {
         public Texture2D?                               M_InternalSpectralLut                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChromaticAberrationRenderer() { Pointer= p0 };
 
-            value.M_InternalSpectralLut                     = GetObject<Texture2D>(new IntPtr(p + 0x020), ReversePrism.DataModels.Texture2D.FromPointer); // 0245A6538988 0x20 M_InternalSpectralLut       ( 000186685A20 ModelClassType Texture2D Texture2D Texture2D Pointer )
+            value.M_InternalSpectralLut                     = GetObject<Texture2D>(new IntPtr(p + 0x020), ReversePrism.DataModels.Texture2D.FromPointer); // 0x20 M_InternalSpectralLut       ( ModelClassType Texture2D Texture2D Texture2D Pointer )
 
             return value;
         }

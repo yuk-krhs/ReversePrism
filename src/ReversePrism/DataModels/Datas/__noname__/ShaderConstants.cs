@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 004 _FsrEasuConstants1                       int IL2CPP_TYPE_I4
     // 008 _FsrEasuConstants2                       int IL2CPP_TYPE_I4
     // 00C _FsrEasuConstants3                       int IL2CPP_TYPE_I4
-    // 010 FsrRcasConstants                         0001865F50A0 ModelPrimitiveType int int int Int32
+    // 010 FsrRcasConstants                         ModelPrimitiveType int int int Int32
     public partial class ShaderConstants : DataModel
     {
         public int                                      FsrRcasConstants                        { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ShaderConstants() { Pointer= p0 };
 
-            value.FsrRcasConstants                          = GetInt32(new IntPtr(p + 0x010)); // 0246693207A8 0x10 FsrRcasConstants            ( 0001865F50A0 ModelPrimitiveType int int int Int32 )
+            value.FsrRcasConstants                          = GetInt32(new IntPtr(p + 0x010)); // 0x10 FsrRcasConstants            ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

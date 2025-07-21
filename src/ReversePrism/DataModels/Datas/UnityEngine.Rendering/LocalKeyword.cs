@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_SpaceInfo                              000186609380 ModelEnumType LocalKeywordSpace LocalKeywordSpace LocalKeywordSpace Int32
-    // 018 M_Name                                   0001866731A0 ModelPrimitiveType string string string String
-    // 020 M_Index                                  000186699C60 ModelPrimitiveType uint uint uint UInt32
+    // 010 M_SpaceInfo                              ModelEnumType LocalKeywordSpace LocalKeywordSpace LocalKeywordSpace Int32
+    // 018 M_Name                                   ModelPrimitiveType string string string String
+    // 020 M_Index                                  ModelPrimitiveType uint uint uint UInt32
     public partial class LocalKeyword : DataModel
     {
         public LocalKeywordSpace                        M_SpaceInfo                             { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LocalKeyword() { Pointer= p0 };
 
-            value.M_SpaceInfo                               = (LocalKeywordSpace)GetInt32(new IntPtr(p + 0x010)); // 0245A246E030 0x10 M_SpaceInfo                 ( 000186609380 ModelEnumType LocalKeywordSpace LocalKeywordSpace LocalKeywordSpace Int32 )
-            value.M_Name                                    = GetString(new IntPtr(p + 0x018)); // 0245A246E050 0x18 M_Name                      ( 0001866731A0 ModelPrimitiveType string string string String )
-            value.M_Index                                   = GetUInt32(new IntPtr(p + 0x020)); // 0245A246E070 0x20 M_Index                     ( 000186699C60 ModelPrimitiveType uint uint uint UInt32 )
+            value.M_SpaceInfo                               = (LocalKeywordSpace)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_SpaceInfo                 ( ModelEnumType LocalKeywordSpace LocalKeywordSpace LocalKeywordSpace Int32 )
+            value.M_Name                                    = GetString(new IntPtr(p + 0x018)); // 0x18 M_Name                      ( ModelPrimitiveType string string string String )
+            value.M_Index                                   = GetUInt32(new IntPtr(p + 0x020)); // 0x20 M_Index                     ( ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

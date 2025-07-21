@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Color                                    0001865AB0A0 ModelEnumType Color Color Color Int32
-    // 020 PlaneDropShadowColor                     0001865AB0A0 ModelEnumType Color Color Color Int32
+    // 010 Color                                    ModelEnumType Color Color Color Int32
+    // 020 PlaneDropShadowColor                     ModelEnumType Color Color Color Int32
     public partial class PersonalLightBehaviour : DataModel
     {
         public Color                                    Color                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PersonalLightBehaviour() { Pointer= p0 };
 
-            value.Color                                     = (Color)GetInt32(new IntPtr(p + 0x010)); // 024664E72570 0x10 Color                       ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.PlaneDropShadowColor                      = (Color)GetInt32(new IntPtr(p + 0x020)); // 024664E72590 0x20 PlaneDropShadowColor        ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
+            value.Color                                     = (Color)GetInt32(new IntPtr(p + 0x010)); // 0x10 Color                       ( ModelEnumType Color Color Color Int32 )
+            value.PlaneDropShadowColor                      = (Color)GetInt32(new IntPtr(p + 0x020)); // 0x20 PlaneDropShadowColor        ( ModelEnumType Color Color Color Int32 )
 
             return value;
         }

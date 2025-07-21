@@ -15,6 +15,9 @@ namespace ReversePrism.DataModels
         TotalParameter,
         LiveSkillId,
         LiveSkillLevel,
+        IdolLevel,
+        DearnessLevel,
+        Fan,
         EventBonus,
     }
 }

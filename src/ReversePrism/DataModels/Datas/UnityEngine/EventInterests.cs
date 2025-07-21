@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 WantsMouseMove                           000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 011 WantsMouseEnterLeaveWindow               000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 012 WantsLessLayoutEvents                    000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 WantsMouseMove                           ModelPrimitiveType bool bool bool Bool
+    // 011 WantsMouseEnterLeaveWindow               ModelPrimitiveType bool bool bool Bool
+    // 012 WantsLessLayoutEvents                    ModelPrimitiveType bool bool bool Bool
     public partial class EventInterests : DataModel
     {
         public bool                                     WantsMouseMove                          { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EventInterests() { Pointer= p0 };
 
-            value.WantsMouseMove                            = GetBool(new IntPtr(p + 0x010)); // 0245A3E9F368 0x10 WantsMouseMove              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.WantsMouseEnterLeaveWindow                = GetBool(new IntPtr(p + 0x011)); // 0245A3E9F388 0x11 WantsMouseEnterLeaveWindow  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.WantsLessLayoutEvents                     = GetBool(new IntPtr(p + 0x012)); // 0245A3E9F3A8 0x12 WantsLessLayoutEvents       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.WantsMouseMove                            = GetBool(new IntPtr(p + 0x010)); // 0x10 WantsMouseMove              ( ModelPrimitiveType bool bool bool Bool )
+            value.WantsMouseEnterLeaveWindow                = GetBool(new IntPtr(p + 0x011)); // 0x11 WantsMouseEnterLeaveWindow  ( ModelPrimitiveType bool bool bool Bool )
+            value.WantsLessLayoutEvents                     = GetBool(new IntPtr(p + 0x012)); // 0x12 WantsLessLayoutEvents       ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

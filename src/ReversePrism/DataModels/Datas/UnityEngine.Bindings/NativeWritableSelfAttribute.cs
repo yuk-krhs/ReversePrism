@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 WritableSelf                             000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 WritableSelf                             ModelPrimitiveType bool bool bool Bool
     public partial class NativeWritableSelfAttribute : DataModel
     {
         public bool                                     WritableSelf                            { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NativeWritableSelfAttribute() { Pointer= p0 };
 
-            value.WritableSelf                              = GetBool(new IntPtr(p + 0x010)); // 0245A692B538 0x10 WritableSelf                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.WritableSelf                              = GetBool(new IntPtr(p + 0x010)); // 0x10 WritableSelf                ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

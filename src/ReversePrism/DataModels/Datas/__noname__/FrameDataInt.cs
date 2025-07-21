@@ -8,13 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 FrameCount                               0001865F36C0 ModelPrimitiveType int int int Int32
-    // 018 EyeIrisUvL                               000185B7D5E0 ModelPrimitiveListType int[] int[] List<int> Pointer
-    // 020 EyeIrisUvR                               000185B7D5E0 ModelPrimitiveListType int[] int[] List<int> Pointer
-    // 028 EyeFlip                                  0001865F36C0 ModelPrimitiveType int int int Int32
-    // 030 FaceParams                               000185B7D5E0 ModelPrimitiveListType int[] int[] List<int> Pointer
-    // 038 BodyBones                                000185CC0DC8 ModelClassListType BoneAxisInt[] BoneAxisInt[] List<BoneAxisInt> Pointer
-    // 040 HipsTrans                                000185B7D5E0 ModelPrimitiveListType int[] int[] List<int> Pointer
+    // 010 FrameCount                               ModelPrimitiveType int int int Int32
+    // 018 EyeIrisUvL                               ModelPrimitiveListType int[] int[] List<int> Pointer
+    // 020 EyeIrisUvR                               ModelPrimitiveListType int[] int[] List<int> Pointer
+    // 028 EyeFlip                                  ModelPrimitiveType int int int Int32
+    // 030 FaceParams                               ModelPrimitiveListType int[] int[] List<int> Pointer
+    // 038 BodyBones                                ModelClassListType BoneAxisInt[] BoneAxisInt[] List<BoneAxisInt> Pointer
+    // 040 HipsTrans                                ModelPrimitiveListType int[] int[] List<int> Pointer
     public partial class FrameDataInt : DataModel
     {
         public int                                      FrameCount                              { get; set; }
@@ -33,13 +33,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FrameDataInt() { Pointer= p0 };
 
-            value.FrameCount                                = GetInt32(new IntPtr(p + 0x010)); // 024664DF2930 0x10 FrameCount                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.EyeIrisUvL                                = GetInt32List(new IntPtr(p + 0x018)); // 024664DF2950 0x18 EyeIrisUvL                  ( 000185B7D5E0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.EyeIrisUvR                                = GetInt32List(new IntPtr(p + 0x020)); // 024664DF2970 0x20 EyeIrisUvR                  ( 000185B7D5E0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.EyeFlip                                   = GetInt32(new IntPtr(p + 0x028)); // 024664DF2990 0x28 EyeFlip                     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.FaceParams                                = GetInt32List(new IntPtr(p + 0x030)); // 024664DF29B0 0x30 FaceParams                  ( 000185B7D5E0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.BodyBones                                 = GetObjectList<BoneAxisInt>(new IntPtr(p + 0x038), ReversePrism.DataModels.BoneAxisInt.FromPointer); // 024664DF29D0 0x38 BodyBones                   ( 000185CC0DC8 ModelClassListType BoneAxisInt[] BoneAxisInt[] List<BoneAxisInt> Pointer )
-            value.HipsTrans                                 = GetInt32List(new IntPtr(p + 0x040)); // 024664DF29F0 0x40 HipsTrans                   ( 000185B7D5E0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.FrameCount                                = GetInt32(new IntPtr(p + 0x010)); // 0x10 FrameCount                  ( ModelPrimitiveType int int int Int32 )
+            value.EyeIrisUvL                                = GetInt32List(new IntPtr(p + 0x018)); // 0x18 EyeIrisUvL                  ( ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.EyeIrisUvR                                = GetInt32List(new IntPtr(p + 0x020)); // 0x20 EyeIrisUvR                  ( ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.EyeFlip                                   = GetInt32(new IntPtr(p + 0x028)); // 0x28 EyeFlip                     ( ModelPrimitiveType int int int Int32 )
+            value.FaceParams                                = GetInt32List(new IntPtr(p + 0x030)); // 0x30 FaceParams                  ( ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.BodyBones                                 = GetObjectList<BoneAxisInt>(new IntPtr(p + 0x038), ReversePrism.DataModels.BoneAxisInt.FromPointer); // 0x38 BodyBones                   ( ModelClassListType BoneAxisInt[] BoneAxisInt[] List<BoneAxisInt> Pointer )
+            value.HipsTrans                                 = GetInt32List(new IntPtr(p + 0x040)); // 0x40 HipsTrans                   ( ModelPrimitiveListType int[] int[] List<int> Pointer )
 
             return value;
         }

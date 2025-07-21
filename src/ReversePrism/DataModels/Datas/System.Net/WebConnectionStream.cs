@@ -8,14 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 Closed                                   000186595480 ModelPrimitiveType bool bool bool Bool
-    // 029 Disposed                                 000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 028 Closed                                   ModelPrimitiveType bool bool bool Bool
+    // 029 Disposed                                 ModelPrimitiveType bool bool bool Bool
     // 030 locker                                   <object> IL2CPP_TYPE_OBJECT
-    // 038 Read_timeout                             0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 03C Write_timeout                            0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 040 Request                                  0001866E5D00 ModelClassType HttpWebRequest HttpWebRequest HttpWebRequest Pointer
-    // 048 Connection                               000186548BA0 ModelClassType WebConnection WebConnection WebConnection Pointer
-    // 050 Operation                                00018654C930 ModelClassType WebOperation WebOperation WebOperation Pointer
+    // 038 Read_timeout                             ModelPrimitiveType int int int Int32
+    // 03C Write_timeout                            ModelPrimitiveType int int int Int32
+    // 040 Request                                  ModelClassType HttpWebRequest HttpWebRequest HttpWebRequest Pointer
+    // 048 Connection                               ModelClassType WebConnection WebConnection WebConnection Pointer
+    // 050 Operation                                ModelClassType WebOperation WebOperation WebOperation Pointer
     public partial class WebConnectionStream : DataModel
     {
         public bool                                     Closed                                  { get; set; }
@@ -34,13 +34,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new WebConnectionStream() { Pointer= p0 };
 
-            value.Closed                                    = GetBool(new IntPtr(p + 0x028)); // 024667AC9DE0 0x28 Closed                      ( 000186595480 ModelPrimitiveType bool bool bool Bool )
-            value.Disposed                                  = GetBool(new IntPtr(p + 0x029)); // 024667AC9E00 0x29 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Read_timeout                              = GetInt32(new IntPtr(p + 0x038)); // 024667AC9E40 0x38 Read_timeout                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Write_timeout                             = GetInt32(new IntPtr(p + 0x03C)); // 024667AC9E60 0x3C Write_timeout               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Request                                   = GetObject<HttpWebRequest>(new IntPtr(p + 0x040), ReversePrism.DataModels.HttpWebRequest.FromPointer); // 024667AC9E80 0x40 Request                     ( 0001866E5D00 ModelClassType HttpWebRequest HttpWebRequest HttpWebRequest Pointer )
-            value.Connection                                = GetObject<WebConnection>(new IntPtr(p + 0x048), ReversePrism.DataModels.WebConnection.FromPointer); // 024667AC9EA0 0x48 Connection                  ( 000186548BA0 ModelClassType WebConnection WebConnection WebConnection Pointer )
-            value.Operation                                 = GetObject<WebOperation>(new IntPtr(p + 0x050), ReversePrism.DataModels.WebOperation.FromPointer); // 024667AC9EC0 0x50 Operation                   ( 00018654C930 ModelClassType WebOperation WebOperation WebOperation Pointer )
+            value.Closed                                    = GetBool(new IntPtr(p + 0x028)); // 0x28 Closed                      ( ModelPrimitiveType bool bool bool Bool )
+            value.Disposed                                  = GetBool(new IntPtr(p + 0x029)); // 0x29 Disposed                    ( ModelPrimitiveType bool bool bool Bool )
+            value.Read_timeout                              = GetInt32(new IntPtr(p + 0x038)); // 0x38 Read_timeout                ( ModelPrimitiveType int int int Int32 )
+            value.Write_timeout                             = GetInt32(new IntPtr(p + 0x03C)); // 0x3C Write_timeout               ( ModelPrimitiveType int int int Int32 )
+            value.Request                                   = GetObject<HttpWebRequest>(new IntPtr(p + 0x040), ReversePrism.DataModels.HttpWebRequest.FromPointer); // 0x40 Request                     ( ModelClassType HttpWebRequest HttpWebRequest HttpWebRequest Pointer )
+            value.Connection                                = GetObject<WebConnection>(new IntPtr(p + 0x048), ReversePrism.DataModels.WebConnection.FromPointer); // 0x48 Connection                  ( ModelClassType WebConnection WebConnection WebConnection Pointer )
+            value.Operation                                 = GetObject<WebOperation>(new IntPtr(p + 0x050), ReversePrism.DataModels.WebOperation.FromPointer); // 0x50 Operation                   ( ModelClassType WebOperation WebOperation WebOperation Pointer )
 
             return value;
         }

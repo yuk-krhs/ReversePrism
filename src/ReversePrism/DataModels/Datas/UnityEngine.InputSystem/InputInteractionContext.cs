@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_State                                  0001866F7420 ModelClassType InputActionState InputActionState InputActionState Pointer
-    // 018 M_Flags                                  000186633CB0 ModelEnumType Flags Flags Flags Int32
-    // 01C M_TriggerState                           0001866F7830 ModelEnumType TriggerState TriggerState TriggerState Int32
+    // 010 M_State                                  ModelClassType InputActionState InputActionState InputActionState Pointer
+    // 018 M_Flags                                  ModelEnumType Flags Flags Flags Int32
+    // 01C M_TriggerState                           ModelEnumType TriggerState TriggerState TriggerState Int32
     public partial class InputInteractionContext : DataModel
     {
         public InputActionState?                        M_State                                 { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InputInteractionContext() { Pointer= p0 };
 
-            value.M_State                                   = GetObject<InputActionState>(new IntPtr(p + 0x010), ReversePrism.DataModels.InputActionState.FromPointer); // 0246676A8D78 0x10 M_State                     ( 0001866F7420 ModelClassType InputActionState InputActionState InputActionState Pointer )
-            value.M_Flags                                   = (Flags)GetInt32(new IntPtr(p + 0x018)); // 0246676A8D98 0x18 M_Flags                     ( 000186633CB0 ModelEnumType Flags Flags Flags Int32 )
-            value.M_TriggerState                            = (TriggerState)GetInt32(new IntPtr(p + 0x01C)); // 0246676A8DB8 0x1C M_TriggerState              ( 0001866F7830 ModelEnumType TriggerState TriggerState TriggerState Int32 )
+            value.M_State                                   = GetObject<InputActionState>(new IntPtr(p + 0x010), ReversePrism.DataModels.InputActionState.FromPointer); // 0x10 M_State                     ( ModelClassType InputActionState InputActionState InputActionState Pointer )
+            value.M_Flags                                   = (Flags)GetInt32(new IntPtr(p + 0x018)); // 0x18 M_Flags                     ( ModelEnumType Flags Flags Flags Int32 )
+            value.M_TriggerState                            = (TriggerState)GetInt32(new IntPtr(p + 0x01C)); // 0x1C M_TriggerState              ( ModelEnumType TriggerState TriggerState TriggerState Int32 )
 
             return value;
         }

@@ -8,22 +8,22 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 SourceFontFileName                       0001866722E0 ModelPrimitiveType string string string String
-    // 018 SourceFontFileGUID                       0001866722E0 ModelPrimitiveType string string string String
-    // 020 PointSizeSamplingMode                    0001865F36C0 ModelPrimitiveType int int int Int32
-    // 024 PointSize                                0001865F36C0 ModelPrimitiveType int int int Int32
-    // 028 Padding                                  0001865F36C0 ModelPrimitiveType int int int Int32
-    // 02C PackingMode                              0001865F36C0 ModelPrimitiveType int int int Int32
-    // 030 AtlasWidth                               0001865F36C0 ModelPrimitiveType int int int Int32
-    // 034 AtlasHeight                              0001865F36C0 ModelPrimitiveType int int int Int32
-    // 038 CharacterSetSelectionMode                0001865F36C0 ModelPrimitiveType int int int Int32
-    // 040 CharacterSequence                        0001866722E0 ModelPrimitiveType string string string String
-    // 048 ReferencedFontAssetGUID                  0001866722E0 ModelPrimitiveType string string string String
-    // 050 ReferencedTextAssetGUID                  0001866722E0 ModelPrimitiveType string string string String
-    // 058 FontStyle                                0001865F36C0 ModelPrimitiveType int int int Int32
-    // 05C FontStyleModifier                        000186666050 ModelPrimitiveType float float float Single
-    // 060 RenderMode                               0001865F36C0 ModelPrimitiveType int int int Int32
-    // 064 IncludeFontFeatures                      000186595960 ModelPrimitiveType bool bool bool Bool
+    // 010 SourceFontFileName                       ModelPrimitiveType string string string String
+    // 018 SourceFontFileGUID                       ModelPrimitiveType string string string String
+    // 020 PointSizeSamplingMode                    ModelPrimitiveType int int int Int32
+    // 024 PointSize                                ModelPrimitiveType int int int Int32
+    // 028 Padding                                  ModelPrimitiveType int int int Int32
+    // 02C PackingMode                              ModelPrimitiveType int int int Int32
+    // 030 AtlasWidth                               ModelPrimitiveType int int int Int32
+    // 034 AtlasHeight                              ModelPrimitiveType int int int Int32
+    // 038 CharacterSetSelectionMode                ModelPrimitiveType int int int Int32
+    // 040 CharacterSequence                        ModelPrimitiveType string string string String
+    // 048 ReferencedFontAssetGUID                  ModelPrimitiveType string string string String
+    // 050 ReferencedTextAssetGUID                  ModelPrimitiveType string string string String
+    // 058 FontStyle                                ModelPrimitiveType int int int Int32
+    // 05C FontStyleModifier                        ModelPrimitiveType float float float Single
+    // 060 RenderMode                               ModelPrimitiveType int int int Int32
+    // 064 IncludeFontFeatures                      ModelPrimitiveType bool bool bool Bool
     public partial class FontAssetCreationSettings : DataModel
     {
         public string                                   SourceFontFileName                      { get; set; }
@@ -51,22 +51,22 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FontAssetCreationSettings() { Pointer= p0 };
 
-            value.SourceFontFileName                        = GetString(new IntPtr(p + 0x010)); // 02466097DD20 0x10 SourceFontFileName          ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.SourceFontFileGUID                        = GetString(new IntPtr(p + 0x018)); // 02466097DD40 0x18 SourceFontFileGUID          ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.PointSizeSamplingMode                     = GetInt32(new IntPtr(p + 0x020)); // 02466097DD60 0x20 PointSizeSamplingMode       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.PointSize                                 = GetInt32(new IntPtr(p + 0x024)); // 02466097DD80 0x24 PointSize                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Padding                                   = GetInt32(new IntPtr(p + 0x028)); // 02466097DDA0 0x28 Padding                     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.PackingMode                               = GetInt32(new IntPtr(p + 0x02C)); // 02466097DDC0 0x2C PackingMode                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.AtlasWidth                                = GetInt32(new IntPtr(p + 0x030)); // 02466097DDE0 0x30 AtlasWidth                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.AtlasHeight                               = GetInt32(new IntPtr(p + 0x034)); // 02466097DE00 0x34 AtlasHeight                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.CharacterSetSelectionMode                 = GetInt32(new IntPtr(p + 0x038)); // 02466097DE20 0x38 CharacterSetSelectionMode   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.CharacterSequence                         = GetString(new IntPtr(p + 0x040)); // 02466097DE40 0x40 CharacterSequence           ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ReferencedFontAssetGUID                   = GetString(new IntPtr(p + 0x048)); // 02466097DE60 0x48 ReferencedFontAssetGUID     ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ReferencedTextAssetGUID                   = GetString(new IntPtr(p + 0x050)); // 02466097DE80 0x50 ReferencedTextAssetGUID     ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.FontStyle                                 = GetInt32(new IntPtr(p + 0x058)); // 02466097DEA0 0x58 FontStyle                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.FontStyleModifier                         = GetSingle(new IntPtr(p + 0x05C)); // 02466097DEC0 0x5C FontStyleModifier           ( 000186666050 ModelPrimitiveType float float float Single )
-            value.RenderMode                                = GetInt32(new IntPtr(p + 0x060)); // 02466097DEE0 0x60 RenderMode                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.IncludeFontFeatures                       = GetBool(new IntPtr(p + 0x064)); // 02466097DF00 0x64 IncludeFontFeatures         ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.SourceFontFileName                        = GetString(new IntPtr(p + 0x010)); // 0x10 SourceFontFileName          ( ModelPrimitiveType string string string String )
+            value.SourceFontFileGUID                        = GetString(new IntPtr(p + 0x018)); // 0x18 SourceFontFileGUID          ( ModelPrimitiveType string string string String )
+            value.PointSizeSamplingMode                     = GetInt32(new IntPtr(p + 0x020)); // 0x20 PointSizeSamplingMode       ( ModelPrimitiveType int int int Int32 )
+            value.PointSize                                 = GetInt32(new IntPtr(p + 0x024)); // 0x24 PointSize                   ( ModelPrimitiveType int int int Int32 )
+            value.Padding                                   = GetInt32(new IntPtr(p + 0x028)); // 0x28 Padding                     ( ModelPrimitiveType int int int Int32 )
+            value.PackingMode                               = GetInt32(new IntPtr(p + 0x02C)); // 0x2C PackingMode                 ( ModelPrimitiveType int int int Int32 )
+            value.AtlasWidth                                = GetInt32(new IntPtr(p + 0x030)); // 0x30 AtlasWidth                  ( ModelPrimitiveType int int int Int32 )
+            value.AtlasHeight                               = GetInt32(new IntPtr(p + 0x034)); // 0x34 AtlasHeight                 ( ModelPrimitiveType int int int Int32 )
+            value.CharacterSetSelectionMode                 = GetInt32(new IntPtr(p + 0x038)); // 0x38 CharacterSetSelectionMode   ( ModelPrimitiveType int int int Int32 )
+            value.CharacterSequence                         = GetString(new IntPtr(p + 0x040)); // 0x40 CharacterSequence           ( ModelPrimitiveType string string string String )
+            value.ReferencedFontAssetGUID                   = GetString(new IntPtr(p + 0x048)); // 0x48 ReferencedFontAssetGUID     ( ModelPrimitiveType string string string String )
+            value.ReferencedTextAssetGUID                   = GetString(new IntPtr(p + 0x050)); // 0x50 ReferencedTextAssetGUID     ( ModelPrimitiveType string string string String )
+            value.FontStyle                                 = GetInt32(new IntPtr(p + 0x058)); // 0x58 FontStyle                   ( ModelPrimitiveType int int int Int32 )
+            value.FontStyleModifier                         = GetSingle(new IntPtr(p + 0x05C)); // 0x5C FontStyleModifier           ( ModelPrimitiveType float float float Single )
+            value.RenderMode                                = GetInt32(new IntPtr(p + 0x060)); // 0x60 RenderMode                  ( ModelPrimitiveType int int int Int32 )
+            value.IncludeFontFeatures                       = GetBool(new IntPtr(p + 0x064)); // 0x64 IncludeFontFeatures         ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

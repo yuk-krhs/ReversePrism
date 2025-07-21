@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 EventList                                000185CFD088 ModelClassListType List`1<ProduceTutorialEventBase> List`1<ProduceTutorialEventBase> List<ProduceTutorialEventBase> Pointer
+    // 010 EventList                                ModelClassListType List`1<ProduceTutorialEventBase> List`1<ProduceTutorialEventBase> List<ProduceTutorialEventBase> Pointer
     public partial class ProduceTutorialEventGroup : DataModel
     {
         public List<ProduceTutorialEventBase>?          EventList                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceTutorialEventGroup() { Pointer= p0 };
 
-            value.EventList                                 = GetObjectList<ProduceTutorialEventBase>(new IntPtr(p + 0x010), ReversePrism.DataModels.ProduceTutorialEventBase.FromPointer); // 024665DBBA98 0x10 EventList                   ( 000185CFD088 ModelClassListType List`1<ProduceTutorialEventBase> List`1<ProduceTutorialEventBase> List<ProduceTutorialEventBase> Pointer )
+            value.EventList                                 = GetObjectList<ProduceTutorialEventBase>(new IntPtr(p + 0x010), ReversePrism.DataModels.ProduceTutorialEventBase.FromPointer); // 0x10 EventList                   ( ModelClassListType List`1<ProduceTutorialEventBase> List`1<ProduceTutorialEventBase> List<ProduceTutorialEventBase> Pointer )
 
             return value;
         }

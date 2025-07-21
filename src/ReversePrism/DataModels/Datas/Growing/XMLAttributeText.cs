@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 7E8 Entries                                  000185D31118 ModelEnumListType List`1<Entry> List`1<Entry> List<Entry> Pointer
+    // 7E8 Entries                                  ModelEnumListType List`1<Entry> List`1<Entry> List<Entry> Pointer
     public partial class XMLAttributeText : DataModel
     {
         public List<Entry>?                             Entries                                 { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XMLAttributeText() { Pointer= p0 };
 
-            value.Entries                                   = GetEnumList<Entry>(new IntPtr(p + 0x7E8)); // 024664BB2B70 0x7E8 Entries                     ( 000185D31118 ModelEnumListType List`1<Entry> List`1<Entry> List<Entry> Pointer )
+            value.Entries                                   = GetEnumList<Entry>(new IntPtr(p + 0x7E8)); // 0x7E8 Entries                     ( ModelEnumListType List`1<Entry> List`1<Entry> List<Entry> Pointer )
 
             return value;
         }

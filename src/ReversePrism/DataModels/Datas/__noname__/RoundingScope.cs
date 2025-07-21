@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 OldBits                                  000186719F00 ModelEnumType MXCSRBits MXCSRBits MXCSRBits Int32
+    // 010 OldBits                                  ModelEnumType MXCSRBits MXCSRBits MXCSRBits Int32
     public partial class RoundingScope : DataModel
     {
         public MXCSRBits                                OldBits                                 { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RoundingScope() { Pointer= p0 };
 
-            value.OldBits                                   = (MXCSRBits)GetInt32(new IntPtr(p + 0x010)); // 02466A974A08 0x10 OldBits                     ( 000186719F00 ModelEnumType MXCSRBits MXCSRBits MXCSRBits Int32 )
+            value.OldBits                                   = (MXCSRBits)GetInt32(new IntPtr(p + 0x010)); // 0x10 OldBits                     ( ModelEnumType MXCSRBits MXCSRBits MXCSRBits Int32 )
 
             return value;
         }

@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Carousel                                 000186567600 ModelClassType ProducePreparationEpisodeListCarousel ProducePreparationEpisodeListCarousel ProducePreparationEpisodeListCarousel Pointer
-    // 028 NextButton                               0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 030 PrevButton                               0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
+    // 020 Carousel                                 ModelClassType ProducePreparationEpisodeListCarousel ProducePreparationEpisodeListCarousel ProducePreparationEpisodeListCarousel Pointer
+    // 028 NextButton                               ModelClassType UIButton UIButton UIButton Pointer
+    // 030 PrevButton                               ModelClassType UIButton UIButton UIButton Pointer
     public partial class ProducePreparationEpisodeSelectListView : DataModel
     {
         public ProducePreparationEpisodeListCarousel?   Carousel                                { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProducePreparationEpisodeSelectListView() { Pointer= p0 };
 
-            value.Carousel                                  = GetObject<ProducePreparationEpisodeListCarousel>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProducePreparationEpisodeListCarousel.FromPointer); // 024665A3FAB8 0x20 Carousel                    ( 000186567600 ModelClassType ProducePreparationEpisodeListCarousel ProducePreparationEpisodeListCarousel ProducePreparationEpisodeListCarousel Pointer )
-            value.NextButton                                = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 024665A3FAD8 0x28 NextButton                  ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.PrevButton                                = GetObject<UIButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIButton.FromPointer); // 024665A3FAF8 0x30 PrevButton                  ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.Carousel                                  = GetObject<ProducePreparationEpisodeListCarousel>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProducePreparationEpisodeListCarousel.FromPointer); // 0x20 Carousel                    ( ModelClassType ProducePreparationEpisodeListCarousel ProducePreparationEpisodeListCarousel ProducePreparationEpisodeListCarousel Pointer )
+            value.NextButton                                = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 0x28 NextButton                  ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.PrevButton                                = GetObject<UIButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIButton.FromPointer); // 0x30 PrevButton                  ( ModelClassType UIButton UIButton UIButton Pointer )
 
             return value;
         }

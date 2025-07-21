@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 ViewPrefab                               00018655A1F0 ModelClassType ChainProfileScreenView ChainProfileScreenView ChainProfileScreenView Pointer
-    // 028 ViewParent                               0001866AA150 ModelClassType Transform Transform Transform Pointer
+    // 020 ViewPrefab                               ModelClassType ChainProfileScreenView ChainProfileScreenView ChainProfileScreenView Pointer
+    // 028 ViewParent                               ModelClassType Transform Transform Transform Pointer
     public partial class ChainProfileScreenBuilder : DataModel
     {
         public ChainProfileScreenView?                  ViewPrefab                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChainProfileScreenBuilder() { Pointer= p0 };
 
-            value.ViewPrefab                                = GetObject<ChainProfileScreenView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ChainProfileScreenView.FromPointer); // 02466B6D37A8 0x20 ViewPrefab                  ( 00018655A1F0 ModelClassType ChainProfileScreenView ChainProfileScreenView ChainProfileScreenView Pointer )
-            value.ViewParent                                = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 02466B6D37C8 0x28 ViewParent                  ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.ViewPrefab                                = GetObject<ChainProfileScreenView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ChainProfileScreenView.FromPointer); // 0x20 ViewPrefab                  ( ModelClassType ChainProfileScreenView ChainProfileScreenView ChainProfileScreenView Pointer )
+            value.ViewParent                                = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 0x28 ViewParent                  ( ModelClassType Transform Transform Transform Pointer )
 
             return value;
         }

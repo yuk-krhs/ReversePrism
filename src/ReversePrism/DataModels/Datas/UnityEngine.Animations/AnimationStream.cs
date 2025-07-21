@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_AnimatorBindingsVersion                000186698B70 ModelPrimitiveType uint uint uint UInt32
+    // 010 M_AnimatorBindingsVersion                ModelPrimitiveType uint uint uint UInt32
     // 018 constant                                 <int> IL2CPP_TYPE_I
     // 020 input                                    <int> IL2CPP_TYPE_I
     // 028 output                                   <int> IL2CPP_TYPE_I
@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AnimationStream() { Pointer= p0 };
 
-            value.M_AnimatorBindingsVersion                 = GetUInt32(new IntPtr(p + 0x010)); // 0245A2247678 0x10 M_AnimatorBindingsVersion   ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
+            value.M_AnimatorBindingsVersion                 = GetUInt32(new IntPtr(p + 0x010)); // 0x10 M_AnimatorBindingsVersion   ( ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

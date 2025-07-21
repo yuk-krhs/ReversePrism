@@ -12,9 +12,9 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 LoginBonusListFieldNumber                int IL2CPP_TYPE_I4
     // 008 _repeated_loginBonusList_codec           FieldCodec`1<LoginBonusStatus> IL2CPP_TYPE_GENERICINST
-    // 018 LoginBonusList                           000185CE4E38 ModelClassListType RepeatedField`1<LoginBonusStatus> RepeatedField`1<LoginBonusStatus> List<LoginBonusStatus> Pointer
+    // 018 LoginBonusList                           ModelClassListType RepeatedField`1<LoginBonusStatus> RepeatedField`1<LoginBonusStatus> List<LoginBonusStatus> Pointer
     // 000 CostumeFieldNumber                       int IL2CPP_TYPE_I4
-    // 020 Costume                                  00018659DB60 ModelClassType CharacterCostumeStatus CharacterCostumeStatus CharacterCostumeStatus Pointer
+    // 020 Costume                                  ModelClassType CharacterCostumeStatus CharacterCostumeStatus CharacterCostumeStatus Pointer
     public partial class ExecuteLoginBonusReply : DataModel
     {
         public List<LoginBonusStatus>?                  LoginBonusList                          { get; set; }
@@ -28,8 +28,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExecuteLoginBonusReply() { Pointer= p0 };
 
-            value.LoginBonusList                            = GetObjectList<LoginBonusStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.LoginBonusStatus.FromPointer); // 024662180BF8 0x18 LoginBonusList              ( 000185CE4E38 ModelClassListType RepeatedField`1<LoginBonusStatus> RepeatedField`1<LoginBonusStatus> List<LoginBonusStatus> Pointer )
-            value.Costume                                   = GetObject<CharacterCostumeStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.CharacterCostumeStatus.FromPointer); // 024662180C38 0x20 Costume                     ( 00018659DB60 ModelClassType CharacterCostumeStatus CharacterCostumeStatus CharacterCostumeStatus Pointer )
+            value.LoginBonusList                            = GetObjectList<LoginBonusStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.LoginBonusStatus.FromPointer); // 0x18 LoginBonusList              ( ModelClassListType RepeatedField`1<LoginBonusStatus> RepeatedField`1<LoginBonusStatus> List<LoginBonusStatus> Pointer )
+            value.Costume                                   = GetObject<CharacterCostumeStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.CharacterCostumeStatus.FromPointer); // 0x20 Costume                     ( ModelClassType CharacterCostumeStatus CharacterCostumeStatus CharacterCostumeStatus Pointer )
 
             return value;
         }

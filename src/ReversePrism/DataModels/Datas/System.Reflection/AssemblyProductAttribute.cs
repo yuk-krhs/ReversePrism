@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Product                                  000186672F10 ModelPrimitiveType string string string String
+    // 010 Product                                  ModelPrimitiveType string string string String
     public partial class AssemblyProductAttribute : DataModel
     {
         public string                                   Product                                 { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AssemblyProductAttribute() { Pointer= p0 };
 
-            value.Product                                   = GetString(new IntPtr(p + 0x010)); // 024666D38DA8 0x10 Product                     ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Product                                   = GetString(new IntPtr(p + 0x010)); // 0x10 Product                     ( ModelPrimitiveType string string string String )
 
             return value;
         }

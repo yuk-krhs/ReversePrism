@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 MstCharacterInfoId                       0001865F4940 ModelPrimitiveType int int int Int32
-    // 014 ProductKey                               0001865A2870 ModelEnumType ProductKey ProductKey ProductKey Int32
-    // 020 MstCostumeSet                            00018661D250 ModelClassType MstCostumeSet MstCostumeSet MstCostumeSet Pointer
+    // 010 MstCharacterInfoId                       ModelPrimitiveType int int int Int32
+    // 014 ProductKey                               ModelEnumType ProductKey ProductKey ProductKey Int32
+    // 020 MstCostumeSet                            ModelClassType MstCostumeSet MstCostumeSet MstCostumeSet Pointer
     public partial class GashaDetailCostumeViewModel : DataModel
     {
         public int                                      MstCharacterInfoId                      { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GashaDetailCostumeViewModel() { Pointer= p0 };
 
-            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x010)); // 0246663BB138 0x10 MstCharacterInfoId          ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.ProductKey                                = (ProductKey)GetInt32(new IntPtr(p + 0x014)); // 0246663BB158 0x14 ProductKey                  ( 0001865A2870 ModelEnumType ProductKey ProductKey ProductKey Int32 )
-            value.MstCostumeSet                             = GetObject<MstCostumeSet>(new IntPtr(p + 0x020), ReversePrism.DataModels.MstCostumeSet.FromPointer); // 0246663BB178 0x20 MstCostumeSet               ( 00018661D250 ModelClassType MstCostumeSet MstCostumeSet MstCostumeSet Pointer )
+            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x010)); // 0x10 MstCharacterInfoId          ( ModelPrimitiveType int int int Int32 )
+            value.ProductKey                                = (ProductKey)GetInt32(new IntPtr(p + 0x014)); // 0x14 ProductKey                  ( ModelEnumType ProductKey ProductKey ProductKey Int32 )
+            value.MstCostumeSet                             = GetObject<MstCostumeSet>(new IntPtr(p + 0x020), ReversePrism.DataModels.MstCostumeSet.FromPointer); // 0x20 MstCostumeSet               ( ModelClassType MstCostumeSet MstCostumeSet MstCostumeSet Pointer )
 
             return value;
         }

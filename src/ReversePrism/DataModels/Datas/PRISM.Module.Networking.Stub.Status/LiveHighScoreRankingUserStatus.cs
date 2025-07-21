@@ -11,16 +11,16 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<LiveHighScoreRankingUserStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 RankFieldNumber                          int IL2CPP_TYPE_I4
-    // 018 Rank                                     0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 Rank                                     ModelPrimitiveType int int int Int32
     // 000 HighScoreFieldNumber                     int IL2CPP_TYPE_I4
-    // 01C HighScore                                0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 01C HighScore                                ModelPrimitiveType int int int Int32
     // 000 TotalPowerFieldNumber                    int IL2CPP_TYPE_I4
-    // 020 TotalPower                               0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 TotalPower                               ModelPrimitiveType int int int Int32
     // 000 IdolListFieldNumber                      int IL2CPP_TYPE_I4
     // 008 _repeated_idolList_codec                 FieldCodec`1<LiveRankingUnitIdolStatus> IL2CPP_TYPE_GENERICINST
-    // 028 IdolList                                 000185CE3768 ModelClassListType RepeatedField`1<LiveRankingUnitIdolStatus> RepeatedField`1<LiveRankingUnitIdolStatus> List<LiveRankingUnitIdolStatus> Pointer
+    // 028 IdolList                                 ModelClassListType RepeatedField`1<LiveRankingUnitIdolStatus> RepeatedField`1<LiveRankingUnitIdolStatus> List<LiveRankingUnitIdolStatus> Pointer
     // 000 UserProfileFieldNumber                   int IL2CPP_TYPE_I4
-    // 030 UserProfile                              00018656B480 ModelClassType LiveRankingUserProfileStatus LiveRankingUserProfileStatus LiveRankingUserProfileStatus Pointer
+    // 030 UserProfile                              ModelClassType LiveRankingUserProfileStatus LiveRankingUserProfileStatus LiveRankingUserProfileStatus Pointer
     public partial class LiveHighScoreRankingUserStatus : DataModel
     {
         public int                                      Rank                                    { get; set; }
@@ -37,11 +37,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveHighScoreRankingUserStatus() { Pointer= p0 };
 
-            value.Rank                                      = GetInt32(new IntPtr(p + 0x018)); // 0246612CE330 0x18 Rank                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.HighScore                                 = GetInt32(new IntPtr(p + 0x01C)); // 0246612CE370 0x1C HighScore                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.TotalPower                                = GetInt32(new IntPtr(p + 0x020)); // 0246612CE3B0 0x20 TotalPower                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IdolList                                  = GetObjectList<LiveRankingUnitIdolStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.LiveRankingUnitIdolStatus.FromPointer); // 0246612CE410 0x28 IdolList                    ( 000185CE3768 ModelClassListType RepeatedField`1<LiveRankingUnitIdolStatus> RepeatedField`1<LiveRankingUnitIdolStatus> List<LiveRankingUnitIdolStatus> Pointer )
-            value.UserProfile                               = GetObject<LiveRankingUserProfileStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.LiveRankingUserProfileStatus.FromPointer); // 0246612CE450 0x30 UserProfile                 ( 00018656B480 ModelClassType LiveRankingUserProfileStatus LiveRankingUserProfileStatus LiveRankingUserProfileStatus Pointer )
+            value.Rank                                      = GetInt32(new IntPtr(p + 0x018)); // 0x18 Rank                        ( ModelPrimitiveType int int int Int32 )
+            value.HighScore                                 = GetInt32(new IntPtr(p + 0x01C)); // 0x1C HighScore                   ( ModelPrimitiveType int int int Int32 )
+            value.TotalPower                                = GetInt32(new IntPtr(p + 0x020)); // 0x20 TotalPower                  ( ModelPrimitiveType int int int Int32 )
+            value.IdolList                                  = GetObjectList<LiveRankingUnitIdolStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.LiveRankingUnitIdolStatus.FromPointer); // 0x28 IdolList                    ( ModelClassListType RepeatedField`1<LiveRankingUnitIdolStatus> RepeatedField`1<LiveRankingUnitIdolStatus> List<LiveRankingUnitIdolStatus> Pointer )
+            value.UserProfile                               = GetObject<LiveRankingUserProfileStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.LiveRankingUserProfileStatus.FromPointer); // 0x30 UserProfile                 ( ModelClassType LiveRankingUserProfileStatus LiveRankingUserProfileStatus LiveRankingUserProfileStatus Pointer )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 SortTargetIndex                          0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 014 UseFavoriteToggle                        0001865965D0 ModelPrimitiveType bool bool bool Bool
+    // 010 SortTargetIndex                          ModelPrimitiveType int int int Int32
+    // 014 UseFavoriteToggle                        ModelPrimitiveType bool bool bool Bool
     public partial class StorySortFilterPopupSortContentViewModel : DataModel
     {
         public int                                      SortTargetIndex                         { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StorySortFilterPopupSortContentViewModel() { Pointer= p0 };
 
-            value.SortTargetIndex                           = GetInt32(new IntPtr(p + 0x010)); // 024666823520 0x10 SortTargetIndex             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UseFavoriteToggle                         = GetBool(new IntPtr(p + 0x014)); // 024666823540 0x14 UseFavoriteToggle           ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.SortTargetIndex                           = GetInt32(new IntPtr(p + 0x010)); // 0x10 SortTargetIndex             ( ModelPrimitiveType int int int Int32 )
+            value.UseFavoriteToggle                         = GetBool(new IntPtr(p + 0x014)); // 0x14 UseFavoriteToggle           ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

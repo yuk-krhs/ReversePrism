@@ -11,8 +11,8 @@ namespace ReversePrism.DataModels
     // 000 WaitTimeout                              int IL2CPP_TYPE_I4
     // 000 MAX_WAITHANDLES                          int IL2CPP_TYPE_I4
     // 018 waitHandle                               <int> IL2CPP_TYPE_I
-    // 020 SafeWaitHandle                           00018665F760 ModelClassType SafeWaitHandle SafeWaitHandle SafeWaitHandle Pointer
-    // 028 HasThreadAffinity                        000186595210 ModelPrimitiveType bool bool bool Bool
+    // 020 SafeWaitHandle                           ModelClassType SafeWaitHandle SafeWaitHandle SafeWaitHandle Pointer
+    // 028 HasThreadAffinity                        ModelPrimitiveType bool bool bool Bool
     // 000 WAIT_OBJECT_0                            int IL2CPP_TYPE_I4
     // 000 WAIT_ABANDONED                           int IL2CPP_TYPE_I4
     // 000 WAIT_FAILED                              int IL2CPP_TYPE_I4
@@ -33,8 +33,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new WaitHandle() { Pointer= p0 };
 
-            value.SafeWaitHandle                            = GetObject<SafeWaitHandle>(new IntPtr(p + 0x020), ReversePrism.DataModels.SafeWaitHandle.FromPointer); // 0245A4D5A658 0x20 SafeWaitHandle              ( 00018665F760 ModelClassType SafeWaitHandle SafeWaitHandle SafeWaitHandle Pointer )
-            value.HasThreadAffinity                         = GetBool(new IntPtr(p + 0x028)); // 0245A4D5A678 0x28 HasThreadAffinity           ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.SafeWaitHandle                            = GetObject<SafeWaitHandle>(new IntPtr(p + 0x020), ReversePrism.DataModels.SafeWaitHandle.FromPointer); // 0x20 SafeWaitHandle              ( ModelClassType SafeWaitHandle SafeWaitHandle SafeWaitHandle Pointer )
+            value.HasThreadAffinity                         = GetBool(new IntPtr(p + 0x028)); // 0x28 HasThreadAffinity           ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

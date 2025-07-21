@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Down                                     0001865F2F90 ModelPrimitiveType int int int Int32
-    // 014 Up                                       0001865F2F90 ModelPrimitiveType int int int Int32
+    // 010 Down                                     ModelPrimitiveType int int int Int32
+    // 014 Up                                       ModelPrimitiveType int int int Int32
     public partial class Level : DataModel
     {
         public int                                      Down                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Level() { Pointer= p0 };
 
-            value.Down                                      = GetInt32(new IntPtr(p + 0x010)); // 02466BB146F0 0x10 Down                        ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.Up                                        = GetInt32(new IntPtr(p + 0x014)); // 02466BB14710 0x14 Up                          ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.Down                                      = GetInt32(new IntPtr(p + 0x010)); // 0x10 Down                        ( ModelPrimitiveType int int int Int32 )
+            value.Up                                        = GetInt32(new IntPtr(p + 0x014)); // 0x14 Up                          ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

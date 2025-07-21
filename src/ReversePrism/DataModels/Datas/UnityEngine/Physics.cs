@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 000 ContactModifyEvent                       Action`2<PhysicsScene, NativeArray`1<ModifiableContactPair>> IL2CPP_TYPE_GENERICINST
     // 008 ContactModifyEventCCD                    Action`2<PhysicsScene, NativeArray`1<ModifiableContactPair>> IL2CPP_TYPE_GENERICINST
-    // 010 ContactEvent                             00018656B900 ModelClassType ContactEventDelegate ContactEventDelegate ContactEventDelegate Pointer
-    // 018 S_ReusableCollision                      0001865C9AD0 ModelClassType Collision Collision Collision Pointer
+    // 010 ContactEvent                             ModelClassType ContactEventDelegate ContactEventDelegate ContactEventDelegate Pointer
+    // 018 S_ReusableCollision                      ModelClassType Collision Collision Collision Pointer
     public partial class Physics : DataModel
     {
         public ContactEventDelegate?                    ContactEvent                            { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Physics() { Pointer= p0 };
 
-            value.ContactEvent                              = GetObject<ContactEventDelegate>(new IntPtr(p + 0x010), ReversePrism.DataModels.ContactEventDelegate.FromPointer); // 0245A214B5D0 0x10 ContactEvent                ( 00018656B900 ModelClassType ContactEventDelegate ContactEventDelegate ContactEventDelegate Pointer )
-            value.S_ReusableCollision                       = GetObject<Collision>(new IntPtr(p + 0x018), ReversePrism.DataModels.Collision.FromPointer); // 0245A214B5F0 0x18 S_ReusableCollision         ( 0001865C9AD0 ModelClassType Collision Collision Collision Pointer )
+            value.ContactEvent                              = GetObject<ContactEventDelegate>(new IntPtr(p + 0x010), ReversePrism.DataModels.ContactEventDelegate.FromPointer); // 0x10 ContactEvent                ( ModelClassType ContactEventDelegate ContactEventDelegate ContactEventDelegate Pointer )
+            value.S_ReusableCollision                       = GetObject<Collision>(new IntPtr(p + 0x018), ReversePrism.DataModels.Collision.FromPointer); // 0x18 S_ReusableCollision         ( ModelClassType Collision Collision Collision Pointer )
 
             return value;
         }

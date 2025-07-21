@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 048 List                                     00018662FBE0 ModelClassType CostumePresetListView CostumePresetListView CostumePresetListView Pointer
-    // 050 HideButton                               000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer
+    // 048 List                                     ModelClassType CostumePresetListView CostumePresetListView CostumePresetListView Pointer
+    // 050 HideButton                               ModelClassType ButtonBase ButtonBase ButtonBase Pointer
     // 058 OnApplyPreset                            Action`1<ICostumePresetStatus> IL2CPP_TYPE_GENERICINST
     public partial class CostumePresetWindow : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CostumePresetWindow() { Pointer= p0 };
 
-            value.List                                      = GetObject<CostumePresetListView>(new IntPtr(p + 0x048), ReversePrism.DataModels.CostumePresetListView.FromPointer); // 02466BC904B8 0x48 List                        ( 00018662FBE0 ModelClassType CostumePresetListView CostumePresetListView CostumePresetListView Pointer )
-            value.HideButton                                = GetObject<ButtonBase>(new IntPtr(p + 0x050), ReversePrism.DataModels.ButtonBase.FromPointer); // 02466BC904D8 0x50 HideButton                  ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.List                                      = GetObject<CostumePresetListView>(new IntPtr(p + 0x048), ReversePrism.DataModels.CostumePresetListView.FromPointer); // 0x48 List                        ( ModelClassType CostumePresetListView CostumePresetListView CostumePresetListView Pointer )
+            value.HideButton                                = GetObject<ButtonBase>(new IntPtr(p + 0x050), ReversePrism.DataModels.ButtonBase.FromPointer); // 0x50 HideButton                  ( ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
 
             return value;
         }

@@ -8,18 +8,22 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Button                                   0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 028 ThumbnailImage                           0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 030 NewBadge                                 0001865D81D0 ModelClassType GameObject GameObject GameObject Pointer
-    // 038 UnreadBadge                              0001865D81D0 ModelClassType GameObject GameObject GameObject Pointer
-    // 040 Title                                    0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 060 CellButton                               ModelClassType UIButton UIButton UIButton Pointer
+    // 068 ThumbnailImage                           ModelClassType UIImage UIImage UIImage Pointer
+    // 070 NewBadge                                 ModelClassType GameObject GameObject GameObject Pointer
+    // 078 UnreadBadge                              ModelClassType GameObject GameObject GameObject Pointer
+    // 080 Title                                    ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 088 Cts                                      ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
+    // 090 Disposables                              ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
     public partial class ExtraStoryFirstCategoryCell : DataModel
     {
-        public UIButton?                                Button                                  { get; set; }
+        public UIButton?                                CellButton                              { get; set; }
         public UIImage?                                 ThumbnailImage                          { get; set; }
         public GameObject?                              NewBadge                                { get; set; }
         public GameObject?                              UnreadBadge                             { get; set; }
         public UITextMeshProUGUI?                       Title                                   { get; set; }
+        public CancellationTokenSource?                 Cts                                     { get; set; }
+        public CompositeDisposable?                     Disposables                             { get; set; }
 
         public static ExtraStoryFirstCategoryCell? FromPointer(IntPtr p0)
         {
@@ -29,11 +33,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExtraStoryFirstCategoryCell() { Pointer= p0 };
 
-            value.Button                                    = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 02466B9F6B30 0x20 Button                      ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.ThumbnailImage                            = GetObject<UIImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIImage.FromPointer); // 02466B9F6B50 0x28 ThumbnailImage              ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.NewBadge                                  = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 02466B9F6B70 0x30 NewBadge                    ( 0001865D81D0 ModelClassType GameObject GameObject GameObject Pointer )
-            value.UnreadBadge                               = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 02466B9F6B90 0x38 UnreadBadge                 ( 0001865D81D0 ModelClassType GameObject GameObject GameObject Pointer )
-            value.Title                                     = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B9F6BB0 0x40 Title                       ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.CellButton                                = GetObject<UIButton>(new IntPtr(p + 0x060), ReversePrism.DataModels.UIButton.FromPointer); // 0x60 CellButton                  ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.ThumbnailImage                            = GetObject<UIImage>(new IntPtr(p + 0x068), ReversePrism.DataModels.UIImage.FromPointer); // 0x68 ThumbnailImage              ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.NewBadge                                  = GetObject<GameObject>(new IntPtr(p + 0x070), ReversePrism.DataModels.GameObject.FromPointer); // 0x70 NewBadge                    ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.UnreadBadge                               = GetObject<GameObject>(new IntPtr(p + 0x078), ReversePrism.DataModels.GameObject.FromPointer); // 0x78 UnreadBadge                 ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.Title                                     = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x080), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x80 Title                       ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x088), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0x88 Cts                         ( ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x090), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0x90 Disposables                 ( ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
 
             return value;
         }

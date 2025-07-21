@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Text                                     000186672F10 ModelPrimitiveType string string string String
+    // 010 Text                                     ModelPrimitiveType string string string String
     public partial class StepUpGashaRatesTitleCellViewModel : DataModel
     {
         public string                                   Text                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StepUpGashaRatesTitleCellViewModel() { Pointer= p0 };
 
-            value.Text                                      = GetString(new IntPtr(p + 0x010)); // 024665471808 0x10 Text                        ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Text                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Text                        ( ModelPrimitiveType string string string String )
 
             return value;
         }

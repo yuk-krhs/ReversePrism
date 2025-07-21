@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 TxtLabel                                 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 028 ImgPoint                                 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 030 GashaProductItem                         000186610A30 ModelClassType GashaProductItemPresenter GashaProductItemPresenter GashaProductItemPresenter Pointer
-    // 038 TxtLeft                                  0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 040 TxtRight                                 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 048 GoArrow                                  0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
+    // 020 TxtLabel                                 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 028 ImgPoint                                 ModelClassType GameObject GameObject GameObject Pointer
+    // 030 GashaProductItem                         ModelClassType GashaProductItemPresenter GashaProductItemPresenter GashaProductItemPresenter Pointer
+    // 038 TxtLeft                                  ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 040 TxtRight                                 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 048 GoArrow                                  ModelClassType GameObject GameObject GameObject Pointer
     public partial class GashaExchangeConfirmationPoint : DataModel
     {
         public UITextMeshProUGUI?                       TxtLabel                                { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GashaExchangeConfirmationPoint() { Pointer= p0 };
 
-            value.TxtLabel                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665E69F08 0x20 TxtLabel                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ImgPoint                                  = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 024665E69F28 0x28 ImgPoint                    ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.GashaProductItem                          = GetObject<GashaProductItemPresenter>(new IntPtr(p + 0x030), ReversePrism.DataModels.GashaProductItemPresenter.FromPointer); // 024665E69F48 0x30 GashaProductItem            ( 000186610A30 ModelClassType GashaProductItemPresenter GashaProductItemPresenter GashaProductItemPresenter Pointer )
-            value.TxtLeft                                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665E69F68 0x38 TxtLeft                     ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TxtRight                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665E69F88 0x40 TxtRight                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.GoArrow                                   = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 024665E69FA8 0x48 GoArrow                     ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.TxtLabel                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x20 TxtLabel                    ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ImgPoint                                  = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0x28 ImgPoint                    ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.GashaProductItem                          = GetObject<GashaProductItemPresenter>(new IntPtr(p + 0x030), ReversePrism.DataModels.GashaProductItemPresenter.FromPointer); // 0x30 GashaProductItem            ( ModelClassType GashaProductItemPresenter GashaProductItemPresenter GashaProductItemPresenter Pointer )
+            value.TxtLeft                                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x38 TxtLeft                     ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtRight                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x40 TxtRight                    ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.GoArrow                                   = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 0x48 GoArrow                     ( ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

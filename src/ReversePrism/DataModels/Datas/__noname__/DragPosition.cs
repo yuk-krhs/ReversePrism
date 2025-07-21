@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 InsertAtIndex                            0001865F36C0 ModelPrimitiveType int int int Int32
-    // 014 ParentId                                 0001865F36C0 ModelPrimitiveType int int int Int32
-    // 018 ChildIndex                               0001865F36C0 ModelPrimitiveType int int int Int32
-    // 020 RecycledItem                             000186679EE0 ModelClassType ReusableCollectionItem ReusableCollectionItem ReusableCollectionItem Pointer
-    // 028 DropPosition                             0001866F4B90 ModelEnumType DragAndDropPosition DragAndDropPosition DragAndDropPosition Int32
+    // 010 InsertAtIndex                            ModelPrimitiveType int int int Int32
+    // 014 ParentId                                 ModelPrimitiveType int int int Int32
+    // 018 ChildIndex                               ModelPrimitiveType int int int Int32
+    // 020 RecycledItem                             ModelClassType ReusableCollectionItem ReusableCollectionItem ReusableCollectionItem Pointer
+    // 028 DropPosition                             ModelEnumType DragAndDropPosition DragAndDropPosition DragAndDropPosition Int32
     public partial class DragPosition : DataModel
     {
         public int                                      InsertAtIndex                           { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DragPosition() { Pointer= p0 };
 
-            value.InsertAtIndex                             = GetInt32(new IntPtr(p + 0x010)); // 0245A6718118 0x10 InsertAtIndex               ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.ParentId                                  = GetInt32(new IntPtr(p + 0x014)); // 0245A6718138 0x14 ParentId                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.ChildIndex                                = GetInt32(new IntPtr(p + 0x018)); // 0245A6718158 0x18 ChildIndex                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.RecycledItem                              = GetObject<ReusableCollectionItem>(new IntPtr(p + 0x020), ReversePrism.DataModels.ReusableCollectionItem.FromPointer); // 0245A6718178 0x20 RecycledItem                ( 000186679EE0 ModelClassType ReusableCollectionItem ReusableCollectionItem ReusableCollectionItem Pointer )
-            value.DropPosition                              = (DragAndDropPosition)GetInt32(new IntPtr(p + 0x028)); // 0245A6718198 0x28 DropPosition                ( 0001866F4B90 ModelEnumType DragAndDropPosition DragAndDropPosition DragAndDropPosition Int32 )
+            value.InsertAtIndex                             = GetInt32(new IntPtr(p + 0x010)); // 0x10 InsertAtIndex               ( ModelPrimitiveType int int int Int32 )
+            value.ParentId                                  = GetInt32(new IntPtr(p + 0x014)); // 0x14 ParentId                    ( ModelPrimitiveType int int int Int32 )
+            value.ChildIndex                                = GetInt32(new IntPtr(p + 0x018)); // 0x18 ChildIndex                  ( ModelPrimitiveType int int int Int32 )
+            value.RecycledItem                              = GetObject<ReusableCollectionItem>(new IntPtr(p + 0x020), ReversePrism.DataModels.ReusableCollectionItem.FromPointer); // 0x20 RecycledItem                ( ModelClassType ReusableCollectionItem ReusableCollectionItem ReusableCollectionItem Pointer )
+            value.DropPosition                              = (DragAndDropPosition)GetInt32(new IntPtr(p + 0x028)); // 0x28 DropPosition                ( ModelEnumType DragAndDropPosition DragAndDropPosition DragAndDropPosition Int32 )
 
             return value;
         }

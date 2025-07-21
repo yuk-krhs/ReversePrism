@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 ussClassName                             string IL2CPP_TYPE_STRING
     // 008 labelUssClassName                        string IL2CPP_TYPE_STRING
-    // 3D8 M_TitleLabel                             000186774D80 ModelClassType Label Label Label Pointer
+    // 3D8 M_TitleLabel                             ModelClassType Label Label Label Pointer
     public partial class GroupBox : DataModel
     {
         public Label?                                   M_TitleLabel                            { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GroupBox() { Pointer= p0 };
 
-            value.M_TitleLabel                              = GetObject<Label>(new IntPtr(p + 0x3D8), ReversePrism.DataModels.Label.FromPointer); // 0245A66D4078 0x3D8 M_TitleLabel                ( 000186774D80 ModelClassType Label Label Label Pointer )
+            value.M_TitleLabel                              = GetObject<Label>(new IntPtr(p + 0x3D8), ReversePrism.DataModels.Label.FromPointer); // 0x3D8 M_TitleLabel                ( ModelClassType Label Label Label Pointer )
 
             return value;
         }

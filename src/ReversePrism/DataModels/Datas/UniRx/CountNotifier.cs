@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 010 lockObject                               <object> IL2CPP_TYPE_OBJECT
     // 018 statusChanged                            Subject`1<CountChangedStatus> IL2CPP_TYPE_GENERICINST
-    // 020 Max                                      0001865F4260 ModelPrimitiveType int int int Int32
-    // 024 Count                                    0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 Max                                      ModelPrimitiveType int int int Int32
+    // 024 Count                                    ModelPrimitiveType int int int Int32
     public partial class CountNotifier : DataModel
     {
         public int                                      Max                                     { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CountNotifier() { Pointer= p0 };
 
-            value.Max                                       = GetInt32(new IntPtr(p + 0x020)); // 0246695B5790 0x20 Max                         ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Count                                     = GetInt32(new IntPtr(p + 0x024)); // 0246695B57B0 0x24 Count                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Max                                       = GetInt32(new IntPtr(p + 0x020)); // 0x20 Max                         ( ModelPrimitiveType int int int Int32 )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x024)); // 0x24 Count                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

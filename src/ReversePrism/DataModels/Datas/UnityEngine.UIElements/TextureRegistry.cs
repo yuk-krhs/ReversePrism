@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Textures                               000185D2E578 ModelEnumListType List`1<TextureInfo> List`1<TextureInfo> List<TextureInfo> Pointer
+    // 010 M_Textures                               ModelEnumListType List`1<TextureInfo> List`1<TextureInfo> List<TextureInfo> Pointer
     // 018 m_TextureToId                            Dictionary`2<Texture, TextureId> IL2CPP_TYPE_GENERICINST
     // 020 m_FreeIds                                Stack`1<TextureId> IL2CPP_TYPE_GENERICINST
     // 000 maxTextures                              int IL2CPP_TYPE_I4
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TextureRegistry() { Pointer= p0 };
 
-            value.M_Textures                                = GetEnumList<TextureInfo>(new IntPtr(p + 0x010)); // 0245A67AB8E8 0x10 M_Textures                  ( 000185D2E578 ModelEnumListType List`1<TextureInfo> List`1<TextureInfo> List<TextureInfo> Pointer )
+            value.M_Textures                                = GetEnumList<TextureInfo>(new IntPtr(p + 0x010)); // 0x10 M_Textures                  ( ModelEnumListType List`1<TextureInfo> List`1<TextureInfo> List<TextureInfo> Pointer )
 
             return value;
         }

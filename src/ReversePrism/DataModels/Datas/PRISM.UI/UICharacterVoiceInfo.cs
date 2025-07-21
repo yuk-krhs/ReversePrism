@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 MstCharacterInfoId                       0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 CharaName                                000186672F10 ModelPrimitiveType string string string String
-    // 020 UnitIdol                                 00018670CE40 ModelClassType UnitIdol UnitIdol UnitIdol Pointer
-    // 028 VoicePattern                             0001866E3DC0 ModelClassType UICharacterVoicePattern UICharacterVoicePattern UICharacterVoicePattern Pointer
+    // 010 MstCharacterInfoId                       ModelPrimitiveType int int int Int32
+    // 018 CharaName                                ModelPrimitiveType string string string String
+    // 020 UnitIdol                                 ModelClassType UnitIdol UnitIdol UnitIdol Pointer
+    // 028 VoicePattern                             ModelClassType UICharacterVoicePattern UICharacterVoicePattern UICharacterVoicePattern Pointer
     public partial class UICharacterVoiceInfo : DataModel
     {
         public int                                      MstCharacterInfoId                      { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UICharacterVoiceInfo() { Pointer= p0 };
 
-            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x010)); // 0246654A7FA8 0x10 MstCharacterInfoId          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.CharaName                                 = GetString(new IntPtr(p + 0x018)); // 0246654A7FC8 0x18 CharaName                   ( 000186672F10 ModelPrimitiveType string string string String )
-            value.UnitIdol                                  = GetObject<UnitIdol>(new IntPtr(p + 0x020), ReversePrism.DataModels.UnitIdol.FromPointer); // 0246654A7FE8 0x20 UnitIdol                    ( 00018670CE40 ModelClassType UnitIdol UnitIdol UnitIdol Pointer )
-            value.VoicePattern                              = GetObject<UICharacterVoicePattern>(new IntPtr(p + 0x028), ReversePrism.DataModels.UICharacterVoicePattern.FromPointer); // 0246654A8008 0x28 VoicePattern                ( 0001866E3DC0 ModelClassType UICharacterVoicePattern UICharacterVoicePattern UICharacterVoicePattern Pointer )
+            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x010)); // 0x10 MstCharacterInfoId          ( ModelPrimitiveType int int int Int32 )
+            value.CharaName                                 = GetString(new IntPtr(p + 0x018)); // 0x18 CharaName                   ( ModelPrimitiveType string string string String )
+            value.UnitIdol                                  = GetObject<UnitIdol>(new IntPtr(p + 0x020), ReversePrism.DataModels.UnitIdol.FromPointer); // 0x20 UnitIdol                    ( ModelClassType UnitIdol UnitIdol UnitIdol Pointer )
+            value.VoicePattern                              = GetObject<UICharacterVoicePattern>(new IntPtr(p + 0x028), ReversePrism.DataModels.UICharacterVoicePattern.FromPointer); // 0x28 VoicePattern                ( ModelClassType UICharacterVoicePattern UICharacterVoicePattern UICharacterVoicePattern Pointer )
 
             return value;
         }

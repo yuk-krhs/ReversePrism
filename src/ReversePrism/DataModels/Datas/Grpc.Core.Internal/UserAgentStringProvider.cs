@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 defaultInstance                          UserAgentStringProvider IL2CPP_TYPE_CLASS
-    // 010 UserAgentString                          000186672F10 ModelPrimitiveType string string string String
+    // 010 UserAgentString                          ModelPrimitiveType string string string String
     public partial class UserAgentStringProvider : DataModel
     {
         public string                                   UserAgentString                         { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UserAgentStringProvider() { Pointer= p0 };
 
-            value.UserAgentString                           = GetString(new IntPtr(p + 0x010)); // 0245A40C5B30 0x10 UserAgentString             ( 000186672F10 ModelPrimitiveType string string string String )
+            value.UserAgentString                           = GetString(new IntPtr(p + 0x010)); // 0x10 UserAgentString             ( ModelPrimitiveType string string string String )
 
             return value;
         }

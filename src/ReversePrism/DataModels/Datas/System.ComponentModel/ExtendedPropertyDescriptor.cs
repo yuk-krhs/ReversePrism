@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 088 ExtenderInfo                             000186634EE0 ModelClassType ReflectPropertyDescriptor ReflectPropertyDescriptor ReflectPropertyDescriptor Pointer
-    // 090 Provider                                 000186771190 ModelClassType IExtenderProvider IExtenderProvider IExtenderProvider Pointer
+    // 088 ExtenderInfo                             ModelClassType ReflectPropertyDescriptor ReflectPropertyDescriptor ReflectPropertyDescriptor Pointer
+    // 090 Provider                                 ModelClassType IExtenderProvider IExtenderProvider IExtenderProvider Pointer
     public partial class ExtendedPropertyDescriptor : DataModel
     {
         public ReflectPropertyDescriptor?               ExtenderInfo                            { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExtendedPropertyDescriptor() { Pointer= p0 };
 
-            value.ExtenderInfo                              = GetObject<ReflectPropertyDescriptor>(new IntPtr(p + 0x088), ReversePrism.DataModels.ReflectPropertyDescriptor.FromPointer); // 024667B846C0 0x88 ExtenderInfo                ( 000186634EE0 ModelClassType ReflectPropertyDescriptor ReflectPropertyDescriptor ReflectPropertyDescriptor Pointer )
-            value.Provider                                  = GetObject<IExtenderProvider>(new IntPtr(p + 0x090), ReversePrism.DataModels.IExtenderProvider.FromPointer); // 024667B846E0 0x90 Provider                    ( 000186771190 ModelClassType IExtenderProvider IExtenderProvider IExtenderProvider Pointer )
+            value.ExtenderInfo                              = GetObject<ReflectPropertyDescriptor>(new IntPtr(p + 0x088), ReversePrism.DataModels.ReflectPropertyDescriptor.FromPointer); // 0x88 ExtenderInfo                ( ModelClassType ReflectPropertyDescriptor ReflectPropertyDescriptor ReflectPropertyDescriptor Pointer )
+            value.Provider                                  = GetObject<IExtenderProvider>(new IntPtr(p + 0x090), ReversePrism.DataModels.IExtenderProvider.FromPointer); // 0x90 Provider                    ( ModelClassType IExtenderProvider IExtenderProvider IExtenderProvider Pointer )
 
             return value;
         }

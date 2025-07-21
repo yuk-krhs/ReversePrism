@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<RecoverStaminaByInGameCurrencyArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 StaminaTypeFieldNumber                   int IL2CPP_TYPE_I4
-    // 018 StaminaType                              00018656BC30 ModelEnumType StaminaType StaminaType StaminaType Int32
+    // 018 StaminaType                              ModelEnumType StaminaType StaminaType StaminaType Int32
     // 000 RecoverCountFieldNumber                  int IL2CPP_TYPE_I4
-    // 01C RecoverCount                             0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 01C RecoverCount                             ModelPrimitiveType int int int Int32
     public partial class RecoverStaminaByInGameCurrencyArgs : DataModel
     {
         public StaminaType                              StaminaType                             { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RecoverStaminaByInGameCurrencyArgs() { Pointer= p0 };
 
-            value.StaminaType                               = (StaminaType)GetInt32(new IntPtr(p + 0x018)); // 0246628CEA60 0x18 StaminaType                 ( 00018656BC30 ModelEnumType StaminaType StaminaType StaminaType Int32 )
-            value.RecoverCount                              = GetInt32(new IntPtr(p + 0x01C)); // 0246628CEAA0 0x1C RecoverCount                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.StaminaType                               = (StaminaType)GetInt32(new IntPtr(p + 0x018)); // 0x18 StaminaType                 ( ModelEnumType StaminaType StaminaType StaminaType Int32 )
+            value.RecoverCount                              = GetInt32(new IntPtr(p + 0x01C)); // 0x1C RecoverCount                ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

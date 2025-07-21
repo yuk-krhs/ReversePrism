@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 m_Jobs                                   NativeArray`1<JobHandle> IL2CPP_TYPE_GENERICINST
-    // 020 M_JobCount                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 024 Disposed                                 000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 020 M_JobCount                               ModelPrimitiveType int int int Int32
+    // 024 Disposed                                 ModelPrimitiveType bool bool bool Bool
     public partial class JobMerger : DataModel
     {
         public int                                      M_JobCount                              { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JobMerger() { Pointer= p0 };
 
-            value.M_JobCount                                = GetInt32(new IntPtr(p + 0x020)); // 0245A6826870 0x20 M_JobCount                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Disposed                                  = GetBool(new IntPtr(p + 0x024)); // 0245A6826890 0x24 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_JobCount                                = GetInt32(new IntPtr(p + 0x020)); // 0x20 M_JobCount                  ( ModelPrimitiveType int int int Int32 )
+            value.Disposed                                  = GetBool(new IntPtr(p + 0x024)); // 0x24 Disposed                    ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

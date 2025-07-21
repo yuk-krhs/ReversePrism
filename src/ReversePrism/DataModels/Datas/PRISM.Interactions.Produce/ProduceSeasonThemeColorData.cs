@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 SeasonThemeColor                         000185B75890 ModelEnumListType Color[] Color[] List<Color> Pointer
-    // 020 SubSeasonThemeColor                      000185B75890 ModelEnumListType Color[] Color[] List<Color> Pointer
+    // 018 SeasonThemeColor                         ModelEnumListType Color[] Color[] List<Color> Pointer
+    // 020 SubSeasonThemeColor                      ModelEnumListType Color[] Color[] List<Color> Pointer
     public partial class ProduceSeasonThemeColorData : DataModel
     {
         public List<Color>?                             SeasonThemeColor                        { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceSeasonThemeColorData() { Pointer= p0 };
 
-            value.SeasonThemeColor                          = GetEnumList<Color>(new IntPtr(p + 0x018)); // 02466A27EFE0 0x18 SeasonThemeColor            ( 000185B75890 ModelEnumListType Color[] Color[] List<Color> Pointer )
-            value.SubSeasonThemeColor                       = GetEnumList<Color>(new IntPtr(p + 0x020)); // 02466A27F000 0x20 SubSeasonThemeColor         ( 000185B75890 ModelEnumListType Color[] Color[] List<Color> Pointer )
+            value.SeasonThemeColor                          = GetEnumList<Color>(new IntPtr(p + 0x018)); // 0x18 SeasonThemeColor            ( ModelEnumListType Color[] Color[] List<Color> Pointer )
+            value.SubSeasonThemeColor                       = GetEnumList<Color>(new IntPtr(p + 0x020)); // 0x20 SubSeasonThemeColor         ( ModelEnumListType Color[] Color[] List<Color> Pointer )
 
             return value;
         }

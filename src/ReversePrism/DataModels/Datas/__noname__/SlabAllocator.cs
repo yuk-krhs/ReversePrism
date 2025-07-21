@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_handle                                 000186699480 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32
-    // 018 Storage                                  0001866CD820 ModelEnumType Block Block Block Int32
-    // 038 Log2SlabSizeInBytes                      0001865F2F90 ModelPrimitiveType int int int Int32
+    // 010 M_handle                                 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32
+    // 018 Storage                                  ModelEnumType Block Block Block Int32
+    // 038 Log2SlabSizeInBytes                      ModelPrimitiveType int int int Int32
     // 040 Occupied                                 FixedList4096Bytes`1<int> IL2CPP_TYPE_GENERICINST
-    // 1040 BudgetInBytes                            0001865F79C0 ModelPrimitiveType long long long Int64
-    // 1048 AllocatedBytes                           0001865F79C0 ModelPrimitiveType long long long Int64
+    // 1040 BudgetInBytes                            ModelPrimitiveType long long long Int64
+    // 1048 AllocatedBytes                           ModelPrimitiveType long long long Int64
     public partial class SlabAllocator : DataModel
     {
         public AllocatorHandle                          M_handle                                { get; set; }
@@ -30,11 +30,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SlabAllocator() { Pointer= p0 };
 
-            value.M_handle                                  = (AllocatorHandle)GetInt32(new IntPtr(p + 0x010)); // 0245A34D7BA0 0x10 M_handle                    ( 000186699480 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32 )
-            value.Storage                                   = (Block)GetInt32(new IntPtr(p + 0x018)); // 0245A34D7BC0 0x18 Storage                     ( 0001866CD820 ModelEnumType Block Block Block Int32 )
-            value.Log2SlabSizeInBytes                       = GetInt32(new IntPtr(p + 0x038)); // 0245A34D7BE0 0x38 Log2SlabSizeInBytes         ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.BudgetInBytes                             = GetInt64(new IntPtr(p + 0x1040)); // 0245A34D7C20 0x1040 BudgetInBytes               ( 0001865F79C0 ModelPrimitiveType long long long Int64 )
-            value.AllocatedBytes                            = GetInt64(new IntPtr(p + 0x1048)); // 0245A34D7C40 0x1048 AllocatedBytes              ( 0001865F79C0 ModelPrimitiveType long long long Int64 )
+            value.M_handle                                  = (AllocatorHandle)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_handle                    ( ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32 )
+            value.Storage                                   = (Block)GetInt32(new IntPtr(p + 0x018)); // 0x18 Storage                     ( ModelEnumType Block Block Block Int32 )
+            value.Log2SlabSizeInBytes                       = GetInt32(new IntPtr(p + 0x038)); // 0x38 Log2SlabSizeInBytes         ( ModelPrimitiveType int int int Int32 )
+            value.BudgetInBytes                             = GetInt64(new IntPtr(p + 0x1040)); // 0x1040 BudgetInBytes               ( ModelPrimitiveType long long long Int64 )
+            value.AllocatedBytes                            = GetInt64(new IntPtr(p + 0x1048)); // 0x1048 AllocatedBytes              ( ModelPrimitiveType long long long Int64 )
 
             return value;
         }

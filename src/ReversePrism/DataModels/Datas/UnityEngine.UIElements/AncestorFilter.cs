@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_CountingBloomFilter                    000186639560 ModelEnumType CountingBloomFilter CountingBloomFilter CountingBloomFilter Int32
+    // 010 M_CountingBloomFilter                    ModelEnumType CountingBloomFilter CountingBloomFilter CountingBloomFilter Int32
     // 4010 m_HashStack                              Stack`1<int> IL2CPP_TYPE_GENERICINST
     public partial class AncestorFilter : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AncestorFilter() { Pointer= p0 };
 
-            value.M_CountingBloomFilter                     = (CountingBloomFilter)GetInt32(new IntPtr(p + 0x010)); // 0245A6712F20 0x10 M_CountingBloomFilter       ( 000186639560 ModelEnumType CountingBloomFilter CountingBloomFilter CountingBloomFilter Int32 )
+            value.M_CountingBloomFilter                     = (CountingBloomFilter)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_CountingBloomFilter       ( ModelEnumType CountingBloomFilter CountingBloomFilter CountingBloomFilter Int32 )
 
             return value;
         }

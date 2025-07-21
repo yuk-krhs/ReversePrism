@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_BaseMarkGlyphID                        000186698B70 ModelPrimitiveType uint uint uint UInt32
-    // 014 M_BaseMarkGlyphAnchorPoint               00018667FF60 ModelEnumType GlyphAnchorPoint GlyphAnchorPoint GlyphAnchorPoint Int32
-    // 01C M_CombiningMarkGlyphID                   000186698B70 ModelPrimitiveType uint uint uint UInt32
-    // 020 M_CombiningMarkPositionAdjustment        0001865D36E0 ModelEnumType MarkPositionAdjustment MarkPositionAdjustment MarkPositionAdjustment Int32
+    // 010 M_BaseMarkGlyphID                        ModelPrimitiveType uint uint uint UInt32
+    // 014 M_BaseMarkGlyphAnchorPoint               ModelEnumType GlyphAnchorPoint GlyphAnchorPoint GlyphAnchorPoint Int32
+    // 01C M_CombiningMarkGlyphID                   ModelPrimitiveType uint uint uint UInt32
+    // 020 M_CombiningMarkPositionAdjustment        ModelEnumType MarkPositionAdjustment MarkPositionAdjustment MarkPositionAdjustment Int32
     public partial class MarkToMarkAdjustmentRecord : DataModel
     {
         public uint                                     M_BaseMarkGlyphID                       { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MarkToMarkAdjustmentRecord() { Pointer= p0 };
 
-            value.M_BaseMarkGlyphID                         = GetUInt32(new IntPtr(p + 0x010)); // 0245A2174F58 0x10 M_BaseMarkGlyphID           ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
-            value.M_BaseMarkGlyphAnchorPoint                = (GlyphAnchorPoint)GetInt32(new IntPtr(p + 0x014)); // 0245A2174F78 0x14 M_BaseMarkGlyphAnchorPoint  ( 00018667FF60 ModelEnumType GlyphAnchorPoint GlyphAnchorPoint GlyphAnchorPoint Int32 )
-            value.M_CombiningMarkGlyphID                    = GetUInt32(new IntPtr(p + 0x01C)); // 0245A2174F98 0x1C M_CombiningMarkGlyphID      ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
-            value.M_CombiningMarkPositionAdjustment         = (MarkPositionAdjustment)GetInt32(new IntPtr(p + 0x020)); // 0245A2174FB8 0x20 M_CombiningMarkPositionAdjustment ( 0001865D36E0 ModelEnumType MarkPositionAdjustment MarkPositionAdjustment MarkPositionAdjustment Int32 )
+            value.M_BaseMarkGlyphID                         = GetUInt32(new IntPtr(p + 0x010)); // 0x10 M_BaseMarkGlyphID           ( ModelPrimitiveType uint uint uint UInt32 )
+            value.M_BaseMarkGlyphAnchorPoint                = (GlyphAnchorPoint)GetInt32(new IntPtr(p + 0x014)); // 0x14 M_BaseMarkGlyphAnchorPoint  ( ModelEnumType GlyphAnchorPoint GlyphAnchorPoint GlyphAnchorPoint Int32 )
+            value.M_CombiningMarkGlyphID                    = GetUInt32(new IntPtr(p + 0x01C)); // 0x1C M_CombiningMarkGlyphID      ( ModelPrimitiveType uint uint uint UInt32 )
+            value.M_CombiningMarkPositionAdjustment         = (MarkPositionAdjustment)GetInt32(new IntPtr(p + 0x020)); // 0x20 M_CombiningMarkPositionAdjustment ( ModelEnumType MarkPositionAdjustment MarkPositionAdjustment MarkPositionAdjustment Int32 )
 
             return value;
         }

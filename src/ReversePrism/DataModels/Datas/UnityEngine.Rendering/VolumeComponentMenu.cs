@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Menu                                     0001866736C0 ModelPrimitiveType string string string String
+    // 010 Menu                                     ModelPrimitiveType string string string String
     public partial class VolumeComponentMenu : DataModel
     {
         public string                                   Menu                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new VolumeComponentMenu() { Pointer= p0 };
 
-            value.Menu                                      = GetString(new IntPtr(p + 0x010)); // 024669324C58 0x10 Menu                        ( 0001866736C0 ModelPrimitiveType string string string String )
+            value.Menu                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Menu                        ( ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 SelectedIcons                            000185B7E8E0 ModelClassListType FUnitIcon[] FUnitIcon[] List<FUnitIcon> Pointer
-    // 018 Amounts                                  000185B7D9E0 ModelPrimitiveListType int[] int[] List<int> Pointer
+    // 010 SelectedIcons                            ModelClassListType FUnitIcon[] FUnitIcon[] List<FUnitIcon> Pointer
+    // 018 Amounts                                  ModelPrimitiveListType int[] int[] List<int> Pointer
     public partial class FesUnitTransferConfirmedPopupViewModel : DataModel
     {
         public List<FUnitIcon>?                         SelectedIcons                           { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FesUnitTransferConfirmedPopupViewModel() { Pointer= p0 };
 
-            value.SelectedIcons                             = GetObjectList<FUnitIcon>(new IntPtr(p + 0x010), ReversePrism.DataModels.FUnitIcon.FromPointer); // 024665F4C178 0x10 SelectedIcons               ( 000185B7E8E0 ModelClassListType FUnitIcon[] FUnitIcon[] List<FUnitIcon> Pointer )
-            value.Amounts                                   = GetInt32List(new IntPtr(p + 0x018)); // 024665F4C198 0x18 Amounts                     ( 000185B7D9E0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.SelectedIcons                             = GetObjectList<FUnitIcon>(new IntPtr(p + 0x010), ReversePrism.DataModels.FUnitIcon.FromPointer); // 0x10 SelectedIcons               ( ModelClassListType FUnitIcon[] FUnitIcon[] List<FUnitIcon> Pointer )
+            value.Amounts                                   = GetInt32List(new IntPtr(p + 0x018)); // 0x18 Amounts                     ( ModelPrimitiveListType int[] int[] List<int> Pointer )
 
             return value;
         }

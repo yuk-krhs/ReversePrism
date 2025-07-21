@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 010 visibleLightsPtr                         IntPtr IL2CPP_TYPE_PTR
     // 018 visibleOffscreenVertexLightsPtr          IntPtr IL2CPP_TYPE_PTR
     // 020 visibleReflectionProbesPtr               IntPtr IL2CPP_TYPE_PTR
-    // 028 VisibleLightCount                        0001865F36C0 ModelPrimitiveType int int int Int32
-    // 02C VisibleOffscreenVertexLightCount         0001865F36C0 ModelPrimitiveType int int int Int32
-    // 030 VisibleReflectionProbeCount              0001865F36C0 ModelPrimitiveType int int int Int32
+    // 028 VisibleLightCount                        ModelPrimitiveType int int int Int32
+    // 02C VisibleOffscreenVertexLightCount         ModelPrimitiveType int int int Int32
+    // 030 VisibleReflectionProbeCount              ModelPrimitiveType int int int Int32
     public partial class CullingAllocationInfo : DataModel
     {
         public int                                      VisibleLightCount                       { get; set; }
@@ -28,9 +28,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CullingAllocationInfo() { Pointer= p0 };
 
-            value.VisibleLightCount                         = GetInt32(new IntPtr(p + 0x028)); // 0245A6890890 0x28 VisibleLightCount           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.VisibleOffscreenVertexLightCount          = GetInt32(new IntPtr(p + 0x02C)); // 0245A68908B0 0x2C VisibleOffscreenVertexLightCount ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.VisibleReflectionProbeCount               = GetInt32(new IntPtr(p + 0x030)); // 0245A68908D0 0x30 VisibleReflectionProbeCount ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.VisibleLightCount                         = GetInt32(new IntPtr(p + 0x028)); // 0x28 VisibleLightCount           ( ModelPrimitiveType int int int Int32 )
+            value.VisibleOffscreenVertexLightCount          = GetInt32(new IntPtr(p + 0x02C)); // 0x2C VisibleOffscreenVertexLightCount ( ModelPrimitiveType int int int Int32 )
+            value.VisibleReflectionProbeCount               = GetInt32(new IntPtr(p + 0x030)); // 0x30 VisibleReflectionProbeCount ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

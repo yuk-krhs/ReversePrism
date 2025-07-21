@@ -13,5 +13,8 @@ namespace ReversePrism.DataModels
         None,
         TotalParameter,
         LiveSkill,
+        IdolLevel,
+        DearnessLevel,
+        Fan,
     }
 }

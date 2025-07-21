@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 ussClassName                             string IL2CPP_TYPE_STRING
     // 008 dragAreaUssClassName                     string IL2CPP_TYPE_STRING
-    // 3C8 DragArea                                 0001866B34A0 ModelClassType VisualElement VisualElement VisualElement Pointer
+    // 3C8 DragArea                                 ModelClassType VisualElement VisualElement VisualElement Pointer
     public partial class MultiColumnHeaderColumnResizeHandle : DataModel
     {
         public VisualElement?                           DragArea                                { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MultiColumnHeaderColumnResizeHandle() { Pointer= p0 };
 
-            value.DragArea                                  = GetObject<VisualElement>(new IntPtr(p + 0x3C8), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A68641F0 0x3C8 DragArea                    ( 0001866B34A0 ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.DragArea                                  = GetObject<VisualElement>(new IntPtr(p + 0x3C8), ReversePrism.DataModels.VisualElement.FromPointer); // 0x3C8 DragArea                    ( ModelClassType VisualElement VisualElement VisualElement Pointer )
 
             return value;
         }

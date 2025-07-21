@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Hi                                       000186699EB0 ModelPrimitiveType uint uint uint UInt32
-    // 018 MidLo                                    00018669C740 ModelPrimitiveType ulong ulong ulong UInt64
+    // 010 Hi                                       ModelPrimitiveType uint uint uint UInt32
+    // 018 MidLo                                    ModelPrimitiveType ulong ulong ulong UInt64
     public partial class PowerOvfl : DataModel
     {
         public uint                                     Hi                                      { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PowerOvfl() { Pointer= p0 };
 
-            value.Hi                                        = GetUInt32(new IntPtr(p + 0x010)); // 024666B21AB8 0x10 Hi                          ( 000186699EB0 ModelPrimitiveType uint uint uint UInt32 )
-            value.MidLo                                     = GetUInt64(new IntPtr(p + 0x018)); // 024666B21AD8 0x18 MidLo                       ( 00018669C740 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.Hi                                        = GetUInt32(new IntPtr(p + 0x010)); // 0x10 Hi                          ( ModelPrimitiveType uint uint uint UInt32 )
+            value.MidLo                                     = GetUInt64(new IntPtr(p + 0x018)); // 0x18 MidLo                       ( ModelPrimitiveType ulong ulong ulong UInt64 )
 
             return value;
         }

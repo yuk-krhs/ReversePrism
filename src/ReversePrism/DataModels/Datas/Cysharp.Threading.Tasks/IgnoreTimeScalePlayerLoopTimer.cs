@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 030 InitialFrame                             0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 034 Elapsed                                  0001866656B0 ModelPrimitiveType float float float Single
-    // 038 Interval                                 0001866656B0 ModelPrimitiveType float float float Single
+    // 030 InitialFrame                             ModelPrimitiveType int int int Int32
+    // 034 Elapsed                                  ModelPrimitiveType float float float Single
+    // 038 Interval                                 ModelPrimitiveType float float float Single
     public partial class IgnoreTimeScalePlayerLoopTimer : DataModel
     {
         public int                                      InitialFrame                            { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IgnoreTimeScalePlayerLoopTimer() { Pointer= p0 };
 
-            value.InitialFrame                              = GetInt32(new IntPtr(p + 0x030)); // 0245A4E56D18 0x30 InitialFrame                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Elapsed                                   = GetSingle(new IntPtr(p + 0x034)); // 0245A4E56D38 0x34 Elapsed                     ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.Interval                                  = GetSingle(new IntPtr(p + 0x038)); // 0245A4E56D58 0x38 Interval                    ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.InitialFrame                              = GetInt32(new IntPtr(p + 0x030)); // 0x30 InitialFrame                ( ModelPrimitiveType int int int Int32 )
+            value.Elapsed                                   = GetSingle(new IntPtr(p + 0x034)); // 0x34 Elapsed                     ( ModelPrimitiveType float float float Single )
+            value.Interval                                  = GetSingle(new IntPtr(p + 0x038)); // 0x38 Interval                    ( ModelPrimitiveType float float float Single )
 
             return value;
         }

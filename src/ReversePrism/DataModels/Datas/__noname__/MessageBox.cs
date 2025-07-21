@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 048 Style                                    000186776180 ModelEnumType Style Style Style Int32
+    // 048 Style                                    ModelEnumType Style Style Style Int32
     public partial class MessageBox : DataModel
     {
         public Style                                    Style                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MessageBox() { Pointer= p0 };
 
-            value.Style                                     = (Style)GetInt32(new IntPtr(p + 0x048)); // 0246691DFEA0 0x48 Style                       ( 000186776180 ModelEnumType Style Style Style Int32 )
+            value.Style                                     = (Style)GetInt32(new IntPtr(p + 0x048)); // 0x48 Style                       ( ModelEnumType Style Style Style Int32 )
 
             return value;
         }

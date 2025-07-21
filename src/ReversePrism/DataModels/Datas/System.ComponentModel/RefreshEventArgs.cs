@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 TypeChanged                              0001866936B0 ModelClassType Type Type Type Pointer
+    // 010 TypeChanged                              ModelClassType Type Type Type Pointer
     public partial class RefreshEventArgs : DataModel
     {
         public Type?                                    TypeChanged                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RefreshEventArgs() { Pointer= p0 };
 
-            value.TypeChanged                               = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 024667BA17A8 0x10 TypeChanged                 ( 0001866936B0 ModelClassType Type Type Type Pointer )
+            value.TypeChanged                               = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0x10 TypeChanged                 ( ModelClassType Type Type Type Pointer )
 
             return value;
         }

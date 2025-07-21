@@ -9,21 +9,21 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 async_state                              <object> IL2CPP_TYPE_OBJECT
-    // 018 Handle                                   000186542CB0 ModelClassType WaitHandle WaitHandle WaitHandle Pointer
+    // 018 Handle                                   ModelClassType WaitHandle WaitHandle WaitHandle Pointer
     // 020 async_delegate                           <object> IL2CPP_TYPE_OBJECT
     // 028 data                                     <int> IL2CPP_TYPE_I
     // 030 object_data                              <object> IL2CPP_TYPE_OBJECT
-    // 038 Sync_completed                           000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 039 Completed                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 03A Endinvoke_called                         000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 038 Sync_completed                           ModelPrimitiveType bool bool bool Bool
+    // 039 Completed                                ModelPrimitiveType bool bool bool Bool
+    // 03A Endinvoke_called                         ModelPrimitiveType bool bool bool Bool
     // 040 async_callback                           <object> IL2CPP_TYPE_OBJECT
-    // 048 Current                                  0001865CCA80 ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer
-    // 050 Original                                 0001865CCA80 ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer
-    // 058 Add_time                                 0001865F7700 ModelPrimitiveType long long long Int64
-    // 060 Call_message                             000186649F50 ModelClassType MonoMethodMessage MonoMethodMessage MonoMethodMessage Pointer
-    // 068 Message_ctrl                             0001865AF6B0 ModelClassType IMessageCtrl IMessageCtrl IMessageCtrl Pointer
-    // 070 Reply_message                            0001865AEA80 ModelClassType IMessage IMessage IMessage Pointer
-    // 078 Orig_cb                                  00018653F270 ModelClassType WaitCallback WaitCallback WaitCallback Pointer
+    // 048 Current                                  ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer
+    // 050 Original                                 ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer
+    // 058 Add_time                                 ModelPrimitiveType long long long Int64
+    // 060 Call_message                             ModelClassType MonoMethodMessage MonoMethodMessage MonoMethodMessage Pointer
+    // 068 Message_ctrl                             ModelClassType IMessageCtrl IMessageCtrl IMessageCtrl Pointer
+    // 070 Reply_message                            ModelClassType IMessage IMessage IMessage Pointer
+    // 078 Orig_cb                                  ModelClassType WaitCallback WaitCallback WaitCallback Pointer
     public partial class AsyncResult : DataModel
     {
         public WaitHandle?                              Handle                                  { get; set; }
@@ -46,17 +46,17 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AsyncResult() { Pointer= p0 };
 
-            value.Handle                                    = GetObject<WaitHandle>(new IntPtr(p + 0x018), ReversePrism.DataModels.WaitHandle.FromPointer); // 024666C60018 0x18 Handle                      ( 000186542CB0 ModelClassType WaitHandle WaitHandle WaitHandle Pointer )
-            value.Sync_completed                            = GetBool(new IntPtr(p + 0x038)); // 024666C60098 0x38 Sync_completed              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Completed                                 = GetBool(new IntPtr(p + 0x039)); // 024666C600B8 0x39 Completed                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Endinvoke_called                          = GetBool(new IntPtr(p + 0x03A)); // 024666C600D8 0x3A Endinvoke_called            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Current                                   = GetObject<ExecutionContext>(new IntPtr(p + 0x048), ReversePrism.DataModels.ExecutionContext.FromPointer); // 024666C60118 0x48 Current                     ( 0001865CCA80 ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer )
-            value.Original                                  = GetObject<ExecutionContext>(new IntPtr(p + 0x050), ReversePrism.DataModels.ExecutionContext.FromPointer); // 024666C60138 0x50 Original                    ( 0001865CCA80 ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer )
-            value.Add_time                                  = GetInt64(new IntPtr(p + 0x058)); // 024666C60158 0x58 Add_time                    ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.Call_message                              = GetObject<MonoMethodMessage>(new IntPtr(p + 0x060), ReversePrism.DataModels.MonoMethodMessage.FromPointer); // 024666C60178 0x60 Call_message                ( 000186649F50 ModelClassType MonoMethodMessage MonoMethodMessage MonoMethodMessage Pointer )
-            value.Message_ctrl                              = GetObject<IMessageCtrl>(new IntPtr(p + 0x068), ReversePrism.DataModels.IMessageCtrl.FromPointer); // 024666C60198 0x68 Message_ctrl                ( 0001865AF6B0 ModelClassType IMessageCtrl IMessageCtrl IMessageCtrl Pointer )
-            value.Reply_message                             = GetObject<IMessage>(new IntPtr(p + 0x070), ReversePrism.DataModels.IMessage.FromPointer); // 024666C601B8 0x70 Reply_message               ( 0001865AEA80 ModelClassType IMessage IMessage IMessage Pointer )
-            value.Orig_cb                                   = GetObject<WaitCallback>(new IntPtr(p + 0x078), ReversePrism.DataModels.WaitCallback.FromPointer); // 024666C601D8 0x78 Orig_cb                     ( 00018653F270 ModelClassType WaitCallback WaitCallback WaitCallback Pointer )
+            value.Handle                                    = GetObject<WaitHandle>(new IntPtr(p + 0x018), ReversePrism.DataModels.WaitHandle.FromPointer); // 0x18 Handle                      ( ModelClassType WaitHandle WaitHandle WaitHandle Pointer )
+            value.Sync_completed                            = GetBool(new IntPtr(p + 0x038)); // 0x38 Sync_completed              ( ModelPrimitiveType bool bool bool Bool )
+            value.Completed                                 = GetBool(new IntPtr(p + 0x039)); // 0x39 Completed                   ( ModelPrimitiveType bool bool bool Bool )
+            value.Endinvoke_called                          = GetBool(new IntPtr(p + 0x03A)); // 0x3A Endinvoke_called            ( ModelPrimitiveType bool bool bool Bool )
+            value.Current                                   = GetObject<ExecutionContext>(new IntPtr(p + 0x048), ReversePrism.DataModels.ExecutionContext.FromPointer); // 0x48 Current                     ( ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer )
+            value.Original                                  = GetObject<ExecutionContext>(new IntPtr(p + 0x050), ReversePrism.DataModels.ExecutionContext.FromPointer); // 0x50 Original                    ( ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer )
+            value.Add_time                                  = GetInt64(new IntPtr(p + 0x058)); // 0x58 Add_time                    ( ModelPrimitiveType long long long Int64 )
+            value.Call_message                              = GetObject<MonoMethodMessage>(new IntPtr(p + 0x060), ReversePrism.DataModels.MonoMethodMessage.FromPointer); // 0x60 Call_message                ( ModelClassType MonoMethodMessage MonoMethodMessage MonoMethodMessage Pointer )
+            value.Message_ctrl                              = GetObject<IMessageCtrl>(new IntPtr(p + 0x068), ReversePrism.DataModels.IMessageCtrl.FromPointer); // 0x68 Message_ctrl                ( ModelClassType IMessageCtrl IMessageCtrl IMessageCtrl Pointer )
+            value.Reply_message                             = GetObject<IMessage>(new IntPtr(p + 0x070), ReversePrism.DataModels.IMessage.FromPointer); // 0x70 Reply_message               ( ModelClassType IMessage IMessage IMessage Pointer )
+            value.Orig_cb                                   = GetObject<WaitCallback>(new IntPtr(p + 0x078), ReversePrism.DataModels.WaitCallback.FromPointer); // 0x78 Orig_cb                     ( ModelClassType WaitCallback WaitCallback WaitCallback Pointer )
 
             return value;
         }

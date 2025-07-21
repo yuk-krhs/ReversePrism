@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Key                                      000186671910 ModelPrimitiveType string string string String
-    // 018 Value                                    000186671910 ModelPrimitiveType string string string String
+    // 010 Key                                      ModelPrimitiveType string string string String
+    // 018 Value                                    ModelPrimitiveType string string string String
     public partial class MetadatasRow : DataModel
     {
         public string                                   Key                                     { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MetadatasRow() { Pointer= p0 };
 
-            value.Key                                       = GetString(new IntPtr(p + 0x010)); // 0245A3E01DC8 0x10 Key                         ( 000186671910 ModelPrimitiveType string string string String )
-            value.Value                                     = GetString(new IntPtr(p + 0x018)); // 0245A3E01DE8 0x18 Value                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.Key                                       = GetString(new IntPtr(p + 0x010)); // 0x10 Key                         ( ModelPrimitiveType string string string String )
+            value.Value                                     = GetString(new IntPtr(p + 0x018)); // 0x18 Value                       ( ModelPrimitiveType string string string String )
 
             return value;
         }

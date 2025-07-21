@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Name                                     000186675150 ModelPrimitiveType string string string String
-    // 018 DefaultControlFlag                       000186595960 ModelPrimitiveType bool bool bool Bool
-    // 01C DefaultControlValue                      000186666050 ModelPrimitiveType float float float Single
-    // 020 ControlId                                0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 028 ControlName                              000186675150 ModelPrimitiveType string string string String
+    // 010 Name                                     ModelPrimitiveType string string string String
+    // 018 DefaultControlFlag                       ModelPrimitiveType bool bool bool Bool
+    // 01C DefaultControlValue                      ModelPrimitiveType float float float Single
+    // 020 ControlId                                ModelPrimitiveType uint uint uint UInt32
+    // 028 ControlName                              ModelPrimitiveType string string string String
     public partial class AisacInfo : DataModel
     {
         public string                                   Name                                    { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AisacInfo() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 02466ACD4890 0x10 Name                        ( 000186675150 ModelPrimitiveType string string string String )
-            value.DefaultControlFlag                        = GetBool(new IntPtr(p + 0x018)); // 02466ACD48B0 0x18 DefaultControlFlag          ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.DefaultControlValue                       = GetSingle(new IntPtr(p + 0x01C)); // 02466ACD48D0 0x1C DefaultControlValue         ( 000186666050 ModelPrimitiveType float float float Single )
-            value.ControlId                                 = GetUInt32(new IntPtr(p + 0x020)); // 02466ACD48F0 0x20 ControlId                   ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.ControlName                               = GetString(new IntPtr(p + 0x028)); // 02466ACD4910 0x28 ControlName                 ( 000186675150 ModelPrimitiveType string string string String )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Name                        ( ModelPrimitiveType string string string String )
+            value.DefaultControlFlag                        = GetBool(new IntPtr(p + 0x018)); // 0x18 DefaultControlFlag          ( ModelPrimitiveType bool bool bool Bool )
+            value.DefaultControlValue                       = GetSingle(new IntPtr(p + 0x01C)); // 0x1C DefaultControlValue         ( ModelPrimitiveType float float float Single )
+            value.ControlId                                 = GetUInt32(new IntPtr(p + 0x020)); // 0x20 ControlId                   ( ModelPrimitiveType uint uint uint UInt32 )
+            value.ControlName                               = GetString(new IntPtr(p + 0x028)); // 0x28 ControlName                 ( ModelPrimitiveType string string string String )
 
             return value;
         }

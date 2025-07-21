@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 0F8 ExtensionDataValueType                   000186671910 ModelPrimitiveType string string string String
-    // 100 DateTimeFormat                           000186695190 ModelClassType DateTimeFormat DateTimeFormat DateTimeFormat Pointer
-    // 108 UseSimpleDictionaryFormat                000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 0F8 ExtensionDataValueType                   ModelPrimitiveType string string string String
+    // 100 DateTimeFormat                           ModelClassType DateTimeFormat DateTimeFormat DateTimeFormat Pointer
+    // 108 UseSimpleDictionaryFormat                ModelPrimitiveType bool bool bool Bool
     public partial class XmlObjectSerializerReadContextComplexJson : DataModel
     {
         public string                                   ExtensionDataValueType                  { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlObjectSerializerReadContextComplexJson() { Pointer= p0 };
 
-            value.ExtensionDataValueType                    = GetString(new IntPtr(p + 0x0F8)); // 0245A4D28680 0xF8 ExtensionDataValueType      ( 000186671910 ModelPrimitiveType string string string String )
-            value.DateTimeFormat                            = GetObject<DateTimeFormat>(new IntPtr(p + 0x100), ReversePrism.DataModels.DateTimeFormat.FromPointer); // 0245A4D286A0 0x100 DateTimeFormat              ( 000186695190 ModelClassType DateTimeFormat DateTimeFormat DateTimeFormat Pointer )
-            value.UseSimpleDictionaryFormat                 = GetBool(new IntPtr(p + 0x108)); // 0245A4D286C0 0x108 UseSimpleDictionaryFormat   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ExtensionDataValueType                    = GetString(new IntPtr(p + 0x0F8)); // 0xF8 ExtensionDataValueType      ( ModelPrimitiveType string string string String )
+            value.DateTimeFormat                            = GetObject<DateTimeFormat>(new IntPtr(p + 0x100), ReversePrism.DataModels.DateTimeFormat.FromPointer); // 0x100 DateTimeFormat              ( ModelClassType DateTimeFormat DateTimeFormat DateTimeFormat Pointer )
+            value.UseSimpleDictionaryFormat                 = GetBool(new IntPtr(p + 0x108)); // 0x108 UseSimpleDictionaryFormat   ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

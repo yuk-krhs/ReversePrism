@@ -8,14 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 MainHeadline                             000186672F10 ModelPrimitiveType string string string String
-    // 018 SubHeadline                              000186672F10 ModelPrimitiveType string string string String
-    // 020 Summary                                  000186672F10 ModelPrimitiveType string string string String
-    // 028 HasAdvInformation                        0001865965D0 ModelPrimitiveType bool bool bool Bool
+    // 010 OuterHeadline                            ModelPrimitiveType string string string String
+    // 018 InnerHeadline                            ModelPrimitiveType string string string String
+    // 020 Summary                                  ModelPrimitiveType string string string String
+    // 028 HasAdvInformation                        ModelPrimitiveType bool bool bool Bool
     public partial class AdvSkipConfirmationPopupViewModel : DataModel
     {
-        public string                                   MainHeadline                            { get; set; }
-        public string                                   SubHeadline                             { get; set; }
+        public string                                   OuterHeadline                           { get; set; }
+        public string                                   InnerHeadline                           { get; set; }
         public string                                   Summary                                 { get; set; }
         public bool                                     HasAdvInformation                       { get; set; }
 
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AdvSkipConfirmationPopupViewModel() { Pointer= p0 };
 
-            value.MainHeadline                              = GetString(new IntPtr(p + 0x010)); // 024666987E00 0x10 MainHeadline                ( 000186672F10 ModelPrimitiveType string string string String )
-            value.SubHeadline                               = GetString(new IntPtr(p + 0x018)); // 024666987E20 0x18 SubHeadline                 ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Summary                                   = GetString(new IntPtr(p + 0x020)); // 024666987E40 0x20 Summary                     ( 000186672F10 ModelPrimitiveType string string string String )
-            value.HasAdvInformation                         = GetBool(new IntPtr(p + 0x028)); // 024666987E60 0x28 HasAdvInformation           ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.OuterHeadline                             = GetString(new IntPtr(p + 0x010)); // 0x10 OuterHeadline               ( ModelPrimitiveType string string string String )
+            value.InnerHeadline                             = GetString(new IntPtr(p + 0x018)); // 0x18 InnerHeadline               ( ModelPrimitiveType string string string String )
+            value.Summary                                   = GetString(new IntPtr(p + 0x020)); // 0x20 Summary                     ( ModelPrimitiveType string string string String )
+            value.HasAdvInformation                         = GetBool(new IntPtr(p + 0x028)); // 0x28 HasAdvInformation           ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

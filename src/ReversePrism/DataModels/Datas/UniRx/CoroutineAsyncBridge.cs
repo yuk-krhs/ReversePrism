@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Continuation                             0001866792B0 ModelClassType Action Action Action Pointer
-    // 018 IsCompleted                              000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 Continuation                             ModelClassType Action Action Action Pointer
+    // 018 IsCompleted                              ModelPrimitiveType bool bool bool Bool
     public partial class CoroutineAsyncBridge : DataModel
     {
         public Action?                                  Continuation                            { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CoroutineAsyncBridge() { Pointer= p0 };
 
-            value.Continuation                              = GetObject<Action>(new IntPtr(p + 0x010), ReversePrism.DataModels.Action.FromPointer); // 024669607FA0 0x10 Continuation                ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.IsCompleted                               = GetBool(new IntPtr(p + 0x018)); // 024669607FC0 0x18 IsCompleted                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Continuation                              = GetObject<Action>(new IntPtr(p + 0x010), ReversePrism.DataModels.Action.FromPointer); // 0x10 Continuation                ( ModelClassType Action Action Action Pointer )
+            value.IsCompleted                               = GetBool(new IntPtr(p + 0x018)); // 0x18 IsCompleted                 ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

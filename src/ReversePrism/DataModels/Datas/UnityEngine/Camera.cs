@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 000 kMaxBladeCount                           int IL2CPP_TYPE_I4
     // 000 onPreCull                                CameraCallback IL2CPP_TYPE_CLASS
     // 008 onPreRender                              CameraCallback IL2CPP_TYPE_CLASS
-    // 010 OnPostRender                             000186722250 ModelClassType CameraCallback CameraCallback CameraCallback Pointer
+    // 010 OnPostRender                             ModelClassType CameraCallback CameraCallback CameraCallback Pointer
     public partial class Camera : DataModel
     {
         public CameraCallback?                          OnPostRender                            { get; set; }
@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Camera() { Pointer= p0 };
 
-            value.OnPostRender                              = GetObject<CameraCallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.CameraCallback.FromPointer); // 0245A233A9F8 0x10 OnPostRender                ( 000186722250 ModelClassType CameraCallback CameraCallback CameraCallback Pointer )
+            value.OnPostRender                              = GetObject<CameraCallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.CameraCallback.FromPointer); // 0x10 OnPostRender                ( ModelClassType CameraCallback CameraCallback CameraCallback Pointer )
 
             return value;
         }

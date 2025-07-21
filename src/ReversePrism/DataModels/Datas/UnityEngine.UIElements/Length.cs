@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 k_MaxValue                               float IL2CPP_TYPE_R4
-    // 010 M_Value                                  0001866656B0 ModelPrimitiveType float float float Single
-    // 014 M_Unit                                   000186681680 ModelEnumType Unit Unit Unit Int32
+    // 010 M_Value                                  ModelPrimitiveType float float float Single
+    // 014 M_Unit                                   ModelEnumType Unit Unit Unit Int32
     public partial class Length : DataModel
     {
         public float                                    M_Value                                 { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Length() { Pointer= p0 };
 
-            value.M_Value                                   = GetSingle(new IntPtr(p + 0x010)); // 0245A3F1AFD8 0x10 M_Value                     ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_Unit                                    = (Unit)GetInt32(new IntPtr(p + 0x014)); // 0245A3F1AFF8 0x14 M_Unit                      ( 000186681680 ModelEnumType Unit Unit Unit Int32 )
+            value.M_Value                                   = GetSingle(new IntPtr(p + 0x010)); // 0x10 M_Value                     ( ModelPrimitiveType float float float Single )
+            value.M_Unit                                    = (Unit)GetInt32(new IntPtr(p + 0x014)); // 0x14 M_Unit                      ( ModelEnumType Unit Unit Unit Int32 )
 
             return value;
         }

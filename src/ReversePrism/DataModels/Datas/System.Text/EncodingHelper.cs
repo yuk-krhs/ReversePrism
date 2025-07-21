@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 000 utf8EncodingWithoutMarkers               Encoding IL2CPP_TYPE_CLASS
     // 008 lockobj                                  <object> IL2CPP_TYPE_OBJECT
-    // 010 I18nAssembly                             00018658B940 ModelClassType Assembly Assembly Assembly Pointer
-    // 018 I18nDisabled                             000186595C30 ModelPrimitiveType bool bool bool Bool
+    // 010 I18nAssembly                             ModelClassType Assembly Assembly Assembly Pointer
+    // 018 I18nDisabled                             ModelPrimitiveType bool bool bool Bool
     public partial class EncodingHelper : DataModel
     {
         public Assembly?                                I18nAssembly                            { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EncodingHelper() { Pointer= p0 };
 
-            value.I18nAssembly                              = GetObject<Assembly>(new IntPtr(p + 0x010), ReversePrism.DataModels.Assembly.FromPointer); // 0245A41BE4C0 0x10 I18nAssembly                ( 00018658B940 ModelClassType Assembly Assembly Assembly Pointer )
-            value.I18nDisabled                              = GetBool(new IntPtr(p + 0x018)); // 0245A41BE4E0 0x18 I18nDisabled                ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.I18nAssembly                              = GetObject<Assembly>(new IntPtr(p + 0x010), ReversePrism.DataModels.Assembly.FromPointer); // 0x10 I18nAssembly                ( ModelClassType Assembly Assembly Assembly Pointer )
+            value.I18nDisabled                              = GetBool(new IntPtr(p + 0x018)); // 0x18 I18nDisabled                ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

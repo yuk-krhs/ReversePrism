@@ -9,9 +9,9 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Infinity                                 int IL2CPP_TYPE_I4
-    // 010 M_Type                                   00018652C6C0 ModelEnumType ExpressionMultiplierType ExpressionMultiplierType ExpressionMultiplierType Int32
-    // 014 Min                                      0001865F36C0 ModelPrimitiveType int int int Int32
-    // 018 Max                                      0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 M_Type                                   ModelEnumType ExpressionMultiplierType ExpressionMultiplierType ExpressionMultiplierType Int32
+    // 014 Min                                      ModelPrimitiveType int int int Int32
+    // 018 Max                                      ModelPrimitiveType int int int Int32
     public partial class ExpressionMultiplier : DataModel
     {
         public ExpressionMultiplierType                 M_Type                                  { get; set; }
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExpressionMultiplier() { Pointer= p0 };
 
-            value.M_Type                                    = (ExpressionMultiplierType)GetInt32(new IntPtr(p + 0x010)); // 0245A684A8B0 0x10 M_Type                      ( 00018652C6C0 ModelEnumType ExpressionMultiplierType ExpressionMultiplierType ExpressionMultiplierType Int32 )
-            value.Min                                       = GetInt32(new IntPtr(p + 0x014)); // 0245A684A8D0 0x14 Min                         ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Max                                       = GetInt32(new IntPtr(p + 0x018)); // 0245A684A8F0 0x18 Max                         ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.M_Type                                    = (ExpressionMultiplierType)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_Type                      ( ModelEnumType ExpressionMultiplierType ExpressionMultiplierType ExpressionMultiplierType Int32 )
+            value.Min                                       = GetInt32(new IntPtr(p + 0x014)); // 0x14 Min                         ( ModelPrimitiveType int int int Int32 )
+            value.Max                                       = GetInt32(new IntPtr(p + 0x018)); // 0x18 Max                         ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

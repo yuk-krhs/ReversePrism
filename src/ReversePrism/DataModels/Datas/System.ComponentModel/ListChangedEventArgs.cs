@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ListChangedType                          000186537230 ModelEnumType ListChangedType ListChangedType ListChangedType Int32
-    // 014 NewIndex                                 0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 OldIndex                                 0001865F4260 ModelPrimitiveType int int int Int32
-    // 020 PropertyDescriptor                       0001865D3000 ModelClassType PropertyDescriptor PropertyDescriptor PropertyDescriptor Pointer
+    // 010 ListChangedType                          ModelEnumType ListChangedType ListChangedType ListChangedType Int32
+    // 014 NewIndex                                 ModelPrimitiveType int int int Int32
+    // 018 OldIndex                                 ModelPrimitiveType int int int Int32
+    // 020 PropertyDescriptor                       ModelClassType PropertyDescriptor PropertyDescriptor PropertyDescriptor Pointer
     public partial class ListChangedEventArgs : DataModel
     {
         public ListChangedType                          ListChangedType                         { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ListChangedEventArgs() { Pointer= p0 };
 
-            value.ListChangedType                           = (ListChangedType)GetInt32(new IntPtr(p + 0x010)); // 024667B87A80 0x10 ListChangedType             ( 000186537230 ModelEnumType ListChangedType ListChangedType ListChangedType Int32 )
-            value.NewIndex                                  = GetInt32(new IntPtr(p + 0x014)); // 024667B87AA0 0x14 NewIndex                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.OldIndex                                  = GetInt32(new IntPtr(p + 0x018)); // 024667B87AC0 0x18 OldIndex                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.PropertyDescriptor                        = GetObject<PropertyDescriptor>(new IntPtr(p + 0x020), ReversePrism.DataModels.PropertyDescriptor.FromPointer); // 024667B87AE0 0x20 PropertyDescriptor          ( 0001865D3000 ModelClassType PropertyDescriptor PropertyDescriptor PropertyDescriptor Pointer )
+            value.ListChangedType                           = (ListChangedType)GetInt32(new IntPtr(p + 0x010)); // 0x10 ListChangedType             ( ModelEnumType ListChangedType ListChangedType ListChangedType Int32 )
+            value.NewIndex                                  = GetInt32(new IntPtr(p + 0x014)); // 0x14 NewIndex                    ( ModelPrimitiveType int int int Int32 )
+            value.OldIndex                                  = GetInt32(new IntPtr(p + 0x018)); // 0x18 OldIndex                    ( ModelPrimitiveType int int int Int32 )
+            value.PropertyDescriptor                        = GetObject<PropertyDescriptor>(new IntPtr(p + 0x020), ReversePrism.DataModels.PropertyDescriptor.FromPointer); // 0x20 PropertyDescriptor          ( ModelClassType PropertyDescriptor PropertyDescriptor PropertyDescriptor Pointer )
 
             return value;
         }

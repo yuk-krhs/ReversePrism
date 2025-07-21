@@ -10,10 +10,10 @@ namespace ReversePrism.DataModels
 
     // 000 oid                                      string IL2CPP_TYPE_STRING
     // 000 friendlyName                             string IL2CPP_TYPE_STRING
-    // 028 CertificateAuthority                     000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 029 HasPathLengthConstraint                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 02C PathLengthConstraint                     0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 030 Status                                   0001866DC700 ModelEnumType AsnDecodeStatus AsnDecodeStatus AsnDecodeStatus Int32
+    // 028 CertificateAuthority                     ModelPrimitiveType bool bool bool Bool
+    // 029 HasPathLengthConstraint                  ModelPrimitiveType bool bool bool Bool
+    // 02C PathLengthConstraint                     ModelPrimitiveType int int int Int32
+    // 030 Status                                   ModelEnumType AsnDecodeStatus AsnDecodeStatus AsnDecodeStatus Int32
     public partial class X509BasicConstraintsExtension : DataModel
     {
         public bool                                     CertificateAuthority                    { get; set; }
@@ -29,10 +29,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new X509BasicConstraintsExtension() { Pointer= p0 };
 
-            value.CertificateAuthority                      = GetBool(new IntPtr(p + 0x028)); // 024667A3AF00 0x28 CertificateAuthority        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.HasPathLengthConstraint                   = GetBool(new IntPtr(p + 0x029)); // 024667A3AF20 0x29 HasPathLengthConstraint     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.PathLengthConstraint                      = GetInt32(new IntPtr(p + 0x02C)); // 024667A3AF40 0x2C PathLengthConstraint        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Status                                    = (AsnDecodeStatus)GetInt32(new IntPtr(p + 0x030)); // 024667A3AF60 0x30 Status                      ( 0001866DC700 ModelEnumType AsnDecodeStatus AsnDecodeStatus AsnDecodeStatus Int32 )
+            value.CertificateAuthority                      = GetBool(new IntPtr(p + 0x028)); // 0x28 CertificateAuthority        ( ModelPrimitiveType bool bool bool Bool )
+            value.HasPathLengthConstraint                   = GetBool(new IntPtr(p + 0x029)); // 0x29 HasPathLengthConstraint     ( ModelPrimitiveType bool bool bool Bool )
+            value.PathLengthConstraint                      = GetInt32(new IntPtr(p + 0x02C)); // 0x2C PathLengthConstraint        ( ModelPrimitiveType int int int Int32 )
+            value.Status                                    = (AsnDecodeStatus)GetInt32(new IntPtr(p + 0x030)); // 0x30 Status                      ( ModelEnumType AsnDecodeStatus AsnDecodeStatus AsnDecodeStatus Int32 )
 
             return value;
         }

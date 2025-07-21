@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 effects                                  ListWithKey`2<ProduceInGameEffectType, ProduceInGameEffect> IL2CPP_TYPE_GENERICINST
-    // 018 DisplayEffect                            000186556BB0 ModelClassType ProduceInGameEffect ProduceInGameEffect ProduceInGameEffect Pointer
-    // 020 GroupID                                  0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 DisplayEffect                            ModelClassType ProduceInGameEffect ProduceInGameEffect ProduceInGameEffect Pointer
+    // 020 GroupID                                  ModelPrimitiveType int int int Int32
     public partial class ProduceInGameEffectGroup : DataModel
     {
         public ProduceInGameEffect?                     DisplayEffect                           { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceInGameEffectGroup() { Pointer= p0 };
 
-            value.DisplayEffect                             = GetObject<ProduceInGameEffect>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceInGameEffect.FromPointer); // 024665A36908 0x18 DisplayEffect               ( 000186556BB0 ModelClassType ProduceInGameEffect ProduceInGameEffect ProduceInGameEffect Pointer )
-            value.GroupID                                   = GetInt32(new IntPtr(p + 0x020)); // 024665A36928 0x20 GroupID                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.DisplayEffect                             = GetObject<ProduceInGameEffect>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceInGameEffect.FromPointer); // 0x18 DisplayEffect               ( ModelClassType ProduceInGameEffect ProduceInGameEffect ProduceInGameEffect Pointer )
+            value.GroupID                                   = GetInt32(new IntPtr(p + 0x020)); // 0x20 GroupID                     ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

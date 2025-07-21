@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 050 RefName                                  0001866BC7E0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer
+    // 050 RefName                                  ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer
     public partial class XmlSchemaAttributeGroupRef : DataModel
     {
         public XmlQualifiedName?                        RefName                                 { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlSchemaAttributeGroupRef() { Pointer= p0 };
 
-            value.RefName                                   = GetObject<XmlQualifiedName>(new IntPtr(p + 0x050), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0246675FFA40 0x50 RefName                     ( 0001866BC7E0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
+            value.RefName                                   = GetObject<XmlQualifiedName>(new IntPtr(p + 0x050), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0x50 RefName                     ( ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
 
             return value;
         }

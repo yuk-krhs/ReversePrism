@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Target                                   000186514600 ModelClassType SkinnedMeshRenderer SkinnedMeshRenderer SkinnedMeshRenderer Pointer
-    // 018 LipHeightIndex                           0001865F36C0 ModelPrimitiveType int int int Int32
-    // 01C LipWidthOpenIndex                        0001865F36C0 ModelPrimitiveType int int int Int32
-    // 020 LipWidthCloseIndex                       0001865F36C0 ModelPrimitiveType int int int Int32
-    // 024 TongueUpIndex                            0001865F36C0 ModelPrimitiveType int int int Int32
-    // 028 SilenceInfo                              0001866EBE00 ModelEnumType Info Info Info Int32
+    // 010 Target                                   ModelClassType SkinnedMeshRenderer SkinnedMeshRenderer SkinnedMeshRenderer Pointer
+    // 018 LipHeightIndex                           ModelPrimitiveType int int int Int32
+    // 01C LipWidthOpenIndex                        ModelPrimitiveType int int int Int32
+    // 020 LipWidthCloseIndex                       ModelPrimitiveType int int int Int32
+    // 024 TongueUpIndex                            ModelPrimitiveType int int int Int32
+    // 028 SilenceInfo                              ModelEnumType Info Info Info Int32
     public partial class CriLipsMorphBlendShapeWidthHeight : DataModel
     {
         public SkinnedMeshRenderer?                     Target                                  { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CriLipsMorphBlendShapeWidthHeight() { Pointer= p0 };
 
-            value.Target                                    = GetObject<SkinnedMeshRenderer>(new IntPtr(p + 0x010), ReversePrism.DataModels.SkinnedMeshRenderer.FromPointer); // 02466BC28020 0x10 Target                      ( 000186514600 ModelClassType SkinnedMeshRenderer SkinnedMeshRenderer SkinnedMeshRenderer Pointer )
-            value.LipHeightIndex                            = GetInt32(new IntPtr(p + 0x018)); // 02466BC28040 0x18 LipHeightIndex              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.LipWidthOpenIndex                         = GetInt32(new IntPtr(p + 0x01C)); // 02466BC28060 0x1C LipWidthOpenIndex           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.LipWidthCloseIndex                        = GetInt32(new IntPtr(p + 0x020)); // 02466BC28080 0x20 LipWidthCloseIndex          ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.TongueUpIndex                             = GetInt32(new IntPtr(p + 0x024)); // 02466BC280A0 0x24 TongueUpIndex               ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.SilenceInfo                               = (Info)GetInt32(new IntPtr(p + 0x028)); // 02466BC280C0 0x28 SilenceInfo                 ( 0001866EBE00 ModelEnumType Info Info Info Int32 )
+            value.Target                                    = GetObject<SkinnedMeshRenderer>(new IntPtr(p + 0x010), ReversePrism.DataModels.SkinnedMeshRenderer.FromPointer); // 0x10 Target                      ( ModelClassType SkinnedMeshRenderer SkinnedMeshRenderer SkinnedMeshRenderer Pointer )
+            value.LipHeightIndex                            = GetInt32(new IntPtr(p + 0x018)); // 0x18 LipHeightIndex              ( ModelPrimitiveType int int int Int32 )
+            value.LipWidthOpenIndex                         = GetInt32(new IntPtr(p + 0x01C)); // 0x1C LipWidthOpenIndex           ( ModelPrimitiveType int int int Int32 )
+            value.LipWidthCloseIndex                        = GetInt32(new IntPtr(p + 0x020)); // 0x20 LipWidthCloseIndex          ( ModelPrimitiveType int int int Int32 )
+            value.TongueUpIndex                             = GetInt32(new IntPtr(p + 0x024)); // 0x24 TongueUpIndex               ( ModelPrimitiveType int int int Int32 )
+            value.SilenceInfo                               = (Info)GetInt32(new IntPtr(p + 0x028)); // 0x28 SilenceInfo                 ( ModelEnumType Info Info Info Int32 )
 
             return value;
         }

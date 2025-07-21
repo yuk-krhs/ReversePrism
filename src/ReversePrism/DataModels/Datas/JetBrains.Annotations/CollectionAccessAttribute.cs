@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CollectionAccessType                     0001865C2BB0 ModelEnumType CollectionAccessType CollectionAccessType CollectionAccessType Int32
+    // 010 CollectionAccessType                     ModelEnumType CollectionAccessType CollectionAccessType CollectionAccessType Int32
     public partial class CollectionAccessAttribute : DataModel
     {
         public CollectionAccessType                     CollectionAccessType                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CollectionAccessAttribute() { Pointer= p0 };
 
-            value.CollectionAccessType                      = (CollectionAccessType)GetInt32(new IntPtr(p + 0x010)); // 0245A6868588 0x10 CollectionAccessType        ( 0001865C2BB0 ModelEnumType CollectionAccessType CollectionAccessType CollectionAccessType Int32 )
+            value.CollectionAccessType                      = (CollectionAccessType)GetInt32(new IntPtr(p + 0x010)); // 0x10 CollectionAccessType        ( ModelEnumType CollectionAccessType CollectionAccessType CollectionAccessType Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 TutorialParams                           000185D2ED58 ModelClassListType List`1<TutorialParam> List`1<TutorialParam> List<TutorialParam> Pointer
+    // 018 TutorialParams                           ModelClassListType List`1<TutorialParam> List`1<TutorialParam> List<TutorialParam> Pointer
     public partial class TutorialData : DataModel
     {
         public List<TutorialParam>?                     TutorialParams                          { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TutorialData() { Pointer= p0 };
 
-            value.TutorialParams                            = GetObjectList<TutorialParam>(new IntPtr(p + 0x018), ReversePrism.DataModels.TutorialParam.FromPointer); // 024665D7CA48 0x18 TutorialParams              ( 000185D2ED58 ModelClassListType List`1<TutorialParam> List`1<TutorialParam> List<TutorialParam> Pointer )
+            value.TutorialParams                            = GetObjectList<TutorialParam>(new IntPtr(p + 0x018), ReversePrism.DataModels.TutorialParam.FromPointer); // 0x18 TutorialParams              ( ModelClassListType List`1<TutorialParam> List`1<TutorialParam> List<TutorialParam> Pointer )
 
             return value;
         }

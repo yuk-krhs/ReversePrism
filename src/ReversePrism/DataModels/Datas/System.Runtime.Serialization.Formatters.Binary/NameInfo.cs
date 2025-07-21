@@ -8,19 +8,19 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 NIFullName                               000186671BA0 ModelPrimitiveType string string string String
-    // 018 NIobjectId                               0001865F79C0 ModelPrimitiveType long long long Int64
-    // 020 NIassemId                                0001865F79C0 ModelPrimitiveType long long long Int64
-    // 028 NIprimitiveTypeEnum                      0001865FCE10 ModelEnumType InternalPrimitiveTypeE InternalPrimitiveTypeE InternalPrimitiveTypeE Int32
-    // 030 NItype                                   000186692A80 ModelClassType Type Type Type Pointer
-    // 038 NIisSealed                               000186595210 ModelPrimitiveType bool bool bool Bool
-    // 039 NIisArray                                000186595210 ModelPrimitiveType bool bool bool Bool
-    // 03A NIisArrayItem                            000186595210 ModelPrimitiveType bool bool bool Bool
-    // 03B NItransmitTypeOnObject                   000186595210 ModelPrimitiveType bool bool bool Bool
-    // 03C NItransmitTypeOnMember                   000186595210 ModelPrimitiveType bool bool bool Bool
-    // 03D NIisParentTypeOnObject                   000186595210 ModelPrimitiveType bool bool bool Bool
-    // 040 NIarrayEnum                              000186719B60 ModelEnumType InternalArrayTypeE InternalArrayTypeE InternalArrayTypeE Int32
-    // 044 NIsealedStatusChecked                    000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 NIFullName                               ModelPrimitiveType string string string String
+    // 018 NIobjectId                               ModelPrimitiveType long long long Int64
+    // 020 NIassemId                                ModelPrimitiveType long long long Int64
+    // 028 NIprimitiveTypeEnum                      ModelEnumType InternalPrimitiveTypeE InternalPrimitiveTypeE InternalPrimitiveTypeE Int32
+    // 030 NItype                                   ModelClassType Type Type Type Pointer
+    // 038 NIisSealed                               ModelPrimitiveType bool bool bool Bool
+    // 039 NIisArray                                ModelPrimitiveType bool bool bool Bool
+    // 03A NIisArrayItem                            ModelPrimitiveType bool bool bool Bool
+    // 03B NItransmitTypeOnObject                   ModelPrimitiveType bool bool bool Bool
+    // 03C NItransmitTypeOnMember                   ModelPrimitiveType bool bool bool Bool
+    // 03D NIisParentTypeOnObject                   ModelPrimitiveType bool bool bool Bool
+    // 040 NIarrayEnum                              ModelEnumType InternalArrayTypeE InternalArrayTypeE InternalArrayTypeE Int32
+    // 044 NIsealedStatusChecked                    ModelPrimitiveType bool bool bool Bool
     public partial class NameInfo : DataModel
     {
         public string                                   NIFullName                              { get; set; }
@@ -45,19 +45,19 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NameInfo() { Pointer= p0 };
 
-            value.NIFullName                                = GetString(new IntPtr(p + 0x010)); // 024666CC3FA8 0x10 NIFullName                  ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.NIobjectId                                = GetInt64(new IntPtr(p + 0x018)); // 024666CC3FC8 0x18 NIobjectId                  ( 0001865F79C0 ModelPrimitiveType long long long Int64 )
-            value.NIassemId                                 = GetInt64(new IntPtr(p + 0x020)); // 024666CC3FE8 0x20 NIassemId                   ( 0001865F79C0 ModelPrimitiveType long long long Int64 )
-            value.NIprimitiveTypeEnum                       = (InternalPrimitiveTypeE)GetInt32(new IntPtr(p + 0x028)); // 024666CC4008 0x28 NIprimitiveTypeEnum         ( 0001865FCE10 ModelEnumType InternalPrimitiveTypeE InternalPrimitiveTypeE InternalPrimitiveTypeE Int32 )
-            value.NItype                                    = GetObject<Type>(new IntPtr(p + 0x030), ReversePrism.DataModels.Type.FromPointer); // 024666CC4028 0x30 NItype                      ( 000186692A80 ModelClassType Type Type Type Pointer )
-            value.NIisSealed                                = GetBool(new IntPtr(p + 0x038)); // 024666CC4048 0x38 NIisSealed                  ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.NIisArray                                 = GetBool(new IntPtr(p + 0x039)); // 024666CC4068 0x39 NIisArray                   ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.NIisArrayItem                             = GetBool(new IntPtr(p + 0x03A)); // 024666CC4088 0x3A NIisArrayItem               ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.NItransmitTypeOnObject                    = GetBool(new IntPtr(p + 0x03B)); // 024666CC40A8 0x3B NItransmitTypeOnObject      ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.NItransmitTypeOnMember                    = GetBool(new IntPtr(p + 0x03C)); // 024666CC40C8 0x3C NItransmitTypeOnMember      ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.NIisParentTypeOnObject                    = GetBool(new IntPtr(p + 0x03D)); // 024666CC40E8 0x3D NIisParentTypeOnObject      ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.NIarrayEnum                               = (InternalArrayTypeE)GetInt32(new IntPtr(p + 0x040)); // 024666CC4108 0x40 NIarrayEnum                 ( 000186719B60 ModelEnumType InternalArrayTypeE InternalArrayTypeE InternalArrayTypeE Int32 )
-            value.NIsealedStatusChecked                     = GetBool(new IntPtr(p + 0x044)); // 024666CC4128 0x44 NIsealedStatusChecked       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.NIFullName                                = GetString(new IntPtr(p + 0x010)); // 0x10 NIFullName                  ( ModelPrimitiveType string string string String )
+            value.NIobjectId                                = GetInt64(new IntPtr(p + 0x018)); // 0x18 NIobjectId                  ( ModelPrimitiveType long long long Int64 )
+            value.NIassemId                                 = GetInt64(new IntPtr(p + 0x020)); // 0x20 NIassemId                   ( ModelPrimitiveType long long long Int64 )
+            value.NIprimitiveTypeEnum                       = (InternalPrimitiveTypeE)GetInt32(new IntPtr(p + 0x028)); // 0x28 NIprimitiveTypeEnum         ( ModelEnumType InternalPrimitiveTypeE InternalPrimitiveTypeE InternalPrimitiveTypeE Int32 )
+            value.NItype                                    = GetObject<Type>(new IntPtr(p + 0x030), ReversePrism.DataModels.Type.FromPointer); // 0x30 NItype                      ( ModelClassType Type Type Type Pointer )
+            value.NIisSealed                                = GetBool(new IntPtr(p + 0x038)); // 0x38 NIisSealed                  ( ModelPrimitiveType bool bool bool Bool )
+            value.NIisArray                                 = GetBool(new IntPtr(p + 0x039)); // 0x39 NIisArray                   ( ModelPrimitiveType bool bool bool Bool )
+            value.NIisArrayItem                             = GetBool(new IntPtr(p + 0x03A)); // 0x3A NIisArrayItem               ( ModelPrimitiveType bool bool bool Bool )
+            value.NItransmitTypeOnObject                    = GetBool(new IntPtr(p + 0x03B)); // 0x3B NItransmitTypeOnObject      ( ModelPrimitiveType bool bool bool Bool )
+            value.NItransmitTypeOnMember                    = GetBool(new IntPtr(p + 0x03C)); // 0x3C NItransmitTypeOnMember      ( ModelPrimitiveType bool bool bool Bool )
+            value.NIisParentTypeOnObject                    = GetBool(new IntPtr(p + 0x03D)); // 0x3D NIisParentTypeOnObject      ( ModelPrimitiveType bool bool bool Bool )
+            value.NIarrayEnum                               = (InternalArrayTypeE)GetInt32(new IntPtr(p + 0x040)); // 0x40 NIarrayEnum                 ( ModelEnumType InternalArrayTypeE InternalArrayTypeE InternalArrayTypeE Int32 )
+            value.NIsealedStatusChecked                     = GetBool(new IntPtr(p + 0x044)); // 0x44 NIsealedStatusChecked       ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 IdolIcon                                 000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer
-    // 028 BlankObject                              0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
+    // 020 IdolIcon                                 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer
+    // 028 BlankObject                              ModelClassType GameObject GameObject GameObject Pointer
     public partial class ChallengeTourIdolIcon : DataModel
     {
         public PFIdolIconView?                          IdolIcon                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChallengeTourIdolIcon() { Pointer= p0 };
 
-            value.IdolIcon                                  = GetObject<PFIdolIconView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 02466A227A30 0x20 IdolIcon                    ( 000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
-            value.BlankObject                               = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 02466A227A50 0x28 BlankObject                 ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.IdolIcon                                  = GetObject<PFIdolIconView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 0x20 IdolIcon                    ( ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
+            value.BlankObject                               = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0x28 BlankObject                 ( ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

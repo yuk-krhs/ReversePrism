@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 DefaultUpdateUrl                         Uri IL2CPP_TYPE_CLASS
     // 008 Default                                  string IL2CPP_TYPE_STRING
     // 010 Sync                                     <object> IL2CPP_TYPE_OBJECT
-    // 018 Instance                                 0001866C71A0 ModelClassType AppConfigExtensions AppConfigExtensions AppConfigExtensions Pointer
+    // 018 Instance                                 ModelClassType AppConfigExtensions AppConfigExtensions AppConfigExtensions Pointer
     // 020 SStringState                             Dictionary`2<int, Dictionary`2<string, string>> IL2CPP_TYPE_GENERICINST
     public partial class AppConfigExtensions : DataModel
     {
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AppConfigExtensions() { Pointer= p0 };
 
-            value.Instance                                  = GetObject<AppConfigExtensions>(new IntPtr(p + 0x018), ReversePrism.DataModels.AppConfigExtensions.FromPointer); // 02466BD7B410 0x18 Instance                    ( 0001866C71A0 ModelClassType AppConfigExtensions AppConfigExtensions AppConfigExtensions Pointer )
+            value.Instance                                  = GetObject<AppConfigExtensions>(new IntPtr(p + 0x018), ReversePrism.DataModels.AppConfigExtensions.FromPointer); // 0x18 Instance                    ( ModelClassType AppConfigExtensions AppConfigExtensions AppConfigExtensions Pointer )
 
             return value;
         }

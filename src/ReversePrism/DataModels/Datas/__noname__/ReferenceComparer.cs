@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Converter                                000186633770 ModelClassType ReferenceConverter ReferenceConverter ReferenceConverter Pointer
+    // 010 Converter                                ModelClassType ReferenceConverter ReferenceConverter ReferenceConverter Pointer
     public partial class ReferenceComparer : DataModel
     {
         public ReferenceConverter?                      Converter                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ReferenceComparer() { Pointer= p0 };
 
-            value.Converter                                 = GetObject<ReferenceConverter>(new IntPtr(p + 0x010), ReversePrism.DataModels.ReferenceConverter.FromPointer); // 024667BA0FB8 0x10 Converter                   ( 000186633770 ModelClassType ReferenceConverter ReferenceConverter ReferenceConverter Pointer )
+            value.Converter                                 = GetObject<ReferenceConverter>(new IntPtr(p + 0x010), ReversePrism.DataModels.ReferenceConverter.FromPointer); // 0x10 Converter                   ( ModelClassType ReferenceConverter ReferenceConverter ReferenceConverter Pointer )
 
             return value;
         }

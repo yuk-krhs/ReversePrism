@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 000 _instance                                UnitySynchronizationContext IL2CPP_TYPE_CLASS
     // 018 queue                                    Queue`1<Tuple`2<SendOrPostCallback, <object>>> IL2CPP_TYPE_GENERICINST
-    // 020 Behavior                                 0001866AC4A0 ModelClassType SynchronizationContextBehavoir SynchronizationContextBehavoir SynchronizationContextBehavoir Pointer
-    // 028 MainThreadId                             0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 Behavior                                 ModelClassType SynchronizationContextBehavoir SynchronizationContextBehavoir SynchronizationContextBehavoir Pointer
+    // 028 MainThreadId                             ModelPrimitiveType int int int Int32
     // 000 Timeout                                  int IL2CPP_TYPE_I4
     // 008 signalDictionary                         Dictionary`2<int, ManualResetEvent> IL2CPP_TYPE_GENERICINST
     public partial class UnitySynchronizationContext : DataModel
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnitySynchronizationContext() { Pointer= p0 };
 
-            value.Behavior                                  = GetObject<SynchronizationContextBehavoir>(new IntPtr(p + 0x020), ReversePrism.DataModels.SynchronizationContextBehavoir.FromPointer); // 02466BD660C8 0x20 Behavior                    ( 0001866AC4A0 ModelClassType SynchronizationContextBehavoir SynchronizationContextBehavoir SynchronizationContextBehavoir Pointer )
-            value.MainThreadId                              = GetInt32(new IntPtr(p + 0x028)); // 02466BD660E8 0x28 MainThreadId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Behavior                                  = GetObject<SynchronizationContextBehavoir>(new IntPtr(p + 0x020), ReversePrism.DataModels.SynchronizationContextBehavoir.FromPointer); // 0x20 Behavior                    ( ModelClassType SynchronizationContextBehavoir SynchronizationContextBehavoir SynchronizationContextBehavoir Pointer )
+            value.MainThreadId                              = GetInt32(new IntPtr(p + 0x028)); // 0x28 MainThreadId                ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

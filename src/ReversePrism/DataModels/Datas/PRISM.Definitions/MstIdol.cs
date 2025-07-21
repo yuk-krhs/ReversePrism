@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Id                                       0001865F4260 ModelPrimitiveType int int int Int32
-    // 014 MstDefaultLiveCostumeSetId               0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 DefaultLiveCostumeSet                    00018661D250 ModelClassType MstCostumeSet MstCostumeSet MstCostumeSet Pointer
+    // 010 Id                                       ModelPrimitiveType int int int Int32
+    // 014 MstDefaultLiveCostumeSetId               ModelPrimitiveType int int int Int32
+    // 018 DefaultLiveCostumeSet                    ModelClassType MstCostumeSet MstCostumeSet MstCostumeSet Pointer
     public partial class MstIdol : DataModel
     {
         public int                                      Id                                      { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MstIdol() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A4681AB8 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstDefaultLiveCostumeSetId                = GetInt32(new IntPtr(p + 0x014)); // 0245A4681AD8 0x14 MstDefaultLiveCostumeSetId  ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.DefaultLiveCostumeSet                     = GetObject<MstCostumeSet>(new IntPtr(p + 0x018), ReversePrism.DataModels.MstCostumeSet.FromPointer); // 0245A4681AF8 0x18 DefaultLiveCostumeSet       ( 00018661D250 ModelClassType MstCostumeSet MstCostumeSet MstCostumeSet Pointer )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0x10 Id                          ( ModelPrimitiveType int int int Int32 )
+            value.MstDefaultLiveCostumeSetId                = GetInt32(new IntPtr(p + 0x014)); // 0x14 MstDefaultLiveCostumeSetId  ( ModelPrimitiveType int int int Int32 )
+            value.DefaultLiveCostumeSet                     = GetObject<MstCostumeSet>(new IntPtr(p + 0x018), ReversePrism.DataModels.MstCostumeSet.FromPointer); // 0x18 DefaultLiveCostumeSet       ( ModelClassType MstCostumeSet MstCostumeSet MstCostumeSet Pointer )
 
             return value;
         }

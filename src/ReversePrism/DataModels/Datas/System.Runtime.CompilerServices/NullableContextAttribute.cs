@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Flag                                     00018659D650 ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 010 Flag                                     ModelPrimitiveType sbyte sbyte sbyte SByte
     public partial class NullableContextAttribute : DataModel
     {
         public sbyte                                    Flag                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NullableContextAttribute() { Pointer= p0 };
 
-            value.Flag                                      = GetSByte(new IntPtr(p + 0x010)); // 0245A68EFF10 0x10 Flag                        ( 00018659D650 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Flag                                      = GetSByte(new IntPtr(p + 0x010)); // 0x10 Flag                        ( ModelPrimitiveType sbyte sbyte sbyte SByte )
 
             return value;
         }

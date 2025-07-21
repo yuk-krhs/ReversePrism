@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Tag                                      000186697450 ModelPrimitiveType ushort ushort ushort UInt16
-    // 018 Type                                     0001866936B0 ModelClassType Type Type Type Pointer
+    // 010 Tag                                      ModelPrimitiveType ushort ushort ushort UInt16
+    // 018 Type                                     ModelClassType Type Type Type Pointer
     public partial class MemoryPackUnionAttribute : DataModel
     {
         public ushort                                   Tag                                     { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MemoryPackUnionAttribute() { Pointer= p0 };
 
-            value.Tag                                       = GetUInt16(new IntPtr(p + 0x010)); // 02466AF6EC28 0x10 Tag                         ( 000186697450 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 02466AF6EC48 0x18 Type                        ( 0001866936B0 ModelClassType Type Type Type Pointer )
+            value.Tag                                       = GetUInt16(new IntPtr(p + 0x010)); // 0x10 Tag                         ( ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 0x18 Type                        ( ModelClassType Type Type Type Pointer )
 
             return value;
         }

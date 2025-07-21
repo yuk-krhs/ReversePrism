@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Enumerator                               0001867512A0 ModelClassType IDictionaryEnumerator IDictionaryEnumerator IDictionaryEnumerator Pointer
+    // 010 Enumerator                               ModelClassType IDictionaryEnumerator IDictionaryEnumerator IDictionaryEnumerator Pointer
     public partial class XmlSchemaCollectionEnumerator : DataModel
     {
         public IDictionaryEnumerator?                   Enumerator                              { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlSchemaCollectionEnumerator() { Pointer= p0 };
 
-            value.Enumerator                                = GetObject<IDictionaryEnumerator>(new IntPtr(p + 0x010), ReversePrism.DataModels.IDictionaryEnumerator.FromPointer); // 0246675FFE68 0x10 Enumerator                  ( 0001867512A0 ModelClassType IDictionaryEnumerator IDictionaryEnumerator IDictionaryEnumerator Pointer )
+            value.Enumerator                                = GetObject<IDictionaryEnumerator>(new IntPtr(p + 0x010), ReversePrism.DataModels.IDictionaryEnumerator.FromPointer); // 0x10 Enumerator                  ( ModelClassType IDictionaryEnumerator IDictionaryEnumerator IDictionaryEnumerator Pointer )
 
             return value;
         }

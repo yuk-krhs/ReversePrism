@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Logger                                   000186710460 ModelClassType PRISMLoggerBase PRISMLoggerBase PRISMLoggerBase Pointer
-    // 018 LoggerAnalysis                           0001865A2150 ModelClassType ILoggerAnalysis ILoggerAnalysis ILoggerAnalysis Pointer
+    // 010 Logger                                   ModelClassType PRISMLoggerBase PRISMLoggerBase PRISMLoggerBase Pointer
+    // 018 LoggerAnalysis                           ModelClassType ILoggerAnalysis ILoggerAnalysis ILoggerAnalysis Pointer
     public partial class LoggerInstaller : DataModel
     {
         public PRISMLoggerBase?                         Logger                                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LoggerInstaller() { Pointer= p0 };
 
-            value.Logger                                    = GetObject<PRISMLoggerBase>(new IntPtr(p + 0x010), ReversePrism.DataModels.PRISMLoggerBase.FromPointer); // 0245A3C78C90 0x10 Logger                      ( 000186710460 ModelClassType PRISMLoggerBase PRISMLoggerBase PRISMLoggerBase Pointer )
-            value.LoggerAnalysis                            = GetObject<ILoggerAnalysis>(new IntPtr(p + 0x018), ReversePrism.DataModels.ILoggerAnalysis.FromPointer); // 0245A3C78CB0 0x18 LoggerAnalysis              ( 0001865A2150 ModelClassType ILoggerAnalysis ILoggerAnalysis ILoggerAnalysis Pointer )
+            value.Logger                                    = GetObject<PRISMLoggerBase>(new IntPtr(p + 0x010), ReversePrism.DataModels.PRISMLoggerBase.FromPointer); // 0x10 Logger                      ( ModelClassType PRISMLoggerBase PRISMLoggerBase PRISMLoggerBase Pointer )
+            value.LoggerAnalysis                            = GetObject<ILoggerAnalysis>(new IntPtr(p + 0x018), ReversePrism.DataModels.ILoggerAnalysis.FromPointer); // 0x18 LoggerAnalysis              ( ModelClassType ILoggerAnalysis ILoggerAnalysis ILoggerAnalysis Pointer )
 
             return value;
         }

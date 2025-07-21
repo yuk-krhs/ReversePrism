@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 ScenarioManager                          0001866C9D90 ModelClassType ScenarioManager ScenarioManager ScenarioManager Pointer
+    // 020 ScenarioManager                          ModelClassType ScenarioManager ScenarioManager ScenarioManager Pointer
     // 000 _sceneLoader                             SceneLoaderAddressable IL2CPP_TYPE_CLASS
     // 008 isContinueBGM                            bool IL2CPP_TYPE_BOOLEAN
     public partial class Model3DManager : DataModel
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Model3DManager() { Pointer= p0 };
 
-            value.ScenarioManager                           = GetObject<ScenarioManager>(new IntPtr(p + 0x020), ReversePrism.DataModels.ScenarioManager.FromPointer); // 0245A60CD168 0x20 ScenarioManager             ( 0001866C9D90 ModelClassType ScenarioManager ScenarioManager ScenarioManager Pointer )
+            value.ScenarioManager                           = GetObject<ScenarioManager>(new IntPtr(p + 0x020), ReversePrism.DataModels.ScenarioManager.FromPointer); // 0x20 ScenarioManager             ( ModelClassType ScenarioManager ScenarioManager ScenarioManager Pointer )
 
             return value;
         }

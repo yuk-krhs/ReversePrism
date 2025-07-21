@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 JumpParam                                0001866B5250 ModelClassType IdolListViewParameter IdolListViewParameter IdolListViewParameter Pointer
+    // 010 JumpParam                                ModelClassType IdolListViewParameter IdolListViewParameter IdolListViewParameter Pointer
     public partial class IdolListArgument : DataModel
     {
         public IdolListViewParameter?                   JumpParam                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IdolListArgument() { Pointer= p0 };
 
-            value.JumpParam                                 = GetObject<IdolListViewParameter>(new IntPtr(p + 0x010), ReversePrism.DataModels.IdolListViewParameter.FromPointer); // 024665F352F8 0x10 JumpParam                   ( 0001866B5250 ModelClassType IdolListViewParameter IdolListViewParameter IdolListViewParameter Pointer )
+            value.JumpParam                                 = GetObject<IdolListViewParameter>(new IntPtr(p + 0x010), ReversePrism.DataModels.IdolListViewParameter.FromPointer); // 0x10 JumpParam                   ( ModelClassType IdolListViewParameter IdolListViewParameter IdolListViewParameter Pointer )
 
             return value;
         }

@@ -8,19 +8,16 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 HeaderPanelView                          0001865E4990 ModelClassType PvpHeaderPanelView PvpHeaderPanelView PvpHeaderPanelView Pointer
-    // 028 UnitTypeTabGroup                         0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer
-    // 030 GridHeaderView                           000186547AB0 ModelClassType FUHeaderView FUHeaderView FUHeaderView Pointer
-    // 038 GridView                                 0001865F5DD0 ModelClassType PvpUnitEditGridView PvpUnitEditGridView PvpUnitEditGridView Pointer
-    // 040 TotalCountText                           0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 048 SortFilterView                           000186580020 ModelClassType FilterAndSortView FilterAndSortView FilterAndSortView Pointer
-    // 050 SortSwitch                               0001866F44A0 ModelClassType UISwitch UISwitch UISwitch Pointer
-    // 058 DecideButton                             0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 060 PIdolUnitEditButton                      0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 068 fesUnitDetailPopupFactory                PopupViewFactory`1<IFUnitDetailPopupView> IL2CPP_TYPE_GENERICINST
-    // 070 pIdolEditPopupViewFactory                PopupViewFactory`1<IPvpPIdolUnitEditPopupView> IL2CPP_TYPE_GENERICINST
-    // 078 fesUnitSearchPopupViewFactory            PopupViewFactory`1<IFesUnitSearchPopupView> IL2CPP_TYPE_GENERICINST
-    // 080 ViewModel                                0001865F7270 ModelClassType PvpUnitEditViewModel PvpUnitEditViewModel PvpUnitEditViewModel Pointer
+    // 020 HeaderPanelView                          ModelClassType PvpHeaderPanelView PvpHeaderPanelView PvpHeaderPanelView Pointer
+    // 028 UnitTypeTabGroup                         ModelClassType UITabGroup UITabGroup UITabGroup Pointer
+    // 030 GridHeaderView                           ModelClassType FUHeaderView FUHeaderView FUHeaderView Pointer
+    // 038 GridView                                 ModelClassType PvpUnitEditGridView PvpUnitEditGridView PvpUnitEditGridView Pointer
+    // 040 TotalCountText                           ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 048 SortFilterView                           ModelClassType FilterAndSortView FilterAndSortView FilterAndSortView Pointer
+    // 050 SortSwitch                               ModelClassType UISwitch UISwitch UISwitch Pointer
+    // 058 DecideButton                             ModelClassType UIButton UIButton UIButton Pointer
+    // 060 PIdolUnitEditButton                      ModelClassType UIButton UIButton UIButton Pointer
+    // 068 ViewModel                                ModelClassType PvpUnitEditViewModel PvpUnitEditViewModel PvpUnitEditViewModel Pointer
     public partial class PvpUnitEditView : DataModel
     {
         public PvpHeaderPanelView?                      HeaderPanelView                         { get; set; }
@@ -42,16 +39,16 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PvpUnitEditView() { Pointer= p0 };
 
-            value.HeaderPanelView                           = GetObject<PvpHeaderPanelView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PvpHeaderPanelView.FromPointer); // 02466A1A7240 0x20 HeaderPanelView             ( 0001865E4990 ModelClassType PvpHeaderPanelView PvpHeaderPanelView PvpHeaderPanelView Pointer )
-            value.UnitTypeTabGroup                          = GetObject<UITabGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITabGroup.FromPointer); // 02466A1A7260 0x28 UnitTypeTabGroup            ( 0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
-            value.GridHeaderView                            = GetObject<FUHeaderView>(new IntPtr(p + 0x030), ReversePrism.DataModels.FUHeaderView.FromPointer); // 02466A1A7280 0x30 GridHeaderView              ( 000186547AB0 ModelClassType FUHeaderView FUHeaderView FUHeaderView Pointer )
-            value.GridView                                  = GetObject<PvpUnitEditGridView>(new IntPtr(p + 0x038), ReversePrism.DataModels.PvpUnitEditGridView.FromPointer); // 02466A1A72A0 0x38 GridView                    ( 0001865F5DD0 ModelClassType PvpUnitEditGridView PvpUnitEditGridView PvpUnitEditGridView Pointer )
-            value.TotalCountText                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A1A72C0 0x40 TotalCountText              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.SortFilterView                            = GetObject<FilterAndSortView>(new IntPtr(p + 0x048), ReversePrism.DataModels.FilterAndSortView.FromPointer); // 02466A1A72E0 0x48 SortFilterView              ( 000186580020 ModelClassType FilterAndSortView FilterAndSortView FilterAndSortView Pointer )
-            value.SortSwitch                                = GetObject<UISwitch>(new IntPtr(p + 0x050), ReversePrism.DataModels.UISwitch.FromPointer); // 02466A1A7300 0x50 SortSwitch                  ( 0001866F44A0 ModelClassType UISwitch UISwitch UISwitch Pointer )
-            value.DecideButton                              = GetObject<UIButton>(new IntPtr(p + 0x058), ReversePrism.DataModels.UIButton.FromPointer); // 02466A1A7320 0x58 DecideButton                ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.PIdolUnitEditButton                       = GetObject<UIButton>(new IntPtr(p + 0x060), ReversePrism.DataModels.UIButton.FromPointer); // 02466A1A7340 0x60 PIdolUnitEditButton         ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.ViewModel                                 = GetObject<PvpUnitEditViewModel>(new IntPtr(p + 0x080), ReversePrism.DataModels.PvpUnitEditViewModel.FromPointer); // 02466A1A73C0 0x80 ViewModel                   ( 0001865F7270 ModelClassType PvpUnitEditViewModel PvpUnitEditViewModel PvpUnitEditViewModel Pointer )
+            value.HeaderPanelView                           = GetObject<PvpHeaderPanelView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PvpHeaderPanelView.FromPointer); // 0x20 HeaderPanelView             ( ModelClassType PvpHeaderPanelView PvpHeaderPanelView PvpHeaderPanelView Pointer )
+            value.UnitTypeTabGroup                          = GetObject<UITabGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITabGroup.FromPointer); // 0x28 UnitTypeTabGroup            ( ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
+            value.GridHeaderView                            = GetObject<FUHeaderView>(new IntPtr(p + 0x030), ReversePrism.DataModels.FUHeaderView.FromPointer); // 0x30 GridHeaderView              ( ModelClassType FUHeaderView FUHeaderView FUHeaderView Pointer )
+            value.GridView                                  = GetObject<PvpUnitEditGridView>(new IntPtr(p + 0x038), ReversePrism.DataModels.PvpUnitEditGridView.FromPointer); // 0x38 GridView                    ( ModelClassType PvpUnitEditGridView PvpUnitEditGridView PvpUnitEditGridView Pointer )
+            value.TotalCountText                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x40 TotalCountText              ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.SortFilterView                            = GetObject<FilterAndSortView>(new IntPtr(p + 0x048), ReversePrism.DataModels.FilterAndSortView.FromPointer); // 0x48 SortFilterView              ( ModelClassType FilterAndSortView FilterAndSortView FilterAndSortView Pointer )
+            value.SortSwitch                                = GetObject<UISwitch>(new IntPtr(p + 0x050), ReversePrism.DataModels.UISwitch.FromPointer); // 0x50 SortSwitch                  ( ModelClassType UISwitch UISwitch UISwitch Pointer )
+            value.DecideButton                              = GetObject<UIButton>(new IntPtr(p + 0x058), ReversePrism.DataModels.UIButton.FromPointer); // 0x58 DecideButton                ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.PIdolUnitEditButton                       = GetObject<UIButton>(new IntPtr(p + 0x060), ReversePrism.DataModels.UIButton.FromPointer); // 0x60 PIdolUnitEditButton         ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.ViewModel                                 = GetObject<PvpUnitEditViewModel>(new IntPtr(p + 0x068), ReversePrism.DataModels.PvpUnitEditViewModel.FromPointer); // 0x68 ViewModel                   ( ModelClassType PvpUnitEditViewModel PvpUnitEditViewModel PvpUnitEditViewModel Pointer )
 
             return value;
         }

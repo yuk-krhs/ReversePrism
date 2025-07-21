@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<UpdateLastDisplayDateArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 TabTypeFieldNumber                       int IL2CPP_TYPE_I4
-    // 018 TabType                                  000186709870 ModelEnumType SeasonMissionTabType SeasonMissionTabType SeasonMissionTabType Int32
+    // 018 TabType                                  ModelEnumType SeasonMissionTabType SeasonMissionTabType SeasonMissionTabType Int32
     public partial class UpdateLastDisplayDateArgs : DataModel
     {
         public SeasonMissionTabType                     TabType                                 { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UpdateLastDisplayDateArgs() { Pointer= p0 };
 
-            value.TabType                                   = (SeasonMissionTabType)GetInt32(new IntPtr(p + 0x018)); // 0246626E8470 0x18 TabType                     ( 000186709870 ModelEnumType SeasonMissionTabType SeasonMissionTabType SeasonMissionTabType Int32 )
+            value.TabType                                   = (SeasonMissionTabType)GetInt32(new IntPtr(p + 0x018)); // 0x18 TabType                     ( ModelEnumType SeasonMissionTabType SeasonMissionTabType SeasonMissionTabType Int32 )
 
             return value;
         }

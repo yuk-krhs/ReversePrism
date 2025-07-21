@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 090 CellPrefab                               0001866CD830 ModelClassType HomeSettingsIdolSelectGridViewCell HomeSettingsIdolSelectGridViewCell HomeSettingsIdolSelectGridViewCell Pointer
+    // 090 CellPrefab                               ModelClassType HomeSettingsIdolSelectGridViewCell HomeSettingsIdolSelectGridViewCell HomeSettingsIdolSelectGridViewCell Pointer
     public partial class HomeSettingsIdolSelectGridView : DataModel
     {
         public HomeSettingsIdolSelectGridViewCell?      CellPrefab                              { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HomeSettingsIdolSelectGridView() { Pointer= p0 };
 
-            value.CellPrefab                                = GetObject<HomeSettingsIdolSelectGridViewCell>(new IntPtr(p + 0x090), ReversePrism.DataModels.HomeSettingsIdolSelectGridViewCell.FromPointer); // 02466B59FEF8 0x90 CellPrefab                  ( 0001866CD830 ModelClassType HomeSettingsIdolSelectGridViewCell HomeSettingsIdolSelectGridViewCell HomeSettingsIdolSelectGridViewCell Pointer )
+            value.CellPrefab                                = GetObject<HomeSettingsIdolSelectGridViewCell>(new IntPtr(p + 0x090), ReversePrism.DataModels.HomeSettingsIdolSelectGridViewCell.FromPointer); // 0x90 CellPrefab                  ( ModelClassType HomeSettingsIdolSelectGridViewCell HomeSettingsIdolSelectGridViewCell HomeSettingsIdolSelectGridViewCell Pointer )
 
             return value;
         }

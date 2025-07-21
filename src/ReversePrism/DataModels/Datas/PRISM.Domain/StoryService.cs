@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CachedStoryService                       000186716FD0 ModelClassType ICachedStoryService ICachedStoryService ICachedStoryService Pointer
+    // 010 CachedStoryService                       ModelClassType ICachedStoryService ICachedStoryService ICachedStoryService Pointer
     public partial class StoryService : DataModel
     {
         public ICachedStoryService?                     CachedStoryService                      { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StoryService() { Pointer= p0 };
 
-            value.CachedStoryService                        = GetObject<ICachedStoryService>(new IntPtr(p + 0x010), ReversePrism.DataModels.ICachedStoryService.FromPointer); // 024665953728 0x10 CachedStoryService          ( 000186716FD0 ModelClassType ICachedStoryService ICachedStoryService ICachedStoryService Pointer )
+            value.CachedStoryService                        = GetObject<ICachedStoryService>(new IntPtr(p + 0x010), ReversePrism.DataModels.ICachedStoryService.FromPointer); // 0x10 CachedStoryService          ( ModelClassType ICachedStoryService ICachedStoryService ICachedStoryService Pointer )
 
             return value;
         }

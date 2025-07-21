@@ -10,13 +10,13 @@ namespace ReversePrism.DataModels
 
     // 010 src                                      <int> IL2CPP_TYPE_I
     // 018 dst                                      <int> IL2CPP_TYPE_I
-    // 020 Count                                    0001865F36C0 ModelPrimitiveType int int int Int32
+    // 020 Count                                    ModelPrimitiveType int int int Int32
     // 028 closingSrc                               <int> IL2CPP_TYPE_I
     // 030 closingDst                               <int> IL2CPP_TYPE_I
-    // 038 ClosingCount                             0001865F36C0 ModelPrimitiveType int int int Int32
-    // 03C Transform                                00018660DFD0 ModelEnumType Matrix4x4 Matrix4x4 Matrix4x4 Int32
-    // 07C VertsBeforeUVDisplacement                0001865F36C0 ModelPrimitiveType int int int Int32
-    // 080 VertsAfterUVDisplacement                 0001865F36C0 ModelPrimitiveType int int int Int32
+    // 038 ClosingCount                             ModelPrimitiveType int int int Int32
+    // 03C Transform                                ModelEnumType Matrix4x4 Matrix4x4 Matrix4x4 Int32
+    // 07C VertsBeforeUVDisplacement                ModelPrimitiveType int int int Int32
+    // 080 VertsAfterUVDisplacement                 ModelPrimitiveType int int int Int32
     public partial class NudgeJobData : DataModel
     {
         public int                                      Count                                   { get; set; }
@@ -33,11 +33,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NudgeJobData() { Pointer= p0 };
 
-            value.Count                                     = GetInt32(new IntPtr(p + 0x020)); // 0245A68261A0 0x20 Count                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.ClosingCount                              = GetInt32(new IntPtr(p + 0x038)); // 0245A6826200 0x38 ClosingCount                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Transform                                 = (Matrix4x4)GetInt32(new IntPtr(p + 0x03C)); // 0245A6826220 0x3C Transform                   ( 00018660DFD0 ModelEnumType Matrix4x4 Matrix4x4 Matrix4x4 Int32 )
-            value.VertsBeforeUVDisplacement                 = GetInt32(new IntPtr(p + 0x07C)); // 0245A6826240 0x7C VertsBeforeUVDisplacement   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.VertsAfterUVDisplacement                  = GetInt32(new IntPtr(p + 0x080)); // 0245A6826260 0x80 VertsAfterUVDisplacement    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x020)); // 0x20 Count                       ( ModelPrimitiveType int int int Int32 )
+            value.ClosingCount                              = GetInt32(new IntPtr(p + 0x038)); // 0x38 ClosingCount                ( ModelPrimitiveType int int int Int32 )
+            value.Transform                                 = (Matrix4x4)GetInt32(new IntPtr(p + 0x03C)); // 0x3C Transform                   ( ModelEnumType Matrix4x4 Matrix4x4 Matrix4x4 Int32 )
+            value.VertsBeforeUVDisplacement                 = GetInt32(new IntPtr(p + 0x07C)); // 0x7C VertsBeforeUVDisplacement   ( ModelPrimitiveType int int int Int32 )
+            value.VertsAfterUVDisplacement                  = GetInt32(new IntPtr(p + 0x080)); // 0x80 VertsAfterUVDisplacement    ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

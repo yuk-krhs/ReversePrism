@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Status                                   00018660B6D0 ModelClassType IPvpUnitStatus IPvpUnitStatus IPvpUnitStatus Pointer
+    // 010 Status                                   ModelClassType IPvpUnitStatus IPvpUnitStatus IPvpUnitStatus Pointer
     // 018 <ProduceCards>k__BackingField            IEnumerable`1<IProduceCardStatus> IL2CPP_TYPE_GENERICINST
     public partial class PvpUnitViewModel : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PvpUnitViewModel() { Pointer= p0 };
 
-            value.Status                                    = GetObject<IPvpUnitStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IPvpUnitStatus.FromPointer); // 024665EB1A28 0x10 Status                      ( 00018660B6D0 ModelClassType IPvpUnitStatus IPvpUnitStatus IPvpUnitStatus Pointer )
+            value.Status                                    = GetObject<IPvpUnitStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IPvpUnitStatus.FromPointer); // 0x10 Status                      ( ModelClassType IPvpUnitStatus IPvpUnitStatus IPvpUnitStatus Pointer )
 
             return value;
         }

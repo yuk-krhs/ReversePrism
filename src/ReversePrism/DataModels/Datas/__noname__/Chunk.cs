@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Bytes                                    000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 018 Offset                                   0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 Bytes                                    ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 018 Offset                                   ModelPrimitiveType int int int Int32
     public partial class Chunk : DataModel
     {
         public List<sbyte>?                             Bytes                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Chunk() { Pointer= p0 };
 
-            value.Bytes                                     = GetSByteList(new IntPtr(p + 0x010)); // 024667AE7E28 0x10 Bytes                       ( 000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Offset                                    = GetInt32(new IntPtr(p + 0x018)); // 024667AE7E48 0x18 Offset                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Bytes                                     = GetSByteList(new IntPtr(p + 0x010)); // 0x10 Bytes                       ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Offset                                    = GetInt32(new IntPtr(p + 0x018)); // 0x18 Offset                      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

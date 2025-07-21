@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 MorphingTargetType                       000186561440 ModelEnumType MorphingTargetType MorphingTargetType MorphingTargetType Int32
-    // 018 SkinnedMeshRenderer                      000186514880 ModelClassType SkinnedMeshRenderer SkinnedMeshRenderer SkinnedMeshRenderer Pointer
-    // 020 Animator                                 0001866B92A0 ModelClassType Animator Animator Animator Pointer
-    // 028 NameMappingGetBlendShapeIndexs           000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer
-    // 030 SilenceWidthPosition                     0001866656B0 ModelPrimitiveType float float float Single
+    // 010 MorphingTargetType                       ModelEnumType MorphingTargetType MorphingTargetType MorphingTargetType Int32
+    // 018 SkinnedMeshRenderer                      ModelClassType SkinnedMeshRenderer SkinnedMeshRenderer SkinnedMeshRenderer Pointer
+    // 020 Animator                                 ModelClassType Animator Animator Animator Pointer
+    // 028 NameMappingGetBlendShapeIndexs           ModelPrimitiveListType int[] int[] List<int> Pointer
+    // 030 SilenceWidthPosition                     ModelPrimitiveType float float float Single
     public partial class CriLipsMeshMorph : DataModel
     {
         public MorphingTargetType                       MorphingTargetType                      { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CriLipsMeshMorph() { Pointer= p0 };
 
-            value.MorphingTargetType                        = (MorphingTargetType)GetInt32(new IntPtr(p + 0x010)); // 02466BC27160 0x10 MorphingTargetType          ( 000186561440 ModelEnumType MorphingTargetType MorphingTargetType MorphingTargetType Int32 )
-            value.SkinnedMeshRenderer                       = GetObject<SkinnedMeshRenderer>(new IntPtr(p + 0x018), ReversePrism.DataModels.SkinnedMeshRenderer.FromPointer); // 02466BC27180 0x18 SkinnedMeshRenderer         ( 000186514880 ModelClassType SkinnedMeshRenderer SkinnedMeshRenderer SkinnedMeshRenderer Pointer )
-            value.Animator                                  = GetObject<Animator>(new IntPtr(p + 0x020), ReversePrism.DataModels.Animator.FromPointer); // 02466BC271A0 0x20 Animator                    ( 0001866B92A0 ModelClassType Animator Animator Animator Pointer )
-            value.NameMappingGetBlendShapeIndexs            = GetInt32List(new IntPtr(p + 0x028)); // 02466BC271C0 0x28 NameMappingGetBlendShapeIndexs ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.SilenceWidthPosition                      = GetSingle(new IntPtr(p + 0x030)); // 02466BC271E0 0x30 SilenceWidthPosition        ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.MorphingTargetType                        = (MorphingTargetType)GetInt32(new IntPtr(p + 0x010)); // 0x10 MorphingTargetType          ( ModelEnumType MorphingTargetType MorphingTargetType MorphingTargetType Int32 )
+            value.SkinnedMeshRenderer                       = GetObject<SkinnedMeshRenderer>(new IntPtr(p + 0x018), ReversePrism.DataModels.SkinnedMeshRenderer.FromPointer); // 0x18 SkinnedMeshRenderer         ( ModelClassType SkinnedMeshRenderer SkinnedMeshRenderer SkinnedMeshRenderer Pointer )
+            value.Animator                                  = GetObject<Animator>(new IntPtr(p + 0x020), ReversePrism.DataModels.Animator.FromPointer); // 0x20 Animator                    ( ModelClassType Animator Animator Animator Pointer )
+            value.NameMappingGetBlendShapeIndexs            = GetInt32List(new IntPtr(p + 0x028)); // 0x28 NameMappingGetBlendShapeIndexs ( ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.SilenceWidthPosition                      = GetSingle(new IntPtr(p + 0x030)); // 0x30 SilenceWidthPosition        ( ModelPrimitiveType float float float Single )
 
             return value;
         }

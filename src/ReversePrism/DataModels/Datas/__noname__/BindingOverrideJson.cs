@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Action                                   0001866722E0 ModelPrimitiveType string string string String
-    // 018 Id                                       0001866722E0 ModelPrimitiveType string string string String
-    // 020 Path                                     0001866722E0 ModelPrimitiveType string string string String
-    // 028 Interactions                             0001866722E0 ModelPrimitiveType string string string String
-    // 030 Processors                               0001866722E0 ModelPrimitiveType string string string String
+    // 010 Action                                   ModelPrimitiveType string string string String
+    // 018 Id                                       ModelPrimitiveType string string string String
+    // 020 Path                                     ModelPrimitiveType string string string String
+    // 028 Interactions                             ModelPrimitiveType string string string String
+    // 030 Processors                               ModelPrimitiveType string string string String
     public partial class BindingOverrideJson : DataModel
     {
         public string                                   Action                                  { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BindingOverrideJson() { Pointer= p0 };
 
-            value.Action                                    = GetString(new IntPtr(p + 0x010)); // 0246676BD608 0x10 Action                      ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Id                                        = GetString(new IntPtr(p + 0x018)); // 0246676BD628 0x18 Id                          ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Path                                      = GetString(new IntPtr(p + 0x020)); // 0246676BD648 0x20 Path                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Interactions                              = GetString(new IntPtr(p + 0x028)); // 0246676BD668 0x28 Interactions                ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Processors                                = GetString(new IntPtr(p + 0x030)); // 0246676BD688 0x30 Processors                  ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Action                                    = GetString(new IntPtr(p + 0x010)); // 0x10 Action                      ( ModelPrimitiveType string string string String )
+            value.Id                                        = GetString(new IntPtr(p + 0x018)); // 0x18 Id                          ( ModelPrimitiveType string string string String )
+            value.Path                                      = GetString(new IntPtr(p + 0x020)); // 0x20 Path                        ( ModelPrimitiveType string string string String )
+            value.Interactions                              = GetString(new IntPtr(p + 0x028)); // 0x28 Interactions                ( ModelPrimitiveType string string string String )
+            value.Processors                                = GetString(new IntPtr(p + 0x030)); // 0x30 Processors                  ( ModelPrimitiveType string string string String )
 
             return value;
         }

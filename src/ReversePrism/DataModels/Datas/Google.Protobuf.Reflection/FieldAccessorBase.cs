@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 getValueDelegate                         Func`2<IMessage, <object>> IL2CPP_TYPE_GENERICINST
-    // 018 Descriptor                               000186571FF0 ModelClassType FieldDescriptor FieldDescriptor FieldDescriptor Pointer
+    // 018 Descriptor                               ModelClassType FieldDescriptor FieldDescriptor FieldDescriptor Pointer
     public partial class FieldAccessorBase : DataModel
     {
         public FieldDescriptor?                         Descriptor                              { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FieldAccessorBase() { Pointer= p0 };
 
-            value.Descriptor                                = GetObject<FieldDescriptor>(new IntPtr(p + 0x018), ReversePrism.DataModels.FieldDescriptor.FromPointer); // 024660D53698 0x18 Descriptor                  ( 000186571FF0 ModelClassType FieldDescriptor FieldDescriptor FieldDescriptor Pointer )
+            value.Descriptor                                = GetObject<FieldDescriptor>(new IntPtr(p + 0x018), ReversePrism.DataModels.FieldDescriptor.FromPointer); // 0x18 Descriptor                  ( ModelClassType FieldDescriptor FieldDescriptor FieldDescriptor Pointer )
 
             return value;
         }

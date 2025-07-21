@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 Logger                                   ILogger IL2CPP_TYPE_CLASS
     // 000 RTLD_LAZY                                int IL2CPP_TYPE_I4
     // 000 RTLD_GLOBAL                              int IL2CPP_TYPE_I4
-    // 010 LibraryPath                              000186672F10 ModelPrimitiveType string string string String
+    // 010 LibraryPath                              ModelPrimitiveType string string string String
     // 018 handle                                   <int> IL2CPP_TYPE_I
     public partial class UnmanagedLibrary : DataModel
     {
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnmanagedLibrary() { Pointer= p0 };
 
-            value.LibraryPath                               = GetString(new IntPtr(p + 0x010)); // 024660E3B6F0 0x10 LibraryPath                 ( 000186672F10 ModelPrimitiveType string string string String )
+            value.LibraryPath                               = GetString(new IntPtr(p + 0x010)); // 0x10 LibraryPath                 ( ModelPrimitiveType string string string String )
 
             return value;
         }

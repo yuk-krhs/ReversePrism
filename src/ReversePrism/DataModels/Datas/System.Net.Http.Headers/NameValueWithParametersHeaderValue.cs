@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Parameters                               000185CF5918 ModelClassListType List`1<NameValueHeaderValue> List`1<NameValueHeaderValue> List<NameValueHeaderValue> Pointer
+    // 020 Parameters                               ModelClassListType List`1<NameValueHeaderValue> List`1<NameValueHeaderValue> List<NameValueHeaderValue> Pointer
     public partial class NameValueWithParametersHeaderValue : DataModel
     {
         public List<NameValueHeaderValue>?              Parameters                              { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NameValueWithParametersHeaderValue() { Pointer= p0 };
 
-            value.Parameters                                = GetObjectList<NameValueHeaderValue>(new IntPtr(p + 0x020), ReversePrism.DataModels.NameValueHeaderValue.FromPointer); // 02466B907C18 0x20 Parameters                  ( 000185CF5918 ModelClassListType List`1<NameValueHeaderValue> List`1<NameValueHeaderValue> List<NameValueHeaderValue> Pointer )
+            value.Parameters                                = GetObjectList<NameValueHeaderValue>(new IntPtr(p + 0x020), ReversePrism.DataModels.NameValueHeaderValue.FromPointer); // 0x20 Parameters                  ( ModelClassListType List`1<NameValueHeaderValue> List`1<NameValueHeaderValue> List<NameValueHeaderValue> Pointer )
 
             return value;
         }

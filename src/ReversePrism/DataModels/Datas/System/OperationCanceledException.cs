@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 090 CancellationToken                        00018653DAD0 ModelEnumType CancellationToken CancellationToken CancellationToken Int32
+    // 090 CancellationToken                        ModelEnumType CancellationToken CancellationToken CancellationToken Int32
     public partial class OperationCanceledException : DataModel
     {
         public CancellationToken                        CancellationToken                       { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new OperationCanceledException() { Pointer= p0 };
 
-            value.CancellationToken                         = (CancellationToken)GetInt32(new IntPtr(p + 0x090)); // 0245A3DE3740 0x90 CancellationToken           ( 00018653DAD0 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
+            value.CancellationToken                         = (CancellationToken)GetInt32(new IntPtr(p + 0x090)); // 0x90 CancellationToken           ( ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
 
             return value;
         }

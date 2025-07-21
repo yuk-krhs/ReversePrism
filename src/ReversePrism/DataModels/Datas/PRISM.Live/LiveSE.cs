@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 000 SheetName                                string IL2CPP_TYPE_STRING
     // 000 Pause                                    SoundKey IL2CPP_TYPE_VALUETYPE
-    // 010 MVSeekBarAppear                          000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32
-    // 020 MVSeekBarSlide                           000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32
+    // 010 MVSeekBarAppear                          ModelEnumType SoundKey SoundKey SoundKey Int32
+    // 020 MVSeekBarSlide                           ModelEnumType SoundKey SoundKey SoundKey Int32
     public partial class LiveSE : DataModel
     {
         public SoundKey                                 MVSeekBarAppear                         { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveSE() { Pointer= p0 };
 
-            value.MVSeekBarAppear                           = (SoundKey)GetInt32(new IntPtr(p + 0x010)); // 024665171220 0x10 MVSeekBarAppear             ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
-            value.MVSeekBarSlide                            = (SoundKey)GetInt32(new IntPtr(p + 0x020)); // 024665171240 0x20 MVSeekBarSlide              ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.MVSeekBarAppear                           = (SoundKey)GetInt32(new IntPtr(p + 0x010)); // 0x10 MVSeekBarAppear             ( ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.MVSeekBarSlide                            = (SoundKey)GetInt32(new IntPtr(p + 0x020)); // 0x20 MVSeekBarSlide              ( ModelEnumType SoundKey SoundKey SoundKey Int32 )
 
             return value;
         }

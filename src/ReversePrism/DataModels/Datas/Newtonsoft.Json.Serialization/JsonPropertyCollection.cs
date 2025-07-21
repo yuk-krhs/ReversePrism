@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 030 Type                                     0001866936B0 ModelClassType Type Type Type Pointer
-    // 038 List                                     000185CEEC98 ModelClassListType List`1<JsonProperty> List`1<JsonProperty> List<JsonProperty> Pointer
+    // 030 Type                                     ModelClassType Type Type Type Pointer
+    // 038 List                                     ModelClassListType List`1<JsonProperty> List`1<JsonProperty> List<JsonProperty> Pointer
     public partial class JsonPropertyCollection : DataModel
     {
         public Type?                                    Type                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JsonPropertyCollection() { Pointer= p0 };
 
-            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x030), ReversePrism.DataModels.Type.FromPointer); // 0245A6013730 0x30 Type                        ( 0001866936B0 ModelClassType Type Type Type Pointer )
-            value.List                                      = GetObjectList<JsonProperty>(new IntPtr(p + 0x038), ReversePrism.DataModels.JsonProperty.FromPointer); // 0245A6013750 0x38 List                        ( 000185CEEC98 ModelClassListType List`1<JsonProperty> List`1<JsonProperty> List<JsonProperty> Pointer )
+            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x030), ReversePrism.DataModels.Type.FromPointer); // 0x30 Type                        ( ModelClassType Type Type Type Pointer )
+            value.List                                      = GetObjectList<JsonProperty>(new IntPtr(p + 0x038), ReversePrism.DataModels.JsonProperty.FromPointer); // 0x38 List                        ( ModelClassListType List`1<JsonProperty> List`1<JsonProperty> List<JsonProperty> Pointer )
 
             return value;
         }

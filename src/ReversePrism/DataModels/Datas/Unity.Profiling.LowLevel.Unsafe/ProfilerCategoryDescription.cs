@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Id                                       000186697760 ModelPrimitiveType ushort ushort ushort UInt16
-    // 012 Flags                                    000186697760 ModelPrimitiveType ushort ushort ushort UInt16
-    // 014 Color                                    0001865AD8F0 ModelEnumType Color32 Color32 Color32 Int32
-    // 018 Reserved0                                0001865F4260 ModelPrimitiveType int int int Int32
-    // 01C NameUtf8Len                              0001865F4940 ModelPrimitiveType int int int Int32
+    // 010 Id                                       ModelPrimitiveType ushort ushort ushort UInt16
+    // 012 Flags                                    ModelPrimitiveType ushort ushort ushort UInt16
+    // 014 Color                                    ModelEnumType Color32 Color32 Color32 Int32
+    // 018 Reserved0                                ModelPrimitiveType int int int Int32
+    // 01C NameUtf8Len                              ModelPrimitiveType int int int Int32
     // 020 NameUtf8                                 IntPtr IL2CPP_TYPE_PTR
     public partial class ProfilerCategoryDescription : DataModel
     {
@@ -30,11 +30,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProfilerCategoryDescription() { Pointer= p0 };
 
-            value.Id                                        = GetUInt16(new IntPtr(p + 0x010)); // 0245A68661F8 0x10 Id                          ( 000186697760 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.Flags                                     = GetUInt16(new IntPtr(p + 0x012)); // 0245A6866218 0x12 Flags                       ( 000186697760 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.Color                                     = (Color32)GetInt32(new IntPtr(p + 0x014)); // 0245A6866238 0x14 Color                       ( 0001865AD8F0 ModelEnumType Color32 Color32 Color32 Int32 )
-            value.Reserved0                                 = GetInt32(new IntPtr(p + 0x018)); // 0245A6866258 0x18 Reserved0                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.NameUtf8Len                               = GetInt32(new IntPtr(p + 0x01C)); // 0245A6866278 0x1C NameUtf8Len                 ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.Id                                        = GetUInt16(new IntPtr(p + 0x010)); // 0x10 Id                          ( ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Flags                                     = GetUInt16(new IntPtr(p + 0x012)); // 0x12 Flags                       ( ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Color                                     = (Color32)GetInt32(new IntPtr(p + 0x014)); // 0x14 Color                       ( ModelEnumType Color32 Color32 Color32 Int32 )
+            value.Reserved0                                 = GetInt32(new IntPtr(p + 0x018)); // 0x18 Reserved0                   ( ModelPrimitiveType int int int Int32 )
+            value.NameUtf8Len                               = GetInt32(new IntPtr(p + 0x01C)); // 0x1C NameUtf8Len                 ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

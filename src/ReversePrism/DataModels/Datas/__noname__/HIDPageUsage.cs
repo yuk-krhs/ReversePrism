@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Page                                     00018652C5F0 ModelEnumType UsagePage UsagePage UsagePage Int32
-    // 014 Usage                                    0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 Page                                     ModelEnumType UsagePage UsagePage UsagePage Int32
+    // 014 Usage                                    ModelPrimitiveType int int int Int32
     public partial class HIDPageUsage : DataModel
     {
         public UsagePage                                Page                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HIDPageUsage() { Pointer= p0 };
 
-            value.Page                                      = (UsagePage)GetInt32(new IntPtr(p + 0x010)); // 0245A3495188 0x10 Page                        ( 00018652C5F0 ModelEnumType UsagePage UsagePage UsagePage Int32 )
-            value.Usage                                     = GetInt32(new IntPtr(p + 0x014)); // 0245A34951A8 0x14 Usage                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Page                                      = (UsagePage)GetInt32(new IntPtr(p + 0x010)); // 0x10 Page                        ( ModelEnumType UsagePage UsagePage UsagePage Int32 )
+            value.Usage                                     = GetInt32(new IntPtr(p + 0x014)); // 0x14 Usage                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

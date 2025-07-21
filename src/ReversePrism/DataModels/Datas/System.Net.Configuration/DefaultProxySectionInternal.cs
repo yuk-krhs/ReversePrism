@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 WebProxy                                 00018669AB30 ModelClassType IWebProxy IWebProxy IWebProxy Pointer
+    // 010 WebProxy                                 ModelClassType IWebProxy IWebProxy IWebProxy Pointer
     // 000 classSyncObject                          <object> IL2CPP_TYPE_OBJECT
     public partial class DefaultProxySectionInternal : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DefaultProxySectionInternal() { Pointer= p0 };
 
-            value.WebProxy                                  = GetObject<IWebProxy>(new IntPtr(p + 0x010), ReversePrism.DataModels.IWebProxy.FromPointer); // 024667B4BA88 0x10 WebProxy                    ( 00018669AB30 ModelClassType IWebProxy IWebProxy IWebProxy Pointer )
+            value.WebProxy                                  = GetObject<IWebProxy>(new IntPtr(p + 0x010), ReversePrism.DataModels.IWebProxy.FromPointer); // 0x10 WebProxy                    ( ModelClassType IWebProxy IWebProxy IWebProxy Pointer )
 
             return value;
         }

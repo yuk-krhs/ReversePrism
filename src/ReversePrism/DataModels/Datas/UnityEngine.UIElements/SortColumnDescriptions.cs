@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 m_Descriptions                           IList`1<SortColumnDescription> IL2CPP_TYPE_GENERICINST
-    // 018 Changed                                  0001866792B0 ModelClassType Action Action Action Pointer
+    // 018 Changed                                  ModelClassType Action Action Action Pointer
     public partial class SortColumnDescriptions : DataModel
     {
         public Action?                                  Changed                                 { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SortColumnDescriptions() { Pointer= p0 };
 
-            value.Changed                                   = GetObject<Action>(new IntPtr(p + 0x018), ReversePrism.DataModels.Action.FromPointer); // 0245A66EF960 0x18 Changed                     ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.Changed                                   = GetObject<Action>(new IntPtr(p + 0x018), ReversePrism.DataModels.Action.FromPointer); // 0x18 Changed                     ( ModelClassType Action Action Action Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 InnerBinder                              00018664D460 ModelClassType GetMemberBinder GetMemberBinder GetMemberBinder Pointer
+    // 028 InnerBinder                              ModelClassType GetMemberBinder GetMemberBinder GetMemberBinder Pointer
     public partial class NoThrowGetBinderMember : DataModel
     {
         public GetMemberBinder?                         InnerBinder                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NoThrowGetBinderMember() { Pointer= p0 };
 
-            value.InnerBinder                               = GetObject<GetMemberBinder>(new IntPtr(p + 0x028), ReversePrism.DataModels.GetMemberBinder.FromPointer); // 02466879F4D0 0x28 InnerBinder                 ( 00018664D460 ModelClassType GetMemberBinder GetMemberBinder GetMemberBinder Pointer )
+            value.InnerBinder                               = GetObject<GetMemberBinder>(new IntPtr(p + 0x028), ReversePrism.DataModels.GetMemberBinder.FromPointer); // 0x28 InnerBinder                 ( ModelClassType GetMemberBinder GetMemberBinder GetMemberBinder Pointer )
 
             return value;
         }

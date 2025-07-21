@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 050 MaxSize                                  0001865F8300 ModelPrimitiveType long long long Int64
+    // 050 MaxSize                                  ModelPrimitiveType long long long Int64
     public partial class FixedMemoryStream : DataModel
     {
         public long                                     MaxSize                                 { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FixedMemoryStream() { Pointer= p0 };
 
-            value.MaxSize                                   = GetInt64(new IntPtr(p + 0x050)); // 02466B8ACAF8 0x50 MaxSize                     ( 0001865F8300 ModelPrimitiveType long long long Int64 )
+            value.MaxSize                                   = GetInt64(new IntPtr(p + 0x050)); // 0x50 MaxSize                     ( ModelPrimitiveType long long long Int64 )
 
             return value;
         }

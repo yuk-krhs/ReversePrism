@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Db                                       0001866BFBD0 ModelClassType SavedataDB SavedataDB SavedataDB Pointer
+    // 010 Db                                       ModelClassType SavedataDB SavedataDB SavedataDB Pointer
     // 018 pendings                                 Dictionary`2<string, SavablePropertyBase> IL2CPP_TYPE_GENERICINST
     // 020 bufferDic                                Dictionary`2<string, string> IL2CPP_TYPE_GENERICINST
     public partial class BufferedSavedataProxy : DataModel
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BufferedSavedataProxy() { Pointer= p0 };
 
-            value.Db                                        = GetObject<SavedataDB>(new IntPtr(p + 0x010), ReversePrism.DataModels.SavedataDB.FromPointer); // 0245A3DCAFE8 0x10 Db                          ( 0001866BFBD0 ModelClassType SavedataDB SavedataDB SavedataDB Pointer )
+            value.Db                                        = GetObject<SavedataDB>(new IntPtr(p + 0x010), ReversePrism.DataModels.SavedataDB.FromPointer); // 0x10 Db                          ( ModelClassType SavedataDB SavedataDB SavedataDB Pointer )
 
             return value;
         }

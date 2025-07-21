@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 060 NameLabel                                0001866320F0 ModelClassType Text Text Text Pointer
-    // 068 M_Field                                  000186587280 ModelClassType MessageBox MessageBox MessageBox Pointer
+    // 060 NameLabel                                ModelClassType Text Text Text Pointer
+    // 068 M_Field                                  ModelClassType MessageBox MessageBox MessageBox Pointer
     // 000 k_WarningBackgroundColor                 Color32 IL2CPP_TYPE_VALUETYPE
     // 004 k_WarningTextColor                       Color32 IL2CPP_TYPE_VALUETYPE
     // 008 k_ErrorBackgroundColor                   Color32 IL2CPP_TYPE_VALUETYPE
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DebugUIHandlerMessageBox() { Pointer= p0 };
 
-            value.NameLabel                                 = GetObject<Text>(new IntPtr(p + 0x060), ReversePrism.DataModels.Text.FromPointer); // 02466938A3A0 0x60 NameLabel                   ( 0001866320F0 ModelClassType Text Text Text Pointer )
-            value.M_Field                                   = GetObject<MessageBox>(new IntPtr(p + 0x068), ReversePrism.DataModels.MessageBox.FromPointer); // 02466938A3C0 0x68 M_Field                     ( 000186587280 ModelClassType MessageBox MessageBox MessageBox Pointer )
+            value.NameLabel                                 = GetObject<Text>(new IntPtr(p + 0x060), ReversePrism.DataModels.Text.FromPointer); // 0x60 NameLabel                   ( ModelClassType Text Text Text Pointer )
+            value.M_Field                                   = GetObject<MessageBox>(new IntPtr(p + 0x068), ReversePrism.DataModels.MessageBox.FromPointer); // 0x68 M_Field                     ( ModelClassType MessageBox MessageBox MessageBox Pointer )
 
             return value;
         }

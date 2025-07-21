@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 MoviePlayer                              000186658A40 ModelClassType MoviePlayer MoviePlayer MoviePlayer Pointer
+    // 020 MoviePlayer                              ModelClassType MoviePlayer MoviePlayer MoviePlayer Pointer
     // 000 SyncTimeInterval                         float IL2CPP_TYPE_R4
-    // 028 SyncTimeDisposable                       0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 028 SyncTimeDisposable                       ModelClassType IDisposable IDisposable IDisposable Pointer
     public partial class Live2DMVPlayer : DataModel
     {
         public MoviePlayer?                             MoviePlayer                             { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Live2DMVPlayer() { Pointer= p0 };
 
-            value.MoviePlayer                               = GetObject<MoviePlayer>(new IntPtr(p + 0x020), ReversePrism.DataModels.MoviePlayer.FromPointer); // 024664EA2EC8 0x20 MoviePlayer                 ( 000186658A40 ModelClassType MoviePlayer MoviePlayer MoviePlayer Pointer )
-            value.SyncTimeDisposable                        = GetObject<IDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.IDisposable.FromPointer); // 024664EA2F08 0x28 SyncTimeDisposable          ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.MoviePlayer                               = GetObject<MoviePlayer>(new IntPtr(p + 0x020), ReversePrism.DataModels.MoviePlayer.FromPointer); // 0x20 MoviePlayer                 ( ModelClassType MoviePlayer MoviePlayer MoviePlayer Pointer )
+            value.SyncTimeDisposable                        = GetObject<IDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.IDisposable.FromPointer); // 0x28 SyncTimeDisposable          ( ModelClassType IDisposable IDisposable IDisposable Pointer )
 
             return value;
         }

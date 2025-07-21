@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Arguments                                000185CEF958 ModelClassListType IReadOnlyList`1<Expression> IReadOnlyList`1<Expression> List<Expression> Pointer
-    // 018 Object                                   0001865CF210 ModelClassType Expression Expression Expression Pointer
-    // 020 Indexer                                  0001865D48B0 ModelClassType PropertyInfo PropertyInfo PropertyInfo Pointer
+    // 010 Arguments                                ModelClassListType IReadOnlyList`1<Expression> IReadOnlyList`1<Expression> List<Expression> Pointer
+    // 018 Object                                   ModelClassType Expression Expression Expression Pointer
+    // 020 Indexer                                  ModelClassType PropertyInfo PropertyInfo PropertyInfo Pointer
     public partial class IndexExpression : DataModel
     {
         public List<Expression>?                        Arguments                               { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IndexExpression() { Pointer= p0 };
 
-            value.Arguments                                 = GetObjectList<Expression>(new IntPtr(p + 0x010), ReversePrism.DataModels.Expression.FromPointer); // 024669F7E4C0 0x10 Arguments                   ( 000185CEF958 ModelClassListType IReadOnlyList`1<Expression> IReadOnlyList`1<Expression> List<Expression> Pointer )
-            value.Object                                    = GetObject<Expression>(new IntPtr(p + 0x018), ReversePrism.DataModels.Expression.FromPointer); // 024669F7E4E0 0x18 Object                      ( 0001865CF210 ModelClassType Expression Expression Expression Pointer )
-            value.Indexer                                   = GetObject<PropertyInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.PropertyInfo.FromPointer); // 024669F7E500 0x20 Indexer                     ( 0001865D48B0 ModelClassType PropertyInfo PropertyInfo PropertyInfo Pointer )
+            value.Arguments                                 = GetObjectList<Expression>(new IntPtr(p + 0x010), ReversePrism.DataModels.Expression.FromPointer); // 0x10 Arguments                   ( ModelClassListType IReadOnlyList`1<Expression> IReadOnlyList`1<Expression> List<Expression> Pointer )
+            value.Object                                    = GetObject<Expression>(new IntPtr(p + 0x018), ReversePrism.DataModels.Expression.FromPointer); // 0x18 Object                      ( ModelClassType Expression Expression Expression Pointer )
+            value.Indexer                                   = GetObject<PropertyInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.PropertyInfo.FromPointer); // 0x20 Indexer                     ( ModelClassType PropertyInfo PropertyInfo PropertyInfo Pointer )
 
             return value;
         }

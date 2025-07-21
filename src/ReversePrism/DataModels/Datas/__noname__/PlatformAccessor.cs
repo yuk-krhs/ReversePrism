@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 _exceptionHandler                        ExceptionHandler IL2CPP_TYPE_CLASS
     // 008 _impl                                    Impl IL2CPP_TYPE_CLASS
-    // 010 App                                      000186594FB0 ModelClassType FirebaseApp FirebaseApp FirebaseApp Pointer
+    // 010 App                                      ModelClassType FirebaseApp FirebaseApp FirebaseApp Pointer
     public partial class PlatformAccessor : DataModel
     {
         public FirebaseApp?                             App                                     { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PlatformAccessor() { Pointer= p0 };
 
-            value.App                                       = GetObject<FirebaseApp>(new IntPtr(p + 0x010), ReversePrism.DataModels.FirebaseApp.FromPointer); // 02466BCDF8F0 0x10 App                         ( 000186594FB0 ModelClassType FirebaseApp FirebaseApp FirebaseApp Pointer )
+            value.App                                       = GetObject<FirebaseApp>(new IntPtr(p + 0x010), ReversePrism.DataModels.FirebaseApp.FromPointer); // 0x10 App                         ( ModelClassType FirebaseApp FirebaseApp FirebaseApp Pointer )
 
             return value;
         }

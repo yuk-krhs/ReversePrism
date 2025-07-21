@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Icon                                     000186613190 ModelClassType RawImage RawImage RawImage Pointer
-    // 028 SpecialIcons                             000185CBAE08 ModelEnumListType SpecialIcon[] SpecialIcon[] List<SpecialIcon> Pointer
-    // 030 AmountText                               0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 020 Icon                                     ModelClassType RawImage RawImage RawImage Pointer
+    // 028 SpecialIcons                             ModelEnumListType SpecialIcon[] SpecialIcon[] List<SpecialIcon> Pointer
+    // 030 AmountText                               ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     public partial class GashaHistoryProductLabel : DataModel
     {
         public RawImage?                                Icon                                    { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GashaHistoryProductLabel() { Pointer= p0 };
 
-            value.Icon                                      = GetObject<RawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.RawImage.FromPointer); // 02466537A360 0x20 Icon                        ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.SpecialIcons                              = GetEnumList<SpecialIcon>(new IntPtr(p + 0x028)); // 02466537A380 0x28 SpecialIcons                ( 000185CBAE08 ModelEnumListType SpecialIcon[] SpecialIcon[] List<SpecialIcon> Pointer )
-            value.AmountText                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466537A3A0 0x30 AmountText                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Icon                                      = GetObject<RawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.RawImage.FromPointer); // 0x20 Icon                        ( ModelClassType RawImage RawImage RawImage Pointer )
+            value.SpecialIcons                              = GetEnumList<SpecialIcon>(new IntPtr(p + 0x028)); // 0x28 SpecialIcons                ( ModelEnumListType SpecialIcon[] SpecialIcon[] List<SpecialIcon> Pointer )
+            value.AmountText                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x30 AmountText                  ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

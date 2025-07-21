@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 WorkOnRawImage                           0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer
-    // 028 WorkOnText                               0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 030 WorkOnLineObject                         0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 038 WorkOffRawImage                          0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer
-    // 040 WorkOffText                              0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 048 WorkOffLineObject                        0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
+    // 020 WorkOnRawImage                           ModelClassType UIRawImage UIRawImage UIRawImage Pointer
+    // 028 WorkOnText                               ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 030 WorkOnLineObject                         ModelClassType GameObject GameObject GameObject Pointer
+    // 038 WorkOffRawImage                          ModelClassType UIRawImage UIRawImage UIRawImage Pointer
+    // 040 WorkOffText                              ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 048 WorkOffLineObject                        ModelClassType GameObject GameObject GameObject Pointer
     public partial class WeekDisplayContent : DataModel
     {
         public UIRawImage?                              WorkOnRawImage                          { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new WeekDisplayContent() { Pointer= p0 };
 
-            value.WorkOnRawImage                            = GetObject<UIRawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIRawImage.FromPointer); // 02466A121440 0x20 WorkOnRawImage              ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
-            value.WorkOnText                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A121460 0x28 WorkOnText                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.WorkOnLineObject                          = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 02466A121480 0x30 WorkOnLineObject            ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.WorkOffRawImage                           = GetObject<UIRawImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIRawImage.FromPointer); // 02466A1214A0 0x38 WorkOffRawImage             ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
-            value.WorkOffText                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A1214C0 0x40 WorkOffText                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.WorkOffLineObject                         = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 02466A1214E0 0x48 WorkOffLineObject           ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.WorkOnRawImage                            = GetObject<UIRawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIRawImage.FromPointer); // 0x20 WorkOnRawImage              ( ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
+            value.WorkOnText                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x28 WorkOnText                  ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.WorkOnLineObject                          = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0x30 WorkOnLineObject            ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.WorkOffRawImage                           = GetObject<UIRawImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIRawImage.FromPointer); // 0x38 WorkOffRawImage             ( ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
+            value.WorkOffText                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x40 WorkOffText                 ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.WorkOffLineObject                         = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 0x48 WorkOffLineObject           ( ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

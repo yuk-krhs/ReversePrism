@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_owner                                  0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 M_owner                                  ModelPrimitiveType int int int Int32
     // 000 SPINNING_FACTOR                          int IL2CPP_TYPE_I4
     // 000 SLEEP_ONE_FREQUENCY                      int IL2CPP_TYPE_I4
     // 000 SLEEP_ZERO_FREQUENCY                     int IL2CPP_TYPE_I4
@@ -31,7 +31,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SpinLock() { Pointer= p0 };
 
-            value.M_owner                                   = GetInt32(new IntPtr(p + 0x010)); // 0245A3BD8920 0x10 M_owner                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_owner                                   = GetInt32(new IntPtr(p + 0x010)); // 0x10 M_owner                     ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

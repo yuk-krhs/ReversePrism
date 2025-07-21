@@ -8,32 +8,32 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 MessageText                              0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 028 ItemIconImage                            000186613190 ModelClassType RawImage RawImage RawImage Pointer
-    // 030 ItemNameText                             0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 038 ProductDetailButton                      0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 040 PurchaseAmountPanel                      0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 048 PurchaseAmountText                       0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 050 MinimumButton                            0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 058 MinusButton                              0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 060 PlusButton                               0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 068 MaximumButton                            0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 070 NeedPaidJewelPanel                       0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 078 NeedPaidJewelAmountText                  0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 080 NeedFreeJewelPanel                       0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 088 NeedFreeJewelAmountText                  0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 090 PaidJewelFluctionTextPair                000186768A80 ModelClassType ValueFluctionTextPair ValueFluctionTextPair ValueFluctionTextPair Pointer
-    // 098 FreeJewelFluctionTextPair                000186768A80 ModelClassType ValueFluctionTextPair ValueFluctionTextPair ValueFluctionTextPair Pointer
-    // 0A0 CashPanel                                0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 0A8 CashPriceText                            0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 0B0 ItemFluctionTextPair                     000186768A80 ModelClassType ValueFluctionTextPair ValueFluctionTextPair ValueFluctionTextPair Pointer
-    // 0B8 PurchaseLimitPanel                       0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 0C0 CurrentPurchaseLimitText                 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 0C8 AfterPurchaseLimitText                   0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 0D0 SpecifiedCommercialTransactionActButton  0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 0D8 ActOnSettlementButton                    0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 0E0 CautionPanel                             0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 0E8 CautionText                              0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 020 MessageText                              ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 028 ItemIconImage                            ModelClassType RawImage RawImage RawImage Pointer
+    // 030 ItemNameText                             ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 038 ProductDetailButton                      ModelClassType UIButton UIButton UIButton Pointer
+    // 040 PurchaseAmountPanel                      ModelClassType GameObject GameObject GameObject Pointer
+    // 048 PurchaseAmountText                       ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 050 MinimumButton                            ModelClassType UIButton UIButton UIButton Pointer
+    // 058 MinusButton                              ModelClassType UIButton UIButton UIButton Pointer
+    // 060 PlusButton                               ModelClassType UIButton UIButton UIButton Pointer
+    // 068 MaximumButton                            ModelClassType UIButton UIButton UIButton Pointer
+    // 070 NeedPaidJewelPanel                       ModelClassType GameObject GameObject GameObject Pointer
+    // 078 NeedPaidJewelAmountText                  ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 080 NeedFreeJewelPanel                       ModelClassType GameObject GameObject GameObject Pointer
+    // 088 NeedFreeJewelAmountText                  ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 090 PaidJewelFluctionTextPair                ModelClassType ValueFluctionTextPair ValueFluctionTextPair ValueFluctionTextPair Pointer
+    // 098 FreeJewelFluctionTextPair                ModelClassType ValueFluctionTextPair ValueFluctionTextPair ValueFluctionTextPair Pointer
+    // 0A0 CashPanel                                ModelClassType GameObject GameObject GameObject Pointer
+    // 0A8 CashPriceText                            ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 0B0 ItemFluctionTextPair                     ModelClassType ValueFluctionTextPair ValueFluctionTextPair ValueFluctionTextPair Pointer
+    // 0B8 PurchaseLimitPanel                       ModelClassType GameObject GameObject GameObject Pointer
+    // 0C0 CurrentPurchaseLimitText                 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 0C8 AfterPurchaseLimitText                   ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 0D0 SpecifiedCommercialTransactionActButton  ModelClassType UIButton UIButton UIButton Pointer
+    // 0D8 ActOnSettlementButton                    ModelClassType UIButton UIButton UIButton Pointer
+    // 0E0 CautionPanel                             ModelClassType GameObject GameObject GameObject Pointer
+    // 0E8 CautionText                              ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 0F0 OnClickProductDetailButton               Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 0F8 OnClickMinimumButton                     Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 100 OnClickMinusButton                       Subject`1<Unit> IL2CPP_TYPE_GENERICINST
@@ -78,32 +78,32 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ShopPurchaseConfirmView() { Pointer= p0 };
 
-            value.MessageText                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246655ABEF8 0x20 MessageText                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ItemIconImage                             = GetObject<RawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.RawImage.FromPointer); // 0246655ABF18 0x28 ItemIconImage               ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.ItemNameText                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246655ABF38 0x30 ItemNameText                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ProductDetailButton                       = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 0246655ABF58 0x38 ProductDetailButton         ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.PurchaseAmountPanel                       = GetObject<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 0246655ABF78 0x40 PurchaseAmountPanel         ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.PurchaseAmountText                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246655ABF98 0x48 PurchaseAmountText          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.MinimumButton                             = GetObject<UIButton>(new IntPtr(p + 0x050), ReversePrism.DataModels.UIButton.FromPointer); // 0246655ABFB8 0x50 MinimumButton               ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.MinusButton                               = GetObject<UIButton>(new IntPtr(p + 0x058), ReversePrism.DataModels.UIButton.FromPointer); // 0246655ABFD8 0x58 MinusButton                 ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.PlusButton                                = GetObject<UIButton>(new IntPtr(p + 0x060), ReversePrism.DataModels.UIButton.FromPointer); // 0246655ABFF8 0x60 PlusButton                  ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.MaximumButton                             = GetObject<UIButton>(new IntPtr(p + 0x068), ReversePrism.DataModels.UIButton.FromPointer); // 0246655AC018 0x68 MaximumButton               ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.NeedPaidJewelPanel                        = GetObject<GameObject>(new IntPtr(p + 0x070), ReversePrism.DataModels.GameObject.FromPointer); // 0246655AC038 0x70 NeedPaidJewelPanel          ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.NeedPaidJewelAmountText                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x078), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246655AC058 0x78 NeedPaidJewelAmountText     ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.NeedFreeJewelPanel                        = GetObject<GameObject>(new IntPtr(p + 0x080), ReversePrism.DataModels.GameObject.FromPointer); // 0246655AC078 0x80 NeedFreeJewelPanel          ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.NeedFreeJewelAmountText                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x088), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246655AC098 0x88 NeedFreeJewelAmountText     ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.PaidJewelFluctionTextPair                 = GetObject<ValueFluctionTextPair>(new IntPtr(p + 0x090), ReversePrism.DataModels.ValueFluctionTextPair.FromPointer); // 0246655AC0B8 0x90 PaidJewelFluctionTextPair   ( 000186768A80 ModelClassType ValueFluctionTextPair ValueFluctionTextPair ValueFluctionTextPair Pointer )
-            value.FreeJewelFluctionTextPair                 = GetObject<ValueFluctionTextPair>(new IntPtr(p + 0x098), ReversePrism.DataModels.ValueFluctionTextPair.FromPointer); // 0246655AC0D8 0x98 FreeJewelFluctionTextPair   ( 000186768A80 ModelClassType ValueFluctionTextPair ValueFluctionTextPair ValueFluctionTextPair Pointer )
-            value.CashPanel                                 = GetObject<GameObject>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.GameObject.FromPointer); // 0246655AC0F8 0xA0 CashPanel                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.CashPriceText                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246655AC118 0xA8 CashPriceText               ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ItemFluctionTextPair                      = GetObject<ValueFluctionTextPair>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.ValueFluctionTextPair.FromPointer); // 0246655AC138 0xB0 ItemFluctionTextPair        ( 000186768A80 ModelClassType ValueFluctionTextPair ValueFluctionTextPair ValueFluctionTextPair Pointer )
-            value.PurchaseLimitPanel                        = GetObject<GameObject>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.GameObject.FromPointer); // 0246655AC158 0xB8 PurchaseLimitPanel          ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.CurrentPurchaseLimitText                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246655AC178 0xC0 CurrentPurchaseLimitText    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.AfterPurchaseLimitText                    = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246655AC198 0xC8 AfterPurchaseLimitText      ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.SpecifiedCommercialTransactionActButton   = GetObject<UIButton>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.UIButton.FromPointer); // 0246655AC1B8 0xD0 SpecifiedCommercialTransactionActButton ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.ActOnSettlementButton                     = GetObject<UIButton>(new IntPtr(p + 0x0D8), ReversePrism.DataModels.UIButton.FromPointer); // 0246655AC1D8 0xD8 ActOnSettlementButton       ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.CautionPanel                              = GetObject<GameObject>(new IntPtr(p + 0x0E0), ReversePrism.DataModels.GameObject.FromPointer); // 0246655AC1F8 0xE0 CautionPanel                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.CautionText                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246655AC218 0xE8 CautionText                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.MessageText                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x20 MessageText                 ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ItemIconImage                             = GetObject<RawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.RawImage.FromPointer); // 0x28 ItemIconImage               ( ModelClassType RawImage RawImage RawImage Pointer )
+            value.ItemNameText                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x30 ItemNameText                ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ProductDetailButton                       = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 0x38 ProductDetailButton         ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.PurchaseAmountPanel                       = GetObject<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 0x40 PurchaseAmountPanel         ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.PurchaseAmountText                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x48 PurchaseAmountText          ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.MinimumButton                             = GetObject<UIButton>(new IntPtr(p + 0x050), ReversePrism.DataModels.UIButton.FromPointer); // 0x50 MinimumButton               ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.MinusButton                               = GetObject<UIButton>(new IntPtr(p + 0x058), ReversePrism.DataModels.UIButton.FromPointer); // 0x58 MinusButton                 ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.PlusButton                                = GetObject<UIButton>(new IntPtr(p + 0x060), ReversePrism.DataModels.UIButton.FromPointer); // 0x60 PlusButton                  ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.MaximumButton                             = GetObject<UIButton>(new IntPtr(p + 0x068), ReversePrism.DataModels.UIButton.FromPointer); // 0x68 MaximumButton               ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.NeedPaidJewelPanel                        = GetObject<GameObject>(new IntPtr(p + 0x070), ReversePrism.DataModels.GameObject.FromPointer); // 0x70 NeedPaidJewelPanel          ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.NeedPaidJewelAmountText                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x078), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x78 NeedPaidJewelAmountText     ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.NeedFreeJewelPanel                        = GetObject<GameObject>(new IntPtr(p + 0x080), ReversePrism.DataModels.GameObject.FromPointer); // 0x80 NeedFreeJewelPanel          ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.NeedFreeJewelAmountText                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x088), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x88 NeedFreeJewelAmountText     ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.PaidJewelFluctionTextPair                 = GetObject<ValueFluctionTextPair>(new IntPtr(p + 0x090), ReversePrism.DataModels.ValueFluctionTextPair.FromPointer); // 0x90 PaidJewelFluctionTextPair   ( ModelClassType ValueFluctionTextPair ValueFluctionTextPair ValueFluctionTextPair Pointer )
+            value.FreeJewelFluctionTextPair                 = GetObject<ValueFluctionTextPair>(new IntPtr(p + 0x098), ReversePrism.DataModels.ValueFluctionTextPair.FromPointer); // 0x98 FreeJewelFluctionTextPair   ( ModelClassType ValueFluctionTextPair ValueFluctionTextPair ValueFluctionTextPair Pointer )
+            value.CashPanel                                 = GetObject<GameObject>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.GameObject.FromPointer); // 0xA0 CashPanel                   ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.CashPriceText                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0xA8 CashPriceText               ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ItemFluctionTextPair                      = GetObject<ValueFluctionTextPair>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.ValueFluctionTextPair.FromPointer); // 0xB0 ItemFluctionTextPair        ( ModelClassType ValueFluctionTextPair ValueFluctionTextPair ValueFluctionTextPair Pointer )
+            value.PurchaseLimitPanel                        = GetObject<GameObject>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.GameObject.FromPointer); // 0xB8 PurchaseLimitPanel          ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.CurrentPurchaseLimitText                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0xC0 CurrentPurchaseLimitText    ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.AfterPurchaseLimitText                    = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0xC8 AfterPurchaseLimitText      ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.SpecifiedCommercialTransactionActButton   = GetObject<UIButton>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.UIButton.FromPointer); // 0xD0 SpecifiedCommercialTransactionActButton ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.ActOnSettlementButton                     = GetObject<UIButton>(new IntPtr(p + 0x0D8), ReversePrism.DataModels.UIButton.FromPointer); // 0xD8 ActOnSettlementButton       ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.CautionPanel                              = GetObject<GameObject>(new IntPtr(p + 0x0E0), ReversePrism.DataModels.GameObject.FromPointer); // 0xE0 CautionPanel                ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.CautionText                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0xE8 CautionText                 ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

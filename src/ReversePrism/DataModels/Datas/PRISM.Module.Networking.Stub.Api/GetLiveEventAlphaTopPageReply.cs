@@ -11,27 +11,27 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<GetLiveEventAlphaTopPageReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 GameEventStatusFieldNumber               int IL2CPP_TYPE_I4
-    // 018 GameEventStatus                          0001865E7E60 ModelClassType GameEventStatus GameEventStatus GameEventStatus Pointer
+    // 018 GameEventStatus                          ModelClassType GameEventStatus GameEventStatus GameEventStatus Pointer
     // 000 EventPointFieldNumber                    int IL2CPP_TYPE_I4
-    // 020 EventPoint                               0001865F7700 ModelPrimitiveType long long long Int64
+    // 020 EventPoint                               ModelPrimitiveType long long long Int64
     // 000 NextRewardFieldNumber                    int IL2CPP_TYPE_I4
-    // 028 NextReward                               000186760490 ModelClassType EventPointRewardStatus EventPointRewardStatus EventPointRewardStatus Pointer
+    // 028 NextReward                               ModelClassType EventPointRewardStatus EventPointRewardStatus EventPointRewardStatus Pointer
     // 000 NotificationListFieldNumber              int IL2CPP_TYPE_I4
     // 008 _repeated_notificationList_codec         FieldCodec`1<HomeNotificationStatus> IL2CPP_TYPE_GENERICINST
-    // 030 NotificationList                         000185CDE8A8 ModelClassListType RepeatedField`1<HomeNotificationStatus> RepeatedField`1<HomeNotificationStatus> List<HomeNotificationStatus> Pointer
+    // 030 NotificationList                         ModelClassListType RepeatedField`1<HomeNotificationStatus> RepeatedField`1<HomeNotificationStatus> List<HomeNotificationStatus> Pointer
     // 000 EventBonusFieldNumber                    int IL2CPP_TYPE_I4
-    // 038 EventBonus                               00018674F9C0 ModelClassType EventBonusStatus EventBonusStatus EventBonusStatus Pointer
+    // 038 EventBonus                               ModelClassType EventBonusStatus EventBonusStatus EventBonusStatus Pointer
     // 000 MedalGashaStatusFieldNumber              int IL2CPP_TYPE_I4
-    // 040 MedalGashaStatus                         0001865EEDD0 ModelClassType MedalGashaStatus MedalGashaStatus MedalGashaStatus Pointer
+    // 040 MedalGashaStatus                         ModelClassType MedalGashaStatus MedalGashaStatus MedalGashaStatus Pointer
     // 000 MedalFieldNumber                         int IL2CPP_TYPE_I4
-    // 048 Medal                                    0001865F7700 ModelPrimitiveType long long long Int64
+    // 048 Medal                                    ModelPrimitiveType long long long Int64
     // 000 EventRankingListFieldNumber              int IL2CPP_TYPE_I4
     // 010 _repeated_eventRankingList_codec         FieldCodec`1<LiveEventRankingStatus> IL2CPP_TYPE_GENERICINST
-    // 050 EventRankingList                         000185CE3088 ModelClassListType RepeatedField`1<LiveEventRankingStatus> RepeatedField`1<LiveEventRankingStatus> List<LiveEventRankingStatus> Pointer
+    // 050 EventRankingList                         ModelClassListType RepeatedField`1<LiveEventRankingStatus> RepeatedField`1<LiveEventRankingStatus> List<LiveEventRankingStatus> Pointer
     // 000 MstMissionGroupIdFieldNumber             int IL2CPP_TYPE_I4
-    // 058 MstMissionGroupId                        0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 058 MstMissionGroupId                        ModelPrimitiveType int int int Int32
     // 000 MstSongIdFieldNumber                     int IL2CPP_TYPE_I4
-    // 05C MstSongId                                0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 05C MstSongId                                ModelPrimitiveType int int int Int32
     public partial class GetLiveEventAlphaTopPageReply : DataModel
     {
         public GameEventStatus?                         GameEventStatus                         { get; set; }
@@ -53,16 +53,16 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetLiveEventAlphaTopPageReply() { Pointer= p0 };
 
-            value.GameEventStatus                           = GetObject<GameEventStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.GameEventStatus.FromPointer); // 024662155DD8 0x18 GameEventStatus             ( 0001865E7E60 ModelClassType GameEventStatus GameEventStatus GameEventStatus Pointer )
-            value.EventPoint                                = GetInt64(new IntPtr(p + 0x020)); // 024662155E18 0x20 EventPoint                  ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.NextReward                                = GetObject<EventPointRewardStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.EventPointRewardStatus.FromPointer); // 024662155E58 0x28 NextReward                  ( 000186760490 ModelClassType EventPointRewardStatus EventPointRewardStatus EventPointRewardStatus Pointer )
-            value.NotificationList                          = GetObjectList<HomeNotificationStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.HomeNotificationStatus.FromPointer); // 024662155EB8 0x30 NotificationList            ( 000185CDE8A8 ModelClassListType RepeatedField`1<HomeNotificationStatus> RepeatedField`1<HomeNotificationStatus> List<HomeNotificationStatus> Pointer )
-            value.EventBonus                                = GetObject<EventBonusStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.EventBonusStatus.FromPointer); // 024662155EF8 0x38 EventBonus                  ( 00018674F9C0 ModelClassType EventBonusStatus EventBonusStatus EventBonusStatus Pointer )
-            value.MedalGashaStatus                          = GetObject<MedalGashaStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.MedalGashaStatus.FromPointer); // 024662155F38 0x40 MedalGashaStatus            ( 0001865EEDD0 ModelClassType MedalGashaStatus MedalGashaStatus MedalGashaStatus Pointer )
-            value.Medal                                     = GetInt64(new IntPtr(p + 0x048)); // 024662155F78 0x48 Medal                       ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.EventRankingList                          = GetObjectList<LiveEventRankingStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.LiveEventRankingStatus.FromPointer); // 024662155FD8 0x50 EventRankingList            ( 000185CE3088 ModelClassListType RepeatedField`1<LiveEventRankingStatus> RepeatedField`1<LiveEventRankingStatus> List<LiveEventRankingStatus> Pointer )
-            value.MstMissionGroupId                         = GetInt32(new IntPtr(p + 0x058)); // 024662156018 0x58 MstMissionGroupId           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstSongId                                 = GetInt32(new IntPtr(p + 0x05C)); // 024662156058 0x5C MstSongId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.GameEventStatus                           = GetObject<GameEventStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.GameEventStatus.FromPointer); // 0x18 GameEventStatus             ( ModelClassType GameEventStatus GameEventStatus GameEventStatus Pointer )
+            value.EventPoint                                = GetInt64(new IntPtr(p + 0x020)); // 0x20 EventPoint                  ( ModelPrimitiveType long long long Int64 )
+            value.NextReward                                = GetObject<EventPointRewardStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.EventPointRewardStatus.FromPointer); // 0x28 NextReward                  ( ModelClassType EventPointRewardStatus EventPointRewardStatus EventPointRewardStatus Pointer )
+            value.NotificationList                          = GetObjectList<HomeNotificationStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.HomeNotificationStatus.FromPointer); // 0x30 NotificationList            ( ModelClassListType RepeatedField`1<HomeNotificationStatus> RepeatedField`1<HomeNotificationStatus> List<HomeNotificationStatus> Pointer )
+            value.EventBonus                                = GetObject<EventBonusStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.EventBonusStatus.FromPointer); // 0x38 EventBonus                  ( ModelClassType EventBonusStatus EventBonusStatus EventBonusStatus Pointer )
+            value.MedalGashaStatus                          = GetObject<MedalGashaStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.MedalGashaStatus.FromPointer); // 0x40 MedalGashaStatus            ( ModelClassType MedalGashaStatus MedalGashaStatus MedalGashaStatus Pointer )
+            value.Medal                                     = GetInt64(new IntPtr(p + 0x048)); // 0x48 Medal                       ( ModelPrimitiveType long long long Int64 )
+            value.EventRankingList                          = GetObjectList<LiveEventRankingStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.LiveEventRankingStatus.FromPointer); // 0x50 EventRankingList            ( ModelClassListType RepeatedField`1<LiveEventRankingStatus> RepeatedField`1<LiveEventRankingStatus> List<LiveEventRankingStatus> Pointer )
+            value.MstMissionGroupId                         = GetInt32(new IntPtr(p + 0x058)); // 0x58 MstMissionGroupId           ( ModelPrimitiveType int int int Int32 )
+            value.MstSongId                                 = GetInt32(new IntPtr(p + 0x05C)); // 0x5C MstSongId                   ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

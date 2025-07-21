@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Unicode                                  0001865F36C0 ModelPrimitiveType int int int Int32
-    // 014 StringIndex                              0001865F36C0 ModelPrimitiveType int int int Int32
-    // 018 Length                                   0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 Unicode                                  ModelPrimitiveType int int int Int32
+    // 014 StringIndex                              ModelPrimitiveType int int int Int32
+    // 018 Length                                   ModelPrimitiveType int int int Int32
     public partial class UnicodeChar : DataModel
     {
         public int                                      Unicode                                 { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnicodeChar() { Pointer= p0 };
 
-            value.Unicode                                   = GetInt32(new IntPtr(p + 0x010)); // 02466096DFA0 0x10 Unicode                     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.StringIndex                               = GetInt32(new IntPtr(p + 0x014)); // 02466096DFC0 0x14 StringIndex                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Length                                    = GetInt32(new IntPtr(p + 0x018)); // 02466096DFE0 0x18 Length                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Unicode                                   = GetInt32(new IntPtr(p + 0x010)); // 0x10 Unicode                     ( ModelPrimitiveType int int int Int32 )
+            value.StringIndex                               = GetInt32(new IntPtr(p + 0x014)); // 0x14 StringIndex                 ( ModelPrimitiveType int int int Int32 )
+            value.Length                                    = GetInt32(new IntPtr(p + 0x018)); // 0x18 Length                      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

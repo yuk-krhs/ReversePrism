@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_PropertyInfo                           0001865D4B20 ModelClassType PropertyInfo PropertyInfo PropertyInfo Pointer
+    // 010 M_PropertyInfo                           ModelClassType PropertyInfo PropertyInfo PropertyInfo Pointer
     public partial class PropertyMember : DataModel
     {
         public PropertyInfo?                            M_PropertyInfo                          { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PropertyMember() { Pointer= p0 };
 
-            value.M_PropertyInfo                            = GetObject<PropertyInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.PropertyInfo.FromPointer); // 0245A68FEF90 0x10 M_PropertyInfo              ( 0001865D4B20 ModelClassType PropertyInfo PropertyInfo PropertyInfo Pointer )
+            value.M_PropertyInfo                            = GetObject<PropertyInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.PropertyInfo.FromPointer); // 0x10 M_PropertyInfo              ( ModelClassType PropertyInfo PropertyInfo PropertyInfo Pointer )
 
             return value;
         }

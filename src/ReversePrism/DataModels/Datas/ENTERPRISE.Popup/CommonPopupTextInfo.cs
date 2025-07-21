@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Text                                     0001866722E0 ModelPrimitiveType string string string String
-    // 018 SE                                       000186536470 ModelEnumType SoundKey SoundKey SoundKey Int32
+    // 010 Text                                     ModelPrimitiveType string string string String
+    // 018 SE                                       ModelEnumType SoundKey SoundKey SoundKey Int32
     public partial class CommonPopupTextInfo : DataModel
     {
         public string                                   Text                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CommonPopupTextInfo() { Pointer= p0 };
 
-            value.Text                                      = GetString(new IntPtr(p + 0x010)); // 02466B07F090 0x10 Text                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.SE                                        = (SoundKey)GetInt32(new IntPtr(p + 0x018)); // 02466B07F0B0 0x18 SE                          ( 000186536470 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.Text                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Text                        ( ModelPrimitiveType string string string String )
+            value.SE                                        = (SoundKey)GetInt32(new IntPtr(p + 0x018)); // 0x18 SE                          ( ModelEnumType SoundKey SoundKey SoundKey Int32 )
 
             return value;
         }

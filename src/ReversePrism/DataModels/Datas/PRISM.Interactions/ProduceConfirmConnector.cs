@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 090 EpisodeSelectModel                       00018651FD70 ModelClassType ViewProducePreparationEpisodeSelectModel ViewProducePreparationEpisodeSelectModel ViewProducePreparationEpisodeSelectModel Pointer
-    // 098 AutoReleasedConfigRef                    000186671E00 ModelPrimitiveType string string string String
-    // 0A0 InheritanceReleasedConfigRef             000186671E00 ModelPrimitiveType string string string String
+    // 088 EpisodeSelectModel                       ModelClassType ViewProducePreparationEpisodeSelectModel ViewProducePreparationEpisodeSelectModel ViewProducePreparationEpisodeSelectModel Pointer
+    // 090 AutoReleasedConfigRef                    ModelPrimitiveType string string string String
+    // 098 InheritanceReleasedConfigRef             ModelPrimitiveType string string string String
     public partial class ProduceConfirmConnector : DataModel
     {
         public ViewProducePreparationEpisodeSelectModel? EpisodeSelectModel                      { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceConfirmConnector() { Pointer= p0 };
 
-            value.EpisodeSelectModel                        = GetObject<ViewProducePreparationEpisodeSelectModel>(new IntPtr(p + 0x090), ReversePrism.DataModels.ViewProducePreparationEpisodeSelectModel.FromPointer); // 02466A19DD08 0x90 EpisodeSelectModel          ( 00018651FD70 ModelClassType ViewProducePreparationEpisodeSelectModel ViewProducePreparationEpisodeSelectModel ViewProducePreparationEpisodeSelectModel Pointer )
-            value.AutoReleasedConfigRef                     = GetString(new IntPtr(p + 0x098)); // 02466A19DD28 0x98 AutoReleasedConfigRef       ( 000186671E00 ModelPrimitiveType string string string String )
-            value.InheritanceReleasedConfigRef              = GetString(new IntPtr(p + 0x0A0)); // 02466A19DD48 0xA0 InheritanceReleasedConfigRef ( 000186671E00 ModelPrimitiveType string string string String )
+            value.EpisodeSelectModel                        = GetObject<ViewProducePreparationEpisodeSelectModel>(new IntPtr(p + 0x088), ReversePrism.DataModels.ViewProducePreparationEpisodeSelectModel.FromPointer); // 0x88 EpisodeSelectModel          ( ModelClassType ViewProducePreparationEpisodeSelectModel ViewProducePreparationEpisodeSelectModel ViewProducePreparationEpisodeSelectModel Pointer )
+            value.AutoReleasedConfigRef                     = GetString(new IntPtr(p + 0x090)); // 0x90 AutoReleasedConfigRef       ( ModelPrimitiveType string string string String )
+            value.InheritanceReleasedConfigRef              = GetString(new IntPtr(p + 0x098)); // 0x98 InheritanceReleasedConfigRef ( ModelPrimitiveType string string string String )
 
             return value;
         }

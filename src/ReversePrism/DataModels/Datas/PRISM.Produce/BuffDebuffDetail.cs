@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 048 BuffIcon                                 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 050 EffectGroup                              000186557080 ModelClassType ProduceInGameEffectGroup ProduceInGameEffectGroup ProduceInGameEffectGroup Pointer
-    // 058 BuffIconAtlas                            00018654FA50 ModelClassType SpriteAtlas SpriteAtlas SpriteAtlas Pointer
+    // 048 BuffIcon                                 ModelClassType UIImage UIImage UIImage Pointer
+    // 050 EffectGroup                              ModelClassType ProduceInGameEffectGroup ProduceInGameEffectGroup ProduceInGameEffectGroup Pointer
+    // 058 BuffIconAtlas                            ModelClassType SpriteAtlas SpriteAtlas SpriteAtlas Pointer
     public partial class BuffDebuffDetail : DataModel
     {
         public UIImage?                                 BuffIcon                                { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BuffDebuffDetail() { Pointer= p0 };
 
-            value.BuffIcon                                  = GetObject<UIImage>(new IntPtr(p + 0x048), ReversePrism.DataModels.UIImage.FromPointer); // 024665CB9960 0x48 BuffIcon                    ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.EffectGroup                               = GetObject<ProduceInGameEffectGroup>(new IntPtr(p + 0x050), ReversePrism.DataModels.ProduceInGameEffectGroup.FromPointer); // 024665CB9980 0x50 EffectGroup                 ( 000186557080 ModelClassType ProduceInGameEffectGroup ProduceInGameEffectGroup ProduceInGameEffectGroup Pointer )
-            value.BuffIconAtlas                             = GetObject<SpriteAtlas>(new IntPtr(p + 0x058), ReversePrism.DataModels.SpriteAtlas.FromPointer); // 024665CB99A0 0x58 BuffIconAtlas               ( 00018654FA50 ModelClassType SpriteAtlas SpriteAtlas SpriteAtlas Pointer )
+            value.BuffIcon                                  = GetObject<UIImage>(new IntPtr(p + 0x048), ReversePrism.DataModels.UIImage.FromPointer); // 0x48 BuffIcon                    ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.EffectGroup                               = GetObject<ProduceInGameEffectGroup>(new IntPtr(p + 0x050), ReversePrism.DataModels.ProduceInGameEffectGroup.FromPointer); // 0x50 EffectGroup                 ( ModelClassType ProduceInGameEffectGroup ProduceInGameEffectGroup ProduceInGameEffectGroup Pointer )
+            value.BuffIconAtlas                             = GetObject<SpriteAtlas>(new IntPtr(p + 0x058), ReversePrism.DataModels.SpriteAtlas.FromPointer); // 0x58 BuffIconAtlas               ( ModelClassType SpriteAtlas SpriteAtlas SpriteAtlas Pointer )
 
             return value;
         }

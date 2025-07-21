@@ -29,5 +29,6 @@ namespace ReversePrism.DataModels
         HalfRightMiddle,
         HalfRightUp,
         HalfRightDown,
+        RootFront,
     }
 }

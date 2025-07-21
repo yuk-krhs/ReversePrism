@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_callingConvention                      000186533B30 ModelEnumType CallingConvention CallingConvention CallingConvention Int32
+    // 010 M_callingConvention                      ModelEnumType CallingConvention CallingConvention CallingConvention Int32
     public partial class UnmanagedFunctionPointerAttribute : DataModel
     {
         public CallingConvention                        M_callingConvention                     { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnmanagedFunctionPointerAttribute() { Pointer= p0 };
 
-            value.M_callingConvention                       = (CallingConvention)GetInt32(new IntPtr(p + 0x010)); // 024666CF2280 0x10 M_callingConvention         ( 000186533B30 ModelEnumType CallingConvention CallingConvention CallingConvention Int32 )
+            value.M_callingConvention                       = (CallingConvention)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_callingConvention         ( ModelEnumType CallingConvention CallingConvention CallingConvention Int32 )
 
             return value;
         }

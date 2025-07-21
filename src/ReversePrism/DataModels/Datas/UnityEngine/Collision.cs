@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Header                                 0001865B20C0 ModelEnumType ContactPairHeader ContactPairHeader ContactPairHeader Int32
-    // 038 M_Pair                                   0001865B1950 ModelEnumType ContactPair ContactPair ContactPair Int32
-    // 060 M_Flipped                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 068 M_LegacyContacts                         000185B76EF0 ModelEnumListType ContactPoint[] ContactPoint[] List<ContactPoint> Pointer
+    // 010 M_Header                                 ModelEnumType ContactPairHeader ContactPairHeader ContactPairHeader Int32
+    // 038 M_Pair                                   ModelEnumType ContactPair ContactPair ContactPair Int32
+    // 060 M_Flipped                                ModelPrimitiveType bool bool bool Bool
+    // 068 M_LegacyContacts                         ModelEnumListType ContactPoint[] ContactPoint[] List<ContactPoint> Pointer
     public partial class Collision : DataModel
     {
         public ContactPairHeader                        M_Header                                { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Collision() { Pointer= p0 };
 
-            value.M_Header                                  = (ContactPairHeader)GetInt32(new IntPtr(p + 0x010)); // 0245A691D450 0x10 M_Header                    ( 0001865B20C0 ModelEnumType ContactPairHeader ContactPairHeader ContactPairHeader Int32 )
-            value.M_Pair                                    = (ContactPair)GetInt32(new IntPtr(p + 0x038)); // 0245A691D470 0x38 M_Pair                      ( 0001865B1950 ModelEnumType ContactPair ContactPair ContactPair Int32 )
-            value.M_Flipped                                 = GetBool(new IntPtr(p + 0x060)); // 0245A691D490 0x60 M_Flipped                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_LegacyContacts                          = GetEnumList<ContactPoint>(new IntPtr(p + 0x068)); // 0245A691D4B0 0x68 M_LegacyContacts            ( 000185B76EF0 ModelEnumListType ContactPoint[] ContactPoint[] List<ContactPoint> Pointer )
+            value.M_Header                                  = (ContactPairHeader)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_Header                    ( ModelEnumType ContactPairHeader ContactPairHeader ContactPairHeader Int32 )
+            value.M_Pair                                    = (ContactPair)GetInt32(new IntPtr(p + 0x038)); // 0x38 M_Pair                      ( ModelEnumType ContactPair ContactPair ContactPair Int32 )
+            value.M_Flipped                                 = GetBool(new IntPtr(p + 0x060)); // 0x60 M_Flipped                   ( ModelPrimitiveType bool bool bool Bool )
+            value.M_LegacyContacts                          = GetEnumList<ContactPoint>(new IntPtr(p + 0x068)); // 0x68 M_LegacyContacts            ( ModelEnumListType ContactPoint[] ContactPoint[] List<ContactPoint> Pointer )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 BannerButton                             0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 028 BannerImage                              0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
+    // 020 BannerButton                             ModelClassType UIButton UIButton UIButton Pointer
+    // 028 BannerImage                              ModelClassType UIImage UIImage UIImage Pointer
     public partial class ProducePreparationEpisodeSelectBannerView : DataModel
     {
         public UIButton?                                BannerButton                            { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProducePreparationEpisodeSelectBannerView() { Pointer= p0 };
 
-            value.BannerButton                              = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 024665A3DBF0 0x20 BannerButton                ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.BannerImage                               = GetObject<UIImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIImage.FromPointer); // 024665A3DC10 0x28 BannerImage                 ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.BannerButton                              = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 0x20 BannerButton                ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.BannerImage                               = GetObject<UIImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIImage.FromPointer); // 0x28 BannerImage                 ( ModelClassType UIImage UIImage UIImage Pointer )
 
             return value;
         }

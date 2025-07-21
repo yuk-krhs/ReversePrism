@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Namespaces                               0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 010 Namespaces                               ModelClassType Hashtable Hashtable Hashtable Pointer
     public partial class XmlSerializerNamespaces : DataModel
     {
         public Hashtable?                               Namespaces                              { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlSerializerNamespaces() { Pointer= p0 };
 
-            value.Namespaces                                = GetObject<Hashtable>(new IntPtr(p + 0x010), ReversePrism.DataModels.Hashtable.FromPointer); // 0246675063F8 0x10 Namespaces                  ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.Namespaces                                = GetObject<Hashtable>(new IntPtr(p + 0x010), ReversePrism.DataModels.Hashtable.FromPointer); // 0x10 Namespaces                  ( ModelClassType Hashtable Hashtable Hashtable Pointer )
 
             return value;
         }

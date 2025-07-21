@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 UniqueDownloadId                         0001865F2F90 ModelPrimitiveType int int int Int32
-    // 018 Body                                     000186702D90 ModelEnumType Body Body Body Int32
+    // 010 UniqueDownloadId                         ModelPrimitiveType int int int Int32
+    // 018 Body                                     ModelEnumType Body Body Body Int32
     public partial class NativeDownloadRequest : DataModel
     {
         public int                                      UniqueDownloadId                        { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NativeDownloadRequest() { Pointer= p0 };
 
-            value.UniqueDownloadId                          = GetInt32(new IntPtr(p + 0x010)); // 02466B575700 0x10 UniqueDownloadId            ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.Body                                      = (Body)GetInt32(new IntPtr(p + 0x018)); // 02466B575720 0x18 Body                        ( 000186702D90 ModelEnumType Body Body Body Int32 )
+            value.UniqueDownloadId                          = GetInt32(new IntPtr(p + 0x010)); // 0x10 UniqueDownloadId            ( ModelPrimitiveType int int int Int32 )
+            value.Body                                      = (Body)GetInt32(new IntPtr(p + 0x018)); // 0x18 Body                        ( ModelEnumType Body Body Body Int32 )
 
             return value;
         }

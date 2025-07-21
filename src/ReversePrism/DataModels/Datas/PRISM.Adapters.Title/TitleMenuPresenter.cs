@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Popup                                    0001866741D0 ModelClassType ITitlePopupReference ITitlePopupReference ITitlePopupReference Pointer
-    // 018 DeleteUserDataAction                     00018667A3C0 ModelClassType Action Action Action Pointer
+    // 010 Popup                                    ModelClassType ITitlePopupReference ITitlePopupReference ITitlePopupReference Pointer
+    // 018 DeleteUserDataAction                     ModelClassType Action Action Action Pointer
     public partial class TitleMenuPresenter : DataModel
     {
         public ITitlePopupReference?                    Popup                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TitleMenuPresenter() { Pointer= p0 };
 
-            value.Popup                                     = GetObject<ITitlePopupReference>(new IntPtr(p + 0x010), ReversePrism.DataModels.ITitlePopupReference.FromPointer); // 0245A44A9860 0x10 Popup                       ( 0001866741D0 ModelClassType ITitlePopupReference ITitlePopupReference ITitlePopupReference Pointer )
-            value.DeleteUserDataAction                      = GetObject<Action>(new IntPtr(p + 0x018), ReversePrism.DataModels.Action.FromPointer); // 0245A44A9880 0x18 DeleteUserDataAction        ( 00018667A3C0 ModelClassType Action Action Action Pointer )
+            value.Popup                                     = GetObject<ITitlePopupReference>(new IntPtr(p + 0x010), ReversePrism.DataModels.ITitlePopupReference.FromPointer); // 0x10 Popup                       ( ModelClassType ITitlePopupReference ITitlePopupReference ITitlePopupReference Pointer )
+            value.DeleteUserDataAction                      = GetObject<Action>(new IntPtr(p + 0x018), ReversePrism.DataModels.Action.FromPointer); // 0x18 DeleteUserDataAction        ( ModelClassType Action Action Action Pointer )
 
             return value;
         }

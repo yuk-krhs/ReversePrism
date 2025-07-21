@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 010 m_IdToProduct                            Dictionary`2<string, Product> IL2CPP_TYPE_GENERICINST
     // 018 m_StoreSpecificIdToProduct               Dictionary`2<string, Product> IL2CPP_TYPE_GENERICINST
     // 020 <set>k__BackingField                     HashSet`1<Product> IL2CPP_TYPE_GENERICINST
-    // 028 All                                      000185B9DF90 ModelClassListType Product[] Product[] List<Product> Pointer
+    // 028 All                                      ModelClassListType Product[] Product[] List<Product> Pointer
     public partial class ProductCollection : DataModel
     {
         public List<Product>?                           All                                     { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProductCollection() { Pointer= p0 };
 
-            value.All                                       = GetObjectList<Product>(new IntPtr(p + 0x028), ReversePrism.DataModels.Product.FromPointer); // 0245A4C19BF0 0x28 All                         ( 000185B9DF90 ModelClassListType Product[] Product[] List<Product> Pointer )
+            value.All                                       = GetObjectList<Product>(new IntPtr(p + 0x028), ReversePrism.DataModels.Product.FromPointer); // 0x28 All                         ( ModelClassListType Product[] Product[] List<Product> Pointer )
 
             return value;
         }

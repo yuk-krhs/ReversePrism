@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 dataPtr                                  <int> IL2CPP_TYPE_I
-    // 018 Length                                   0001865F4260 ModelPrimitiveType int int int Int32
+    // 018 Length                                   ModelPrimitiveType int int int Int32
     public partial class Slice : DataModel
     {
         public int                                      Length                                  { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Slice() { Pointer= p0 };
 
-            value.Length                                    = GetInt32(new IntPtr(p + 0x018)); // 024662FBF4D0 0x18 Length                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Length                                    = GetInt32(new IntPtr(p + 0x018)); // 0x18 Length                      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

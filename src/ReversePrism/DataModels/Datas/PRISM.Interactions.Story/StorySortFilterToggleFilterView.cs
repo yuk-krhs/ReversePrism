@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 GroupToggleButton                        00018669D390 ModelClassType GroupToggleButton GroupToggleButton GroupToggleButton Pointer
-    // 028 Toggles                                  000185CAC208 ModelClassListType ToggleButton[] ToggleButton[] List<ToggleButton> Pointer
-    // 030 ViewModel                                0001865A3EC0 ModelClassType StorySortFilterToggleFilterViewModel StorySortFilterToggleFilterViewModel StorySortFilterToggleFilterViewModel Pointer
+    // 020 GroupToggleButton                        ModelClassType GroupToggleButton GroupToggleButton GroupToggleButton Pointer
+    // 028 Toggles                                  ModelClassListType ToggleButton[] ToggleButton[] List<ToggleButton> Pointer
+    // 030 ViewModel                                ModelClassType StorySortFilterToggleFilterViewModel StorySortFilterToggleFilterViewModel StorySortFilterToggleFilterViewModel Pointer
     public partial class StorySortFilterToggleFilterView : DataModel
     {
         public GroupToggleButton?                       GroupToggleButton                       { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StorySortFilterToggleFilterView() { Pointer= p0 };
 
-            value.GroupToggleButton                         = GetObject<GroupToggleButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.GroupToggleButton.FromPointer); // 02466B9D4E38 0x20 GroupToggleButton           ( 00018669D390 ModelClassType GroupToggleButton GroupToggleButton GroupToggleButton Pointer )
-            value.Toggles                                   = GetObjectList<ToggleButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.ToggleButton.FromPointer); // 02466B9D4E58 0x28 Toggles                     ( 000185CAC208 ModelClassListType ToggleButton[] ToggleButton[] List<ToggleButton> Pointer )
-            value.ViewModel                                 = GetObject<StorySortFilterToggleFilterViewModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.StorySortFilterToggleFilterViewModel.FromPointer); // 02466B9D4E78 0x30 ViewModel                   ( 0001865A3EC0 ModelClassType StorySortFilterToggleFilterViewModel StorySortFilterToggleFilterViewModel StorySortFilterToggleFilterViewModel Pointer )
+            value.GroupToggleButton                         = GetObject<GroupToggleButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.GroupToggleButton.FromPointer); // 0x20 GroupToggleButton           ( ModelClassType GroupToggleButton GroupToggleButton GroupToggleButton Pointer )
+            value.Toggles                                   = GetObjectList<ToggleButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.ToggleButton.FromPointer); // 0x28 Toggles                     ( ModelClassListType ToggleButton[] ToggleButton[] List<ToggleButton> Pointer )
+            value.ViewModel                                 = GetObject<StorySortFilterToggleFilterViewModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.StorySortFilterToggleFilterViewModel.FromPointer); // 0x30 ViewModel                   ( ModelClassType StorySortFilterToggleFilterViewModel StorySortFilterToggleFilterViewModel StorySortFilterToggleFilterViewModel Pointer )
 
             return value;
         }

@@ -9,11 +9,11 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 PrefabPath                               string IL2CPP_TYPE_STRING
-    // 020 Loaded                                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 028 ObjectName                               000186671910 ModelPrimitiveType string string string String
-    // 030 FreeObject                               0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
+    // 020 Loaded                                   ModelPrimitiveType bool bool bool Bool
+    // 028 ObjectName                               ModelPrimitiveType string string string String
+    // 030 FreeObject                               ModelClassType GameObject GameObject GameObject Pointer
     // 038 receivedData                             Queue`1<ReceivedData> IL2CPP_TYPE_GENERICINST
-    // 040 IsViewPaused                             000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 040 IsViewPaused                             ModelPrimitiveType bool bool bool Bool
     public partial class FreeObjectView : DataModel
     {
         public bool                                     Loaded                                  { get; set; }
@@ -29,10 +29,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FreeObjectView() { Pointer= p0 };
 
-            value.Loaded                                    = GetBool(new IntPtr(p + 0x020)); // 024664FAD940 0x20 Loaded                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ObjectName                                = GetString(new IntPtr(p + 0x028)); // 024664FAD960 0x28 ObjectName                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.FreeObject                                = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 024664FAD980 0x30 FreeObject                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.IsViewPaused                              = GetBool(new IntPtr(p + 0x040)); // 024664FAD9C0 0x40 IsViewPaused                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Loaded                                    = GetBool(new IntPtr(p + 0x020)); // 0x20 Loaded                      ( ModelPrimitiveType bool bool bool Bool )
+            value.ObjectName                                = GetString(new IntPtr(p + 0x028)); // 0x28 ObjectName                  ( ModelPrimitiveType string string string String )
+            value.FreeObject                                = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0x30 FreeObject                  ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.IsViewPaused                              = GetBool(new IntPtr(p + 0x040)); // 0x40 IsViewPaused                ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

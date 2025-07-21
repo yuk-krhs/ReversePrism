@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CursorPos                                0001866A8740 ModelEnumType Vector2 Vector2 Vector2 Int32
-    // 018 CharWidth                                000186666050 ModelPrimitiveType float float float Single
+    // 010 CursorPos                                ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 018 CharWidth                                ModelPrimitiveType float float float Single
     public partial class UICharInfo : DataModel
     {
         public Vector2                                  CursorPos                               { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UICharInfo() { Pointer= p0 };
 
-            value.CursorPos                                 = (Vector2)GetInt32(new IntPtr(p + 0x010)); // 0245A217FDF0 0x10 CursorPos                   ( 0001866A8740 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.CharWidth                                 = GetSingle(new IntPtr(p + 0x018)); // 0245A217FE10 0x18 CharWidth                   ( 000186666050 ModelPrimitiveType float float float Single )
+            value.CursorPos                                 = (Vector2)GetInt32(new IntPtr(p + 0x010)); // 0x10 CursorPos                   ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.CharWidth                                 = GetSingle(new IntPtr(p + 0x018)); // 0x18 CharWidth                   ( ModelPrimitiveType float float float Single )
 
             return value;
         }

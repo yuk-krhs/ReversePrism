@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Table                                    0001865B8520 ModelClassType DataTable DataTable DataTable Pointer
-    // 018 List                                     0001865796B0 ModelClassType DataRowTree DataRowTree DataRowTree Pointer
-    // 020 NullInList                               0001865F2F90 ModelPrimitiveType int int int Int32
+    // 010 Table                                    ModelClassType DataTable DataTable DataTable Pointer
+    // 018 List                                     ModelClassType DataRowTree DataRowTree DataRowTree Pointer
+    // 020 NullInList                               ModelPrimitiveType int int int Int32
     public partial class DataRowCollection : DataModel
     {
         public DataTable?                               Table                                   { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DataRowCollection() { Pointer= p0 };
 
-            value.Table                                     = GetObject<DataTable>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataTable.FromPointer); // 0246689372B0 0x10 Table                       ( 0001865B8520 ModelClassType DataTable DataTable DataTable Pointer )
-            value.List                                      = GetObject<DataRowTree>(new IntPtr(p + 0x018), ReversePrism.DataModels.DataRowTree.FromPointer); // 0246689372D0 0x18 List                        ( 0001865796B0 ModelClassType DataRowTree DataRowTree DataRowTree Pointer )
-            value.NullInList                                = GetInt32(new IntPtr(p + 0x020)); // 0246689372F0 0x20 NullInList                  ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.Table                                     = GetObject<DataTable>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataTable.FromPointer); // 0x10 Table                       ( ModelClassType DataTable DataTable DataTable Pointer )
+            value.List                                      = GetObject<DataRowTree>(new IntPtr(p + 0x018), ReversePrism.DataModels.DataRowTree.FromPointer); // 0x18 List                        ( ModelClassType DataRowTree DataRowTree DataRowTree Pointer )
+            value.NullInList                                = GetInt32(new IntPtr(p + 0x020)); // 0x20 NullInList                  ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

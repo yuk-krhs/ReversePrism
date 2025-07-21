@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ReplySink                                0001865B0830 ModelClassType IMessageSink IMessageSink IMessageSink Pointer
-    // 018 Context                                  0001866134D0 ModelClassType Context Context Context Pointer
+    // 010 ReplySink                                ModelClassType IMessageSink IMessageSink IMessageSink Pointer
+    // 018 Context                                  ModelClassType Context Context Context Pointer
     public partial class ClientContextReplySink : DataModel
     {
         public IMessageSink?                            ReplySink                               { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ClientContextReplySink() { Pointer= p0 };
 
-            value.ReplySink                                 = GetObject<IMessageSink>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMessageSink.FromPointer); // 024666C60F80 0x10 ReplySink                   ( 0001865B0830 ModelClassType IMessageSink IMessageSink IMessageSink Pointer )
-            value.Context                                   = GetObject<Context>(new IntPtr(p + 0x018), ReversePrism.DataModels.Context.FromPointer); // 024666C60FA0 0x18 Context                     ( 0001866134D0 ModelClassType Context Context Context Pointer )
+            value.ReplySink                                 = GetObject<IMessageSink>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMessageSink.FromPointer); // 0x10 ReplySink                   ( ModelClassType IMessageSink IMessageSink IMessageSink Pointer )
+            value.Context                                   = GetObject<Context>(new IntPtr(p + 0x018), ReversePrism.DataModels.Context.FromPointer); // 0x18 Context                     ( ModelClassType Context Context Context Pointer )
 
             return value;
         }

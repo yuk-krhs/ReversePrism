@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Disposed                                 000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 Disposed                                 ModelPrimitiveType bool bool bool Bool
     public partial class HideScope : DataModel
     {
         public bool                                     Disposed                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HideScope() { Pointer= p0 };
 
-            value.Disposed                                  = GetBool(new IntPtr(p + 0x010)); // 024664C20F50 0x10 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Disposed                                  = GetBool(new IntPtr(p + 0x010)); // 0x10 Disposed                    ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

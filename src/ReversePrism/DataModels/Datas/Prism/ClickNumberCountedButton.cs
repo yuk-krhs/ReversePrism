@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 1B0 MaxCount                                 0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 1B4 CountedIndex                             0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 1B0 MaxCount                                 ModelPrimitiveType int int int Int32
+    // 1B4 CountedIndex                             ModelPrimitiveType int int int Int32
     public partial class ClickNumberCountedButton : DataModel
     {
         public int                                      MaxCount                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ClickNumberCountedButton() { Pointer= p0 };
 
-            value.MaxCount                                  = GetInt32(new IntPtr(p + 0x1B0)); // 024664CA7A28 0x1B0 MaxCount                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CountedIndex                              = GetInt32(new IntPtr(p + 0x1B4)); // 024664CA7A48 0x1B4 CountedIndex                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MaxCount                                  = GetInt32(new IntPtr(p + 0x1B0)); // 0x1B0 MaxCount                    ( ModelPrimitiveType int int int Int32 )
+            value.CountedIndex                              = GetInt32(new IntPtr(p + 0x1B4)); // 0x1B4 CountedIndex                ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

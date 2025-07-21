@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 SortCategoryType                         0001865F36C0 ModelPrimitiveType int int int Int32
-    // 014 SortOrderType                            0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 SortCategoryType                         ModelPrimitiveType int int int Int32
+    // 014 SortOrderType                            ModelPrimitiveType int int int Int32
     public partial class SortFilterData : DataModel
     {
         public int                                      SortCategoryType                        { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SortFilterData() { Pointer= p0 };
 
-            value.SortCategoryType                          = GetInt32(new IntPtr(p + 0x010)); // 02466AEA68A8 0x10 SortCategoryType            ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.SortOrderType                             = GetInt32(new IntPtr(p + 0x014)); // 02466AEA68C8 0x14 SortOrderType               ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.SortCategoryType                          = GetInt32(new IntPtr(p + 0x010)); // 0x10 SortCategoryType            ( ModelPrimitiveType int int int Int32 )
+            value.SortOrderType                             = GetInt32(new IntPtr(p + 0x014)); // 0x14 SortOrderType               ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

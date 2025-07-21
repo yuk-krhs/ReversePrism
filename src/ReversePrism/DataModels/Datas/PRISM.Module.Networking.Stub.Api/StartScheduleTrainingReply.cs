@@ -11,25 +11,25 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<StartScheduleTrainingReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ProduceBaseInfoFieldNumber               int IL2CPP_TYPE_I4
-    // 018 ProduceBaseInfo                          0001865332D0 ModelClassType ProduceBaseInfoStatus ProduceBaseInfoStatus ProduceBaseInfoStatus Pointer
+    // 018 ProduceBaseInfo                          ModelClassType ProduceBaseInfoStatus ProduceBaseInfoStatus ProduceBaseInfoStatus Pointer
     // 000 IsTroubleFieldNumber                     int IL2CPP_TYPE_I4
-    // 020 IsTrouble                                000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 020 IsTrouble                                ModelPrimitiveType bool bool bool Bool
     // 000 UnitParameterVariationFieldNumber        int IL2CPP_TYPE_I4
-    // 028 UnitParameterVariation                   00018671DE80 ModelClassType ParameterVariationStatus ParameterVariationStatus ParameterVariationStatus Pointer
+    // 028 UnitParameterVariation                   ModelClassType ParameterVariationStatus ParameterVariationStatus ParameterVariationStatus Pointer
     // 000 ScheduleDetailTypeFieldNumber            int IL2CPP_TYPE_I4
-    // 030 ScheduleDetailType                       0001866D43F0 ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32
+    // 030 ScheduleDetailType                       ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32
     // 000 MstCharacterInfoIdListFieldNumber        int IL2CPP_TYPE_I4
     // 008 _repeated_mstCharacterInfoIdList_codec   FieldCodec`1<int> IL2CPP_TYPE_GENERICINST
-    // 038 MstCharacterInfoIdList                   000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer
+    // 038 MstCharacterInfoIdList                   ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer
     // 000 IsSupportBonusFieldNumber                int IL2CPP_TYPE_I4
-    // 040 IsSupportBonus                           000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 040 IsSupportBonus                           ModelPrimitiveType bool bool bool Bool
     // 000 ScheduleLevelFieldNumber                 int IL2CPP_TYPE_I4
-    // 044 ScheduleLevel                            0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 044 ScheduleLevel                            ModelPrimitiveType int int int Int32
     // 000 VitalityVariationFieldNumber             int IL2CPP_TYPE_I4
-    // 048 VitalityVariation                        00018652F800 ModelClassType VitalityVariationStatus VitalityVariationStatus VitalityVariationStatus Pointer
+    // 048 VitalityVariation                        ModelClassType VitalityVariationStatus VitalityVariationStatus VitalityVariationStatus Pointer
     // 000 ExertSupportEffectListFieldNumber        int IL2CPP_TYPE_I4
     // 010 _repeated_exertSupportEffectList_codec   FieldCodec`1<ExertSupportEffectStatus> IL2CPP_TYPE_GENERICINST
-    // 050 ExertSupportEffectList                   000185CD6CF8 ModelClassListType RepeatedField`1<ExertSupportEffectStatus> RepeatedField`1<ExertSupportEffectStatus> List<ExertSupportEffectStatus> Pointer
+    // 050 ExertSupportEffectList                   ModelClassListType RepeatedField`1<ExertSupportEffectStatus> RepeatedField`1<ExertSupportEffectStatus> List<ExertSupportEffectStatus> Pointer
     public partial class StartScheduleTrainingReply : DataModel
     {
         public ProduceBaseInfoStatus?                   ProduceBaseInfo                         { get; set; }
@@ -50,15 +50,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StartScheduleTrainingReply() { Pointer= p0 };
 
-            value.ProduceBaseInfo                           = GetObject<ProduceBaseInfoStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceBaseInfoStatus.FromPointer); // 02466259A558 0x18 ProduceBaseInfo             ( 0001865332D0 ModelClassType ProduceBaseInfoStatus ProduceBaseInfoStatus ProduceBaseInfoStatus Pointer )
-            value.IsTrouble                                 = GetBool(new IntPtr(p + 0x020)); // 02466259A598 0x20 IsTrouble                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.UnitParameterVariation                    = GetObject<ParameterVariationStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ParameterVariationStatus.FromPointer); // 02466259A5D8 0x28 UnitParameterVariation      ( 00018671DE80 ModelClassType ParameterVariationStatus ParameterVariationStatus ParameterVariationStatus Pointer )
-            value.ScheduleDetailType                        = (ScheduleDetailType)GetInt32(new IntPtr(p + 0x030)); // 02466259A618 0x30 ScheduleDetailType          ( 0001866D43F0 ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32 )
-            value.MstCharacterInfoIdList                    = GetInt32List(new IntPtr(p + 0x038)); // 02466259A678 0x38 MstCharacterInfoIdList      ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
-            value.IsSupportBonus                            = GetBool(new IntPtr(p + 0x040)); // 02466259A6B8 0x40 IsSupportBonus              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ScheduleLevel                             = GetInt32(new IntPtr(p + 0x044)); // 02466259A6F8 0x44 ScheduleLevel               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.VitalityVariation                         = GetObject<VitalityVariationStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.VitalityVariationStatus.FromPointer); // 02466259A738 0x48 VitalityVariation           ( 00018652F800 ModelClassType VitalityVariationStatus VitalityVariationStatus VitalityVariationStatus Pointer )
-            value.ExertSupportEffectList                    = GetObjectList<ExertSupportEffectStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.ExertSupportEffectStatus.FromPointer); // 02466259A798 0x50 ExertSupportEffectList      ( 000185CD6CF8 ModelClassListType RepeatedField`1<ExertSupportEffectStatus> RepeatedField`1<ExertSupportEffectStatus> List<ExertSupportEffectStatus> Pointer )
+            value.ProduceBaseInfo                           = GetObject<ProduceBaseInfoStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceBaseInfoStatus.FromPointer); // 0x18 ProduceBaseInfo             ( ModelClassType ProduceBaseInfoStatus ProduceBaseInfoStatus ProduceBaseInfoStatus Pointer )
+            value.IsTrouble                                 = GetBool(new IntPtr(p + 0x020)); // 0x20 IsTrouble                   ( ModelPrimitiveType bool bool bool Bool )
+            value.UnitParameterVariation                    = GetObject<ParameterVariationStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ParameterVariationStatus.FromPointer); // 0x28 UnitParameterVariation      ( ModelClassType ParameterVariationStatus ParameterVariationStatus ParameterVariationStatus Pointer )
+            value.ScheduleDetailType                        = (ScheduleDetailType)GetInt32(new IntPtr(p + 0x030)); // 0x30 ScheduleDetailType          ( ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32 )
+            value.MstCharacterInfoIdList                    = GetInt32List(new IntPtr(p + 0x038)); // 0x38 MstCharacterInfoIdList      ( ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.IsSupportBonus                            = GetBool(new IntPtr(p + 0x040)); // 0x40 IsSupportBonus              ( ModelPrimitiveType bool bool bool Bool )
+            value.ScheduleLevel                             = GetInt32(new IntPtr(p + 0x044)); // 0x44 ScheduleLevel               ( ModelPrimitiveType int int int Int32 )
+            value.VitalityVariation                         = GetObject<VitalityVariationStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.VitalityVariationStatus.FromPointer); // 0x48 VitalityVariation           ( ModelClassType VitalityVariationStatus VitalityVariationStatus VitalityVariationStatus Pointer )
+            value.ExertSupportEffectList                    = GetObjectList<ExertSupportEffectStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.ExertSupportEffectStatus.FromPointer); // 0x50 ExertSupportEffectList      ( ModelClassListType RepeatedField`1<ExertSupportEffectStatus> RepeatedField`1<ExertSupportEffectStatus> List<ExertSupportEffectStatus> Pointer )
 
             return value;
         }

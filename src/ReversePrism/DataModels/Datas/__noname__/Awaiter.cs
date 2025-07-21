@@ -9,9 +9,9 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 switchToCallback                         SendOrPostCallback IL2CPP_TYPE_CLASS
-    // 010 SynchronizationContext                   000186602270 ModelClassType SynchronizationContext SynchronizationContext SynchronizationContext Pointer
-    // 018 DontPostWhenSameContext                  0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 020 CancellationToken                        00018653D5A0 ModelEnumType CancellationToken CancellationToken CancellationToken Int32
+    // 010 SynchronizationContext                   ModelClassType SynchronizationContext SynchronizationContext SynchronizationContext Pointer
+    // 018 DontPostWhenSameContext                  ModelPrimitiveType bool bool bool Bool
+    // 020 CancellationToken                        ModelEnumType CancellationToken CancellationToken CancellationToken Int32
     public partial class Awaiter : DataModel
     {
         public SynchronizationContext?                  SynchronizationContext                  { get; set; }
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Awaiter() { Pointer= p0 };
 
-            value.SynchronizationContext                    = GetObject<SynchronizationContext>(new IntPtr(p + 0x010), ReversePrism.DataModels.SynchronizationContext.FromPointer); // 024668EF5D98 0x10 SynchronizationContext      ( 000186602270 ModelClassType SynchronizationContext SynchronizationContext SynchronizationContext Pointer )
-            value.DontPostWhenSameContext                   = GetBool(new IntPtr(p + 0x018)); // 024668EF5DB8 0x18 DontPostWhenSameContext     ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.CancellationToken                         = (CancellationToken)GetInt32(new IntPtr(p + 0x020)); // 024668EF5DD8 0x20 CancellationToken           ( 00018653D5A0 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
+            value.SynchronizationContext                    = GetObject<SynchronizationContext>(new IntPtr(p + 0x010), ReversePrism.DataModels.SynchronizationContext.FromPointer); // 0x10 SynchronizationContext      ( ModelClassType SynchronizationContext SynchronizationContext SynchronizationContext Pointer )
+            value.DontPostWhenSameContext                   = GetBool(new IntPtr(p + 0x018)); // 0x18 DontPostWhenSameContext     ( ModelPrimitiveType bool bool bool Bool )
+            value.CancellationToken                         = (CancellationToken)GetInt32(new IntPtr(p + 0x020)); // 0x20 CancellationToken           ( ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
 
             return value;
         }

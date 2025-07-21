@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 IconData                                 00018670C7D0 ModelClassType PIdolIcon PIdolIcon PIdolIcon Pointer
-    // 018 IsSelectIdol                             0001865965D0 ModelPrimitiveType bool bool bool Bool
+    // 010 IconData                                 ModelClassType PIdolIcon PIdolIcon PIdolIcon Pointer
+    // 018 IsSelectIdol                             ModelPrimitiveType bool bool bool Bool
     public partial class ProfilePIdolIconViewModel : DataModel
     {
         public PIdolIcon?                               IconData                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProfilePIdolIconViewModel() { Pointer= p0 };
 
-            value.IconData                                  = GetObject<PIdolIcon>(new IntPtr(p + 0x010), ReversePrism.DataModels.PIdolIcon.FromPointer); // 0246667271E8 0x10 IconData                    ( 00018670C7D0 ModelClassType PIdolIcon PIdolIcon PIdolIcon Pointer )
-            value.IsSelectIdol                              = GetBool(new IntPtr(p + 0x018)); // 024666727208 0x18 IsSelectIdol                ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.IconData                                  = GetObject<PIdolIcon>(new IntPtr(p + 0x010), ReversePrism.DataModels.PIdolIcon.FromPointer); // 0x10 IconData                    ( ModelClassType PIdolIcon PIdolIcon PIdolIcon Pointer )
+            value.IsSelectIdol                              = GetBool(new IntPtr(p + 0x018)); // 0x18 IsSelectIdol                ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

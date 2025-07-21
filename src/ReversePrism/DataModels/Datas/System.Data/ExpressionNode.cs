@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Table                                    0001865B7E00 ModelClassType DataTable DataTable DataTable Pointer
+    // 010 Table                                    ModelClassType DataTable DataTable DataTable Pointer
     public partial class ExpressionNode : DataModel
     {
         public DataTable?                               Table                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExpressionNode() { Pointer= p0 };
 
-            value.Table                                     = GetObject<DataTable>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataTable.FromPointer); // 024668992AC8 0x10 Table                       ( 0001865B7E00 ModelClassType DataTable DataTable DataTable Pointer )
+            value.Table                                     = GetObject<DataTable>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataTable.FromPointer); // 0x10 Table                       ( ModelClassType DataTable DataTable DataTable Pointer )
 
             return value;
         }

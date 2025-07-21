@@ -8,16 +8,16 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 View                                     00018651B0D0 ModelClassType IFriendOverlayView IFriendOverlayView IFriendOverlayView Pointer
-    // 018 ViewModel                                0001865CD230 ModelClassType FriendViewModel FriendViewModel FriendViewModel Pointer
+    // 010 View                                     ModelClassType IFriendOverlayView IFriendOverlayView IFriendOverlayView Pointer
+    // 018 ViewModel                                ModelClassType FriendViewModel FriendViewModel FriendViewModel Pointer
     // 020 permanentData                            SavableJsonObject`1<FriendListSortFilterPermanentData> IL2CPP_TYPE_GENERICINST
     // 028 onClose                                  Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 030 Disposable                               0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
-    // 038 TokenSource                              0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
-    // 040 OverlayManager                           0001866FE7B0 ModelClassType OverlayManager OverlayManager OverlayManager Pointer
-    // 048 CategoryType                             0001866CDC80 ModelEnumType CategoryType CategoryType CategoryType Int32
-    // 04C SortCategory                             0001866CE810 ModelEnumType SortCategory SortCategory SortCategory Int32
-    // 050 SortOrder                                0001866CEF50 ModelEnumType SortOrder SortOrder SortOrder Int32
+    // 030 Disposable                               ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
+    // 038 TokenSource                              ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
+    // 040 OverlayManager                           ModelClassType OverlayManager OverlayManager OverlayManager Pointer
+    // 048 CategoryType                             ModelEnumType CategoryType CategoryType CategoryType Int32
+    // 04C SortCategory                             ModelEnumType SortCategory SortCategory SortCategory Int32
+    // 050 SortOrder                                ModelEnumType SortOrder SortOrder SortOrder Int32
     public partial class FriendOverlayPresenter : DataModel
     {
         public IFriendOverlayView?                      View                                    { get; set; }
@@ -37,14 +37,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FriendOverlayPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<IFriendOverlayView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IFriendOverlayView.FromPointer); // 024666391FE0 0x10 View                        ( 00018651B0D0 ModelClassType IFriendOverlayView IFriendOverlayView IFriendOverlayView Pointer )
-            value.ViewModel                                 = GetObject<FriendViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.FriendViewModel.FromPointer); // 024666392000 0x18 ViewModel                   ( 0001865CD230 ModelClassType FriendViewModel FriendViewModel FriendViewModel Pointer )
-            value.Disposable                                = GetObject<CompositeDisposable>(new IntPtr(p + 0x030), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 024666392060 0x30 Disposable                  ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
-            value.TokenSource                               = GetObject<CancellationTokenSource>(new IntPtr(p + 0x038), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 024666392080 0x38 TokenSource                 ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
-            value.OverlayManager                            = GetObject<OverlayManager>(new IntPtr(p + 0x040), ReversePrism.DataModels.OverlayManager.FromPointer); // 0246663920A0 0x40 OverlayManager              ( 0001866FE7B0 ModelClassType OverlayManager OverlayManager OverlayManager Pointer )
-            value.CategoryType                              = (CategoryType)GetInt32(new IntPtr(p + 0x048)); // 0246663920C0 0x48 CategoryType                ( 0001866CDC80 ModelEnumType CategoryType CategoryType CategoryType Int32 )
-            value.SortCategory                              = (SortCategory)GetInt32(new IntPtr(p + 0x04C)); // 0246663920E0 0x4C SortCategory                ( 0001866CE810 ModelEnumType SortCategory SortCategory SortCategory Int32 )
-            value.SortOrder                                 = (SortOrder)GetInt32(new IntPtr(p + 0x050)); // 024666392100 0x50 SortOrder                   ( 0001866CEF50 ModelEnumType SortOrder SortOrder SortOrder Int32 )
+            value.View                                      = GetObject<IFriendOverlayView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IFriendOverlayView.FromPointer); // 0x10 View                        ( ModelClassType IFriendOverlayView IFriendOverlayView IFriendOverlayView Pointer )
+            value.ViewModel                                 = GetObject<FriendViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.FriendViewModel.FromPointer); // 0x18 ViewModel                   ( ModelClassType FriendViewModel FriendViewModel FriendViewModel Pointer )
+            value.Disposable                                = GetObject<CompositeDisposable>(new IntPtr(p + 0x030), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0x30 Disposable                  ( ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.TokenSource                               = GetObject<CancellationTokenSource>(new IntPtr(p + 0x038), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0x38 TokenSource                 ( ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.OverlayManager                            = GetObject<OverlayManager>(new IntPtr(p + 0x040), ReversePrism.DataModels.OverlayManager.FromPointer); // 0x40 OverlayManager              ( ModelClassType OverlayManager OverlayManager OverlayManager Pointer )
+            value.CategoryType                              = (CategoryType)GetInt32(new IntPtr(p + 0x048)); // 0x48 CategoryType                ( ModelEnumType CategoryType CategoryType CategoryType Int32 )
+            value.SortCategory                              = (SortCategory)GetInt32(new IntPtr(p + 0x04C)); // 0x4C SortCategory                ( ModelEnumType SortCategory SortCategory SortCategory Int32 )
+            value.SortOrder                                 = (SortOrder)GetInt32(new IntPtr(p + 0x050)); // 0x50 SortOrder                   ( ModelEnumType SortOrder SortOrder SortOrder Int32 )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CharacterId                              0001865F4260 ModelPrimitiveType int int int Int32
-    // 014 ReturnFromCasualCostumeSelection         000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 CharacterId                              ModelPrimitiveType int int int Int32
+    // 014 ReturnFromCasualCostumeSelection         ModelPrimitiveType bool bool bool Bool
     public partial class IdolBaseDetailViewParameter : DataModel
     {
         public int                                      CharacterId                             { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IdolBaseDetailViewParameter() { Pointer= p0 };
 
-            value.CharacterId                               = GetInt32(new IntPtr(p + 0x010)); // 024665E213A0 0x10 CharacterId                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.ReturnFromCasualCostumeSelection          = GetBool(new IntPtr(p + 0x014)); // 024665E213C0 0x14 ReturnFromCasualCostumeSelection ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CharacterId                               = GetInt32(new IntPtr(p + 0x010)); // 0x10 CharacterId                 ( ModelPrimitiveType int int int Int32 )
+            value.ReturnFromCasualCostumeSelection          = GetBool(new IntPtr(p + 0x014)); // 0x14 ReturnFromCasualCostumeSelection ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -10,19 +10,19 @@ namespace ReversePrism.DataModels
 
     // 000 kEpsilon                                 float IL2CPP_TYPE_R4
     // 000 kEpsilonNormalSqrt                       float IL2CPP_TYPE_R4
-    // 010 X                                        000186666050 ModelPrimitiveType float float float Single
-    // 014 Y                                        000186666050 ModelPrimitiveType float float float Single
-    // 018 Z                                        000186666050 ModelPrimitiveType float float float Single
+    // 010 X                                        ModelPrimitiveType float float float Single
+    // 014 Y                                        ModelPrimitiveType float float float Single
+    // 018 Z                                        ModelPrimitiveType float float float Single
     // 000 zeroVector                               Vector3 IL2CPP_TYPE_VALUETYPE
     // 00C oneVector                                Vector3 IL2CPP_TYPE_VALUETYPE
-    // 018 UpVector                                 0001866ACBA0 ModelEnumType Vector3 Vector3 Vector3 Int32
-    // 024 DownVector                               0001866ACBA0 ModelEnumType Vector3 Vector3 Vector3 Int32
-    // 030 LeftVector                               0001866ACBA0 ModelEnumType Vector3 Vector3 Vector3 Int32
-    // 03C RightVector                              0001866ACBA0 ModelEnumType Vector3 Vector3 Vector3 Int32
-    // 048 ForwardVector                            0001866ACBA0 ModelEnumType Vector3 Vector3 Vector3 Int32
-    // 054 BackVector                               0001866ACBA0 ModelEnumType Vector3 Vector3 Vector3 Int32
-    // 060 PositiveInfinityVector                   0001866ACBA0 ModelEnumType Vector3 Vector3 Vector3 Int32
-    // 06C NegativeInfinityVector                   0001866ACBA0 ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 018 UpVector                                 ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 024 DownVector                               ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 030 LeftVector                               ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 03C RightVector                              ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 048 ForwardVector                            ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 054 BackVector                               ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 060 PositiveInfinityVector                   ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 06C NegativeInfinityVector                   ModelEnumType Vector3 Vector3 Vector3 Int32
     public partial class Vector3 : DataModel
     {
         public float                                    X                                       { get; set; }
@@ -45,17 +45,17 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Vector3() { Pointer= p0 };
 
-            value.X                                         = GetSingle(new IntPtr(p + 0x010)); // 0245A15F0278 0x10 X                           ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Y                                         = GetSingle(new IntPtr(p + 0x014)); // 0245A15F0298 0x14 Y                           ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Z                                         = GetSingle(new IntPtr(p + 0x018)); // 0245A15F02B8 0x18 Z                           ( 000186666050 ModelPrimitiveType float float float Single )
-            value.UpVector                                  = (Vector3)GetInt32(new IntPtr(p + 0x018)); // 0245A15F0318 0x18 UpVector                    ( 0001866ACBA0 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.DownVector                                = (Vector3)GetInt32(new IntPtr(p + 0x024)); // 0245A15F0338 0x24 DownVector                  ( 0001866ACBA0 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.LeftVector                                = (Vector3)GetInt32(new IntPtr(p + 0x030)); // 0245A15F0358 0x30 LeftVector                  ( 0001866ACBA0 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.RightVector                               = (Vector3)GetInt32(new IntPtr(p + 0x03C)); // 0245A15F0378 0x3C RightVector                 ( 0001866ACBA0 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.ForwardVector                             = (Vector3)GetInt32(new IntPtr(p + 0x048)); // 0245A15F0398 0x48 ForwardVector               ( 0001866ACBA0 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.BackVector                                = (Vector3)GetInt32(new IntPtr(p + 0x054)); // 0245A15F03B8 0x54 BackVector                  ( 0001866ACBA0 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.PositiveInfinityVector                    = (Vector3)GetInt32(new IntPtr(p + 0x060)); // 0245A15F03D8 0x60 PositiveInfinityVector      ( 0001866ACBA0 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.NegativeInfinityVector                    = (Vector3)GetInt32(new IntPtr(p + 0x06C)); // 0245A15F03F8 0x6C NegativeInfinityVector      ( 0001866ACBA0 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.X                                         = GetSingle(new IntPtr(p + 0x010)); // 0x10 X                           ( ModelPrimitiveType float float float Single )
+            value.Y                                         = GetSingle(new IntPtr(p + 0x014)); // 0x14 Y                           ( ModelPrimitiveType float float float Single )
+            value.Z                                         = GetSingle(new IntPtr(p + 0x018)); // 0x18 Z                           ( ModelPrimitiveType float float float Single )
+            value.UpVector                                  = (Vector3)GetInt32(new IntPtr(p + 0x018)); // 0x18 UpVector                    ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.DownVector                                = (Vector3)GetInt32(new IntPtr(p + 0x024)); // 0x24 DownVector                  ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.LeftVector                                = (Vector3)GetInt32(new IntPtr(p + 0x030)); // 0x30 LeftVector                  ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.RightVector                               = (Vector3)GetInt32(new IntPtr(p + 0x03C)); // 0x3C RightVector                 ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.ForwardVector                             = (Vector3)GetInt32(new IntPtr(p + 0x048)); // 0x48 ForwardVector               ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.BackVector                                = (Vector3)GetInt32(new IntPtr(p + 0x054)); // 0x54 BackVector                  ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.PositiveInfinityVector                    = (Vector3)GetInt32(new IntPtr(p + 0x060)); // 0x60 PositiveInfinityVector      ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.NegativeInfinityVector                    = (Vector3)GetInt32(new IntPtr(p + 0x06C)); // 0x6C NegativeInfinityVector      ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
 
             return value;
         }

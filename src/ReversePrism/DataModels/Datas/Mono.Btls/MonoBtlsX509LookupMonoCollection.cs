@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 048 Hashes                                   000185B7E2C0 ModelPrimitiveListType long[] long[] List<long> Pointer
-    // 050 Certificates                             000185B94130 ModelClassListType MonoBtlsX509[] MonoBtlsX509[] List<MonoBtlsX509> Pointer
-    // 058 Collection                               0001865656A0 ModelClassType X509CertificateCollection X509CertificateCollection X509CertificateCollection Pointer
-    // 060 Trust                                    000186646E40 ModelEnumType MonoBtlsX509TrustKind MonoBtlsX509TrustKind MonoBtlsX509TrustKind Int32
+    // 048 Hashes                                   ModelPrimitiveListType long[] long[] List<long> Pointer
+    // 050 Certificates                             ModelClassListType MonoBtlsX509[] MonoBtlsX509[] List<MonoBtlsX509> Pointer
+    // 058 Collection                               ModelClassType X509CertificateCollection X509CertificateCollection X509CertificateCollection Pointer
+    // 060 Trust                                    ModelEnumType MonoBtlsX509TrustKind MonoBtlsX509TrustKind MonoBtlsX509TrustKind Int32
     public partial class MonoBtlsX509LookupMonoCollection : DataModel
     {
         public List<long>?                              Hashes                                  { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MonoBtlsX509LookupMonoCollection() { Pointer= p0 };
 
-            value.Hashes                                    = GetInt64List(new IntPtr(p + 0x048)); // 0246679C6868 0x48 Hashes                      ( 000185B7E2C0 ModelPrimitiveListType long[] long[] List<long> Pointer )
-            value.Certificates                              = GetObjectList<MonoBtlsX509>(new IntPtr(p + 0x050), ReversePrism.DataModels.MonoBtlsX509.FromPointer); // 0246679C6888 0x50 Certificates                ( 000185B94130 ModelClassListType MonoBtlsX509[] MonoBtlsX509[] List<MonoBtlsX509> Pointer )
-            value.Collection                                = GetObject<X509CertificateCollection>(new IntPtr(p + 0x058), ReversePrism.DataModels.X509CertificateCollection.FromPointer); // 0246679C68A8 0x58 Collection                  ( 0001865656A0 ModelClassType X509CertificateCollection X509CertificateCollection X509CertificateCollection Pointer )
-            value.Trust                                     = (MonoBtlsX509TrustKind)GetInt32(new IntPtr(p + 0x060)); // 0246679C68C8 0x60 Trust                       ( 000186646E40 ModelEnumType MonoBtlsX509TrustKind MonoBtlsX509TrustKind MonoBtlsX509TrustKind Int32 )
+            value.Hashes                                    = GetInt64List(new IntPtr(p + 0x048)); // 0x48 Hashes                      ( ModelPrimitiveListType long[] long[] List<long> Pointer )
+            value.Certificates                              = GetObjectList<MonoBtlsX509>(new IntPtr(p + 0x050), ReversePrism.DataModels.MonoBtlsX509.FromPointer); // 0x50 Certificates                ( ModelClassListType MonoBtlsX509[] MonoBtlsX509[] List<MonoBtlsX509> Pointer )
+            value.Collection                                = GetObject<X509CertificateCollection>(new IntPtr(p + 0x058), ReversePrism.DataModels.X509CertificateCollection.FromPointer); // 0x58 Collection                  ( ModelClassType X509CertificateCollection X509CertificateCollection X509CertificateCollection Pointer )
+            value.Trust                                     = (MonoBtlsX509TrustKind)GetInt32(new IntPtr(p + 0x060)); // 0x60 Trust                       ( ModelEnumType MonoBtlsX509TrustKind MonoBtlsX509TrustKind MonoBtlsX509TrustKind Int32 )
 
             return value;
         }

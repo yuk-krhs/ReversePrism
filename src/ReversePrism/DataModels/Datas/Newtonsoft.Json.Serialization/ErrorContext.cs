@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Traced                                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 018 Error                                    0001865CB1C0 ModelClassType Exception Exception Exception Pointer
+    // 010 Traced                                   ModelPrimitiveType bool bool bool Bool
+    // 018 Error                                    ModelClassType Exception Exception Exception Pointer
     // 020 <OriginalObject>k__BackingField          <object> IL2CPP_TYPE_OBJECT
     // 028 <Member>k__BackingField                  <object> IL2CPP_TYPE_OBJECT
-    // 030 Path                                     000186672F10 ModelPrimitiveType string string string String
-    // 038 Handled                                  000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 030 Path                                     ModelPrimitiveType string string string String
+    // 038 Handled                                  ModelPrimitiveType bool bool bool Bool
     public partial class ErrorContext : DataModel
     {
         public bool                                     Traced                                  { get; set; }
@@ -29,10 +29,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ErrorContext() { Pointer= p0 };
 
-            value.Traced                                    = GetBool(new IntPtr(p + 0x010)); // 0246687C5400 0x10 Traced                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Error                                     = GetObject<Exception>(new IntPtr(p + 0x018), ReversePrism.DataModels.Exception.FromPointer); // 0246687C5420 0x18 Error                       ( 0001865CB1C0 ModelClassType Exception Exception Exception Pointer )
-            value.Path                                      = GetString(new IntPtr(p + 0x030)); // 0246687C5480 0x30 Path                        ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Handled                                   = GetBool(new IntPtr(p + 0x038)); // 0246687C54A0 0x38 Handled                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Traced                                    = GetBool(new IntPtr(p + 0x010)); // 0x10 Traced                      ( ModelPrimitiveType bool bool bool Bool )
+            value.Error                                     = GetObject<Exception>(new IntPtr(p + 0x018), ReversePrism.DataModels.Exception.FromPointer); // 0x18 Error                       ( ModelClassType Exception Exception Exception Pointer )
+            value.Path                                      = GetString(new IntPtr(p + 0x030)); // 0x30 Path                        ( ModelPrimitiveType string string string String )
+            value.Handled                                   = GetBool(new IntPtr(p + 0x038)); // 0x38 Handled                     ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

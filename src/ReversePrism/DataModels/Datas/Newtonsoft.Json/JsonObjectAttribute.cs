@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 068 MemberSerialization                      0001865F42A0 ModelEnumType MemberSerialization MemberSerialization MemberSerialization Int32
+    // 068 MemberSerialization                      ModelEnumType MemberSerialization MemberSerialization MemberSerialization Int32
     // 06C _missingMemberHandling                   Nullable`1<MissingMemberHandling> IL2CPP_TYPE_GENERICINST
     // 074 _itemRequired                            Nullable`1<Required> IL2CPP_TYPE_GENERICINST
     // 07C _itemNullValueHandling                   Nullable`1<NullValueHandling> IL2CPP_TYPE_GENERICINST
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JsonObjectAttribute() { Pointer= p0 };
 
-            value.MemberSerialization                       = (MemberSerialization)GetInt32(new IntPtr(p + 0x068)); // 0245A5FC16A8 0x68 MemberSerialization         ( 0001865F42A0 ModelEnumType MemberSerialization MemberSerialization MemberSerialization Int32 )
+            value.MemberSerialization                       = (MemberSerialization)GetInt32(new IntPtr(p + 0x068)); // 0x68 MemberSerialization         ( ModelEnumType MemberSerialization MemberSerialization MemberSerialization Int32 )
 
             return value;
         }

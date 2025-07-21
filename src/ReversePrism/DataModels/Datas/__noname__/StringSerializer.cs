@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 SerializedText                           000186672F10 ModelPrimitiveType string string string String
-    // 018 CurrentTokenStartIndex                   0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 01C State                                    000186585C70 ModelEnumType State State State Int32
+    // 010 SerializedText                           ModelPrimitiveType string string string String
+    // 018 CurrentTokenStartIndex                   ModelPrimitiveType int int int Int32
+    // 01C State                                    ModelEnumType State State State Int32
     public partial class StringSerializer : DataModel
     {
         public string                                   SerializedText                          { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StringSerializer() { Pointer= p0 };
 
-            value.SerializedText                            = GetString(new IntPtr(p + 0x010)); // 0246669D8DD0 0x10 SerializedText              ( 000186672F10 ModelPrimitiveType string string string String )
-            value.CurrentTokenStartIndex                    = GetInt32(new IntPtr(p + 0x018)); // 0246669D8DF0 0x18 CurrentTokenStartIndex      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.State                                     = (State)GetInt32(new IntPtr(p + 0x01C)); // 0246669D8E10 0x1C State                       ( 000186585C70 ModelEnumType State State State Int32 )
+            value.SerializedText                            = GetString(new IntPtr(p + 0x010)); // 0x10 SerializedText              ( ModelPrimitiveType string string string String )
+            value.CurrentTokenStartIndex                    = GetInt32(new IntPtr(p + 0x018)); // 0x18 CurrentTokenStartIndex      ( ModelPrimitiveType int int int Int32 )
+            value.State                                     = (State)GetInt32(new IntPtr(p + 0x01C)); // 0x1C State                       ( ModelEnumType State State State Int32 )
 
             return value;
         }

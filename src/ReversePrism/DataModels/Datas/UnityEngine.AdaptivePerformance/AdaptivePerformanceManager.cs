@@ -8,42 +8,42 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 ThermalEvent                             000186659550 ModelClassType ThermalEventHandler ThermalEventHandler ThermalEventHandler Pointer
-    // 028 PerformanceBottleneckChangeEvent         000186731A10 ModelClassType PerformanceBottleneckChangeHandler PerformanceBottleneckChangeHandler PerformanceBottleneckChangeHandler Pointer
-    // 030 PerformanceLevelChangeEvent              000186732FE0 ModelClassType PerformanceLevelChangeHandler PerformanceLevelChangeHandler PerformanceLevelChangeHandler Pointer
-    // 038 PerformanceBoostChangeEvent              0001867306E0 ModelClassType PerformanceBoostChangeHandler PerformanceBoostChangeHandler PerformanceBoostChangeHandler Pointer
-    // 040 PerformanceModeEvent                     000186734060 ModelClassType PerformanceModeEventHandler PerformanceModeEventHandler PerformanceModeEventHandler Pointer
-    // 048 M_JustResumed                            000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 04C M_RequestedCpuLevel                      0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 050 M_RequestedGpuLevel                      0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 054 M_NewUserPerformanceLevelRequest         000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 055 M_RequestedCpuBoost                      000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 056 M_RequestedGpuBoost                      000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 057 M_NewUserCpuPerformanceBoostRequest      000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 058 M_NewUserGpuPerformanceBoostRequest      000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 05C M_ThermalMetrics                         000186659A50 ModelEnumType ThermalMetrics ThermalMetrics ThermalMetrics Int32
-    // 068 M_PerformanceMetrics                     000186733480 ModelEnumType PerformanceMetrics PerformanceMetrics PerformanceMetrics Int32
-    // 084 M_FrameTiming                            0001865C0470 ModelEnumType FrameTiming FrameTiming FrameTiming Int32
-    // 09C M_PerformanceMode                        000186733960 ModelEnumType PerformanceMode PerformanceMode PerformanceMode Int32
-    // 0A0 LoggingFrequencyInFrames                 0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 0A4 M_AutomaticPerformanceControl            000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 0A5 M_AutomaticPerformanceControlChanged     000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 0A8 Indexer                                  000186683E60 ModelClassType AdaptivePerformanceIndexer AdaptivePerformanceIndexer AdaptivePerformanceIndexer Pointer
-    // 0B0 M_Settings                               0001865E0E70 ModelClassType IAdaptivePerformanceSettings IAdaptivePerformanceSettings IAdaptivePerformanceSettings Pointer
-    // 0B8 M_Subsystem                              000186687E50 ModelClassType AdaptivePerformanceSubsystem AdaptivePerformanceSubsystem AdaptivePerformanceSubsystem Pointer
-    // 0C0 M_DevicePerfControl                      0001866CB810 ModelClassType DevicePerformanceControlImpl DevicePerformanceControlImpl DevicePerformanceControlImpl Pointer
-    // 0C8 M_AutoPerformanceLevelController         000186727F30 ModelClassType AutoPerformanceLevelController AutoPerformanceLevelController AutoPerformanceLevelController Pointer
-    // 0D0 M_CpuFrameTimeProvider                   000186639A40 ModelClassType CpuTimeProvider CpuTimeProvider CpuTimeProvider Pointer
-    // 0D8 M_GpuFrameTimeProvider                   00018668E3F0 ModelClassType GpuTimeProvider GpuTimeProvider GpuTimeProvider Pointer
-    // 0E0 M_AppLifecycle                           0001866F9980 ModelClassType IApplicationLifecycle IApplicationLifecycle IApplicationLifecycle Pointer
-    // 0E8 M_TemperatureTrend                       00018662DA50 ModelClassType TemperatureTrend TemperatureTrend TemperatureTrend Pointer
-    // 0F0 M_UseProviderOverallFrameTime            000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 0F8 M_WaitForEndOfFrame                      000186541180 ModelClassType WaitForEndOfFrame WaitForEndOfFrame WaitForEndOfFrame Pointer
-    // 100 M_FrameCount                             0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 108 M_OverallFrameTime                       000186695340 ModelClassType RunningAverage RunningAverage RunningAverage Pointer
-    // 110 M_OverallFrameTimeAccu                   0001866656B0 ModelPrimitiveType float float float Single
-    // 118 M_GpuFrameTime                           000186695340 ModelClassType RunningAverage RunningAverage RunningAverage Pointer
-    // 120 M_CpuFrameTime                           000186695340 ModelClassType RunningAverage RunningAverage RunningAverage Pointer
+    // 020 ThermalEvent                             ModelClassType ThermalEventHandler ThermalEventHandler ThermalEventHandler Pointer
+    // 028 PerformanceBottleneckChangeEvent         ModelClassType PerformanceBottleneckChangeHandler PerformanceBottleneckChangeHandler PerformanceBottleneckChangeHandler Pointer
+    // 030 PerformanceLevelChangeEvent              ModelClassType PerformanceLevelChangeHandler PerformanceLevelChangeHandler PerformanceLevelChangeHandler Pointer
+    // 038 PerformanceBoostChangeEvent              ModelClassType PerformanceBoostChangeHandler PerformanceBoostChangeHandler PerformanceBoostChangeHandler Pointer
+    // 040 PerformanceModeEvent                     ModelClassType PerformanceModeEventHandler PerformanceModeEventHandler PerformanceModeEventHandler Pointer
+    // 048 M_JustResumed                            ModelPrimitiveType bool bool bool Bool
+    // 04C M_RequestedCpuLevel                      ModelPrimitiveType int int int Int32
+    // 050 M_RequestedGpuLevel                      ModelPrimitiveType int int int Int32
+    // 054 M_NewUserPerformanceLevelRequest         ModelPrimitiveType bool bool bool Bool
+    // 055 M_RequestedCpuBoost                      ModelPrimitiveType bool bool bool Bool
+    // 056 M_RequestedGpuBoost                      ModelPrimitiveType bool bool bool Bool
+    // 057 M_NewUserCpuPerformanceBoostRequest      ModelPrimitiveType bool bool bool Bool
+    // 058 M_NewUserGpuPerformanceBoostRequest      ModelPrimitiveType bool bool bool Bool
+    // 05C M_ThermalMetrics                         ModelEnumType ThermalMetrics ThermalMetrics ThermalMetrics Int32
+    // 068 M_PerformanceMetrics                     ModelEnumType PerformanceMetrics PerformanceMetrics PerformanceMetrics Int32
+    // 084 M_FrameTiming                            ModelEnumType FrameTiming FrameTiming FrameTiming Int32
+    // 09C M_PerformanceMode                        ModelEnumType PerformanceMode PerformanceMode PerformanceMode Int32
+    // 0A0 LoggingFrequencyInFrames                 ModelPrimitiveType int int int Int32
+    // 0A4 M_AutomaticPerformanceControl            ModelPrimitiveType bool bool bool Bool
+    // 0A5 M_AutomaticPerformanceControlChanged     ModelPrimitiveType bool bool bool Bool
+    // 0A8 Indexer                                  ModelClassType AdaptivePerformanceIndexer AdaptivePerformanceIndexer AdaptivePerformanceIndexer Pointer
+    // 0B0 M_Settings                               ModelClassType IAdaptivePerformanceSettings IAdaptivePerformanceSettings IAdaptivePerformanceSettings Pointer
+    // 0B8 M_Subsystem                              ModelClassType AdaptivePerformanceSubsystem AdaptivePerformanceSubsystem AdaptivePerformanceSubsystem Pointer
+    // 0C0 M_DevicePerfControl                      ModelClassType DevicePerformanceControlImpl DevicePerformanceControlImpl DevicePerformanceControlImpl Pointer
+    // 0C8 M_AutoPerformanceLevelController         ModelClassType AutoPerformanceLevelController AutoPerformanceLevelController AutoPerformanceLevelController Pointer
+    // 0D0 M_CpuFrameTimeProvider                   ModelClassType CpuTimeProvider CpuTimeProvider CpuTimeProvider Pointer
+    // 0D8 M_GpuFrameTimeProvider                   ModelClassType GpuTimeProvider GpuTimeProvider GpuTimeProvider Pointer
+    // 0E0 M_AppLifecycle                           ModelClassType IApplicationLifecycle IApplicationLifecycle IApplicationLifecycle Pointer
+    // 0E8 M_TemperatureTrend                       ModelClassType TemperatureTrend TemperatureTrend TemperatureTrend Pointer
+    // 0F0 M_UseProviderOverallFrameTime            ModelPrimitiveType bool bool bool Bool
+    // 0F8 M_WaitForEndOfFrame                      ModelClassType WaitForEndOfFrame WaitForEndOfFrame WaitForEndOfFrame Pointer
+    // 100 M_FrameCount                             ModelPrimitiveType int int int Int32
+    // 108 M_OverallFrameTime                       ModelClassType RunningAverage RunningAverage RunningAverage Pointer
+    // 110 M_OverallFrameTimeAccu                   ModelPrimitiveType float float float Single
+    // 118 M_GpuFrameTime                           ModelClassType RunningAverage RunningAverage RunningAverage Pointer
+    // 120 M_CpuFrameTime                           ModelClassType RunningAverage RunningAverage RunningAverage Pointer
     public partial class AdaptivePerformanceManager : DataModel
     {
         public ThermalEventHandler?                     ThermalEvent                            { get; set; }
@@ -91,42 +91,42 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AdaptivePerformanceManager() { Pointer= p0 };
 
-            value.ThermalEvent                              = GetObject<ThermalEventHandler>(new IntPtr(p + 0x020), ReversePrism.DataModels.ThermalEventHandler.FromPointer); // 024660909E88 0x20 ThermalEvent                ( 000186659550 ModelClassType ThermalEventHandler ThermalEventHandler ThermalEventHandler Pointer )
-            value.PerformanceBottleneckChangeEvent          = GetObject<PerformanceBottleneckChangeHandler>(new IntPtr(p + 0x028), ReversePrism.DataModels.PerformanceBottleneckChangeHandler.FromPointer); // 024660909EA8 0x28 PerformanceBottleneckChangeEvent ( 000186731A10 ModelClassType PerformanceBottleneckChangeHandler PerformanceBottleneckChangeHandler PerformanceBottleneckChangeHandler Pointer )
-            value.PerformanceLevelChangeEvent               = GetObject<PerformanceLevelChangeHandler>(new IntPtr(p + 0x030), ReversePrism.DataModels.PerformanceLevelChangeHandler.FromPointer); // 024660909EC8 0x30 PerformanceLevelChangeEvent ( 000186732FE0 ModelClassType PerformanceLevelChangeHandler PerformanceLevelChangeHandler PerformanceLevelChangeHandler Pointer )
-            value.PerformanceBoostChangeEvent               = GetObject<PerformanceBoostChangeHandler>(new IntPtr(p + 0x038), ReversePrism.DataModels.PerformanceBoostChangeHandler.FromPointer); // 024660909EE8 0x38 PerformanceBoostChangeEvent ( 0001867306E0 ModelClassType PerformanceBoostChangeHandler PerformanceBoostChangeHandler PerformanceBoostChangeHandler Pointer )
-            value.PerformanceModeEvent                      = GetObject<PerformanceModeEventHandler>(new IntPtr(p + 0x040), ReversePrism.DataModels.PerformanceModeEventHandler.FromPointer); // 024660909F08 0x40 PerformanceModeEvent        ( 000186734060 ModelClassType PerformanceModeEventHandler PerformanceModeEventHandler PerformanceModeEventHandler Pointer )
-            value.M_JustResumed                             = GetBool(new IntPtr(p + 0x048)); // 024660909F28 0x48 M_JustResumed               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_RequestedCpuLevel                       = GetInt32(new IntPtr(p + 0x04C)); // 024660909F48 0x4C M_RequestedCpuLevel         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_RequestedGpuLevel                       = GetInt32(new IntPtr(p + 0x050)); // 024660909F68 0x50 M_RequestedGpuLevel         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_NewUserPerformanceLevelRequest          = GetBool(new IntPtr(p + 0x054)); // 024660909F88 0x54 M_NewUserPerformanceLevelRequest ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_RequestedCpuBoost                       = GetBool(new IntPtr(p + 0x055)); // 024660909FA8 0x55 M_RequestedCpuBoost         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_RequestedGpuBoost                       = GetBool(new IntPtr(p + 0x056)); // 024660909FC8 0x56 M_RequestedGpuBoost         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_NewUserCpuPerformanceBoostRequest       = GetBool(new IntPtr(p + 0x057)); // 024660909FE8 0x57 M_NewUserCpuPerformanceBoostRequest ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_NewUserGpuPerformanceBoostRequest       = GetBool(new IntPtr(p + 0x058)); // 02466090A008 0x58 M_NewUserGpuPerformanceBoostRequest ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_ThermalMetrics                          = (ThermalMetrics)GetInt32(new IntPtr(p + 0x05C)); // 02466090A028 0x5C M_ThermalMetrics            ( 000186659A50 ModelEnumType ThermalMetrics ThermalMetrics ThermalMetrics Int32 )
-            value.M_PerformanceMetrics                      = (PerformanceMetrics)GetInt32(new IntPtr(p + 0x068)); // 02466090A048 0x68 M_PerformanceMetrics        ( 000186733480 ModelEnumType PerformanceMetrics PerformanceMetrics PerformanceMetrics Int32 )
-            value.M_FrameTiming                             = (FrameTiming)GetInt32(new IntPtr(p + 0x084)); // 02466090A068 0x84 M_FrameTiming               ( 0001865C0470 ModelEnumType FrameTiming FrameTiming FrameTiming Int32 )
-            value.M_PerformanceMode                         = (PerformanceMode)GetInt32(new IntPtr(p + 0x09C)); // 02466090A088 0x9C M_PerformanceMode           ( 000186733960 ModelEnumType PerformanceMode PerformanceMode PerformanceMode Int32 )
-            value.LoggingFrequencyInFrames                  = GetInt32(new IntPtr(p + 0x0A0)); // 02466090A0A8 0xA0 LoggingFrequencyInFrames    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_AutomaticPerformanceControl             = GetBool(new IntPtr(p + 0x0A4)); // 02466090A0C8 0xA4 M_AutomaticPerformanceControl ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_AutomaticPerformanceControlChanged      = GetBool(new IntPtr(p + 0x0A5)); // 02466090A0E8 0xA5 M_AutomaticPerformanceControlChanged ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Indexer                                   = GetObject<AdaptivePerformanceIndexer>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.AdaptivePerformanceIndexer.FromPointer); // 02466090A108 0xA8 Indexer                     ( 000186683E60 ModelClassType AdaptivePerformanceIndexer AdaptivePerformanceIndexer AdaptivePerformanceIndexer Pointer )
-            value.M_Settings                                = GetObject<IAdaptivePerformanceSettings>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.IAdaptivePerformanceSettings.FromPointer); // 02466090A128 0xB0 M_Settings                  ( 0001865E0E70 ModelClassType IAdaptivePerformanceSettings IAdaptivePerformanceSettings IAdaptivePerformanceSettings Pointer )
-            value.M_Subsystem                               = GetObject<AdaptivePerformanceSubsystem>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.AdaptivePerformanceSubsystem.FromPointer); // 02466090A148 0xB8 M_Subsystem                 ( 000186687E50 ModelClassType AdaptivePerformanceSubsystem AdaptivePerformanceSubsystem AdaptivePerformanceSubsystem Pointer )
-            value.M_DevicePerfControl                       = GetObject<DevicePerformanceControlImpl>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.DevicePerformanceControlImpl.FromPointer); // 02466090A168 0xC0 M_DevicePerfControl         ( 0001866CB810 ModelClassType DevicePerformanceControlImpl DevicePerformanceControlImpl DevicePerformanceControlImpl Pointer )
-            value.M_AutoPerformanceLevelController          = GetObject<AutoPerformanceLevelController>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.AutoPerformanceLevelController.FromPointer); // 02466090A188 0xC8 M_AutoPerformanceLevelController ( 000186727F30 ModelClassType AutoPerformanceLevelController AutoPerformanceLevelController AutoPerformanceLevelController Pointer )
-            value.M_CpuFrameTimeProvider                    = GetObject<CpuTimeProvider>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.CpuTimeProvider.FromPointer); // 02466090A1A8 0xD0 M_CpuFrameTimeProvider      ( 000186639A40 ModelClassType CpuTimeProvider CpuTimeProvider CpuTimeProvider Pointer )
-            value.M_GpuFrameTimeProvider                    = GetObject<GpuTimeProvider>(new IntPtr(p + 0x0D8), ReversePrism.DataModels.GpuTimeProvider.FromPointer); // 02466090A1C8 0xD8 M_GpuFrameTimeProvider      ( 00018668E3F0 ModelClassType GpuTimeProvider GpuTimeProvider GpuTimeProvider Pointer )
-            value.M_AppLifecycle                            = GetObject<IApplicationLifecycle>(new IntPtr(p + 0x0E0), ReversePrism.DataModels.IApplicationLifecycle.FromPointer); // 02466090A1E8 0xE0 M_AppLifecycle              ( 0001866F9980 ModelClassType IApplicationLifecycle IApplicationLifecycle IApplicationLifecycle Pointer )
-            value.M_TemperatureTrend                        = GetObject<TemperatureTrend>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.TemperatureTrend.FromPointer); // 02466090A208 0xE8 M_TemperatureTrend          ( 00018662DA50 ModelClassType TemperatureTrend TemperatureTrend TemperatureTrend Pointer )
-            value.M_UseProviderOverallFrameTime             = GetBool(new IntPtr(p + 0x0F0)); // 02466090A228 0xF0 M_UseProviderOverallFrameTime ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_WaitForEndOfFrame                       = GetObject<WaitForEndOfFrame>(new IntPtr(p + 0x0F8), ReversePrism.DataModels.WaitForEndOfFrame.FromPointer); // 02466090A248 0xF8 M_WaitForEndOfFrame         ( 000186541180 ModelClassType WaitForEndOfFrame WaitForEndOfFrame WaitForEndOfFrame Pointer )
-            value.M_FrameCount                              = GetInt32(new IntPtr(p + 0x100)); // 02466090A268 0x100 M_FrameCount                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_OverallFrameTime                        = GetObject<RunningAverage>(new IntPtr(p + 0x108), ReversePrism.DataModels.RunningAverage.FromPointer); // 02466090A288 0x108 M_OverallFrameTime          ( 000186695340 ModelClassType RunningAverage RunningAverage RunningAverage Pointer )
-            value.M_OverallFrameTimeAccu                    = GetSingle(new IntPtr(p + 0x110)); // 02466090A2A8 0x110 M_OverallFrameTimeAccu      ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_GpuFrameTime                            = GetObject<RunningAverage>(new IntPtr(p + 0x118), ReversePrism.DataModels.RunningAverage.FromPointer); // 02466090A2C8 0x118 M_GpuFrameTime              ( 000186695340 ModelClassType RunningAverage RunningAverage RunningAverage Pointer )
-            value.M_CpuFrameTime                            = GetObject<RunningAverage>(new IntPtr(p + 0x120), ReversePrism.DataModels.RunningAverage.FromPointer); // 02466090A2E8 0x120 M_CpuFrameTime              ( 000186695340 ModelClassType RunningAverage RunningAverage RunningAverage Pointer )
+            value.ThermalEvent                              = GetObject<ThermalEventHandler>(new IntPtr(p + 0x020), ReversePrism.DataModels.ThermalEventHandler.FromPointer); // 0x20 ThermalEvent                ( ModelClassType ThermalEventHandler ThermalEventHandler ThermalEventHandler Pointer )
+            value.PerformanceBottleneckChangeEvent          = GetObject<PerformanceBottleneckChangeHandler>(new IntPtr(p + 0x028), ReversePrism.DataModels.PerformanceBottleneckChangeHandler.FromPointer); // 0x28 PerformanceBottleneckChangeEvent ( ModelClassType PerformanceBottleneckChangeHandler PerformanceBottleneckChangeHandler PerformanceBottleneckChangeHandler Pointer )
+            value.PerformanceLevelChangeEvent               = GetObject<PerformanceLevelChangeHandler>(new IntPtr(p + 0x030), ReversePrism.DataModels.PerformanceLevelChangeHandler.FromPointer); // 0x30 PerformanceLevelChangeEvent ( ModelClassType PerformanceLevelChangeHandler PerformanceLevelChangeHandler PerformanceLevelChangeHandler Pointer )
+            value.PerformanceBoostChangeEvent               = GetObject<PerformanceBoostChangeHandler>(new IntPtr(p + 0x038), ReversePrism.DataModels.PerformanceBoostChangeHandler.FromPointer); // 0x38 PerformanceBoostChangeEvent ( ModelClassType PerformanceBoostChangeHandler PerformanceBoostChangeHandler PerformanceBoostChangeHandler Pointer )
+            value.PerformanceModeEvent                      = GetObject<PerformanceModeEventHandler>(new IntPtr(p + 0x040), ReversePrism.DataModels.PerformanceModeEventHandler.FromPointer); // 0x40 PerformanceModeEvent        ( ModelClassType PerformanceModeEventHandler PerformanceModeEventHandler PerformanceModeEventHandler Pointer )
+            value.M_JustResumed                             = GetBool(new IntPtr(p + 0x048)); // 0x48 M_JustResumed               ( ModelPrimitiveType bool bool bool Bool )
+            value.M_RequestedCpuLevel                       = GetInt32(new IntPtr(p + 0x04C)); // 0x4C M_RequestedCpuLevel         ( ModelPrimitiveType int int int Int32 )
+            value.M_RequestedGpuLevel                       = GetInt32(new IntPtr(p + 0x050)); // 0x50 M_RequestedGpuLevel         ( ModelPrimitiveType int int int Int32 )
+            value.M_NewUserPerformanceLevelRequest          = GetBool(new IntPtr(p + 0x054)); // 0x54 M_NewUserPerformanceLevelRequest ( ModelPrimitiveType bool bool bool Bool )
+            value.M_RequestedCpuBoost                       = GetBool(new IntPtr(p + 0x055)); // 0x55 M_RequestedCpuBoost         ( ModelPrimitiveType bool bool bool Bool )
+            value.M_RequestedGpuBoost                       = GetBool(new IntPtr(p + 0x056)); // 0x56 M_RequestedGpuBoost         ( ModelPrimitiveType bool bool bool Bool )
+            value.M_NewUserCpuPerformanceBoostRequest       = GetBool(new IntPtr(p + 0x057)); // 0x57 M_NewUserCpuPerformanceBoostRequest ( ModelPrimitiveType bool bool bool Bool )
+            value.M_NewUserGpuPerformanceBoostRequest       = GetBool(new IntPtr(p + 0x058)); // 0x58 M_NewUserGpuPerformanceBoostRequest ( ModelPrimitiveType bool bool bool Bool )
+            value.M_ThermalMetrics                          = (ThermalMetrics)GetInt32(new IntPtr(p + 0x05C)); // 0x5C M_ThermalMetrics            ( ModelEnumType ThermalMetrics ThermalMetrics ThermalMetrics Int32 )
+            value.M_PerformanceMetrics                      = (PerformanceMetrics)GetInt32(new IntPtr(p + 0x068)); // 0x68 M_PerformanceMetrics        ( ModelEnumType PerformanceMetrics PerformanceMetrics PerformanceMetrics Int32 )
+            value.M_FrameTiming                             = (FrameTiming)GetInt32(new IntPtr(p + 0x084)); // 0x84 M_FrameTiming               ( ModelEnumType FrameTiming FrameTiming FrameTiming Int32 )
+            value.M_PerformanceMode                         = (PerformanceMode)GetInt32(new IntPtr(p + 0x09C)); // 0x9C M_PerformanceMode           ( ModelEnumType PerformanceMode PerformanceMode PerformanceMode Int32 )
+            value.LoggingFrequencyInFrames                  = GetInt32(new IntPtr(p + 0x0A0)); // 0xA0 LoggingFrequencyInFrames    ( ModelPrimitiveType int int int Int32 )
+            value.M_AutomaticPerformanceControl             = GetBool(new IntPtr(p + 0x0A4)); // 0xA4 M_AutomaticPerformanceControl ( ModelPrimitiveType bool bool bool Bool )
+            value.M_AutomaticPerformanceControlChanged      = GetBool(new IntPtr(p + 0x0A5)); // 0xA5 M_AutomaticPerformanceControlChanged ( ModelPrimitiveType bool bool bool Bool )
+            value.Indexer                                   = GetObject<AdaptivePerformanceIndexer>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.AdaptivePerformanceIndexer.FromPointer); // 0xA8 Indexer                     ( ModelClassType AdaptivePerformanceIndexer AdaptivePerformanceIndexer AdaptivePerformanceIndexer Pointer )
+            value.M_Settings                                = GetObject<IAdaptivePerformanceSettings>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.IAdaptivePerformanceSettings.FromPointer); // 0xB0 M_Settings                  ( ModelClassType IAdaptivePerformanceSettings IAdaptivePerformanceSettings IAdaptivePerformanceSettings Pointer )
+            value.M_Subsystem                               = GetObject<AdaptivePerformanceSubsystem>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.AdaptivePerformanceSubsystem.FromPointer); // 0xB8 M_Subsystem                 ( ModelClassType AdaptivePerformanceSubsystem AdaptivePerformanceSubsystem AdaptivePerformanceSubsystem Pointer )
+            value.M_DevicePerfControl                       = GetObject<DevicePerformanceControlImpl>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.DevicePerformanceControlImpl.FromPointer); // 0xC0 M_DevicePerfControl         ( ModelClassType DevicePerformanceControlImpl DevicePerformanceControlImpl DevicePerformanceControlImpl Pointer )
+            value.M_AutoPerformanceLevelController          = GetObject<AutoPerformanceLevelController>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.AutoPerformanceLevelController.FromPointer); // 0xC8 M_AutoPerformanceLevelController ( ModelClassType AutoPerformanceLevelController AutoPerformanceLevelController AutoPerformanceLevelController Pointer )
+            value.M_CpuFrameTimeProvider                    = GetObject<CpuTimeProvider>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.CpuTimeProvider.FromPointer); // 0xD0 M_CpuFrameTimeProvider      ( ModelClassType CpuTimeProvider CpuTimeProvider CpuTimeProvider Pointer )
+            value.M_GpuFrameTimeProvider                    = GetObject<GpuTimeProvider>(new IntPtr(p + 0x0D8), ReversePrism.DataModels.GpuTimeProvider.FromPointer); // 0xD8 M_GpuFrameTimeProvider      ( ModelClassType GpuTimeProvider GpuTimeProvider GpuTimeProvider Pointer )
+            value.M_AppLifecycle                            = GetObject<IApplicationLifecycle>(new IntPtr(p + 0x0E0), ReversePrism.DataModels.IApplicationLifecycle.FromPointer); // 0xE0 M_AppLifecycle              ( ModelClassType IApplicationLifecycle IApplicationLifecycle IApplicationLifecycle Pointer )
+            value.M_TemperatureTrend                        = GetObject<TemperatureTrend>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.TemperatureTrend.FromPointer); // 0xE8 M_TemperatureTrend          ( ModelClassType TemperatureTrend TemperatureTrend TemperatureTrend Pointer )
+            value.M_UseProviderOverallFrameTime             = GetBool(new IntPtr(p + 0x0F0)); // 0xF0 M_UseProviderOverallFrameTime ( ModelPrimitiveType bool bool bool Bool )
+            value.M_WaitForEndOfFrame                       = GetObject<WaitForEndOfFrame>(new IntPtr(p + 0x0F8), ReversePrism.DataModels.WaitForEndOfFrame.FromPointer); // 0xF8 M_WaitForEndOfFrame         ( ModelClassType WaitForEndOfFrame WaitForEndOfFrame WaitForEndOfFrame Pointer )
+            value.M_FrameCount                              = GetInt32(new IntPtr(p + 0x100)); // 0x100 M_FrameCount                ( ModelPrimitiveType int int int Int32 )
+            value.M_OverallFrameTime                        = GetObject<RunningAverage>(new IntPtr(p + 0x108), ReversePrism.DataModels.RunningAverage.FromPointer); // 0x108 M_OverallFrameTime          ( ModelClassType RunningAverage RunningAverage RunningAverage Pointer )
+            value.M_OverallFrameTimeAccu                    = GetSingle(new IntPtr(p + 0x110)); // 0x110 M_OverallFrameTimeAccu      ( ModelPrimitiveType float float float Single )
+            value.M_GpuFrameTime                            = GetObject<RunningAverage>(new IntPtr(p + 0x118), ReversePrism.DataModels.RunningAverage.FromPointer); // 0x118 M_GpuFrameTime              ( ModelClassType RunningAverage RunningAverage RunningAverage Pointer )
+            value.M_CpuFrameTime                            = GetObject<RunningAverage>(new IntPtr(p + 0x120), ReversePrism.DataModels.RunningAverage.FromPointer); // 0x120 M_CpuFrameTime              ( ModelClassType RunningAverage RunningAverage RunningAverage Pointer )
 
             return value;
         }

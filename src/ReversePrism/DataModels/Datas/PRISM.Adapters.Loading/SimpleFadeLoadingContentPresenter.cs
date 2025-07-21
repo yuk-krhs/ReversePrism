@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 View                                     000186646380 ModelClassType ISimpleFadeLoadingContentView ISimpleFadeLoadingContentView ISimpleFadeLoadingContentView Pointer
-    // 018 SimpleFadeType                           0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 View                                     ModelClassType ISimpleFadeLoadingContentView ISimpleFadeLoadingContentView ISimpleFadeLoadingContentView Pointer
+    // 018 SimpleFadeType                           ModelPrimitiveType int int int Int32
     public partial class SimpleFadeLoadingContentPresenter : DataModel
     {
         public ISimpleFadeLoadingContentView?           View                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SimpleFadeLoadingContentPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<ISimpleFadeLoadingContentView>(new IntPtr(p + 0x010), ReversePrism.DataModels.ISimpleFadeLoadingContentView.FromPointer); // 0245A3A655C0 0x10 View                        ( 000186646380 ModelClassType ISimpleFadeLoadingContentView ISimpleFadeLoadingContentView ISimpleFadeLoadingContentView Pointer )
-            value.SimpleFadeType                            = GetInt32(new IntPtr(p + 0x018)); // 0245A3A655E0 0x18 SimpleFadeType              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.View                                      = GetObject<ISimpleFadeLoadingContentView>(new IntPtr(p + 0x010), ReversePrism.DataModels.ISimpleFadeLoadingContentView.FromPointer); // 0x10 View                        ( ModelClassType ISimpleFadeLoadingContentView ISimpleFadeLoadingContentView ISimpleFadeLoadingContentView Pointer )
+            value.SimpleFadeType                            = GetInt32(new IntPtr(p + 0x018)); // 0x18 SimpleFadeType              ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

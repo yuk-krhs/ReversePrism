@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 BigCore                                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 014 MediumCore                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 018 LittleCore                               0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 BigCore                                  ModelPrimitiveType int int int Int32
+    // 014 MediumCore                               ModelPrimitiveType int int int Int32
+    // 018 LittleCore                               ModelPrimitiveType int int int Int32
     public partial class ClusterInfo : DataModel
     {
         public int                                      BigCore                                 { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ClusterInfo() { Pointer= p0 };
 
-            value.BigCore                                   = GetInt32(new IntPtr(p + 0x010)); // 02466090A428 0x10 BigCore                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MediumCore                                = GetInt32(new IntPtr(p + 0x014)); // 02466090A448 0x14 MediumCore                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.LittleCore                                = GetInt32(new IntPtr(p + 0x018)); // 02466090A468 0x18 LittleCore                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.BigCore                                   = GetInt32(new IntPtr(p + 0x010)); // 0x10 BigCore                     ( ModelPrimitiveType int int int Int32 )
+            value.MediumCore                                = GetInt32(new IntPtr(p + 0x014)); // 0x14 MediumCore                  ( ModelPrimitiveType int int int Int32 )
+            value.LittleCore                                = GetInt32(new IntPtr(p + 0x018)); // 0x18 LittleCore                  ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

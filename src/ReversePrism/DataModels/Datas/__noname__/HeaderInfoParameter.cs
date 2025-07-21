@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Title                                    000186672F10 ModelPrimitiveType string string string String
-    // 018 MarkType                                 00018658BC10 ModelEnumType PopupMarkType PopupMarkType PopupMarkType Int32
-    // 020 OnInfoClick                              00018667A3C0 ModelClassType Action Action Action Pointer
+    // 010 Title                                    ModelPrimitiveType string string string String
+    // 018 MarkType                                 ModelEnumType PopupMarkType PopupMarkType PopupMarkType Int32
+    // 020 OnInfoClick                              ModelClassType Action Action Action Pointer
     public partial class HeaderInfoParameter : DataModel
     {
         public string                                   Title                                   { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HeaderInfoParameter() { Pointer= p0 };
 
-            value.Title                                     = GetString(new IntPtr(p + 0x010)); // 02466B5F60A8 0x10 Title                       ( 000186672F10 ModelPrimitiveType string string string String )
-            value.MarkType                                  = (PopupMarkType)GetInt32(new IntPtr(p + 0x018)); // 02466B5F60C8 0x18 MarkType                    ( 00018658BC10 ModelEnumType PopupMarkType PopupMarkType PopupMarkType Int32 )
-            value.OnInfoClick                               = GetObject<Action>(new IntPtr(p + 0x020), ReversePrism.DataModels.Action.FromPointer); // 02466B5F60E8 0x20 OnInfoClick                 ( 00018667A3C0 ModelClassType Action Action Action Pointer )
+            value.Title                                     = GetString(new IntPtr(p + 0x010)); // 0x10 Title                       ( ModelPrimitiveType string string string String )
+            value.MarkType                                  = (PopupMarkType)GetInt32(new IntPtr(p + 0x018)); // 0x18 MarkType                    ( ModelEnumType PopupMarkType PopupMarkType PopupMarkType Int32 )
+            value.OnInfoClick                               = GetObject<Action>(new IntPtr(p + 0x020), ReversePrism.DataModels.Action.FromPointer); // 0x20 OnInfoClick                 ( ModelClassType Action Action Action Pointer )
 
             return value;
         }

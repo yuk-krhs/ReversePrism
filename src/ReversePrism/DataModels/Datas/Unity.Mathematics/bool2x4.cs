@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 C0                                       0001866C1A60 ModelEnumType bool2 bool2 bool2 Int32
-    // 012 C1                                       0001866C1A60 ModelEnumType bool2 bool2 bool2 Int32
-    // 014 C2                                       0001866C1A60 ModelEnumType bool2 bool2 bool2 Int32
-    // 016 C3                                       0001866C1A60 ModelEnumType bool2 bool2 bool2 Int32
+    // 010 C0                                       ModelEnumType bool2 bool2 bool2 Int32
+    // 012 C1                                       ModelEnumType bool2 bool2 bool2 Int32
+    // 014 C2                                       ModelEnumType bool2 bool2 bool2 Int32
+    // 016 C3                                       ModelEnumType bool2 bool2 bool2 Int32
     public partial class bool2x4 : DataModel
     {
         public bool2                                    C0                                      { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new bool2x4() { Pointer= p0 };
 
-            value.C0                                        = (bool2)GetInt32(new IntPtr(p + 0x010)); // 024667EB4260 0x10 C0                          ( 0001866C1A60 ModelEnumType bool2 bool2 bool2 Int32 )
-            value.C1                                        = (bool2)GetInt32(new IntPtr(p + 0x012)); // 024667EB4280 0x12 C1                          ( 0001866C1A60 ModelEnumType bool2 bool2 bool2 Int32 )
-            value.C2                                        = (bool2)GetInt32(new IntPtr(p + 0x014)); // 024667EB42A0 0x14 C2                          ( 0001866C1A60 ModelEnumType bool2 bool2 bool2 Int32 )
-            value.C3                                        = (bool2)GetInt32(new IntPtr(p + 0x016)); // 024667EB42C0 0x16 C3                          ( 0001866C1A60 ModelEnumType bool2 bool2 bool2 Int32 )
+            value.C0                                        = (bool2)GetInt32(new IntPtr(p + 0x010)); // 0x10 C0                          ( ModelEnumType bool2 bool2 bool2 Int32 )
+            value.C1                                        = (bool2)GetInt32(new IntPtr(p + 0x012)); // 0x12 C1                          ( ModelEnumType bool2 bool2 bool2 Int32 )
+            value.C2                                        = (bool2)GetInt32(new IntPtr(p + 0x014)); // 0x14 C2                          ( ModelEnumType bool2 bool2 bool2 Int32 )
+            value.C3                                        = (bool2)GetInt32(new IntPtr(p + 0x016)); // 0x16 C3                          ( ModelEnumType bool2 bool2 bool2 Int32 )
 
             return value;
         }

@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 OffsetX                                  000186666050 ModelPrimitiveType float float float Single
-    // 014 OffsetY                                  000186666050 ModelPrimitiveType float float float Single
-    // 018 ScaleX                                   000186666050 ModelPrimitiveType float float float Single
-    // 01C ScaleY                                   000186666050 ModelPrimitiveType float float float Single
-    // 020 LnA                                      000186666050 ModelPrimitiveType float float float Single
-    // 024 B                                        000186666050 ModelPrimitiveType float float float Single
+    // 010 OffsetX                                  ModelPrimitiveType float float float Single
+    // 014 OffsetY                                  ModelPrimitiveType float float float Single
+    // 018 ScaleX                                   ModelPrimitiveType float float float Single
+    // 01C ScaleY                                   ModelPrimitiveType float float float Single
+    // 020 LnA                                      ModelPrimitiveType float float float Single
+    // 024 B                                        ModelPrimitiveType float float float Single
     public partial class Segment : DataModel
     {
         public float                                    OffsetX                                 { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Segment() { Pointer= p0 };
 
-            value.OffsetX                                   = GetSingle(new IntPtr(p + 0x010)); // 02466B4A5F98 0x10 OffsetX                     ( 000186666050 ModelPrimitiveType float float float Single )
-            value.OffsetY                                   = GetSingle(new IntPtr(p + 0x014)); // 02466B4A5FB8 0x14 OffsetY                     ( 000186666050 ModelPrimitiveType float float float Single )
-            value.ScaleX                                    = GetSingle(new IntPtr(p + 0x018)); // 02466B4A5FD8 0x18 ScaleX                      ( 000186666050 ModelPrimitiveType float float float Single )
-            value.ScaleY                                    = GetSingle(new IntPtr(p + 0x01C)); // 02466B4A5FF8 0x1C ScaleY                      ( 000186666050 ModelPrimitiveType float float float Single )
-            value.LnA                                       = GetSingle(new IntPtr(p + 0x020)); // 02466B4A6018 0x20 LnA                         ( 000186666050 ModelPrimitiveType float float float Single )
-            value.B                                         = GetSingle(new IntPtr(p + 0x024)); // 02466B4A6038 0x24 B                           ( 000186666050 ModelPrimitiveType float float float Single )
+            value.OffsetX                                   = GetSingle(new IntPtr(p + 0x010)); // 0x10 OffsetX                     ( ModelPrimitiveType float float float Single )
+            value.OffsetY                                   = GetSingle(new IntPtr(p + 0x014)); // 0x14 OffsetY                     ( ModelPrimitiveType float float float Single )
+            value.ScaleX                                    = GetSingle(new IntPtr(p + 0x018)); // 0x18 ScaleX                      ( ModelPrimitiveType float float float Single )
+            value.ScaleY                                    = GetSingle(new IntPtr(p + 0x01C)); // 0x1C ScaleY                      ( ModelPrimitiveType float float float Single )
+            value.LnA                                       = GetSingle(new IntPtr(p + 0x020)); // 0x20 LnA                         ( ModelPrimitiveType float float float Single )
+            value.B                                         = GetSingle(new IntPtr(p + 0x024)); // 0x24 B                           ( ModelPrimitiveType float float float Single )
 
             return value;
         }

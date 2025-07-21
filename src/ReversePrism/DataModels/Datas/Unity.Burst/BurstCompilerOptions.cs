@@ -116,14 +116,14 @@ namespace ReversePrism.DataModels
     // 000 ForceDisableBurstCompilation             bool IL2CPP_TYPE_BOOLEAN
     // 001 ForceBurstCompilationSynchronously       bool IL2CPP_TYPE_BOOLEAN
     // 002 IsSecondaryUnityProcess                  bool IL2CPP_TYPE_BOOLEAN
-    // 010 EnableBurstCompilation                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 011 EnableBurstCompileSynchronously          000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 012 EnableBurstSafetyChecks                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 013 EnableBurstTimings                       000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 014 EnableBurstDebug                         000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 015 ForceEnableBurstSafetyChecks             000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 016 IsGlobal                                 0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 018 OptionsChanged                           0001866792B0 ModelClassType Action Action Action Pointer
+    // 010 EnableBurstCompilation                   ModelPrimitiveType bool bool bool Bool
+    // 011 EnableBurstCompileSynchronously          ModelPrimitiveType bool bool bool Bool
+    // 012 EnableBurstSafetyChecks                  ModelPrimitiveType bool bool bool Bool
+    // 013 EnableBurstTimings                       ModelPrimitiveType bool bool bool Bool
+    // 014 EnableBurstDebug                         ModelPrimitiveType bool bool bool Bool
+    // 015 ForceEnableBurstSafetyChecks             ModelPrimitiveType bool bool bool Bool
+    // 016 IsGlobal                                 ModelPrimitiveType bool bool bool Bool
+    // 018 OptionsChanged                           ModelClassType Action Action Action Pointer
     public partial class BurstCompilerOptions : DataModel
     {
         public bool                                     EnableBurstCompilation                  { get; set; }
@@ -143,14 +143,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BurstCompilerOptions() { Pointer= p0 };
 
-            value.EnableBurstCompilation                    = GetBool(new IntPtr(p + 0x010)); // 0245A349C168 0x10 EnableBurstCompilation      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.EnableBurstCompileSynchronously           = GetBool(new IntPtr(p + 0x011)); // 0245A349C188 0x11 EnableBurstCompileSynchronously ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.EnableBurstSafetyChecks                   = GetBool(new IntPtr(p + 0x012)); // 0245A349C1A8 0x12 EnableBurstSafetyChecks     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.EnableBurstTimings                        = GetBool(new IntPtr(p + 0x013)); // 0245A349C1C8 0x13 EnableBurstTimings          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.EnableBurstDebug                          = GetBool(new IntPtr(p + 0x014)); // 0245A349C1E8 0x14 EnableBurstDebug            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ForceEnableBurstSafetyChecks              = GetBool(new IntPtr(p + 0x015)); // 0245A349C208 0x15 ForceEnableBurstSafetyChecks ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsGlobal                                  = GetBool(new IntPtr(p + 0x016)); // 0245A349C228 0x16 IsGlobal                    ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.OptionsChanged                            = GetObject<Action>(new IntPtr(p + 0x018), ReversePrism.DataModels.Action.FromPointer); // 0245A349C248 0x18 OptionsChanged              ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.EnableBurstCompilation                    = GetBool(new IntPtr(p + 0x010)); // 0x10 EnableBurstCompilation      ( ModelPrimitiveType bool bool bool Bool )
+            value.EnableBurstCompileSynchronously           = GetBool(new IntPtr(p + 0x011)); // 0x11 EnableBurstCompileSynchronously ( ModelPrimitiveType bool bool bool Bool )
+            value.EnableBurstSafetyChecks                   = GetBool(new IntPtr(p + 0x012)); // 0x12 EnableBurstSafetyChecks     ( ModelPrimitiveType bool bool bool Bool )
+            value.EnableBurstTimings                        = GetBool(new IntPtr(p + 0x013)); // 0x13 EnableBurstTimings          ( ModelPrimitiveType bool bool bool Bool )
+            value.EnableBurstDebug                          = GetBool(new IntPtr(p + 0x014)); // 0x14 EnableBurstDebug            ( ModelPrimitiveType bool bool bool Bool )
+            value.ForceEnableBurstSafetyChecks              = GetBool(new IntPtr(p + 0x015)); // 0x15 ForceEnableBurstSafetyChecks ( ModelPrimitiveType bool bool bool Bool )
+            value.IsGlobal                                  = GetBool(new IntPtr(p + 0x016)); // 0x16 IsGlobal                    ( ModelPrimitiveType bool bool bool Bool )
+            value.OptionsChanged                            = GetObject<Action>(new IntPtr(p + 0x018), ReversePrism.DataModels.Action.FromPointer); // 0x18 OptionsChanged              ( ModelClassType Action Action Action Pointer )
 
             return value;
         }

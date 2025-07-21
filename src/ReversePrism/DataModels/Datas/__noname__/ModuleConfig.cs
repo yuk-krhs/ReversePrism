@@ -8,14 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 NumInstallers                            0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 018 ProxyHost                                000186674C50 ModelPrimitiveType string string string String
-    // 020 ProxyPort                                000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
-    // 028 UserAgent                                000186674C50 ModelPrimitiveType string string string String
-    // 030 InactiveTimeoutSec                       0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 034 AllowInsecureSSL                         000186595960 ModelPrimitiveType bool bool bool Bool
-    // 035 CrcEnabled                               000186595960 ModelPrimitiveType bool bool bool Bool
-    // 036 PlatformConfig                           00018655C3A0 ModelEnumType ModulePlatformConfig ModulePlatformConfig ModulePlatformConfig Int32
+    // 010 NumInstallers                            ModelPrimitiveType uint uint uint UInt32
+    // 018 ProxyHost                                ModelPrimitiveType string string string String
+    // 020 ProxyPort                                ModelPrimitiveType ushort ushort ushort UInt16
+    // 028 UserAgent                                ModelPrimitiveType string string string String
+    // 030 InactiveTimeoutSec                       ModelPrimitiveType uint uint uint UInt32
+    // 034 AllowInsecureSSL                         ModelPrimitiveType bool bool bool Bool
+    // 035 CrcEnabled                               ModelPrimitiveType bool bool bool Bool
+    // 036 PlatformConfig                           ModelEnumType ModulePlatformConfig ModulePlatformConfig ModulePlatformConfig Int32
     public partial class ModuleConfig : DataModel
     {
         public uint                                     NumInstallers                           { get; set; }
@@ -35,14 +35,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ModuleConfig() { Pointer= p0 };
 
-            value.NumInstallers                             = GetUInt32(new IntPtr(p + 0x010)); // 02466AD25538 0x10 NumInstallers               ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.ProxyHost                                 = GetString(new IntPtr(p + 0x018)); // 02466AD25558 0x18 ProxyHost                   ( 000186674C50 ModelPrimitiveType string string string String )
-            value.ProxyPort                                 = GetUInt16(new IntPtr(p + 0x020)); // 02466AD25578 0x20 ProxyPort                   ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.UserAgent                                 = GetString(new IntPtr(p + 0x028)); // 02466AD25598 0x28 UserAgent                   ( 000186674C50 ModelPrimitiveType string string string String )
-            value.InactiveTimeoutSec                        = GetUInt32(new IntPtr(p + 0x030)); // 02466AD255B8 0x30 InactiveTimeoutSec          ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.AllowInsecureSSL                          = GetBool(new IntPtr(p + 0x034)); // 02466AD255D8 0x34 AllowInsecureSSL            ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.CrcEnabled                                = GetBool(new IntPtr(p + 0x035)); // 02466AD255F8 0x35 CrcEnabled                  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.PlatformConfig                            = (ModulePlatformConfig)GetInt32(new IntPtr(p + 0x036)); // 02466AD25618 0x36 PlatformConfig              ( 00018655C3A0 ModelEnumType ModulePlatformConfig ModulePlatformConfig ModulePlatformConfig Int32 )
+            value.NumInstallers                             = GetUInt32(new IntPtr(p + 0x010)); // 0x10 NumInstallers               ( ModelPrimitiveType uint uint uint UInt32 )
+            value.ProxyHost                                 = GetString(new IntPtr(p + 0x018)); // 0x18 ProxyHost                   ( ModelPrimitiveType string string string String )
+            value.ProxyPort                                 = GetUInt16(new IntPtr(p + 0x020)); // 0x20 ProxyPort                   ( ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.UserAgent                                 = GetString(new IntPtr(p + 0x028)); // 0x28 UserAgent                   ( ModelPrimitiveType string string string String )
+            value.InactiveTimeoutSec                        = GetUInt32(new IntPtr(p + 0x030)); // 0x30 InactiveTimeoutSec          ( ModelPrimitiveType uint uint uint UInt32 )
+            value.AllowInsecureSSL                          = GetBool(new IntPtr(p + 0x034)); // 0x34 AllowInsecureSSL            ( ModelPrimitiveType bool bool bool Bool )
+            value.CrcEnabled                                = GetBool(new IntPtr(p + 0x035)); // 0x35 CrcEnabled                  ( ModelPrimitiveType bool bool bool Bool )
+            value.PlatformConfig                            = (ModulePlatformConfig)GetInt32(new IntPtr(p + 0x036)); // 0x36 PlatformConfig              ( ModelEnumType ModulePlatformConfig ModulePlatformConfig ModulePlatformConfig Int32 )
 
             return value;
         }

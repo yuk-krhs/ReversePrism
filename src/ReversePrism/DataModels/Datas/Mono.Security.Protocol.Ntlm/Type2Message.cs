@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 Nonce                                    000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 020 TargetName                               000186671910 ModelPrimitiveType string string string String
-    // 028 TargetInfo                               000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 018 Nonce                                    ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 020 TargetName                               ModelPrimitiveType string string string String
+    // 028 TargetInfo                               ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     public partial class Type2Message : DataModel
     {
         public List<sbyte>?                             Nonce                                   { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Type2Message() { Pointer= p0 };
 
-            value.Nonce                                     = GetSByteList(new IntPtr(p + 0x018)); // 02466B40CDC0 0x18 Nonce                       ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.TargetName                                = GetString(new IntPtr(p + 0x020)); // 02466B40CDE0 0x20 TargetName                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.TargetInfo                                = GetSByteList(new IntPtr(p + 0x028)); // 02466B40CE00 0x28 TargetInfo                  ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Nonce                                     = GetSByteList(new IntPtr(p + 0x018)); // 0x18 Nonce                       ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.TargetName                                = GetString(new IntPtr(p + 0x020)); // 0x20 TargetName                  ( ModelPrimitiveType string string string String )
+            value.TargetInfo                                = GetSByteList(new IntPtr(p + 0x028)); // 0x28 TargetInfo                  ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

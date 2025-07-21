@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 LastCultureName                          0001866722E0 ModelPrimitiveType string string string String
-    // 018 LastResourceSet                          00018665B2B0 ModelClassType ResourceSet ResourceSet ResourceSet Pointer
+    // 010 LastCultureName                          ModelPrimitiveType string string string String
+    // 018 LastResourceSet                          ModelClassType ResourceSet ResourceSet ResourceSet Pointer
     public partial class CultureNameResourceSetPair : DataModel
     {
         public string                                   LastCultureName                         { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CultureNameResourceSetPair() { Pointer= p0 };
 
-            value.LastCultureName                           = GetString(new IntPtr(p + 0x010)); // 024666D2FF48 0x10 LastCultureName             ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.LastResourceSet                           = GetObject<ResourceSet>(new IntPtr(p + 0x018), ReversePrism.DataModels.ResourceSet.FromPointer); // 024666D2FF68 0x18 LastResourceSet             ( 00018665B2B0 ModelClassType ResourceSet ResourceSet ResourceSet Pointer )
+            value.LastCultureName                           = GetString(new IntPtr(p + 0x010)); // 0x10 LastCultureName             ( ModelPrimitiveType string string string String )
+            value.LastResourceSet                           = GetObject<ResourceSet>(new IntPtr(p + 0x018), ReversePrism.DataModels.ResourceSet.FromPointer); // 0x18 LastResourceSet             ( ModelClassType ResourceSet ResourceSet ResourceSet Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 RewardViewCells                          000185B74560 ModelClassListType ChallengeTourResultRewardViewCell[] ChallengeTourResultRewardViewCell[] List<ChallengeTourResultRewardViewCell> Pointer
+    // 020 RewardViewCells                          ModelClassListType ChallengeTourResultRewardViewCell[] ChallengeTourResultRewardViewCell[] List<ChallengeTourResultRewardViewCell> Pointer
     public partial class ChallengeTourResultRewardPanelView : DataModel
     {
         public List<ChallengeTourResultRewardViewCell>? RewardViewCells                         { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChallengeTourResultRewardPanelView() { Pointer= p0 };
 
-            value.RewardViewCells                           = GetObjectList<ChallengeTourResultRewardViewCell>(new IntPtr(p + 0x020), ReversePrism.DataModels.ChallengeTourResultRewardViewCell.FromPointer); // 02466A226018 0x20 RewardViewCells             ( 000185B74560 ModelClassListType ChallengeTourResultRewardViewCell[] ChallengeTourResultRewardViewCell[] List<ChallengeTourResultRewardViewCell> Pointer )
+            value.RewardViewCells                           = GetObjectList<ChallengeTourResultRewardViewCell>(new IntPtr(p + 0x020), ReversePrism.DataModels.ChallengeTourResultRewardViewCell.FromPointer); // 0x20 RewardViewCells             ( ModelClassListType ChallengeTourResultRewardViewCell[] ChallengeTourResultRewardViewCell[] List<ChallengeTourResultRewardViewCell> Pointer )
 
             return value;
         }

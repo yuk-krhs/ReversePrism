@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 IconIdolViews                            000185B7EE60 ModelClassListType FesUnitIconIdolView[] FesUnitIconIdolView[] List<FesUnitIconIdolView> Pointer
-    // 028 CurrentGroup                             000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
-    // 030 Ct                                       00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32
-    // 038 UnitMemberNum                            0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 IconIdolViews                            ModelClassListType FesUnitIconIdolView[] FesUnitIconIdolView[] List<FesUnitIconIdolView> Pointer
+    // 028 CurrentGroup                             ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
+    // 030 Ct                                       ModelEnumType CancellationToken CancellationToken CancellationToken Int32
+    // 038 UnitMemberNum                            ModelPrimitiveType int int int Int32
     public partial class FesUnitIdolPositioning : DataModel
     {
         public List<FesUnitIconIdolView>?               IconIdolViews                           { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FesUnitIdolPositioning() { Pointer= p0 };
 
-            value.IconIdolViews                             = GetObjectList<FesUnitIconIdolView>(new IntPtr(p + 0x020), ReversePrism.DataModels.FesUnitIconIdolView.FromPointer); // 0245A5B240B8 0x20 IconIdolViews               ( 000185B7EE60 ModelClassListType FesUnitIconIdolView[] FesUnitIconIdolView[] List<FesUnitIconIdolView> Pointer )
-            value.CurrentGroup                              = GetObject<CanvasGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0245A5B240D8 0x28 CurrentGroup                ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.Ct                                        = (CancellationToken)GetInt32(new IntPtr(p + 0x030)); // 0245A5B240F8 0x30 Ct                          ( 00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
-            value.UnitMemberNum                             = GetInt32(new IntPtr(p + 0x038)); // 0245A5B24118 0x38 UnitMemberNum               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IconIdolViews                             = GetObjectList<FesUnitIconIdolView>(new IntPtr(p + 0x020), ReversePrism.DataModels.FesUnitIconIdolView.FromPointer); // 0x20 IconIdolViews               ( ModelClassListType FesUnitIconIdolView[] FesUnitIconIdolView[] List<FesUnitIconIdolView> Pointer )
+            value.CurrentGroup                              = GetObject<CanvasGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0x28 CurrentGroup                ( ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.Ct                                        = (CancellationToken)GetInt32(new IntPtr(p + 0x030)); // 0x30 Ct                          ( ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
+            value.UnitMemberNum                             = GetInt32(new IntPtr(p + 0x038)); // 0x38 UnitMemberNum               ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

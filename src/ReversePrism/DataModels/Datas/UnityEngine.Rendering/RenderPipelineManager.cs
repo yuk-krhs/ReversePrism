@@ -10,18 +10,18 @@ namespace ReversePrism.DataModels
 
     // 000 s_CurrentPipelineAsset                   RenderPipelineAsset IL2CPP_TYPE_CLASS
     // 008 s_Cameras                                List`1<Camera> IL2CPP_TYPE_GENERICINST
-    // 010 S_CurrentPipelineType                    000186672530 ModelPrimitiveType string string string String
-    // 018 S_CurrentPipeline                        0001866581D0 ModelClassType RenderPipeline RenderPipeline RenderPipeline Pointer
+    // 010 S_CurrentPipelineType                    ModelPrimitiveType string string string String
+    // 018 S_CurrentPipeline                        ModelClassType RenderPipeline RenderPipeline RenderPipeline Pointer
     // 020 beginFrameRendering                      Action`2<ScriptableRenderContext, Camera[]> IL2CPP_TYPE_GENERICINST
     // 028 endFrameRendering                        Action`2<ScriptableRenderContext, Camera[]> IL2CPP_TYPE_GENERICINST
     // 030 beginContextRendering                    Action`2<ScriptableRenderContext, List`1<Camera>> IL2CPP_TYPE_GENERICINST
     // 038 endContextRendering                      Action`2<ScriptableRenderContext, List`1<Camera>> IL2CPP_TYPE_GENERICINST
     // 040 beginCameraRendering                     Action`2<ScriptableRenderContext, Camera> IL2CPP_TYPE_GENERICINST
     // 048 endCameraRendering                       Action`2<ScriptableRenderContext, Camera> IL2CPP_TYPE_GENERICINST
-    // 050 ActiveRenderPipelineTypeChanged          000186679C50 ModelClassType Action Action Action Pointer
+    // 050 ActiveRenderPipelineTypeChanged          ModelClassType Action Action Action Pointer
     // 058 activeRenderPipelineAssetChanged         Action`2<RenderPipelineAsset, RenderPipelineAsset> IL2CPP_TYPE_GENERICINST
-    // 060 ActiveRenderPipelineCreated              000186679C50 ModelClassType Action Action Action Pointer
-    // 068 ActiveRenderPipelineDisposed             000186679C50 ModelClassType Action Action Action Pointer
+    // 060 ActiveRenderPipelineCreated              ModelClassType Action Action Action Pointer
+    // 068 ActiveRenderPipelineDisposed             ModelClassType Action Action Action Pointer
     public partial class RenderPipelineManager : DataModel
     {
         public string                                   S_CurrentPipelineType                   { get; set; }
@@ -38,11 +38,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RenderPipelineManager() { Pointer= p0 };
 
-            value.S_CurrentPipelineType                     = GetString(new IntPtr(p + 0x010)); // 0245A2472AF0 0x10 S_CurrentPipelineType       ( 000186672530 ModelPrimitiveType string string string String )
-            value.S_CurrentPipeline                         = GetObject<RenderPipeline>(new IntPtr(p + 0x018), ReversePrism.DataModels.RenderPipeline.FromPointer); // 0245A2472B10 0x18 S_CurrentPipeline           ( 0001866581D0 ModelClassType RenderPipeline RenderPipeline RenderPipeline Pointer )
-            value.ActiveRenderPipelineTypeChanged           = GetObject<Action>(new IntPtr(p + 0x050), ReversePrism.DataModels.Action.FromPointer); // 0245A2472BF0 0x50 ActiveRenderPipelineTypeChanged ( 000186679C50 ModelClassType Action Action Action Pointer )
-            value.ActiveRenderPipelineCreated               = GetObject<Action>(new IntPtr(p + 0x060), ReversePrism.DataModels.Action.FromPointer); // 0245A2472C30 0x60 ActiveRenderPipelineCreated ( 000186679C50 ModelClassType Action Action Action Pointer )
-            value.ActiveRenderPipelineDisposed              = GetObject<Action>(new IntPtr(p + 0x068), ReversePrism.DataModels.Action.FromPointer); // 0245A2472C50 0x68 ActiveRenderPipelineDisposed ( 000186679C50 ModelClassType Action Action Action Pointer )
+            value.S_CurrentPipelineType                     = GetString(new IntPtr(p + 0x010)); // 0x10 S_CurrentPipelineType       ( ModelPrimitiveType string string string String )
+            value.S_CurrentPipeline                         = GetObject<RenderPipeline>(new IntPtr(p + 0x018), ReversePrism.DataModels.RenderPipeline.FromPointer); // 0x18 S_CurrentPipeline           ( ModelClassType RenderPipeline RenderPipeline RenderPipeline Pointer )
+            value.ActiveRenderPipelineTypeChanged           = GetObject<Action>(new IntPtr(p + 0x050), ReversePrism.DataModels.Action.FromPointer); // 0x50 ActiveRenderPipelineTypeChanged ( ModelClassType Action Action Action Pointer )
+            value.ActiveRenderPipelineCreated               = GetObject<Action>(new IntPtr(p + 0x060), ReversePrism.DataModels.Action.FromPointer); // 0x60 ActiveRenderPipelineCreated ( ModelClassType Action Action Action Pointer )
+            value.ActiveRenderPipelineDisposed              = GetObject<Action>(new IntPtr(p + 0x068), ReversePrism.DataModels.Action.FromPointer); // 0x68 ActiveRenderPipelineDisposed ( ModelClassType Action Action Action Pointer )
 
             return value;
         }

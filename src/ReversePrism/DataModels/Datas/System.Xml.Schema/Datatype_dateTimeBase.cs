@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 atomicValueType                          Type IL2CPP_TYPE_CLASS
     // 008 listValueType                            Type IL2CPP_TYPE_CLASS
-    // 038 DateTimeFlags                            0001865D9140 ModelEnumType XsdDateTimeFlags XsdDateTimeFlags XsdDateTimeFlags Int32
+    // 038 DateTimeFlags                            ModelEnumType XsdDateTimeFlags XsdDateTimeFlags XsdDateTimeFlags Int32
     public partial class Datatype_dateTimeBase : DataModel
     {
         public XsdDateTimeFlags                         DateTimeFlags                           { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Datatype_dateTimeBase() { Pointer= p0 };
 
-            value.DateTimeFlags                             = (XsdDateTimeFlags)GetInt32(new IntPtr(p + 0x038)); // 024667566CA0 0x38 DateTimeFlags               ( 0001865D9140 ModelEnumType XsdDateTimeFlags XsdDateTimeFlags XsdDateTimeFlags Int32 )
+            value.DateTimeFlags                             = (XsdDateTimeFlags)GetInt32(new IntPtr(p + 0x038)); // 0x38 DateTimeFlags               ( ModelEnumType XsdDateTimeFlags XsdDateTimeFlags XsdDateTimeFlags Int32 )
 
             return value;
         }

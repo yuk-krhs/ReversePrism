@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 XmlTextEncoder                           0001865CCD50 ModelClassType XmlTextEncoder XmlTextEncoder XmlTextEncoder Pointer
+    // 028 XmlTextEncoder                           ModelClassType XmlTextEncoder XmlTextEncoder XmlTextEncoder Pointer
     public partial class XmlTextWriterBase64Encoder : DataModel
     {
         public XmlTextEncoder?                          XmlTextEncoder                          { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlTextWriterBase64Encoder() { Pointer= p0 };
 
-            value.XmlTextEncoder                            = GetObject<XmlTextEncoder>(new IntPtr(p + 0x028), ReversePrism.DataModels.XmlTextEncoder.FromPointer); // 024667399968 0x28 XmlTextEncoder              ( 0001865CCD50 ModelClassType XmlTextEncoder XmlTextEncoder XmlTextEncoder Pointer )
+            value.XmlTextEncoder                            = GetObject<XmlTextEncoder>(new IntPtr(p + 0x028), ReversePrism.DataModels.XmlTextEncoder.FromPointer); // 0x28 XmlTextEncoder              ( ModelClassType XmlTextEncoder XmlTextEncoder XmlTextEncoder Pointer )
 
             return value;
         }

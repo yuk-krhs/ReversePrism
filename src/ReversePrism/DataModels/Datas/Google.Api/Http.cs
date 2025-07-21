@@ -12,9 +12,9 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 RulesFieldNumber                         int IL2CPP_TYPE_I4
     // 008 _repeated_rules_codec                    FieldCodec`1<HttpRule> IL2CPP_TYPE_GENERICINST
-    // 018 Rules                                    000185CDECF8 ModelClassListType RepeatedField`1<HttpRule> RepeatedField`1<HttpRule> List<HttpRule> Pointer
+    // 018 Rules                                    ModelClassListType RepeatedField`1<HttpRule> RepeatedField`1<HttpRule> List<HttpRule> Pointer
     // 000 FullyDecodeReservedExpansionFieldNumber  int IL2CPP_TYPE_I4
-    // 020 FullyDecodeReservedExpansion             000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 020 FullyDecodeReservedExpansion             ModelPrimitiveType bool bool bool Bool
     public partial class Http : DataModel
     {
         public List<HttpRule>?                          Rules                                   { get; set; }
@@ -28,8 +28,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Http() { Pointer= p0 };
 
-            value.Rules                                     = GetObjectList<HttpRule>(new IntPtr(p + 0x018), ReversePrism.DataModels.HttpRule.FromPointer); // 02466A838838 0x18 Rules                       ( 000185CDECF8 ModelClassListType RepeatedField`1<HttpRule> RepeatedField`1<HttpRule> List<HttpRule> Pointer )
-            value.FullyDecodeReservedExpansion              = GetBool(new IntPtr(p + 0x020)); // 02466A838878 0x20 FullyDecodeReservedExpansion ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Rules                                     = GetObjectList<HttpRule>(new IntPtr(p + 0x018), ReversePrism.DataModels.HttpRule.FromPointer); // 0x18 Rules                       ( ModelClassListType RepeatedField`1<HttpRule> RepeatedField`1<HttpRule> List<HttpRule> Pointer )
+            value.FullyDecodeReservedExpansion              = GetBool(new IntPtr(p + 0x020)); // 0x20 FullyDecodeReservedExpansion ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

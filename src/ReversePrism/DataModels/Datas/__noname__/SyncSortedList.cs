@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 048 List                                     000186532E70 ModelClassType SortedList SortedList SortedList Pointer
+    // 048 List                                     ModelClassType SortedList SortedList SortedList Pointer
     // 050 _root                                    <object> IL2CPP_TYPE_OBJECT
     public partial class SyncSortedList : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SyncSortedList() { Pointer= p0 };
 
-            value.List                                      = GetObject<SortedList>(new IntPtr(p + 0x048), ReversePrism.DataModels.SortedList.FromPointer); // 024666DD01E0 0x48 List                        ( 000186532E70 ModelClassType SortedList SortedList SortedList Pointer )
+            value.List                                      = GetObject<SortedList>(new IntPtr(p + 0x048), ReversePrism.DataModels.SortedList.FromPointer); // 0x48 List                        ( ModelClassType SortedList SortedList SortedList Pointer )
 
             return value;
         }

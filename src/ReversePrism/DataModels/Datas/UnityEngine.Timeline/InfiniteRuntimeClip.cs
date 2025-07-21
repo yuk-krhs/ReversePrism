@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 M_Playable                               00018674C270 ModelEnumType Playable Playable Playable Int32
+    // 018 M_Playable                               ModelEnumType Playable Playable Playable Int32
     // 000 kIntervalEnd                             long IL2CPP_TYPE_I8
     public partial class InfiniteRuntimeClip : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InfiniteRuntimeClip() { Pointer= p0 };
 
-            value.M_Playable                                = (Playable)GetInt32(new IntPtr(p + 0x018)); // 02466B2E90D0 0x18 M_Playable                  ( 00018674C270 ModelEnumType Playable Playable Playable Int32 )
+            value.M_Playable                                = (Playable)GetInt32(new IntPtr(p + 0x018)); // 0x18 M_Playable                  ( ModelEnumType Playable Playable Playable Int32 )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 SortTargetIndex                          0001865F4260 ModelPrimitiveType int int int Int32
-    // 014 UseFavoriteSortToggle                    0001865965D0 ModelPrimitiveType bool bool bool Bool
+    // 010 SortTargetIndex                          ModelPrimitiveType int int int Int32
+    // 014 UseFavoriteSortToggle                    ModelPrimitiveType bool bool bool Bool
     // 018 <ReadFilterSelectedIndices>k__BackingField HashSet`1<int> IL2CPP_TYPE_GENERICINST
     // 020 <StoryTypeFilterSelectedIndices>k__BackingField HashSet`1<int> IL2CPP_TYPE_GENERICINST
     // 028 <SelectedCharacterIds>k__BackingField    HashSet`1<int> IL2CPP_TYPE_GENERICINST
@@ -26,8 +26,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StorySortFilterPopupSequencerParameter() { Pointer= p0 };
 
-            value.SortTargetIndex                           = GetInt32(new IntPtr(p + 0x010)); // 024666823148 0x10 SortTargetIndex             ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.UseFavoriteSortToggle                     = GetBool(new IntPtr(p + 0x014)); // 024666823168 0x14 UseFavoriteSortToggle       ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.SortTargetIndex                           = GetInt32(new IntPtr(p + 0x010)); // 0x10 SortTargetIndex             ( ModelPrimitiveType int int int Int32 )
+            value.UseFavoriteSortToggle                     = GetBool(new IntPtr(p + 0x014)); // 0x14 UseFavoriteSortToggle       ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

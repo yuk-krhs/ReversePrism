@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 SortFilterTabGroup                       0001866F35E0 ModelClassType UISortFilterTabGroup UISortFilterTabGroup UISortFilterTabGroup Pointer
-    // 028 SortView                                 00018656DC00 ModelClassType FesUnitSortView FesUnitSortView FesUnitSortView Pointer
-    // 030 FilterView                               0001865684F0 ModelClassType FesUnitFilterView FesUnitFilterView FesUnitFilterView Pointer
+    // 020 SortFilterTabGroup                       ModelClassType UISortFilterTabGroup UISortFilterTabGroup UISortFilterTabGroup Pointer
+    // 028 SortView                                 ModelClassType FesUnitSortView FesUnitSortView FesUnitSortView Pointer
+    // 030 FilterView                               ModelClassType FesUnitFilterView FesUnitFilterView FesUnitFilterView Pointer
     // 038 onClick                                  Subject`1<Nullable`1<int>> IL2CPP_TYPE_GENERICINST
-    // 040 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
+    // 040 Parent                                   ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
     public partial class FesUnitSearchPopupView : DataModel
     {
         public UISortFilterTabGroup?                    SortFilterTabGroup                      { get; set; }
@@ -28,10 +28,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FesUnitSearchPopupView() { Pointer= p0 };
 
-            value.SortFilterTabGroup                        = GetObject<UISortFilterTabGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.UISortFilterTabGroup.FromPointer); // 02466A300F58 0x20 SortFilterTabGroup          ( 0001866F35E0 ModelClassType UISortFilterTabGroup UISortFilterTabGroup UISortFilterTabGroup Pointer )
-            value.SortView                                  = GetObject<FesUnitSortView>(new IntPtr(p + 0x028), ReversePrism.DataModels.FesUnitSortView.FromPointer); // 02466A300F78 0x28 SortView                    ( 00018656DC00 ModelClassType FesUnitSortView FesUnitSortView FesUnitSortView Pointer )
-            value.FilterView                                = GetObject<FesUnitFilterView>(new IntPtr(p + 0x030), ReversePrism.DataModels.FesUnitFilterView.FromPointer); // 02466A300F98 0x30 FilterView                  ( 0001865684F0 ModelClassType FesUnitFilterView FesUnitFilterView FesUnitFilterView Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x040), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466A300FD8 0x40 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.SortFilterTabGroup                        = GetObject<UISortFilterTabGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.UISortFilterTabGroup.FromPointer); // 0x20 SortFilterTabGroup          ( ModelClassType UISortFilterTabGroup UISortFilterTabGroup UISortFilterTabGroup Pointer )
+            value.SortView                                  = GetObject<FesUnitSortView>(new IntPtr(p + 0x028), ReversePrism.DataModels.FesUnitSortView.FromPointer); // 0x28 SortView                    ( ModelClassType FesUnitSortView FesUnitSortView FesUnitSortView Pointer )
+            value.FilterView                                = GetObject<FesUnitFilterView>(new IntPtr(p + 0x030), ReversePrism.DataModels.FesUnitFilterView.FromPointer); // 0x30 FilterView                  ( ModelClassType FesUnitFilterView FesUnitFilterView FesUnitFilterView Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x040), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0x40 Parent                      ( ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

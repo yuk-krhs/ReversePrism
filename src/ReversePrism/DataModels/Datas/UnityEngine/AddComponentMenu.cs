@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_AddComponentMenu                       000186671910 ModelPrimitiveType string string string String
-    // 018 M_Ordering                               0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 M_AddComponentMenu                       ModelPrimitiveType string string string String
+    // 018 M_Ordering                               ModelPrimitiveType int int int Int32
     public partial class AddComponentMenu : DataModel
     {
         public string                                   M_AddComponentMenu                      { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AddComponentMenu() { Pointer= p0 };
 
-            value.M_AddComponentMenu                        = GetString(new IntPtr(p + 0x010)); // 0245A24F00C8 0x10 M_AddComponentMenu          ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_Ordering                                = GetInt32(new IntPtr(p + 0x018)); // 0245A24F00E8 0x18 M_Ordering                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_AddComponentMenu                        = GetString(new IntPtr(p + 0x010)); // 0x10 M_AddComponentMenu          ( ModelPrimitiveType string string string String )
+            value.M_Ordering                                = GetInt32(new IntPtr(p + 0x018)); // 0x18 M_Ordering                  ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

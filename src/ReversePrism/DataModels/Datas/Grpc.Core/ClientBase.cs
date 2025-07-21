@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Configuration                            000186770810 ModelClassType ClientBaseConfiguration ClientBaseConfiguration ClientBaseConfiguration Pointer
-    // 018 CallInvoker                              00018652ADF0 ModelClassType CallInvoker CallInvoker CallInvoker Pointer
+    // 010 Configuration                            ModelClassType ClientBaseConfiguration ClientBaseConfiguration ClientBaseConfiguration Pointer
+    // 018 CallInvoker                              ModelClassType CallInvoker CallInvoker CallInvoker Pointer
     public partial class ClientBase : DataModel
     {
         public ClientBaseConfiguration?                 Configuration                           { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ClientBase() { Pointer= p0 };
 
-            value.Configuration                             = GetObject<ClientBaseConfiguration>(new IntPtr(p + 0x010), ReversePrism.DataModels.ClientBaseConfiguration.FromPointer); // 024664164878 0x10 Configuration               ( 000186770810 ModelClassType ClientBaseConfiguration ClientBaseConfiguration ClientBaseConfiguration Pointer )
-            value.CallInvoker                               = GetObject<CallInvoker>(new IntPtr(p + 0x018), ReversePrism.DataModels.CallInvoker.FromPointer); // 024664164898 0x18 CallInvoker                 ( 00018652ADF0 ModelClassType CallInvoker CallInvoker CallInvoker Pointer )
+            value.Configuration                             = GetObject<ClientBaseConfiguration>(new IntPtr(p + 0x010), ReversePrism.DataModels.ClientBaseConfiguration.FromPointer); // 0x10 Configuration               ( ModelClassType ClientBaseConfiguration ClientBaseConfiguration ClientBaseConfiguration Pointer )
+            value.CallInvoker                               = GetObject<CallInvoker>(new IntPtr(p + 0x018), ReversePrism.DataModels.CallInvoker.FromPointer); // 0x18 CallInvoker                 ( ModelClassType CallInvoker CallInvoker CallInvoker Pointer )
 
             return value;
         }

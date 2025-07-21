@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 IsIMGUIContainer                         000186595210 ModelPrimitiveType bool bool bool Bool
-    // 018 M_CallbackRegistry                       0001867513E0 ModelClassType EventCallbackRegistry EventCallbackRegistry EventCallbackRegistry Pointer
+    // 010 IsIMGUIContainer                         ModelPrimitiveType bool bool bool Bool
+    // 018 M_CallbackRegistry                       ModelClassType EventCallbackRegistry EventCallbackRegistry EventCallbackRegistry Pointer
     // 000 ExecuteDefaultActionName                 string IL2CPP_TYPE_STRING
     // 000 ExecuteDefaultActionAtTargetName         string IL2CPP_TYPE_STRING
     public partial class CallbackEventHandler : DataModel
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CallbackEventHandler() { Pointer= p0 };
 
-            value.IsIMGUIContainer                          = GetBool(new IntPtr(p + 0x010)); // 0245A3F07FF0 0x10 IsIMGUIContainer            ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.M_CallbackRegistry                        = GetObject<EventCallbackRegistry>(new IntPtr(p + 0x018), ReversePrism.DataModels.EventCallbackRegistry.FromPointer); // 0245A3F08010 0x18 M_CallbackRegistry          ( 0001867513E0 ModelClassType EventCallbackRegistry EventCallbackRegistry EventCallbackRegistry Pointer )
+            value.IsIMGUIContainer                          = GetBool(new IntPtr(p + 0x010)); // 0x10 IsIMGUIContainer            ( ModelPrimitiveType bool bool bool Bool )
+            value.M_CallbackRegistry                        = GetObject<EventCallbackRegistry>(new IntPtr(p + 0x018), ReversePrism.DataModels.EventCallbackRegistry.FromPointer); // 0x18 M_CallbackRegistry          ( ModelClassType EventCallbackRegistry EventCallbackRegistry EventCallbackRegistry Pointer )
 
             return value;
         }

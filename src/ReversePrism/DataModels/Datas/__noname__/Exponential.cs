@@ -11,11 +11,11 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<Exponential> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 NumFiniteBucketsFieldNumber              int IL2CPP_TYPE_I4
-    // 018 NumFiniteBuckets                         0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 NumFiniteBuckets                         ModelPrimitiveType int int int Int32
     // 000 GrowthFactorFieldNumber                  int IL2CPP_TYPE_I4
-    // 020 GrowthFactor                             0001865C2950 ModelPrimitiveType double double double Double
+    // 020 GrowthFactor                             ModelPrimitiveType double double double Double
     // 000 ScaleFieldNumber                         int IL2CPP_TYPE_I4
-    // 028 Scale                                    0001865C2950 ModelPrimitiveType double double double Double
+    // 028 Scale                                    ModelPrimitiveType double double double Double
     public partial class Exponential : DataModel
     {
         public int                                      NumFiniteBuckets                        { get; set; }
@@ -30,9 +30,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Exponential() { Pointer= p0 };
 
-            value.NumFiniteBuckets                          = GetInt32(new IntPtr(p + 0x018)); // 02466A7FB230 0x18 NumFiniteBuckets            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.GrowthFactor                              = GetDouble(new IntPtr(p + 0x020)); // 02466A7FB270 0x20 GrowthFactor                ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.Scale                                     = GetDouble(new IntPtr(p + 0x028)); // 02466A7FB2B0 0x28 Scale                       ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.NumFiniteBuckets                          = GetInt32(new IntPtr(p + 0x018)); // 0x18 NumFiniteBuckets            ( ModelPrimitiveType int int int Int32 )
+            value.GrowthFactor                              = GetDouble(new IntPtr(p + 0x020)); // 0x20 GrowthFactor                ( ModelPrimitiveType double double double Double )
+            value.Scale                                     = GetDouble(new IntPtr(p + 0x028)); // 0x28 Scale                       ( ModelPrimitiveType double double double Double )
 
             return value;
         }

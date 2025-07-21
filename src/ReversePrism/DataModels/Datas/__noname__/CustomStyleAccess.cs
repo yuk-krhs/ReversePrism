@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 m_CustomProperties                       Dictionary`2<string, StylePropertyValue> IL2CPP_TYPE_GENERICINST
-    // 018 M_DpiScaling                             0001866656B0 ModelPrimitiveType float float float Single
+    // 018 M_DpiScaling                             ModelPrimitiveType float float float Single
     public partial class CustomStyleAccess : DataModel
     {
         public float                                    M_DpiScaling                            { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CustomStyleAccess() { Pointer= p0 };
 
-            value.M_DpiScaling                              = GetSingle(new IntPtr(p + 0x018)); // 0245A67B6BE0 0x18 M_DpiScaling                ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_DpiScaling                              = GetSingle(new IntPtr(p + 0x018)); // 0x18 M_DpiScaling                ( ModelPrimitiveType float float float Single )
 
             return value;
         }

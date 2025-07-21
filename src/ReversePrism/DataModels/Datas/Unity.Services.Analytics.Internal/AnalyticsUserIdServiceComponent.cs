@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_AnalyticsService                       0001866F3430 ModelClassType IAnalyticsService IAnalyticsService IAnalyticsService Pointer
+    // 010 M_AnalyticsService                       ModelClassType IAnalyticsService IAnalyticsService IAnalyticsService Pointer
     public partial class AnalyticsUserIdServiceComponent : DataModel
     {
         public IAnalyticsService?                       M_AnalyticsService                      { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AnalyticsUserIdServiceComponent() { Pointer= p0 };
 
-            value.M_AnalyticsService                        = GetObject<IAnalyticsService>(new IntPtr(p + 0x010), ReversePrism.DataModels.IAnalyticsService.FromPointer); // 0245A6680308 0x10 M_AnalyticsService          ( 0001866F3430 ModelClassType IAnalyticsService IAnalyticsService IAnalyticsService Pointer )
+            value.M_AnalyticsService                        = GetObject<IAnalyticsService>(new IntPtr(p + 0x010), ReversePrism.DataModels.IAnalyticsService.FromPointer); // 0x10 M_AnalyticsService          ( ModelClassType IAnalyticsService IAnalyticsService IAnalyticsService Pointer )
 
             return value;
         }

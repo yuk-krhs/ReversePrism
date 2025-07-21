@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 m_Ptr                                    <int> IL2CPP_TYPE_I
-    // 018 M_Version                                0001865F2F90 ModelPrimitiveType int int int Int32
-    // 01C M_FenceType                              000186695B80 ModelEnumType GraphicsFenceType GraphicsFenceType GraphicsFenceType Int32
+    // 018 M_Version                                ModelPrimitiveType int int int Int32
+    // 01C M_FenceType                              ModelEnumType GraphicsFenceType GraphicsFenceType GraphicsFenceType Int32
     public partial class GraphicsFence : DataModel
     {
         public int                                      M_Version                               { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GraphicsFence() { Pointer= p0 };
 
-            value.M_Version                                 = GetInt32(new IntPtr(p + 0x018)); // 0245A246C5F8 0x18 M_Version                   ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.M_FenceType                               = (GraphicsFenceType)GetInt32(new IntPtr(p + 0x01C)); // 0245A246C618 0x1C M_FenceType                 ( 000186695B80 ModelEnumType GraphicsFenceType GraphicsFenceType GraphicsFenceType Int32 )
+            value.M_Version                                 = GetInt32(new IntPtr(p + 0x018)); // 0x18 M_Version                   ( ModelPrimitiveType int int int Int32 )
+            value.M_FenceType                               = (GraphicsFenceType)GetInt32(new IntPtr(p + 0x01C)); // 0x1C M_FenceType                 ( ModelEnumType GraphicsFenceType GraphicsFenceType GraphicsFenceType Int32 )
 
             return value;
         }

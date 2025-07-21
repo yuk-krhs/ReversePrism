@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 010 vertices                                 <int> IL2CPP_TYPE_I
     // 018 indices                                  <int> IL2CPP_TYPE_I
-    // 020 VertexCount                              0001865F36C0 ModelPrimitiveType int int int Int32
-    // 024 IndexCount                               0001865F36C0 ModelPrimitiveType int int int Int32
+    // 020 VertexCount                              ModelPrimitiveType int int int Int32
+    // 024 IndexCount                               ModelPrimitiveType int int int Int32
     public partial class MeshWriteDataInterface : DataModel
     {
         public int                                      VertexCount                             { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MeshWriteDataInterface() { Pointer= p0 };
 
-            value.VertexCount                               = GetInt32(new IntPtr(p + 0x020)); // 0245A67A05D0 0x20 VertexCount                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.IndexCount                                = GetInt32(new IntPtr(p + 0x024)); // 0245A67A05F0 0x24 IndexCount                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.VertexCount                               = GetInt32(new IntPtr(p + 0x020)); // 0x20 VertexCount                 ( ModelPrimitiveType int int int Int32 )
+            value.IndexCount                                = GetInt32(new IntPtr(p + 0x024)); // 0x24 IndexCount                  ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

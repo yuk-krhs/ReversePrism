@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 modules                                  ArrayList IL2CPP_TYPE_CLASS
     // 008 locker                                   <object> IL2CPP_TYPE_OBJECT
-    // 010 Credential_policy                        0001867454B0 ModelClassType ICredentialPolicy ICredentialPolicy ICredentialPolicy Pointer
+    // 010 Credential_policy                        ModelClassType ICredentialPolicy ICredentialPolicy ICredentialPolicy Pointer
     public partial class AuthenticationManager : DataModel
     {
         public ICredentialPolicy?                       Credential_policy                       { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AuthenticationManager() { Pointer= p0 };
 
-            value.Credential_policy                         = GetObject<ICredentialPolicy>(new IntPtr(p + 0x010), ReversePrism.DataModels.ICredentialPolicy.FromPointer); // 024667AB3120 0x10 Credential_policy           ( 0001867454B0 ModelClassType ICredentialPolicy ICredentialPolicy ICredentialPolicy Pointer )
+            value.Credential_policy                         = GetObject<ICredentialPolicy>(new IntPtr(p + 0x010), ReversePrism.DataModels.ICredentialPolicy.FromPointer); // 0x10 Credential_policy           ( ModelClassType ICredentialPolicy ICredentialPolicy ICredentialPolicy Pointer )
 
             return value;
         }

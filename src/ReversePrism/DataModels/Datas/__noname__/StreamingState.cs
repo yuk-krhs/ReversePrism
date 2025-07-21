@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 004 NB_STRIPES_PER_BLOCK                     int IL2CPP_TYPE_I4
     // 008 INTERNAL_BUFFER_SIZE                     int IL2CPP_TYPE_I4
     // 00C INTERNAL_BUFFER_STRIPES                  int IL2CPP_TYPE_I4
-    // 010 State                                    0001865A8340 ModelEnumType StreamingStateData StreamingStateData StreamingStateData Int32
+    // 010 State                                    ModelEnumType StreamingStateData StreamingStateData StreamingStateData Int32
     public partial class StreamingState : DataModel
     {
         public StreamingStateData                       State                                   { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StreamingState() { Pointer= p0 };
 
-            value.State                                     = (StreamingStateData)GetInt32(new IntPtr(p + 0x010)); // 024669CBD8E8 0x10 State                       ( 0001865A8340 ModelEnumType StreamingStateData StreamingStateData StreamingStateData Int32 )
+            value.State                                     = (StreamingStateData)GetInt32(new IntPtr(p + 0x010)); // 0x10 State                       ( ModelEnumType StreamingStateData StreamingStateData StreamingStateData Int32 )
 
             return value;
         }

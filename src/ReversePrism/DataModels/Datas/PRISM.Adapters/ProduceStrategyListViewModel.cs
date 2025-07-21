@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ProduceStrategyList                      000185CE7A88 ModelClassListType List`1<IProduceStrategyStatus> List`1<IProduceStrategyStatus> List<IProduceStrategyStatus> Pointer
+    // 010 ProduceStrategyList                      ModelClassListType List`1<IProduceStrategyStatus> List`1<IProduceStrategyStatus> List<IProduceStrategyStatus> Pointer
     public partial class ProduceStrategyListViewModel : DataModel
     {
         public List<IProduceStrategyStatus>?            ProduceStrategyList                     { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceStrategyListViewModel() { Pointer= p0 };
 
-            value.ProduceStrategyList                       = GetObjectList<IProduceStrategyStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProduceStrategyStatus.FromPointer); // 024666608300 0x10 ProduceStrategyList         ( 000185CE7A88 ModelClassListType List`1<IProduceStrategyStatus> List`1<IProduceStrategyStatus> List<IProduceStrategyStatus> Pointer )
+            value.ProduceStrategyList                       = GetObjectList<IProduceStrategyStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProduceStrategyStatus.FromPointer); // 0x10 ProduceStrategyList         ( ModelClassListType List`1<IProduceStrategyStatus> List`1<IProduceStrategyStatus> List<IProduceStrategyStatus> Pointer )
 
             return value;
         }

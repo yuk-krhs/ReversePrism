@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 060 NameLabel                                0001866320F0 ModelClassType Text Text Text Pointer
-    // 068 ValueLabel                               0001866320F0 ModelClassType Text Text Text Pointer
+    // 060 NameLabel                                ModelClassType Text Text Text Pointer
+    // 068 ValueLabel                               ModelClassType Text Text Text Pointer
     // 070 getter                                   Func`1<float> IL2CPP_TYPE_GENERICINST
     // 078 setter                                   Action`1<float> IL2CPP_TYPE_GENERICINST
     // 080 incStepGetter                            Func`1<float> IL2CPP_TYPE_GENERICINST
@@ -28,8 +28,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DebugUIHandlerIndirectFloatField() { Pointer= p0 };
 
-            value.NameLabel                                 = GetObject<Text>(new IntPtr(p + 0x060), ReversePrism.DataModels.Text.FromPointer); // 024669383770 0x60 NameLabel                   ( 0001866320F0 ModelClassType Text Text Text Pointer )
-            value.ValueLabel                                = GetObject<Text>(new IntPtr(p + 0x068), ReversePrism.DataModels.Text.FromPointer); // 024669383790 0x68 ValueLabel                  ( 0001866320F0 ModelClassType Text Text Text Pointer )
+            value.NameLabel                                 = GetObject<Text>(new IntPtr(p + 0x060), ReversePrism.DataModels.Text.FromPointer); // 0x60 NameLabel                   ( ModelClassType Text Text Text Pointer )
+            value.ValueLabel                                = GetObject<Text>(new IntPtr(p + 0x068), ReversePrism.DataModels.Text.FromPointer); // 0x68 ValueLabel                  ( ModelClassType Text Text Text Pointer )
 
             return value;
         }

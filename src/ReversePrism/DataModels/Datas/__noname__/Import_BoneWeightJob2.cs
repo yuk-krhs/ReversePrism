@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    // 010 startBoneWeightIndices                   NativeArray`1<int> IL2CPP_TYPE_GENERICINST
+    // 020 boneWeightArray                          NativeArray`1<BoneWeight1> IL2CPP_TYPE_GENERICINST
+    // 030 bonesPerVertexArray                      NativeArray`1<sbyte> IL2CPP_TYPE_GENERICINST
+    // 040 boneWeights                              NativeArray`1<VirtualMeshBoneWeight> IL2CPP_TYPE_GENERICINST
+    public partial class Import_BoneWeightJob2 : DataModel
+    {
+
+        public static Import_BoneWeightJob2? FromPointer(IntPtr p0)
+        {
+            if(p0 == IntPtr.Zero)
+                return null;
+
+            var p       = p0.ToInt64();
+            var value   = new Import_BoneWeightJob2() { Pointer= p0 };
+
+
+            return value;
+        }
+    }
+}

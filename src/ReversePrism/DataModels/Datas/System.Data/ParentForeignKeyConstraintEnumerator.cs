@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 Table                                    0001865B8520 ModelClassType DataTable DataTable DataTable Pointer
+    // 028 Table                                    ModelClassType DataTable DataTable DataTable Pointer
     public partial class ParentForeignKeyConstraintEnumerator : DataModel
     {
         public DataTable?                               Table                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ParentForeignKeyConstraintEnumerator() { Pointer= p0 };
 
-            value.Table                                     = GetObject<DataTable>(new IntPtr(p + 0x028), ReversePrism.DataModels.DataTable.FromPointer); // 02466891A0C8 0x28 Table                       ( 0001865B8520 ModelClassType DataTable DataTable DataTable Pointer )
+            value.Table                                     = GetObject<DataTable>(new IntPtr(p + 0x028), ReversePrism.DataModels.DataTable.FromPointer); // 0x28 Table                       ( ModelClassType DataTable DataTable DataTable Pointer )
 
             return value;
         }

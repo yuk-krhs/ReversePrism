@@ -58,6 +58,10 @@ namespace ReversePrism.DataModels
         EventStory,
         ShinyPartyToken,
         EventSeal,
+        EventAudience,
+        LiveEventMedalAllSong,
+        StreamTicket,
+        DressOrderTicket,
         Num,
     }
 }

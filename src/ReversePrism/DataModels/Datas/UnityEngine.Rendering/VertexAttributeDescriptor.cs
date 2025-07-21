@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Attribute                                000186512590 ModelEnumType VertexAttribute VertexAttribute VertexAttribute Int32
-    // 014 Format                                   0001865130D0 ModelEnumType VertexAttributeFormat VertexAttributeFormat VertexAttributeFormat Int32
-    // 018 Dimension                                0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 01C Stream                                   0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 Attribute                                ModelEnumType VertexAttribute VertexAttribute VertexAttribute Int32
+    // 014 Format                                   ModelEnumType VertexAttributeFormat VertexAttributeFormat VertexAttributeFormat Int32
+    // 018 Dimension                                ModelPrimitiveType int int int Int32
+    // 01C Stream                                   ModelPrimitiveType int int int Int32
     public partial class VertexAttributeDescriptor : DataModel
     {
         public VertexAttribute                          Attribute                               { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new VertexAttributeDescriptor() { Pointer= p0 };
 
-            value.Attribute                                 = (VertexAttribute)GetInt32(new IntPtr(p + 0x010)); // 0245A247DDD0 0x10 Attribute                   ( 000186512590 ModelEnumType VertexAttribute VertexAttribute VertexAttribute Int32 )
-            value.Format                                    = (VertexAttributeFormat)GetInt32(new IntPtr(p + 0x014)); // 0245A247DDF0 0x14 Format                      ( 0001865130D0 ModelEnumType VertexAttributeFormat VertexAttributeFormat VertexAttributeFormat Int32 )
-            value.Dimension                                 = GetInt32(new IntPtr(p + 0x018)); // 0245A247DE10 0x18 Dimension                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Stream                                    = GetInt32(new IntPtr(p + 0x01C)); // 0245A247DE30 0x1C Stream                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Attribute                                 = (VertexAttribute)GetInt32(new IntPtr(p + 0x010)); // 0x10 Attribute                   ( ModelEnumType VertexAttribute VertexAttribute VertexAttribute Int32 )
+            value.Format                                    = (VertexAttributeFormat)GetInt32(new IntPtr(p + 0x014)); // 0x14 Format                      ( ModelEnumType VertexAttributeFormat VertexAttributeFormat VertexAttributeFormat Int32 )
+            value.Dimension                                 = GetInt32(new IntPtr(p + 0x018)); // 0x18 Dimension                   ( ModelPrimitiveType int int int Int32 )
+            value.Stream                                    = GetInt32(new IntPtr(p + 0x01C)); // 0x1C Stream                      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

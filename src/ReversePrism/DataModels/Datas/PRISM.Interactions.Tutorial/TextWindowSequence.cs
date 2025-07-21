@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CueName                                  000186671910 ModelPrimitiveType string string string String
-    // 018 Message                                  000186671910 ModelPrimitiveType string string string String
+    // 010 CueName                                  ModelPrimitiveType string string string String
+    // 018 Message                                  ModelPrimitiveType string string string String
     public partial class TextWindowSequence : DataModel
     {
         public string                                   CueName                                 { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TextWindowSequence() { Pointer= p0 };
 
-            value.CueName                                   = GetString(new IntPtr(p + 0x010)); // 02466BCA8B60 0x10 CueName                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.Message                                   = GetString(new IntPtr(p + 0x018)); // 02466BCA8B80 0x18 Message                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.CueName                                   = GetString(new IntPtr(p + 0x010)); // 0x10 CueName                     ( ModelPrimitiveType string string string String )
+            value.Message                                   = GetString(new IntPtr(p + 0x018)); // 0x18 Message                     ( ModelPrimitiveType string string string String )
 
             return value;
         }

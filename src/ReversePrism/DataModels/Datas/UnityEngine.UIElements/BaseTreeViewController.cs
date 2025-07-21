@@ -9,10 +9,10 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 030 m_TreeItems                              Dictionary`2<int, TreeItem> IL2CPP_TYPE_GENERICINST
-    // 038 M_RootIndices                            000185CECF28 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer
-    // 040 M_ItemWrappers                           000185D16408 ModelEnumListType List`1<TreeViewItemWrapper> List`1<TreeViewItemWrapper> List<TreeViewItemWrapper> Pointer
+    // 038 M_RootIndices                            ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer
+    // 040 M_ItemWrappers                           ModelEnumListType List`1<TreeViewItemWrapper> List`1<TreeViewItemWrapper> List<TreeViewItemWrapper> Pointer
     // 048 m_TreeItemIdsWithItemWrappers            HashSet`1<int> IL2CPP_TYPE_GENERICINST
-    // 050 M_WrapperInsertionList                   000185D16408 ModelEnumListType List`1<TreeViewItemWrapper> List`1<TreeViewItemWrapper> List<TreeViewItemWrapper> Pointer
+    // 050 M_WrapperInsertionList                   ModelEnumListType List`1<TreeViewItemWrapper> List`1<TreeViewItemWrapper> List<TreeViewItemWrapper> Pointer
     // 000 K_ExpandItemByIndex                      ProfilerMarker IL2CPP_TYPE_VALUETYPE
     // 008 k_CreateWrappers                         ProfilerMarker IL2CPP_TYPE_VALUETYPE
     public partial class BaseTreeViewController : DataModel
@@ -29,9 +29,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BaseTreeViewController() { Pointer= p0 };
 
-            value.M_RootIndices                             = GetInt32List(new IntPtr(p + 0x038)); // 0245A66A9CB0 0x38 M_RootIndices               ( 000185CECF28 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
-            value.M_ItemWrappers                            = GetEnumList<TreeViewItemWrapper>(new IntPtr(p + 0x040)); // 0245A66A9CD0 0x40 M_ItemWrappers              ( 000185D16408 ModelEnumListType List`1<TreeViewItemWrapper> List`1<TreeViewItemWrapper> List<TreeViewItemWrapper> Pointer )
-            value.M_WrapperInsertionList                    = GetEnumList<TreeViewItemWrapper>(new IntPtr(p + 0x050)); // 0245A66A9D10 0x50 M_WrapperInsertionList      ( 000185D16408 ModelEnumListType List`1<TreeViewItemWrapper> List`1<TreeViewItemWrapper> List<TreeViewItemWrapper> Pointer )
+            value.M_RootIndices                             = GetInt32List(new IntPtr(p + 0x038)); // 0x38 M_RootIndices               ( ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
+            value.M_ItemWrappers                            = GetEnumList<TreeViewItemWrapper>(new IntPtr(p + 0x040)); // 0x40 M_ItemWrappers              ( ModelEnumListType List`1<TreeViewItemWrapper> List`1<TreeViewItemWrapper> List<TreeViewItemWrapper> Pointer )
+            value.M_WrapperInsertionList                    = GetEnumList<TreeViewItemWrapper>(new IntPtr(p + 0x050)); // 0x50 M_WrapperInsertionList      ( ModelEnumListType List`1<TreeViewItemWrapper> List`1<TreeViewItemWrapper> List<TreeViewItemWrapper> Pointer )
 
             return value;
         }

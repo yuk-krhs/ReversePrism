@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 factoryMethod                            Func`1<InputDevice> IL2CPP_TYPE_GENERICINST
-    // 018 Metadata                                 0001866722E0 ModelPrimitiveType string string string String
+    // 018 Metadata                                 ModelPrimitiveType string string string String
     public partial class PrecompiledLayout : DataModel
     {
         public string                                   Metadata                                { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PrecompiledLayout() { Pointer= p0 };
 
-            value.Metadata                                  = GetString(new IntPtr(p + 0x018)); // 0245A2E4C238 0x18 Metadata                    ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Metadata                                  = GetString(new IntPtr(p + 0x018)); // 0x18 Metadata                    ( ModelPrimitiveType string string string String )
 
             return value;
         }

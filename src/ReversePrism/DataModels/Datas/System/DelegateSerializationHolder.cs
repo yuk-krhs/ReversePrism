@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Delegate                                 0001866BA8B0 ModelClassType Delegate Delegate Delegate Pointer
+    // 010 Delegate                                 ModelClassType Delegate Delegate Delegate Pointer
     public partial class DelegateSerializationHolder : DataModel
     {
         public Delegate?                                Delegate                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DelegateSerializationHolder() { Pointer= p0 };
 
-            value.Delegate                                  = GetObject<Delegate>(new IntPtr(p + 0x010), ReversePrism.DataModels.Delegate.FromPointer); // 024666AC6AB8 0x10 Delegate                    ( 0001866BA8B0 ModelClassType Delegate Delegate Delegate Pointer )
+            value.Delegate                                  = GetObject<Delegate>(new IntPtr(p + 0x010), ReversePrism.DataModels.Delegate.FromPointer); // 0x10 Delegate                    ( ModelClassType Delegate Delegate Delegate Pointer )
 
             return value;
         }

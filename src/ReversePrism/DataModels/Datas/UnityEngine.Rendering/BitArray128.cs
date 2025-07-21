@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Data1                                    00018669B890 ModelPrimitiveType ulong ulong ulong UInt64
-    // 018 Data2                                    00018669B890 ModelPrimitiveType ulong ulong ulong UInt64
+    // 010 Data1                                    ModelPrimitiveType ulong ulong ulong UInt64
+    // 018 Data2                                    ModelPrimitiveType ulong ulong ulong UInt64
     public partial class BitArray128 : DataModel
     {
         public ulong                                    Data1                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BitArray128() { Pointer= p0 };
 
-            value.Data1                                     = GetUInt64(new IntPtr(p + 0x010)); // 024669309B58 0x10 Data1                       ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.Data2                                     = GetUInt64(new IntPtr(p + 0x018)); // 024669309B78 0x18 Data2                       ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.Data1                                     = GetUInt64(new IntPtr(p + 0x010)); // 0x10 Data1                       ( ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.Data2                                     = GetUInt64(new IntPtr(p + 0x018)); // 0x18 Data2                       ( ModelPrimitiveType ulong ulong ulong UInt64 )
 
             return value;
         }

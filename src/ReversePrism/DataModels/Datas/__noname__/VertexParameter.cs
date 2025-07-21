@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Position                                 0001866A8740 ModelEnumType Vector2 Vector2 Vector2 Int32
-    // 018 Color                                    0001865ACF10 ModelEnumType Color32 Color32 Color32 Int32
-    // 01C Uv                                       0001866A8740 ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 010 Position                                 ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 018 Color                                    ModelEnumType Color32 Color32 Color32 Int32
+    // 01C Uv                                       ModelEnumType Vector2 Vector2 Vector2 Int32
     public partial class VertexParameter : DataModel
     {
         public Vector2                                  Position                                { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new VertexParameter() { Pointer= p0 };
 
-            value.Position                                  = (Vector2)GetInt32(new IntPtr(p + 0x010)); // 0245A695CFE0 0x10 Position                    ( 0001866A8740 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.Color                                     = (Color32)GetInt32(new IntPtr(p + 0x018)); // 0245A695D000 0x18 Color                       ( 0001865ACF10 ModelEnumType Color32 Color32 Color32 Int32 )
-            value.Uv                                        = (Vector2)GetInt32(new IntPtr(p + 0x01C)); // 0245A695D020 0x1C Uv                          ( 0001866A8740 ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.Position                                  = (Vector2)GetInt32(new IntPtr(p + 0x010)); // 0x10 Position                    ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.Color                                     = (Color32)GetInt32(new IntPtr(p + 0x018)); // 0x18 Color                       ( ModelEnumType Color32 Color32 Color32 Int32 )
+            value.Uv                                        = (Vector2)GetInt32(new IntPtr(p + 0x01C)); // 0x1C Uv                          ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
 
             return value;
         }

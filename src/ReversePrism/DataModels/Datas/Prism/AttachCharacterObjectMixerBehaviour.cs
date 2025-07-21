@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 038 CurrentClip                              00018666DB50 ModelClassType TimelineClip TimelineClip TimelineClip Pointer
+    // 038 CurrentClip                              ModelClassType TimelineClip TimelineClip TimelineClip Pointer
     public partial class AttachCharacterObjectMixerBehaviour : DataModel
     {
         public TimelineClip?                            CurrentClip                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AttachCharacterObjectMixerBehaviour() { Pointer= p0 };
 
-            value.CurrentClip                               = GetObject<TimelineClip>(new IntPtr(p + 0x038), ReversePrism.DataModels.TimelineClip.FromPointer); // 024664E718B8 0x38 CurrentClip                 ( 00018666DB50 ModelClassType TimelineClip TimelineClip TimelineClip Pointer )
+            value.CurrentClip                               = GetObject<TimelineClip>(new IntPtr(p + 0x038), ReversePrism.DataModels.TimelineClip.FromPointer); // 0x38 CurrentClip                 ( ModelClassType TimelineClip TimelineClip TimelineClip Pointer )
 
             return value;
         }

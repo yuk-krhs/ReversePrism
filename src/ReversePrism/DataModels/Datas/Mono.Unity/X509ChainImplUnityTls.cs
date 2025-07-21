@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Elements                                 000186567750 ModelClassType X509ChainElementCollection X509ChainElementCollection X509ChainElementCollection Pointer
-    // 018 NativeCertificateChain                   0001866B0FA0 ModelEnumType unitytls_x509list_ref unitytls_x509list_ref unitytls_x509list_ref Int32
-    // 020 Policy                                   000186568B50 ModelClassType X509ChainPolicy X509ChainPolicy X509ChainPolicy Pointer
-    // 028 ChainStatusList                          000185D1D0D8 ModelEnumListType List`1<X509ChainStatus> List`1<X509ChainStatus> List<X509ChainStatus> Pointer
-    // 030 ReverseOrder                             000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 Elements                                 ModelClassType X509ChainElementCollection X509ChainElementCollection X509ChainElementCollection Pointer
+    // 018 NativeCertificateChain                   ModelEnumType unitytls_x509list_ref unitytls_x509list_ref unitytls_x509list_ref Int32
+    // 020 Policy                                   ModelClassType X509ChainPolicy X509ChainPolicy X509ChainPolicy Pointer
+    // 028 ChainStatusList                          ModelEnumListType List`1<X509ChainStatus> List`1<X509ChainStatus> List<X509ChainStatus> Pointer
+    // 030 ReverseOrder                             ModelPrimitiveType bool bool bool Bool
     public partial class X509ChainImplUnityTls : DataModel
     {
         public X509ChainElementCollection?              Elements                                { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new X509ChainImplUnityTls() { Pointer= p0 };
 
-            value.Elements                                  = GetObject<X509ChainElementCollection>(new IntPtr(p + 0x010), ReversePrism.DataModels.X509ChainElementCollection.FromPointer); // 02466795E850 0x10 Elements                    ( 000186567750 ModelClassType X509ChainElementCollection X509ChainElementCollection X509ChainElementCollection Pointer )
-            value.NativeCertificateChain                    = (unitytls_x509list_ref)GetInt32(new IntPtr(p + 0x018)); // 02466795E870 0x18 NativeCertificateChain      ( 0001866B0FA0 ModelEnumType unitytls_x509list_ref unitytls_x509list_ref unitytls_x509list_ref Int32 )
-            value.Policy                                    = GetObject<X509ChainPolicy>(new IntPtr(p + 0x020), ReversePrism.DataModels.X509ChainPolicy.FromPointer); // 02466795E890 0x20 Policy                      ( 000186568B50 ModelClassType X509ChainPolicy X509ChainPolicy X509ChainPolicy Pointer )
-            value.ChainStatusList                           = GetEnumList<X509ChainStatus>(new IntPtr(p + 0x028)); // 02466795E8B0 0x28 ChainStatusList             ( 000185D1D0D8 ModelEnumListType List`1<X509ChainStatus> List`1<X509ChainStatus> List<X509ChainStatus> Pointer )
-            value.ReverseOrder                              = GetBool(new IntPtr(p + 0x030)); // 02466795E8D0 0x30 ReverseOrder                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Elements                                  = GetObject<X509ChainElementCollection>(new IntPtr(p + 0x010), ReversePrism.DataModels.X509ChainElementCollection.FromPointer); // 0x10 Elements                    ( ModelClassType X509ChainElementCollection X509ChainElementCollection X509ChainElementCollection Pointer )
+            value.NativeCertificateChain                    = (unitytls_x509list_ref)GetInt32(new IntPtr(p + 0x018)); // 0x18 NativeCertificateChain      ( ModelEnumType unitytls_x509list_ref unitytls_x509list_ref unitytls_x509list_ref Int32 )
+            value.Policy                                    = GetObject<X509ChainPolicy>(new IntPtr(p + 0x020), ReversePrism.DataModels.X509ChainPolicy.FromPointer); // 0x20 Policy                      ( ModelClassType X509ChainPolicy X509ChainPolicy X509ChainPolicy Pointer )
+            value.ChainStatusList                           = GetEnumList<X509ChainStatus>(new IntPtr(p + 0x028)); // 0x28 ChainStatusList             ( ModelEnumListType List`1<X509ChainStatus> List`1<X509ChainStatus> List<X509ChainStatus> Pointer )
+            value.ReverseOrder                              = GetBool(new IntPtr(p + 0x030)); // 0x30 ReverseOrder                ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

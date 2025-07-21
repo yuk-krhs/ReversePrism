@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 boolTrigger                              Subject`1<bool> IL2CPP_TYPE_GENERICINST
-    // 018 BoolValue                                000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 018 BoolValue                                ModelPrimitiveType bool bool bool Bool
     public partial class BooleanNotifier : DataModel
     {
         public bool                                     BoolValue                               { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BooleanNotifier() { Pointer= p0 };
 
-            value.BoolValue                                 = GetBool(new IntPtr(p + 0x018)); // 0246695B5068 0x18 BoolValue                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.BoolValue                                 = GetBool(new IntPtr(p + 0x018)); // 0x18 BoolValue                   ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

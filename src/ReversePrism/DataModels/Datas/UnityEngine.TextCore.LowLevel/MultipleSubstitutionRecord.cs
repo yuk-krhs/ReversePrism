@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_TargetGlyphID                          000186698B70 ModelPrimitiveType uint uint uint UInt32
-    // 018 M_SubstituteGlyphIDs                     000185B83830 ModelPrimitiveListType uint[] uint[] List<uint> Pointer
+    // 010 M_TargetGlyphID                          ModelPrimitiveType uint uint uint UInt32
+    // 018 M_SubstituteGlyphIDs                     ModelPrimitiveListType uint[] uint[] List<uint> Pointer
     public partial class MultipleSubstitutionRecord : DataModel
     {
         public uint                                     M_TargetGlyphID                         { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MultipleSubstitutionRecord() { Pointer= p0 };
 
-            value.M_TargetGlyphID                           = GetUInt32(new IntPtr(p + 0x010)); // 0245A2176808 0x10 M_TargetGlyphID             ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
-            value.M_SubstituteGlyphIDs                      = GetUInt32List(new IntPtr(p + 0x018)); // 0245A2176828 0x18 M_SubstituteGlyphIDs        ( 000185B83830 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.M_TargetGlyphID                           = GetUInt32(new IntPtr(p + 0x010)); // 0x10 M_TargetGlyphID             ( ModelPrimitiveType uint uint uint UInt32 )
+            value.M_SubstituteGlyphIDs                      = GetUInt32List(new IntPtr(p + 0x018)); // 0x18 M_SubstituteGlyphIDs        ( ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
 
             return value;
         }

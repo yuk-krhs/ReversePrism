@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 ht                                       ConcurrentDictionary`2<string, <object>> IL2CPP_TYPE_GENERICINST
-    // 010 Name                                     000186671910 ModelPrimitiveType string string string String
+    // 010 Name                                     ModelPrimitiveType string string string String
     public partial class NameCache : DataModel
     {
         public string                                   Name                                    { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NameCache() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 024666CC4F90 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Name                        ( ModelPrimitiveType string string string String )
 
             return value;
         }

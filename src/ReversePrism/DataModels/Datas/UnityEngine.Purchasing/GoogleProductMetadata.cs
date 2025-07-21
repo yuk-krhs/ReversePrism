@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 040 OriginalJson                             000186671910 ModelPrimitiveType string string string String
-    // 048 SubscriptionPeriod                       000186671910 ModelPrimitiveType string string string String
-    // 050 FreeTrialPeriod                          000186671910 ModelPrimitiveType string string string String
-    // 058 IntroductoryPrice                        000186671910 ModelPrimitiveType string string string String
-    // 060 IntroductoryPricePeriod                  000186671910 ModelPrimitiveType string string string String
-    // 068 IntroductoryPriceCycles                  0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 040 OriginalJson                             ModelPrimitiveType string string string String
+    // 048 SubscriptionPeriod                       ModelPrimitiveType string string string String
+    // 050 FreeTrialPeriod                          ModelPrimitiveType string string string String
+    // 058 IntroductoryPrice                        ModelPrimitiveType string string string String
+    // 060 IntroductoryPricePeriod                  ModelPrimitiveType string string string String
+    // 068 IntroductoryPriceCycles                  ModelPrimitiveType int int int Int32
     public partial class GoogleProductMetadata : DataModel
     {
         public string                                   OriginalJson                            { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GoogleProductMetadata() { Pointer= p0 };
 
-            value.OriginalJson                              = GetString(new IntPtr(p + 0x040)); // 0245A68CF208 0x40 OriginalJson                ( 000186671910 ModelPrimitiveType string string string String )
-            value.SubscriptionPeriod                        = GetString(new IntPtr(p + 0x048)); // 0245A68CF228 0x48 SubscriptionPeriod          ( 000186671910 ModelPrimitiveType string string string String )
-            value.FreeTrialPeriod                           = GetString(new IntPtr(p + 0x050)); // 0245A68CF248 0x50 FreeTrialPeriod             ( 000186671910 ModelPrimitiveType string string string String )
-            value.IntroductoryPrice                         = GetString(new IntPtr(p + 0x058)); // 0245A68CF268 0x58 IntroductoryPrice           ( 000186671910 ModelPrimitiveType string string string String )
-            value.IntroductoryPricePeriod                   = GetString(new IntPtr(p + 0x060)); // 0245A68CF288 0x60 IntroductoryPricePeriod     ( 000186671910 ModelPrimitiveType string string string String )
-            value.IntroductoryPriceCycles                   = GetInt32(new IntPtr(p + 0x068)); // 0245A68CF2A8 0x68 IntroductoryPriceCycles     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OriginalJson                              = GetString(new IntPtr(p + 0x040)); // 0x40 OriginalJson                ( ModelPrimitiveType string string string String )
+            value.SubscriptionPeriod                        = GetString(new IntPtr(p + 0x048)); // 0x48 SubscriptionPeriod          ( ModelPrimitiveType string string string String )
+            value.FreeTrialPeriod                           = GetString(new IntPtr(p + 0x050)); // 0x50 FreeTrialPeriod             ( ModelPrimitiveType string string string String )
+            value.IntroductoryPrice                         = GetString(new IntPtr(p + 0x058)); // 0x58 IntroductoryPrice           ( ModelPrimitiveType string string string String )
+            value.IntroductoryPricePeriod                   = GetString(new IntPtr(p + 0x060)); // 0x60 IntroductoryPricePeriod     ( ModelPrimitiveType string string string String )
+            value.IntroductoryPriceCycles                   = GetInt32(new IntPtr(p + 0x068)); // 0x68 IntroductoryPriceCycles     ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

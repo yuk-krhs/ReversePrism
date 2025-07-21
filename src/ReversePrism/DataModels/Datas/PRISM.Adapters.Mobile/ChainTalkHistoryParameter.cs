@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ScrollPosition                           0001866656B0 ModelPrimitiveType float float float Single
-    // 014 ChainGroupId                             0001865F4260 ModelPrimitiveType int int int Int32
+    // 010 ScrollPosition                           ModelPrimitiveType float float float Single
+    // 014 ChainGroupId                             ModelPrimitiveType int int int Int32
     public partial class ChainTalkHistoryParameter : DataModel
     {
         public float                                    ScrollPosition                          { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChainTalkHistoryParameter() { Pointer= p0 };
 
-            value.ScrollPosition                            = GetSingle(new IntPtr(p + 0x010)); // 0246668E9C28 0x10 ScrollPosition              ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.ChainGroupId                              = GetInt32(new IntPtr(p + 0x014)); // 0246668E9C48 0x14 ChainGroupId                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.ScrollPosition                            = GetSingle(new IntPtr(p + 0x010)); // 0x10 ScrollPosition              ( ModelPrimitiveType float float float Single )
+            value.ChainGroupId                              = GetInt32(new IntPtr(p + 0x014)); // 0x14 ChainGroupId                ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

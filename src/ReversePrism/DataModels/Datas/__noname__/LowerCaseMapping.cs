@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 010 ChMin                                    char IL2CPP_TYPE_CHAR
     // 012 ChMax                                    char IL2CPP_TYPE_CHAR
-    // 014 LcOp                                     0001865F4940 ModelPrimitiveType int int int Int32
-    // 018 Data                                     0001865F4940 ModelPrimitiveType int int int Int32
+    // 014 LcOp                                     ModelPrimitiveType int int int Int32
+    // 018 Data                                     ModelPrimitiveType int int int Int32
     public partial class LowerCaseMapping : DataModel
     {
         public int                                      LcOp                                    { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LowerCaseMapping() { Pointer= p0 };
 
-            value.LcOp                                      = GetInt32(new IntPtr(p + 0x014)); // 0245A3431768 0x14 LcOp                        ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.Data                                      = GetInt32(new IntPtr(p + 0x018)); // 0245A3431788 0x18 Data                        ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.LcOp                                      = GetInt32(new IntPtr(p + 0x014)); // 0x14 LcOp                        ( ModelPrimitiveType int int int Int32 )
+            value.Data                                      = GetInt32(new IntPtr(p + 0x018)); // 0x18 Data                        ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ArchiveIndicesFieldNumber                int IL2CPP_TYPE_I4
     // 008 _repeated_archiveIndices_codec           FieldCodec`1<ArchiveIndex> IL2CPP_TYPE_GENERICINST
-    // 018 ArchiveIndices                           000185CCE8F8 ModelClassListType RepeatedField`1<ArchiveIndex> RepeatedField`1<ArchiveIndex> List<ArchiveIndex> Pointer
+    // 018 ArchiveIndices                           ModelClassListType RepeatedField`1<ArchiveIndex> RepeatedField`1<ArchiveIndex> List<ArchiveIndex> Pointer
     public partial class ListArchiveIndexResponse : DataModel
     {
         public List<ArchiveIndex>?                      ArchiveIndices                          { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ListArchiveIndexResponse() { Pointer= p0 };
 
-            value.ArchiveIndices                            = GetObjectList<ArchiveIndex>(new IntPtr(p + 0x018), ReversePrism.DataModels.ArchiveIndex.FromPointer); // 024664BEB938 0x18 ArchiveIndices              ( 000185CCE8F8 ModelClassListType RepeatedField`1<ArchiveIndex> RepeatedField`1<ArchiveIndex> List<ArchiveIndex> Pointer )
+            value.ArchiveIndices                            = GetObjectList<ArchiveIndex>(new IntPtr(p + 0x018), ReversePrism.DataModels.ArchiveIndex.FromPointer); // 0x18 ArchiveIndices              ( ModelClassListType RepeatedField`1<ArchiveIndex> RepeatedField`1<ArchiveIndex> List<ArchiveIndex> Pointer )
 
             return value;
         }

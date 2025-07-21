@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 090 CellPrefab                               00018655ACD0 ModelClassType FavoriteIconSelectGridViewCell FavoriteIconSelectGridViewCell FavoriteIconSelectGridViewCell Pointer
-    // 098 EmptyView                                0001865D81D0 ModelClassType GameObject GameObject GameObject Pointer
+    // 090 CellPrefab                               ModelClassType FavoriteIconSelectGridViewCell FavoriteIconSelectGridViewCell FavoriteIconSelectGridViewCell Pointer
+    // 098 EmptyView                                ModelClassType GameObject GameObject GameObject Pointer
     public partial class FavoriteIconSelectGridView : DataModel
     {
         public FavoriteIconSelectGridViewCell?          CellPrefab                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FavoriteIconSelectGridView() { Pointer= p0 };
 
-            value.CellPrefab                                = GetObject<FavoriteIconSelectGridViewCell>(new IntPtr(p + 0x090), ReversePrism.DataModels.FavoriteIconSelectGridViewCell.FromPointer); // 02466A39C028 0x90 CellPrefab                  ( 00018655ACD0 ModelClassType FavoriteIconSelectGridViewCell FavoriteIconSelectGridViewCell FavoriteIconSelectGridViewCell Pointer )
-            value.EmptyView                                 = GetObject<GameObject>(new IntPtr(p + 0x098), ReversePrism.DataModels.GameObject.FromPointer); // 02466A39C048 0x98 EmptyView                   ( 0001865D81D0 ModelClassType GameObject GameObject GameObject Pointer )
+            value.CellPrefab                                = GetObject<FavoriteIconSelectGridViewCell>(new IntPtr(p + 0x090), ReversePrism.DataModels.FavoriteIconSelectGridViewCell.FromPointer); // 0x90 CellPrefab                  ( ModelClassType FavoriteIconSelectGridViewCell FavoriteIconSelectGridViewCell FavoriteIconSelectGridViewCell Pointer )
+            value.EmptyView                                 = GetObject<GameObject>(new IntPtr(p + 0x098), ReversePrism.DataModels.GameObject.FromPointer); // 0x98 EmptyView                   ( ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

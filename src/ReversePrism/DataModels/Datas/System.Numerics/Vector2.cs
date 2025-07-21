@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 X                                        000186666050 ModelPrimitiveType float float float Single
-    // 014 Y                                        000186666050 ModelPrimitiveType float float float Single
+    // 010 X                                        ModelPrimitiveType float float float Single
+    // 014 Y                                        ModelPrimitiveType float float float Single
     public partial class Vector2 : DataModel
     {
         public float                                    X                                       { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Vector2() { Pointer= p0 };
 
-            value.X                                         = GetSingle(new IntPtr(p + 0x010)); // 0245A44FD2B8 0x10 X                           ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Y                                         = GetSingle(new IntPtr(p + 0x014)); // 0245A44FD2D8 0x14 Y                           ( 000186666050 ModelPrimitiveType float float float Single )
+            value.X                                         = GetSingle(new IntPtr(p + 0x010)); // 0x10 X                           ( ModelPrimitiveType float float float Single )
+            value.Y                                         = GetSingle(new IntPtr(p + 0x014)); // 0x14 Y                           ( ModelPrimitiveType float float float Single )
 
             return value;
         }

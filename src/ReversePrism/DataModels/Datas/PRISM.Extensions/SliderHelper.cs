@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 PointerUpAction                          0001866792B0 ModelClassType Action Action Action Pointer
+    // 020 PointerUpAction                          ModelClassType Action Action Action Pointer
     public partial class SliderHelper : DataModel
     {
         public Action?                                  PointerUpAction                         { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SliderHelper() { Pointer= p0 };
 
-            value.PointerUpAction                           = GetObject<Action>(new IntPtr(p + 0x020), ReversePrism.DataModels.Action.FromPointer); // 024664C6C180 0x20 PointerUpAction             ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.PointerUpAction                           = GetObject<Action>(new IntPtr(p + 0x020), ReversePrism.DataModels.Action.FromPointer); // 0x20 PointerUpAction             ( ModelClassType Action Action Action Pointer )
 
             return value;
         }

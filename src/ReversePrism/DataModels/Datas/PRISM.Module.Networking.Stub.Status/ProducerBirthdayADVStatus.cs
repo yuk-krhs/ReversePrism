@@ -11,11 +11,11 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<ProducerBirthdayADVStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstProducerBirthdayAdvIdFieldNumber      int IL2CPP_TYPE_I4
-    // 018 MstProducerBirthdayAdvId                 0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MstProducerBirthdayAdvId                 ModelPrimitiveType int int int Int32
     // 000 MstIdolIdFieldNumber                     int IL2CPP_TYPE_I4
-    // 01C MstIdolId                                0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 01C MstIdolId                                ModelPrimitiveType int int int Int32
     // 000 ResourceIdFieldNumber                    int IL2CPP_TYPE_I4
-    // 020 ResourceId                               000186671910 ModelPrimitiveType string string string String
+    // 020 ResourceId                               ModelPrimitiveType string string string String
     public partial class ProducerBirthdayADVStatus : DataModel
     {
         public int                                      MstProducerBirthdayAdvId                { get; set; }
@@ -30,9 +30,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProducerBirthdayADVStatus() { Pointer= p0 };
 
-            value.MstProducerBirthdayAdvId                  = GetInt32(new IntPtr(p + 0x018)); // 024661907A48 0x18 MstProducerBirthdayAdvId    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x01C)); // 024661907A88 0x1C MstIdolId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ResourceId                                = GetString(new IntPtr(p + 0x020)); // 024661907AC8 0x20 ResourceId                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.MstProducerBirthdayAdvId                  = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstProducerBirthdayAdvId    ( ModelPrimitiveType int int int Int32 )
+            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x01C)); // 0x1C MstIdolId                   ( ModelPrimitiveType int int int Int32 )
+            value.ResourceId                                = GetString(new IntPtr(p + 0x020)); // 0x20 ResourceId                  ( ModelPrimitiveType string string string String )
 
             return value;
         }

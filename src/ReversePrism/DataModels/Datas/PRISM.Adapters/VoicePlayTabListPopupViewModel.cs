@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CurrentTabType                           000186536D10 ModelEnumType VoicePlayTab VoicePlayTab VoicePlayTab Int32
-    // 014 MstCharacterInfoId                       0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 HomeList                                 000185CE1848 ModelClassListType List`1<ICategoryElementGridCellViewModel> List`1<ICategoryElementGridCellViewModel> List<ICategoryElementGridCellViewModel> Pointer
-    // 020 ProduceList                              000185CE1848 ModelClassListType List`1<ICategoryElementGridCellViewModel> List`1<ICategoryElementGridCellViewModel> List<ICategoryElementGridCellViewModel> Pointer
-    // 028 LiveList                                 000185CE1848 ModelClassListType List`1<ICategoryElementGridCellViewModel> List`1<ICategoryElementGridCellViewModel> List<ICategoryElementGridCellViewModel> Pointer
-    // 030 OtherList                                000185CE1848 ModelClassListType List`1<ICategoryElementGridCellViewModel> List`1<ICategoryElementGridCellViewModel> List<ICategoryElementGridCellViewModel> Pointer
+    // 010 CurrentTabType                           ModelEnumType VoicePlayTab VoicePlayTab VoicePlayTab Int32
+    // 014 MstCharacterInfoId                       ModelPrimitiveType int int int Int32
+    // 018 HomeList                                 ModelClassListType List`1<ICategoryElementGridCellViewModel> List`1<ICategoryElementGridCellViewModel> List<ICategoryElementGridCellViewModel> Pointer
+    // 020 ProduceList                              ModelClassListType List`1<ICategoryElementGridCellViewModel> List`1<ICategoryElementGridCellViewModel> List<ICategoryElementGridCellViewModel> Pointer
+    // 028 LiveList                                 ModelClassListType List`1<ICategoryElementGridCellViewModel> List`1<ICategoryElementGridCellViewModel> List<ICategoryElementGridCellViewModel> Pointer
+    // 030 OtherList                                ModelClassListType List`1<ICategoryElementGridCellViewModel> List`1<ICategoryElementGridCellViewModel> List<ICategoryElementGridCellViewModel> Pointer
     public partial class VoicePlayTabListPopupViewModel : DataModel
     {
         public VoicePlayTab                             CurrentTabType                          { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new VoicePlayTabListPopupViewModel() { Pointer= p0 };
 
-            value.CurrentTabType                            = (VoicePlayTab)GetInt32(new IntPtr(p + 0x010)); // 024665EE4518 0x10 CurrentTabType              ( 000186536D10 ModelEnumType VoicePlayTab VoicePlayTab VoicePlayTab Int32 )
-            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x014)); // 024665EE4538 0x14 MstCharacterInfoId          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.HomeList                                  = GetObjectList<ICategoryElementGridCellViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.ICategoryElementGridCellViewModel.FromPointer); // 024665EE4558 0x18 HomeList                    ( 000185CE1848 ModelClassListType List`1<ICategoryElementGridCellViewModel> List`1<ICategoryElementGridCellViewModel> List<ICategoryElementGridCellViewModel> Pointer )
-            value.ProduceList                               = GetObjectList<ICategoryElementGridCellViewModel>(new IntPtr(p + 0x020), ReversePrism.DataModels.ICategoryElementGridCellViewModel.FromPointer); // 024665EE4578 0x20 ProduceList                 ( 000185CE1848 ModelClassListType List`1<ICategoryElementGridCellViewModel> List`1<ICategoryElementGridCellViewModel> List<ICategoryElementGridCellViewModel> Pointer )
-            value.LiveList                                  = GetObjectList<ICategoryElementGridCellViewModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.ICategoryElementGridCellViewModel.FromPointer); // 024665EE4598 0x28 LiveList                    ( 000185CE1848 ModelClassListType List`1<ICategoryElementGridCellViewModel> List`1<ICategoryElementGridCellViewModel> List<ICategoryElementGridCellViewModel> Pointer )
-            value.OtherList                                 = GetObjectList<ICategoryElementGridCellViewModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.ICategoryElementGridCellViewModel.FromPointer); // 024665EE45B8 0x30 OtherList                   ( 000185CE1848 ModelClassListType List`1<ICategoryElementGridCellViewModel> List`1<ICategoryElementGridCellViewModel> List<ICategoryElementGridCellViewModel> Pointer )
+            value.CurrentTabType                            = (VoicePlayTab)GetInt32(new IntPtr(p + 0x010)); // 0x10 CurrentTabType              ( ModelEnumType VoicePlayTab VoicePlayTab VoicePlayTab Int32 )
+            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x014)); // 0x14 MstCharacterInfoId          ( ModelPrimitiveType int int int Int32 )
+            value.HomeList                                  = GetObjectList<ICategoryElementGridCellViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.ICategoryElementGridCellViewModel.FromPointer); // 0x18 HomeList                    ( ModelClassListType List`1<ICategoryElementGridCellViewModel> List`1<ICategoryElementGridCellViewModel> List<ICategoryElementGridCellViewModel> Pointer )
+            value.ProduceList                               = GetObjectList<ICategoryElementGridCellViewModel>(new IntPtr(p + 0x020), ReversePrism.DataModels.ICategoryElementGridCellViewModel.FromPointer); // 0x20 ProduceList                 ( ModelClassListType List`1<ICategoryElementGridCellViewModel> List`1<ICategoryElementGridCellViewModel> List<ICategoryElementGridCellViewModel> Pointer )
+            value.LiveList                                  = GetObjectList<ICategoryElementGridCellViewModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.ICategoryElementGridCellViewModel.FromPointer); // 0x28 LiveList                    ( ModelClassListType List`1<ICategoryElementGridCellViewModel> List`1<ICategoryElementGridCellViewModel> List<ICategoryElementGridCellViewModel> Pointer )
+            value.OtherList                                 = GetObjectList<ICategoryElementGridCellViewModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.ICategoryElementGridCellViewModel.FromPointer); // 0x30 OtherList                   ( ModelClassListType List`1<ICategoryElementGridCellViewModel> List`1<ICategoryElementGridCellViewModel> List<ICategoryElementGridCellViewModel> Pointer )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_CachedQuerySkuDetailsService           00018655B990 ModelClassType IGoogleCachedQuerySkuDetailsService IGoogleCachedQuerySkuDetailsService IGoogleCachedQuerySkuDetailsService Pointer
-    // 018 M_Logger                                 0001865A19E0 ModelClassType ILogger ILogger ILogger Pointer
+    // 010 M_CachedQuerySkuDetailsService           ModelClassType IGoogleCachedQuerySkuDetailsService IGoogleCachedQuerySkuDetailsService IGoogleCachedQuerySkuDetailsService Pointer
+    // 018 M_Logger                                 ModelClassType ILogger ILogger ILogger Pointer
     public partial class GooglePurchaseBuilder : DataModel
     {
         public IGoogleCachedQuerySkuDetailsService?     M_CachedQuerySkuDetailsService          { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GooglePurchaseBuilder() { Pointer= p0 };
 
-            value.M_CachedQuerySkuDetailsService            = GetObject<IGoogleCachedQuerySkuDetailsService>(new IntPtr(p + 0x010), ReversePrism.DataModels.IGoogleCachedQuerySkuDetailsService.FromPointer); // 0245A68E6598 0x10 M_CachedQuerySkuDetailsService ( 00018655B990 ModelClassType IGoogleCachedQuerySkuDetailsService IGoogleCachedQuerySkuDetailsService IGoogleCachedQuerySkuDetailsService Pointer )
-            value.M_Logger                                  = GetObject<ILogger>(new IntPtr(p + 0x018), ReversePrism.DataModels.ILogger.FromPointer); // 0245A68E65B8 0x18 M_Logger                    ( 0001865A19E0 ModelClassType ILogger ILogger ILogger Pointer )
+            value.M_CachedQuerySkuDetailsService            = GetObject<IGoogleCachedQuerySkuDetailsService>(new IntPtr(p + 0x010), ReversePrism.DataModels.IGoogleCachedQuerySkuDetailsService.FromPointer); // 0x10 M_CachedQuerySkuDetailsService ( ModelClassType IGoogleCachedQuerySkuDetailsService IGoogleCachedQuerySkuDetailsService IGoogleCachedQuerySkuDetailsService Pointer )
+            value.M_Logger                                  = GetObject<ILogger>(new IntPtr(p + 0x018), ReversePrism.DataModels.ILogger.FromPointer); // 0x18 M_Logger                    ( ModelClassType ILogger ILogger ILogger Pointer )
 
             return value;
         }

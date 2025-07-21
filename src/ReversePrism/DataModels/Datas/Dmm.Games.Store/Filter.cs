@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Field                                    0001866722E0 ModelPrimitiveType string string string String
-    // 018 Operand                                  0001866722E0 ModelPrimitiveType string string string String
-    // 020 Value                                    0001866722E0 ModelPrimitiveType string string string String
+    // 010 Field                                    ModelPrimitiveType string string string String
+    // 018 Operand                                  ModelPrimitiveType string string string String
+    // 020 Value                                    ModelPrimitiveType string string string String
     public partial class Filter : DataModel
     {
         public string                                   Field                                   { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Filter() { Pointer= p0 };
 
-            value.Field                                     = GetString(new IntPtr(p + 0x010)); // 02466B5449C8 0x10 Field                       ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Operand                                   = GetString(new IntPtr(p + 0x018)); // 02466B5449E8 0x18 Operand                     ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Value                                     = GetString(new IntPtr(p + 0x020)); // 02466B544A08 0x20 Value                       ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Field                                     = GetString(new IntPtr(p + 0x010)); // 0x10 Field                       ( ModelPrimitiveType string string string String )
+            value.Operand                                   = GetString(new IntPtr(p + 0x018)); // 0x18 Operand                     ( ModelPrimitiveType string string string String )
+            value.Value                                     = GetString(new IntPtr(p + 0x020)); // 0x20 Value                       ( ModelPrimitiveType string string string String )
 
             return value;
         }

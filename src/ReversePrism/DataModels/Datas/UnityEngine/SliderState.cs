@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 DragStartPos                             000186666050 ModelPrimitiveType float float float Single
-    // 014 DragStartValue                           000186666050 ModelPrimitiveType float float float Single
-    // 018 IsDragging                               000186595960 ModelPrimitiveType bool bool bool Bool
+    // 010 DragStartPos                             ModelPrimitiveType float float float Single
+    // 014 DragStartValue                           ModelPrimitiveType float float float Single
+    // 018 IsDragging                               ModelPrimitiveType bool bool bool Bool
     public partial class SliderState : DataModel
     {
         public float                                    DragStartPos                            { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SliderState() { Pointer= p0 };
 
-            value.DragStartPos                              = GetSingle(new IntPtr(p + 0x010)); // 0245A21E6B00 0x10 DragStartPos                ( 000186666050 ModelPrimitiveType float float float Single )
-            value.DragStartValue                            = GetSingle(new IntPtr(p + 0x014)); // 0245A21E6B20 0x14 DragStartValue              ( 000186666050 ModelPrimitiveType float float float Single )
-            value.IsDragging                                = GetBool(new IntPtr(p + 0x018)); // 0245A21E6B40 0x18 IsDragging                  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.DragStartPos                              = GetSingle(new IntPtr(p + 0x010)); // 0x10 DragStartPos                ( ModelPrimitiveType float float float Single )
+            value.DragStartValue                            = GetSingle(new IntPtr(p + 0x014)); // 0x14 DragStartValue              ( ModelPrimitiveType float float float Single )
+            value.IsDragging                                = GetBool(new IntPtr(p + 0x018)); // 0x18 IsDragging                  ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Name                                     000186671910 ModelPrimitiveType string string string String
-    // 018 Optional                                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 019 GenerateProxy                            000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 Name                                     ModelPrimitiveType string string string String
+    // 018 Optional                                 ModelPrimitiveType bool bool bool Bool
+    // 019 GenerateProxy                            ModelPrimitiveType bool bool bool Bool
     public partial class RequiredByNativeCodeAttribute : DataModel
     {
         public string                                   Name                                    { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RequiredByNativeCodeAttribute() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0245A692C3A8 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Optional                                  = GetBool(new IntPtr(p + 0x018)); // 0245A692C3C8 0x18 Optional                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.GenerateProxy                             = GetBool(new IntPtr(p + 0x019)); // 0245A692C3E8 0x19 GenerateProxy               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Name                        ( ModelPrimitiveType string string string String )
+            value.Optional                                  = GetBool(new IntPtr(p + 0x018)); // 0x18 Optional                    ( ModelPrimitiveType bool bool bool Bool )
+            value.GenerateProxy                             = GetBool(new IntPtr(p + 0x019)); // 0x19 GenerateProxy               ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

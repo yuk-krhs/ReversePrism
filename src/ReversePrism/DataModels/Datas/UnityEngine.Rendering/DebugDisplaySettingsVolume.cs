@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 VolumeDebugSettings                      00018669A3F0 ModelClassType IVolumeDebugSettings2 IVolumeDebugSettings2 IVolumeDebugSettings2 Pointer
-    // 018 VolumeComponentEnumIndex                 0001865F2F90 ModelPrimitiveType int int int Int32
+    // 010 VolumeDebugSettings                      ModelClassType IVolumeDebugSettings2 IVolumeDebugSettings2 IVolumeDebugSettings2 Pointer
+    // 018 VolumeComponentEnumIndex                 ModelPrimitiveType int int int Int32
     public partial class DebugDisplaySettingsVolume : DataModel
     {
         public IVolumeDebugSettings2?                   VolumeDebugSettings                     { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DebugDisplaySettingsVolume() { Pointer= p0 };
 
-            value.VolumeDebugSettings                       = GetObject<IVolumeDebugSettings2>(new IntPtr(p + 0x010), ReversePrism.DataModels.IVolumeDebugSettings2.FromPointer); // 0246691B98F0 0x10 VolumeDebugSettings         ( 00018669A3F0 ModelClassType IVolumeDebugSettings2 IVolumeDebugSettings2 IVolumeDebugSettings2 Pointer )
-            value.VolumeComponentEnumIndex                  = GetInt32(new IntPtr(p + 0x018)); // 0246691B9910 0x18 VolumeComponentEnumIndex    ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.VolumeDebugSettings                       = GetObject<IVolumeDebugSettings2>(new IntPtr(p + 0x010), ReversePrism.DataModels.IVolumeDebugSettings2.FromPointer); // 0x10 VolumeDebugSettings         ( ModelClassType IVolumeDebugSettings2 IVolumeDebugSettings2 IVolumeDebugSettings2 Pointer )
+            value.VolumeComponentEnumIndex                  = GetInt32(new IntPtr(p + 0x018)); // 0x18 VolumeComponentEnumIndex    ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 Aki                                      000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 028 Aki                                      ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     public partial class AuthorityKeyIdentifierExtension : DataModel
     {
         public List<sbyte>?                             Aki                                     { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AuthorityKeyIdentifierExtension() { Pointer= p0 };
 
-            value.Aki                                       = GetSByteList(new IntPtr(p + 0x028)); // 02466B40BB30 0x28 Aki                         ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Aki                                       = GetSByteList(new IntPtr(p + 0x028)); // 0x28 Aki                         ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

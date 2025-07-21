@@ -8,16 +8,16 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 038 Rect                                     000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
-    // 040 ScheduleDetailContent                    0001866D1FB0 ModelClassType ScheduleDetailContent ScheduleDetailContent ScheduleDetailContent Pointer
-    // 048 Animator                                 0001866B8DE0 ModelClassType Animator Animator Animator Pointer
-    // 050 OrderControllCanvas                      00018653FDA0 ModelClassType Canvas Canvas Canvas Pointer
-    // 058 GraphicRaycaster                         0001866940A0 ModelClassType GraphicRaycaster GraphicRaycaster GraphicRaycaster Pointer
-    // 060 RightMoveButton                          0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 068 LeftMoveButton                           0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
+    // 038 Rect                                     ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 040 ScheduleDetailContent                    ModelClassType ScheduleDetailContent ScheduleDetailContent ScheduleDetailContent Pointer
+    // 048 Animator                                 ModelClassType Animator Animator Animator Pointer
+    // 050 OrderControllCanvas                      ModelClassType Canvas Canvas Canvas Pointer
+    // 058 GraphicRaycaster                         ModelClassType GraphicRaycaster GraphicRaycaster GraphicRaycaster Pointer
+    // 060 RightMoveButton                          ModelClassType UIButton UIButton UIButton Pointer
+    // 068 LeftMoveButton                           ModelClassType UIButton UIButton UIButton Pointer
     // 070 cacheSubject                             Subject`1<bool> IL2CPP_TYPE_GENERICINST
     // 078 cacheIsAuditionSubject                   Subject`1<bool> IL2CPP_TYPE_GENERICINST
-    // 080 IsAudition                               000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 080 IsAudition                               ModelPrimitiveType bool bool bool Bool
     public partial class ScheduleSelectionListCarouselCell : DataModel
     {
         public RectTransform?                           Rect                                    { get; set; }
@@ -37,14 +37,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ScheduleSelectionListCarouselCell() { Pointer= p0 };
 
-            value.Rect                                      = GetObject<RectTransform>(new IntPtr(p + 0x038), ReversePrism.DataModels.RectTransform.FromPointer); // 02466A1E1240 0x38 Rect                        ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.ScheduleDetailContent                     = GetObject<ScheduleDetailContent>(new IntPtr(p + 0x040), ReversePrism.DataModels.ScheduleDetailContent.FromPointer); // 02466A1E1260 0x40 ScheduleDetailContent       ( 0001866D1FB0 ModelClassType ScheduleDetailContent ScheduleDetailContent ScheduleDetailContent Pointer )
-            value.Animator                                  = GetObject<Animator>(new IntPtr(p + 0x048), ReversePrism.DataModels.Animator.FromPointer); // 02466A1E1280 0x48 Animator                    ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
-            value.OrderControllCanvas                       = GetObject<Canvas>(new IntPtr(p + 0x050), ReversePrism.DataModels.Canvas.FromPointer); // 02466A1E12A0 0x50 OrderControllCanvas         ( 00018653FDA0 ModelClassType Canvas Canvas Canvas Pointer )
-            value.GraphicRaycaster                          = GetObject<GraphicRaycaster>(new IntPtr(p + 0x058), ReversePrism.DataModels.GraphicRaycaster.FromPointer); // 02466A1E12C0 0x58 GraphicRaycaster            ( 0001866940A0 ModelClassType GraphicRaycaster GraphicRaycaster GraphicRaycaster Pointer )
-            value.RightMoveButton                           = GetObject<UIButton>(new IntPtr(p + 0x060), ReversePrism.DataModels.UIButton.FromPointer); // 02466A1E12E0 0x60 RightMoveButton             ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.LeftMoveButton                            = GetObject<UIButton>(new IntPtr(p + 0x068), ReversePrism.DataModels.UIButton.FromPointer); // 02466A1E1300 0x68 LeftMoveButton              ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.IsAudition                                = GetBool(new IntPtr(p + 0x080)); // 02466A1E1360 0x80 IsAudition                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Rect                                      = GetObject<RectTransform>(new IntPtr(p + 0x038), ReversePrism.DataModels.RectTransform.FromPointer); // 0x38 Rect                        ( ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.ScheduleDetailContent                     = GetObject<ScheduleDetailContent>(new IntPtr(p + 0x040), ReversePrism.DataModels.ScheduleDetailContent.FromPointer); // 0x40 ScheduleDetailContent       ( ModelClassType ScheduleDetailContent ScheduleDetailContent ScheduleDetailContent Pointer )
+            value.Animator                                  = GetObject<Animator>(new IntPtr(p + 0x048), ReversePrism.DataModels.Animator.FromPointer); // 0x48 Animator                    ( ModelClassType Animator Animator Animator Pointer )
+            value.OrderControllCanvas                       = GetObject<Canvas>(new IntPtr(p + 0x050), ReversePrism.DataModels.Canvas.FromPointer); // 0x50 OrderControllCanvas         ( ModelClassType Canvas Canvas Canvas Pointer )
+            value.GraphicRaycaster                          = GetObject<GraphicRaycaster>(new IntPtr(p + 0x058), ReversePrism.DataModels.GraphicRaycaster.FromPointer); // 0x58 GraphicRaycaster            ( ModelClassType GraphicRaycaster GraphicRaycaster GraphicRaycaster Pointer )
+            value.RightMoveButton                           = GetObject<UIButton>(new IntPtr(p + 0x060), ReversePrism.DataModels.UIButton.FromPointer); // 0x60 RightMoveButton             ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.LeftMoveButton                            = GetObject<UIButton>(new IntPtr(p + 0x068), ReversePrism.DataModels.UIButton.FromPointer); // 0x68 LeftMoveButton              ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.IsAudition                                = GetBool(new IntPtr(p + 0x080)); // 0x80 IsAudition                  ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Name                                     000186671910 ModelPrimitiveType string string string String
-    // 018 M_ObsoleteNames                          000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 020 Type                                     000186671910 ModelPrimitiveType string string string String
-    // 028 TypeNamespace                            000186671910 ModelPrimitiveType string string string String
-    // 030 Use                                      0001866CCB90 ModelEnumType Use Use Use Int32
-    // 038 Restriction                              000186760FC0 ModelClassType UxmlTypeRestriction UxmlTypeRestriction UxmlTypeRestriction Pointer
+    // 010 Name                                     ModelPrimitiveType string string string String
+    // 018 M_ObsoleteNames                          ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 020 Type                                     ModelPrimitiveType string string string String
+    // 028 TypeNamespace                            ModelPrimitiveType string string string String
+    // 030 Use                                      ModelEnumType Use Use Use Int32
+    // 038 Restriction                              ModelClassType UxmlTypeRestriction UxmlTypeRestriction UxmlTypeRestriction Pointer
     public partial class UxmlAttributeDescription : DataModel
     {
         public string                                   Name                                    { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UxmlAttributeDescription() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0245A66C7100 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_ObsoleteNames                           = GetStringList(new IntPtr(p + 0x018)); // 0245A66C7120 0x18 M_ObsoleteNames             ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.Type                                      = GetString(new IntPtr(p + 0x020)); // 0245A66C7140 0x20 Type                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.TypeNamespace                             = GetString(new IntPtr(p + 0x028)); // 0245A66C7160 0x28 TypeNamespace               ( 000186671910 ModelPrimitiveType string string string String )
-            value.Use                                       = (Use)GetInt32(new IntPtr(p + 0x030)); // 0245A66C7180 0x30 Use                         ( 0001866CCB90 ModelEnumType Use Use Use Int32 )
-            value.Restriction                               = GetObject<UxmlTypeRestriction>(new IntPtr(p + 0x038), ReversePrism.DataModels.UxmlTypeRestriction.FromPointer); // 0245A66C71A0 0x38 Restriction                 ( 000186760FC0 ModelClassType UxmlTypeRestriction UxmlTypeRestriction UxmlTypeRestriction Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Name                        ( ModelPrimitiveType string string string String )
+            value.M_ObsoleteNames                           = GetStringList(new IntPtr(p + 0x018)); // 0x18 M_ObsoleteNames             ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.Type                                      = GetString(new IntPtr(p + 0x020)); // 0x20 Type                        ( ModelPrimitiveType string string string String )
+            value.TypeNamespace                             = GetString(new IntPtr(p + 0x028)); // 0x28 TypeNamespace               ( ModelPrimitiveType string string string String )
+            value.Use                                       = (Use)GetInt32(new IntPtr(p + 0x030)); // 0x30 Use                         ( ModelEnumType Use Use Use Int32 )
+            value.Restriction                               = GetObject<UxmlTypeRestriction>(new IntPtr(p + 0x038), ReversePrism.DataModels.UxmlTypeRestriction.FromPointer); // 0x38 Restriction                 ( ModelClassType UxmlTypeRestriction UxmlTypeRestriction UxmlTypeRestriction Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Exception                              0001865CA820 ModelClassType Exception Exception Exception Pointer
+    // 010 M_Exception                              ModelClassType Exception Exception Exception Pointer
     // 018 m_stackTrace                             <object> IL2CPP_TYPE_OBJECT
     public partial class ExceptionDispatchInfo : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExceptionDispatchInfo() { Pointer= p0 };
 
-            value.M_Exception                               = GetObject<Exception>(new IntPtr(p + 0x010), ReversePrism.DataModels.Exception.FromPointer); // 0246669DABB8 0x10 M_Exception                 ( 0001865CA820 ModelClassType Exception Exception Exception Pointer )
+            value.M_Exception                               = GetObject<Exception>(new IntPtr(p + 0x010), ReversePrism.DataModels.Exception.FromPointer); // 0x10 M_Exception                 ( ModelClassType Exception Exception Exception Pointer )
 
             return value;
         }

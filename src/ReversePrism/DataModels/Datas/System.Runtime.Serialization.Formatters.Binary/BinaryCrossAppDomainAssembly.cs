@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 AssemId                                  0001865F2F90 ModelPrimitiveType int int int Int32
-    // 014 AssemblyIndex                            0001865F2F90 ModelPrimitiveType int int int Int32
+    // 010 AssemId                                  ModelPrimitiveType int int int Int32
+    // 014 AssemblyIndex                            ModelPrimitiveType int int int Int32
     public partial class BinaryCrossAppDomainAssembly : DataModel
     {
         public int                                      AssemId                                 { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BinaryCrossAppDomainAssembly() { Pointer= p0 };
 
-            value.AssemId                                   = GetInt32(new IntPtr(p + 0x010)); // 024666CA1430 0x10 AssemId                     ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.AssemblyIndex                             = GetInt32(new IntPtr(p + 0x014)); // 024666CA1450 0x14 AssemblyIndex               ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.AssemId                                   = GetInt32(new IntPtr(p + 0x010)); // 0x10 AssemId                     ( ModelPrimitiveType int int int Int32 )
+            value.AssemblyIndex                             = GetInt32(new IntPtr(p + 0x014)); // 0x14 AssemblyIndex               ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

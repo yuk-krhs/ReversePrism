@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 View                                     0001865F6E00 ModelClassType PvpUnitEditView PvpUnitEditView PvpUnitEditView Pointer
+    // 020 View                                     ModelClassType PvpUnitEditView PvpUnitEditView PvpUnitEditView Pointer
     public partial class PvpUnitEditBuilder : DataModel
     {
         public PvpUnitEditView?                         View                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PvpUnitEditBuilder() { Pointer= p0 };
 
-            value.View                                      = GetObject<PvpUnitEditView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PvpUnitEditView.FromPointer); // 02466B6B2B08 0x20 View                        ( 0001865F6E00 ModelClassType PvpUnitEditView PvpUnitEditView PvpUnitEditView Pointer )
+            value.View                                      = GetObject<PvpUnitEditView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PvpUnitEditView.FromPointer); // 0x20 View                        ( ModelClassType PvpUnitEditView PvpUnitEditView PvpUnitEditView Pointer )
 
             return value;
         }

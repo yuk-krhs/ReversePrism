@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Delegate                               000186724C20 ModelClassType SendOrPostCallback SendOrPostCallback SendOrPostCallback Pointer
+    // 010 M_Delegate                               ModelClassType SendOrPostCallback SendOrPostCallback SendOrPostCallback Pointer
     // 018 m_State                                  <object> IL2CPP_TYPE_OBJECT
     public partial class InvocationContext : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InvocationContext() { Pointer= p0 };
 
-            value.M_Delegate                                = GetObject<SendOrPostCallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.SendOrPostCallback.FromPointer); // 024666B4D030 0x10 M_Delegate                  ( 000186724C20 ModelClassType SendOrPostCallback SendOrPostCallback SendOrPostCallback Pointer )
+            value.M_Delegate                                = GetObject<SendOrPostCallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.SendOrPostCallback.FromPointer); // 0x10 M_Delegate                  ( ModelClassType SendOrPostCallback SendOrPostCallback SendOrPostCallback Pointer )
 
             return value;
         }

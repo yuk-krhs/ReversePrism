@@ -37,5 +37,9 @@ namespace ReversePrism.DataModels
         AdvReward,
         MiniLive,
         TalkShow,
+        ScriptReading,
+        CostumeFitting,
+        PublicRelations,
+        ActingPractice,
     }
 }

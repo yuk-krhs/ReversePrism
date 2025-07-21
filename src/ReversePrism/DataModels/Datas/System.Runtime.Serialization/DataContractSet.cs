@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 010 contracts                                Dictionary`2<XmlQualifiedName, DataContract> IL2CPP_TYPE_GENERICINST
     // 018 processedContracts                       Dictionary`2<DataContract, <object>> IL2CPP_TYPE_GENERICINST
-    // 020 DataContractSurrogate                    00018674A640 ModelClassType IDataContractSurrogate IDataContractSurrogate IDataContractSurrogate Pointer
-    // 028 SurrogateDataTable                       0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 020 DataContractSurrogate                    ModelClassType IDataContractSurrogate IDataContractSurrogate IDataContractSurrogate Pointer
+    // 028 SurrogateDataTable                       ModelClassType Hashtable Hashtable Hashtable Pointer
     // 030 knownTypesForObject                      Dictionary`2<XmlQualifiedName, DataContract> IL2CPP_TYPE_GENERICINST
     // 038 referencedTypes                          ICollection`1<Type> IL2CPP_TYPE_GENERICINST
     // 040 referencedCollectionTypes                ICollection`1<Type> IL2CPP_TYPE_GENERICINST
@@ -30,8 +30,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DataContractSet() { Pointer= p0 };
 
-            value.DataContractSurrogate                     = GetObject<IDataContractSurrogate>(new IntPtr(p + 0x020), ReversePrism.DataModels.IDataContractSurrogate.FromPointer); // 024667D10030 0x20 DataContractSurrogate       ( 00018674A640 ModelClassType IDataContractSurrogate IDataContractSurrogate IDataContractSurrogate Pointer )
-            value.SurrogateDataTable                        = GetObject<Hashtable>(new IntPtr(p + 0x028), ReversePrism.DataModels.Hashtable.FromPointer); // 024667D10050 0x28 SurrogateDataTable          ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.DataContractSurrogate                     = GetObject<IDataContractSurrogate>(new IntPtr(p + 0x020), ReversePrism.DataModels.IDataContractSurrogate.FromPointer); // 0x20 DataContractSurrogate       ( ModelClassType IDataContractSurrogate IDataContractSurrogate IDataContractSurrogate Pointer )
+            value.SurrogateDataTable                        = GetObject<Hashtable>(new IntPtr(p + 0x028), ReversePrism.DataModels.Hashtable.FromPointer); // 0x28 SurrogateDataTable          ( ModelClassType Hashtable Hashtable Hashtable Pointer )
 
             return value;
         }

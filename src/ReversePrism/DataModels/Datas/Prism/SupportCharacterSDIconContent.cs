@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 SupportCharaObject                       0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 028 SupportCharaCooperationObject            0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 030 SupportCharaCooperationIconObject        0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 038 SupportCharaImage                        0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
+    // 020 SupportCharaObject                       ModelClassType GameObject GameObject GameObject Pointer
+    // 028 SupportCharaCooperationObject            ModelClassType GameObject GameObject GameObject Pointer
+    // 030 SupportCharaCooperationIconObject        ModelClassType GameObject GameObject GameObject Pointer
+    // 038 SupportCharaImage                        ModelClassType UIImage UIImage UIImage Pointer
     public partial class SupportCharacterSDIconContent : DataModel
     {
         public GameObject?                              SupportCharaObject                      { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SupportCharacterSDIconContent() { Pointer= p0 };
 
-            value.SupportCharaObject                        = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 02466A114398 0x20 SupportCharaObject          ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.SupportCharaCooperationObject             = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 02466A1143B8 0x28 SupportCharaCooperationObject ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.SupportCharaCooperationIconObject         = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 02466A1143D8 0x30 SupportCharaCooperationIconObject ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.SupportCharaImage                         = GetObject<UIImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIImage.FromPointer); // 02466A1143F8 0x38 SupportCharaImage           ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.SupportCharaObject                        = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0x20 SupportCharaObject          ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.SupportCharaCooperationObject             = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0x28 SupportCharaCooperationObject ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.SupportCharaCooperationIconObject         = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0x30 SupportCharaCooperationIconObject ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.SupportCharaImage                         = GetObject<UIImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIImage.FromPointer); // 0x38 SupportCharaImage           ( ModelClassType UIImage UIImage UIImage Pointer )
 
             return value;
         }

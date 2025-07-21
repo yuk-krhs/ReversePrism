@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CertificateChain                         000186672F10 ModelPrimitiveType string string string String
-    // 018 PrivateKey                               000186672F10 ModelPrimitiveType string string string String
+    // 010 CertificateChain                         ModelPrimitiveType string string string String
+    // 018 PrivateKey                               ModelPrimitiveType string string string String
     public partial class KeyCertificatePair : DataModel
     {
         public string                                   CertificateChain                        { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new KeyCertificatePair() { Pointer= p0 };
 
-            value.CertificateChain                          = GetString(new IntPtr(p + 0x010)); // 0246693D1970 0x10 CertificateChain            ( 000186672F10 ModelPrimitiveType string string string String )
-            value.PrivateKey                                = GetString(new IntPtr(p + 0x018)); // 0246693D1990 0x18 PrivateKey                  ( 000186672F10 ModelPrimitiveType string string string String )
+            value.CertificateChain                          = GetString(new IntPtr(p + 0x010)); // 0x10 CertificateChain            ( ModelPrimitiveType string string string String )
+            value.PrivateKey                                = GetString(new IntPtr(p + 0x018)); // 0x18 PrivateKey                  ( ModelPrimitiveType string string string String )
 
             return value;
         }

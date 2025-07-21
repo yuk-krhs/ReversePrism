@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 GameObject                               0001865D8420 ModelClassType GameObject GameObject GameObject Pointer
-    // 018 Image                                    0001866EB310 ModelClassType UIImage UIImage UIImage Pointer
+    // 010 GameObject                               ModelClassType GameObject GameObject GameObject Pointer
+    // 018 Image                                    ModelClassType UIImage UIImage UIImage Pointer
     public partial class GameObjectImagePair : DataModel
     {
         public GameObject?                              GameObject                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GameObjectImagePair() { Pointer= p0 };
 
-            value.GameObject                                = GetObject<GameObject>(new IntPtr(p + 0x010), ReversePrism.DataModels.GameObject.FromPointer); // 024665E206C8 0x10 GameObject                  ( 0001865D8420 ModelClassType GameObject GameObject GameObject Pointer )
-            value.Image                                     = GetObject<UIImage>(new IntPtr(p + 0x018), ReversePrism.DataModels.UIImage.FromPointer); // 024665E206E8 0x18 Image                       ( 0001866EB310 ModelClassType UIImage UIImage UIImage Pointer )
+            value.GameObject                                = GetObject<GameObject>(new IntPtr(p + 0x010), ReversePrism.DataModels.GameObject.FromPointer); // 0x10 GameObject                  ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.Image                                     = GetObject<UIImage>(new IntPtr(p + 0x018), ReversePrism.DataModels.UIImage.FromPointer); // 0x18 Image                       ( ModelClassType UIImage UIImage UIImage Pointer )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Parsed                                   <object> IL2CPP_TYPE_OBJECT
-    // 018 Values                                   000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
+    // 018 Values                                   ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
     // 020 CustomToString                           Func`2<<object>, string> IL2CPP_TYPE_GENERICINST
     public partial class HeaderBucket : DataModel
     {
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HeaderBucket() { Pointer= p0 };
 
-            value.Values                                    = GetStringList(new IntPtr(p + 0x018)); // 02466B8EBF60 0x18 Values                      ( 000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.Values                                    = GetStringList(new IntPtr(p + 0x018)); // 0x18 Values                      ( ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
 
             return value;
         }

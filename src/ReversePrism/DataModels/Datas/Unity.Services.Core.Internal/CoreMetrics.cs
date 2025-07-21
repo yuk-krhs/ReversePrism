@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 000 AllPackageNamesKey                       string IL2CPP_TYPE_STRING
     // 000 AllPackageNamesSeparator                 char IL2CPP_TYPE_CHAR
     // 000 <Instance>k__BackingField                CoreMetrics IL2CPP_TYPE_CLASS
-    // 010 Metrics                                  0001865B2F70 ModelClassType IMetrics IMetrics IMetrics Pointer
+    // 010 Metrics                                  ModelClassType IMetrics IMetrics IMetrics Pointer
     // 018 <AllPackageMetrics>k__BackingField       IDictionary`2<Type, IMetrics> IL2CPP_TYPE_GENERICINST
     public partial class CoreMetrics : DataModel
     {
@@ -30,7 +30,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CoreMetrics() { Pointer= p0 };
 
-            value.Metrics                                   = GetObject<IMetrics>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMetrics.FromPointer); // 0246608BDEE0 0x10 Metrics                     ( 0001865B2F70 ModelClassType IMetrics IMetrics IMetrics Pointer )
+            value.Metrics                                   = GetObject<IMetrics>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMetrics.FromPointer); // 0x10 Metrics                     ( ModelClassType IMetrics IMetrics IMetrics Pointer )
 
             return value;
         }

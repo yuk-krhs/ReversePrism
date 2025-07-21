@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Modifier1                                0001865F36C0 ModelPrimitiveType int int int Int32
-    // 014 Modifier2                                0001865F36C0 ModelPrimitiveType int int int Int32
-    // 018 Button                                   0001865F36C0 ModelPrimitiveType int int int Int32
-    // 01C OverrideModifiersNeedToBePressedFirst    000186595960 ModelPrimitiveType bool bool bool Bool
+    // 010 Modifier1                                ModelPrimitiveType int int int Int32
+    // 014 Modifier2                                ModelPrimitiveType int int int Int32
+    // 018 Button                                   ModelPrimitiveType int int int Int32
+    // 01C OverrideModifiersNeedToBePressedFirst    ModelPrimitiveType bool bool bool Bool
     public partial class ButtonWithTwoModifiers : DataModel
     {
         public int                                      Modifier1                               { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ButtonWithTwoModifiers() { Pointer= p0 };
 
-            value.Modifier1                                 = GetInt32(new IntPtr(p + 0x010)); // 024667945E40 0x10 Modifier1                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Modifier2                                 = GetInt32(new IntPtr(p + 0x014)); // 024667945E60 0x14 Modifier2                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Button                                    = GetInt32(new IntPtr(p + 0x018)); // 024667945E80 0x18 Button                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.OverrideModifiersNeedToBePressedFirst     = GetBool(new IntPtr(p + 0x01C)); // 024667945EA0 0x1C OverrideModifiersNeedToBePressedFirst ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Modifier1                                 = GetInt32(new IntPtr(p + 0x010)); // 0x10 Modifier1                   ( ModelPrimitiveType int int int Int32 )
+            value.Modifier2                                 = GetInt32(new IntPtr(p + 0x014)); // 0x14 Modifier2                   ( ModelPrimitiveType int int int Int32 )
+            value.Button                                    = GetInt32(new IntPtr(p + 0x018)); // 0x18 Button                      ( ModelPrimitiveType int int int Int32 )
+            value.OverrideModifiersNeedToBePressedFirst     = GetBool(new IntPtr(p + 0x01C)); // 0x1C OverrideModifiersNeedToBePressedFirst ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

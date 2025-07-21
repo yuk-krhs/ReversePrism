@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 AccumulatedDelta                         0001866A8740 ModelEnumType Vector2 Vector2 Vector2 Int32
-    // 018 UniqueId                                 0001866992B0 ModelPrimitiveType uint uint uint UInt32
+    // 010 AccumulatedDelta                         ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 018 UniqueId                                 ModelPrimitiveType uint uint uint UInt32
     public partial class ExtraDataPerTouchState : DataModel
     {
         public Vector2                                  AccumulatedDelta                        { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExtraDataPerTouchState() { Pointer= p0 };
 
-            value.AccumulatedDelta                          = (Vector2)GetInt32(new IntPtr(p + 0x010)); // 02466784D610 0x10 AccumulatedDelta            ( 0001866A8740 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.UniqueId                                  = GetUInt32(new IntPtr(p + 0x018)); // 02466784D630 0x18 UniqueId                    ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.AccumulatedDelta                          = (Vector2)GetInt32(new IntPtr(p + 0x010)); // 0x10 AccumulatedDelta            ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.UniqueId                                  = GetUInt32(new IntPtr(p + 0x018)); // 0x18 UniqueId                    ( ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

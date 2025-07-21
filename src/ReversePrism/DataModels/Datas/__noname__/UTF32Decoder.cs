@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 030 IChar                                    0001865F2F90 ModelPrimitiveType int int int Int32
-    // 034 ReadByteCount                            0001865F2F90 ModelPrimitiveType int int int Int32
+    // 030 IChar                                    ModelPrimitiveType int int int Int32
+    // 034 ReadByteCount                            ModelPrimitiveType int int int Int32
     public partial class UTF32Decoder : DataModel
     {
         public int                                      IChar                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UTF32Decoder() { Pointer= p0 };
 
-            value.IChar                                     = GetInt32(new IntPtr(p + 0x030)); // 024666BDC690 0x30 IChar                       ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.ReadByteCount                             = GetInt32(new IntPtr(p + 0x034)); // 024666BDC6B0 0x34 ReadByteCount               ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.IChar                                     = GetInt32(new IntPtr(p + 0x030)); // 0x30 IChar                       ( ModelPrimitiveType int int int Int32 )
+            value.ReadByteCount                             = GetInt32(new IntPtr(p + 0x034)); // 0x34 ReadByteCount               ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

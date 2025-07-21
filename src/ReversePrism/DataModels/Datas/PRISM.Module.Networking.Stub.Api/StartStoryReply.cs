@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<StartStoryReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 StoryFieldNumber                         int IL2CPP_TYPE_I4
-    // 018 Story                                    0001865A4D90 ModelClassType StoryStatus StoryStatus StoryStatus Pointer
+    // 018 Story                                    ModelClassType StoryStatus StoryStatus StoryStatus Pointer
     // 000 NextStoryIdFieldNumber                   int IL2CPP_TYPE_I4
-    // 020 NextStoryId                              0001865979C0 ModelClassType StoryIDStatus StoryIDStatus StoryIDStatus Pointer
+    // 020 NextStoryId                              ModelClassType StoryIDStatus StoryIDStatus StoryIDStatus Pointer
     public partial class StartStoryReply : DataModel
     {
         public StoryStatus?                             Story                                   { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StartStoryReply() { Pointer= p0 };
 
-            value.Story                                     = GetObject<StoryStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoryStatus.FromPointer); // 0246629B5A28 0x18 Story                       ( 0001865A4D90 ModelClassType StoryStatus StoryStatus StoryStatus Pointer )
-            value.NextStoryId                               = GetObject<StoryIDStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.StoryIDStatus.FromPointer); // 0246629B5A68 0x20 NextStoryId                 ( 0001865979C0 ModelClassType StoryIDStatus StoryIDStatus StoryIDStatus Pointer )
+            value.Story                                     = GetObject<StoryStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoryStatus.FromPointer); // 0x18 Story                       ( ModelClassType StoryStatus StoryStatus StoryStatus Pointer )
+            value.NextStoryId                               = GetObject<StoryIDStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.StoryIDStatus.FromPointer); // 0x20 NextStoryId                 ( ModelClassType StoryIDStatus StoryIDStatus StoryIDStatus Pointer )
 
             return value;
         }

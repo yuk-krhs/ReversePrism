@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 DmmAccessToken                           0001866722E0 ModelPrimitiveType string string string String
-    // 018 DmmOpenId                                0001866722E0 ModelPrimitiveType string string string String
-    // 020 Error                                    0001865C8690 ModelClassType Error Error Error Pointer
+    // 010 DmmAccessToken                           ModelPrimitiveType string string string String
+    // 018 DmmOpenId                                ModelPrimitiveType string string string String
+    // 020 Error                                    ModelClassType Error Error Error Pointer
     public partial class ReceiptAuthDataResult : DataModel
     {
         public string                                   DmmAccessToken                          { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ReceiptAuthDataResult() { Pointer= p0 };
 
-            value.DmmAccessToken                            = GetString(new IntPtr(p + 0x010)); // 02466B50F110 0x10 DmmAccessToken              ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.DmmOpenId                                 = GetString(new IntPtr(p + 0x018)); // 02466B50F130 0x18 DmmOpenId                   ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Error                                     = GetObject<Error>(new IntPtr(p + 0x020), ReversePrism.DataModels.Error.FromPointer); // 02466B50F150 0x20 Error                       ( 0001865C8690 ModelClassType Error Error Error Pointer )
+            value.DmmAccessToken                            = GetString(new IntPtr(p + 0x010)); // 0x10 DmmAccessToken              ( ModelPrimitiveType string string string String )
+            value.DmmOpenId                                 = GetString(new IntPtr(p + 0x018)); // 0x18 DmmOpenId                   ( ModelPrimitiveType string string string String )
+            value.Error                                     = GetObject<Error>(new IntPtr(p + 0x020), ReversePrism.DataModels.Error.FromPointer); // 0x20 Error                       ( ModelClassType Error Error Error Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 HasFocus                                 000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 HasFocus                                 ModelPrimitiveType bool bool bool Bool
     public partial class ApplicationFocusChangedEventArgs : DataModel
     {
         public bool                                     HasFocus                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ApplicationFocusChangedEventArgs() { Pointer= p0 };
 
-            value.HasFocus                                  = GetBool(new IntPtr(p + 0x010)); // 02466BD77C98 0x10 HasFocus                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.HasFocus                                  = GetBool(new IntPtr(p + 0x010)); // 0x10 HasFocus                    ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -9,10 +9,10 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 m_FirstBlock                             <int> IL2CPP_TYPE_I
-    // 018 M_NumBlocks                              0001865F2F90 ModelPrimitiveType int int int Int32
-    // 01C M_MaxBlocks                              0001865F2F90 ModelPrimitiveType int int int Int32
+    // 018 M_NumBlocks                              ModelPrimitiveType int int int Int32
+    // 01C M_MaxBlocks                              ModelPrimitiveType int int int Int32
     // 000 m_BlockSize                              int IL2CPP_TYPE_I4
-    // 020 M_AllocLock                              0001865F2F90 ModelPrimitiveType int int int Int32
+    // 020 M_AllocLock                              ModelPrimitiveType int int int Int32
     public partial class UnsafeQueueBlockPoolData : DataModel
     {
         public int                                      M_NumBlocks                             { get; set; }
@@ -27,9 +27,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnsafeQueueBlockPoolData() { Pointer= p0 };
 
-            value.M_NumBlocks                               = GetInt32(new IntPtr(p + 0x018)); // 024669CB89F8 0x18 M_NumBlocks                 ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.M_MaxBlocks                               = GetInt32(new IntPtr(p + 0x01C)); // 024669CB8A18 0x1C M_MaxBlocks                 ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.M_AllocLock                               = GetInt32(new IntPtr(p + 0x020)); // 024669CB8A58 0x20 M_AllocLock                 ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.M_NumBlocks                               = GetInt32(new IntPtr(p + 0x018)); // 0x18 M_NumBlocks                 ( ModelPrimitiveType int int int Int32 )
+            value.M_MaxBlocks                               = GetInt32(new IntPtr(p + 0x01C)); // 0x1C M_MaxBlocks                 ( ModelPrimitiveType int int int Int32 )
+            value.M_AllocLock                               = GetInt32(new IntPtr(p + 0x020)); // 0x20 M_AllocLock                 ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

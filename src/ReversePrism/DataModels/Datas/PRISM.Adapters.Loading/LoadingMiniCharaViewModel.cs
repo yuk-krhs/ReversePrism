@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CharacterIds                             000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer
     // 000 DefaultCharacterId                       int IL2CPP_TYPE_I4
+    // 010 CharacterIds                             ModelPrimitiveListType int[] int[] List<int> Pointer
     public partial class LoadingMiniCharaViewModel : DataModel
     {
         public List<int>?                               CharacterIds                            { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LoadingMiniCharaViewModel() { Pointer= p0 };
 
-            value.CharacterIds                              = GetInt32List(new IntPtr(p + 0x010)); // 0245A1EA09A8 0x10 CharacterIds                ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.CharacterIds                              = GetInt32List(new IntPtr(p + 0x010)); // 0x10 CharacterIds                ( ModelPrimitiveListType int[] int[] List<int> Pointer )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ScheduleSelectionSchedulePanelViewModel  0001866E0820 ModelClassType ScheduleSelectionSchedulePanelViewModel ScheduleSelectionSchedulePanelViewModel ScheduleSelectionSchedulePanelViewModel Pointer
-    // 018 Week                                     0001865F4260 ModelPrimitiveType int int int Int32
+    // 010 ScheduleSelectionSchedulePanelViewModel  ModelClassType ScheduleSelectionSchedulePanelViewModel ScheduleSelectionSchedulePanelViewModel ScheduleSelectionSchedulePanelViewModel Pointer
+    // 018 Week                                     ModelPrimitiveType int int int Int32
     public partial class ScheduleSelectionScheduleCarouselCellData : DataModel
     {
         public ScheduleSelectionSchedulePanelViewModel? ScheduleSelectionSchedulePanelViewModel { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ScheduleSelectionScheduleCarouselCellData() { Pointer= p0 };
 
-            value.ScheduleSelectionSchedulePanelViewModel   = GetObject<ScheduleSelectionSchedulePanelViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.ScheduleSelectionSchedulePanelViewModel.FromPointer); // 02466689E038 0x10 ScheduleSelectionSchedulePanelViewModel ( 0001866E0820 ModelClassType ScheduleSelectionSchedulePanelViewModel ScheduleSelectionSchedulePanelViewModel ScheduleSelectionSchedulePanelViewModel Pointer )
-            value.Week                                      = GetInt32(new IntPtr(p + 0x018)); // 02466689E058 0x18 Week                        ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.ScheduleSelectionSchedulePanelViewModel   = GetObject<ScheduleSelectionSchedulePanelViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.ScheduleSelectionSchedulePanelViewModel.FromPointer); // 0x10 ScheduleSelectionSchedulePanelViewModel ( ModelClassType ScheduleSelectionSchedulePanelViewModel ScheduleSelectionSchedulePanelViewModel ScheduleSelectionSchedulePanelViewModel Pointer )
+            value.Week                                      = GetInt32(new IntPtr(p + 0x018)); // 0x18 Week                        ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

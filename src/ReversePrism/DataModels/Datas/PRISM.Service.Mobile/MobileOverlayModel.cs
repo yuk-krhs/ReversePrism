@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Service                                  000186635D00 ModelClassType MobileService MobileService MobileService Pointer
+    // 010 Service                                  ModelClassType MobileService MobileService MobileService Pointer
     // 018 unreadTwestaExistenceChecker             Func`1<bool> IL2CPP_TYPE_GENERICINST
     public partial class MobileOverlayModel : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MobileOverlayModel() { Pointer= p0 };
 
-            value.Service                                   = GetObject<MobileService>(new IntPtr(p + 0x010), ReversePrism.DataModels.MobileService.FromPointer); // 024666931148 0x10 Service                     ( 000186635D00 ModelClassType MobileService MobileService MobileService Pointer )
+            value.Service                                   = GetObject<MobileService>(new IntPtr(p + 0x010), ReversePrism.DataModels.MobileService.FromPointer); // 0x10 Service                     ( ModelClassType MobileService MobileService MobileService Pointer )
 
             return value;
         }

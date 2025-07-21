@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Next                                     000186649310 ModelClassType MonoListItem MonoListItem MonoListItem Pointer
+    // 010 Next                                     ModelClassType MonoListItem MonoListItem MonoListItem Pointer
     // 018 data                                     <object> IL2CPP_TYPE_OBJECT
     public partial class MonoListItem : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MonoListItem() { Pointer= p0 };
 
-            value.Next                                      = GetObject<MonoListItem>(new IntPtr(p + 0x010), ReversePrism.DataModels.MonoListItem.FromPointer); // 024666AC8708 0x10 Next                        ( 000186649310 ModelClassType MonoListItem MonoListItem MonoListItem Pointer )
+            value.Next                                      = GetObject<MonoListItem>(new IntPtr(p + 0x010), ReversePrism.DataModels.MonoListItem.FromPointer); // 0x10 Next                        ( ModelClassType MonoListItem MonoListItem MonoListItem Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 DisplayOrder                             0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 DisplayOrder                             ModelPrimitiveType int int int Int32
     public partial class LogAccordionOnCommonViewModel : DataModel
     {
         public int                                      DisplayOrder                            { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LogAccordionOnCommonViewModel() { Pointer= p0 };
 
-            value.DisplayOrder                              = GetInt32(new IntPtr(p + 0x010)); // 0246665743A8 0x10 DisplayOrder                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.DisplayOrder                              = GetInt32(new IntPtr(p + 0x010)); // 0x10 DisplayOrder                ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

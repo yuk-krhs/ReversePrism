@@ -8,27 +8,21 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 HeaderText                               0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 028 RewardItemPos                            0001866AA150 ModelClassType Transform Transform Transform Pointer
-    // 030 RewardItemPrefab                         000186625810 ModelClassType ReceiveRewardItem ReceiveRewardItem ReceiveRewardItem Pointer
-    // 038 ScrollRect                               0001866F7FA0 ModelClassType ScrollRect ScrollRect ScrollRect Pointer
-    // 040 PIdolDetailPopupCaller                   000186709050 ModelClassType PIdolDetailPopupCaller PIdolDetailPopupCaller PIdolDetailPopupCaller Pointer
-    // 048 SCharaDetailPopupCaller                  0001866A33D0 ModelClassType SCharaDetailPopupCaller SCharaDetailPopupCaller SCharaDetailPopupCaller Pointer
-    // 050 AchievementDetailCaller                  000186674050 ModelClassType AchievementDetailPopupCaller AchievementDetailPopupCaller AchievementDetailPopupCaller Pointer
-    // 058 FooterArea                               0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 060 FooterText                               0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 068 onClosed                                 Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 070 PopupFrameParameter                      000186762FA0 ModelClassType PopupFrameParameter PopupFrameParameter PopupFrameParameter Pointer
-    // 078 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
+    // 020 HeaderText                               ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 028 RewardItemPos                            ModelClassType Transform Transform Transform Pointer
+    // 030 RewardItemPrefab                         ModelClassType ReceiveRewardItem ReceiveRewardItem ReceiveRewardItem Pointer
+    // 038 ScrollRect                               ModelClassType ScrollRect ScrollRect ScrollRect Pointer
+    // 040 FooterArea                               ModelClassType GameObject GameObject GameObject Pointer
+    // 048 FooterText                               ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 050 onClosed                                 Subject`1<Unit> IL2CPP_TYPE_GENERICINST
+    // 058 PopupFrameParameter                      ModelClassType PopupFrameParameter PopupFrameParameter PopupFrameParameter Pointer
+    // 060 Parent                                   ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
     public partial class ReceiveRewardPopupView : DataModel
     {
         public UITextMeshProUGUI?                       HeaderText                              { get; set; }
         public Transform?                               RewardItemPos                           { get; set; }
         public ReceiveRewardItem?                       RewardItemPrefab                        { get; set; }
         public ScrollRect?                              ScrollRect                              { get; set; }
-        public PIdolDetailPopupCaller?                  PIdolDetailPopupCaller                  { get; set; }
-        public SCharaDetailPopupCaller?                 SCharaDetailPopupCaller                 { get; set; }
-        public AchievementDetailPopupCaller?            AchievementDetailCaller                 { get; set; }
         public GameObject?                              FooterArea                              { get; set; }
         public UITextMeshProUGUI?                       FooterText                              { get; set; }
         public PopupFrameParameter?                     PopupFrameParameter                     { get; set; }
@@ -42,17 +36,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ReceiveRewardPopupView() { Pointer= p0 };
 
-            value.HeaderText                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B625238 0x20 HeaderText                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.RewardItemPos                             = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 02466B625258 0x28 RewardItemPos               ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.RewardItemPrefab                          = GetObject<ReceiveRewardItem>(new IntPtr(p + 0x030), ReversePrism.DataModels.ReceiveRewardItem.FromPointer); // 02466B625278 0x30 RewardItemPrefab            ( 000186625810 ModelClassType ReceiveRewardItem ReceiveRewardItem ReceiveRewardItem Pointer )
-            value.ScrollRect                                = GetObject<ScrollRect>(new IntPtr(p + 0x038), ReversePrism.DataModels.ScrollRect.FromPointer); // 02466B625298 0x38 ScrollRect                  ( 0001866F7FA0 ModelClassType ScrollRect ScrollRect ScrollRect Pointer )
-            value.PIdolDetailPopupCaller                    = GetObject<PIdolDetailPopupCaller>(new IntPtr(p + 0x040), ReversePrism.DataModels.PIdolDetailPopupCaller.FromPointer); // 02466B6252B8 0x40 PIdolDetailPopupCaller      ( 000186709050 ModelClassType PIdolDetailPopupCaller PIdolDetailPopupCaller PIdolDetailPopupCaller Pointer )
-            value.SCharaDetailPopupCaller                   = GetObject<SCharaDetailPopupCaller>(new IntPtr(p + 0x048), ReversePrism.DataModels.SCharaDetailPopupCaller.FromPointer); // 02466B6252D8 0x48 SCharaDetailPopupCaller     ( 0001866A33D0 ModelClassType SCharaDetailPopupCaller SCharaDetailPopupCaller SCharaDetailPopupCaller Pointer )
-            value.AchievementDetailCaller                   = GetObject<AchievementDetailPopupCaller>(new IntPtr(p + 0x050), ReversePrism.DataModels.AchievementDetailPopupCaller.FromPointer); // 02466B6252F8 0x50 AchievementDetailCaller     ( 000186674050 ModelClassType AchievementDetailPopupCaller AchievementDetailPopupCaller AchievementDetailPopupCaller Pointer )
-            value.FooterArea                                = GetObject<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 02466B625318 0x58 FooterArea                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.FooterText                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x060), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B625338 0x60 FooterText                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.PopupFrameParameter                       = GetObject<PopupFrameParameter>(new IntPtr(p + 0x070), ReversePrism.DataModels.PopupFrameParameter.FromPointer); // 02466B625378 0x70 PopupFrameParameter         ( 000186762FA0 ModelClassType PopupFrameParameter PopupFrameParameter PopupFrameParameter Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x078), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466B625398 0x78 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.HeaderText                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x20 HeaderText                  ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.RewardItemPos                             = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 0x28 RewardItemPos               ( ModelClassType Transform Transform Transform Pointer )
+            value.RewardItemPrefab                          = GetObject<ReceiveRewardItem>(new IntPtr(p + 0x030), ReversePrism.DataModels.ReceiveRewardItem.FromPointer); // 0x30 RewardItemPrefab            ( ModelClassType ReceiveRewardItem ReceiveRewardItem ReceiveRewardItem Pointer )
+            value.ScrollRect                                = GetObject<ScrollRect>(new IntPtr(p + 0x038), ReversePrism.DataModels.ScrollRect.FromPointer); // 0x38 ScrollRect                  ( ModelClassType ScrollRect ScrollRect ScrollRect Pointer )
+            value.FooterArea                                = GetObject<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 0x40 FooterArea                  ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.FooterText                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x48 FooterText                  ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.PopupFrameParameter                       = GetObject<PopupFrameParameter>(new IntPtr(p + 0x058), ReversePrism.DataModels.PopupFrameParameter.FromPointer); // 0x58 PopupFrameParameter         ( ModelClassType PopupFrameParameter PopupFrameParameter PopupFrameParameter Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x060), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0x60 Parent                      ( ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

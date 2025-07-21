@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Name                                     000186671910 ModelPrimitiveType string string string String
-    // 018 Ns                                       000186671910 ModelPrimitiveType string string string String
-    // 020 IsNameSetExplicitly                      000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 021 IsNamespaceSetExplicitly                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 022 IsReference                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 023 IsReferenceSetExplicitly                 000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 Name                                     ModelPrimitiveType string string string String
+    // 018 Ns                                       ModelPrimitiveType string string string String
+    // 020 IsNameSetExplicitly                      ModelPrimitiveType bool bool bool Bool
+    // 021 IsNamespaceSetExplicitly                 ModelPrimitiveType bool bool bool Bool
+    // 022 IsReference                              ModelPrimitiveType bool bool bool Bool
+    // 023 IsReferenceSetExplicitly                 ModelPrimitiveType bool bool bool Bool
     public partial class DataContractAttribute : DataModel
     {
         public string                                   Name                                    { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DataContractAttribute() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0245A4CDEC58 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Ns                                        = GetString(new IntPtr(p + 0x018)); // 0245A4CDEC78 0x18 Ns                          ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsNameSetExplicitly                       = GetBool(new IntPtr(p + 0x020)); // 0245A4CDEC98 0x20 IsNameSetExplicitly         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsNamespaceSetExplicitly                  = GetBool(new IntPtr(p + 0x021)); // 0245A4CDECB8 0x21 IsNamespaceSetExplicitly    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsReference                               = GetBool(new IntPtr(p + 0x022)); // 0245A4CDECD8 0x22 IsReference                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsReferenceSetExplicitly                  = GetBool(new IntPtr(p + 0x023)); // 0245A4CDECF8 0x23 IsReferenceSetExplicitly    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Name                        ( ModelPrimitiveType string string string String )
+            value.Ns                                        = GetString(new IntPtr(p + 0x018)); // 0x18 Ns                          ( ModelPrimitiveType string string string String )
+            value.IsNameSetExplicitly                       = GetBool(new IntPtr(p + 0x020)); // 0x20 IsNameSetExplicitly         ( ModelPrimitiveType bool bool bool Bool )
+            value.IsNamespaceSetExplicitly                  = GetBool(new IntPtr(p + 0x021)); // 0x21 IsNamespaceSetExplicitly    ( ModelPrimitiveType bool bool bool Bool )
+            value.IsReference                               = GetBool(new IntPtr(p + 0x022)); // 0x22 IsReference                 ( ModelPrimitiveType bool bool bool Bool )
+            value.IsReferenceSetExplicitly                  = GetBool(new IntPtr(p + 0x023)); // 0x23 IsReferenceSetExplicitly    ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

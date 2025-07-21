@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 False                                    0001865CF210 ModelClassType Expression Expression Expression Pointer
+    // 020 False                                    ModelClassType Expression Expression Expression Pointer
     public partial class FullConditionalExpression : DataModel
     {
         public Expression?                              False                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FullConditionalExpression() { Pointer= p0 };
 
-            value.False                                     = GetObject<Expression>(new IntPtr(p + 0x020), ReversePrism.DataModels.Expression.FromPointer); // 024669F998D0 0x20 False                       ( 0001865CF210 ModelClassType Expression Expression Expression Pointer )
+            value.False                                     = GetObject<Expression>(new IntPtr(p + 0x020), ReversePrism.DataModels.Expression.FromPointer); // 0x20 False                       ( ModelClassType Expression Expression Expression Pointer )
 
             return value;
         }

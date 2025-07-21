@@ -13,6 +13,7 @@ namespace ReversePrism.DataModels
         None,
         Alpha,
         Pvp,
+        LiveAllSong,
         Num,
     }
 }

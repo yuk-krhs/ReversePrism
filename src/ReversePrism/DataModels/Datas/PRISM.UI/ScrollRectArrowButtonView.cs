@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 ScrollRect                               0001866F7FA0 ModelClassType ScrollRect ScrollRect ScrollRect Pointer
-    // 028 LeftArrow                                000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer
-    // 030 RightArrow                               000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer
-    // 038 ArrowButtonScrollSensitivity             0001866656B0 ModelPrimitiveType float float float Single
-    // 040 ScrollTween                              0001866BEFF0 ModelClassType Tween Tween Tween Pointer
+    // 020 ScrollRect                               ModelClassType ScrollRect ScrollRect ScrollRect Pointer
+    // 028 LeftArrow                                ModelClassType ButtonBase ButtonBase ButtonBase Pointer
+    // 030 RightArrow                               ModelClassType ButtonBase ButtonBase ButtonBase Pointer
+    // 038 ArrowButtonScrollSensitivity             ModelPrimitiveType float float float Single
+    // 040 ScrollTween                              ModelClassType Tween Tween Tween Pointer
     public partial class ScrollRectArrowButtonView : DataModel
     {
         public ScrollRect?                              ScrollRect                              { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ScrollRectArrowButtonView() { Pointer= p0 };
 
-            value.ScrollRect                                = GetObject<ScrollRect>(new IntPtr(p + 0x020), ReversePrism.DataModels.ScrollRect.FromPointer); // 0246654F8020 0x20 ScrollRect                  ( 0001866F7FA0 ModelClassType ScrollRect ScrollRect ScrollRect Pointer )
-            value.LeftArrow                                 = GetObject<ButtonBase>(new IntPtr(p + 0x028), ReversePrism.DataModels.ButtonBase.FromPointer); // 0246654F8040 0x28 LeftArrow                   ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.RightArrow                                = GetObject<ButtonBase>(new IntPtr(p + 0x030), ReversePrism.DataModels.ButtonBase.FromPointer); // 0246654F8060 0x30 RightArrow                  ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.ArrowButtonScrollSensitivity              = GetSingle(new IntPtr(p + 0x038)); // 0246654F8080 0x38 ArrowButtonScrollSensitivity ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.ScrollTween                               = GetObject<Tween>(new IntPtr(p + 0x040), ReversePrism.DataModels.Tween.FromPointer); // 0246654F80A0 0x40 ScrollTween                 ( 0001866BEFF0 ModelClassType Tween Tween Tween Pointer )
+            value.ScrollRect                                = GetObject<ScrollRect>(new IntPtr(p + 0x020), ReversePrism.DataModels.ScrollRect.FromPointer); // 0x20 ScrollRect                  ( ModelClassType ScrollRect ScrollRect ScrollRect Pointer )
+            value.LeftArrow                                 = GetObject<ButtonBase>(new IntPtr(p + 0x028), ReversePrism.DataModels.ButtonBase.FromPointer); // 0x28 LeftArrow                   ( ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.RightArrow                                = GetObject<ButtonBase>(new IntPtr(p + 0x030), ReversePrism.DataModels.ButtonBase.FromPointer); // 0x30 RightArrow                  ( ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.ArrowButtonScrollSensitivity              = GetSingle(new IntPtr(p + 0x038)); // 0x38 ArrowButtonScrollSensitivity ( ModelPrimitiveType float float float Single )
+            value.ScrollTween                               = GetObject<Tween>(new IntPtr(p + 0x040), ReversePrism.DataModels.Tween.FromPointer); // 0x40 ScrollTween                 ( ModelClassType Tween Tween Tween Pointer )
 
             return value;
         }

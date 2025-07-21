@@ -11,20 +11,20 @@ namespace ReversePrism.DataModels
     // 000 PlayerJoinedMessage                      string IL2CPP_TYPE_STRING
     // 000 PlayerLeftMessage                        string IL2CPP_TYPE_STRING
     // 000 <instance>k__BackingField                PlayerInputManager IL2CPP_TYPE_CLASS
-    // 020 M_NotificationBehavior                   000186755800 ModelEnumType PlayerNotifications PlayerNotifications PlayerNotifications Int32
-    // 024 M_MaxPlayerCount                         0001865F2F90 ModelPrimitiveType int int int Int32
-    // 028 M_AllowJoining                           000186595210 ModelPrimitiveType bool bool bool Bool
-    // 02C M_JoinBehavior                           000186751C50 ModelEnumType PlayerJoinBehavior PlayerJoinBehavior PlayerJoinBehavior Int32
-    // 030 M_PlayerJoinedEvent                      00018657F360 ModelClassType PlayerJoinedEvent PlayerJoinedEvent PlayerJoinedEvent Pointer
-    // 038 M_PlayerLeftEvent                        00018657F7E0 ModelClassType PlayerLeftEvent PlayerLeftEvent PlayerLeftEvent Pointer
-    // 040 M_JoinAction                             0001865E9370 ModelEnumType InputActionProperty InputActionProperty InputActionProperty Int32
-    // 058 M_PlayerPrefab                           0001865D7F70 ModelClassType GameObject GameObject GameObject Pointer
-    // 060 M_SplitScreen                            000186595210 ModelPrimitiveType bool bool bool Bool
-    // 061 M_MaintainAspectRatioInSplitScreen       000186595210 ModelPrimitiveType bool bool bool Bool
-    // 064 M_FixedNumberOfSplitScreens              0001865F2F90 ModelPrimitiveType int int int Int32
-    // 068 M_SplitScreenRect                        00018664F8A0 ModelEnumType Rect Rect Rect Int32
-    // 078 M_JoinActionDelegateHooked               0001865974C0 ModelPrimitiveType bool bool bool Bool
-    // 079 M_UnpairedDeviceUsedDelegateHooked       0001865974C0 ModelPrimitiveType bool bool bool Bool
+    // 020 M_NotificationBehavior                   ModelEnumType PlayerNotifications PlayerNotifications PlayerNotifications Int32
+    // 024 M_MaxPlayerCount                         ModelPrimitiveType int int int Int32
+    // 028 M_AllowJoining                           ModelPrimitiveType bool bool bool Bool
+    // 02C M_JoinBehavior                           ModelEnumType PlayerJoinBehavior PlayerJoinBehavior PlayerJoinBehavior Int32
+    // 030 M_PlayerJoinedEvent                      ModelClassType PlayerJoinedEvent PlayerJoinedEvent PlayerJoinedEvent Pointer
+    // 038 M_PlayerLeftEvent                        ModelClassType PlayerLeftEvent PlayerLeftEvent PlayerLeftEvent Pointer
+    // 040 M_JoinAction                             ModelEnumType InputActionProperty InputActionProperty InputActionProperty Int32
+    // 058 M_PlayerPrefab                           ModelClassType GameObject GameObject GameObject Pointer
+    // 060 M_SplitScreen                            ModelPrimitiveType bool bool bool Bool
+    // 061 M_MaintainAspectRatioInSplitScreen       ModelPrimitiveType bool bool bool Bool
+    // 064 M_FixedNumberOfSplitScreens              ModelPrimitiveType int int int Int32
+    // 068 M_SplitScreenRect                        ModelEnumType Rect Rect Rect Int32
+    // 078 M_JoinActionDelegateHooked               ModelPrimitiveType bool bool bool Bool
+    // 079 M_UnpairedDeviceUsedDelegateHooked       ModelPrimitiveType bool bool bool Bool
     // 080 m_JoinActionDelegate                     Action`1<CallbackContext> IL2CPP_TYPE_GENERICINST
     // 088 m_UnpairedDeviceUsedDelegate             Action`2<InputControl, InputEventPtr> IL2CPP_TYPE_GENERICINST
     // 090 m_PlayerJoinedCallbacks                  CallbackArray`1<Action`1<PlayerInput>> IL2CPP_TYPE_GENERICINST
@@ -54,20 +54,20 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PlayerInputManager() { Pointer= p0 };
 
-            value.M_NotificationBehavior                    = (PlayerNotifications)GetInt32(new IntPtr(p + 0x020)); // 0246677DDFB0 0x20 M_NotificationBehavior      ( 000186755800 ModelEnumType PlayerNotifications PlayerNotifications PlayerNotifications Int32 )
-            value.M_MaxPlayerCount                          = GetInt32(new IntPtr(p + 0x024)); // 0246677DDFD0 0x24 M_MaxPlayerCount            ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.M_AllowJoining                            = GetBool(new IntPtr(p + 0x028)); // 0246677DDFF0 0x28 M_AllowJoining              ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.M_JoinBehavior                            = (PlayerJoinBehavior)GetInt32(new IntPtr(p + 0x02C)); // 0246677DE010 0x2C M_JoinBehavior              ( 000186751C50 ModelEnumType PlayerJoinBehavior PlayerJoinBehavior PlayerJoinBehavior Int32 )
-            value.M_PlayerJoinedEvent                       = GetObject<PlayerJoinedEvent>(new IntPtr(p + 0x030), ReversePrism.DataModels.PlayerJoinedEvent.FromPointer); // 0246677DE030 0x30 M_PlayerJoinedEvent         ( 00018657F360 ModelClassType PlayerJoinedEvent PlayerJoinedEvent PlayerJoinedEvent Pointer )
-            value.M_PlayerLeftEvent                         = GetObject<PlayerLeftEvent>(new IntPtr(p + 0x038), ReversePrism.DataModels.PlayerLeftEvent.FromPointer); // 0246677DE050 0x38 M_PlayerLeftEvent           ( 00018657F7E0 ModelClassType PlayerLeftEvent PlayerLeftEvent PlayerLeftEvent Pointer )
-            value.M_JoinAction                              = (InputActionProperty)GetInt32(new IntPtr(p + 0x040)); // 0246677DE070 0x40 M_JoinAction                ( 0001865E9370 ModelEnumType InputActionProperty InputActionProperty InputActionProperty Int32 )
-            value.M_PlayerPrefab                            = GetObject<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 0246677DE090 0x58 M_PlayerPrefab              ( 0001865D7F70 ModelClassType GameObject GameObject GameObject Pointer )
-            value.M_SplitScreen                             = GetBool(new IntPtr(p + 0x060)); // 0246677DE0B0 0x60 M_SplitScreen               ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.M_MaintainAspectRatioInSplitScreen        = GetBool(new IntPtr(p + 0x061)); // 0246677DE0D0 0x61 M_MaintainAspectRatioInSplitScreen ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.M_FixedNumberOfSplitScreens               = GetInt32(new IntPtr(p + 0x064)); // 0246677DE0F0 0x64 M_FixedNumberOfSplitScreens ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.M_SplitScreenRect                         = (Rect)GetInt32(new IntPtr(p + 0x068)); // 0246677DE110 0x68 M_SplitScreenRect           ( 00018664F8A0 ModelEnumType Rect Rect Rect Int32 )
-            value.M_JoinActionDelegateHooked                = GetBool(new IntPtr(p + 0x078)); // 0246677DE130 0x78 M_JoinActionDelegateHooked  ( 0001865974C0 ModelPrimitiveType bool bool bool Bool )
-            value.M_UnpairedDeviceUsedDelegateHooked        = GetBool(new IntPtr(p + 0x079)); // 0246677DE150 0x79 M_UnpairedDeviceUsedDelegateHooked ( 0001865974C0 ModelPrimitiveType bool bool bool Bool )
+            value.M_NotificationBehavior                    = (PlayerNotifications)GetInt32(new IntPtr(p + 0x020)); // 0x20 M_NotificationBehavior      ( ModelEnumType PlayerNotifications PlayerNotifications PlayerNotifications Int32 )
+            value.M_MaxPlayerCount                          = GetInt32(new IntPtr(p + 0x024)); // 0x24 M_MaxPlayerCount            ( ModelPrimitiveType int int int Int32 )
+            value.M_AllowJoining                            = GetBool(new IntPtr(p + 0x028)); // 0x28 M_AllowJoining              ( ModelPrimitiveType bool bool bool Bool )
+            value.M_JoinBehavior                            = (PlayerJoinBehavior)GetInt32(new IntPtr(p + 0x02C)); // 0x2C M_JoinBehavior              ( ModelEnumType PlayerJoinBehavior PlayerJoinBehavior PlayerJoinBehavior Int32 )
+            value.M_PlayerJoinedEvent                       = GetObject<PlayerJoinedEvent>(new IntPtr(p + 0x030), ReversePrism.DataModels.PlayerJoinedEvent.FromPointer); // 0x30 M_PlayerJoinedEvent         ( ModelClassType PlayerJoinedEvent PlayerJoinedEvent PlayerJoinedEvent Pointer )
+            value.M_PlayerLeftEvent                         = GetObject<PlayerLeftEvent>(new IntPtr(p + 0x038), ReversePrism.DataModels.PlayerLeftEvent.FromPointer); // 0x38 M_PlayerLeftEvent           ( ModelClassType PlayerLeftEvent PlayerLeftEvent PlayerLeftEvent Pointer )
+            value.M_JoinAction                              = (InputActionProperty)GetInt32(new IntPtr(p + 0x040)); // 0x40 M_JoinAction                ( ModelEnumType InputActionProperty InputActionProperty InputActionProperty Int32 )
+            value.M_PlayerPrefab                            = GetObject<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 0x58 M_PlayerPrefab              ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.M_SplitScreen                             = GetBool(new IntPtr(p + 0x060)); // 0x60 M_SplitScreen               ( ModelPrimitiveType bool bool bool Bool )
+            value.M_MaintainAspectRatioInSplitScreen        = GetBool(new IntPtr(p + 0x061)); // 0x61 M_MaintainAspectRatioInSplitScreen ( ModelPrimitiveType bool bool bool Bool )
+            value.M_FixedNumberOfSplitScreens               = GetInt32(new IntPtr(p + 0x064)); // 0x64 M_FixedNumberOfSplitScreens ( ModelPrimitiveType int int int Int32 )
+            value.M_SplitScreenRect                         = (Rect)GetInt32(new IntPtr(p + 0x068)); // 0x68 M_SplitScreenRect           ( ModelEnumType Rect Rect Rect Int32 )
+            value.M_JoinActionDelegateHooked                = GetBool(new IntPtr(p + 0x078)); // 0x78 M_JoinActionDelegateHooked  ( ModelPrimitiveType bool bool bool Bool )
+            value.M_UnpairedDeviceUsedDelegateHooked        = GetBool(new IntPtr(p + 0x079)); // 0x79 M_UnpairedDeviceUsedDelegateHooked ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

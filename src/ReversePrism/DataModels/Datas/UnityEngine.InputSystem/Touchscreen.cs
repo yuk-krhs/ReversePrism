@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 1A0 PrimaryTouch                             00018668E310 ModelClassType TouchControl TouchControl TouchControl Pointer
+    // 1A0 PrimaryTouch                             ModelClassType TouchControl TouchControl TouchControl Pointer
     // 1A8 <touches>k__BackingField                 ReadOnlyArray`1<TouchControl> IL2CPP_TYPE_GENERICINST
     // 000 <current>k__BackingField                 Touchscreen IL2CPP_TYPE_CLASS
     // 008 s_TapTime                                float IL2CPP_TYPE_R4
     // 00C s_TapDelayTime                           float IL2CPP_TYPE_R4
-    // 010 S_TapRadiusSquared                       000186666530 ModelPrimitiveType float float float Single
+    // 010 S_TapRadiusSquared                       ModelPrimitiveType float float float Single
     public partial class Touchscreen : DataModel
     {
         public TouchControl?                            PrimaryTouch                            { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Touchscreen() { Pointer= p0 };
 
-            value.PrimaryTouch                              = GetObject<TouchControl>(new IntPtr(p + 0x1A0), ReversePrism.DataModels.TouchControl.FromPointer); // 0245A33ADDF0 0x1A0 PrimaryTouch                ( 00018668E310 ModelClassType TouchControl TouchControl TouchControl Pointer )
-            value.S_TapRadiusSquared                        = GetSingle(new IntPtr(p + 0x010)); // 0245A33ADE90 0x10 S_TapRadiusSquared          ( 000186666530 ModelPrimitiveType float float float Single )
+            value.PrimaryTouch                              = GetObject<TouchControl>(new IntPtr(p + 0x1A0), ReversePrism.DataModels.TouchControl.FromPointer); // 0x1A0 PrimaryTouch                ( ModelClassType TouchControl TouchControl TouchControl Pointer )
+            value.S_TapRadiusSquared                        = GetSingle(new IntPtr(p + 0x010)); // 0x10 S_TapRadiusSquared          ( ModelPrimitiveType float float float Single )
 
             return value;
         }

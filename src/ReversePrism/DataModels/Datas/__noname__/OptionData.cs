@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Text                                   000186671910 ModelPrimitiveType string string string String
-    // 018 M_Image                                  00018666B610 ModelClassType Sprite Sprite Sprite Pointer
+    // 010 M_Text                                   ModelPrimitiveType string string string String
+    // 018 M_Image                                  ModelClassType Sprite Sprite Sprite Pointer
     public partial class OptionData : DataModel
     {
         public string                                   M_Text                                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new OptionData() { Pointer= p0 };
 
-            value.M_Text                                    = GetString(new IntPtr(p + 0x010)); // 0245A689D2E0 0x10 M_Text                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_Image                                   = GetObject<Sprite>(new IntPtr(p + 0x018), ReversePrism.DataModels.Sprite.FromPointer); // 0245A689D300 0x18 M_Image                     ( 00018666B610 ModelClassType Sprite Sprite Sprite Pointer )
+            value.M_Text                                    = GetString(new IntPtr(p + 0x010)); // 0x10 M_Text                      ( ModelPrimitiveType string string string String )
+            value.M_Image                                   = GetObject<Sprite>(new IntPtr(p + 0x018), ReversePrism.DataModels.Sprite.FromPointer); // 0x18 M_Image                     ( ModelClassType Sprite Sprite Sprite Pointer )
 
             return value;
         }

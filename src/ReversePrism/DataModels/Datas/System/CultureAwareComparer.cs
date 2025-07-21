@@ -8,8 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CompareInfo                              0001865EB660 ModelClassType CompareInfo CompareInfo CompareInfo Pointer
-    // 018 Options                                  0001865EBFA0 ModelEnumType CompareOptions CompareOptions CompareOptions Int32
+    // 000 ValidCompareMaskOffFlags                 CompareOptions IL2CPP_TYPE_VALUETYPE
+    // 010 CompareInfo                              ModelClassType CompareInfo CompareInfo CompareInfo Pointer
+    // 018 Options                                  ModelEnumType CompareOptions CompareOptions CompareOptions Int32
     public partial class CultureAwareComparer : DataModel
     {
         public CompareInfo?                             CompareInfo                             { get; set; }
@@ -23,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CultureAwareComparer() { Pointer= p0 };
 
-            value.CompareInfo                               = GetObject<CompareInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.CompareInfo.FromPointer); // 0245A3CC85D0 0x10 CompareInfo                 ( 0001865EB660 ModelClassType CompareInfo CompareInfo CompareInfo Pointer )
-            value.Options                                   = (CompareOptions)GetInt32(new IntPtr(p + 0x018)); // 0245A3CC85F0 0x18 Options                     ( 0001865EBFA0 ModelEnumType CompareOptions CompareOptions CompareOptions Int32 )
+            value.CompareInfo                               = GetObject<CompareInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.CompareInfo.FromPointer); // 0x10 CompareInfo                 ( ModelClassType CompareInfo CompareInfo CompareInfo Pointer )
+            value.Options                                   = (CompareOptions)GetInt32(new IntPtr(p + 0x018)); // 0x18 Options                     ( ModelEnumType CompareOptions CompareOptions CompareOptions Int32 )
 
             return value;
         }

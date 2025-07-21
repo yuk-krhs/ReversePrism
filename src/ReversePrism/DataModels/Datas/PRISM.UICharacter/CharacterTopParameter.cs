@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Type                                     0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 Type                                     ModelPrimitiveType int int int Int32
     public partial class CharacterTopParameter : DataModel
     {
         public int                                      Type                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CharacterTopParameter() { Pointer= p0 };
 
-            value.Type                                      = GetInt32(new IntPtr(p + 0x010)); // 024665E21160 0x10 Type                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Type                                      = GetInt32(new IntPtr(p + 0x010)); // 0x10 Type                        ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

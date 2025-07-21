@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_types                                  Type[] IL2CPP_TYPE_SZARRAY
-    // 010 Values                                   00018664F1C0 ModelClassType StandardValuesCollection StandardValuesCollection StandardValuesCollection Pointer
+    // 010 Values                                   ModelClassType StandardValuesCollection StandardValuesCollection StandardValuesCollection Pointer
     public partial class ColumnTypeConverter : DataModel
     {
         public StandardValuesCollection?                Values                                  { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ColumnTypeConverter() { Pointer= p0 };
 
-            value.Values                                    = GetObject<StandardValuesCollection>(new IntPtr(p + 0x010), ReversePrism.DataModels.StandardValuesCollection.FromPointer); // 0246688F7F58 0x10 Values                      ( 00018664F1C0 ModelClassType StandardValuesCollection StandardValuesCollection StandardValuesCollection Pointer )
+            value.Values                                    = GetObject<StandardValuesCollection>(new IntPtr(p + 0x010), ReversePrism.DataModels.StandardValuesCollection.FromPointer); // 0x10 Values                      ( ModelClassType StandardValuesCollection StandardValuesCollection StandardValuesCollection Pointer )
 
             return value;
         }

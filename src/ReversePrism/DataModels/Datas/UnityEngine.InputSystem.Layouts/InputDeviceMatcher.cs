@@ -10,10 +10,10 @@ namespace ReversePrism.DataModels
 
     // 010 m_Patterns                               KeyValuePair`2<InternedString, <object>>[] IL2CPP_TYPE_SZARRAY
     // 000 kInterfaceKey                            InternedString IL2CPP_TYPE_VALUETYPE
-    // 010 KDeviceClassKey                          0001865FEAB0 ModelEnumType InternedString InternedString InternedString Int32
-    // 020 KManufacturerKey                         0001865FEAB0 ModelEnumType InternedString InternedString InternedString Int32
-    // 030 KProductKey                              0001865FEAB0 ModelEnumType InternedString InternedString InternedString Int32
-    // 040 KVersionKey                              0001865FEAB0 ModelEnumType InternedString InternedString InternedString Int32
+    // 010 KDeviceClassKey                          ModelEnumType InternedString InternedString InternedString Int32
+    // 020 KManufacturerKey                         ModelEnumType InternedString InternedString InternedString Int32
+    // 030 KProductKey                              ModelEnumType InternedString InternedString InternedString Int32
+    // 040 KVersionKey                              ModelEnumType InternedString InternedString InternedString Int32
     public partial class InputDeviceMatcher : DataModel
     {
         public InternedString                           KDeviceClassKey                         { get; set; }
@@ -29,10 +29,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InputDeviceMatcher() { Pointer= p0 };
 
-            value.KDeviceClassKey                           = (InternedString)GetInt32(new IntPtr(p + 0x010)); // 0245A2E5D930 0x10 KDeviceClassKey             ( 0001865FEAB0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.KManufacturerKey                          = (InternedString)GetInt32(new IntPtr(p + 0x020)); // 0245A2E5D950 0x20 KManufacturerKey            ( 0001865FEAB0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.KProductKey                               = (InternedString)GetInt32(new IntPtr(p + 0x030)); // 0245A2E5D970 0x30 KProductKey                 ( 0001865FEAB0 ModelEnumType InternedString InternedString InternedString Int32 )
-            value.KVersionKey                               = (InternedString)GetInt32(new IntPtr(p + 0x040)); // 0245A2E5D990 0x40 KVersionKey                 ( 0001865FEAB0 ModelEnumType InternedString InternedString InternedString Int32 )
+            value.KDeviceClassKey                           = (InternedString)GetInt32(new IntPtr(p + 0x010)); // 0x10 KDeviceClassKey             ( ModelEnumType InternedString InternedString InternedString Int32 )
+            value.KManufacturerKey                          = (InternedString)GetInt32(new IntPtr(p + 0x020)); // 0x20 KManufacturerKey            ( ModelEnumType InternedString InternedString InternedString Int32 )
+            value.KProductKey                               = (InternedString)GetInt32(new IntPtr(p + 0x030)); // 0x30 KProductKey                 ( ModelEnumType InternedString InternedString InternedString Int32 )
+            value.KVersionKey                               = (InternedString)GetInt32(new IntPtr(p + 0x040)); // 0x40 KVersionKey                 ( ModelEnumType InternedString InternedString InternedString Int32 )
 
             return value;
         }

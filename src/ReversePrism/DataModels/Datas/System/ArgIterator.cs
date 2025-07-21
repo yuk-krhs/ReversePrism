@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 010 sig                                      <int> IL2CPP_TYPE_I
     // 018 args                                     <int> IL2CPP_TYPE_I
-    // 020 Next_arg                                 0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 024 Num_args                                 0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 Next_arg                                 ModelPrimitiveType int int int Int32
+    // 024 Num_args                                 ModelPrimitiveType int int int Int32
     public partial class ArgIterator : DataModel
     {
         public int                                      Next_arg                                { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ArgIterator() { Pointer= p0 };
 
-            value.Next_arg                                  = GetInt32(new IntPtr(p + 0x020)); // 024666AC53E8 0x20 Next_arg                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Num_args                                  = GetInt32(new IntPtr(p + 0x024)); // 024666AC5408 0x24 Num_args                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Next_arg                                  = GetInt32(new IntPtr(p + 0x020)); // 0x20 Next_arg                    ( ModelPrimitiveType int int int Int32 )
+            value.Num_args                                  = GetInt32(new IntPtr(p + 0x024)); // 0x24 Num_args                    ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

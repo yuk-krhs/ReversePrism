@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 Result                                   000186670BE0 ModelClassType Stream Stream Stream Pointer
+    // 028 Result                                   ModelClassType Stream Stream Stream Pointer
     public partial class OpenReadCompletedEventArgs : DataModel
     {
         public Stream?                                  Result                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new OpenReadCompletedEventArgs() { Pointer= p0 };
 
-            value.Result                                    = GetObject<Stream>(new IntPtr(p + 0x028), ReversePrism.DataModels.Stream.FromPointer); // 024667A6F790 0x28 Result                      ( 000186670BE0 ModelClassType Stream Stream Stream Pointer )
+            value.Result                                    = GetObject<Stream>(new IntPtr(p + 0x028), ReversePrism.DataModels.Stream.FromPointer); // 0x28 Result                      ( ModelClassType Stream Stream Stream Pointer )
 
             return value;
         }

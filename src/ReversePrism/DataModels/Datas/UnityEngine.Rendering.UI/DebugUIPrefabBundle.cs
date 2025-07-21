@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Type                                     0001866722E0 ModelPrimitiveType string string string String
-    // 018 Prefab                                   000186630900 ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 010 Type                                     ModelPrimitiveType string string string String
+    // 018 Prefab                                   ModelClassType RectTransform RectTransform RectTransform Pointer
     public partial class DebugUIPrefabBundle : DataModel
     {
         public string                                   Type                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DebugUIPrefabBundle() { Pointer= p0 };
 
-            value.Type                                      = GetString(new IntPtr(p + 0x010)); // 0246693745B8 0x10 Type                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Prefab                                    = GetObject<RectTransform>(new IntPtr(p + 0x018), ReversePrism.DataModels.RectTransform.FromPointer); // 0246693745D8 0x18 Prefab                      ( 000186630900 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.Type                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Type                        ( ModelPrimitiveType string string string String )
+            value.Prefab                                    = GetObject<RectTransform>(new IntPtr(p + 0x018), ReversePrism.DataModels.RectTransform.FromPointer); // 0x18 Prefab                      ( ModelClassType RectTransform RectTransform RectTransform Pointer )
 
             return value;
         }

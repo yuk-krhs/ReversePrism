@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_value                                  000186666CB0 ModelPrimitiveType float float float Single
+    // 010 M_value                                  ModelPrimitiveType float float float Single
     // 000 MinValue                                 float IL2CPP_TYPE_R4
     // 000 Epsilon                                  float IL2CPP_TYPE_R4
     // 000 MaxValue                                 float IL2CPP_TYPE_R4
@@ -28,7 +28,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Single() { Pointer= p0 };
 
-            value.M_value                                   = GetSingle(new IntPtr(p + 0x010)); // 0245A20A26A0 0x10 M_value                     ( 000186666CB0 ModelPrimitiveType float float float Single )
+            value.M_value                                   = GetSingle(new IntPtr(p + 0x010)); // 0x10 M_value                     ( ModelPrimitiveType float float float Single )
 
             return value;
         }

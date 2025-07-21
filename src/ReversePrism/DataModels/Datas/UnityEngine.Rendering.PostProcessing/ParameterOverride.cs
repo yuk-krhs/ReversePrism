@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 OverrideState                            000186595960 ModelPrimitiveType bool bool bool Bool
+    // 010 OverrideState                            ModelPrimitiveType bool bool bool Bool
     public partial class ParameterOverride : DataModel
     {
         public bool                                     OverrideState                           { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ParameterOverride() { Pointer= p0 };
 
-            value.OverrideState                             = GetBool(new IntPtr(p + 0x010)); // 0245A60DB870 0x10 OverrideState               ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.OverrideState                             = GetBool(new IntPtr(p + 0x010)); // 0x10 OverrideState               ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

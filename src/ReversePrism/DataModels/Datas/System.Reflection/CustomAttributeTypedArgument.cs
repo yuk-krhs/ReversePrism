@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ArgumentType                             0001866936B0 ModelClassType Type Type Type Pointer
+    // 010 ArgumentType                             ModelClassType Type Type Type Pointer
     // 018 <Value>k__BackingField                   <object> IL2CPP_TYPE_OBJECT
     public partial class CustomAttributeTypedArgument : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CustomAttributeTypedArgument() { Pointer= p0 };
 
-            value.ArgumentType                              = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0245A3DA9318 0x10 ArgumentType                ( 0001866936B0 ModelClassType Type Type Type Pointer )
+            value.ArgumentType                              = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0x10 ArgumentType                ( ModelClassType Type Type Type Pointer )
 
             return value;
         }

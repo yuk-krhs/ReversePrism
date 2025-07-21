@@ -9,10 +9,10 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 o                                        <object> IL2CPP_TYPE_OBJECT
-    // 018 Elem                                     000186597700 ModelClassType XmlElement XmlElement XmlElement Pointer
-    // 020 Qnames                                   000186671910 ModelPrimitiveType string string string String
-    // 028 LineNumber                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 02C LinePosition                             0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 Elem                                     ModelClassType XmlElement XmlElement XmlElement Pointer
+    // 020 Qnames                                   ModelPrimitiveType string string string String
+    // 028 LineNumber                               ModelPrimitiveType int int int Int32
+    // 02C LinePosition                             ModelPrimitiveType int int int Int32
     public partial class XmlElementEventArgs : DataModel
     {
         public XmlElement?                              Elem                                    { get; set; }
@@ -28,10 +28,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlElementEventArgs() { Pointer= p0 };
 
-            value.Elem                                      = GetObject<XmlElement>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlElement.FromPointer); // 024667506B48 0x18 Elem                        ( 000186597700 ModelClassType XmlElement XmlElement XmlElement Pointer )
-            value.Qnames                                    = GetString(new IntPtr(p + 0x020)); // 024667506B68 0x20 Qnames                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.LineNumber                                = GetInt32(new IntPtr(p + 0x028)); // 024667506B88 0x28 LineNumber                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.LinePosition                              = GetInt32(new IntPtr(p + 0x02C)); // 024667506BA8 0x2C LinePosition                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Elem                                      = GetObject<XmlElement>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlElement.FromPointer); // 0x18 Elem                        ( ModelClassType XmlElement XmlElement XmlElement Pointer )
+            value.Qnames                                    = GetString(new IntPtr(p + 0x020)); // 0x20 Qnames                      ( ModelPrimitiveType string string string String )
+            value.LineNumber                                = GetInt32(new IntPtr(p + 0x028)); // 0x28 LineNumber                  ( ModelPrimitiveType int int int Int32 )
+            value.LinePosition                              = GetInt32(new IntPtr(p + 0x02C)); // 0x2C LinePosition                ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

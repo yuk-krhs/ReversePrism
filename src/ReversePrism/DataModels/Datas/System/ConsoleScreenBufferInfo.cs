@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Size                                     0001866208A0 ModelEnumType Coord Coord Coord Int32
-    // 014 CursorPosition                           0001866208A0 ModelEnumType Coord Coord Coord Int32
-    // 018 Attribute                                0001865F1520 ModelPrimitiveType short short short Int16
-    // 01A Window                                   00018651F800 ModelEnumType SmallRect SmallRect SmallRect Int32
-    // 022 MaxWindowSize                            0001866208A0 ModelEnumType Coord Coord Coord Int32
+    // 010 Size                                     ModelEnumType Coord Coord Coord Int32
+    // 014 CursorPosition                           ModelEnumType Coord Coord Coord Int32
+    // 018 Attribute                                ModelPrimitiveType short short short Int16
+    // 01A Window                                   ModelEnumType SmallRect SmallRect SmallRect Int32
+    // 022 MaxWindowSize                            ModelEnumType Coord Coord Coord Int32
     public partial class ConsoleScreenBufferInfo : DataModel
     {
         public Coord                                    Size                                    { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ConsoleScreenBufferInfo() { Pointer= p0 };
 
-            value.Size                                      = (Coord)GetInt32(new IntPtr(p + 0x010)); // 024666B20278 0x10 Size                        ( 0001866208A0 ModelEnumType Coord Coord Coord Int32 )
-            value.CursorPosition                            = (Coord)GetInt32(new IntPtr(p + 0x014)); // 024666B20298 0x14 CursorPosition              ( 0001866208A0 ModelEnumType Coord Coord Coord Int32 )
-            value.Attribute                                 = GetInt16(new IntPtr(p + 0x018)); // 024666B202B8 0x18 Attribute                   ( 0001865F1520 ModelPrimitiveType short short short Int16 )
-            value.Window                                    = (SmallRect)GetInt32(new IntPtr(p + 0x01A)); // 024666B202D8 0x1A Window                      ( 00018651F800 ModelEnumType SmallRect SmallRect SmallRect Int32 )
-            value.MaxWindowSize                             = (Coord)GetInt32(new IntPtr(p + 0x022)); // 024666B202F8 0x22 MaxWindowSize               ( 0001866208A0 ModelEnumType Coord Coord Coord Int32 )
+            value.Size                                      = (Coord)GetInt32(new IntPtr(p + 0x010)); // 0x10 Size                        ( ModelEnumType Coord Coord Coord Int32 )
+            value.CursorPosition                            = (Coord)GetInt32(new IntPtr(p + 0x014)); // 0x14 CursorPosition              ( ModelEnumType Coord Coord Coord Int32 )
+            value.Attribute                                 = GetInt16(new IntPtr(p + 0x018)); // 0x18 Attribute                   ( ModelPrimitiveType short short short Int16 )
+            value.Window                                    = (SmallRect)GetInt32(new IntPtr(p + 0x01A)); // 0x1A Window                      ( ModelEnumType SmallRect SmallRect SmallRect Int32 )
+            value.MaxWindowSize                             = (Coord)GetInt32(new IntPtr(p + 0x022)); // 0x22 MaxWindowSize               ( ModelEnumType Coord Coord Coord Int32 )
 
             return value;
         }

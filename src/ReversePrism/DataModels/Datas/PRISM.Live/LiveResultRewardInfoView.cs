@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 LBMoneyView                              000186576340 ModelClassType LiveRewardLBMoneyView LiveRewardLBMoneyView LiveRewardLBMoneyView Pointer
-    // 028 RewardItemPrefab                         000186573C40 ModelClassType LiveResultRewardItem LiveResultRewardItem LiveResultRewardItem Pointer
-    // 030 RewardScrollRects                        000185CA2DF8 ModelClassListType ScrollRect[] ScrollRect[] List<ScrollRect> Pointer
-    // 038 RewardEmptyObjects                       000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
+    // 020 LBMoneyView                              ModelClassType LiveRewardLBMoneyView LiveRewardLBMoneyView LiveRewardLBMoneyView Pointer
+    // 028 RewardItemPrefab                         ModelClassType LiveResultRewardItem LiveResultRewardItem LiveResultRewardItem Pointer
+    // 030 RewardScrollRects                        ModelClassListType ScrollRect[] ScrollRect[] List<ScrollRect> Pointer
+    // 038 RewardEmptyObjects                       ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
     // 040 rewardItemDic                            Dictionary`2<LiveResultRewardCategory, List`1<LiveResultRewardItem>> IL2CPP_TYPE_GENERICINST
     public partial class LiveResultRewardInfoView : DataModel
     {
@@ -28,10 +28,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveResultRewardInfoView() { Pointer= p0 };
 
-            value.LBMoneyView                               = GetObject<LiveRewardLBMoneyView>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveRewardLBMoneyView.FromPointer); // 0246652C6608 0x20 LBMoneyView                 ( 000186576340 ModelClassType LiveRewardLBMoneyView LiveRewardLBMoneyView LiveRewardLBMoneyView Pointer )
-            value.RewardItemPrefab                          = GetObject<LiveResultRewardItem>(new IntPtr(p + 0x028), ReversePrism.DataModels.LiveResultRewardItem.FromPointer); // 0246652C6628 0x28 RewardItemPrefab            ( 000186573C40 ModelClassType LiveResultRewardItem LiveResultRewardItem LiveResultRewardItem Pointer )
-            value.RewardScrollRects                         = GetObjectList<ScrollRect>(new IntPtr(p + 0x030), ReversePrism.DataModels.ScrollRect.FromPointer); // 0246652C6648 0x30 RewardScrollRects           ( 000185CA2DF8 ModelClassListType ScrollRect[] ScrollRect[] List<ScrollRect> Pointer )
-            value.RewardEmptyObjects                        = GetObjectList<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0246652C6668 0x38 RewardEmptyObjects          ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.LBMoneyView                               = GetObject<LiveRewardLBMoneyView>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveRewardLBMoneyView.FromPointer); // 0x20 LBMoneyView                 ( ModelClassType LiveRewardLBMoneyView LiveRewardLBMoneyView LiveRewardLBMoneyView Pointer )
+            value.RewardItemPrefab                          = GetObject<LiveResultRewardItem>(new IntPtr(p + 0x028), ReversePrism.DataModels.LiveResultRewardItem.FromPointer); // 0x28 RewardItemPrefab            ( ModelClassType LiveResultRewardItem LiveResultRewardItem LiveResultRewardItem Pointer )
+            value.RewardScrollRects                         = GetObjectList<ScrollRect>(new IntPtr(p + 0x030), ReversePrism.DataModels.ScrollRect.FromPointer); // 0x30 RewardScrollRects           ( ModelClassListType ScrollRect[] ScrollRect[] List<ScrollRect> Pointer )
+            value.RewardEmptyObjects                        = GetObjectList<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0x38 RewardEmptyObjects          ( ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
 
             return value;
         }

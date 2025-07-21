@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 Helper                                   0001865AA0D0 ModelClassType PrimitiveDataContractCriticalHelper PrimitiveDataContractCriticalHelper PrimitiveDataContractCriticalHelper Pointer
+    // 028 Helper                                   ModelClassType PrimitiveDataContractCriticalHelper PrimitiveDataContractCriticalHelper PrimitiveDataContractCriticalHelper Pointer
     public partial class PrimitiveDataContract : DataModel
     {
         public PrimitiveDataContractCriticalHelper?     Helper                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PrimitiveDataContract() { Pointer= p0 };
 
-            value.Helper                                    = GetObject<PrimitiveDataContractCriticalHelper>(new IntPtr(p + 0x028), ReversePrism.DataModels.PrimitiveDataContractCriticalHelper.FromPointer); // 0245A4CC8B48 0x28 Helper                      ( 0001865AA0D0 ModelClassType PrimitiveDataContractCriticalHelper PrimitiveDataContractCriticalHelper PrimitiveDataContractCriticalHelper Pointer )
+            value.Helper                                    = GetObject<PrimitiveDataContractCriticalHelper>(new IntPtr(p + 0x028), ReversePrism.DataModels.PrimitiveDataContractCriticalHelper.FromPointer); // 0x28 Helper                      ( ModelClassType PrimitiveDataContractCriticalHelper PrimitiveDataContractCriticalHelper PrimitiveDataContractCriticalHelper Pointer )
 
             return value;
         }

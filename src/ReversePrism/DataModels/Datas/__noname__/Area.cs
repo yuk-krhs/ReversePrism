@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Rect                                     000186651230 ModelEnumType RectInt RectInt RectInt Int32
-    // 020 Allocator                                00018674EC40 ModelClassType BestFitAllocator BestFitAllocator BestFitAllocator Pointer
+    // 010 Rect                                     ModelEnumType RectInt RectInt RectInt Int32
+    // 020 Allocator                                ModelClassType BestFitAllocator BestFitAllocator BestFitAllocator Pointer
     public partial class Area : DataModel
     {
         public RectInt                                  Rect                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Area() { Pointer= p0 };
 
-            value.Rect                                      = (RectInt)GetInt32(new IntPtr(p + 0x010)); // 0245A6821858 0x10 Rect                        ( 000186651230 ModelEnumType RectInt RectInt RectInt Int32 )
-            value.Allocator                                 = GetObject<BestFitAllocator>(new IntPtr(p + 0x020), ReversePrism.DataModels.BestFitAllocator.FromPointer); // 0245A6821878 0x20 Allocator                   ( 00018674EC40 ModelClassType BestFitAllocator BestFitAllocator BestFitAllocator Pointer )
+            value.Rect                                      = (RectInt)GetInt32(new IntPtr(p + 0x010)); // 0x10 Rect                        ( ModelEnumType RectInt RectInt RectInt Int32 )
+            value.Allocator                                 = GetObject<BestFitAllocator>(new IntPtr(p + 0x020), ReversePrism.DataModels.BestFitAllocator.FromPointer); // 0x20 Allocator                   ( ModelClassType BestFitAllocator BestFitAllocator BestFitAllocator Pointer )
 
             return value;
         }

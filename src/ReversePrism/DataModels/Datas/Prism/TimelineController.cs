@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 MainCameraController                     000186536460 ModelClassType CameraController CameraController CameraController Pointer
-    // 028 MyDirector                               00018674DA70 ModelClassType PlayableDirector PlayableDirector PlayableDirector Pointer
-    // 030 CriAtomTrackTime                         0001865F7700 ModelPrimitiveType long long long Int64
-    // 038 Duration                                 0001865C2950 ModelPrimitiveType double double double Double
+    // 020 MainCameraController                     ModelClassType CameraController CameraController CameraController Pointer
+    // 028 MyDirector                               ModelClassType PlayableDirector PlayableDirector PlayableDirector Pointer
+    // 030 CriAtomTrackTime                         ModelPrimitiveType long long long Int64
+    // 038 Duration                                 ModelPrimitiveType double double double Double
     // 040 onLyric                                  Action`1<string> IL2CPP_TYPE_GENERICINST
     // 000 DanceTrackName                           string IL2CPP_TYPE_STRING
     // 000 EyeOpenCloseTrackName                    string IL2CPP_TYPE_STRING
@@ -20,6 +20,7 @@ namespace ReversePrism.DataModels
     // 000 ActivationTrackName                      string IL2CPP_TYPE_STRING
     // 000 PersonalLightTrackName                   string IL2CPP_TYPE_STRING
     // 000 SwitchModelTrackName                     string IL2CPP_TYPE_STRING
+    // 000 HighlightShakeTrackName                  string IL2CPP_TYPE_STRING
     // 000 CriManaTrackName                         string IL2CPP_TYPE_STRING
     // 000 CriAtomTrack                             string IL2CPP_TYPE_STRING
     // 000 Center                                   string IL2CPP_TYPE_STRING
@@ -49,10 +50,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TimelineController() { Pointer= p0 };
 
-            value.MainCameraController                      = GetObject<CameraController>(new IntPtr(p + 0x020), ReversePrism.DataModels.CameraController.FromPointer); // 024664DF5C80 0x20 MainCameraController        ( 000186536460 ModelClassType CameraController CameraController CameraController Pointer )
-            value.MyDirector                                = GetObject<PlayableDirector>(new IntPtr(p + 0x028), ReversePrism.DataModels.PlayableDirector.FromPointer); // 024664DF5CA0 0x28 MyDirector                  ( 00018674DA70 ModelClassType PlayableDirector PlayableDirector PlayableDirector Pointer )
-            value.CriAtomTrackTime                          = GetInt64(new IntPtr(p + 0x030)); // 024664DF5CC0 0x30 CriAtomTrackTime            ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.Duration                                  = GetDouble(new IntPtr(p + 0x038)); // 024664DF5CE0 0x38 Duration                    ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.MainCameraController                      = GetObject<CameraController>(new IntPtr(p + 0x020), ReversePrism.DataModels.CameraController.FromPointer); // 0x20 MainCameraController        ( ModelClassType CameraController CameraController CameraController Pointer )
+            value.MyDirector                                = GetObject<PlayableDirector>(new IntPtr(p + 0x028), ReversePrism.DataModels.PlayableDirector.FromPointer); // 0x28 MyDirector                  ( ModelClassType PlayableDirector PlayableDirector PlayableDirector Pointer )
+            value.CriAtomTrackTime                          = GetInt64(new IntPtr(p + 0x030)); // 0x30 CriAtomTrackTime            ( ModelPrimitiveType long long long Int64 )
+            value.Duration                                  = GetDouble(new IntPtr(p + 0x038)); // 0x38 Duration                    ( ModelPrimitiveType double double double Double )
 
             return value;
         }

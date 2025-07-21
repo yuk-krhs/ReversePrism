@@ -9,18 +9,18 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 LongTouchThreshold                       float IL2CPP_TYPE_R4
-    // 020 IsInitialized                            000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 024 TouchDuration                            0001866656B0 ModelPrimitiveType float float float Single
-    // 028 IsTouchCharacter                         000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 029 IsTouchOutOfRange                        000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 02A IsLongTouchCharacter                     000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 02B IsTouchAllRange                          000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 02C IsTouchNotPointerOverAllRange            000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 02D IsReleaseCharacter                       000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 02E IsReleaseOutOfRange                      000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 02F IsReleaseAllRange                        000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 030 MainCamera                               0001865A1C90 ModelClassType Camera Camera Camera Pointer
-    // 038 LayerMask                                0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 IsInitialized                            ModelPrimitiveType bool bool bool Bool
+    // 024 TouchDuration                            ModelPrimitiveType float float float Single
+    // 028 IsTouchCharacter                         ModelPrimitiveType bool bool bool Bool
+    // 029 IsTouchOutOfRange                        ModelPrimitiveType bool bool bool Bool
+    // 02A IsLongTouchCharacter                     ModelPrimitiveType bool bool bool Bool
+    // 02B IsTouchAllRange                          ModelPrimitiveType bool bool bool Bool
+    // 02C IsTouchNotPointerOverAllRange            ModelPrimitiveType bool bool bool Bool
+    // 02D IsReleaseCharacter                       ModelPrimitiveType bool bool bool Bool
+    // 02E IsReleaseOutOfRange                      ModelPrimitiveType bool bool bool Bool
+    // 02F IsReleaseAllRange                        ModelPrimitiveType bool bool bool Bool
+    // 030 MainCamera                               ModelClassType Camera Camera Camera Pointer
+    // 038 LayerMask                                ModelPrimitiveType int int int Int32
     // 040 touchCharacterSubject                    Subject`1<Character> IL2CPP_TYPE_GENERICINST
     // 048 touchOutOfRangeSubject                   Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 050 longTouchSubject                         Subject`1<Character> IL2CPP_TYPE_GENERICINST
@@ -49,18 +49,18 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CharacterTouchDetector() { Pointer= p0 };
 
-            value.IsInitialized                             = GetBool(new IntPtr(p + 0x020)); // 0245A4FA74F8 0x20 IsInitialized               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.TouchDuration                             = GetSingle(new IntPtr(p + 0x024)); // 0245A4FA7518 0x24 TouchDuration               ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.IsTouchCharacter                          = GetBool(new IntPtr(p + 0x028)); // 0245A4FA7538 0x28 IsTouchCharacter            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsTouchOutOfRange                         = GetBool(new IntPtr(p + 0x029)); // 0245A4FA7558 0x29 IsTouchOutOfRange           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsLongTouchCharacter                      = GetBool(new IntPtr(p + 0x02A)); // 0245A4FA7578 0x2A IsLongTouchCharacter        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsTouchAllRange                           = GetBool(new IntPtr(p + 0x02B)); // 0245A4FA7598 0x2B IsTouchAllRange             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsTouchNotPointerOverAllRange             = GetBool(new IntPtr(p + 0x02C)); // 0245A4FA75B8 0x2C IsTouchNotPointerOverAllRange ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsReleaseCharacter                        = GetBool(new IntPtr(p + 0x02D)); // 0245A4FA75D8 0x2D IsReleaseCharacter          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsReleaseOutOfRange                       = GetBool(new IntPtr(p + 0x02E)); // 0245A4FA75F8 0x2E IsReleaseOutOfRange         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsReleaseAllRange                         = GetBool(new IntPtr(p + 0x02F)); // 0245A4FA7618 0x2F IsReleaseAllRange           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.MainCamera                                = GetObject<Camera>(new IntPtr(p + 0x030), ReversePrism.DataModels.Camera.FromPointer); // 0245A4FA7638 0x30 MainCamera                  ( 0001865A1C90 ModelClassType Camera Camera Camera Pointer )
-            value.LayerMask                                 = GetInt32(new IntPtr(p + 0x038)); // 0245A4FA7658 0x38 LayerMask                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsInitialized                             = GetBool(new IntPtr(p + 0x020)); // 0x20 IsInitialized               ( ModelPrimitiveType bool bool bool Bool )
+            value.TouchDuration                             = GetSingle(new IntPtr(p + 0x024)); // 0x24 TouchDuration               ( ModelPrimitiveType float float float Single )
+            value.IsTouchCharacter                          = GetBool(new IntPtr(p + 0x028)); // 0x28 IsTouchCharacter            ( ModelPrimitiveType bool bool bool Bool )
+            value.IsTouchOutOfRange                         = GetBool(new IntPtr(p + 0x029)); // 0x29 IsTouchOutOfRange           ( ModelPrimitiveType bool bool bool Bool )
+            value.IsLongTouchCharacter                      = GetBool(new IntPtr(p + 0x02A)); // 0x2A IsLongTouchCharacter        ( ModelPrimitiveType bool bool bool Bool )
+            value.IsTouchAllRange                           = GetBool(new IntPtr(p + 0x02B)); // 0x2B IsTouchAllRange             ( ModelPrimitiveType bool bool bool Bool )
+            value.IsTouchNotPointerOverAllRange             = GetBool(new IntPtr(p + 0x02C)); // 0x2C IsTouchNotPointerOverAllRange ( ModelPrimitiveType bool bool bool Bool )
+            value.IsReleaseCharacter                        = GetBool(new IntPtr(p + 0x02D)); // 0x2D IsReleaseCharacter          ( ModelPrimitiveType bool bool bool Bool )
+            value.IsReleaseOutOfRange                       = GetBool(new IntPtr(p + 0x02E)); // 0x2E IsReleaseOutOfRange         ( ModelPrimitiveType bool bool bool Bool )
+            value.IsReleaseAllRange                         = GetBool(new IntPtr(p + 0x02F)); // 0x2F IsReleaseAllRange           ( ModelPrimitiveType bool bool bool Bool )
+            value.MainCamera                                = GetObject<Camera>(new IntPtr(p + 0x030), ReversePrism.DataModels.Camera.FromPointer); // 0x30 MainCamera                  ( ModelClassType Camera Camera Camera Pointer )
+            value.LayerMask                                 = GetInt32(new IntPtr(p + 0x038)); // 0x38 LayerMask                   ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

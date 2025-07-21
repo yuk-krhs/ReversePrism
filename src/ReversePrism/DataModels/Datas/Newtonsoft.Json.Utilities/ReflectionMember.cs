@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 MemberType                               000186692850 ModelClassType Type Type Type Pointer
+    // 010 MemberType                               ModelClassType Type Type Type Pointer
     // 018 <Getter>k__BackingField                  Func`2<<object>, <object>> IL2CPP_TYPE_GENERICINST
     // 020 <Setter>k__BackingField                  Action`2<<object>, <object>> IL2CPP_TYPE_GENERICINST
     public partial class ReflectionMember : DataModel
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ReflectionMember() { Pointer= p0 };
 
-            value.MemberType                                = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0246687A6898 0x10 MemberType                  ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.MemberType                                = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0x10 MemberType                  ( ModelClassType Type Type Type Pointer )
 
             return value;
         }

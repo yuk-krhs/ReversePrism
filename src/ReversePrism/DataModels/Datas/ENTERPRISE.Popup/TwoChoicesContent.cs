@@ -10,10 +10,10 @@ namespace ReversePrism.DataModels
 
     // 000 LeftIDStart                              int IL2CPP_TYPE_I4
     // 000 RightIDStart                             int IL2CPP_TYPE_I4
-    // 060 ButtonGroup                              0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 068 TextArea                                 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 070 ButtonDistance                           0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 074 TextMargin                               0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 060 ButtonGroup                              ModelClassType GameObject GameObject GameObject Pointer
+    // 068 TextArea                                 ModelClassType GameObject GameObject GameObject Pointer
+    // 070 ButtonDistance                           ModelPrimitiveType int int int Int32
+    // 074 TextMargin                               ModelPrimitiveType int int int Int32
     public partial class TwoChoicesContent : DataModel
     {
         public GameObject?                              ButtonGroup                             { get; set; }
@@ -29,10 +29,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TwoChoicesContent() { Pointer= p0 };
 
-            value.ButtonGroup                               = GetObject<GameObject>(new IntPtr(p + 0x060), ReversePrism.DataModels.GameObject.FromPointer); // 0245A4406F08 0x60 ButtonGroup                 ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.TextArea                                  = GetObject<GameObject>(new IntPtr(p + 0x068), ReversePrism.DataModels.GameObject.FromPointer); // 0245A4406F28 0x68 TextArea                    ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ButtonDistance                            = GetInt32(new IntPtr(p + 0x070)); // 0245A4406F48 0x70 ButtonDistance              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.TextMargin                                = GetInt32(new IntPtr(p + 0x074)); // 0245A4406F68 0x74 TextMargin                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ButtonGroup                               = GetObject<GameObject>(new IntPtr(p + 0x060), ReversePrism.DataModels.GameObject.FromPointer); // 0x60 ButtonGroup                 ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.TextArea                                  = GetObject<GameObject>(new IntPtr(p + 0x068), ReversePrism.DataModels.GameObject.FromPointer); // 0x68 TextArea                    ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.ButtonDistance                            = GetInt32(new IntPtr(p + 0x070)); // 0x70 ButtonDistance              ( ModelPrimitiveType int int int Int32 )
+            value.TextMargin                                = GetInt32(new IntPtr(p + 0x074)); // 0x74 TextMargin                  ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

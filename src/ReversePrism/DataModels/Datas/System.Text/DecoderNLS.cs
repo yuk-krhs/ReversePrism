@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Encoding                                 00018672D9E0 ModelClassType Encoding Encoding Encoding Pointer
-    // 028 MustFlush                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 029 ThrowOnOverflow                          000186595210 ModelPrimitiveType bool bool bool Bool
-    // 02C BytesUsed                                0001865F2F90 ModelPrimitiveType int int int Int32
+    // 020 Encoding                                 ModelClassType Encoding Encoding Encoding Pointer
+    // 028 MustFlush                                ModelPrimitiveType bool bool bool Bool
+    // 029 ThrowOnOverflow                          ModelPrimitiveType bool bool bool Bool
+    // 02C BytesUsed                                ModelPrimitiveType int int int Int32
     public partial class DecoderNLS : DataModel
     {
         public Encoding?                                Encoding                                { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DecoderNLS() { Pointer= p0 };
 
-            value.Encoding                                  = GetObject<Encoding>(new IntPtr(p + 0x020), ReversePrism.DataModels.Encoding.FromPointer); // 0245A33E6BE0 0x20 Encoding                    ( 00018672D9E0 ModelClassType Encoding Encoding Encoding Pointer )
-            value.MustFlush                                 = GetBool(new IntPtr(p + 0x028)); // 0245A33E6C00 0x28 MustFlush                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ThrowOnOverflow                           = GetBool(new IntPtr(p + 0x029)); // 0245A33E6C20 0x29 ThrowOnOverflow             ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.BytesUsed                                 = GetInt32(new IntPtr(p + 0x02C)); // 0245A33E6C40 0x2C BytesUsed                   ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.Encoding                                  = GetObject<Encoding>(new IntPtr(p + 0x020), ReversePrism.DataModels.Encoding.FromPointer); // 0x20 Encoding                    ( ModelClassType Encoding Encoding Encoding Pointer )
+            value.MustFlush                                 = GetBool(new IntPtr(p + 0x028)); // 0x28 MustFlush                   ( ModelPrimitiveType bool bool bool Bool )
+            value.ThrowOnOverflow                           = GetBool(new IntPtr(p + 0x029)); // 0x29 ThrowOnOverflow             ( ModelPrimitiveType bool bool bool Bool )
+            value.BytesUsed                                 = GetInt32(new IntPtr(p + 0x02C)); // 0x2C BytesUsed                   ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

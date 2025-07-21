@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 AssemblyFullName                         000186672F10 ModelPrimitiveType string string string String
+    // 010 AssemblyFullName                         ModelPrimitiveType string string string String
     public partial class TypeForwardedFromAttribute : DataModel
     {
         public string                                   AssemblyFullName                        { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TypeForwardedFromAttribute() { Pointer= p0 };
 
-            value.AssemblyFullName                          = GetString(new IntPtr(p + 0x010)); // 024666D06FC8 0x10 AssemblyFullName            ( 000186672F10 ModelPrimitiveType string string string String )
+            value.AssemblyFullName                          = GetString(new IntPtr(p + 0x010)); // 0x10 AssemblyFullName            ( ModelPrimitiveType string string string String )
 
             return value;
         }

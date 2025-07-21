@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Gauge                                    0001866D5710 ModelClassType InGameGaugeBase InGameGaugeBase InGameGaugeBase Pointer
-    // 018 ValueText                                0001866F95C0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 010 Gauge                                    ModelClassType InGameGaugeBase InGameGaugeBase InGameGaugeBase Pointer
+    // 018 ValueText                                ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     public partial class GaugeParts : DataModel
     {
         public InGameGaugeBase?                         Gauge                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GaugeParts() { Pointer= p0 };
 
-            value.Gauge                                     = GetObject<InGameGaugeBase>(new IntPtr(p + 0x010), ReversePrism.DataModels.InGameGaugeBase.FromPointer); // 024665CC6D78 0x10 Gauge                       ( 0001866D5710 ModelClassType InGameGaugeBase InGameGaugeBase InGameGaugeBase Pointer )
-            value.ValueText                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x018), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665CC6D98 0x18 ValueText                   ( 0001866F95C0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Gauge                                     = GetObject<InGameGaugeBase>(new IntPtr(p + 0x010), ReversePrism.DataModels.InGameGaugeBase.FromPointer); // 0x10 Gauge                       ( ModelClassType InGameGaugeBase InGameGaugeBase InGameGaugeBase Pointer )
+            value.ValueText                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x018), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x18 ValueText                   ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CurveType                                00018653FF40 ModelEnumType CurveType CurveType CurveType Int32
-    // 014 CurveStrength                            000186666050 ModelPrimitiveType float float float Single
-    // 018 FadeTimeMs                               000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
+    // 010 CurveType                                ModelEnumType CurveType CurveType CurveType Int32
+    // 014 CurveStrength                            ModelPrimitiveType float float float Single
+    // 018 FadeTimeMs                               ModelPrimitiveType ushort ushort ushort UInt16
     public partial class ReactFadeParameter : DataModel
     {
         public CurveType                                CurveType                               { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ReactFadeParameter() { Pointer= p0 };
 
-            value.CurveType                                 = (CurveType)GetInt32(new IntPtr(p + 0x010)); // 02466ACD6428 0x10 CurveType                   ( 00018653FF40 ModelEnumType CurveType CurveType CurveType Int32 )
-            value.CurveStrength                             = GetSingle(new IntPtr(p + 0x014)); // 02466ACD6448 0x14 CurveStrength               ( 000186666050 ModelPrimitiveType float float float Single )
-            value.FadeTimeMs                                = GetUInt16(new IntPtr(p + 0x018)); // 02466ACD6468 0x18 FadeTimeMs                  ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.CurveType                                 = (CurveType)GetInt32(new IntPtr(p + 0x010)); // 0x10 CurveType                   ( ModelEnumType CurveType CurveType CurveType Int32 )
+            value.CurveStrength                             = GetSingle(new IntPtr(p + 0x014)); // 0x14 CurveStrength               ( ModelPrimitiveType float float float Single )
+            value.FadeTimeMs                                = GetUInt16(new IntPtr(p + 0x018)); // 0x18 FadeTimeMs                  ( ModelPrimitiveType ushort ushort ushort UInt16 )
 
             return value;
         }

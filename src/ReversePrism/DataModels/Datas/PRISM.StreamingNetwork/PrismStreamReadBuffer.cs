@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ReturnBytes                              000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 010 ReturnBytes                              ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     public partial class PrismStreamReadBuffer : DataModel
     {
         public List<sbyte>?                             ReturnBytes                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PrismStreamReadBuffer() { Pointer= p0 };
 
-            value.ReturnBytes                               = GetSByteList(new IntPtr(p + 0x010)); // 024664F73D88 0x10 ReturnBytes                 ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.ReturnBytes                               = GetSByteList(new IntPtr(p + 0x010)); // 0x10 ReturnBytes                 ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

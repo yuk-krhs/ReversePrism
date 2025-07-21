@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 OriginalCells                            000185CDD178 ModelClassListType List`1<GameHelpListCellViewModel> List`1<GameHelpListCellViewModel> List<GameHelpListCellViewModel> Pointer
-    // 018 CurrentShowCells                         000185CDD178 ModelClassListType List`1<GameHelpListCellViewModel> List`1<GameHelpListCellViewModel> List<GameHelpListCellViewModel> Pointer
+    // 010 OriginalCells                            ModelClassListType List`1<GameHelpListCellViewModel> List`1<GameHelpListCellViewModel> List<GameHelpListCellViewModel> Pointer
+    // 018 CurrentShowCells                         ModelClassListType List`1<GameHelpListCellViewModel> List`1<GameHelpListCellViewModel> List<GameHelpListCellViewModel> Pointer
     // 020 expandedGroupIds                         HashSet`1<int> IL2CPP_TYPE_GENERICINST
     public partial class GameHelpListViewModel : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GameHelpListViewModel() { Pointer= p0 };
 
-            value.OriginalCells                             = GetObjectList<GameHelpListCellViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.GameHelpListCellViewModel.FromPointer); // 024666981A50 0x10 OriginalCells               ( 000185CDD178 ModelClassListType List`1<GameHelpListCellViewModel> List`1<GameHelpListCellViewModel> List<GameHelpListCellViewModel> Pointer )
-            value.CurrentShowCells                          = GetObjectList<GameHelpListCellViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.GameHelpListCellViewModel.FromPointer); // 024666981A70 0x18 CurrentShowCells            ( 000185CDD178 ModelClassListType List`1<GameHelpListCellViewModel> List`1<GameHelpListCellViewModel> List<GameHelpListCellViewModel> Pointer )
+            value.OriginalCells                             = GetObjectList<GameHelpListCellViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.GameHelpListCellViewModel.FromPointer); // 0x10 OriginalCells               ( ModelClassListType List`1<GameHelpListCellViewModel> List`1<GameHelpListCellViewModel> List<GameHelpListCellViewModel> Pointer )
+            value.CurrentShowCells                          = GetObjectList<GameHelpListCellViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.GameHelpListCellViewModel.FromPointer); // 0x18 CurrentShowCells            ( ModelClassListType List`1<GameHelpListCellViewModel> List`1<GameHelpListCellViewModel> List<GameHelpListCellViewModel> Pointer )
 
             return value;
         }

@@ -8,12 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 View                                     000186680440 ModelClassType ITutorialMovieView ITutorialMovieView ITutorialMovieView Pointer
-    // 018 Context                                  0001866813B0 ModelClassType ITutorialSequenceContext ITutorialSequenceContext ITutorialSequenceContext Pointer
+    // 010 View                                     ModelClassType ITutorialMovieView ITutorialMovieView ITutorialMovieView Pointer
     public partial class TutorialMoviePresenter : DataModel
     {
         public ITutorialMovieView?                      View                                    { get; set; }
-        public ITutorialSequenceContext?                Context                                 { get; set; }
 
         public static TutorialMoviePresenter? FromPointer(IntPtr p0)
         {
@@ -23,8 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TutorialMoviePresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<ITutorialMovieView>(new IntPtr(p + 0x010), ReversePrism.DataModels.ITutorialMovieView.FromPointer); // 0246667DDDF0 0x10 View                        ( 000186680440 ModelClassType ITutorialMovieView ITutorialMovieView ITutorialMovieView Pointer )
-            value.Context                                   = GetObject<ITutorialSequenceContext>(new IntPtr(p + 0x018), ReversePrism.DataModels.ITutorialSequenceContext.FromPointer); // 0246667DDE10 0x18 Context                     ( 0001866813B0 ModelClassType ITutorialSequenceContext ITutorialSequenceContext ITutorialSequenceContext Pointer )
+            value.View                                      = GetObject<ITutorialMovieView>(new IntPtr(p + 0x010), ReversePrism.DataModels.ITutorialMovieView.FromPointer); // 0x10 View                        ( ModelClassType ITutorialMovieView ITutorialMovieView ITutorialMovieView Pointer )
 
             return value;
         }

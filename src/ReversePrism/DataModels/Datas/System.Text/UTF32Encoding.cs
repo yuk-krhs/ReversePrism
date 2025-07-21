@@ -10,11 +10,11 @@ namespace ReversePrism.DataModels
 
     // 000 s_default                                UTF32Encoding IL2CPP_TYPE_CLASS
     // 008 s_bigEndianDefault                       UTF32Encoding IL2CPP_TYPE_CLASS
-    // 010 S_bigEndianPreamble                      000185B7A290 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 018 S_littleEndianPreamble                   000185B7A290 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 038 EmitUTF32ByteOrderMark                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 039 IsThrowException                         000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 03A BigEndian                                000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 S_bigEndianPreamble                      ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 018 S_littleEndianPreamble                   ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 038 EmitUTF32ByteOrderMark                   ModelPrimitiveType bool bool bool Bool
+    // 039 IsThrowException                         ModelPrimitiveType bool bool bool Bool
+    // 03A BigEndian                                ModelPrimitiveType bool bool bool Bool
     public partial class UTF32Encoding : DataModel
     {
         public List<sbyte>?                             S_bigEndianPreamble                     { get; set; }
@@ -31,11 +31,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UTF32Encoding() { Pointer= p0 };
 
-            value.S_bigEndianPreamble                       = GetSByteList(new IntPtr(p + 0x010)); // 0245A410DAF8 0x10 S_bigEndianPreamble         ( 000185B7A290 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.S_littleEndianPreamble                    = GetSByteList(new IntPtr(p + 0x018)); // 0245A410DB18 0x18 S_littleEndianPreamble      ( 000185B7A290 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.EmitUTF32ByteOrderMark                    = GetBool(new IntPtr(p + 0x038)); // 0245A410DB38 0x38 EmitUTF32ByteOrderMark      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsThrowException                          = GetBool(new IntPtr(p + 0x039)); // 0245A410DB58 0x39 IsThrowException            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.BigEndian                                 = GetBool(new IntPtr(p + 0x03A)); // 0245A410DB78 0x3A BigEndian                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.S_bigEndianPreamble                       = GetSByteList(new IntPtr(p + 0x010)); // 0x10 S_bigEndianPreamble         ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.S_littleEndianPreamble                    = GetSByteList(new IntPtr(p + 0x018)); // 0x18 S_littleEndianPreamble      ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.EmitUTF32ByteOrderMark                    = GetBool(new IntPtr(p + 0x038)); // 0x38 EmitUTF32ByteOrderMark      ( ModelPrimitiveType bool bool bool Bool )
+            value.IsThrowException                          = GetBool(new IntPtr(p + 0x039)); // 0x39 IsThrowException            ( ModelPrimitiveType bool bool bool Bool )
+            value.BigEndian                                 = GetBool(new IntPtr(p + 0x03A)); // 0x3A BigEndian                   ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

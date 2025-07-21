@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 DataList                                 000185CBFFF8 ModelEnumListType Data[] Data[] List<Data> Pointer
+    // 010 DataList                                 ModelEnumListType Data[] Data[] List<Data> Pointer
     public partial class PhaseConditionalSequence : DataModel
     {
         public List<Data>?                              DataList                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PhaseConditionalSequence() { Pointer= p0 };
 
-            value.DataList                                  = GetEnumList<Data>(new IntPtr(p + 0x010)); // 02466BC977F0 0x10 DataList                    ( 000185CBFFF8 ModelEnumListType Data[] Data[] List<Data> Pointer )
+            value.DataList                                  = GetEnumList<Data>(new IntPtr(p + 0x010)); // 0x10 DataList                    ( ModelEnumListType Data[] Data[] List<Data> Pointer )
 
             return value;
         }

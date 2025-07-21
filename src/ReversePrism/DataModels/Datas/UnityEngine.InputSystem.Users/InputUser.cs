@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 InvalidId                                uint IL2CPP_TYPE_U4
-    // 010 M_Id                                     000186698B70 ModelPrimitiveType uint uint uint UInt32
+    // 010 M_Id                                     ModelPrimitiveType uint uint uint UInt32
     // 000 s_GlobalState                            GlobalState IL2CPP_TYPE_VALUETYPE
     public partial class InputUser : DataModel
     {
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InputUser() { Pointer= p0 };
 
-            value.M_Id                                      = GetUInt32(new IntPtr(p + 0x010)); // 02466777BD58 0x10 M_Id                        ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
+            value.M_Id                                      = GetUInt32(new IntPtr(p + 0x010)); // 0x10 M_Id                        ( ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

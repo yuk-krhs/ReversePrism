@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 JobHandle                                000186600F20 ModelEnumType JobHandle JobHandle JobHandle Int32
+    // 010 JobHandle                                ModelEnumType JobHandle JobHandle JobHandle Int32
     // 020 core                                     UniTaskCompletionSourceCore`1<AsyncUnit> IL2CPP_TYPE_GENERICINST
     public partial class JobHandlePromise : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JobHandlePromise() { Pointer= p0 };
 
-            value.JobHandle                                 = (JobHandle)GetInt32(new IntPtr(p + 0x010)); // 024669002890 0x10 JobHandle                   ( 000186600F20 ModelEnumType JobHandle JobHandle JobHandle Int32 )
+            value.JobHandle                                 = (JobHandle)GetInt32(new IntPtr(p + 0x010)); // 0x10 JobHandle                   ( ModelEnumType JobHandle JobHandle JobHandle Int32 )
 
             return value;
         }

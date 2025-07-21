@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Query                                    0001866722E0 ModelPrimitiveType string string string String
+    // 010 Query                                    ModelPrimitiveType string string string String
     public partial class GraphRequest : DataModel
     {
         public string                                   Query                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GraphRequest() { Pointer= p0 };
 
-            value.Query                                     = GetString(new IntPtr(p + 0x010)); // 02466BE40090 0x10 Query                       ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Query                                     = GetString(new IntPtr(p + 0x010)); // 0x10 Query                       ( ModelPrimitiveType string string string String )
 
             return value;
         }

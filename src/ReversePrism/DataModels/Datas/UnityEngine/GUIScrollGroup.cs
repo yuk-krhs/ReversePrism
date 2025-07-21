@@ -8,18 +8,18 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 090 CalcMinWidth                             000186666050 ModelPrimitiveType float float float Single
-    // 094 CalcMaxWidth                             000186666050 ModelPrimitiveType float float float Single
-    // 098 CalcMinHeight                            000186666050 ModelPrimitiveType float float float Single
-    // 09C CalcMaxHeight                            000186666050 ModelPrimitiveType float float float Single
-    // 0A0 ClientWidth                              000186666050 ModelPrimitiveType float float float Single
-    // 0A4 ClientHeight                             000186666050 ModelPrimitiveType float float float Single
-    // 0A8 AllowHorizontalScroll                    000186595960 ModelPrimitiveType bool bool bool Bool
-    // 0A9 AllowVerticalScroll                      000186595960 ModelPrimitiveType bool bool bool Bool
-    // 0AA NeedsHorizontalScrollbar                 000186595960 ModelPrimitiveType bool bool bool Bool
-    // 0AB NeedsVerticalScrollbar                   000186595960 ModelPrimitiveType bool bool bool Bool
-    // 0B0 HorizontalScrollbar                      0001865DF030 ModelClassType GUIStyle GUIStyle GUIStyle Pointer
-    // 0B8 VerticalScrollbar                        0001865DF030 ModelClassType GUIStyle GUIStyle GUIStyle Pointer
+    // 090 CalcMinWidth                             ModelPrimitiveType float float float Single
+    // 094 CalcMaxWidth                             ModelPrimitiveType float float float Single
+    // 098 CalcMinHeight                            ModelPrimitiveType float float float Single
+    // 09C CalcMaxHeight                            ModelPrimitiveType float float float Single
+    // 0A0 ClientWidth                              ModelPrimitiveType float float float Single
+    // 0A4 ClientHeight                             ModelPrimitiveType float float float Single
+    // 0A8 AllowHorizontalScroll                    ModelPrimitiveType bool bool bool Bool
+    // 0A9 AllowVerticalScroll                      ModelPrimitiveType bool bool bool Bool
+    // 0AA NeedsHorizontalScrollbar                 ModelPrimitiveType bool bool bool Bool
+    // 0AB NeedsVerticalScrollbar                   ModelPrimitiveType bool bool bool Bool
+    // 0B0 HorizontalScrollbar                      ModelClassType GUIStyle GUIStyle GUIStyle Pointer
+    // 0B8 VerticalScrollbar                        ModelClassType GUIStyle GUIStyle GUIStyle Pointer
     public partial class GUIScrollGroup : DataModel
     {
         public float                                    CalcMinWidth                            { get; set; }
@@ -43,18 +43,18 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GUIScrollGroup() { Pointer= p0 };
 
-            value.CalcMinWidth                              = GetSingle(new IntPtr(p + 0x090)); // 0245A21D2190 0x90 CalcMinWidth                ( 000186666050 ModelPrimitiveType float float float Single )
-            value.CalcMaxWidth                              = GetSingle(new IntPtr(p + 0x094)); // 0245A21D21B0 0x94 CalcMaxWidth                ( 000186666050 ModelPrimitiveType float float float Single )
-            value.CalcMinHeight                             = GetSingle(new IntPtr(p + 0x098)); // 0245A21D21D0 0x98 CalcMinHeight               ( 000186666050 ModelPrimitiveType float float float Single )
-            value.CalcMaxHeight                             = GetSingle(new IntPtr(p + 0x09C)); // 0245A21D21F0 0x9C CalcMaxHeight               ( 000186666050 ModelPrimitiveType float float float Single )
-            value.ClientWidth                               = GetSingle(new IntPtr(p + 0x0A0)); // 0245A21D2210 0xA0 ClientWidth                 ( 000186666050 ModelPrimitiveType float float float Single )
-            value.ClientHeight                              = GetSingle(new IntPtr(p + 0x0A4)); // 0245A21D2230 0xA4 ClientHeight                ( 000186666050 ModelPrimitiveType float float float Single )
-            value.AllowHorizontalScroll                     = GetBool(new IntPtr(p + 0x0A8)); // 0245A21D2250 0xA8 AllowHorizontalScroll       ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.AllowVerticalScroll                       = GetBool(new IntPtr(p + 0x0A9)); // 0245A21D2270 0xA9 AllowVerticalScroll         ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.NeedsHorizontalScrollbar                  = GetBool(new IntPtr(p + 0x0AA)); // 0245A21D2290 0xAA NeedsHorizontalScrollbar    ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.NeedsVerticalScrollbar                    = GetBool(new IntPtr(p + 0x0AB)); // 0245A21D22B0 0xAB NeedsVerticalScrollbar      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.HorizontalScrollbar                       = GetObject<GUIStyle>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.GUIStyle.FromPointer); // 0245A21D22D0 0xB0 HorizontalScrollbar         ( 0001865DF030 ModelClassType GUIStyle GUIStyle GUIStyle Pointer )
-            value.VerticalScrollbar                         = GetObject<GUIStyle>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.GUIStyle.FromPointer); // 0245A21D22F0 0xB8 VerticalScrollbar           ( 0001865DF030 ModelClassType GUIStyle GUIStyle GUIStyle Pointer )
+            value.CalcMinWidth                              = GetSingle(new IntPtr(p + 0x090)); // 0x90 CalcMinWidth                ( ModelPrimitiveType float float float Single )
+            value.CalcMaxWidth                              = GetSingle(new IntPtr(p + 0x094)); // 0x94 CalcMaxWidth                ( ModelPrimitiveType float float float Single )
+            value.CalcMinHeight                             = GetSingle(new IntPtr(p + 0x098)); // 0x98 CalcMinHeight               ( ModelPrimitiveType float float float Single )
+            value.CalcMaxHeight                             = GetSingle(new IntPtr(p + 0x09C)); // 0x9C CalcMaxHeight               ( ModelPrimitiveType float float float Single )
+            value.ClientWidth                               = GetSingle(new IntPtr(p + 0x0A0)); // 0xA0 ClientWidth                 ( ModelPrimitiveType float float float Single )
+            value.ClientHeight                              = GetSingle(new IntPtr(p + 0x0A4)); // 0xA4 ClientHeight                ( ModelPrimitiveType float float float Single )
+            value.AllowHorizontalScroll                     = GetBool(new IntPtr(p + 0x0A8)); // 0xA8 AllowHorizontalScroll       ( ModelPrimitiveType bool bool bool Bool )
+            value.AllowVerticalScroll                       = GetBool(new IntPtr(p + 0x0A9)); // 0xA9 AllowVerticalScroll         ( ModelPrimitiveType bool bool bool Bool )
+            value.NeedsHorizontalScrollbar                  = GetBool(new IntPtr(p + 0x0AA)); // 0xAA NeedsHorizontalScrollbar    ( ModelPrimitiveType bool bool bool Bool )
+            value.NeedsVerticalScrollbar                    = GetBool(new IntPtr(p + 0x0AB)); // 0xAB NeedsVerticalScrollbar      ( ModelPrimitiveType bool bool bool Bool )
+            value.HorizontalScrollbar                       = GetObject<GUIStyle>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.GUIStyle.FromPointer); // 0xB0 HorizontalScrollbar         ( ModelClassType GUIStyle GUIStyle GUIStyle Pointer )
+            value.VerticalScrollbar                         = GetObject<GUIStyle>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.GUIStyle.FromPointer); // 0xB8 VerticalScrollbar           ( ModelClassType GUIStyle GUIStyle GUIStyle Pointer )
 
             return value;
         }

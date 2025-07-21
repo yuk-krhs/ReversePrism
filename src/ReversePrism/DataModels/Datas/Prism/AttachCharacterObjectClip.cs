@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 Behaviour                                00018670F800 ModelClassType AttachCharacterObjectBehaviour AttachCharacterObjectBehaviour AttachCharacterObjectBehaviour Pointer
+    // 018 Behaviour                                ModelClassType AttachCharacterObjectBehaviour AttachCharacterObjectBehaviour AttachCharacterObjectBehaviour Pointer
     public partial class AttachCharacterObjectClip : DataModel
     {
         public AttachCharacterObjectBehaviour?          Behaviour                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AttachCharacterObjectClip() { Pointer= p0 };
 
-            value.Behaviour                                 = GetObject<AttachCharacterObjectBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.AttachCharacterObjectBehaviour.FromPointer); // 024664E71768 0x18 Behaviour                   ( 00018670F800 ModelClassType AttachCharacterObjectBehaviour AttachCharacterObjectBehaviour AttachCharacterObjectBehaviour Pointer )
+            value.Behaviour                                 = GetObject<AttachCharacterObjectBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.AttachCharacterObjectBehaviour.FromPointer); // 0x18 Behaviour                   ( ModelClassType AttachCharacterObjectBehaviour AttachCharacterObjectBehaviour AttachCharacterObjectBehaviour Pointer )
 
             return value;
         }

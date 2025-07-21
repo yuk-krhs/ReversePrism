@@ -8,12 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 View                                     000186627280 ModelClassType IScheduleSelectionUnitIdolView IScheduleSelectionUnitIdolView IScheduleSelectionUnitIdolView Pointer
-    // 018 PIdolDetailPopupViewFactory              0001865CFB80 ModelClassType IPIdolDetailPopupViewFactory IPIdolDetailPopupViewFactory IPIdolDetailPopupViewFactory Pointer
+    // 010 View                                     ModelClassType IScheduleSelectionUnitIdolView IScheduleSelectionUnitIdolView IScheduleSelectionUnitIdolView Pointer
     public partial class ScheduleSelectionUnitIdolPresenter : DataModel
     {
         public IScheduleSelectionUnitIdolView?          View                                    { get; set; }
-        public IPIdolDetailPopupViewFactory?            PIdolDetailPopupViewFactory             { get; set; }
 
         public static ScheduleSelectionUnitIdolPresenter? FromPointer(IntPtr p0)
         {
@@ -23,8 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ScheduleSelectionUnitIdolPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<IScheduleSelectionUnitIdolView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IScheduleSelectionUnitIdolView.FromPointer); // 024665EB2D38 0x10 View                        ( 000186627280 ModelClassType IScheduleSelectionUnitIdolView IScheduleSelectionUnitIdolView IScheduleSelectionUnitIdolView Pointer )
-            value.PIdolDetailPopupViewFactory               = GetObject<IPIdolDetailPopupViewFactory>(new IntPtr(p + 0x018), ReversePrism.DataModels.IPIdolDetailPopupViewFactory.FromPointer); // 024665EB2D58 0x18 PIdolDetailPopupViewFactory ( 0001865CFB80 ModelClassType IPIdolDetailPopupViewFactory IPIdolDetailPopupViewFactory IPIdolDetailPopupViewFactory Pointer )
+            value.View                                      = GetObject<IScheduleSelectionUnitIdolView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IScheduleSelectionUnitIdolView.FromPointer); // 0x10 View                        ( ModelClassType IScheduleSelectionUnitIdolView IScheduleSelectionUnitIdolView IScheduleSelectionUnitIdolView Pointer )
 
             return value;
         }

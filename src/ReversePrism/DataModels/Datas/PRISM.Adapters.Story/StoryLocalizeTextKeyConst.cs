@@ -15,12 +15,13 @@ namespace ReversePrism.DataModels
     // 040 CanChangeSettingsFromMenu                ValueTuple`2<string, int> IL2CPP_TYPE_GENERICINST
     // 050 RecommendDownloadOverWiFi                ValueTuple`2<string, int> IL2CPP_TYPE_GENERICINST
     // 060 Story                                    ValueTuple`2<string, int> IL2CPP_TYPE_GENERICINST
-    // 070 MainTab                                  ValueTuple`2<string, int> IL2CPP_TYPE_GENERICINST
-    // 080 IdolTab                                  ValueTuple`2<string, int> IL2CPP_TYPE_GENERICINST
-    // 090 EventTab                                 ValueTuple`2<string, int> IL2CPP_TYPE_GENERICINST
-    // 0A0 ExtraTab                                 ValueTuple`2<string, int> IL2CPP_TYPE_GENERICINST
-    // 0B0 FavoriteTab                              ValueTuple`2<string, int> IL2CPP_TYPE_GENERICINST
-    // 0C0 SearchTab                                ValueTuple`2<string, int> IL2CPP_TYPE_GENERICINST
+    // 070 ContinuousPlayPopupTitle                 ValueTuple`2<string, int> IL2CPP_TYPE_GENERICINST
+    // 080 MainTab                                  ValueTuple`2<string, int> IL2CPP_TYPE_GENERICINST
+    // 090 IdolTab                                  ValueTuple`2<string, int> IL2CPP_TYPE_GENERICINST
+    // 0A0 EventTab                                 ValueTuple`2<string, int> IL2CPP_TYPE_GENERICINST
+    // 0B0 ExtraTab                                 ValueTuple`2<string, int> IL2CPP_TYPE_GENERICINST
+    // 0C0 FavoriteTab                              ValueTuple`2<string, int> IL2CPP_TYPE_GENERICINST
+    // 0D0 SearchTab                                ValueTuple`2<string, int> IL2CPP_TYPE_GENERICINST
     public partial class StoryLocalizeTextKeyConst : DataModel
     {
 

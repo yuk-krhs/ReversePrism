@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Director                                 00018674DA70 ModelClassType PlayableDirector PlayableDirector PlayableDirector Pointer
+    // 020 Director                                 ModelClassType PlayableDirector PlayableDirector PlayableDirector Pointer
     public partial class TimelineLayer : DataModel
     {
         public PlayableDirector?                        Director                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TimelineLayer() { Pointer= p0 };
 
-            value.Director                                  = GetObject<PlayableDirector>(new IntPtr(p + 0x020), ReversePrism.DataModels.PlayableDirector.FromPointer); // 024664E758D8 0x20 Director                    ( 00018674DA70 ModelClassType PlayableDirector PlayableDirector PlayableDirector Pointer )
+            value.Director                                  = GetObject<PlayableDirector>(new IntPtr(p + 0x020), ReversePrism.DataModels.PlayableDirector.FromPointer); // 0x20 Director                    ( ModelClassType PlayableDirector PlayableDirector PlayableDirector Pointer )
 
             return value;
         }

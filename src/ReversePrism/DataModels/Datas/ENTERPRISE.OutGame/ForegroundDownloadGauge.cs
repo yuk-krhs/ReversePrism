@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 038 DownloadBar                              00018651CF50 ModelClassType Slider Slider Slider Pointer
+    // 038 DownloadBar                              ModelClassType Slider Slider Slider Pointer
     public partial class ForegroundDownloadGauge : DataModel
     {
         public Slider?                                  DownloadBar                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ForegroundDownloadGauge() { Pointer= p0 };
 
-            value.DownloadBar                               = GetObject<Slider>(new IntPtr(p + 0x038), ReversePrism.DataModels.Slider.FromPointer); // 024660A8FE08 0x38 DownloadBar                 ( 00018651CF50 ModelClassType Slider Slider Slider Pointer )
+            value.DownloadBar                               = GetObject<Slider>(new IntPtr(p + 0x038), ReversePrism.DataModels.Slider.FromPointer); // 0x38 DownloadBar                 ( ModelClassType Slider Slider Slider Pointer )
 
             return value;
         }

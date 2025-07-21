@@ -11,12 +11,12 @@ namespace ReversePrism.DataModels
     // 000 k_FpsFormatString                        string IL2CPP_TYPE_STRING
     // 000 k_MsFormatString                         string IL2CPP_TYPE_STRING
     // 000 k_RefreshRate                            float IL2CPP_TYPE_R4
-    // 010 M_FrameHistory                           0001865BFE70 ModelClassType FrameTimeSampleHistory FrameTimeSampleHistory FrameTimeSampleHistory Pointer
-    // 018 M_BottleneckHistory                      00018676DD10 ModelClassType BottleneckHistory BottleneckHistory BottleneckHistory Pointer
-    // 020 BottleneckHistorySize                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 024 SampleHistorySize                        0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 028 M_Timing                                 000185B7FF10 ModelEnumListType FrameTiming[] FrameTiming[] List<FrameTiming> Pointer
-    // 030 M_Sample                                 0001865D6E20 ModelEnumType FrameTimeSample FrameTimeSample FrameTimeSample Int32
+    // 010 M_FrameHistory                           ModelClassType FrameTimeSampleHistory FrameTimeSampleHistory FrameTimeSampleHistory Pointer
+    // 018 M_BottleneckHistory                      ModelClassType BottleneckHistory BottleneckHistory BottleneckHistory Pointer
+    // 020 BottleneckHistorySize                    ModelPrimitiveType int int int Int32
+    // 024 SampleHistorySize                        ModelPrimitiveType int int int Int32
+    // 028 M_Timing                                 ModelEnumListType FrameTiming[] FrameTiming[] List<FrameTiming> Pointer
+    // 030 M_Sample                                 ModelEnumType FrameTimeSample FrameTimeSample FrameTimeSample Int32
     public partial class DebugFrameTiming : DataModel
     {
         public FrameTimeSampleHistory?                  M_FrameHistory                          { get; set; }
@@ -34,12 +34,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DebugFrameTiming() { Pointer= p0 };
 
-            value.M_FrameHistory                            = GetObject<FrameTimeSampleHistory>(new IntPtr(p + 0x010), ReversePrism.DataModels.FrameTimeSampleHistory.FromPointer); // 0246691C46C8 0x10 M_FrameHistory              ( 0001865BFE70 ModelClassType FrameTimeSampleHistory FrameTimeSampleHistory FrameTimeSampleHistory Pointer )
-            value.M_BottleneckHistory                       = GetObject<BottleneckHistory>(new IntPtr(p + 0x018), ReversePrism.DataModels.BottleneckHistory.FromPointer); // 0246691C46E8 0x18 M_BottleneckHistory         ( 00018676DD10 ModelClassType BottleneckHistory BottleneckHistory BottleneckHistory Pointer )
-            value.BottleneckHistorySize                     = GetInt32(new IntPtr(p + 0x020)); // 0246691C4708 0x20 BottleneckHistorySize       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SampleHistorySize                         = GetInt32(new IntPtr(p + 0x024)); // 0246691C4728 0x24 SampleHistorySize           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_Timing                                  = GetEnumList<FrameTiming>(new IntPtr(p + 0x028)); // 0246691C4748 0x28 M_Timing                    ( 000185B7FF10 ModelEnumListType FrameTiming[] FrameTiming[] List<FrameTiming> Pointer )
-            value.M_Sample                                  = (FrameTimeSample)GetInt32(new IntPtr(p + 0x030)); // 0246691C4768 0x30 M_Sample                    ( 0001865D6E20 ModelEnumType FrameTimeSample FrameTimeSample FrameTimeSample Int32 )
+            value.M_FrameHistory                            = GetObject<FrameTimeSampleHistory>(new IntPtr(p + 0x010), ReversePrism.DataModels.FrameTimeSampleHistory.FromPointer); // 0x10 M_FrameHistory              ( ModelClassType FrameTimeSampleHistory FrameTimeSampleHistory FrameTimeSampleHistory Pointer )
+            value.M_BottleneckHistory                       = GetObject<BottleneckHistory>(new IntPtr(p + 0x018), ReversePrism.DataModels.BottleneckHistory.FromPointer); // 0x18 M_BottleneckHistory         ( ModelClassType BottleneckHistory BottleneckHistory BottleneckHistory Pointer )
+            value.BottleneckHistorySize                     = GetInt32(new IntPtr(p + 0x020)); // 0x20 BottleneckHistorySize       ( ModelPrimitiveType int int int Int32 )
+            value.SampleHistorySize                         = GetInt32(new IntPtr(p + 0x024)); // 0x24 SampleHistorySize           ( ModelPrimitiveType int int int Int32 )
+            value.M_Timing                                  = GetEnumList<FrameTiming>(new IntPtr(p + 0x028)); // 0x28 M_Timing                    ( ModelEnumListType FrameTiming[] FrameTiming[] List<FrameTiming> Pointer )
+            value.M_Sample                                  = (FrameTimeSample)GetInt32(new IntPtr(p + 0x030)); // 0x30 M_Sample                    ( ModelEnumType FrameTimeSample FrameTimeSample FrameTimeSample Int32 )
 
             return value;
         }

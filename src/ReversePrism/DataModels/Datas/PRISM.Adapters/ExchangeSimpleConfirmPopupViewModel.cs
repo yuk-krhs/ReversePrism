@@ -11,13 +11,13 @@ namespace ReversePrism.DataModels
     // 000 ExchangeCautionTextKey                   int IL2CPP_TYPE_I4
     // 000 CautionIdolTextKey                       int IL2CPP_TYPE_I4
     // 000 CautionCharacterTextKey                  int IL2CPP_TYPE_I4
-    // 010 ExchangeMstId                            0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 ExchangeProduct                          0001865FA400 ModelClassType IProductWithAmountStatus IProductWithAmountStatus IProductWithAmountStatus Pointer
-    // 020 RequireProduct                           0001865FA400 ModelClassType IProductWithAmountStatus IProductWithAmountStatus IProductWithAmountStatus Pointer
-    // 028 LimitStatus                              00018676AFA0 ModelClassType IExchangeProductPurchaseLimitStatus IExchangeProductPurchaseLimitStatus IExchangeProductPurchaseLimitStatus Pointer
-    // 030 RequireProductBaseAmount                 0001865F4260 ModelPrimitiveType int int int Int32
-    // 034 ExchangeLimitReaminCount                 0001865F4260 ModelPrimitiveType int int int Int32
-    // 038 ExchangeCount                            0001865F4260 ModelPrimitiveType int int int Int32
+    // 010 ExchangeMstId                            ModelPrimitiveType int int int Int32
+    // 018 ExchangeProduct                          ModelClassType IProductWithAmountStatus IProductWithAmountStatus IProductWithAmountStatus Pointer
+    // 020 RequireProduct                           ModelClassType IProductWithAmountStatus IProductWithAmountStatus IProductWithAmountStatus Pointer
+    // 028 LimitStatus                              ModelClassType IExchangeProductPurchaseLimitStatus IExchangeProductPurchaseLimitStatus IExchangeProductPurchaseLimitStatus Pointer
+    // 030 RequireProductBaseAmount                 ModelPrimitiveType int int int Int32
+    // 034 ExchangeLimitReaminCount                 ModelPrimitiveType int int int Int32
+    // 038 ExchangeCount                            ModelPrimitiveType int int int Int32
     public partial class ExchangeSimpleConfirmPopupViewModel : DataModel
     {
         public int                                      ExchangeMstId                           { get; set; }
@@ -36,13 +36,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExchangeSimpleConfirmPopupViewModel() { Pointer= p0 };
 
-            value.ExchangeMstId                             = GetInt32(new IntPtr(p + 0x010)); // 0246663299A8 0x10 ExchangeMstId               ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.ExchangeProduct                           = GetObject<IProductWithAmountStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 0246663299C8 0x18 ExchangeProduct             ( 0001865FA400 ModelClassType IProductWithAmountStatus IProductWithAmountStatus IProductWithAmountStatus Pointer )
-            value.RequireProduct                            = GetObject<IProductWithAmountStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 0246663299E8 0x20 RequireProduct              ( 0001865FA400 ModelClassType IProductWithAmountStatus IProductWithAmountStatus IProductWithAmountStatus Pointer )
-            value.LimitStatus                               = GetObject<IExchangeProductPurchaseLimitStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.IExchangeProductPurchaseLimitStatus.FromPointer); // 024666329A08 0x28 LimitStatus                 ( 00018676AFA0 ModelClassType IExchangeProductPurchaseLimitStatus IExchangeProductPurchaseLimitStatus IExchangeProductPurchaseLimitStatus Pointer )
-            value.RequireProductBaseAmount                  = GetInt32(new IntPtr(p + 0x030)); // 024666329A28 0x30 RequireProductBaseAmount    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.ExchangeLimitReaminCount                  = GetInt32(new IntPtr(p + 0x034)); // 024666329A48 0x34 ExchangeLimitReaminCount    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.ExchangeCount                             = GetInt32(new IntPtr(p + 0x038)); // 024666329A68 0x38 ExchangeCount               ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.ExchangeMstId                             = GetInt32(new IntPtr(p + 0x010)); // 0x10 ExchangeMstId               ( ModelPrimitiveType int int int Int32 )
+            value.ExchangeProduct                           = GetObject<IProductWithAmountStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 0x18 ExchangeProduct             ( ModelClassType IProductWithAmountStatus IProductWithAmountStatus IProductWithAmountStatus Pointer )
+            value.RequireProduct                            = GetObject<IProductWithAmountStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 0x20 RequireProduct              ( ModelClassType IProductWithAmountStatus IProductWithAmountStatus IProductWithAmountStatus Pointer )
+            value.LimitStatus                               = GetObject<IExchangeProductPurchaseLimitStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.IExchangeProductPurchaseLimitStatus.FromPointer); // 0x28 LimitStatus                 ( ModelClassType IExchangeProductPurchaseLimitStatus IExchangeProductPurchaseLimitStatus IExchangeProductPurchaseLimitStatus Pointer )
+            value.RequireProductBaseAmount                  = GetInt32(new IntPtr(p + 0x030)); // 0x30 RequireProductBaseAmount    ( ModelPrimitiveType int int int Int32 )
+            value.ExchangeLimitReaminCount                  = GetInt32(new IntPtr(p + 0x034)); // 0x34 ExchangeLimitReaminCount    ( ModelPrimitiveType int int int Int32 )
+            value.ExchangeCount                             = GetInt32(new IntPtr(p + 0x038)); // 0x38 ExchangeCount               ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

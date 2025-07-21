@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 MstProduceCardId                         0001865F4260 ModelPrimitiveType int int int Int32
-    // 014 MstProduceCardContentGroupTypeId         0001865F4260 ModelPrimitiveType int int int Int32
+    // 010 MstProduceCardId                         ModelPrimitiveType int int int Int32
+    // 014 MstProduceCardContentGroupTypeId         ModelPrimitiveType int int int Int32
     public partial class MstProduceCardContentGroup : DataModel
     {
         public int                                      MstProduceCardId                        { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MstProduceCardContentGroup() { Pointer= p0 };
 
-            value.MstProduceCardId                          = GetInt32(new IntPtr(p + 0x010)); // 0245A4618F08 0x10 MstProduceCardId            ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstProduceCardContentGroupTypeId          = GetInt32(new IntPtr(p + 0x014)); // 0245A4618F28 0x14 MstProduceCardContentGroupTypeId ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.MstProduceCardId                          = GetInt32(new IntPtr(p + 0x010)); // 0x10 MstProduceCardId            ( ModelPrimitiveType int int int Int32 )
+            value.MstProduceCardContentGroupTypeId          = GetInt32(new IntPtr(p + 0x014)); // 0x14 MstProduceCardContentGroupTypeId ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 ViewPrefab                               0001866CE3E0 ModelClassType TwestaTopScreenView TwestaTopScreenView TwestaTopScreenView Pointer
-    // 028 ViewParent                               0001866AA150 ModelClassType Transform Transform Transform Pointer
+    // 020 ViewPrefab                               ModelClassType TwestaTopScreenView TwestaTopScreenView TwestaTopScreenView Pointer
+    // 028 ViewParent                               ModelClassType Transform Transform Transform Pointer
     public partial class TwestaTopScreenBuilder : DataModel
     {
         public TwestaTopScreenView?                     ViewPrefab                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TwestaTopScreenBuilder() { Pointer= p0 };
 
-            value.ViewPrefab                                = GetObject<TwestaTopScreenView>(new IntPtr(p + 0x020), ReversePrism.DataModels.TwestaTopScreenView.FromPointer); // 02466B6D59C8 0x20 ViewPrefab                  ( 0001866CE3E0 ModelClassType TwestaTopScreenView TwestaTopScreenView TwestaTopScreenView Pointer )
-            value.ViewParent                                = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 02466B6D59E8 0x28 ViewParent                  ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.ViewPrefab                                = GetObject<TwestaTopScreenView>(new IntPtr(p + 0x020), ReversePrism.DataModels.TwestaTopScreenView.FromPointer); // 0x20 ViewPrefab                  ( ModelClassType TwestaTopScreenView TwestaTopScreenView TwestaTopScreenView Pointer )
+            value.ViewParent                                = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 0x28 ViewParent                  ( ModelClassType Transform Transform Transform Pointer )
 
             return value;
         }

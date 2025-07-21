@@ -42,7 +42,7 @@ namespace ReversePrism.DataModels
         Live,
         Produce,
         Exchange,
-        LiveEventAlpha,
+        LiveEvent,
         ChallengeTour,
         FriendInvitation,
         StreamProgram,

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 View                                     00018664AAA0 ModelClassType ISpecialLoadingContentView ISpecialLoadingContentView ISpecialLoadingContentView Pointer
-    // 018 TransitionAnimationType                  0001866ACD70 ModelEnumType TransitionAnimationType TransitionAnimationType TransitionAnimationType Int32
+    // 010 View                                     ModelClassType ISpecialLoadingContentView ISpecialLoadingContentView ISpecialLoadingContentView Pointer
+    // 018 TransitionAnimationType                  ModelEnumType TransitionAnimationType TransitionAnimationType TransitionAnimationType Int32
     public partial class SpecialLoadingContentPresenter : DataModel
     {
         public ISpecialLoadingContentView?              View                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SpecialLoadingContentPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<ISpecialLoadingContentView>(new IntPtr(p + 0x010), ReversePrism.DataModels.ISpecialLoadingContentView.FromPointer); // 0245A3A658A0 0x10 View                        ( 00018664AAA0 ModelClassType ISpecialLoadingContentView ISpecialLoadingContentView ISpecialLoadingContentView Pointer )
-            value.TransitionAnimationType                   = (TransitionAnimationType)GetInt32(new IntPtr(p + 0x018)); // 0245A3A658C0 0x18 TransitionAnimationType     ( 0001866ACD70 ModelEnumType TransitionAnimationType TransitionAnimationType TransitionAnimationType Int32 )
+            value.View                                      = GetObject<ISpecialLoadingContentView>(new IntPtr(p + 0x010), ReversePrism.DataModels.ISpecialLoadingContentView.FromPointer); // 0x10 View                        ( ModelClassType ISpecialLoadingContentView ISpecialLoadingContentView ISpecialLoadingContentView Pointer )
+            value.TransitionAnimationType                   = (TransitionAnimationType)GetInt32(new IntPtr(p + 0x018)); // 0x18 TransitionAnimationType     ( ModelEnumType TransitionAnimationType TransitionAnimationType TransitionAnimationType Int32 )
 
             return value;
         }

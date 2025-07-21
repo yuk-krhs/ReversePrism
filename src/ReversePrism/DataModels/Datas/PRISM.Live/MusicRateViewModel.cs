@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 RateType                                 0001866710F0 ModelEnumType MusicRateType MusicRateType MusicRateType Int32
-    // 014 MasterId                                 0001865F4940 ModelPrimitiveType int int int Int32
-    // 018 FrameTypeLevel                           0001865F4940 ModelPrimitiveType int int int Int32
-    // 01C Star                                     0001865F4940 ModelPrimitiveType int int int Int32
-    // 020 Rate                                     000186666F40 ModelPrimitiveType float float float Single
+    // 010 RateType                                 ModelEnumType MusicRateType MusicRateType MusicRateType Int32
+    // 014 MasterId                                 ModelPrimitiveType int int int Int32
+    // 018 FrameTypeLevel                           ModelPrimitiveType int int int Int32
+    // 01C Star                                     ModelPrimitiveType int int int Int32
+    // 020 Rate                                     ModelPrimitiveType float float float Single
     public partial class MusicRateViewModel : DataModel
     {
         public MusicRateType                            RateType                                { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MusicRateViewModel() { Pointer= p0 };
 
-            value.RateType                                  = (MusicRateType)GetInt32(new IntPtr(p + 0x010)); // 0246651A82B0 0x10 RateType                    ( 0001866710F0 ModelEnumType MusicRateType MusicRateType MusicRateType Int32 )
-            value.MasterId                                  = GetInt32(new IntPtr(p + 0x014)); // 0246651A82D0 0x14 MasterId                    ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.FrameTypeLevel                            = GetInt32(new IntPtr(p + 0x018)); // 0246651A82F0 0x18 FrameTypeLevel              ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.Star                                      = GetInt32(new IntPtr(p + 0x01C)); // 0246651A8310 0x1C Star                        ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.Rate                                      = GetSingle(new IntPtr(p + 0x020)); // 0246651A8330 0x20 Rate                        ( 000186666F40 ModelPrimitiveType float float float Single )
+            value.RateType                                  = (MusicRateType)GetInt32(new IntPtr(p + 0x010)); // 0x10 RateType                    ( ModelEnumType MusicRateType MusicRateType MusicRateType Int32 )
+            value.MasterId                                  = GetInt32(new IntPtr(p + 0x014)); // 0x14 MasterId                    ( ModelPrimitiveType int int int Int32 )
+            value.FrameTypeLevel                            = GetInt32(new IntPtr(p + 0x018)); // 0x18 FrameTypeLevel              ( ModelPrimitiveType int int int Int32 )
+            value.Star                                      = GetInt32(new IntPtr(p + 0x01C)); // 0x1C Star                        ( ModelPrimitiveType int int int Int32 )
+            value.Rate                                      = GetSingle(new IntPtr(p + 0x020)); // 0x20 Rate                        ( ModelPrimitiveType float float float Single )
 
             return value;
         }

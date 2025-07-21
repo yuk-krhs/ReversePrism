@@ -8,16 +8,16 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Canvas                                   00018653FDA0 ModelClassType Canvas Canvas Canvas Pointer
-    // 028 UnmaskImage                              0001866CCDB0 ModelClassType Image Image Image Pointer
-    // 030 UnmaskDefaultSprite                      00018666B610 ModelClassType Sprite Sprite Sprite Pointer
-    // 038 Unmask                                   000186735050 ModelClassType Unmask Unmask Unmask Pointer
-    // 040 Arrow                                    000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
-    // 048 SpeechBubbleArrow                        000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
-    // 050 ArrowWidth                               0001866656B0 ModelPrimitiveType float float float Single
-    // 058 AnnotationMessageText                    0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 060 AnnotationArrowDistanceX                 0001866656B0 ModelPrimitiveType float float float Single
-    // 064 AnnotationArrowDistanceY                 0001866656B0 ModelPrimitiveType float float float Single
+    // 020 Canvas                                   ModelClassType Canvas Canvas Canvas Pointer
+    // 028 UnmaskImage                              ModelClassType Image Image Image Pointer
+    // 030 UnmaskDefaultSprite                      ModelClassType Sprite Sprite Sprite Pointer
+    // 038 Unmask                                   ModelClassType Unmask Unmask Unmask Pointer
+    // 040 Arrow                                    ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 048 SpeechBubbleArrow                        ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 050 ArrowWidth                               ModelPrimitiveType float float float Single
+    // 058 AnnotationMessageText                    ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 060 AnnotationArrowDistanceX                 ModelPrimitiveType float float float Single
+    // 064 AnnotationArrowDistanceY                 ModelPrimitiveType float float float Single
     public partial class TutorialFocusView : DataModel
     {
         public Canvas?                                  Canvas                                  { get; set; }
@@ -39,16 +39,16 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TutorialFocusView() { Pointer= p0 };
 
-            value.Canvas                                    = GetObject<Canvas>(new IntPtr(p + 0x020), ReversePrism.DataModels.Canvas.FromPointer); // 02466BCAA078 0x20 Canvas                      ( 00018653FDA0 ModelClassType Canvas Canvas Canvas Pointer )
-            value.UnmaskImage                               = GetObject<Image>(new IntPtr(p + 0x028), ReversePrism.DataModels.Image.FromPointer); // 02466BCAA098 0x28 UnmaskImage                 ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.UnmaskDefaultSprite                       = GetObject<Sprite>(new IntPtr(p + 0x030), ReversePrism.DataModels.Sprite.FromPointer); // 02466BCAA0B8 0x30 UnmaskDefaultSprite         ( 00018666B610 ModelClassType Sprite Sprite Sprite Pointer )
-            value.Unmask                                    = GetObject<Unmask>(new IntPtr(p + 0x038), ReversePrism.DataModels.Unmask.FromPointer); // 02466BCAA0D8 0x38 Unmask                      ( 000186735050 ModelClassType Unmask Unmask Unmask Pointer )
-            value.Arrow                                     = GetObject<RectTransform>(new IntPtr(p + 0x040), ReversePrism.DataModels.RectTransform.FromPointer); // 02466BCAA0F8 0x40 Arrow                       ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.SpeechBubbleArrow                         = GetObject<RectTransform>(new IntPtr(p + 0x048), ReversePrism.DataModels.RectTransform.FromPointer); // 02466BCAA118 0x48 SpeechBubbleArrow           ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.ArrowWidth                                = GetSingle(new IntPtr(p + 0x050)); // 02466BCAA138 0x50 ArrowWidth                  ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.AnnotationMessageText                     = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x058), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BCAA158 0x58 AnnotationMessageText       ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.AnnotationArrowDistanceX                  = GetSingle(new IntPtr(p + 0x060)); // 02466BCAA178 0x60 AnnotationArrowDistanceX    ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.AnnotationArrowDistanceY                  = GetSingle(new IntPtr(p + 0x064)); // 02466BCAA198 0x64 AnnotationArrowDistanceY    ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.Canvas                                    = GetObject<Canvas>(new IntPtr(p + 0x020), ReversePrism.DataModels.Canvas.FromPointer); // 0x20 Canvas                      ( ModelClassType Canvas Canvas Canvas Pointer )
+            value.UnmaskImage                               = GetObject<Image>(new IntPtr(p + 0x028), ReversePrism.DataModels.Image.FromPointer); // 0x28 UnmaskImage                 ( ModelClassType Image Image Image Pointer )
+            value.UnmaskDefaultSprite                       = GetObject<Sprite>(new IntPtr(p + 0x030), ReversePrism.DataModels.Sprite.FromPointer); // 0x30 UnmaskDefaultSprite         ( ModelClassType Sprite Sprite Sprite Pointer )
+            value.Unmask                                    = GetObject<Unmask>(new IntPtr(p + 0x038), ReversePrism.DataModels.Unmask.FromPointer); // 0x38 Unmask                      ( ModelClassType Unmask Unmask Unmask Pointer )
+            value.Arrow                                     = GetObject<RectTransform>(new IntPtr(p + 0x040), ReversePrism.DataModels.RectTransform.FromPointer); // 0x40 Arrow                       ( ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.SpeechBubbleArrow                         = GetObject<RectTransform>(new IntPtr(p + 0x048), ReversePrism.DataModels.RectTransform.FromPointer); // 0x48 SpeechBubbleArrow           ( ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.ArrowWidth                                = GetSingle(new IntPtr(p + 0x050)); // 0x50 ArrowWidth                  ( ModelPrimitiveType float float float Single )
+            value.AnnotationMessageText                     = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x058), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x58 AnnotationMessageText       ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.AnnotationArrowDistanceX                  = GetSingle(new IntPtr(p + 0x060)); // 0x60 AnnotationArrowDistanceX    ( ModelPrimitiveType float float float Single )
+            value.AnnotationArrowDistanceY                  = GetSingle(new IntPtr(p + 0x064)); // 0x64 AnnotationArrowDistanceY    ( ModelPrimitiveType float float float Single )
 
             return value;
         }

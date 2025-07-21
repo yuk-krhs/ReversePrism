@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Data                                     0001866A2770 ModelEnumType UnsafeBitArray UnsafeBitArray UnsafeBitArray Int32
+    // 010 Data                                     ModelEnumType UnsafeBitArray UnsafeBitArray UnsafeBitArray Int32
     public partial class UnsafeBitArrayDebugView : DataModel
     {
         public UnsafeBitArray                           Data                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnsafeBitArrayDebugView() { Pointer= p0 };
 
-            value.Data                                      = (UnsafeBitArray)GetInt32(new IntPtr(p + 0x010)); // 024669CED820 0x10 Data                        ( 0001866A2770 ModelEnumType UnsafeBitArray UnsafeBitArray UnsafeBitArray Int32 )
+            value.Data                                      = (UnsafeBitArray)GetInt32(new IntPtr(p + 0x010)); // 0x10 Data                        ( ModelEnumType UnsafeBitArray UnsafeBitArray UnsafeBitArray Int32 )
 
             return value;
         }

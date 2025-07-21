@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 TabIndex                                 0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 TabIndex                                 ModelPrimitiveType int int int Int32
     public partial class IdolBaseDetailPermanentData : DataModel
     {
         public int                                      TabIndex                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IdolBaseDetailPermanentData() { Pointer= p0 };
 
-            value.TabIndex                                  = GetInt32(new IntPtr(p + 0x010)); // 0245A3A79DC0 0x10 TabIndex                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TabIndex                                  = GetInt32(new IntPtr(p + 0x010)); // 0x10 TabIndex                    ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

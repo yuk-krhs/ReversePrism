@@ -10,14 +10,14 @@ namespace ReversePrism.DataModels
 
     // 000 s_MarkerWrite                            ProfilerMarker IL2CPP_TYPE_VALUETYPE
     // 008 s_MarkerCommit                           ProfilerMarker IL2CPP_TYPE_VALUETYPE
-    // 010 M_Length                                 0001865F4260 ModelPrimitiveType int int int Int32
-    // 014 M_ElemWidth                              0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 M_Allocator                              00018674EA00 ModelClassType BestFitAllocator BestFitAllocator BestFitAllocator Pointer
-    // 020 M_Atlas                                  000186685A20 ModelClassType Texture2D Texture2D Texture2D Pointer
-    // 028 M_RawAtlas                               00018651B4A0 ModelEnumType RawTexture RawTexture RawTexture Int32
-    // 010 S_TextureCounter                         0001865F38E0 ModelPrimitiveType int int int Int32
-    // 038 Disposed                                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 039 MustCommit                               000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 M_Length                                 ModelPrimitiveType int int int Int32
+    // 014 M_ElemWidth                              ModelPrimitiveType int int int Int32
+    // 018 M_Allocator                              ModelClassType BestFitAllocator BestFitAllocator BestFitAllocator Pointer
+    // 020 M_Atlas                                  ModelClassType Texture2D Texture2D Texture2D Pointer
+    // 028 M_RawAtlas                               ModelEnumType RawTexture RawTexture RawTexture Int32
+    // 010 S_TextureCounter                         ModelPrimitiveType int int int Int32
+    // 038 Disposed                                 ModelPrimitiveType bool bool bool Bool
+    // 039 MustCommit                               ModelPrimitiveType bool bool bool Bool
     public partial class GradientSettingsAtlas : DataModel
     {
         public int                                      M_Length                                { get; set; }
@@ -37,14 +37,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GradientSettingsAtlas() { Pointer= p0 };
 
-            value.M_Length                                  = GetInt32(new IntPtr(p + 0x010)); // 0245A6825A98 0x10 M_Length                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.M_ElemWidth                               = GetInt32(new IntPtr(p + 0x014)); // 0245A6825AB8 0x14 M_ElemWidth                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.M_Allocator                               = GetObject<BestFitAllocator>(new IntPtr(p + 0x018), ReversePrism.DataModels.BestFitAllocator.FromPointer); // 0245A6825AD8 0x18 M_Allocator                 ( 00018674EA00 ModelClassType BestFitAllocator BestFitAllocator BestFitAllocator Pointer )
-            value.M_Atlas                                   = GetObject<Texture2D>(new IntPtr(p + 0x020), ReversePrism.DataModels.Texture2D.FromPointer); // 0245A6825AF8 0x20 M_Atlas                     ( 000186685A20 ModelClassType Texture2D Texture2D Texture2D Pointer )
-            value.M_RawAtlas                                = (RawTexture)GetInt32(new IntPtr(p + 0x028)); // 0245A6825B18 0x28 M_RawAtlas                  ( 00018651B4A0 ModelEnumType RawTexture RawTexture RawTexture Int32 )
-            value.S_TextureCounter                          = GetInt32(new IntPtr(p + 0x010)); // 0245A6825B38 0x10 S_TextureCounter            ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
-            value.Disposed                                  = GetBool(new IntPtr(p + 0x038)); // 0245A6825B58 0x38 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.MustCommit                                = GetBool(new IntPtr(p + 0x039)); // 0245A6825B78 0x39 MustCommit                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_Length                                  = GetInt32(new IntPtr(p + 0x010)); // 0x10 M_Length                    ( ModelPrimitiveType int int int Int32 )
+            value.M_ElemWidth                               = GetInt32(new IntPtr(p + 0x014)); // 0x14 M_ElemWidth                 ( ModelPrimitiveType int int int Int32 )
+            value.M_Allocator                               = GetObject<BestFitAllocator>(new IntPtr(p + 0x018), ReversePrism.DataModels.BestFitAllocator.FromPointer); // 0x18 M_Allocator                 ( ModelClassType BestFitAllocator BestFitAllocator BestFitAllocator Pointer )
+            value.M_Atlas                                   = GetObject<Texture2D>(new IntPtr(p + 0x020), ReversePrism.DataModels.Texture2D.FromPointer); // 0x20 M_Atlas                     ( ModelClassType Texture2D Texture2D Texture2D Pointer )
+            value.M_RawAtlas                                = (RawTexture)GetInt32(new IntPtr(p + 0x028)); // 0x28 M_RawAtlas                  ( ModelEnumType RawTexture RawTexture RawTexture Int32 )
+            value.S_TextureCounter                          = GetInt32(new IntPtr(p + 0x010)); // 0x10 S_TextureCounter            ( ModelPrimitiveType int int int Int32 )
+            value.Disposed                                  = GetBool(new IntPtr(p + 0x038)); // 0x38 Disposed                    ( ModelPrimitiveType bool bool bool Bool )
+            value.MustCommit                                = GetBool(new IntPtr(p + 0x039)); // 0x39 MustCommit                  ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

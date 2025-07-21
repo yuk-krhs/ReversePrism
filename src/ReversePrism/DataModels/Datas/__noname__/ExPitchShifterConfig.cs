@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 NumDsp                                   0001865F36C0 ModelPrimitiveType int int int Int32
-    // 014 MaxChannels                              0001865F36C0 ModelPrimitiveType int int int Int32
-    // 018 MaxSamplingRate                          0001865F36C0 ModelPrimitiveType int int int Int32
-    // 01C Config                                   000186553290 ModelEnumType PitchShifterConfig PitchShifterConfig PitchShifterConfig Int32
+    // 010 NumDsp                                   ModelPrimitiveType int int int Int32
+    // 014 MaxChannels                              ModelPrimitiveType int int int Int32
+    // 018 MaxSamplingRate                          ModelPrimitiveType int int int Int32
+    // 01C Config                                   ModelEnumType PitchShifterConfig PitchShifterConfig PitchShifterConfig Int32
     public partial class ExPitchShifterConfig : DataModel
     {
         public int                                      NumDsp                                  { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExPitchShifterConfig() { Pointer= p0 };
 
-            value.NumDsp                                    = GetInt32(new IntPtr(p + 0x010)); // 02466ACE1D60 0x10 NumDsp                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.MaxChannels                               = GetInt32(new IntPtr(p + 0x014)); // 02466ACE1D80 0x14 MaxChannels                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.MaxSamplingRate                           = GetInt32(new IntPtr(p + 0x018)); // 02466ACE1DA0 0x18 MaxSamplingRate             ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Config                                    = (PitchShifterConfig)GetInt32(new IntPtr(p + 0x01C)); // 02466ACE1DC0 0x1C Config                      ( 000186553290 ModelEnumType PitchShifterConfig PitchShifterConfig PitchShifterConfig Int32 )
+            value.NumDsp                                    = GetInt32(new IntPtr(p + 0x010)); // 0x10 NumDsp                      ( ModelPrimitiveType int int int Int32 )
+            value.MaxChannels                               = GetInt32(new IntPtr(p + 0x014)); // 0x14 MaxChannels                 ( ModelPrimitiveType int int int Int32 )
+            value.MaxSamplingRate                           = GetInt32(new IntPtr(p + 0x018)); // 0x18 MaxSamplingRate             ( ModelPrimitiveType int int int Int32 )
+            value.Config                                    = (PitchShifterConfig)GetInt32(new IntPtr(p + 0x01C)); // 0x1C Config                      ( ModelEnumType PitchShifterConfig PitchShifterConfig PitchShifterConfig Int32 )
 
             return value;
         }

@@ -23,24 +23,24 @@ namespace ReversePrism.DataModels
     // 000 xmlnsNamespace                           string IL2CPP_TYPE_STRING
     // 000 binHexEncoding                           BinHexEncoding IL2CPP_TYPE_CLASS
     // 008 CharacterAbbrevs                         char[] IL2CPP_TYPE_SZARRAY
-    // 018 AttributeText                            000186671910 ModelPrimitiveType string string string String
-    // 020 DataType                                 000186738170 ModelEnumType JsonDataType JsonDataType JsonDataType Int32
-    // 024 Depth                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 028 EndElementBuffer                         000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 029 IsWritingDataTypeAttribute               000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 02A IsWritingServerTypeAttribute             000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 02B IsWritingXmlnsAttribute                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 02C IsWritingXmlnsAttributeDefaultNs         000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 030 NameState                                000186738D60 ModelEnumType NameState NameState NameState Int32
-    // 034 NodeType                                 000186756FE0 ModelEnumType JsonNodeType JsonNodeType JsonNodeType Int32
-    // 038 NodeWriter                               000186738860 ModelClassType JsonNodeWriter JsonNodeWriter JsonNodeWriter Pointer
-    // 040 Scopes                                   000185B8F180 ModelEnumListType JsonNodeType[] JsonNodeType[] List<JsonNodeType> Pointer
-    // 048 ServerTypeValue                          000186671910 ModelPrimitiveType string string string String
-    // 050 WriteState                               0001865618F0 ModelEnumType WriteState WriteState WriteState Int32
-    // 054 WroteServerTypeAttribute                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 055 Indent                                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 058 IndentChars                              000186671910 ModelPrimitiveType string string string String
-    // 060 IndentLevel                              0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 AttributeText                            ModelPrimitiveType string string string String
+    // 020 DataType                                 ModelEnumType JsonDataType JsonDataType JsonDataType Int32
+    // 024 Depth                                    ModelPrimitiveType int int int Int32
+    // 028 EndElementBuffer                         ModelPrimitiveType bool bool bool Bool
+    // 029 IsWritingDataTypeAttribute               ModelPrimitiveType bool bool bool Bool
+    // 02A IsWritingServerTypeAttribute             ModelPrimitiveType bool bool bool Bool
+    // 02B IsWritingXmlnsAttribute                  ModelPrimitiveType bool bool bool Bool
+    // 02C IsWritingXmlnsAttributeDefaultNs         ModelPrimitiveType bool bool bool Bool
+    // 030 NameState                                ModelEnumType NameState NameState NameState Int32
+    // 034 NodeType                                 ModelEnumType JsonNodeType JsonNodeType JsonNodeType Int32
+    // 038 NodeWriter                               ModelClassType JsonNodeWriter JsonNodeWriter JsonNodeWriter Pointer
+    // 040 Scopes                                   ModelEnumListType JsonNodeType[] JsonNodeType[] List<JsonNodeType> Pointer
+    // 048 ServerTypeValue                          ModelPrimitiveType string string string String
+    // 050 WriteState                               ModelEnumType WriteState WriteState WriteState Int32
+    // 054 WroteServerTypeAttribute                 ModelPrimitiveType bool bool bool Bool
+    // 055 Indent                                   ModelPrimitiveType bool bool bool Bool
+    // 058 IndentChars                              ModelPrimitiveType string string string String
+    // 060 IndentLevel                              ModelPrimitiveType int int int Int32
     public partial class XmlJsonWriter : DataModel
     {
         public string                                   AttributeText                           { get; set; }
@@ -70,24 +70,24 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlJsonWriter() { Pointer= p0 };
 
-            value.AttributeText                             = GetString(new IntPtr(p + 0x018)); // 0245A4DBD680 0x18 AttributeText               ( 000186671910 ModelPrimitiveType string string string String )
-            value.DataType                                  = (JsonDataType)GetInt32(new IntPtr(p + 0x020)); // 0245A4DBD6A0 0x20 DataType                    ( 000186738170 ModelEnumType JsonDataType JsonDataType JsonDataType Int32 )
-            value.Depth                                     = GetInt32(new IntPtr(p + 0x024)); // 0245A4DBD6C0 0x24 Depth                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.EndElementBuffer                          = GetBool(new IntPtr(p + 0x028)); // 0245A4DBD6E0 0x28 EndElementBuffer            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsWritingDataTypeAttribute                = GetBool(new IntPtr(p + 0x029)); // 0245A4DBD700 0x29 IsWritingDataTypeAttribute  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsWritingServerTypeAttribute              = GetBool(new IntPtr(p + 0x02A)); // 0245A4DBD720 0x2A IsWritingServerTypeAttribute ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsWritingXmlnsAttribute                   = GetBool(new IntPtr(p + 0x02B)); // 0245A4DBD740 0x2B IsWritingXmlnsAttribute     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsWritingXmlnsAttributeDefaultNs          = GetBool(new IntPtr(p + 0x02C)); // 0245A4DBD760 0x2C IsWritingXmlnsAttributeDefaultNs ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.NameState                                 = (NameState)GetInt32(new IntPtr(p + 0x030)); // 0245A4DBD780 0x30 NameState                   ( 000186738D60 ModelEnumType NameState NameState NameState Int32 )
-            value.NodeType                                  = (JsonNodeType)GetInt32(new IntPtr(p + 0x034)); // 0245A4DBD7A0 0x34 NodeType                    ( 000186756FE0 ModelEnumType JsonNodeType JsonNodeType JsonNodeType Int32 )
-            value.NodeWriter                                = GetObject<JsonNodeWriter>(new IntPtr(p + 0x038), ReversePrism.DataModels.JsonNodeWriter.FromPointer); // 0245A4DBD7C0 0x38 NodeWriter                  ( 000186738860 ModelClassType JsonNodeWriter JsonNodeWriter JsonNodeWriter Pointer )
-            value.Scopes                                    = GetEnumList<JsonNodeType>(new IntPtr(p + 0x040)); // 0245A4DBD7E0 0x40 Scopes                      ( 000185B8F180 ModelEnumListType JsonNodeType[] JsonNodeType[] List<JsonNodeType> Pointer )
-            value.ServerTypeValue                           = GetString(new IntPtr(p + 0x048)); // 0245A4DBD800 0x48 ServerTypeValue             ( 000186671910 ModelPrimitiveType string string string String )
-            value.WriteState                                = (WriteState)GetInt32(new IntPtr(p + 0x050)); // 0245A4DBD820 0x50 WriteState                  ( 0001865618F0 ModelEnumType WriteState WriteState WriteState Int32 )
-            value.WroteServerTypeAttribute                  = GetBool(new IntPtr(p + 0x054)); // 0245A4DBD840 0x54 WroteServerTypeAttribute    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Indent                                    = GetBool(new IntPtr(p + 0x055)); // 0245A4DBD860 0x55 Indent                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IndentChars                               = GetString(new IntPtr(p + 0x058)); // 0245A4DBD880 0x58 IndentChars                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.IndentLevel                               = GetInt32(new IntPtr(p + 0x060)); // 0245A4DBD8A0 0x60 IndentLevel                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.AttributeText                             = GetString(new IntPtr(p + 0x018)); // 0x18 AttributeText               ( ModelPrimitiveType string string string String )
+            value.DataType                                  = (JsonDataType)GetInt32(new IntPtr(p + 0x020)); // 0x20 DataType                    ( ModelEnumType JsonDataType JsonDataType JsonDataType Int32 )
+            value.Depth                                     = GetInt32(new IntPtr(p + 0x024)); // 0x24 Depth                       ( ModelPrimitiveType int int int Int32 )
+            value.EndElementBuffer                          = GetBool(new IntPtr(p + 0x028)); // 0x28 EndElementBuffer            ( ModelPrimitiveType bool bool bool Bool )
+            value.IsWritingDataTypeAttribute                = GetBool(new IntPtr(p + 0x029)); // 0x29 IsWritingDataTypeAttribute  ( ModelPrimitiveType bool bool bool Bool )
+            value.IsWritingServerTypeAttribute              = GetBool(new IntPtr(p + 0x02A)); // 0x2A IsWritingServerTypeAttribute ( ModelPrimitiveType bool bool bool Bool )
+            value.IsWritingXmlnsAttribute                   = GetBool(new IntPtr(p + 0x02B)); // 0x2B IsWritingXmlnsAttribute     ( ModelPrimitiveType bool bool bool Bool )
+            value.IsWritingXmlnsAttributeDefaultNs          = GetBool(new IntPtr(p + 0x02C)); // 0x2C IsWritingXmlnsAttributeDefaultNs ( ModelPrimitiveType bool bool bool Bool )
+            value.NameState                                 = (NameState)GetInt32(new IntPtr(p + 0x030)); // 0x30 NameState                   ( ModelEnumType NameState NameState NameState Int32 )
+            value.NodeType                                  = (JsonNodeType)GetInt32(new IntPtr(p + 0x034)); // 0x34 NodeType                    ( ModelEnumType JsonNodeType JsonNodeType JsonNodeType Int32 )
+            value.NodeWriter                                = GetObject<JsonNodeWriter>(new IntPtr(p + 0x038), ReversePrism.DataModels.JsonNodeWriter.FromPointer); // 0x38 NodeWriter                  ( ModelClassType JsonNodeWriter JsonNodeWriter JsonNodeWriter Pointer )
+            value.Scopes                                    = GetEnumList<JsonNodeType>(new IntPtr(p + 0x040)); // 0x40 Scopes                      ( ModelEnumListType JsonNodeType[] JsonNodeType[] List<JsonNodeType> Pointer )
+            value.ServerTypeValue                           = GetString(new IntPtr(p + 0x048)); // 0x48 ServerTypeValue             ( ModelPrimitiveType string string string String )
+            value.WriteState                                = (WriteState)GetInt32(new IntPtr(p + 0x050)); // 0x50 WriteState                  ( ModelEnumType WriteState WriteState WriteState Int32 )
+            value.WroteServerTypeAttribute                  = GetBool(new IntPtr(p + 0x054)); // 0x54 WroteServerTypeAttribute    ( ModelPrimitiveType bool bool bool Bool )
+            value.Indent                                    = GetBool(new IntPtr(p + 0x055)); // 0x55 Indent                      ( ModelPrimitiveType bool bool bool Bool )
+            value.IndentChars                               = GetString(new IntPtr(p + 0x058)); // 0x58 IndentChars                 ( ModelPrimitiveType string string string String )
+            value.IndentLevel                               = GetInt32(new IntPtr(p + 0x060)); // 0x60 IndentLevel                 ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

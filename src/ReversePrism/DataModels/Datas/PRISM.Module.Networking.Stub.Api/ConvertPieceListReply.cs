@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<ConvertPieceListReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 HavingGroupFieldNumber                   int IL2CPP_TYPE_I4
-    // 018 HavingGroup                              0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer
+    // 018 HavingGroup                              ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer
     public partial class ConvertPieceListReply : DataModel
     {
         public HavingProductGroupStatus?                HavingGroup                             { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ConvertPieceListReply() { Pointer= p0 };
 
-            value.HavingGroup                               = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 02466238BF58 0x18 HavingGroup                 ( 0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
+            value.HavingGroup                               = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 0x18 HavingGroup                 ( ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
 
             return value;
         }

@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 040 SelectedIndex                            0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 048 <OnCellClicked>k__BackingField           Action`1<int> IL2CPP_TYPE_GENERICINST
-    // 050 <OnCellLongPressed>k__BackingField       Action`1<int> IL2CPP_TYPE_GENERICINST
+    // 048 SelectedIndex                            ModelPrimitiveType int int int Int32
+    // 050 <OnCellClicked>k__BackingField           Action`1<int> IL2CPP_TYPE_GENERICINST
+    // 058 <OnCellLongPressed>k__BackingField       Action`1<int> IL2CPP_TYPE_GENERICINST
     public partial class CommonGridViewContext : DataModel
     {
         public int                                      SelectedIndex                           { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CommonGridViewContext() { Pointer= p0 };
 
-            value.SelectedIndex                             = GetInt32(new IntPtr(p + 0x040)); // 024664CCD010 0x40 SelectedIndex               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SelectedIndex                             = GetInt32(new IntPtr(p + 0x048)); // 0x48 SelectedIndex               ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

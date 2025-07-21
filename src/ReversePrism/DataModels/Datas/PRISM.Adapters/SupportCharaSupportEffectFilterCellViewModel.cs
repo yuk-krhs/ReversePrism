@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CellType                                 0001865DD8B0 ModelEnumType SupportCharaFilterCellType SupportCharaFilterCellType SupportCharaFilterCellType Int32
-    // 014 Index                                    0001865F4260 ModelPrimitiveType int int int Int32
+    // 010 CellType                                 ModelEnumType SupportCharaFilterCellType SupportCharaFilterCellType SupportCharaFilterCellType Int32
+    // 014 Index                                    ModelPrimitiveType int int int Int32
     public partial class SupportCharaSupportEffectFilterCellViewModel : DataModel
     {
         public SupportCharaFilterCellType               CellType                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SupportCharaSupportEffectFilterCellViewModel() { Pointer= p0 };
 
-            value.CellType                                  = (SupportCharaFilterCellType)GetInt32(new IntPtr(p + 0x010)); // 0246662302C8 0x10 CellType                    ( 0001865DD8B0 ModelEnumType SupportCharaFilterCellType SupportCharaFilterCellType SupportCharaFilterCellType Int32 )
-            value.Index                                     = GetInt32(new IntPtr(p + 0x014)); // 0246662302E8 0x14 Index                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.CellType                                  = (SupportCharaFilterCellType)GetInt32(new IntPtr(p + 0x010)); // 0x10 CellType                    ( ModelEnumType SupportCharaFilterCellType SupportCharaFilterCellType SupportCharaFilterCellType Int32 )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x014)); // 0x14 Index                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

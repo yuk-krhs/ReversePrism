@@ -11,13 +11,13 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<ChallengeTourInGameClearStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MentalPointFieldNumber                   int IL2CPP_TYPE_I4
-    // 018 MentalPoint                              0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MentalPoint                              ModelPrimitiveType int int int Int32
     // 000 MentalGuardCountFieldNumber              int IL2CPP_TYPE_I4
-    // 01C MentalGuardCount                         0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 01C MentalGuardCount                         ModelPrimitiveType int int int Int32
     // 000 AvoidRateFieldNumber                     int IL2CPP_TYPE_I4
-    // 020 AvoidRate                                0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 AvoidRate                                ModelPrimitiveType int int int Int32
     // 000 HandCardCountFieldNumber                 int IL2CPP_TYPE_I4
-    // 024 HandCardCount                            0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 024 HandCardCount                            ModelPrimitiveType int int int Int32
     public partial class ChallengeTourInGameClearStatus : DataModel
     {
         public int                                      MentalPoint                             { get; set; }
@@ -33,10 +33,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChallengeTourInGameClearStatus() { Pointer= p0 };
 
-            value.MentalPoint                               = GetInt32(new IntPtr(p + 0x018)); // 024660ED0B60 0x18 MentalPoint                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MentalGuardCount                          = GetInt32(new IntPtr(p + 0x01C)); // 024660ED0BA0 0x1C MentalGuardCount            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.AvoidRate                                 = GetInt32(new IntPtr(p + 0x020)); // 024660ED0BE0 0x20 AvoidRate                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.HandCardCount                             = GetInt32(new IntPtr(p + 0x024)); // 024660ED0C20 0x24 HandCardCount               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MentalPoint                               = GetInt32(new IntPtr(p + 0x018)); // 0x18 MentalPoint                 ( ModelPrimitiveType int int int Int32 )
+            value.MentalGuardCount                          = GetInt32(new IntPtr(p + 0x01C)); // 0x1C MentalGuardCount            ( ModelPrimitiveType int int int Int32 )
+            value.AvoidRate                                 = GetInt32(new IntPtr(p + 0x020)); // 0x20 AvoidRate                   ( ModelPrimitiveType int int int Int32 )
+            value.HandCardCount                             = GetInt32(new IntPtr(p + 0x024)); // 0x24 HandCardCount               ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Principal                                0001865DDD40 ModelClassType IPrincipal IPrincipal IPrincipal Pointer
+    // 010 Principal                                ModelClassType IPrincipal IPrincipal IPrincipal Pointer
     public partial class CallContextSecurityData : DataModel
     {
         public IPrincipal?                              Principal                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CallContextSecurityData() { Pointer= p0 };
 
-            value.Principal                                 = GetObject<IPrincipal>(new IntPtr(p + 0x010), ReversePrism.DataModels.IPrincipal.FromPointer); // 024666C5FD68 0x10 Principal                   ( 0001865DDD40 ModelClassType IPrincipal IPrincipal IPrincipal Pointer )
+            value.Principal                                 = GetObject<IPrincipal>(new IntPtr(p + 0x010), ReversePrism.DataModels.IPrincipal.FromPointer); // 0x10 Principal                   ( ModelClassType IPrincipal IPrincipal IPrincipal Pointer )
 
             return value;
         }

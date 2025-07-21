@@ -11,26 +11,26 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<InheritanceFesIdolUnitStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 FesUnitIdFieldNumber                     int IL2CPP_TYPE_I4
-    // 018 FesUnitId                                000186671910 ModelPrimitiveType string string string String
+    // 018 FesUnitId                                ModelPrimitiveType string string string String
     // 000 MstUnitIdFieldNumber                     int IL2CPP_TYPE_I4
-    // 020 MstUnitId                                0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 MstUnitId                                ModelPrimitiveType int int int Int32
     // 000 NameFieldNumber                          int IL2CPP_TYPE_I4
-    // 028 Name                                     000186671910 ModelPrimitiveType string string string String
+    // 028 Name                                     ModelPrimitiveType string string string String
     // 000 ParameterFieldNumber                     int IL2CPP_TYPE_I4
-    // 030 Parameter                                0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer
+    // 030 Parameter                                ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer
     // 000 RankFieldNumber                          int IL2CPP_TYPE_I4
-    // 038 Rank                                     000186562070 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32
+    // 038 Rank                                     ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32
     // 000 FesIdolListFieldNumber                   int IL2CPP_TYPE_I4
     // 008 _repeated_fesIdolList_codec              FieldCodec`1<InheritanceFesUnitIdolStatus> IL2CPP_TYPE_GENERICINST
-    // 040 FesIdolList                              000185CE1628 ModelClassListType RepeatedField`1<InheritanceFesUnitIdolStatus> RepeatedField`1<InheritanceFesUnitIdolStatus> List<InheritanceFesUnitIdolStatus> Pointer
+    // 040 FesIdolList                              ModelClassListType RepeatedField`1<InheritanceFesUnitIdolStatus> RepeatedField`1<InheritanceFesUnitIdolStatus> List<InheritanceFesUnitIdolStatus> Pointer
     // 000 SupportCharacterListFieldNumber          int IL2CPP_TYPE_I4
     // 010 _repeated_supportCharacterList_codec     FieldCodec`1<InheritanceFesUnitSupportCharacterStatus> IL2CPP_TYPE_GENERICINST
-    // 048 SupportCharacterList                     000185CE1868 ModelClassListType RepeatedField`1<InheritanceFesUnitSupportCharacterStatus> RepeatedField`1<InheritanceFesUnitSupportCharacterStatus> List<InheritanceFesUnitSupportCharacterStatus> Pointer
+    // 048 SupportCharacterList                     ModelClassListType RepeatedField`1<InheritanceFesUnitSupportCharacterStatus> RepeatedField`1<InheritanceFesUnitSupportCharacterStatus> List<InheritanceFesUnitSupportCharacterStatus> Pointer
     // 000 SupportSkillListFieldNumber              int IL2CPP_TYPE_I4
     // 018 _repeated_supportSkillList_codec         FieldCodec`1<InheritanceFesUnitAttachedSupportSkillStatus> IL2CPP_TYPE_GENERICINST
-    // 050 SupportSkillList                         000185CE13E8 ModelClassListType RepeatedField`1<InheritanceFesUnitAttachedSupportSkillStatus> RepeatedField`1<InheritanceFesUnitAttachedSupportSkillStatus> List<InheritanceFesUnitAttachedSupportSkillStatus> Pointer
+    // 050 SupportSkillList                         ModelClassListType RepeatedField`1<InheritanceFesUnitAttachedSupportSkillStatus> RepeatedField`1<InheritanceFesUnitAttachedSupportSkillStatus> List<InheritanceFesUnitAttachedSupportSkillStatus> Pointer
     // 000 CardDeckFieldNumber                      int IL2CPP_TYPE_I4
-    // 058 CardDeck                                 000186536800 ModelClassType ProduceCardDeckStatus ProduceCardDeckStatus ProduceCardDeckStatus Pointer
+    // 058 CardDeck                                 ModelClassType ProduceCardDeckStatus ProduceCardDeckStatus ProduceCardDeckStatus Pointer
     public partial class InheritanceFesIdolUnitStatus : DataModel
     {
         public string                                   FesUnitId                               { get; set; }
@@ -51,15 +51,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InheritanceFesIdolUnitStatus() { Pointer= p0 };
 
-            value.FesUnitId                                 = GetString(new IntPtr(p + 0x018)); // 02466106E9C0 0x18 FesUnitId                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x020)); // 02466106EA00 0x20 MstUnitId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Name                                      = GetString(new IntPtr(p + 0x028)); // 02466106EA40 0x28 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Parameter                                 = GetObject<ProduceParameterStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ProduceParameterStatus.FromPointer); // 02466106EA80 0x30 Parameter                   ( 0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer )
-            value.Rank                                      = (ProduceParameterRank)GetInt32(new IntPtr(p + 0x038)); // 02466106EAC0 0x38 Rank                        ( 000186562070 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32 )
-            value.FesIdolList                               = GetObjectList<InheritanceFesUnitIdolStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.InheritanceFesUnitIdolStatus.FromPointer); // 02466106EB20 0x40 FesIdolList                 ( 000185CE1628 ModelClassListType RepeatedField`1<InheritanceFesUnitIdolStatus> RepeatedField`1<InheritanceFesUnitIdolStatus> List<InheritanceFesUnitIdolStatus> Pointer )
-            value.SupportCharacterList                      = GetObjectList<InheritanceFesUnitSupportCharacterStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.InheritanceFesUnitSupportCharacterStatus.FromPointer); // 02466106EB80 0x48 SupportCharacterList        ( 000185CE1868 ModelClassListType RepeatedField`1<InheritanceFesUnitSupportCharacterStatus> RepeatedField`1<InheritanceFesUnitSupportCharacterStatus> List<InheritanceFesUnitSupportCharacterStatus> Pointer )
-            value.SupportSkillList                          = GetObjectList<InheritanceFesUnitAttachedSupportSkillStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.InheritanceFesUnitAttachedSupportSkillStatus.FromPointer); // 02466106EBE0 0x50 SupportSkillList            ( 000185CE13E8 ModelClassListType RepeatedField`1<InheritanceFesUnitAttachedSupportSkillStatus> RepeatedField`1<InheritanceFesUnitAttachedSupportSkillStatus> List<InheritanceFesUnitAttachedSupportSkillStatus> Pointer )
-            value.CardDeck                                  = GetObject<ProduceCardDeckStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.ProduceCardDeckStatus.FromPointer); // 02466106EC20 0x58 CardDeck                    ( 000186536800 ModelClassType ProduceCardDeckStatus ProduceCardDeckStatus ProduceCardDeckStatus Pointer )
+            value.FesUnitId                                 = GetString(new IntPtr(p + 0x018)); // 0x18 FesUnitId                   ( ModelPrimitiveType string string string String )
+            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x020)); // 0x20 MstUnitId                   ( ModelPrimitiveType int int int Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x028)); // 0x28 Name                        ( ModelPrimitiveType string string string String )
+            value.Parameter                                 = GetObject<ProduceParameterStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ProduceParameterStatus.FromPointer); // 0x30 Parameter                   ( ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer )
+            value.Rank                                      = (ProduceParameterRank)GetInt32(new IntPtr(p + 0x038)); // 0x38 Rank                        ( ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32 )
+            value.FesIdolList                               = GetObjectList<InheritanceFesUnitIdolStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.InheritanceFesUnitIdolStatus.FromPointer); // 0x40 FesIdolList                 ( ModelClassListType RepeatedField`1<InheritanceFesUnitIdolStatus> RepeatedField`1<InheritanceFesUnitIdolStatus> List<InheritanceFesUnitIdolStatus> Pointer )
+            value.SupportCharacterList                      = GetObjectList<InheritanceFesUnitSupportCharacterStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.InheritanceFesUnitSupportCharacterStatus.FromPointer); // 0x48 SupportCharacterList        ( ModelClassListType RepeatedField`1<InheritanceFesUnitSupportCharacterStatus> RepeatedField`1<InheritanceFesUnitSupportCharacterStatus> List<InheritanceFesUnitSupportCharacterStatus> Pointer )
+            value.SupportSkillList                          = GetObjectList<InheritanceFesUnitAttachedSupportSkillStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.InheritanceFesUnitAttachedSupportSkillStatus.FromPointer); // 0x50 SupportSkillList            ( ModelClassListType RepeatedField`1<InheritanceFesUnitAttachedSupportSkillStatus> RepeatedField`1<InheritanceFesUnitAttachedSupportSkillStatus> List<InheritanceFesUnitAttachedSupportSkillStatus> Pointer )
+            value.CardDeck                                  = GetObject<ProduceCardDeckStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.ProduceCardDeckStatus.FromPointer); // 0x58 CardDeck                    ( ModelClassType ProduceCardDeckStatus ProduceCardDeckStatus ProduceCardDeckStatus Pointer )
 
             return value;
         }

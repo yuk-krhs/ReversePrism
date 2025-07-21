@@ -8,16 +8,16 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 BackVitalityGauge                        0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 028 FrontVitalityGauge                       0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 030 FrontFillVitalityGauge                   0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 038 Vitality                                 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 040 NormalColor                              0001865AA8E0 ModelEnumType Color Color Color Int32
-    // 050 EstimateColor                            0001865AA8E0 ModelEnumType Color Color Color Int32
-    // 060 BaseScheduleColor                        0001865AA8E0 ModelEnumType Color Color Color Int32
-    // 070 NormalColorStringHexTag                  000186671910 ModelPrimitiveType string string string String
-    // 078 EstimateColorStringHexTag                000186671910 ModelPrimitiveType string string string String
-    // 080 BaseScheduleColorStringHexTag            000186671910 ModelPrimitiveType string string string String
+    // 020 BackVitalityGauge                        ModelClassType UIImage UIImage UIImage Pointer
+    // 028 FrontVitalityGauge                       ModelClassType UIImage UIImage UIImage Pointer
+    // 030 FrontFillVitalityGauge                   ModelClassType UIImage UIImage UIImage Pointer
+    // 038 Vitality                                 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 040 NormalColor                              ModelEnumType Color Color Color Int32
+    // 050 EstimateColor                            ModelEnumType Color Color Color Int32
+    // 060 BaseScheduleColor                        ModelEnumType Color Color Color Int32
+    // 070 NormalColorStringHexTag                  ModelPrimitiveType string string string String
+    // 078 EstimateColorStringHexTag                ModelPrimitiveType string string string String
+    // 080 BaseScheduleColorStringHexTag            ModelPrimitiveType string string string String
     // 000 SeChangeLimit                            int IL2CPP_TYPE_I4
     // 000 SeBigCrease                              string IL2CPP_TYPE_STRING
     // 000 SeLittleCrease                           string IL2CPP_TYPE_STRING
@@ -44,16 +44,16 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new VitalityGauge() { Pointer= p0 };
 
-            value.BackVitalityGauge                         = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 024664C10C88 0x20 BackVitalityGauge           ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.FrontVitalityGauge                        = GetObject<UIImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIImage.FromPointer); // 024664C10CA8 0x28 FrontVitalityGauge          ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.FrontFillVitalityGauge                    = GetObject<UIImage>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIImage.FromPointer); // 024664C10CC8 0x30 FrontFillVitalityGauge      ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.Vitality                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024664C10CE8 0x38 Vitality                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.NormalColor                               = (Color)GetInt32(new IntPtr(p + 0x040)); // 024664C10D08 0x40 NormalColor                 ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.EstimateColor                             = (Color)GetInt32(new IntPtr(p + 0x050)); // 024664C10D28 0x50 EstimateColor               ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.BaseScheduleColor                         = (Color)GetInt32(new IntPtr(p + 0x060)); // 024664C10D48 0x60 BaseScheduleColor           ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.NormalColorStringHexTag                   = GetString(new IntPtr(p + 0x070)); // 024664C10D68 0x70 NormalColorStringHexTag     ( 000186671910 ModelPrimitiveType string string string String )
-            value.EstimateColorStringHexTag                 = GetString(new IntPtr(p + 0x078)); // 024664C10D88 0x78 EstimateColorStringHexTag   ( 000186671910 ModelPrimitiveType string string string String )
-            value.BaseScheduleColorStringHexTag             = GetString(new IntPtr(p + 0x080)); // 024664C10DA8 0x80 BaseScheduleColorStringHexTag ( 000186671910 ModelPrimitiveType string string string String )
+            value.BackVitalityGauge                         = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 0x20 BackVitalityGauge           ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.FrontVitalityGauge                        = GetObject<UIImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIImage.FromPointer); // 0x28 FrontVitalityGauge          ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.FrontFillVitalityGauge                    = GetObject<UIImage>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIImage.FromPointer); // 0x30 FrontFillVitalityGauge      ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.Vitality                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x38 Vitality                    ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.NormalColor                               = (Color)GetInt32(new IntPtr(p + 0x040)); // 0x40 NormalColor                 ( ModelEnumType Color Color Color Int32 )
+            value.EstimateColor                             = (Color)GetInt32(new IntPtr(p + 0x050)); // 0x50 EstimateColor               ( ModelEnumType Color Color Color Int32 )
+            value.BaseScheduleColor                         = (Color)GetInt32(new IntPtr(p + 0x060)); // 0x60 BaseScheduleColor           ( ModelEnumType Color Color Color Int32 )
+            value.NormalColorStringHexTag                   = GetString(new IntPtr(p + 0x070)); // 0x70 NormalColorStringHexTag     ( ModelPrimitiveType string string string String )
+            value.EstimateColorStringHexTag                 = GetString(new IntPtr(p + 0x078)); // 0x78 EstimateColorStringHexTag   ( ModelPrimitiveType string string string String )
+            value.BaseScheduleColorStringHexTag             = GetString(new IntPtr(p + 0x080)); // 0x80 BaseScheduleColorStringHexTag ( ModelPrimitiveType string string string String )
 
             return value;
         }

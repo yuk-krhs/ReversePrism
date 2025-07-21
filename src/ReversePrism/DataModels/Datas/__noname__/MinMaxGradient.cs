@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Mode                                   0001867254A0 ModelEnumType ParticleSystemGradientMode ParticleSystemGradientMode ParticleSystemGradientMode Int32
-    // 018 M_GradientMin                            0001865DAFD0 ModelClassType Gradient Gradient Gradient Pointer
-    // 020 M_GradientMax                            0001865DAFD0 ModelClassType Gradient Gradient Gradient Pointer
-    // 028 M_ColorMin                               0001865AA8E0 ModelEnumType Color Color Color Int32
-    // 038 M_ColorMax                               0001865AA8E0 ModelEnumType Color Color Color Int32
+    // 010 M_Mode                                   ModelEnumType ParticleSystemGradientMode ParticleSystemGradientMode ParticleSystemGradientMode Int32
+    // 018 M_GradientMin                            ModelClassType Gradient Gradient Gradient Pointer
+    // 020 M_GradientMax                            ModelClassType Gradient Gradient Gradient Pointer
+    // 028 M_ColorMin                               ModelEnumType Color Color Color Int32
+    // 038 M_ColorMax                               ModelEnumType Color Color Color Int32
     public partial class MinMaxGradient : DataModel
     {
         public ParticleSystemGradientMode               M_Mode                                  { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MinMaxGradient() { Pointer= p0 };
 
-            value.M_Mode                                    = (ParticleSystemGradientMode)GetInt32(new IntPtr(p + 0x010)); // 0245A691F9E0 0x10 M_Mode                      ( 0001867254A0 ModelEnumType ParticleSystemGradientMode ParticleSystemGradientMode ParticleSystemGradientMode Int32 )
-            value.M_GradientMin                             = GetObject<Gradient>(new IntPtr(p + 0x018), ReversePrism.DataModels.Gradient.FromPointer); // 0245A691FA00 0x18 M_GradientMin               ( 0001865DAFD0 ModelClassType Gradient Gradient Gradient Pointer )
-            value.M_GradientMax                             = GetObject<Gradient>(new IntPtr(p + 0x020), ReversePrism.DataModels.Gradient.FromPointer); // 0245A691FA20 0x20 M_GradientMax               ( 0001865DAFD0 ModelClassType Gradient Gradient Gradient Pointer )
-            value.M_ColorMin                                = (Color)GetInt32(new IntPtr(p + 0x028)); // 0245A691FA40 0x28 M_ColorMin                  ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.M_ColorMax                                = (Color)GetInt32(new IntPtr(p + 0x038)); // 0245A691FA60 0x38 M_ColorMax                  ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.M_Mode                                    = (ParticleSystemGradientMode)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_Mode                      ( ModelEnumType ParticleSystemGradientMode ParticleSystemGradientMode ParticleSystemGradientMode Int32 )
+            value.M_GradientMin                             = GetObject<Gradient>(new IntPtr(p + 0x018), ReversePrism.DataModels.Gradient.FromPointer); // 0x18 M_GradientMin               ( ModelClassType Gradient Gradient Gradient Pointer )
+            value.M_GradientMax                             = GetObject<Gradient>(new IntPtr(p + 0x020), ReversePrism.DataModels.Gradient.FromPointer); // 0x20 M_GradientMax               ( ModelClassType Gradient Gradient Gradient Pointer )
+            value.M_ColorMin                                = (Color)GetInt32(new IntPtr(p + 0x028)); // 0x28 M_ColorMin                  ( ModelEnumType Color Color Color Int32 )
+            value.M_ColorMax                                = (Color)GetInt32(new IntPtr(p + 0x038)); // 0x38 M_ColorMax                  ( ModelEnumType Color Color Color Int32 )
 
             return value;
         }

@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 000 ProfileTag                               string IL2CPP_TYPE_STRING
     // 000 ProfileDrawAllSampler                    ProfileSampler IL2CPP_TYPE_CLASS
-    // 010 PostProcessingContext                    00018676D710 ModelClassType PostProcessRenderContext PostProcessRenderContext PostProcessRenderContext Pointer
-    // 018 RenderTargetIdentifiers                  000185CA0AC8 ModelEnumListType RenderTargetIdentifier[] RenderTargetIdentifier[] List<RenderTargetIdentifier> Pointer
+    // 010 PostProcessingContext                    ModelClassType PostProcessRenderContext PostProcessRenderContext PostProcessRenderContext Pointer
+    // 018 RenderTargetIdentifiers                  ModelEnumListType RenderTargetIdentifier[] RenderTargetIdentifier[] List<RenderTargetIdentifier> Pointer
     public partial class DrawPostProcessingPass : DataModel
     {
         public PostProcessRenderContext?                PostProcessingContext                   { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DrawPostProcessingPass() { Pointer= p0 };
 
-            value.PostProcessingContext                     = GetObject<PostProcessRenderContext>(new IntPtr(p + 0x010), ReversePrism.DataModels.PostProcessRenderContext.FromPointer); // 024660AB0EA0 0x10 PostProcessingContext       ( 00018676D710 ModelClassType PostProcessRenderContext PostProcessRenderContext PostProcessRenderContext Pointer )
-            value.RenderTargetIdentifiers                   = GetEnumList<RenderTargetIdentifier>(new IntPtr(p + 0x018)); // 024660AB0EC0 0x18 RenderTargetIdentifiers     ( 000185CA0AC8 ModelEnumListType RenderTargetIdentifier[] RenderTargetIdentifier[] List<RenderTargetIdentifier> Pointer )
+            value.PostProcessingContext                     = GetObject<PostProcessRenderContext>(new IntPtr(p + 0x010), ReversePrism.DataModels.PostProcessRenderContext.FromPointer); // 0x10 PostProcessingContext       ( ModelClassType PostProcessRenderContext PostProcessRenderContext PostProcessRenderContext Pointer )
+            value.RenderTargetIdentifiers                   = GetEnumList<RenderTargetIdentifier>(new IntPtr(p + 0x018)); // 0x18 RenderTargetIdentifiers     ( ModelEnumListType RenderTargetIdentifier[] RenderTargetIdentifier[] List<RenderTargetIdentifier> Pointer )
 
             return value;
         }

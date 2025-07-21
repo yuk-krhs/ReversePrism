@@ -8,17 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 FavoriteButton                           0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 028 ScrollerView                             0001866CD110 ModelClassType TwestaScrollerView TwestaScrollerView TwestaScrollerView Pointer
-    // 030 ScreenFader                              0001866349F0 ModelClassType MobileScreenFader MobileScreenFader MobileScreenFader Pointer
+    // 020 FavoriteButton                           ModelClassType UIButton UIButton UIButton Pointer
+    // 028 ScrollerView                             ModelClassType TwestaScrollerView TwestaScrollerView TwestaScrollerView Pointer
+    // 030 ScreenFader                              ModelClassType MobileScreenFader MobileScreenFader MobileScreenFader Pointer
     // 038 onClickFavoriteButtonSubject             Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 040 ResourceTag                              00018661C240 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
     public partial class TwestaTopScreenView : DataModel
     {
         public UIButton?                                FavoriteButton                          { get; set; }
         public TwestaScrollerView?                      ScrollerView                            { get; set; }
         public MobileScreenFader?                       ScreenFader                             { get; set; }
-        public IResourceTag?                            ResourceTag                             { get; set; }
 
         public static TwestaTopScreenView? FromPointer(IntPtr p0)
         {
@@ -28,10 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TwestaTopScreenView() { Pointer= p0 };
 
-            value.FavoriteButton                            = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 02466B1D54D0 0x20 FavoriteButton              ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.ScrollerView                              = GetObject<TwestaScrollerView>(new IntPtr(p + 0x028), ReversePrism.DataModels.TwestaScrollerView.FromPointer); // 02466B1D54F0 0x28 ScrollerView                ( 0001866CD110 ModelClassType TwestaScrollerView TwestaScrollerView TwestaScrollerView Pointer )
-            value.ScreenFader                               = GetObject<MobileScreenFader>(new IntPtr(p + 0x030), ReversePrism.DataModels.MobileScreenFader.FromPointer); // 02466B1D5510 0x30 ScreenFader                 ( 0001866349F0 ModelClassType MobileScreenFader MobileScreenFader MobileScreenFader Pointer )
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x040), ReversePrism.DataModels.IResourceTag.FromPointer); // 02466B1D5550 0x40 ResourceTag                 ( 00018661C240 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
+            value.FavoriteButton                            = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 0x20 FavoriteButton              ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.ScrollerView                              = GetObject<TwestaScrollerView>(new IntPtr(p + 0x028), ReversePrism.DataModels.TwestaScrollerView.FromPointer); // 0x28 ScrollerView                ( ModelClassType TwestaScrollerView TwestaScrollerView TwestaScrollerView Pointer )
+            value.ScreenFader                               = GetObject<MobileScreenFader>(new IntPtr(p + 0x030), ReversePrism.DataModels.MobileScreenFader.FromPointer); // 0x30 ScreenFader                 ( ModelClassType MobileScreenFader MobileScreenFader MobileScreenFader Pointer )
 
             return value;
         }

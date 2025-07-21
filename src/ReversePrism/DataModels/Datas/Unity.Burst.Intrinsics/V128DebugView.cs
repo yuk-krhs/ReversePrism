@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Value                                  0001866CC550 ModelEnumType v128 v128 v128 Int32
+    // 010 M_Value                                  ModelEnumType v128 v128 v128 Int32
     public partial class V128DebugView : DataModel
     {
         public v128                                     M_Value                                 { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new V128DebugView() { Pointer= p0 };
 
-            value.M_Value                                   = (v128)GetInt32(new IntPtr(p + 0x010)); // 02466A96F130 0x10 M_Value                     ( 0001866CC550 ModelEnumType v128 v128 v128 Int32 )
+            value.M_Value                                   = (v128)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_Value                     ( ModelEnumType v128 v128 v128 Int32 )
 
             return value;
         }

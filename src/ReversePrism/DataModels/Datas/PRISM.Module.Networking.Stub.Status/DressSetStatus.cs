@@ -11,10 +11,10 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<DressSetStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstDressSetIdFieldNumber                 int IL2CPP_TYPE_I4
-    // 018 MstDressSetId                            0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MstDressSetId                            ModelPrimitiveType int int int Int32
     // 000 ProductListFieldNumber                   int IL2CPP_TYPE_I4
     // 008 _repeated_productList_codec              FieldCodec`1<ProductWithAmountStatus> IL2CPP_TYPE_GENERICINST
-    // 020 ProductList                              000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer
+    // 020 ProductList                              ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer
     public partial class DressSetStatus : DataModel
     {
         public int                                      MstDressSetId                           { get; set; }
@@ -28,8 +28,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DressSetStatus() { Pointer= p0 };
 
-            value.MstDressSetId                             = GetInt32(new IntPtr(p + 0x018)); // 02466080AE08 0x18 MstDressSetId               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ProductList                               = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 02466080AE68 0x20 ProductList                 ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
+            value.MstDressSetId                             = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstDressSetId               ( ModelPrimitiveType int int int Int32 )
+            value.ProductList                               = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0x20 ProductList                 ( ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
 
             return value;
         }

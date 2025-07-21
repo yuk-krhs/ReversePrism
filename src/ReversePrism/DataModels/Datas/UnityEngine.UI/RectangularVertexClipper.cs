@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_WorldCorners                           000185CB10A8 ModelEnumListType Vector3[] Vector3[] List<Vector3> Pointer
-    // 018 M_CanvasCorners                          000185CB10A8 ModelEnumListType Vector3[] Vector3[] List<Vector3> Pointer
+    // 010 M_WorldCorners                           ModelEnumListType Vector3[] Vector3[] List<Vector3> Pointer
+    // 018 M_CanvasCorners                          ModelEnumListType Vector3[] Vector3[] List<Vector3> Pointer
     public partial class RectangularVertexClipper : DataModel
     {
         public List<Vector3>?                           M_WorldCorners                          { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RectangularVertexClipper() { Pointer= p0 };
 
-            value.M_WorldCorners                            = GetEnumList<Vector3>(new IntPtr(p + 0x010)); // 024660AA34A8 0x10 M_WorldCorners              ( 000185CB10A8 ModelEnumListType Vector3[] Vector3[] List<Vector3> Pointer )
-            value.M_CanvasCorners                           = GetEnumList<Vector3>(new IntPtr(p + 0x018)); // 024660AA34C8 0x18 M_CanvasCorners             ( 000185CB10A8 ModelEnumListType Vector3[] Vector3[] List<Vector3> Pointer )
+            value.M_WorldCorners                            = GetEnumList<Vector3>(new IntPtr(p + 0x010)); // 0x10 M_WorldCorners              ( ModelEnumListType Vector3[] Vector3[] List<Vector3> Pointer )
+            value.M_CanvasCorners                           = GetEnumList<Vector3>(new IntPtr(p + 0x018)); // 0x18 M_CanvasCorners             ( ModelEnumListType Vector3[] Vector3[] List<Vector3> Pointer )
 
             return value;
         }

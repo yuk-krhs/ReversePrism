@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 000 kTimeEpsilon                             double IL2CPP_TYPE_R8
     // 008 kFrameRateEpsilon                        double IL2CPP_TYPE_R8
-    // 010 K_MaxTimelineDurationInSeconds           0001865C3F60 ModelPrimitiveType double double double Double
-    // 018 KFrameRateRounding                       0001865C3F60 ModelPrimitiveType double double double Double
+    // 010 K_MaxTimelineDurationInSeconds           ModelPrimitiveType double double double Double
+    // 018 KFrameRateRounding                       ModelPrimitiveType double double double Double
     public partial class TimeUtility : DataModel
     {
         public double                                   K_MaxTimelineDurationInSeconds          { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TimeUtility() { Pointer= p0 };
 
-            value.K_MaxTimelineDurationInSeconds            = GetDouble(new IntPtr(p + 0x010)); // 02466B32A630 0x10 K_MaxTimelineDurationInSeconds ( 0001865C3F60 ModelPrimitiveType double double double Double )
-            value.KFrameRateRounding                        = GetDouble(new IntPtr(p + 0x018)); // 02466B32A650 0x18 KFrameRateRounding          ( 0001865C3F60 ModelPrimitiveType double double double Double )
+            value.K_MaxTimelineDurationInSeconds            = GetDouble(new IntPtr(p + 0x010)); // 0x10 K_MaxTimelineDurationInSeconds ( ModelPrimitiveType double double double Double )
+            value.KFrameRateRounding                        = GetDouble(new IntPtr(p + 0x018)); // 0x18 KFrameRateRounding          ( ModelPrimitiveType double double double Double )
 
             return value;
         }

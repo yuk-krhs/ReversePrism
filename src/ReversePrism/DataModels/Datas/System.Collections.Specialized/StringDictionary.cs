@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Contents                                 0001865DE5A0 ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 010 Contents                                 ModelClassType Hashtable Hashtable Hashtable Pointer
     public partial class StringDictionary : DataModel
     {
         public Hashtable?                               Contents                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StringDictionary() { Pointer= p0 };
 
-            value.Contents                                  = GetObject<Hashtable>(new IntPtr(p + 0x010), ReversePrism.DataModels.Hashtable.FromPointer); // 024667A0B388 0x10 Contents                    ( 0001865DE5A0 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.Contents                                  = GetObject<Hashtable>(new IntPtr(p + 0x010), ReversePrism.DataModels.Hashtable.FromPointer); // 0x10 Contents                    ( ModelClassType Hashtable Hashtable Hashtable Pointer )
 
             return value;
         }

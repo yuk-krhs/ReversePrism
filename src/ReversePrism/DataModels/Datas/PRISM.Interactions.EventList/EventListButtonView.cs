@@ -8,9 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Button                                   0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 028 NewBadge                                 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 030 eventListOverlayViewFactory              OverlayViewFactory`1<IEventListOverlayView> IL2CPP_TYPE_GENERICINST
+    // 020 Button                                   ModelClassType UIButton UIButton UIButton Pointer
+    // 028 NewBadge                                 ModelClassType GameObject GameObject GameObject Pointer
     public partial class EventListButtonView : DataModel
     {
         public UIButton?                                Button                                  { get; set; }
@@ -24,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EventListButtonView() { Pointer= p0 };
 
-            value.Button                                    = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 0245A4F6F6E8 0x20 Button                      ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.NewBadge                                  = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0245A4F6F708 0x28 NewBadge                    ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.Button                                    = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 0x20 Button                      ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.NewBadge                                  = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0x28 NewBadge                    ( ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

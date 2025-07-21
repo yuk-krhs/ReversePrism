@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 IsMask                                   000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 018 IsMask                                   ModelPrimitiveType bool bool bool Bool
     public partial class CanvasRenderer : DataModel
     {
         public bool                                     IsMask                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CanvasRenderer() { Pointer= p0 };
 
-            value.IsMask                                    = GetBool(new IntPtr(p + 0x018)); // 0245A3A10920 0x18 IsMask                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsMask                                    = GetBool(new IntPtr(p + 0x018)); // 0x18 IsMask                      ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

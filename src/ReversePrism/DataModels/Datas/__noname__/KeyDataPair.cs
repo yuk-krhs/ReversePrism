@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ChainUserId                              0001865F36C0 ModelPrimitiveType int int int Int32
-    // 018 Data                                     00018673E380 ModelClassType TypingData TypingData TypingData Pointer
+    // 010 ChainUserId                              ModelPrimitiveType int int int Int32
+    // 018 Data                                     ModelClassType TypingData TypingData TypingData Pointer
     public partial class KeyDataPair : DataModel
     {
         public int                                      ChainUserId                             { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new KeyDataPair() { Pointer= p0 };
 
-            value.ChainUserId                               = GetInt32(new IntPtr(p + 0x010)); // 02466B1745A0 0x10 ChainUserId                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Data                                      = GetObject<TypingData>(new IntPtr(p + 0x018), ReversePrism.DataModels.TypingData.FromPointer); // 02466B1745C0 0x18 Data                        ( 00018673E380 ModelClassType TypingData TypingData TypingData Pointer )
+            value.ChainUserId                               = GetInt32(new IntPtr(p + 0x010)); // 0x10 ChainUserId                 ( ModelPrimitiveType int int int Int32 )
+            value.Data                                      = GetObject<TypingData>(new IntPtr(p + 0x018), ReversePrism.DataModels.TypingData.FromPointer); // 0x18 Data                        ( ModelClassType TypingData TypingData TypingData Pointer )
 
             return value;
         }

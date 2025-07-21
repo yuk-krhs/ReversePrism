@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Str                                      000186671910 ModelPrimitiveType string string string String
-    // 018 Index                                    0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 Str                                      ModelPrimitiveType string string string String
+    // 018 Index                                    ModelPrimitiveType int int int Int32
     // 01C _currentElement                          char IL2CPP_TYPE_CHAR
     public partial class CharEnumerator : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CharEnumerator() { Pointer= p0 };
 
-            value.Str                                       = GetString(new IntPtr(p + 0x010)); // 0245A33D3560 0x10 Str                         ( 000186671910 ModelPrimitiveType string string string String )
-            value.Index                                     = GetInt32(new IntPtr(p + 0x018)); // 0245A33D3580 0x18 Index                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Str                                       = GetString(new IntPtr(p + 0x010)); // 0x10 Str                         ( ModelPrimitiveType string string string String )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x018)); // 0x18 Index                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Connections                              0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 010 Connections                              ModelClassType Hashtable Hashtable Hashtable Pointer
     public partial class XmlDownloadManager : DataModel
     {
         public Hashtable?                               Connections                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlDownloadManager() { Pointer= p0 };
 
-            value.Connections                               = GetObject<Hashtable>(new IntPtr(p + 0x010), ReversePrism.DataModels.Hashtable.FromPointer); // 0246674DF9D0 0x10 Connections                 ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.Connections                               = GetObject<Hashtable>(new IntPtr(p + 0x010), ReversePrism.DataModels.Hashtable.FromPointer); // 0x10 Connections                 ( ModelClassType Hashtable Hashtable Hashtable Pointer )
 
             return value;
         }

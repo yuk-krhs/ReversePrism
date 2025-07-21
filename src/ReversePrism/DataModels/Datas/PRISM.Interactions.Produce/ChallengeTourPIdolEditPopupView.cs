@@ -8,21 +8,18 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 PIdolUnitPanelViews                      000185B74050 ModelClassListType ChallengeTourPIdolUnitPanelView[] ChallengeTourPIdolUnitPanelView[] List<ChallengeTourPIdolUnitPanelView> Pointer
-    // 028 pIdoleDetailPopupFactory                 PopupViewFactory`1<IPIdolDetailPopupView> IL2CPP_TYPE_GENERICINST
-    // 030 pIdoleSelectPopupFactory                 PopupViewFactory`1<IChallengeTourPIdolSelectPopupView> IL2CPP_TYPE_GENERICINST
-    // 038 onDecide                                 Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 040 onCancel                                 Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 048 onClickPIdol                             Subject`1<int> IL2CPP_TYPE_GENERICINST
-    // 050 onLongPressPIdol                         Subject`1<int> IL2CPP_TYPE_GENERICINST
-    // 058 PIdolViewModels                          000185B74250 ModelClassListType ChallengeTourPIdolUnitViewModel[] ChallengeTourPIdolUnitViewModel[] List<ChallengeTourPIdolUnitViewModel> Pointer
-    // 060 ResourceTag                              00018661C240 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
-    // 068 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
+    // 020 PIdolUnitPanelViews                      ModelClassListType ChallengeTourPIdolUnitPanelView[] ChallengeTourPIdolUnitPanelView[] List<ChallengeTourPIdolUnitPanelView> Pointer
+    // 028 onClosed                                 Subject`1<bool> IL2CPP_TYPE_GENERICINST
+    // 030 onClickPIdol                             Subject`1<int> IL2CPP_TYPE_GENERICINST
+    // 038 onLongPressPIdol                         Subject`1<int> IL2CPP_TYPE_GENERICINST
+    // 040 PIdolViewModels                          ModelClassListType ChallengeTourPIdolUnitViewModel[] ChallengeTourPIdolUnitViewModel[] List<ChallengeTourPIdolUnitViewModel> Pointer
+    // 048 ResourceLoader                           ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer
+    // 050 Parent                                   ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
     public partial class ChallengeTourPIdolEditPopupView : DataModel
     {
         public List<ChallengeTourPIdolUnitPanelView>?   PIdolUnitPanelViews                     { get; set; }
         public List<ChallengeTourPIdolUnitViewModel>?   PIdolViewModels                         { get; set; }
-        public IResourceTag?                            ResourceTag                             { get; set; }
+        public IResourceLoader?                         ResourceLoader                          { get; set; }
         public IPopupFrameView?                         Parent                                  { get; set; }
 
         public static ChallengeTourPIdolEditPopupView? FromPointer(IntPtr p0)
@@ -33,10 +30,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChallengeTourPIdolEditPopupView() { Pointer= p0 };
 
-            value.PIdolUnitPanelViews                       = GetObjectList<ChallengeTourPIdolUnitPanelView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ChallengeTourPIdolUnitPanelView.FromPointer); // 02466A21A5F0 0x20 PIdolUnitPanelViews         ( 000185B74050 ModelClassListType ChallengeTourPIdolUnitPanelView[] ChallengeTourPIdolUnitPanelView[] List<ChallengeTourPIdolUnitPanelView> Pointer )
-            value.PIdolViewModels                           = GetObjectList<ChallengeTourPIdolUnitViewModel>(new IntPtr(p + 0x058), ReversePrism.DataModels.ChallengeTourPIdolUnitViewModel.FromPointer); // 02466A21A6D0 0x58 PIdolViewModels             ( 000185B74250 ModelClassListType ChallengeTourPIdolUnitViewModel[] ChallengeTourPIdolUnitViewModel[] List<ChallengeTourPIdolUnitViewModel> Pointer )
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x060), ReversePrism.DataModels.IResourceTag.FromPointer); // 02466A21A6F0 0x60 ResourceTag                 ( 00018661C240 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x068), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466A21A710 0x68 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.PIdolUnitPanelViews                       = GetObjectList<ChallengeTourPIdolUnitPanelView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ChallengeTourPIdolUnitPanelView.FromPointer); // 0x20 PIdolUnitPanelViews         ( ModelClassListType ChallengeTourPIdolUnitPanelView[] ChallengeTourPIdolUnitPanelView[] List<ChallengeTourPIdolUnitPanelView> Pointer )
+            value.PIdolViewModels                           = GetObjectList<ChallengeTourPIdolUnitViewModel>(new IntPtr(p + 0x040), ReversePrism.DataModels.ChallengeTourPIdolUnitViewModel.FromPointer); // 0x40 PIdolViewModels             ( ModelClassListType ChallengeTourPIdolUnitViewModel[] ChallengeTourPIdolUnitViewModel[] List<ChallengeTourPIdolUnitViewModel> Pointer )
+            value.ResourceLoader                            = GetObject<IResourceLoader>(new IntPtr(p + 0x048), ReversePrism.DataModels.IResourceLoader.FromPointer); // 0x48 ResourceLoader              ( ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x050), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0x50 Parent                      ( ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

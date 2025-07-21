@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 SupportCharacterStatus                   000186669DA0 ModelClassType ISupportCharacterStatus ISupportCharacterStatus ISupportCharacterStatus Pointer
-    // 018 CharaId                                  0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 SupportCharacterStatus                   ModelClassType ISupportCharacterStatus ISupportCharacterStatus ISupportCharacterStatus Pointer
+    // 018 CharaId                                  ModelPrimitiveType int int int Int32
     public partial class SupportCharacterModel : DataModel
     {
         public ISupportCharacterStatus?                 SupportCharacterStatus                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SupportCharacterModel() { Pointer= p0 };
 
-            value.SupportCharacterStatus                    = GetObject<ISupportCharacterStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.ISupportCharacterStatus.FromPointer); // 0245A3B1B038 0x10 SupportCharacterStatus      ( 000186669DA0 ModelClassType ISupportCharacterStatus ISupportCharacterStatus ISupportCharacterStatus Pointer )
-            value.CharaId                                   = GetInt32(new IntPtr(p + 0x018)); // 0245A3B1B058 0x18 CharaId                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SupportCharacterStatus                    = GetObject<ISupportCharacterStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.ISupportCharacterStatus.FromPointer); // 0x10 SupportCharacterStatus      ( ModelClassType ISupportCharacterStatus ISupportCharacterStatus ISupportCharacterStatus Pointer )
+            value.CharaId                                   = GetInt32(new IntPtr(p + 0x018)); // 0x18 CharaId                     ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

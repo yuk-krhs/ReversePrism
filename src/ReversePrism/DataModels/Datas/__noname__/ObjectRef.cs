@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Guid                                     0001865DC380 ModelEnumType Guid Guid Guid Int32
-    // 020 Type                                     000186558D30 ModelEnumType ModuleType ModuleType ModuleType Int32
-    // 028 Disposable                               00018664F3E0 ModelClassType CriDisposable CriDisposable CriDisposable Pointer
+    // 010 Guid                                     ModelEnumType Guid Guid Guid Int32
+    // 020 Type                                     ModelEnumType ModuleType ModuleType ModuleType Int32
+    // 028 Disposable                               ModelClassType CriDisposable CriDisposable CriDisposable Pointer
     public partial class ObjectRef : DataModel
     {
         public Guid                                     Guid                                    { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ObjectRef() { Pointer= p0 };
 
-            value.Guid                                      = (Guid)GetInt32(new IntPtr(p + 0x010)); // 0246614D3218 0x10 Guid                        ( 0001865DC380 ModelEnumType Guid Guid Guid Int32 )
-            value.Type                                      = (ModuleType)GetInt32(new IntPtr(p + 0x020)); // 0246614D3238 0x20 Type                        ( 000186558D30 ModelEnumType ModuleType ModuleType ModuleType Int32 )
-            value.Disposable                                = GetObject<CriDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.CriDisposable.FromPointer); // 0246614D3258 0x28 Disposable                  ( 00018664F3E0 ModelClassType CriDisposable CriDisposable CriDisposable Pointer )
+            value.Guid                                      = (Guid)GetInt32(new IntPtr(p + 0x010)); // 0x10 Guid                        ( ModelEnumType Guid Guid Guid Int32 )
+            value.Type                                      = (ModuleType)GetInt32(new IntPtr(p + 0x020)); // 0x20 Type                        ( ModelEnumType ModuleType ModuleType ModuleType Int32 )
+            value.Disposable                                = GetObject<CriDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.CriDisposable.FromPointer); // 0x28 Disposable                  ( ModelClassType CriDisposable CriDisposable CriDisposable Pointer )
 
             return value;
         }

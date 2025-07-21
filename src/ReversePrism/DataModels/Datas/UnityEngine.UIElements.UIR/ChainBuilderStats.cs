@@ -8,30 +8,30 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ElementsAdded                            0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 014 ElementsRemoved                          0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 018 RecursiveClipUpdates                     0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 01C RecursiveClipUpdatesExpanded             0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 020 NonRecursiveClipUpdates                  0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 024 RecursiveTransformUpdates                0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 028 RecursiveTransformUpdatesExpanded        0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 02C RecursiveOpacityUpdates                  0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 030 RecursiveOpacityUpdatesExpanded          0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 034 OpacityIdUpdates                         0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 038 ColorUpdates                             0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 03C ColorUpdatesExpanded                     0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 040 RecursiveVisualUpdates                   0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 044 RecursiveVisualUpdatesExpanded           0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 048 NonRecursiveVisualUpdates                0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 04C DirtyProcessed                           0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 050 NudgeTransformed                         0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 054 BoneTransformed                          0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 058 SkipTransformed                          0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 05C VisualUpdateTransformed                  0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 060 UpdatedMeshAllocations                   0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 064 NewMeshAllocations                       0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 068 GroupTransformElementsChanged            0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 06C ImmedateRenderersActive                  0001866992B0 ModelPrimitiveType uint uint uint UInt32
+    // 010 ElementsAdded                            ModelPrimitiveType uint uint uint UInt32
+    // 014 ElementsRemoved                          ModelPrimitiveType uint uint uint UInt32
+    // 018 RecursiveClipUpdates                     ModelPrimitiveType uint uint uint UInt32
+    // 01C RecursiveClipUpdatesExpanded             ModelPrimitiveType uint uint uint UInt32
+    // 020 NonRecursiveClipUpdates                  ModelPrimitiveType uint uint uint UInt32
+    // 024 RecursiveTransformUpdates                ModelPrimitiveType uint uint uint UInt32
+    // 028 RecursiveTransformUpdatesExpanded        ModelPrimitiveType uint uint uint UInt32
+    // 02C RecursiveOpacityUpdates                  ModelPrimitiveType uint uint uint UInt32
+    // 030 RecursiveOpacityUpdatesExpanded          ModelPrimitiveType uint uint uint UInt32
+    // 034 OpacityIdUpdates                         ModelPrimitiveType uint uint uint UInt32
+    // 038 ColorUpdates                             ModelPrimitiveType uint uint uint UInt32
+    // 03C ColorUpdatesExpanded                     ModelPrimitiveType uint uint uint UInt32
+    // 040 RecursiveVisualUpdates                   ModelPrimitiveType uint uint uint UInt32
+    // 044 RecursiveVisualUpdatesExpanded           ModelPrimitiveType uint uint uint UInt32
+    // 048 NonRecursiveVisualUpdates                ModelPrimitiveType uint uint uint UInt32
+    // 04C DirtyProcessed                           ModelPrimitiveType uint uint uint UInt32
+    // 050 NudgeTransformed                         ModelPrimitiveType uint uint uint UInt32
+    // 054 BoneTransformed                          ModelPrimitiveType uint uint uint UInt32
+    // 058 SkipTransformed                          ModelPrimitiveType uint uint uint UInt32
+    // 05C VisualUpdateTransformed                  ModelPrimitiveType uint uint uint UInt32
+    // 060 UpdatedMeshAllocations                   ModelPrimitiveType uint uint uint UInt32
+    // 064 NewMeshAllocations                       ModelPrimitiveType uint uint uint UInt32
+    // 068 GroupTransformElementsChanged            ModelPrimitiveType uint uint uint UInt32
+    // 06C ImmedateRenderersActive                  ModelPrimitiveType uint uint uint UInt32
     public partial class ChainBuilderStats : DataModel
     {
         public uint                                     ElementsAdded                           { get; set; }
@@ -67,30 +67,30 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChainBuilderStats() { Pointer= p0 };
 
-            value.ElementsAdded                             = GetUInt32(new IntPtr(p + 0x010)); // 0245A682A3E8 0x10 ElementsAdded               ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.ElementsRemoved                           = GetUInt32(new IntPtr(p + 0x014)); // 0245A682A408 0x14 ElementsRemoved             ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.RecursiveClipUpdates                      = GetUInt32(new IntPtr(p + 0x018)); // 0245A682A428 0x18 RecursiveClipUpdates        ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.RecursiveClipUpdatesExpanded              = GetUInt32(new IntPtr(p + 0x01C)); // 0245A682A448 0x1C RecursiveClipUpdatesExpanded ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.NonRecursiveClipUpdates                   = GetUInt32(new IntPtr(p + 0x020)); // 0245A682A468 0x20 NonRecursiveClipUpdates     ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.RecursiveTransformUpdates                 = GetUInt32(new IntPtr(p + 0x024)); // 0245A682A488 0x24 RecursiveTransformUpdates   ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.RecursiveTransformUpdatesExpanded         = GetUInt32(new IntPtr(p + 0x028)); // 0245A682A4A8 0x28 RecursiveTransformUpdatesExpanded ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.RecursiveOpacityUpdates                   = GetUInt32(new IntPtr(p + 0x02C)); // 0245A682A4C8 0x2C RecursiveOpacityUpdates     ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.RecursiveOpacityUpdatesExpanded           = GetUInt32(new IntPtr(p + 0x030)); // 0245A682A4E8 0x30 RecursiveOpacityUpdatesExpanded ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.OpacityIdUpdates                          = GetUInt32(new IntPtr(p + 0x034)); // 0245A682A508 0x34 OpacityIdUpdates            ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.ColorUpdates                              = GetUInt32(new IntPtr(p + 0x038)); // 0245A682A528 0x38 ColorUpdates                ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.ColorUpdatesExpanded                      = GetUInt32(new IntPtr(p + 0x03C)); // 0245A682A548 0x3C ColorUpdatesExpanded        ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.RecursiveVisualUpdates                    = GetUInt32(new IntPtr(p + 0x040)); // 0245A682A568 0x40 RecursiveVisualUpdates      ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.RecursiveVisualUpdatesExpanded            = GetUInt32(new IntPtr(p + 0x044)); // 0245A682A588 0x44 RecursiveVisualUpdatesExpanded ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.NonRecursiveVisualUpdates                 = GetUInt32(new IntPtr(p + 0x048)); // 0245A682A5A8 0x48 NonRecursiveVisualUpdates   ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.DirtyProcessed                            = GetUInt32(new IntPtr(p + 0x04C)); // 0245A682A5C8 0x4C DirtyProcessed              ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.NudgeTransformed                          = GetUInt32(new IntPtr(p + 0x050)); // 0245A682A5E8 0x50 NudgeTransformed            ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.BoneTransformed                           = GetUInt32(new IntPtr(p + 0x054)); // 0245A682A608 0x54 BoneTransformed             ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.SkipTransformed                           = GetUInt32(new IntPtr(p + 0x058)); // 0245A682A628 0x58 SkipTransformed             ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.VisualUpdateTransformed                   = GetUInt32(new IntPtr(p + 0x05C)); // 0245A682A648 0x5C VisualUpdateTransformed     ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.UpdatedMeshAllocations                    = GetUInt32(new IntPtr(p + 0x060)); // 0245A682A668 0x60 UpdatedMeshAllocations      ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.NewMeshAllocations                        = GetUInt32(new IntPtr(p + 0x064)); // 0245A682A688 0x64 NewMeshAllocations          ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.GroupTransformElementsChanged             = GetUInt32(new IntPtr(p + 0x068)); // 0245A682A6A8 0x68 GroupTransformElementsChanged ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.ImmedateRenderersActive                   = GetUInt32(new IntPtr(p + 0x06C)); // 0245A682A6C8 0x6C ImmedateRenderersActive     ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.ElementsAdded                             = GetUInt32(new IntPtr(p + 0x010)); // 0x10 ElementsAdded               ( ModelPrimitiveType uint uint uint UInt32 )
+            value.ElementsRemoved                           = GetUInt32(new IntPtr(p + 0x014)); // 0x14 ElementsRemoved             ( ModelPrimitiveType uint uint uint UInt32 )
+            value.RecursiveClipUpdates                      = GetUInt32(new IntPtr(p + 0x018)); // 0x18 RecursiveClipUpdates        ( ModelPrimitiveType uint uint uint UInt32 )
+            value.RecursiveClipUpdatesExpanded              = GetUInt32(new IntPtr(p + 0x01C)); // 0x1C RecursiveClipUpdatesExpanded ( ModelPrimitiveType uint uint uint UInt32 )
+            value.NonRecursiveClipUpdates                   = GetUInt32(new IntPtr(p + 0x020)); // 0x20 NonRecursiveClipUpdates     ( ModelPrimitiveType uint uint uint UInt32 )
+            value.RecursiveTransformUpdates                 = GetUInt32(new IntPtr(p + 0x024)); // 0x24 RecursiveTransformUpdates   ( ModelPrimitiveType uint uint uint UInt32 )
+            value.RecursiveTransformUpdatesExpanded         = GetUInt32(new IntPtr(p + 0x028)); // 0x28 RecursiveTransformUpdatesExpanded ( ModelPrimitiveType uint uint uint UInt32 )
+            value.RecursiveOpacityUpdates                   = GetUInt32(new IntPtr(p + 0x02C)); // 0x2C RecursiveOpacityUpdates     ( ModelPrimitiveType uint uint uint UInt32 )
+            value.RecursiveOpacityUpdatesExpanded           = GetUInt32(new IntPtr(p + 0x030)); // 0x30 RecursiveOpacityUpdatesExpanded ( ModelPrimitiveType uint uint uint UInt32 )
+            value.OpacityIdUpdates                          = GetUInt32(new IntPtr(p + 0x034)); // 0x34 OpacityIdUpdates            ( ModelPrimitiveType uint uint uint UInt32 )
+            value.ColorUpdates                              = GetUInt32(new IntPtr(p + 0x038)); // 0x38 ColorUpdates                ( ModelPrimitiveType uint uint uint UInt32 )
+            value.ColorUpdatesExpanded                      = GetUInt32(new IntPtr(p + 0x03C)); // 0x3C ColorUpdatesExpanded        ( ModelPrimitiveType uint uint uint UInt32 )
+            value.RecursiveVisualUpdates                    = GetUInt32(new IntPtr(p + 0x040)); // 0x40 RecursiveVisualUpdates      ( ModelPrimitiveType uint uint uint UInt32 )
+            value.RecursiveVisualUpdatesExpanded            = GetUInt32(new IntPtr(p + 0x044)); // 0x44 RecursiveVisualUpdatesExpanded ( ModelPrimitiveType uint uint uint UInt32 )
+            value.NonRecursiveVisualUpdates                 = GetUInt32(new IntPtr(p + 0x048)); // 0x48 NonRecursiveVisualUpdates   ( ModelPrimitiveType uint uint uint UInt32 )
+            value.DirtyProcessed                            = GetUInt32(new IntPtr(p + 0x04C)); // 0x4C DirtyProcessed              ( ModelPrimitiveType uint uint uint UInt32 )
+            value.NudgeTransformed                          = GetUInt32(new IntPtr(p + 0x050)); // 0x50 NudgeTransformed            ( ModelPrimitiveType uint uint uint UInt32 )
+            value.BoneTransformed                           = GetUInt32(new IntPtr(p + 0x054)); // 0x54 BoneTransformed             ( ModelPrimitiveType uint uint uint UInt32 )
+            value.SkipTransformed                           = GetUInt32(new IntPtr(p + 0x058)); // 0x58 SkipTransformed             ( ModelPrimitiveType uint uint uint UInt32 )
+            value.VisualUpdateTransformed                   = GetUInt32(new IntPtr(p + 0x05C)); // 0x5C VisualUpdateTransformed     ( ModelPrimitiveType uint uint uint UInt32 )
+            value.UpdatedMeshAllocations                    = GetUInt32(new IntPtr(p + 0x060)); // 0x60 UpdatedMeshAllocations      ( ModelPrimitiveType uint uint uint UInt32 )
+            value.NewMeshAllocations                        = GetUInt32(new IntPtr(p + 0x064)); // 0x64 NewMeshAllocations          ( ModelPrimitiveType uint uint uint UInt32 )
+            value.GroupTransformElementsChanged             = GetUInt32(new IntPtr(p + 0x068)); // 0x68 GroupTransformElementsChanged ( ModelPrimitiveType uint uint uint UInt32 )
+            value.ImmedateRenderersActive                   = GetUInt32(new IntPtr(p + 0x06C)); // 0x6C ImmedateRenderersActive     ( ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

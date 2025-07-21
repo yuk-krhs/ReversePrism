@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 LastDisplayDate                          000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
+    // 010 LastDisplayDate                          ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
     // 000 _parser                                  MessageParser`1<TouchSpecialMissionReply> IL2CPP_TYPE_GENERICINST
     // 020 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 LastDisplayDateFieldNumber               int IL2CPP_TYPE_I4
-    // 028 _LastDisplayDate                         000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
+    // 028 _LastDisplayDate                         ModelClassType Timestamp Timestamp Timestamp Pointer
     public partial class TouchSpecialMissionReply : DataModel
     {
         public DateTime                                 LastDisplayDate                         { get; set; }
@@ -26,8 +26,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TouchSpecialMissionReply() { Pointer= p0 };
 
-            value.LastDisplayDate                           = GetDateTime(new IntPtr(p + 0x010)); // 024662844AF0 0x10 LastDisplayDate             ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value._LastDisplayDate                          = GetObject<Timestamp>(new IntPtr(p + 0x028), ReversePrism.DataModels.Timestamp.FromPointer); // 024662844B70 0x28 _LastDisplayDate            ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.LastDisplayDate                           = GetDateTime(new IntPtr(p + 0x010)); // 0x10 LastDisplayDate             ( ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value._LastDisplayDate                          = GetObject<Timestamp>(new IntPtr(p + 0x028), ReversePrism.DataModels.Timestamp.FromPointer); // 0x28 _LastDisplayDate            ( ModelClassType Timestamp Timestamp Timestamp Pointer )
             value.LastDisplayDate               = ToDateTime(value._LastDisplayDate);
 
             return value;

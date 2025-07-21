@@ -8,13 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Up                                       0001865F36C0 ModelPrimitiveType int int int Int32
-    // 014 Down                                     0001865F36C0 ModelPrimitiveType int int int Int32
-    // 018 Left                                     0001865F36C0 ModelPrimitiveType int int int Int32
-    // 01C Right                                    0001865F36C0 ModelPrimitiveType int int int Int32
-    // 020 Forward                                  0001865F36C0 ModelPrimitiveType int int int Int32
-    // 024 Backward                                 0001865F36C0 ModelPrimitiveType int int int Int32
-    // 028 Mode                                     0001866D5290 ModelEnumType Mode Mode Mode Int32
+    // 010 Up                                       ModelPrimitiveType int int int Int32
+    // 014 Down                                     ModelPrimitiveType int int int Int32
+    // 018 Left                                     ModelPrimitiveType int int int Int32
+    // 01C Right                                    ModelPrimitiveType int int int Int32
+    // 020 Forward                                  ModelPrimitiveType int int int Int32
+    // 024 Backward                                 ModelPrimitiveType int int int Int32
+    // 028 Mode                                     ModelEnumType Mode Mode Mode Int32
     public partial class Vector3Composite : DataModel
     {
         public int                                      Up                                      { get; set; }
@@ -33,13 +33,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Vector3Composite() { Pointer= p0 };
 
-            value.Up                                        = GetInt32(new IntPtr(p + 0x010)); // 024667947468 0x10 Up                          ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Down                                      = GetInt32(new IntPtr(p + 0x014)); // 024667947488 0x14 Down                        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Left                                      = GetInt32(new IntPtr(p + 0x018)); // 0246679474A8 0x18 Left                        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Right                                     = GetInt32(new IntPtr(p + 0x01C)); // 0246679474C8 0x1C Right                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Forward                                   = GetInt32(new IntPtr(p + 0x020)); // 0246679474E8 0x20 Forward                     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Backward                                  = GetInt32(new IntPtr(p + 0x024)); // 024667947508 0x24 Backward                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Mode                                      = (Mode)GetInt32(new IntPtr(p + 0x028)); // 024667947528 0x28 Mode                        ( 0001866D5290 ModelEnumType Mode Mode Mode Int32 )
+            value.Up                                        = GetInt32(new IntPtr(p + 0x010)); // 0x10 Up                          ( ModelPrimitiveType int int int Int32 )
+            value.Down                                      = GetInt32(new IntPtr(p + 0x014)); // 0x14 Down                        ( ModelPrimitiveType int int int Int32 )
+            value.Left                                      = GetInt32(new IntPtr(p + 0x018)); // 0x18 Left                        ( ModelPrimitiveType int int int Int32 )
+            value.Right                                     = GetInt32(new IntPtr(p + 0x01C)); // 0x1C Right                       ( ModelPrimitiveType int int int Int32 )
+            value.Forward                                   = GetInt32(new IntPtr(p + 0x020)); // 0x20 Forward                     ( ModelPrimitiveType int int int Int32 )
+            value.Backward                                  = GetInt32(new IntPtr(p + 0x024)); // 0x24 Backward                    ( ModelPrimitiveType int int int Int32 )
+            value.Mode                                      = (Mode)GetInt32(new IntPtr(p + 0x028)); // 0x28 Mode                        ( ModelEnumType Mode Mode Mode Int32 )
 
             return value;
         }

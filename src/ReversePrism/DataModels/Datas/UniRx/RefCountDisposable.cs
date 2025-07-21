@@ -9,9 +9,9 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 _gate                                    <object> IL2CPP_TYPE_OBJECT
-    // 018 Disposable                               0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
-    // 020 IsPrimaryDisposed                        000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 024 Count                                    0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 Disposable                               ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 020 IsPrimaryDisposed                        ModelPrimitiveType bool bool bool Bool
+    // 024 Count                                    ModelPrimitiveType int int int Int32
     public partial class RefCountDisposable : DataModel
     {
         public IDisposable?                             Disposable                              { get; set; }
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RefCountDisposable() { Pointer= p0 };
 
-            value.Disposable                                = GetObject<IDisposable>(new IntPtr(p + 0x018), ReversePrism.DataModels.IDisposable.FromPointer); // 0246694D6530 0x18 Disposable                  ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
-            value.IsPrimaryDisposed                         = GetBool(new IntPtr(p + 0x020)); // 0246694D6550 0x20 IsPrimaryDisposed           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Count                                     = GetInt32(new IntPtr(p + 0x024)); // 0246694D6570 0x24 Count                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Disposable                                = GetObject<IDisposable>(new IntPtr(p + 0x018), ReversePrism.DataModels.IDisposable.FromPointer); // 0x18 Disposable                  ( ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.IsPrimaryDisposed                         = GetBool(new IntPtr(p + 0x020)); // 0x20 IsPrimaryDisposed           ( ModelPrimitiveType bool bool bool Bool )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x024)); // 0x24 Count                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

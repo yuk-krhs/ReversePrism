@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Dispatcher                             0001867559F0 ModelClassType EventDispatcher EventDispatcher EventDispatcher Pointer
+    // 010 M_Dispatcher                             ModelClassType EventDispatcher EventDispatcher EventDispatcher Pointer
     public partial class EventDispatcherGate : DataModel
     {
         public EventDispatcher?                         M_Dispatcher                            { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EventDispatcherGate() { Pointer= p0 };
 
-            value.M_Dispatcher                              = GetObject<EventDispatcher>(new IntPtr(p + 0x010), ReversePrism.DataModels.EventDispatcher.FromPointer); // 0245A671A998 0x10 M_Dispatcher                ( 0001867559F0 ModelClassType EventDispatcher EventDispatcher EventDispatcher Pointer )
+            value.M_Dispatcher                              = GetObject<EventDispatcher>(new IntPtr(p + 0x010), ReversePrism.DataModels.EventDispatcher.FromPointer); // 0x10 M_Dispatcher                ( ModelClassType EventDispatcher EventDispatcher EventDispatcher Pointer )
 
             return value;
         }

@@ -8,13 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 CharaColorBg                             0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 028 UiCharacterViewer                        0001866E2C70 ModelClassType UICharacterViewer UICharacterViewer UICharacterViewer Pointer
-    // 030 CharacterPositionAdjuster                000186553690 ModelClassType CenteringObjectsOutsideSafeArea CenteringObjectsOutsideSafeArea CenteringObjectsOutsideSafeArea Pointer
-    // 038 DearnessText                             0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 040 TitleView                                0001865E9D00 ModelClassType CommonTitleView CommonTitleView CommonTitleView Pointer
-    // 048 CellList                                 0001866C77A0 ModelClassType IdolStoryLastCategoryCellList IdolStoryLastCategoryCellList IdolStoryLastCategoryCellList Pointer
-    // 050 AdvTransitionerView                      0001865A6340 ModelClassType StoryToAdvTransitionerView StoryToAdvTransitionerView StoryToAdvTransitionerView Pointer
+    // 020 CharaColorBg                             ModelClassType UIImage UIImage UIImage Pointer
+    // 028 UiCharacterViewer                        ModelClassType UICharacterViewer UICharacterViewer UICharacterViewer Pointer
+    // 030 CharacterPositionAdjuster                ModelClassType CenteringObjectsOutsideSafeArea CenteringObjectsOutsideSafeArea CenteringObjectsOutsideSafeArea Pointer
+    // 038 DearnessText                             ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 040 TitleView                                ModelClassType CommonTitleView CommonTitleView CommonTitleView Pointer
+    // 048 CellList                                 ModelClassType StoryLastCategoryCellListView StoryLastCategoryCellListView StoryLastCategoryCellListView Pointer
     public partial class IdolStoryLastCategoryView : DataModel
     {
         public UIImage?                                 CharaColorBg                            { get; set; }
@@ -22,8 +21,7 @@ namespace ReversePrism.DataModels
         public CenteringObjectsOutsideSafeArea?         CharacterPositionAdjuster               { get; set; }
         public UITextMeshProUGUI?                       DearnessText                            { get; set; }
         public CommonTitleView?                         TitleView                               { get; set; }
-        public IdolStoryLastCategoryCellList?           CellList                                { get; set; }
-        public StoryToAdvTransitionerView?              AdvTransitionerView                     { get; set; }
+        public StoryLastCategoryCellListView?           CellList                                { get; set; }
 
         public static IdolStoryLastCategoryView? FromPointer(IntPtr p0)
         {
@@ -33,13 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IdolStoryLastCategoryView() { Pointer= p0 };
 
-            value.CharaColorBg                              = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 02466B6B3658 0x20 CharaColorBg                ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.UiCharacterViewer                         = GetObject<UICharacterViewer>(new IntPtr(p + 0x028), ReversePrism.DataModels.UICharacterViewer.FromPointer); // 02466B6B3678 0x28 UiCharacterViewer           ( 0001866E2C70 ModelClassType UICharacterViewer UICharacterViewer UICharacterViewer Pointer )
-            value.CharacterPositionAdjuster                 = GetObject<CenteringObjectsOutsideSafeArea>(new IntPtr(p + 0x030), ReversePrism.DataModels.CenteringObjectsOutsideSafeArea.FromPointer); // 02466B6B3698 0x30 CharacterPositionAdjuster   ( 000186553690 ModelClassType CenteringObjectsOutsideSafeArea CenteringObjectsOutsideSafeArea CenteringObjectsOutsideSafeArea Pointer )
-            value.DearnessText                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B6B36B8 0x38 DearnessText                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TitleView                                 = GetObject<CommonTitleView>(new IntPtr(p + 0x040), ReversePrism.DataModels.CommonTitleView.FromPointer); // 02466B6B36D8 0x40 TitleView                   ( 0001865E9D00 ModelClassType CommonTitleView CommonTitleView CommonTitleView Pointer )
-            value.CellList                                  = GetObject<IdolStoryLastCategoryCellList>(new IntPtr(p + 0x048), ReversePrism.DataModels.IdolStoryLastCategoryCellList.FromPointer); // 02466B6B36F8 0x48 CellList                    ( 0001866C77A0 ModelClassType IdolStoryLastCategoryCellList IdolStoryLastCategoryCellList IdolStoryLastCategoryCellList Pointer )
-            value.AdvTransitionerView                       = GetObject<StoryToAdvTransitionerView>(new IntPtr(p + 0x050), ReversePrism.DataModels.StoryToAdvTransitionerView.FromPointer); // 02466B6B3718 0x50 AdvTransitionerView         ( 0001865A6340 ModelClassType StoryToAdvTransitionerView StoryToAdvTransitionerView StoryToAdvTransitionerView Pointer )
+            value.CharaColorBg                              = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 0x20 CharaColorBg                ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.UiCharacterViewer                         = GetObject<UICharacterViewer>(new IntPtr(p + 0x028), ReversePrism.DataModels.UICharacterViewer.FromPointer); // 0x28 UiCharacterViewer           ( ModelClassType UICharacterViewer UICharacterViewer UICharacterViewer Pointer )
+            value.CharacterPositionAdjuster                 = GetObject<CenteringObjectsOutsideSafeArea>(new IntPtr(p + 0x030), ReversePrism.DataModels.CenteringObjectsOutsideSafeArea.FromPointer); // 0x30 CharacterPositionAdjuster   ( ModelClassType CenteringObjectsOutsideSafeArea CenteringObjectsOutsideSafeArea CenteringObjectsOutsideSafeArea Pointer )
+            value.DearnessText                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x38 DearnessText                ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TitleView                                 = GetObject<CommonTitleView>(new IntPtr(p + 0x040), ReversePrism.DataModels.CommonTitleView.FromPointer); // 0x40 TitleView                   ( ModelClassType CommonTitleView CommonTitleView CommonTitleView Pointer )
+            value.CellList                                  = GetObject<StoryLastCategoryCellListView>(new IntPtr(p + 0x048), ReversePrism.DataModels.StoryLastCategoryCellListView.FromPointer); // 0x48 CellList                    ( ModelClassType StoryLastCategoryCellListView StoryLastCategoryCellListView StoryLastCategoryCellListView Pointer )
 
             return value;
         }

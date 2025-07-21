@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 threadLocalInstance                      ThreadLocal`1<DefaultSerializationContext> IL2CPP_TYPE_GENERICINST
-    // 010 IsComplete                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 018 SliceBuffer                              00018651B620 ModelClassType SliceBufferSafeHandle SliceBufferSafeHandle SliceBufferSafeHandle Pointer
+    // 010 IsComplete                               ModelPrimitiveType bool bool bool Bool
+    // 018 SliceBuffer                              ModelClassType SliceBufferSafeHandle SliceBufferSafeHandle SliceBufferSafeHandle Pointer
     public partial class DefaultSerializationContext : DataModel
     {
         public bool                                     IsComplete                              { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DefaultSerializationContext() { Pointer= p0 };
 
-            value.IsComplete                                = GetBool(new IntPtr(p + 0x010)); // 0245A4BC0870 0x10 IsComplete                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SliceBuffer                               = GetObject<SliceBufferSafeHandle>(new IntPtr(p + 0x018), ReversePrism.DataModels.SliceBufferSafeHandle.FromPointer); // 0245A4BC0890 0x18 SliceBuffer                 ( 00018651B620 ModelClassType SliceBufferSafeHandle SliceBufferSafeHandle SliceBufferSafeHandle Pointer )
+            value.IsComplete                                = GetBool(new IntPtr(p + 0x010)); // 0x10 IsComplete                  ( ModelPrimitiveType bool bool bool Bool )
+            value.SliceBuffer                               = GetObject<SliceBufferSafeHandle>(new IntPtr(p + 0x018), ReversePrism.DataModels.SliceBufferSafeHandle.FromPointer); // 0x18 SliceBuffer                 ( ModelClassType SliceBufferSafeHandle SliceBufferSafeHandle SliceBufferSafeHandle Pointer )
 
             return value;
         }

@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 070 LessonPanel                              00018651DBE0 ModelClassType LessonPanel LessonPanel LessonPanel Pointer
-    // 078 LessonModel                              00018651D440 ModelClassType LessonModel LessonModel LessonModel Pointer
-    // 080 LessonViewModel                          000186520790 ModelClassType LessonViewModel LessonViewModel LessonViewModel Pointer
-    // 088 LiveScene                                0001865771C0 ModelClassType LiveScene LiveScene LiveScene Pointer
+    // 080 LessonPanel                              ModelClassType LessonPanel LessonPanel LessonPanel Pointer
+    // 088 LessonModel                              ModelClassType LessonModel LessonModel LessonModel Pointer
+    // 090 LessonViewModel                          ModelClassType LessonViewModel LessonViewModel LessonViewModel Pointer
+    // 098 LiveScene                                ModelClassType LiveScene LiveScene LiveScene Pointer
     public partial class LessonPresenter : DataModel
     {
         public LessonPanel?                             LessonPanel                             { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LessonPresenter() { Pointer= p0 };
 
-            value.LessonPanel                               = GetObject<LessonPanel>(new IntPtr(p + 0x070), ReversePrism.DataModels.LessonPanel.FromPointer); // 024665C629D0 0x70 LessonPanel                 ( 00018651DBE0 ModelClassType LessonPanel LessonPanel LessonPanel Pointer )
-            value.LessonModel                               = GetObject<LessonModel>(new IntPtr(p + 0x078), ReversePrism.DataModels.LessonModel.FromPointer); // 024665C629F0 0x78 LessonModel                 ( 00018651D440 ModelClassType LessonModel LessonModel LessonModel Pointer )
-            value.LessonViewModel                           = GetObject<LessonViewModel>(new IntPtr(p + 0x080), ReversePrism.DataModels.LessonViewModel.FromPointer); // 024665C62A10 0x80 LessonViewModel             ( 000186520790 ModelClassType LessonViewModel LessonViewModel LessonViewModel Pointer )
-            value.LiveScene                                 = GetObject<LiveScene>(new IntPtr(p + 0x088), ReversePrism.DataModels.LiveScene.FromPointer); // 024665C62A30 0x88 LiveScene                   ( 0001865771C0 ModelClassType LiveScene LiveScene LiveScene Pointer )
+            value.LessonPanel                               = GetObject<LessonPanel>(new IntPtr(p + 0x080), ReversePrism.DataModels.LessonPanel.FromPointer); // 0x80 LessonPanel                 ( ModelClassType LessonPanel LessonPanel LessonPanel Pointer )
+            value.LessonModel                               = GetObject<LessonModel>(new IntPtr(p + 0x088), ReversePrism.DataModels.LessonModel.FromPointer); // 0x88 LessonModel                 ( ModelClassType LessonModel LessonModel LessonModel Pointer )
+            value.LessonViewModel                           = GetObject<LessonViewModel>(new IntPtr(p + 0x090), ReversePrism.DataModels.LessonViewModel.FromPointer); // 0x90 LessonViewModel             ( ModelClassType LessonViewModel LessonViewModel LessonViewModel Pointer )
+            value.LiveScene                                 = GetObject<LiveScene>(new IntPtr(p + 0x098), ReversePrism.DataModels.LiveScene.FromPointer); // 0x98 LiveScene                   ( ModelClassType LiveScene LiveScene LiveScene Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 170 AmbientTemperature                       000186730F50 ModelClassType AxisControl AxisControl AxisControl Pointer
+    // 170 AmbientTemperature                       ModelClassType AxisControl AxisControl AxisControl Pointer
     // 000 <current>k__BackingField                 AmbientTemperatureSensor IL2CPP_TYPE_CLASS
     public partial class AmbientTemperatureSensor : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AmbientTemperatureSensor() { Pointer= p0 };
 
-            value.AmbientTemperature                        = GetObject<AxisControl>(new IntPtr(p + 0x170), ReversePrism.DataModels.AxisControl.FromPointer); // 0245A33B2478 0x170 AmbientTemperature          ( 000186730F50 ModelClassType AxisControl AxisControl AxisControl Pointer )
+            value.AmbientTemperature                        = GetObject<AxisControl>(new IntPtr(p + 0x170), ReversePrism.DataModels.AxisControl.FromPointer); // 0x170 AmbientTemperature          ( ModelClassType AxisControl AxisControl AxisControl Pointer )
 
             return value;
         }

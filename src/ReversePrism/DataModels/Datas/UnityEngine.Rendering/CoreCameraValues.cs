@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 FilterMode                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 014 CullingMask                              000186698B70 ModelPrimitiveType uint uint uint UInt32
-    // 018 InstanceID                               0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 FilterMode                               ModelPrimitiveType int int int Int32
+    // 014 CullingMask                              ModelPrimitiveType uint uint uint UInt32
+    // 018 InstanceID                               ModelPrimitiveType int int int Int32
     public partial class CoreCameraValues : DataModel
     {
         public int                                      FilterMode                              { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CoreCameraValues() { Pointer= p0 };
 
-            value.FilterMode                                = GetInt32(new IntPtr(p + 0x010)); // 0245A24582F8 0x10 FilterMode                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CullingMask                               = GetUInt32(new IntPtr(p + 0x014)); // 0245A2458318 0x14 CullingMask                 ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
-            value.InstanceID                                = GetInt32(new IntPtr(p + 0x018)); // 0245A2458338 0x18 InstanceID                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.FilterMode                                = GetInt32(new IntPtr(p + 0x010)); // 0x10 FilterMode                  ( ModelPrimitiveType int int int Int32 )
+            value.CullingMask                               = GetUInt32(new IntPtr(p + 0x014)); // 0x14 CullingMask                 ( ModelPrimitiveType uint uint uint UInt32 )
+            value.InstanceID                                = GetInt32(new IntPtr(p + 0x018)); // 0x18 InstanceID                  ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

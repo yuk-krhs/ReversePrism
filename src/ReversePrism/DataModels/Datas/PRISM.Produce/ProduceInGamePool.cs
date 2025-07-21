@@ -16,6 +16,10 @@ namespace ReversePrism.DataModels
     // 030 <InGameActionResultPool>k__BackingField  ObjectPool`1<InGameActionResult> IL2CPP_TYPE_GENERICINST
     // 038 <InGamePlayerActionResultPool>k__BackingField ObjectPool`1<InGamePlayerActionResult> IL2CPP_TYPE_GENERICINST
     // 040 <TemporaryCardListPool>k__BackingField   ObjectPool`1<List`1<IngamePCardModel>> IL2CPP_TYPE_GENERICINST
+    // 048 <AppealEffectConditionParamPool>k__BackingField ObjectPool`1<AppealEffectConditionParam> IL2CPP_TYPE_GENERICINST
+    // 050 <ShowProduceCardDetailParamPool>k__BackingField ObjectPool`1<ShowProduceCardDetailParam> IL2CPP_TYPE_GENERICINST
+    // 058 <EffectDisplayIdListPool>k__BackingField ObjectPool`1<List`1<int>> IL2CPP_TYPE_GENERICINST
+    // 060 <MentalAnimDataPool>k__BackingField      ObjectPool`1<MentalAnimationData> IL2CPP_TYPE_GENERICINST
     public partial class ProduceInGamePool : DataModel
     {
 

@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 FullTypeName                             000186671910 ModelPrimitiveType string string string String
-    // 018 AssemblyString                           000186671910 ModelPrimitiveType string string string String
-    // 020 HasTypeForwardedFrom                     000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 FullTypeName                             ModelPrimitiveType string string string String
+    // 018 AssemblyString                           ModelPrimitiveType string string string String
+    // 020 HasTypeForwardedFrom                     ModelPrimitiveType bool bool bool Bool
     public partial class TypeInformation : DataModel
     {
         public string                                   FullTypeName                            { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TypeInformation() { Pointer= p0 };
 
-            value.FullTypeName                              = GetString(new IntPtr(p + 0x010)); // 024666CC15A8 0x10 FullTypeName                ( 000186671910 ModelPrimitiveType string string string String )
-            value.AssemblyString                            = GetString(new IntPtr(p + 0x018)); // 024666CC15C8 0x18 AssemblyString              ( 000186671910 ModelPrimitiveType string string string String )
-            value.HasTypeForwardedFrom                      = GetBool(new IntPtr(p + 0x020)); // 024666CC15E8 0x20 HasTypeForwardedFrom        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.FullTypeName                              = GetString(new IntPtr(p + 0x010)); // 0x10 FullTypeName                ( ModelPrimitiveType string string string String )
+            value.AssemblyString                            = GetString(new IntPtr(p + 0x018)); // 0x18 AssemblyString              ( ModelPrimitiveType string string string String )
+            value.HasTypeForwardedFrom                      = GetBool(new IntPtr(p + 0x020)); // 0x20 HasTypeForwardedFrom        ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

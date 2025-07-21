@@ -9,10 +9,10 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 MinValue                                 DateTimeOffset IL2CPP_TYPE_VALUETYPE
-    // 010 MaxValue                                 0001865BD420 ModelEnumType DateTimeOffset DateTimeOffset DateTimeOffset Int32
-    // 020 UnixEpoch                                0001865BD420 ModelEnumType DateTimeOffset DateTimeOffset DateTimeOffset Int32
-    // 010 DateTime                                 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    // 018 OffsetMinutes                            0001865F1780 ModelPrimitiveType short short short Int16
+    // 010 MaxValue                                 ModelEnumType DateTimeOffset DateTimeOffset DateTimeOffset Int32
+    // 020 UnixEpoch                                ModelEnumType DateTimeOffset DateTimeOffset DateTimeOffset Int32
+    // 010 DateTime                                 ModelPrimitiveType DateTime DateTime DateTime DateTime
+    // 018 OffsetMinutes                            ModelPrimitiveType short short short Int16
     public partial class DateTimeOffset : DataModel
     {
         public DateTimeOffset                           MaxValue                                { get; set; }
@@ -28,10 +28,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DateTimeOffset() { Pointer= p0 };
 
-            value.MaxValue                                  = (DateTimeOffset)GetInt32(new IntPtr(p + 0x010)); // 0245A3C0E778 0x10 MaxValue                    ( 0001865BD420 ModelEnumType DateTimeOffset DateTimeOffset DateTimeOffset Int32 )
-            value.UnixEpoch                                 = (DateTimeOffset)GetInt32(new IntPtr(p + 0x020)); // 0245A3C0E798 0x20 UnixEpoch                   ( 0001865BD420 ModelEnumType DateTimeOffset DateTimeOffset DateTimeOffset Int32 )
-            value.DateTime                                  = GetDateTime(new IntPtr(p + 0x010)); // 0245A3C0E7B8 0x10 DateTime                    ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.OffsetMinutes                             = GetInt16(new IntPtr(p + 0x018)); // 0245A3C0E7D8 0x18 OffsetMinutes               ( 0001865F1780 ModelPrimitiveType short short short Int16 )
+            value.MaxValue                                  = (DateTimeOffset)GetInt32(new IntPtr(p + 0x010)); // 0x10 MaxValue                    ( ModelEnumType DateTimeOffset DateTimeOffset DateTimeOffset Int32 )
+            value.UnixEpoch                                 = (DateTimeOffset)GetInt32(new IntPtr(p + 0x020)); // 0x20 UnixEpoch                   ( ModelEnumType DateTimeOffset DateTimeOffset DateTimeOffset Int32 )
+            value.DateTime                                  = GetDateTime(new IntPtr(p + 0x010)); // 0x10 DateTime                    ( ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.OffsetMinutes                             = GetInt16(new IntPtr(p + 0x018)); // 0x18 OffsetMinutes               ( ModelPrimitiveType short short short Int16 )
 
             return value;
         }

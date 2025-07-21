@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ArrResponse                              000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 018 CadMrm                                   00018659FB50 ModelClassType CADMethodReturnMessage CADMethodReturnMessage CADMethodReturnMessage Pointer
+    // 010 ArrResponse                              ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 018 CadMrm                                   ModelClassType CADMethodReturnMessage CADMethodReturnMessage CADMethodReturnMessage Pointer
     public partial class ProcessMessageRes : DataModel
     {
         public List<sbyte>?                             ArrResponse                             { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProcessMessageRes() { Pointer= p0 };
 
-            value.ArrResponse                               = GetSByteList(new IntPtr(p + 0x010)); // 024666C5D5C8 0x10 ArrResponse                 ( 000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.CadMrm                                    = GetObject<CADMethodReturnMessage>(new IntPtr(p + 0x018), ReversePrism.DataModels.CADMethodReturnMessage.FromPointer); // 024666C5D5E8 0x18 CadMrm                      ( 00018659FB50 ModelClassType CADMethodReturnMessage CADMethodReturnMessage CADMethodReturnMessage Pointer )
+            value.ArrResponse                               = GetSByteList(new IntPtr(p + 0x010)); // 0x10 ArrResponse                 ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.CadMrm                                    = GetObject<CADMethodReturnMessage>(new IntPtr(p + 0x018), ReversePrism.DataModels.CADMethodReturnMessage.FromPointer); // 0x18 CadMrm                      ( ModelClassType CADMethodReturnMessage CADMethodReturnMessage CADMethodReturnMessage Pointer )
 
             return value;
         }

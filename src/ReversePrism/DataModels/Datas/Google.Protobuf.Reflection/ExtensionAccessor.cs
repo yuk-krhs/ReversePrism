@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Extension                                0001865CFEB0 ModelClassType Extension Extension Extension Pointer
-    // 018 Helper                                   0001866BF630 ModelClassType IExtensionReflectionHelper IExtensionReflectionHelper IExtensionReflectionHelper Pointer
-    // 020 Descriptor                               000186571FF0 ModelClassType FieldDescriptor FieldDescriptor FieldDescriptor Pointer
+    // 010 Extension                                ModelClassType Extension Extension Extension Pointer
+    // 018 Helper                                   ModelClassType IExtensionReflectionHelper IExtensionReflectionHelper IExtensionReflectionHelper Pointer
+    // 020 Descriptor                               ModelClassType FieldDescriptor FieldDescriptor FieldDescriptor Pointer
     public partial class ExtensionAccessor : DataModel
     {
         public Extension?                               Extension                               { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExtensionAccessor() { Pointer= p0 };
 
-            value.Extension                                 = GetObject<Extension>(new IntPtr(p + 0x010), ReversePrism.DataModels.Extension.FromPointer); // 024660D532D0 0x10 Extension                   ( 0001865CFEB0 ModelClassType Extension Extension Extension Pointer )
-            value.Helper                                    = GetObject<IExtensionReflectionHelper>(new IntPtr(p + 0x018), ReversePrism.DataModels.IExtensionReflectionHelper.FromPointer); // 024660D532F0 0x18 Helper                      ( 0001866BF630 ModelClassType IExtensionReflectionHelper IExtensionReflectionHelper IExtensionReflectionHelper Pointer )
-            value.Descriptor                                = GetObject<FieldDescriptor>(new IntPtr(p + 0x020), ReversePrism.DataModels.FieldDescriptor.FromPointer); // 024660D53310 0x20 Descriptor                  ( 000186571FF0 ModelClassType FieldDescriptor FieldDescriptor FieldDescriptor Pointer )
+            value.Extension                                 = GetObject<Extension>(new IntPtr(p + 0x010), ReversePrism.DataModels.Extension.FromPointer); // 0x10 Extension                   ( ModelClassType Extension Extension Extension Pointer )
+            value.Helper                                    = GetObject<IExtensionReflectionHelper>(new IntPtr(p + 0x018), ReversePrism.DataModels.IExtensionReflectionHelper.FromPointer); // 0x18 Helper                      ( ModelClassType IExtensionReflectionHelper IExtensionReflectionHelper IExtensionReflectionHelper Pointer )
+            value.Descriptor                                = GetObject<FieldDescriptor>(new IntPtr(p + 0x020), ReversePrism.DataModels.FieldDescriptor.FromPointer); // 0x20 Descriptor                  ( ModelClassType FieldDescriptor FieldDescriptor FieldDescriptor Pointer )
 
             return value;
         }

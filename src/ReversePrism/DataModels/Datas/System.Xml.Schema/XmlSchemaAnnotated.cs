@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 038 Id                                       000186671910 ModelPrimitiveType string string string String
-    // 040 Annotation                               0001865AD1E0 ModelClassType XmlSchemaAnnotation XmlSchemaAnnotation XmlSchemaAnnotation Pointer
-    // 048 MoreAttributes                           000185CB3608 ModelClassListType XmlAttribute[] XmlAttribute[] List<XmlAttribute> Pointer
+    // 038 Id                                       ModelPrimitiveType string string string String
+    // 040 Annotation                               ModelClassType XmlSchemaAnnotation XmlSchemaAnnotation XmlSchemaAnnotation Pointer
+    // 048 MoreAttributes                           ModelClassListType XmlAttribute[] XmlAttribute[] List<XmlAttribute> Pointer
     public partial class XmlSchemaAnnotated : DataModel
     {
         public string                                   Id                                      { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlSchemaAnnotated() { Pointer= p0 };
 
-            value.Id                                        = GetString(new IntPtr(p + 0x038)); // 0246673DD8F0 0x38 Id                          ( 000186671910 ModelPrimitiveType string string string String )
-            value.Annotation                                = GetObject<XmlSchemaAnnotation>(new IntPtr(p + 0x040), ReversePrism.DataModels.XmlSchemaAnnotation.FromPointer); // 0246673DD910 0x40 Annotation                  ( 0001865AD1E0 ModelClassType XmlSchemaAnnotation XmlSchemaAnnotation XmlSchemaAnnotation Pointer )
-            value.MoreAttributes                            = GetObjectList<XmlAttribute>(new IntPtr(p + 0x048), ReversePrism.DataModels.XmlAttribute.FromPointer); // 0246673DD930 0x48 MoreAttributes              ( 000185CB3608 ModelClassListType XmlAttribute[] XmlAttribute[] List<XmlAttribute> Pointer )
+            value.Id                                        = GetString(new IntPtr(p + 0x038)); // 0x38 Id                          ( ModelPrimitiveType string string string String )
+            value.Annotation                                = GetObject<XmlSchemaAnnotation>(new IntPtr(p + 0x040), ReversePrism.DataModels.XmlSchemaAnnotation.FromPointer); // 0x40 Annotation                  ( ModelClassType XmlSchemaAnnotation XmlSchemaAnnotation XmlSchemaAnnotation Pointer )
+            value.MoreAttributes                            = GetObjectList<XmlAttribute>(new IntPtr(p + 0x048), ReversePrism.DataModels.XmlAttribute.FromPointer); // 0x48 MoreAttributes              ( ModelClassListType XmlAttribute[] XmlAttribute[] List<XmlAttribute> Pointer )
 
             return value;
         }

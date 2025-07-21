@@ -12,8 +12,8 @@ namespace ReversePrism.DataModels
     // 000 Empty                                    Metadata IL2CPP_TYPE_CLASS
     // 000 CompressionRequestAlgorithmMetadataKey   string IL2CPP_TYPE_STRING
     // 008 EncodingASCII                            Encoding IL2CPP_TYPE_CLASS
-    // 010 Entries                                  000185D26BC8 ModelClassListType List`1<Entry> List`1<Entry> List<Entry> Pointer
-    // 018 ReadOnly                                 000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 Entries                                  ModelClassListType List`1<Entry> List`1<Entry> List<Entry> Pointer
+    // 018 ReadOnly                                 ModelPrimitiveType bool bool bool Bool
     public partial class Metadata : DataModel
     {
         public List<Entry>?                             Entries                                 { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Metadata() { Pointer= p0 };
 
-            value.Entries                                   = GetObjectList<Entry>(new IntPtr(p + 0x010), ReversePrism.DataModels.Entry.FromPointer); // 0245A4B8CF30 0x10 Entries                     ( 000185D26BC8 ModelClassListType List`1<Entry> List`1<Entry> List<Entry> Pointer )
-            value.ReadOnly                                  = GetBool(new IntPtr(p + 0x018)); // 0245A4B8CF50 0x18 ReadOnly                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Entries                                   = GetObjectList<Entry>(new IntPtr(p + 0x010), ReversePrism.DataModels.Entry.FromPointer); // 0x10 Entries                     ( ModelClassListType List`1<Entry> List`1<Entry> List<Entry> Pointer )
+            value.ReadOnly                                  = GetBool(new IntPtr(p + 0x018)); // 0x18 ReadOnly                    ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

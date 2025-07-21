@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 DocumentType                             000186574F10 ModelClassType XDocumentType XDocumentType XDocumentType Pointer
+    // 018 DocumentType                             ModelClassType XDocumentType XDocumentType XDocumentType Pointer
     public partial class XDocumentTypeWrapper : DataModel
     {
         public XDocumentType?                           DocumentType                            { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XDocumentTypeWrapper() { Pointer= p0 };
 
-            value.DocumentType                              = GetObject<XDocumentType>(new IntPtr(p + 0x018), ReversePrism.DataModels.XDocumentType.FromPointer); // 0246688C1A60 0x18 DocumentType                ( 000186574F10 ModelClassType XDocumentType XDocumentType XDocumentType Pointer )
+            value.DocumentType                              = GetObject<XDocumentType>(new IntPtr(p + 0x018), ReversePrism.DataModels.XDocumentType.FromPointer); // 0x18 DocumentType                ( ModelClassType XDocumentType XDocumentType XDocumentType Pointer )
 
             return value;
         }

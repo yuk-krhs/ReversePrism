@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Request                                0001866E1900 ModelClassType HttpRequest HttpRequest HttpRequest Pointer
+    // 010 M_Request                                ModelClassType HttpRequest HttpRequest HttpRequest Pointer
     public partial class ReadOnlyHttpRequest : DataModel
     {
         public HttpRequest?                             M_Request                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ReadOnlyHttpRequest() { Pointer= p0 };
 
-            value.M_Request                                 = GetObject<HttpRequest>(new IntPtr(p + 0x010), ReversePrism.DataModels.HttpRequest.FromPointer); // 02466BAE41F8 0x10 M_Request                   ( 0001866E1900 ModelClassType HttpRequest HttpRequest HttpRequest Pointer )
+            value.M_Request                                 = GetObject<HttpRequest>(new IntPtr(p + 0x010), ReversePrism.DataModels.HttpRequest.FromPointer); // 0x10 M_Request                   ( ModelClassType HttpRequest HttpRequest HttpRequest Pointer )
 
             return value;
         }

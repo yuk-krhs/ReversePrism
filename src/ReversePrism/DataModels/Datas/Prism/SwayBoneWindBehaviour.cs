@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 WindCurveX                               000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer
-    // 018 WindCurveY                               000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer
-    // 020 WindCurveZ                               000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer
+    // 010 WindCurveX                               ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer
+    // 018 WindCurveY                               ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer
+    // 020 WindCurveZ                               ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer
     public partial class SwayBoneWindBehaviour : DataModel
     {
         public AnimationCurve?                          WindCurveX                              { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SwayBoneWindBehaviour() { Pointer= p0 };
 
-            value.WindCurveX                                = GetObject<AnimationCurve>(new IntPtr(p + 0x010), ReversePrism.DataModels.AnimationCurve.FromPointer); // 024664E753E0 0x10 WindCurveX                  ( 000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
-            value.WindCurveY                                = GetObject<AnimationCurve>(new IntPtr(p + 0x018), ReversePrism.DataModels.AnimationCurve.FromPointer); // 024664E75400 0x18 WindCurveY                  ( 000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
-            value.WindCurveZ                                = GetObject<AnimationCurve>(new IntPtr(p + 0x020), ReversePrism.DataModels.AnimationCurve.FromPointer); // 024664E75420 0x20 WindCurveZ                  ( 000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
+            value.WindCurveX                                = GetObject<AnimationCurve>(new IntPtr(p + 0x010), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0x10 WindCurveX                  ( ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
+            value.WindCurveY                                = GetObject<AnimationCurve>(new IntPtr(p + 0x018), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0x18 WindCurveY                  ( ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
+            value.WindCurveZ                                = GetObject<AnimationCurve>(new IntPtr(p + 0x020), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0x20 WindCurveZ                  ( ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
 
             return value;
         }

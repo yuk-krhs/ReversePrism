@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Camera                                   0001865A1C90 ModelClassType Camera Camera Camera Pointer
+    // 020 Camera                                   ModelClassType Camera Camera Camera Pointer
     public partial class Billboard : DataModel
     {
         public Camera?                                  Camera                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Billboard() { Pointer= p0 };
 
-            value.Camera                                    = GetObject<Camera>(new IntPtr(p + 0x020), ReversePrism.DataModels.Camera.FromPointer); // 024664EC10F0 0x20 Camera                      ( 0001865A1C90 ModelClassType Camera Camera Camera Pointer )
+            value.Camera                                    = GetObject<Camera>(new IntPtr(p + 0x020), ReversePrism.DataModels.Camera.FromPointer); // 0x20 Camera                      ( ModelClassType Camera Camera Camera Pointer )
 
             return value;
         }

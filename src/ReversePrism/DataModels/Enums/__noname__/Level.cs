@@ -10,12 +10,8 @@ namespace ReversePrism.DataModels
 
     public enum Level
     {
-        Debug,
-        Info,
-        Warning,
-        Assert,
-        Error,
-        CrashReport,
-        Exception,
+        Undoc,
+        API,
+        UserRef,
     }
 }

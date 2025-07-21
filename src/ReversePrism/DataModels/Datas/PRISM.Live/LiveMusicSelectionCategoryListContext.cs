@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 038 ItemCount                                0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 040 ItemCount                                ModelPrimitiveType int int int Int32
     public partial class LiveMusicSelectionCategoryListContext : DataModel
     {
         public int                                      ItemCount                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveMusicSelectionCategoryListContext() { Pointer= p0 };
 
-            value.ItemCount                                 = GetInt32(new IntPtr(p + 0x038)); // 0246651A8838 0x38 ItemCount                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ItemCount                                 = GetInt32(new IntPtr(p + 0x040)); // 0x40 ItemCount                   ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 Native                                   NativeMethods IL2CPP_TYPE_CLASS
     // 008 Logger                                   ILogger IL2CPP_TYPE_CLASS
     // 020 returnToPoolAction                       Action`1<RequestCallContextSafeHandle> IL2CPP_TYPE_GENERICINST
-    // 028 CompletionCallback                       000186667020 ModelClassType RequestCallCompletionDelegate RequestCallCompletionDelegate RequestCallCompletionDelegate Pointer
+    // 028 CompletionCallback                       ModelClassType RequestCallCompletionDelegate RequestCallCompletionDelegate RequestCallCompletionDelegate Pointer
     public partial class RequestCallContextSafeHandle : DataModel
     {
         public RequestCallCompletionDelegate?           CompletionCallback                      { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RequestCallContextSafeHandle() { Pointer= p0 };
 
-            value.CompletionCallback                        = GetObject<RequestCallCompletionDelegate>(new IntPtr(p + 0x028), ReversePrism.DataModels.RequestCallCompletionDelegate.FromPointer); // 024660E34E58 0x28 CompletionCallback          ( 000186667020 ModelClassType RequestCallCompletionDelegate RequestCallCompletionDelegate RequestCallCompletionDelegate Pointer )
+            value.CompletionCallback                        = GetObject<RequestCallCompletionDelegate>(new IntPtr(p + 0x028), ReversePrism.DataModels.RequestCallCompletionDelegate.FromPointer); // 0x28 CompletionCallback          ( ModelClassType RequestCallCompletionDelegate RequestCallCompletionDelegate RequestCallCompletionDelegate Pointer )
 
             return value;
         }

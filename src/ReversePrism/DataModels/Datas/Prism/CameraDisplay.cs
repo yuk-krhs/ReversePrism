@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 RawImage                                 000186613190 ModelClassType RawImage RawImage RawImage Pointer
-    // 028 BlurRatio                                000186666050 ModelPrimitiveType float float float Single
+    // 020 RawImage                                 ModelClassType RawImage RawImage RawImage Pointer
+    // 028 BlurRatio                                ModelPrimitiveType float float float Single
     public partial class CameraDisplay : DataModel
     {
         public RawImage?                                RawImage                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CameraDisplay() { Pointer= p0 };
 
-            value.RawImage                                  = GetObject<RawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.RawImage.FromPointer); // 024664E6C1D0 0x20 RawImage                    ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.BlurRatio                                 = GetSingle(new IntPtr(p + 0x028)); // 024664E6C1F0 0x28 BlurRatio                   ( 000186666050 ModelPrimitiveType float float float Single )
+            value.RawImage                                  = GetObject<RawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.RawImage.FromPointer); // 0x20 RawImage                    ( ModelClassType RawImage RawImage RawImage Pointer )
+            value.BlurRatio                                 = GetSingle(new IntPtr(p + 0x028)); // 0x28 BlurRatio                   ( ModelPrimitiveType float float float Single )
 
             return value;
         }

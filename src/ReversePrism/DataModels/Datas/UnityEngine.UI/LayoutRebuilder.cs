@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_ToRebuild                              000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
-    // 018 M_CachedHashFromTransform                0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 M_ToRebuild                              ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 018 M_CachedHashFromTransform                ModelPrimitiveType int int int Int32
     // 000 s_Rebuilders                             ObjectPool`1<LayoutRebuilder> IL2CPP_TYPE_GENERICINST
     public partial class LayoutRebuilder : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LayoutRebuilder() { Pointer= p0 };
 
-            value.M_ToRebuild                               = GetObject<RectTransform>(new IntPtr(p + 0x010), ReversePrism.DataModels.RectTransform.FromPointer); // 0245A39ACD08 0x10 M_ToRebuild                 ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.M_CachedHashFromTransform                 = GetInt32(new IntPtr(p + 0x018)); // 0245A39ACD28 0x18 M_CachedHashFromTransform   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_ToRebuild                               = GetObject<RectTransform>(new IntPtr(p + 0x010), ReversePrism.DataModels.RectTransform.FromPointer); // 0x10 M_ToRebuild                 ( ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.M_CachedHashFromTransform                 = GetInt32(new IntPtr(p + 0x018)); // 0x18 M_CachedHashFromTransform   ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

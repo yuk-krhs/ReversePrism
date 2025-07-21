@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Values                                   000185B846B0 ModelPrimitiveListType ulong[] ulong[] List<ulong> Pointer
-    // 018 Names                                    000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 010 Values                                   ModelPrimitiveListType ulong[] ulong[] List<ulong> Pointer
+    // 018 Names                                    ModelPrimitiveListType string[] string[] List<string> Pointer
     public partial class ValuesAndNames : DataModel
     {
         public List<ulong>?                             Values                                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ValuesAndNames() { Pointer= p0 };
 
-            value.Values                                    = GetUInt64List(new IntPtr(p + 0x010)); // 0245A01CAA68 0x10 Values                      ( 000185B846B0 ModelPrimitiveListType ulong[] ulong[] List<ulong> Pointer )
-            value.Names                                     = GetStringList(new IntPtr(p + 0x018)); // 0245A01CAA88 0x18 Names                       ( 000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.Values                                    = GetUInt64List(new IntPtr(p + 0x010)); // 0x10 Values                      ( ModelPrimitiveListType ulong[] ulong[] List<ulong> Pointer )
+            value.Names                                     = GetStringList(new IntPtr(p + 0x018)); // 0x18 Names                       ( ModelPrimitiveListType string[] string[] List<string> Pointer )
 
             return value;
         }

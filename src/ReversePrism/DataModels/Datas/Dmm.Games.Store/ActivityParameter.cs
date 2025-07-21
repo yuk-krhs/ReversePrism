@@ -8,13 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 Guid                                     0001866722E0 ModelPrimitiveType string string string String
-    // 030 Selector                                 0001866722E0 ModelPrimitiveType string string string String
-    // 038 AppId                                    0001866722E0 ModelPrimitiveType string string string String
-    // 040 Title                                    0001866722E0 ModelPrimitiveType string string string String
-    // 048 Url                                      0001866722E0 ModelPrimitiveType string string string String
-    // 050 MobileUrl                                0001866722E0 ModelPrimitiveType string string string String
-    // 058 TouchUrl                                 0001866722E0 ModelPrimitiveType string string string String
+    // 028 Guid                                     ModelPrimitiveType string string string String
+    // 030 Selector                                 ModelPrimitiveType string string string String
+    // 038 AppId                                    ModelPrimitiveType string string string String
+    // 040 Title                                    ModelPrimitiveType string string string String
+    // 048 Url                                      ModelPrimitiveType string string string String
+    // 050 MobileUrl                                ModelPrimitiveType string string string String
+    // 058 TouchUrl                                 ModelPrimitiveType string string string String
     public partial class ActivityParameter : DataModel
     {
         public string                                   Guid                                    { get; set; }
@@ -33,13 +33,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ActivityParameter() { Pointer= p0 };
 
-            value.Guid                                      = GetString(new IntPtr(p + 0x028)); // 02466B5167F0 0x28 Guid                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Selector                                  = GetString(new IntPtr(p + 0x030)); // 02466B516810 0x30 Selector                    ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.AppId                                     = GetString(new IntPtr(p + 0x038)); // 02466B516830 0x38 AppId                       ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Title                                     = GetString(new IntPtr(p + 0x040)); // 02466B516850 0x40 Title                       ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Url                                       = GetString(new IntPtr(p + 0x048)); // 02466B516870 0x48 Url                         ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.MobileUrl                                 = GetString(new IntPtr(p + 0x050)); // 02466B516890 0x50 MobileUrl                   ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.TouchUrl                                  = GetString(new IntPtr(p + 0x058)); // 02466B5168B0 0x58 TouchUrl                    ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Guid                                      = GetString(new IntPtr(p + 0x028)); // 0x28 Guid                        ( ModelPrimitiveType string string string String )
+            value.Selector                                  = GetString(new IntPtr(p + 0x030)); // 0x30 Selector                    ( ModelPrimitiveType string string string String )
+            value.AppId                                     = GetString(new IntPtr(p + 0x038)); // 0x38 AppId                       ( ModelPrimitiveType string string string String )
+            value.Title                                     = GetString(new IntPtr(p + 0x040)); // 0x40 Title                       ( ModelPrimitiveType string string string String )
+            value.Url                                       = GetString(new IntPtr(p + 0x048)); // 0x48 Url                         ( ModelPrimitiveType string string string String )
+            value.MobileUrl                                 = GetString(new IntPtr(p + 0x050)); // 0x50 MobileUrl                   ( ModelPrimitiveType string string string String )
+            value.TouchUrl                                  = GetString(new IntPtr(p + 0x058)); // 0x58 TouchUrl                    ( ModelPrimitiveType string string string String )
 
             return value;
         }

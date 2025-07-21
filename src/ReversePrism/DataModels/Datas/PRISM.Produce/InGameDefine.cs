@@ -22,6 +22,9 @@ namespace ReversePrism.DataModels
     // 000 MaxProducePointValue                     int IL2CPP_TYPE_I4
     // 000 ShhisUnitId                              int IL2CPP_TYPE_I4
     // 000 AiLogicNum                               int IL2CPP_TYPE_I4
+    // 000 MinCardCost                              int IL2CPP_TYPE_I4
+    // 000 MaxCardCost                              int IL2CPP_TYPE_I4
+    // 000 MaxAvoid                                 int IL2CPP_TYPE_I4
     public partial class InGameDefine : DataModel
     {
 

@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ShowAlpha                                000186596AF0 ModelPrimitiveType bool bool bool Bool
-    // 011 Hdr                                      000186596AF0 ModelPrimitiveType bool bool bool Bool
-    // 014 MinBrightness                            000186666F40 ModelPrimitiveType float float float Single
-    // 018 MaxBrightness                            000186666F40 ModelPrimitiveType float float float Single
-    // 01C MinExposureValue                         000186666F40 ModelPrimitiveType float float float Single
-    // 020 MaxExposureValue                         000186666F40 ModelPrimitiveType float float float Single
+    // 010 ShowAlpha                                ModelPrimitiveType bool bool bool Bool
+    // 011 Hdr                                      ModelPrimitiveType bool bool bool Bool
+    // 014 MinBrightness                            ModelPrimitiveType float float float Single
+    // 018 MaxBrightness                            ModelPrimitiveType float float float Single
+    // 01C MinExposureValue                         ModelPrimitiveType float float float Single
+    // 020 MaxExposureValue                         ModelPrimitiveType float float float Single
     public partial class ColorUsageAttribute : DataModel
     {
         public bool                                     ShowAlpha                               { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ColorUsageAttribute() { Pointer= p0 };
 
-            value.ShowAlpha                                 = GetBool(new IntPtr(p + 0x010)); // 0245A687AC70 0x10 ShowAlpha                   ( 000186596AF0 ModelPrimitiveType bool bool bool Bool )
-            value.Hdr                                       = GetBool(new IntPtr(p + 0x011)); // 0245A687AC90 0x11 Hdr                         ( 000186596AF0 ModelPrimitiveType bool bool bool Bool )
-            value.MinBrightness                             = GetSingle(new IntPtr(p + 0x014)); // 0245A687ACB0 0x14 MinBrightness               ( 000186666F40 ModelPrimitiveType float float float Single )
-            value.MaxBrightness                             = GetSingle(new IntPtr(p + 0x018)); // 0245A687ACD0 0x18 MaxBrightness               ( 000186666F40 ModelPrimitiveType float float float Single )
-            value.MinExposureValue                          = GetSingle(new IntPtr(p + 0x01C)); // 0245A687ACF0 0x1C MinExposureValue            ( 000186666F40 ModelPrimitiveType float float float Single )
-            value.MaxExposureValue                          = GetSingle(new IntPtr(p + 0x020)); // 0245A687AD10 0x20 MaxExposureValue            ( 000186666F40 ModelPrimitiveType float float float Single )
+            value.ShowAlpha                                 = GetBool(new IntPtr(p + 0x010)); // 0x10 ShowAlpha                   ( ModelPrimitiveType bool bool bool Bool )
+            value.Hdr                                       = GetBool(new IntPtr(p + 0x011)); // 0x11 Hdr                         ( ModelPrimitiveType bool bool bool Bool )
+            value.MinBrightness                             = GetSingle(new IntPtr(p + 0x014)); // 0x14 MinBrightness               ( ModelPrimitiveType float float float Single )
+            value.MaxBrightness                             = GetSingle(new IntPtr(p + 0x018)); // 0x18 MaxBrightness               ( ModelPrimitiveType float float float Single )
+            value.MinExposureValue                          = GetSingle(new IntPtr(p + 0x01C)); // 0x1C MinExposureValue            ( ModelPrimitiveType float float float Single )
+            value.MaxExposureValue                          = GetSingle(new IntPtr(p + 0x020)); // 0x20 MaxExposureValue            ( ModelPrimitiveType float float float Single )
 
             return value;
         }

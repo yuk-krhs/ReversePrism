@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 knownTypes                               Collection`1<Type> IL2CPP_TYPE_GENERICINST
-    // 018 DataContractSurrogate                    00018674A640 ModelClassType IDataContractSurrogate IDataContractSurrogate IDataContractSurrogate Pointer
+    // 018 DataContractSurrogate                    ModelClassType IDataContractSurrogate IDataContractSurrogate IDataContractSurrogate Pointer
     public partial class ExportOptions : DataModel
     {
         public IDataContractSurrogate?                  DataContractSurrogate                   { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExportOptions() { Pointer= p0 };
 
-            value.DataContractSurrogate                     = GetObject<IDataContractSurrogate>(new IntPtr(p + 0x018), ReversePrism.DataModels.IDataContractSurrogate.FromPointer); // 024667D0F0B8 0x18 DataContractSurrogate       ( 00018674A640 ModelClassType IDataContractSurrogate IDataContractSurrogate IDataContractSurrogate Pointer )
+            value.DataContractSurrogate                     = GetObject<IDataContractSurrogate>(new IntPtr(p + 0x018), ReversePrism.DataModels.IDataContractSurrogate.FromPointer); // 0x18 DataContractSurrogate       ( ModelClassType IDataContractSurrogate IDataContractSurrogate IDataContractSurrogate Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 098 M_EndPoint                               0001865C6810 ModelClassType EndPoint EndPoint EndPoint Pointer
+    // 098 M_EndPoint                               ModelClassType EndPoint EndPoint EndPoint Pointer
     public partial class SocketException : DataModel
     {
         public EndPoint?                                M_EndPoint                              { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SocketException() { Pointer= p0 };
 
-            value.M_EndPoint                                = GetObject<EndPoint>(new IntPtr(p + 0x098), ReversePrism.DataModels.EndPoint.FromPointer); // 024667B54000 0x98 M_EndPoint                  ( 0001865C6810 ModelClassType EndPoint EndPoint EndPoint Pointer )
+            value.M_EndPoint                                = GetObject<EndPoint>(new IntPtr(p + 0x098), ReversePrism.DataModels.EndPoint.FromPointer); // 0x98 M_EndPoint                  ( ModelClassType EndPoint EndPoint EndPoint Pointer )
 
             return value;
         }

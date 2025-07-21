@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Lambda                                   0001867781F0 ModelClassType LambdaExpression LambdaExpression LambdaExpression Pointer
-    // 018 Interpreter                              000186721AE0 ModelClassType Interpreter Interpreter Interpreter Pointer
+    // 010 Lambda                                   ModelClassType LambdaExpression LambdaExpression LambdaExpression Pointer
+    // 018 Interpreter                              ModelClassType Interpreter Interpreter Interpreter Pointer
     public partial class LightDelegateCreator : DataModel
     {
         public LambdaExpression?                        Lambda                                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LightDelegateCreator() { Pointer= p0 };
 
-            value.Lambda                                    = GetObject<LambdaExpression>(new IntPtr(p + 0x010), ReversePrism.DataModels.LambdaExpression.FromPointer); // 02466A03F070 0x10 Lambda                      ( 0001867781F0 ModelClassType LambdaExpression LambdaExpression LambdaExpression Pointer )
-            value.Interpreter                               = GetObject<Interpreter>(new IntPtr(p + 0x018), ReversePrism.DataModels.Interpreter.FromPointer); // 02466A03F090 0x18 Interpreter                 ( 000186721AE0 ModelClassType Interpreter Interpreter Interpreter Pointer )
+            value.Lambda                                    = GetObject<LambdaExpression>(new IntPtr(p + 0x010), ReversePrism.DataModels.LambdaExpression.FromPointer); // 0x10 Lambda                      ( ModelClassType LambdaExpression LambdaExpression LambdaExpression Pointer )
+            value.Interpreter                               = GetObject<Interpreter>(new IntPtr(p + 0x018), ReversePrism.DataModels.Interpreter.FromPointer); // 0x18 Interpreter                 ( ModelClassType Interpreter Interpreter Interpreter Pointer )
 
             return value;
         }

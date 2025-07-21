@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 MethodName                               000186672F10 ModelPrimitiveType string string string String
-    // 018 DebugInfo                                00018669CEB0 ModelClassType DebugInfo DebugInfo DebugInfo Pointer
+    // 010 MethodName                               ModelPrimitiveType string string string String
+    // 018 DebugInfo                                ModelClassType DebugInfo DebugInfo DebugInfo Pointer
     public partial class InterpretedFrameInfo : DataModel
     {
         public string                                   MethodName                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InterpretedFrameInfo() { Pointer= p0 };
 
-            value.MethodName                                = GetString(new IntPtr(p + 0x010)); // 02466A049B68 0x10 MethodName                  ( 000186672F10 ModelPrimitiveType string string string String )
-            value.DebugInfo                                 = GetObject<DebugInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.DebugInfo.FromPointer); // 02466A049B88 0x18 DebugInfo                   ( 00018669CEB0 ModelClassType DebugInfo DebugInfo DebugInfo Pointer )
+            value.MethodName                                = GetString(new IntPtr(p + 0x010)); // 0x10 MethodName                  ( ModelPrimitiveType string string string String )
+            value.DebugInfo                                 = GetObject<DebugInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.DebugInfo.FromPointer); // 0x18 DebugInfo                   ( ModelClassType DebugInfo DebugInfo DebugInfo Pointer )
 
             return value;
         }

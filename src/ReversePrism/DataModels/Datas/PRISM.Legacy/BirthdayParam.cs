@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 DateTimeFormat                           string IL2CPP_TYPE_STRING
     // 000 MonthAndDayStartIndex                    int IL2CPP_TYPE_I4
     // 000 YearAndMonthStartIndex                   int IL2CPP_TYPE_I4
-    // 010 BirthYear                                0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 014 BirthMonth                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 018 BirthDay                                 0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 BirthYear                                ModelPrimitiveType int int int Int32
+    // 014 BirthMonth                               ModelPrimitiveType int int int Int32
+    // 018 BirthDay                                 ModelPrimitiveType int int int Int32
     public partial class BirthdayParam : DataModel
     {
         public int                                      BirthYear                               { get; set; }
@@ -28,9 +28,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BirthdayParam() { Pointer= p0 };
 
-            value.BirthYear                                 = GetInt32(new IntPtr(p + 0x010)); // 024665115510 0x10 BirthYear                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.BirthMonth                                = GetInt32(new IntPtr(p + 0x014)); // 024665115530 0x14 BirthMonth                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.BirthDay                                  = GetInt32(new IntPtr(p + 0x018)); // 024665115550 0x18 BirthDay                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.BirthYear                                 = GetInt32(new IntPtr(p + 0x010)); // 0x10 BirthYear                   ( ModelPrimitiveType int int int Int32 )
+            value.BirthMonth                                = GetInt32(new IntPtr(p + 0x014)); // 0x14 BirthMonth                  ( ModelPrimitiveType int int int Int32 )
+            value.BirthDay                                  = GetInt32(new IntPtr(p + 0x018)); // 0x18 BirthDay                    ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

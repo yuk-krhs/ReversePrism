@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 Behaviour                                0001865FDE50 ModelClassType SwitchModelBehaviour SwitchModelBehaviour SwitchModelBehaviour Pointer
+    // 018 Behaviour                                ModelClassType SwitchModelBehaviour SwitchModelBehaviour SwitchModelBehaviour Pointer
     public partial class SwitchModelClip : DataModel
     {
         public SwitchModelBehaviour?                    Behaviour                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SwitchModelClip() { Pointer= p0 };
 
-            value.Behaviour                                 = GetObject<SwitchModelBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.SwitchModelBehaviour.FromPointer); // 024664E72DD0 0x18 Behaviour                   ( 0001865FDE50 ModelClassType SwitchModelBehaviour SwitchModelBehaviour SwitchModelBehaviour Pointer )
+            value.Behaviour                                 = GetObject<SwitchModelBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.SwitchModelBehaviour.FromPointer); // 0x18 Behaviour                   ( ModelClassType SwitchModelBehaviour SwitchModelBehaviour SwitchModelBehaviour Pointer )
 
             return value;
         }

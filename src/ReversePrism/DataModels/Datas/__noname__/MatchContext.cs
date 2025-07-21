@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ValueIndex                               0001865F36C0 ModelPrimitiveType int int int Int32
-    // 014 MatchedVariableCount                     0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 ValueIndex                               ModelPrimitiveType int int int Int32
+    // 014 MatchedVariableCount                     ModelPrimitiveType int int int Int32
     public partial class MatchContext : DataModel
     {
         public int                                      ValueIndex                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MatchContext() { Pointer= p0 };
 
-            value.ValueIndex                                = GetInt32(new IntPtr(p + 0x010)); // 0245A6848FD8 0x10 ValueIndex                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.MatchedVariableCount                      = GetInt32(new IntPtr(p + 0x014)); // 0245A6848FF8 0x14 MatchedVariableCount        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.ValueIndex                                = GetInt32(new IntPtr(p + 0x010)); // 0x10 ValueIndex                  ( ModelPrimitiveType int int int Int32 )
+            value.MatchedVariableCount                      = GetInt32(new IntPtr(p + 0x014)); // 0x14 MatchedVariableCount        ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

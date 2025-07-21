@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 M_Name                                   00018675F520 ModelClassType UxmlStringAttributeDescription UxmlStringAttributeDescription UxmlStringAttributeDescription Pointer
-    // 020 M_Class                                  00018675F2E0 ModelClassType UxmlStringAttributeDescription UxmlStringAttributeDescription UxmlStringAttributeDescription Pointer
+    // 018 M_Name                                   ModelClassType UxmlStringAttributeDescription UxmlStringAttributeDescription UxmlStringAttributeDescription Pointer
+    // 020 M_Class                                  ModelClassType UxmlStringAttributeDescription UxmlStringAttributeDescription UxmlStringAttributeDescription Pointer
     public partial class UxmlRootElementTraits : DataModel
     {
         public UxmlStringAttributeDescription?          M_Name                                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UxmlRootElementTraits() { Pointer= p0 };
 
-            value.M_Name                                    = GetObject<UxmlStringAttributeDescription>(new IntPtr(p + 0x018), ReversePrism.DataModels.UxmlStringAttributeDescription.FromPointer); // 0245A680E5B0 0x18 M_Name                      ( 00018675F520 ModelClassType UxmlStringAttributeDescription UxmlStringAttributeDescription UxmlStringAttributeDescription Pointer )
-            value.M_Class                                   = GetObject<UxmlStringAttributeDescription>(new IntPtr(p + 0x020), ReversePrism.DataModels.UxmlStringAttributeDescription.FromPointer); // 0245A680E5D0 0x20 M_Class                     ( 00018675F2E0 ModelClassType UxmlStringAttributeDescription UxmlStringAttributeDescription UxmlStringAttributeDescription Pointer )
+            value.M_Name                                    = GetObject<UxmlStringAttributeDescription>(new IntPtr(p + 0x018), ReversePrism.DataModels.UxmlStringAttributeDescription.FromPointer); // 0x18 M_Name                      ( ModelClassType UxmlStringAttributeDescription UxmlStringAttributeDescription UxmlStringAttributeDescription Pointer )
+            value.M_Class                                   = GetObject<UxmlStringAttributeDescription>(new IntPtr(p + 0x020), ReversePrism.DataModels.UxmlStringAttributeDescription.FromPointer); // 0x20 M_Class                     ( ModelClassType UxmlStringAttributeDescription UxmlStringAttributeDescription UxmlStringAttributeDescription Pointer )
 
             return value;
         }

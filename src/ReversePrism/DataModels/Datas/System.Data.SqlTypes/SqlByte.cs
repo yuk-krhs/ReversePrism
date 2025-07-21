@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_fNotNull                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 011 M_value                                  00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 010 M_fNotNull                               ModelPrimitiveType bool bool bool Bool
+    // 011 M_value                                  ModelPrimitiveType sbyte sbyte sbyte SByte
     // 000 s_iBitNotByteMax                         int IL2CPP_TYPE_I4
     // 004 Null                                     SqlByte IL2CPP_TYPE_VALUETYPE
     // 006 Zero                                     SqlByte IL2CPP_TYPE_VALUETYPE
@@ -28,8 +28,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SqlByte() { Pointer= p0 };
 
-            value.M_fNotNull                                = GetBool(new IntPtr(p + 0x010)); // 0246689EA948 0x10 M_fNotNull                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_value                                   = GetSByte(new IntPtr(p + 0x011)); // 0246689EA968 0x11 M_value                     ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.M_fNotNull                                = GetBool(new IntPtr(p + 0x010)); // 0x10 M_fNotNull                  ( ModelPrimitiveType bool bool bool Bool )
+            value.M_value                                   = GetSByte(new IntPtr(p + 0x011)); // 0x11 M_value                     ( ModelPrimitiveType sbyte sbyte sbyte SByte )
 
             return value;
         }

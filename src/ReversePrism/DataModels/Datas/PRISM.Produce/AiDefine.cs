@@ -8,6 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
+    // 000 FirstCardScoreRate                       int IL2CPP_TYPE_I4
+    // 000 MaxTypeCounter                           int IL2CPP_TYPE_I4
+    // 000 TypeCounterPoint                         int IL2CPP_TYPE_I4
+    // 000 AppealZeroScore                          int IL2CPP_TYPE_I4
+    // 000 AddParamaterTypesScore                   int IL2CPP_TYPE_I4
     // 000 EditorAiPatternScriptableObjectPath      string IL2CPP_TYPE_STRING
     // 000 AiPatternScriptableObjectPath            string IL2CPP_TYPE_STRING
     // 000 EditorAiExcelPath                        string IL2CPP_TYPE_STRING

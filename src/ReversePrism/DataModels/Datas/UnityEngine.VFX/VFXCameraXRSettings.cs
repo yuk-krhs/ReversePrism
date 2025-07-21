@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ViewTotal                                0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 014 ViewCount                                0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 018 ViewOffset                               0001866992B0 ModelPrimitiveType uint uint uint UInt32
+    // 010 ViewTotal                                ModelPrimitiveType uint uint uint UInt32
+    // 014 ViewCount                                ModelPrimitiveType uint uint uint UInt32
+    // 018 ViewOffset                               ModelPrimitiveType uint uint uint UInt32
     public partial class VFXCameraXRSettings : DataModel
     {
         public uint                                     ViewTotal                               { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new VFXCameraXRSettings() { Pointer= p0 };
 
-            value.ViewTotal                                 = GetUInt32(new IntPtr(p + 0x010)); // 0245A2196C68 0x10 ViewTotal                   ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.ViewCount                                 = GetUInt32(new IntPtr(p + 0x014)); // 0245A2196C88 0x14 ViewCount                   ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.ViewOffset                                = GetUInt32(new IntPtr(p + 0x018)); // 0245A2196CA8 0x18 ViewOffset                  ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.ViewTotal                                 = GetUInt32(new IntPtr(p + 0x010)); // 0x10 ViewTotal                   ( ModelPrimitiveType uint uint uint UInt32 )
+            value.ViewCount                                 = GetUInt32(new IntPtr(p + 0x014)); // 0x14 ViewCount                   ( ModelPrimitiveType uint uint uint UInt32 )
+            value.ViewOffset                                = GetUInt32(new IntPtr(p + 0x018)); // 0x18 ViewOffset                  ( ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

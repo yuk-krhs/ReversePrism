@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Target                                   000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 010 Target                                   ModelClassType RectTransform RectTransform RectTransform Pointer
     public partial class SetTargetSequence : DataModel
     {
         public RectTransform?                           Target                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SetTargetSequence() { Pointer= p0 };
 
-            value.Target                                    = GetObject<RectTransform>(new IntPtr(p + 0x010), ReversePrism.DataModels.RectTransform.FromPointer); // 0245A57430F8 0x10 Target                      ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.Target                                    = GetObject<RectTransform>(new IntPtr(p + 0x010), ReversePrism.DataModels.RectTransform.FromPointer); // 0x10 Target                      ( ModelClassType RectTransform RectTransform RectTransform Pointer )
 
             return value;
         }

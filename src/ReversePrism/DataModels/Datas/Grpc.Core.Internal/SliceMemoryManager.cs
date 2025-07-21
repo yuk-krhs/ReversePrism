@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Slice                                    000186668D70 ModelEnumType Slice Slice Slice Int32
+    // 010 Slice                                    ModelEnumType Slice Slice Slice Int32
     public partial class SliceMemoryManager : DataModel
     {
         public Slice                                    Slice                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SliceMemoryManager() { Pointer= p0 };
 
-            value.Slice                                     = (Slice)GetInt32(new IntPtr(p + 0x010)); // 024662FBF490 0x10 Slice                       ( 000186668D70 ModelEnumType Slice Slice Slice Int32 )
+            value.Slice                                     = (Slice)GetInt32(new IntPtr(p + 0x010)); // 0x10 Slice                       ( ModelEnumType Slice Slice Slice Int32 )
 
             return value;
         }

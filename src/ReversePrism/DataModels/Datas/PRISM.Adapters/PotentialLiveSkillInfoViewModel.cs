@@ -8,12 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 MstPotentialLiveSkillID                  0001865F4260 ModelPrimitiveType int int int Int32
-    // 014 MstPotentialLiveSkillLevelID             0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 Lv                                       0001865F4260 ModelPrimitiveType int int int Int32
-    // 020 <Effects>k__BackingField                 ValueTuple`2<string, string>[] IL2CPP_TYPE_SZARRAY
+    // 010 LiveSkillLevels                          ModelClassListType IReadOnlyList`1<IPotentialLiveSkillLevelStatus> IReadOnlyList`1<IPotentialLiveSkillLevelStatus> List<IPotentialLiveSkillLevelStatus> Pointer
+    // 018 onUpdate                                 Subject`1<PotentialLiveSkillInfoViewModel> IL2CPP_TYPE_GENERICINST
+    // 020 MstPotentialLiveSkillID                  ModelPrimitiveType int int int Int32
+    // 024 MstPotentialLiveSkillLevelID             ModelPrimitiveType int int int Int32
+    // 028 Lv                                       ModelPrimitiveType int int int Int32
+    // 030 <Effects>k__BackingField                 ValueTuple`2<string, string>[] IL2CPP_TYPE_SZARRAY
     public partial class PotentialLiveSkillInfoViewModel : DataModel
     {
+        public List<IPotentialLiveSkillLevelStatus>?    LiveSkillLevels                         { get; set; }
         public int                                      MstPotentialLiveSkillID                 { get; set; }
         public int                                      MstPotentialLiveSkillLevelID            { get; set; }
         public int                                      Lv                                      { get; set; }
@@ -26,9 +29,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PotentialLiveSkillInfoViewModel() { Pointer= p0 };
 
-            value.MstPotentialLiveSkillID                   = GetInt32(new IntPtr(p + 0x010)); // 024665FEC020 0x10 MstPotentialLiveSkillID     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstPotentialLiveSkillLevelID              = GetInt32(new IntPtr(p + 0x014)); // 024665FEC040 0x14 MstPotentialLiveSkillLevelID ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Lv                                        = GetInt32(new IntPtr(p + 0x018)); // 024665FEC060 0x18 Lv                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.LiveSkillLevels                           = GetObjectList<IPotentialLiveSkillLevelStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IPotentialLiveSkillLevelStatus.FromPointer); // 0x10 LiveSkillLevels             ( ModelClassListType IReadOnlyList`1<IPotentialLiveSkillLevelStatus> IReadOnlyList`1<IPotentialLiveSkillLevelStatus> List<IPotentialLiveSkillLevelStatus> Pointer )
+            value.MstPotentialLiveSkillID                   = GetInt32(new IntPtr(p + 0x020)); // 0x20 MstPotentialLiveSkillID     ( ModelPrimitiveType int int int Int32 )
+            value.MstPotentialLiveSkillLevelID              = GetInt32(new IntPtr(p + 0x024)); // 0x24 MstPotentialLiveSkillLevelID ( ModelPrimitiveType int int int Int32 )
+            value.Lv                                        = GetInt32(new IntPtr(p + 0x028)); // 0x28 Lv                          ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

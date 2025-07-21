@@ -11,10 +11,10 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<BuildChallengeTourProduceIdolUnitArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ChallengeTourIdFieldNumber               int IL2CPP_TYPE_I4
-    // 018 ChallengeTourId                          0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 ChallengeTourId                          ModelPrimitiveType int int int Int32
     // 000 MstProduceIdolIdListFieldNumber          int IL2CPP_TYPE_I4
     // 008 _repeated_mstProduceIdolIdList_codec     FieldCodec`1<int> IL2CPP_TYPE_GENERICINST
-    // 020 MstProduceIdolIdList                     000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer
+    // 020 MstProduceIdolIdList                     ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer
     public partial class BuildChallengeTourProduceIdolUnitArgs : DataModel
     {
         public int                                      ChallengeTourId                         { get; set; }
@@ -28,8 +28,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BuildChallengeTourProduceIdolUnitArgs() { Pointer= p0 };
 
-            value.ChallengeTourId                           = GetInt32(new IntPtr(p + 0x018)); // 024660B13458 0x18 ChallengeTourId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstProduceIdolIdList                      = GetInt32List(new IntPtr(p + 0x020)); // 024660B134B8 0x20 MstProduceIdolIdList        ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.ChallengeTourId                           = GetInt32(new IntPtr(p + 0x018)); // 0x18 ChallengeTourId             ( ModelPrimitiveType int int int Int32 )
+            value.MstProduceIdolIdList                      = GetInt32List(new IntPtr(p + 0x020)); // 0x20 MstProduceIdolIdList        ( ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
 
             return value;
         }

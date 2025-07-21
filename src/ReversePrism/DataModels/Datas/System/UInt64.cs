@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_value                                  00018669C270 ModelPrimitiveType ulong ulong ulong UInt64
+    // 010 M_value                                  ModelPrimitiveType ulong ulong ulong UInt64
     // 000 MaxValue                                 ulong IL2CPP_TYPE_U8
     // 000 MinValue                                 ulong IL2CPP_TYPE_U8
     public partial class UInt64 : DataModel
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UInt64() { Pointer= p0 };
 
-            value.M_value                                   = GetUInt64(new IntPtr(p + 0x010)); // 0245A33EEBC8 0x10 M_value                     ( 00018669C270 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.M_value                                   = GetUInt64(new IntPtr(p + 0x010)); // 0x10 M_value                     ( ModelPrimitiveType ulong ulong ulong UInt64 )
 
             return value;
         }

@@ -21,12 +21,15 @@ namespace ReversePrism.DataModels
     // 050 __Marshaller_api_GetStreamArchiveLiveURLReply Marshaller`1<GetStreamArchiveLiveURLReply> IL2CPP_TYPE_GENERICINST
     // 058 __Marshaller_api_ToggleArchiveFavoriteArgs Marshaller`1<ToggleArchiveFavoriteArgs> IL2CPP_TYPE_GENERICINST
     // 060 __Marshaller_api_ToggleArchiveFavoriteReply Marshaller`1<ToggleArchiveFavoriteReply> IL2CPP_TYPE_GENERICINST
-    // 068 __Method_GetStreamProgramList            Method`2<GetStreamProgramListArgs, GetStreamProgramListReply> IL2CPP_TYPE_GENERICINST
-    // 070 __Method_GetStreamProgramInfo            Method`2<GetStreamProgramInfoArgs, GetStreamProgramInfoReply> IL2CPP_TYPE_GENERICINST
-    // 078 __Method_GetStreamProgramURL             Method`2<GetStreamProgramURLArgs, GetStreamProgramURLReply> IL2CPP_TYPE_GENERICINST
-    // 080 __Method_GetStreamArchiveList            Method`2<GetStreamArchiveListArgs, GetStreamArchiveListReply> IL2CPP_TYPE_GENERICINST
-    // 088 __Method_GetStreamArchiveLiveURL         Method`2<GetStreamArchiveLiveURLArgs, GetStreamArchiveLiveURLReply> IL2CPP_TYPE_GENERICINST
-    // 090 __Method_ToggleArchiveFavorite           Method`2<ToggleArchiveFavoriteArgs, ToggleArchiveFavoriteReply> IL2CPP_TYPE_GENERICINST
+    // 068 __Marshaller_api_ReleasePremiumStreamArgs Marshaller`1<ReleasePremiumStreamArgs> IL2CPP_TYPE_GENERICINST
+    // 070 __Marshaller_api_ReleasePremiumStreamReply Marshaller`1<ReleasePremiumStreamReply> IL2CPP_TYPE_GENERICINST
+    // 078 __Method_GetStreamProgramList            Method`2<GetStreamProgramListArgs, GetStreamProgramListReply> IL2CPP_TYPE_GENERICINST
+    // 080 __Method_GetStreamProgramInfo            Method`2<GetStreamProgramInfoArgs, GetStreamProgramInfoReply> IL2CPP_TYPE_GENERICINST
+    // 088 __Method_GetStreamProgramURL             Method`2<GetStreamProgramURLArgs, GetStreamProgramURLReply> IL2CPP_TYPE_GENERICINST
+    // 090 __Method_GetStreamArchiveList            Method`2<GetStreamArchiveListArgs, GetStreamArchiveListReply> IL2CPP_TYPE_GENERICINST
+    // 098 __Method_GetStreamArchiveLiveURL         Method`2<GetStreamArchiveLiveURLArgs, GetStreamArchiveLiveURLReply> IL2CPP_TYPE_GENERICINST
+    // 0A0 __Method_ToggleArchiveFavorite           Method`2<ToggleArchiveFavoriteArgs, ToggleArchiveFavoriteReply> IL2CPP_TYPE_GENERICINST
+    // 0A8 __Method_ReleasePremiumStream            Method`2<ReleasePremiumStreamArgs, ReleasePremiumStreamReply> IL2CPP_TYPE_GENERICINST
     public partial class StreamProgramService : DataModel
     {
 

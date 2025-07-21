@@ -9,9 +9,9 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 usedCharacterIds                         HashSet`1<int> IL2CPP_TYPE_GENERICINST
-    // 018 Candidates                               000185B90A40 ModelClassListType LiveIdol[] LiveIdol[] List<LiveIdol> Pointer
-    // 020 Selected                                 000185B90A40 ModelClassListType LiveIdol[] LiveIdol[] List<LiveIdol> Pointer
-    // 028 SelectedCount                            0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 Candidates                               ModelClassListType LiveIdol[] LiveIdol[] List<LiveIdol> Pointer
+    // 020 Selected                                 ModelClassListType LiveIdol[] LiveIdol[] List<LiveIdol> Pointer
+    // 028 SelectedCount                            ModelPrimitiveType int int int Int32
     public partial class Selector : DataModel
     {
         public List<LiveIdol>?                          Candidates                              { get; set; }
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Selector() { Pointer= p0 };
 
-            value.Candidates                                = GetObjectList<LiveIdol>(new IntPtr(p + 0x018), ReversePrism.DataModels.LiveIdol.FromPointer); // 0246652F99A0 0x18 Candidates                  ( 000185B90A40 ModelClassListType LiveIdol[] LiveIdol[] List<LiveIdol> Pointer )
-            value.Selected                                  = GetObjectList<LiveIdol>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveIdol.FromPointer); // 0246652F99C0 0x20 Selected                    ( 000185B90A40 ModelClassListType LiveIdol[] LiveIdol[] List<LiveIdol> Pointer )
-            value.SelectedCount                             = GetInt32(new IntPtr(p + 0x028)); // 0246652F99E0 0x28 SelectedCount               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Candidates                                = GetObjectList<LiveIdol>(new IntPtr(p + 0x018), ReversePrism.DataModels.LiveIdol.FromPointer); // 0x18 Candidates                  ( ModelClassListType LiveIdol[] LiveIdol[] List<LiveIdol> Pointer )
+            value.Selected                                  = GetObjectList<LiveIdol>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveIdol.FromPointer); // 0x20 Selected                    ( ModelClassListType LiveIdol[] LiveIdol[] List<LiveIdol> Pointer )
+            value.SelectedCount                             = GetInt32(new IntPtr(p + 0x028)); // 0x28 SelectedCount               ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

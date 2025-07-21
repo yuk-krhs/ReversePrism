@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 RewardListFieldNumber                    int IL2CPP_TYPE_I4
     // 008 _repeated_rewardList_codec               FieldCodec`1<LivePlayRewardStatus> IL2CPP_TYPE_GENERICINST
-    // 018 RewardList                               000185CE3518 ModelClassListType RepeatedField`1<LivePlayRewardStatus> RepeatedField`1<LivePlayRewardStatus> List<LivePlayRewardStatus> Pointer
+    // 018 RewardList                               ModelClassListType RepeatedField`1<LivePlayRewardStatus> RepeatedField`1<LivePlayRewardStatus> List<LivePlayRewardStatus> Pointer
     public partial class GetLivePlayRewardListReply : DataModel
     {
         public List<LivePlayRewardStatus>?              RewardList                              { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetLivePlayRewardListReply() { Pointer= p0 };
 
-            value.RewardList                                = GetObjectList<LivePlayRewardStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.LivePlayRewardStatus.FromPointer); // 02466217D790 0x18 RewardList                  ( 000185CE3518 ModelClassListType RepeatedField`1<LivePlayRewardStatus> RepeatedField`1<LivePlayRewardStatus> List<LivePlayRewardStatus> Pointer )
+            value.RewardList                                = GetObjectList<LivePlayRewardStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.LivePlayRewardStatus.FromPointer); // 0x18 RewardList                  ( ModelClassListType RepeatedField`1<LivePlayRewardStatus> RepeatedField`1<LivePlayRewardStatus> List<LivePlayRewardStatus> Pointer )
 
             return value;
         }

@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<LimitedValueStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 CurrentFieldNumber                       int IL2CPP_TYPE_I4
-    // 018 Current                                  0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 Current                                  ModelPrimitiveType int int int Int32
     // 000 LimitFieldNumber                         int IL2CPP_TYPE_I4
-    // 01C Limit                                    0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 01C Limit                                    ModelPrimitiveType int int int Int32
     public partial class LimitedValueStatus : DataModel
     {
         public int                                      Current                                 { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LimitedValueStatus() { Pointer= p0 };
 
-            value.Current                                   = GetInt32(new IntPtr(p + 0x018)); // 024660EE52D8 0x18 Current                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Limit                                     = GetInt32(new IntPtr(p + 0x01C)); // 024660EE5318 0x1C Limit                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Current                                   = GetInt32(new IntPtr(p + 0x018)); // 0x18 Current                     ( ModelPrimitiveType int int int Int32 )
+            value.Limit                                     = GetInt32(new IntPtr(p + 0x01C)); // 0x1C Limit                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

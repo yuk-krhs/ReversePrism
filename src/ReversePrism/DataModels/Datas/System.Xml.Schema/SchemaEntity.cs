@@ -8,19 +8,19 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Qname                                    0001866BC7E0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer
-    // 018 Url                                      000186671910 ModelPrimitiveType string string string String
-    // 020 Pubid                                    000186671910 ModelPrimitiveType string string string String
-    // 028 Text                                     000186671910 ModelPrimitiveType string string string String
-    // 030 Ndata                                    0001866BC7E0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer
-    // 038 LineNumber                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 03C LinePosition                             0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 040 IsParameter                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 041 IsExternal                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 042 ParsingInProgress                        000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 043 IsDeclaredInExternal                     000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 048 BaseURI                                  000186671910 ModelPrimitiveType string string string String
-    // 050 DeclaredURI                              000186671910 ModelPrimitiveType string string string String
+    // 010 Qname                                    ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer
+    // 018 Url                                      ModelPrimitiveType string string string String
+    // 020 Pubid                                    ModelPrimitiveType string string string String
+    // 028 Text                                     ModelPrimitiveType string string string String
+    // 030 Ndata                                    ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer
+    // 038 LineNumber                               ModelPrimitiveType int int int Int32
+    // 03C LinePosition                             ModelPrimitiveType int int int Int32
+    // 040 IsParameter                              ModelPrimitiveType bool bool bool Bool
+    // 041 IsExternal                               ModelPrimitiveType bool bool bool Bool
+    // 042 ParsingInProgress                        ModelPrimitiveType bool bool bool Bool
+    // 043 IsDeclaredInExternal                     ModelPrimitiveType bool bool bool Bool
+    // 048 BaseURI                                  ModelPrimitiveType string string string String
+    // 050 DeclaredURI                              ModelPrimitiveType string string string String
     public partial class SchemaEntity : DataModel
     {
         public XmlQualifiedName?                        Qname                                   { get; set; }
@@ -45,19 +45,19 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SchemaEntity() { Pointer= p0 };
 
-            value.Qname                                     = GetObject<XmlQualifiedName>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0246674DDD60 0x10 Qname                       ( 0001866BC7E0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
-            value.Url                                       = GetString(new IntPtr(p + 0x018)); // 0246674DDD80 0x18 Url                         ( 000186671910 ModelPrimitiveType string string string String )
-            value.Pubid                                     = GetString(new IntPtr(p + 0x020)); // 0246674DDDA0 0x20 Pubid                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.Text                                      = GetString(new IntPtr(p + 0x028)); // 0246674DDDC0 0x28 Text                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Ndata                                     = GetObject<XmlQualifiedName>(new IntPtr(p + 0x030), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0246674DDDE0 0x30 Ndata                       ( 0001866BC7E0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
-            value.LineNumber                                = GetInt32(new IntPtr(p + 0x038)); // 0246674DDE00 0x38 LineNumber                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.LinePosition                              = GetInt32(new IntPtr(p + 0x03C)); // 0246674DDE20 0x3C LinePosition                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsParameter                               = GetBool(new IntPtr(p + 0x040)); // 0246674DDE40 0x40 IsParameter                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsExternal                                = GetBool(new IntPtr(p + 0x041)); // 0246674DDE60 0x41 IsExternal                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ParsingInProgress                         = GetBool(new IntPtr(p + 0x042)); // 0246674DDE80 0x42 ParsingInProgress           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsDeclaredInExternal                      = GetBool(new IntPtr(p + 0x043)); // 0246674DDEA0 0x43 IsDeclaredInExternal        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.BaseURI                                   = GetString(new IntPtr(p + 0x048)); // 0246674DDEC0 0x48 BaseURI                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.DeclaredURI                               = GetString(new IntPtr(p + 0x050)); // 0246674DDEE0 0x50 DeclaredURI                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Qname                                     = GetObject<XmlQualifiedName>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0x10 Qname                       ( ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
+            value.Url                                       = GetString(new IntPtr(p + 0x018)); // 0x18 Url                         ( ModelPrimitiveType string string string String )
+            value.Pubid                                     = GetString(new IntPtr(p + 0x020)); // 0x20 Pubid                       ( ModelPrimitiveType string string string String )
+            value.Text                                      = GetString(new IntPtr(p + 0x028)); // 0x28 Text                        ( ModelPrimitiveType string string string String )
+            value.Ndata                                     = GetObject<XmlQualifiedName>(new IntPtr(p + 0x030), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0x30 Ndata                       ( ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
+            value.LineNumber                                = GetInt32(new IntPtr(p + 0x038)); // 0x38 LineNumber                  ( ModelPrimitiveType int int int Int32 )
+            value.LinePosition                              = GetInt32(new IntPtr(p + 0x03C)); // 0x3C LinePosition                ( ModelPrimitiveType int int int Int32 )
+            value.IsParameter                               = GetBool(new IntPtr(p + 0x040)); // 0x40 IsParameter                 ( ModelPrimitiveType bool bool bool Bool )
+            value.IsExternal                                = GetBool(new IntPtr(p + 0x041)); // 0x41 IsExternal                  ( ModelPrimitiveType bool bool bool Bool )
+            value.ParsingInProgress                         = GetBool(new IntPtr(p + 0x042)); // 0x42 ParsingInProgress           ( ModelPrimitiveType bool bool bool Bool )
+            value.IsDeclaredInExternal                      = GetBool(new IntPtr(p + 0x043)); // 0x43 IsDeclaredInExternal        ( ModelPrimitiveType bool bool bool Bool )
+            value.BaseURI                                   = GetString(new IntPtr(p + 0x048)); // 0x48 BaseURI                     ( ModelPrimitiveType string string string String )
+            value.DeclaredURI                               = GetString(new IntPtr(p + 0x050)); // 0x50 DeclaredURI                 ( ModelPrimitiveType string string string String )
 
             return value;
         }

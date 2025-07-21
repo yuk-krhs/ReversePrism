@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 <GroupRelations>k__BackingField          Dictionary`2<uint, List`1<int>> IL2CPP_TYPE_GENERICINST
-    // 018 Entries                                  000185B739E0 ModelEnumListType CatalogBinaryEntry[] CatalogBinaryEntry[] List<CatalogBinaryEntry> Pointer
+    // 018 Entries                                  ModelEnumListType CatalogBinaryEntry[] CatalogBinaryEntry[] List<CatalogBinaryEntry> Pointer
     public partial class CatalogBinary : DataModel
     {
         public List<CatalogBinaryEntry>?                Entries                                 { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CatalogBinary() { Pointer= p0 };
 
-            value.Entries                                   = GetEnumList<CatalogBinaryEntry>(new IntPtr(p + 0x018)); // 02466B56AE68 0x18 Entries                     ( 000185B739E0 ModelEnumListType CatalogBinaryEntry[] CatalogBinaryEntry[] List<CatalogBinaryEntry> Pointer )
+            value.Entries                                   = GetEnumList<CatalogBinaryEntry>(new IntPtr(p + 0x018)); // 0x18 Entries                     ( ModelEnumListType CatalogBinaryEntry[] CatalogBinaryEntry[] List<CatalogBinaryEntry> Pointer )
 
             return value;
         }

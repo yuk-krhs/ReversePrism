@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 090 ScrollCorrectionDuration                 0001866656B0 ModelPrimitiveType float float float Single
-    // 094 ScrollCorrectionEase                     000186717B50 ModelEnumType Ease Ease Ease Int32
+    // 090 ScrollCorrectionDuration                 ModelPrimitiveType float float float Single
+    // 094 ScrollCorrectionEase                     ModelEnumType Ease Ease Ease Int32
     public partial class ProducePreparationEpisodeSelectUnitListView : DataModel
     {
         public float                                    ScrollCorrectionDuration                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProducePreparationEpisodeSelectUnitListView() { Pointer= p0 };
 
-            value.ScrollCorrectionDuration                  = GetSingle(new IntPtr(p + 0x090)); // 024665A56F08 0x90 ScrollCorrectionDuration    ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.ScrollCorrectionEase                      = (Ease)GetInt32(new IntPtr(p + 0x094)); // 024665A56F28 0x94 ScrollCorrectionEase        ( 000186717B50 ModelEnumType Ease Ease Ease Int32 )
+            value.ScrollCorrectionDuration                  = GetSingle(new IntPtr(p + 0x090)); // 0x90 ScrollCorrectionDuration    ( ModelPrimitiveType float float float Single )
+            value.ScrollCorrectionEase                      = (Ease)GetInt32(new IntPtr(p + 0x094)); // 0x94 ScrollCorrectionEase        ( ModelEnumType Ease Ease Ease Int32 )
 
             return value;
         }

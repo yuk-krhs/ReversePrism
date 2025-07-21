@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Src                                      00018664D720 ModelClassType Texture Texture Texture Pointer
-    // 018 SrcRect                                  000186651230 ModelEnumType RectInt RectInt RectInt Int32
-    // 028 DstPos                                   0001866AA610 ModelEnumType Vector2Int Vector2Int Vector2Int Int32
-    // 030 Border                                   0001865F36C0 ModelPrimitiveType int int int Int32
-    // 034 Tint                                     0001865AB0A0 ModelEnumType Color Color Color Int32
+    // 010 Src                                      ModelClassType Texture Texture Texture Pointer
+    // 018 SrcRect                                  ModelEnumType RectInt RectInt RectInt Int32
+    // 028 DstPos                                   ModelEnumType Vector2Int Vector2Int Vector2Int Int32
+    // 030 Border                                   ModelPrimitiveType int int int Int32
+    // 034 Tint                                     ModelEnumType Color Color Color Int32
     public partial class BlitInfo : DataModel
     {
         public Texture?                                 Src                                     { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BlitInfo() { Pointer= p0 };
 
-            value.Src                                       = GetObject<Texture>(new IntPtr(p + 0x010), ReversePrism.DataModels.Texture.FromPointer); // 0245A683B948 0x10 Src                         ( 00018664D720 ModelClassType Texture Texture Texture Pointer )
-            value.SrcRect                                   = (RectInt)GetInt32(new IntPtr(p + 0x018)); // 0245A683B968 0x18 SrcRect                     ( 000186651230 ModelEnumType RectInt RectInt RectInt Int32 )
-            value.DstPos                                    = (Vector2Int)GetInt32(new IntPtr(p + 0x028)); // 0245A683B988 0x28 DstPos                      ( 0001866AA610 ModelEnumType Vector2Int Vector2Int Vector2Int Int32 )
-            value.Border                                    = GetInt32(new IntPtr(p + 0x030)); // 0245A683B9A8 0x30 Border                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Tint                                      = (Color)GetInt32(new IntPtr(p + 0x034)); // 0245A683B9C8 0x34 Tint                        ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
+            value.Src                                       = GetObject<Texture>(new IntPtr(p + 0x010), ReversePrism.DataModels.Texture.FromPointer); // 0x10 Src                         ( ModelClassType Texture Texture Texture Pointer )
+            value.SrcRect                                   = (RectInt)GetInt32(new IntPtr(p + 0x018)); // 0x18 SrcRect                     ( ModelEnumType RectInt RectInt RectInt Int32 )
+            value.DstPos                                    = (Vector2Int)GetInt32(new IntPtr(p + 0x028)); // 0x28 DstPos                      ( ModelEnumType Vector2Int Vector2Int Vector2Int Int32 )
+            value.Border                                    = GetInt32(new IntPtr(p + 0x030)); // 0x30 Border                      ( ModelPrimitiveType int int int Int32 )
+            value.Tint                                      = (Color)GetInt32(new IntPtr(p + 0x034)); // 0x34 Tint                        ( ModelEnumType Color Color Color Int32 )
 
             return value;
         }

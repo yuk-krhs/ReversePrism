@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 CanvasGroup                              000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
-    // 028 GoContent                                00018662ABC0 ModelClassType CostumeContentView CostumeContentView CostumeContentView Pointer
-    // 030 ContentParent                            0001866AA150 ModelClassType Transform Transform Transform Pointer
+    // 020 CanvasGroup                              ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
+    // 028 GoContent                                ModelClassType CostumeContentView CostumeContentView CostumeContentView Pointer
+    // 030 ContentParent                            ModelClassType Transform Transform Transform Pointer
     // 038 <OnCostumeDetail>k__BackingField         IObservable`1<ValueTuple`2<CostumePartType, int>> IL2CPP_TYPE_GENERICINST
     public partial class PIdolDetailCostumeView : DataModel
     {
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PIdolDetailCostumeView() { Pointer= p0 };
 
-            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466A3589C8 0x20 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.GoContent                                 = GetObject<CostumeContentView>(new IntPtr(p + 0x028), ReversePrism.DataModels.CostumeContentView.FromPointer); // 02466A3589E8 0x28 GoContent                   ( 00018662ABC0 ModelClassType CostumeContentView CostumeContentView CostumeContentView Pointer )
-            value.ContentParent                             = GetObject<Transform>(new IntPtr(p + 0x030), ReversePrism.DataModels.Transform.FromPointer); // 02466A358A08 0x30 ContentParent               ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0x20 CanvasGroup                 ( ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.GoContent                                 = GetObject<CostumeContentView>(new IntPtr(p + 0x028), ReversePrism.DataModels.CostumeContentView.FromPointer); // 0x28 GoContent                   ( ModelClassType CostumeContentView CostumeContentView CostumeContentView Pointer )
+            value.ContentParent                             = GetObject<Transform>(new IntPtr(p + 0x030), ReversePrism.DataModels.Transform.FromPointer); // 0x30 ContentParent               ( ModelClassType Transform Transform Transform Pointer )
 
             return value;
         }

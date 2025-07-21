@@ -12,9 +12,9 @@ namespace ReversePrism.DataModels
     // 018 keys                                     IntPtr IL2CPP_TYPE_PTR
     // 020 next                                     IntPtr IL2CPP_TYPE_PTR
     // 028 buckets                                  IntPtr IL2CPP_TYPE_PTR
-    // 030 KeyCapacity                              0001865F2F90 ModelPrimitiveType int int int Int32
-    // 034 BucketCapacityMask                       0001865F2F90 ModelPrimitiveType int int int Int32
-    // 038 AllocatedIndexLength                     0001865F2F90 ModelPrimitiveType int int int Int32
+    // 030 KeyCapacity                              ModelPrimitiveType int int int Int32
+    // 034 BucketCapacityMask                       ModelPrimitiveType int int int Int32
+    // 038 AllocatedIndexLength                     ModelPrimitiveType int int int Int32
     // 000 kFirstFreeTLSOffset                      int IL2CPP_TYPE_I4
     // 000 IntsPerCacheLine                         int IL2CPP_TYPE_I4
     public partial class UnsafeParallelHashMapData : DataModel
@@ -31,9 +31,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnsafeParallelHashMapData() { Pointer= p0 };
 
-            value.KeyCapacity                               = GetInt32(new IntPtr(p + 0x030)); // 024669D31DE8 0x30 KeyCapacity                 ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.BucketCapacityMask                        = GetInt32(new IntPtr(p + 0x034)); // 024669D31E08 0x34 BucketCapacityMask          ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.AllocatedIndexLength                      = GetInt32(new IntPtr(p + 0x038)); // 024669D31E28 0x38 AllocatedIndexLength        ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.KeyCapacity                               = GetInt32(new IntPtr(p + 0x030)); // 0x30 KeyCapacity                 ( ModelPrimitiveType int int int Int32 )
+            value.BucketCapacityMask                        = GetInt32(new IntPtr(p + 0x034)); // 0x34 BucketCapacityMask          ( ModelPrimitiveType int int int Int32 )
+            value.AllocatedIndexLength                      = GetInt32(new IntPtr(p + 0x038)); // 0x38 AllocatedIndexLength        ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

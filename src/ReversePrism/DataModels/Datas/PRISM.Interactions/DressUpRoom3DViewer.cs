@@ -8,45 +8,46 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 CameraRotateSensitivity                  0001866656B0 ModelPrimitiveType float float float Single
-    // 024 CameraMoveSensitivity                    0001866656B0 ModelPrimitiveType float float float Single
-    // 028 SpeechBalloonView                        0001865A3FE0 ModelClassType CharacterSpeechBalloonView CharacterSpeechBalloonView CharacterSpeechBalloonView Pointer
-    // 030 CameraPinchZoomSensitivity               0001866656B0 ModelPrimitiveType float float float Single
-    // 034 CameraMouseZoomSensitivity               0001866656B0 ModelPrimitiveType float float float Single
-    // 038 MaxCameraPositionY                       0001866656B0 ModelPrimitiveType float float float Single
-    // 03C MinCameraPositionY                       0001866656B0 ModelPrimitiveType float float float Single
-    // 040 MaxFov                                   0001866656B0 ModelPrimitiveType float float float Single
-    // 044 MinFov                                   0001866656B0 ModelPrimitiveType float float float Single
-    // 048 MaxLookDownAngle                         0001866656B0 ModelPrimitiveType float float float Single
-    // 050 ViewerSafeArea                           0001866F2010 ModelClassType UISafeArea UISafeArea UISafeArea Pointer
-    // 058 ScenarioManager                          0001866C9D90 ModelClassType ScenarioManager ScenarioManager ScenarioManager Pointer
-    // 060 onEndPlayingVoice                        Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 068 on3DModelClick                           Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 070 onPinch                                  Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 078 onSwipe                                  Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 080 onScroll                                 Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 088 showUI                                   Subject`1<bool> IL2CPP_TYPE_GENERICINST
-    // 090 CharaName                                000186671910 ModelPrimitiveType string string string String
-    // 098 PlayingVoiceDisposable                   0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
-    // 0A0 OnClickFlag                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 0A4 ClickCount                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 0A8 CurrentFov                               0001866656B0 ModelPrimitiveType float float float Single
-    // 0AC CurrentCameraPositionY                   0001866656B0 ModelPrimitiveType float float float Single
-    // 0B0 CurrentCameraDollyEndpointY              0001866656B0 ModelPrimitiveType float float float Single
-    // 0B4 BaseDistanceOfCameraAndIdol              0001866656B0 ModelPrimitiveType float float float Single
-    // 0B8 DollyOutMaxDistance                      0001866656B0 ModelPrimitiveType float float float Single
-    // 0BC TapAreaMinX                              0001866656B0 ModelPrimitiveType float float float Single
-    // 0C0 TapAreaMaxX                              0001866656B0 ModelPrimitiveType float float float Single
-    // 0C4 TapAreaBaseMinX                          0001866656B0 ModelPrimitiveType float float float Single
-    // 0C8 TapAreaBaseMaxX                          0001866656B0 ModelPrimitiveType float float float Single
-    // 0CC ScreenWidthInSafeArea                    0001866656B0 ModelPrimitiveType float float float Single
-    // 0D0 TapAreaCurrentMinX                       0001866656B0 ModelPrimitiveType float float float Single
-    // 0D4 TapAreaCurrentMaxX                       0001866656B0 ModelPrimitiveType float float float Single
-    // 0D8 TapAreaMinY                              0001866656B0 ModelPrimitiveType float float float Single
-    // 0DC WidthInSafeAreaOneTwelfth                0001866656B0 ModelPrimitiveType float float float Single
-    // 0E0 ScreenWidthHalf                          0001866656B0 ModelPrimitiveType float float float Single
-    // 0E4 FovPosYCoefficient                       0001866656B0 ModelPrimitiveType float float float Single
-    // 0E8 IsActive                                 000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 020 CameraRotateSensitivity                  ModelPrimitiveType float float float Single
+    // 024 CameraMoveSensitivity                    ModelPrimitiveType float float float Single
+    // 028 SpeechBalloonView                        ModelClassType CharacterSpeechBalloonView CharacterSpeechBalloonView CharacterSpeechBalloonView Pointer
+    // 030 CameraPinchZoomSensitivity               ModelPrimitiveType float float float Single
+    // 034 CameraMouseZoomSensitivity               ModelPrimitiveType float float float Single
+    // 038 MaxCameraPositionY                       ModelPrimitiveType float float float Single
+    // 03C MinCameraPositionY                       ModelPrimitiveType float float float Single
+    // 040 MaxFov                                   ModelPrimitiveType float float float Single
+    // 044 MinFov                                   ModelPrimitiveType float float float Single
+    // 048 MaxLookDownAngle                         ModelPrimitiveType float float float Single
+    // 050 ViewerSafeArea                           ModelClassType UISafeArea UISafeArea UISafeArea Pointer
+    // 058 ScenarioManager                          ModelClassType ScenarioManager ScenarioManager ScenarioManager Pointer
+    // 060 Model3dLoader                            ModelClassType SimpleModel3dLoader SimpleModel3dLoader SimpleModel3dLoader Pointer
+    // 068 onEndPlayingVoice                        Subject`1<Unit> IL2CPP_TYPE_GENERICINST
+    // 070 on3DModelClick                           Subject`1<Unit> IL2CPP_TYPE_GENERICINST
+    // 078 onPinch                                  Subject`1<Unit> IL2CPP_TYPE_GENERICINST
+    // 080 onSwipe                                  Subject`1<Unit> IL2CPP_TYPE_GENERICINST
+    // 088 onScroll                                 Subject`1<Unit> IL2CPP_TYPE_GENERICINST
+    // 090 showUI                                   Subject`1<bool> IL2CPP_TYPE_GENERICINST
+    // 098 CharaName                                ModelPrimitiveType string string string String
+    // 0A0 PlayingVoiceDisposable                   ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 0A8 OnClickFlag                              ModelPrimitiveType bool bool bool Bool
+    // 0AC ClickCount                               ModelPrimitiveType int int int Int32
+    // 0B0 CurrentFov                               ModelPrimitiveType float float float Single
+    // 0B4 CurrentCameraPositionY                   ModelPrimitiveType float float float Single
+    // 0B8 CurrentCameraDollyEndpointY              ModelPrimitiveType float float float Single
+    // 0BC BaseDistanceOfCameraAndIdol              ModelPrimitiveType float float float Single
+    // 0C0 DollyOutMaxDistance                      ModelPrimitiveType float float float Single
+    // 0C4 TapAreaMinX                              ModelPrimitiveType float float float Single
+    // 0C8 TapAreaMaxX                              ModelPrimitiveType float float float Single
+    // 0CC TapAreaBaseMinX                          ModelPrimitiveType float float float Single
+    // 0D0 TapAreaBaseMaxX                          ModelPrimitiveType float float float Single
+    // 0D4 ScreenWidthInSafeArea                    ModelPrimitiveType float float float Single
+    // 0D8 TapAreaCurrentMinX                       ModelPrimitiveType float float float Single
+    // 0DC TapAreaCurrentMaxX                       ModelPrimitiveType float float float Single
+    // 0E0 TapAreaMinY                              ModelPrimitiveType float float float Single
+    // 0E4 WidthInSafeAreaOneTwelfth                ModelPrimitiveType float float float Single
+    // 0E8 ScreenWidthHalf                          ModelPrimitiveType float float float Single
+    // 0EC FovPosYCoefficient                       ModelPrimitiveType float float float Single
+    // 0F0 IsActive                                 ModelPrimitiveType bool bool bool Bool
     public partial class DressUpRoom3DViewer : DataModel
     {
         public float                                    CameraRotateSensitivity                 { get; set; }
@@ -61,6 +62,7 @@ namespace ReversePrism.DataModels
         public float                                    MaxLookDownAngle                        { get; set; }
         public UISafeArea?                              ViewerSafeArea                          { get; set; }
         public ScenarioManager?                         ScenarioManager                         { get; set; }
+        public SimpleModel3dLoader?                     Model3dLoader                           { get; set; }
         public string                                   CharaName                               { get; set; }
         public IDisposable?                             PlayingVoiceDisposable                  { get; set; }
         public bool                                     OnClickFlag                             { get; set; }
@@ -91,39 +93,40 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DressUpRoom3DViewer() { Pointer= p0 };
 
-            value.CameraRotateSensitivity                   = GetSingle(new IntPtr(p + 0x020)); // 02466B6D1840 0x20 CameraRotateSensitivity     ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.CameraMoveSensitivity                     = GetSingle(new IntPtr(p + 0x024)); // 02466B6D1860 0x24 CameraMoveSensitivity       ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.SpeechBalloonView                         = GetObject<CharacterSpeechBalloonView>(new IntPtr(p + 0x028), ReversePrism.DataModels.CharacterSpeechBalloonView.FromPointer); // 02466B6D1880 0x28 SpeechBalloonView           ( 0001865A3FE0 ModelClassType CharacterSpeechBalloonView CharacterSpeechBalloonView CharacterSpeechBalloonView Pointer )
-            value.CameraPinchZoomSensitivity                = GetSingle(new IntPtr(p + 0x030)); // 02466B6D18A0 0x30 CameraPinchZoomSensitivity  ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.CameraMouseZoomSensitivity                = GetSingle(new IntPtr(p + 0x034)); // 02466B6D18C0 0x34 CameraMouseZoomSensitivity  ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.MaxCameraPositionY                        = GetSingle(new IntPtr(p + 0x038)); // 02466B6D18E0 0x38 MaxCameraPositionY          ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.MinCameraPositionY                        = GetSingle(new IntPtr(p + 0x03C)); // 02466B6D1900 0x3C MinCameraPositionY          ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.MaxFov                                    = GetSingle(new IntPtr(p + 0x040)); // 02466B6D1920 0x40 MaxFov                      ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.MinFov                                    = GetSingle(new IntPtr(p + 0x044)); // 02466B6D1940 0x44 MinFov                      ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.MaxLookDownAngle                          = GetSingle(new IntPtr(p + 0x048)); // 02466B6D1960 0x48 MaxLookDownAngle            ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.ViewerSafeArea                            = GetObject<UISafeArea>(new IntPtr(p + 0x050), ReversePrism.DataModels.UISafeArea.FromPointer); // 02466B6D1980 0x50 ViewerSafeArea              ( 0001866F2010 ModelClassType UISafeArea UISafeArea UISafeArea Pointer )
-            value.ScenarioManager                           = GetObject<ScenarioManager>(new IntPtr(p + 0x058), ReversePrism.DataModels.ScenarioManager.FromPointer); // 02466B6D19A0 0x58 ScenarioManager             ( 0001866C9D90 ModelClassType ScenarioManager ScenarioManager ScenarioManager Pointer )
-            value.CharaName                                 = GetString(new IntPtr(p + 0x090)); // 02466B6D1A80 0x90 CharaName                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.PlayingVoiceDisposable                    = GetObject<IDisposable>(new IntPtr(p + 0x098), ReversePrism.DataModels.IDisposable.FromPointer); // 02466B6D1AA0 0x98 PlayingVoiceDisposable      ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
-            value.OnClickFlag                               = GetBool(new IntPtr(p + 0x0A0)); // 02466B6D1AC0 0xA0 OnClickFlag                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ClickCount                                = GetInt32(new IntPtr(p + 0x0A4)); // 02466B6D1AE0 0xA4 ClickCount                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CurrentFov                                = GetSingle(new IntPtr(p + 0x0A8)); // 02466B6D1B00 0xA8 CurrentFov                  ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.CurrentCameraPositionY                    = GetSingle(new IntPtr(p + 0x0AC)); // 02466B6D1B20 0xAC CurrentCameraPositionY      ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.CurrentCameraDollyEndpointY               = GetSingle(new IntPtr(p + 0x0B0)); // 02466B6D1B40 0xB0 CurrentCameraDollyEndpointY ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.BaseDistanceOfCameraAndIdol               = GetSingle(new IntPtr(p + 0x0B4)); // 02466B6D1B60 0xB4 BaseDistanceOfCameraAndIdol ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.DollyOutMaxDistance                       = GetSingle(new IntPtr(p + 0x0B8)); // 02466B6D1B80 0xB8 DollyOutMaxDistance         ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.TapAreaMinX                               = GetSingle(new IntPtr(p + 0x0BC)); // 02466B6D1BA0 0xBC TapAreaMinX                 ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.TapAreaMaxX                               = GetSingle(new IntPtr(p + 0x0C0)); // 02466B6D1BC0 0xC0 TapAreaMaxX                 ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.TapAreaBaseMinX                           = GetSingle(new IntPtr(p + 0x0C4)); // 02466B6D1BE0 0xC4 TapAreaBaseMinX             ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.TapAreaBaseMaxX                           = GetSingle(new IntPtr(p + 0x0C8)); // 02466B6D1C00 0xC8 TapAreaBaseMaxX             ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.ScreenWidthInSafeArea                     = GetSingle(new IntPtr(p + 0x0CC)); // 02466B6D1C20 0xCC ScreenWidthInSafeArea       ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.TapAreaCurrentMinX                        = GetSingle(new IntPtr(p + 0x0D0)); // 02466B6D1C40 0xD0 TapAreaCurrentMinX          ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.TapAreaCurrentMaxX                        = GetSingle(new IntPtr(p + 0x0D4)); // 02466B6D1C60 0xD4 TapAreaCurrentMaxX          ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.TapAreaMinY                               = GetSingle(new IntPtr(p + 0x0D8)); // 02466B6D1C80 0xD8 TapAreaMinY                 ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.WidthInSafeAreaOneTwelfth                 = GetSingle(new IntPtr(p + 0x0DC)); // 02466B6D1CA0 0xDC WidthInSafeAreaOneTwelfth   ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.ScreenWidthHalf                           = GetSingle(new IntPtr(p + 0x0E0)); // 02466B6D1CC0 0xE0 ScreenWidthHalf             ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.FovPosYCoefficient                        = GetSingle(new IntPtr(p + 0x0E4)); // 02466B6D1CE0 0xE4 FovPosYCoefficient          ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.IsActive                                  = GetBool(new IntPtr(p + 0x0E8)); // 02466B6D1D00 0xE8 IsActive                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CameraRotateSensitivity                   = GetSingle(new IntPtr(p + 0x020)); // 0x20 CameraRotateSensitivity     ( ModelPrimitiveType float float float Single )
+            value.CameraMoveSensitivity                     = GetSingle(new IntPtr(p + 0x024)); // 0x24 CameraMoveSensitivity       ( ModelPrimitiveType float float float Single )
+            value.SpeechBalloonView                         = GetObject<CharacterSpeechBalloonView>(new IntPtr(p + 0x028), ReversePrism.DataModels.CharacterSpeechBalloonView.FromPointer); // 0x28 SpeechBalloonView           ( ModelClassType CharacterSpeechBalloonView CharacterSpeechBalloonView CharacterSpeechBalloonView Pointer )
+            value.CameraPinchZoomSensitivity                = GetSingle(new IntPtr(p + 0x030)); // 0x30 CameraPinchZoomSensitivity  ( ModelPrimitiveType float float float Single )
+            value.CameraMouseZoomSensitivity                = GetSingle(new IntPtr(p + 0x034)); // 0x34 CameraMouseZoomSensitivity  ( ModelPrimitiveType float float float Single )
+            value.MaxCameraPositionY                        = GetSingle(new IntPtr(p + 0x038)); // 0x38 MaxCameraPositionY          ( ModelPrimitiveType float float float Single )
+            value.MinCameraPositionY                        = GetSingle(new IntPtr(p + 0x03C)); // 0x3C MinCameraPositionY          ( ModelPrimitiveType float float float Single )
+            value.MaxFov                                    = GetSingle(new IntPtr(p + 0x040)); // 0x40 MaxFov                      ( ModelPrimitiveType float float float Single )
+            value.MinFov                                    = GetSingle(new IntPtr(p + 0x044)); // 0x44 MinFov                      ( ModelPrimitiveType float float float Single )
+            value.MaxLookDownAngle                          = GetSingle(new IntPtr(p + 0x048)); // 0x48 MaxLookDownAngle            ( ModelPrimitiveType float float float Single )
+            value.ViewerSafeArea                            = GetObject<UISafeArea>(new IntPtr(p + 0x050), ReversePrism.DataModels.UISafeArea.FromPointer); // 0x50 ViewerSafeArea              ( ModelClassType UISafeArea UISafeArea UISafeArea Pointer )
+            value.ScenarioManager                           = GetObject<ScenarioManager>(new IntPtr(p + 0x058), ReversePrism.DataModels.ScenarioManager.FromPointer); // 0x58 ScenarioManager             ( ModelClassType ScenarioManager ScenarioManager ScenarioManager Pointer )
+            value.Model3dLoader                             = GetObject<SimpleModel3dLoader>(new IntPtr(p + 0x060), ReversePrism.DataModels.SimpleModel3dLoader.FromPointer); // 0x60 Model3dLoader               ( ModelClassType SimpleModel3dLoader SimpleModel3dLoader SimpleModel3dLoader Pointer )
+            value.CharaName                                 = GetString(new IntPtr(p + 0x098)); // 0x98 CharaName                   ( ModelPrimitiveType string string string String )
+            value.PlayingVoiceDisposable                    = GetObject<IDisposable>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.IDisposable.FromPointer); // 0xA0 PlayingVoiceDisposable      ( ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.OnClickFlag                               = GetBool(new IntPtr(p + 0x0A8)); // 0xA8 OnClickFlag                 ( ModelPrimitiveType bool bool bool Bool )
+            value.ClickCount                                = GetInt32(new IntPtr(p + 0x0AC)); // 0xAC ClickCount                  ( ModelPrimitiveType int int int Int32 )
+            value.CurrentFov                                = GetSingle(new IntPtr(p + 0x0B0)); // 0xB0 CurrentFov                  ( ModelPrimitiveType float float float Single )
+            value.CurrentCameraPositionY                    = GetSingle(new IntPtr(p + 0x0B4)); // 0xB4 CurrentCameraPositionY      ( ModelPrimitiveType float float float Single )
+            value.CurrentCameraDollyEndpointY               = GetSingle(new IntPtr(p + 0x0B8)); // 0xB8 CurrentCameraDollyEndpointY ( ModelPrimitiveType float float float Single )
+            value.BaseDistanceOfCameraAndIdol               = GetSingle(new IntPtr(p + 0x0BC)); // 0xBC BaseDistanceOfCameraAndIdol ( ModelPrimitiveType float float float Single )
+            value.DollyOutMaxDistance                       = GetSingle(new IntPtr(p + 0x0C0)); // 0xC0 DollyOutMaxDistance         ( ModelPrimitiveType float float float Single )
+            value.TapAreaMinX                               = GetSingle(new IntPtr(p + 0x0C4)); // 0xC4 TapAreaMinX                 ( ModelPrimitiveType float float float Single )
+            value.TapAreaMaxX                               = GetSingle(new IntPtr(p + 0x0C8)); // 0xC8 TapAreaMaxX                 ( ModelPrimitiveType float float float Single )
+            value.TapAreaBaseMinX                           = GetSingle(new IntPtr(p + 0x0CC)); // 0xCC TapAreaBaseMinX             ( ModelPrimitiveType float float float Single )
+            value.TapAreaBaseMaxX                           = GetSingle(new IntPtr(p + 0x0D0)); // 0xD0 TapAreaBaseMaxX             ( ModelPrimitiveType float float float Single )
+            value.ScreenWidthInSafeArea                     = GetSingle(new IntPtr(p + 0x0D4)); // 0xD4 ScreenWidthInSafeArea       ( ModelPrimitiveType float float float Single )
+            value.TapAreaCurrentMinX                        = GetSingle(new IntPtr(p + 0x0D8)); // 0xD8 TapAreaCurrentMinX          ( ModelPrimitiveType float float float Single )
+            value.TapAreaCurrentMaxX                        = GetSingle(new IntPtr(p + 0x0DC)); // 0xDC TapAreaCurrentMaxX          ( ModelPrimitiveType float float float Single )
+            value.TapAreaMinY                               = GetSingle(new IntPtr(p + 0x0E0)); // 0xE0 TapAreaMinY                 ( ModelPrimitiveType float float float Single )
+            value.WidthInSafeAreaOneTwelfth                 = GetSingle(new IntPtr(p + 0x0E4)); // 0xE4 WidthInSafeAreaOneTwelfth   ( ModelPrimitiveType float float float Single )
+            value.ScreenWidthHalf                           = GetSingle(new IntPtr(p + 0x0E8)); // 0xE8 ScreenWidthHalf             ( ModelPrimitiveType float float float Single )
+            value.FovPosYCoefficient                        = GetSingle(new IntPtr(p + 0x0EC)); // 0xEC FovPosYCoefficient          ( ModelPrimitiveType float float float Single )
+            value.IsActive                                  = GetBool(new IntPtr(p + 0x0F0)); // 0xF0 IsActive                    ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

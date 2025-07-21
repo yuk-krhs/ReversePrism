@@ -9,14 +9,14 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 MAX_API_RETRY_COUNT                      int IL2CPP_TYPE_I4
-    // 010 Callback                                 000186658CA0 ModelClassType IStoreCallback IStoreCallback IStoreCallback Pointer
+    // 010 Callback                                 ModelClassType IStoreCallback IStoreCallback IStoreCallback Pointer
     // 018 _initModel                               Nullable`1<SdkInitModel> IL2CPP_TYPE_GENERICINST
-    // 050 ApiToken                                 000186672F10 ModelPrimitiveType string string string String
-    // 058 IsSandbox                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 060 UserKey                                  00018674CC50 ModelEnumType UserKey UserKey UserKey Int32
-    // 070 Inventory                                0001866E55A0 ModelClassType DmmGamesIapStoreInventory DmmGamesIapStoreInventory DmmGamesIapStoreInventory Pointer
+    // 050 ApiToken                                 ModelPrimitiveType string string string String
+    // 058 IsSandbox                                ModelPrimitiveType bool bool bool Bool
+    // 060 UserKey                                  ModelEnumType UserKey UserKey UserKey Int32
+    // 070 Inventory                                ModelClassType DmmGamesIapStoreInventory DmmGamesIapStoreInventory DmmGamesIapStoreInventory Pointer
     // 008 _dmmGamesIapError                        DmmGamesIapStoreError IL2CPP_TYPE_CLASS
-    // 078 ProductIcon                              000186685A20 ModelClassType Texture2D Texture2D Texture2D Pointer
+    // 078 ProductIcon                              ModelClassType Texture2D Texture2D Texture2D Pointer
     // 080 _productIcons                            Dictionary`2<string, Texture2D> IL2CPP_TYPE_GENERICINST
     public partial class DmmGamesIapStore : DataModel
     {
@@ -35,12 +35,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DmmGamesIapStore() { Pointer= p0 };
 
-            value.Callback                                  = GetObject<IStoreCallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.IStoreCallback.FromPointer); // 0245A4BECAE0 0x10 Callback                    ( 000186658CA0 ModelClassType IStoreCallback IStoreCallback IStoreCallback Pointer )
-            value.ApiToken                                  = GetString(new IntPtr(p + 0x050)); // 0245A4BECB20 0x50 ApiToken                    ( 000186672F10 ModelPrimitiveType string string string String )
-            value.IsSandbox                                 = GetBool(new IntPtr(p + 0x058)); // 0245A4BECB40 0x58 IsSandbox                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.UserKey                                   = (UserKey)GetInt32(new IntPtr(p + 0x060)); // 0245A4BECB60 0x60 UserKey                     ( 00018674CC50 ModelEnumType UserKey UserKey UserKey Int32 )
-            value.Inventory                                 = GetObject<DmmGamesIapStoreInventory>(new IntPtr(p + 0x070), ReversePrism.DataModels.DmmGamesIapStoreInventory.FromPointer); // 0245A4BECB80 0x70 Inventory                   ( 0001866E55A0 ModelClassType DmmGamesIapStoreInventory DmmGamesIapStoreInventory DmmGamesIapStoreInventory Pointer )
-            value.ProductIcon                               = GetObject<Texture2D>(new IntPtr(p + 0x078), ReversePrism.DataModels.Texture2D.FromPointer); // 0245A4BECBC0 0x78 ProductIcon                 ( 000186685A20 ModelClassType Texture2D Texture2D Texture2D Pointer )
+            value.Callback                                  = GetObject<IStoreCallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.IStoreCallback.FromPointer); // 0x10 Callback                    ( ModelClassType IStoreCallback IStoreCallback IStoreCallback Pointer )
+            value.ApiToken                                  = GetString(new IntPtr(p + 0x050)); // 0x50 ApiToken                    ( ModelPrimitiveType string string string String )
+            value.IsSandbox                                 = GetBool(new IntPtr(p + 0x058)); // 0x58 IsSandbox                   ( ModelPrimitiveType bool bool bool Bool )
+            value.UserKey                                   = (UserKey)GetInt32(new IntPtr(p + 0x060)); // 0x60 UserKey                     ( ModelEnumType UserKey UserKey UserKey Int32 )
+            value.Inventory                                 = GetObject<DmmGamesIapStoreInventory>(new IntPtr(p + 0x070), ReversePrism.DataModels.DmmGamesIapStoreInventory.FromPointer); // 0x70 Inventory                   ( ModelClassType DmmGamesIapStoreInventory DmmGamesIapStoreInventory DmmGamesIapStoreInventory Pointer )
+            value.ProductIcon                               = GetObject<Texture2D>(new IntPtr(p + 0x078), ReversePrism.DataModels.Texture2D.FromPointer); // 0x78 ProductIcon                 ( ModelClassType Texture2D Texture2D Texture2D Pointer )
 
             return value;
         }

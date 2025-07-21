@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 BitCount                                 0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 018 Locals                                   000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 010 BitCount                                 ModelPrimitiveType int int int Int32
+    // 018 Locals                                   ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     public partial class BitFlagsGenerator : DataModel
     {
         public int                                      BitCount                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BitFlagsGenerator() { Pointer= p0 };
 
-            value.BitCount                                  = GetInt32(new IntPtr(p + 0x010)); // 0245A4D93F30 0x10 BitCount                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Locals                                    = GetSByteList(new IntPtr(p + 0x018)); // 0245A4D93F50 0x18 Locals                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.BitCount                                  = GetInt32(new IntPtr(p + 0x010)); // 0x10 BitCount                    ( ModelPrimitiveType int int int Int32 )
+            value.Locals                                    = GetSByteList(new IntPtr(p + 0x018)); // 0x18 Locals                      ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

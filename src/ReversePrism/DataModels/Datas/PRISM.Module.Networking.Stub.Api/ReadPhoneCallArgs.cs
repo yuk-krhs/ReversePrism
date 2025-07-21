@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<ReadPhoneCallArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstPhoneCallIdFieldNumber                int IL2CPP_TYPE_I4
-    // 018 MstPhoneCallId                           0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MstPhoneCallId                           ModelPrimitiveType int int int Int32
     public partial class ReadPhoneCallArgs : DataModel
     {
         public int                                      MstPhoneCallId                          { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ReadPhoneCallArgs() { Pointer= p0 };
 
-            value.MstPhoneCallId                            = GetInt32(new IntPtr(p + 0x018)); // 024662275128 0x18 MstPhoneCallId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstPhoneCallId                            = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstPhoneCallId              ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

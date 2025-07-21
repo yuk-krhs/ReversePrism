@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 040 M_DefaultSorting                         000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 040 M_DefaultSorting                         ModelPrimitiveType bool bool bool Bool
     public partial class AdaptiveSorting : DataModel
     {
         public bool                                     M_DefaultSorting                        { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AdaptiveSorting() { Pointer= p0 };
 
-            value.M_DefaultSorting                          = GetBool(new IntPtr(p + 0x040)); // 02466B715E98 0x40 M_DefaultSorting            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_DefaultSorting                          = GetBool(new IntPtr(p + 0x040)); // 0x40 M_DefaultSorting            ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

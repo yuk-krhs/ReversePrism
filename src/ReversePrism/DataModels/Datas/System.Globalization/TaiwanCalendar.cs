@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 000 taiwanEraInfo                            EraInfo[] IL2CPP_TYPE_SZARRAY
     // 008 s_defaultInstance                        Calendar IL2CPP_TYPE_CLASS
-    // 020 Helper                                   0001866991E0 ModelClassType GregorianCalendarHelper GregorianCalendarHelper GregorianCalendarHelper Pointer
-    // 010 CalendarMinValue                         0001865BA910 ModelPrimitiveType DateTime DateTime DateTime DateTime
+    // 020 Helper                                   ModelClassType GregorianCalendarHelper GregorianCalendarHelper GregorianCalendarHelper Pointer
+    // 010 CalendarMinValue                         ModelPrimitiveType DateTime DateTime DateTime DateTime
     public partial class TaiwanCalendar : DataModel
     {
         public GregorianCalendarHelper?                 Helper                                  { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TaiwanCalendar() { Pointer= p0 };
 
-            value.Helper                                    = GetObject<GregorianCalendarHelper>(new IntPtr(p + 0x020), ReversePrism.DataModels.GregorianCalendarHelper.FromPointer); // 024666D8E7B8 0x20 Helper                      ( 0001866991E0 ModelClassType GregorianCalendarHelper GregorianCalendarHelper GregorianCalendarHelper Pointer )
-            value.CalendarMinValue                          = GetDateTime(new IntPtr(p + 0x010)); // 024666D8E7D8 0x10 CalendarMinValue            ( 0001865BA910 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.Helper                                    = GetObject<GregorianCalendarHelper>(new IntPtr(p + 0x020), ReversePrism.DataModels.GregorianCalendarHelper.FromPointer); // 0x20 Helper                      ( ModelClassType GregorianCalendarHelper GregorianCalendarHelper GregorianCalendarHelper Pointer )
+            value.CalendarMinValue                          = GetDateTime(new IntPtr(p + 0x010)); // 0x10 CalendarMinValue            ( ModelPrimitiveType DateTime DateTime DateTime DateTime )
 
             return value;
         }

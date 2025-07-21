@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_defaultValue                           ulong IL2CPP_TYPE_U8
-    // 050 Values                                   000185B84460 ModelPrimitiveListType ulong[] ulong[] List<ulong> Pointer
+    // 050 Values                                   ModelPrimitiveListType ulong[] ulong[] List<ulong> Pointer
     public partial class UInt64Storage : DataModel
     {
         public List<ulong>?                             Values                                  { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UInt64Storage() { Pointer= p0 };
 
-            value.Values                                    = GetUInt64List(new IntPtr(p + 0x050)); // 024668A614F0 0x50 Values                      ( 000185B84460 ModelPrimitiveListType ulong[] ulong[] List<ulong> Pointer )
+            value.Values                                    = GetUInt64List(new IntPtr(p + 0x050)); // 0x50 Values                      ( ModelPrimitiveListType ulong[] ulong[] List<ulong> Pointer )
 
             return value;
         }

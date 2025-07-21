@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReversePrism.DataModels
+{
+    using static ModelMarshaler;
+
+    public enum BlendOp
+    {
+        Add,
+        Subtract,
+        ReverseSubtract,
+        Min,
+        Max,
+        LogicalClear,
+        LogicalSet,
+        LogicalCopy,
+        LogicalCopyInverted,
+        LogicalNoop,
+        LogicalInvert,
+        LogicalAnd,
+        LogicalNand,
+        LogicalOr,
+        LogicalNor,
+        LogicalXor,
+        LogicalEquivalence,
+        LogicalAndReverse,
+        LogicalAndInverted,
+        LogicalOrReverse,
+        LogicalOrInverted,
+        Multiply,
+        Screen,
+        Overlay,
+        Darken,
+        Lighten,
+        ColorDodge,
+        ColorBurn,
+        HardLight,
+        SoftLight,
+        Difference,
+        Exclusion,
+        HSLHue,
+        HSLSaturation,
+        HSLColor,
+        HSLLuminosity,
+    }
+}

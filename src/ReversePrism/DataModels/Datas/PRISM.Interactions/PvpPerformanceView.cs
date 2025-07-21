@@ -8,11 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 ResourceTag                              00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
-    // 028 Content                                  0001865ECA70 ModelClassType PvpPerformanceContent PvpPerformanceContent PvpPerformanceContent Pointer
+    // 020 Content                                  ModelClassType PvpPerformanceContent PvpPerformanceContent PvpPerformanceContent Pointer
     public partial class PvpPerformanceView : DataModel
     {
-        public IResourceTag?                            ResourceTag                             { get; set; }
         public PvpPerformanceContent?                   Content                                 { get; set; }
 
         public static PvpPerformanceView? FromPointer(IntPtr p0)
@@ -23,8 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PvpPerformanceView() { Pointer= p0 };
 
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x020), ReversePrism.DataModels.IResourceTag.FromPointer); // 02466B6B2ED0 0x20 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
-            value.Content                                   = GetObject<PvpPerformanceContent>(new IntPtr(p + 0x028), ReversePrism.DataModels.PvpPerformanceContent.FromPointer); // 02466B6B2EF0 0x28 Content                     ( 0001865ECA70 ModelClassType PvpPerformanceContent PvpPerformanceContent PvpPerformanceContent Pointer )
+            value.Content                                   = GetObject<PvpPerformanceContent>(new IntPtr(p + 0x020), ReversePrism.DataModels.PvpPerformanceContent.FromPointer); // 0x20 Content                     ( ModelClassType PvpPerformanceContent PvpPerformanceContent PvpPerformanceContent Pointer )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Executor                                 0001866D65D0 ModelClassType InGamePlayerActionResult InGamePlayerActionResult InGamePlayerActionResult Pointer
-    // 018 Opponent                                 0001866D65D0 ModelClassType InGamePlayerActionResult InGamePlayerActionResult InGamePlayerActionResult Pointer
+    // 010 Executor                                 ModelClassType InGamePlayerActionResult InGamePlayerActionResult InGamePlayerActionResult Pointer
+    // 018 Opponent                                 ModelClassType InGamePlayerActionResult InGamePlayerActionResult InGamePlayerActionResult Pointer
     public partial class InGameActionResult : DataModel
     {
         public InGamePlayerActionResult?                Executor                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InGameActionResult() { Pointer= p0 };
 
-            value.Executor                                  = GetObject<InGamePlayerActionResult>(new IntPtr(p + 0x010), ReversePrism.DataModels.InGamePlayerActionResult.FromPointer); // 024665AFDEC8 0x10 Executor                    ( 0001866D65D0 ModelClassType InGamePlayerActionResult InGamePlayerActionResult InGamePlayerActionResult Pointer )
-            value.Opponent                                  = GetObject<InGamePlayerActionResult>(new IntPtr(p + 0x018), ReversePrism.DataModels.InGamePlayerActionResult.FromPointer); // 024665AFDEE8 0x18 Opponent                    ( 0001866D65D0 ModelClassType InGamePlayerActionResult InGamePlayerActionResult InGamePlayerActionResult Pointer )
+            value.Executor                                  = GetObject<InGamePlayerActionResult>(new IntPtr(p + 0x010), ReversePrism.DataModels.InGamePlayerActionResult.FromPointer); // 0x10 Executor                    ( ModelClassType InGamePlayerActionResult InGamePlayerActionResult InGamePlayerActionResult Pointer )
+            value.Opponent                                  = GetObject<InGamePlayerActionResult>(new IntPtr(p + 0x018), ReversePrism.DataModels.InGamePlayerActionResult.FromPointer); // 0x18 Opponent                    ( ModelClassType InGamePlayerActionResult InGamePlayerActionResult InGamePlayerActionResult Pointer )
 
             return value;
         }

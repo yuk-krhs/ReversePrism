@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 SelectObjects                            000185CC2BE8 ModelClassListType SelectObjectData[] SelectObjectData[] List<SelectObjectData> Pointer
+    // 020 SelectObjects                            ModelClassListType SelectObjectData[] SelectObjectData[] List<SelectObjectData> Pointer
     public partial class SelectObject : DataModel
     {
         public List<SelectObjectData>?                  SelectObjects                           { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SelectObject() { Pointer= p0 };
 
-            value.SelectObjects                             = GetObjectList<SelectObjectData>(new IntPtr(p + 0x020), ReversePrism.DataModels.SelectObjectData.FromPointer); // 024664DCCDD0 0x20 SelectObjects               ( 000185CC2BE8 ModelClassListType SelectObjectData[] SelectObjectData[] List<SelectObjectData> Pointer )
+            value.SelectObjects                             = GetObjectList<SelectObjectData>(new IntPtr(p + 0x020), ReversePrism.DataModels.SelectObjectData.FromPointer); // 0x20 SelectObjects               ( ModelClassListType SelectObjectData[] SelectObjectData[] List<SelectObjectData> Pointer )
 
             return value;
         }

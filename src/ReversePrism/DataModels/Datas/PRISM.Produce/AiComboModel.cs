@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 AiPatternDataTargetList                  000185CCC478 ModelClassListType List`1<AiPatternData> List`1<AiPatternData> List<AiPatternData> Pointer
-    // 018 AiPatternDataAllList                     000185CCC478 ModelClassListType List`1<AiPatternData> List`1<AiPatternData> List<AiPatternData> Pointer
+    // 010 AiPatternDataTargetList                  ModelClassListType List`1<AiPatternData> List`1<AiPatternData> List<AiPatternData> Pointer
+    // 018 AiPatternDataAllList                     ModelClassListType List`1<AiPatternData> List`1<AiPatternData> List<AiPatternData> Pointer
     public partial class AiComboModel : DataModel
     {
         public List<AiPatternData>?                     AiPatternDataTargetList                 { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AiComboModel() { Pointer= p0 };
 
-            value.AiPatternDataTargetList                   = GetObjectList<AiPatternData>(new IntPtr(p + 0x010), ReversePrism.DataModels.AiPatternData.FromPointer); // 024665ADFD50 0x10 AiPatternDataTargetList     ( 000185CCC478 ModelClassListType List`1<AiPatternData> List`1<AiPatternData> List<AiPatternData> Pointer )
-            value.AiPatternDataAllList                      = GetObjectList<AiPatternData>(new IntPtr(p + 0x018), ReversePrism.DataModels.AiPatternData.FromPointer); // 024665ADFD70 0x18 AiPatternDataAllList        ( 000185CCC478 ModelClassListType List`1<AiPatternData> List`1<AiPatternData> List<AiPatternData> Pointer )
+            value.AiPatternDataTargetList                   = GetObjectList<AiPatternData>(new IntPtr(p + 0x010), ReversePrism.DataModels.AiPatternData.FromPointer); // 0x10 AiPatternDataTargetList     ( ModelClassListType List`1<AiPatternData> List`1<AiPatternData> List<AiPatternData> Pointer )
+            value.AiPatternDataAllList                      = GetObjectList<AiPatternData>(new IntPtr(p + 0x018), ReversePrism.DataModels.AiPatternData.FromPointer); // 0x18 AiPatternDataAllList        ( ModelClassListType List`1<AiPatternData> List`1<AiPatternData> List<AiPatternData> Pointer )
 
             return value;
         }

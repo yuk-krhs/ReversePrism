@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 EventName                                0001866722E0 ModelPrimitiveType string string string String
-    // 018 StartFrame                               0001865F36C0 ModelPrimitiveType int int int Int32
-    // 020 Arg1                                     0001866722E0 ModelPrimitiveType string string string String
-    // 028 Arg2                                     0001866722E0 ModelPrimitiveType string string string String
+    // 010 EventName                                ModelPrimitiveType string string string String
+    // 018 StartFrame                               ModelPrimitiveType int int int Int32
+    // 020 Arg1                                     ModelPrimitiveType string string string String
+    // 028 Arg2                                     ModelPrimitiveType string string string String
     public partial class AnimEvent : DataModel
     {
         public string                                   EventName                               { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AnimEvent() { Pointer= p0 };
 
-            value.EventName                                 = GetString(new IntPtr(p + 0x010)); // 0245A5CE3DE0 0x10 EventName                   ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.StartFrame                                = GetInt32(new IntPtr(p + 0x018)); // 0245A5CE3E00 0x18 StartFrame                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Arg1                                      = GetString(new IntPtr(p + 0x020)); // 0245A5CE3E20 0x20 Arg1                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Arg2                                      = GetString(new IntPtr(p + 0x028)); // 0245A5CE3E40 0x28 Arg2                        ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.EventName                                 = GetString(new IntPtr(p + 0x010)); // 0x10 EventName                   ( ModelPrimitiveType string string string String )
+            value.StartFrame                                = GetInt32(new IntPtr(p + 0x018)); // 0x18 StartFrame                  ( ModelPrimitiveType int int int Int32 )
+            value.Arg1                                      = GetString(new IntPtr(p + 0x020)); // 0x20 Arg1                        ( ModelPrimitiveType string string string String )
+            value.Arg2                                      = GetString(new IntPtr(p + 0x028)); // 0x28 Arg2                        ( ModelPrimitiveType string string string String )
 
             return value;
         }

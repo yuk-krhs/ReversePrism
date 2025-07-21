@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 CampaignIconListFieldNumber              int IL2CPP_TYPE_I4
     // 008 _repeated_campaignIconList_codec         FieldCodec`1<CampaignIconStatus> IL2CPP_TYPE_GENERICINST
-    // 018 CampaignIconList                         000185CD0408 ModelClassListType RepeatedField`1<CampaignIconStatus> RepeatedField`1<CampaignIconStatus> List<CampaignIconStatus> Pointer
+    // 018 CampaignIconList                         ModelClassListType RepeatedField`1<CampaignIconStatus> RepeatedField`1<CampaignIconStatus> List<CampaignIconStatus> Pointer
     public partial class GetCampaignIconListReply : DataModel
     {
         public List<CampaignIconStatus>?                CampaignIconList                        { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetCampaignIconListReply() { Pointer= p0 };
 
-            value.CampaignIconList                          = GetObjectList<CampaignIconStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.CampaignIconStatus.FromPointer); // 024660B1BE40 0x18 CampaignIconList            ( 000185CD0408 ModelClassListType RepeatedField`1<CampaignIconStatus> RepeatedField`1<CampaignIconStatus> List<CampaignIconStatus> Pointer )
+            value.CampaignIconList                          = GetObjectList<CampaignIconStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.CampaignIconStatus.FromPointer); // 0x18 CampaignIconList            ( ModelClassListType RepeatedField`1<CampaignIconStatus> RepeatedField`1<CampaignIconStatus> List<CampaignIconStatus> Pointer )
 
             return value;
         }

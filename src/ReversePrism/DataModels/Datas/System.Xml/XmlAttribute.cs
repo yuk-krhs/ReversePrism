@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 Name                                     00018659FF60 ModelClassType XmlName XmlName XmlName Pointer
-    // 020 LastChild                                00018659E450 ModelClassType XmlLinkedNode XmlLinkedNode XmlLinkedNode Pointer
+    // 018 Name                                     ModelClassType XmlName XmlName XmlName Pointer
+    // 020 LastChild                                ModelClassType XmlLinkedNode XmlLinkedNode XmlLinkedNode Pointer
     public partial class XmlAttribute : DataModel
     {
         public XmlName?                                 Name                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlAttribute() { Pointer= p0 };
 
-            value.Name                                      = GetObject<XmlName>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlName.FromPointer); // 0246674A9E60 0x18 Name                        ( 00018659FF60 ModelClassType XmlName XmlName XmlName Pointer )
-            value.LastChild                                 = GetObject<XmlLinkedNode>(new IntPtr(p + 0x020), ReversePrism.DataModels.XmlLinkedNode.FromPointer); // 0246674A9E80 0x20 LastChild                   ( 00018659E450 ModelClassType XmlLinkedNode XmlLinkedNode XmlLinkedNode Pointer )
+            value.Name                                      = GetObject<XmlName>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlName.FromPointer); // 0x18 Name                        ( ModelClassType XmlName XmlName XmlName Pointer )
+            value.LastChild                                 = GetObject<XmlLinkedNode>(new IntPtr(p + 0x020), ReversePrism.DataModels.XmlLinkedNode.FromPointer); // 0x20 LastChild                   ( ModelClassType XmlLinkedNode XmlLinkedNode XmlLinkedNode Pointer )
 
             return value;
         }

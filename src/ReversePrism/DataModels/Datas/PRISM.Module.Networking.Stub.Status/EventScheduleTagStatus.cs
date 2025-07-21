@@ -11,13 +11,13 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<EventScheduleTagStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 TagIdFieldNumber                         int IL2CPP_TYPE_I4
-    // 018 TagId                                    000186671910 ModelPrimitiveType string string string String
+    // 018 TagId                                    ModelPrimitiveType string string string String
     // 000 TagNameFieldNumber                       int IL2CPP_TYPE_I4
-    // 020 TagName                                  000186671910 ModelPrimitiveType string string string String
+    // 020 TagName                                  ModelPrimitiveType string string string String
     // 000 BodyColorCodeFieldNumber                 int IL2CPP_TYPE_I4
-    // 028 BodyColorCode                            000186671910 ModelPrimitiveType string string string String
+    // 028 BodyColorCode                            ModelPrimitiveType string string string String
     // 000 TextColorCodeFieldNumber                 int IL2CPP_TYPE_I4
-    // 030 TextColorCode                            000186671910 ModelPrimitiveType string string string String
+    // 030 TextColorCode                            ModelPrimitiveType string string string String
     public partial class EventScheduleTagStatus : DataModel
     {
         public string                                   TagId                                   { get; set; }
@@ -33,10 +33,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EventScheduleTagStatus() { Pointer= p0 };
 
-            value.TagId                                     = GetString(new IntPtr(p + 0x018)); // 024661035F10 0x18 TagId                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.TagName                                   = GetString(new IntPtr(p + 0x020)); // 024661035F50 0x20 TagName                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.BodyColorCode                             = GetString(new IntPtr(p + 0x028)); // 024661035F90 0x28 BodyColorCode               ( 000186671910 ModelPrimitiveType string string string String )
-            value.TextColorCode                             = GetString(new IntPtr(p + 0x030)); // 024661035FD0 0x30 TextColorCode               ( 000186671910 ModelPrimitiveType string string string String )
+            value.TagId                                     = GetString(new IntPtr(p + 0x018)); // 0x18 TagId                       ( ModelPrimitiveType string string string String )
+            value.TagName                                   = GetString(new IntPtr(p + 0x020)); // 0x20 TagName                     ( ModelPrimitiveType string string string String )
+            value.BodyColorCode                             = GetString(new IntPtr(p + 0x028)); // 0x28 BodyColorCode               ( ModelPrimitiveType string string string String )
+            value.TextColorCode                             = GetString(new IntPtr(p + 0x030)); // 0x30 TextColorCode               ( ModelPrimitiveType string string string String )
 
             return value;
         }

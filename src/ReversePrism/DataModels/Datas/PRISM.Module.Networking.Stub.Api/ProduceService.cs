@@ -117,60 +117,84 @@ namespace ReversePrism.DataModels
     // 350 __Marshaller_api_StartScheduleTalkShowReply Marshaller`1<StartScheduleTalkShowReply> IL2CPP_TYPE_GENERICINST
     // 358 __Marshaller_api_FinishScheduleTalkShowArgs Marshaller`1<FinishScheduleTalkShowArgs> IL2CPP_TYPE_GENERICINST
     // 360 __Marshaller_api_FinishScheduleTalkShowReply Marshaller`1<FinishScheduleTalkShowReply> IL2CPP_TYPE_GENERICINST
-    // 368 __Method_GetProduceUnit                  Method`2<GetProduceUnitArgs, GetProduceUnitReply> IL2CPP_TYPE_GENERICINST
-    // 370 __Method_SetProduceUnit                  Method`2<SetProduceUnitArgs, SetProduceUnitReply> IL2CPP_TYPE_GENERICINST
-    // 378 __Method_GetFriendSupportCharacterList   Method`2<GetFriendSupportCharacterListArgs, GetFriendSupportCharacterListReply> IL2CPP_TYPE_GENERICINST
-    // 380 __Method_StartProduce                    Method`2<StartProduceArgs, StartProduceReply> IL2CPP_TYPE_GENERICINST
-    // 388 __Method_GetProduceResume                Method`2<GetProduceResumeArgs, GetProduceResumeReply> IL2CPP_TYPE_GENERICINST
-    // 390 __Method_GetProduceTop                   Method`2<GetProduceTopArgs, GetProduceTopReply> IL2CPP_TYPE_GENERICINST
-    // 398 __Method_GetEpisodeList                  Method`2<GetEpisodeListArgs, GetEpisodeListReply> IL2CPP_TYPE_GENERICINST
-    // 3A0 __Method_ProduceStrategyList             Method`2<ProduceStrategyListArgs, ProduceStrategyListReply> IL2CPP_TYPE_GENERICINST
-    // 3A8 __Method_SelectProduceStrategy           Method`2<SelectProduceStrategyArgs, SelectProduceStrategyReply> IL2CPP_TYPE_GENERICINST
-    // 3B0 __Method_SelectProduceStrategyReward     Method`2<SelectProduceStrategyRewardArgs, SelectProduceStrategyRewardReply> IL2CPP_TYPE_GENERICINST
-    // 3B8 __Method_SelectSchedule                  Method`2<SelectScheduleArgs, SelectScheduleReply> IL2CPP_TYPE_GENERICINST
-    // 3C0 __Method_StartScheduleRest               Method`2<StartScheduleRestArgs, StartScheduleRestReply> IL2CPP_TYPE_GENERICINST
-    // 3C8 __Method_FinishScheduleRest              Method`2<FinishScheduleRestArgs, FinishScheduleRestReply> IL2CPP_TYPE_GENERICINST
-    // 3D0 __Method_StartScheduleTraining           Method`2<StartScheduleTrainingArgs, StartScheduleTrainingReply> IL2CPP_TYPE_GENERICINST
-    // 3D8 __Method_FinishScheduleTraining          Method`2<FinishScheduleTrainingArgs, FinishScheduleTrainingReply> IL2CPP_TYPE_GENERICINST
-    // 3E0 __Method_StartScheduleWorking            Method`2<StartScheduleWorkingArgs, StartScheduleWorkingReply> IL2CPP_TYPE_GENERICINST
-    // 3E8 __Method_FinishScheduleWorking           Method`2<FinishScheduleWorkingArgs, FinishScheduleWorkingReply> IL2CPP_TYPE_GENERICINST
-    // 3F0 __Method_StartScheduleOuting             Method`2<StartScheduleOutingArgs, StartScheduleOutingReply> IL2CPP_TYPE_GENERICINST
-    // 3F8 __Method_FinishScheduleOuting            Method`2<FinishScheduleOutingArgs, FinishScheduleOutingReply> IL2CPP_TYPE_GENERICINST
-    // 400 __Method_StartScheduleShopping           Method`2<StartScheduleShoppingArgs, StartScheduleShoppingReply> IL2CPP_TYPE_GENERICINST
-    // 408 __Method_FinishScheduleShopping          Method`2<FinishScheduleShoppingArgs, FinishScheduleShoppingReply> IL2CPP_TYPE_GENERICINST
-    // 410 __Method_StartScheduleAdvice             Method`2<StartScheduleAdviceArgs, StartScheduleAdviceReply> IL2CPP_TYPE_GENERICINST
-    // 418 __Method_FinishScheduleAdvice            Method`2<FinishScheduleAdviceArgs, FinishScheduleAdviceReply> IL2CPP_TYPE_GENERICINST
-    // 420 __Method_StartLesson                     Method`2<StartLessonArgs, StartLessonReply> IL2CPP_TYPE_GENERICINST
-    // 428 __Method_FinishLesson                    Method`2<FinishLessonArgs, FinishLessonReply> IL2CPP_TYPE_GENERICINST
-    // 430 __Method_FinishLessonResult              Method`2<FinishLessonResultArgs, FinishLessonResultReply> IL2CPP_TYPE_GENERICINST
-    // 438 __Method_StartSpecialLesson              Method`2<StartSpecialLessonArgs, StartSpecialLessonReply> IL2CPP_TYPE_GENERICINST
-    // 440 __Method_FinishSpecialLesson             Method`2<FinishSpecialLessonArgs, FinishSpecialLessonReply> IL2CPP_TYPE_GENERICINST
-    // 448 __Method_CardRankUp                      Method`2<CardRankUpArgs, CardRankUpReply> IL2CPP_TYPE_GENERICINST
-    // 450 __Method_StartAudition                   Method`2<StartAuditionArgs, StartAuditionReply> IL2CPP_TYPE_GENERICINST
-    // 458 __Method_FinishAudition                  Method`2<FinishAuditionArgs, FinishAuditionReply> IL2CPP_TYPE_GENERICINST
-    // 460 __Method_FinishAuditionResult            Method`2<FinishAuditionResultArgs, FinishAuditionResultReply> IL2CPP_TYPE_GENERICINST
-    // 468 __Method_StartSupportCooperationEvent    Method`2<StartSupportCooperationEventArgs, StartSupportCooperationEventReply> IL2CPP_TYPE_GENERICINST
-    // 470 __Method_FinishSupportCooperationEvent   Method`2<FinishSupportCooperationEventArgs, FinishSupportCooperationEventReply> IL2CPP_TYPE_GENERICINST
-    // 478 __Method_StartProduceAdv                 Method`2<StartProduceAdvArgs, StartProduceAdvReply> IL2CPP_TYPE_GENERICINST
-    // 480 __Method_SelectProduceAdvOption          Method`2<SelectProduceAdvOptionArgs, SelectProduceAdvOptionReply> IL2CPP_TYPE_GENERICINST
-    // 488 __Method_FinishProduceAdv                Method`2<FinishProduceAdvArgs, FinishProduceAdvReply> IL2CPP_TYPE_GENERICINST
-    // 490 __Method_ProduceResult                   Method`2<ProduceResultArgs, ProduceResultReply> IL2CPP_TYPE_GENERICINST
-    // 498 __Method_DetermineProduceResult          Method`2<DetermineProduceResultArgs, DetermineProduceResultReply> IL2CPP_TYPE_GENERICINST
-    // 4A0 __Method_ProduceMV                       Method`2<ProduceMVArgs, ProduceMVReply> IL2CPP_TYPE_GENERICINST
-    // 4A8 __Method_FinishProduce                   Method`2<FinishProduceArgs, FinishProduceReply> IL2CPP_TYPE_GENERICINST
-    // 4B0 __Method_SubSeasonList                   Method`2<SubSeasonListArgs, SubSeasonListReply> IL2CPP_TYPE_GENERICINST
-    // 4B8 __Method_SelectSubSeason                 Method`2<SelectSubSeasonArgs, SelectSubSeasonReply> IL2CPP_TYPE_GENERICINST
-    // 4C0 __Method_SelectSubSeasonIdol             Method`2<SelectSubSeasonIdolArgs, SelectSubSeasonIdolReply> IL2CPP_TYPE_GENERICINST
-    // 4C8 __Method_ProduceFailureResult            Method`2<ProduceFailureResultArgs, ProduceFailureResultReply> IL2CPP_TYPE_GENERICINST
-    // 4D0 __Method_InheritanceSkillList            Method`2<InheritanceSkillListArgs, InheritanceSkillListReply> IL2CPP_TYPE_GENERICINST
-    // 4D8 __Method_SelectInheritanceSkill          Method`2<SelectInheritanceSkillArgs, SelectInheritanceSkillReply> IL2CPP_TYPE_GENERICINST
-    // 4E0 __Method_GetProduceAutoPlayProgress      Method`2<GetProduceAutoPlayProgressArgs, GetProduceAutoPlayProgressReply> IL2CPP_TYPE_GENERICINST
-    // 4E8 __Method_CancelProduceAutoPlay           Method`2<CancelProduceAutoPlayArgs, CancelProduceAutoPlayReply> IL2CPP_TYPE_GENERICINST
-    // 4F0 __Method_GetProduceAdvList               Method`2<GetProduceAdvListArgs, GetProduceAdvListReply> IL2CPP_TYPE_GENERICINST
-    // 4F8 __Method_StartScheduleMiniLive           Method`2<StartScheduleMiniLiveArgs, StartScheduleMiniLiveReply> IL2CPP_TYPE_GENERICINST
-    // 500 __Method_FinishScheduleMiniLive          Method`2<FinishScheduleMiniLiveArgs, FinishScheduleMiniLiveReply> IL2CPP_TYPE_GENERICINST
-    // 508 __Method_StartScheduleTalkShow           Method`2<StartScheduleTalkShowArgs, StartScheduleTalkShowReply> IL2CPP_TYPE_GENERICINST
-    // 510 __Method_FinishScheduleTalkShow          Method`2<FinishScheduleTalkShowArgs, FinishScheduleTalkShowReply> IL2CPP_TYPE_GENERICINST
+    // 368 __Marshaller_api_StartScheduleScriptReadingArgs Marshaller`1<StartScheduleScriptReadingArgs> IL2CPP_TYPE_GENERICINST
+    // 370 __Marshaller_api_StartScheduleScriptReadingReply Marshaller`1<StartScheduleScriptReadingReply> IL2CPP_TYPE_GENERICINST
+    // 378 __Marshaller_api_FinishScheduleScriptReadingArgs Marshaller`1<FinishScheduleScriptReadingArgs> IL2CPP_TYPE_GENERICINST
+    // 380 __Marshaller_api_FinishScheduleScriptReadingReply Marshaller`1<FinishScheduleScriptReadingReply> IL2CPP_TYPE_GENERICINST
+    // 388 __Marshaller_api_StartScheduleCostumeFittingArgs Marshaller`1<StartScheduleCostumeFittingArgs> IL2CPP_TYPE_GENERICINST
+    // 390 __Marshaller_api_StartScheduleCostumeFittingReply Marshaller`1<StartScheduleCostumeFittingReply> IL2CPP_TYPE_GENERICINST
+    // 398 __Marshaller_api_FinishScheduleCostumeFittingArgs Marshaller`1<FinishScheduleCostumeFittingArgs> IL2CPP_TYPE_GENERICINST
+    // 3A0 __Marshaller_api_FinishScheduleCostumeFittingReply Marshaller`1<FinishScheduleCostumeFittingReply> IL2CPP_TYPE_GENERICINST
+    // 3A8 __Marshaller_api_StartSchedulePublicRelationsArgs Marshaller`1<StartSchedulePublicRelationsArgs> IL2CPP_TYPE_GENERICINST
+    // 3B0 __Marshaller_api_StartSchedulePublicRelationsReply Marshaller`1<StartSchedulePublicRelationsReply> IL2CPP_TYPE_GENERICINST
+    // 3B8 __Marshaller_api_FinishSchedulePublicRelationsArgs Marshaller`1<FinishSchedulePublicRelationsArgs> IL2CPP_TYPE_GENERICINST
+    // 3C0 __Marshaller_api_FinishSchedulePublicRelationsReply Marshaller`1<FinishSchedulePublicRelationsReply> IL2CPP_TYPE_GENERICINST
+    // 3C8 __Marshaller_api_StartScheduleActingPracticeArgs Marshaller`1<StartScheduleActingPracticeArgs> IL2CPP_TYPE_GENERICINST
+    // 3D0 __Marshaller_api_StartScheduleActingPracticeReply Marshaller`1<StartScheduleActingPracticeReply> IL2CPP_TYPE_GENERICINST
+    // 3D8 __Marshaller_api_FinishScheduleActingPracticeArgs Marshaller`1<FinishScheduleActingPracticeArgs> IL2CPP_TYPE_GENERICINST
+    // 3E0 __Marshaller_api_FinishScheduleActingPracticeReply Marshaller`1<FinishScheduleActingPracticeReply> IL2CPP_TYPE_GENERICINST
+    // 3E8 __Method_GetProduceUnit                  Method`2<GetProduceUnitArgs, GetProduceUnitReply> IL2CPP_TYPE_GENERICINST
+    // 3F0 __Method_SetProduceUnit                  Method`2<SetProduceUnitArgs, SetProduceUnitReply> IL2CPP_TYPE_GENERICINST
+    // 3F8 __Method_GetFriendSupportCharacterList   Method`2<GetFriendSupportCharacterListArgs, GetFriendSupportCharacterListReply> IL2CPP_TYPE_GENERICINST
+    // 400 __Method_StartProduce                    Method`2<StartProduceArgs, StartProduceReply> IL2CPP_TYPE_GENERICINST
+    // 408 __Method_GetProduceResume                Method`2<GetProduceResumeArgs, GetProduceResumeReply> IL2CPP_TYPE_GENERICINST
+    // 410 __Method_GetProduceTop                   Method`2<GetProduceTopArgs, GetProduceTopReply> IL2CPP_TYPE_GENERICINST
+    // 418 __Method_GetEpisodeList                  Method`2<GetEpisodeListArgs, GetEpisodeListReply> IL2CPP_TYPE_GENERICINST
+    // 420 __Method_ProduceStrategyList             Method`2<ProduceStrategyListArgs, ProduceStrategyListReply> IL2CPP_TYPE_GENERICINST
+    // 428 __Method_SelectProduceStrategy           Method`2<SelectProduceStrategyArgs, SelectProduceStrategyReply> IL2CPP_TYPE_GENERICINST
+    // 430 __Method_SelectProduceStrategyReward     Method`2<SelectProduceStrategyRewardArgs, SelectProduceStrategyRewardReply> IL2CPP_TYPE_GENERICINST
+    // 438 __Method_SelectSchedule                  Method`2<SelectScheduleArgs, SelectScheduleReply> IL2CPP_TYPE_GENERICINST
+    // 440 __Method_StartScheduleRest               Method`2<StartScheduleRestArgs, StartScheduleRestReply> IL2CPP_TYPE_GENERICINST
+    // 448 __Method_FinishScheduleRest              Method`2<FinishScheduleRestArgs, FinishScheduleRestReply> IL2CPP_TYPE_GENERICINST
+    // 450 __Method_StartScheduleTraining           Method`2<StartScheduleTrainingArgs, StartScheduleTrainingReply> IL2CPP_TYPE_GENERICINST
+    // 458 __Method_FinishScheduleTraining          Method`2<FinishScheduleTrainingArgs, FinishScheduleTrainingReply> IL2CPP_TYPE_GENERICINST
+    // 460 __Method_StartScheduleWorking            Method`2<StartScheduleWorkingArgs, StartScheduleWorkingReply> IL2CPP_TYPE_GENERICINST
+    // 468 __Method_FinishScheduleWorking           Method`2<FinishScheduleWorkingArgs, FinishScheduleWorkingReply> IL2CPP_TYPE_GENERICINST
+    // 470 __Method_StartScheduleOuting             Method`2<StartScheduleOutingArgs, StartScheduleOutingReply> IL2CPP_TYPE_GENERICINST
+    // 478 __Method_FinishScheduleOuting            Method`2<FinishScheduleOutingArgs, FinishScheduleOutingReply> IL2CPP_TYPE_GENERICINST
+    // 480 __Method_StartScheduleShopping           Method`2<StartScheduleShoppingArgs, StartScheduleShoppingReply> IL2CPP_TYPE_GENERICINST
+    // 488 __Method_FinishScheduleShopping          Method`2<FinishScheduleShoppingArgs, FinishScheduleShoppingReply> IL2CPP_TYPE_GENERICINST
+    // 490 __Method_StartScheduleAdvice             Method`2<StartScheduleAdviceArgs, StartScheduleAdviceReply> IL2CPP_TYPE_GENERICINST
+    // 498 __Method_FinishScheduleAdvice            Method`2<FinishScheduleAdviceArgs, FinishScheduleAdviceReply> IL2CPP_TYPE_GENERICINST
+    // 4A0 __Method_StartLesson                     Method`2<StartLessonArgs, StartLessonReply> IL2CPP_TYPE_GENERICINST
+    // 4A8 __Method_FinishLesson                    Method`2<FinishLessonArgs, FinishLessonReply> IL2CPP_TYPE_GENERICINST
+    // 4B0 __Method_FinishLessonResult              Method`2<FinishLessonResultArgs, FinishLessonResultReply> IL2CPP_TYPE_GENERICINST
+    // 4B8 __Method_StartSpecialLesson              Method`2<StartSpecialLessonArgs, StartSpecialLessonReply> IL2CPP_TYPE_GENERICINST
+    // 4C0 __Method_FinishSpecialLesson             Method`2<FinishSpecialLessonArgs, FinishSpecialLessonReply> IL2CPP_TYPE_GENERICINST
+    // 4C8 __Method_CardRankUp                      Method`2<CardRankUpArgs, CardRankUpReply> IL2CPP_TYPE_GENERICINST
+    // 4D0 __Method_StartAudition                   Method`2<StartAuditionArgs, StartAuditionReply> IL2CPP_TYPE_GENERICINST
+    // 4D8 __Method_FinishAudition                  Method`2<FinishAuditionArgs, FinishAuditionReply> IL2CPP_TYPE_GENERICINST
+    // 4E0 __Method_FinishAuditionResult            Method`2<FinishAuditionResultArgs, FinishAuditionResultReply> IL2CPP_TYPE_GENERICINST
+    // 4E8 __Method_StartSupportCooperationEvent    Method`2<StartSupportCooperationEventArgs, StartSupportCooperationEventReply> IL2CPP_TYPE_GENERICINST
+    // 4F0 __Method_FinishSupportCooperationEvent   Method`2<FinishSupportCooperationEventArgs, FinishSupportCooperationEventReply> IL2CPP_TYPE_GENERICINST
+    // 4F8 __Method_StartProduceAdv                 Method`2<StartProduceAdvArgs, StartProduceAdvReply> IL2CPP_TYPE_GENERICINST
+    // 500 __Method_SelectProduceAdvOption          Method`2<SelectProduceAdvOptionArgs, SelectProduceAdvOptionReply> IL2CPP_TYPE_GENERICINST
+    // 508 __Method_FinishProduceAdv                Method`2<FinishProduceAdvArgs, FinishProduceAdvReply> IL2CPP_TYPE_GENERICINST
+    // 510 __Method_ProduceResult                   Method`2<ProduceResultArgs, ProduceResultReply> IL2CPP_TYPE_GENERICINST
+    // 518 __Method_DetermineProduceResult          Method`2<DetermineProduceResultArgs, DetermineProduceResultReply> IL2CPP_TYPE_GENERICINST
+    // 520 __Method_ProduceMV                       Method`2<ProduceMVArgs, ProduceMVReply> IL2CPP_TYPE_GENERICINST
+    // 528 __Method_FinishProduce                   Method`2<FinishProduceArgs, FinishProduceReply> IL2CPP_TYPE_GENERICINST
+    // 530 __Method_SubSeasonList                   Method`2<SubSeasonListArgs, SubSeasonListReply> IL2CPP_TYPE_GENERICINST
+    // 538 __Method_SelectSubSeason                 Method`2<SelectSubSeasonArgs, SelectSubSeasonReply> IL2CPP_TYPE_GENERICINST
+    // 540 __Method_SelectSubSeasonIdol             Method`2<SelectSubSeasonIdolArgs, SelectSubSeasonIdolReply> IL2CPP_TYPE_GENERICINST
+    // 548 __Method_ProduceFailureResult            Method`2<ProduceFailureResultArgs, ProduceFailureResultReply> IL2CPP_TYPE_GENERICINST
+    // 550 __Method_InheritanceSkillList            Method`2<InheritanceSkillListArgs, InheritanceSkillListReply> IL2CPP_TYPE_GENERICINST
+    // 558 __Method_SelectInheritanceSkill          Method`2<SelectInheritanceSkillArgs, SelectInheritanceSkillReply> IL2CPP_TYPE_GENERICINST
+    // 560 __Method_GetProduceAutoPlayProgress      Method`2<GetProduceAutoPlayProgressArgs, GetProduceAutoPlayProgressReply> IL2CPP_TYPE_GENERICINST
+    // 568 __Method_CancelProduceAutoPlay           Method`2<CancelProduceAutoPlayArgs, CancelProduceAutoPlayReply> IL2CPP_TYPE_GENERICINST
+    // 570 __Method_GetProduceAdvList               Method`2<GetProduceAdvListArgs, GetProduceAdvListReply> IL2CPP_TYPE_GENERICINST
+    // 578 __Method_StartScheduleMiniLive           Method`2<StartScheduleMiniLiveArgs, StartScheduleMiniLiveReply> IL2CPP_TYPE_GENERICINST
+    // 580 __Method_FinishScheduleMiniLive          Method`2<FinishScheduleMiniLiveArgs, FinishScheduleMiniLiveReply> IL2CPP_TYPE_GENERICINST
+    // 588 __Method_StartScheduleTalkShow           Method`2<StartScheduleTalkShowArgs, StartScheduleTalkShowReply> IL2CPP_TYPE_GENERICINST
+    // 590 __Method_FinishScheduleTalkShow          Method`2<FinishScheduleTalkShowArgs, FinishScheduleTalkShowReply> IL2CPP_TYPE_GENERICINST
+    // 598 __Method_StartScheduleScriptReading      Method`2<StartScheduleScriptReadingArgs, StartScheduleScriptReadingReply> IL2CPP_TYPE_GENERICINST
+    // 5A0 __Method_FinishScheduleScriptReading     Method`2<FinishScheduleScriptReadingArgs, FinishScheduleScriptReadingReply> IL2CPP_TYPE_GENERICINST
+    // 5A8 __Method_StartScheduleCostumeFitting     Method`2<StartScheduleCostumeFittingArgs, StartScheduleCostumeFittingReply> IL2CPP_TYPE_GENERICINST
+    // 5B0 __Method_FinishScheduleCostumeFitting    Method`2<FinishScheduleCostumeFittingArgs, FinishScheduleCostumeFittingReply> IL2CPP_TYPE_GENERICINST
+    // 5B8 __Method_StartSchedulePublicRelations    Method`2<StartSchedulePublicRelationsArgs, StartSchedulePublicRelationsReply> IL2CPP_TYPE_GENERICINST
+    // 5C0 __Method_FinishSchedulePublicRelations   Method`2<FinishSchedulePublicRelationsArgs, FinishSchedulePublicRelationsReply> IL2CPP_TYPE_GENERICINST
+    // 5C8 __Method_StartScheduleActingPractice     Method`2<StartScheduleActingPracticeArgs, StartScheduleActingPracticeReply> IL2CPP_TYPE_GENERICINST
+    // 5D0 __Method_FinishScheduleActingPractice    Method`2<FinishScheduleActingPracticeArgs, FinishScheduleActingPracticeReply> IL2CPP_TYPE_GENERICINST
     public partial class ProduceService : DataModel
     {
 

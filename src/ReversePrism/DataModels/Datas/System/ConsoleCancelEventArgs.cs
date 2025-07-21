@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Type                                     00018660A650 ModelEnumType ConsoleSpecialKey ConsoleSpecialKey ConsoleSpecialKey Int32
-    // 014 Cancel                                   000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 Type                                     ModelEnumType ConsoleSpecialKey ConsoleSpecialKey ConsoleSpecialKey Int32
+    // 014 Cancel                                   ModelPrimitiveType bool bool bool Bool
     public partial class ConsoleCancelEventArgs : DataModel
     {
         public ConsoleSpecialKey                        Type                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ConsoleCancelEventArgs() { Pointer= p0 };
 
-            value.Type                                      = (ConsoleSpecialKey)GetInt32(new IntPtr(p + 0x010)); // 024666AA2AC0 0x10 Type                        ( 00018660A650 ModelEnumType ConsoleSpecialKey ConsoleSpecialKey ConsoleSpecialKey Int32 )
-            value.Cancel                                    = GetBool(new IntPtr(p + 0x014)); // 024666AA2AE0 0x14 Cancel                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Type                                      = (ConsoleSpecialKey)GetInt32(new IntPtr(p + 0x010)); // 0x10 Type                        ( ModelEnumType ConsoleSpecialKey ConsoleSpecialKey ConsoleSpecialKey Int32 )
+            value.Cancel                                    = GetBool(new IntPtr(p + 0x014)); // 0x14 Cancel                      ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

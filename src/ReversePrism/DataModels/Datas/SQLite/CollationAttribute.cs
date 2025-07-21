@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Value                                    000186671910 ModelPrimitiveType string string string String
+    // 010 Value                                    ModelPrimitiveType string string string String
     public partial class CollationAttribute : DataModel
     {
         public string                                   Value                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CollationAttribute() { Pointer= p0 };
 
-            value.Value                                     = GetString(new IntPtr(p + 0x010)); // 0245A3DA33A0 0x10 Value                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.Value                                     = GetString(new IntPtr(p + 0x010)); // 0x10 Value                       ( ModelPrimitiveType string string string String )
 
             return value;
         }

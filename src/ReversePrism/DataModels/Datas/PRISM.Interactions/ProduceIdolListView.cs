@@ -8,15 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 GridView                                 0001867335D0 ModelClassType EnhancedCharacterSelectGridView EnhancedCharacterSelectGridView EnhancedCharacterSelectGridView Pointer
-    // 028 FilterAndSortView                        000186580020 ModelClassType FilterAndSortView FilterAndSortView FilterAndSortView Pointer
-    // 030 BtnSwitchSortDirection                   0001866F44A0 ModelClassType UISwitch UISwitch UISwitch Pointer
+    // 020 GridView                                 ModelClassType EnhancedCharacterSelectGridView EnhancedCharacterSelectGridView EnhancedCharacterSelectGridView Pointer
+    // 028 FilterAndSortView                        ModelClassType FilterAndSortView FilterAndSortView FilterAndSortView Pointer
+    // 030 BtnSwitchSortDirection                   ModelClassType UISwitch UISwitch UISwitch Pointer
     // 038 onSelectIndex                            Subject`1<int> IL2CPP_TYPE_GENERICINST
     // 040 onDetail                                 Subject`1<int> IL2CPP_TYPE_GENERICINST
     // 048 onFilterSort                             Subject`1<bool> IL2CPP_TYPE_GENERICINST
     // 050 onSortDirection                          Subject`1<bool> IL2CPP_TYPE_GENERICINST
-    // 058 OnClickDisposable                        0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
-    // 060 OnLongPressDisposable                    0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 058 OnClickDisposable                        ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 060 OnLongPressDisposable                    ModelClassType IDisposable IDisposable IDisposable Pointer
     public partial class ProduceIdolListView : DataModel
     {
         public EnhancedCharacterSelectGridView?         GridView                                { get; set; }
@@ -33,11 +33,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceIdolListView() { Pointer= p0 };
 
-            value.GridView                                  = GetObject<EnhancedCharacterSelectGridView>(new IntPtr(p + 0x020), ReversePrism.DataModels.EnhancedCharacterSelectGridView.FromPointer); // 02466A2C8420 0x20 GridView                    ( 0001867335D0 ModelClassType EnhancedCharacterSelectGridView EnhancedCharacterSelectGridView EnhancedCharacterSelectGridView Pointer )
-            value.FilterAndSortView                         = GetObject<FilterAndSortView>(new IntPtr(p + 0x028), ReversePrism.DataModels.FilterAndSortView.FromPointer); // 02466A2C8440 0x28 FilterAndSortView           ( 000186580020 ModelClassType FilterAndSortView FilterAndSortView FilterAndSortView Pointer )
-            value.BtnSwitchSortDirection                    = GetObject<UISwitch>(new IntPtr(p + 0x030), ReversePrism.DataModels.UISwitch.FromPointer); // 02466A2C8460 0x30 BtnSwitchSortDirection      ( 0001866F44A0 ModelClassType UISwitch UISwitch UISwitch Pointer )
-            value.OnClickDisposable                         = GetObject<IDisposable>(new IntPtr(p + 0x058), ReversePrism.DataModels.IDisposable.FromPointer); // 02466A2C8500 0x58 OnClickDisposable           ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
-            value.OnLongPressDisposable                     = GetObject<IDisposable>(new IntPtr(p + 0x060), ReversePrism.DataModels.IDisposable.FromPointer); // 02466A2C8520 0x60 OnLongPressDisposable       ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.GridView                                  = GetObject<EnhancedCharacterSelectGridView>(new IntPtr(p + 0x020), ReversePrism.DataModels.EnhancedCharacterSelectGridView.FromPointer); // 0x20 GridView                    ( ModelClassType EnhancedCharacterSelectGridView EnhancedCharacterSelectGridView EnhancedCharacterSelectGridView Pointer )
+            value.FilterAndSortView                         = GetObject<FilterAndSortView>(new IntPtr(p + 0x028), ReversePrism.DataModels.FilterAndSortView.FromPointer); // 0x28 FilterAndSortView           ( ModelClassType FilterAndSortView FilterAndSortView FilterAndSortView Pointer )
+            value.BtnSwitchSortDirection                    = GetObject<UISwitch>(new IntPtr(p + 0x030), ReversePrism.DataModels.UISwitch.FromPointer); // 0x30 BtnSwitchSortDirection      ( ModelClassType UISwitch UISwitch UISwitch Pointer )
+            value.OnClickDisposable                         = GetObject<IDisposable>(new IntPtr(p + 0x058), ReversePrism.DataModels.IDisposable.FromPointer); // 0x58 OnClickDisposable           ( ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.OnLongPressDisposable                     = GetObject<IDisposable>(new IntPtr(p + 0x060), ReversePrism.DataModels.IDisposable.FromPointer); // 0x60 OnLongPressDisposable       ( ModelClassType IDisposable IDisposable IDisposable Pointer )
 
             return value;
         }

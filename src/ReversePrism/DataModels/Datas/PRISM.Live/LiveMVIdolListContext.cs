@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 038 SelectedCharacterId                      ReactiveProperty`1<int> IL2CPP_TYPE_GENERICINST
-    // 040 ItemCount                                0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 040 SelectedCharacterId                      ReactiveProperty`1<int> IL2CPP_TYPE_GENERICINST
+    // 048 ItemCount                                ModelPrimitiveType int int int Int32
     public partial class LiveMVIdolListContext : DataModel
     {
         public int                                      ItemCount                               { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveMVIdolListContext() { Pointer= p0 };
 
-            value.ItemCount                                 = GetInt32(new IntPtr(p + 0x040)); // 0246652187E8 0x40 ItemCount                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ItemCount                                 = GetInt32(new IntPtr(p + 0x048)); // 0x48 ItemCount                   ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

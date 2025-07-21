@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 m_encoding                               UnicodeEncoding IL2CPP_TYPE_CLASS
-    // 030 Sb                                       000186676650 ModelClassType StringBuilder StringBuilder StringBuilder Pointer
-    // 038 IsOpen                                   000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 030 Sb                                       ModelClassType StringBuilder StringBuilder StringBuilder Pointer
+    // 038 IsOpen                                   ModelPrimitiveType bool bool bool Bool
     public partial class StringWriter : DataModel
     {
         public StringBuilder?                           Sb                                      { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StringWriter() { Pointer= p0 };
 
-            value.Sb                                        = GetObject<StringBuilder>(new IntPtr(p + 0x030), ReversePrism.DataModels.StringBuilder.FromPointer); // 0245A664B0E0 0x30 Sb                          ( 000186676650 ModelClassType StringBuilder StringBuilder StringBuilder Pointer )
-            value.IsOpen                                    = GetBool(new IntPtr(p + 0x038)); // 0245A664B100 0x38 IsOpen                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Sb                                        = GetObject<StringBuilder>(new IntPtr(p + 0x030), ReversePrism.DataModels.StringBuilder.FromPointer); // 0x30 Sb                          ( ModelClassType StringBuilder StringBuilder StringBuilder Pointer )
+            value.IsOpen                                    = GetBool(new IntPtr(p + 0x038)); // 0x38 IsOpen                      ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

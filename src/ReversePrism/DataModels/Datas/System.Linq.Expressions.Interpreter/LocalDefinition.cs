@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Index                                    0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 Parameter                                00018671C880 ModelClassType ParameterExpression ParameterExpression ParameterExpression Pointer
+    // 010 Index                                    ModelPrimitiveType int int int Int32
+    // 018 Parameter                                ModelClassType ParameterExpression ParameterExpression ParameterExpression Pointer
     public partial class LocalDefinition : DataModel
     {
         public int                                      Index                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LocalDefinition() { Pointer= p0 };
 
-            value.Index                                     = GetInt32(new IntPtr(p + 0x010)); // 02466A070210 0x10 Index                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Parameter                                 = GetObject<ParameterExpression>(new IntPtr(p + 0x018), ReversePrism.DataModels.ParameterExpression.FromPointer); // 02466A070230 0x18 Parameter                   ( 00018671C880 ModelClassType ParameterExpression ParameterExpression ParameterExpression Pointer )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x010)); // 0x10 Index                       ( ModelPrimitiveType int int int Int32 )
+            value.Parameter                                 = GetObject<ParameterExpression>(new IntPtr(p + 0x018), ReversePrism.DataModels.ParameterExpression.FromPointer); // 0x18 Parameter                   ( ModelClassType ParameterExpression ParameterExpression ParameterExpression Pointer )
 
             return value;
         }

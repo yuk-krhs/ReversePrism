@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 TutorialExternalAccess                   0001866B98B0 ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer
-    // 018 IsDisable                                000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 TutorialExternalAccess                   ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer
+    // 018 IsDisable                                ModelPrimitiveType bool bool bool Bool
     public partial class ProduceTutorialDisableNPCEvent : DataModel
     {
         public TutorialExternalAccess?                  TutorialExternalAccess                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceTutorialDisableNPCEvent() { Pointer= p0 };
 
-            value.TutorialExternalAccess                    = GetObject<TutorialExternalAccess>(new IntPtr(p + 0x010), ReversePrism.DataModels.TutorialExternalAccess.FromPointer); // 024665DBB120 0x10 TutorialExternalAccess      ( 0001866B98B0 ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer )
-            value.IsDisable                                 = GetBool(new IntPtr(p + 0x018)); // 024665DBB140 0x18 IsDisable                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.TutorialExternalAccess                    = GetObject<TutorialExternalAccess>(new IntPtr(p + 0x010), ReversePrism.DataModels.TutorialExternalAccess.FromPointer); // 0x10 TutorialExternalAccess      ( ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer )
+            value.IsDisable                                 = GetBool(new IntPtr(p + 0x018)); // 0x18 IsDisable                   ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

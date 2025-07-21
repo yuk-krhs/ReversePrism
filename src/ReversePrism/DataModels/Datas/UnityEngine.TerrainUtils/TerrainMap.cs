@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_patchSize                              0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32
-    // 01C M_errorCode                              000186630F60 ModelEnumType TerrainMapStatusCode TerrainMapStatusCode TerrainMapStatusCode Int32
+    // 010 M_patchSize                              ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 01C M_errorCode                              ModelEnumType TerrainMapStatusCode TerrainMapStatusCode TerrainMapStatusCode Int32
     // 020 m_terrainTiles                           Dictionary`2<TerrainTileCoord, Terrain> IL2CPP_TYPE_GENERICINST
     public partial class TerrainMap : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TerrainMap() { Pointer= p0 };
 
-            value.M_patchSize                               = (Vector3)GetInt32(new IntPtr(p + 0x010)); // 0245A6929F88 0x10 M_patchSize                 ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.M_errorCode                               = (TerrainMapStatusCode)GetInt32(new IntPtr(p + 0x01C)); // 0245A6929FA8 0x1C M_errorCode                 ( 000186630F60 ModelEnumType TerrainMapStatusCode TerrainMapStatusCode TerrainMapStatusCode Int32 )
+            value.M_patchSize                               = (Vector3)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_patchSize                 ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.M_errorCode                               = (TerrainMapStatusCode)GetInt32(new IntPtr(p + 0x01C)); // 0x1C M_errorCode                 ( ModelEnumType TerrainMapStatusCode TerrainMapStatusCode TerrainMapStatusCode Int32 )
 
             return value;
         }

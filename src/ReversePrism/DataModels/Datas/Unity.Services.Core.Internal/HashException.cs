@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 090 Hash                                     0001865F4260 ModelPrimitiveType int int int Int32
+    // 090 Hash                                     ModelPrimitiveType int int int Int32
     public partial class HashException : DataModel
     {
         public int                                      Hash                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HashException() { Pointer= p0 };
 
-            value.Hash                                      = GetInt32(new IntPtr(p + 0x090)); // 02466BAFA8E8 0x90 Hash                        ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Hash                                      = GetInt32(new IntPtr(p + 0x090)); // 0x90 Hash                        ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

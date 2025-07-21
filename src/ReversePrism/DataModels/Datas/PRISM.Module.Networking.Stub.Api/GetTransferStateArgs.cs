@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<GetTransferStateArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 UserIdFieldNumber                        int IL2CPP_TYPE_I4
-    // 018 UserId                                   000186671910 ModelPrimitiveType string string string String
+    // 018 UserId                                   ModelPrimitiveType string string string String
     // 000 SecretFieldNumber                        int IL2CPP_TYPE_I4
-    // 020 Secret                                   000186671910 ModelPrimitiveType string string string String
+    // 020 Secret                                   ModelPrimitiveType string string string String
     public partial class GetTransferStateArgs : DataModel
     {
         public string                                   UserId                                  { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetTransferStateArgs() { Pointer= p0 };
 
-            value.UserId                                    = GetString(new IntPtr(p + 0x018)); // 024660B54DF0 0x18 UserId                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Secret                                    = GetString(new IntPtr(p + 0x020)); // 024660B54E30 0x20 Secret                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.UserId                                    = GetString(new IntPtr(p + 0x018)); // 0x18 UserId                      ( ModelPrimitiveType string string string String )
+            value.Secret                                    = GetString(new IntPtr(p + 0x020)); // 0x20 Secret                      ( ModelPrimitiveType string string string String )
 
             return value;
         }

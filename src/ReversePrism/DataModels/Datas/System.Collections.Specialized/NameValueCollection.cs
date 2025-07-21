@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 050 All                                      000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 058 AllKeys                                  000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 058 All                                      ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 060 AllKeys                                  ModelPrimitiveListType string[] string[] List<string> Pointer
     public partial class NameValueCollection : DataModel
     {
         public List<string>?                            All                                     { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NameValueCollection() { Pointer= p0 };
 
-            value.All                                       = GetStringList(new IntPtr(p + 0x050)); // 0246679EF698 0x50 All                         ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.AllKeys                                   = GetStringList(new IntPtr(p + 0x058)); // 0246679EF6B8 0x58 AllKeys                     ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.All                                       = GetStringList(new IntPtr(p + 0x058)); // 0x58 All                         ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.AllKeys                                   = GetStringList(new IntPtr(p + 0x060)); // 0x60 AllKeys                     ( ModelPrimitiveListType string[] string[] List<string> Pointer )
 
             return value;
         }

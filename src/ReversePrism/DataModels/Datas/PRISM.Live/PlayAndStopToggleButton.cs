@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 248 ObjectOn                                 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 250 ObjectOff                                0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
+    // 248 ObjectOn                                 ModelClassType GameObject GameObject GameObject Pointer
+    // 250 ObjectOff                                ModelClassType GameObject GameObject GameObject Pointer
     public partial class PlayAndStopToggleButton : DataModel
     {
         public GameObject?                              ObjectOn                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PlayAndStopToggleButton() { Pointer= p0 };
 
-            value.ObjectOn                                  = GetObject<GameObject>(new IntPtr(p + 0x248), ReversePrism.DataModels.GameObject.FromPointer); // 024664C6C4C8 0x248 ObjectOn                    ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ObjectOff                                 = GetObject<GameObject>(new IntPtr(p + 0x250), ReversePrism.DataModels.GameObject.FromPointer); // 024664C6C4E8 0x250 ObjectOff                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.ObjectOn                                  = GetObject<GameObject>(new IntPtr(p + 0x248), ReversePrism.DataModels.GameObject.FromPointer); // 0x248 ObjectOn                    ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.ObjectOff                                 = GetObject<GameObject>(new IntPtr(p + 0x250), ReversePrism.DataModels.GameObject.FromPointer); // 0x250 ObjectOff                   ( ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

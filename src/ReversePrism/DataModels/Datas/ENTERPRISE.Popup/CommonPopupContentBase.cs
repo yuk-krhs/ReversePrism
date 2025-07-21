@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 058 Param                                    0001865E80B0 ModelClassType CommonPopupParam CommonPopupParam CommonPopupParam Pointer
+    // 058 Param                                    ModelClassType CommonPopupParam CommonPopupParam CommonPopupParam Pointer
     public partial class CommonPopupContentBase : DataModel
     {
         public CommonPopupParam?                        Param                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CommonPopupContentBase() { Pointer= p0 };
 
-            value.Param                                     = GetObject<CommonPopupParam>(new IntPtr(p + 0x058), ReversePrism.DataModels.CommonPopupParam.FromPointer); // 024660D77418 0x58 Param                       ( 0001865E80B0 ModelClassType CommonPopupParam CommonPopupParam CommonPopupParam Pointer )
+            value.Param                                     = GetObject<CommonPopupParam>(new IntPtr(p + 0x058), ReversePrism.DataModels.CommonPopupParam.FromPointer); // 0x58 Param                       ( ModelClassType CommonPopupParam CommonPopupParam CommonPopupParam Pointer )
 
             return value;
         }

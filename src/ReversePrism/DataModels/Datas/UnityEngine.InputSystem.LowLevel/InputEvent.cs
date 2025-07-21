@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 kBaseEventSize                           int IL2CPP_TYPE_I4
     // 000 InvalidEventId                           int IL2CPP_TYPE_I4
     // 000 kAlignment                               int IL2CPP_TYPE_I4
-    // 010 M_Event                                  00018668A010 ModelEnumType NativeInputEvent NativeInputEvent NativeInputEvent Int32
+    // 010 M_Event                                  ModelEnumType NativeInputEvent NativeInputEvent NativeInputEvent Int32
     public partial class InputEvent : DataModel
     {
         public NativeInputEvent                         M_Event                                 { get; set; }
@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InputEvent() { Pointer= p0 };
 
-            value.M_Event                                   = (NativeInputEvent)GetInt32(new IntPtr(p + 0x010)); // 0246676F3CB0 0x10 M_Event                     ( 00018668A010 ModelEnumType NativeInputEvent NativeInputEvent NativeInputEvent Int32 )
+            value.M_Event                                   = (NativeInputEvent)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_Event                     ( ModelEnumType NativeInputEvent NativeInputEvent NativeInputEvent Int32 )
 
             return value;
         }

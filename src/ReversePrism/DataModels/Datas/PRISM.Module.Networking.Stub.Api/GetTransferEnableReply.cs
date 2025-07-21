@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<GetTransferEnableReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 IsTransferEnableFieldNumber              int IL2CPP_TYPE_I4
-    // 018 IsTransferEnable                         000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 018 IsTransferEnable                         ModelPrimitiveType bool bool bool Bool
     public partial class GetTransferEnableReply : DataModel
     {
         public bool                                     IsTransferEnable                        { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetTransferEnableReply() { Pointer= p0 };
 
-            value.IsTransferEnable                          = GetBool(new IntPtr(p + 0x018)); // 024660B52550 0x18 IsTransferEnable            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsTransferEnable                          = GetBool(new IntPtr(p + 0x018)); // 0x18 IsTransferEnable            ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

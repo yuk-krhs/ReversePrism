@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 090 UnitID                                   0001865F36C0 ModelPrimitiveType int int int Int32
-    // 098 ManualData                               0001866DA720 ModelClassType HowToPlayProduceManualData HowToPlayProduceManualData HowToPlayProduceManualData Pointer
+    // 090 UnitID                                   ModelPrimitiveType int int int Int32
+    // 098 ManualData                               ModelClassType HowToPlayProduceManualData HowToPlayProduceManualData HowToPlayProduceManualData Pointer
     public partial class IngameTutorialPopupParameter : DataModel
     {
         public int                                      UnitID                                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IngameTutorialPopupParameter() { Pointer= p0 };
 
-            value.UnitID                                    = GetInt32(new IntPtr(p + 0x090)); // 024665CEE810 0x90 UnitID                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.ManualData                                = GetObject<HowToPlayProduceManualData>(new IntPtr(p + 0x098), ReversePrism.DataModels.HowToPlayProduceManualData.FromPointer); // 024665CEE830 0x98 ManualData                  ( 0001866DA720 ModelClassType HowToPlayProduceManualData HowToPlayProduceManualData HowToPlayProduceManualData Pointer )
+            value.UnitID                                    = GetInt32(new IntPtr(p + 0x090)); // 0x90 UnitID                      ( ModelPrimitiveType int int int Int32 )
+            value.ManualData                                = GetObject<HowToPlayProduceManualData>(new IntPtr(p + 0x098), ReversePrism.DataModels.HowToPlayProduceManualData.FromPointer); // 0x98 ManualData                  ( ModelClassType HowToPlayProduceManualData HowToPlayProduceManualData HowToPlayProduceManualData Pointer )
 
             return value;
         }

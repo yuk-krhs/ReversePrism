@@ -8,14 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 PIdolIcon                                00018670C7D0 ModelClassType PIdolIcon PIdolIcon PIdolIcon Pointer
-    // 018 MstPIdolId                               0001865F4260 ModelPrimitiveType int int int Int32
-    // 01C MstIdolId                                0001865F4260 ModelPrimitiveType int int int Int32
-    // 020 IdolSkills                               000185CEA9F8 ModelClassListType List`1<IdolSkillContentViewModel> List`1<IdolSkillContentViewModel> List<IdolSkillContentViewModel> Pointer
-    // 028 BeforeSkillLv                            0001865F4260 ModelPrimitiveType int int int Int32
-    // 02C AfterSkillLv                             0001865F4260 ModelPrimitiveType int int int Int32
-    // 030 CueSheetName                             000186672F10 ModelPrimitiveType string string string String
-    // 038 CueName                                  000186672F10 ModelPrimitiveType string string string String
+    // 010 PIdolIcon                                ModelClassType PIdolIcon PIdolIcon PIdolIcon Pointer
+    // 018 MstPIdolId                               ModelPrimitiveType int int int Int32
+    // 01C MstIdolId                                ModelPrimitiveType int int int Int32
+    // 020 IdolSkills                               ModelClassListType List`1<IdolSkillContentViewModel> List`1<IdolSkillContentViewModel> List<IdolSkillContentViewModel> Pointer
+    // 028 BeforeSkillLv                            ModelPrimitiveType int int int Int32
+    // 02C AfterSkillLv                             ModelPrimitiveType int int int Int32
+    // 030 CueSheetName                             ModelPrimitiveType string string string String
+    // 038 CueName                                  ModelPrimitiveType string string string String
     public partial class IdolSkillLvUpCompletedPopupViewModel : DataModel
     {
         public PIdolIcon?                               PIdolIcon                               { get; set; }
@@ -35,14 +35,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IdolSkillLvUpCompletedPopupViewModel() { Pointer= p0 };
 
-            value.PIdolIcon                                 = GetObject<PIdolIcon>(new IntPtr(p + 0x010), ReversePrism.DataModels.PIdolIcon.FromPointer); // 024665FCF260 0x10 PIdolIcon                   ( 00018670C7D0 ModelClassType PIdolIcon PIdolIcon PIdolIcon Pointer )
-            value.MstPIdolId                                = GetInt32(new IntPtr(p + 0x018)); // 024665FCF280 0x18 MstPIdolId                  ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x01C)); // 024665FCF2A0 0x1C MstIdolId                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.IdolSkills                                = GetObjectList<IdolSkillContentViewModel>(new IntPtr(p + 0x020), ReversePrism.DataModels.IdolSkillContentViewModel.FromPointer); // 024665FCF2C0 0x20 IdolSkills                  ( 000185CEA9F8 ModelClassListType List`1<IdolSkillContentViewModel> List`1<IdolSkillContentViewModel> List<IdolSkillContentViewModel> Pointer )
-            value.BeforeSkillLv                             = GetInt32(new IntPtr(p + 0x028)); // 024665FCF2E0 0x28 BeforeSkillLv               ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.AfterSkillLv                              = GetInt32(new IntPtr(p + 0x02C)); // 024665FCF300 0x2C AfterSkillLv                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.CueSheetName                              = GetString(new IntPtr(p + 0x030)); // 024665FCF320 0x30 CueSheetName                ( 000186672F10 ModelPrimitiveType string string string String )
-            value.CueName                                   = GetString(new IntPtr(p + 0x038)); // 024665FCF340 0x38 CueName                     ( 000186672F10 ModelPrimitiveType string string string String )
+            value.PIdolIcon                                 = GetObject<PIdolIcon>(new IntPtr(p + 0x010), ReversePrism.DataModels.PIdolIcon.FromPointer); // 0x10 PIdolIcon                   ( ModelClassType PIdolIcon PIdolIcon PIdolIcon Pointer )
+            value.MstPIdolId                                = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstPIdolId                  ( ModelPrimitiveType int int int Int32 )
+            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x01C)); // 0x1C MstIdolId                   ( ModelPrimitiveType int int int Int32 )
+            value.IdolSkills                                = GetObjectList<IdolSkillContentViewModel>(new IntPtr(p + 0x020), ReversePrism.DataModels.IdolSkillContentViewModel.FromPointer); // 0x20 IdolSkills                  ( ModelClassListType List`1<IdolSkillContentViewModel> List`1<IdolSkillContentViewModel> List<IdolSkillContentViewModel> Pointer )
+            value.BeforeSkillLv                             = GetInt32(new IntPtr(p + 0x028)); // 0x28 BeforeSkillLv               ( ModelPrimitiveType int int int Int32 )
+            value.AfterSkillLv                              = GetInt32(new IntPtr(p + 0x02C)); // 0x2C AfterSkillLv                ( ModelPrimitiveType int int int Int32 )
+            value.CueSheetName                              = GetString(new IntPtr(p + 0x030)); // 0x30 CueSheetName                ( ModelPrimitiveType string string string String )
+            value.CueName                                   = GetString(new IntPtr(p + 0x038)); // 0x38 CueName                     ( ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 040 Next                                     00018672F9D0 ModelClassType Axis Axis Axis Pointer
+    // 040 Next                                     ModelClassType Axis Axis Axis Pointer
     public partial class DoubleLinkAxis : DataModel
     {
         public Axis?                                    Next                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DoubleLinkAxis() { Pointer= p0 };
 
-            value.Next                                      = GetObject<Axis>(new IntPtr(p + 0x040), ReversePrism.DataModels.Axis.FromPointer); // 02466753CAC8 0x40 Next                        ( 00018672F9D0 ModelClassType Axis Axis Axis Pointer )
+            value.Next                                      = GetObject<Axis>(new IntPtr(p + 0x040), ReversePrism.DataModels.Axis.FromPointer); // 0x40 Next                        ( ModelClassType Axis Axis Axis Pointer )
 
             return value;
         }

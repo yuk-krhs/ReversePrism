@@ -8,15 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 PurchaseToken                            000186671910 ModelPrimitiveType string string string String
-    // 018 OrderId                                  000186671910 ModelPrimitiveType string string string String
-    // 020 ProductId                                000186671910 ModelPrimitiveType string string string String
-    // 028 Price                                    000186671910 ModelPrimitiveType string string string String
-    // 030 PriceAmountMicros                        0001865F7700 ModelPrimitiveType long long long Int64
-    // 038 PriceCurrencyCode                        000186671910 ModelPrimitiveType string string string String
-    // 040 Quantity                                 0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 048 PurchaseTime                             0001865F7700 ModelPrimitiveType long long long Int64
-    // 050 DeveloperPayload                         000186671910 ModelPrimitiveType string string string String
+    // 010 PurchaseToken                            ModelPrimitiveType string string string String
+    // 018 OrderId                                  ModelPrimitiveType string string string String
+    // 020 ProductId                                ModelPrimitiveType string string string String
+    // 028 Price                                    ModelPrimitiveType string string string String
+    // 030 PriceAmountMicros                        ModelPrimitiveType long long long Int64
+    // 038 PriceCurrencyCode                        ModelPrimitiveType string string string String
+    // 040 Quantity                                 ModelPrimitiveType int int int Int32
+    // 048 PurchaseTime                             ModelPrimitiveType long long long Int64
+    // 050 DeveloperPayload                         ModelPrimitiveType string string string String
     public partial class ReceiptInfo : DataModel
     {
         public string                                   PurchaseToken                           { get; set; }
@@ -37,15 +37,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ReceiptInfo() { Pointer= p0 };
 
-            value.PurchaseToken                             = GetString(new IntPtr(p + 0x010)); // 0245A4BFF2B8 0x10 PurchaseToken               ( 000186671910 ModelPrimitiveType string string string String )
-            value.OrderId                                   = GetString(new IntPtr(p + 0x018)); // 0245A4BFF2D8 0x18 OrderId                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.ProductId                                 = GetString(new IntPtr(p + 0x020)); // 0245A4BFF2F8 0x20 ProductId                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.Price                                     = GetString(new IntPtr(p + 0x028)); // 0245A4BFF318 0x28 Price                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.PriceAmountMicros                         = GetInt64(new IntPtr(p + 0x030)); // 0245A4BFF338 0x30 PriceAmountMicros           ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.PriceCurrencyCode                         = GetString(new IntPtr(p + 0x038)); // 0245A4BFF358 0x38 PriceCurrencyCode           ( 000186671910 ModelPrimitiveType string string string String )
-            value.Quantity                                  = GetInt32(new IntPtr(p + 0x040)); // 0245A4BFF378 0x40 Quantity                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.PurchaseTime                              = GetInt64(new IntPtr(p + 0x048)); // 0245A4BFF398 0x48 PurchaseTime                ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.DeveloperPayload                          = GetString(new IntPtr(p + 0x050)); // 0245A4BFF3B8 0x50 DeveloperPayload            ( 000186671910 ModelPrimitiveType string string string String )
+            value.PurchaseToken                             = GetString(new IntPtr(p + 0x010)); // 0x10 PurchaseToken               ( ModelPrimitiveType string string string String )
+            value.OrderId                                   = GetString(new IntPtr(p + 0x018)); // 0x18 OrderId                     ( ModelPrimitiveType string string string String )
+            value.ProductId                                 = GetString(new IntPtr(p + 0x020)); // 0x20 ProductId                   ( ModelPrimitiveType string string string String )
+            value.Price                                     = GetString(new IntPtr(p + 0x028)); // 0x28 Price                       ( ModelPrimitiveType string string string String )
+            value.PriceAmountMicros                         = GetInt64(new IntPtr(p + 0x030)); // 0x30 PriceAmountMicros           ( ModelPrimitiveType long long long Int64 )
+            value.PriceCurrencyCode                         = GetString(new IntPtr(p + 0x038)); // 0x38 PriceCurrencyCode           ( ModelPrimitiveType string string string String )
+            value.Quantity                                  = GetInt32(new IntPtr(p + 0x040)); // 0x40 Quantity                    ( ModelPrimitiveType int int int Int32 )
+            value.PurchaseTime                              = GetInt64(new IntPtr(p + 0x048)); // 0x48 PurchaseTime                ( ModelPrimitiveType long long long Int64 )
+            value.DeveloperPayload                          = GetString(new IntPtr(p + 0x050)); // 0x50 DeveloperPayload            ( ModelPrimitiveType string string string String )
 
             return value;
         }

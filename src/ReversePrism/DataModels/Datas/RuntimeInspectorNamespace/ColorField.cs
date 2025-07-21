@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 080 ColorPickerArea                          000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
-    // 088 InputColor                               00018675AFC0 ModelClassType PointerEventListener PointerEventListener PointerEventListener Pointer
-    // 090 ColorImg                                 0001866CCDB0 ModelClassType Image Image Image Pointer
-    // 098 IsColor32                                000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 080 ColorPickerArea                          ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 088 InputColor                               ModelClassType PointerEventListener PointerEventListener PointerEventListener Pointer
+    // 090 ColorImg                                 ModelClassType Image Image Image Pointer
+    // 098 IsColor32                                ModelPrimitiveType bool bool bool Bool
     public partial class ColorField : DataModel
     {
         public RectTransform?                           ColorPickerArea                         { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ColorField() { Pointer= p0 };
 
-            value.ColorPickerArea                           = GetObject<RectTransform>(new IntPtr(p + 0x080), ReversePrism.DataModels.RectTransform.FromPointer); // 02466B236C90 0x80 ColorPickerArea             ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.InputColor                                = GetObject<PointerEventListener>(new IntPtr(p + 0x088), ReversePrism.DataModels.PointerEventListener.FromPointer); // 02466B236CB0 0x88 InputColor                  ( 00018675AFC0 ModelClassType PointerEventListener PointerEventListener PointerEventListener Pointer )
-            value.ColorImg                                  = GetObject<Image>(new IntPtr(p + 0x090), ReversePrism.DataModels.Image.FromPointer); // 02466B236CD0 0x90 ColorImg                    ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.IsColor32                                 = GetBool(new IntPtr(p + 0x098)); // 02466B236CF0 0x98 IsColor32                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ColorPickerArea                           = GetObject<RectTransform>(new IntPtr(p + 0x080), ReversePrism.DataModels.RectTransform.FromPointer); // 0x80 ColorPickerArea             ( ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.InputColor                                = GetObject<PointerEventListener>(new IntPtr(p + 0x088), ReversePrism.DataModels.PointerEventListener.FromPointer); // 0x88 InputColor                  ( ModelClassType PointerEventListener PointerEventListener PointerEventListener Pointer )
+            value.ColorImg                                  = GetObject<Image>(new IntPtr(p + 0x090), ReversePrism.DataModels.Image.FromPointer); // 0x90 ColorImg                    ( ModelClassType Image Image Image Pointer )
+            value.IsColor32                                 = GetBool(new IntPtr(p + 0x098)); // 0x98 IsColor32                   ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

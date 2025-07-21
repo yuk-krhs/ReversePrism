@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 PlayerId                                 0001865F36C0 ModelPrimitiveType int int int Int32
-    // 018 Data                                     000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 010 PlayerId                                 ModelPrimitiveType int int int Int32
+    // 018 Data                                     ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     public partial class MessageEventArgs : DataModel
     {
         public int                                      PlayerId                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MessageEventArgs() { Pointer= p0 };
 
-            value.PlayerId                                  = GetInt32(new IntPtr(p + 0x010)); // 0245A6888550 0x10 PlayerId                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Data                                      = GetSByteList(new IntPtr(p + 0x018)); // 0245A6888570 0x18 Data                        ( 000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.PlayerId                                  = GetInt32(new IntPtr(p + 0x010)); // 0x10 PlayerId                    ( ModelPrimitiveType int int int Int32 )
+            value.Data                                      = GetSByteList(new IntPtr(p + 0x018)); // 0x18 Data                        ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

@@ -8,15 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Id                                       0001865F4260 ModelPrimitiveType int int int Int32
-    // 014 MstCharacterInfoId                       0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 CostumeType                              0001865F4260 ModelPrimitiveType int int int Int32
-    // 01C HairResourceIdForClient                  0001865F4260 ModelPrimitiveType int int int Int32
-    // 020 HairAccessoryResourceIdListForClient     000185B7D9E0 ModelPrimitiveListType int[] int[] List<int> Pointer
-    // 028 SortId                                   0001865F4260 ModelPrimitiveType int int int Int32
-    // 030 CharacterInfo                            00018661BCB0 ModelClassType MstCharacterInfo MstCharacterInfo MstCharacterInfo Pointer
-    // 038 HairResource                             000186622B00 ModelClassType MstHairstyleResource MstHairstyleResource MstHairstyleResource Pointer
-    // 040 HairAccessoryResources                   000185B948E0 ModelClassListType MstAccessoryResource[] MstAccessoryResource[] List<MstAccessoryResource> Pointer
+    // 010 Id                                       ModelPrimitiveType int int int Int32
+    // 014 MstCharacterInfoId                       ModelPrimitiveType int int int Int32
+    // 018 CostumeType                              ModelPrimitiveType int int int Int32
+    // 01C HairResourceIdForClient                  ModelPrimitiveType int int int Int32
+    // 020 HairAccessoryResourceIdListForClient     ModelPrimitiveListType int[] int[] List<int> Pointer
+    // 028 SortId                                   ModelPrimitiveType int int int Int32
+    // 030 CharacterInfo                            ModelClassType MstCharacterInfo MstCharacterInfo MstCharacterInfo Pointer
+    // 038 HairResource                             ModelClassType MstHairstyleResource MstHairstyleResource MstHairstyleResource Pointer
+    // 040 HairAccessoryResources                   ModelClassListType MstAccessoryResource[] MstAccessoryResource[] List<MstAccessoryResource> Pointer
     public partial class MstHairstyle : DataModel
     {
         public int                                      Id                                      { get; set; }
@@ -37,15 +37,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MstHairstyle() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A4703CA8 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x014)); // 0245A4703CC8 0x14 MstCharacterInfoId          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.CostumeType                               = GetInt32(new IntPtr(p + 0x018)); // 0245A4703CE8 0x18 CostumeType                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.HairResourceIdForClient                   = GetInt32(new IntPtr(p + 0x01C)); // 0245A4703D08 0x1C HairResourceIdForClient     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.HairAccessoryResourceIdListForClient      = GetInt32List(new IntPtr(p + 0x020)); // 0245A4703D28 0x20 HairAccessoryResourceIdListForClient ( 000185B7D9E0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.SortId                                    = GetInt32(new IntPtr(p + 0x028)); // 0245A4703D48 0x28 SortId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.CharacterInfo                             = GetObject<MstCharacterInfo>(new IntPtr(p + 0x030), ReversePrism.DataModels.MstCharacterInfo.FromPointer); // 0245A4703D68 0x30 CharacterInfo               ( 00018661BCB0 ModelClassType MstCharacterInfo MstCharacterInfo MstCharacterInfo Pointer )
-            value.HairResource                              = GetObject<MstHairstyleResource>(new IntPtr(p + 0x038), ReversePrism.DataModels.MstHairstyleResource.FromPointer); // 0245A4703D88 0x38 HairResource                ( 000186622B00 ModelClassType MstHairstyleResource MstHairstyleResource MstHairstyleResource Pointer )
-            value.HairAccessoryResources                    = GetObjectList<MstAccessoryResource>(new IntPtr(p + 0x040), ReversePrism.DataModels.MstAccessoryResource.FromPointer); // 0245A4703DA8 0x40 HairAccessoryResources      ( 000185B948E0 ModelClassListType MstAccessoryResource[] MstAccessoryResource[] List<MstAccessoryResource> Pointer )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0x10 Id                          ( ModelPrimitiveType int int int Int32 )
+            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x014)); // 0x14 MstCharacterInfoId          ( ModelPrimitiveType int int int Int32 )
+            value.CostumeType                               = GetInt32(new IntPtr(p + 0x018)); // 0x18 CostumeType                 ( ModelPrimitiveType int int int Int32 )
+            value.HairResourceIdForClient                   = GetInt32(new IntPtr(p + 0x01C)); // 0x1C HairResourceIdForClient     ( ModelPrimitiveType int int int Int32 )
+            value.HairAccessoryResourceIdListForClient      = GetInt32List(new IntPtr(p + 0x020)); // 0x20 HairAccessoryResourceIdListForClient ( ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.SortId                                    = GetInt32(new IntPtr(p + 0x028)); // 0x28 SortId                      ( ModelPrimitiveType int int int Int32 )
+            value.CharacterInfo                             = GetObject<MstCharacterInfo>(new IntPtr(p + 0x030), ReversePrism.DataModels.MstCharacterInfo.FromPointer); // 0x30 CharacterInfo               ( ModelClassType MstCharacterInfo MstCharacterInfo MstCharacterInfo Pointer )
+            value.HairResource                              = GetObject<MstHairstyleResource>(new IntPtr(p + 0x038), ReversePrism.DataModels.MstHairstyleResource.FromPointer); // 0x38 HairResource                ( ModelClassType MstHairstyleResource MstHairstyleResource MstHairstyleResource Pointer )
+            value.HairAccessoryResources                    = GetObjectList<MstAccessoryResource>(new IntPtr(p + 0x040), ReversePrism.DataModels.MstAccessoryResource.FromPointer); // 0x40 HairAccessoryResources      ( ModelClassListType MstAccessoryResource[] MstAccessoryResource[] List<MstAccessoryResource> Pointer )
 
             return value;
         }

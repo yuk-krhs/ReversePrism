@@ -8,13 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Date                                     000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
+    // 010 Date                                     ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
     // 000 _parser                                  MessageParser`1<ExpireDateStatus> IL2CPP_TYPE_GENERICINST
     // 020 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 DateFieldNumber                          int IL2CPP_TYPE_I4
-    // 028 _Date                                    000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
+    // 028 _Date                                    ModelClassType Timestamp Timestamp Timestamp Pointer
     // 000 AmountFieldNumber                        int IL2CPP_TYPE_I4
-    // 030 Amount                                   0001865F7700 ModelPrimitiveType long long long Int64
+    // 030 Amount                                   ModelPrimitiveType long long long Int64
     public partial class ExpireDateStatus : DataModel
     {
         public DateTime                                 Date                                    { get; set; }
@@ -29,9 +29,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExpireDateStatus() { Pointer= p0 };
 
-            value.Date                                      = GetDateTime(new IntPtr(p + 0x010)); // 024660F142C0 0x10 Date                        ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value._Date                                     = GetObject<Timestamp>(new IntPtr(p + 0x028), ReversePrism.DataModels.Timestamp.FromPointer); // 024660F14340 0x28 _Date                       ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.Amount                                    = GetInt64(new IntPtr(p + 0x030)); // 024660F14380 0x30 Amount                      ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.Date                                      = GetDateTime(new IntPtr(p + 0x010)); // 0x10 Date                        ( ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value._Date                                     = GetObject<Timestamp>(new IntPtr(p + 0x028), ReversePrism.DataModels.Timestamp.FromPointer); // 0x28 _Date                       ( ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.Amount                                    = GetInt64(new IntPtr(p + 0x030)); // 0x30 Amount                      ( ModelPrimitiveType long long long Int64 )
             value.Date                          = ToDateTime(value._Date);
 
             return value;

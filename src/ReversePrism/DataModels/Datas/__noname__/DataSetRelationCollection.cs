@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 038 DataSet                                  000186680C90 ModelClassType DataSet DataSet DataSet Pointer
-    // 040 Relations                                00018658A840 ModelClassType ArrayList ArrayList ArrayList Pointer
-    // 048 DelayLoadingRelations                    000185B78F10 ModelClassListType DataRelation[] DataRelation[] List<DataRelation> Pointer
+    // 038 DataSet                                  ModelClassType DataSet DataSet DataSet Pointer
+    // 040 Relations                                ModelClassType ArrayList ArrayList ArrayList Pointer
+    // 048 DelayLoadingRelations                    ModelClassListType DataRelation[] DataRelation[] List<DataRelation> Pointer
     public partial class DataSetRelationCollection : DataModel
     {
         public DataSet?                                 DataSet                                 { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DataSetRelationCollection() { Pointer= p0 };
 
-            value.DataSet                                   = GetObject<DataSet>(new IntPtr(p + 0x038), ReversePrism.DataModels.DataSet.FromPointer); // 0246689358D0 0x38 DataSet                     ( 000186680C90 ModelClassType DataSet DataSet DataSet Pointer )
-            value.Relations                                 = GetObject<ArrayList>(new IntPtr(p + 0x040), ReversePrism.DataModels.ArrayList.FromPointer); // 0246689358F0 0x40 Relations                   ( 00018658A840 ModelClassType ArrayList ArrayList ArrayList Pointer )
-            value.DelayLoadingRelations                     = GetObjectList<DataRelation>(new IntPtr(p + 0x048), ReversePrism.DataModels.DataRelation.FromPointer); // 024668935910 0x48 DelayLoadingRelations       ( 000185B78F10 ModelClassListType DataRelation[] DataRelation[] List<DataRelation> Pointer )
+            value.DataSet                                   = GetObject<DataSet>(new IntPtr(p + 0x038), ReversePrism.DataModels.DataSet.FromPointer); // 0x38 DataSet                     ( ModelClassType DataSet DataSet DataSet Pointer )
+            value.Relations                                 = GetObject<ArrayList>(new IntPtr(p + 0x040), ReversePrism.DataModels.ArrayList.FromPointer); // 0x40 Relations                   ( ModelClassType ArrayList ArrayList ArrayList Pointer )
+            value.DelayLoadingRelations                     = GetObjectList<DataRelation>(new IntPtr(p + 0x048), ReversePrism.DataModels.DataRelation.FromPointer); // 0x48 DelayLoadingRelations       ( ModelClassListType DataRelation[] DataRelation[] List<DataRelation> Pointer )
 
             return value;
         }

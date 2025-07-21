@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 000 <OnEffectBufferFunc>k__BackingField      Func`1<RenderTexture> IL2CPP_TYPE_GENERICINST
+    // 000 <OnEffectBufferFunc>k__BackingField      Func`1<ValueTuple`3<RenderTargetIdentifier, int, int>> IL2CPP_TYPE_GENERICINST
     public partial class EffectBufferBridge : DataModel
     {
 

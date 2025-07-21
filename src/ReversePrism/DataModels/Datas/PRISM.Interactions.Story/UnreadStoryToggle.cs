@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Toggle                                   000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer
-    // 028 LabelText                                0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 020 Toggle                                   ModelClassType ToggleButton ToggleButton ToggleButton Pointer
+    // 028 LabelText                                ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     public partial class UnreadStoryToggle : DataModel
     {
         public ToggleButton?                            Toggle                                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnreadStoryToggle() { Pointer= p0 };
 
-            value.Toggle                                    = GetObject<ToggleButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.ToggleButton.FromPointer); // 02466B9F6AC0 0x20 Toggle                      ( 000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer )
-            value.LabelText                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B9F6AE0 0x28 LabelText                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Toggle                                    = GetObject<ToggleButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.ToggleButton.FromPointer); // 0x20 Toggle                      ( ModelClassType ToggleButton ToggleButton ToggleButton Pointer )
+            value.LabelText                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x28 LabelText                   ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

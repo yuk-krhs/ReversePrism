@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Id                                       0001865F4260 ModelPrimitiveType int int int Int32
-    // 014 ParentId                                 0001865F4260 ModelPrimitiveType int int int Int32
+    // 010 Id                                       ModelPrimitiveType int int int Int32
+    // 014 ParentId                                 ModelPrimitiveType int int int Int32
     // 018 <childrenIds>k__BackingField             IEnumerable`1<int> IL2CPP_TYPE_GENERICINST
     public partial class TreeItem : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TreeItem() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A67035C0 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.ParentId                                  = GetInt32(new IntPtr(p + 0x014)); // 0245A67035E0 0x14 ParentId                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0x10 Id                          ( ModelPrimitiveType int int int Int32 )
+            value.ParentId                                  = GetInt32(new IntPtr(p + 0x014)); // 0x14 ParentId                    ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

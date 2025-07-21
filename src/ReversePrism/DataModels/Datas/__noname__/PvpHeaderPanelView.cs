@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 038 EndDates                                 000185D18A08 ModelClassListType List`1<UITextMeshProUGUI> List`1<UITextMeshProUGUI> List<UITextMeshProUGUI> Pointer
-    // 040 Rankings                                 000185D18A08 ModelClassListType List`1<UITextMeshProUGUI> List`1<UITextMeshProUGUI> List<UITextMeshProUGUI> Pointer
-    // 048 EffectText                               0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 050 EffectIcon                               0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 058 RankingRewardButtons                     000185D17588 ModelClassListType List`1<UIButton> List`1<UIButton> List<UIButton> Pointer
+    // 038 EndDates                                 ModelClassListType List`1<UITextMeshProUGUI> List`1<UITextMeshProUGUI> List<UITextMeshProUGUI> Pointer
+    // 040 Rankings                                 ModelClassListType List`1<UITextMeshProUGUI> List`1<UITextMeshProUGUI> List<UITextMeshProUGUI> Pointer
+    // 048 EffectText                               ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 050 EffectIcon                               ModelClassType UIImage UIImage UIImage Pointer
+    // 058 RankingRewardButtons                     ModelClassListType List`1<UIButton> List`1<UIButton> List<UIButton> Pointer
     public partial class PvpHeaderPanelView : DataModel
     {
         public List<UITextMeshProUGUI>?                 EndDates                                { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PvpHeaderPanelView() { Pointer= p0 };
 
-            value.EndDates                                  = GetObjectList<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A0F5BB8 0x38 EndDates                    ( 000185D18A08 ModelClassListType List`1<UITextMeshProUGUI> List`1<UITextMeshProUGUI> List<UITextMeshProUGUI> Pointer )
-            value.Rankings                                  = GetObjectList<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A0F5BD8 0x40 Rankings                    ( 000185D18A08 ModelClassListType List`1<UITextMeshProUGUI> List`1<UITextMeshProUGUI> List<UITextMeshProUGUI> Pointer )
-            value.EffectText                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A0F5BF8 0x48 EffectText                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.EffectIcon                                = GetObject<UIImage>(new IntPtr(p + 0x050), ReversePrism.DataModels.UIImage.FromPointer); // 02466A0F5C18 0x50 EffectIcon                  ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.RankingRewardButtons                      = GetObjectList<UIButton>(new IntPtr(p + 0x058), ReversePrism.DataModels.UIButton.FromPointer); // 02466A0F5C38 0x58 RankingRewardButtons        ( 000185D17588 ModelClassListType List`1<UIButton> List`1<UIButton> List<UIButton> Pointer )
+            value.EndDates                                  = GetObjectList<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x38 EndDates                    ( ModelClassListType List`1<UITextMeshProUGUI> List`1<UITextMeshProUGUI> List<UITextMeshProUGUI> Pointer )
+            value.Rankings                                  = GetObjectList<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x40 Rankings                    ( ModelClassListType List`1<UITextMeshProUGUI> List`1<UITextMeshProUGUI> List<UITextMeshProUGUI> Pointer )
+            value.EffectText                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x48 EffectText                  ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.EffectIcon                                = GetObject<UIImage>(new IntPtr(p + 0x050), ReversePrism.DataModels.UIImage.FromPointer); // 0x50 EffectIcon                  ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.RankingRewardButtons                      = GetObjectList<UIButton>(new IntPtr(p + 0x058), ReversePrism.DataModels.UIButton.FromPointer); // 0x58 RankingRewardButtons        ( ModelClassListType List`1<UIButton> List`1<UIButton> List<UIButton> Pointer )
 
             return value;
         }

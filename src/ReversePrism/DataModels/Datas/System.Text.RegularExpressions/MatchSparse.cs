@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 078 Caps                                     0001865DF3A0 ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 078 Caps                                     ModelClassType Hashtable Hashtable Hashtable Pointer
     public partial class MatchSparse : DataModel
     {
         public Hashtable?                               Caps                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MatchSparse() { Pointer= p0 };
 
-            value.Caps                                      = GetObject<Hashtable>(new IntPtr(p + 0x078), ReversePrism.DataModels.Hashtable.FromPointer); // 024660CFA9F0 0x78 Caps                        ( 0001865DF3A0 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.Caps                                      = GetObject<Hashtable>(new IntPtr(p + 0x078), ReversePrism.DataModels.Hashtable.FromPointer); // 0x78 Caps                        ( ModelClassType Hashtable Hashtable Hashtable Pointer )
 
             return value;
         }

@@ -8,14 +8,16 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Id                                       000186672F10 ModelPrimitiveType string string string String
-    // 018 MovieList                                000185B81DA0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 020 MovieValueList                           000185B81DA0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 028 ImageList                                000185B81DA0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 030 StepCatchphraseImage                     000186672F10 ModelPrimitiveType string string string String
+    // 010 Id                                       ModelPrimitiveType string string string String
+    // 018 LogoImage                                ModelPrimitiveType string string string String
+    // 020 MovieList                                ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 028 MovieValueList                           ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 030 ImageList                                ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 038 StepCatchphraseImage                     ModelPrimitiveType string string string String
     public partial class MstGashaResource : DataModel
     {
         public string                                   Id                                      { get; set; }
+        public string                                   LogoImage                               { get; set; }
         public List<string>?                            MovieList                               { get; set; }
         public List<string>?                            MovieValueList                          { get; set; }
         public List<string>?                            ImageList                               { get; set; }
@@ -29,11 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MstGashaResource() { Pointer= p0 };
 
-            value.Id                                        = GetString(new IntPtr(p + 0x010)); // 0245A46F3E78 0x10 Id                          ( 000186672F10 ModelPrimitiveType string string string String )
-            value.MovieList                                 = GetStringList(new IntPtr(p + 0x018)); // 0245A46F3E98 0x18 MovieList                   ( 000185B81DA0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.MovieValueList                            = GetStringList(new IntPtr(p + 0x020)); // 0245A46F3EB8 0x20 MovieValueList              ( 000185B81DA0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.ImageList                                 = GetStringList(new IntPtr(p + 0x028)); // 0245A46F3ED8 0x28 ImageList                   ( 000185B81DA0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.StepCatchphraseImage                      = GetString(new IntPtr(p + 0x030)); // 0245A46F3EF8 0x30 StepCatchphraseImage        ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Id                                        = GetString(new IntPtr(p + 0x010)); // 0x10 Id                          ( ModelPrimitiveType string string string String )
+            value.LogoImage                                 = GetString(new IntPtr(p + 0x018)); // 0x18 LogoImage                   ( ModelPrimitiveType string string string String )
+            value.MovieList                                 = GetStringList(new IntPtr(p + 0x020)); // 0x20 MovieList                   ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.MovieValueList                            = GetStringList(new IntPtr(p + 0x028)); // 0x28 MovieValueList              ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.ImageList                                 = GetStringList(new IntPtr(p + 0x030)); // 0x30 ImageList                   ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.StepCatchphraseImage                      = GetString(new IntPtr(p + 0x038)); // 0x38 StepCatchphraseImage        ( ModelPrimitiveType string string string String )
 
             return value;
         }

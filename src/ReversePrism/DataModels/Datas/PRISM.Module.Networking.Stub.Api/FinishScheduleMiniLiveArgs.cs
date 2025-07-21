@@ -12,10 +12,10 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 SelectProduceCardIdListFieldNumber       int IL2CPP_TYPE_I4
     // 008 _repeated_selectProduceCardIdList_codec  FieldCodec`1<string> IL2CPP_TYPE_GENERICINST
-    // 018 SelectProduceCardIdList                  000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
+    // 018 SelectProduceCardIdList                  ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
     // 000 DeleteProduceCardIdListFieldNumber       int IL2CPP_TYPE_I4
     // 010 _repeated_deleteProduceCardIdList_codec  FieldCodec`1<string> IL2CPP_TYPE_GENERICINST
-    // 020 DeleteProduceCardIdList                  000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
+    // 020 DeleteProduceCardIdList                  ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
     public partial class FinishScheduleMiniLiveArgs : DataModel
     {
         public List<string>?                            SelectProduceCardIdList                 { get; set; }
@@ -29,8 +29,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FinishScheduleMiniLiveArgs() { Pointer= p0 };
 
-            value.SelectProduceCardIdList                   = GetStringList(new IntPtr(p + 0x018)); // 02466251CAA0 0x18 SelectProduceCardIdList     ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
-            value.DeleteProduceCardIdList                   = GetStringList(new IntPtr(p + 0x020)); // 02466251CB00 0x20 DeleteProduceCardIdList     ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.SelectProduceCardIdList                   = GetStringList(new IntPtr(p + 0x018)); // 0x18 SelectProduceCardIdList     ( ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.DeleteProduceCardIdList                   = GetStringList(new IntPtr(p + 0x020)); // 0x20 DeleteProduceCardIdList     ( ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
 
             return value;
         }

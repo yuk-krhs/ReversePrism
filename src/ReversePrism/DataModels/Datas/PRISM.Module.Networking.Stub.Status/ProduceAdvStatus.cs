@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<ProduceAdvStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 IdFieldNumber                            int IL2CPP_TYPE_I4
-    // 018 Id                                       0001865277D0 ModelClassType ProduceAdvIDStatus ProduceAdvIDStatus ProduceAdvIDStatus Pointer
+    // 018 Id                                       ModelClassType ProduceAdvIDStatus ProduceAdvIDStatus ProduceAdvIDStatus Pointer
     // 000 IsReadFieldNumber                        int IL2CPP_TYPE_I4
-    // 020 IsRead                                   000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 020 IsRead                                   ModelPrimitiveType bool bool bool Bool
     public partial class ProduceAdvStatus : DataModel
     {
         public ProduceAdvIDStatus?                      Id                                      { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceAdvStatus() { Pointer= p0 };
 
-            value.Id                                        = GetObject<ProduceAdvIDStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceAdvIDStatus.FromPointer); // 02466108D060 0x18 Id                          ( 0001865277D0 ModelClassType ProduceAdvIDStatus ProduceAdvIDStatus ProduceAdvIDStatus Pointer )
-            value.IsRead                                    = GetBool(new IntPtr(p + 0x020)); // 02466108D0A0 0x20 IsRead                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Id                                        = GetObject<ProduceAdvIDStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceAdvIDStatus.FromPointer); // 0x18 Id                          ( ModelClassType ProduceAdvIDStatus ProduceAdvIDStatus ProduceAdvIDStatus Pointer )
+            value.IsRead                                    = GetBool(new IntPtr(p + 0x020)); // 0x20 IsRead                      ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 SortFilterSettings                       0001865300A0 ModelClassType SortFilterSettings SortFilterSettings SortFilterSettings Pointer
+    // 010 SortFilterSettings                       ModelClassType SortFilterSettings SortFilterSettings SortFilterSettings Pointer
     public partial class SeasonMissionFilterSaveData : DataModel
     {
         public SortFilterSettings?                      SortFilterSettings                      { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SeasonMissionFilterSaveData() { Pointer= p0 };
 
-            value.SortFilterSettings                        = GetObject<SortFilterSettings>(new IntPtr(p + 0x010), ReversePrism.DataModels.SortFilterSettings.FromPointer); // 0245A3A76850 0x10 SortFilterSettings          ( 0001865300A0 ModelClassType SortFilterSettings SortFilterSettings SortFilterSettings Pointer )
+            value.SortFilterSettings                        = GetObject<SortFilterSettings>(new IntPtr(p + 0x010), ReversePrism.DataModels.SortFilterSettings.FromPointer); // 0x10 SortFilterSettings          ( ModelClassType SortFilterSettings SortFilterSettings SortFilterSettings Pointer )
 
             return value;
         }

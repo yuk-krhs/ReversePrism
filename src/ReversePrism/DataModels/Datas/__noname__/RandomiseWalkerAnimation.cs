@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Animator                                 0001866B92A0 ModelClassType Animator Animator Animator Pointer
+    // 020 Animator                                 ModelClassType Animator Animator Animator Pointer
     public partial class RandomiseWalkerAnimation : DataModel
     {
         public Animator?                                Animator                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RandomiseWalkerAnimation() { Pointer= p0 };
 
-            value.Animator                                  = GetObject<Animator>(new IntPtr(p + 0x020), ReversePrism.DataModels.Animator.FromPointer); // 024664B71258 0x20 Animator                    ( 0001866B92A0 ModelClassType Animator Animator Animator Pointer )
+            value.Animator                                  = GetObject<Animator>(new IntPtr(p + 0x020), ReversePrism.DataModels.Animator.FromPointer); // 0x20 Animator                    ( ModelClassType Animator Animator Animator Pointer )
 
             return value;
         }

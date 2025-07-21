@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 DisplayBufferScale                       0001866656B0 ModelPrimitiveType float float float Single
-    // 014 ShadowType                               000186751A10 ModelEnumType ShadowType ShadowType ShadowType Int32
-    // 018 NoPostProcess                            000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 DisplayBufferScale                       ModelPrimitiveType float float float Single
+    // 014 ShadowType                               ModelEnumType ShadowType ShadowType ShadowType Int32
+    // 018 NoPostProcess                            ModelPrimitiveType bool bool bool Bool
     public partial class GraphicsManager : DataModel
     {
         public float                                    DisplayBufferScale                      { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GraphicsManager() { Pointer= p0 };
 
-            value.DisplayBufferScale                        = GetSingle(new IntPtr(p + 0x010)); // 024660DE98D0 0x10 DisplayBufferScale          ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.ShadowType                                = (ShadowType)GetInt32(new IntPtr(p + 0x014)); // 024660DE98F0 0x14 ShadowType                  ( 000186751A10 ModelEnumType ShadowType ShadowType ShadowType Int32 )
-            value.NoPostProcess                             = GetBool(new IntPtr(p + 0x018)); // 024660DE9910 0x18 NoPostProcess               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.DisplayBufferScale                        = GetSingle(new IntPtr(p + 0x010)); // 0x10 DisplayBufferScale          ( ModelPrimitiveType float float float Single )
+            value.ShadowType                                = (ShadowType)GetInt32(new IntPtr(p + 0x014)); // 0x14 ShadowType                  ( ModelEnumType ShadowType ShadowType ShadowType Int32 )
+            value.NoPostProcess                             = GetBool(new IntPtr(p + 0x018)); // 0x18 NoPostProcess               ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

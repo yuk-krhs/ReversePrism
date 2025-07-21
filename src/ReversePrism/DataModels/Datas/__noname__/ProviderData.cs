@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Enabled                                  000186595960 ModelPrimitiveType bool bool bool Bool
-    // 018 Id                                       0001866722E0 ModelPrimitiveType string string string String
-    // 020 Version                                  0001866722E0 ModelPrimitiveType string string string String
-    // 028 CustomData                               0001866722E0 ModelPrimitiveType string string string String
+    // 010 Enabled                                  ModelPrimitiveType bool bool bool Bool
+    // 018 Id                                       ModelPrimitiveType string string string String
+    // 020 Version                                  ModelPrimitiveType string string string String
+    // 028 CustomData                               ModelPrimitiveType string string string String
     public partial class ProviderData : DataModel
     {
         public bool                                     Enabled                                 { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProviderData() { Pointer= p0 };
 
-            value.Enabled                                   = GetBool(new IntPtr(p + 0x010)); // 024660913408 0x10 Enabled                     ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Id                                        = GetString(new IntPtr(p + 0x018)); // 024660913428 0x18 Id                          ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Version                                   = GetString(new IntPtr(p + 0x020)); // 024660913448 0x20 Version                     ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.CustomData                                = GetString(new IntPtr(p + 0x028)); // 024660913468 0x28 CustomData                  ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Enabled                                   = GetBool(new IntPtr(p + 0x010)); // 0x10 Enabled                     ( ModelPrimitiveType bool bool bool Bool )
+            value.Id                                        = GetString(new IntPtr(p + 0x018)); // 0x18 Id                          ( ModelPrimitiveType string string string String )
+            value.Version                                   = GetString(new IntPtr(p + 0x020)); // 0x20 Version                     ( ModelPrimitiveType string string string String )
+            value.CustomData                                = GetString(new IntPtr(p + 0x028)); // 0x28 CustomData                  ( ModelPrimitiveType string string string String )
 
             return value;
         }

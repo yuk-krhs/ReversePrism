@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Value                                    0001866992B0 ModelPrimitiveType uint uint uint UInt32
+    // 010 Value                                    ModelPrimitiveType uint uint uint UInt32
     public partial class BitField32 : DataModel
     {
         public uint                                     Value                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BitField32() { Pointer= p0 };
 
-            value.Value                                     = GetUInt32(new IntPtr(p + 0x010)); // 0246698D79B0 0x10 Value                       ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.Value                                     = GetUInt32(new IntPtr(p + 0x010)); // 0x10 Value                       ( ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

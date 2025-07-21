@@ -62,6 +62,14 @@ namespace ReversePrism.DataModels
     // 4C8 FinishScheduleMiniLive                   Method`2<IFinishScheduleMiniLiveArgs, IFinishScheduleMiniLiveReply> IL2CPP_TYPE_GENERICINST
     // 4E0 StartScheduleTalkShow                    Method`2<IStartScheduleTalkShowArgs, IStartScheduleTalkShowReply> IL2CPP_TYPE_GENERICINST
     // 4F8 FinishScheduleTalkShow                   Method`2<IFinishScheduleTalkShowArgs, IFinishScheduleTalkShowReply> IL2CPP_TYPE_GENERICINST
+    // 510 StartScheduleScriptReading               Method`2<IStartScheduleScriptReadingArgs, IStartScheduleScriptReadingReply> IL2CPP_TYPE_GENERICINST
+    // 528 FinishScheduleScriptReading              Method`2<IFinishScheduleScriptReadingArgs, IFinishScheduleScriptReadingReply> IL2CPP_TYPE_GENERICINST
+    // 540 StartScheduleCostumeFitting              Method`2<IStartScheduleCostumeFittingArgs, IStartScheduleCostumeFittingReply> IL2CPP_TYPE_GENERICINST
+    // 558 FinishScheduleCostumeFitting             Method`2<IFinishScheduleCostumeFittingArgs, IFinishScheduleCostumeFittingReply> IL2CPP_TYPE_GENERICINST
+    // 570 StartSchedulePublicRelations             Method`2<IStartSchedulePublicRelationsArgs, IStartSchedulePublicRelationsReply> IL2CPP_TYPE_GENERICINST
+    // 588 FinishSchedulePublicRelations            Method`2<IFinishSchedulePublicRelationsArgs, IFinishSchedulePublicRelationsReply> IL2CPP_TYPE_GENERICINST
+    // 5A0 StartScheduleActingPractice              Method`2<IStartScheduleActingPracticeArgs, IStartScheduleActingPracticeReply> IL2CPP_TYPE_GENERICINST
+    // 5B8 FinishScheduleActingPractice             Method`2<IFinishScheduleActingPracticeArgs, IFinishScheduleActingPracticeReply> IL2CPP_TYPE_GENERICINST
     public partial class ProduceServiceMethods : DataModel
     {
 

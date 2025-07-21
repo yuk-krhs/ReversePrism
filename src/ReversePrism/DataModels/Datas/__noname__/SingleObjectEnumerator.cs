@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 loneValue                                <object> IL2CPP_TYPE_OBJECT
-    // 018 Position                                 0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 Position                                 ModelPrimitiveType int int int Int32
     public partial class SingleObjectEnumerator : DataModel
     {
         public int                                      Position                                { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SingleObjectEnumerator() { Pointer= p0 };
 
-            value.Position                                  = GetInt32(new IntPtr(p + 0x018)); // 0246674B5160 0x18 Position                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Position                                  = GetInt32(new IntPtr(p + 0x018)); // 0x18 Position                    ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 CharacterImage                           0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer
-    // 028 TitleText                                0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 030 DescriptionText                          0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 038 MissionSuccessObj                        0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 040 MissionFailureObj                        0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 048 ParameterContent                         00018671BD80 ModelClassType ParameterContent ParameterContent ParameterContent Pointer
+    // 020 CharacterImage                           ModelClassType UIRawImage UIRawImage UIRawImage Pointer
+    // 028 TitleText                                ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 030 DescriptionText                          ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 038 MissionSuccessObj                        ModelClassType GameObject GameObject GameObject Pointer
+    // 040 MissionFailureObj                        ModelClassType GameObject GameObject GameObject Pointer
+    // 048 ParameterContent                         ModelClassType ParameterContent ParameterContent ParameterContent Pointer
     public partial class ChallengeMissionContent : DataModel
     {
         public UIRawImage?                              CharacterImage                          { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChallengeMissionContent() { Pointer= p0 };
 
-            value.CharacterImage                            = GetObject<UIRawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIRawImage.FromPointer); // 024665D81458 0x20 CharacterImage              ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
-            value.TitleText                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665D81478 0x28 TitleText                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.DescriptionText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665D81498 0x30 DescriptionText             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.MissionSuccessObj                         = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 024665D814B8 0x38 MissionSuccessObj           ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.MissionFailureObj                         = GetObject<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 024665D814D8 0x40 MissionFailureObj           ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ParameterContent                          = GetObject<ParameterContent>(new IntPtr(p + 0x048), ReversePrism.DataModels.ParameterContent.FromPointer); // 024665D814F8 0x48 ParameterContent            ( 00018671BD80 ModelClassType ParameterContent ParameterContent ParameterContent Pointer )
+            value.CharacterImage                            = GetObject<UIRawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIRawImage.FromPointer); // 0x20 CharacterImage              ( ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
+            value.TitleText                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x28 TitleText                   ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.DescriptionText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x30 DescriptionText             ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.MissionSuccessObj                         = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0x38 MissionSuccessObj           ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.MissionFailureObj                         = GetObject<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 0x40 MissionFailureObj           ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.ParameterContent                          = GetObject<ParameterContent>(new IntPtr(p + 0x048), ReversePrism.DataModels.ParameterContent.FromPointer); // 0x48 ParameterContent            ( ModelClassType ParameterContent ParameterContent ParameterContent Pointer )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 090 CacheDeleteProduceCardAmount             0001865F36C0 ModelPrimitiveType int int int Int32
-    // 098 DeletableCards                           000185D06078 ModelClassListType IReadOnlyList`1<IProduceCardStatus> IReadOnlyList`1<IProduceCardStatus> List<IProduceCardStatus> Pointer
+    // 090 CacheDeleteProduceCardAmount             ModelPrimitiveType int int int Int32
+    // 098 DeletableCards                           ModelClassListType IReadOnlyList`1<IProduceCardStatus> IReadOnlyList`1<IProduceCardStatus> List<IProduceCardStatus> Pointer
     public partial class DeleteProduceCardPopupParam : DataModel
     {
         public int                                      CacheDeleteProduceCardAmount            { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DeleteProduceCardPopupParam() { Pointer= p0 };
 
-            value.CacheDeleteProduceCardAmount              = GetInt32(new IntPtr(p + 0x090)); // 024665D1C8A0 0x90 CacheDeleteProduceCardAmount ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.DeletableCards                            = GetObjectList<IProduceCardStatus>(new IntPtr(p + 0x098), ReversePrism.DataModels.IProduceCardStatus.FromPointer); // 024665D1C8C0 0x98 DeletableCards              ( 000185D06078 ModelClassListType IReadOnlyList`1<IProduceCardStatus> IReadOnlyList`1<IProduceCardStatus> List<IProduceCardStatus> Pointer )
+            value.CacheDeleteProduceCardAmount              = GetInt32(new IntPtr(p + 0x090)); // 0x90 CacheDeleteProduceCardAmount ( ModelPrimitiveType int int int Int32 )
+            value.DeletableCards                            = GetObjectList<IProduceCardStatus>(new IntPtr(p + 0x098), ReversePrism.DataModels.IProduceCardStatus.FromPointer); // 0x98 DeletableCards              ( ModelClassListType IReadOnlyList`1<IProduceCardStatus> IReadOnlyList`1<IProduceCardStatus> List<IProduceCardStatus> Pointer )
 
             return value;
         }

@@ -27,5 +27,6 @@ namespace ReversePrism.DataModels
         RenderHints,
         TransitionProperty,
         EventCallbackCategories,
+        Picking,
     }
 }

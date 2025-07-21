@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_NestedIOCount                          0001865F2F90 ModelPrimitiveType int int int Int32
+    // 010 M_NestedIOCount                          ModelPrimitiveType int int int Int32
     public partial class ThreadContext : DataModel
     {
         public int                                      M_NestedIOCount                         { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ThreadContext() { Pointer= p0 };
 
-            value.M_NestedIOCount                           = GetInt32(new IntPtr(p + 0x010)); // 024667A914A0 0x10 M_NestedIOCount             ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.M_NestedIOCount                           = GetInt32(new IntPtr(p + 0x010)); // 0x10 M_NestedIOCount             ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

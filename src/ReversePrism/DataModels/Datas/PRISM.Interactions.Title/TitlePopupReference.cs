@@ -8,13 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 License                                  0001866785C0 ModelClassType TitleLicensePopupView TitleLicensePopupView TitleLicensePopupView Pointer
-    // 028 Transfer                                 00018667BE20 ModelClassType TitleTransferPopupView TitleTransferPopupView TitleTransferPopupView Pointer
-    // 030 NameInput                                00018667A5A0 ModelClassType TitleNameInputPopupView TitleNameInputPopupView TitleNameInputPopupView Pointer
-    // 038 privacyOptionPopupFactory                PopupViewFactory`1<IPrivacyOptionPopupView> IL2CPP_TYPE_GENERICINST
-    // 040 Att                                      0001866766A0 ModelClassType TitleATTPopupView TitleATTPopupView TitleATTPopupView Pointer
-    // 048 Menu                                     000186679920 ModelClassType TitleMenuPopupView TitleMenuPopupView TitleMenuPopupView Pointer
-    // 050 TransferContact                          0001866A3D90 ModelClassType TransferContactPopupView TransferContactPopupView TransferContactPopupView Pointer
+    // 020 License                                  ModelClassType TitleLicensePopupView TitleLicensePopupView TitleLicensePopupView Pointer
+    // 028 Transfer                                 ModelClassType TitleTransferPopupView TitleTransferPopupView TitleTransferPopupView Pointer
+    // 030 NameInput                                ModelClassType TitleNameInputPopupView TitleNameInputPopupView TitleNameInputPopupView Pointer
+    // 038 Att                                      ModelClassType TitleATTPopupView TitleATTPopupView TitleATTPopupView Pointer
+    // 040 Menu                                     ModelClassType TitleMenuPopupView TitleMenuPopupView TitleMenuPopupView Pointer
+    // 048 TransferContact                          ModelClassType TransferContactPopupView TransferContactPopupView TransferContactPopupView Pointer
     public partial class TitlePopupReference : DataModel
     {
         public TitleLicensePopupView?                   License                                 { get; set; }
@@ -32,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TitlePopupReference() { Pointer= p0 };
 
-            value.License                                   = GetObject<TitleLicensePopupView>(new IntPtr(p + 0x020), ReversePrism.DataModels.TitleLicensePopupView.FromPointer); // 0245A43FBA58 0x20 License                     ( 0001866785C0 ModelClassType TitleLicensePopupView TitleLicensePopupView TitleLicensePopupView Pointer )
-            value.Transfer                                  = GetObject<TitleTransferPopupView>(new IntPtr(p + 0x028), ReversePrism.DataModels.TitleTransferPopupView.FromPointer); // 0245A43FBA78 0x28 Transfer                    ( 00018667BE20 ModelClassType TitleTransferPopupView TitleTransferPopupView TitleTransferPopupView Pointer )
-            value.NameInput                                 = GetObject<TitleNameInputPopupView>(new IntPtr(p + 0x030), ReversePrism.DataModels.TitleNameInputPopupView.FromPointer); // 0245A43FBA98 0x30 NameInput                   ( 00018667A5A0 ModelClassType TitleNameInputPopupView TitleNameInputPopupView TitleNameInputPopupView Pointer )
-            value.Att                                       = GetObject<TitleATTPopupView>(new IntPtr(p + 0x040), ReversePrism.DataModels.TitleATTPopupView.FromPointer); // 0245A43FBAD8 0x40 Att                         ( 0001866766A0 ModelClassType TitleATTPopupView TitleATTPopupView TitleATTPopupView Pointer )
-            value.Menu                                      = GetObject<TitleMenuPopupView>(new IntPtr(p + 0x048), ReversePrism.DataModels.TitleMenuPopupView.FromPointer); // 0245A43FBAF8 0x48 Menu                        ( 000186679920 ModelClassType TitleMenuPopupView TitleMenuPopupView TitleMenuPopupView Pointer )
-            value.TransferContact                           = GetObject<TransferContactPopupView>(new IntPtr(p + 0x050), ReversePrism.DataModels.TransferContactPopupView.FromPointer); // 0245A43FBB18 0x50 TransferContact             ( 0001866A3D90 ModelClassType TransferContactPopupView TransferContactPopupView TransferContactPopupView Pointer )
+            value.License                                   = GetObject<TitleLicensePopupView>(new IntPtr(p + 0x020), ReversePrism.DataModels.TitleLicensePopupView.FromPointer); // 0x20 License                     ( ModelClassType TitleLicensePopupView TitleLicensePopupView TitleLicensePopupView Pointer )
+            value.Transfer                                  = GetObject<TitleTransferPopupView>(new IntPtr(p + 0x028), ReversePrism.DataModels.TitleTransferPopupView.FromPointer); // 0x28 Transfer                    ( ModelClassType TitleTransferPopupView TitleTransferPopupView TitleTransferPopupView Pointer )
+            value.NameInput                                 = GetObject<TitleNameInputPopupView>(new IntPtr(p + 0x030), ReversePrism.DataModels.TitleNameInputPopupView.FromPointer); // 0x30 NameInput                   ( ModelClassType TitleNameInputPopupView TitleNameInputPopupView TitleNameInputPopupView Pointer )
+            value.Att                                       = GetObject<TitleATTPopupView>(new IntPtr(p + 0x038), ReversePrism.DataModels.TitleATTPopupView.FromPointer); // 0x38 Att                         ( ModelClassType TitleATTPopupView TitleATTPopupView TitleATTPopupView Pointer )
+            value.Menu                                      = GetObject<TitleMenuPopupView>(new IntPtr(p + 0x040), ReversePrism.DataModels.TitleMenuPopupView.FromPointer); // 0x40 Menu                        ( ModelClassType TitleMenuPopupView TitleMenuPopupView TitleMenuPopupView Pointer )
+            value.TransferContact                           = GetObject<TransferContactPopupView>(new IntPtr(p + 0x048), ReversePrism.DataModels.TransferContactPopupView.FromPointer); // 0x48 TransferContact             ( ModelClassType TransferContactPopupView TransferContactPopupView TransferContactPopupView Pointer )
 
             return value;
         }

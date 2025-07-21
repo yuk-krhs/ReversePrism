@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 SupportEffectContentList                 000185D10518 ModelClassListType List`1<SupportEffectContent> List`1<SupportEffectContent> List<SupportEffectContent> Pointer
-    // 028 OnDisplayTapButton                       0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 030 AnimatorWithEvent                        0001866BBE80 ModelClassType AnimatorWithEvent AnimatorWithEvent AnimatorWithEvent Pointer
-    // 038 IsTapped                                 000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 020 SupportEffectContentList                 ModelClassListType List`1<SupportEffectContent> List`1<SupportEffectContent> List<SupportEffectContent> Pointer
+    // 028 OnDisplayTapButton                       ModelClassType UIButton UIButton UIButton Pointer
+    // 030 AnimatorWithEvent                        ModelClassType AnimatorWithEvent AnimatorWithEvent AnimatorWithEvent Pointer
+    // 038 IsTapped                                 ModelPrimitiveType bool bool bool Bool
     public partial class SupportEffectDemonstrateUIContent : DataModel
     {
         public List<SupportEffectContent>?              SupportEffectContentList                { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SupportEffectDemonstrateUIContent() { Pointer= p0 };
 
-            value.SupportEffectContentList                  = GetObjectList<SupportEffectContent>(new IntPtr(p + 0x020), ReversePrism.DataModels.SupportEffectContent.FromPointer); // 024664C10E78 0x20 SupportEffectContentList    ( 000185D10518 ModelClassListType List`1<SupportEffectContent> List`1<SupportEffectContent> List<SupportEffectContent> Pointer )
-            value.OnDisplayTapButton                        = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 024664C10E98 0x28 OnDisplayTapButton          ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.AnimatorWithEvent                         = GetObject<AnimatorWithEvent>(new IntPtr(p + 0x030), ReversePrism.DataModels.AnimatorWithEvent.FromPointer); // 024664C10EB8 0x30 AnimatorWithEvent           ( 0001866BBE80 ModelClassType AnimatorWithEvent AnimatorWithEvent AnimatorWithEvent Pointer )
-            value.IsTapped                                  = GetBool(new IntPtr(p + 0x038)); // 024664C10ED8 0x38 IsTapped                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.SupportEffectContentList                  = GetObjectList<SupportEffectContent>(new IntPtr(p + 0x020), ReversePrism.DataModels.SupportEffectContent.FromPointer); // 0x20 SupportEffectContentList    ( ModelClassListType List`1<SupportEffectContent> List`1<SupportEffectContent> List<SupportEffectContent> Pointer )
+            value.OnDisplayTapButton                        = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 0x28 OnDisplayTapButton          ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.AnimatorWithEvent                         = GetObject<AnimatorWithEvent>(new IntPtr(p + 0x030), ReversePrism.DataModels.AnimatorWithEvent.FromPointer); // 0x30 AnimatorWithEvent           ( ModelClassType AnimatorWithEvent AnimatorWithEvent AnimatorWithEvent Pointer )
+            value.IsTapped                                  = GetBool(new IntPtr(p + 0x038)); // 0x38 IsTapped                    ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

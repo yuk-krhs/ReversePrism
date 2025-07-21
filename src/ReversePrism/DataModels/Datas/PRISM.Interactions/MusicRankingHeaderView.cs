@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 RankingBaseImage                         0001866CCDB0 ModelClassType Image Image Image Pointer
-    // 028 RankingBaseSprites                       000185CA4898 ModelClassListType Sprite[] Sprite[] List<Sprite> Pointer
-    // 030 RankingTextObjects                       000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
-    // 038 RankWithUniqueSprite                     0001865F4260 ModelPrimitiveType int int int Int32
+    // 020 RankingBaseImage                         ModelClassType Image Image Image Pointer
+    // 028 RankingBaseSprites                       ModelClassListType Sprite[] Sprite[] List<Sprite> Pointer
+    // 030 RankingTextObjects                       ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
+    // 038 RankWithUniqueSprite                     ModelPrimitiveType int int int Int32
     public partial class MusicRankingHeaderView : DataModel
     {
         public Image?                                   RankingBaseImage                        { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MusicRankingHeaderView() { Pointer= p0 };
 
-            value.RankingBaseImage                          = GetObject<Image>(new IntPtr(p + 0x020), ReversePrism.DataModels.Image.FromPointer); // 02466B464188 0x20 RankingBaseImage            ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.RankingBaseSprites                        = GetObjectList<Sprite>(new IntPtr(p + 0x028), ReversePrism.DataModels.Sprite.FromPointer); // 02466B4641A8 0x28 RankingBaseSprites          ( 000185CA4898 ModelClassListType Sprite[] Sprite[] List<Sprite> Pointer )
-            value.RankingTextObjects                        = GetObjectList<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 02466B4641C8 0x30 RankingTextObjects          ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
-            value.RankWithUniqueSprite                      = GetInt32(new IntPtr(p + 0x038)); // 02466B4641E8 0x38 RankWithUniqueSprite        ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.RankingBaseImage                          = GetObject<Image>(new IntPtr(p + 0x020), ReversePrism.DataModels.Image.FromPointer); // 0x20 RankingBaseImage            ( ModelClassType Image Image Image Pointer )
+            value.RankingBaseSprites                        = GetObjectList<Sprite>(new IntPtr(p + 0x028), ReversePrism.DataModels.Sprite.FromPointer); // 0x28 RankingBaseSprites          ( ModelClassListType Sprite[] Sprite[] List<Sprite> Pointer )
+            value.RankingTextObjects                        = GetObjectList<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0x30 RankingTextObjects          ( ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.RankWithUniqueSprite                      = GetInt32(new IntPtr(p + 0x038)); // 0x38 RankWithUniqueSprite        ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

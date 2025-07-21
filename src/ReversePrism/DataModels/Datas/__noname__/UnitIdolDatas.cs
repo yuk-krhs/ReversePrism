@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 UnitIdolData                             000185CC52F8 ModelClassListType UnitIdolData[] UnitIdolData[] List<UnitIdolData> Pointer
+    // 010 UnitIdolData                             ModelClassListType UnitIdolData[] UnitIdolData[] List<UnitIdolData> Pointer
     public partial class UnitIdolDatas : DataModel
     {
         public List<UnitIdolData>?                      UnitIdolData                            { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnitIdolDatas() { Pointer= p0 };
 
-            value.UnitIdolData                              = GetObjectList<UnitIdolData>(new IntPtr(p + 0x010), ReversePrism.DataModels.UnitIdolData.FromPointer); // 0245A5FA8390 0x10 UnitIdolData                ( 000185CC52F8 ModelClassListType UnitIdolData[] UnitIdolData[] List<UnitIdolData> Pointer )
+            value.UnitIdolData                              = GetObjectList<UnitIdolData>(new IntPtr(p + 0x010), ReversePrism.DataModels.UnitIdolData.FromPointer); // 0x10 UnitIdolData                ( ModelClassListType UnitIdolData[] UnitIdolData[] List<UnitIdolData> Pointer )
 
             return value;
         }

@@ -8,15 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 040 MaximumSamplingRate                      0001865F4260 ModelPrimitiveType int int int Int32
-    // 044 MinimumSupportSamplingRate               0001865F4260 ModelPrimitiveType int int int Int32
-    // 048 MicrophoneConfig                         0001865607A0 ModelEnumType MicrophoneConfig MicrophoneConfig MicrophoneConfig Int32
-    // 058 RunningMicConfig                         0001865607A0 ModelEnumType MicrophoneConfig MicrophoneConfig MicrophoneConfig Int32
-    // 068 IsMicrophoneStarted                      000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 069 AutoConnect                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 070 AtomExMic                                000186647700 ModelClassType CriAtomExMic CriAtomExMic CriAtomExMic Pointer
+    // 040 MaximumSamplingRate                      ModelPrimitiveType int int int Int32
+    // 044 MinimumSupportSamplingRate               ModelPrimitiveType int int int Int32
+    // 048 MicrophoneConfig                         ModelEnumType MicrophoneConfig MicrophoneConfig MicrophoneConfig Int32
+    // 058 RunningMicConfig                         ModelEnumType MicrophoneConfig MicrophoneConfig MicrophoneConfig Int32
+    // 068 IsMicrophoneStarted                      ModelPrimitiveType bool bool bool Bool
+    // 069 AutoConnect                              ModelPrimitiveType bool bool bool Bool
+    // 070 AtomExMic                                ModelClassType CriAtomExMic CriAtomExMic CriAtomExMic Pointer
     // 078 deviceInfo                               Nullable`1<DeviceInfo> IL2CPP_TYPE_GENERICINST
-    // 0A0 ShouldLogMicDisconnection                000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 0A0 ShouldLogMicDisconnection                ModelPrimitiveType bool bool bool Bool
     public partial class CriLipsSamplerForAtomMic : DataModel
     {
         public int                                      MaximumSamplingRate                     { get; set; }
@@ -36,14 +36,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CriLipsSamplerForAtomMic() { Pointer= p0 };
 
-            value.MaximumSamplingRate                       = GetInt32(new IntPtr(p + 0x040)); // 02466BC28D58 0x40 MaximumSamplingRate         ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MinimumSupportSamplingRate                = GetInt32(new IntPtr(p + 0x044)); // 02466BC28D78 0x44 MinimumSupportSamplingRate  ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MicrophoneConfig                          = (MicrophoneConfig)GetInt32(new IntPtr(p + 0x048)); // 02466BC28D98 0x48 MicrophoneConfig            ( 0001865607A0 ModelEnumType MicrophoneConfig MicrophoneConfig MicrophoneConfig Int32 )
-            value.RunningMicConfig                          = (MicrophoneConfig)GetInt32(new IntPtr(p + 0x058)); // 02466BC28DB8 0x58 RunningMicConfig            ( 0001865607A0 ModelEnumType MicrophoneConfig MicrophoneConfig MicrophoneConfig Int32 )
-            value.IsMicrophoneStarted                       = GetBool(new IntPtr(p + 0x068)); // 02466BC28DD8 0x68 IsMicrophoneStarted         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.AutoConnect                               = GetBool(new IntPtr(p + 0x069)); // 02466BC28DF8 0x69 AutoConnect                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.AtomExMic                                 = GetObject<CriAtomExMic>(new IntPtr(p + 0x070), ReversePrism.DataModels.CriAtomExMic.FromPointer); // 02466BC28E18 0x70 AtomExMic                   ( 000186647700 ModelClassType CriAtomExMic CriAtomExMic CriAtomExMic Pointer )
-            value.ShouldLogMicDisconnection                 = GetBool(new IntPtr(p + 0x0A0)); // 02466BC28E58 0xA0 ShouldLogMicDisconnection   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MaximumSamplingRate                       = GetInt32(new IntPtr(p + 0x040)); // 0x40 MaximumSamplingRate         ( ModelPrimitiveType int int int Int32 )
+            value.MinimumSupportSamplingRate                = GetInt32(new IntPtr(p + 0x044)); // 0x44 MinimumSupportSamplingRate  ( ModelPrimitiveType int int int Int32 )
+            value.MicrophoneConfig                          = (MicrophoneConfig)GetInt32(new IntPtr(p + 0x048)); // 0x48 MicrophoneConfig            ( ModelEnumType MicrophoneConfig MicrophoneConfig MicrophoneConfig Int32 )
+            value.RunningMicConfig                          = (MicrophoneConfig)GetInt32(new IntPtr(p + 0x058)); // 0x58 RunningMicConfig            ( ModelEnumType MicrophoneConfig MicrophoneConfig MicrophoneConfig Int32 )
+            value.IsMicrophoneStarted                       = GetBool(new IntPtr(p + 0x068)); // 0x68 IsMicrophoneStarted         ( ModelPrimitiveType bool bool bool Bool )
+            value.AutoConnect                               = GetBool(new IntPtr(p + 0x069)); // 0x69 AutoConnect                 ( ModelPrimitiveType bool bool bool Bool )
+            value.AtomExMic                                 = GetObject<CriAtomExMic>(new IntPtr(p + 0x070), ReversePrism.DataModels.CriAtomExMic.FromPointer); // 0x70 AtomExMic                   ( ModelClassType CriAtomExMic CriAtomExMic CriAtomExMic Pointer )
+            value.ShouldLogMicDisconnection                 = GetBool(new IntPtr(p + 0x0A0)); // 0xA0 ShouldLogMicDisconnection   ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

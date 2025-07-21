@@ -11,13 +11,13 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<StartAuditionReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ProduceBaseInfoFieldNumber               int IL2CPP_TYPE_I4
-    // 018 ProduceBaseInfo                          0001865332D0 ModelClassType ProduceBaseInfoStatus ProduceBaseInfoStatus ProduceBaseInfoStatus Pointer
+    // 018 ProduceBaseInfo                          ModelClassType ProduceBaseInfoStatus ProduceBaseInfoStatus ProduceBaseInfoStatus Pointer
     // 000 RivalUnitFieldNumber                     int IL2CPP_TYPE_I4
-    // 020 RivalUnit                                000186691660 ModelClassType RivalUnitStatus RivalUnitStatus RivalUnitStatus Pointer
+    // 020 RivalUnit                                ModelClassType RivalUnitStatus RivalUnitStatus RivalUnitStatus Pointer
     // 000 OpponentFieldNumber                      int IL2CPP_TYPE_I4
-    // 028 Opponent                                 0001866E5AB0 ModelClassType OpponentStatus OpponentStatus OpponentStatus Pointer
+    // 028 Opponent                                 ModelClassType OpponentStatus OpponentStatus OpponentStatus Pointer
     // 000 ScheduleDetailTypeFieldNumber            int IL2CPP_TYPE_I4
-    // 030 ScheduleDetailType                       0001866D43F0 ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32
+    // 030 ScheduleDetailType                       ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32
     public partial class StartAuditionReply : DataModel
     {
         public ProduceBaseInfoStatus?                   ProduceBaseInfo                         { get; set; }
@@ -33,10 +33,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StartAuditionReply() { Pointer= p0 };
 
-            value.ProduceBaseInfo                           = GetObject<ProduceBaseInfoStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceBaseInfoStatus.FromPointer); // 02466257BFA8 0x18 ProduceBaseInfo             ( 0001865332D0 ModelClassType ProduceBaseInfoStatus ProduceBaseInfoStatus ProduceBaseInfoStatus Pointer )
-            value.RivalUnit                                 = GetObject<RivalUnitStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.RivalUnitStatus.FromPointer); // 02466257BFE8 0x20 RivalUnit                   ( 000186691660 ModelClassType RivalUnitStatus RivalUnitStatus RivalUnitStatus Pointer )
-            value.Opponent                                  = GetObject<OpponentStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.OpponentStatus.FromPointer); // 02466257C028 0x28 Opponent                    ( 0001866E5AB0 ModelClassType OpponentStatus OpponentStatus OpponentStatus Pointer )
-            value.ScheduleDetailType                        = (ScheduleDetailType)GetInt32(new IntPtr(p + 0x030)); // 02466257C068 0x30 ScheduleDetailType          ( 0001866D43F0 ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32 )
+            value.ProduceBaseInfo                           = GetObject<ProduceBaseInfoStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceBaseInfoStatus.FromPointer); // 0x18 ProduceBaseInfo             ( ModelClassType ProduceBaseInfoStatus ProduceBaseInfoStatus ProduceBaseInfoStatus Pointer )
+            value.RivalUnit                                 = GetObject<RivalUnitStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.RivalUnitStatus.FromPointer); // 0x20 RivalUnit                   ( ModelClassType RivalUnitStatus RivalUnitStatus RivalUnitStatus Pointer )
+            value.Opponent                                  = GetObject<OpponentStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.OpponentStatus.FromPointer); // 0x28 Opponent                    ( ModelClassType OpponentStatus OpponentStatus OpponentStatus Pointer )
+            value.ScheduleDetailType                        = (ScheduleDetailType)GetInt32(new IntPtr(p + 0x030)); // 0x30 ScheduleDetailType          ( ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32 )
 
             return value;
         }

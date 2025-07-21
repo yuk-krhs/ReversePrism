@@ -11,8 +11,8 @@ namespace ReversePrism.DataModels
     // 000 CsharpExtOverrideLocationEnvVarName      string IL2CPP_TYPE_STRING
     // 000 Logger                                   ILogger IL2CPP_TYPE_CLASS
     // 008 staticLock                               <object> IL2CPP_TYPE_OBJECT
-    // 010 Instance                                 0001866885D0 ModelClassType NativeExtension NativeExtension NativeExtension Pointer
-    // 010 NativeMethods                            00018668D9A0 ModelClassType NativeMethods NativeMethods NativeMethods Pointer
+    // 010 Instance                                 ModelClassType NativeExtension NativeExtension NativeExtension Pointer
+    // 010 NativeMethods                            ModelClassType NativeMethods NativeMethods NativeMethods Pointer
     public partial class NativeExtension : DataModel
     {
         public NativeExtension?                         Instance                                { get; set; }
@@ -26,8 +26,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NativeExtension() { Pointer= p0 };
 
-            value.Instance                                  = GetObject<NativeExtension>(new IntPtr(p + 0x010), ReversePrism.DataModels.NativeExtension.FromPointer); // 024660E3A238 0x10 Instance                    ( 0001866885D0 ModelClassType NativeExtension NativeExtension NativeExtension Pointer )
-            value.NativeMethods                             = GetObject<NativeMethods>(new IntPtr(p + 0x010), ReversePrism.DataModels.NativeMethods.FromPointer); // 024660E3A258 0x10 NativeMethods               ( 00018668D9A0 ModelClassType NativeMethods NativeMethods NativeMethods Pointer )
+            value.Instance                                  = GetObject<NativeExtension>(new IntPtr(p + 0x010), ReversePrism.DataModels.NativeExtension.FromPointer); // 0x10 Instance                    ( ModelClassType NativeExtension NativeExtension NativeExtension Pointer )
+            value.NativeMethods                             = GetObject<NativeMethods>(new IntPtr(p + 0x010), ReversePrism.DataModels.NativeMethods.FromPointer); // 0x10 NativeMethods               ( ModelClassType NativeMethods NativeMethods NativeMethods Pointer )
 
             return value;
         }

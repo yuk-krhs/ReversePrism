@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 CategoryCell                             0001865E8F10 ModelClassType GameHelpListCategoryCellView GameHelpListCategoryCellView GameHelpListCategoryCellView Pointer
-    // 028 GetTextSizeView                          0001866704A0 ModelClassType GetTextSizeView GetTextSizeView GetTextSizeView Pointer
-    // 030 Scroller                                 000186735270 ModelClassType EnhancedScroller EnhancedScroller EnhancedScroller Pointer
+    // 020 CategoryCell                             ModelClassType GameHelpListCategoryCellView GameHelpListCategoryCellView GameHelpListCategoryCellView Pointer
+    // 028 GetTextSizeView                          ModelClassType GetTextSizeView GetTextSizeView GetTextSizeView Pointer
+    // 030 Scroller                                 ModelClassType EnhancedScroller EnhancedScroller EnhancedScroller Pointer
     // 038 onClick                                  Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 040 ViewModel                                0001865EA360 ModelClassType GameHelpListViewModel GameHelpListViewModel GameHelpListViewModel Pointer
-    // 048 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
+    // 040 ViewModel                                ModelClassType GameHelpListViewModel GameHelpListViewModel GameHelpListViewModel Pointer
+    // 048 Parent                                   ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
     public partial class GameHelpListPopupView : DataModel
     {
         public GameHelpListCategoryCellView?            CategoryCell                            { get; set; }
@@ -30,11 +30,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GameHelpListPopupView() { Pointer= p0 };
 
-            value.CategoryCell                              = GetObject<GameHelpListCategoryCellView>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameHelpListCategoryCellView.FromPointer); // 02466B627C68 0x20 CategoryCell                ( 0001865E8F10 ModelClassType GameHelpListCategoryCellView GameHelpListCategoryCellView GameHelpListCategoryCellView Pointer )
-            value.GetTextSizeView                           = GetObject<GetTextSizeView>(new IntPtr(p + 0x028), ReversePrism.DataModels.GetTextSizeView.FromPointer); // 02466B627C88 0x28 GetTextSizeView             ( 0001866704A0 ModelClassType GetTextSizeView GetTextSizeView GetTextSizeView Pointer )
-            value.Scroller                                  = GetObject<EnhancedScroller>(new IntPtr(p + 0x030), ReversePrism.DataModels.EnhancedScroller.FromPointer); // 02466B627CA8 0x30 Scroller                    ( 000186735270 ModelClassType EnhancedScroller EnhancedScroller EnhancedScroller Pointer )
-            value.ViewModel                                 = GetObject<GameHelpListViewModel>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameHelpListViewModel.FromPointer); // 02466B627CE8 0x40 ViewModel                   ( 0001865EA360 ModelClassType GameHelpListViewModel GameHelpListViewModel GameHelpListViewModel Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x048), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466B627D08 0x48 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.CategoryCell                              = GetObject<GameHelpListCategoryCellView>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameHelpListCategoryCellView.FromPointer); // 0x20 CategoryCell                ( ModelClassType GameHelpListCategoryCellView GameHelpListCategoryCellView GameHelpListCategoryCellView Pointer )
+            value.GetTextSizeView                           = GetObject<GetTextSizeView>(new IntPtr(p + 0x028), ReversePrism.DataModels.GetTextSizeView.FromPointer); // 0x28 GetTextSizeView             ( ModelClassType GetTextSizeView GetTextSizeView GetTextSizeView Pointer )
+            value.Scroller                                  = GetObject<EnhancedScroller>(new IntPtr(p + 0x030), ReversePrism.DataModels.EnhancedScroller.FromPointer); // 0x30 Scroller                    ( ModelClassType EnhancedScroller EnhancedScroller EnhancedScroller Pointer )
+            value.ViewModel                                 = GetObject<GameHelpListViewModel>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameHelpListViewModel.FromPointer); // 0x40 ViewModel                   ( ModelClassType GameHelpListViewModel GameHelpListViewModel GameHelpListViewModel Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x048), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0x48 Parent                      ( ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

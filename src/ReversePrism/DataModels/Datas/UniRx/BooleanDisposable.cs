@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 IsDisposed                               000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 IsDisposed                               ModelPrimitiveType bool bool bool Bool
     public partial class BooleanDisposable : DataModel
     {
         public bool                                     IsDisposed                              { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BooleanDisposable() { Pointer= p0 };
 
-            value.IsDisposed                                = GetBool(new IntPtr(p + 0x010)); // 0245A3C2D698 0x10 IsDisposed                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsDisposed                                = GetBool(new IntPtr(p + 0x010)); // 0x10 IsDisposed                  ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

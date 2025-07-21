@@ -10,11 +10,11 @@ namespace ReversePrism.DataModels
 
     // 000 k_SettingsKey                            string IL2CPP_TYPE_STRING
     // 008 s_RuntimeSettingsInstance                AdaptivePerformanceGeneralSettings IL2CPP_TYPE_CLASS
-    // 018 M_LoaderManagerInstance                  000186685930 ModelClassType AdaptivePerformanceManagerSettings AdaptivePerformanceManagerSettings AdaptivePerformanceManagerSettings Pointer
-    // 020 M_InitManagerOnStart                     000186595210 ModelPrimitiveType bool bool bool Bool
-    // 028 M_AdaptivePerformanceManager             0001866856F0 ModelClassType AdaptivePerformanceManagerSettings AdaptivePerformanceManagerSettings AdaptivePerformanceManagerSettings Pointer
-    // 030 M_ProviderIntialized                     000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 031 M_ProviderStarted                        000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 018 M_LoaderManagerInstance                  ModelClassType AdaptivePerformanceManagerSettings AdaptivePerformanceManagerSettings AdaptivePerformanceManagerSettings Pointer
+    // 020 M_InitManagerOnStart                     ModelPrimitiveType bool bool bool Bool
+    // 028 M_AdaptivePerformanceManager             ModelClassType AdaptivePerformanceManagerSettings AdaptivePerformanceManagerSettings AdaptivePerformanceManagerSettings Pointer
+    // 030 M_ProviderIntialized                     ModelPrimitiveType bool bool bool Bool
+    // 031 M_ProviderStarted                        ModelPrimitiveType bool bool bool Bool
     public partial class AdaptivePerformanceGeneralSettings : DataModel
     {
         public AdaptivePerformanceManagerSettings?      M_LoaderManagerInstance                 { get; set; }
@@ -31,11 +31,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AdaptivePerformanceGeneralSettings() { Pointer= p0 };
 
-            value.M_LoaderManagerInstance                   = GetObject<AdaptivePerformanceManagerSettings>(new IntPtr(p + 0x018), ReversePrism.DataModels.AdaptivePerformanceManagerSettings.FromPointer); // 0245A3498D58 0x18 M_LoaderManagerInstance     ( 000186685930 ModelClassType AdaptivePerformanceManagerSettings AdaptivePerformanceManagerSettings AdaptivePerformanceManagerSettings Pointer )
-            value.M_InitManagerOnStart                      = GetBool(new IntPtr(p + 0x020)); // 0245A3498D78 0x20 M_InitManagerOnStart        ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.M_AdaptivePerformanceManager              = GetObject<AdaptivePerformanceManagerSettings>(new IntPtr(p + 0x028), ReversePrism.DataModels.AdaptivePerformanceManagerSettings.FromPointer); // 0245A3498D98 0x28 M_AdaptivePerformanceManager ( 0001866856F0 ModelClassType AdaptivePerformanceManagerSettings AdaptivePerformanceManagerSettings AdaptivePerformanceManagerSettings Pointer )
-            value.M_ProviderIntialized                      = GetBool(new IntPtr(p + 0x030)); // 0245A3498DB8 0x30 M_ProviderIntialized        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_ProviderStarted                         = GetBool(new IntPtr(p + 0x031)); // 0245A3498DD8 0x31 M_ProviderStarted           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_LoaderManagerInstance                   = GetObject<AdaptivePerformanceManagerSettings>(new IntPtr(p + 0x018), ReversePrism.DataModels.AdaptivePerformanceManagerSettings.FromPointer); // 0x18 M_LoaderManagerInstance     ( ModelClassType AdaptivePerformanceManagerSettings AdaptivePerformanceManagerSettings AdaptivePerformanceManagerSettings Pointer )
+            value.M_InitManagerOnStart                      = GetBool(new IntPtr(p + 0x020)); // 0x20 M_InitManagerOnStart        ( ModelPrimitiveType bool bool bool Bool )
+            value.M_AdaptivePerformanceManager              = GetObject<AdaptivePerformanceManagerSettings>(new IntPtr(p + 0x028), ReversePrism.DataModels.AdaptivePerformanceManagerSettings.FromPointer); // 0x28 M_AdaptivePerformanceManager ( ModelClassType AdaptivePerformanceManagerSettings AdaptivePerformanceManagerSettings AdaptivePerformanceManagerSettings Pointer )
+            value.M_ProviderIntialized                      = GetBool(new IntPtr(p + 0x030)); // 0x30 M_ProviderIntialized        ( ModelPrimitiveType bool bool bool Bool )
+            value.M_ProviderStarted                         = GetBool(new IntPtr(p + 0x031)); // 0x31 M_ProviderStarted           ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

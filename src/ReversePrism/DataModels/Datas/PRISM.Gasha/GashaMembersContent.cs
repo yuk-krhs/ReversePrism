@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 060 GashaMembersView                         000186607750 ModelClassType GashaMembersView GashaMembersView GashaMembersView Pointer
+    // 060 GashaMembersView                         ModelClassType GashaMembersView GashaMembersView GashaMembersView Pointer
     public partial class GashaMembersContent : DataModel
     {
         public GashaMembersView?                        GashaMembersView                        { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GashaMembersContent() { Pointer= p0 };
 
-            value.GashaMembersView                          = GetObject<GashaMembersView>(new IntPtr(p + 0x060), ReversePrism.DataModels.GashaMembersView.FromPointer); // 02466537DED0 0x60 GashaMembersView            ( 000186607750 ModelClassType GashaMembersView GashaMembersView GashaMembersView Pointer )
+            value.GashaMembersView                          = GetObject<GashaMembersView>(new IntPtr(p + 0x060), ReversePrism.DataModels.GashaMembersView.FromPointer); // 0x60 GashaMembersView            ( ModelClassType GashaMembersView GashaMembersView GashaMembersView Pointer )
 
             return value;
         }

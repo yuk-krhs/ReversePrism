@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 TimelineLayer                            00018666FD90 ModelClassType TimelineLayer TimelineLayer TimelineLayer Pointer
-    // 018 ParentPath                               0001866722E0 ModelPrimitiveType string string string String
+    // 010 TimelineLayer                            ModelClassType TimelineLayer TimelineLayer TimelineLayer Pointer
+    // 018 ParentPath                               ModelPrimitiveType string string string String
     public partial class TimelineLayerBehaviour : DataModel
     {
         public TimelineLayer?                           TimelineLayer                           { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TimelineLayerBehaviour() { Pointer= p0 };
 
-            value.TimelineLayer                             = GetObject<TimelineLayer>(new IntPtr(p + 0x010), ReversePrism.DataModels.TimelineLayer.FromPointer); // 024664E75898 0x10 TimelineLayer               ( 00018666FD90 ModelClassType TimelineLayer TimelineLayer TimelineLayer Pointer )
-            value.ParentPath                                = GetString(new IntPtr(p + 0x018)); // 024664E758B8 0x18 ParentPath                  ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.TimelineLayer                             = GetObject<TimelineLayer>(new IntPtr(p + 0x010), ReversePrism.DataModels.TimelineLayer.FromPointer); // 0x10 TimelineLayer               ( ModelClassType TimelineLayer TimelineLayer TimelineLayer Pointer )
+            value.ParentPath                                = GetString(new IntPtr(p + 0x018)); // 0x18 ParentPath                  ( ModelPrimitiveType string string string String )
 
             return value;
         }

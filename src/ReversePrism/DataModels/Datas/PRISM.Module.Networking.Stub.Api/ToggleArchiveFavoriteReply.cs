@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<ToggleArchiveFavoriteReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ProgramFieldNumber                       int IL2CPP_TYPE_I4
-    // 018 Program                                  0001866D3170 ModelClassType ArchiveStreamProgramStatus ArchiveStreamProgramStatus ArchiveStreamProgramStatus Pointer
+    // 018 Program                                  ModelClassType ArchiveStreamProgramStatus ArchiveStreamProgramStatus ArchiveStreamProgramStatus Pointer
     public partial class ToggleArchiveFavoriteReply : DataModel
     {
         public ArchiveStreamProgramStatus?              Program                                 { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ToggleArchiveFavoriteReply() { Pointer= p0 };
 
-            value.Program                                   = GetObject<ArchiveStreamProgramStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ArchiveStreamProgramStatus.FromPointer); // 024662A458F0 0x18 Program                     ( 0001866D3170 ModelClassType ArchiveStreamProgramStatus ArchiveStreamProgramStatus ArchiveStreamProgramStatus Pointer )
+            value.Program                                   = GetObject<ArchiveStreamProgramStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ArchiveStreamProgramStatus.FromPointer); // 0x18 Program                     ( ModelClassType ArchiveStreamProgramStatus ArchiveStreamProgramStatus ArchiveStreamProgramStatus Pointer )
 
             return value;
         }

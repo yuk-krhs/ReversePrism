@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_defaultValue                           ushort IL2CPP_TYPE_U2
-    // 050 Values                                   000185CAEB28 ModelPrimitiveListType ushort[] ushort[] List<ushort> Pointer
+    // 050 Values                                   ModelPrimitiveListType ushort[] ushort[] List<ushort> Pointer
     public partial class UInt16Storage : DataModel
     {
         public List<ushort>?                            Values                                  { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UInt16Storage() { Pointer= p0 };
 
-            value.Values                                    = GetUInt16List(new IntPtr(p + 0x050)); // 024668A60880 0x50 Values                      ( 000185CAEB28 ModelPrimitiveListType ushort[] ushort[] List<ushort> Pointer )
+            value.Values                                    = GetUInt16List(new IntPtr(p + 0x050)); // 0x50 Values                      ( ModelPrimitiveListType ushort[] ushort[] List<ushort> Pointer )
 
             return value;
         }

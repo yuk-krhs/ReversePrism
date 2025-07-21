@@ -11,11 +11,11 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<UsageRule> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 SelectorFieldNumber                      int IL2CPP_TYPE_I4
-    // 018 Selector                                 000186671910 ModelPrimitiveType string string string String
+    // 018 Selector                                 ModelPrimitiveType string string string String
     // 000 AllowUnregisteredCallsFieldNumber        int IL2CPP_TYPE_I4
-    // 020 AllowUnregisteredCalls                   000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 020 AllowUnregisteredCalls                   ModelPrimitiveType bool bool bool Bool
     // 000 SkipServiceControlFieldNumber            int IL2CPP_TYPE_I4
-    // 021 SkipServiceControl                       000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 021 SkipServiceControl                       ModelPrimitiveType bool bool bool Bool
     public partial class UsageRule : DataModel
     {
         public string                                   Selector                                { get; set; }
@@ -30,9 +30,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UsageRule() { Pointer= p0 };
 
-            value.Selector                                  = GetString(new IntPtr(p + 0x018)); // 02466A904500 0x18 Selector                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.AllowUnregisteredCalls                    = GetBool(new IntPtr(p + 0x020)); // 02466A904540 0x20 AllowUnregisteredCalls      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SkipServiceControl                        = GetBool(new IntPtr(p + 0x021)); // 02466A904580 0x21 SkipServiceControl          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Selector                                  = GetString(new IntPtr(p + 0x018)); // 0x18 Selector                    ( ModelPrimitiveType string string string String )
+            value.AllowUnregisteredCalls                    = GetBool(new IntPtr(p + 0x020)); // 0x20 AllowUnregisteredCalls      ( ModelPrimitiveType bool bool bool Bool )
+            value.SkipServiceControl                        = GetBool(new IntPtr(p + 0x021)); // 0x21 SkipServiceControl          ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

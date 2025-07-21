@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_LoadType                               00018669A410 ModelEnumType RuntimeInitializeLoadType RuntimeInitializeLoadType RuntimeInitializeLoadType Int32
+    // 010 M_LoadType                               ModelEnumType RuntimeInitializeLoadType RuntimeInitializeLoadType RuntimeInitializeLoadType Int32
     public partial class RuntimeInitializeOnLoadMethodAttribute : DataModel
     {
         public RuntimeInitializeLoadType                M_LoadType                              { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RuntimeInitializeOnLoadMethodAttribute() { Pointer= p0 };
 
-            value.M_LoadType                                = (RuntimeInitializeLoadType)GetInt32(new IntPtr(p + 0x010)); // 0245A248C5B8 0x10 M_LoadType                  ( 00018669A410 ModelEnumType RuntimeInitializeLoadType RuntimeInitializeLoadType RuntimeInitializeLoadType Int32 )
+            value.M_LoadType                                = (RuntimeInitializeLoadType)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_LoadType                  ( ModelEnumType RuntimeInitializeLoadType RuntimeInitializeLoadType RuntimeInitializeLoadType Int32 )
 
             return value;
         }

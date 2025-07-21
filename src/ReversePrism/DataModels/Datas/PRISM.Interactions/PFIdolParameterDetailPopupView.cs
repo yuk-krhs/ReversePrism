@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 CellBase                                 0001867052B0 ModelClassType PFIdolParameterDetailPopupViewCell PFIdolParameterDetailPopupViewCell PFIdolParameterDetailPopupViewCell Pointer
+    // 020 CellBase                                 ModelClassType PFIdolParameterDetailPopupViewCell PFIdolParameterDetailPopupViewCell PFIdolParameterDetailPopupViewCell Pointer
     // 028 onClosed                                 Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 030 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
-    // 038 IpfIdolParameterDetailPopupViewImplementation 0001865CDF60 ModelClassType IPFIdolParameterDetailPopupView IPFIdolParameterDetailPopupView IPFIdolParameterDetailPopupView Pointer
+    // 030 Parent                                   ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
+    // 038 IpfIdolParameterDetailPopupViewImplementation ModelClassType IPFIdolParameterDetailPopupView IPFIdolParameterDetailPopupView IPFIdolParameterDetailPopupView Pointer
     public partial class PFIdolParameterDetailPopupView : DataModel
     {
         public PFIdolParameterDetailPopupViewCell?      CellBase                                { get; set; }
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PFIdolParameterDetailPopupView() { Pointer= p0 };
 
-            value.CellBase                                  = GetObject<PFIdolParameterDetailPopupViewCell>(new IntPtr(p + 0x020), ReversePrism.DataModels.PFIdolParameterDetailPopupViewCell.FromPointer); // 02466A358730 0x20 CellBase                    ( 0001867052B0 ModelClassType PFIdolParameterDetailPopupViewCell PFIdolParameterDetailPopupViewCell PFIdolParameterDetailPopupViewCell Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x030), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466A358770 0x30 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
-            value.IpfIdolParameterDetailPopupViewImplementation = GetObject<IPFIdolParameterDetailPopupView>(new IntPtr(p + 0x038), ReversePrism.DataModels.IPFIdolParameterDetailPopupView.FromPointer); // 02466A358790 0x38 IpfIdolParameterDetailPopupViewImplementation ( 0001865CDF60 ModelClassType IPFIdolParameterDetailPopupView IPFIdolParameterDetailPopupView IPFIdolParameterDetailPopupView Pointer )
+            value.CellBase                                  = GetObject<PFIdolParameterDetailPopupViewCell>(new IntPtr(p + 0x020), ReversePrism.DataModels.PFIdolParameterDetailPopupViewCell.FromPointer); // 0x20 CellBase                    ( ModelClassType PFIdolParameterDetailPopupViewCell PFIdolParameterDetailPopupViewCell PFIdolParameterDetailPopupViewCell Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x030), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0x30 Parent                      ( ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.IpfIdolParameterDetailPopupViewImplementation = GetObject<IPFIdolParameterDetailPopupView>(new IntPtr(p + 0x038), ReversePrism.DataModels.IPFIdolParameterDetailPopupView.FromPointer); // 0x38 IpfIdolParameterDetailPopupViewImplementation ( ModelClassType IPFIdolParameterDetailPopupView IPFIdolParameterDetailPopupView IPFIdolParameterDetailPopupView Pointer )
 
             return value;
         }

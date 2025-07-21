@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MissionGroupListFieldNumber              int IL2CPP_TYPE_I4
     // 008 _repeated_missionGroupList_codec         FieldCodec`1<MissionGroupStatus> IL2CPP_TYPE_GENERICINST
-    // 018 MissionGroupList                         000185CE6E88 ModelClassListType RepeatedField`1<MissionGroupStatus> RepeatedField`1<MissionGroupStatus> List<MissionGroupStatus> Pointer
+    // 018 MissionGroupList                         ModelClassListType RepeatedField`1<MissionGroupStatus> RepeatedField`1<MissionGroupStatus> List<MissionGroupStatus> Pointer
     public partial class GetMissionListReply : DataModel
     {
         public List<MissionGroupStatus>?                MissionGroupList                        { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetMissionListReply() { Pointer= p0 };
 
-            value.MissionGroupList                          = GetObjectList<MissionGroupStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.MissionGroupStatus.FromPointer); // 02466224F850 0x18 MissionGroupList            ( 000185CE6E88 ModelClassListType RepeatedField`1<MissionGroupStatus> RepeatedField`1<MissionGroupStatus> List<MissionGroupStatus> Pointer )
+            value.MissionGroupList                          = GetObjectList<MissionGroupStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.MissionGroupStatus.FromPointer); // 0x18 MissionGroupList            ( ModelClassListType RepeatedField`1<MissionGroupStatus> RepeatedField`1<MissionGroupStatus> List<MissionGroupStatus> Pointer )
 
             return value;
         }

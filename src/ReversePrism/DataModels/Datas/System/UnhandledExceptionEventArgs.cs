@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 _exception                               <object> IL2CPP_TYPE_OBJECT
-    // 018 IsTerminating                            000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 018 IsTerminating                            ModelPrimitiveType bool bool bool Bool
     public partial class UnhandledExceptionEventArgs : DataModel
     {
         public bool                                     IsTerminating                           { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnhandledExceptionEventArgs() { Pointer= p0 };
 
-            value.IsTerminating                             = GetBool(new IntPtr(p + 0x018)); // 024666A7C1E0 0x18 IsTerminating               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsTerminating                             = GetBool(new IntPtr(p + 0x018)); // 0x18 IsTerminating               ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Table                                    0001866195E0 ModelClassType TableMapping TableMapping TableMapping Pointer
-    // 018 Action                                   0001866B7A40 ModelEnumType NotifyTableChangedAction NotifyTableChangedAction NotifyTableChangedAction Int32
+    // 010 Table                                    ModelClassType TableMapping TableMapping TableMapping Pointer
+    // 018 Action                                   ModelEnumType NotifyTableChangedAction NotifyTableChangedAction NotifyTableChangedAction Int32
     public partial class NotifyTableChangedEventArgs : DataModel
     {
         public TableMapping?                            Table                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NotifyTableChangedEventArgs() { Pointer= p0 };
 
-            value.Table                                     = GetObject<TableMapping>(new IntPtr(p + 0x010), ReversePrism.DataModels.TableMapping.FromPointer); // 0245A44AD6C8 0x10 Table                       ( 0001866195E0 ModelClassType TableMapping TableMapping TableMapping Pointer )
-            value.Action                                    = (NotifyTableChangedAction)GetInt32(new IntPtr(p + 0x018)); // 0245A44AD6E8 0x18 Action                      ( 0001866B7A40 ModelEnumType NotifyTableChangedAction NotifyTableChangedAction NotifyTableChangedAction Int32 )
+            value.Table                                     = GetObject<TableMapping>(new IntPtr(p + 0x010), ReversePrism.DataModels.TableMapping.FromPointer); // 0x10 Table                       ( ModelClassType TableMapping TableMapping TableMapping Pointer )
+            value.Action                                    = (NotifyTableChangedAction)GetInt32(new IntPtr(p + 0x018)); // 0x18 Action                      ( ModelEnumType NotifyTableChangedAction NotifyTableChangedAction NotifyTableChangedAction Int32 )
 
             return value;
         }

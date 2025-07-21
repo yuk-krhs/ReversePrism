@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 eventListScheduleScrollPositions         Dictionary`2<int, float> IL2CPP_TYPE_GENERICINST
-    // 018 CurrentSelectedEventTab                  0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 CurrentSelectedEventTab                  ModelPrimitiveType int int int Int32
     // 020 <AllEventScheduleList>k__BackingField    ReadOnlyCollection`1<IEventScheduleStatus> IL2CPP_TYPE_GENERICINST
     // 028 <EventScheduleLists>k__BackingField      IReadOnlyDictionary`2<EventScheduleType, ReadOnlyCollection`1<IEventScheduleStatus>> IL2CPP_TYPE_GENERICINST
     public partial class EventListOverlayModel : DataModel
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EventListOverlayModel() { Pointer= p0 };
 
-            value.CurrentSelectedEventTab                   = GetInt32(new IntPtr(p + 0x018)); // 024666324BA8 0x18 CurrentSelectedEventTab     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CurrentSelectedEventTab                   = GetInt32(new IntPtr(p + 0x018)); // 0x18 CurrentSelectedEventTab     ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

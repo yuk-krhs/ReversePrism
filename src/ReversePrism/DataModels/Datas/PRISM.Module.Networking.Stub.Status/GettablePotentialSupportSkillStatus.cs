@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<GettablePotentialSupportSkillStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 PotentialSupportSkillFieldNumber         int IL2CPP_TYPE_I4
-    // 018 PotentialSupportSkill                    0001866DBF40 ModelClassType InProducePotentialSupportSkillStatus InProducePotentialSupportSkillStatus InProducePotentialSupportSkillStatus Pointer
+    // 018 PotentialSupportSkill                    ModelClassType InProducePotentialSupportSkillStatus InProducePotentialSupportSkillStatus InProducePotentialSupportSkillStatus Pointer
     public partial class GettablePotentialSupportSkillStatus : DataModel
     {
         public InProducePotentialSupportSkillStatus?    PotentialSupportSkill                   { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GettablePotentialSupportSkillStatus() { Pointer= p0 };
 
-            value.PotentialSupportSkill                     = GetObject<InProducePotentialSupportSkillStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.InProducePotentialSupportSkillStatus.FromPointer); // 024661054398 0x18 PotentialSupportSkill       ( 0001866DBF40 ModelClassType InProducePotentialSupportSkillStatus InProducePotentialSupportSkillStatus InProducePotentialSupportSkillStatus Pointer )
+            value.PotentialSupportSkill                     = GetObject<InProducePotentialSupportSkillStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.InProducePotentialSupportSkillStatus.FromPointer); // 0x18 PotentialSupportSkill       ( ModelClassType InProducePotentialSupportSkillStatus InProducePotentialSupportSkillStatus InProducePotentialSupportSkillStatus Pointer )
 
             return value;
         }

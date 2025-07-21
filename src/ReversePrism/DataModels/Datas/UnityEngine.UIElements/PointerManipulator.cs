@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 030 M_CurrentPointerId                       0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 030 M_CurrentPointerId                       ModelPrimitiveType int int int Int32
     public partial class PointerManipulator : DataModel
     {
         public int                                      M_CurrentPointerId                      { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PointerManipulator() { Pointer= p0 };
 
-            value.M_CurrentPointerId                        = GetInt32(new IntPtr(p + 0x030)); // 0245A66A5BF8 0x30 M_CurrentPointerId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_CurrentPointerId                        = GetInt32(new IntPtr(p + 0x030)); // 0x30 M_CurrentPointerId          ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

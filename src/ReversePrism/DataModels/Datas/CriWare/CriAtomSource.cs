@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 0A8 CueName                                  000186671910 ModelPrimitiveType string string string String
-    // 0B0 CueSheet                                 000186671910 ModelPrimitiveType string string string String
+    // 0A8 CueName                                  ModelPrimitiveType string string string String
+    // 0B0 CueSheet                                 ModelPrimitiveType string string string String
     public partial class CriAtomSource : DataModel
     {
         public string                                   CueName                                 { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CriAtomSource() { Pointer= p0 };
 
-            value.CueName                                   = GetString(new IntPtr(p + 0x0A8)); // 0245A421E948 0xA8 CueName                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.CueSheet                                  = GetString(new IntPtr(p + 0x0B0)); // 0245A421E968 0xB0 CueSheet                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.CueName                                   = GetString(new IntPtr(p + 0x0A8)); // 0xA8 CueName                     ( ModelPrimitiveType string string string String )
+            value.CueSheet                                  = GetString(new IntPtr(p + 0x0B0)); // 0xB0 CueSheet                    ( ModelPrimitiveType string string string String )
 
             return value;
         }

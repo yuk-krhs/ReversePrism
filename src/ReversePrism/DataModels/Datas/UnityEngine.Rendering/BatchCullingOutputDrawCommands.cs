@@ -13,10 +13,10 @@ namespace ReversePrism.DataModels
     // 020 drawRanges                               IntPtr IL2CPP_TYPE_PTR
     // 028 instanceSortingPositions                 IntPtr IL2CPP_TYPE_PTR
     // 030 drawCommandPickingInstanceIDs            IntPtr IL2CPP_TYPE_PTR
-    // 038 DrawCommandCount                         0001865F36C0 ModelPrimitiveType int int int Int32
-    // 03C VisibleInstanceCount                     0001865F36C0 ModelPrimitiveType int int int Int32
-    // 040 DrawRangeCount                           0001865F36C0 ModelPrimitiveType int int int Int32
-    // 044 InstanceSortingPositionFloatCount        0001865F36C0 ModelPrimitiveType int int int Int32
+    // 038 DrawCommandCount                         ModelPrimitiveType int int int Int32
+    // 03C VisibleInstanceCount                     ModelPrimitiveType int int int Int32
+    // 040 DrawRangeCount                           ModelPrimitiveType int int int Int32
+    // 044 InstanceSortingPositionFloatCount        ModelPrimitiveType int int int Int32
     public partial class BatchCullingOutputDrawCommands : DataModel
     {
         public int                                      DrawCommandCount                        { get; set; }
@@ -32,10 +32,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BatchCullingOutputDrawCommands() { Pointer= p0 };
 
-            value.DrawCommandCount                          = GetInt32(new IntPtr(p + 0x038)); // 0245A688D430 0x38 DrawCommandCount            ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.VisibleInstanceCount                      = GetInt32(new IntPtr(p + 0x03C)); // 0245A688D450 0x3C VisibleInstanceCount        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.DrawRangeCount                            = GetInt32(new IntPtr(p + 0x040)); // 0245A688D470 0x40 DrawRangeCount              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.InstanceSortingPositionFloatCount         = GetInt32(new IntPtr(p + 0x044)); // 0245A688D490 0x44 InstanceSortingPositionFloatCount ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.DrawCommandCount                          = GetInt32(new IntPtr(p + 0x038)); // 0x38 DrawCommandCount            ( ModelPrimitiveType int int int Int32 )
+            value.VisibleInstanceCount                      = GetInt32(new IntPtr(p + 0x03C)); // 0x3C VisibleInstanceCount        ( ModelPrimitiveType int int int Int32 )
+            value.DrawRangeCount                            = GetInt32(new IntPtr(p + 0x040)); // 0x40 DrawRangeCount              ( ModelPrimitiveType int int int Int32 )
+            value.InstanceSortingPositionFloatCount         = GetInt32(new IntPtr(p + 0x044)); // 0x44 InstanceSortingPositionFloatCount ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

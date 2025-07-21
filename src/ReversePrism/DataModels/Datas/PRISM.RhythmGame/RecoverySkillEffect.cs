@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 RecoveryLife                             0001865F4260 ModelPrimitiveType int int int Int32
+    // 020 RecoveryLife                             ModelPrimitiveType int int int Int32
     public partial class RecoverySkillEffect : DataModel
     {
         public int                                      RecoveryLife                            { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RecoverySkillEffect() { Pointer= p0 };
 
-            value.RecoveryLife                              = GetInt32(new IntPtr(p + 0x020)); // 024665012198 0x20 RecoveryLife                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.RecoveryLife                              = GetInt32(new IntPtr(p + 0x020)); // 0x20 RecoveryLife                ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

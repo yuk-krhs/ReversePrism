@@ -8,14 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 X0                                       000186665900 ModelPrimitiveType float float float Single
-    // 014 Y0                                       000186665900 ModelPrimitiveType float float float Single
-    // 018 X1                                       000186665900 ModelPrimitiveType float float float Single
-    // 01C Y1                                       000186665900 ModelPrimitiveType float float float Single
-    // 020 W                                        000186665900 ModelPrimitiveType float float float Single
-    // 024 OvershootX                               000186665900 ModelPrimitiveType float float float Single
-    // 028 OvershootY                               000186665900 ModelPrimitiveType float float float Single
-    // 02C Gamma                                    000186665900 ModelPrimitiveType float float float Single
+    // 010 X0                                       ModelPrimitiveType float float float Single
+    // 014 Y0                                       ModelPrimitiveType float float float Single
+    // 018 X1                                       ModelPrimitiveType float float float Single
+    // 01C Y1                                       ModelPrimitiveType float float float Single
+    // 020 W                                        ModelPrimitiveType float float float Single
+    // 024 OvershootX                               ModelPrimitiveType float float float Single
+    // 028 OvershootY                               ModelPrimitiveType float float float Single
+    // 02C Gamma                                    ModelPrimitiveType float float float Single
     public partial class DirectParams : DataModel
     {
         public float                                    X0                                      { get; set; }
@@ -35,14 +35,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DirectParams() { Pointer= p0 };
 
-            value.X0                                        = GetSingle(new IntPtr(p + 0x010)); // 02466B4A6120 0x10 X0                          ( 000186665900 ModelPrimitiveType float float float Single )
-            value.Y0                                        = GetSingle(new IntPtr(p + 0x014)); // 02466B4A6140 0x14 Y0                          ( 000186665900 ModelPrimitiveType float float float Single )
-            value.X1                                        = GetSingle(new IntPtr(p + 0x018)); // 02466B4A6160 0x18 X1                          ( 000186665900 ModelPrimitiveType float float float Single )
-            value.Y1                                        = GetSingle(new IntPtr(p + 0x01C)); // 02466B4A6180 0x1C Y1                          ( 000186665900 ModelPrimitiveType float float float Single )
-            value.W                                         = GetSingle(new IntPtr(p + 0x020)); // 02466B4A61A0 0x20 W                           ( 000186665900 ModelPrimitiveType float float float Single )
-            value.OvershootX                                = GetSingle(new IntPtr(p + 0x024)); // 02466B4A61C0 0x24 OvershootX                  ( 000186665900 ModelPrimitiveType float float float Single )
-            value.OvershootY                                = GetSingle(new IntPtr(p + 0x028)); // 02466B4A61E0 0x28 OvershootY                  ( 000186665900 ModelPrimitiveType float float float Single )
-            value.Gamma                                     = GetSingle(new IntPtr(p + 0x02C)); // 02466B4A6200 0x2C Gamma                       ( 000186665900 ModelPrimitiveType float float float Single )
+            value.X0                                        = GetSingle(new IntPtr(p + 0x010)); // 0x10 X0                          ( ModelPrimitiveType float float float Single )
+            value.Y0                                        = GetSingle(new IntPtr(p + 0x014)); // 0x14 Y0                          ( ModelPrimitiveType float float float Single )
+            value.X1                                        = GetSingle(new IntPtr(p + 0x018)); // 0x18 X1                          ( ModelPrimitiveType float float float Single )
+            value.Y1                                        = GetSingle(new IntPtr(p + 0x01C)); // 0x1C Y1                          ( ModelPrimitiveType float float float Single )
+            value.W                                         = GetSingle(new IntPtr(p + 0x020)); // 0x20 W                           ( ModelPrimitiveType float float float Single )
+            value.OvershootX                                = GetSingle(new IntPtr(p + 0x024)); // 0x24 OvershootX                  ( ModelPrimitiveType float float float Single )
+            value.OvershootY                                = GetSingle(new IntPtr(p + 0x028)); // 0x28 OvershootY                  ( ModelPrimitiveType float float float Single )
+            value.Gamma                                     = GetSingle(new IntPtr(p + 0x02C)); // 0x2C Gamma                       ( ModelPrimitiveType float float float Single )
 
             return value;
         }

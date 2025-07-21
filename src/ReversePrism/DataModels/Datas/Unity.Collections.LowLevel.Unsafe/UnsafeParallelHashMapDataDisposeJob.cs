@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Data                                     000186739E10 ModelEnumType UnsafeParallelHashMapDataDispose UnsafeParallelHashMapDataDispose UnsafeParallelHashMapDataDispose Int32
+    // 010 Data                                     ModelEnumType UnsafeParallelHashMapDataDispose UnsafeParallelHashMapDataDispose UnsafeParallelHashMapDataDispose Int32
     public partial class UnsafeParallelHashMapDataDisposeJob : DataModel
     {
         public UnsafeParallelHashMapDataDispose         Data                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnsafeParallelHashMapDataDisposeJob() { Pointer= p0 };
 
-            value.Data                                      = (UnsafeParallelHashMapDataDispose)GetInt32(new IntPtr(p + 0x010)); // 0246608B9D78 0x10 Data                        ( 000186739E10 ModelEnumType UnsafeParallelHashMapDataDispose UnsafeParallelHashMapDataDispose UnsafeParallelHashMapDataDispose Int32 )
+            value.Data                                      = (UnsafeParallelHashMapDataDispose)GetInt32(new IntPtr(p + 0x010)); // 0x10 Data                        ( ModelEnumType UnsafeParallelHashMapDataDispose UnsafeParallelHashMapDataDispose UnsafeParallelHashMapDataDispose Int32 )
 
             return value;
         }

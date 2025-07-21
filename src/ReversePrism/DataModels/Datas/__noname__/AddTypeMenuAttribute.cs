@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 MenuName                                 000186672F10 ModelPrimitiveType string string string String
-    // 018 Order                                    0001865F4260 ModelPrimitiveType int int int Int32
+    // 010 MenuName                                 ModelPrimitiveType string string string String
+    // 018 Order                                    ModelPrimitiveType int int int Int32
     // 000 k_Separeters                             char[] IL2CPP_TYPE_SZARRAY
     public partial class AddTypeMenuAttribute : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AddTypeMenuAttribute() { Pointer= p0 };
 
-            value.MenuName                                  = GetString(new IntPtr(p + 0x010)); // 02466BFBC440 0x10 MenuName                    ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Order                                     = GetInt32(new IntPtr(p + 0x018)); // 02466BFBC460 0x18 Order                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.MenuName                                  = GetString(new IntPtr(p + 0x010)); // 0x10 MenuName                    ( ModelPrimitiveType string string string String )
+            value.Order                                     = GetInt32(new IntPtr(p + 0x018)); // 0x18 Order                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

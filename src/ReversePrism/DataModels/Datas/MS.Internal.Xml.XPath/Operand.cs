@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Type                                     000186580650 ModelEnumType XPathResultType XPathResultType XPathResultType Int32
+    // 010 Type                                     ModelEnumType XPathResultType XPathResultType XPathResultType Int32
     // 018 _val                                     <object> IL2CPP_TYPE_OBJECT
     public partial class Operand : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Operand() { Pointer= p0 };
 
-            value.Type                                      = (XPathResultType)GetInt32(new IntPtr(p + 0x010)); // 024667692A00 0x10 Type                        ( 000186580650 ModelEnumType XPathResultType XPathResultType XPathResultType Int32 )
+            value.Type                                      = (XPathResultType)GetInt32(new IntPtr(p + 0x010)); // 0x10 Type                        ( ModelEnumType XPathResultType XPathResultType XPathResultType Int32 )
 
             return value;
         }

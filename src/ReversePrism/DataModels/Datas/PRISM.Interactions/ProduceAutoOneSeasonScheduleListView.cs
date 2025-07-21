@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 068 JumpTime                                 0001866656B0 ModelPrimitiveType float float float Single
+    // 058 JumpTime                                 ModelPrimitiveType float float float Single
     public partial class ProduceAutoOneSeasonScheduleListView : DataModel
     {
         public float                                    JumpTime                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceAutoOneSeasonScheduleListView() { Pointer= p0 };
 
-            value.JumpTime                                  = GetSingle(new IntPtr(p + 0x068)); // 02466A122AE0 0x68 JumpTime                    ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.JumpTime                                  = GetSingle(new IntPtr(p + 0x058)); // 0x58 JumpTime                    ( ModelPrimitiveType float float float Single )
 
             return value;
         }

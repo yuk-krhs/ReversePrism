@@ -9,9 +9,9 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 handle                                   <int> IL2CPP_TYPE_I
-    // 018 State                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 01C OwnsHandle                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 01D FullyInitialized                         000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 018 State                                    ModelPrimitiveType int int int Int32
+    // 01C OwnsHandle                               ModelPrimitiveType bool bool bool Bool
+    // 01D FullyInitialized                         ModelPrimitiveType bool bool bool Bool
     // 000 RefCount_Mask                            int IL2CPP_TYPE_I4
     // 000 RefCount_One                             int IL2CPP_TYPE_I4
     public partial class SafeHandle : DataModel
@@ -28,9 +28,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SafeHandle() { Pointer= p0 };
 
-            value.State                                     = GetInt32(new IntPtr(p + 0x018)); // 0245A3D00A80 0x18 State                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.OwnsHandle                                = GetBool(new IntPtr(p + 0x01C)); // 0245A3D00AA0 0x1C OwnsHandle                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.FullyInitialized                          = GetBool(new IntPtr(p + 0x01D)); // 0245A3D00AC0 0x1D FullyInitialized            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.State                                     = GetInt32(new IntPtr(p + 0x018)); // 0x18 State                       ( ModelPrimitiveType int int int Int32 )
+            value.OwnsHandle                                = GetBool(new IntPtr(p + 0x01C)); // 0x1C OwnsHandle                  ( ModelPrimitiveType bool bool bool Bool )
+            value.FullyInitialized                          = GetBool(new IntPtr(p + 0x01D)); // 0x1D FullyInitialized            ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

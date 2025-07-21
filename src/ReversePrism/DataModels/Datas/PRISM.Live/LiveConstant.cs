@@ -9,8 +9,12 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 UnitMaxIdolCount                         int IL2CPP_TYPE_I4
+    // 000 UnitSummerMaxIdolCount                   int IL2CPP_TYPE_I4
+    // 000 SummerUnitSortArray                      int[] IL2CPP_TYPE_SZARRAY
     // 000 BaseLBMaxUsage                           int IL2CPP_TYPE_I4
     // 000 UseOtherCharacterCostumeUnitNumber       int IL2CPP_TYPE_I4
+    // 000 SummerUnitBaseNumber                     int IL2CPP_TYPE_I4
+    // 000 TotalTechnicalRateRewardIdForShinyEnable int IL2CPP_TYPE_I4
     public partial class LiveConstant : DataModel
     {
 

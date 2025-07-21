@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Type                                     000186711AA0 ModelEnumType DynamicResScalePolicyType DynamicResScalePolicyType DynamicResScalePolicyType Int32
-    // 018 Method                                   00018672FFC0 ModelClassType PerformDynamicRes PerformDynamicRes PerformDynamicRes Pointer
+    // 010 Type                                     ModelEnumType DynamicResScalePolicyType DynamicResScalePolicyType DynamicResScalePolicyType Int32
+    // 018 Method                                   ModelClassType PerformDynamicRes PerformDynamicRes PerformDynamicRes Pointer
     public partial class ScalerContainer : DataModel
     {
         public DynamicResScalePolicyType                Type                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ScalerContainer() { Pointer= p0 };
 
-            value.Type                                      = (DynamicResScalePolicyType)GetInt32(new IntPtr(p + 0x010)); // 0245A3FCB9D0 0x10 Type                        ( 000186711AA0 ModelEnumType DynamicResScalePolicyType DynamicResScalePolicyType DynamicResScalePolicyType Int32 )
-            value.Method                                    = GetObject<PerformDynamicRes>(new IntPtr(p + 0x018), ReversePrism.DataModels.PerformDynamicRes.FromPointer); // 0245A3FCB9F0 0x18 Method                      ( 00018672FFC0 ModelClassType PerformDynamicRes PerformDynamicRes PerformDynamicRes Pointer )
+            value.Type                                      = (DynamicResScalePolicyType)GetInt32(new IntPtr(p + 0x010)); // 0x10 Type                        ( ModelEnumType DynamicResScalePolicyType DynamicResScalePolicyType DynamicResScalePolicyType Int32 )
+            value.Method                                    = GetObject<PerformDynamicRes>(new IntPtr(p + 0x018), ReversePrism.DataModels.PerformDynamicRes.FromPointer); // 0x18 Method                      ( ModelClassType PerformDynamicRes PerformDynamicRes PerformDynamicRes Pointer )
 
             return value;
         }

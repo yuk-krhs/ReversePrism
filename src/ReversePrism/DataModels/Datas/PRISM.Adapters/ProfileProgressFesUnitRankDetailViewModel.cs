@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Status                                   00018668E5C0 ModelClassType IUserProfileFesUnitRankStatus IUserProfileFesUnitRankStatus IUserProfileFesUnitRankStatus Pointer
-    // 018 Rank                                     00018660DDC0 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32
-    // 020 Title                                    000186672F10 ModelPrimitiveType string string string String
+    // 010 Status                                   ModelClassType IUserProfileFesUnitRankStatus IUserProfileFesUnitRankStatus IUserProfileFesUnitRankStatus Pointer
+    // 018 Rank                                     ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32
+    // 020 Title                                    ModelPrimitiveType string string string String
     public partial class ProfileProgressFesUnitRankDetailViewModel : DataModel
     {
         public IUserProfileFesUnitRankStatus?           Status                                  { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProfileProgressFesUnitRankDetailViewModel() { Pointer= p0 };
 
-            value.Status                                    = GetObject<IUserProfileFesUnitRankStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IUserProfileFesUnitRankStatus.FromPointer); // 024666705A60 0x10 Status                      ( 00018668E5C0 ModelClassType IUserProfileFesUnitRankStatus IUserProfileFesUnitRankStatus IUserProfileFesUnitRankStatus Pointer )
-            value.Rank                                      = (ProduceParameterRank)GetInt32(new IntPtr(p + 0x018)); // 024666705A80 0x18 Rank                        ( 00018660DDC0 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32 )
-            value.Title                                     = GetString(new IntPtr(p + 0x020)); // 024666705AA0 0x20 Title                       ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Status                                    = GetObject<IUserProfileFesUnitRankStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IUserProfileFesUnitRankStatus.FromPointer); // 0x10 Status                      ( ModelClassType IUserProfileFesUnitRankStatus IUserProfileFesUnitRankStatus IUserProfileFesUnitRankStatus Pointer )
+            value.Rank                                      = (ProduceParameterRank)GetInt32(new IntPtr(p + 0x018)); // 0x18 Rank                        ( ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32 )
+            value.Title                                     = GetString(new IntPtr(p + 0x020)); // 0x20 Title                       ( ModelPrimitiveType string string string String )
 
             return value;
         }

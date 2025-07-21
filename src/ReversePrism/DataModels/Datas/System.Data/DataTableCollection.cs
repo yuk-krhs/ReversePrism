@@ -8,14 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 DataSet                                  000186680C90 ModelClassType DataSet DataSet DataSet Pointer
-    // 018 List                                     00018658A840 ModelClassType ArrayList ArrayList ArrayList Pointer
-    // 020 DefaultNameIndex                         0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 028 DelayedAddRangeTables                    000185B79420 ModelClassListType DataTable[] DataTable[] List<DataTable> Pointer
-    // 030 OnCollectionChangedDelegate              0001865C4430 ModelClassType CollectionChangeEventHandler CollectionChangeEventHandler CollectionChangeEventHandler Pointer
-    // 038 OnCollectionChangingDelegate             0001865C4430 ModelClassType CollectionChangeEventHandler CollectionChangeEventHandler CollectionChangeEventHandler Pointer
+    // 010 DataSet                                  ModelClassType DataSet DataSet DataSet Pointer
+    // 018 List                                     ModelClassType ArrayList ArrayList ArrayList Pointer
+    // 020 DefaultNameIndex                         ModelPrimitiveType int int int Int32
+    // 028 DelayedAddRangeTables                    ModelClassListType DataTable[] DataTable[] List<DataTable> Pointer
+    // 030 OnCollectionChangedDelegate              ModelClassType CollectionChangeEventHandler CollectionChangeEventHandler CollectionChangeEventHandler Pointer
+    // 038 OnCollectionChangingDelegate             ModelClassType CollectionChangeEventHandler CollectionChangeEventHandler CollectionChangeEventHandler Pointer
     // 000 s_objectTypeCount                        int IL2CPP_TYPE_I4
-    // 040 ObjectID                                 0001865F4260 ModelPrimitiveType int int int Int32
+    // 040 ObjectID                                 ModelPrimitiveType int int int Int32
     public partial class DataTableCollection : DataModel
     {
         public DataSet?                                 DataSet                                 { get; set; }
@@ -34,13 +34,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DataTableCollection() { Pointer= p0 };
 
-            value.DataSet                                   = GetObject<DataSet>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataSet.FromPointer); // 02466893FF08 0x10 DataSet                     ( 000186680C90 ModelClassType DataSet DataSet DataSet Pointer )
-            value.List                                      = GetObject<ArrayList>(new IntPtr(p + 0x018), ReversePrism.DataModels.ArrayList.FromPointer); // 02466893FF28 0x18 List                        ( 00018658A840 ModelClassType ArrayList ArrayList ArrayList Pointer )
-            value.DefaultNameIndex                          = GetInt32(new IntPtr(p + 0x020)); // 02466893FF48 0x20 DefaultNameIndex            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.DelayedAddRangeTables                     = GetObjectList<DataTable>(new IntPtr(p + 0x028), ReversePrism.DataModels.DataTable.FromPointer); // 02466893FF68 0x28 DelayedAddRangeTables       ( 000185B79420 ModelClassListType DataTable[] DataTable[] List<DataTable> Pointer )
-            value.OnCollectionChangedDelegate               = GetObject<CollectionChangeEventHandler>(new IntPtr(p + 0x030), ReversePrism.DataModels.CollectionChangeEventHandler.FromPointer); // 02466893FF88 0x30 OnCollectionChangedDelegate ( 0001865C4430 ModelClassType CollectionChangeEventHandler CollectionChangeEventHandler CollectionChangeEventHandler Pointer )
-            value.OnCollectionChangingDelegate              = GetObject<CollectionChangeEventHandler>(new IntPtr(p + 0x038), ReversePrism.DataModels.CollectionChangeEventHandler.FromPointer); // 02466893FFA8 0x38 OnCollectionChangingDelegate ( 0001865C4430 ModelClassType CollectionChangeEventHandler CollectionChangeEventHandler CollectionChangeEventHandler Pointer )
-            value.ObjectID                                  = GetInt32(new IntPtr(p + 0x040)); // 02466893FFE8 0x40 ObjectID                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.DataSet                                   = GetObject<DataSet>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataSet.FromPointer); // 0x10 DataSet                     ( ModelClassType DataSet DataSet DataSet Pointer )
+            value.List                                      = GetObject<ArrayList>(new IntPtr(p + 0x018), ReversePrism.DataModels.ArrayList.FromPointer); // 0x18 List                        ( ModelClassType ArrayList ArrayList ArrayList Pointer )
+            value.DefaultNameIndex                          = GetInt32(new IntPtr(p + 0x020)); // 0x20 DefaultNameIndex            ( ModelPrimitiveType int int int Int32 )
+            value.DelayedAddRangeTables                     = GetObjectList<DataTable>(new IntPtr(p + 0x028), ReversePrism.DataModels.DataTable.FromPointer); // 0x28 DelayedAddRangeTables       ( ModelClassListType DataTable[] DataTable[] List<DataTable> Pointer )
+            value.OnCollectionChangedDelegate               = GetObject<CollectionChangeEventHandler>(new IntPtr(p + 0x030), ReversePrism.DataModels.CollectionChangeEventHandler.FromPointer); // 0x30 OnCollectionChangedDelegate ( ModelClassType CollectionChangeEventHandler CollectionChangeEventHandler CollectionChangeEventHandler Pointer )
+            value.OnCollectionChangingDelegate              = GetObject<CollectionChangeEventHandler>(new IntPtr(p + 0x038), ReversePrism.DataModels.CollectionChangeEventHandler.FromPointer); // 0x38 OnCollectionChangingDelegate ( ModelClassType CollectionChangeEventHandler CollectionChangeEventHandler CollectionChangeEventHandler Pointer )
+            value.ObjectID                                  = GetInt32(new IntPtr(p + 0x040)); // 0x40 ObjectID                    ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

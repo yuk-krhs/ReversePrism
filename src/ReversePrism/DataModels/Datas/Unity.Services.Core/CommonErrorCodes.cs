@@ -22,6 +22,7 @@ namespace ReversePrism.DataModels
     // 000 InvalidRequest                           int IL2CPP_TYPE_I4
     // 000 ProjectPolicyAccessDenied                int IL2CPP_TYPE_I4
     // 000 PlayerPolicyAccessDenied                 int IL2CPP_TYPE_I4
+    // 000 Conflict                                 int IL2CPP_TYPE_I4
     public partial class CommonErrorCodes : DataModel
     {
 

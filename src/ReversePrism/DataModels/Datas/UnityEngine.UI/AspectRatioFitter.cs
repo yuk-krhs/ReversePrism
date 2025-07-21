@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 M_AspectMode                             0001866BC140 ModelEnumType AspectMode AspectMode AspectMode Int32
-    // 024 M_AspectRatio                            0001866656B0 ModelPrimitiveType float float float Single
-    // 028 M_Rect                                   000186630DC0 ModelClassType RectTransform RectTransform RectTransform Pointer
-    // 030 M_DelayedSetDirty                        000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 031 M_DoesParentExist                        000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 032 M_Tracker                                000186705B80 ModelEnumType DrivenRectTransformTracker DrivenRectTransformTracker DrivenRectTransformTracker Int32
+    // 020 M_AspectMode                             ModelEnumType AspectMode AspectMode AspectMode Int32
+    // 024 M_AspectRatio                            ModelPrimitiveType float float float Single
+    // 028 M_Rect                                   ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 030 M_DelayedSetDirty                        ModelPrimitiveType bool bool bool Bool
+    // 031 M_DoesParentExist                        ModelPrimitiveType bool bool bool Bool
+    // 032 M_Tracker                                ModelEnumType DrivenRectTransformTracker DrivenRectTransformTracker DrivenRectTransformTracker Int32
     public partial class AspectRatioFitter : DataModel
     {
         public AspectMode                               M_AspectMode                            { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AspectRatioFitter() { Pointer= p0 };
 
-            value.M_AspectMode                              = (AspectMode)GetInt32(new IntPtr(p + 0x020)); // 0245A4400D80 0x20 M_AspectMode                ( 0001866BC140 ModelEnumType AspectMode AspectMode AspectMode Int32 )
-            value.M_AspectRatio                             = GetSingle(new IntPtr(p + 0x024)); // 0245A4400DA0 0x24 M_AspectRatio               ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_Rect                                    = GetObject<RectTransform>(new IntPtr(p + 0x028), ReversePrism.DataModels.RectTransform.FromPointer); // 0245A4400DC0 0x28 M_Rect                      ( 000186630DC0 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.M_DelayedSetDirty                         = GetBool(new IntPtr(p + 0x030)); // 0245A4400DE0 0x30 M_DelayedSetDirty           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_DoesParentExist                         = GetBool(new IntPtr(p + 0x031)); // 0245A4400E00 0x31 M_DoesParentExist           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_Tracker                                 = (DrivenRectTransformTracker)GetInt32(new IntPtr(p + 0x032)); // 0245A4400E20 0x32 M_Tracker                   ( 000186705B80 ModelEnumType DrivenRectTransformTracker DrivenRectTransformTracker DrivenRectTransformTracker Int32 )
+            value.M_AspectMode                              = (AspectMode)GetInt32(new IntPtr(p + 0x020)); // 0x20 M_AspectMode                ( ModelEnumType AspectMode AspectMode AspectMode Int32 )
+            value.M_AspectRatio                             = GetSingle(new IntPtr(p + 0x024)); // 0x24 M_AspectRatio               ( ModelPrimitiveType float float float Single )
+            value.M_Rect                                    = GetObject<RectTransform>(new IntPtr(p + 0x028), ReversePrism.DataModels.RectTransform.FromPointer); // 0x28 M_Rect                      ( ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.M_DelayedSetDirty                         = GetBool(new IntPtr(p + 0x030)); // 0x30 M_DelayedSetDirty           ( ModelPrimitiveType bool bool bool Bool )
+            value.M_DoesParentExist                         = GetBool(new IntPtr(p + 0x031)); // 0x31 M_DoesParentExist           ( ModelPrimitiveType bool bool bool Bool )
+            value.M_Tracker                                 = (DrivenRectTransformTracker)GetInt32(new IntPtr(p + 0x032)); // 0x32 M_Tracker                   ( ModelEnumType DrivenRectTransformTracker DrivenRectTransformTracker DrivenRectTransformTracker Int32 )
 
             return value;
         }

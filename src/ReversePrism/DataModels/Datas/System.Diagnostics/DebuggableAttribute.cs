@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_debuggingModes                         00018658DC50 ModelEnumType DebuggingModes DebuggingModes DebuggingModes Int32
+    // 010 M_debuggingModes                         ModelEnumType DebuggingModes DebuggingModes DebuggingModes Int32
     public partial class DebuggableAttribute : DataModel
     {
         public DebuggingModes                           M_debuggingModes                        { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DebuggableAttribute() { Pointer= p0 };
 
-            value.M_debuggingModes                          = (DebuggingModes)GetInt32(new IntPtr(p + 0x010)); // 024666D92720 0x10 M_debuggingModes            ( 00018658DC50 ModelEnumType DebuggingModes DebuggingModes DebuggingModes Int32 )
+            value.M_debuggingModes                          = (DebuggingModes)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_debuggingModes            ( ModelEnumType DebuggingModes DebuggingModes DebuggingModes Int32 )
 
             return value;
         }

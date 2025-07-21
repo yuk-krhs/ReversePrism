@@ -8,30 +8,31 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 0A8 CanvasGroup                              000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
-    // 0B0 LayoutGroup                              00018650CD20 ModelClassType LayoutGroup LayoutGroup LayoutGroup Pointer
-    // 0B8 PurchaseProductAmountPanel               0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 0C0 PurchaseProductAmountText                0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 0C8 PurchaseProductIcon                      00018667EAE0 ModelClassType RewardItem RewardItem RewardItem Pointer
-    // 0D0 FilterState                              0001866E1930 ModelClassType UIButtonGroupUnit UIButtonGroupUnit UIButtonGroupUnit Pointer
-    // 0D8 FilterButton                             0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 0E0 EmptyResultText                          0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 0E8 Scroller                                 0001866FAE60 ModelClassType Scroller Scroller Scroller Pointer
-    // 0F0 HorizontalTabGroup                       0001866F5B90 ModelClassType UITabGroupEx UITabGroupEx UITabGroupEx Pointer
-    // 0F8 curAllItems                              IList`1<ExchangeGoodsClientModel> IL2CPP_TYPE_GENERICINST
-    // 100 appliedFilterItems                       IList`1<ExchangeGoodsClientModel> IL2CPP_TYPE_GENERICINST
-    // 108 curSortFilterModel                       SortFilterModel`1<ExchangeGoodsClientModel> IL2CPP_TYPE_GENERICINST
-    // 110 ItemSortFilterModel                      00018650DAF0 ModelClassType ExchangeItemSortFilterModel ExchangeItemSortFilterModel ExchangeItemSortFilterModel Pointer
-    // 118 PieceSortIdolFilterModel                 000186510C10 ModelClassType ExchangePieceSortFilterModel ExchangePieceSortFilterModel ExchangePieceSortFilterModel Pointer
-    // 120 StarFragmentFilterDataSortFilterModel    00018650DAF0 ModelClassType ExchangeItemSortFilterModel ExchangeItemSortFilterModel ExchangeItemSortFilterModel Pointer
-    // 128 SeasonMedalFilterDataSortFilterModel     00018650DAF0 ModelClassType ExchangeItemSortFilterModel ExchangeItemSortFilterModel ExchangeItemSortFilterModel Pointer
-    // 130 NoneDataSortFilterModel                  00018650DAF0 ModelClassType ExchangeItemSortFilterModel ExchangeItemSortFilterModel ExchangeItemSortFilterModel Pointer
-    // 138 ItemFilterPopupContentBase               000186761A40 ModelClassType PopupContentBase PopupContentBase PopupContentBase Pointer
-    // 140 PieceFilterPopupContentBase              000186761A40 ModelClassType PopupContentBase PopupContentBase PopupContentBase Pointer
-    // 148 ConfirmationPopupContentBase             000186761A40 ModelClassType PopupContentBase PopupContentBase PopupContentBase Pointer
-    // 150 onExchangeCompletedSubject               Subject`1<ValueTuple`2<ExchangeGoodsClientModel, IPurchaseExchangeProductReply>> IL2CPP_TYPE_GENERICINST
-    // 158 onGoToOtherViewSubject                   Subject`1<ValueTuple`3<ButtonGoToType, ExchangeGoodsClientModel, IPurchaseExchangeProductReply>> IL2CPP_TYPE_GENERICINST
-    // 160 onSelectGoodsSubject                     Subject`1<ExchangeGoodsClientModel> IL2CPP_TYPE_GENERICINST
+    // 0A8 CanvasGroup                              ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
+    // 0B0 LayoutGroup                              ModelClassType LayoutGroup LayoutGroup LayoutGroup Pointer
+    // 0B8 PurchaseProductAmountPanel               ModelClassType GameObject GameObject GameObject Pointer
+    // 0C0 PurchaseProductAmountText                ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 0C8 PurchaseProductIcon                      ModelClassType RewardItem RewardItem RewardItem Pointer
+    // 0D0 FilterState                              ModelClassType UIButtonGroupUnit UIButtonGroupUnit UIButtonGroupUnit Pointer
+    // 0D8 FilterButton                             ModelClassType UIButton UIButton UIButton Pointer
+    // 0E0 EmptyResultText                          ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 0E8 Scroller                                 ModelClassType Scroller Scroller Scroller Pointer
+    // 0F0 HorizontalTabGroup                       ModelClassType UITabGroupEx UITabGroupEx UITabGroupEx Pointer
+    // 0F8 ItemFilterPopupContentBase               ModelClassType ExchangeItemFilterPopupContent ExchangeItemFilterPopupContent ExchangeItemFilterPopupContent Pointer
+    // 100 PieceFilterPopupContentBase              ModelClassType ExchangePieceFilterPopupContent ExchangePieceFilterPopupContent ExchangePieceFilterPopupContent Pointer
+    // 108 ConfirmationPopupContentBase             ModelClassType ExchangeConfirmationPopupContent ExchangeConfirmationPopupContent ExchangeConfirmationPopupContent Pointer
+    // 110 curAllItems                              IList`1<ExchangeGoodsClientModel> IL2CPP_TYPE_GENERICINST
+    // 118 appliedFilterItems                       IList`1<ExchangeGoodsClientModel> IL2CPP_TYPE_GENERICINST
+    // 120 curSortFilterModel                       SortFilterModel`1<ExchangeGoodsClientModel> IL2CPP_TYPE_GENERICINST
+    // 128 ItemSortFilterModel                      ModelClassType ExchangeItemSortFilterModel ExchangeItemSortFilterModel ExchangeItemSortFilterModel Pointer
+    // 130 PieceSortIdolFilterModel                 ModelClassType ExchangePieceSortFilterModel ExchangePieceSortFilterModel ExchangePieceSortFilterModel Pointer
+    // 138 StarFragmentFilterDataSortFilterModel    ModelClassType ExchangeItemSortFilterModel ExchangeItemSortFilterModel ExchangeItemSortFilterModel Pointer
+    // 140 SeasonMedalFilterDataSortFilterModel     ModelClassType ExchangeItemSortFilterModel ExchangeItemSortFilterModel ExchangeItemSortFilterModel Pointer
+    // 148 NoneDataSortFilterModel                  ModelClassType ExchangeItemSortFilterModel ExchangeItemSortFilterModel ExchangeItemSortFilterModel Pointer
+    // 150 IsSkipScrollResetOnNextUpdate            ModelPrimitiveType bool bool bool Bool
+    // 158 onExchangeCompletedSubject               Subject`1<ValueTuple`2<ExchangeGoodsClientModel, IPurchaseExchangeProductReply>> IL2CPP_TYPE_GENERICINST
+    // 160 onGoToOtherViewSubject                   Subject`1<ValueTuple`3<ButtonGoToType, ExchangeGoodsClientModel, IPurchaseExchangeProductReply>> IL2CPP_TYPE_GENERICINST
+    // 168 onSelectGoodsSubject                     Subject`1<ExchangeGoodsClientModel> IL2CPP_TYPE_GENERICINST
     public partial class ExchangeGoodsGridView : DataModel
     {
         public CanvasGroup?                             CanvasGroup                             { get; set; }
@@ -44,14 +45,15 @@ namespace ReversePrism.DataModels
         public UITextMeshProUGUI?                       EmptyResultText                         { get; set; }
         public Scroller?                                Scroller                                { get; set; }
         public UITabGroupEx?                            HorizontalTabGroup                      { get; set; }
+        public ExchangeItemFilterPopupContent?          ItemFilterPopupContentBase              { get; set; }
+        public ExchangePieceFilterPopupContent?         PieceFilterPopupContentBase             { get; set; }
+        public ExchangeConfirmationPopupContent?        ConfirmationPopupContentBase            { get; set; }
         public ExchangeItemSortFilterModel?             ItemSortFilterModel                     { get; set; }
         public ExchangePieceSortFilterModel?            PieceSortIdolFilterModel                { get; set; }
         public ExchangeItemSortFilterModel?             StarFragmentFilterDataSortFilterModel   { get; set; }
         public ExchangeItemSortFilterModel?             SeasonMedalFilterDataSortFilterModel    { get; set; }
         public ExchangeItemSortFilterModel?             NoneDataSortFilterModel                 { get; set; }
-        public PopupContentBase?                        ItemFilterPopupContentBase              { get; set; }
-        public PopupContentBase?                        PieceFilterPopupContentBase             { get; set; }
-        public PopupContentBase?                        ConfirmationPopupContentBase            { get; set; }
+        public bool                                     IsSkipScrollResetOnNextUpdate           { get; set; }
 
         public static ExchangeGoodsGridView? FromPointer(IntPtr p0)
         {
@@ -61,24 +63,25 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExchangeGoodsGridView() { Pointer= p0 };
 
-            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466552FB48 0xA8 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.LayoutGroup                               = GetObject<LayoutGroup>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.LayoutGroup.FromPointer); // 02466552FB68 0xB0 LayoutGroup                 ( 00018650CD20 ModelClassType LayoutGroup LayoutGroup LayoutGroup Pointer )
-            value.PurchaseProductAmountPanel                = GetObject<GameObject>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.GameObject.FromPointer); // 02466552FB88 0xB8 PurchaseProductAmountPanel  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.PurchaseProductAmountText                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466552FBA8 0xC0 PurchaseProductAmountText   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.PurchaseProductIcon                       = GetObject<RewardItem>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.RewardItem.FromPointer); // 02466552FBC8 0xC8 PurchaseProductIcon         ( 00018667EAE0 ModelClassType RewardItem RewardItem RewardItem Pointer )
-            value.FilterState                               = GetObject<UIButtonGroupUnit>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.UIButtonGroupUnit.FromPointer); // 02466552FBE8 0xD0 FilterState                 ( 0001866E1930 ModelClassType UIButtonGroupUnit UIButtonGroupUnit UIButtonGroupUnit Pointer )
-            value.FilterButton                              = GetObject<UIButton>(new IntPtr(p + 0x0D8), ReversePrism.DataModels.UIButton.FromPointer); // 02466552FC08 0xD8 FilterButton                ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.EmptyResultText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x0E0), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466552FC28 0xE0 EmptyResultText             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.Scroller                                  = GetObject<Scroller>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.Scroller.FromPointer); // 02466552FC48 0xE8 Scroller                    ( 0001866FAE60 ModelClassType Scroller Scroller Scroller Pointer )
-            value.HorizontalTabGroup                        = GetObject<UITabGroupEx>(new IntPtr(p + 0x0F0), ReversePrism.DataModels.UITabGroupEx.FromPointer); // 02466552FC68 0xF0 HorizontalTabGroup          ( 0001866F5B90 ModelClassType UITabGroupEx UITabGroupEx UITabGroupEx Pointer )
-            value.ItemSortFilterModel                       = GetObject<ExchangeItemSortFilterModel>(new IntPtr(p + 0x110), ReversePrism.DataModels.ExchangeItemSortFilterModel.FromPointer); // 02466552FCE8 0x110 ItemSortFilterModel         ( 00018650DAF0 ModelClassType ExchangeItemSortFilterModel ExchangeItemSortFilterModel ExchangeItemSortFilterModel Pointer )
-            value.PieceSortIdolFilterModel                  = GetObject<ExchangePieceSortFilterModel>(new IntPtr(p + 0x118), ReversePrism.DataModels.ExchangePieceSortFilterModel.FromPointer); // 02466552FD08 0x118 PieceSortIdolFilterModel    ( 000186510C10 ModelClassType ExchangePieceSortFilterModel ExchangePieceSortFilterModel ExchangePieceSortFilterModel Pointer )
-            value.StarFragmentFilterDataSortFilterModel     = GetObject<ExchangeItemSortFilterModel>(new IntPtr(p + 0x120), ReversePrism.DataModels.ExchangeItemSortFilterModel.FromPointer); // 02466552FD28 0x120 StarFragmentFilterDataSortFilterModel ( 00018650DAF0 ModelClassType ExchangeItemSortFilterModel ExchangeItemSortFilterModel ExchangeItemSortFilterModel Pointer )
-            value.SeasonMedalFilterDataSortFilterModel      = GetObject<ExchangeItemSortFilterModel>(new IntPtr(p + 0x128), ReversePrism.DataModels.ExchangeItemSortFilterModel.FromPointer); // 02466552FD48 0x128 SeasonMedalFilterDataSortFilterModel ( 00018650DAF0 ModelClassType ExchangeItemSortFilterModel ExchangeItemSortFilterModel ExchangeItemSortFilterModel Pointer )
-            value.NoneDataSortFilterModel                   = GetObject<ExchangeItemSortFilterModel>(new IntPtr(p + 0x130), ReversePrism.DataModels.ExchangeItemSortFilterModel.FromPointer); // 02466552FD68 0x130 NoneDataSortFilterModel     ( 00018650DAF0 ModelClassType ExchangeItemSortFilterModel ExchangeItemSortFilterModel ExchangeItemSortFilterModel Pointer )
-            value.ItemFilterPopupContentBase                = GetObject<PopupContentBase>(new IntPtr(p + 0x138), ReversePrism.DataModels.PopupContentBase.FromPointer); // 02466552FD88 0x138 ItemFilterPopupContentBase  ( 000186761A40 ModelClassType PopupContentBase PopupContentBase PopupContentBase Pointer )
-            value.PieceFilterPopupContentBase               = GetObject<PopupContentBase>(new IntPtr(p + 0x140), ReversePrism.DataModels.PopupContentBase.FromPointer); // 02466552FDA8 0x140 PieceFilterPopupContentBase ( 000186761A40 ModelClassType PopupContentBase PopupContentBase PopupContentBase Pointer )
-            value.ConfirmationPopupContentBase              = GetObject<PopupContentBase>(new IntPtr(p + 0x148), ReversePrism.DataModels.PopupContentBase.FromPointer); // 02466552FDC8 0x148 ConfirmationPopupContentBase ( 000186761A40 ModelClassType PopupContentBase PopupContentBase PopupContentBase Pointer )
+            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0xA8 CanvasGroup                 ( ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.LayoutGroup                               = GetObject<LayoutGroup>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.LayoutGroup.FromPointer); // 0xB0 LayoutGroup                 ( ModelClassType LayoutGroup LayoutGroup LayoutGroup Pointer )
+            value.PurchaseProductAmountPanel                = GetObject<GameObject>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.GameObject.FromPointer); // 0xB8 PurchaseProductAmountPanel  ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.PurchaseProductAmountText                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0xC0 PurchaseProductAmountText   ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.PurchaseProductIcon                       = GetObject<RewardItem>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.RewardItem.FromPointer); // 0xC8 PurchaseProductIcon         ( ModelClassType RewardItem RewardItem RewardItem Pointer )
+            value.FilterState                               = GetObject<UIButtonGroupUnit>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.UIButtonGroupUnit.FromPointer); // 0xD0 FilterState                 ( ModelClassType UIButtonGroupUnit UIButtonGroupUnit UIButtonGroupUnit Pointer )
+            value.FilterButton                              = GetObject<UIButton>(new IntPtr(p + 0x0D8), ReversePrism.DataModels.UIButton.FromPointer); // 0xD8 FilterButton                ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.EmptyResultText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x0E0), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0xE0 EmptyResultText             ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Scroller                                  = GetObject<Scroller>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.Scroller.FromPointer); // 0xE8 Scroller                    ( ModelClassType Scroller Scroller Scroller Pointer )
+            value.HorizontalTabGroup                        = GetObject<UITabGroupEx>(new IntPtr(p + 0x0F0), ReversePrism.DataModels.UITabGroupEx.FromPointer); // 0xF0 HorizontalTabGroup          ( ModelClassType UITabGroupEx UITabGroupEx UITabGroupEx Pointer )
+            value.ItemFilterPopupContentBase                = GetObject<ExchangeItemFilterPopupContent>(new IntPtr(p + 0x0F8), ReversePrism.DataModels.ExchangeItemFilterPopupContent.FromPointer); // 0xF8 ItemFilterPopupContentBase  ( ModelClassType ExchangeItemFilterPopupContent ExchangeItemFilterPopupContent ExchangeItemFilterPopupContent Pointer )
+            value.PieceFilterPopupContentBase               = GetObject<ExchangePieceFilterPopupContent>(new IntPtr(p + 0x100), ReversePrism.DataModels.ExchangePieceFilterPopupContent.FromPointer); // 0x100 PieceFilterPopupContentBase ( ModelClassType ExchangePieceFilterPopupContent ExchangePieceFilterPopupContent ExchangePieceFilterPopupContent Pointer )
+            value.ConfirmationPopupContentBase              = GetObject<ExchangeConfirmationPopupContent>(new IntPtr(p + 0x108), ReversePrism.DataModels.ExchangeConfirmationPopupContent.FromPointer); // 0x108 ConfirmationPopupContentBase ( ModelClassType ExchangeConfirmationPopupContent ExchangeConfirmationPopupContent ExchangeConfirmationPopupContent Pointer )
+            value.ItemSortFilterModel                       = GetObject<ExchangeItemSortFilterModel>(new IntPtr(p + 0x128), ReversePrism.DataModels.ExchangeItemSortFilterModel.FromPointer); // 0x128 ItemSortFilterModel         ( ModelClassType ExchangeItemSortFilterModel ExchangeItemSortFilterModel ExchangeItemSortFilterModel Pointer )
+            value.PieceSortIdolFilterModel                  = GetObject<ExchangePieceSortFilterModel>(new IntPtr(p + 0x130), ReversePrism.DataModels.ExchangePieceSortFilterModel.FromPointer); // 0x130 PieceSortIdolFilterModel    ( ModelClassType ExchangePieceSortFilterModel ExchangePieceSortFilterModel ExchangePieceSortFilterModel Pointer )
+            value.StarFragmentFilterDataSortFilterModel     = GetObject<ExchangeItemSortFilterModel>(new IntPtr(p + 0x138), ReversePrism.DataModels.ExchangeItemSortFilterModel.FromPointer); // 0x138 StarFragmentFilterDataSortFilterModel ( ModelClassType ExchangeItemSortFilterModel ExchangeItemSortFilterModel ExchangeItemSortFilterModel Pointer )
+            value.SeasonMedalFilterDataSortFilterModel      = GetObject<ExchangeItemSortFilterModel>(new IntPtr(p + 0x140), ReversePrism.DataModels.ExchangeItemSortFilterModel.FromPointer); // 0x140 SeasonMedalFilterDataSortFilterModel ( ModelClassType ExchangeItemSortFilterModel ExchangeItemSortFilterModel ExchangeItemSortFilterModel Pointer )
+            value.NoneDataSortFilterModel                   = GetObject<ExchangeItemSortFilterModel>(new IntPtr(p + 0x148), ReversePrism.DataModels.ExchangeItemSortFilterModel.FromPointer); // 0x148 NoneDataSortFilterModel     ( ModelClassType ExchangeItemSortFilterModel ExchangeItemSortFilterModel ExchangeItemSortFilterModel Pointer )
+            value.IsSkipScrollResetOnNextUpdate             = GetBool(new IntPtr(p + 0x150)); // 0x150 IsSkipScrollResetOnNextUpdate ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

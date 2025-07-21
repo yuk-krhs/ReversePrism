@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Name                                     000186671910 ModelPrimitiveType string string string String
-    // 018 Version                                  000186671910 ModelPrimitiveType string string string String
+    // 010 Name                                     ModelPrimitiveType string string string String
+    // 018 Version                                  ModelPrimitiveType string string string String
     public partial class ProductHeaderValue : DataModel
     {
         public string                                   Name                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProductHeaderValue() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 02466B915530 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Version                                   = GetString(new IntPtr(p + 0x018)); // 02466B915550 0x18 Version                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Name                        ( ModelPrimitiveType string string string String )
+            value.Version                                   = GetString(new IntPtr(p + 0x018)); // 0x18 Version                     ( ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -10,15 +10,15 @@ namespace ReversePrism.DataModels
 
     // 000 _parser                                  MessageParser`1<EnumValueDescriptorProto> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
-    // 018 HasBits0                                 0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 HasBits0                                 ModelPrimitiveType int int int Int32
     // 000 NameFieldNumber                          int IL2CPP_TYPE_I4
     // 008 NameDefaultValue                         string IL2CPP_TYPE_STRING
-    // 020 Name                                     000186671910 ModelPrimitiveType string string string String
+    // 020 Name                                     ModelPrimitiveType string string string String
     // 000 NumberFieldNumber                        int IL2CPP_TYPE_I4
-    // 010 NumberDefaultValue                       0001865F4BC0 ModelPrimitiveType int int int Int32
-    // 028 Number                                   0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 NumberDefaultValue                       ModelPrimitiveType int int int Int32
+    // 028 Number                                   ModelPrimitiveType int int int Int32
     // 000 OptionsFieldNumber                       int IL2CPP_TYPE_I4
-    // 030 Options                                  00018673D500 ModelClassType EnumValueOptions EnumValueOptions EnumValueOptions Pointer
+    // 030 Options                                  ModelClassType EnumValueOptions EnumValueOptions EnumValueOptions Pointer
     public partial class EnumValueDescriptorProto : DataModel
     {
         public int                                      HasBits0                                { get; set; }
@@ -35,11 +35,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EnumValueDescriptorProto() { Pointer= p0 };
 
-            value.HasBits0                                  = GetInt32(new IntPtr(p + 0x018)); // 0245A3B0C280 0x18 HasBits0                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 0245A3B0C2E0 0x20 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.NumberDefaultValue                        = GetInt32(new IntPtr(p + 0x010)); // 0245A3B0C320 0x10 NumberDefaultValue          ( 0001865F4BC0 ModelPrimitiveType int int int Int32 )
-            value.Number                                    = GetInt32(new IntPtr(p + 0x028)); // 0245A3B0C340 0x28 Number                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Options                                   = GetObject<EnumValueOptions>(new IntPtr(p + 0x030), ReversePrism.DataModels.EnumValueOptions.FromPointer); // 0245A3B0C380 0x30 Options                     ( 00018673D500 ModelClassType EnumValueOptions EnumValueOptions EnumValueOptions Pointer )
+            value.HasBits0                                  = GetInt32(new IntPtr(p + 0x018)); // 0x18 HasBits0                    ( ModelPrimitiveType int int int Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 0x20 Name                        ( ModelPrimitiveType string string string String )
+            value.NumberDefaultValue                        = GetInt32(new IntPtr(p + 0x010)); // 0x10 NumberDefaultValue          ( ModelPrimitiveType int int int Int32 )
+            value.Number                                    = GetInt32(new IntPtr(p + 0x028)); // 0x28 Number                      ( ModelPrimitiveType int int int Int32 )
+            value.Options                                   = GetObject<EnumValueOptions>(new IntPtr(p + 0x030), ReversePrism.DataModels.EnumValueOptions.FromPointer); // 0x30 Options                     ( ModelClassType EnumValueOptions EnumValueOptions EnumValueOptions Pointer )
 
             return value;
         }

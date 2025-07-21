@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Options                                  00018663F0B0 ModelEnumType RegexOptions RegexOptions RegexOptions Int32
-    // 018 CultureKey                               000186672F10 ModelPrimitiveType string string string String
-    // 020 Pattern                                  000186672F10 ModelPrimitiveType string string string String
+    // 010 Options                                  ModelEnumType RegexOptions RegexOptions RegexOptions Int32
+    // 018 CultureKey                               ModelPrimitiveType string string string String
+    // 020 Pattern                                  ModelPrimitiveType string string string String
     public partial class CachedCodeEntryKey : DataModel
     {
         public RegexOptions                             Options                                 { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CachedCodeEntryKey() { Pointer= p0 };
 
-            value.Options                                   = (RegexOptions)GetInt32(new IntPtr(p + 0x010)); // 0245A33F5158 0x10 Options                     ( 00018663F0B0 ModelEnumType RegexOptions RegexOptions RegexOptions Int32 )
-            value.CultureKey                                = GetString(new IntPtr(p + 0x018)); // 0245A33F5178 0x18 CultureKey                  ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Pattern                                   = GetString(new IntPtr(p + 0x020)); // 0245A33F5198 0x20 Pattern                     ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Options                                   = (RegexOptions)GetInt32(new IntPtr(p + 0x010)); // 0x10 Options                     ( ModelEnumType RegexOptions RegexOptions RegexOptions Int32 )
+            value.CultureKey                                = GetString(new IntPtr(p + 0x018)); // 0x18 CultureKey                  ( ModelPrimitiveType string string string String )
+            value.Pattern                                   = GetString(new IntPtr(p + 0x020)); // 0x20 Pattern                     ( ModelPrimitiveType string string string String )
 
             return value;
         }

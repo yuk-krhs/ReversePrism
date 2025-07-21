@@ -8,15 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Next                                     00018670BA80 ModelClassType CachedCodeEntry CachedCodeEntry CachedCodeEntry Pointer
-    // 018 Previous                                 00018670BA80 ModelClassType CachedCodeEntry CachedCodeEntry CachedCodeEntry Pointer
-    // 020 Key                                      0001866C1870 ModelEnumType CachedCodeEntryKey CachedCodeEntryKey CachedCodeEntryKey Int32
-    // 038 Code                                     00018663CE50 ModelClassType RegexCode RegexCode RegexCode Pointer
-    // 040 Caps                                     0001865DF650 ModelClassType Hashtable Hashtable Hashtable Pointer
-    // 048 Capnames                                 0001865DF650 ModelClassType Hashtable Hashtable Hashtable Pointer
-    // 050 Capslist                                 000185B81FB0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 058 Capsize                                  0001865F4940 ModelPrimitiveType int int int Int32
-    // 060 Runnerref                                000186520E60 ModelClassType ExclusiveReference ExclusiveReference ExclusiveReference Pointer
+    // 010 Next                                     ModelClassType CachedCodeEntry CachedCodeEntry CachedCodeEntry Pointer
+    // 018 Previous                                 ModelClassType CachedCodeEntry CachedCodeEntry CachedCodeEntry Pointer
+    // 020 Key                                      ModelEnumType CachedCodeEntryKey CachedCodeEntryKey CachedCodeEntryKey Int32
+    // 038 Code                                     ModelClassType RegexCode RegexCode RegexCode Pointer
+    // 040 Caps                                     ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 048 Capnames                                 ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 050 Capslist                                 ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 058 Capsize                                  ModelPrimitiveType int int int Int32
+    // 060 Runnerref                                ModelClassType ExclusiveReference ExclusiveReference ExclusiveReference Pointer
     // 068 ReplRef                                  WeakReference`1<RegexReplacement> IL2CPP_TYPE_GENERICINST
     public partial class CachedCodeEntry : DataModel
     {
@@ -38,15 +38,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CachedCodeEntry() { Pointer= p0 };
 
-            value.Next                                      = GetObject<CachedCodeEntry>(new IntPtr(p + 0x010), ReversePrism.DataModels.CachedCodeEntry.FromPointer); // 0245A33F51C8 0x10 Next                        ( 00018670BA80 ModelClassType CachedCodeEntry CachedCodeEntry CachedCodeEntry Pointer )
-            value.Previous                                  = GetObject<CachedCodeEntry>(new IntPtr(p + 0x018), ReversePrism.DataModels.CachedCodeEntry.FromPointer); // 0245A33F51E8 0x18 Previous                    ( 00018670BA80 ModelClassType CachedCodeEntry CachedCodeEntry CachedCodeEntry Pointer )
-            value.Key                                       = (CachedCodeEntryKey)GetInt32(new IntPtr(p + 0x020)); // 0245A33F5208 0x20 Key                         ( 0001866C1870 ModelEnumType CachedCodeEntryKey CachedCodeEntryKey CachedCodeEntryKey Int32 )
-            value.Code                                      = GetObject<RegexCode>(new IntPtr(p + 0x038), ReversePrism.DataModels.RegexCode.FromPointer); // 0245A33F5228 0x38 Code                        ( 00018663CE50 ModelClassType RegexCode RegexCode RegexCode Pointer )
-            value.Caps                                      = GetObject<Hashtable>(new IntPtr(p + 0x040), ReversePrism.DataModels.Hashtable.FromPointer); // 0245A33F5248 0x40 Caps                        ( 0001865DF650 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.Capnames                                  = GetObject<Hashtable>(new IntPtr(p + 0x048), ReversePrism.DataModels.Hashtable.FromPointer); // 0245A33F5268 0x48 Capnames                    ( 0001865DF650 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.Capslist                                  = GetStringList(new IntPtr(p + 0x050)); // 0245A33F5288 0x50 Capslist                    ( 000185B81FB0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.Capsize                                   = GetInt32(new IntPtr(p + 0x058)); // 0245A33F52A8 0x58 Capsize                     ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.Runnerref                                 = GetObject<ExclusiveReference>(new IntPtr(p + 0x060), ReversePrism.DataModels.ExclusiveReference.FromPointer); // 0245A33F52C8 0x60 Runnerref                   ( 000186520E60 ModelClassType ExclusiveReference ExclusiveReference ExclusiveReference Pointer )
+            value.Next                                      = GetObject<CachedCodeEntry>(new IntPtr(p + 0x010), ReversePrism.DataModels.CachedCodeEntry.FromPointer); // 0x10 Next                        ( ModelClassType CachedCodeEntry CachedCodeEntry CachedCodeEntry Pointer )
+            value.Previous                                  = GetObject<CachedCodeEntry>(new IntPtr(p + 0x018), ReversePrism.DataModels.CachedCodeEntry.FromPointer); // 0x18 Previous                    ( ModelClassType CachedCodeEntry CachedCodeEntry CachedCodeEntry Pointer )
+            value.Key                                       = (CachedCodeEntryKey)GetInt32(new IntPtr(p + 0x020)); // 0x20 Key                         ( ModelEnumType CachedCodeEntryKey CachedCodeEntryKey CachedCodeEntryKey Int32 )
+            value.Code                                      = GetObject<RegexCode>(new IntPtr(p + 0x038), ReversePrism.DataModels.RegexCode.FromPointer); // 0x38 Code                        ( ModelClassType RegexCode RegexCode RegexCode Pointer )
+            value.Caps                                      = GetObject<Hashtable>(new IntPtr(p + 0x040), ReversePrism.DataModels.Hashtable.FromPointer); // 0x40 Caps                        ( ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.Capnames                                  = GetObject<Hashtable>(new IntPtr(p + 0x048), ReversePrism.DataModels.Hashtable.FromPointer); // 0x48 Capnames                    ( ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.Capslist                                  = GetStringList(new IntPtr(p + 0x050)); // 0x50 Capslist                    ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.Capsize                                   = GetInt32(new IntPtr(p + 0x058)); // 0x58 Capsize                     ( ModelPrimitiveType int int int Int32 )
+            value.Runnerref                                 = GetObject<ExclusiveReference>(new IntPtr(p + 0x060), ReversePrism.DataModels.ExclusiveReference.FromPointer); // 0x60 Runnerref                   ( ModelClassType ExclusiveReference ExclusiveReference ExclusiveReference Pointer )
 
             return value;
         }

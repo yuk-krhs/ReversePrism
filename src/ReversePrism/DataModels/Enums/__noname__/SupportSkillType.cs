@@ -61,7 +61,7 @@ namespace ReversePrism.DataModels
         MentalGuardRate,
         AppealBonusWhenOpponentMentalBreak,
         AppealBonusWhenCostDown,
-        SelfDamageUp,
+        MentalDamageUpFromOpponent,
         AddMaxHandNumWhenRecoverMentalBreak,
         StartDashMaxHandCount,
         StartDashRandomCostDown,

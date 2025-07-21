@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ScreenType                               000186540DD0 ModelEnumType ScreenType ScreenType ScreenType Int32
+    // 010 ScreenType                               ModelEnumType ScreenType ScreenType ScreenType Int32
     // 018 Builder                                  SerializableInterface`1<IMobileScreenBuilder> IL2CPP_TYPE_GENERICINST
     public partial class KeyBuilderPair : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new KeyBuilderPair() { Pointer= p0 };
 
-            value.ScreenType                                = (ScreenType)GetInt32(new IntPtr(p + 0x010)); // 02466B17F750 0x10 ScreenType                  ( 000186540DD0 ModelEnumType ScreenType ScreenType ScreenType Int32 )
+            value.ScreenType                                = (ScreenType)GetInt32(new IntPtr(p + 0x010)); // 0x10 ScreenType                  ( ModelEnumType ScreenType ScreenType ScreenType Int32 )
 
             return value;
         }

@@ -8,15 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 TraItemRoot                              0001866AA150 ModelClassType Transform Transform Transform Pointer
-    // 028 GoTemplateIco                            0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 030 OkButton                                 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 038 SkipAnimationButton                      0001865140C0 ModelClassType Button Button Button Pointer
-    // 040 MedalGashaSequenceAnimator               0001866B8DE0 ModelClassType Animator Animator Animator Pointer
-    // 048 MedalGashaRibbonAnimator                 0001866B8DE0 ModelClassType Animator Animator Animator Pointer
-    // 050 UiCanvas                                 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
-    // 058 ResourceTag                              00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
-    // 060 CellList                                 000185CF26C8 ModelClassListType List`1<MedalGashaResultViewCell> List`1<MedalGashaResultViewCell> List<MedalGashaResultViewCell> Pointer
+    // 020 TraItemRoot                              ModelClassType Transform Transform Transform Pointer
+    // 028 GoTemplateIco                            ModelClassType GameObject GameObject GameObject Pointer
+    // 030 OkButton                                 ModelClassType UIButton UIButton UIButton Pointer
+    // 038 SkipAnimationButton                      ModelClassType Button Button Button Pointer
+    // 040 MedalGashaSequenceAnimator               ModelClassType Animator Animator Animator Pointer
+    // 048 MedalGashaRibbonAnimator                 ModelClassType Animator Animator Animator Pointer
+    // 050 UiCanvas                                 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
+    // 058 CellList                                 ModelClassListType List`1<MedalGashaResultViewCell> List`1<MedalGashaResultViewCell> List<MedalGashaResultViewCell> Pointer
+    // 060 SkipToken                                ModelEnumType CancellationToken CancellationToken CancellationToken Int32
     public partial class MedalGashaResultView : DataModel
     {
         public Transform?                               TraItemRoot                             { get; set; }
@@ -26,8 +26,8 @@ namespace ReversePrism.DataModels
         public Animator?                                MedalGashaSequenceAnimator              { get; set; }
         public Animator?                                MedalGashaRibbonAnimator                { get; set; }
         public CanvasGroup?                             UiCanvas                                { get; set; }
-        public IResourceTag?                            ResourceTag                             { get; set; }
         public List<MedalGashaResultViewCell>?          CellList                                { get; set; }
+        public CancellationToken                        SkipToken                               { get; set; }
 
         public static MedalGashaResultView? FromPointer(IntPtr p0)
         {
@@ -37,15 +37,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MedalGashaResultView() { Pointer= p0 };
 
-            value.TraItemRoot                               = GetObject<Transform>(new IntPtr(p + 0x020), ReversePrism.DataModels.Transform.FromPointer); // 02466B9AE0B0 0x20 TraItemRoot                 ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.GoTemplateIco                             = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 02466B9AE0D0 0x28 GoTemplateIco               ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.OkButton                                  = GetObject<UIButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIButton.FromPointer); // 02466B9AE0F0 0x30 OkButton                    ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.SkipAnimationButton                       = GetObject<Button>(new IntPtr(p + 0x038), ReversePrism.DataModels.Button.FromPointer); // 02466B9AE110 0x38 SkipAnimationButton         ( 0001865140C0 ModelClassType Button Button Button Pointer )
-            value.MedalGashaSequenceAnimator                = GetObject<Animator>(new IntPtr(p + 0x040), ReversePrism.DataModels.Animator.FromPointer); // 02466B9AE130 0x40 MedalGashaSequenceAnimator  ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
-            value.MedalGashaRibbonAnimator                  = GetObject<Animator>(new IntPtr(p + 0x048), ReversePrism.DataModels.Animator.FromPointer); // 02466B9AE150 0x48 MedalGashaRibbonAnimator    ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
-            value.UiCanvas                                  = GetObject<CanvasGroup>(new IntPtr(p + 0x050), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466B9AE170 0x50 UiCanvas                    ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x058), ReversePrism.DataModels.IResourceTag.FromPointer); // 02466B9AE190 0x58 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
-            value.CellList                                  = GetObjectList<MedalGashaResultViewCell>(new IntPtr(p + 0x060), ReversePrism.DataModels.MedalGashaResultViewCell.FromPointer); // 02466B9AE1B0 0x60 CellList                    ( 000185CF26C8 ModelClassListType List`1<MedalGashaResultViewCell> List`1<MedalGashaResultViewCell> List<MedalGashaResultViewCell> Pointer )
+            value.TraItemRoot                               = GetObject<Transform>(new IntPtr(p + 0x020), ReversePrism.DataModels.Transform.FromPointer); // 0x20 TraItemRoot                 ( ModelClassType Transform Transform Transform Pointer )
+            value.GoTemplateIco                             = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0x28 GoTemplateIco               ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.OkButton                                  = GetObject<UIButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIButton.FromPointer); // 0x30 OkButton                    ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.SkipAnimationButton                       = GetObject<Button>(new IntPtr(p + 0x038), ReversePrism.DataModels.Button.FromPointer); // 0x38 SkipAnimationButton         ( ModelClassType Button Button Button Pointer )
+            value.MedalGashaSequenceAnimator                = GetObject<Animator>(new IntPtr(p + 0x040), ReversePrism.DataModels.Animator.FromPointer); // 0x40 MedalGashaSequenceAnimator  ( ModelClassType Animator Animator Animator Pointer )
+            value.MedalGashaRibbonAnimator                  = GetObject<Animator>(new IntPtr(p + 0x048), ReversePrism.DataModels.Animator.FromPointer); // 0x48 MedalGashaRibbonAnimator    ( ModelClassType Animator Animator Animator Pointer )
+            value.UiCanvas                                  = GetObject<CanvasGroup>(new IntPtr(p + 0x050), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0x50 UiCanvas                    ( ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.CellList                                  = GetObjectList<MedalGashaResultViewCell>(new IntPtr(p + 0x058), ReversePrism.DataModels.MedalGashaResultViewCell.FromPointer); // 0x58 CellList                    ( ModelClassListType List`1<MedalGashaResultViewCell> List`1<MedalGashaResultViewCell> List<MedalGashaResultViewCell> Pointer )
+            value.SkipToken                                 = (CancellationToken)GetInt32(new IntPtr(p + 0x060)); // 0x60 SkipToken                   ( ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
 
             return value;
         }

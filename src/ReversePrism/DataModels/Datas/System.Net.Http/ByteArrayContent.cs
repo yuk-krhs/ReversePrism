@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 Content                                  000185B79F90 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 030 Offset                                   0001865F4260 ModelPrimitiveType int int int Int32
-    // 034 Count                                    0001865F4260 ModelPrimitiveType int int int Int32
+    // 028 Content                                  ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 030 Offset                                   ModelPrimitiveType int int int Int32
+    // 034 Count                                    ModelPrimitiveType int int int Int32
     public partial class ByteArrayContent : DataModel
     {
         public List<sbyte>?                             Content                                 { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ByteArrayContent() { Pointer= p0 };
 
-            value.Content                                   = GetSByteList(new IntPtr(p + 0x028)); // 02466B8AC400 0x28 Content                     ( 000185B79F90 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Offset                                    = GetInt32(new IntPtr(p + 0x030)); // 02466B8AC420 0x30 Offset                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Count                                     = GetInt32(new IntPtr(p + 0x034)); // 02466B8AC440 0x34 Count                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Content                                   = GetSByteList(new IntPtr(p + 0x028)); // 0x28 Content                     ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Offset                                    = GetInt32(new IntPtr(p + 0x030)); // 0x30 Offset                      ( ModelPrimitiveType int int int Int32 )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x034)); // 0x34 Count                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

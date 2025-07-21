@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Name                                   000186671BA0 ModelPrimitiveType string string string String
-    // 018 M_Index                                  000186698DF0 ModelPrimitiveType uint uint uint UInt32
-    // 01C M_IsLocal                                000186595210 ModelPrimitiveType bool bool bool Bool
-    // 01D M_IsCompute                              000186595210 ModelPrimitiveType bool bool bool Bool
-    // 01E M_IsValid                                000186595210 ModelPrimitiveType bool bool bool Bool
+    // 010 M_Name                                   ModelPrimitiveType string string string String
+    // 018 M_Index                                  ModelPrimitiveType uint uint uint UInt32
+    // 01C M_IsLocal                                ModelPrimitiveType bool bool bool Bool
+    // 01D M_IsCompute                              ModelPrimitiveType bool bool bool Bool
+    // 01E M_IsValid                                ModelPrimitiveType bool bool bool Bool
     public partial class ShaderKeyword : DataModel
     {
         public string                                   M_Name                                  { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ShaderKeyword() { Pointer= p0 };
 
-            value.M_Name                                    = GetString(new IntPtr(p + 0x010)); // 0245A2476958 0x10 M_Name                      ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.M_Index                                   = GetUInt32(new IntPtr(p + 0x018)); // 0245A2476978 0x18 M_Index                     ( 000186698DF0 ModelPrimitiveType uint uint uint UInt32 )
-            value.M_IsLocal                                 = GetBool(new IntPtr(p + 0x01C)); // 0245A2476998 0x1C M_IsLocal                   ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.M_IsCompute                               = GetBool(new IntPtr(p + 0x01D)); // 0245A24769B8 0x1D M_IsCompute                 ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.M_IsValid                                 = GetBool(new IntPtr(p + 0x01E)); // 0245A24769D8 0x1E M_IsValid                   ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.M_Name                                    = GetString(new IntPtr(p + 0x010)); // 0x10 M_Name                      ( ModelPrimitiveType string string string String )
+            value.M_Index                                   = GetUInt32(new IntPtr(p + 0x018)); // 0x18 M_Index                     ( ModelPrimitiveType uint uint uint UInt32 )
+            value.M_IsLocal                                 = GetBool(new IntPtr(p + 0x01C)); // 0x1C M_IsLocal                   ( ModelPrimitiveType bool bool bool Bool )
+            value.M_IsCompute                               = GetBool(new IntPtr(p + 0x01D)); // 0x1D M_IsCompute                 ( ModelPrimitiveType bool bool bool Bool )
+            value.M_IsValid                                 = GetBool(new IntPtr(p + 0x01E)); // 0x1E M_IsValid                   ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

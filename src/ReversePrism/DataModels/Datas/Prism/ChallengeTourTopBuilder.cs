@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 View                                     000186588060 ModelClassType ChallengeTourTopView ChallengeTourTopView ChallengeTourTopView Pointer
+    // 020 View                                     ModelClassType ChallengeTourTopView ChallengeTourTopView ChallengeTourTopView Pointer
     public partial class ChallengeTourTopBuilder : DataModel
     {
         public ChallengeTourTopView?                    View                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChallengeTourTopBuilder() { Pointer= p0 };
 
-            value.View                                      = GetObject<ChallengeTourTopView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ChallengeTourTopView.FromPointer); // 02466B6B1F30 0x20 View                        ( 000186588060 ModelClassType ChallengeTourTopView ChallengeTourTopView ChallengeTourTopView Pointer )
+            value.View                                      = GetObject<ChallengeTourTopView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ChallengeTourTopView.FromPointer); // 0x20 View                        ( ModelClassType ChallengeTourTopView ChallengeTourTopView ChallengeTourTopView Pointer )
 
             return value;
         }

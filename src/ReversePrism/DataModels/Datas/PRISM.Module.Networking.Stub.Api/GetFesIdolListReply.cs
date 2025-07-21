@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 FesIdolListFieldNumber                   int IL2CPP_TYPE_I4
     // 008 _repeated_fesIdolList_codec              FieldCodec`1<FesIdolStatus> IL2CPP_TYPE_GENERICINST
-    // 018 FesIdolList                              000185CD7D58 ModelClassListType RepeatedField`1<FesIdolStatus> RepeatedField`1<FesIdolStatus> List<FesIdolStatus> Pointer
+    // 018 FesIdolList                              ModelClassListType RepeatedField`1<FesIdolStatus> RepeatedField`1<FesIdolStatus> List<FesIdolStatus> Pointer
     public partial class GetFesIdolListReply : DataModel
     {
         public List<FesIdolStatus>?                     FesIdolList                             { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetFesIdolListReply() { Pointer= p0 };
 
-            value.FesIdolList                               = GetObjectList<FesIdolStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.FesIdolStatus.FromPointer); // 024661220F70 0x18 FesIdolList                 ( 000185CD7D58 ModelClassListType RepeatedField`1<FesIdolStatus> RepeatedField`1<FesIdolStatus> List<FesIdolStatus> Pointer )
+            value.FesIdolList                               = GetObjectList<FesIdolStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.FesIdolStatus.FromPointer); // 0x18 FesIdolList                 ( ModelClassListType RepeatedField`1<FesIdolStatus> RepeatedField`1<FesIdolStatus> List<FesIdolStatus> Pointer )
 
             return value;
         }

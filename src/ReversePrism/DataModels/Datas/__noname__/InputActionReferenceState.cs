@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 RefCount                                 0001865F36C0 ModelPrimitiveType int int int Int32
-    // 014 EnabledByInputModule                     000186595960 ModelPrimitiveType bool bool bool Bool
+    // 010 RefCount                                 ModelPrimitiveType int int int Int32
+    // 014 EnabledByInputModule                     ModelPrimitiveType bool bool bool Bool
     public partial class InputActionReferenceState : DataModel
     {
         public int                                      RefCount                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InputActionReferenceState() { Pointer= p0 };
 
-            value.RefCount                                  = GetInt32(new IntPtr(p + 0x010)); // 0246677FDA40 0x10 RefCount                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.EnabledByInputModule                      = GetBool(new IntPtr(p + 0x014)); // 0246677FDA60 0x14 EnabledByInputModule        ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.RefCount                                  = GetInt32(new IntPtr(p + 0x010)); // 0x10 RefCount                    ( ModelPrimitiveType int int int Int32 )
+            value.EnabledByInputModule                      = GetBool(new IntPtr(p + 0x014)); // 0x14 EnabledByInputModule        ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

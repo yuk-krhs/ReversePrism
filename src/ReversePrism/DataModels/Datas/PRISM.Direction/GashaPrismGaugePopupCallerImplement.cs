@@ -8,7 +8,6 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 gashaPrismGaugePopupViewFactory          PopupViewFactory`1<IGashaPrismGaugePopupView> IL2CPP_TYPE_GENERICINST
     public partial class GashaPrismGaugePopupCallerImplement : DataModel
     {
 

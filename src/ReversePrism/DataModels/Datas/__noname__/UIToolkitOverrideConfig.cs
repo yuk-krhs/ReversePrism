@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ActiveEventSystem                        00018676C190 ModelClassType EventSystem EventSystem EventSystem Pointer
-    // 018 SendEvents                               000186595960 ModelPrimitiveType bool bool bool Bool
-    // 019 CreatePanelGameObjectsOnStart            000186595960 ModelPrimitiveType bool bool bool Bool
+    // 010 ActiveEventSystem                        ModelClassType EventSystem EventSystem EventSystem Pointer
+    // 018 SendEvents                               ModelPrimitiveType bool bool bool Bool
+    // 019 CreatePanelGameObjectsOnStart            ModelPrimitiveType bool bool bool Bool
     public partial class UIToolkitOverrideConfig : DataModel
     {
         public EventSystem?                             ActiveEventSystem                       { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UIToolkitOverrideConfig() { Pointer= p0 };
 
-            value.ActiveEventSystem                         = GetObject<EventSystem>(new IntPtr(p + 0x010), ReversePrism.DataModels.EventSystem.FromPointer); // 0245A3E88FD0 0x10 ActiveEventSystem           ( 00018676C190 ModelClassType EventSystem EventSystem EventSystem Pointer )
-            value.SendEvents                                = GetBool(new IntPtr(p + 0x018)); // 0245A3E88FF0 0x18 SendEvents                  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.CreatePanelGameObjectsOnStart             = GetBool(new IntPtr(p + 0x019)); // 0245A3E89010 0x19 CreatePanelGameObjectsOnStart ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.ActiveEventSystem                         = GetObject<EventSystem>(new IntPtr(p + 0x010), ReversePrism.DataModels.EventSystem.FromPointer); // 0x10 ActiveEventSystem           ( ModelClassType EventSystem EventSystem EventSystem Pointer )
+            value.SendEvents                                = GetBool(new IntPtr(p + 0x018)); // 0x18 SendEvents                  ( ModelPrimitiveType bool bool bool Bool )
+            value.CreatePanelGameObjectsOnStart             = GetBool(new IntPtr(p + 0x019)); // 0x19 CreatePanelGameObjectsOnStart ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

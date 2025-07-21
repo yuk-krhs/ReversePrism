@@ -8,19 +8,22 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 NewIcon                                  0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 028 IconImage                                000186613190 ModelClassType RawImage RawImage RawImage Pointer
-    // 030 GrayoutImage                             0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 038 PurchaseButton                           0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 040 DetailButton                             0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 048 TryButton                                0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 050 PriceText                                0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 058 ExpireDateText                           0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 060 PurchaseCountLimitText                   0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 068 LimitTimeDisposable                      0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
-    // 070 onPurchaseProduct                        Subject`1<ShopProductParam> IL2CPP_TYPE_GENERICINST
-    // 078 onDetail                                 Subject`1<ShopProductParam> IL2CPP_TYPE_GENERICINST
-    // 080 onTry                                    Subject`1<ShopProductParam> IL2CPP_TYPE_GENERICINST
+    // 020 NewIcon                                  ModelClassType GameObject GameObject GameObject Pointer
+    // 028 IconImage                                ModelClassType RawImage RawImage RawImage Pointer
+    // 030 GrayoutImage                             ModelClassType GameObject GameObject GameObject Pointer
+    // 038 PurchaseButton                           ModelClassType UIButton UIButton UIButton Pointer
+    // 040 DetailButton                             ModelClassType UIButton UIButton UIButton Pointer
+    // 048 TryButton                                ModelClassType UIButton UIButton UIButton Pointer
+    // 050 PriceText                                ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 058 ExpireDateText                           ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 060 PurchaseCountLimitText                   ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 068 LabelAreaObj                             ModelClassType GameObject GameObject GameObject Pointer
+    // 070 AlreadyAcquiredLabelObj                  ModelClassType GameObject GameObject GameObject Pointer
+    // 078 AlreadyAcquiredText                      ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 080 LimitTimeDisposable                      ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 088 onPurchaseProduct                        Subject`1<ShopProductParam> IL2CPP_TYPE_GENERICINST
+    // 090 onDetail                                 Subject`1<ShopProductParam> IL2CPP_TYPE_GENERICINST
+    // 098 onTry                                    Subject`1<ShopProductParam> IL2CPP_TYPE_GENERICINST
     public partial class ShopCostumeListItemView : DataModel
     {
         public GameObject?                              NewIcon                                 { get; set; }
@@ -32,6 +35,9 @@ namespace ReversePrism.DataModels
         public UITextMeshProUGUI?                       PriceText                               { get; set; }
         public UITextMeshProUGUI?                       ExpireDateText                          { get; set; }
         public UITextMeshProUGUI?                       PurchaseCountLimitText                  { get; set; }
+        public GameObject?                              LabelAreaObj                            { get; set; }
+        public GameObject?                              AlreadyAcquiredLabelObj                 { get; set; }
+        public UITextMeshProUGUI?                       AlreadyAcquiredText                     { get; set; }
         public IDisposable?                             LimitTimeDisposable                     { get; set; }
 
         public static ShopCostumeListItemView? FromPointer(IntPtr p0)
@@ -42,16 +48,19 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ShopCostumeListItemView() { Pointer= p0 };
 
-            value.NewIcon                                   = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 02466B890070 0x20 NewIcon                     ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.IconImage                                 = GetObject<RawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.RawImage.FromPointer); // 02466B890090 0x28 IconImage                   ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.GrayoutImage                              = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 02466B8900B0 0x30 GrayoutImage                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.PurchaseButton                            = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 02466B8900D0 0x38 PurchaseButton              ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.DetailButton                              = GetObject<UIButton>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIButton.FromPointer); // 02466B8900F0 0x40 DetailButton                ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.TryButton                                 = GetObject<UIButton>(new IntPtr(p + 0x048), ReversePrism.DataModels.UIButton.FromPointer); // 02466B890110 0x48 TryButton                   ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.PriceText                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B890130 0x50 PriceText                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ExpireDateText                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x058), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B890150 0x58 ExpireDateText              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.PurchaseCountLimitText                    = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x060), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B890170 0x60 PurchaseCountLimitText      ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.LimitTimeDisposable                       = GetObject<IDisposable>(new IntPtr(p + 0x068), ReversePrism.DataModels.IDisposable.FromPointer); // 02466B890190 0x68 LimitTimeDisposable         ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.NewIcon                                   = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0x20 NewIcon                     ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.IconImage                                 = GetObject<RawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.RawImage.FromPointer); // 0x28 IconImage                   ( ModelClassType RawImage RawImage RawImage Pointer )
+            value.GrayoutImage                              = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0x30 GrayoutImage                ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.PurchaseButton                            = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 0x38 PurchaseButton              ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.DetailButton                              = GetObject<UIButton>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIButton.FromPointer); // 0x40 DetailButton                ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.TryButton                                 = GetObject<UIButton>(new IntPtr(p + 0x048), ReversePrism.DataModels.UIButton.FromPointer); // 0x48 TryButton                   ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.PriceText                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x50 PriceText                   ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ExpireDateText                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x058), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x58 ExpireDateText              ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.PurchaseCountLimitText                    = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x060), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x60 PurchaseCountLimitText      ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.LabelAreaObj                              = GetObject<GameObject>(new IntPtr(p + 0x068), ReversePrism.DataModels.GameObject.FromPointer); // 0x68 LabelAreaObj                ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.AlreadyAcquiredLabelObj                   = GetObject<GameObject>(new IntPtr(p + 0x070), ReversePrism.DataModels.GameObject.FromPointer); // 0x70 AlreadyAcquiredLabelObj     ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.AlreadyAcquiredText                       = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x078), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x78 AlreadyAcquiredText         ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.LimitTimeDisposable                       = GetObject<IDisposable>(new IntPtr(p + 0x080), ReversePrism.DataModels.IDisposable.FromPointer); // 0x80 LimitTimeDisposable         ( ModelClassType IDisposable IDisposable IDisposable Pointer )
 
             return value;
         }

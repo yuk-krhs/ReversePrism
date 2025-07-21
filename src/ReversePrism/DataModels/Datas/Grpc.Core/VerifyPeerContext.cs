@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 TargetName                               000186672F10 ModelPrimitiveType string string string String
-    // 018 PeerPem                                  000186672F10 ModelPrimitiveType string string string String
+    // 010 TargetName                               ModelPrimitiveType string string string String
+    // 018 PeerPem                                  ModelPrimitiveType string string string String
     public partial class VerifyPeerContext : DataModel
     {
         public string                                   TargetName                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new VerifyPeerContext() { Pointer= p0 };
 
-            value.TargetName                                = GetString(new IntPtr(p + 0x010)); // 02466BBE7778 0x10 TargetName                  ( 000186672F10 ModelPrimitiveType string string string String )
-            value.PeerPem                                   = GetString(new IntPtr(p + 0x018)); // 02466BBE7798 0x18 PeerPem                     ( 000186672F10 ModelPrimitiveType string string string String )
+            value.TargetName                                = GetString(new IntPtr(p + 0x010)); // 0x10 TargetName                  ( ModelPrimitiveType string string string String )
+            value.PeerPem                                   = GetString(new IntPtr(p + 0x018)); // 0x18 PeerPem                     ( ModelPrimitiveType string string string String )
 
             return value;
         }

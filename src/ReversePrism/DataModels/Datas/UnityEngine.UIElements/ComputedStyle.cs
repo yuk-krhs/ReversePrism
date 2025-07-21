@@ -14,11 +14,11 @@ namespace ReversePrism.DataModels
     // 028 transformData                            StyleDataRef`1<TransformData> IL2CPP_TYPE_GENERICINST
     // 030 transitionData                           StyleDataRef`1<TransitionData> IL2CPP_TYPE_GENERICINST
     // 038 visualData                               StyleDataRef`1<VisualData> IL2CPP_TYPE_GENERICINST
-    // 040 YogaNode                                 0001865DDF00 ModelClassType YogaNode YogaNode YogaNode Pointer
+    // 040 YogaNode                                 ModelClassType YogaNode YogaNode YogaNode Pointer
     // 048 customProperties                         Dictionary`2<string, StylePropertyValue> IL2CPP_TYPE_GENERICINST
-    // 050 MatchingRulesHash                        0001865F7E40 ModelPrimitiveType long long long Int64
-    // 058 DpiScaling                               000186666050 ModelPrimitiveType float float float Single
-    // 060 ComputedTransitions                      000185B7BBA0 ModelEnumListType ComputedTransitionProperty[] ComputedTransitionProperty[] List<ComputedTransitionProperty> Pointer
+    // 050 MatchingRulesHash                        ModelPrimitiveType long long long Int64
+    // 058 DpiScaling                               ModelPrimitiveType float float float Single
+    // 060 ComputedTransitions                      ModelEnumListType ComputedTransitionProperty[] ComputedTransitionProperty[] List<ComputedTransitionProperty> Pointer
     public partial class ComputedStyle : DataModel
     {
         public YogaNode?                                YogaNode                                { get; set; }
@@ -34,10 +34,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ComputedStyle() { Pointer= p0 };
 
-            value.YogaNode                                  = GetObject<YogaNode>(new IntPtr(p + 0x040), ReversePrism.DataModels.YogaNode.FromPointer); // 0245A3F09070 0x40 YogaNode                    ( 0001865DDF00 ModelClassType YogaNode YogaNode YogaNode Pointer )
-            value.MatchingRulesHash                         = GetInt64(new IntPtr(p + 0x050)); // 0245A3F090B0 0x50 MatchingRulesHash           ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
-            value.DpiScaling                                = GetSingle(new IntPtr(p + 0x058)); // 0245A3F090D0 0x58 DpiScaling                  ( 000186666050 ModelPrimitiveType float float float Single )
-            value.ComputedTransitions                       = GetEnumList<ComputedTransitionProperty>(new IntPtr(p + 0x060)); // 0245A3F090F0 0x60 ComputedTransitions         ( 000185B7BBA0 ModelEnumListType ComputedTransitionProperty[] ComputedTransitionProperty[] List<ComputedTransitionProperty> Pointer )
+            value.YogaNode                                  = GetObject<YogaNode>(new IntPtr(p + 0x040), ReversePrism.DataModels.YogaNode.FromPointer); // 0x40 YogaNode                    ( ModelClassType YogaNode YogaNode YogaNode Pointer )
+            value.MatchingRulesHash                         = GetInt64(new IntPtr(p + 0x050)); // 0x50 MatchingRulesHash           ( ModelPrimitiveType long long long Int64 )
+            value.DpiScaling                                = GetSingle(new IntPtr(p + 0x058)); // 0x58 DpiScaling                  ( ModelPrimitiveType float float float Single )
+            value.ComputedTransitions                       = GetEnumList<ComputedTransitionProperty>(new IntPtr(p + 0x060)); // 0x60 ComputedTransitions         ( ModelEnumListType ComputedTransitionProperty[] ComputedTransitionProperty[] List<ComputedTransitionProperty> Pointer )
 
             return value;
         }

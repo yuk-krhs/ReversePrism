@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<ProceedTutorialArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 TutorialFieldNumber                      int IL2CPP_TYPE_I4
-    // 018 Tutorial                                 0001866BDDF0 ModelClassType TutorialStatus TutorialStatus TutorialStatus Pointer
+    // 018 Tutorial                                 ModelClassType TutorialStatus TutorialStatus TutorialStatus Pointer
     // 000 IsSkipFieldNumber                        int IL2CPP_TYPE_I4
-    // 020 IsSkip                                   000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 020 IsSkip                                   ModelPrimitiveType bool bool bool Bool
     public partial class ProceedTutorialArgs : DataModel
     {
         public TutorialStatus?                          Tutorial                                { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProceedTutorialArgs() { Pointer= p0 };
 
-            value.Tutorial                                  = GetObject<TutorialStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.TutorialStatus.FromPointer); // 024662BDE6B0 0x18 Tutorial                    ( 0001866BDDF0 ModelClassType TutorialStatus TutorialStatus TutorialStatus Pointer )
-            value.IsSkip                                    = GetBool(new IntPtr(p + 0x020)); // 024662BDE6F0 0x20 IsSkip                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Tutorial                                  = GetObject<TutorialStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.TutorialStatus.FromPointer); // 0x18 Tutorial                    ( ModelClassType TutorialStatus TutorialStatus TutorialStatus Pointer )
+            value.IsSkip                                    = GetBool(new IntPtr(p + 0x020)); // 0x20 IsSkip                      ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

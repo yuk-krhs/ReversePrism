@@ -9,9 +9,9 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_ListPool                               EventCallbackListPool IL2CPP_TYPE_CLASS
-    // 010 M_Callbacks                              000186750810 ModelClassType EventCallbackList EventCallbackList EventCallbackList Pointer
-    // 018 M_TemporaryCallbacks                     000186750810 ModelClassType EventCallbackList EventCallbackList EventCallbackList Pointer
-    // 020 M_IsInvoking                             0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 M_Callbacks                              ModelClassType EventCallbackList EventCallbackList EventCallbackList Pointer
+    // 018 M_TemporaryCallbacks                     ModelClassType EventCallbackList EventCallbackList EventCallbackList Pointer
+    // 020 M_IsInvoking                             ModelPrimitiveType int int int Int32
     public partial class EventCallbackRegistry : DataModel
     {
         public EventCallbackList?                       M_Callbacks                             { get; set; }
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EventCallbackRegistry() { Pointer= p0 };
 
-            value.M_Callbacks                               = GetObject<EventCallbackList>(new IntPtr(p + 0x010), ReversePrism.DataModels.EventCallbackList.FromPointer); // 0245A6729358 0x10 M_Callbacks                 ( 000186750810 ModelClassType EventCallbackList EventCallbackList EventCallbackList Pointer )
-            value.M_TemporaryCallbacks                      = GetObject<EventCallbackList>(new IntPtr(p + 0x018), ReversePrism.DataModels.EventCallbackList.FromPointer); // 0245A6729378 0x18 M_TemporaryCallbacks        ( 000186750810 ModelClassType EventCallbackList EventCallbackList EventCallbackList Pointer )
-            value.M_IsInvoking                              = GetInt32(new IntPtr(p + 0x020)); // 0245A6729398 0x20 M_IsInvoking                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_Callbacks                               = GetObject<EventCallbackList>(new IntPtr(p + 0x010), ReversePrism.DataModels.EventCallbackList.FromPointer); // 0x10 M_Callbacks                 ( ModelClassType EventCallbackList EventCallbackList EventCallbackList Pointer )
+            value.M_TemporaryCallbacks                      = GetObject<EventCallbackList>(new IntPtr(p + 0x018), ReversePrism.DataModels.EventCallbackList.FromPointer); // 0x18 M_TemporaryCallbacks        ( ModelClassType EventCallbackList EventCallbackList EventCallbackList Pointer )
+            value.M_IsInvoking                              = GetInt32(new IntPtr(p + 0x020)); // 0x20 M_IsInvoking                ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

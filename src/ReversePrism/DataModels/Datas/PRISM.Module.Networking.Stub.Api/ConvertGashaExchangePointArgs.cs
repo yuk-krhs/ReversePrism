@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 GashaExchangeIdListFieldNumber           int IL2CPP_TYPE_I4
     // 008 _repeated_gashaExchangeIdList_codec      FieldCodec`1<string> IL2CPP_TYPE_GENERICINST
-    // 018 GashaExchangeIdList                      000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
+    // 018 GashaExchangeIdList                      ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
     public partial class ConvertGashaExchangePointArgs : DataModel
     {
         public List<string>?                            GashaExchangeIdList                     { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ConvertGashaExchangePointArgs() { Pointer= p0 };
 
-            value.GashaExchangeIdList                       = GetStringList(new IntPtr(p + 0x018)); // 0246619914C8 0x18 GashaExchangeIdList         ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.GashaExchangeIdList                       = GetStringList(new IntPtr(p + 0x018)); // 0x18 GashaExchangeIdList         ( ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
 
             return value;
         }

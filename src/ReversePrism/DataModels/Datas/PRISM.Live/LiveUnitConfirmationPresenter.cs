@@ -8,18 +8,21 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 080 View                                     00018658C410 ModelClassType LiveUnitConfirmationView LiveUnitConfirmationView LiveUnitConfirmationView Pointer
-    // 088 LiveBonusContent                         000186540AD0 ModelClassType LiveBonusContent LiveBonusContent LiveBonusContent Pointer
-    // 090 UnitEditView                             00018658B970 ModelClassType LiveUnitConfirmationUnitEditView LiveUnitConfirmationUnitEditView LiveUnitConfirmationUnitEditView Pointer
-    // 098 UnitListWindow                           000186595110 ModelClassType LiveUnitListWindow LiveUnitListWindow LiveUnitListWindow Pointer
-    // 0A0 SettingPopupCaller                       000186579570 ModelClassType LiveSettingPopupCaller LiveSettingPopupCaller LiveSettingPopupCaller Pointer
-    // 0A8 LbPopupCaller                            0001865412D0 ModelClassType LiveBonusUsageSettingPopupCaller LiveBonusUsageSettingPopupCaller LiveBonusUsageSettingPopupCaller Pointer
-    // 0B0 StageDetailPopupCaller                   000186580640 ModelClassType LiveStageDetailPopupCaller LiveStageDetailPopupCaller LiveStageDetailPopupCaller Pointer
-    // 0B8 UseRecommendedPopupCaller                000186590890 ModelClassType LiveUnitEditUseRecommendedPopupCaller LiveUnitEditUseRecommendedPopupCaller LiveUnitEditUseRecommendedPopupCaller Pointer
-    // 0C0 TotalParameterDetailPopupCaller          000186599130 ModelClassType LiveUnitTotalParameterDetailPopupCaller LiveUnitTotalParameterDetailPopupCaller LiveUnitTotalParameterDetailPopupCaller Pointer
-    // 0C8 Model                                    000186588FF0 ModelClassType LiveUnitConfirmationModel LiveUnitConfirmationModel LiveUnitConfirmationModel Pointer
-    // 0D0 Canceller                                000186724470 ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32
-    // 0D8 JumpParameter                            0001866D66F0 ModelClassType JumpParameter JumpParameter JumpParameter Pointer
+    // 078 View                                     ModelClassType LiveUnitConfirmationView LiveUnitConfirmationView LiveUnitConfirmationView Pointer
+    // 080 LiveBonusContent                         ModelClassType LiveBonusContent LiveBonusContent LiveBonusContent Pointer
+    // 088 UnitEditView                             ModelClassType LiveUnitConfirmationUnitEditView LiveUnitConfirmationUnitEditView LiveUnitConfirmationUnitEditView Pointer
+    // 090 UnitListWindow                           ModelClassType LiveUnitListWindow LiveUnitListWindow LiveUnitListWindow Pointer
+    // 098 SettingPopupCaller                       ModelClassType LiveSettingPopupCaller LiveSettingPopupCaller LiveSettingPopupCaller Pointer
+    // 0A0 LbPopupCaller                            ModelClassType LiveBonusUsageSettingPopupCaller LiveBonusUsageSettingPopupCaller LiveBonusUsageSettingPopupCaller Pointer
+    // 0A8 StageDetailPopupCaller                   ModelClassType LiveStageDetailPopupCaller LiveStageDetailPopupCaller LiveStageDetailPopupCaller Pointer
+    // 0B0 UseRecommendedPopupCaller                ModelClassType LiveUnitEditUseRecommendedPopupCaller LiveUnitEditUseRecommendedPopupCaller LiveUnitEditUseRecommendedPopupCaller Pointer
+    // 0B8 TotalParameterDetailPopupCaller          ModelClassType LiveUnitTotalParameterDetailPopupCaller LiveUnitTotalParameterDetailPopupCaller LiveUnitTotalParameterDetailPopupCaller Pointer
+    // 0C0 SkipLiveConfirmationPopupCaller          ModelClassType SkipLiveConfirmationPopupCaller SkipLiveConfirmationPopupCaller SkipLiveConfirmationPopupCaller Pointer
+    // 0C8 LimitedVoiceSeparateDetailPopupCaller    ModelClassType LimitedVoiceSeparateDetailPopupCaller LimitedVoiceSeparateDetailPopupCaller LimitedVoiceSeparateDetailPopupCaller Pointer
+    // 0D0 EventBreakTimePopupCaller                ModelClassType ILiveEventBreakTimePopupCaller ILiveEventBreakTimePopupCaller ILiveEventBreakTimePopupCaller Pointer
+    // 0D8 Model                                    ModelClassType LiveUnitConfirmationModel LiveUnitConfirmationModel LiveUnitConfirmationModel Pointer
+    // 0E0 Canceller                                ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32
+    // 0E8 JumpParameter                            ModelClassType JumpParameter JumpParameter JumpParameter Pointer
     public partial class LiveUnitConfirmationPresenter : DataModel
     {
         public LiveUnitConfirmationView?                View                                    { get; set; }
@@ -31,6 +34,9 @@ namespace ReversePrism.DataModels
         public LiveStageDetailPopupCaller?              StageDetailPopupCaller                  { get; set; }
         public LiveUnitEditUseRecommendedPopupCaller?   UseRecommendedPopupCaller               { get; set; }
         public LiveUnitTotalParameterDetailPopupCaller? TotalParameterDetailPopupCaller         { get; set; }
+        public SkipLiveConfirmationPopupCaller?         SkipLiveConfirmationPopupCaller         { get; set; }
+        public LimitedVoiceSeparateDetailPopupCaller?   LimitedVoiceSeparateDetailPopupCaller   { get; set; }
+        public ILiveEventBreakTimePopupCaller?          EventBreakTimePopupCaller               { get; set; }
         public LiveUnitConfirmationModel?               Model                                   { get; set; }
         public AutoCancellationTokenSource              Canceller                               { get; set; }
         public JumpParameter?                           JumpParameter                           { get; set; }
@@ -43,18 +49,21 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveUnitConfirmationPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<LiveUnitConfirmationView>(new IntPtr(p + 0x080), ReversePrism.DataModels.LiveUnitConfirmationView.FromPointer); // 024665305E90 0x80 View                        ( 00018658C410 ModelClassType LiveUnitConfirmationView LiveUnitConfirmationView LiveUnitConfirmationView Pointer )
-            value.LiveBonusContent                          = GetObject<LiveBonusContent>(new IntPtr(p + 0x088), ReversePrism.DataModels.LiveBonusContent.FromPointer); // 024665305EB0 0x88 LiveBonusContent            ( 000186540AD0 ModelClassType LiveBonusContent LiveBonusContent LiveBonusContent Pointer )
-            value.UnitEditView                              = GetObject<LiveUnitConfirmationUnitEditView>(new IntPtr(p + 0x090), ReversePrism.DataModels.LiveUnitConfirmationUnitEditView.FromPointer); // 024665305ED0 0x90 UnitEditView                ( 00018658B970 ModelClassType LiveUnitConfirmationUnitEditView LiveUnitConfirmationUnitEditView LiveUnitConfirmationUnitEditView Pointer )
-            value.UnitListWindow                            = GetObject<LiveUnitListWindow>(new IntPtr(p + 0x098), ReversePrism.DataModels.LiveUnitListWindow.FromPointer); // 024665305EF0 0x98 UnitListWindow              ( 000186595110 ModelClassType LiveUnitListWindow LiveUnitListWindow LiveUnitListWindow Pointer )
-            value.SettingPopupCaller                        = GetObject<LiveSettingPopupCaller>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.LiveSettingPopupCaller.FromPointer); // 024665305F10 0xA0 SettingPopupCaller          ( 000186579570 ModelClassType LiveSettingPopupCaller LiveSettingPopupCaller LiveSettingPopupCaller Pointer )
-            value.LbPopupCaller                             = GetObject<LiveBonusUsageSettingPopupCaller>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.LiveBonusUsageSettingPopupCaller.FromPointer); // 024665305F30 0xA8 LbPopupCaller               ( 0001865412D0 ModelClassType LiveBonusUsageSettingPopupCaller LiveBonusUsageSettingPopupCaller LiveBonusUsageSettingPopupCaller Pointer )
-            value.StageDetailPopupCaller                    = GetObject<LiveStageDetailPopupCaller>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.LiveStageDetailPopupCaller.FromPointer); // 024665305F50 0xB0 StageDetailPopupCaller      ( 000186580640 ModelClassType LiveStageDetailPopupCaller LiveStageDetailPopupCaller LiveStageDetailPopupCaller Pointer )
-            value.UseRecommendedPopupCaller                 = GetObject<LiveUnitEditUseRecommendedPopupCaller>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.LiveUnitEditUseRecommendedPopupCaller.FromPointer); // 024665305F70 0xB8 UseRecommendedPopupCaller   ( 000186590890 ModelClassType LiveUnitEditUseRecommendedPopupCaller LiveUnitEditUseRecommendedPopupCaller LiveUnitEditUseRecommendedPopupCaller Pointer )
-            value.TotalParameterDetailPopupCaller           = GetObject<LiveUnitTotalParameterDetailPopupCaller>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.LiveUnitTotalParameterDetailPopupCaller.FromPointer); // 024665305F90 0xC0 TotalParameterDetailPopupCaller ( 000186599130 ModelClassType LiveUnitTotalParameterDetailPopupCaller LiveUnitTotalParameterDetailPopupCaller LiveUnitTotalParameterDetailPopupCaller Pointer )
-            value.Model                                     = GetObject<LiveUnitConfirmationModel>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.LiveUnitConfirmationModel.FromPointer); // 024665305FB0 0xC8 Model                       ( 000186588FF0 ModelClassType LiveUnitConfirmationModel LiveUnitConfirmationModel LiveUnitConfirmationModel Pointer )
-            value.Canceller                                 = (AutoCancellationTokenSource)GetInt32(new IntPtr(p + 0x0D0)); // 024665305FD0 0xD0 Canceller                   ( 000186724470 ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32 )
-            value.JumpParameter                             = GetObject<JumpParameter>(new IntPtr(p + 0x0D8), ReversePrism.DataModels.JumpParameter.FromPointer); // 024665305FF0 0xD8 JumpParameter               ( 0001866D66F0 ModelClassType JumpParameter JumpParameter JumpParameter Pointer )
+            value.View                                      = GetObject<LiveUnitConfirmationView>(new IntPtr(p + 0x078), ReversePrism.DataModels.LiveUnitConfirmationView.FromPointer); // 0x78 View                        ( ModelClassType LiveUnitConfirmationView LiveUnitConfirmationView LiveUnitConfirmationView Pointer )
+            value.LiveBonusContent                          = GetObject<LiveBonusContent>(new IntPtr(p + 0x080), ReversePrism.DataModels.LiveBonusContent.FromPointer); // 0x80 LiveBonusContent            ( ModelClassType LiveBonusContent LiveBonusContent LiveBonusContent Pointer )
+            value.UnitEditView                              = GetObject<LiveUnitConfirmationUnitEditView>(new IntPtr(p + 0x088), ReversePrism.DataModels.LiveUnitConfirmationUnitEditView.FromPointer); // 0x88 UnitEditView                ( ModelClassType LiveUnitConfirmationUnitEditView LiveUnitConfirmationUnitEditView LiveUnitConfirmationUnitEditView Pointer )
+            value.UnitListWindow                            = GetObject<LiveUnitListWindow>(new IntPtr(p + 0x090), ReversePrism.DataModels.LiveUnitListWindow.FromPointer); // 0x90 UnitListWindow              ( ModelClassType LiveUnitListWindow LiveUnitListWindow LiveUnitListWindow Pointer )
+            value.SettingPopupCaller                        = GetObject<LiveSettingPopupCaller>(new IntPtr(p + 0x098), ReversePrism.DataModels.LiveSettingPopupCaller.FromPointer); // 0x98 SettingPopupCaller          ( ModelClassType LiveSettingPopupCaller LiveSettingPopupCaller LiveSettingPopupCaller Pointer )
+            value.LbPopupCaller                             = GetObject<LiveBonusUsageSettingPopupCaller>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.LiveBonusUsageSettingPopupCaller.FromPointer); // 0xA0 LbPopupCaller               ( ModelClassType LiveBonusUsageSettingPopupCaller LiveBonusUsageSettingPopupCaller LiveBonusUsageSettingPopupCaller Pointer )
+            value.StageDetailPopupCaller                    = GetObject<LiveStageDetailPopupCaller>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.LiveStageDetailPopupCaller.FromPointer); // 0xA8 StageDetailPopupCaller      ( ModelClassType LiveStageDetailPopupCaller LiveStageDetailPopupCaller LiveStageDetailPopupCaller Pointer )
+            value.UseRecommendedPopupCaller                 = GetObject<LiveUnitEditUseRecommendedPopupCaller>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.LiveUnitEditUseRecommendedPopupCaller.FromPointer); // 0xB0 UseRecommendedPopupCaller   ( ModelClassType LiveUnitEditUseRecommendedPopupCaller LiveUnitEditUseRecommendedPopupCaller LiveUnitEditUseRecommendedPopupCaller Pointer )
+            value.TotalParameterDetailPopupCaller           = GetObject<LiveUnitTotalParameterDetailPopupCaller>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.LiveUnitTotalParameterDetailPopupCaller.FromPointer); // 0xB8 TotalParameterDetailPopupCaller ( ModelClassType LiveUnitTotalParameterDetailPopupCaller LiveUnitTotalParameterDetailPopupCaller LiveUnitTotalParameterDetailPopupCaller Pointer )
+            value.SkipLiveConfirmationPopupCaller           = GetObject<SkipLiveConfirmationPopupCaller>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.SkipLiveConfirmationPopupCaller.FromPointer); // 0xC0 SkipLiveConfirmationPopupCaller ( ModelClassType SkipLiveConfirmationPopupCaller SkipLiveConfirmationPopupCaller SkipLiveConfirmationPopupCaller Pointer )
+            value.LimitedVoiceSeparateDetailPopupCaller     = GetObject<LimitedVoiceSeparateDetailPopupCaller>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.LimitedVoiceSeparateDetailPopupCaller.FromPointer); // 0xC8 LimitedVoiceSeparateDetailPopupCaller ( ModelClassType LimitedVoiceSeparateDetailPopupCaller LimitedVoiceSeparateDetailPopupCaller LimitedVoiceSeparateDetailPopupCaller Pointer )
+            value.EventBreakTimePopupCaller                 = GetObject<ILiveEventBreakTimePopupCaller>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.ILiveEventBreakTimePopupCaller.FromPointer); // 0xD0 EventBreakTimePopupCaller   ( ModelClassType ILiveEventBreakTimePopupCaller ILiveEventBreakTimePopupCaller ILiveEventBreakTimePopupCaller Pointer )
+            value.Model                                     = GetObject<LiveUnitConfirmationModel>(new IntPtr(p + 0x0D8), ReversePrism.DataModels.LiveUnitConfirmationModel.FromPointer); // 0xD8 Model                       ( ModelClassType LiveUnitConfirmationModel LiveUnitConfirmationModel LiveUnitConfirmationModel Pointer )
+            value.Canceller                                 = (AutoCancellationTokenSource)GetInt32(new IntPtr(p + 0x0E0)); // 0xE0 Canceller                   ( ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32 )
+            value.JumpParameter                             = GetObject<JumpParameter>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.JumpParameter.FromPointer); // 0xE8 JumpParameter               ( ModelClassType JumpParameter JumpParameter JumpParameter Pointer )
 
             return value;
         }

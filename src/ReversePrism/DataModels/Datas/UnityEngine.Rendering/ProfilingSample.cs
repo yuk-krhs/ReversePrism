@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Cmd                                    0001865E01D0 ModelClassType CommandBuffer CommandBuffer CommandBuffer Pointer
-    // 018 M_Name                                   000186672F10 ModelPrimitiveType string string string String
-    // 020 M_Disposed                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 028 M_Sampler                                00018666CA30 ModelClassType CustomSampler CustomSampler CustomSampler Pointer
+    // 010 M_Cmd                                    ModelClassType CommandBuffer CommandBuffer CommandBuffer Pointer
+    // 018 M_Name                                   ModelPrimitiveType string string string String
+    // 020 M_Disposed                               ModelPrimitiveType bool bool bool Bool
+    // 028 M_Sampler                                ModelClassType CustomSampler CustomSampler CustomSampler Pointer
     public partial class ProfilingSample : DataModel
     {
         public CommandBuffer?                           M_Cmd                                   { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProfilingSample() { Pointer= p0 };
 
-            value.M_Cmd                                     = GetObject<CommandBuffer>(new IntPtr(p + 0x010), ReversePrism.DataModels.CommandBuffer.FromPointer); // 0246691FB298 0x10 M_Cmd                       ( 0001865E01D0 ModelClassType CommandBuffer CommandBuffer CommandBuffer Pointer )
-            value.M_Name                                    = GetString(new IntPtr(p + 0x018)); // 0246691FB2B8 0x18 M_Name                      ( 000186672F10 ModelPrimitiveType string string string String )
-            value.M_Disposed                                = GetBool(new IntPtr(p + 0x020)); // 0246691FB2D8 0x20 M_Disposed                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_Sampler                                 = GetObject<CustomSampler>(new IntPtr(p + 0x028), ReversePrism.DataModels.CustomSampler.FromPointer); // 0246691FB2F8 0x28 M_Sampler                   ( 00018666CA30 ModelClassType CustomSampler CustomSampler CustomSampler Pointer )
+            value.M_Cmd                                     = GetObject<CommandBuffer>(new IntPtr(p + 0x010), ReversePrism.DataModels.CommandBuffer.FromPointer); // 0x10 M_Cmd                       ( ModelClassType CommandBuffer CommandBuffer CommandBuffer Pointer )
+            value.M_Name                                    = GetString(new IntPtr(p + 0x018)); // 0x18 M_Name                      ( ModelPrimitiveType string string string String )
+            value.M_Disposed                                = GetBool(new IntPtr(p + 0x020)); // 0x20 M_Disposed                  ( ModelPrimitiveType bool bool bool Bool )
+            value.M_Sampler                                 = GetObject<CustomSampler>(new IntPtr(p + 0x028), ReversePrism.DataModels.CustomSampler.FromPointer); // 0x28 M_Sampler                   ( ModelClassType CustomSampler CustomSampler CustomSampler Pointer )
 
             return value;
         }

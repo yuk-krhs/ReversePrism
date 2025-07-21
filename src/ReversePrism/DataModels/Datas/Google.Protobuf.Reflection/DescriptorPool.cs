@@ -12,7 +12,6 @@ namespace ReversePrism.DataModels
     // 018 fieldsByNumber                           IDictionary`2<ObjectIntPair`1<IDescriptor>, FieldDescriptor> IL2CPP_TYPE_GENERICINST
     // 020 enumValuesByNumber                       IDictionary`2<ObjectIntPair`1<IDescriptor>, EnumValueDescriptor> IL2CPP_TYPE_GENERICINST
     // 028 dependencies                             HashSet`1<FileDescriptor> IL2CPP_TYPE_GENERICINST
-    // 000 ValidationRegex                          Regex IL2CPP_TYPE_CLASS
     public partial class DescriptorPool : DataModel
     {
 

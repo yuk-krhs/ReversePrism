@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<PrismOptions> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 AuthTypeFieldNumber                      int IL2CPP_TYPE_I4
-    // 018 AuthType                                 000186569160 ModelEnumType AuthType AuthType AuthType Int32
+    // 018 AuthType                                 ModelEnumType AuthType AuthType AuthType Int32
     public partial class PrismOptions : DataModel
     {
         public AuthType                                 AuthType                                { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PrismOptions() { Pointer= p0 };
 
-            value.AuthType                                  = (AuthType)GetInt32(new IntPtr(p + 0x018)); // 024660B6A558 0x18 AuthType                    ( 000186569160 ModelEnumType AuthType AuthType AuthType Int32 )
+            value.AuthType                                  = (AuthType)GetInt32(new IntPtr(p + 0x018)); // 0x18 AuthType                    ( ModelEnumType AuthType AuthType AuthType Int32 )
 
             return value;
         }

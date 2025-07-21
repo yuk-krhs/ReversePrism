@@ -8,13 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Id                                       0001865F4260 ModelPrimitiveType int int int Int32
-    // 014 MstUnitId                                0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 ReleaseDate                              0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime
+    // 010 Id                                       ModelPrimitiveType int int int Int32
+    // 014 MstUnitId                                ModelPrimitiveType int int int Int32
+    // 018 SortId                                   ModelPrimitiveType int int int Int32
+    // 020 ReleaseDate                              ModelPrimitiveType DateTime DateTime DateTime DateTime
     public partial class MstMainStoryChapter : DataModel
     {
         public int                                      Id                                      { get; set; }
         public int                                      MstUnitId                               { get; set; }
+        public int                                      SortId                                  { get; set; }
         public DateTime                                 ReleaseDate                             { get; set; }
 
         public static MstMainStoryChapter? FromPointer(IntPtr p0)
@@ -25,9 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MstMainStoryChapter() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A469BD60 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x014)); // 0245A469BD80 0x14 MstUnitId                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.ReleaseDate                               = GetDateTime(new IntPtr(p + 0x018)); // 0245A469BDA0 0x18 ReleaseDate                 ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0x10 Id                          ( ModelPrimitiveType int int int Int32 )
+            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x014)); // 0x14 MstUnitId                   ( ModelPrimitiveType int int int Int32 )
+            value.SortId                                    = GetInt32(new IntPtr(p + 0x018)); // 0x18 SortId                      ( ModelPrimitiveType int int int Int32 )
+            value.ReleaseDate                               = GetDateTime(new IntPtr(p + 0x020)); // 0x20 ReleaseDate                 ( ModelPrimitiveType DateTime DateTime DateTime DateTime )
 
             return value;
         }

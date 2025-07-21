@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 090 ObjectName                               000186671910 ModelPrimitiveType string string string String
+    // 090 ObjectName                               ModelPrimitiveType string string string String
     public partial class ObjectDisposedException : DataModel
     {
         public string                                   ObjectName                              { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ObjectDisposedException() { Pointer= p0 };
 
-            value.ObjectName                                = GetString(new IntPtr(p + 0x090)); // 024666A5EFE8 0x90 ObjectName                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.ObjectName                                = GetString(new IntPtr(p + 0x090)); // 0x90 ObjectName                  ( ModelPrimitiveType string string string String )
 
             return value;
         }

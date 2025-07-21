@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 X                                        0001865C2E50 ModelPrimitiveType double double double Double
-    // 018 Y                                        0001865C2E50 ModelPrimitiveType double double double Double
+    // 010 X                                        ModelPrimitiveType double double double Double
+    // 018 Y                                        ModelPrimitiveType double double double Double
     // 000 zero                                     double2 IL2CPP_TYPE_VALUETYPE
     public partial class double2 : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new double2() { Pointer= p0 };
 
-            value.X                                         = GetDouble(new IntPtr(p + 0x010)); // 0245A155FB20 0x10 X                           ( 0001865C2E50 ModelPrimitiveType double double double Double )
-            value.Y                                         = GetDouble(new IntPtr(p + 0x018)); // 0245A155FB40 0x18 Y                           ( 0001865C2E50 ModelPrimitiveType double double double Double )
+            value.X                                         = GetDouble(new IntPtr(p + 0x010)); // 0x10 X                           ( ModelPrimitiveType double double double Double )
+            value.Y                                         = GetDouble(new IntPtr(p + 0x018)); // 0x18 Y                           ( ModelPrimitiveType double double double Double )
 
             return value;
         }

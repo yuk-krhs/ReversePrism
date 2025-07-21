@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CrashlyticsInternal                      000186596740 ModelClassType FirebaseCrashlyticsInternal FirebaseCrashlyticsInternal FirebaseCrashlyticsInternal Pointer
-    // 018 FirebaseApp                              000186595220 ModelClassType FirebaseApp FirebaseApp FirebaseApp Pointer
+    // 010 CrashlyticsInternal                      ModelClassType FirebaseCrashlyticsInternal FirebaseCrashlyticsInternal FirebaseCrashlyticsInternal Pointer
+    // 018 FirebaseApp                              ModelClassType FirebaseApp FirebaseApp FirebaseApp Pointer
     public partial class AndroidImpl : DataModel
     {
         public FirebaseCrashlyticsInternal?             CrashlyticsInternal                     { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AndroidImpl() { Pointer= p0 };
 
-            value.CrashlyticsInternal                       = GetObject<FirebaseCrashlyticsInternal>(new IntPtr(p + 0x010), ReversePrism.DataModels.FirebaseCrashlyticsInternal.FromPointer); // 02466BCE12C0 0x10 CrashlyticsInternal         ( 000186596740 ModelClassType FirebaseCrashlyticsInternal FirebaseCrashlyticsInternal FirebaseCrashlyticsInternal Pointer )
-            value.FirebaseApp                               = GetObject<FirebaseApp>(new IntPtr(p + 0x018), ReversePrism.DataModels.FirebaseApp.FromPointer); // 02466BCE12E0 0x18 FirebaseApp                 ( 000186595220 ModelClassType FirebaseApp FirebaseApp FirebaseApp Pointer )
+            value.CrashlyticsInternal                       = GetObject<FirebaseCrashlyticsInternal>(new IntPtr(p + 0x010), ReversePrism.DataModels.FirebaseCrashlyticsInternal.FromPointer); // 0x10 CrashlyticsInternal         ( ModelClassType FirebaseCrashlyticsInternal FirebaseCrashlyticsInternal FirebaseCrashlyticsInternal Pointer )
+            value.FirebaseApp                               = GetObject<FirebaseApp>(new IntPtr(p + 0x018), ReversePrism.DataModels.FirebaseApp.FromPointer); // 0x18 FirebaseApp                 ( ModelClassType FirebaseApp FirebaseApp FirebaseApp Pointer )
 
             return value;
         }

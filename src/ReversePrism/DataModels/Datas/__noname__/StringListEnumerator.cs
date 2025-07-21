@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CollectionRef                            0001865C0D50 ModelClassType StringList StringList StringList Pointer
-    // 018 CurrentIndex                             0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 CollectionRef                            ModelClassType StringList StringList StringList Pointer
+    // 018 CurrentIndex                             ModelPrimitiveType int int int Int32
     // 020 currentObject                            <object> IL2CPP_TYPE_OBJECT
-    // 028 CurrentSize                              0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 028 CurrentSize                              ModelPrimitiveType int int int Int32
     public partial class StringListEnumerator : DataModel
     {
         public StringList?                              CollectionRef                           { get; set; }
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StringListEnumerator() { Pointer= p0 };
 
-            value.CollectionRef                             = GetObject<StringList>(new IntPtr(p + 0x010), ReversePrism.DataModels.StringList.FromPointer); // 02466B7DD2D0 0x10 CollectionRef               ( 0001865C0D50 ModelClassType StringList StringList StringList Pointer )
-            value.CurrentIndex                              = GetInt32(new IntPtr(p + 0x018)); // 02466B7DD2F0 0x18 CurrentIndex                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CurrentSize                               = GetInt32(new IntPtr(p + 0x028)); // 02466B7DD330 0x28 CurrentSize                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CollectionRef                             = GetObject<StringList>(new IntPtr(p + 0x010), ReversePrism.DataModels.StringList.FromPointer); // 0x10 CollectionRef               ( ModelClassType StringList StringList StringList Pointer )
+            value.CurrentIndex                              = GetInt32(new IntPtr(p + 0x018)); // 0x18 CurrentIndex                ( ModelPrimitiveType int int int Int32 )
+            value.CurrentSize                               = GetInt32(new IntPtr(p + 0x028)); // 0x28 CurrentSize                 ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

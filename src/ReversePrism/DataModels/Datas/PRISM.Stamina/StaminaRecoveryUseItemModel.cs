@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 RecoveryItemModel                        0001865660D0 ModelClassType StaminaRecoveryItemModel StaminaRecoveryItemModel StaminaRecoveryItemModel Pointer
-    // 018 UseAmount                                0001865F7700 ModelPrimitiveType long long long Int64
+    // 010 RecoveryItemModel                        ModelClassType StaminaRecoveryItemModel StaminaRecoveryItemModel StaminaRecoveryItemModel Pointer
+    // 018 UseAmount                                ModelPrimitiveType long long long Int64
     public partial class StaminaRecoveryUseItemModel : DataModel
     {
         public StaminaRecoveryItemModel?                RecoveryItemModel                       { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StaminaRecoveryUseItemModel() { Pointer= p0 };
 
-            value.RecoveryItemModel                         = GetObject<StaminaRecoveryItemModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.StaminaRecoveryItemModel.FromPointer); // 024665671A78 0x10 RecoveryItemModel           ( 0001865660D0 ModelClassType StaminaRecoveryItemModel StaminaRecoveryItemModel StaminaRecoveryItemModel Pointer )
-            value.UseAmount                                 = GetInt64(new IntPtr(p + 0x018)); // 024665671A98 0x18 UseAmount                   ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.RecoveryItemModel                         = GetObject<StaminaRecoveryItemModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.StaminaRecoveryItemModel.FromPointer); // 0x10 RecoveryItemModel           ( ModelClassType StaminaRecoveryItemModel StaminaRecoveryItemModel StaminaRecoveryItemModel Pointer )
+            value.UseAmount                                 = GetInt64(new IntPtr(p + 0x018)); // 0x18 UseAmount                   ( ModelPrimitiveType long long long Int64 )
 
             return value;
         }

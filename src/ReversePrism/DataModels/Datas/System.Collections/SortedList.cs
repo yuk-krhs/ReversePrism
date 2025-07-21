@@ -10,11 +10,11 @@ namespace ReversePrism.DataModels
 
     // 010 keys                                     <object>[] IL2CPP_TYPE_SZARRAY
     // 018 values                                   <object>[] IL2CPP_TYPE_SZARRAY
-    // 020 Size                                     0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 024 Version                                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 028 Comparer                                 0001867353C0 ModelClassType IComparer IComparer IComparer Pointer
-    // 030 KeyList                                  00018654C480 ModelClassType KeyList KeyList KeyList Pointer
-    // 038 ValueList                                00018654D0C0 ModelClassType ValueList ValueList ValueList Pointer
+    // 020 Size                                     ModelPrimitiveType int int int Int32
+    // 024 Version                                  ModelPrimitiveType int int int Int32
+    // 028 Comparer                                 ModelClassType IComparer IComparer IComparer Pointer
+    // 030 KeyList                                  ModelClassType KeyList KeyList KeyList Pointer
+    // 038 ValueList                                ModelClassType ValueList ValueList ValueList Pointer
     // 040 _syncRoot                                <object> IL2CPP_TYPE_OBJECT
     public partial class SortedList : DataModel
     {
@@ -32,11 +32,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SortedList() { Pointer= p0 };
 
-            value.Size                                      = GetInt32(new IntPtr(p + 0x020)); // 024666DD0120 0x20 Size                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Version                                   = GetInt32(new IntPtr(p + 0x024)); // 024666DD0140 0x24 Version                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Comparer                                  = GetObject<IComparer>(new IntPtr(p + 0x028), ReversePrism.DataModels.IComparer.FromPointer); // 024666DD0160 0x28 Comparer                    ( 0001867353C0 ModelClassType IComparer IComparer IComparer Pointer )
-            value.KeyList                                   = GetObject<KeyList>(new IntPtr(p + 0x030), ReversePrism.DataModels.KeyList.FromPointer); // 024666DD0180 0x30 KeyList                     ( 00018654C480 ModelClassType KeyList KeyList KeyList Pointer )
-            value.ValueList                                 = GetObject<ValueList>(new IntPtr(p + 0x038), ReversePrism.DataModels.ValueList.FromPointer); // 024666DD01A0 0x38 ValueList                   ( 00018654D0C0 ModelClassType ValueList ValueList ValueList Pointer )
+            value.Size                                      = GetInt32(new IntPtr(p + 0x020)); // 0x20 Size                        ( ModelPrimitiveType int int int Int32 )
+            value.Version                                   = GetInt32(new IntPtr(p + 0x024)); // 0x24 Version                     ( ModelPrimitiveType int int int Int32 )
+            value.Comparer                                  = GetObject<IComparer>(new IntPtr(p + 0x028), ReversePrism.DataModels.IComparer.FromPointer); // 0x28 Comparer                    ( ModelClassType IComparer IComparer IComparer Pointer )
+            value.KeyList                                   = GetObject<KeyList>(new IntPtr(p + 0x030), ReversePrism.DataModels.KeyList.FromPointer); // 0x30 KeyList                     ( ModelClassType KeyList KeyList KeyList Pointer )
+            value.ValueList                                 = GetObject<ValueList>(new IntPtr(p + 0x038), ReversePrism.DataModels.ValueList.FromPointer); // 0x38 ValueList                   ( ModelClassType ValueList ValueList ValueList Pointer )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 UserIdChanged                            Action`1<string> IL2CPP_TYPE_GENERICINST
-    // 018 M_UserId                                 000186671910 ModelPrimitiveType string string string String
+    // 018 M_UserId                                 ModelPrimitiveType string string string String
     public partial class ExternalUserIdProperty : DataModel
     {
         public string                                   M_UserId                                { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExternalUserIdProperty() { Pointer= p0 };
 
-            value.M_UserId                                  = GetString(new IntPtr(p + 0x018)); // 0245A3599120 0x18 M_UserId                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_UserId                                  = GetString(new IntPtr(p + 0x018)); // 0x18 M_UserId                    ( ModelPrimitiveType string string string String )
 
             return value;
         }

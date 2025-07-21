@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 _Hammersley2dSeq64                       00018651E8E0 ModelEnumType <hammersley2dSeq64>e__FixedBuffer <hammersley2dSeq64>e__FixedBuffer <hammersley2dSeq64>e__FixedBuffer Int32
+    // 010 _Hammersley2dSeq64                       ModelEnumType <hammersley2dSeq64>e__FixedBuffer <hammersley2dSeq64>e__FixedBuffer <hammersley2dSeq64>e__FixedBuffer Int32
     public partial class Hammersley2dSeq64 : DataModel
     {
         public <hammersley2dSeq64>e__FixedBuffer        _Hammersley2dSeq64                      { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Hammersley2dSeq64() { Pointer= p0 };
 
-            value._Hammersley2dSeq64                        = (<hammersley2dSeq64>e__FixedBuffer)GetInt32(new IntPtr(p + 0x010)); // 0246692BE518 0x10 _Hammersley2dSeq64          ( 00018651E8E0 ModelEnumType <hammersley2dSeq64>e__FixedBuffer <hammersley2dSeq64>e__FixedBuffer <hammersley2dSeq64>e__FixedBuffer Int32 )
+            value._Hammersley2dSeq64                        = (<hammersley2dSeq64>e__FixedBuffer)GetInt32(new IntPtr(p + 0x010)); // 0x10 _Hammersley2dSeq64          ( ModelEnumType <hammersley2dSeq64>e__FixedBuffer <hammersley2dSeq64>e__FixedBuffer <hammersley2dSeq64>e__FixedBuffer Int32 )
 
             return value;
         }

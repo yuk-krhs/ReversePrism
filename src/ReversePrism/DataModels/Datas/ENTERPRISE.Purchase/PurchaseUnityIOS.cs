@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 058 AppleExtensions                          0001866F9200 ModelClassType IAppleExtensions IAppleExtensions IAppleExtensions Pointer
+    // 058 AppleExtensions                          ModelClassType IAppleExtensions IAppleExtensions IAppleExtensions Pointer
     public partial class PurchaseUnityIOS : DataModel
     {
         public IAppleExtensions?                        AppleExtensions                         { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PurchaseUnityIOS() { Pointer= p0 };
 
-            value.AppleExtensions                           = GetObject<IAppleExtensions>(new IntPtr(p + 0x058), ReversePrism.DataModels.IAppleExtensions.FromPointer); // 02466BDD9EF0 0x58 AppleExtensions             ( 0001866F9200 ModelClassType IAppleExtensions IAppleExtensions IAppleExtensions Pointer )
+            value.AppleExtensions                           = GetObject<IAppleExtensions>(new IntPtr(p + 0x058), ReversePrism.DataModels.IAppleExtensions.FromPointer); // 0x58 AppleExtensions             ( ModelClassType IAppleExtensions IAppleExtensions IAppleExtensions Pointer )
 
             return value;
         }

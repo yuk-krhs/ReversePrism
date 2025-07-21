@@ -12,9 +12,9 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 CompletedListFieldNumber                 int IL2CPP_TYPE_I4
     // 008 _repeated_completedList_codec            FieldCodec`1<MissionCompletedStatus> IL2CPP_TYPE_GENERICINST
-    // 018 CompletedList                            000185CE6A08 ModelClassListType RepeatedField`1<MissionCompletedStatus> RepeatedField`1<MissionCompletedStatus> List<MissionCompletedStatus> Pointer
+    // 018 CompletedList                            ModelClassListType RepeatedField`1<MissionCompletedStatus> RepeatedField`1<MissionCompletedStatus> List<MissionCompletedStatus> Pointer
     // 000 AndMoreFieldNumber                       int IL2CPP_TYPE_I4
-    // 020 AndMore                                  0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 AndMore                                  ModelPrimitiveType int int int Int32
     public partial class NotifyMissionCompletedStatus : DataModel
     {
         public List<MissionCompletedStatus>?            CompletedList                           { get; set; }
@@ -28,8 +28,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NotifyMissionCompletedStatus() { Pointer= p0 };
 
-            value.CompletedList                             = GetObjectList<MissionCompletedStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.MissionCompletedStatus.FromPointer); // 024662269B78 0x18 CompletedList               ( 000185CE6A08 ModelClassListType RepeatedField`1<MissionCompletedStatus> RepeatedField`1<MissionCompletedStatus> List<MissionCompletedStatus> Pointer )
-            value.AndMore                                   = GetInt32(new IntPtr(p + 0x020)); // 024662269BB8 0x20 AndMore                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CompletedList                             = GetObjectList<MissionCompletedStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.MissionCompletedStatus.FromPointer); // 0x18 CompletedList               ( ModelClassListType RepeatedField`1<MissionCompletedStatus> RepeatedField`1<MissionCompletedStatus> List<MissionCompletedStatus> Pointer )
+            value.AndMore                                   = GetInt32(new IntPtr(p + 0x020)); // 0x20 AndMore                     ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

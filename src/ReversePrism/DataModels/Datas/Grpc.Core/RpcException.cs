@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 090 Status                                   000186585850 ModelEnumType Status Status Status Int32
-    // 0A8 Trailers                                 00018660C830 ModelClassType Metadata Metadata Metadata Pointer
+    // 090 Status                                   ModelEnumType Status Status Status Int32
+    // 0A8 Trailers                                 ModelClassType Metadata Metadata Metadata Pointer
     public partial class RpcException : DataModel
     {
         public Status                                   Status                                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RpcException() { Pointer= p0 };
 
-            value.Status                                    = (Status)GetInt32(new IntPtr(p + 0x090)); // 024662FB7DF0 0x90 Status                      ( 000186585850 ModelEnumType Status Status Status Int32 )
-            value.Trailers                                  = GetObject<Metadata>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.Metadata.FromPointer); // 024662FB7E10 0xA8 Trailers                    ( 00018660C830 ModelClassType Metadata Metadata Metadata Pointer )
+            value.Status                                    = (Status)GetInt32(new IntPtr(p + 0x090)); // 0x90 Status                      ( ModelEnumType Status Status Status Int32 )
+            value.Trailers                                  = GetObject<Metadata>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.Metadata.FromPointer); // 0xA8 Trailers                    ( ModelClassType Metadata Metadata Metadata Pointer )
 
             return value;
         }

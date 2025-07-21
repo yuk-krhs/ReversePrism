@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 040 M_Container                              0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer
-    // 048 M_DragHandle                             0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer
-    // 050 M_ItemContainer                          0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer
+    // 048 M_Container                              ModelClassType VisualElement VisualElement VisualElement Pointer
+    // 050 M_DragHandle                             ModelClassType VisualElement VisualElement VisualElement Pointer
+    // 058 M_ItemContainer                          ModelClassType VisualElement VisualElement VisualElement Pointer
     public partial class ReusableListViewItem : DataModel
     {
         public VisualElement?                           M_Container                             { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ReusableListViewItem() { Pointer= p0 };
 
-            value.M_Container                               = GetObject<VisualElement>(new IntPtr(p + 0x040), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A66B0018 0x40 M_Container                 ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
-            value.M_DragHandle                              = GetObject<VisualElement>(new IntPtr(p + 0x048), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A66B0038 0x48 M_DragHandle                ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
-            value.M_ItemContainer                           = GetObject<VisualElement>(new IntPtr(p + 0x050), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A66B0058 0x50 M_ItemContainer             ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.M_Container                               = GetObject<VisualElement>(new IntPtr(p + 0x048), ReversePrism.DataModels.VisualElement.FromPointer); // 0x48 M_Container                 ( ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.M_DragHandle                              = GetObject<VisualElement>(new IntPtr(p + 0x050), ReversePrism.DataModels.VisualElement.FromPointer); // 0x50 M_DragHandle                ( ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.M_ItemContainer                           = GetObject<VisualElement>(new IntPtr(p + 0x058), ReversePrism.DataModels.VisualElement.FromPointer); // 0x58 M_ItemContainer             ( ModelClassType VisualElement VisualElement VisualElement Pointer )
 
             return value;
         }

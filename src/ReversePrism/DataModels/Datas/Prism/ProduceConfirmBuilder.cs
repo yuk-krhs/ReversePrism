@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 View                                     00018653A300 ModelClassType ProduceConfirmView ProduceConfirmView ProduceConfirmView Pointer
+    // 020 View                                     ModelClassType ProduceConfirmView ProduceConfirmView ProduceConfirmView Pointer
     public partial class ProduceConfirmBuilder : DataModel
     {
         public ProduceConfirmView?                      View                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceConfirmBuilder() { Pointer= p0 };
 
-            value.View                                      = GetObject<ProduceConfirmView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceConfirmView.FromPointer); // 02466B6B25F8 0x20 View                        ( 00018653A300 ModelClassType ProduceConfirmView ProduceConfirmView ProduceConfirmView Pointer )
+            value.View                                      = GetObject<ProduceConfirmView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceConfirmView.FromPointer); // 0x20 View                        ( ModelClassType ProduceConfirmView ProduceConfirmView ProduceConfirmView Pointer )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 Active                                   000186595960 ModelPrimitiveType bool bool bool Bool
-    // 020 Enabled                                  000186768DE0 ModelClassType BoolParameter BoolParameter BoolParameter Pointer
+    // 018 Active                                   ModelPrimitiveType bool bool bool Bool
+    // 020 Enabled                                  ModelClassType BoolParameter BoolParameter BoolParameter Pointer
     // 028 parameters                               ReadOnlyCollection`1<ParameterOverride> IL2CPP_TYPE_GENERICINST
     public partial class PostProcessEffectSettings : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PostProcessEffectSettings() { Pointer= p0 };
 
-            value.Active                                    = GetBool(new IntPtr(p + 0x018)); // 0245A60DB698 0x18 Active                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Enabled                                   = GetObject<BoolParameter>(new IntPtr(p + 0x020), ReversePrism.DataModels.BoolParameter.FromPointer); // 0245A60DB6B8 0x20 Enabled                     ( 000186768DE0 ModelClassType BoolParameter BoolParameter BoolParameter Pointer )
+            value.Active                                    = GetBool(new IntPtr(p + 0x018)); // 0x18 Active                      ( ModelPrimitiveType bool bool bool Bool )
+            value.Enabled                                   = GetObject<BoolParameter>(new IntPtr(p + 0x020), ReversePrism.DataModels.BoolParameter.FromPointer); // 0x20 Enabled                     ( ModelClassType BoolParameter BoolParameter BoolParameter Pointer )
 
             return value;
         }

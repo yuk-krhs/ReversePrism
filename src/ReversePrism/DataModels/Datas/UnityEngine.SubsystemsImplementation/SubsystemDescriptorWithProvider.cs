@@ -8,14 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Id                                       000186671910 ModelPrimitiveType string string string String
-    // 018 ProviderType                             000186692850 ModelClassType Type Type Type Pointer
-    // 020 SubsystemTypeOverride                    000186692850 ModelClassType Type Type Type Pointer
+    // 010 Id                                       ModelPrimitiveType string string string String
     public partial class SubsystemDescriptorWithProvider : DataModel
     {
         public string                                   Id                                      { get; set; }
-        public Type?                                    ProviderType                            { get; set; }
-        public Type?                                    SubsystemTypeOverride                   { get; set; }
 
         public static SubsystemDescriptorWithProvider? FromPointer(IntPtr p0)
         {
@@ -25,9 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SubsystemDescriptorWithProvider() { Pointer= p0 };
 
-            value.Id                                        = GetString(new IntPtr(p + 0x010)); // 0246609175F0 0x10 Id                          ( 000186671910 ModelPrimitiveType string string string String )
-            value.ProviderType                              = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 024660917610 0x18 ProviderType                ( 000186692850 ModelClassType Type Type Type Pointer )
-            value.SubsystemTypeOverride                     = GetObject<Type>(new IntPtr(p + 0x020), ReversePrism.DataModels.Type.FromPointer); // 024660917630 0x20 SubsystemTypeOverride       ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.Id                                        = GetString(new IntPtr(p + 0x010)); // 0x10 Id                          ( ModelPrimitiveType string string string String )
 
             return value;
         }

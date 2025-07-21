@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 AccessKey                                000186671BA0 ModelPrimitiveType string string string String
-    // 020 User                                     00018674B3F0 ModelClassType User User User Pointer
+    // 018 AccessKey                                ModelPrimitiveType string string string String
+    // 020 User                                     ModelClassType User User User Pointer
     // 000 OnUpdateSettings                         Action`1<HubSettings> IL2CPP_TYPE_GENERICINST
     // 000 API                                      string IL2CPP_TYPE_STRING
     // 000 Version                                  string IL2CPP_TYPE_STRING
@@ -28,8 +28,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HubSettings() { Pointer= p0 };
 
-            value.AccessKey                                 = GetString(new IntPtr(p + 0x018)); // 0245A3342158 0x18 AccessKey                   ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.User                                      = GetObject<User>(new IntPtr(p + 0x020), ReversePrism.DataModels.User.FromPointer); // 0245A3342178 0x20 User                        ( 00018674B3F0 ModelClassType User User User Pointer )
+            value.AccessKey                                 = GetString(new IntPtr(p + 0x018)); // 0x18 AccessKey                   ( ModelPrimitiveType string string string String )
+            value.User                                      = GetObject<User>(new IntPtr(p + 0x020), ReversePrism.DataModels.User.FromPointer); // 0x20 User                        ( ModelClassType User User User Pointer )
 
             return value;
         }

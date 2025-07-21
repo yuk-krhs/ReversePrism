@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Source                                   00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    // 011 Replace                                  00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 010 Source                                   ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 011 Replace                                  ModelPrimitiveType sbyte sbyte sbyte SByte
     public partial class Level2Map : DataModel
     {
         public sbyte                                    Source                                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Level2Map() { Pointer= p0 };
 
-            value.Source                                    = GetSByte(new IntPtr(p + 0x010)); // 0245A3CE39C8 0x10 Source                      ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Replace                                   = GetSByte(new IntPtr(p + 0x011)); // 0245A3CE39E8 0x11 Replace                     ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Source                                    = GetSByte(new IntPtr(p + 0x010)); // 0x10 Source                      ( ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Replace                                   = GetSByte(new IntPtr(p + 0x011)); // 0x11 Replace                     ( ModelPrimitiveType sbyte sbyte sbyte SByte )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 060 NameLabel                                0001866320F0 ModelClassType Text Text Text Pointer
-    // 068 ValueLabel                               0001866320F0 ModelClassType Text Text Text Pointer
+    // 060 NameLabel                                ModelClassType Text Text Text Pointer
+    // 068 ValueLabel                               ModelClassType Text Text Text Pointer
     public partial class DebugUIHandlerObject : DataModel
     {
         public Text?                                    NameLabel                               { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DebugUIHandlerObject() { Pointer= p0 };
 
-            value.NameLabel                                 = GetObject<Text>(new IntPtr(p + 0x060), ReversePrism.DataModels.Text.FromPointer); // 02466938A460 0x60 NameLabel                   ( 0001866320F0 ModelClassType Text Text Text Pointer )
-            value.ValueLabel                                = GetObject<Text>(new IntPtr(p + 0x068), ReversePrism.DataModels.Text.FromPointer); // 02466938A480 0x68 ValueLabel                  ( 0001866320F0 ModelClassType Text Text Text Pointer )
+            value.NameLabel                                 = GetObject<Text>(new IntPtr(p + 0x060), ReversePrism.DataModels.Text.FromPointer); // 0x60 NameLabel                   ( ModelClassType Text Text Text Pointer )
+            value.ValueLabel                                = GetObject<Text>(new IntPtr(p + 0x068), ReversePrism.DataModels.Text.FromPointer); // 0x68 ValueLabel                  ( ModelClassType Text Text Text Pointer )
 
             return value;
         }

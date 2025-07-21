@@ -11,11 +11,11 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<SupportEffectStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstSupportEffectIdFieldNumber            int IL2CPP_TYPE_I4
-    // 018 MstSupportEffectId                       0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MstSupportEffectId                       ModelPrimitiveType int int int Int32
     // 000 UnlockPremiseLevelFieldNumber            int IL2CPP_TYPE_I4
-    // 01C UnlockPremiseLevel                       0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 01C UnlockPremiseLevel                       ModelPrimitiveType int int int Int32
     // 000 ProduceEntrustFieldNumber                int IL2CPP_TYPE_I4
-    // 020 ProduceEntrust                           00018653E020 ModelClassType ProduceEntrustStatus ProduceEntrustStatus ProduceEntrustStatus Pointer
+    // 020 ProduceEntrust                           ModelClassType ProduceEntrustStatus ProduceEntrustStatus ProduceEntrustStatus Pointer
     public partial class SupportEffectStatus : DataModel
     {
         public int                                      MstSupportEffectId                      { get; set; }
@@ -30,9 +30,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SupportEffectStatus() { Pointer= p0 };
 
-            value.MstSupportEffectId                        = GetInt32(new IntPtr(p + 0x018)); // 0246613A97E0 0x18 MstSupportEffectId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UnlockPremiseLevel                        = GetInt32(new IntPtr(p + 0x01C)); // 0246613A9820 0x1C UnlockPremiseLevel          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ProduceEntrust                            = GetObject<ProduceEntrustStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceEntrustStatus.FromPointer); // 0246613A9860 0x20 ProduceEntrust              ( 00018653E020 ModelClassType ProduceEntrustStatus ProduceEntrustStatus ProduceEntrustStatus Pointer )
+            value.MstSupportEffectId                        = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstSupportEffectId          ( ModelPrimitiveType int int int Int32 )
+            value.UnlockPremiseLevel                        = GetInt32(new IntPtr(p + 0x01C)); // 0x1C UnlockPremiseLevel          ( ModelPrimitiveType int int int Int32 )
+            value.ProduceEntrust                            = GetObject<ProduceEntrustStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceEntrustStatus.FromPointer); // 0x20 ProduceEntrust              ( ModelClassType ProduceEntrustStatus ProduceEntrustStatus ProduceEntrustStatus Pointer )
 
             return value;
         }

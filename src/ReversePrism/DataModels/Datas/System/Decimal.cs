@@ -12,15 +12,15 @@ namespace ReversePrism.DataModels
     // 000 ScaleMask                                int IL2CPP_TYPE_I4
     // 000 ScaleShift                               int IL2CPP_TYPE_I4
     // 000 Zero                                     Decimal IL2CPP_TYPE_VALUETYPE
-    // 010 One                                      0001865C12F0 ModelEnumType Decimal Decimal Decimal Int32
-    // 020 MinusOne                                 0001865C12F0 ModelEnumType Decimal Decimal Decimal Int32
-    // 030 MaxValue                                 0001865C12F0 ModelEnumType Decimal Decimal Decimal Int32
-    // 040 MinValue                                 0001865C12F0 ModelEnumType Decimal Decimal Decimal Int32
-    // 010 Flags                                    0001865F4260 ModelPrimitiveType int int int Int32
-    // 014 Hi                                       0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 Lo                                       0001865F4260 ModelPrimitiveType int int int Int32
-    // 01C Mid                                      0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 UlomidLE                                 00018669CEA0 ModelPrimitiveType ulong ulong ulong UInt64
+    // 010 One                                      ModelEnumType Decimal Decimal Decimal Int32
+    // 020 MinusOne                                 ModelEnumType Decimal Decimal Decimal Int32
+    // 030 MaxValue                                 ModelEnumType Decimal Decimal Decimal Int32
+    // 040 MinValue                                 ModelEnumType Decimal Decimal Decimal Int32
+    // 010 Flags                                    ModelPrimitiveType int int int Int32
+    // 014 Hi                                       ModelPrimitiveType int int int Int32
+    // 018 Lo                                       ModelPrimitiveType int int int Int32
+    // 01C Mid                                      ModelPrimitiveType int int int Int32
+    // 018 UlomidLE                                 ModelPrimitiveType ulong ulong ulong UInt64
     public partial class Decimal : DataModel
     {
         public Decimal                                  One                                     { get; set; }
@@ -41,15 +41,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Decimal() { Pointer= p0 };
 
-            value.One                                       = (Decimal)GetInt32(new IntPtr(p + 0x010)); // 0245A3D4E150 0x10 One                         ( 0001865C12F0 ModelEnumType Decimal Decimal Decimal Int32 )
-            value.MinusOne                                  = (Decimal)GetInt32(new IntPtr(p + 0x020)); // 0245A3D4E170 0x20 MinusOne                    ( 0001865C12F0 ModelEnumType Decimal Decimal Decimal Int32 )
-            value.MaxValue                                  = (Decimal)GetInt32(new IntPtr(p + 0x030)); // 0245A3D4E190 0x30 MaxValue                    ( 0001865C12F0 ModelEnumType Decimal Decimal Decimal Int32 )
-            value.MinValue                                  = (Decimal)GetInt32(new IntPtr(p + 0x040)); // 0245A3D4E1B0 0x40 MinValue                    ( 0001865C12F0 ModelEnumType Decimal Decimal Decimal Int32 )
-            value.Flags                                     = GetInt32(new IntPtr(p + 0x010)); // 0245A3D4E1D0 0x10 Flags                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Hi                                        = GetInt32(new IntPtr(p + 0x014)); // 0245A3D4E1F0 0x14 Hi                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Lo                                        = GetInt32(new IntPtr(p + 0x018)); // 0245A3D4E210 0x18 Lo                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Mid                                       = GetInt32(new IntPtr(p + 0x01C)); // 0245A3D4E230 0x1C Mid                         ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.UlomidLE                                  = GetUInt64(new IntPtr(p + 0x018)); // 0245A3D4E250 0x18 UlomidLE                    ( 00018669CEA0 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.One                                       = (Decimal)GetInt32(new IntPtr(p + 0x010)); // 0x10 One                         ( ModelEnumType Decimal Decimal Decimal Int32 )
+            value.MinusOne                                  = (Decimal)GetInt32(new IntPtr(p + 0x020)); // 0x20 MinusOne                    ( ModelEnumType Decimal Decimal Decimal Int32 )
+            value.MaxValue                                  = (Decimal)GetInt32(new IntPtr(p + 0x030)); // 0x30 MaxValue                    ( ModelEnumType Decimal Decimal Decimal Int32 )
+            value.MinValue                                  = (Decimal)GetInt32(new IntPtr(p + 0x040)); // 0x40 MinValue                    ( ModelEnumType Decimal Decimal Decimal Int32 )
+            value.Flags                                     = GetInt32(new IntPtr(p + 0x010)); // 0x10 Flags                       ( ModelPrimitiveType int int int Int32 )
+            value.Hi                                        = GetInt32(new IntPtr(p + 0x014)); // 0x14 Hi                          ( ModelPrimitiveType int int int Int32 )
+            value.Lo                                        = GetInt32(new IntPtr(p + 0x018)); // 0x18 Lo                          ( ModelPrimitiveType int int int Int32 )
+            value.Mid                                       = GetInt32(new IntPtr(p + 0x01C)); // 0x1C Mid                         ( ModelPrimitiveType int int int Int32 )
+            value.UlomidLE                                  = GetUInt64(new IntPtr(p + 0x018)); // 0x18 UlomidLE                    ( ModelPrimitiveType ulong ulong ulong UInt64 )
 
             return value;
         }

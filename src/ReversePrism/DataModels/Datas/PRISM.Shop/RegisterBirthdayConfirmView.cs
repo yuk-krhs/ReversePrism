@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 BirthdayTextView                         00018675F650 ModelClassType BirthdayTextView BirthdayTextView BirthdayTextView Pointer
+    // 020 BirthdayTextView                         ModelClassType BirthdayTextView BirthdayTextView BirthdayTextView Pointer
     public partial class RegisterBirthdayConfirmView : DataModel
     {
         public BirthdayTextView?                        BirthdayTextView                        { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RegisterBirthdayConfirmView() { Pointer= p0 };
 
-            value.BirthdayTextView                          = GetObject<BirthdayTextView>(new IntPtr(p + 0x020), ReversePrism.DataModels.BirthdayTextView.FromPointer); // 024665573E70 0x20 BirthdayTextView            ( 00018675F650 ModelClassType BirthdayTextView BirthdayTextView BirthdayTextView Pointer )
+            value.BirthdayTextView                          = GetObject<BirthdayTextView>(new IntPtr(p + 0x020), ReversePrism.DataModels.BirthdayTextView.FromPointer); // 0x20 BirthdayTextView            ( ModelClassType BirthdayTextView BirthdayTextView BirthdayTextView Pointer )
 
             return value;
         }

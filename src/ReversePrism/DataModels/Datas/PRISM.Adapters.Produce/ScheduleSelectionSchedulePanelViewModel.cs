@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 WeekSchedule                             00018669CA60 ModelClassType IWeekScheduleStatus IWeekScheduleStatus IWeekScheduleStatus Pointer
-    // 018 ProduceTerm                              0001865F5C80 ModelClassType IProduceTermStatus IProduceTermStatus IProduceTermStatus Pointer
-    // 020 WeekIndex                                0001865F4260 ModelPrimitiveType int int int Int32
-    // 028 SubSeason                                000186665040 ModelClassType ISubSeasonStatus ISubSeasonStatus ISubSeasonStatus Pointer
+    // 010 WeekSchedule                             ModelClassType IWeekScheduleStatus IWeekScheduleStatus IWeekScheduleStatus Pointer
+    // 018 ProduceTerm                              ModelClassType IProduceTermStatus IProduceTermStatus IProduceTermStatus Pointer
+    // 020 WeekIndex                                ModelPrimitiveType int int int Int32
+    // 028 SubSeason                                ModelClassType ISubSeasonStatus ISubSeasonStatus ISubSeasonStatus Pointer
     public partial class ScheduleSelectionSchedulePanelViewModel : DataModel
     {
         public IWeekScheduleStatus?                     WeekSchedule                            { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ScheduleSelectionSchedulePanelViewModel() { Pointer= p0 };
 
-            value.WeekSchedule                              = GetObject<IWeekScheduleStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IWeekScheduleStatus.FromPointer); // 02466689E278 0x10 WeekSchedule                ( 00018669CA60 ModelClassType IWeekScheduleStatus IWeekScheduleStatus IWeekScheduleStatus Pointer )
-            value.ProduceTerm                               = GetObject<IProduceTermStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IProduceTermStatus.FromPointer); // 02466689E298 0x18 ProduceTerm                 ( 0001865F5C80 ModelClassType IProduceTermStatus IProduceTermStatus IProduceTermStatus Pointer )
-            value.WeekIndex                                 = GetInt32(new IntPtr(p + 0x020)); // 02466689E2B8 0x20 WeekIndex                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.SubSeason                                 = GetObject<ISubSeasonStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ISubSeasonStatus.FromPointer); // 02466689E2D8 0x28 SubSeason                   ( 000186665040 ModelClassType ISubSeasonStatus ISubSeasonStatus ISubSeasonStatus Pointer )
+            value.WeekSchedule                              = GetObject<IWeekScheduleStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IWeekScheduleStatus.FromPointer); // 0x10 WeekSchedule                ( ModelClassType IWeekScheduleStatus IWeekScheduleStatus IWeekScheduleStatus Pointer )
+            value.ProduceTerm                               = GetObject<IProduceTermStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IProduceTermStatus.FromPointer); // 0x18 ProduceTerm                 ( ModelClassType IProduceTermStatus IProduceTermStatus IProduceTermStatus Pointer )
+            value.WeekIndex                                 = GetInt32(new IntPtr(p + 0x020)); // 0x20 WeekIndex                   ( ModelPrimitiveType int int int Int32 )
+            value.SubSeason                                 = GetObject<ISubSeasonStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ISubSeasonStatus.FromPointer); // 0x28 SubSeason                   ( ModelClassType ISubSeasonStatus ISubSeasonStatus ISubSeasonStatus Pointer )
 
             return value;
         }

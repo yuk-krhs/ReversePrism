@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<BuildChallengeTourProduceIdolUnitReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ProduceIdolUnitFieldNumber               int IL2CPP_TYPE_I4
-    // 018 ProduceIdolUnit                          00018658C400 ModelClassType ChallengeTourUnitStatus ChallengeTourUnitStatus ChallengeTourUnitStatus Pointer
+    // 018 ProduceIdolUnit                          ModelClassType ChallengeTourUnitStatus ChallengeTourUnitStatus ChallengeTourUnitStatus Pointer
     public partial class BuildChallengeTourProduceIdolUnitReply : DataModel
     {
         public ChallengeTourUnitStatus?                 ProduceIdolUnit                         { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BuildChallengeTourProduceIdolUnitReply() { Pointer= p0 };
 
-            value.ProduceIdolUnit                           = GetObject<ChallengeTourUnitStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ChallengeTourUnitStatus.FromPointer); // 024660B16A18 0x18 ProduceIdolUnit             ( 00018658C400 ModelClassType ChallengeTourUnitStatus ChallengeTourUnitStatus ChallengeTourUnitStatus Pointer )
+            value.ProduceIdolUnit                           = GetObject<ChallengeTourUnitStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ChallengeTourUnitStatus.FromPointer); // 0x18 ProduceIdolUnit             ( ModelClassType ChallengeTourUnitStatus ChallengeTourUnitStatus ChallengeTourUnitStatus Pointer )
 
             return value;
         }

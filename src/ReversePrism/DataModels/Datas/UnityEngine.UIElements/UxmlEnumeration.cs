@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Values                                 000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
+    // 010 M_Values                                 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
     public partial class UxmlEnumeration : DataModel
     {
         public List<string>?                            M_Values                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UxmlEnumeration() { Pointer= p0 };
 
-            value.M_Values                                  = GetStringList(new IntPtr(p + 0x010)); // 0245A6815628 0x10 M_Values                    ( 000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.M_Values                                  = GetStringList(new IntPtr(p + 0x010)); // 0x10 M_Values                    ( ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
 
             return value;
         }

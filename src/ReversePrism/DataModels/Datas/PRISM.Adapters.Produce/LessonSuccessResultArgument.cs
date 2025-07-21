@@ -8,25 +8,25 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ProduceBaseInfo                          0001865E3840 ModelClassType IProduceBaseInfoStatus IProduceBaseInfoStatus IProduceBaseInfoStatus Pointer
-    // 018 UnitID                                   0001865F4940 ModelPrimitiveType int int int Int32
-    // 01C ScheduleDetailType                       000186615580 ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32
-    // 020 ScheduleLevel                            0001865F4940 ModelPrimitiveType int int int Int32
-    // 024 IsExistSupportBonus                      000186596AF0 ModelPrimitiveType bool bool bool Bool
-    // 028 ClearRank                                00018660B7E0 ModelEnumType ProduceClearRank ProduceClearRank ProduceClearRank Int32
-    // 02C ClearSecond                              0001865F4940 ModelPrimitiveType int int int Int32
-    // 030 ScheduleRewards                          000185D09978 ModelClassListType IReadOnlyList`1<IScheduleRewardStatus> IReadOnlyList`1<IScheduleRewardStatus> List<IScheduleRewardStatus> Pointer
-    // 038 UnitIdolCount                            0001865F4940 ModelPrimitiveType int int int Int32
-    // 040 UnitParameterVariation                   0001865D2650 ModelClassType IParameterVariationStatus IParameterVariationStatus IParameterVariationStatus Pointer
-    // 048 ChallengeMission                         000186720230 ModelClassType IChallengeMissionStatus IChallengeMissionStatus IChallengeMissionStatus Pointer
-    // 050 ChallengeMissionIdol                     00018657D8B0 ModelClassType IInProduceIdolStatus IInProduceIdolStatus IInProduceIdolStatus Pointer
-    // 058 ChallengeMissionParameterVariation       0001865D2650 ModelClassType IParameterVariationStatus IParameterVariationStatus IParameterVariationStatus Pointer
-    // 060 IsChallengeMissionAchieved               000186596AF0 ModelPrimitiveType bool bool bool Bool
-    // 064 GettableProduceCardAmount                0001865F4940 ModelPrimitiveType int int int Int32
-    // 068 GettableProduceCards                     000185D06128 ModelClassListType IReadOnlyList`1<IProduceCardStatus> IReadOnlyList`1<IProduceCardStatus> List<IProduceCardStatus> Pointer
-    // 070 DeckProduceCards                         000185D06128 ModelClassListType IReadOnlyList`1<IProduceCardStatus> IReadOnlyList`1<IProduceCardStatus> List<IProduceCardStatus> Pointer
-    // 078 ExertSupportEffectList                   000185CE3508 ModelClassListType List`1<IExertSupportEffectStatus> List`1<IExertSupportEffectStatus> List<IExertSupportEffectStatus> Pointer
-    // 080 UnitIdols                                000185CAF558 ModelClassListType UnitIdol[] UnitIdol[] List<UnitIdol> Pointer
+    // 010 ProduceBaseInfo                          ModelClassType IProduceBaseInfoStatus IProduceBaseInfoStatus IProduceBaseInfoStatus Pointer
+    // 018 UnitID                                   ModelPrimitiveType int int int Int32
+    // 01C ScheduleDetailType                       ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32
+    // 020 ScheduleLevel                            ModelPrimitiveType int int int Int32
+    // 024 IsExistSupportBonus                      ModelPrimitiveType bool bool bool Bool
+    // 028 ClearRank                                ModelEnumType ProduceClearRank ProduceClearRank ProduceClearRank Int32
+    // 02C ClearSecond                              ModelPrimitiveType int int int Int32
+    // 030 ScheduleRewards                          ModelClassListType IReadOnlyList`1<IScheduleRewardStatus> IReadOnlyList`1<IScheduleRewardStatus> List<IScheduleRewardStatus> Pointer
+    // 038 UnitIdolCount                            ModelPrimitiveType int int int Int32
+    // 040 UnitParameterVariation                   ModelClassType IParameterVariationStatus IParameterVariationStatus IParameterVariationStatus Pointer
+    // 048 ChallengeMission                         ModelClassType IChallengeMissionStatus IChallengeMissionStatus IChallengeMissionStatus Pointer
+    // 050 ChallengeMissionIdol                     ModelClassType IInProduceIdolStatus IInProduceIdolStatus IInProduceIdolStatus Pointer
+    // 058 ChallengeMissionParameterVariation       ModelClassType IParameterVariationStatus IParameterVariationStatus IParameterVariationStatus Pointer
+    // 060 IsChallengeMissionAchieved               ModelPrimitiveType bool bool bool Bool
+    // 064 GettableProduceCardAmount                ModelPrimitiveType int int int Int32
+    // 068 GettableProduceCards                     ModelClassListType IReadOnlyList`1<IProduceCardStatus> IReadOnlyList`1<IProduceCardStatus> List<IProduceCardStatus> Pointer
+    // 070 DeckProduceCards                         ModelClassListType IReadOnlyList`1<IProduceCardStatus> IReadOnlyList`1<IProduceCardStatus> List<IProduceCardStatus> Pointer
+    // 078 ExertSupportEffectList                   ModelClassListType List`1<IExertSupportEffectStatus> List`1<IExertSupportEffectStatus> List<IExertSupportEffectStatus> Pointer
+    // 080 UnitIdols                                ModelClassListType UnitIdol[] UnitIdol[] List<UnitIdol> Pointer
     public partial class LessonSuccessResultArgument : DataModel
     {
         public IProduceBaseInfoStatus?                  ProduceBaseInfo                         { get; set; }
@@ -57,25 +57,25 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LessonSuccessResultArgument() { Pointer= p0 };
 
-            value.ProduceBaseInfo                           = GetObject<IProduceBaseInfoStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProduceBaseInfoStatus.FromPointer); // 02466687D658 0x10 ProduceBaseInfo             ( 0001865E3840 ModelClassType IProduceBaseInfoStatus IProduceBaseInfoStatus IProduceBaseInfoStatus Pointer )
-            value.UnitID                                    = GetInt32(new IntPtr(p + 0x018)); // 02466687D678 0x18 UnitID                      ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.ScheduleDetailType                        = (ScheduleDetailType)GetInt32(new IntPtr(p + 0x01C)); // 02466687D698 0x1C ScheduleDetailType          ( 000186615580 ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32 )
-            value.ScheduleLevel                             = GetInt32(new IntPtr(p + 0x020)); // 02466687D6B8 0x20 ScheduleLevel               ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.IsExistSupportBonus                       = GetBool(new IntPtr(p + 0x024)); // 02466687D6D8 0x24 IsExistSupportBonus         ( 000186596AF0 ModelPrimitiveType bool bool bool Bool )
-            value.ClearRank                                 = (ProduceClearRank)GetInt32(new IntPtr(p + 0x028)); // 02466687D6F8 0x28 ClearRank                   ( 00018660B7E0 ModelEnumType ProduceClearRank ProduceClearRank ProduceClearRank Int32 )
-            value.ClearSecond                               = GetInt32(new IntPtr(p + 0x02C)); // 02466687D718 0x2C ClearSecond                 ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.ScheduleRewards                           = GetObjectList<IScheduleRewardStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.IScheduleRewardStatus.FromPointer); // 02466687D738 0x30 ScheduleRewards             ( 000185D09978 ModelClassListType IReadOnlyList`1<IScheduleRewardStatus> IReadOnlyList`1<IScheduleRewardStatus> List<IScheduleRewardStatus> Pointer )
-            value.UnitIdolCount                             = GetInt32(new IntPtr(p + 0x038)); // 02466687D758 0x38 UnitIdolCount               ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.UnitParameterVariation                    = GetObject<IParameterVariationStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.IParameterVariationStatus.FromPointer); // 02466687D778 0x40 UnitParameterVariation      ( 0001865D2650 ModelClassType IParameterVariationStatus IParameterVariationStatus IParameterVariationStatus Pointer )
-            value.ChallengeMission                          = GetObject<IChallengeMissionStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.IChallengeMissionStatus.FromPointer); // 02466687D798 0x48 ChallengeMission            ( 000186720230 ModelClassType IChallengeMissionStatus IChallengeMissionStatus IChallengeMissionStatus Pointer )
-            value.ChallengeMissionIdol                      = GetObject<IInProduceIdolStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.IInProduceIdolStatus.FromPointer); // 02466687D7B8 0x50 ChallengeMissionIdol        ( 00018657D8B0 ModelClassType IInProduceIdolStatus IInProduceIdolStatus IInProduceIdolStatus Pointer )
-            value.ChallengeMissionParameterVariation        = GetObject<IParameterVariationStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.IParameterVariationStatus.FromPointer); // 02466687D7D8 0x58 ChallengeMissionParameterVariation ( 0001865D2650 ModelClassType IParameterVariationStatus IParameterVariationStatus IParameterVariationStatus Pointer )
-            value.IsChallengeMissionAchieved                = GetBool(new IntPtr(p + 0x060)); // 02466687D7F8 0x60 IsChallengeMissionAchieved  ( 000186596AF0 ModelPrimitiveType bool bool bool Bool )
-            value.GettableProduceCardAmount                 = GetInt32(new IntPtr(p + 0x064)); // 02466687D818 0x64 GettableProduceCardAmount   ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.GettableProduceCards                      = GetObjectList<IProduceCardStatus>(new IntPtr(p + 0x068), ReversePrism.DataModels.IProduceCardStatus.FromPointer); // 02466687D838 0x68 GettableProduceCards        ( 000185D06128 ModelClassListType IReadOnlyList`1<IProduceCardStatus> IReadOnlyList`1<IProduceCardStatus> List<IProduceCardStatus> Pointer )
-            value.DeckProduceCards                          = GetObjectList<IProduceCardStatus>(new IntPtr(p + 0x070), ReversePrism.DataModels.IProduceCardStatus.FromPointer); // 02466687D858 0x70 DeckProduceCards            ( 000185D06128 ModelClassListType IReadOnlyList`1<IProduceCardStatus> IReadOnlyList`1<IProduceCardStatus> List<IProduceCardStatus> Pointer )
-            value.ExertSupportEffectList                    = GetObjectList<IExertSupportEffectStatus>(new IntPtr(p + 0x078), ReversePrism.DataModels.IExertSupportEffectStatus.FromPointer); // 02466687D878 0x78 ExertSupportEffectList      ( 000185CE3508 ModelClassListType List`1<IExertSupportEffectStatus> List`1<IExertSupportEffectStatus> List<IExertSupportEffectStatus> Pointer )
-            value.UnitIdols                                 = GetObjectList<UnitIdol>(new IntPtr(p + 0x080), ReversePrism.DataModels.UnitIdol.FromPointer); // 02466687D898 0x80 UnitIdols                   ( 000185CAF558 ModelClassListType UnitIdol[] UnitIdol[] List<UnitIdol> Pointer )
+            value.ProduceBaseInfo                           = GetObject<IProduceBaseInfoStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProduceBaseInfoStatus.FromPointer); // 0x10 ProduceBaseInfo             ( ModelClassType IProduceBaseInfoStatus IProduceBaseInfoStatus IProduceBaseInfoStatus Pointer )
+            value.UnitID                                    = GetInt32(new IntPtr(p + 0x018)); // 0x18 UnitID                      ( ModelPrimitiveType int int int Int32 )
+            value.ScheduleDetailType                        = (ScheduleDetailType)GetInt32(new IntPtr(p + 0x01C)); // 0x1C ScheduleDetailType          ( ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32 )
+            value.ScheduleLevel                             = GetInt32(new IntPtr(p + 0x020)); // 0x20 ScheduleLevel               ( ModelPrimitiveType int int int Int32 )
+            value.IsExistSupportBonus                       = GetBool(new IntPtr(p + 0x024)); // 0x24 IsExistSupportBonus         ( ModelPrimitiveType bool bool bool Bool )
+            value.ClearRank                                 = (ProduceClearRank)GetInt32(new IntPtr(p + 0x028)); // 0x28 ClearRank                   ( ModelEnumType ProduceClearRank ProduceClearRank ProduceClearRank Int32 )
+            value.ClearSecond                               = GetInt32(new IntPtr(p + 0x02C)); // 0x2C ClearSecond                 ( ModelPrimitiveType int int int Int32 )
+            value.ScheduleRewards                           = GetObjectList<IScheduleRewardStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.IScheduleRewardStatus.FromPointer); // 0x30 ScheduleRewards             ( ModelClassListType IReadOnlyList`1<IScheduleRewardStatus> IReadOnlyList`1<IScheduleRewardStatus> List<IScheduleRewardStatus> Pointer )
+            value.UnitIdolCount                             = GetInt32(new IntPtr(p + 0x038)); // 0x38 UnitIdolCount               ( ModelPrimitiveType int int int Int32 )
+            value.UnitParameterVariation                    = GetObject<IParameterVariationStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.IParameterVariationStatus.FromPointer); // 0x40 UnitParameterVariation      ( ModelClassType IParameterVariationStatus IParameterVariationStatus IParameterVariationStatus Pointer )
+            value.ChallengeMission                          = GetObject<IChallengeMissionStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.IChallengeMissionStatus.FromPointer); // 0x48 ChallengeMission            ( ModelClassType IChallengeMissionStatus IChallengeMissionStatus IChallengeMissionStatus Pointer )
+            value.ChallengeMissionIdol                      = GetObject<IInProduceIdolStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.IInProduceIdolStatus.FromPointer); // 0x50 ChallengeMissionIdol        ( ModelClassType IInProduceIdolStatus IInProduceIdolStatus IInProduceIdolStatus Pointer )
+            value.ChallengeMissionParameterVariation        = GetObject<IParameterVariationStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.IParameterVariationStatus.FromPointer); // 0x58 ChallengeMissionParameterVariation ( ModelClassType IParameterVariationStatus IParameterVariationStatus IParameterVariationStatus Pointer )
+            value.IsChallengeMissionAchieved                = GetBool(new IntPtr(p + 0x060)); // 0x60 IsChallengeMissionAchieved  ( ModelPrimitiveType bool bool bool Bool )
+            value.GettableProduceCardAmount                 = GetInt32(new IntPtr(p + 0x064)); // 0x64 GettableProduceCardAmount   ( ModelPrimitiveType int int int Int32 )
+            value.GettableProduceCards                      = GetObjectList<IProduceCardStatus>(new IntPtr(p + 0x068), ReversePrism.DataModels.IProduceCardStatus.FromPointer); // 0x68 GettableProduceCards        ( ModelClassListType IReadOnlyList`1<IProduceCardStatus> IReadOnlyList`1<IProduceCardStatus> List<IProduceCardStatus> Pointer )
+            value.DeckProduceCards                          = GetObjectList<IProduceCardStatus>(new IntPtr(p + 0x070), ReversePrism.DataModels.IProduceCardStatus.FromPointer); // 0x70 DeckProduceCards            ( ModelClassListType IReadOnlyList`1<IProduceCardStatus> IReadOnlyList`1<IProduceCardStatus> List<IProduceCardStatus> Pointer )
+            value.ExertSupportEffectList                    = GetObjectList<IExertSupportEffectStatus>(new IntPtr(p + 0x078), ReversePrism.DataModels.IExertSupportEffectStatus.FromPointer); // 0x78 ExertSupportEffectList      ( ModelClassListType List`1<IExertSupportEffectStatus> List`1<IExertSupportEffectStatus> List<IExertSupportEffectStatus> Pointer )
+            value.UnitIdols                                 = GetObjectList<UnitIdol>(new IntPtr(p + 0x080), ReversePrism.DataModels.UnitIdol.FromPointer); // 0x80 UnitIdols                   ( ModelClassListType UnitIdol[] UnitIdol[] List<UnitIdol> Pointer )
 
             return value;
         }

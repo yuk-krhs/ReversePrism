@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<ToggleStoryFavoriteReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 UpdatedStoryFieldNumber                  int IL2CPP_TYPE_I4
-    // 018 UpdatedStory                             0001865A4D90 ModelClassType StoryStatus StoryStatus StoryStatus Pointer
+    // 018 UpdatedStory                             ModelClassType StoryStatus StoryStatus StoryStatus Pointer
     public partial class ToggleStoryFavoriteReply : DataModel
     {
         public StoryStatus?                             UpdatedStory                            { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ToggleStoryFavoriteReply() { Pointer= p0 };
 
-            value.UpdatedStory                              = GetObject<StoryStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoryStatus.FromPointer); // 0246629B7398 0x18 UpdatedStory                ( 0001865A4D90 ModelClassType StoryStatus StoryStatus StoryStatus Pointer )
+            value.UpdatedStory                              = GetObject<StoryStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoryStatus.FromPointer); // 0x18 UpdatedStory                ( ModelClassType StoryStatus StoryStatus StoryStatus Pointer )
 
             return value;
         }

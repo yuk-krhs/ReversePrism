@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 BeforeDiamondLv                          0001865F4260 ModelPrimitiveType int int int Int32
-    // 014 AfterDiamondLv                           0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 LimitLvs                                 000185CF0078 ModelClassListType List`1<LimitLvContentViewModel> List`1<LimitLvContentViewModel> List<LimitLvContentViewModel> Pointer
-    // 020 ProductKey                               0001865A2670 ModelEnumType ProductKey ProductKey ProductKey Int32
-    // 028 Required                                 0001865F4260 ModelPrimitiveType int int int Int32
-    // 030 Amount                                   0001865F8300 ModelPrimitiveType long long long Int64
+    // 010 BeforeDiamondLv                          ModelPrimitiveType int int int Int32
+    // 014 AfterDiamondLv                           ModelPrimitiveType int int int Int32
+    // 018 LimitLvs                                 ModelClassListType List`1<LimitLvContentViewModel> List`1<LimitLvContentViewModel> List<LimitLvContentViewModel> Pointer
+    // 020 ProductKey                               ModelEnumType ProductKey ProductKey ProductKey Int32
+    // 028 Required                                 ModelPrimitiveType int int int Int32
+    // 030 Amount                                   ModelPrimitiveType long long long Int64
     public partial class MasterTrainingExecutionConfirmedPopupViewModel : DataModel
     {
         public int                                      BeforeDiamondLv                         { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MasterTrainingExecutionConfirmedPopupViewModel() { Pointer= p0 };
 
-            value.BeforeDiamondLv                           = GetInt32(new IntPtr(p + 0x010)); // 024665FE78D8 0x10 BeforeDiamondLv             ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.AfterDiamondLv                            = GetInt32(new IntPtr(p + 0x014)); // 024665FE78F8 0x14 AfterDiamondLv              ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.LimitLvs                                  = GetObjectList<LimitLvContentViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.LimitLvContentViewModel.FromPointer); // 024665FE7918 0x18 LimitLvs                    ( 000185CF0078 ModelClassListType List`1<LimitLvContentViewModel> List`1<LimitLvContentViewModel> List<LimitLvContentViewModel> Pointer )
-            value.ProductKey                                = (ProductKey)GetInt32(new IntPtr(p + 0x020)); // 024665FE7938 0x20 ProductKey                  ( 0001865A2670 ModelEnumType ProductKey ProductKey ProductKey Int32 )
-            value.Required                                  = GetInt32(new IntPtr(p + 0x028)); // 024665FE7958 0x28 Required                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Amount                                    = GetInt64(new IntPtr(p + 0x030)); // 024665FE7978 0x30 Amount                      ( 0001865F8300 ModelPrimitiveType long long long Int64 )
+            value.BeforeDiamondLv                           = GetInt32(new IntPtr(p + 0x010)); // 0x10 BeforeDiamondLv             ( ModelPrimitiveType int int int Int32 )
+            value.AfterDiamondLv                            = GetInt32(new IntPtr(p + 0x014)); // 0x14 AfterDiamondLv              ( ModelPrimitiveType int int int Int32 )
+            value.LimitLvs                                  = GetObjectList<LimitLvContentViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.LimitLvContentViewModel.FromPointer); // 0x18 LimitLvs                    ( ModelClassListType List`1<LimitLvContentViewModel> List`1<LimitLvContentViewModel> List<LimitLvContentViewModel> Pointer )
+            value.ProductKey                                = (ProductKey)GetInt32(new IntPtr(p + 0x020)); // 0x20 ProductKey                  ( ModelEnumType ProductKey ProductKey ProductKey Int32 )
+            value.Required                                  = GetInt32(new IntPtr(p + 0x028)); // 0x28 Required                    ( ModelPrimitiveType int int int Int32 )
+            value.Amount                                    = GetInt64(new IntPtr(p + 0x030)); // 0x30 Amount                      ( ModelPrimitiveType long long long Int64 )
 
             return value;
         }

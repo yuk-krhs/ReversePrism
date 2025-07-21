@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Configuration                          000186600AC0 ModelClassType IProjectConfiguration IProjectConfiguration IProjectConfiguration Pointer
-    // 018 M_AnalyticsService                       00018668C8A0 ModelClassType IUnstructuredEventRecorder IUnstructuredEventRecorder IUnstructuredEventRecorder Pointer
+    // 010 M_Configuration                          ModelClassType IProjectConfiguration IProjectConfiguration IProjectConfiguration Pointer
+    // 018 M_AnalyticsService                       ModelClassType IUnstructuredEventRecorder IUnstructuredEventRecorder IUnstructuredEventRecorder Pointer
     public partial class StandardEventServiceComponent : DataModel
     {
         public IProjectConfiguration?                   M_Configuration                         { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StandardEventServiceComponent() { Pointer= p0 };
 
-            value.M_Configuration                           = GetObject<IProjectConfiguration>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProjectConfiguration.FromPointer); // 0245A6683970 0x10 M_Configuration             ( 000186600AC0 ModelClassType IProjectConfiguration IProjectConfiguration IProjectConfiguration Pointer )
-            value.M_AnalyticsService                        = GetObject<IUnstructuredEventRecorder>(new IntPtr(p + 0x018), ReversePrism.DataModels.IUnstructuredEventRecorder.FromPointer); // 0245A6683990 0x18 M_AnalyticsService          ( 00018668C8A0 ModelClassType IUnstructuredEventRecorder IUnstructuredEventRecorder IUnstructuredEventRecorder Pointer )
+            value.M_Configuration                           = GetObject<IProjectConfiguration>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProjectConfiguration.FromPointer); // 0x10 M_Configuration             ( ModelClassType IProjectConfiguration IProjectConfiguration IProjectConfiguration Pointer )
+            value.M_AnalyticsService                        = GetObject<IUnstructuredEventRecorder>(new IntPtr(p + 0x018), ReversePrism.DataModels.IUnstructuredEventRecorder.FromPointer); // 0x18 M_AnalyticsService          ( ModelClassType IUnstructuredEventRecorder IUnstructuredEventRecorder IUnstructuredEventRecorder Pointer )
 
             return value;
         }

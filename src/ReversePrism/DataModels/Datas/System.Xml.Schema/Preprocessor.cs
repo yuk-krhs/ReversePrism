@@ -8,25 +8,25 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 040 Xmlns                                    000186671910 ModelPrimitiveType string string string String
-    // 048 NsXsi                                    000186671910 ModelPrimitiveType string string string String
-    // 050 TargetNamespace                          000186671910 ModelPrimitiveType string string string String
-    // 058 RootSchema                               0001866BE120 ModelClassType XmlSchema XmlSchema XmlSchema Pointer
-    // 060 CurrentSchema                            0001866BE120 ModelClassType XmlSchema XmlSchema XmlSchema Pointer
-    // 068 ElementFormDefault                       0001865B66F0 ModelEnumType XmlSchemaForm XmlSchemaForm XmlSchemaForm Int32
-    // 06C AttributeFormDefault                     0001865B66F0 ModelEnumType XmlSchemaForm XmlSchemaForm XmlSchemaForm Int32
-    // 070 BlockDefault                             0001865B4BE0 ModelEnumType XmlSchemaDerivationMethod XmlSchemaDerivationMethod XmlSchemaDerivationMethod Int32
-    // 074 FinalDefault                             0001865B4BE0 ModelEnumType XmlSchemaDerivationMethod XmlSchemaDerivationMethod XmlSchemaDerivationMethod Int32
-    // 078 SchemaLocations                          0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer
-    // 080 ChameleonSchemas                         0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer
-    // 088 ReferenceNamespaces                      0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer
-    // 090 ProcessedExternals                       0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer
-    // 098 LockList                                 000186532E70 ModelClassType SortedList SortedList SortedList Pointer
-    // 0A0 ReaderSettings                           0001865AACF0 ModelClassType XmlReaderSettings XmlReaderSettings XmlReaderSettings Pointer
-    // 0A8 RootSchemaForRedefine                    0001866BE120 ModelClassType XmlSchema XmlSchema XmlSchema Pointer
-    // 0B0 RedefinedList                            00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer
+    // 040 Xmlns                                    ModelPrimitiveType string string string String
+    // 048 NsXsi                                    ModelPrimitiveType string string string String
+    // 050 TargetNamespace                          ModelPrimitiveType string string string String
+    // 058 RootSchema                               ModelClassType XmlSchema XmlSchema XmlSchema Pointer
+    // 060 CurrentSchema                            ModelClassType XmlSchema XmlSchema XmlSchema Pointer
+    // 068 ElementFormDefault                       ModelEnumType XmlSchemaForm XmlSchemaForm XmlSchemaForm Int32
+    // 06C AttributeFormDefault                     ModelEnumType XmlSchemaForm XmlSchemaForm XmlSchemaForm Int32
+    // 070 BlockDefault                             ModelEnumType XmlSchemaDerivationMethod XmlSchemaDerivationMethod XmlSchemaDerivationMethod Int32
+    // 074 FinalDefault                             ModelEnumType XmlSchemaDerivationMethod XmlSchemaDerivationMethod XmlSchemaDerivationMethod Int32
+    // 078 SchemaLocations                          ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 080 ChameleonSchemas                         ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 088 ReferenceNamespaces                      ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 090 ProcessedExternals                       ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 098 LockList                                 ModelClassType SortedList SortedList SortedList Pointer
+    // 0A0 ReaderSettings                           ModelClassType XmlReaderSettings XmlReaderSettings XmlReaderSettings Pointer
+    // 0A8 RootSchemaForRedefine                    ModelClassType XmlSchema XmlSchema XmlSchema Pointer
+    // 0B0 RedefinedList                            ModelClassType ArrayList ArrayList ArrayList Pointer
     // 000 builtInSchemaForXmlNS                    XmlSchema IL2CPP_TYPE_CLASS
-    // 0B8 XmlResolver                              0001865ABBE0 ModelClassType XmlResolver XmlResolver XmlResolver Pointer
+    // 0B8 XmlResolver                              ModelClassType XmlResolver XmlResolver XmlResolver Pointer
     public partial class Preprocessor : DataModel
     {
         public string                                   Xmlns                                   { get; set; }
@@ -56,24 +56,24 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Preprocessor() { Pointer= p0 };
 
-            value.Xmlns                                     = GetString(new IntPtr(p + 0x040)); // 0246675940C8 0x40 Xmlns                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.NsXsi                                     = GetString(new IntPtr(p + 0x048)); // 0246675940E8 0x48 NsXsi                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.TargetNamespace                           = GetString(new IntPtr(p + 0x050)); // 024667594108 0x50 TargetNamespace             ( 000186671910 ModelPrimitiveType string string string String )
-            value.RootSchema                                = GetObject<XmlSchema>(new IntPtr(p + 0x058), ReversePrism.DataModels.XmlSchema.FromPointer); // 024667594128 0x58 RootSchema                  ( 0001866BE120 ModelClassType XmlSchema XmlSchema XmlSchema Pointer )
-            value.CurrentSchema                             = GetObject<XmlSchema>(new IntPtr(p + 0x060), ReversePrism.DataModels.XmlSchema.FromPointer); // 024667594148 0x60 CurrentSchema               ( 0001866BE120 ModelClassType XmlSchema XmlSchema XmlSchema Pointer )
-            value.ElementFormDefault                        = (XmlSchemaForm)GetInt32(new IntPtr(p + 0x068)); // 024667594168 0x68 ElementFormDefault          ( 0001865B66F0 ModelEnumType XmlSchemaForm XmlSchemaForm XmlSchemaForm Int32 )
-            value.AttributeFormDefault                      = (XmlSchemaForm)GetInt32(new IntPtr(p + 0x06C)); // 024667594188 0x6C AttributeFormDefault        ( 0001865B66F0 ModelEnumType XmlSchemaForm XmlSchemaForm XmlSchemaForm Int32 )
-            value.BlockDefault                              = (XmlSchemaDerivationMethod)GetInt32(new IntPtr(p + 0x070)); // 0246675941A8 0x70 BlockDefault                ( 0001865B4BE0 ModelEnumType XmlSchemaDerivationMethod XmlSchemaDerivationMethod XmlSchemaDerivationMethod Int32 )
-            value.FinalDefault                              = (XmlSchemaDerivationMethod)GetInt32(new IntPtr(p + 0x074)); // 0246675941C8 0x74 FinalDefault                ( 0001865B4BE0 ModelEnumType XmlSchemaDerivationMethod XmlSchemaDerivationMethod XmlSchemaDerivationMethod Int32 )
-            value.SchemaLocations                           = GetObject<Hashtable>(new IntPtr(p + 0x078), ReversePrism.DataModels.Hashtable.FromPointer); // 0246675941E8 0x78 SchemaLocations             ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.ChameleonSchemas                          = GetObject<Hashtable>(new IntPtr(p + 0x080), ReversePrism.DataModels.Hashtable.FromPointer); // 024667594208 0x80 ChameleonSchemas            ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.ReferenceNamespaces                       = GetObject<Hashtable>(new IntPtr(p + 0x088), ReversePrism.DataModels.Hashtable.FromPointer); // 024667594228 0x88 ReferenceNamespaces         ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.ProcessedExternals                        = GetObject<Hashtable>(new IntPtr(p + 0x090), ReversePrism.DataModels.Hashtable.FromPointer); // 024667594248 0x90 ProcessedExternals          ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.LockList                                  = GetObject<SortedList>(new IntPtr(p + 0x098), ReversePrism.DataModels.SortedList.FromPointer); // 024667594268 0x98 LockList                    ( 000186532E70 ModelClassType SortedList SortedList SortedList Pointer )
-            value.ReaderSettings                            = GetObject<XmlReaderSettings>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.XmlReaderSettings.FromPointer); // 024667594288 0xA0 ReaderSettings              ( 0001865AACF0 ModelClassType XmlReaderSettings XmlReaderSettings XmlReaderSettings Pointer )
-            value.RootSchemaForRedefine                     = GetObject<XmlSchema>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.XmlSchema.FromPointer); // 0246675942A8 0xA8 RootSchemaForRedefine       ( 0001866BE120 ModelClassType XmlSchema XmlSchema XmlSchema Pointer )
-            value.RedefinedList                             = GetObject<ArrayList>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.ArrayList.FromPointer); // 0246675942C8 0xB0 RedefinedList               ( 00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer )
-            value.XmlResolver                               = GetObject<XmlResolver>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.XmlResolver.FromPointer); // 024667594308 0xB8 XmlResolver                 ( 0001865ABBE0 ModelClassType XmlResolver XmlResolver XmlResolver Pointer )
+            value.Xmlns                                     = GetString(new IntPtr(p + 0x040)); // 0x40 Xmlns                       ( ModelPrimitiveType string string string String )
+            value.NsXsi                                     = GetString(new IntPtr(p + 0x048)); // 0x48 NsXsi                       ( ModelPrimitiveType string string string String )
+            value.TargetNamespace                           = GetString(new IntPtr(p + 0x050)); // 0x50 TargetNamespace             ( ModelPrimitiveType string string string String )
+            value.RootSchema                                = GetObject<XmlSchema>(new IntPtr(p + 0x058), ReversePrism.DataModels.XmlSchema.FromPointer); // 0x58 RootSchema                  ( ModelClassType XmlSchema XmlSchema XmlSchema Pointer )
+            value.CurrentSchema                             = GetObject<XmlSchema>(new IntPtr(p + 0x060), ReversePrism.DataModels.XmlSchema.FromPointer); // 0x60 CurrentSchema               ( ModelClassType XmlSchema XmlSchema XmlSchema Pointer )
+            value.ElementFormDefault                        = (XmlSchemaForm)GetInt32(new IntPtr(p + 0x068)); // 0x68 ElementFormDefault          ( ModelEnumType XmlSchemaForm XmlSchemaForm XmlSchemaForm Int32 )
+            value.AttributeFormDefault                      = (XmlSchemaForm)GetInt32(new IntPtr(p + 0x06C)); // 0x6C AttributeFormDefault        ( ModelEnumType XmlSchemaForm XmlSchemaForm XmlSchemaForm Int32 )
+            value.BlockDefault                              = (XmlSchemaDerivationMethod)GetInt32(new IntPtr(p + 0x070)); // 0x70 BlockDefault                ( ModelEnumType XmlSchemaDerivationMethod XmlSchemaDerivationMethod XmlSchemaDerivationMethod Int32 )
+            value.FinalDefault                              = (XmlSchemaDerivationMethod)GetInt32(new IntPtr(p + 0x074)); // 0x74 FinalDefault                ( ModelEnumType XmlSchemaDerivationMethod XmlSchemaDerivationMethod XmlSchemaDerivationMethod Int32 )
+            value.SchemaLocations                           = GetObject<Hashtable>(new IntPtr(p + 0x078), ReversePrism.DataModels.Hashtable.FromPointer); // 0x78 SchemaLocations             ( ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.ChameleonSchemas                          = GetObject<Hashtable>(new IntPtr(p + 0x080), ReversePrism.DataModels.Hashtable.FromPointer); // 0x80 ChameleonSchemas            ( ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.ReferenceNamespaces                       = GetObject<Hashtable>(new IntPtr(p + 0x088), ReversePrism.DataModels.Hashtable.FromPointer); // 0x88 ReferenceNamespaces         ( ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.ProcessedExternals                        = GetObject<Hashtable>(new IntPtr(p + 0x090), ReversePrism.DataModels.Hashtable.FromPointer); // 0x90 ProcessedExternals          ( ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.LockList                                  = GetObject<SortedList>(new IntPtr(p + 0x098), ReversePrism.DataModels.SortedList.FromPointer); // 0x98 LockList                    ( ModelClassType SortedList SortedList SortedList Pointer )
+            value.ReaderSettings                            = GetObject<XmlReaderSettings>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.XmlReaderSettings.FromPointer); // 0xA0 ReaderSettings              ( ModelClassType XmlReaderSettings XmlReaderSettings XmlReaderSettings Pointer )
+            value.RootSchemaForRedefine                     = GetObject<XmlSchema>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.XmlSchema.FromPointer); // 0xA8 RootSchemaForRedefine       ( ModelClassType XmlSchema XmlSchema XmlSchema Pointer )
+            value.RedefinedList                             = GetObject<ArrayList>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.ArrayList.FromPointer); // 0xB0 RedefinedList               ( ModelClassType ArrayList ArrayList ArrayList Pointer )
+            value.XmlResolver                               = GetObject<XmlResolver>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.XmlResolver.FromPointer); // 0xB8 XmlResolver                 ( ModelClassType XmlResolver XmlResolver XmlResolver Pointer )
 
             return value;
         }

@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 GridView                                 000186755580 ModelClassType ShopCostumeGridView ShopCostumeGridView ShopCostumeGridView Pointer
-    // 028 CanvasGroup                              000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
-    // 030 HorizontalTabGroup                       0001866F5B90 ModelClassType UITabGroupEx UITabGroupEx UITabGroupEx Pointer
+    // 020 GridView                                 ModelClassType ShopCostumeGridView ShopCostumeGridView ShopCostumeGridView Pointer
+    // 028 CanvasGroup                              ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
+    // 030 HorizontalTabGroup                       ModelClassType UITabGroupEx UITabGroupEx UITabGroupEx Pointer
     public partial class ShopCostumeSellingView : DataModel
     {
         public ShopCostumeGridView?                     GridView                                { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ShopCostumeSellingView() { Pointer= p0 };
 
-            value.GridView                                  = GetObject<ShopCostumeGridView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ShopCostumeGridView.FromPointer); // 02466B857130 0x20 GridView                    ( 000186755580 ModelClassType ShopCostumeGridView ShopCostumeGridView ShopCostumeGridView Pointer )
-            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466B857150 0x28 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.HorizontalTabGroup                        = GetObject<UITabGroupEx>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITabGroupEx.FromPointer); // 02466B857170 0x30 HorizontalTabGroup          ( 0001866F5B90 ModelClassType UITabGroupEx UITabGroupEx UITabGroupEx Pointer )
+            value.GridView                                  = GetObject<ShopCostumeGridView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ShopCostumeGridView.FromPointer); // 0x20 GridView                    ( ModelClassType ShopCostumeGridView ShopCostumeGridView ShopCostumeGridView Pointer )
+            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x028), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0x28 CanvasGroup                 ( ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.HorizontalTabGroup                        = GetObject<UITabGroupEx>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITabGroupEx.FromPointer); // 0x30 HorizontalTabGroup          ( ModelClassType UITabGroupEx UITabGroupEx UITabGroupEx Pointer )
 
             return value;
         }

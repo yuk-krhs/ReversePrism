@@ -8,15 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ChainTalkTextId                          0001865F4260 ModelPrimitiveType int int int Int32
-    // 014 ChainGroupId                             0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 ChainUserId                              0001865F4260 ModelPrimitiveType int int int Int32
-    // 01C NeedsShowIconAndName                     0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 020 PostType                                 00018653E6D0 ModelEnumType PostType PostType PostType Int32
-    // 024 TalkerType                               00018653F3E0 ModelEnumType TalkerType TalkerType TalkerType Int32
-    // 028 IsEndSeparator                           0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 029 IsIconButtonActive                       0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 02A IsThumbnailButtonActive                  0001865965D0 ModelPrimitiveType bool bool bool Bool
+    // 010 ChainTalkTextId                          ModelPrimitiveType int int int Int32
+    // 014 ChainGroupId                             ModelPrimitiveType int int int Int32
+    // 018 ChainUserId                              ModelPrimitiveType int int int Int32
+    // 01C NeedsShowIconAndName                     ModelPrimitiveType bool bool bool Bool
+    // 020 PostType                                 ModelEnumType PostType PostType PostType Int32
+    // 024 TalkerType                               ModelEnumType TalkerType TalkerType TalkerType Int32
+    // 028 IsEndSeparator                           ModelPrimitiveType bool bool bool Bool
+    // 029 IsIconButtonActive                       ModelPrimitiveType bool bool bool Bool
+    // 02A IsThumbnailButtonActive                  ModelPrimitiveType bool bool bool Bool
     public partial class ChainTalkCellViewModel : DataModel
     {
         public int                                      ChainTalkTextId                         { get; set; }
@@ -37,15 +37,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChainTalkCellViewModel() { Pointer= p0 };
 
-            value.ChainTalkTextId                           = GetInt32(new IntPtr(p + 0x010)); // 0246668C8CD0 0x10 ChainTalkTextId             ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.ChainGroupId                              = GetInt32(new IntPtr(p + 0x014)); // 0246668C8CF0 0x14 ChainGroupId                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.ChainUserId                               = GetInt32(new IntPtr(p + 0x018)); // 0246668C8D10 0x18 ChainUserId                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.NeedsShowIconAndName                      = GetBool(new IntPtr(p + 0x01C)); // 0246668C8D30 0x1C NeedsShowIconAndName        ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.PostType                                  = (PostType)GetInt32(new IntPtr(p + 0x020)); // 0246668C8D50 0x20 PostType                    ( 00018653E6D0 ModelEnumType PostType PostType PostType Int32 )
-            value.TalkerType                                = (TalkerType)GetInt32(new IntPtr(p + 0x024)); // 0246668C8D70 0x24 TalkerType                  ( 00018653F3E0 ModelEnumType TalkerType TalkerType TalkerType Int32 )
-            value.IsEndSeparator                            = GetBool(new IntPtr(p + 0x028)); // 0246668C8D90 0x28 IsEndSeparator              ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.IsIconButtonActive                        = GetBool(new IntPtr(p + 0x029)); // 0246668C8DB0 0x29 IsIconButtonActive          ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.IsThumbnailButtonActive                   = GetBool(new IntPtr(p + 0x02A)); // 0246668C8DD0 0x2A IsThumbnailButtonActive     ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.ChainTalkTextId                           = GetInt32(new IntPtr(p + 0x010)); // 0x10 ChainTalkTextId             ( ModelPrimitiveType int int int Int32 )
+            value.ChainGroupId                              = GetInt32(new IntPtr(p + 0x014)); // 0x14 ChainGroupId                ( ModelPrimitiveType int int int Int32 )
+            value.ChainUserId                               = GetInt32(new IntPtr(p + 0x018)); // 0x18 ChainUserId                 ( ModelPrimitiveType int int int Int32 )
+            value.NeedsShowIconAndName                      = GetBool(new IntPtr(p + 0x01C)); // 0x1C NeedsShowIconAndName        ( ModelPrimitiveType bool bool bool Bool )
+            value.PostType                                  = (PostType)GetInt32(new IntPtr(p + 0x020)); // 0x20 PostType                    ( ModelEnumType PostType PostType PostType Int32 )
+            value.TalkerType                                = (TalkerType)GetInt32(new IntPtr(p + 0x024)); // 0x24 TalkerType                  ( ModelEnumType TalkerType TalkerType TalkerType Int32 )
+            value.IsEndSeparator                            = GetBool(new IntPtr(p + 0x028)); // 0x28 IsEndSeparator              ( ModelPrimitiveType bool bool bool Bool )
+            value.IsIconButtonActive                        = GetBool(new IntPtr(p + 0x029)); // 0x29 IsIconButtonActive          ( ModelPrimitiveType bool bool bool Bool )
+            value.IsThumbnailButtonActive                   = GetBool(new IntPtr(p + 0x02A)); // 0x2A IsThumbnailButtonActive     ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

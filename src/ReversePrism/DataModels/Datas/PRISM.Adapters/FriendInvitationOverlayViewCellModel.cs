@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Mission                                  000186519EF0 ModelClassType IFriendInvitationMissionStatus IFriendInvitationMissionStatus IFriendInvitationMissionStatus Pointer
+    // 010 Mission                                  ModelClassType IFriendInvitationMissionStatus IFriendInvitationMissionStatus IFriendInvitationMissionStatus Pointer
     public partial class FriendInvitationOverlayViewCellModel : DataModel
     {
         public IFriendInvitationMissionStatus?          Mission                                 { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FriendInvitationOverlayViewCellModel() { Pointer= p0 };
 
-            value.Mission                                   = GetObject<IFriendInvitationMissionStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IFriendInvitationMissionStatus.FromPointer); // 0246663ABD40 0x10 Mission                     ( 000186519EF0 ModelClassType IFriendInvitationMissionStatus IFriendInvitationMissionStatus IFriendInvitationMissionStatus Pointer )
+            value.Mission                                   = GetObject<IFriendInvitationMissionStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IFriendInvitationMissionStatus.FromPointer); // 0x10 Mission                     ( ModelClassType IFriendInvitationMissionStatus IFriendInvitationMissionStatus IFriendInvitationMissionStatus Pointer )
 
             return value;
         }

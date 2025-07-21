@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Idols                                    000185D10038 ModelClassListType IReadOnlyList`1<IdolLevelUpIdolViewModel> IReadOnlyList`1<IdolLevelUpIdolViewModel> List<IdolLevelUpIdolViewModel> Pointer
-    // 018 ProductRewards                           000185CE7D98 ModelClassListType List`1<IProductWithAmountStatus> List`1<IProductWithAmountStatus> List<IProductWithAmountStatus> Pointer
+    // 010 Idols                                    ModelClassListType IReadOnlyList`1<IdolLevelUpIdolViewModel> IReadOnlyList`1<IdolLevelUpIdolViewModel> List<IdolLevelUpIdolViewModel> Pointer
+    // 018 ProductRewards                           ModelClassListType List`1<IProductWithAmountStatus> List`1<IProductWithAmountStatus> List<IProductWithAmountStatus> Pointer
     // 020 idolStoryRewards                         HashSet`1<int> IL2CPP_TYPE_GENERICINST
     public partial class IdolLevelUpAnimationViewModel : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IdolLevelUpAnimationViewModel() { Pointer= p0 };
 
-            value.Idols                                     = GetObjectList<IdolLevelUpIdolViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.IdolLevelUpIdolViewModel.FromPointer); // 024664CACE80 0x10 Idols                       ( 000185D10038 ModelClassListType IReadOnlyList`1<IdolLevelUpIdolViewModel> IReadOnlyList`1<IdolLevelUpIdolViewModel> List<IdolLevelUpIdolViewModel> Pointer )
-            value.ProductRewards                            = GetObjectList<IProductWithAmountStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 024664CACEA0 0x18 ProductRewards              ( 000185CE7D98 ModelClassListType List`1<IProductWithAmountStatus> List`1<IProductWithAmountStatus> List<IProductWithAmountStatus> Pointer )
+            value.Idols                                     = GetObjectList<IdolLevelUpIdolViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.IdolLevelUpIdolViewModel.FromPointer); // 0x10 Idols                       ( ModelClassListType IReadOnlyList`1<IdolLevelUpIdolViewModel> IReadOnlyList`1<IdolLevelUpIdolViewModel> List<IdolLevelUpIdolViewModel> Pointer )
+            value.ProductRewards                            = GetObjectList<IProductWithAmountStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IProductWithAmountStatus.FromPointer); // 0x18 ProductRewards              ( ModelClassListType List`1<IProductWithAmountStatus> List`1<IProductWithAmountStatus> List<IProductWithAmountStatus> Pointer )
 
             return value;
         }

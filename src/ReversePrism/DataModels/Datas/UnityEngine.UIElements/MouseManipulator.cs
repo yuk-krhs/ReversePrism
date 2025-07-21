@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 Activators                               000185CF1538 ModelEnumListType List`1<ManipulatorActivationFilter> List`1<ManipulatorActivationFilter> List<ManipulatorActivationFilter> Pointer
-    // 020 M_currentActivator                       0001865CF5C0 ModelEnumType ManipulatorActivationFilter ManipulatorActivationFilter ManipulatorActivationFilter Int32
+    // 018 Activators                               ModelEnumListType List`1<ManipulatorActivationFilter> List`1<ManipulatorActivationFilter> List<ManipulatorActivationFilter> Pointer
+    // 020 M_currentActivator                       ModelEnumType ManipulatorActivationFilter ManipulatorActivationFilter ManipulatorActivationFilter Int32
     public partial class MouseManipulator : DataModel
     {
         public List<ManipulatorActivationFilter>?       Activators                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MouseManipulator() { Pointer= p0 };
 
-            value.Activators                                = GetEnumList<ManipulatorActivationFilter>(new IntPtr(p + 0x018)); // 0245A66A5428 0x18 Activators                  ( 000185CF1538 ModelEnumListType List`1<ManipulatorActivationFilter> List`1<ManipulatorActivationFilter> List<ManipulatorActivationFilter> Pointer )
-            value.M_currentActivator                        = (ManipulatorActivationFilter)GetInt32(new IntPtr(p + 0x020)); // 0245A66A5448 0x20 M_currentActivator          ( 0001865CF5C0 ModelEnumType ManipulatorActivationFilter ManipulatorActivationFilter ManipulatorActivationFilter Int32 )
+            value.Activators                                = GetEnumList<ManipulatorActivationFilter>(new IntPtr(p + 0x018)); // 0x18 Activators                  ( ModelEnumListType List`1<ManipulatorActivationFilter> List`1<ManipulatorActivationFilter> List<ManipulatorActivationFilter> Pointer )
+            value.M_currentActivator                        = (ManipulatorActivationFilter)GetInt32(new IntPtr(p + 0x020)); // 0x20 M_currentActivator          ( ModelEnumType ManipulatorActivationFilter ManipulatorActivationFilter ManipulatorActivationFilter Int32 )
 
             return value;
         }

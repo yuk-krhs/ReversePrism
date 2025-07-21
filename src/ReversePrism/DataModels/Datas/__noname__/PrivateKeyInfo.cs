@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Version                                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 018 Algorithm                                000186671910 ModelPrimitiveType string string string String
-    // 020 Key                                      000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 028 List                                     00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer
+    // 010 Version                                  ModelPrimitiveType int int int Int32
+    // 018 Algorithm                                ModelPrimitiveType string string string String
+    // 020 Key                                      ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 028 List                                     ModelClassType ArrayList ArrayList ArrayList Pointer
     public partial class PrivateKeyInfo : DataModel
     {
         public int                                      Version                                 { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PrivateKeyInfo() { Pointer= p0 };
 
-            value.Version                                   = GetInt32(new IntPtr(p + 0x010)); // 02466B409908 0x10 Version                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Algorithm                                 = GetString(new IntPtr(p + 0x018)); // 02466B409928 0x18 Algorithm                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.Key                                       = GetSByteList(new IntPtr(p + 0x020)); // 02466B409948 0x20 Key                         ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.List                                      = GetObject<ArrayList>(new IntPtr(p + 0x028), ReversePrism.DataModels.ArrayList.FromPointer); // 02466B409968 0x28 List                        ( 00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer )
+            value.Version                                   = GetInt32(new IntPtr(p + 0x010)); // 0x10 Version                     ( ModelPrimitiveType int int int Int32 )
+            value.Algorithm                                 = GetString(new IntPtr(p + 0x018)); // 0x18 Algorithm                   ( ModelPrimitiveType string string string String )
+            value.Key                                       = GetSByteList(new IntPtr(p + 0x020)); // 0x20 Key                         ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.List                                      = GetObject<ArrayList>(new IntPtr(p + 0x028), ReversePrism.DataModels.ArrayList.FromPointer); // 0x28 List                        ( ModelClassType ArrayList ArrayList ArrayList Pointer )
 
             return value;
         }

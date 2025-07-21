@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_Instance                               DebugUpdater IL2CPP_TYPE_CLASS
-    // 020 M_Orientation                            0001866F2A80 ModelEnumType ScreenOrientation ScreenOrientation ScreenOrientation Int32
-    // 024 M_RuntimeUiWasVisibleLastFrame           000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 020 M_Orientation                            ModelEnumType ScreenOrientation ScreenOrientation ScreenOrientation Int32
+    // 024 M_RuntimeUiWasVisibleLastFrame           ModelPrimitiveType bool bool bool Bool
     public partial class DebugUpdater : DataModel
     {
         public ScreenOrientation                        M_Orientation                           { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DebugUpdater() { Pointer= p0 };
 
-            value.M_Orientation                             = (ScreenOrientation)GetInt32(new IntPtr(p + 0x020)); // 0246691E06D8 0x20 M_Orientation               ( 0001866F2A80 ModelEnumType ScreenOrientation ScreenOrientation ScreenOrientation Int32 )
-            value.M_RuntimeUiWasVisibleLastFrame            = GetBool(new IntPtr(p + 0x024)); // 0246691E06F8 0x24 M_RuntimeUiWasVisibleLastFrame ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_Orientation                             = (ScreenOrientation)GetInt32(new IntPtr(p + 0x020)); // 0x20 M_Orientation               ( ModelEnumType ScreenOrientation ScreenOrientation ScreenOrientation Int32 )
+            value.M_RuntimeUiWasVisibleLastFrame            = GetBool(new IntPtr(p + 0x024)); // 0x24 M_RuntimeUiWasVisibleLastFrame ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<SupportCharacterIconStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstCharacterInfoIdFieldNumber            int IL2CPP_TYPE_I4
-    // 018 MstCharacterInfoId                       0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MstCharacterInfoId                       ModelPrimitiveType int int int Int32
     // 000 IsCooperationEventFieldNumber            int IL2CPP_TYPE_I4
-    // 01C IsCooperationEvent                       000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 01C IsCooperationEvent                       ModelPrimitiveType bool bool bool Bool
     public partial class SupportCharacterIconStatus : DataModel
     {
         public int                                      MstCharacterInfoId                      { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SupportCharacterIconStatus() { Pointer= p0 };
 
-            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x018)); // 0246610C1C80 0x18 MstCharacterInfoId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsCooperationEvent                        = GetBool(new IntPtr(p + 0x01C)); // 0246610C1CC0 0x1C IsCooperationEvent          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstCharacterInfoId          ( ModelPrimitiveType int int int Int32 )
+            value.IsCooperationEvent                        = GetBool(new IntPtr(p + 0x01C)); // 0x1C IsCooperationEvent          ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

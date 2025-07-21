@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 IsError                                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 014 Result                                   0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 IsError                                  ModelPrimitiveType bool bool bool Bool
+    // 014 Result                                   ModelPrimitiveType int int int Int32
     // 000 _isPopupReady                            bool IL2CPP_TYPE_BOOLEAN
     // 001 _isShowPopup                             bool IL2CPP_TYPE_BOOLEAN
     public partial class GGIregualDetector : DataModel
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GGIregualDetector() { Pointer= p0 };
 
-            value.IsError                                   = GetBool(new IntPtr(p + 0x010)); // 0245A3C04090 0x10 IsError                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Result                                    = GetInt32(new IntPtr(p + 0x014)); // 0245A3C040B0 0x14 Result                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsError                                   = GetBool(new IntPtr(p + 0x010)); // 0x10 IsError                     ( ModelPrimitiveType bool bool bool Bool )
+            value.Result                                    = GetInt32(new IntPtr(p + 0x014)); // 0x14 Result                      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

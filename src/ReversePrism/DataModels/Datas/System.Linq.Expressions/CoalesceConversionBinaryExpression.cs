@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Conversion                               0001867781F0 ModelClassType LambdaExpression LambdaExpression LambdaExpression Pointer
+    // 020 Conversion                               ModelClassType LambdaExpression LambdaExpression LambdaExpression Pointer
     public partial class CoalesceConversionBinaryExpression : DataModel
     {
         public LambdaExpression?                        Conversion                              { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CoalesceConversionBinaryExpression() { Pointer= p0 };
 
-            value.Conversion                                = GetObject<LambdaExpression>(new IntPtr(p + 0x020), ReversePrism.DataModels.LambdaExpression.FromPointer); // 024669F74330 0x20 Conversion                  ( 0001867781F0 ModelClassType LambdaExpression LambdaExpression LambdaExpression Pointer )
+            value.Conversion                                = GetObject<LambdaExpression>(new IntPtr(p + 0x020), ReversePrism.DataModels.LambdaExpression.FromPointer); // 0x20 Conversion                  ( ModelClassType LambdaExpression LambdaExpression LambdaExpression Pointer )
 
             return value;
         }

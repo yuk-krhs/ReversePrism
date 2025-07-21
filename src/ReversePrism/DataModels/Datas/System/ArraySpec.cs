@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Dimensions                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 014 Bound                                    000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 Dimensions                               ModelPrimitiveType int int int Int32
+    // 014 Bound                                    ModelPrimitiveType bool bool bool Bool
     public partial class ArraySpec : DataModel
     {
         public int                                      Dimensions                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ArraySpec() { Pointer= p0 };
 
-            value.Dimensions                                = GetInt32(new IntPtr(p + 0x010)); // 024666B09438 0x10 Dimensions                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Bound                                     = GetBool(new IntPtr(p + 0x014)); // 024666B09458 0x14 Bound                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Dimensions                                = GetInt32(new IntPtr(p + 0x010)); // 0x10 Dimensions                  ( ModelPrimitiveType int int int Int32 )
+            value.Bound                                     = GetBool(new IntPtr(p + 0x014)); // 0x14 Bound                       ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

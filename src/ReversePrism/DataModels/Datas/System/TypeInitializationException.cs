@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 090 TypeName                                 000186671910 ModelPrimitiveType string string string String
+    // 090 TypeName                                 ModelPrimitiveType string string string String
     public partial class TypeInitializationException : DataModel
     {
         public string                                   TypeName                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TypeInitializationException() { Pointer= p0 };
 
-            value.TypeName                                  = GetString(new IntPtr(p + 0x090)); // 0245A4D43A70 0x90 TypeName                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.TypeName                                  = GetString(new IntPtr(p + 0x090)); // 0x90 TypeName                    ( ModelPrimitiveType string string string String )
 
             return value;
         }

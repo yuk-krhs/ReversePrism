@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 IncludedTypes                            000185B82C10 ModelClassListType Type[] Type[] List<Type> Pointer
-    // 018 Namspace                                 000186671910 ModelPrimitiveType string string string String
-    // 020 CanBeGenerated                           000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 IncludedTypes                            ModelClassListType Type[] Type[] List<Type> Pointer
+    // 018 Namspace                                 ModelPrimitiveType string string string String
+    // 020 CanBeGenerated                           ModelPrimitiveType bool bool bool Bool
     public partial class SerializationSource : DataModel
     {
         public List<Type>?                              IncludedTypes                           { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SerializationSource() { Pointer= p0 };
 
-            value.IncludedTypes                             = GetObjectList<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0246675135F8 0x10 IncludedTypes               ( 000185B82C10 ModelClassListType Type[] Type[] List<Type> Pointer )
-            value.Namspace                                  = GetString(new IntPtr(p + 0x018)); // 024667513618 0x18 Namspace                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.CanBeGenerated                            = GetBool(new IntPtr(p + 0x020)); // 024667513638 0x20 CanBeGenerated              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IncludedTypes                             = GetObjectList<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0x10 IncludedTypes               ( ModelClassListType Type[] Type[] List<Type> Pointer )
+            value.Namspace                                  = GetString(new IntPtr(p + 0x018)); // 0x18 Namspace                    ( ModelPrimitiveType string string string String )
+            value.CanBeGenerated                            = GetBool(new IntPtr(p + 0x020)); // 0x20 CanBeGenerated              ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

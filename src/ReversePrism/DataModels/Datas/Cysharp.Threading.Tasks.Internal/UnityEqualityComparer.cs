@@ -16,24 +16,24 @@ namespace ReversePrism.DataModels
     // 028 Rect                                     IEqualityComparer`1<Rect> IL2CPP_TYPE_GENERICINST
     // 030 Bounds                                   IEqualityComparer`1<Bounds> IL2CPP_TYPE_GENERICINST
     // 038 Quaternion                               IEqualityComparer`1<Quaternion> IL2CPP_TYPE_GENERICINST
-    // 040 Vector2Type                              0001866A02E0 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
-    // 048 Vector3Type                              0001866A02E0 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
-    // 050 Vector4Type                              0001866A02E0 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
-    // 058 ColorType                                0001866A02E0 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
-    // 060 Color32Type                              0001866A02E0 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
-    // 068 RectType                                 0001866A02E0 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
-    // 070 BoundsType                               0001866A02E0 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
-    // 078 QuaternionType                           0001866A02E0 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
+    // 040 Vector2Type                              ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
+    // 048 Vector3Type                              ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
+    // 050 Vector4Type                              ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
+    // 058 ColorType                                ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
+    // 060 Color32Type                              ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
+    // 068 RectType                                 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
+    // 070 BoundsType                               ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
+    // 078 QuaternionType                           ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
     // 080 Vector2Int                               IEqualityComparer`1<Vector2Int> IL2CPP_TYPE_GENERICINST
     // 088 Vector3Int                               IEqualityComparer`1<Vector3Int> IL2CPP_TYPE_GENERICINST
     // 090 RangeInt                                 IEqualityComparer`1<RangeInt> IL2CPP_TYPE_GENERICINST
     // 098 RectInt                                  IEqualityComparer`1<RectInt> IL2CPP_TYPE_GENERICINST
     // 0A0 BoundsInt                                IEqualityComparer`1<BoundsInt> IL2CPP_TYPE_GENERICINST
-    // 0A8 Vector2IntType                           0001866A02E0 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
-    // 0B0 Vector3IntType                           0001866A02E0 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
-    // 0B8 RangeIntType                             0001866A02E0 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
-    // 0C0 RectIntType                              0001866A02E0 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
-    // 0C8 BoundsIntType                            0001866A02E0 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
+    // 0A8 Vector2IntType                           ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
+    // 0B0 Vector3IntType                           ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
+    // 0B8 RangeIntType                             ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
+    // 0C0 RectIntType                              ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
+    // 0C8 BoundsIntType                            ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
     public partial class UnityEqualityComparer : DataModel
     {
         public RuntimeTypeHandle                        Vector2Type                             { get; set; }
@@ -58,19 +58,19 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnityEqualityComparer() { Pointer= p0 };
 
-            value.Vector2Type                               = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x040)); // 0246690AB448 0x40 Vector2Type                 ( 0001866A02E0 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
-            value.Vector3Type                               = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x048)); // 0246690AB468 0x48 Vector3Type                 ( 0001866A02E0 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
-            value.Vector4Type                               = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x050)); // 0246690AB488 0x50 Vector4Type                 ( 0001866A02E0 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
-            value.ColorType                                 = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x058)); // 0246690AB4A8 0x58 ColorType                   ( 0001866A02E0 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
-            value.Color32Type                               = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x060)); // 0246690AB4C8 0x60 Color32Type                 ( 0001866A02E0 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
-            value.RectType                                  = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x068)); // 0246690AB4E8 0x68 RectType                    ( 0001866A02E0 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
-            value.BoundsType                                = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x070)); // 0246690AB508 0x70 BoundsType                  ( 0001866A02E0 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
-            value.QuaternionType                            = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x078)); // 0246690AB528 0x78 QuaternionType              ( 0001866A02E0 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
-            value.Vector2IntType                            = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x0A8)); // 0246690AB5E8 0xA8 Vector2IntType              ( 0001866A02E0 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
-            value.Vector3IntType                            = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x0B0)); // 0246690AB608 0xB0 Vector3IntType              ( 0001866A02E0 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
-            value.RangeIntType                              = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x0B8)); // 0246690AB628 0xB8 RangeIntType                ( 0001866A02E0 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
-            value.RectIntType                               = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x0C0)); // 0246690AB648 0xC0 RectIntType                 ( 0001866A02E0 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
-            value.BoundsIntType                             = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x0C8)); // 0246690AB668 0xC8 BoundsIntType               ( 0001866A02E0 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
+            value.Vector2Type                               = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x040)); // 0x40 Vector2Type                 ( ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
+            value.Vector3Type                               = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x048)); // 0x48 Vector3Type                 ( ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
+            value.Vector4Type                               = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x050)); // 0x50 Vector4Type                 ( ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
+            value.ColorType                                 = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x058)); // 0x58 ColorType                   ( ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
+            value.Color32Type                               = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x060)); // 0x60 Color32Type                 ( ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
+            value.RectType                                  = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x068)); // 0x68 RectType                    ( ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
+            value.BoundsType                                = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x070)); // 0x70 BoundsType                  ( ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
+            value.QuaternionType                            = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x078)); // 0x78 QuaternionType              ( ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
+            value.Vector2IntType                            = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x0A8)); // 0xA8 Vector2IntType              ( ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
+            value.Vector3IntType                            = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x0B0)); // 0xB0 Vector3IntType              ( ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
+            value.RangeIntType                              = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x0B8)); // 0xB8 RangeIntType                ( ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
+            value.RectIntType                               = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x0C0)); // 0xC0 RectIntType                 ( ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
+            value.BoundsIntType                             = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x0C8)); // 0xC8 BoundsIntType               ( ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
 
             return value;
         }

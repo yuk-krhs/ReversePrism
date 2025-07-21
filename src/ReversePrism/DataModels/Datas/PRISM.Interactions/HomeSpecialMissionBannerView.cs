@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 BannerButton                             0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 028 BannerImage                              000186613190 ModelClassType RawImage RawImage RawImage Pointer
-    // 030 BadgeView                                000186738540 ModelClassType BadgeView BadgeView BadgeView Pointer
-    // 038 ViewModel                                0001866BBCF0 ModelClassType HomeBannerViewModel HomeBannerViewModel HomeBannerViewModel Pointer
+    // 020 BannerButton                             ModelClassType UIButton UIButton UIButton Pointer
+    // 028 BannerImage                              ModelClassType RawImage RawImage RawImage Pointer
+    // 030 BadgeView                                ModelClassType BadgeView BadgeView BadgeView Pointer
+    // 038 ViewModel                                ModelClassType HomeBannerViewModel HomeBannerViewModel HomeBannerViewModel Pointer
     public partial class HomeSpecialMissionBannerView : DataModel
     {
         public UIButton?                                BannerButton                            { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HomeSpecialMissionBannerView() { Pointer= p0 };
 
-            value.BannerButton                              = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 0245A5AF7F68 0x20 BannerButton                ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.BannerImage                               = GetObject<RawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.RawImage.FromPointer); // 0245A5AF7F88 0x28 BannerImage                 ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.BadgeView                                 = GetObject<BadgeView>(new IntPtr(p + 0x030), ReversePrism.DataModels.BadgeView.FromPointer); // 0245A5AF7FA8 0x30 BadgeView                   ( 000186738540 ModelClassType BadgeView BadgeView BadgeView Pointer )
-            value.ViewModel                                 = GetObject<HomeBannerViewModel>(new IntPtr(p + 0x038), ReversePrism.DataModels.HomeBannerViewModel.FromPointer); // 0245A5AF7FC8 0x38 ViewModel                   ( 0001866BBCF0 ModelClassType HomeBannerViewModel HomeBannerViewModel HomeBannerViewModel Pointer )
+            value.BannerButton                              = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 0x20 BannerButton                ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.BannerImage                               = GetObject<RawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.RawImage.FromPointer); // 0x28 BannerImage                 ( ModelClassType RawImage RawImage RawImage Pointer )
+            value.BadgeView                                 = GetObject<BadgeView>(new IntPtr(p + 0x030), ReversePrism.DataModels.BadgeView.FromPointer); // 0x30 BadgeView                   ( ModelClassType BadgeView BadgeView BadgeView Pointer )
+            value.ViewModel                                 = GetObject<HomeBannerViewModel>(new IntPtr(p + 0x038), ReversePrism.DataModels.HomeBannerViewModel.FromPointer); // 0x38 ViewModel                   ( ModelClassType HomeBannerViewModel HomeBannerViewModel HomeBannerViewModel Pointer )
 
             return value;
         }

@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ProduceBaseInfo                          0001865E2F10 ModelClassType IProduceBaseInfoStatus IProduceBaseInfoStatus IProduceBaseInfoStatus Pointer
-    // 018 ProduceStrategy                          0001865F4070 ModelClassType IProduceStrategyStatus IProduceStrategyStatus IProduceStrategyStatus Pointer
-    // 020 ProduceCardList                          000185CE7148 ModelClassListType List`1<IProduceCardStatus> List`1<IProduceCardStatus> List<IProduceCardStatus> Pointer
-    // 028 PotentialSupportSkill                    000186559940 ModelClassType IGettablePotentialSupportSkillStatus IGettablePotentialSupportSkillStatus IGettablePotentialSupportSkillStatus Pointer
+    // 010 ProduceBaseInfo                          ModelClassType IProduceBaseInfoStatus IProduceBaseInfoStatus IProduceBaseInfoStatus Pointer
+    // 018 ProduceStrategy                          ModelClassType IProduceStrategyStatus IProduceStrategyStatus IProduceStrategyStatus Pointer
+    // 020 ProduceCardList                          ModelClassListType List`1<IProduceCardStatus> List`1<IProduceCardStatus> List<IProduceCardStatus> Pointer
+    // 028 PotentialSupportSkill                    ModelClassType IGettablePotentialSupportSkillStatus IGettablePotentialSupportSkillStatus IGettablePotentialSupportSkillStatus Pointer
     public partial class SelectProduceStrategyViewModel : DataModel
     {
         public IProduceBaseInfoStatus?                  ProduceBaseInfo                         { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SelectProduceStrategyViewModel() { Pointer= p0 };
 
-            value.ProduceBaseInfo                           = GetObject<IProduceBaseInfoStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProduceBaseInfoStatus.FromPointer); // 02466660DF08 0x10 ProduceBaseInfo             ( 0001865E2F10 ModelClassType IProduceBaseInfoStatus IProduceBaseInfoStatus IProduceBaseInfoStatus Pointer )
-            value.ProduceStrategy                           = GetObject<IProduceStrategyStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IProduceStrategyStatus.FromPointer); // 02466660DF28 0x18 ProduceStrategy             ( 0001865F4070 ModelClassType IProduceStrategyStatus IProduceStrategyStatus IProduceStrategyStatus Pointer )
-            value.ProduceCardList                           = GetObjectList<IProduceCardStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IProduceCardStatus.FromPointer); // 02466660DF48 0x20 ProduceCardList             ( 000185CE7148 ModelClassListType List`1<IProduceCardStatus> List`1<IProduceCardStatus> List<IProduceCardStatus> Pointer )
-            value.PotentialSupportSkill                     = GetObject<IGettablePotentialSupportSkillStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.IGettablePotentialSupportSkillStatus.FromPointer); // 02466660DF68 0x28 PotentialSupportSkill       ( 000186559940 ModelClassType IGettablePotentialSupportSkillStatus IGettablePotentialSupportSkillStatus IGettablePotentialSupportSkillStatus Pointer )
+            value.ProduceBaseInfo                           = GetObject<IProduceBaseInfoStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProduceBaseInfoStatus.FromPointer); // 0x10 ProduceBaseInfo             ( ModelClassType IProduceBaseInfoStatus IProduceBaseInfoStatus IProduceBaseInfoStatus Pointer )
+            value.ProduceStrategy                           = GetObject<IProduceStrategyStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IProduceStrategyStatus.FromPointer); // 0x18 ProduceStrategy             ( ModelClassType IProduceStrategyStatus IProduceStrategyStatus IProduceStrategyStatus Pointer )
+            value.ProduceCardList                           = GetObjectList<IProduceCardStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IProduceCardStatus.FromPointer); // 0x20 ProduceCardList             ( ModelClassListType List`1<IProduceCardStatus> List`1<IProduceCardStatus> List<IProduceCardStatus> Pointer )
+            value.PotentialSupportSkill                     = GetObject<IGettablePotentialSupportSkillStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.IGettablePotentialSupportSkillStatus.FromPointer); // 0x28 PotentialSupportSkill       ( ModelClassType IGettablePotentialSupportSkillStatus IGettablePotentialSupportSkillStatus IGettablePotentialSupportSkillStatus Pointer )
 
             return value;
         }

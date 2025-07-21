@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Method                                   000186613DA0 ModelClassType MethodInfo MethodInfo MethodInfo Pointer
+    // 010 Method                                   ModelClassType MethodInfo MethodInfo MethodInfo Pointer
     public partial class FakeDelegate : DataModel
     {
         public MethodInfo?                              Method                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FakeDelegate() { Pointer= p0 };
 
-            value.Method                                    = GetObject<MethodInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.MethodInfo.FromPointer); // 0245A34B6230 0x10 Method                      ( 000186613DA0 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
+            value.Method                                    = GetObject<MethodInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.MethodInfo.FromPointer); // 0x10 Method                      ( ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
 
             return value;
         }

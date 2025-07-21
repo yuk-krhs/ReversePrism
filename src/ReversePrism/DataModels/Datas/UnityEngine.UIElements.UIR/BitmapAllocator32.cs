@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_PageHeight                             0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 018 M_Pages                                  000185D1FC18 ModelEnumListType List`1<Page> List`1<Page> List<Page> Pointer
-    // 020 M_AllocMap                               000185D191C8 ModelPrimitiveListType List`1<uint> List`1<uint> List<uint> Pointer
-    // 028 M_EntryWidth                             0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 02C M_EntryHeight                            0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 M_PageHeight                             ModelPrimitiveType int int int Int32
+    // 018 M_Pages                                  ModelEnumListType List`1<Page> List`1<Page> List<Page> Pointer
+    // 020 M_AllocMap                               ModelPrimitiveListType List`1<uint> List`1<uint> List<uint> Pointer
+    // 028 M_EntryWidth                             ModelPrimitiveType int int int Int32
+    // 02C M_EntryHeight                            ModelPrimitiveType int int int Int32
     public partial class BitmapAllocator32 : DataModel
     {
         public int                                      M_PageHeight                            { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BitmapAllocator32() { Pointer= p0 };
 
-            value.M_PageHeight                              = GetInt32(new IntPtr(p + 0x010)); // 0245A682D308 0x10 M_PageHeight                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_Pages                                   = GetEnumList<Page>(new IntPtr(p + 0x018)); // 0245A682D328 0x18 M_Pages                     ( 000185D1FC18 ModelEnumListType List`1<Page> List`1<Page> List<Page> Pointer )
-            value.M_AllocMap                                = GetUInt32List(new IntPtr(p + 0x020)); // 0245A682D348 0x20 M_AllocMap                  ( 000185D191C8 ModelPrimitiveListType List`1<uint> List`1<uint> List<uint> Pointer )
-            value.M_EntryWidth                              = GetInt32(new IntPtr(p + 0x028)); // 0245A682D368 0x28 M_EntryWidth                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_EntryHeight                             = GetInt32(new IntPtr(p + 0x02C)); // 0245A682D388 0x2C M_EntryHeight               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_PageHeight                              = GetInt32(new IntPtr(p + 0x010)); // 0x10 M_PageHeight                ( ModelPrimitiveType int int int Int32 )
+            value.M_Pages                                   = GetEnumList<Page>(new IntPtr(p + 0x018)); // 0x18 M_Pages                     ( ModelEnumListType List`1<Page> List`1<Page> List<Page> Pointer )
+            value.M_AllocMap                                = GetUInt32List(new IntPtr(p + 0x020)); // 0x20 M_AllocMap                  ( ModelPrimitiveListType List`1<uint> List`1<uint> List<uint> Pointer )
+            value.M_EntryWidth                              = GetInt32(new IntPtr(p + 0x028)); // 0x28 M_EntryWidth                ( ModelPrimitiveType int int int Int32 )
+            value.M_EntryHeight                             = GetInt32(new IntPtr(p + 0x02C)); // 0x2C M_EntryHeight               ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 costumeMap                               Dictionary`2<int, ICostumeStatus> IL2CPP_TYPE_GENERICINST
-    // 018 IsReady                                  000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 018 IsReady                                  ModelPrimitiveType bool bool bool Bool
     public partial class CostumeCache : DataModel
     {
         public bool                                     IsReady                                 { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CostumeCache() { Pointer= p0 };
 
-            value.IsReady                                   = GetBool(new IntPtr(p + 0x018)); // 0245A4ADCC48 0x18 IsReady                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsReady                                   = GetBool(new IntPtr(p + 0x018)); // 0x18 IsReady                     ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

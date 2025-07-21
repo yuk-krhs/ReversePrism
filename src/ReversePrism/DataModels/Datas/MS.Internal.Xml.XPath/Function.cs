@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 FunctionType                             0001866DC9E0 ModelEnumType FunctionType FunctionType FunctionType Int32
-    // 018 ArgumentList                             000185CCD5C8 ModelClassListType List`1<AstNode> List`1<AstNode> List<AstNode> Pointer
-    // 020 Name                                     000186671910 ModelPrimitiveType string string string String
-    // 028 Prefix                                   000186671910 ModelPrimitiveType string string string String
+    // 010 FunctionType                             ModelEnumType FunctionType FunctionType FunctionType Int32
+    // 018 ArgumentList                             ModelClassListType List`1<AstNode> List`1<AstNode> List<AstNode> Pointer
+    // 020 Name                                     ModelPrimitiveType string string string String
+    // 028 Prefix                                   ModelPrimitiveType string string string String
     // 000 ReturnTypes                              XPathResultType[] IL2CPP_TYPE_SZARRAY
     public partial class Function : DataModel
     {
@@ -28,10 +28,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Function() { Pointer= p0 };
 
-            value.FunctionType                              = (FunctionType)GetInt32(new IntPtr(p + 0x010)); // 024667665D88 0x10 FunctionType                ( 0001866DC9E0 ModelEnumType FunctionType FunctionType FunctionType Int32 )
-            value.ArgumentList                              = GetObjectList<AstNode>(new IntPtr(p + 0x018), ReversePrism.DataModels.AstNode.FromPointer); // 024667665DA8 0x18 ArgumentList                ( 000185CCD5C8 ModelClassListType List`1<AstNode> List`1<AstNode> List<AstNode> Pointer )
-            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 024667665DC8 0x20 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Prefix                                    = GetString(new IntPtr(p + 0x028)); // 024667665DE8 0x28 Prefix                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.FunctionType                              = (FunctionType)GetInt32(new IntPtr(p + 0x010)); // 0x10 FunctionType                ( ModelEnumType FunctionType FunctionType FunctionType Int32 )
+            value.ArgumentList                              = GetObjectList<AstNode>(new IntPtr(p + 0x018), ReversePrism.DataModels.AstNode.FromPointer); // 0x18 ArgumentList                ( ModelClassListType List`1<AstNode> List`1<AstNode> List<AstNode> Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 0x20 Name                        ( ModelPrimitiveType string string string String )
+            value.Prefix                                    = GetString(new IntPtr(p + 0x028)); // 0x28 Prefix                      ( ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 040 ReadBuffer                               00018650A4A0 ModelClassType BufferOffsetSize BufferOffsetSize BufferOffsetSize Pointer
+    // 040 ReadBuffer                               ModelClassType BufferOffsetSize BufferOffsetSize BufferOffsetSize Pointer
     public partial class BufferedReadStream : DataModel
     {
         public BufferOffsetSize?                        ReadBuffer                              { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BufferedReadStream() { Pointer= p0 };
 
-            value.ReadBuffer                                = GetObject<BufferOffsetSize>(new IntPtr(p + 0x040), ReversePrism.DataModels.BufferOffsetSize.FromPointer); // 024667AB43D0 0x40 ReadBuffer                  ( 00018650A4A0 ModelClassType BufferOffsetSize BufferOffsetSize BufferOffsetSize Pointer )
+            value.ReadBuffer                                = GetObject<BufferOffsetSize>(new IntPtr(p + 0x040), ReversePrism.DataModels.BufferOffsetSize.FromPointer); // 0x40 ReadBuffer                  ( ModelClassType BufferOffsetSize BufferOffsetSize BufferOffsetSize Pointer )
 
             return value;
         }

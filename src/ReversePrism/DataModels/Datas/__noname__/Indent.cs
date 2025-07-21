@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 RelativeAmount                           0001865F4940 ModelPrimitiveType int int int Int32
+    // 010 RelativeAmount                           ModelPrimitiveType int int int Int32
     public partial class Indent : DataModel
     {
         public int                                      RelativeAmount                          { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Indent() { Pointer= p0 };
 
-            value.RelativeAmount                            = GetInt32(new IntPtr(p + 0x010)); // 024669324E58 0x10 RelativeAmount              ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.RelativeAmount                            = GetInt32(new IntPtr(p + 0x010)); // 0x10 RelativeAmount              ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 HasSearched                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 011 HasVisited                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 018 AdvTransitionerModel                     0001865A5750 ModelClassType StoryToAdvTransitionerModel StoryToAdvTransitionerModel StoryToAdvTransitionerModel Pointer
+    // 010 HasSearched                              ModelPrimitiveType bool bool bool Bool
+    // 011 HasVisited                               ModelPrimitiveType bool bool bool Bool
+    // 018 AdvTransitionerModel                     ModelClassType StoryToAdvTransitionerModel StoryToAdvTransitionerModel StoryToAdvTransitionerModel Pointer
     public partial class StoryTopStorySearchContentArgument : DataModel
     {
         public bool                                     HasSearched                             { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StoryTopStorySearchContentArgument() { Pointer= p0 };
 
-            value.HasSearched                               = GetBool(new IntPtr(p + 0x010)); // 024665EAD800 0x10 HasSearched                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.HasVisited                                = GetBool(new IntPtr(p + 0x011)); // 024665EAD820 0x11 HasVisited                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.AdvTransitionerModel                      = GetObject<StoryToAdvTransitionerModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoryToAdvTransitionerModel.FromPointer); // 024665EAD840 0x18 AdvTransitionerModel        ( 0001865A5750 ModelClassType StoryToAdvTransitionerModel StoryToAdvTransitionerModel StoryToAdvTransitionerModel Pointer )
+            value.HasSearched                               = GetBool(new IntPtr(p + 0x010)); // 0x10 HasSearched                 ( ModelPrimitiveType bool bool bool Bool )
+            value.HasVisited                                = GetBool(new IntPtr(p + 0x011)); // 0x11 HasVisited                  ( ModelPrimitiveType bool bool bool Bool )
+            value.AdvTransitionerModel                      = GetObject<StoryToAdvTransitionerModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoryToAdvTransitionerModel.FromPointer); // 0x18 AdvTransitionerModel        ( ModelClassType StoryToAdvTransitionerModel StoryToAdvTransitionerModel StoryToAdvTransitionerModel Pointer )
 
             return value;
         }

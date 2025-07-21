@@ -9,16 +9,14 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 songDic                                  Dictionary`2<int, ISongStatus> IL2CPP_TYPE_GENERICINST
-    // 018 TotalHighScoreRating                     000186677D10 ModelClassType ITotalHighScoreRatingStatus ITotalHighScoreRatingStatus ITotalHighScoreRatingStatus Pointer
-    // 020 TotalTechnicalRating                     0001866786C0 ModelClassType ITotalTechnicalRatingStatus ITotalTechnicalRatingStatus ITotalTechnicalRatingStatus Pointer
-    // 028 RankRewardList                           000185B89530 ModelClassListType IRankRewardStatus[] IRankRewardStatus[] List<IRankRewardStatus> Pointer
-    // 030 favoriteSongDic                          Dictionary`2<FavoriteSongSlot, IFavoriteSongStatus> IL2CPP_TYPE_GENERICINST
-    // 038 IsReady                                  000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 018 TotalHighScoreRating                     ModelClassType ITotalHighScoreRatingStatus ITotalHighScoreRatingStatus ITotalHighScoreRatingStatus Pointer
+    // 020 TotalTechnicalRating                     ModelClassType ITotalTechnicalRatingStatus ITotalTechnicalRatingStatus ITotalTechnicalRatingStatus Pointer
+    // 028 favoriteSongDic                          Dictionary`2<FavoriteSongSlot, IFavoriteSongStatus> IL2CPP_TYPE_GENERICINST
+    // 030 IsReady                                  ModelPrimitiveType bool bool bool Bool
     public partial class SongCache : DataModel
     {
         public ITotalHighScoreRatingStatus?             TotalHighScoreRating                    { get; set; }
         public ITotalTechnicalRatingStatus?             TotalTechnicalRating                    { get; set; }
-        public List<IRankRewardStatus>?                 RankRewardList                          { get; set; }
         public bool                                     IsReady                                 { get; set; }
 
         public static SongCache? FromPointer(IntPtr p0)
@@ -29,10 +27,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SongCache() { Pointer= p0 };
 
-            value.TotalHighScoreRating                      = GetObject<ITotalHighScoreRatingStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ITotalHighScoreRatingStatus.FromPointer); // 0245A4AE14B0 0x18 TotalHighScoreRating        ( 000186677D10 ModelClassType ITotalHighScoreRatingStatus ITotalHighScoreRatingStatus ITotalHighScoreRatingStatus Pointer )
-            value.TotalTechnicalRating                      = GetObject<ITotalTechnicalRatingStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ITotalTechnicalRatingStatus.FromPointer); // 0245A4AE14D0 0x20 TotalTechnicalRating        ( 0001866786C0 ModelClassType ITotalTechnicalRatingStatus ITotalTechnicalRatingStatus ITotalTechnicalRatingStatus Pointer )
-            value.RankRewardList                            = GetObjectList<IRankRewardStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.IRankRewardStatus.FromPointer); // 0245A4AE14F0 0x28 RankRewardList              ( 000185B89530 ModelClassListType IRankRewardStatus[] IRankRewardStatus[] List<IRankRewardStatus> Pointer )
-            value.IsReady                                   = GetBool(new IntPtr(p + 0x038)); // 0245A4AE1530 0x38 IsReady                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.TotalHighScoreRating                      = GetObject<ITotalHighScoreRatingStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ITotalHighScoreRatingStatus.FromPointer); // 0x18 TotalHighScoreRating        ( ModelClassType ITotalHighScoreRatingStatus ITotalHighScoreRatingStatus ITotalHighScoreRatingStatus Pointer )
+            value.TotalTechnicalRating                      = GetObject<ITotalTechnicalRatingStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ITotalTechnicalRatingStatus.FromPointer); // 0x20 TotalTechnicalRating        ( ModelClassType ITotalTechnicalRatingStatus ITotalTechnicalRatingStatus ITotalTechnicalRatingStatus Pointer )
+            value.IsReady                                   = GetBool(new IntPtr(p + 0x030)); // 0x30 IsReady                     ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 050 TapNotAvailable                          000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 051 SimpleIcon                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 052 AlbumIcon                                000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 058 TapNotAvailable                          ModelPrimitiveType bool bool bool Bool
+    // 059 SimpleIcon                               ModelPrimitiveType bool bool bool Bool
+    // 05A AlbumIcon                                ModelPrimitiveType bool bool bool Bool
     public partial class CharacterSelectClickObservableInt : DataModel
     {
         public bool                                     TapNotAvailable                         { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CharacterSelectClickObservableInt() { Pointer= p0 };
 
-            value.TapNotAvailable                           = GetBool(new IntPtr(p + 0x050)); // 02466A283760 0x50 TapNotAvailable             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SimpleIcon                                = GetBool(new IntPtr(p + 0x051)); // 02466A283780 0x51 SimpleIcon                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.AlbumIcon                                 = GetBool(new IntPtr(p + 0x052)); // 02466A2837A0 0x52 AlbumIcon                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.TapNotAvailable                           = GetBool(new IntPtr(p + 0x058)); // 0x58 TapNotAvailable             ( ModelPrimitiveType bool bool bool Bool )
+            value.SimpleIcon                                = GetBool(new IntPtr(p + 0x059)); // 0x59 SimpleIcon                  ( ModelPrimitiveType bool bool bool Bool )
+            value.AlbumIcon                                 = GetBool(new IntPtr(p + 0x05A)); // 0x5A AlbumIcon                   ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

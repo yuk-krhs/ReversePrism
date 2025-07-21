@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 AssetPath                                string IL2CPP_TYPE_STRING
-    // 060 View                                     0001866BA690 ModelClassType IdolSkillDetailListContentView IdolSkillDetailListContentView IdolSkillDetailListContentView Pointer
-    // 068 EfficacyDetailListPopupCaller            00018675DD00 ModelClassType IEfficacyDetailListPopupCaller IEfficacyDetailListPopupCaller IEfficacyDetailListPopupCaller Pointer
+    // 060 View                                     ModelClassType IdolSkillDetailListContentView IdolSkillDetailListContentView IdolSkillDetailListContentView Pointer
+    // 068 EfficacyDetailListPopupCaller            ModelClassType IEfficacyDetailListPopupCaller IEfficacyDetailListPopupCaller IEfficacyDetailListPopupCaller Pointer
     public partial class IdolSkillDetailListContent : DataModel
     {
         public IdolSkillDetailListContentView?          View                                    { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IdolSkillDetailListContent() { Pointer= p0 };
 
-            value.View                                      = GetObject<IdolSkillDetailListContentView>(new IntPtr(p + 0x060), ReversePrism.DataModels.IdolSkillDetailListContentView.FromPointer); // 0246659E6A00 0x60 View                        ( 0001866BA690 ModelClassType IdolSkillDetailListContentView IdolSkillDetailListContentView IdolSkillDetailListContentView Pointer )
-            value.EfficacyDetailListPopupCaller             = GetObject<IEfficacyDetailListPopupCaller>(new IntPtr(p + 0x068), ReversePrism.DataModels.IEfficacyDetailListPopupCaller.FromPointer); // 0246659E6A20 0x68 EfficacyDetailListPopupCaller ( 00018675DD00 ModelClassType IEfficacyDetailListPopupCaller IEfficacyDetailListPopupCaller IEfficacyDetailListPopupCaller Pointer )
+            value.View                                      = GetObject<IdolSkillDetailListContentView>(new IntPtr(p + 0x060), ReversePrism.DataModels.IdolSkillDetailListContentView.FromPointer); // 0x60 View                        ( ModelClassType IdolSkillDetailListContentView IdolSkillDetailListContentView IdolSkillDetailListContentView Pointer )
+            value.EfficacyDetailListPopupCaller             = GetObject<IEfficacyDetailListPopupCaller>(new IntPtr(p + 0x068), ReversePrism.DataModels.IEfficacyDetailListPopupCaller.FromPointer); // 0x68 EfficacyDetailListPopupCaller ( ModelClassType IEfficacyDetailListPopupCaller IEfficacyDetailListPopupCaller IEfficacyDetailListPopupCaller Pointer )
 
             return value;
         }

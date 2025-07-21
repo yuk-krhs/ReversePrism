@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Dish                                     0001866CC6D0 ModelClassType FrameRateDish FrameRateDish FrameRateDish Pointer
+    // 010 Dish                                     ModelClassType FrameRateDish FrameRateDish FrameRateDish Pointer
     // 000 stack                                    ActivationStack`1<FrameRateDish> IL2CPP_TYPE_GENERICINST
     public partial class FrameRateScope : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FrameRateScope() { Pointer= p0 };
 
-            value.Dish                                      = GetObject<FrameRateDish>(new IntPtr(p + 0x010), ReversePrism.DataModels.FrameRateDish.FromPointer); // 02466B731E18 0x10 Dish                        ( 0001866CC6D0 ModelClassType FrameRateDish FrameRateDish FrameRateDish Pointer )
+            value.Dish                                      = GetObject<FrameRateDish>(new IntPtr(p + 0x010), ReversePrism.DataModels.FrameRateDish.FromPointer); // 0x10 Dish                        ( ModelClassType FrameRateDish FrameRateDish FrameRateDish Pointer )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 UserResult                               0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 Error                                    0001865CC020 ModelClassType ExceptionDispatchInfo ExceptionDispatchInfo ExceptionDispatchInfo Pointer
+    // 010 UserResult                               ModelPrimitiveType int int int Int32
+    // 018 Error                                    ModelClassType ExceptionDispatchInfo ExceptionDispatchInfo ExceptionDispatchInfo Pointer
     public partial class AsyncProtocolResult : DataModel
     {
         public int                                      UserResult                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AsyncProtocolResult() { Pointer= p0 };
 
-            value.UserResult                                = GetInt32(new IntPtr(p + 0x010)); // 0246679748A8 0x10 UserResult                  ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Error                                     = GetObject<ExceptionDispatchInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.ExceptionDispatchInfo.FromPointer); // 0246679748C8 0x18 Error                       ( 0001865CC020 ModelClassType ExceptionDispatchInfo ExceptionDispatchInfo ExceptionDispatchInfo Pointer )
+            value.UserResult                                = GetInt32(new IntPtr(p + 0x010)); // 0x10 UserResult                  ( ModelPrimitiveType int int int Int32 )
+            value.Error                                     = GetObject<ExceptionDispatchInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.ExceptionDispatchInfo.FromPointer); // 0x18 Error                       ( ModelClassType ExceptionDispatchInfo ExceptionDispatchInfo ExceptionDispatchInfo Pointer )
 
             return value;
         }

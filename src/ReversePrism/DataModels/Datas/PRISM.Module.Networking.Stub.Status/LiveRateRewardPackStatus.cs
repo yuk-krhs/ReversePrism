@@ -12,10 +12,10 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 TotalHighScoreRateRewardListFieldNumber  int IL2CPP_TYPE_I4
     // 008 _repeated_totalHighScoreRateRewardList_codec FieldCodec`1<ProductWithAmountStatus> IL2CPP_TYPE_GENERICINST
-    // 018 TotalHighScoreRateRewardList             000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer
+    // 018 TotalHighScoreRateRewardList             ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer
     // 000 TotalTechnicalRateRewardListFieldNumber  int IL2CPP_TYPE_I4
     // 010 _repeated_totalTechnicalRateRewardList_codec FieldCodec`1<ProductWithAmountStatus> IL2CPP_TYPE_GENERICINST
-    // 020 TotalTechnicalRateRewardList             000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer
+    // 020 TotalTechnicalRateRewardList             ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer
     public partial class LiveRateRewardPackStatus : DataModel
     {
         public List<ProductWithAmountStatus>?           TotalHighScoreRateRewardList            { get; set; }
@@ -29,8 +29,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveRateRewardPackStatus() { Pointer= p0 };
 
-            value.TotalHighScoreRateRewardList              = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0246612DD790 0x18 TotalHighScoreRateRewardList ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
-            value.TotalTechnicalRateRewardList              = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0246612DD7F0 0x20 TotalTechnicalRateRewardList ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
+            value.TotalHighScoreRateRewardList              = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0x18 TotalHighScoreRateRewardList ( ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
+            value.TotalTechnicalRateRewardList              = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0x20 TotalTechnicalRateRewardList ( ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
 
             return value;
         }

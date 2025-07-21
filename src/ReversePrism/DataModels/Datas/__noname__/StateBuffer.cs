@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 HeaderIndex                              0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 HeaderIndex                              ModelPrimitiveType int int int Int32
     public partial class StateBuffer : DataModel
     {
         public int                                      HeaderIndex                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StateBuffer() { Pointer= p0 };
 
-            value.HeaderIndex                               = GetInt32(new IntPtr(p + 0x010)); // 02466B09E490 0x10 HeaderIndex                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.HeaderIndex                               = GetInt32(new IntPtr(p + 0x010)); // 0x10 HeaderIndex                 ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

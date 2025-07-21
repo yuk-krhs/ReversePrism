@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Binder                                   00018652E700 ModelClassType CallSiteBinder CallSiteBinder CallSiteBinder Pointer
-    // 018 Match                                    000186595210 ModelPrimitiveType bool bool bool Bool
+    // 010 Binder                                   ModelClassType CallSiteBinder CallSiteBinder CallSiteBinder Pointer
+    // 018 Match                                    ModelPrimitiveType bool bool bool Bool
     public partial class CallSite : DataModel
     {
         public CallSiteBinder?                          Binder                                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CallSite() { Pointer= p0 };
 
-            value.Binder                                    = GetObject<CallSiteBinder>(new IntPtr(p + 0x010), ReversePrism.DataModels.CallSiteBinder.FromPointer); // 0246687C7650 0x10 Binder                      ( 00018652E700 ModelClassType CallSiteBinder CallSiteBinder CallSiteBinder Pointer )
-            value.Match                                     = GetBool(new IntPtr(p + 0x018)); // 0246687C7670 0x18 Match                       ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.Binder                                    = GetObject<CallSiteBinder>(new IntPtr(p + 0x010), ReversePrism.DataModels.CallSiteBinder.FromPointer); // 0x10 Binder                      ( ModelClassType CallSiteBinder CallSiteBinder CallSiteBinder Pointer )
+            value.Match                                     = GetBool(new IntPtr(p + 0x018)); // 0x18 Match                       ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

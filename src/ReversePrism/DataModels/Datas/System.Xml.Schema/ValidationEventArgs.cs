@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Ex                                       0001865B5A80 ModelClassType XmlSchemaException XmlSchemaException XmlSchemaException Pointer
-    // 018 Severity                                 0001865C93A0 ModelEnumType XmlSeverityType XmlSeverityType XmlSeverityType Int32
+    // 010 Ex                                       ModelClassType XmlSchemaException XmlSchemaException XmlSchemaException Pointer
+    // 018 Severity                                 ModelEnumType XmlSeverityType XmlSeverityType XmlSeverityType Int32
     public partial class ValidationEventArgs : DataModel
     {
         public XmlSchemaException?                      Ex                                      { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ValidationEventArgs() { Pointer= p0 };
 
-            value.Ex                                        = GetObject<XmlSchemaException>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlSchemaException.FromPointer); // 0246675F5768 0x10 Ex                          ( 0001865B5A80 ModelClassType XmlSchemaException XmlSchemaException XmlSchemaException Pointer )
-            value.Severity                                  = (XmlSeverityType)GetInt32(new IntPtr(p + 0x018)); // 0246675F5788 0x18 Severity                    ( 0001865C93A0 ModelEnumType XmlSeverityType XmlSeverityType XmlSeverityType Int32 )
+            value.Ex                                        = GetObject<XmlSchemaException>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlSchemaException.FromPointer); // 0x10 Ex                          ( ModelClassType XmlSchemaException XmlSchemaException XmlSchemaException Pointer )
+            value.Severity                                  = (XmlSeverityType)GetInt32(new IntPtr(p + 0x018)); // 0x18 Severity                    ( ModelEnumType XmlSeverityType XmlSeverityType XmlSeverityType Int32 )
 
             return value;
         }

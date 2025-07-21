@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 LiveScene                                000186576D00 ModelClassType LiveScene LiveScene LiveScene Pointer
+    // 020 LiveScene                                ModelClassType LiveScene LiveScene LiveScene Pointer
     public partial class LiveEventMarkerReceiver : DataModel
     {
         public LiveScene?                               LiveScene                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveEventMarkerReceiver() { Pointer= p0 };
 
-            value.LiveScene                                 = GetObject<LiveScene>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveScene.FromPointer); // 024664E3E5D8 0x20 LiveScene                   ( 000186576D00 ModelClassType LiveScene LiveScene LiveScene Pointer )
+            value.LiveScene                                 = GetObject<LiveScene>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveScene.FromPointer); // 0x20 LiveScene                   ( ModelClassType LiveScene LiveScene LiveScene Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Core                                     00018652BD10 ModelClassType LimelightCore LimelightCore LimelightCore Pointer
+    // 010 Core                                     ModelClassType LimelightCore LimelightCore LimelightCore Pointer
     // 018 progressForCategory                      Dictionary`2<DownloadCategory, long> IL2CPP_TYPE_GENERICINST
     // 020 totalForCategory                         Dictionary`2<DownloadCategory, long> IL2CPP_TYPE_GENERICINST
     // 028 runningDownloads                         Dictionary`2<DownloadCategory, HashSet`1<IDownloadJobProvider>> IL2CPP_TYPE_GENERICINST
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ResourceDownloader() { Pointer= p0 };
 
-            value.Core                                      = GetObject<LimelightCore>(new IntPtr(p + 0x010), ReversePrism.DataModels.LimelightCore.FromPointer); // 0245A3CF5480 0x10 Core                        ( 00018652BD10 ModelClassType LimelightCore LimelightCore LimelightCore Pointer )
+            value.Core                                      = GetObject<LimelightCore>(new IntPtr(p + 0x010), ReversePrism.DataModels.LimelightCore.FromPointer); // 0x10 Core                        ( ModelClassType LimelightCore LimelightCore LimelightCore Pointer )
 
             return value;
         }

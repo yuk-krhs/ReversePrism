@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_ClipInstanceID                         0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 014 M_Weight                                 0001866656B0 ModelPrimitiveType float float float Single
+    // 010 M_ClipInstanceID                         ModelPrimitiveType int int int Int32
+    // 014 M_Weight                                 ModelPrimitiveType float float float Single
     public partial class AnimatorClipInfo : DataModel
     {
         public int                                      M_ClipInstanceID                        { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AnimatorClipInfo() { Pointer= p0 };
 
-            value.M_ClipInstanceID                          = GetInt32(new IntPtr(p + 0x010)); // 0245A22254C8 0x10 M_ClipInstanceID            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_Weight                                  = GetSingle(new IntPtr(p + 0x014)); // 0245A22254E8 0x14 M_Weight                    ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_ClipInstanceID                          = GetInt32(new IntPtr(p + 0x010)); // 0x10 M_ClipInstanceID            ( ModelPrimitiveType int int int Int32 )
+            value.M_Weight                                  = GetSingle(new IntPtr(p + 0x014)); // 0x14 M_Weight                    ( ModelPrimitiveType float float float Single )
 
             return value;
         }

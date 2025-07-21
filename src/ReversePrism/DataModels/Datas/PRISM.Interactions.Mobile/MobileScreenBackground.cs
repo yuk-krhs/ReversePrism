@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 BackgroundImage                          0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
+    // 020 BackgroundImage                          ModelClassType UIImage UIImage UIImage Pointer
     public partial class MobileScreenBackground : DataModel
     {
         public UIImage?                                 BackgroundImage                         { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MobileScreenBackground() { Pointer= p0 };
 
-            value.BackgroundImage                           = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 02466B14B818 0x20 BackgroundImage             ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.BackgroundImage                           = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 0x20 BackgroundImage             ( ModelClassType UIImage UIImage UIImage Pointer )
 
             return value;
         }

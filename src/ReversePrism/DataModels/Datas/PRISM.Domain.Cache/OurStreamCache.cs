@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 <LiveStreamCache>k__BackingField         Dictionary`2<int, ILiveStreamProgramStatus> IL2CPP_TYPE_GENERICINST
-    // 018 <ArchiveStreamCache>k__BackingField      Dictionary`2<int, ArchiveStreamProgram> IL2CPP_TYPE_GENERICINST
-    // 020 IsReady                                  000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 018 <ArchiveStreamCache>k__BackingField      Dictionary`2<int, IArchiveStreamProgramStatus> IL2CPP_TYPE_GENERICINST
+    // 020 IsReady                                  ModelPrimitiveType bool bool bool Bool
     public partial class OurStreamCache : DataModel
     {
         public bool                                     IsReady                                 { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new OurStreamCache() { Pointer= p0 };
 
-            value.IsReady                                   = GetBool(new IntPtr(p + 0x020)); // 0245A4ADFFB8 0x20 IsReady                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsReady                                   = GetBool(new IntPtr(p + 0x020)); // 0x20 IsReady                     ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

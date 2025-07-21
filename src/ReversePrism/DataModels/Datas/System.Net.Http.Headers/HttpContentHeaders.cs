@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Content                                  0001866DD990 ModelClassType HttpContent HttpContent HttpContent Pointer
+    // 020 Content                                  ModelClassType HttpContent HttpContent HttpContent Pointer
     public partial class HttpContentHeaders : DataModel
     {
         public HttpContent?                             Content                                 { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HttpContentHeaders() { Pointer= p0 };
 
-            value.Content                                   = GetObject<HttpContent>(new IntPtr(p + 0x020), ReversePrism.DataModels.HttpContent.FromPointer); // 02466B8AD280 0x20 Content                     ( 0001866DD990 ModelClassType HttpContent HttpContent HttpContent Pointer )
+            value.Content                                   = GetObject<HttpContent>(new IntPtr(p + 0x020), ReversePrism.DataModels.HttpContent.FromPointer); // 0x20 Content                     ( ModelClassType HttpContent HttpContent HttpContent Pointer )
 
             return value;
         }

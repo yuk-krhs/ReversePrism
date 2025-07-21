@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<Link> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 DescriptionFieldNumber                   int IL2CPP_TYPE_I4
-    // 018 Description                              000186671910 ModelPrimitiveType string string string String
+    // 018 Description                              ModelPrimitiveType string string string String
     // 000 UrlFieldNumber                           int IL2CPP_TYPE_I4
-    // 020 Url                                      000186671910 ModelPrimitiveType string string string String
+    // 020 Url                                      ModelPrimitiveType string string string String
     public partial class Link : DataModel
     {
         public string                                   Description                             { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Link() { Pointer= p0 };
 
-            value.Description                               = GetString(new IntPtr(p + 0x018)); // 02466A74F6D8 0x18 Description                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.Url                                       = GetString(new IntPtr(p + 0x020)); // 02466A74F718 0x20 Url                         ( 000186671910 ModelPrimitiveType string string string String )
+            value.Description                               = GetString(new IntPtr(p + 0x018)); // 0x18 Description                 ( ModelPrimitiveType string string string String )
+            value.Url                                       = GetString(new IntPtr(p + 0x020)); // 0x20 Url                         ( ModelPrimitiveType string string string String )
 
             return value;
         }

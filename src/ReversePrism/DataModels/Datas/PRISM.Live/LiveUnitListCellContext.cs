@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 038 <TryCalculateUnitParameterBonus>k__BackingField Action`1<LiveUnit> IL2CPP_TYPE_GENERICINST
-    // 040 MusicData                                000186664B50 ModelClassType MusicData MusicData MusicData Pointer
+    // 040 <TryCalculateUnitParameterBonus>k__BackingField Action`1<LiveUnit> IL2CPP_TYPE_GENERICINST
+    // 048 MusicData                                ModelClassType MusicData MusicData MusicData Pointer
     public partial class LiveUnitListCellContext : DataModel
     {
         public MusicData?                               MusicData                               { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveUnitListCellContext() { Pointer= p0 };
 
-            value.MusicData                                 = GetObject<MusicData>(new IntPtr(p + 0x040), ReversePrism.DataModels.MusicData.FromPointer); // 024665324A00 0x40 MusicData                   ( 000186664B50 ModelClassType MusicData MusicData MusicData Pointer )
+            value.MusicData                                 = GetObject<MusicData>(new IntPtr(p + 0x048), ReversePrism.DataModels.MusicData.FromPointer); // 0x48 MusicData                   ( ModelClassType MusicData MusicData MusicData Pointer )
 
             return value;
         }

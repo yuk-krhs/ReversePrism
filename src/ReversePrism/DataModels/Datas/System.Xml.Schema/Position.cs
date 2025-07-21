@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Symbol                                   0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 Symbol                                   ModelPrimitiveType int int int Int32
     // 018 particle                                 <object> IL2CPP_TYPE_OBJECT
     public partial class Position : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Position() { Pointer= p0 };
 
-            value.Symbol                                    = GetInt32(new IntPtr(p + 0x010)); // 02466755CE08 0x10 Symbol                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Symbol                                    = GetInt32(new IntPtr(p + 0x010)); // 0x10 Symbol                      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

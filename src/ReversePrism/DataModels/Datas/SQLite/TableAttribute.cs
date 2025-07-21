@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Name                                     000186671910 ModelPrimitiveType string string string String
-    // 018 WithoutRowId                             000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 Name                                     ModelPrimitiveType string string string String
+    // 018 WithoutRowId                             ModelPrimitiveType bool bool bool Bool
     public partial class TableAttribute : DataModel
     {
         public string                                   Name                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TableAttribute() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0245A3D78C98 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.WithoutRowId                              = GetBool(new IntPtr(p + 0x018)); // 0245A3D78CB8 0x18 WithoutRowId                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Name                        ( ModelPrimitiveType string string string String )
+            value.WithoutRowId                              = GetBool(new IntPtr(p + 0x018)); // 0x18 WithoutRowId                ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

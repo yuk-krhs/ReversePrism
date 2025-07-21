@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ParamMap                                 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer
-    // 018 InoutArgCount                            0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 020 Method                                   000186612B80 ModelClassType MethodBase MethodBase MethodBase Pointer
+    // 010 ParamMap                                 ModelPrimitiveListType int[] int[] List<int> Pointer
+    // 018 InoutArgCount                            ModelPrimitiveType int int int Int32
+    // 020 Method                                   ModelClassType MethodBase MethodBase MethodBase Pointer
     public partial class ArgInfo : DataModel
     {
         public List<int>?                               ParamMap                                { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ArgInfo() { Pointer= p0 };
 
-            value.ParamMap                                  = GetInt32List(new IntPtr(p + 0x010)); // 024666C5FEC0 0x10 ParamMap                    ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.InoutArgCount                             = GetInt32(new IntPtr(p + 0x018)); // 024666C5FEE0 0x18 InoutArgCount               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Method                                    = GetObject<MethodBase>(new IntPtr(p + 0x020), ReversePrism.DataModels.MethodBase.FromPointer); // 024666C5FF00 0x20 Method                      ( 000186612B80 ModelClassType MethodBase MethodBase MethodBase Pointer )
+            value.ParamMap                                  = GetInt32List(new IntPtr(p + 0x010)); // 0x10 ParamMap                    ( ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.InoutArgCount                             = GetInt32(new IntPtr(p + 0x018)); // 0x18 InoutArgCount               ( ModelPrimitiveType int int int Int32 )
+            value.Method                                    = GetObject<MethodBase>(new IntPtr(p + 0x020), ReversePrism.DataModels.MethodBase.FromPointer); // 0x20 Method                      ( ModelClassType MethodBase MethodBase MethodBase Pointer )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 MinLines                                 0001865F4940 ModelPrimitiveType int int int Int32
-    // 014 MaxLines                                 0001865F4940 ModelPrimitiveType int int int Int32
+    // 010 MinLines                                 ModelPrimitiveType int int int Int32
+    // 014 MaxLines                                 ModelPrimitiveType int int int Int32
     public partial class TextAreaAttribute : DataModel
     {
         public int                                      MinLines                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TextAreaAttribute() { Pointer= p0 };
 
-            value.MinLines                                  = GetInt32(new IntPtr(p + 0x010)); // 0245A687AC30 0x10 MinLines                    ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.MaxLines                                  = GetInt32(new IntPtr(p + 0x014)); // 0245A687AC50 0x14 MaxLines                    ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.MinLines                                  = GetInt32(new IntPtr(p + 0x010)); // 0x10 MinLines                    ( ModelPrimitiveType int int int Int32 )
+            value.MaxLines                                  = GetInt32(new IntPtr(p + 0x014)); // 0x14 MaxLines                    ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Contract                                 0001865919D0 ModelClassType XmlDataContract XmlDataContract XmlDataContract Pointer
+    // 010 Contract                                 ModelClassType XmlDataContract XmlDataContract XmlDataContract Pointer
     public partial class XmlDataContractInterpreter : DataModel
     {
         public XmlDataContract?                         Contract                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlDataContractInterpreter() { Pointer= p0 };
 
-            value.Contract                                  = GetObject<XmlDataContract>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlDataContract.FromPointer); // 024667E29D00 0x10 Contract                    ( 0001865919D0 ModelClassType XmlDataContract XmlDataContract XmlDataContract Pointer )
+            value.Contract                                  = GetObject<XmlDataContract>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlDataContract.FromPointer); // 0x10 Contract                    ( ModelClassType XmlDataContract XmlDataContract XmlDataContract Pointer )
 
             return value;
         }

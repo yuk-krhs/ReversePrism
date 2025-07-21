@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Name                                     000186671910 ModelPrimitiveType string string string String
-    // 018 Value                                    00018674B220 ModelClassType IDataNode IDataNode IDataNode Pointer
+    // 010 Name                                     ModelPrimitiveType string string string String
+    // 018 Value                                    ModelClassType IDataNode IDataNode IDataNode Pointer
     public partial class ISerializableDataMember : DataModel
     {
         public string                                   Name                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ISerializableDataMember() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 024667D9FE10 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Value                                     = GetObject<IDataNode>(new IntPtr(p + 0x018), ReversePrism.DataModels.IDataNode.FromPointer); // 024667D9FE30 0x18 Value                       ( 00018674B220 ModelClassType IDataNode IDataNode IDataNode Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Name                        ( ModelPrimitiveType string string string String )
+            value.Value                                     = GetObject<IDataNode>(new IntPtr(p + 0x018), ReversePrism.DataModels.IDataNode.FromPointer); // 0x18 Value                       ( ModelClassType IDataNode IDataNode IDataNode Pointer )
 
             return value;
         }

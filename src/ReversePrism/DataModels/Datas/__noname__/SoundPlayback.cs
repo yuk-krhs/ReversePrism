@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Playback                                 000186648460 ModelEnumType CriAtomExPlayback CriAtomExPlayback CriAtomExPlayback Int32
-    // 014 Volume                                   000186666050 ModelPrimitiveType float float float Single
+    // 010 Playback                                 ModelEnumType CriAtomExPlayback CriAtomExPlayback CriAtomExPlayback Int32
+    // 014 Volume                                   ModelPrimitiveType float float float Single
     public partial class SoundPlayback : DataModel
     {
         public CriAtomExPlayback                        Playback                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SoundPlayback() { Pointer= p0 };
 
-            value.Playback                                  = (CriAtomExPlayback)GetInt32(new IntPtr(p + 0x010)); // 0245A698D348 0x10 Playback                    ( 000186648460 ModelEnumType CriAtomExPlayback CriAtomExPlayback CriAtomExPlayback Int32 )
-            value.Volume                                    = GetSingle(new IntPtr(p + 0x014)); // 0245A698D368 0x14 Volume                      ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Playback                                  = (CriAtomExPlayback)GetInt32(new IntPtr(p + 0x010)); // 0x10 Playback                    ( ModelEnumType CriAtomExPlayback CriAtomExPlayback CriAtomExPlayback Int32 )
+            value.Volume                                    = GetSingle(new IntPtr(p + 0x014)); // 0x14 Volume                      ( ModelPrimitiveType float float float Single )
 
             return value;
         }

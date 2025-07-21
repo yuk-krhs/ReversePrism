@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 SortFilterDatas                          000185CBABF8 ModelClassListType SortFilterData[] SortFilterData[] List<SortFilterData> Pointer
+    // 010 SortFilterDatas                          ModelClassListType SortFilterData[] SortFilterData[] List<SortFilterData> Pointer
     public partial class FriendListSortFilterPermanentData : DataModel
     {
         public List<SortFilterData>?                    SortFilterDatas                         { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FriendListSortFilterPermanentData() { Pointer= p0 };
 
-            value.SortFilterDatas                           = GetObjectList<SortFilterData>(new IntPtr(p + 0x010), ReversePrism.DataModels.SortFilterData.FromPointer); // 0245A3A770D8 0x10 SortFilterDatas             ( 000185CBABF8 ModelClassListType SortFilterData[] SortFilterData[] List<SortFilterData> Pointer )
+            value.SortFilterDatas                           = GetObjectList<SortFilterData>(new IntPtr(p + 0x010), ReversePrism.DataModels.SortFilterData.FromPointer); // 0x10 SortFilterDatas             ( ModelClassListType SortFilterData[] SortFilterData[] List<SortFilterData> Pointer )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Index                                    000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
-    // 012 Version                                  000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
+    // 010 Index                                    ModelPrimitiveType ushort ushort ushort UInt16
+    // 012 Version                                  ModelPrimitiveType ushort ushort ushort UInt16
     public partial class AllocatorHandle : DataModel
     {
         public ushort                                   Index                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AllocatorHandle() { Pointer= p0 };
 
-            value.Index                                     = GetUInt16(new IntPtr(p + 0x010)); // 0245A3499118 0x10 Index                       ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.Version                                   = GetUInt16(new IntPtr(p + 0x012)); // 0245A3499138 0x12 Version                     ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Index                                     = GetUInt16(new IntPtr(p + 0x010)); // 0x10 Index                       ( ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Version                                   = GetUInt16(new IntPtr(p + 0x012)); // 0x12 Version                     ( ModelPrimitiveType ushort ushort ushort UInt16 )
 
             return value;
         }

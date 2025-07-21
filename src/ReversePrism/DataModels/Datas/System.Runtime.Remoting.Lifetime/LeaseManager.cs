@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Objects                                  00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer
-    // 018 Timer                                    000186672E70 ModelClassType Timer Timer Timer Pointer
+    // 010 Objects                                  ModelClassType ArrayList ArrayList ArrayList Pointer
+    // 018 Timer                                    ModelClassType Timer Timer Timer Pointer
     public partial class LeaseManager : DataModel
     {
         public ArrayList?                               Objects                                 { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LeaseManager() { Pointer= p0 };
 
-            value.Objects                                   = GetObject<ArrayList>(new IntPtr(p + 0x010), ReversePrism.DataModels.ArrayList.FromPointer); // 024666C35F98 0x10 Objects                     ( 00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer )
-            value.Timer                                     = GetObject<Timer>(new IntPtr(p + 0x018), ReversePrism.DataModels.Timer.FromPointer); // 024666C35FB8 0x18 Timer                       ( 000186672E70 ModelClassType Timer Timer Timer Pointer )
+            value.Objects                                   = GetObject<ArrayList>(new IntPtr(p + 0x010), ReversePrism.DataModels.ArrayList.FromPointer); // 0x10 Objects                     ( ModelClassType ArrayList ArrayList ArrayList Pointer )
+            value.Timer                                     = GetObject<Timer>(new IntPtr(p + 0x018), ReversePrism.DataModels.Timer.FromPointer); // 0x18 Timer                       ( ModelClassType Timer Timer Timer Pointer )
 
             return value;
         }

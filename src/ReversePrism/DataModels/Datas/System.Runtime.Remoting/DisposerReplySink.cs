@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Next                                     0001865B0830 ModelClassType IMessageSink IMessageSink IMessageSink Pointer
-    // 018 Disposable                               0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 010 Next                                     ModelClassType IMessageSink IMessageSink IMessageSink Pointer
+    // 018 Disposable                               ModelClassType IDisposable IDisposable IDisposable Pointer
     public partial class DisposerReplySink : DataModel
     {
         public IMessageSink?                            Next                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DisposerReplySink() { Pointer= p0 };
 
-            value.Next                                      = GetObject<IMessageSink>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMessageSink.FromPointer); // 024666C31328 0x10 Next                        ( 0001865B0830 ModelClassType IMessageSink IMessageSink IMessageSink Pointer )
-            value.Disposable                                = GetObject<IDisposable>(new IntPtr(p + 0x018), ReversePrism.DataModels.IDisposable.FromPointer); // 024666C31348 0x18 Disposable                  ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.Next                                      = GetObject<IMessageSink>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMessageSink.FromPointer); // 0x10 Next                        ( ModelClassType IMessageSink IMessageSink IMessageSink Pointer )
+            value.Disposable                                = GetObject<IDisposable>(new IntPtr(p + 0x018), ReversePrism.DataModels.IDisposable.FromPointer); // 0x18 Disposable                  ( ModelClassType IDisposable IDisposable IDisposable Pointer )
 
             return value;
         }

@@ -8,14 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 TabGroup                                 0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer
-    // 028 TabItemPrefab                            000186773910 ModelClassType ShopTabItem ShopTabItem ShopTabItem Pointer
+    // 020 TabGroup                                 ModelClassType UITabGroup UITabGroup UITabGroup Pointer
+    // 028 TabItemPrefab                            ModelClassType ShopTabItem ShopTabItem ShopTabItem Pointer
     // 030 OnSelected                               Subject`1<int> IL2CPP_TYPE_GENERICINST
-    // 038 CurrentSelectedItem                      000186773910 ModelClassType ShopTabItem ShopTabItem ShopTabItem Pointer
-    // 040 TabItems                                 000185D09A08 ModelClassListType List`1<ShopTabItem> List`1<ShopTabItem> List<ShopTabItem> Pointer
-    // 048 ShopLocalSave                            0001867622A0 ModelClassType ShopLocalSave ShopLocalSave ShopLocalSave Pointer
-    // 050 CostumeTabNum                            0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 054 LastSelectIndex                          0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 038 CurrentSelectedItem                      ModelClassType ShopTabItem ShopTabItem ShopTabItem Pointer
+    // 040 TabItems                                 ModelClassListType List`1<ShopTabItem> List`1<ShopTabItem> List<ShopTabItem> Pointer
+    // 048 ShopLocalSave                            ModelClassType ShopLocalSave ShopLocalSave ShopLocalSave Pointer
+    // 050 CostumeTabNum                            ModelPrimitiveType int int int Int32
+    // 054 LastSelectIndex                          ModelPrimitiveType int int int Int32
     public partial class ShopTabGroupView : DataModel
     {
         public UITabGroup?                              TabGroup                                { get; set; }
@@ -34,13 +34,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ShopTabGroupView() { Pointer= p0 };
 
-            value.TabGroup                                  = GetObject<UITabGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITabGroup.FromPointer); // 0246655ACB30 0x20 TabGroup                    ( 0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
-            value.TabItemPrefab                             = GetObject<ShopTabItem>(new IntPtr(p + 0x028), ReversePrism.DataModels.ShopTabItem.FromPointer); // 0246655ACB50 0x28 TabItemPrefab               ( 000186773910 ModelClassType ShopTabItem ShopTabItem ShopTabItem Pointer )
-            value.CurrentSelectedItem                       = GetObject<ShopTabItem>(new IntPtr(p + 0x038), ReversePrism.DataModels.ShopTabItem.FromPointer); // 0246655ACB90 0x38 CurrentSelectedItem         ( 000186773910 ModelClassType ShopTabItem ShopTabItem ShopTabItem Pointer )
-            value.TabItems                                  = GetObjectList<ShopTabItem>(new IntPtr(p + 0x040), ReversePrism.DataModels.ShopTabItem.FromPointer); // 0246655ACBB0 0x40 TabItems                    ( 000185D09A08 ModelClassListType List`1<ShopTabItem> List`1<ShopTabItem> List<ShopTabItem> Pointer )
-            value.ShopLocalSave                             = GetObject<ShopLocalSave>(new IntPtr(p + 0x048), ReversePrism.DataModels.ShopLocalSave.FromPointer); // 0246655ACBD0 0x48 ShopLocalSave               ( 0001867622A0 ModelClassType ShopLocalSave ShopLocalSave ShopLocalSave Pointer )
-            value.CostumeTabNum                             = GetInt32(new IntPtr(p + 0x050)); // 0246655ACBF0 0x50 CostumeTabNum               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.LastSelectIndex                           = GetInt32(new IntPtr(p + 0x054)); // 0246655ACC10 0x54 LastSelectIndex             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TabGroup                                  = GetObject<UITabGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITabGroup.FromPointer); // 0x20 TabGroup                    ( ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
+            value.TabItemPrefab                             = GetObject<ShopTabItem>(new IntPtr(p + 0x028), ReversePrism.DataModels.ShopTabItem.FromPointer); // 0x28 TabItemPrefab               ( ModelClassType ShopTabItem ShopTabItem ShopTabItem Pointer )
+            value.CurrentSelectedItem                       = GetObject<ShopTabItem>(new IntPtr(p + 0x038), ReversePrism.DataModels.ShopTabItem.FromPointer); // 0x38 CurrentSelectedItem         ( ModelClassType ShopTabItem ShopTabItem ShopTabItem Pointer )
+            value.TabItems                                  = GetObjectList<ShopTabItem>(new IntPtr(p + 0x040), ReversePrism.DataModels.ShopTabItem.FromPointer); // 0x40 TabItems                    ( ModelClassListType List`1<ShopTabItem> List`1<ShopTabItem> List<ShopTabItem> Pointer )
+            value.ShopLocalSave                             = GetObject<ShopLocalSave>(new IntPtr(p + 0x048), ReversePrism.DataModels.ShopLocalSave.FromPointer); // 0x48 ShopLocalSave               ( ModelClassType ShopLocalSave ShopLocalSave ShopLocalSave Pointer )
+            value.CostumeTabNum                             = GetInt32(new IntPtr(p + 0x050)); // 0x50 CostumeTabNum               ( ModelPrimitiveType int int int Int32 )
+            value.LastSelectIndex                           = GetInt32(new IntPtr(p + 0x054)); // 0x54 LastSelectIndex             ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

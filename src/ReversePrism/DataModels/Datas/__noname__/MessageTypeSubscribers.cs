@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_messageTypeId                          000186671910 ModelPrimitiveType string string string String
-    // 018 SubscriberCount                          0001865F36C0 ModelPrimitiveType int int int Int32
-    // 020 MessageCallback                          00018657DC70 ModelClassType MessageEvent MessageEvent MessageEvent Pointer
+    // 010 M_messageTypeId                          ModelPrimitiveType string string string String
+    // 018 SubscriberCount                          ModelPrimitiveType int int int Int32
+    // 020 MessageCallback                          ModelClassType MessageEvent MessageEvent MessageEvent Pointer
     public partial class MessageTypeSubscribers : DataModel
     {
         public string                                   M_messageTypeId                         { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MessageTypeSubscribers() { Pointer= p0 };
 
-            value.M_messageTypeId                           = GetString(new IntPtr(p + 0x010)); // 0245A688A010 0x10 M_messageTypeId             ( 000186671910 ModelPrimitiveType string string string String )
-            value.SubscriberCount                           = GetInt32(new IntPtr(p + 0x018)); // 0245A688A030 0x18 SubscriberCount             ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.MessageCallback                           = GetObject<MessageEvent>(new IntPtr(p + 0x020), ReversePrism.DataModels.MessageEvent.FromPointer); // 0245A688A050 0x20 MessageCallback             ( 00018657DC70 ModelClassType MessageEvent MessageEvent MessageEvent Pointer )
+            value.M_messageTypeId                           = GetString(new IntPtr(p + 0x010)); // 0x10 M_messageTypeId             ( ModelPrimitiveType string string string String )
+            value.SubscriberCount                           = GetInt32(new IntPtr(p + 0x018)); // 0x18 SubscriberCount             ( ModelPrimitiveType int int int Int32 )
+            value.MessageCallback                           = GetObject<MessageEvent>(new IntPtr(p + 0x020), ReversePrism.DataModels.MessageEvent.FromPointer); // 0x20 MessageCallback             ( ModelClassType MessageEvent MessageEvent MessageEvent Pointer )
 
             return value;
         }

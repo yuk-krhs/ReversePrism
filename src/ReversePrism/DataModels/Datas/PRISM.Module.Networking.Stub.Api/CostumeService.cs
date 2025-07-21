@@ -19,11 +19,14 @@ namespace ReversePrism.DataModels
     // 040 __Marshaller_api_SetCostumePresetNameReply Marshaller`1<SetCostumePresetNameReply> IL2CPP_TYPE_GENERICINST
     // 048 __Marshaller_api_ClearCostumePresetArgs  Marshaller`1<ClearCostumePresetArgs> IL2CPP_TYPE_GENERICINST
     // 050 __Marshaller_api_ClearCostumePresetReply Marshaller`1<ClearCostumePresetReply> IL2CPP_TYPE_GENERICINST
-    // 058 __Method_GetCostumeList                  Method`2<GetCostumeListArgs, GetCostumeListReply> IL2CPP_TYPE_GENERICINST
-    // 060 __Method_GetCostumePresetList            Method`2<GetCostumePresetListArgs, GetCostumePresetListReply> IL2CPP_TYPE_GENERICINST
-    // 068 __Method_SetCostumePreset                Method`2<SetCostumePresetArgs, SetCostumePresetReply> IL2CPP_TYPE_GENERICINST
-    // 070 __Method_SetCostumePresetName            Method`2<SetCostumePresetNameArgs, SetCostumePresetNameReply> IL2CPP_TYPE_GENERICINST
-    // 078 __Method_ClearCostumePreset              Method`2<ClearCostumePresetArgs, ClearCostumePresetReply> IL2CPP_TYPE_GENERICINST
+    // 058 __Marshaller_api_UnlockDressOrderArgs    Marshaller`1<UnlockDressOrderArgs> IL2CPP_TYPE_GENERICINST
+    // 060 __Marshaller_api_UnlockDressOrderReply   Marshaller`1<UnlockDressOrderReply> IL2CPP_TYPE_GENERICINST
+    // 068 __Method_GetCostumeList                  Method`2<GetCostumeListArgs, GetCostumeListReply> IL2CPP_TYPE_GENERICINST
+    // 070 __Method_GetCostumePresetList            Method`2<GetCostumePresetListArgs, GetCostumePresetListReply> IL2CPP_TYPE_GENERICINST
+    // 078 __Method_SetCostumePreset                Method`2<SetCostumePresetArgs, SetCostumePresetReply> IL2CPP_TYPE_GENERICINST
+    // 080 __Method_SetCostumePresetName            Method`2<SetCostumePresetNameArgs, SetCostumePresetNameReply> IL2CPP_TYPE_GENERICINST
+    // 088 __Method_ClearCostumePreset              Method`2<ClearCostumePresetArgs, ClearCostumePresetReply> IL2CPP_TYPE_GENERICINST
+    // 090 __Method_UnlockDressOrder                Method`2<UnlockDressOrderArgs, UnlockDressOrderReply> IL2CPP_TYPE_GENERICINST
     public partial class CostumeService : DataModel
     {
 

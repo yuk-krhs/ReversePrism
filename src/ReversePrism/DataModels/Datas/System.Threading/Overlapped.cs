@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 OffsetL                                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 014 OffsetH                                  0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 OffsetL                                  ModelPrimitiveType int int int Int32
+    // 014 OffsetH                                  ModelPrimitiveType int int int Int32
     // 018 evt_ptr                                  <int> IL2CPP_TYPE_I
     public partial class Overlapped : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Overlapped() { Pointer= p0 };
 
-            value.OffsetL                                   = GetInt32(new IntPtr(p + 0x010)); // 024666B4EB18 0x10 OffsetL                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.OffsetH                                   = GetInt32(new IntPtr(p + 0x014)); // 024666B4EB38 0x14 OffsetH                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OffsetL                                   = GetInt32(new IntPtr(p + 0x010)); // 0x10 OffsetL                     ( ModelPrimitiveType int int int Int32 )
+            value.OffsetH                                   = GetInt32(new IntPtr(p + 0x014)); // 0x14 OffsetH                     ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

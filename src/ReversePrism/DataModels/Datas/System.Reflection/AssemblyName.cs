@@ -8,22 +8,22 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Name                                     000186671910 ModelPrimitiveType string string string String
-    // 018 Codebase                                 000186671910 ModelPrimitiveType string string string String
-    // 020 Major                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 024 Minor                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 028 Build                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 02C Revision                                 0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 030 Cultureinfo                              0001865B47C0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer
-    // 038 Flags                                    0001866E12B0 ModelEnumType AssemblyNameFlags AssemblyNameFlags AssemblyNameFlags Int32
-    // 03C Hashalg                                  0001866DF770 ModelEnumType AssemblyHashAlgorithm AssemblyHashAlgorithm AssemblyHashAlgorithm Int32
-    // 040 Keypair                                  0001865C4A50 ModelClassType StrongNameKeyPair StrongNameKeyPair StrongNameKeyPair Pointer
-    // 048 PublicKey                                000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 050 KeyToken                                 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 058 Versioncompat                            0001866E2610 ModelEnumType AssemblyVersionCompatibility AssemblyVersionCompatibility AssemblyVersionCompatibility Int32
-    // 060 Version                                  0001866B0CC0 ModelClassType Version Version Version Pointer
-    // 068 Processor_architecture                   000186525F00 ModelEnumType ProcessorArchitecture ProcessorArchitecture ProcessorArchitecture Int32
-    // 06C ContentType                              0001866DE1C0 ModelEnumType AssemblyContentType AssemblyContentType AssemblyContentType Int32
+    // 010 Name                                     ModelPrimitiveType string string string String
+    // 018 Codebase                                 ModelPrimitiveType string string string String
+    // 020 Major                                    ModelPrimitiveType int int int Int32
+    // 024 Minor                                    ModelPrimitiveType int int int Int32
+    // 028 Build                                    ModelPrimitiveType int int int Int32
+    // 02C Revision                                 ModelPrimitiveType int int int Int32
+    // 030 Cultureinfo                              ModelClassType CultureInfo CultureInfo CultureInfo Pointer
+    // 038 Flags                                    ModelEnumType AssemblyNameFlags AssemblyNameFlags AssemblyNameFlags Int32
+    // 03C Hashalg                                  ModelEnumType AssemblyHashAlgorithm AssemblyHashAlgorithm AssemblyHashAlgorithm Int32
+    // 040 Keypair                                  ModelClassType StrongNameKeyPair StrongNameKeyPair StrongNameKeyPair Pointer
+    // 048 PublicKey                                ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 050 KeyToken                                 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 058 Versioncompat                            ModelEnumType AssemblyVersionCompatibility AssemblyVersionCompatibility AssemblyVersionCompatibility Int32
+    // 060 Version                                  ModelClassType Version Version Version Pointer
+    // 068 Processor_architecture                   ModelEnumType ProcessorArchitecture ProcessorArchitecture ProcessorArchitecture Int32
+    // 06C ContentType                              ModelEnumType AssemblyContentType AssemblyContentType AssemblyContentType Int32
     public partial class AssemblyName : DataModel
     {
         public string                                   Name                                    { get; set; }
@@ -51,22 +51,22 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AssemblyName() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0245A40CF650 0x10 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Codebase                                  = GetString(new IntPtr(p + 0x018)); // 0245A40CF670 0x18 Codebase                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.Major                                     = GetInt32(new IntPtr(p + 0x020)); // 0245A40CF690 0x20 Major                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Minor                                     = GetInt32(new IntPtr(p + 0x024)); // 0245A40CF6B0 0x24 Minor                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Build                                     = GetInt32(new IntPtr(p + 0x028)); // 0245A40CF6D0 0x28 Build                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Revision                                  = GetInt32(new IntPtr(p + 0x02C)); // 0245A40CF6F0 0x2C Revision                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Cultureinfo                               = GetObject<CultureInfo>(new IntPtr(p + 0x030), ReversePrism.DataModels.CultureInfo.FromPointer); // 0245A40CF710 0x30 Cultureinfo                 ( 0001865B47C0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
-            value.Flags                                     = (AssemblyNameFlags)GetInt32(new IntPtr(p + 0x038)); // 0245A40CF730 0x38 Flags                       ( 0001866E12B0 ModelEnumType AssemblyNameFlags AssemblyNameFlags AssemblyNameFlags Int32 )
-            value.Hashalg                                   = (AssemblyHashAlgorithm)GetInt32(new IntPtr(p + 0x03C)); // 0245A40CF750 0x3C Hashalg                     ( 0001866DF770 ModelEnumType AssemblyHashAlgorithm AssemblyHashAlgorithm AssemblyHashAlgorithm Int32 )
-            value.Keypair                                   = GetObject<StrongNameKeyPair>(new IntPtr(p + 0x040), ReversePrism.DataModels.StrongNameKeyPair.FromPointer); // 0245A40CF770 0x40 Keypair                     ( 0001865C4A50 ModelClassType StrongNameKeyPair StrongNameKeyPair StrongNameKeyPair Pointer )
-            value.PublicKey                                 = GetSByteList(new IntPtr(p + 0x048)); // 0245A40CF790 0x48 PublicKey                   ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.KeyToken                                  = GetSByteList(new IntPtr(p + 0x050)); // 0245A40CF7B0 0x50 KeyToken                    ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Versioncompat                             = (AssemblyVersionCompatibility)GetInt32(new IntPtr(p + 0x058)); // 0245A40CF7D0 0x58 Versioncompat               ( 0001866E2610 ModelEnumType AssemblyVersionCompatibility AssemblyVersionCompatibility AssemblyVersionCompatibility Int32 )
-            value.Version                                   = GetObject<Version>(new IntPtr(p + 0x060), ReversePrism.DataModels.Version.FromPointer); // 0245A40CF7F0 0x60 Version                     ( 0001866B0CC0 ModelClassType Version Version Version Pointer )
-            value.Processor_architecture                    = (ProcessorArchitecture)GetInt32(new IntPtr(p + 0x068)); // 0245A40CF810 0x68 Processor_architecture      ( 000186525F00 ModelEnumType ProcessorArchitecture ProcessorArchitecture ProcessorArchitecture Int32 )
-            value.ContentType                               = (AssemblyContentType)GetInt32(new IntPtr(p + 0x06C)); // 0245A40CF830 0x6C ContentType                 ( 0001866DE1C0 ModelEnumType AssemblyContentType AssemblyContentType AssemblyContentType Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Name                        ( ModelPrimitiveType string string string String )
+            value.Codebase                                  = GetString(new IntPtr(p + 0x018)); // 0x18 Codebase                    ( ModelPrimitiveType string string string String )
+            value.Major                                     = GetInt32(new IntPtr(p + 0x020)); // 0x20 Major                       ( ModelPrimitiveType int int int Int32 )
+            value.Minor                                     = GetInt32(new IntPtr(p + 0x024)); // 0x24 Minor                       ( ModelPrimitiveType int int int Int32 )
+            value.Build                                     = GetInt32(new IntPtr(p + 0x028)); // 0x28 Build                       ( ModelPrimitiveType int int int Int32 )
+            value.Revision                                  = GetInt32(new IntPtr(p + 0x02C)); // 0x2C Revision                    ( ModelPrimitiveType int int int Int32 )
+            value.Cultureinfo                               = GetObject<CultureInfo>(new IntPtr(p + 0x030), ReversePrism.DataModels.CultureInfo.FromPointer); // 0x30 Cultureinfo                 ( ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
+            value.Flags                                     = (AssemblyNameFlags)GetInt32(new IntPtr(p + 0x038)); // 0x38 Flags                       ( ModelEnumType AssemblyNameFlags AssemblyNameFlags AssemblyNameFlags Int32 )
+            value.Hashalg                                   = (AssemblyHashAlgorithm)GetInt32(new IntPtr(p + 0x03C)); // 0x3C Hashalg                     ( ModelEnumType AssemblyHashAlgorithm AssemblyHashAlgorithm AssemblyHashAlgorithm Int32 )
+            value.Keypair                                   = GetObject<StrongNameKeyPair>(new IntPtr(p + 0x040), ReversePrism.DataModels.StrongNameKeyPair.FromPointer); // 0x40 Keypair                     ( ModelClassType StrongNameKeyPair StrongNameKeyPair StrongNameKeyPair Pointer )
+            value.PublicKey                                 = GetSByteList(new IntPtr(p + 0x048)); // 0x48 PublicKey                   ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.KeyToken                                  = GetSByteList(new IntPtr(p + 0x050)); // 0x50 KeyToken                    ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Versioncompat                             = (AssemblyVersionCompatibility)GetInt32(new IntPtr(p + 0x058)); // 0x58 Versioncompat               ( ModelEnumType AssemblyVersionCompatibility AssemblyVersionCompatibility AssemblyVersionCompatibility Int32 )
+            value.Version                                   = GetObject<Version>(new IntPtr(p + 0x060), ReversePrism.DataModels.Version.FromPointer); // 0x60 Version                     ( ModelClassType Version Version Version Pointer )
+            value.Processor_architecture                    = (ProcessorArchitecture)GetInt32(new IntPtr(p + 0x068)); // 0x68 Processor_architecture      ( ModelEnumType ProcessorArchitecture ProcessorArchitecture ProcessorArchitecture Int32 )
+            value.ContentType                               = (AssemblyContentType)GetInt32(new IntPtr(p + 0x06C)); // 0x6C ContentType                 ( ModelEnumType AssemblyContentType AssemblyContentType AssemblyContentType Int32 )
 
             return value;
         }

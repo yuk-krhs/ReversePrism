@@ -8,15 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 3C8 M_ScaleMode                              0001866C1850 ModelEnumType ScaleMode ScaleMode ScaleMode Int32
-    // 3D0 M_Image                                  00018664CFB0 ModelClassType Texture Texture Texture Pointer
-    // 3D8 M_Sprite                                 00018666B610 ModelClassType Sprite Sprite Sprite Pointer
-    // 3E0 M_VectorImage                            0001866B01A0 ModelClassType VectorImage VectorImage VectorImage Pointer
-    // 3E8 M_UV                                     00018664F620 ModelEnumType Rect Rect Rect Int32
-    // 3F8 M_TintColor                              0001865AA8E0 ModelEnumType Color Color Color Int32
-    // 408 M_ImageIsInline                          000186595210 ModelPrimitiveType bool bool bool Bool
-    // 409 M_ScaleModeIsInline                      000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 40A M_TintColorIsInline                      000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 3C8 M_ScaleMode                              ModelEnumType ScaleMode ScaleMode ScaleMode Int32
+    // 3D0 M_Image                                  ModelClassType Texture Texture Texture Pointer
+    // 3D8 M_Sprite                                 ModelClassType Sprite Sprite Sprite Pointer
+    // 3E0 M_VectorImage                            ModelClassType VectorImage VectorImage VectorImage Pointer
+    // 3E8 M_UV                                     ModelEnumType Rect Rect Rect Int32
+    // 3F8 M_TintColor                              ModelEnumType Color Color Color Int32
+    // 408 M_ImageIsInline                          ModelPrimitiveType bool bool bool Bool
+    // 409 M_ScaleModeIsInline                      ModelPrimitiveType bool bool bool Bool
+    // 40A M_TintColorIsInline                      ModelPrimitiveType bool bool bool Bool
     // 000 ussClassName                             string IL2CPP_TYPE_STRING
     // 008 s_ImageProperty                          CustomStyleProperty`1<Texture2D> IL2CPP_TYPE_GENERICINST
     // 010 s_SpriteProperty                         CustomStyleProperty`1<Sprite> IL2CPP_TYPE_GENERICINST
@@ -43,15 +43,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Image() { Pointer= p0 };
 
-            value.M_ScaleMode                               = (ScaleMode)GetInt32(new IntPtr(p + 0x3C8)); // 0245A66D74C8 0x3C8 M_ScaleMode                 ( 0001866C1850 ModelEnumType ScaleMode ScaleMode ScaleMode Int32 )
-            value.M_Image                                   = GetObject<Texture>(new IntPtr(p + 0x3D0), ReversePrism.DataModels.Texture.FromPointer); // 0245A66D74E8 0x3D0 M_Image                     ( 00018664CFB0 ModelClassType Texture Texture Texture Pointer )
-            value.M_Sprite                                  = GetObject<Sprite>(new IntPtr(p + 0x3D8), ReversePrism.DataModels.Sprite.FromPointer); // 0245A66D7508 0x3D8 M_Sprite                    ( 00018666B610 ModelClassType Sprite Sprite Sprite Pointer )
-            value.M_VectorImage                             = GetObject<VectorImage>(new IntPtr(p + 0x3E0), ReversePrism.DataModels.VectorImage.FromPointer); // 0245A66D7528 0x3E0 M_VectorImage               ( 0001866B01A0 ModelClassType VectorImage VectorImage VectorImage Pointer )
-            value.M_UV                                      = (Rect)GetInt32(new IntPtr(p + 0x3E8)); // 0245A66D7548 0x3E8 M_UV                        ( 00018664F620 ModelEnumType Rect Rect Rect Int32 )
-            value.M_TintColor                               = (Color)GetInt32(new IntPtr(p + 0x3F8)); // 0245A66D7568 0x3F8 M_TintColor                 ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.M_ImageIsInline                           = GetBool(new IntPtr(p + 0x408)); // 0245A66D7588 0x408 M_ImageIsInline             ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.M_ScaleModeIsInline                       = GetBool(new IntPtr(p + 0x409)); // 0245A66D75A8 0x409 M_ScaleModeIsInline         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_TintColorIsInline                       = GetBool(new IntPtr(p + 0x40A)); // 0245A66D75C8 0x40A M_TintColorIsInline         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_ScaleMode                               = (ScaleMode)GetInt32(new IntPtr(p + 0x3C8)); // 0x3C8 M_ScaleMode                 ( ModelEnumType ScaleMode ScaleMode ScaleMode Int32 )
+            value.M_Image                                   = GetObject<Texture>(new IntPtr(p + 0x3D0), ReversePrism.DataModels.Texture.FromPointer); // 0x3D0 M_Image                     ( ModelClassType Texture Texture Texture Pointer )
+            value.M_Sprite                                  = GetObject<Sprite>(new IntPtr(p + 0x3D8), ReversePrism.DataModels.Sprite.FromPointer); // 0x3D8 M_Sprite                    ( ModelClassType Sprite Sprite Sprite Pointer )
+            value.M_VectorImage                             = GetObject<VectorImage>(new IntPtr(p + 0x3E0), ReversePrism.DataModels.VectorImage.FromPointer); // 0x3E0 M_VectorImage               ( ModelClassType VectorImage VectorImage VectorImage Pointer )
+            value.M_UV                                      = (Rect)GetInt32(new IntPtr(p + 0x3E8)); // 0x3E8 M_UV                        ( ModelEnumType Rect Rect Rect Int32 )
+            value.M_TintColor                               = (Color)GetInt32(new IntPtr(p + 0x3F8)); // 0x3F8 M_TintColor                 ( ModelEnumType Color Color Color Int32 )
+            value.M_ImageIsInline                           = GetBool(new IntPtr(p + 0x408)); // 0x408 M_ImageIsInline             ( ModelPrimitiveType bool bool bool Bool )
+            value.M_ScaleModeIsInline                       = GetBool(new IntPtr(p + 0x409)); // 0x409 M_ScaleModeIsInline         ( ModelPrimitiveType bool bool bool Bool )
+            value.M_TintColorIsInline                       = GetBool(new IntPtr(p + 0x40A)); // 0x40A M_TintColorIsInline         ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

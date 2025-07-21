@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Pool                                     ObjectPool`1<VisualElementFocusChangeTarget> IL2CPP_TYPE_GENERICINST
-    // 018 Target                                   0001865D3CE0 ModelClassType Focusable Focusable Focusable Pointer
+    // 018 Target                                   ModelClassType Focusable Focusable Focusable Pointer
     public partial class VisualElementFocusChangeTarget : DataModel
     {
         public Focusable?                               Target                                  { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new VisualElementFocusChangeTarget() { Pointer= p0 };
 
-            value.Target                                    = GetObject<Focusable>(new IntPtr(p + 0x018), ReversePrism.DataModels.Focusable.FromPointer); // 0245A681D190 0x18 Target                      ( 0001865D3CE0 ModelClassType Focusable Focusable Focusable Pointer )
+            value.Target                                    = GetObject<Focusable>(new IntPtr(p + 0x018), ReversePrism.DataModels.Focusable.FromPointer); // 0x18 Target                      ( ModelClassType Focusable Focusable Focusable Pointer )
 
             return value;
         }

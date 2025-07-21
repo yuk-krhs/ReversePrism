@@ -8,47 +8,43 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 LiveCanvas                               00018653FDA0 ModelClassType Canvas Canvas Canvas Pointer
-    // 030 DebugCamera                              0001865A1C90 ModelClassType Camera Camera Camera Pointer
-    // 038 DebugUI                                  000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
-    // 040 NameId                                   000186671910 ModelPrimitiveType string string string String
-    // 048 Camera                                   000186536460 ModelClassType CameraController CameraController CameraController Pointer
-    // 050 StageController                          000186562560 ModelClassType StageController StageController StageController Pointer
-    // 058 Characters                               000185B74CD0 ModelClassListType Character[] Character[] List<Character> Pointer
-    // 060 TimelineController                       00018666EA20 ModelClassType TimelineController TimelineController TimelineController Pointer
-    // 068 AudienceController                       000186715720 ModelClassType AudienceController AudienceController AudienceController Pointer
-    // 070 LyricPanelCanvas                         00018653FDA0 ModelClassType Canvas Canvas Canvas Pointer
-    // 078 CamEvent                                 000186539DD0 ModelClassType CameraWorkEvent CameraWorkEvent CameraWorkEvent Pointer
-    // 080 CameraWorkDataList                       000185D20578 ModelClassListType List`1<CameraWorkData> List`1<CameraWorkData> List<CameraWorkData> Pointer
-    // 088 IsManagerSetupCompleted                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 089 IsControlBySequencer                     000186597BE0 ModelPrimitiveType bool bool bool Bool
-    // 08A IsOldMv                                  000186597BE0 ModelPrimitiveType bool bool bool Bool
-    // 090 SoundResources                           000186677C40 ModelClassType MvCutSceneSoundResources MvCutSceneSoundResources MvCutSceneSoundResources Pointer
-    // 098 SceneCreateData                          000186710490 ModelClassType Data Data Data Pointer
-    // 0A0 UnitIdols                                000185CAF1A8 ModelClassListType UnitIdol[] UnitIdol[] List<UnitIdol> Pointer
-    // 0A8 CameraIndex                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 0AC ReflectionForceOn                        000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 0AD AvoidSwayBoneShake                       000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 0B0 AmbientLightColor                        0001865AA8E0 ModelEnumType Color Color Color Int32
-    // 0C0 LiveStartData                            000186581BE0 ModelClassType LiveStartData LiveStartData LiveStartData Pointer
-    // 0C8 LiveMVStartData                          00018655CF60 ModelClassType LiveMVStartData LiveMVStartData LiveMVStartData Pointer
-    // 0D0 TypeExtention                            000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 0D8 IsInitializeEnd                          000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 0D9 IsReceivedParameter                      000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 028 LiveCanvas                               ModelClassType Canvas Canvas Canvas Pointer
+    // 030 NameId                                   ModelPrimitiveType string string string String
+    // 038 Camera                                   ModelClassType CameraController CameraController CameraController Pointer
+    // 040 StageController                          ModelClassType StageController StageController StageController Pointer
+    // 048 Characters                               ModelClassListType Character[] Character[] List<Character> Pointer
+    // 050 TimelineController                       ModelClassType TimelineController TimelineController TimelineController Pointer
+    // 058 AudienceController                       ModelClassType AudienceController AudienceController AudienceController Pointer
+    // 060 LyricPanelCanvas                         ModelClassType Canvas Canvas Canvas Pointer
+    // 068 CamEvent                                 ModelClassType CameraWorkEvent CameraWorkEvent CameraWorkEvent Pointer
+    // 070 CameraWorkDataList                       ModelClassListType List`1<CameraWorkData> List`1<CameraWorkData> List<CameraWorkData> Pointer
+    // 078 IsManagerSetupCompleted                  ModelPrimitiveType bool bool bool Bool
+    // 079 IsControlBySequencer                     ModelPrimitiveType bool bool bool Bool
+    // 07A IsOldMv                                  ModelPrimitiveType bool bool bool Bool
+    // 080 SoundResources                           ModelClassType MvCutSceneSoundResources MvCutSceneSoundResources MvCutSceneSoundResources Pointer
+    // 088 SceneCreateData                          ModelClassType Data Data Data Pointer
+    // 090 UnitIdols                                ModelClassListType UnitIdol[] UnitIdol[] List<UnitIdol> Pointer
+    // 098 CameraIndex                              ModelPrimitiveType int int int Int32
+    // 09C ReflectionForceOn                        ModelPrimitiveType bool bool bool Bool
+    // 09D AvoidSwayBoneShake                       ModelPrimitiveType bool bool bool Bool
+    // 0A0 AmbientLightColor                        ModelEnumType Color Color Color Int32
+    // 0B0 LiveStartData                            ModelClassType LiveStartData LiveStartData LiveStartData Pointer
+    // 0B8 LiveMVStartData                          ModelClassType LiveMVStartData LiveMVStartData LiveMVStartData Pointer
+    // 0C0 TypeExtention                            ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 0C8 IsInitializeEnd                          ModelPrimitiveType bool bool bool Bool
+    // 0C9 IsReceivedParameter                      ModelPrimitiveType bool bool bool Bool
     // 000 isPreLoadEnd                             bool IL2CPP_TYPE_BOOLEAN
-    // 0E0 Disposables                              0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
-    // 0E8 ProgressManager                          000186569620 ModelClassType LiveProgressManager LiveProgressManager LiveProgressManager Pointer
-    // 0F0 AudienceColors                           000185B75890 ModelEnumListType Color[] Color[] List<Color> Pointer
-    // 0F8 PlaySeSubject                            Subject`1<string> IL2CPP_TYPE_GENERICINST
-    // 100 OptionLocalSave                          0001866E6E30 ModelClassType OptionLocalSave OptionLocalSave OptionLocalSave Pointer
-    // 108 LiveSubSequence                          000186584630 ModelClassType LiveSubSequence LiveSubSequence LiveSubSequence Pointer
+    // 0D0 Disposables                              ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
+    // 0D8 ProgressManager                          ModelClassType LiveProgressManager LiveProgressManager LiveProgressManager Pointer
+    // 0E0 AudienceColors                           ModelEnumListType Color[] Color[] List<Color> Pointer
+    // 0E8 PlaySeSubject                            Subject`1<string> IL2CPP_TYPE_GENERICINST
+    // 0F0 OptionLocalSave                          ModelClassType OptionLocalSave OptionLocalSave OptionLocalSave Pointer
+    // 0F8 LiveSubSequence                          ModelClassType LiveSubSequence LiveSubSequence LiveSubSequence Pointer
     // 008 preloadUnitIdol                          UnitIdol[] IL2CPP_TYPE_SZARRAY
-    // 110 LastFrame                                0001866656B0 ModelPrimitiveType float float float Single
+    // 100 LastFrame                                ModelPrimitiveType float float float Single
     public partial class LiveScene : DataModel
     {
         public Canvas?                                  LiveCanvas                              { get; set; }
-        public Camera?                                  DebugCamera                             { get; set; }
-        public RectTransform?                           DebugUI                                 { get; set; }
         public string                                   NameId                                  { get; set; }
         public CameraController?                        Camera                                  { get; set; }
         public StageController?                         StageController                         { get; set; }
@@ -88,39 +84,37 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveScene() { Pointer= p0 };
 
-            value.LiveCanvas                                = GetObject<Canvas>(new IntPtr(p + 0x028), ReversePrism.DataModels.Canvas.FromPointer); // 0245A6A23730 0x28 LiveCanvas                  ( 00018653FDA0 ModelClassType Canvas Canvas Canvas Pointer )
-            value.DebugCamera                               = GetObject<Camera>(new IntPtr(p + 0x030), ReversePrism.DataModels.Camera.FromPointer); // 0245A6A23750 0x30 DebugCamera                 ( 0001865A1C90 ModelClassType Camera Camera Camera Pointer )
-            value.DebugUI                                   = GetObject<RectTransform>(new IntPtr(p + 0x038), ReversePrism.DataModels.RectTransform.FromPointer); // 0245A6A23770 0x38 DebugUI                     ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.NameId                                    = GetString(new IntPtr(p + 0x040)); // 0245A6A23790 0x40 NameId                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Camera                                    = GetObject<CameraController>(new IntPtr(p + 0x048), ReversePrism.DataModels.CameraController.FromPointer); // 0245A6A237B0 0x48 Camera                      ( 000186536460 ModelClassType CameraController CameraController CameraController Pointer )
-            value.StageController                           = GetObject<StageController>(new IntPtr(p + 0x050), ReversePrism.DataModels.StageController.FromPointer); // 0245A6A237D0 0x50 StageController             ( 000186562560 ModelClassType StageController StageController StageController Pointer )
-            value.Characters                                = GetObjectList<Character>(new IntPtr(p + 0x058), ReversePrism.DataModels.Character.FromPointer); // 0245A6A237F0 0x58 Characters                  ( 000185B74CD0 ModelClassListType Character[] Character[] List<Character> Pointer )
-            value.TimelineController                        = GetObject<TimelineController>(new IntPtr(p + 0x060), ReversePrism.DataModels.TimelineController.FromPointer); // 0245A6A23810 0x60 TimelineController          ( 00018666EA20 ModelClassType TimelineController TimelineController TimelineController Pointer )
-            value.AudienceController                        = GetObject<AudienceController>(new IntPtr(p + 0x068), ReversePrism.DataModels.AudienceController.FromPointer); // 0245A6A23830 0x68 AudienceController          ( 000186715720 ModelClassType AudienceController AudienceController AudienceController Pointer )
-            value.LyricPanelCanvas                          = GetObject<Canvas>(new IntPtr(p + 0x070), ReversePrism.DataModels.Canvas.FromPointer); // 0245A6A23850 0x70 LyricPanelCanvas            ( 00018653FDA0 ModelClassType Canvas Canvas Canvas Pointer )
-            value.CamEvent                                  = GetObject<CameraWorkEvent>(new IntPtr(p + 0x078), ReversePrism.DataModels.CameraWorkEvent.FromPointer); // 0245A6A23870 0x78 CamEvent                    ( 000186539DD0 ModelClassType CameraWorkEvent CameraWorkEvent CameraWorkEvent Pointer )
-            value.CameraWorkDataList                        = GetObjectList<CameraWorkData>(new IntPtr(p + 0x080), ReversePrism.DataModels.CameraWorkData.FromPointer); // 0245A6A23890 0x80 CameraWorkDataList          ( 000185D20578 ModelClassListType List`1<CameraWorkData> List`1<CameraWorkData> List<CameraWorkData> Pointer )
-            value.IsManagerSetupCompleted                   = GetBool(new IntPtr(p + 0x088)); // 0245A6A238B0 0x88 IsManagerSetupCompleted     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsControlBySequencer                      = GetBool(new IntPtr(p + 0x089)); // 0245A6A238D0 0x89 IsControlBySequencer        ( 000186597BE0 ModelPrimitiveType bool bool bool Bool )
-            value.IsOldMv                                   = GetBool(new IntPtr(p + 0x08A)); // 0245A6A238F0 0x8A IsOldMv                     ( 000186597BE0 ModelPrimitiveType bool bool bool Bool )
-            value.SoundResources                            = GetObject<MvCutSceneSoundResources>(new IntPtr(p + 0x090), ReversePrism.DataModels.MvCutSceneSoundResources.FromPointer); // 0245A6A23910 0x90 SoundResources              ( 000186677C40 ModelClassType MvCutSceneSoundResources MvCutSceneSoundResources MvCutSceneSoundResources Pointer )
-            value.SceneCreateData                           = GetObject<Data>(new IntPtr(p + 0x098), ReversePrism.DataModels.Data.FromPointer); // 0245A6A23930 0x98 SceneCreateData             ( 000186710490 ModelClassType Data Data Data Pointer )
-            value.UnitIdols                                 = GetObjectList<UnitIdol>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.UnitIdol.FromPointer); // 0245A6A23950 0xA0 UnitIdols                   ( 000185CAF1A8 ModelClassListType UnitIdol[] UnitIdol[] List<UnitIdol> Pointer )
-            value.CameraIndex                               = GetInt32(new IntPtr(p + 0x0A8)); // 0245A6A23970 0xA8 CameraIndex                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ReflectionForceOn                         = GetBool(new IntPtr(p + 0x0AC)); // 0245A6A23990 0xAC ReflectionForceOn           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.AvoidSwayBoneShake                        = GetBool(new IntPtr(p + 0x0AD)); // 0245A6A239B0 0xAD AvoidSwayBoneShake          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.AmbientLightColor                         = (Color)GetInt32(new IntPtr(p + 0x0B0)); // 0245A6A239D0 0xB0 AmbientLightColor           ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.LiveStartData                             = GetObject<LiveStartData>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.LiveStartData.FromPointer); // 0245A6A239F0 0xC0 LiveStartData               ( 000186581BE0 ModelClassType LiveStartData LiveStartData LiveStartData Pointer )
-            value.LiveMVStartData                           = GetObject<LiveMVStartData>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.LiveMVStartData.FromPointer); // 0245A6A23A10 0xC8 LiveMVStartData             ( 00018655CF60 ModelClassType LiveMVStartData LiveMVStartData LiveMVStartData Pointer )
-            value.TypeExtention                             = GetStringList(new IntPtr(p + 0x0D0)); // 0245A6A23A30 0xD0 TypeExtention               ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.IsInitializeEnd                           = GetBool(new IntPtr(p + 0x0D8)); // 0245A6A23A50 0xD8 IsInitializeEnd             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsReceivedParameter                       = GetBool(new IntPtr(p + 0x0D9)); // 0245A6A23A70 0xD9 IsReceivedParameter         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x0E0), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0245A6A23AB0 0xE0 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
-            value.ProgressManager                           = GetObject<LiveProgressManager>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.LiveProgressManager.FromPointer); // 0245A6A23AD0 0xE8 ProgressManager             ( 000186569620 ModelClassType LiveProgressManager LiveProgressManager LiveProgressManager Pointer )
-            value.AudienceColors                            = GetEnumList<Color>(new IntPtr(p + 0x0F0)); // 0245A6A23AF0 0xF0 AudienceColors              ( 000185B75890 ModelEnumListType Color[] Color[] List<Color> Pointer )
-            value.OptionLocalSave                           = GetObject<OptionLocalSave>(new IntPtr(p + 0x100), ReversePrism.DataModels.OptionLocalSave.FromPointer); // 0245A6A23B30 0x100 OptionLocalSave             ( 0001866E6E30 ModelClassType OptionLocalSave OptionLocalSave OptionLocalSave Pointer )
-            value.LiveSubSequence                           = GetObject<LiveSubSequence>(new IntPtr(p + 0x108), ReversePrism.DataModels.LiveSubSequence.FromPointer); // 0245A6A23B50 0x108 LiveSubSequence             ( 000186584630 ModelClassType LiveSubSequence LiveSubSequence LiveSubSequence Pointer )
-            value.LastFrame                                 = GetSingle(new IntPtr(p + 0x110)); // 0245A6A23B90 0x110 LastFrame                   ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.LiveCanvas                                = GetObject<Canvas>(new IntPtr(p + 0x028), ReversePrism.DataModels.Canvas.FromPointer); // 0x28 LiveCanvas                  ( ModelClassType Canvas Canvas Canvas Pointer )
+            value.NameId                                    = GetString(new IntPtr(p + 0x030)); // 0x30 NameId                      ( ModelPrimitiveType string string string String )
+            value.Camera                                    = GetObject<CameraController>(new IntPtr(p + 0x038), ReversePrism.DataModels.CameraController.FromPointer); // 0x38 Camera                      ( ModelClassType CameraController CameraController CameraController Pointer )
+            value.StageController                           = GetObject<StageController>(new IntPtr(p + 0x040), ReversePrism.DataModels.StageController.FromPointer); // 0x40 StageController             ( ModelClassType StageController StageController StageController Pointer )
+            value.Characters                                = GetObjectList<Character>(new IntPtr(p + 0x048), ReversePrism.DataModels.Character.FromPointer); // 0x48 Characters                  ( ModelClassListType Character[] Character[] List<Character> Pointer )
+            value.TimelineController                        = GetObject<TimelineController>(new IntPtr(p + 0x050), ReversePrism.DataModels.TimelineController.FromPointer); // 0x50 TimelineController          ( ModelClassType TimelineController TimelineController TimelineController Pointer )
+            value.AudienceController                        = GetObject<AudienceController>(new IntPtr(p + 0x058), ReversePrism.DataModels.AudienceController.FromPointer); // 0x58 AudienceController          ( ModelClassType AudienceController AudienceController AudienceController Pointer )
+            value.LyricPanelCanvas                          = GetObject<Canvas>(new IntPtr(p + 0x060), ReversePrism.DataModels.Canvas.FromPointer); // 0x60 LyricPanelCanvas            ( ModelClassType Canvas Canvas Canvas Pointer )
+            value.CamEvent                                  = GetObject<CameraWorkEvent>(new IntPtr(p + 0x068), ReversePrism.DataModels.CameraWorkEvent.FromPointer); // 0x68 CamEvent                    ( ModelClassType CameraWorkEvent CameraWorkEvent CameraWorkEvent Pointer )
+            value.CameraWorkDataList                        = GetObjectList<CameraWorkData>(new IntPtr(p + 0x070), ReversePrism.DataModels.CameraWorkData.FromPointer); // 0x70 CameraWorkDataList          ( ModelClassListType List`1<CameraWorkData> List`1<CameraWorkData> List<CameraWorkData> Pointer )
+            value.IsManagerSetupCompleted                   = GetBool(new IntPtr(p + 0x078)); // 0x78 IsManagerSetupCompleted     ( ModelPrimitiveType bool bool bool Bool )
+            value.IsControlBySequencer                      = GetBool(new IntPtr(p + 0x079)); // 0x79 IsControlBySequencer        ( ModelPrimitiveType bool bool bool Bool )
+            value.IsOldMv                                   = GetBool(new IntPtr(p + 0x07A)); // 0x7A IsOldMv                     ( ModelPrimitiveType bool bool bool Bool )
+            value.SoundResources                            = GetObject<MvCutSceneSoundResources>(new IntPtr(p + 0x080), ReversePrism.DataModels.MvCutSceneSoundResources.FromPointer); // 0x80 SoundResources              ( ModelClassType MvCutSceneSoundResources MvCutSceneSoundResources MvCutSceneSoundResources Pointer )
+            value.SceneCreateData                           = GetObject<Data>(new IntPtr(p + 0x088), ReversePrism.DataModels.Data.FromPointer); // 0x88 SceneCreateData             ( ModelClassType Data Data Data Pointer )
+            value.UnitIdols                                 = GetObjectList<UnitIdol>(new IntPtr(p + 0x090), ReversePrism.DataModels.UnitIdol.FromPointer); // 0x90 UnitIdols                   ( ModelClassListType UnitIdol[] UnitIdol[] List<UnitIdol> Pointer )
+            value.CameraIndex                               = GetInt32(new IntPtr(p + 0x098)); // 0x98 CameraIndex                 ( ModelPrimitiveType int int int Int32 )
+            value.ReflectionForceOn                         = GetBool(new IntPtr(p + 0x09C)); // 0x9C ReflectionForceOn           ( ModelPrimitiveType bool bool bool Bool )
+            value.AvoidSwayBoneShake                        = GetBool(new IntPtr(p + 0x09D)); // 0x9D AvoidSwayBoneShake          ( ModelPrimitiveType bool bool bool Bool )
+            value.AmbientLightColor                         = (Color)GetInt32(new IntPtr(p + 0x0A0)); // 0xA0 AmbientLightColor           ( ModelEnumType Color Color Color Int32 )
+            value.LiveStartData                             = GetObject<LiveStartData>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.LiveStartData.FromPointer); // 0xB0 LiveStartData               ( ModelClassType LiveStartData LiveStartData LiveStartData Pointer )
+            value.LiveMVStartData                           = GetObject<LiveMVStartData>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.LiveMVStartData.FromPointer); // 0xB8 LiveMVStartData             ( ModelClassType LiveMVStartData LiveMVStartData LiveMVStartData Pointer )
+            value.TypeExtention                             = GetStringList(new IntPtr(p + 0x0C0)); // 0xC0 TypeExtention               ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.IsInitializeEnd                           = GetBool(new IntPtr(p + 0x0C8)); // 0xC8 IsInitializeEnd             ( ModelPrimitiveType bool bool bool Bool )
+            value.IsReceivedParameter                       = GetBool(new IntPtr(p + 0x0C9)); // 0xC9 IsReceivedParameter         ( ModelPrimitiveType bool bool bool Bool )
+            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0xD0 Disposables                 ( ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.ProgressManager                           = GetObject<LiveProgressManager>(new IntPtr(p + 0x0D8), ReversePrism.DataModels.LiveProgressManager.FromPointer); // 0xD8 ProgressManager             ( ModelClassType LiveProgressManager LiveProgressManager LiveProgressManager Pointer )
+            value.AudienceColors                            = GetEnumList<Color>(new IntPtr(p + 0x0E0)); // 0xE0 AudienceColors              ( ModelEnumListType Color[] Color[] List<Color> Pointer )
+            value.OptionLocalSave                           = GetObject<OptionLocalSave>(new IntPtr(p + 0x0F0), ReversePrism.DataModels.OptionLocalSave.FromPointer); // 0xF0 OptionLocalSave             ( ModelClassType OptionLocalSave OptionLocalSave OptionLocalSave Pointer )
+            value.LiveSubSequence                           = GetObject<LiveSubSequence>(new IntPtr(p + 0x0F8), ReversePrism.DataModels.LiveSubSequence.FromPointer); // 0xF8 LiveSubSequence             ( ModelClassType LiveSubSequence LiveSubSequence LiveSubSequence Pointer )
+            value.LastFrame                                 = GetSingle(new IntPtr(p + 0x100)); // 0x100 LastFrame                   ( ModelPrimitiveType float float float Single )
 
             return value;
         }

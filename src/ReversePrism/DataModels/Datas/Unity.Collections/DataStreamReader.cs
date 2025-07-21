@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 m_BufferPtr                              IntPtr IL2CPP_TYPE_PTR
-    // 018 M_Context                                000186579B90 ModelEnumType Context Context Context Int32
-    // 030 M_Length                                 0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 M_Context                                ModelEnumType Context Context Context Int32
+    // 030 M_Length                                 ModelPrimitiveType int int int Int32
     public partial class DataStreamReader : DataModel
     {
         public Context                                  M_Context                               { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DataStreamReader() { Pointer= p0 };
 
-            value.M_Context                                 = (Context)GetInt32(new IntPtr(p + 0x018)); // 0245A51736B8 0x18 M_Context                   ( 000186579B90 ModelEnumType Context Context Context Int32 )
-            value.M_Length                                  = GetInt32(new IntPtr(p + 0x030)); // 0245A51736D8 0x30 M_Length                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_Context                                 = (Context)GetInt32(new IntPtr(p + 0x018)); // 0x18 M_Context                   ( ModelEnumType Context Context Context Int32 )
+            value.M_Length                                  = GetInt32(new IntPtr(p + 0x030)); // 0x30 M_Length                    ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

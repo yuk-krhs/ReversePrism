@@ -10,9 +10,9 @@ namespace ReversePrism.DataModels
 
     // 000 kMinFrameRate                            double IL2CPP_TYPE_R8
     // 008 kMaxFrameRate                            double IL2CPP_TYPE_R8
-    // 010 KDefaultFrameRate                        0001865C3D00 ModelPrimitiveType double double double Double
-    // 010 M_Framerate                              0001865C2950 ModelPrimitiveType double double double Double
-    // 018 M_ScenePreview                           000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 KDefaultFrameRate                        ModelPrimitiveType double double double Double
+    // 010 M_Framerate                              ModelPrimitiveType double double double Double
+    // 018 M_ScenePreview                           ModelPrimitiveType bool bool bool Bool
     public partial class EditorSettings : DataModel
     {
         public double                                   KDefaultFrameRate                       { get; set; }
@@ -27,9 +27,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EditorSettings() { Pointer= p0 };
 
-            value.KDefaultFrameRate                         = GetDouble(new IntPtr(p + 0x010)); // 02466B2AECF0 0x10 KDefaultFrameRate           ( 0001865C3D00 ModelPrimitiveType double double double Double )
-            value.M_Framerate                               = GetDouble(new IntPtr(p + 0x010)); // 02466B2AED10 0x10 M_Framerate                 ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.M_ScenePreview                            = GetBool(new IntPtr(p + 0x018)); // 02466B2AED30 0x18 M_ScenePreview              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.KDefaultFrameRate                         = GetDouble(new IntPtr(p + 0x010)); // 0x10 KDefaultFrameRate           ( ModelPrimitiveType double double double Double )
+            value.M_Framerate                               = GetDouble(new IntPtr(p + 0x010)); // 0x10 M_Framerate                 ( ModelPrimitiveType double double double Double )
+            value.M_ScenePreview                            = GetBool(new IntPtr(p + 0x018)); // 0x18 M_ScenePreview              ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

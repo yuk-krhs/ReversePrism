@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 068 UnitEditCarousel                         0001865604E0 ModelClassType LiveMVUnitEditCarousel LiveMVUnitEditCarousel LiveMVUnitEditCarousel Pointer
-    // 070 MVOriginalMemberView                     00018655BD80 ModelClassType LiveMVOriginalMemberView LiveMVOriginalMemberView LiveMVOriginalMemberView Pointer
+    // 078 UnitEditCarousel                         ModelClassType LiveMVUnitEditCarousel LiveMVUnitEditCarousel LiveMVUnitEditCarousel Pointer
+    // 080 MVOriginalMemberView                     ModelClassType LiveMVOriginalMemberView LiveMVOriginalMemberView LiveMVOriginalMemberView Pointer
     public partial class LiveMVUnitConfirmationUnitEditView : DataModel
     {
         public LiveMVUnitEditCarousel?                  UnitEditCarousel                        { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveMVUnitConfirmationUnitEditView() { Pointer= p0 };
 
-            value.UnitEditCarousel                          = GetObject<LiveMVUnitEditCarousel>(new IntPtr(p + 0x068), ReversePrism.DataModels.LiveMVUnitEditCarousel.FromPointer); // 024665214D78 0x68 UnitEditCarousel            ( 0001865604E0 ModelClassType LiveMVUnitEditCarousel LiveMVUnitEditCarousel LiveMVUnitEditCarousel Pointer )
-            value.MVOriginalMemberView                      = GetObject<LiveMVOriginalMemberView>(new IntPtr(p + 0x070), ReversePrism.DataModels.LiveMVOriginalMemberView.FromPointer); // 024665214D98 0x70 MVOriginalMemberView        ( 00018655BD80 ModelClassType LiveMVOriginalMemberView LiveMVOriginalMemberView LiveMVOriginalMemberView Pointer )
+            value.UnitEditCarousel                          = GetObject<LiveMVUnitEditCarousel>(new IntPtr(p + 0x078), ReversePrism.DataModels.LiveMVUnitEditCarousel.FromPointer); // 0x78 UnitEditCarousel            ( ModelClassType LiveMVUnitEditCarousel LiveMVUnitEditCarousel LiveMVUnitEditCarousel Pointer )
+            value.MVOriginalMemberView                      = GetObject<LiveMVOriginalMemberView>(new IntPtr(p + 0x080), ReversePrism.DataModels.LiveMVOriginalMemberView.FromPointer); // 0x80 MVOriginalMemberView        ( ModelClassType LiveMVOriginalMemberView LiveMVOriginalMemberView LiveMVOriginalMemberView Pointer )
 
             return value;
         }

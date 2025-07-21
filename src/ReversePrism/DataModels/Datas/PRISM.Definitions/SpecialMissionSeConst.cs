@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 SheetName                                string IL2CPP_TYPE_STRING
     // 000 StepComplete                             SoundKey IL2CPP_TYPE_VALUETYPE
-    // 010 AllStepComplete                          000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32
+    // 010 AllStepComplete                          ModelEnumType SoundKey SoundKey SoundKey Int32
     public partial class SpecialMissionSeConst : DataModel
     {
         public SoundKey                                 AllStepComplete                         { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SpecialMissionSeConst() { Pointer= p0 };
 
-            value.AllStepComplete                           = (SoundKey)GetInt32(new IntPtr(p + 0x010)); // 02466BDDA6F8 0x10 AllStepComplete             ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.AllStepComplete                           = (SoundKey)GetInt32(new IntPtr(p + 0x010)); // 0x10 AllStepComplete             ( ModelEnumType SoundKey SoundKey SoundKey Int32 )
 
             return value;
         }

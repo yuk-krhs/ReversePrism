@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Alloc                                    0001865866A0 ModelEnumType Alloc Alloc Alloc Int32
-    // 028 Page                                     0001867144C0 ModelClassType Page Page Page Pointer
-    // 030 Vertices                                 000186595960 ModelPrimitiveType bool bool bool Bool
+    // 010 Alloc                                    ModelEnumType Alloc Alloc Alloc Int32
+    // 028 Page                                     ModelClassType Page Page Page Pointer
+    // 030 Vertices                                 ModelPrimitiveType bool bool bool Bool
     public partial class AllocToFree : DataModel
     {
         public Alloc                                    Alloc                                   { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AllocToFree() { Pointer= p0 };
 
-            value.Alloc                                     = (Alloc)GetInt32(new IntPtr(p + 0x010)); // 0245A6822A90 0x10 Alloc                       ( 0001865866A0 ModelEnumType Alloc Alloc Alloc Int32 )
-            value.Page                                      = GetObject<Page>(new IntPtr(p + 0x028), ReversePrism.DataModels.Page.FromPointer); // 0245A6822AB0 0x28 Page                        ( 0001867144C0 ModelClassType Page Page Page Pointer )
-            value.Vertices                                  = GetBool(new IntPtr(p + 0x030)); // 0245A6822AD0 0x30 Vertices                    ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Alloc                                     = (Alloc)GetInt32(new IntPtr(p + 0x010)); // 0x10 Alloc                       ( ModelEnumType Alloc Alloc Alloc Int32 )
+            value.Page                                      = GetObject<Page>(new IntPtr(p + 0x028), ReversePrism.DataModels.Page.FromPointer); // 0x28 Page                        ( ModelClassType Page Page Page Pointer )
+            value.Vertices                                  = GetBool(new IntPtr(p + 0x030)); // 0x30 Vertices                    ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

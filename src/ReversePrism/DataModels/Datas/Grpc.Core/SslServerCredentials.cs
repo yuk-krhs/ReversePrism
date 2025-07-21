@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 keyCertificatePairs                      IList`1<KeyCertificatePair> IL2CPP_TYPE_GENERICINST
-    // 018 RootCertificates                         000186672F10 ModelPrimitiveType string string string String
-    // 020 ClientCertificateRequest                 00018655C8B0 ModelEnumType SslClientCertificateRequestType SslClientCertificateRequestType SslClientCertificateRequestType Int32
+    // 018 RootCertificates                         ModelPrimitiveType string string string String
+    // 020 ClientCertificateRequest                 ModelEnumType SslClientCertificateRequestType SslClientCertificateRequestType SslClientCertificateRequestType Int32
     public partial class SslServerCredentials : DataModel
     {
         public string                                   RootCertificates                        { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SslServerCredentials() { Pointer= p0 };
 
-            value.RootCertificates                          = GetString(new IntPtr(p + 0x018)); // 0246693D11C0 0x18 RootCertificates            ( 000186672F10 ModelPrimitiveType string string string String )
-            value.ClientCertificateRequest                  = (SslClientCertificateRequestType)GetInt32(new IntPtr(p + 0x020)); // 0246693D11E0 0x20 ClientCertificateRequest    ( 00018655C8B0 ModelEnumType SslClientCertificateRequestType SslClientCertificateRequestType SslClientCertificateRequestType Int32 )
+            value.RootCertificates                          = GetString(new IntPtr(p + 0x018)); // 0x18 RootCertificates            ( ModelPrimitiveType string string string String )
+            value.ClientCertificateRequest                  = (SslClientCertificateRequestType)GetInt32(new IntPtr(p + 0x020)); // 0x20 ClientCertificateRequest    ( ModelEnumType SslClientCertificateRequestType SslClientCertificateRequestType SslClientCertificateRequestType Int32 )
 
             return value;
         }

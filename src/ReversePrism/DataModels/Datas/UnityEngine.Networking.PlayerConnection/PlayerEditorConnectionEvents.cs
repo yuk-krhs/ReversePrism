@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 MessageTypeSubscribers                   000185D27B08 ModelClassListType List`1<MessageTypeSubscribers> List`1<MessageTypeSubscribers> List<MessageTypeSubscribers> Pointer
-    // 018 ConnectionEvent                          00018657D7D0 ModelClassType ConnectionChangeEvent ConnectionChangeEvent ConnectionChangeEvent Pointer
-    // 020 DisconnectionEvent                       00018657D7D0 ModelClassType ConnectionChangeEvent ConnectionChangeEvent ConnectionChangeEvent Pointer
+    // 010 MessageTypeSubscribers                   ModelClassListType List`1<MessageTypeSubscribers> List`1<MessageTypeSubscribers> List<MessageTypeSubscribers> Pointer
+    // 018 ConnectionEvent                          ModelClassType ConnectionChangeEvent ConnectionChangeEvent ConnectionChangeEvent Pointer
+    // 020 DisconnectionEvent                       ModelClassType ConnectionChangeEvent ConnectionChangeEvent ConnectionChangeEvent Pointer
     public partial class PlayerEditorConnectionEvents : DataModel
     {
         public List<MessageTypeSubscribers>?            MessageTypeSubscribers                  { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PlayerEditorConnectionEvents() { Pointer= p0 };
 
-            value.MessageTypeSubscribers                    = GetObjectList<MessageTypeSubscribers>(new IntPtr(p + 0x010), ReversePrism.DataModels.MessageTypeSubscribers.FromPointer); // 0245A6889500 0x10 MessageTypeSubscribers      ( 000185D27B08 ModelClassListType List`1<MessageTypeSubscribers> List`1<MessageTypeSubscribers> List<MessageTypeSubscribers> Pointer )
-            value.ConnectionEvent                           = GetObject<ConnectionChangeEvent>(new IntPtr(p + 0x018), ReversePrism.DataModels.ConnectionChangeEvent.FromPointer); // 0245A6889520 0x18 ConnectionEvent             ( 00018657D7D0 ModelClassType ConnectionChangeEvent ConnectionChangeEvent ConnectionChangeEvent Pointer )
-            value.DisconnectionEvent                        = GetObject<ConnectionChangeEvent>(new IntPtr(p + 0x020), ReversePrism.DataModels.ConnectionChangeEvent.FromPointer); // 0245A6889540 0x20 DisconnectionEvent          ( 00018657D7D0 ModelClassType ConnectionChangeEvent ConnectionChangeEvent ConnectionChangeEvent Pointer )
+            value.MessageTypeSubscribers                    = GetObjectList<MessageTypeSubscribers>(new IntPtr(p + 0x010), ReversePrism.DataModels.MessageTypeSubscribers.FromPointer); // 0x10 MessageTypeSubscribers      ( ModelClassListType List`1<MessageTypeSubscribers> List`1<MessageTypeSubscribers> List<MessageTypeSubscribers> Pointer )
+            value.ConnectionEvent                           = GetObject<ConnectionChangeEvent>(new IntPtr(p + 0x018), ReversePrism.DataModels.ConnectionChangeEvent.FromPointer); // 0x18 ConnectionEvent             ( ModelClassType ConnectionChangeEvent ConnectionChangeEvent ConnectionChangeEvent Pointer )
+            value.DisconnectionEvent                        = GetObject<ConnectionChangeEvent>(new IntPtr(p + 0x020), ReversePrism.DataModels.ConnectionChangeEvent.FromPointer); // 0x20 DisconnectionEvent          ( ModelClassType ConnectionChangeEvent ConnectionChangeEvent ConnectionChangeEvent Pointer )
 
             return value;
         }

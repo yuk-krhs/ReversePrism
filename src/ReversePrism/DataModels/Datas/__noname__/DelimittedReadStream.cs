@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 Reader                                   0001866BDB70 ModelClassType DelimittedStreamReader DelimittedStreamReader DelimittedStreamReader Pointer
+    // 028 Reader                                   ModelClassType DelimittedStreamReader DelimittedStreamReader DelimittedStreamReader Pointer
     public partial class DelimittedReadStream : DataModel
     {
         public DelimittedStreamReader?                  Reader                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DelimittedReadStream() { Pointer= p0 };
 
-            value.Reader                                    = GetObject<DelimittedStreamReader>(new IntPtr(p + 0x028), ReversePrism.DataModels.DelimittedStreamReader.FromPointer); // 024667CF1578 0x28 Reader                      ( 0001866BDB70 ModelClassType DelimittedStreamReader DelimittedStreamReader DelimittedStreamReader Pointer )
+            value.Reader                                    = GetObject<DelimittedStreamReader>(new IntPtr(p + 0x028), ReversePrism.DataModels.DelimittedStreamReader.FromPointer); // 0x28 Reader                      ( ModelClassType DelimittedStreamReader DelimittedStreamReader DelimittedStreamReader Pointer )
 
             return value;
         }

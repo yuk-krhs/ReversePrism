@@ -8,12 +8,18 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 CmnItems                                 000185B75410 ModelClassListType CmnItem[] CmnItem[] List<CmnItem> Pointer
-    // 028 onClosed                                 Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 030 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
+    // 020 RewardItemPrefab                         ModelClassType RewardItem RewardItem RewardItem Pointer
+    // 028 ItemParent                               ModelClassType Transform Transform Transform Pointer
+    // 030 GridLayoutGroup                          ModelClassType GridLayoutGroup GridLayoutGroup GridLayoutGroup Pointer
+    // 038 IconTapInfoText                          ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 040 onClosed                                 Subject`1<Unit> IL2CPP_TYPE_GENERICINST
+    // 048 Parent                                   ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
     public partial class GashaBonusAcquisitionPopupView : DataModel
     {
-        public List<CmnItem>?                           CmnItems                                { get; set; }
+        public RewardItem?                              RewardItemPrefab                        { get; set; }
+        public Transform?                               ItemParent                              { get; set; }
+        public GridLayoutGroup?                         GridLayoutGroup                         { get; set; }
+        public UITextMeshProUGUI?                       IconTapInfoText                         { get; set; }
         public IPopupFrameView?                         Parent                                  { get; set; }
 
         public static GashaBonusAcquisitionPopupView? FromPointer(IntPtr p0)
@@ -24,8 +30,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GashaBonusAcquisitionPopupView() { Pointer= p0 };
 
-            value.CmnItems                                  = GetObjectList<CmnItem>(new IntPtr(p + 0x020), ReversePrism.DataModels.CmnItem.FromPointer); // 02466BA6E5D8 0x20 CmnItems                    ( 000185B75410 ModelClassListType CmnItem[] CmnItem[] List<CmnItem> Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x030), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466BA6E618 0x30 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.RewardItemPrefab                          = GetObject<RewardItem>(new IntPtr(p + 0x020), ReversePrism.DataModels.RewardItem.FromPointer); // 0x20 RewardItemPrefab            ( ModelClassType RewardItem RewardItem RewardItem Pointer )
+            value.ItemParent                                = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 0x28 ItemParent                  ( ModelClassType Transform Transform Transform Pointer )
+            value.GridLayoutGroup                           = GetObject<GridLayoutGroup>(new IntPtr(p + 0x030), ReversePrism.DataModels.GridLayoutGroup.FromPointer); // 0x30 GridLayoutGroup             ( ModelClassType GridLayoutGroup GridLayoutGroup GridLayoutGroup Pointer )
+            value.IconTapInfoText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x38 IconTapInfoText             ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x048), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0x48 Parent                      ( ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

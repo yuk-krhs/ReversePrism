@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Assembly                                 00018658AEE0 ModelClassType Assembly Assembly Assembly Pointer
-    // 018 Type                                     000186692850 ModelClassType Type Type Type Pointer
+    // 010 Assembly                                 ModelClassType Assembly Assembly Assembly Pointer
+    // 018 Type                                     ModelClassType Type Type Type Pointer
     public partial class XmlObjectDataContractTypeInfo : DataModel
     {
         public Assembly?                                Assembly                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlObjectDataContractTypeInfo() { Pointer= p0 };
 
-            value.Assembly                                  = GetObject<Assembly>(new IntPtr(p + 0x010), ReversePrism.DataModels.Assembly.FromPointer); // 024667DD9370 0x10 Assembly                    ( 00018658AEE0 ModelClassType Assembly Assembly Assembly Pointer )
-            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 024667DD9390 0x18 Type                        ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.Assembly                                  = GetObject<Assembly>(new IntPtr(p + 0x010), ReversePrism.DataModels.Assembly.FromPointer); // 0x10 Assembly                    ( ModelClassType Assembly Assembly Assembly Pointer )
+            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 0x18 Type                        ( ModelClassType Type Type Type Pointer )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Parameters                               0001867537D0 ModelClassType EventData EventData EventData Pointer
-    // 018 Name                                     000186671910 ModelPrimitiveType string string string String
+    // 010 Parameters                               ModelClassType EventData EventData EventData Pointer
+    // 018 Name                                     ModelPrimitiveType string string string String
     // 020 <Version>k__BackingField                 Nullable`1<int> IL2CPP_TYPE_GENERICINST
     public partial class Event : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Event() { Pointer= p0 };
 
-            value.Parameters                                = GetObject<EventData>(new IntPtr(p + 0x010), ReversePrism.DataModels.EventData.FromPointer); // 02466B8345A0 0x10 Parameters                  ( 0001867537D0 ModelClassType EventData EventData EventData Pointer )
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 02466B8345C0 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Parameters                                = GetObject<EventData>(new IntPtr(p + 0x010), ReversePrism.DataModels.EventData.FromPointer); // 0x10 Parameters                  ( ModelClassType EventData EventData EventData Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0x18 Name                        ( ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,24 +8,24 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ObjectInfoId                             0001865F2F90 ModelPrimitiveType int int int Int32
+    // 010 ObjectInfoId                             ModelPrimitiveType int int int Int32
     // 000 readObjectInfoCounter                    int IL2CPP_TYPE_I4
-    // 018 ObjectType                               000186692A80 ModelClassType Type Type Type Pointer
-    // 020 ObjectManager                            0001866C9860 ModelClassType ObjectManager ObjectManager ObjectManager Pointer
-    // 028 Count                                    0001865F2F90 ModelPrimitiveType int int int Int32
-    // 02C IsSi                                     000186595210 ModelPrimitiveType bool bool bool Bool
-    // 02D IsNamed                                  000186595210 ModelPrimitiveType bool bool bool Bool
-    // 02E IsTyped                                  000186595210 ModelPrimitiveType bool bool bool Bool
-    // 02F BSimpleAssembly                          000186595210 ModelPrimitiveType bool bool bool Bool
-    // 030 Cache                                    000186728880 ModelClassType SerObjectInfoCache SerObjectInfoCache SerObjectInfoCache Pointer
-    // 038 WireMemberNames                          000185B81660 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 040 WireMemberTypes                          000185B82D40 ModelClassListType Type[] Type[] List<Type> Pointer
-    // 048 LastPosition                             0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 050 SerializationSurrogate                   000186636BB0 ModelClassType ISerializationSurrogate ISerializationSurrogate ISerializationSurrogate Pointer
-    // 058 Context                                  0001865B8F40 ModelEnumType StreamingContext StreamingContext StreamingContext Int32
-    // 068 MemberTypesList                          000185D16E68 ModelClassListType List`1<Type> List`1<Type> List<Type> Pointer
-    // 070 SerObjectInfoInit                        000186729020 ModelClassType SerObjectInfoInit SerObjectInfoInit SerObjectInfoInit Pointer
-    // 078 FormatterConverter                       000186518A90 ModelClassType IFormatterConverter IFormatterConverter IFormatterConverter Pointer
+    // 018 ObjectType                               ModelClassType Type Type Type Pointer
+    // 020 ObjectManager                            ModelClassType ObjectManager ObjectManager ObjectManager Pointer
+    // 028 Count                                    ModelPrimitiveType int int int Int32
+    // 02C IsSi                                     ModelPrimitiveType bool bool bool Bool
+    // 02D IsNamed                                  ModelPrimitiveType bool bool bool Bool
+    // 02E IsTyped                                  ModelPrimitiveType bool bool bool Bool
+    // 02F BSimpleAssembly                          ModelPrimitiveType bool bool bool Bool
+    // 030 Cache                                    ModelClassType SerObjectInfoCache SerObjectInfoCache SerObjectInfoCache Pointer
+    // 038 WireMemberNames                          ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 040 WireMemberTypes                          ModelClassListType Type[] Type[] List<Type> Pointer
+    // 048 LastPosition                             ModelPrimitiveType int int int Int32
+    // 050 SerializationSurrogate                   ModelClassType ISerializationSurrogate ISerializationSurrogate ISerializationSurrogate Pointer
+    // 058 Context                                  ModelEnumType StreamingContext StreamingContext StreamingContext Int32
+    // 068 MemberTypesList                          ModelClassListType List`1<Type> List`1<Type> List<Type> Pointer
+    // 070 SerObjectInfoInit                        ModelClassType SerObjectInfoInit SerObjectInfoInit SerObjectInfoInit Pointer
+    // 078 FormatterConverter                       ModelClassType IFormatterConverter IFormatterConverter IFormatterConverter Pointer
     public partial class ReadObjectInfo : DataModel
     {
         public int                                      ObjectInfoId                            { get; set; }
@@ -54,23 +54,23 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ReadObjectInfo() { Pointer= p0 };
 
-            value.ObjectInfoId                              = GetInt32(new IntPtr(p + 0x010)); // 024666CA4148 0x10 ObjectInfoId                ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.ObjectType                                = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 024666CA4188 0x18 ObjectType                  ( 000186692A80 ModelClassType Type Type Type Pointer )
-            value.ObjectManager                             = GetObject<ObjectManager>(new IntPtr(p + 0x020), ReversePrism.DataModels.ObjectManager.FromPointer); // 024666CA41A8 0x20 ObjectManager               ( 0001866C9860 ModelClassType ObjectManager ObjectManager ObjectManager Pointer )
-            value.Count                                     = GetInt32(new IntPtr(p + 0x028)); // 024666CA41C8 0x28 Count                       ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.IsSi                                      = GetBool(new IntPtr(p + 0x02C)); // 024666CA41E8 0x2C IsSi                        ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.IsNamed                                   = GetBool(new IntPtr(p + 0x02D)); // 024666CA4208 0x2D IsNamed                     ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.IsTyped                                   = GetBool(new IntPtr(p + 0x02E)); // 024666CA4228 0x2E IsTyped                     ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.BSimpleAssembly                           = GetBool(new IntPtr(p + 0x02F)); // 024666CA4248 0x2F BSimpleAssembly             ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.Cache                                     = GetObject<SerObjectInfoCache>(new IntPtr(p + 0x030), ReversePrism.DataModels.SerObjectInfoCache.FromPointer); // 024666CA4268 0x30 Cache                       ( 000186728880 ModelClassType SerObjectInfoCache SerObjectInfoCache SerObjectInfoCache Pointer )
-            value.WireMemberNames                           = GetStringList(new IntPtr(p + 0x038)); // 024666CA4288 0x38 WireMemberNames             ( 000185B81660 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.WireMemberTypes                           = GetObjectList<Type>(new IntPtr(p + 0x040), ReversePrism.DataModels.Type.FromPointer); // 024666CA42A8 0x40 WireMemberTypes             ( 000185B82D40 ModelClassListType Type[] Type[] List<Type> Pointer )
-            value.LastPosition                              = GetInt32(new IntPtr(p + 0x048)); // 024666CA42C8 0x48 LastPosition                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SerializationSurrogate                    = GetObject<ISerializationSurrogate>(new IntPtr(p + 0x050), ReversePrism.DataModels.ISerializationSurrogate.FromPointer); // 024666CA42E8 0x50 SerializationSurrogate      ( 000186636BB0 ModelClassType ISerializationSurrogate ISerializationSurrogate ISerializationSurrogate Pointer )
-            value.Context                                   = (StreamingContext)GetInt32(new IntPtr(p + 0x058)); // 024666CA4308 0x58 Context                     ( 0001865B8F40 ModelEnumType StreamingContext StreamingContext StreamingContext Int32 )
-            value.MemberTypesList                           = GetObjectList<Type>(new IntPtr(p + 0x068), ReversePrism.DataModels.Type.FromPointer); // 024666CA4328 0x68 MemberTypesList             ( 000185D16E68 ModelClassListType List`1<Type> List`1<Type> List<Type> Pointer )
-            value.SerObjectInfoInit                         = GetObject<SerObjectInfoInit>(new IntPtr(p + 0x070), ReversePrism.DataModels.SerObjectInfoInit.FromPointer); // 024666CA4348 0x70 SerObjectInfoInit           ( 000186729020 ModelClassType SerObjectInfoInit SerObjectInfoInit SerObjectInfoInit Pointer )
-            value.FormatterConverter                        = GetObject<IFormatterConverter>(new IntPtr(p + 0x078), ReversePrism.DataModels.IFormatterConverter.FromPointer); // 024666CA4368 0x78 FormatterConverter          ( 000186518A90 ModelClassType IFormatterConverter IFormatterConverter IFormatterConverter Pointer )
+            value.ObjectInfoId                              = GetInt32(new IntPtr(p + 0x010)); // 0x10 ObjectInfoId                ( ModelPrimitiveType int int int Int32 )
+            value.ObjectType                                = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 0x18 ObjectType                  ( ModelClassType Type Type Type Pointer )
+            value.ObjectManager                             = GetObject<ObjectManager>(new IntPtr(p + 0x020), ReversePrism.DataModels.ObjectManager.FromPointer); // 0x20 ObjectManager               ( ModelClassType ObjectManager ObjectManager ObjectManager Pointer )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x028)); // 0x28 Count                       ( ModelPrimitiveType int int int Int32 )
+            value.IsSi                                      = GetBool(new IntPtr(p + 0x02C)); // 0x2C IsSi                        ( ModelPrimitiveType bool bool bool Bool )
+            value.IsNamed                                   = GetBool(new IntPtr(p + 0x02D)); // 0x2D IsNamed                     ( ModelPrimitiveType bool bool bool Bool )
+            value.IsTyped                                   = GetBool(new IntPtr(p + 0x02E)); // 0x2E IsTyped                     ( ModelPrimitiveType bool bool bool Bool )
+            value.BSimpleAssembly                           = GetBool(new IntPtr(p + 0x02F)); // 0x2F BSimpleAssembly             ( ModelPrimitiveType bool bool bool Bool )
+            value.Cache                                     = GetObject<SerObjectInfoCache>(new IntPtr(p + 0x030), ReversePrism.DataModels.SerObjectInfoCache.FromPointer); // 0x30 Cache                       ( ModelClassType SerObjectInfoCache SerObjectInfoCache SerObjectInfoCache Pointer )
+            value.WireMemberNames                           = GetStringList(new IntPtr(p + 0x038)); // 0x38 WireMemberNames             ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.WireMemberTypes                           = GetObjectList<Type>(new IntPtr(p + 0x040), ReversePrism.DataModels.Type.FromPointer); // 0x40 WireMemberTypes             ( ModelClassListType Type[] Type[] List<Type> Pointer )
+            value.LastPosition                              = GetInt32(new IntPtr(p + 0x048)); // 0x48 LastPosition                ( ModelPrimitiveType int int int Int32 )
+            value.SerializationSurrogate                    = GetObject<ISerializationSurrogate>(new IntPtr(p + 0x050), ReversePrism.DataModels.ISerializationSurrogate.FromPointer); // 0x50 SerializationSurrogate      ( ModelClassType ISerializationSurrogate ISerializationSurrogate ISerializationSurrogate Pointer )
+            value.Context                                   = (StreamingContext)GetInt32(new IntPtr(p + 0x058)); // 0x58 Context                     ( ModelEnumType StreamingContext StreamingContext StreamingContext Int32 )
+            value.MemberTypesList                           = GetObjectList<Type>(new IntPtr(p + 0x068), ReversePrism.DataModels.Type.FromPointer); // 0x68 MemberTypesList             ( ModelClassListType List`1<Type> List`1<Type> List<Type> Pointer )
+            value.SerObjectInfoInit                         = GetObject<SerObjectInfoInit>(new IntPtr(p + 0x070), ReversePrism.DataModels.SerObjectInfoInit.FromPointer); // 0x70 SerObjectInfoInit           ( ModelClassType SerObjectInfoInit SerObjectInfoInit SerObjectInfoInit Pointer )
+            value.FormatterConverter                        = GetObject<IFormatterConverter>(new IntPtr(p + 0x078), ReversePrism.DataModels.IFormatterConverter.FromPointer); // 0x78 FormatterConverter          ( ModelClassType IFormatterConverter IFormatterConverter IFormatterConverter Pointer )
 
             return value;
         }

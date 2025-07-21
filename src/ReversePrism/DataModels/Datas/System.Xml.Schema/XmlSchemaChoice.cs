@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 078 Items                                    0001865BC5D0 ModelClassType XmlSchemaObjectCollection XmlSchemaObjectCollection XmlSchemaObjectCollection Pointer
+    // 078 Items                                    ModelClassType XmlSchemaObjectCollection XmlSchemaObjectCollection XmlSchemaObjectCollection Pointer
     public partial class XmlSchemaChoice : DataModel
     {
         public XmlSchemaObjectCollection?               Items                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlSchemaChoice() { Pointer= p0 };
 
-            value.Items                                     = GetObject<XmlSchemaObjectCollection>(new IntPtr(p + 0x078), ReversePrism.DataModels.XmlSchemaObjectCollection.FromPointer); // 0246675B38B0 0x78 Items                       ( 0001865BC5D0 ModelClassType XmlSchemaObjectCollection XmlSchemaObjectCollection XmlSchemaObjectCollection Pointer )
+            value.Items                                     = GetObject<XmlSchemaObjectCollection>(new IntPtr(p + 0x078), ReversePrism.DataModels.XmlSchemaObjectCollection.FromPointer); // 0x78 Items                       ( ModelClassType XmlSchemaObjectCollection XmlSchemaObjectCollection XmlSchemaObjectCollection Pointer )
 
             return value;
         }

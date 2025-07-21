@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 WebRequest                               00018672DF10 ModelClassType UnityWebRequest UnityWebRequest UnityWebRequest Pointer
+    // 020 WebRequest                               ModelClassType UnityWebRequest UnityWebRequest UnityWebRequest Pointer
     public partial class UnityWebRequestAsyncOperation : DataModel
     {
         public UnityWebRequest?                         WebRequest                              { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnityWebRequestAsyncOperation() { Pointer= p0 };
 
-            value.WebRequest                                = GetObject<UnityWebRequest>(new IntPtr(p + 0x020), ReversePrism.DataModels.UnityWebRequest.FromPointer); // 0245A21F86C8 0x20 WebRequest                  ( 00018672DF10 ModelClassType UnityWebRequest UnityWebRequest UnityWebRequest Pointer )
+            value.WebRequest                                = GetObject<UnityWebRequest>(new IntPtr(p + 0x020), ReversePrism.DataModels.UnityWebRequest.FromPointer); // 0x20 WebRequest                  ( ModelClassType UnityWebRequest UnityWebRequest UnityWebRequest Pointer )
 
             return value;
         }

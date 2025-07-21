@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 000 OnWin32                                  bool IL2CPP_TYPE_BOOLEAN
     // 008 MonoTracePrefix                          string IL2CPP_TYPE_STRING
-    // 010 MonoTraceFile                            0001866738F0 ModelPrimitiveType string string string String
-    // 038 LogFileName                              000186671910 ModelPrimitiveType string string string String
+    // 010 MonoTraceFile                            ModelPrimitiveType string string string String
+    // 038 LogFileName                              ModelPrimitiveType string string string String
     public partial class DefaultTraceListener : DataModel
     {
         public string                                   MonoTraceFile                           { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DefaultTraceListener() { Pointer= p0 };
 
-            value.MonoTraceFile                             = GetString(new IntPtr(p + 0x010)); // 0245A4D3DF60 0x10 MonoTraceFile               ( 0001866738F0 ModelPrimitiveType string string string String )
-            value.LogFileName                               = GetString(new IntPtr(p + 0x038)); // 0245A4D3DF80 0x38 LogFileName                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.MonoTraceFile                             = GetString(new IntPtr(p + 0x010)); // 0x10 MonoTraceFile               ( ModelPrimitiveType string string string String )
+            value.LogFileName                               = GetString(new IntPtr(p + 0x038)); // 0x38 LogFileName                 ( ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_timeControl                            000186671F80 ModelClassType ITimeControl ITimeControl ITimeControl Pointer
-    // 018 M_started                                000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 M_timeControl                            ModelClassType ITimeControl ITimeControl ITimeControl Pointer
+    // 018 M_started                                ModelPrimitiveType bool bool bool Bool
     public partial class TimeControlPlayable : DataModel
     {
         public ITimeControl?                            M_timeControl                           { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TimeControlPlayable() { Pointer= p0 };
 
-            value.M_timeControl                             = GetObject<ITimeControl>(new IntPtr(p + 0x010), ReversePrism.DataModels.ITimeControl.FromPointer); // 02466B30A1B8 0x10 M_timeControl               ( 000186671F80 ModelClassType ITimeControl ITimeControl ITimeControl Pointer )
-            value.M_started                                 = GetBool(new IntPtr(p + 0x018)); // 02466B30A1D8 0x18 M_started                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_timeControl                             = GetObject<ITimeControl>(new IntPtr(p + 0x010), ReversePrism.DataModels.ITimeControl.FromPointer); // 0x10 M_timeControl               ( ModelClassType ITimeControl ITimeControl ITimeControl Pointer )
+            value.M_started                                 = GetBool(new IntPtr(p + 0x018)); // 0x18 M_started                   ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

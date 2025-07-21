@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Origin                                 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32
-    // 01C M_Direction                              0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 010 M_Origin                                 ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 01C M_Direction                              ModelEnumType Vector3 Vector3 Vector3 Int32
     public partial class Ray : DataModel
     {
         public Vector3                                  M_Origin                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Ray() { Pointer= p0 };
 
-            value.M_Origin                                  = (Vector3)GetInt32(new IntPtr(p + 0x010)); // 0245A686B2C0 0x10 M_Origin                    ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.M_Direction                               = (Vector3)GetInt32(new IntPtr(p + 0x01C)); // 0245A686B2E0 0x1C M_Direction                 ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.M_Origin                                  = (Vector3)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_Origin                    ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.M_Direction                               = (Vector3)GetInt32(new IntPtr(p + 0x01C)); // 0x1C M_Direction                 ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
 
             return value;
         }

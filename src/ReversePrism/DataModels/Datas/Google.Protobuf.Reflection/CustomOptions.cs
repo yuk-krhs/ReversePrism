@@ -8,6 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
+    // 000 UnreferencedCodeMessage                  string IL2CPP_TYPE_STRING
     // 000 EmptyParameters                          <object>[] IL2CPP_TYPE_SZARRAY
     // 010 values                                   IDictionary`2<int, IExtensionValue> IL2CPP_TYPE_GENERICINST
     public partial class CustomOptions : DataModel

@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Days                                     0001865C2E50 ModelPrimitiveType double double double Double
-    // 018 Months                                   0001865F36C0 ModelPrimitiveType int int int Int32
-    // 01C Years                                    0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 Days                                     ModelPrimitiveType double double double Double
+    // 018 Months                                   ModelPrimitiveType int int int Int32
+    // 01C Years                                    ModelPrimitiveType int int int Int32
     public partial class TimeSpanUnits : DataModel
     {
         public double                                   Days                                    { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TimeSpanUnits() { Pointer= p0 };
 
-            value.Days                                      = GetDouble(new IntPtr(p + 0x010)); // 0245A68DF9B0 0x10 Days                        ( 0001865C2E50 ModelPrimitiveType double double double Double )
-            value.Months                                    = GetInt32(new IntPtr(p + 0x018)); // 0245A68DF9D0 0x18 Months                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Years                                     = GetInt32(new IntPtr(p + 0x01C)); // 0245A68DF9F0 0x1C Years                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Days                                      = GetDouble(new IntPtr(p + 0x010)); // 0x10 Days                        ( ModelPrimitiveType double double double Double )
+            value.Months                                    = GetInt32(new IntPtr(p + 0x018)); // 0x18 Months                      ( ModelPrimitiveType int int int Int32 )
+            value.Years                                     = GetInt32(new IntPtr(p + 0x01C)); // 0x1C Years                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

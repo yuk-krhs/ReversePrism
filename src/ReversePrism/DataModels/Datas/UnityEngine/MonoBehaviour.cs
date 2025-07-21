@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 M_CancellationTokenSource                0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
+    // 018 M_CancellationTokenSource                ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
     public partial class MonoBehaviour : DataModel
     {
         public CancellationTokenSource?                 M_CancellationTokenSource               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MonoBehaviour() { Pointer= p0 };
 
-            value.M_CancellationTokenSource                 = GetObject<CancellationTokenSource>(new IntPtr(p + 0x018), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0245A23E4110 0x18 M_CancellationTokenSource   ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.M_CancellationTokenSource                 = GetObject<CancellationTokenSource>(new IntPtr(p + 0x018), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0x18 M_CancellationTokenSource   ( ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
 
             return value;
         }

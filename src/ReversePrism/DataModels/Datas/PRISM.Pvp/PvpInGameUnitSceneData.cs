@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 UnitId                                   0001865F4940 ModelPrimitiveType int int int Int32
-    // 018 MvName                                   0001866736C0 ModelPrimitiveType string string string String
-    // 020 UnitIdols                                000185CAF558 ModelClassListType UnitIdol[] UnitIdol[] List<UnitIdol> Pointer
-    // 028 BgPrefabName                             0001866736C0 ModelPrimitiveType string string string String
+    // 010 UnitId                                   ModelPrimitiveType int int int Int32
+    // 018 MvName                                   ModelPrimitiveType string string string String
+    // 020 UnitIdols                                ModelClassListType UnitIdol[] UnitIdol[] List<UnitIdol> Pointer
+    // 028 BgPrefabName                             ModelPrimitiveType string string string String
     public partial class PvpInGameUnitSceneData : DataModel
     {
         public int                                      UnitId                                  { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PvpInGameUnitSceneData() { Pointer= p0 };
 
-            value.UnitId                                    = GetInt32(new IntPtr(p + 0x010)); // 0246650DFCB8 0x10 UnitId                      ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.MvName                                    = GetString(new IntPtr(p + 0x018)); // 0246650DFCD8 0x18 MvName                      ( 0001866736C0 ModelPrimitiveType string string string String )
-            value.UnitIdols                                 = GetObjectList<UnitIdol>(new IntPtr(p + 0x020), ReversePrism.DataModels.UnitIdol.FromPointer); // 0246650DFCF8 0x20 UnitIdols                   ( 000185CAF558 ModelClassListType UnitIdol[] UnitIdol[] List<UnitIdol> Pointer )
-            value.BgPrefabName                              = GetString(new IntPtr(p + 0x028)); // 0246650DFD18 0x28 BgPrefabName                ( 0001866736C0 ModelPrimitiveType string string string String )
+            value.UnitId                                    = GetInt32(new IntPtr(p + 0x010)); // 0x10 UnitId                      ( ModelPrimitiveType int int int Int32 )
+            value.MvName                                    = GetString(new IntPtr(p + 0x018)); // 0x18 MvName                      ( ModelPrimitiveType string string string String )
+            value.UnitIdols                                 = GetObjectList<UnitIdol>(new IntPtr(p + 0x020), ReversePrism.DataModels.UnitIdol.FromPointer); // 0x20 UnitIdols                   ( ModelClassListType UnitIdol[] UnitIdol[] List<UnitIdol> Pointer )
+            value.BgPrefabName                              = GetString(new IntPtr(p + 0x028)); // 0x28 BgPrefabName                ( ModelPrimitiveType string string string String )
 
             return value;
         }

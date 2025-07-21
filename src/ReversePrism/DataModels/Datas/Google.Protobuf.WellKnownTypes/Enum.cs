@@ -11,17 +11,19 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<Enum> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 NameFieldNumber                          int IL2CPP_TYPE_I4
-    // 018 Name                                     000186671910 ModelPrimitiveType string string string String
+    // 018 Name                                     ModelPrimitiveType string string string String
     // 000 EnumvalueFieldNumber                     int IL2CPP_TYPE_I4
     // 008 _repeated_enumvalue_codec                FieldCodec`1<EnumValue> IL2CPP_TYPE_GENERICINST
-    // 020 Enumvalue                                000185CD4738 ModelClassListType RepeatedField`1<EnumValue> RepeatedField`1<EnumValue> List<EnumValue> Pointer
+    // 020 Enumvalue                                ModelClassListType RepeatedField`1<EnumValue> RepeatedField`1<EnumValue> List<EnumValue> Pointer
     // 000 OptionsFieldNumber                       int IL2CPP_TYPE_I4
     // 010 _repeated_options_codec                  FieldCodec`1<Option> IL2CPP_TYPE_GENERICINST
-    // 028 Options                                  000185CE83A8 ModelClassListType RepeatedField`1<Option> RepeatedField`1<Option> List<Option> Pointer
+    // 028 Options                                  ModelClassListType RepeatedField`1<Option> RepeatedField`1<Option> List<Option> Pointer
     // 000 SourceContextFieldNumber                 int IL2CPP_TYPE_I4
-    // 030 SourceContext                            0001865399F0 ModelClassType SourceContext SourceContext SourceContext Pointer
+    // 030 SourceContext                            ModelClassType SourceContext SourceContext SourceContext Pointer
     // 000 SyntaxFieldNumber                        int IL2CPP_TYPE_I4
-    // 038 Syntax                                   000186604390 ModelEnumType Syntax Syntax Syntax Int32
+    // 038 Syntax                                   ModelEnumType Syntax Syntax Syntax Int32
+    // 000 EditionFieldNumber                       int IL2CPP_TYPE_I4
+    // 040 Edition                                  ModelPrimitiveType string string string String
     public partial class Enum : DataModel
     {
         public string                                   Name                                    { get; set; }
@@ -29,6 +31,7 @@ namespace ReversePrism.DataModels
         public List<Option>?                            Options                                 { get; set; }
         public SourceContext?                           SourceContext                           { get; set; }
         public Syntax                                   Syntax                                  { get; set; }
+        public string                                   Edition                                 { get; set; }
 
         public static Enum? FromPointer(IntPtr p0)
         {
@@ -38,11 +41,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Enum() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 02466A51FD40 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Enumvalue                                 = GetObjectList<EnumValue>(new IntPtr(p + 0x020), ReversePrism.DataModels.EnumValue.FromPointer); // 02466A51FDA0 0x20 Enumvalue                   ( 000185CD4738 ModelClassListType RepeatedField`1<EnumValue> RepeatedField`1<EnumValue> List<EnumValue> Pointer )
-            value.Options                                   = GetObjectList<Option>(new IntPtr(p + 0x028), ReversePrism.DataModels.Option.FromPointer); // 02466A51FE00 0x28 Options                     ( 000185CE83A8 ModelClassListType RepeatedField`1<Option> RepeatedField`1<Option> List<Option> Pointer )
-            value.SourceContext                             = GetObject<SourceContext>(new IntPtr(p + 0x030), ReversePrism.DataModels.SourceContext.FromPointer); // 02466A51FE40 0x30 SourceContext               ( 0001865399F0 ModelClassType SourceContext SourceContext SourceContext Pointer )
-            value.Syntax                                    = (Syntax)GetInt32(new IntPtr(p + 0x038)); // 02466A51FE80 0x38 Syntax                      ( 000186604390 ModelEnumType Syntax Syntax Syntax Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0x18 Name                        ( ModelPrimitiveType string string string String )
+            value.Enumvalue                                 = GetObjectList<EnumValue>(new IntPtr(p + 0x020), ReversePrism.DataModels.EnumValue.FromPointer); // 0x20 Enumvalue                   ( ModelClassListType RepeatedField`1<EnumValue> RepeatedField`1<EnumValue> List<EnumValue> Pointer )
+            value.Options                                   = GetObjectList<Option>(new IntPtr(p + 0x028), ReversePrism.DataModels.Option.FromPointer); // 0x28 Options                     ( ModelClassListType RepeatedField`1<Option> RepeatedField`1<Option> List<Option> Pointer )
+            value.SourceContext                             = GetObject<SourceContext>(new IntPtr(p + 0x030), ReversePrism.DataModels.SourceContext.FromPointer); // 0x30 SourceContext               ( ModelClassType SourceContext SourceContext SourceContext Pointer )
+            value.Syntax                                    = (Syntax)GetInt32(new IntPtr(p + 0x038)); // 0x38 Syntax                      ( ModelEnumType Syntax Syntax Syntax Int32 )
+            value.Edition                                   = GetString(new IntPtr(p + 0x040)); // 0x40 Edition                     ( ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 030 M_Name                                   000186671910 ModelPrimitiveType string string string String
-    // 038 M_HashCode                               0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 030 M_Name                                   ModelPrimitiveType string string string String
+    // 038 M_HashCode                               ModelPrimitiveType int int int Int32
     public partial class TMP_SpriteCharacter : DataModel
     {
         public string                                   M_Name                                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TMP_SpriteCharacter() { Pointer= p0 };
 
-            value.M_Name                                    = GetString(new IntPtr(p + 0x030)); // 024660D9AD18 0x30 M_Name                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_HashCode                                = GetInt32(new IntPtr(p + 0x038)); // 024660D9AD38 0x38 M_HashCode                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_Name                                    = GetString(new IntPtr(p + 0x030)); // 0x30 M_Name                      ( ModelPrimitiveType string string string String )
+            value.M_HashCode                                = GetInt32(new IntPtr(p + 0x038)); // 0x38 M_HashCode                  ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

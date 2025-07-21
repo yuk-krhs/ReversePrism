@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Ex                                       00018675B950 ModelClassType JsonSchemaException JsonSchemaException JsonSchemaException Pointer
+    // 010 Ex                                       ModelClassType JsonSchemaException JsonSchemaException JsonSchemaException Pointer
     public partial class ValidationEventArgs : DataModel
     {
         public JsonSchemaException?                     Ex                                      { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ValidationEventArgs() { Pointer= p0 };
 
-            value.Ex                                        = GetObject<JsonSchemaException>(new IntPtr(p + 0x010), ReversePrism.DataModels.JsonSchemaException.FromPointer); // 0246687ED320 0x10 Ex                          ( 00018675B950 ModelClassType JsonSchemaException JsonSchemaException JsonSchemaException Pointer )
+            value.Ex                                        = GetObject<JsonSchemaException>(new IntPtr(p + 0x010), ReversePrism.DataModels.JsonSchemaException.FromPointer); // 0x10 Ex                          ( ModelClassType JsonSchemaException JsonSchemaException JsonSchemaException Pointer )
 
             return value;
         }

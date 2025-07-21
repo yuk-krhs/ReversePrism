@@ -8,30 +8,30 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 SceneCreateData                          000186710490 ModelClassType Data Data Data Pointer
-    // 028 UnitIdols                                000185CAF1A8 ModelClassListType UnitIdol[] UnitIdol[] List<UnitIdol> Pointer
-    // 030 EndFrame                                 0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 034 MovieOnly                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 038 LoopFrameForADV                          0001865F36C0 ModelPrimitiveType int int int Int32
-    // 03C CameraLoop                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 03D LoopWait                                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 040 LiveCharacterController                  000186544E10 ModelClassType LiveCharacterController LiveCharacterController LiveCharacterController Pointer
-    // 048 CameraController                         000186536460 ModelClassType CameraController CameraController CameraController Pointer
-    // 050 CamEvent                                 0001865398B0 ModelClassType CameraWorkEvent CameraWorkEvent CameraWorkEvent Pointer
-    // 058 Timeline                                 00018674DA70 ModelClassType PlayableDirector PlayableDirector PlayableDirector Pointer
-    // 060 SceneBgm                                 00018664CD30 ModelClassType CriAtomSource CriAtomSource CriAtomSource Pointer
-    // 068 CharacterTable                           000185B74CD0 ModelClassListType Character[] Character[] List<Character> Pointer
-    // 070 IsInitializeEnd                          000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 071 IsEndLoop                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 078 MoviePlayer                              000186658A40 ModelClassType MoviePlayer MoviePlayer MoviePlayer Pointer
-    // 080 IsBaseScene                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 081 IsNoSound                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 088 VoiceList                                000185D21448 ModelClassListType List`1<VoiceRequest> List`1<VoiceRequest> List<VoiceRequest> Pointer
-    // 090 SoundResources                           000186677C40 ModelClassType MvCutSceneSoundResources MvCutSceneSoundResources MvCutSceneSoundResources Pointer
-    // 098 SwitchCahacter                           00018656A0A0 ModelClassType SwitchCharacter SwitchCharacter SwitchCharacter Pointer
-    // 0A0 SwitchMovie                              00018656AAD0 ModelClassType SwitchMovie SwitchMovie SwitchMovie Pointer
-    // 0A8 AnimationFrame                           0001866656B0 ModelPrimitiveType float float float Single
-    // 0B0 CurrentVoice                             00018656B4B0 ModelClassType VoiceRequest VoiceRequest VoiceRequest Pointer
+    // 020 SceneCreateData                          ModelClassType Data Data Data Pointer
+    // 028 UnitIdols                                ModelClassListType UnitIdol[] UnitIdol[] List<UnitIdol> Pointer
+    // 030 EndFrame                                 ModelPrimitiveType int int int Int32
+    // 034 MovieOnly                                ModelPrimitiveType bool bool bool Bool
+    // 038 LoopFrameForADV                          ModelPrimitiveType int int int Int32
+    // 03C CameraLoop                               ModelPrimitiveType bool bool bool Bool
+    // 03D LoopWait                                 ModelPrimitiveType bool bool bool Bool
+    // 040 LiveCharacterController                  ModelClassType LiveCharacterController LiveCharacterController LiveCharacterController Pointer
+    // 048 CameraController                         ModelClassType CameraController CameraController CameraController Pointer
+    // 050 CamEvent                                 ModelClassType CameraWorkEvent CameraWorkEvent CameraWorkEvent Pointer
+    // 058 Timeline                                 ModelClassType PlayableDirector PlayableDirector PlayableDirector Pointer
+    // 060 SceneBgm                                 ModelClassType CriAtomSource CriAtomSource CriAtomSource Pointer
+    // 068 CharacterTable                           ModelClassListType Character[] Character[] List<Character> Pointer
+    // 070 IsInitializeEnd                          ModelPrimitiveType bool bool bool Bool
+    // 071 IsEndLoop                                ModelPrimitiveType bool bool bool Bool
+    // 078 MoviePlayer                              ModelClassType MoviePlayer MoviePlayer MoviePlayer Pointer
+    // 080 IsBaseScene                              ModelPrimitiveType bool bool bool Bool
+    // 081 IsNoSound                                ModelPrimitiveType bool bool bool Bool
+    // 088 VoiceList                                ModelClassListType List`1<VoiceRequest> List`1<VoiceRequest> List<VoiceRequest> Pointer
+    // 090 SoundResources                           ModelClassType MvCutSceneSoundResources MvCutSceneSoundResources MvCutSceneSoundResources Pointer
+    // 098 SwitchCahacter                           ModelClassType SwitchCharacter SwitchCharacter SwitchCharacter Pointer
+    // 0A0 SwitchMovie                              ModelClassType SwitchMovie SwitchMovie SwitchMovie Pointer
+    // 0A8 AnimationFrame                           ModelPrimitiveType float float float Single
+    // 0B0 CurrentVoice                             ModelClassType VoiceRequest VoiceRequest VoiceRequest Pointer
     // 000 displaySceneName                         bool IL2CPP_TYPE_BOOLEAN
     public partial class CutScene : DataModel
     {
@@ -68,30 +68,30 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CutScene() { Pointer= p0 };
 
-            value.SceneCreateData                           = GetObject<Data>(new IntPtr(p + 0x020), ReversePrism.DataModels.Data.FromPointer); // 0245A5F96A58 0x20 SceneCreateData             ( 000186710490 ModelClassType Data Data Data Pointer )
-            value.UnitIdols                                 = GetObjectList<UnitIdol>(new IntPtr(p + 0x028), ReversePrism.DataModels.UnitIdol.FromPointer); // 0245A5F96A78 0x28 UnitIdols                   ( 000185CAF1A8 ModelClassListType UnitIdol[] UnitIdol[] List<UnitIdol> Pointer )
-            value.EndFrame                                  = GetInt32(new IntPtr(p + 0x030)); // 0245A5F96A98 0x30 EndFrame                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MovieOnly                                 = GetBool(new IntPtr(p + 0x034)); // 0245A5F96AB8 0x34 MovieOnly                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.LoopFrameForADV                           = GetInt32(new IntPtr(p + 0x038)); // 0245A5F96AD8 0x38 LoopFrameForADV             ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.CameraLoop                                = GetBool(new IntPtr(p + 0x03C)); // 0245A5F96AF8 0x3C CameraLoop                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.LoopWait                                  = GetBool(new IntPtr(p + 0x03D)); // 0245A5F96B18 0x3D LoopWait                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.LiveCharacterController                   = GetObject<LiveCharacterController>(new IntPtr(p + 0x040), ReversePrism.DataModels.LiveCharacterController.FromPointer); // 0245A5F96B38 0x40 LiveCharacterController     ( 000186544E10 ModelClassType LiveCharacterController LiveCharacterController LiveCharacterController Pointer )
-            value.CameraController                          = GetObject<CameraController>(new IntPtr(p + 0x048), ReversePrism.DataModels.CameraController.FromPointer); // 0245A5F96B58 0x48 CameraController            ( 000186536460 ModelClassType CameraController CameraController CameraController Pointer )
-            value.CamEvent                                  = GetObject<CameraWorkEvent>(new IntPtr(p + 0x050), ReversePrism.DataModels.CameraWorkEvent.FromPointer); // 0245A5F96B78 0x50 CamEvent                    ( 0001865398B0 ModelClassType CameraWorkEvent CameraWorkEvent CameraWorkEvent Pointer )
-            value.Timeline                                  = GetObject<PlayableDirector>(new IntPtr(p + 0x058), ReversePrism.DataModels.PlayableDirector.FromPointer); // 0245A5F96B98 0x58 Timeline                    ( 00018674DA70 ModelClassType PlayableDirector PlayableDirector PlayableDirector Pointer )
-            value.SceneBgm                                  = GetObject<CriAtomSource>(new IntPtr(p + 0x060), ReversePrism.DataModels.CriAtomSource.FromPointer); // 0245A5F96BB8 0x60 SceneBgm                    ( 00018664CD30 ModelClassType CriAtomSource CriAtomSource CriAtomSource Pointer )
-            value.CharacterTable                            = GetObjectList<Character>(new IntPtr(p + 0x068), ReversePrism.DataModels.Character.FromPointer); // 0245A5F96BD8 0x68 CharacterTable              ( 000185B74CD0 ModelClassListType Character[] Character[] List<Character> Pointer )
-            value.IsInitializeEnd                           = GetBool(new IntPtr(p + 0x070)); // 0245A5F96BF8 0x70 IsInitializeEnd             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsEndLoop                                 = GetBool(new IntPtr(p + 0x071)); // 0245A5F96C18 0x71 IsEndLoop                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.MoviePlayer                               = GetObject<MoviePlayer>(new IntPtr(p + 0x078), ReversePrism.DataModels.MoviePlayer.FromPointer); // 0245A5F96C38 0x78 MoviePlayer                 ( 000186658A40 ModelClassType MoviePlayer MoviePlayer MoviePlayer Pointer )
-            value.IsBaseScene                               = GetBool(new IntPtr(p + 0x080)); // 0245A5F96C58 0x80 IsBaseScene                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsNoSound                                 = GetBool(new IntPtr(p + 0x081)); // 0245A5F96C78 0x81 IsNoSound                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.VoiceList                                 = GetObjectList<VoiceRequest>(new IntPtr(p + 0x088), ReversePrism.DataModels.VoiceRequest.FromPointer); // 0245A5F96C98 0x88 VoiceList                   ( 000185D21448 ModelClassListType List`1<VoiceRequest> List`1<VoiceRequest> List<VoiceRequest> Pointer )
-            value.SoundResources                            = GetObject<MvCutSceneSoundResources>(new IntPtr(p + 0x090), ReversePrism.DataModels.MvCutSceneSoundResources.FromPointer); // 0245A5F96CB8 0x90 SoundResources              ( 000186677C40 ModelClassType MvCutSceneSoundResources MvCutSceneSoundResources MvCutSceneSoundResources Pointer )
-            value.SwitchCahacter                            = GetObject<SwitchCharacter>(new IntPtr(p + 0x098), ReversePrism.DataModels.SwitchCharacter.FromPointer); // 0245A5F96CD8 0x98 SwitchCahacter              ( 00018656A0A0 ModelClassType SwitchCharacter SwitchCharacter SwitchCharacter Pointer )
-            value.SwitchMovie                               = GetObject<SwitchMovie>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.SwitchMovie.FromPointer); // 0245A5F96CF8 0xA0 SwitchMovie                 ( 00018656AAD0 ModelClassType SwitchMovie SwitchMovie SwitchMovie Pointer )
-            value.AnimationFrame                            = GetSingle(new IntPtr(p + 0x0A8)); // 0245A5F96D18 0xA8 AnimationFrame              ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.CurrentVoice                              = GetObject<VoiceRequest>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.VoiceRequest.FromPointer); // 0245A5F96D38 0xB0 CurrentVoice                ( 00018656B4B0 ModelClassType VoiceRequest VoiceRequest VoiceRequest Pointer )
+            value.SceneCreateData                           = GetObject<Data>(new IntPtr(p + 0x020), ReversePrism.DataModels.Data.FromPointer); // 0x20 SceneCreateData             ( ModelClassType Data Data Data Pointer )
+            value.UnitIdols                                 = GetObjectList<UnitIdol>(new IntPtr(p + 0x028), ReversePrism.DataModels.UnitIdol.FromPointer); // 0x28 UnitIdols                   ( ModelClassListType UnitIdol[] UnitIdol[] List<UnitIdol> Pointer )
+            value.EndFrame                                  = GetInt32(new IntPtr(p + 0x030)); // 0x30 EndFrame                    ( ModelPrimitiveType int int int Int32 )
+            value.MovieOnly                                 = GetBool(new IntPtr(p + 0x034)); // 0x34 MovieOnly                   ( ModelPrimitiveType bool bool bool Bool )
+            value.LoopFrameForADV                           = GetInt32(new IntPtr(p + 0x038)); // 0x38 LoopFrameForADV             ( ModelPrimitiveType int int int Int32 )
+            value.CameraLoop                                = GetBool(new IntPtr(p + 0x03C)); // 0x3C CameraLoop                  ( ModelPrimitiveType bool bool bool Bool )
+            value.LoopWait                                  = GetBool(new IntPtr(p + 0x03D)); // 0x3D LoopWait                    ( ModelPrimitiveType bool bool bool Bool )
+            value.LiveCharacterController                   = GetObject<LiveCharacterController>(new IntPtr(p + 0x040), ReversePrism.DataModels.LiveCharacterController.FromPointer); // 0x40 LiveCharacterController     ( ModelClassType LiveCharacterController LiveCharacterController LiveCharacterController Pointer )
+            value.CameraController                          = GetObject<CameraController>(new IntPtr(p + 0x048), ReversePrism.DataModels.CameraController.FromPointer); // 0x48 CameraController            ( ModelClassType CameraController CameraController CameraController Pointer )
+            value.CamEvent                                  = GetObject<CameraWorkEvent>(new IntPtr(p + 0x050), ReversePrism.DataModels.CameraWorkEvent.FromPointer); // 0x50 CamEvent                    ( ModelClassType CameraWorkEvent CameraWorkEvent CameraWorkEvent Pointer )
+            value.Timeline                                  = GetObject<PlayableDirector>(new IntPtr(p + 0x058), ReversePrism.DataModels.PlayableDirector.FromPointer); // 0x58 Timeline                    ( ModelClassType PlayableDirector PlayableDirector PlayableDirector Pointer )
+            value.SceneBgm                                  = GetObject<CriAtomSource>(new IntPtr(p + 0x060), ReversePrism.DataModels.CriAtomSource.FromPointer); // 0x60 SceneBgm                    ( ModelClassType CriAtomSource CriAtomSource CriAtomSource Pointer )
+            value.CharacterTable                            = GetObjectList<Character>(new IntPtr(p + 0x068), ReversePrism.DataModels.Character.FromPointer); // 0x68 CharacterTable              ( ModelClassListType Character[] Character[] List<Character> Pointer )
+            value.IsInitializeEnd                           = GetBool(new IntPtr(p + 0x070)); // 0x70 IsInitializeEnd             ( ModelPrimitiveType bool bool bool Bool )
+            value.IsEndLoop                                 = GetBool(new IntPtr(p + 0x071)); // 0x71 IsEndLoop                   ( ModelPrimitiveType bool bool bool Bool )
+            value.MoviePlayer                               = GetObject<MoviePlayer>(new IntPtr(p + 0x078), ReversePrism.DataModels.MoviePlayer.FromPointer); // 0x78 MoviePlayer                 ( ModelClassType MoviePlayer MoviePlayer MoviePlayer Pointer )
+            value.IsBaseScene                               = GetBool(new IntPtr(p + 0x080)); // 0x80 IsBaseScene                 ( ModelPrimitiveType bool bool bool Bool )
+            value.IsNoSound                                 = GetBool(new IntPtr(p + 0x081)); // 0x81 IsNoSound                   ( ModelPrimitiveType bool bool bool Bool )
+            value.VoiceList                                 = GetObjectList<VoiceRequest>(new IntPtr(p + 0x088), ReversePrism.DataModels.VoiceRequest.FromPointer); // 0x88 VoiceList                   ( ModelClassListType List`1<VoiceRequest> List`1<VoiceRequest> List<VoiceRequest> Pointer )
+            value.SoundResources                            = GetObject<MvCutSceneSoundResources>(new IntPtr(p + 0x090), ReversePrism.DataModels.MvCutSceneSoundResources.FromPointer); // 0x90 SoundResources              ( ModelClassType MvCutSceneSoundResources MvCutSceneSoundResources MvCutSceneSoundResources Pointer )
+            value.SwitchCahacter                            = GetObject<SwitchCharacter>(new IntPtr(p + 0x098), ReversePrism.DataModels.SwitchCharacter.FromPointer); // 0x98 SwitchCahacter              ( ModelClassType SwitchCharacter SwitchCharacter SwitchCharacter Pointer )
+            value.SwitchMovie                               = GetObject<SwitchMovie>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.SwitchMovie.FromPointer); // 0xA0 SwitchMovie                 ( ModelClassType SwitchMovie SwitchMovie SwitchMovie Pointer )
+            value.AnimationFrame                            = GetSingle(new IntPtr(p + 0x0A8)); // 0xA8 AnimationFrame              ( ModelPrimitiveType float float float Single )
+            value.CurrentVoice                              = GetObject<VoiceRequest>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.VoiceRequest.FromPointer); // 0xB0 CurrentVoice                ( ModelClassType VoiceRequest VoiceRequest VoiceRequest Pointer )
 
             return value;
         }

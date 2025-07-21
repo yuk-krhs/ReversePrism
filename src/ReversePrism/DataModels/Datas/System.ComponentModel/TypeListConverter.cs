@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Types                                    000185B83050 ModelClassListType Type[] Type[] List<Type> Pointer
-    // 018 Values                                   00018664F1C0 ModelClassType StandardValuesCollection StandardValuesCollection StandardValuesCollection Pointer
+    // 010 Types                                    ModelClassListType Type[] Type[] List<Type> Pointer
+    // 018 Values                                   ModelClassType StandardValuesCollection StandardValuesCollection StandardValuesCollection Pointer
     public partial class TypeListConverter : DataModel
     {
         public List<Type>?                              Types                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TypeListConverter() { Pointer= p0 };
 
-            value.Types                                     = GetObjectList<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 024667BA2200 0x10 Types                       ( 000185B83050 ModelClassListType Type[] Type[] List<Type> Pointer )
-            value.Values                                    = GetObject<StandardValuesCollection>(new IntPtr(p + 0x018), ReversePrism.DataModels.StandardValuesCollection.FromPointer); // 024667BA2220 0x18 Values                      ( 00018664F1C0 ModelClassType StandardValuesCollection StandardValuesCollection StandardValuesCollection Pointer )
+            value.Types                                     = GetObjectList<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0x10 Types                       ( ModelClassListType Type[] Type[] List<Type> Pointer )
+            value.Values                                    = GetObject<StandardValuesCollection>(new IntPtr(p + 0x018), ReversePrism.DataModels.StandardValuesCollection.FromPointer); // 0x18 Values                      ( ModelClassType StandardValuesCollection StandardValuesCollection StandardValuesCollection Pointer )
 
             return value;
         }

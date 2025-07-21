@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 UnitId                                   0001865F4260 ModelPrimitiveType int int int Int32
+    // 010 UnitId                                   ModelPrimitiveType int int int Int32
     public partial class CharacterBaseSelectParameter : DataModel
     {
         public int                                      UnitId                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CharacterBaseSelectParameter() { Pointer= p0 };
 
-            value.UnitId                                    = GetInt32(new IntPtr(p + 0x010)); // 024665E20E80 0x10 UnitId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.UnitId                                    = GetInt32(new IntPtr(p + 0x010)); // 0x10 UnitId                      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

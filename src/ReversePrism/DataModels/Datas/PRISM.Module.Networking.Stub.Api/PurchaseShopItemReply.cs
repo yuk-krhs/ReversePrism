@@ -11,13 +11,13 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<PurchaseShopItemReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 BeforeShopItemFieldNumber                int IL2CPP_TYPE_I4
-    // 018 BeforeShopItem                           000186761440 ModelClassType ShopItemStatus ShopItemStatus ShopItemStatus Pointer
+    // 018 BeforeShopItem                           ModelClassType ShopItemStatus ShopItemStatus ShopItemStatus Pointer
     // 000 AfterShopItemFieldNumber                 int IL2CPP_TYPE_I4
-    // 020 AfterShopItem                            000186761440 ModelClassType ShopItemStatus ShopItemStatus ShopItemStatus Pointer
+    // 020 AfterShopItem                            ModelClassType ShopItemStatus ShopItemStatus ShopItemStatus Pointer
     // 000 AmountFieldNumber                        int IL2CPP_TYPE_I4
-    // 028 Amount                                   0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 028 Amount                                   ModelPrimitiveType int int int Int32
     // 000 UpdatedHavingProductGroupFieldNumber     int IL2CPP_TYPE_I4
-    // 030 UpdatedHavingProductGroup                0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer
+    // 030 UpdatedHavingProductGroup                ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer
     public partial class PurchaseShopItemReply : DataModel
     {
         public ShopItemStatus?                          BeforeShopItem                          { get; set; }
@@ -33,10 +33,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PurchaseShopItemReply() { Pointer= p0 };
 
-            value.BeforeShopItem                            = GetObject<ShopItemStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ShopItemStatus.FromPointer); // 02466274F3F0 0x18 BeforeShopItem              ( 000186761440 ModelClassType ShopItemStatus ShopItemStatus ShopItemStatus Pointer )
-            value.AfterShopItem                             = GetObject<ShopItemStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ShopItemStatus.FromPointer); // 02466274F430 0x20 AfterShopItem               ( 000186761440 ModelClassType ShopItemStatus ShopItemStatus ShopItemStatus Pointer )
-            value.Amount                                    = GetInt32(new IntPtr(p + 0x028)); // 02466274F470 0x28 Amount                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UpdatedHavingProductGroup                 = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 02466274F4B0 0x30 UpdatedHavingProductGroup   ( 0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
+            value.BeforeShopItem                            = GetObject<ShopItemStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ShopItemStatus.FromPointer); // 0x18 BeforeShopItem              ( ModelClassType ShopItemStatus ShopItemStatus ShopItemStatus Pointer )
+            value.AfterShopItem                             = GetObject<ShopItemStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ShopItemStatus.FromPointer); // 0x20 AfterShopItem               ( ModelClassType ShopItemStatus ShopItemStatus ShopItemStatus Pointer )
+            value.Amount                                    = GetInt32(new IntPtr(p + 0x028)); // 0x28 Amount                      ( ModelPrimitiveType int int int Int32 )
+            value.UpdatedHavingProductGroup                 = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 0x30 UpdatedHavingProductGroup   ( ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
 
             return value;
         }

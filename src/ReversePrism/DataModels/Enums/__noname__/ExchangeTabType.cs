@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     public enum ExchangeTabType
     {
-        None,
+        Top,
         Money,
         IdolPiece,
         StarFragment,
@@ -19,5 +19,6 @@ namespace ReversePrism.DataModels
         CostumeTicket,
         EventSeal,
         Event,
+        LiveAllSongEvent,
     }
 }

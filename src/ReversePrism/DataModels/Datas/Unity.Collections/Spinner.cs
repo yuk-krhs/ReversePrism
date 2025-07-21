@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Lock                                   0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 M_Lock                                   ModelPrimitiveType int int int Int32
     public partial class Spinner : DataModel
     {
         public int                                      M_Lock                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Spinner() { Pointer= p0 };
 
-            value.M_Lock                                    = GetInt32(new IntPtr(p + 0x010)); // 0245A3562C68 0x10 M_Lock                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_Lock                                    = GetInt32(new IntPtr(p + 0x010)); // 0x10 M_Lock                      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

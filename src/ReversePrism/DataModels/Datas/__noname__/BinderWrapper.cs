@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 008 _setCSharpArgumentInfoArray              <object> IL2CPP_TYPE_OBJECT
     // 010 _getMemberCall                           MethodCall`2<<object>, <object>> IL2CPP_TYPE_GENERICINST
     // 018 _setMemberCall                           MethodCall`2<<object>, <object>> IL2CPP_TYPE_GENERICINST
-    // 020 Init                                     000186595C30 ModelPrimitiveType bool bool bool Bool
+    // 020 Init                                     ModelPrimitiveType bool bool bool Bool
     public partial class BinderWrapper : DataModel
     {
         public bool                                     Init                                    { get; set; }
@@ -30,7 +30,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BinderWrapper() { Pointer= p0 };
 
-            value.Init                                      = GetBool(new IntPtr(p + 0x020)); // 02466879F240 0x20 Init                        ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.Init                                      = GetBool(new IntPtr(p + 0x020)); // 0x20 Init                        ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

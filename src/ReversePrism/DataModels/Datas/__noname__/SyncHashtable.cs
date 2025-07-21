@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 050 Table                                    0001865DE820 ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 050 Table                                    ModelClassType Hashtable Hashtable Hashtable Pointer
     public partial class SyncHashtable : DataModel
     {
         public Hashtable?                               Table                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SyncHashtable() { Pointer= p0 };
 
-            value.Table                                     = GetObject<Hashtable>(new IntPtr(p + 0x050), ReversePrism.DataModels.Hashtable.FromPointer); // 024666DD5558 0x50 Table                       ( 0001865DE820 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.Table                                     = GetObject<Hashtable>(new IntPtr(p + 0x050), ReversePrism.DataModels.Hashtable.FromPointer); // 0x50 Table                       ( ModelClassType Hashtable Hashtable Hashtable Pointer )
 
             return value;
         }

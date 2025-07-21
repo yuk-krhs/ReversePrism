@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 038 OnClickSaveButton                        Action`1<int> IL2CPP_TYPE_GENERICINST
-    // 040 OnClickApplyButton                       Action`1<int> IL2CPP_TYPE_GENERICINST
-    // 048 OnClickDeleteButton                      Action`1<int> IL2CPP_TYPE_GENERICINST
-    // 050 OnEndEditPresetName                      Action`1<ValueTuple`2<int, string>> IL2CPP_TYPE_GENERICINST
+    // 040 OnClickSaveButton                        Action`1<int> IL2CPP_TYPE_GENERICINST
+    // 048 OnClickApplyButton                       Action`1<int> IL2CPP_TYPE_GENERICINST
+    // 050 OnClickDeleteButton                      Action`1<int> IL2CPP_TYPE_GENERICINST
+    // 058 OnEndEditPresetName                      Action`1<ValueTuple`2<int, string>> IL2CPP_TYPE_GENERICINST
     public partial class LiveCostumePresetListViewContext : DataModel
     {
 

@@ -10,9 +10,9 @@ namespace ReversePrism.DataModels
 
     // 000 resourceManager                          ResourceManager IL2CPP_TYPE_CLASS
     // 008 resourceCulture                          CultureInfo IL2CPP_TYPE_CLASS
-    // 010 EventDescriptors                         000185B7C730 ModelEnumListType EventDescriptor[] EventDescriptor[] List<EventDescriptor> Pointer
+    // 010 EventDescriptors                         ModelEnumListType EventDescriptor[] EventDescriptor[] List<EventDescriptor> Pointer
     // 018 syncLock                                 <object> IL2CPP_TYPE_OBJECT
-    // 020 EventDescriptorsCreated                  000186595C30 ModelPrimitiveType bool bool bool Bool
+    // 020 EventDescriptorsCreated                  ModelPrimitiveType bool bool bool Bool
     public partial class TD : DataModel
     {
         public List<EventDescriptor>?                   EventDescriptors                        { get; set; }
@@ -26,8 +26,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TD() { Pointer= p0 };
 
-            value.EventDescriptors                          = GetEnumList<EventDescriptor>(new IntPtr(p + 0x010)); // 0245A4D2C6A0 0x10 EventDescriptors            ( 000185B7C730 ModelEnumListType EventDescriptor[] EventDescriptor[] List<EventDescriptor> Pointer )
-            value.EventDescriptorsCreated                   = GetBool(new IntPtr(p + 0x020)); // 0245A4D2C6E0 0x20 EventDescriptorsCreated     ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.EventDescriptors                          = GetEnumList<EventDescriptor>(new IntPtr(p + 0x010)); // 0x10 EventDescriptors            ( ModelEnumListType EventDescriptor[] EventDescriptor[] List<EventDescriptor> Pointer )
+            value.EventDescriptorsCreated                   = GetBool(new IntPtr(p + 0x020)); // 0x20 EventDescriptorsCreated     ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<GetSuspendedPvpReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 IsSuspendedFieldNumber                   int IL2CPP_TYPE_I4
-    // 018 IsSuspended                              000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 018 IsSuspended                              ModelPrimitiveType bool bool bool Bool
     // 000 CanResumeFieldNumber                     int IL2CPP_TYPE_I4
-    // 019 CanResume                                000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 019 CanResume                                ModelPrimitiveType bool bool bool Bool
     public partial class GetSuspendedPvpReply : DataModel
     {
         public bool                                     IsSuspended                             { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetSuspendedPvpReply() { Pointer= p0 };
 
-            value.IsSuspended                               = GetBool(new IntPtr(p + 0x018)); // 024662014948 0x18 IsSuspended                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CanResume                                 = GetBool(new IntPtr(p + 0x019)); // 024662014988 0x19 CanResume                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsSuspended                               = GetBool(new IntPtr(p + 0x018)); // 0x18 IsSuspended                 ( ModelPrimitiveType bool bool bool Bool )
+            value.CanResume                                 = GetBool(new IntPtr(p + 0x019)); // 0x19 CanResume                   ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

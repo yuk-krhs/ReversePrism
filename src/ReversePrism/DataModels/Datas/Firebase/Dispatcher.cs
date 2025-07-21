@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 OwnerThreadId                            0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 OwnerThreadId                            ModelPrimitiveType int int int Int32
     // 018 queue                                    Queue`1<Action> IL2CPP_TYPE_GENERICINST
     public partial class Dispatcher : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Dispatcher() { Pointer= p0 };
 
-            value.OwnerThreadId                             = GetInt32(new IntPtr(p + 0x010)); // 02466BD61370 0x10 OwnerThreadId               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OwnerThreadId                             = GetInt32(new IntPtr(p + 0x010)); // 0x10 OwnerThreadId               ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 088 Shifter                                  0001866F2990 ModelClassType UIShifter UIShifter UIShifter Pointer
-    // 090 ShifterCells                             000185B844D0 ModelClassListType HomeBannerListViewCell[] HomeBannerListViewCell[] List<HomeBannerListViewCell> Pointer
+    // 078 Shifter                                  ModelClassType UIShifter UIShifter UIShifter Pointer
+    // 080 ShifterCells                             ModelClassListType HomeBannerListViewCell[] HomeBannerListViewCell[] List<HomeBannerListViewCell> Pointer
     public partial class HomeBannerView : DataModel
     {
         public UIShifter?                               Shifter                                 { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HomeBannerView() { Pointer= p0 };
 
-            value.Shifter                                   = GetObject<UIShifter>(new IntPtr(p + 0x088), ReversePrism.DataModels.UIShifter.FromPointer); // 0245A5AF1BB8 0x88 Shifter                     ( 0001866F2990 ModelClassType UIShifter UIShifter UIShifter Pointer )
-            value.ShifterCells                              = GetObjectList<HomeBannerListViewCell>(new IntPtr(p + 0x090), ReversePrism.DataModels.HomeBannerListViewCell.FromPointer); // 0245A5AF1BD8 0x90 ShifterCells                ( 000185B844D0 ModelClassListType HomeBannerListViewCell[] HomeBannerListViewCell[] List<HomeBannerListViewCell> Pointer )
+            value.Shifter                                   = GetObject<UIShifter>(new IntPtr(p + 0x078), ReversePrism.DataModels.UIShifter.FromPointer); // 0x78 Shifter                     ( ModelClassType UIShifter UIShifter UIShifter Pointer )
+            value.ShifterCells                              = GetObjectList<HomeBannerListViewCell>(new IntPtr(p + 0x080), ReversePrism.DataModels.HomeBannerListViewCell.FromPointer); // 0x80 ShifterCells                ( ModelClassListType HomeBannerListViewCell[] HomeBannerListViewCell[] List<HomeBannerListViewCell> Pointer )
 
             return value;
         }

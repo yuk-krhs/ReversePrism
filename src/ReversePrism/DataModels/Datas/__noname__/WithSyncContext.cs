@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 030 TargetSyncContext                        000186602480 ModelClassType SynchronizationContext SynchronizationContext SynchronizationContext Pointer
+    // 030 TargetSyncContext                        ModelClassType SynchronizationContext SynchronizationContext SynchronizationContext Pointer
     public partial class WithSyncContext : DataModel
     {
         public SynchronizationContext?                  TargetSyncContext                       { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new WithSyncContext() { Pointer= p0 };
 
-            value.TargetSyncContext                         = GetObject<SynchronizationContext>(new IntPtr(p + 0x030), ReversePrism.DataModels.SynchronizationContext.FromPointer); // 024661AF0738 0x30 TargetSyncContext           ( 000186602480 ModelClassType SynchronizationContext SynchronizationContext SynchronizationContext Pointer )
+            value.TargetSyncContext                         = GetObject<SynchronizationContext>(new IntPtr(p + 0x030), ReversePrism.DataModels.SynchronizationContext.FromPointer); // 0x30 TargetSyncContext           ( ModelClassType SynchronizationContext SynchronizationContext SynchronizationContext Pointer )
 
             return value;
         }

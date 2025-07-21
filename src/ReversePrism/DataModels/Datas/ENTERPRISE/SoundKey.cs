@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 SheetName                                0001866736C0 ModelPrimitiveType string string string String
-    // 018 CueName                                  0001866736C0 ModelPrimitiveType string string string String
+    // 010 SheetName                                ModelPrimitiveType string string string String
+    // 018 CueName                                  ModelPrimitiveType string string string String
     public partial class SoundKey : DataModel
     {
         public string                                   SheetName                               { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SoundKey() { Pointer= p0 };
 
-            value.SheetName                                 = GetString(new IntPtr(p + 0x010)); // 024660CCA4A0 0x10 SheetName                   ( 0001866736C0 ModelPrimitiveType string string string String )
-            value.CueName                                   = GetString(new IntPtr(p + 0x018)); // 024660CCA4C0 0x18 CueName                     ( 0001866736C0 ModelPrimitiveType string string string String )
+            value.SheetName                                 = GetString(new IntPtr(p + 0x010)); // 0x10 SheetName                   ( ModelPrimitiveType string string string String )
+            value.CueName                                   = GetString(new IntPtr(p + 0x018)); // 0x18 CueName                     ( ModelPrimitiveType string string string String )
 
             return value;
         }

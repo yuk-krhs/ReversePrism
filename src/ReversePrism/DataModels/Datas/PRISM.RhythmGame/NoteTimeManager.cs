@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 List                                     000185D278E8 ModelEnumListType List`1<Data> List`1<Data> List<Data> Pointer
+    // 010 List                                     ModelEnumListType List`1<Data> List`1<Data> List<Data> Pointer
     public partial class NoteTimeManager : DataModel
     {
         public List<Data>?                              List                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NoteTimeManager() { Pointer= p0 };
 
-            value.List                                      = GetEnumList<Data>(new IntPtr(p + 0x010)); // 0246650194F8 0x10 List                        ( 000185D278E8 ModelEnumListType List`1<Data> List`1<Data> List<Data> Pointer )
+            value.List                                      = GetEnumList<Data>(new IntPtr(p + 0x010)); // 0x10 List                        ( ModelEnumListType List`1<Data> List`1<Data> List<Data> Pointer )
 
             return value;
         }

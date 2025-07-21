@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 048 Sprite                                   00018666B8E0 ModelClassType Sprite Sprite Sprite Pointer
+    // 048 Sprite                                   ModelClassType Sprite Sprite Sprite Pointer
     public partial class TMP_SpriteGlyph : DataModel
     {
         public Sprite?                                  Sprite                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TMP_SpriteGlyph() { Pointer= p0 };
 
-            value.Sprite                                    = GetObject<Sprite>(new IntPtr(p + 0x048), ReversePrism.DataModels.Sprite.FromPointer); // 024660D96568 0x48 Sprite                      ( 00018666B8E0 ModelClassType Sprite Sprite Sprite Pointer )
+            value.Sprite                                    = GetObject<Sprite>(new IntPtr(p + 0x048), ReversePrism.DataModels.Sprite.FromPointer); // 0x48 Sprite                      ( ModelClassType Sprite Sprite Sprite Pointer )
 
             return value;
         }

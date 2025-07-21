@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Sheet                                    0001865CDAA0 ModelClassType StyleSheet StyleSheet StyleSheet Pointer
-    // 018 Handle                                   0001865D05F0 ModelEnumType StyleValueHandle StyleValueHandle StyleValueHandle Int32
+    // 010 Sheet                                    ModelClassType StyleSheet StyleSheet StyleSheet Pointer
+    // 018 Handle                                   ModelEnumType StyleValueHandle StyleValueHandle StyleValueHandle Int32
     public partial class StylePropertyValue : DataModel
     {
         public StyleSheet?                              Sheet                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StylePropertyValue() { Pointer= p0 };
 
-            value.Sheet                                     = GetObject<StyleSheet>(new IntPtr(p + 0x010), ReversePrism.DataModels.StyleSheet.FromPointer); // 0245A6846768 0x10 Sheet                       ( 0001865CDAA0 ModelClassType StyleSheet StyleSheet StyleSheet Pointer )
-            value.Handle                                    = (StyleValueHandle)GetInt32(new IntPtr(p + 0x018)); // 0245A6846788 0x18 Handle                      ( 0001865D05F0 ModelEnumType StyleValueHandle StyleValueHandle StyleValueHandle Int32 )
+            value.Sheet                                     = GetObject<StyleSheet>(new IntPtr(p + 0x010), ReversePrism.DataModels.StyleSheet.FromPointer); // 0x10 Sheet                       ( ModelClassType StyleSheet StyleSheet StyleSheet Pointer )
+            value.Handle                                    = (StyleValueHandle)GetInt32(new IntPtr(p + 0x018)); // 0x18 Handle                      ( ModelEnumType StyleValueHandle StyleValueHandle StyleValueHandle Int32 )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Store                                    0001866722E0 ModelPrimitiveType string string string String
-    // 018 Id                                       0001866722E0 ModelPrimitiveType string string string String
+    // 010 Store                                    ModelPrimitiveType string string string String
+    // 018 Id                                       ModelPrimitiveType string string string String
     public partial class StoreID : DataModel
     {
         public string                                   Store                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StoreID() { Pointer= p0 };
 
-            value.Store                                     = GetString(new IntPtr(p + 0x010)); // 0245A68DC708 0x10 Store                       ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Id                                        = GetString(new IntPtr(p + 0x018)); // 0245A68DC728 0x18 Id                          ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Store                                     = GetString(new IntPtr(p + 0x010)); // 0x10 Store                       ( ModelPrimitiveType string string string String )
+            value.Id                                        = GetString(new IntPtr(p + 0x018)); // 0x18 Id                          ( ModelPrimitiveType string string string String )
 
             return value;
         }

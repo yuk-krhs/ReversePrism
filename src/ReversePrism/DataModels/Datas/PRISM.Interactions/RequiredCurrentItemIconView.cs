@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 ImgItem                                  000186613190 ModelClassType RawImage RawImage RawImage Pointer
-    // 028 Btn                                      0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 030 TxtRequiredAmount                        0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 038 TxtCurrentAmount                         0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 040 OutlineForTextMeshProUGUI                0001865D3210 ModelClassType ColorToOutlineForTextMeshProUGUI ColorToOutlineForTextMeshProUGUI ColorToOutlineForTextMeshProUGUI Pointer
+    // 020 ImgItem                                  ModelClassType RawImage RawImage RawImage Pointer
+    // 028 Btn                                      ModelClassType UIButton UIButton UIButton Pointer
+    // 030 TxtRequiredAmount                        ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 038 TxtCurrentAmount                         ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 040 OutlineForTextMeshProUGUI                ModelClassType ColorToOutlineForTextMeshProUGUI ColorToOutlineForTextMeshProUGUI ColorToOutlineForTextMeshProUGUI Pointer
     public partial class RequiredCurrentItemIconView : DataModel
     {
         public RawImage?                                ImgItem                                 { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RequiredCurrentItemIconView() { Pointer= p0 };
 
-            value.ImgItem                                   = GetObject<RawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.RawImage.FromPointer); // 02466A2B54E0 0x20 ImgItem                     ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.Btn                                       = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 02466A2B5500 0x28 Btn                         ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.TxtRequiredAmount                         = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A2B5520 0x30 TxtRequiredAmount           ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TxtCurrentAmount                          = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A2B5540 0x38 TxtCurrentAmount            ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.OutlineForTextMeshProUGUI                 = GetObject<ColorToOutlineForTextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.ColorToOutlineForTextMeshProUGUI.FromPointer); // 02466A2B5560 0x40 OutlineForTextMeshProUGUI   ( 0001865D3210 ModelClassType ColorToOutlineForTextMeshProUGUI ColorToOutlineForTextMeshProUGUI ColorToOutlineForTextMeshProUGUI Pointer )
+            value.ImgItem                                   = GetObject<RawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.RawImage.FromPointer); // 0x20 ImgItem                     ( ModelClassType RawImage RawImage RawImage Pointer )
+            value.Btn                                       = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 0x28 Btn                         ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.TxtRequiredAmount                         = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x30 TxtRequiredAmount           ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtCurrentAmount                          = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x38 TxtCurrentAmount            ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.OutlineForTextMeshProUGUI                 = GetObject<ColorToOutlineForTextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.ColorToOutlineForTextMeshProUGUI.FromPointer); // 0x40 OutlineForTextMeshProUGUI   ( ModelClassType ColorToOutlineForTextMeshProUGUI ColorToOutlineForTextMeshProUGUI ColorToOutlineForTextMeshProUGUI Pointer )
 
             return value;
         }

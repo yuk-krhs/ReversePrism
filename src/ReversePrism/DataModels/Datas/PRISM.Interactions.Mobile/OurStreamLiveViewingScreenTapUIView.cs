@@ -8,25 +8,25 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 UiCanvasGroup                            000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
-    // 028 ScreenTapButton                          0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 030 CameraSwitchingButton                    0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 038 CameraSwitchingButtonText                0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 040 CameraLiveViewLogo                       0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 048 ArchiveArea                              0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 050 TitleText                                0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 058 SeekBarSlider                            00018651CF50 ModelClassType Slider Slider Slider Pointer
-    // 060 CurrentTimeText                          0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 068 LeftTimeText                             0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 070 StopButton                               0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 078 ResumeButton                             0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 080 RewindButton                             0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 088 FastForwardButton                        0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 090 DisplayTime                              0001866656B0 ModelPrimitiveType float float float Single
-    // 094 CloseTime                                0001866656B0 ModelPrimitiveType float float float Single
-    // 098 Cts                                      0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
-    // 0A0 IsShowing                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 0A1 IsMoveSlider                             000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 020 UiCanvasGroup                            ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
+    // 028 ScreenTapButton                          ModelClassType UIButton UIButton UIButton Pointer
+    // 030 CameraSwitchingButton                    ModelClassType UIButton UIButton UIButton Pointer
+    // 038 CameraSwitchingButtonText                ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 040 CameraLiveViewLogo                       ModelClassType UIImage UIImage UIImage Pointer
+    // 048 ArchiveArea                              ModelClassType GameObject GameObject GameObject Pointer
+    // 050 TitleText                                ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 058 SeekBarSlider                            ModelClassType Slider Slider Slider Pointer
+    // 060 TimeText                                 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 068 StopButton                               ModelClassType UIButton UIButton UIButton Pointer
+    // 070 ResumeButton                             ModelClassType UIButton UIButton UIButton Pointer
+    // 078 RewindButton                             ModelClassType UIButton UIButton UIButton Pointer
+    // 080 FastForwardButton                        ModelClassType UIButton UIButton UIButton Pointer
+    // 088 DisplayTime                              ModelPrimitiveType float float float Single
+    // 08C CloseTime                                ModelPrimitiveType float float float Single
+    // 090 Cts                                      ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
+    // 098 IsShowing                                ModelPrimitiveType bool bool bool Bool
+    // 099 IsMoveSlider                             ModelPrimitiveType bool bool bool Bool
+    // 0A0 onPointerUpDownSeekBarSliderSubject      Subject`1<bool> IL2CPP_TYPE_GENERICINST
     public partial class OurStreamLiveViewingScreenTapUIView : DataModel
     {
         public CanvasGroup?                             UiCanvasGroup                           { get; set; }
@@ -37,8 +37,7 @@ namespace ReversePrism.DataModels
         public GameObject?                              ArchiveArea                             { get; set; }
         public UITextMeshProUGUI?                       TitleText                               { get; set; }
         public Slider?                                  SeekBarSlider                           { get; set; }
-        public UITextMeshProUGUI?                       CurrentTimeText                         { get; set; }
-        public UITextMeshProUGUI?                       LeftTimeText                            { get; set; }
+        public UITextMeshProUGUI?                       TimeText                                { get; set; }
         public UIButton?                                StopButton                              { get; set; }
         public UIButton?                                ResumeButton                            { get; set; }
         public UIButton?                                RewindButton                            { get; set; }
@@ -57,25 +56,24 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new OurStreamLiveViewingScreenTapUIView() { Pointer= p0 };
 
-            value.UiCanvasGroup                             = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466B19E498 0x20 UiCanvasGroup               ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.ScreenTapButton                           = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 02466B19E4B8 0x28 ScreenTapButton             ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.CameraSwitchingButton                     = GetObject<UIButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIButton.FromPointer); // 02466B19E4D8 0x30 CameraSwitchingButton       ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.CameraSwitchingButtonText                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B19E4F8 0x38 CameraSwitchingButtonText   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.CameraLiveViewLogo                        = GetObject<UIImage>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIImage.FromPointer); // 02466B19E518 0x40 CameraLiveViewLogo          ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.ArchiveArea                               = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 02466B19E538 0x48 ArchiveArea                 ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.TitleText                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B19E558 0x50 TitleText                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.SeekBarSlider                             = GetObject<Slider>(new IntPtr(p + 0x058), ReversePrism.DataModels.Slider.FromPointer); // 02466B19E578 0x58 SeekBarSlider               ( 00018651CF50 ModelClassType Slider Slider Slider Pointer )
-            value.CurrentTimeText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x060), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B19E598 0x60 CurrentTimeText             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.LeftTimeText                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x068), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B19E5B8 0x68 LeftTimeText                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.StopButton                                = GetObject<UIButton>(new IntPtr(p + 0x070), ReversePrism.DataModels.UIButton.FromPointer); // 02466B19E5D8 0x70 StopButton                  ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.ResumeButton                              = GetObject<UIButton>(new IntPtr(p + 0x078), ReversePrism.DataModels.UIButton.FromPointer); // 02466B19E5F8 0x78 ResumeButton                ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.RewindButton                              = GetObject<UIButton>(new IntPtr(p + 0x080), ReversePrism.DataModels.UIButton.FromPointer); // 02466B19E618 0x80 RewindButton                ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.FastForwardButton                         = GetObject<UIButton>(new IntPtr(p + 0x088), ReversePrism.DataModels.UIButton.FromPointer); // 02466B19E638 0x88 FastForwardButton           ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.DisplayTime                               = GetSingle(new IntPtr(p + 0x090)); // 02466B19E658 0x90 DisplayTime                 ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.CloseTime                                 = GetSingle(new IntPtr(p + 0x094)); // 02466B19E678 0x94 CloseTime                   ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x098), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 02466B19E698 0x98 Cts                         ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
-            value.IsShowing                                 = GetBool(new IntPtr(p + 0x0A0)); // 02466B19E6B8 0xA0 IsShowing                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsMoveSlider                              = GetBool(new IntPtr(p + 0x0A1)); // 02466B19E6D8 0xA1 IsMoveSlider                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.UiCanvasGroup                             = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0x20 UiCanvasGroup               ( ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.ScreenTapButton                           = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 0x28 ScreenTapButton             ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.CameraSwitchingButton                     = GetObject<UIButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIButton.FromPointer); // 0x30 CameraSwitchingButton       ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.CameraSwitchingButtonText                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x38 CameraSwitchingButtonText   ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.CameraLiveViewLogo                        = GetObject<UIImage>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIImage.FromPointer); // 0x40 CameraLiveViewLogo          ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.ArchiveArea                               = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 0x48 ArchiveArea                 ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.TitleText                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x50 TitleText                   ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.SeekBarSlider                             = GetObject<Slider>(new IntPtr(p + 0x058), ReversePrism.DataModels.Slider.FromPointer); // 0x58 SeekBarSlider               ( ModelClassType Slider Slider Slider Pointer )
+            value.TimeText                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x060), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x60 TimeText                    ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.StopButton                                = GetObject<UIButton>(new IntPtr(p + 0x068), ReversePrism.DataModels.UIButton.FromPointer); // 0x68 StopButton                  ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.ResumeButton                              = GetObject<UIButton>(new IntPtr(p + 0x070), ReversePrism.DataModels.UIButton.FromPointer); // 0x70 ResumeButton                ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.RewindButton                              = GetObject<UIButton>(new IntPtr(p + 0x078), ReversePrism.DataModels.UIButton.FromPointer); // 0x78 RewindButton                ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.FastForwardButton                         = GetObject<UIButton>(new IntPtr(p + 0x080), ReversePrism.DataModels.UIButton.FromPointer); // 0x80 FastForwardButton           ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.DisplayTime                               = GetSingle(new IntPtr(p + 0x088)); // 0x88 DisplayTime                 ( ModelPrimitiveType float float float Single )
+            value.CloseTime                                 = GetSingle(new IntPtr(p + 0x08C)); // 0x8C CloseTime                   ( ModelPrimitiveType float float float Single )
+            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x090), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0x90 Cts                         ( ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.IsShowing                                 = GetBool(new IntPtr(p + 0x098)); // 0x98 IsShowing                   ( ModelPrimitiveType bool bool bool Bool )
+            value.IsMoveSlider                              = GetBool(new IntPtr(p + 0x099)); // 0x99 IsMoveSlider                ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 UseH264Playback                          000186595960 ModelPrimitiveType bool bool bool Bool
-    // 014 MaxWidth                                 0001865F36C0 ModelPrimitiveType int int int Int32
-    // 018 MaxHeight                                0001865F36C0 ModelPrimitiveType int int int Int32
-    // 01C GetMemoryFromTexture                     000186595960 ModelPrimitiveType bool bool bool Bool
+    // 010 UseH264Playback                          ModelPrimitiveType bool bool bool Bool
+    // 014 MaxWidth                                 ModelPrimitiveType int int int Int32
+    // 018 MaxHeight                                ModelPrimitiveType int int int Int32
+    // 01C GetMemoryFromTexture                     ModelPrimitiveType bool bool bool Bool
     public partial class VitaH264PlaybackConfig : DataModel
     {
         public bool                                     UseH264Playback                         { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new VitaH264PlaybackConfig() { Pointer= p0 };
 
-            value.UseH264Playback                           = GetBool(new IntPtr(p + 0x010)); // 024660F65490 0x10 UseH264Playback             ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.MaxWidth                                  = GetInt32(new IntPtr(p + 0x014)); // 024660F654B0 0x14 MaxWidth                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.MaxHeight                                 = GetInt32(new IntPtr(p + 0x018)); // 024660F654D0 0x18 MaxHeight                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.GetMemoryFromTexture                      = GetBool(new IntPtr(p + 0x01C)); // 024660F654F0 0x1C GetMemoryFromTexture        ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.UseH264Playback                           = GetBool(new IntPtr(p + 0x010)); // 0x10 UseH264Playback             ( ModelPrimitiveType bool bool bool Bool )
+            value.MaxWidth                                  = GetInt32(new IntPtr(p + 0x014)); // 0x14 MaxWidth                    ( ModelPrimitiveType int int int Int32 )
+            value.MaxHeight                                 = GetInt32(new IntPtr(p + 0x018)); // 0x18 MaxHeight                   ( ModelPrimitiveType int int int Int32 )
+            value.GetMemoryFromTexture                      = GetBool(new IntPtr(p + 0x01C)); // 0x1C GetMemoryFromTexture        ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

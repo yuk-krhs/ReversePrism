@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Type                                     0001866936B0 ModelClassType Type Type Type Pointer
-    // 018 M_FullTypeName                           000186671910 ModelPrimitiveType string string string String
-    // 020 M_TypeName                               000186671910 ModelPrimitiveType string string string String
-    // 028 M_TypeNamespace                          000186671910 ModelPrimitiveType string string string String
+    // 010 Type                                     ModelClassType Type Type Type Pointer
+    // 018 M_FullTypeName                           ModelPrimitiveType string string string String
+    // 020 M_TypeName                               ModelPrimitiveType string string string String
+    // 028 M_TypeNamespace                          ModelPrimitiveType string string string String
     public partial class TypeData : DataModel
     {
         public Type?                                    Type                                    { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TypeData() { Pointer= p0 };
 
-            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0245A67B6DE8 0x10 Type                        ( 0001866936B0 ModelClassType Type Type Type Pointer )
-            value.M_FullTypeName                            = GetString(new IntPtr(p + 0x018)); // 0245A67B6E08 0x18 M_FullTypeName              ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_TypeName                                = GetString(new IntPtr(p + 0x020)); // 0245A67B6E28 0x20 M_TypeName                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_TypeNamespace                           = GetString(new IntPtr(p + 0x028)); // 0245A67B6E48 0x28 M_TypeNamespace             ( 000186671910 ModelPrimitiveType string string string String )
+            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0x10 Type                        ( ModelClassType Type Type Type Pointer )
+            value.M_FullTypeName                            = GetString(new IntPtr(p + 0x018)); // 0x18 M_FullTypeName              ( ModelPrimitiveType string string string String )
+            value.M_TypeName                                = GetString(new IntPtr(p + 0x020)); // 0x20 M_TypeName                  ( ModelPrimitiveType string string string String )
+            value.M_TypeNamespace                           = GetString(new IntPtr(p + 0x028)); // 0x28 M_TypeNamespace             ( ModelPrimitiveType string string string String )
 
             return value;
         }

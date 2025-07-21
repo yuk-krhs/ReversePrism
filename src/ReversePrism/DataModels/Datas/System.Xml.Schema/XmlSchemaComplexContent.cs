@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 050 Content                                  0001865B1D00 ModelClassType XmlSchemaContent XmlSchemaContent XmlSchemaContent Pointer
-    // 058 IsMixed                                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 059 HasMixedAttribute                        000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 050 Content                                  ModelClassType XmlSchemaContent XmlSchemaContent XmlSchemaContent Pointer
+    // 058 IsMixed                                  ModelPrimitiveType bool bool bool Bool
+    // 059 HasMixedAttribute                        ModelPrimitiveType bool bool bool Bool
     public partial class XmlSchemaComplexContent : DataModel
     {
         public XmlSchemaContent?                        Content                                 { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlSchemaComplexContent() { Pointer= p0 };
 
-            value.Content                                   = GetObject<XmlSchemaContent>(new IntPtr(p + 0x050), ReversePrism.DataModels.XmlSchemaContent.FromPointer); // 0246675B2638 0x50 Content                     ( 0001865B1D00 ModelClassType XmlSchemaContent XmlSchemaContent XmlSchemaContent Pointer )
-            value.IsMixed                                   = GetBool(new IntPtr(p + 0x058)); // 0246675B2658 0x58 IsMixed                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.HasMixedAttribute                         = GetBool(new IntPtr(p + 0x059)); // 0246675B2678 0x59 HasMixedAttribute           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Content                                   = GetObject<XmlSchemaContent>(new IntPtr(p + 0x050), ReversePrism.DataModels.XmlSchemaContent.FromPointer); // 0x50 Content                     ( ModelClassType XmlSchemaContent XmlSchemaContent XmlSchemaContent Pointer )
+            value.IsMixed                                   = GetBool(new IntPtr(p + 0x058)); // 0x58 IsMixed                     ( ModelPrimitiveType bool bool bool Bool )
+            value.HasMixedAttribute                         = GetBool(new IntPtr(p + 0x059)); // 0x59 HasMixedAttribute           ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

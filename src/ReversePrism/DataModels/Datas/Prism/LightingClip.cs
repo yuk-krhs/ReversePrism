@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 Behaviour                                000186528E10 ModelClassType LightingBehaviour LightingBehaviour LightingBehaviour Pointer
+    // 018 Behaviour                                ModelClassType LightingBehaviour LightingBehaviour LightingBehaviour Pointer
     public partial class LightingClip : DataModel
     {
         public LightingBehaviour?                       Behaviour                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LightingClip() { Pointer= p0 };
 
-            value.Behaviour                                 = GetObject<LightingBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.LightingBehaviour.FromPointer); // 024664E73490 0x18 Behaviour                   ( 000186528E10 ModelClassType LightingBehaviour LightingBehaviour LightingBehaviour Pointer )
+            value.Behaviour                                 = GetObject<LightingBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.LightingBehaviour.FromPointer); // 0x18 Behaviour                   ( ModelClassType LightingBehaviour LightingBehaviour LightingBehaviour Pointer )
 
             return value;
         }

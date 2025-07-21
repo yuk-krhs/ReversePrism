@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 initialCursor                            string IL2CPP_TYPE_STRING
-    // 010 IsCursorUpdated                          000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 018 Value                                    000186671910 ModelPrimitiveType string string string String
+    // 010 IsCursorUpdated                          ModelPrimitiveType bool bool bool Bool
+    // 018 Value                                    ModelPrimitiveType string string string String
     public partial class TwestaArticleCursor : DataModel
     {
         public bool                                     IsCursorUpdated                         { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TwestaArticleCursor() { Pointer= p0 };
 
-            value.IsCursorUpdated                           = GetBool(new IntPtr(p + 0x010)); // 02466AEA10A8 0x10 IsCursorUpdated             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Value                                     = GetString(new IntPtr(p + 0x018)); // 02466AEA10C8 0x18 Value                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.IsCursorUpdated                           = GetBool(new IntPtr(p + 0x010)); // 0x10 IsCursorUpdated             ( ModelPrimitiveType bool bool bool Bool )
+            value.Value                                     = GetString(new IntPtr(p + 0x018)); // 0x18 Value                       ( ModelPrimitiveType string string string String )
 
             return value;
         }

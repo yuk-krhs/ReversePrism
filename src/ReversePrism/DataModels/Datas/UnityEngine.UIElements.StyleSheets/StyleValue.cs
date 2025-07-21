@@ -8,14 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Id                                       0001865C9B00 ModelEnumType StylePropertyId StylePropertyId StylePropertyId Int32
-    // 014 Keyword                                  0001865C82A0 ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32
-    // 018 Number                                   000186666050 ModelPrimitiveType float float float Single
-    // 018 Length                                   0001866063F0 ModelEnumType Length Length Length Int32
-    // 018 Color                                    0001865AB0A0 ModelEnumType Color Color Color Int32
-    // 018 Resource                                 0001865D93A0 ModelEnumType GCHandle GCHandle GCHandle Int32
-    // 018 Position                                 00018658F640 ModelEnumType BackgroundPosition BackgroundPosition BackgroundPosition Int32
-    // 018 Repeat                                   000186590710 ModelEnumType BackgroundRepeat BackgroundRepeat BackgroundRepeat Int32
+    // 010 Id                                       ModelEnumType StylePropertyId StylePropertyId StylePropertyId Int32
+    // 014 Keyword                                  ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32
+    // 018 Number                                   ModelPrimitiveType float float float Single
+    // 018 Length                                   ModelEnumType Length Length Length Int32
+    // 018 Color                                    ModelEnumType Color Color Color Int32
+    // 018 Resource                                 ModelEnumType GCHandle GCHandle GCHandle Int32
+    // 018 Position                                 ModelEnumType BackgroundPosition BackgroundPosition BackgroundPosition Int32
+    // 018 Repeat                                   ModelEnumType BackgroundRepeat BackgroundRepeat BackgroundRepeat Int32
     public partial class StyleValue : DataModel
     {
         public StylePropertyId                          Id                                      { get; set; }
@@ -35,14 +35,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StyleValue() { Pointer= p0 };
 
-            value.Id                                        = (StylePropertyId)GetInt32(new IntPtr(p + 0x010)); // 0245A6848CE0 0x10 Id                          ( 0001865C9B00 ModelEnumType StylePropertyId StylePropertyId StylePropertyId Int32 )
-            value.Keyword                                   = (StyleKeyword)GetInt32(new IntPtr(p + 0x014)); // 0245A6848D00 0x14 Keyword                     ( 0001865C82A0 ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32 )
-            value.Number                                    = GetSingle(new IntPtr(p + 0x018)); // 0245A6848D20 0x18 Number                      ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Length                                    = (Length)GetInt32(new IntPtr(p + 0x018)); // 0245A6848D40 0x18 Length                      ( 0001866063F0 ModelEnumType Length Length Length Int32 )
-            value.Color                                     = (Color)GetInt32(new IntPtr(p + 0x018)); // 0245A6848D60 0x18 Color                       ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.Resource                                  = (GCHandle)GetInt32(new IntPtr(p + 0x018)); // 0245A6848D80 0x18 Resource                    ( 0001865D93A0 ModelEnumType GCHandle GCHandle GCHandle Int32 )
-            value.Position                                  = (BackgroundPosition)GetInt32(new IntPtr(p + 0x018)); // 0245A6848DA0 0x18 Position                    ( 00018658F640 ModelEnumType BackgroundPosition BackgroundPosition BackgroundPosition Int32 )
-            value.Repeat                                    = (BackgroundRepeat)GetInt32(new IntPtr(p + 0x018)); // 0245A6848DC0 0x18 Repeat                      ( 000186590710 ModelEnumType BackgroundRepeat BackgroundRepeat BackgroundRepeat Int32 )
+            value.Id                                        = (StylePropertyId)GetInt32(new IntPtr(p + 0x010)); // 0x10 Id                          ( ModelEnumType StylePropertyId StylePropertyId StylePropertyId Int32 )
+            value.Keyword                                   = (StyleKeyword)GetInt32(new IntPtr(p + 0x014)); // 0x14 Keyword                     ( ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32 )
+            value.Number                                    = GetSingle(new IntPtr(p + 0x018)); // 0x18 Number                      ( ModelPrimitiveType float float float Single )
+            value.Length                                    = (Length)GetInt32(new IntPtr(p + 0x018)); // 0x18 Length                      ( ModelEnumType Length Length Length Int32 )
+            value.Color                                     = (Color)GetInt32(new IntPtr(p + 0x018)); // 0x18 Color                       ( ModelEnumType Color Color Color Int32 )
+            value.Resource                                  = (GCHandle)GetInt32(new IntPtr(p + 0x018)); // 0x18 Resource                    ( ModelEnumType GCHandle GCHandle GCHandle Int32 )
+            value.Position                                  = (BackgroundPosition)GetInt32(new IntPtr(p + 0x018)); // 0x18 Position                    ( ModelEnumType BackgroundPosition BackgroundPosition BackgroundPosition Int32 )
+            value.Repeat                                    = (BackgroundRepeat)GetInt32(new IntPtr(p + 0x018)); // 0x18 Repeat                      ( ModelEnumType BackgroundRepeat BackgroundRepeat BackgroundRepeat Int32 )
 
             return value;
         }

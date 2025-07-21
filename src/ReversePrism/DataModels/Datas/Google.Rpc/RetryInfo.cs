@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<RetryInfo> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 RetryDelayFieldNumber                    int IL2CPP_TYPE_I4
-    // 018 RetryDelay                               00018670DB80 ModelClassType Duration Duration Duration Pointer
+    // 018 RetryDelay                               ModelClassType Duration Duration Duration Pointer
     public partial class RetryInfo : DataModel
     {
         public Duration?                                RetryDelay                              { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RetryInfo() { Pointer= p0 };
 
-            value.RetryDelay                                = GetObject<Duration>(new IntPtr(p + 0x018), ReversePrism.DataModels.Duration.FromPointer); // 02466A716D70 0x18 RetryDelay                  ( 00018670DB80 ModelClassType Duration Duration Duration Pointer )
+            value.RetryDelay                                = GetObject<Duration>(new IntPtr(p + 0x018), ReversePrism.DataModels.Duration.FromPointer); // 0x18 RetryDelay                  ( ModelClassType Duration Duration Duration Pointer )
 
             return value;
         }

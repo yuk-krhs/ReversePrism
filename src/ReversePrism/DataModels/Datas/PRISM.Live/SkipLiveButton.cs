@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Button                                   000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer
-    // 028 StatusObjects                            000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
-    // 030 EnabledGrayOutController                 0001866EA450 ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer
-    // 038 EnabledRemainingCountText                0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 040 DisabledRemainingCountText               0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 048 CurrentStatus                            00018653B930 ModelEnumType Status Status Status Int32
+    // 020 Button                                   ModelClassType ButtonBase ButtonBase ButtonBase Pointer
+    // 028 StatusObjects                            ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
+    // 030 EnabledGrayOutController                 ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer
+    // 038 EnabledRemainingCountText                ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 040 DisabledRemainingCountText               ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 048 CurrentStatus                            ModelEnumType Status Status Status Int32
     public partial class SkipLiveButton : DataModel
     {
         public ButtonBase?                              Button                                  { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SkipLiveButton() { Pointer= p0 };
 
-            value.Button                                    = GetObject<ButtonBase>(new IntPtr(p + 0x020), ReversePrism.DataModels.ButtonBase.FromPointer); // 024665321378 0x20 Button                      ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.StatusObjects                             = GetObjectList<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 024665321398 0x28 StatusObjects               ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
-            value.EnabledGrayOutController                  = GetObject<UIGrayOutController>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIGrayOutController.FromPointer); // 0246653213B8 0x30 EnabledGrayOutController    ( 0001866EA450 ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer )
-            value.EnabledRemainingCountText                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246653213D8 0x38 EnabledRemainingCountText   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.DisabledRemainingCountText                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246653213F8 0x40 DisabledRemainingCountText  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.CurrentStatus                             = (Status)GetInt32(new IntPtr(p + 0x048)); // 024665321418 0x48 CurrentStatus               ( 00018653B930 ModelEnumType Status Status Status Int32 )
+            value.Button                                    = GetObject<ButtonBase>(new IntPtr(p + 0x020), ReversePrism.DataModels.ButtonBase.FromPointer); // 0x20 Button                      ( ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.StatusObjects                             = GetObjectList<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0x28 StatusObjects               ( ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.EnabledGrayOutController                  = GetObject<UIGrayOutController>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIGrayOutController.FromPointer); // 0x30 EnabledGrayOutController    ( ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer )
+            value.EnabledRemainingCountText                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x38 EnabledRemainingCountText   ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.DisabledRemainingCountText                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x40 DisabledRemainingCountText  ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.CurrentStatus                             = (Status)GetInt32(new IntPtr(p + 0x048)); // 0x48 CurrentStatus               ( ModelEnumType Status Status Status Int32 )
 
             return value;
         }

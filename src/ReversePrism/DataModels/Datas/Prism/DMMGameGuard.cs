@@ -64,10 +64,10 @@ namespace ReversePrism.DataModels
     // 000 NPGAMEMON_SUCCESS                        int IL2CPP_TYPE_I4
     // 000 _bAppExit                                bool IL2CPP_TYPE_BOOLEAN
     // 008 _strMsg                                  string IL2CPP_TYPE_STRING
-    // 010 ErrCode                                  0001865F38E0 ModelPrimitiveType int int int Int32
-    // 014 IsInit                                   000186595C30 ModelPrimitiveType bool bool bool Bool
-    // 015 IsCheck                                  000186595C30 ModelPrimitiveType bool bool bool Bool
-    // 018 CheckDisposable                          0001867537E0 ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 010 ErrCode                                  ModelPrimitiveType int int int Int32
+    // 014 IsInit                                   ModelPrimitiveType bool bool bool Bool
+    // 015 IsCheck                                  ModelPrimitiveType bool bool bool Bool
+    // 018 CheckDisposable                          ModelClassType IDisposable IDisposable IDisposable Pointer
     public partial class DMMGameGuard : DataModel
     {
         public int                                      ErrCode                                 { get; set; }
@@ -83,10 +83,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DMMGameGuard() { Pointer= p0 };
 
-            value.ErrCode                                   = GetInt32(new IntPtr(p + 0x010)); // 0245A3C06740 0x10 ErrCode                     ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
-            value.IsInit                                    = GetBool(new IntPtr(p + 0x014)); // 0245A3C06760 0x14 IsInit                      ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
-            value.IsCheck                                   = GetBool(new IntPtr(p + 0x015)); // 0245A3C06780 0x15 IsCheck                     ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
-            value.CheckDisposable                           = GetObject<IDisposable>(new IntPtr(p + 0x018), ReversePrism.DataModels.IDisposable.FromPointer); // 0245A3C067A0 0x18 CheckDisposable             ( 0001867537E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.ErrCode                                   = GetInt32(new IntPtr(p + 0x010)); // 0x10 ErrCode                     ( ModelPrimitiveType int int int Int32 )
+            value.IsInit                                    = GetBool(new IntPtr(p + 0x014)); // 0x14 IsInit                      ( ModelPrimitiveType bool bool bool Bool )
+            value.IsCheck                                   = GetBool(new IntPtr(p + 0x015)); // 0x15 IsCheck                     ( ModelPrimitiveType bool bool bool Bool )
+            value.CheckDisposable                           = GetObject<IDisposable>(new IntPtr(p + 0x018), ReversePrism.DataModels.IDisposable.FromPointer); // 0x18 CheckDisposable             ( ModelClassType IDisposable IDisposable IDisposable Pointer )
 
             return value;
         }

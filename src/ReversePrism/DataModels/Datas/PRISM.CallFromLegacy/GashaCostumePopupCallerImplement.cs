@@ -8,11 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 factory                                  PopupViewFactory`1<IGashaCostumePopupView> IL2CPP_TYPE_GENERICINST
-    // 028 Sequencer                                0001865F5E90 ModelClassType GashaCostumePopupSequencer GashaCostumePopupSequencer GashaCostumePopupSequencer Pointer
     public partial class GashaCostumePopupCallerImplement : DataModel
     {
-        public GashaCostumePopupSequencer?              Sequencer                               { get; set; }
 
         public static GashaCostumePopupCallerImplement? FromPointer(IntPtr p0)
         {
@@ -22,7 +19,6 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GashaCostumePopupCallerImplement() { Pointer= p0 };
 
-            value.Sequencer                                 = GetObject<GashaCostumePopupSequencer>(new IntPtr(p + 0x028), ReversePrism.DataModels.GashaCostumePopupSequencer.FromPointer); // 02466BA54420 0x28 Sequencer                   ( 0001865F5E90 ModelClassType GashaCostumePopupSequencer GashaCostumePopupSequencer GashaCostumePopupSequencer Pointer )
 
             return value;
         }

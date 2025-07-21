@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 050 StatusLabelBlinkValue                    0001865A8B80 ModelClassType FloatReactiveProperty FloatReactiveProperty FloatReactiveProperty Pointer
-    // 058 TapNotAvailable                          000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 058 StatusLabelBlinkValue                    ModelClassType FloatReactiveProperty FloatReactiveProperty FloatReactiveProperty Pointer
+    // 060 TapNotAvailable                          ModelPrimitiveType bool bool bool Bool
     public partial class UnitSelectClickObservableInt : DataModel
     {
         public FloatReactiveProperty?                   StatusLabelBlinkValue                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnitSelectClickObservableInt() { Pointer= p0 };
 
-            value.StatusLabelBlinkValue                     = GetObject<FloatReactiveProperty>(new IntPtr(p + 0x050), ReversePrism.DataModels.FloatReactiveProperty.FromPointer); // 02466A2AD6D8 0x50 StatusLabelBlinkValue       ( 0001865A8B80 ModelClassType FloatReactiveProperty FloatReactiveProperty FloatReactiveProperty Pointer )
-            value.TapNotAvailable                           = GetBool(new IntPtr(p + 0x058)); // 02466A2AD6F8 0x58 TapNotAvailable             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.StatusLabelBlinkValue                     = GetObject<FloatReactiveProperty>(new IntPtr(p + 0x058), ReversePrism.DataModels.FloatReactiveProperty.FromPointer); // 0x58 StatusLabelBlinkValue       ( ModelClassType FloatReactiveProperty FloatReactiveProperty FloatReactiveProperty Pointer )
+            value.TapNotAvailable                           = GetBool(new IntPtr(p + 0x060)); // 0x60 TapNotAvailable             ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

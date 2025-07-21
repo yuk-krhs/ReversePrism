@@ -9,13 +9,13 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Zero                                     Complex IL2CPP_TYPE_VALUETYPE
-    // 010 One                                      0001865F1F80 ModelEnumType Complex Complex Complex Int32
-    // 020 ImaginaryOne                             0001865F1F80 ModelEnumType Complex Complex Complex Int32
-    // 030 S_sqrtRescaleThreshold                   0001865C3A90 ModelPrimitiveType double double double Double
-    // 038 S_asinOverflowThreshold                  0001865C3A90 ModelPrimitiveType double double double Double
-    // 040 S_log2                                   0001865C3A90 ModelPrimitiveType double double double Double
-    // 010 M_real                                   0001865C2950 ModelPrimitiveType double double double Double
-    // 018 M_imaginary                              0001865C2950 ModelPrimitiveType double double double Double
+    // 010 One                                      ModelEnumType Complex Complex Complex Int32
+    // 020 ImaginaryOne                             ModelEnumType Complex Complex Complex Int32
+    // 030 S_sqrtRescaleThreshold                   ModelPrimitiveType double double double Double
+    // 038 S_asinOverflowThreshold                  ModelPrimitiveType double double double Double
+    // 040 S_log2                                   ModelPrimitiveType double double double Double
+    // 010 M_real                                   ModelPrimitiveType double double double Double
+    // 018 M_imaginary                              ModelPrimitiveType double double double Double
     public partial class Complex : DataModel
     {
         public Complex                                  One                                     { get; set; }
@@ -34,13 +34,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Complex() { Pointer= p0 };
 
-            value.One                                       = (Complex)GetInt32(new IntPtr(p + 0x010)); // 0245A44FC658 0x10 One                         ( 0001865F1F80 ModelEnumType Complex Complex Complex Int32 )
-            value.ImaginaryOne                              = (Complex)GetInt32(new IntPtr(p + 0x020)); // 0245A44FC678 0x20 ImaginaryOne                ( 0001865F1F80 ModelEnumType Complex Complex Complex Int32 )
-            value.S_sqrtRescaleThreshold                    = GetDouble(new IntPtr(p + 0x030)); // 0245A44FC698 0x30 S_sqrtRescaleThreshold      ( 0001865C3A90 ModelPrimitiveType double double double Double )
-            value.S_asinOverflowThreshold                   = GetDouble(new IntPtr(p + 0x038)); // 0245A44FC6B8 0x38 S_asinOverflowThreshold     ( 0001865C3A90 ModelPrimitiveType double double double Double )
-            value.S_log2                                    = GetDouble(new IntPtr(p + 0x040)); // 0245A44FC6D8 0x40 S_log2                      ( 0001865C3A90 ModelPrimitiveType double double double Double )
-            value.M_real                                    = GetDouble(new IntPtr(p + 0x010)); // 0245A44FC6F8 0x10 M_real                      ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.M_imaginary                               = GetDouble(new IntPtr(p + 0x018)); // 0245A44FC718 0x18 M_imaginary                 ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.One                                       = (Complex)GetInt32(new IntPtr(p + 0x010)); // 0x10 One                         ( ModelEnumType Complex Complex Complex Int32 )
+            value.ImaginaryOne                              = (Complex)GetInt32(new IntPtr(p + 0x020)); // 0x20 ImaginaryOne                ( ModelEnumType Complex Complex Complex Int32 )
+            value.S_sqrtRescaleThreshold                    = GetDouble(new IntPtr(p + 0x030)); // 0x30 S_sqrtRescaleThreshold      ( ModelPrimitiveType double double double Double )
+            value.S_asinOverflowThreshold                   = GetDouble(new IntPtr(p + 0x038)); // 0x38 S_asinOverflowThreshold     ( ModelPrimitiveType double double double Double )
+            value.S_log2                                    = GetDouble(new IntPtr(p + 0x040)); // 0x40 S_log2                      ( ModelPrimitiveType double double double Double )
+            value.M_real                                    = GetDouble(new IntPtr(p + 0x010)); // 0x10 M_real                      ( ModelPrimitiveType double double double Double )
+            value.M_imaginary                               = GetDouble(new IntPtr(p + 0x018)); // 0x18 M_imaginary                 ( ModelPrimitiveType double double double Double )
 
             return value;
         }

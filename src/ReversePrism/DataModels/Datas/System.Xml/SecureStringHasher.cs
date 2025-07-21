@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 hashCodeDelegate                         HashCodeOfStringDelegate IL2CPP_TYPE_CLASS
-    // 010 HashCodeRandomizer                       0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 HashCodeRandomizer                       ModelPrimitiveType int int int Int32
     public partial class SecureStringHasher : DataModel
     {
         public int                                      HashCodeRandomizer                      { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SecureStringHasher() { Pointer= p0 };
 
-            value.HashCodeRandomizer                        = GetInt32(new IntPtr(p + 0x010)); // 02466739E870 0x10 HashCodeRandomizer          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.HashCodeRandomizer                        = GetInt32(new IntPtr(p + 0x010)); // 0x10 HashCodeRandomizer          ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

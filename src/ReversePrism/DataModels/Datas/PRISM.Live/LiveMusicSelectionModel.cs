@@ -8,18 +8,17 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 AllMusic                                 000185CF5008 ModelClassListType List`1<MusicData> List`1<MusicData> List<MusicData> Pointer
+    // 010 AllMusic                                 ModelClassListType List`1<MusicData> List`1<MusicData> List<MusicData> Pointer
     // 018 rawMusicListDic                          Dictionary`2<int, IList`1<MusicData>> IL2CPP_TYPE_GENERICINST
     // 020 currentCategorySortFilterAppliedMusicList IList`1<MusicData> IL2CPP_TYPE_GENERICINST
     // 028 selectedMusicDic                         Dictionary`2<int, MusicData> IL2CPP_TYPE_GENERICINST
-    // 030 SaveData                                 000186565F70 ModelClassType LiveMusicSelectionSaveData LiveMusicSelectionSaveData LiveMusicSelectionSaveData Pointer
+    // 030 SaveData                                 ModelClassType LiveMusicSelectionSaveData LiveMusicSelectionSaveData LiveMusicSelectionSaveData Pointer
     // 038 favoriteMusicGroups                      Dictionary`2<FavoriteSongSlot, FavoriteMusicGroup> IL2CPP_TYPE_GENERICINST
     // 040 <MusicCategoryList>k__BackingField       IList`1<MstSongType> IL2CPP_TYPE_GENERICINST
-    // 048 SelectedCategoryIndex                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 050 SortFilterModel                          000186668160 ModelClassType MusicListSortFilterModel MusicListSortFilterModel MusicListSortFilterModel Pointer
-    // 058 SelectedMusicDifficulty                  00018661C520 ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32
-    // 060 MusicRewardHandler                       000186672F40 ModelClassType MusicRewardHandler MusicRewardHandler MusicRewardHandler Pointer
-    // 068 EventViewModel                           0001865640F0 ModelClassType LiveMusicSelectionEventViewModel LiveMusicSelectionEventViewModel LiveMusicSelectionEventViewModel Pointer
+    // 048 SelectedCategoryIndex                    ModelPrimitiveType int int int Int32
+    // 050 SortFilterModel                          ModelClassType MusicListSortFilterModel MusicListSortFilterModel MusicListSortFilterModel Pointer
+    // 058 SelectedMusicDifficulty                  ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32
+    // 060 EventViewModel                           ModelClassType LiveMusicSelectionEventViewModel LiveMusicSelectionEventViewModel LiveMusicSelectionEventViewModel Pointer
     public partial class LiveMusicSelectionModel : DataModel
     {
         public List<MusicData>?                         AllMusic                                { get; set; }
@@ -27,7 +26,6 @@ namespace ReversePrism.DataModels
         public int                                      SelectedCategoryIndex                   { get; set; }
         public MusicListSortFilterModel?                SortFilterModel                         { get; set; }
         public SongDifficultyLevel                      SelectedMusicDifficulty                 { get; set; }
-        public MusicRewardHandler?                      MusicRewardHandler                      { get; set; }
         public LiveMusicSelectionEventViewModel?        EventViewModel                          { get; set; }
 
         public static LiveMusicSelectionModel? FromPointer(IntPtr p0)
@@ -38,13 +36,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveMusicSelectionModel() { Pointer= p0 };
 
-            value.AllMusic                                  = GetObjectList<MusicData>(new IntPtr(p + 0x010), ReversePrism.DataModels.MusicData.FromPointer); // 0246651AAEB0 0x10 AllMusic                    ( 000185CF5008 ModelClassListType List`1<MusicData> List`1<MusicData> List<MusicData> Pointer )
-            value.SaveData                                  = GetObject<LiveMusicSelectionSaveData>(new IntPtr(p + 0x030), ReversePrism.DataModels.LiveMusicSelectionSaveData.FromPointer); // 0246651AAF30 0x30 SaveData                    ( 000186565F70 ModelClassType LiveMusicSelectionSaveData LiveMusicSelectionSaveData LiveMusicSelectionSaveData Pointer )
-            value.SelectedCategoryIndex                     = GetInt32(new IntPtr(p + 0x048)); // 0246651AAF90 0x48 SelectedCategoryIndex       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SortFilterModel                           = GetObject<MusicListSortFilterModel>(new IntPtr(p + 0x050), ReversePrism.DataModels.MusicListSortFilterModel.FromPointer); // 0246651AAFB0 0x50 SortFilterModel             ( 000186668160 ModelClassType MusicListSortFilterModel MusicListSortFilterModel MusicListSortFilterModel Pointer )
-            value.SelectedMusicDifficulty                   = (SongDifficultyLevel)GetInt32(new IntPtr(p + 0x058)); // 0246651AAFD0 0x58 SelectedMusicDifficulty     ( 00018661C520 ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32 )
-            value.MusicRewardHandler                        = GetObject<MusicRewardHandler>(new IntPtr(p + 0x060), ReversePrism.DataModels.MusicRewardHandler.FromPointer); // 0246651AAFF0 0x60 MusicRewardHandler          ( 000186672F40 ModelClassType MusicRewardHandler MusicRewardHandler MusicRewardHandler Pointer )
-            value.EventViewModel                            = GetObject<LiveMusicSelectionEventViewModel>(new IntPtr(p + 0x068), ReversePrism.DataModels.LiveMusicSelectionEventViewModel.FromPointer); // 0246651AB010 0x68 EventViewModel              ( 0001865640F0 ModelClassType LiveMusicSelectionEventViewModel LiveMusicSelectionEventViewModel LiveMusicSelectionEventViewModel Pointer )
+            value.AllMusic                                  = GetObjectList<MusicData>(new IntPtr(p + 0x010), ReversePrism.DataModels.MusicData.FromPointer); // 0x10 AllMusic                    ( ModelClassListType List`1<MusicData> List`1<MusicData> List<MusicData> Pointer )
+            value.SaveData                                  = GetObject<LiveMusicSelectionSaveData>(new IntPtr(p + 0x030), ReversePrism.DataModels.LiveMusicSelectionSaveData.FromPointer); // 0x30 SaveData                    ( ModelClassType LiveMusicSelectionSaveData LiveMusicSelectionSaveData LiveMusicSelectionSaveData Pointer )
+            value.SelectedCategoryIndex                     = GetInt32(new IntPtr(p + 0x048)); // 0x48 SelectedCategoryIndex       ( ModelPrimitiveType int int int Int32 )
+            value.SortFilterModel                           = GetObject<MusicListSortFilterModel>(new IntPtr(p + 0x050), ReversePrism.DataModels.MusicListSortFilterModel.FromPointer); // 0x50 SortFilterModel             ( ModelClassType MusicListSortFilterModel MusicListSortFilterModel MusicListSortFilterModel Pointer )
+            value.SelectedMusicDifficulty                   = (SongDifficultyLevel)GetInt32(new IntPtr(p + 0x058)); // 0x58 SelectedMusicDifficulty     ( ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32 )
+            value.EventViewModel                            = GetObject<LiveMusicSelectionEventViewModel>(new IntPtr(p + 0x060), ReversePrism.DataModels.LiveMusicSelectionEventViewModel.FromPointer); // 0x60 EventViewModel              ( ModelClassType LiveMusicSelectionEventViewModel LiveMusicSelectionEventViewModel LiveMusicSelectionEventViewModel Pointer )
 
             return value;
         }

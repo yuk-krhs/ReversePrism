@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Start                                    0001866DF940 ModelEnumType Index Index Index Int32
-    // 014 End                                      0001866DF940 ModelEnumType Index Index Index Int32
+    // 010 Start                                    ModelEnumType Index Index Index Int32
+    // 014 End                                      ModelEnumType Index Index Index Int32
     public partial class Range : DataModel
     {
         public Index                                    Start                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Range() { Pointer= p0 };
 
-            value.Start                                     = (Index)GetInt32(new IntPtr(p + 0x010)); // 024666A14850 0x10 Start                       ( 0001866DF940 ModelEnumType Index Index Index Int32 )
-            value.End                                       = (Index)GetInt32(new IntPtr(p + 0x014)); // 024666A14870 0x14 End                         ( 0001866DF940 ModelEnumType Index Index Index Int32 )
+            value.Start                                     = (Index)GetInt32(new IntPtr(p + 0x010)); // 0x10 Start                       ( ModelEnumType Index Index Index Int32 )
+            value.End                                       = (Index)GetInt32(new IntPtr(p + 0x014)); // 0x14 End                         ( ModelEnumType Index Index Index Int32 )
 
             return value;
         }

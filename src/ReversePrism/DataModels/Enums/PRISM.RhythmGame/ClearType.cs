@@ -16,5 +16,6 @@ namespace ReversePrism.DataModels
         FullCombo,
         AllGreat,
         AllPerfect,
+        AllShiny,
     }
 }

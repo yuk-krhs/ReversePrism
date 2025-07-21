@@ -9,11 +9,11 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 instance                                 IProductCatalogImpl IL2CPP_TYPE_CLASS
-    // 010 AppleSKU                                 0001866722E0 ModelPrimitiveType string string string String
-    // 018 AppleTeamID                              0001866722E0 ModelPrimitiveType string string string String
-    // 020 EnableCodelessAutoInitialization         000186595960 ModelPrimitiveType bool bool bool Bool
-    // 021 EnableUnityGamingServicesAutoInitialization 000186595960 ModelPrimitiveType bool bool bool Bool
-    // 028 Products                                 000185CFD998 ModelClassListType List`1<ProductCatalogItem> List`1<ProductCatalogItem> List<ProductCatalogItem> Pointer
+    // 010 AppleSKU                                 ModelPrimitiveType string string string String
+    // 018 AppleTeamID                              ModelPrimitiveType string string string String
+    // 020 EnableCodelessAutoInitialization         ModelPrimitiveType bool bool bool Bool
+    // 021 EnableUnityGamingServicesAutoInitialization ModelPrimitiveType bool bool bool Bool
+    // 028 Products                                 ModelClassListType List`1<ProductCatalogItem> List`1<ProductCatalogItem> List<ProductCatalogItem> Pointer
     // 000 kCatalogPath                             string IL2CPP_TYPE_STRING
     // 000 kPrevCatalogPath                         string IL2CPP_TYPE_STRING
     public partial class ProductCatalog : DataModel
@@ -32,11 +32,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProductCatalog() { Pointer= p0 };
 
-            value.AppleSKU                                  = GetString(new IntPtr(p + 0x010)); // 0245A68DEC80 0x10 AppleSKU                    ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.AppleTeamID                               = GetString(new IntPtr(p + 0x018)); // 0245A68DECA0 0x18 AppleTeamID                 ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.EnableCodelessAutoInitialization          = GetBool(new IntPtr(p + 0x020)); // 0245A68DECC0 0x20 EnableCodelessAutoInitialization ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.EnableUnityGamingServicesAutoInitialization = GetBool(new IntPtr(p + 0x021)); // 0245A68DECE0 0x21 EnableUnityGamingServicesAutoInitialization ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Products                                  = GetObjectList<ProductCatalogItem>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProductCatalogItem.FromPointer); // 0245A68DED00 0x28 Products                    ( 000185CFD998 ModelClassListType List`1<ProductCatalogItem> List`1<ProductCatalogItem> List<ProductCatalogItem> Pointer )
+            value.AppleSKU                                  = GetString(new IntPtr(p + 0x010)); // 0x10 AppleSKU                    ( ModelPrimitiveType string string string String )
+            value.AppleTeamID                               = GetString(new IntPtr(p + 0x018)); // 0x18 AppleTeamID                 ( ModelPrimitiveType string string string String )
+            value.EnableCodelessAutoInitialization          = GetBool(new IntPtr(p + 0x020)); // 0x20 EnableCodelessAutoInitialization ( ModelPrimitiveType bool bool bool Bool )
+            value.EnableUnityGamingServicesAutoInitialization = GetBool(new IntPtr(p + 0x021)); // 0x21 EnableUnityGamingServicesAutoInitialization ( ModelPrimitiveType bool bool bool Bool )
+            value.Products                                  = GetObjectList<ProductCatalogItem>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProductCatalogItem.FromPointer); // 0x28 Products                    ( ModelClassListType List`1<ProductCatalogItem> List`1<ProductCatalogItem> List<ProductCatalogItem> Pointer )
 
             return value;
         }

@@ -8,14 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 TapTime                                  000186666050 ModelPrimitiveType float float float Single
-    // 014 TapDelay                                 000186666050 ModelPrimitiveType float float float Single
-    // 018 TapCount                                 0001865F36C0 ModelPrimitiveType int int int Int32
-    // 01C PressPoint                               000186666050 ModelPrimitiveType float float float Single
-    // 020 M_CurrentTapPhase                        00018675FDB0 ModelEnumType TapPhase TapPhase TapPhase Int32
-    // 024 M_CurrentTapCount                        0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 028 M_CurrentTapStartTime                    0001865C2950 ModelPrimitiveType double double double Double
-    // 030 M_LastTapReleaseTime                     0001865C2950 ModelPrimitiveType double double double Double
+    // 010 TapTime                                  ModelPrimitiveType float float float Single
+    // 014 TapDelay                                 ModelPrimitiveType float float float Single
+    // 018 TapCount                                 ModelPrimitiveType int int int Int32
+    // 01C PressPoint                               ModelPrimitiveType float float float Single
+    // 020 M_CurrentTapPhase                        ModelEnumType TapPhase TapPhase TapPhase Int32
+    // 024 M_CurrentTapCount                        ModelPrimitiveType int int int Int32
+    // 028 M_CurrentTapStartTime                    ModelPrimitiveType double double double Double
+    // 030 M_LastTapReleaseTime                     ModelPrimitiveType double double double Double
     public partial class MultiTapInteraction : DataModel
     {
         public float                                    TapTime                                 { get; set; }
@@ -35,14 +35,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MultiTapInteraction() { Pointer= p0 };
 
-            value.TapTime                                   = GetSingle(new IntPtr(p + 0x010)); // 0246678E2EF8 0x10 TapTime                     ( 000186666050 ModelPrimitiveType float float float Single )
-            value.TapDelay                                  = GetSingle(new IntPtr(p + 0x014)); // 0246678E2F18 0x14 TapDelay                    ( 000186666050 ModelPrimitiveType float float float Single )
-            value.TapCount                                  = GetInt32(new IntPtr(p + 0x018)); // 0246678E2F38 0x18 TapCount                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.PressPoint                                = GetSingle(new IntPtr(p + 0x01C)); // 0246678E2F58 0x1C PressPoint                  ( 000186666050 ModelPrimitiveType float float float Single )
-            value.M_CurrentTapPhase                         = (TapPhase)GetInt32(new IntPtr(p + 0x020)); // 0246678E2F78 0x20 M_CurrentTapPhase           ( 00018675FDB0 ModelEnumType TapPhase TapPhase TapPhase Int32 )
-            value.M_CurrentTapCount                         = GetInt32(new IntPtr(p + 0x024)); // 0246678E2F98 0x24 M_CurrentTapCount           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_CurrentTapStartTime                     = GetDouble(new IntPtr(p + 0x028)); // 0246678E2FB8 0x28 M_CurrentTapStartTime       ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.M_LastTapReleaseTime                      = GetDouble(new IntPtr(p + 0x030)); // 0246678E2FD8 0x30 M_LastTapReleaseTime        ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.TapTime                                   = GetSingle(new IntPtr(p + 0x010)); // 0x10 TapTime                     ( ModelPrimitiveType float float float Single )
+            value.TapDelay                                  = GetSingle(new IntPtr(p + 0x014)); // 0x14 TapDelay                    ( ModelPrimitiveType float float float Single )
+            value.TapCount                                  = GetInt32(new IntPtr(p + 0x018)); // 0x18 TapCount                    ( ModelPrimitiveType int int int Int32 )
+            value.PressPoint                                = GetSingle(new IntPtr(p + 0x01C)); // 0x1C PressPoint                  ( ModelPrimitiveType float float float Single )
+            value.M_CurrentTapPhase                         = (TapPhase)GetInt32(new IntPtr(p + 0x020)); // 0x20 M_CurrentTapPhase           ( ModelEnumType TapPhase TapPhase TapPhase Int32 )
+            value.M_CurrentTapCount                         = GetInt32(new IntPtr(p + 0x024)); // 0x24 M_CurrentTapCount           ( ModelPrimitiveType int int int Int32 )
+            value.M_CurrentTapStartTime                     = GetDouble(new IntPtr(p + 0x028)); // 0x28 M_CurrentTapStartTime       ( ModelPrimitiveType double double double Double )
+            value.M_LastTapReleaseTime                      = GetDouble(new IntPtr(p + 0x030)); // 0x30 M_LastTapReleaseTime        ( ModelPrimitiveType double double double Double )
 
             return value;
         }

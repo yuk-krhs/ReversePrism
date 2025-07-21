@@ -8,19 +8,19 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 CanvasGroup                              000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
-    // 028 TxtRequiredMoney                         0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 030 TxtMoney                                 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 038 GoAlert                                  0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 040 BtnExecute                               0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 048 BtnReset                                 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 050 BtnOmakase                               0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 058 GoNormal                                 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 060 GoMax                                    0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 068 TxtLvMaxSubText                          0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 070 TicketSelectorGroup                      0001866635A0 ModelClassType TicketSelectorViewGroup TicketSelectorViewGroup TicketSelectorViewGroup Pointer
-    // 078 SupportEffectView                        0001865F25A0 ModelClassType SupportEffectView SupportEffectView SupportEffectView Pointer
-    // 080 Vm                                       0001865E58C0 ModelClassType SupportCharaTrainingViewModel SupportCharaTrainingViewModel SupportCharaTrainingViewModel Pointer
+    // 020 CanvasGroup                              ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
+    // 028 TxtRequiredMoney                         ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 030 TxtMoney                                 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 038 GoAlert                                  ModelClassType GameObject GameObject GameObject Pointer
+    // 040 BtnExecute                               ModelClassType UIButton UIButton UIButton Pointer
+    // 048 BtnReset                                 ModelClassType UIButton UIButton UIButton Pointer
+    // 050 BtnOmakase                               ModelClassType UIButton UIButton UIButton Pointer
+    // 058 GoNormal                                 ModelClassType GameObject GameObject GameObject Pointer
+    // 060 GoMax                                    ModelClassType GameObject GameObject GameObject Pointer
+    // 068 TxtLvMaxSubText                          ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 070 TicketSelectorGroup                      ModelClassType TicketSelectorViewGroup TicketSelectorViewGroup TicketSelectorViewGroup Pointer
+    // 078 SupportEffectView                        ModelClassType SupportEffectView SupportEffectView SupportEffectView Pointer
+    // 080 Vm                                       ModelClassType SupportCharaTrainingViewModel SupportCharaTrainingViewModel SupportCharaTrainingViewModel Pointer
     public partial class SupportCharaTrainingView : DataModel
     {
         public CanvasGroup?                             CanvasGroup                             { get; set; }
@@ -45,19 +45,19 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SupportCharaTrainingView() { Pointer= p0 };
 
-            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466A3C5D58 0x20 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.TxtRequiredMoney                          = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A3C5D78 0x28 TxtRequiredMoney            ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TxtMoney                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A3C5D98 0x30 TxtMoney                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.GoAlert                                   = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 02466A3C5DB8 0x38 GoAlert                     ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.BtnExecute                                = GetObject<UIButton>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIButton.FromPointer); // 02466A3C5DD8 0x40 BtnExecute                  ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.BtnReset                                  = GetObject<UIButton>(new IntPtr(p + 0x048), ReversePrism.DataModels.UIButton.FromPointer); // 02466A3C5DF8 0x48 BtnReset                    ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.BtnOmakase                                = GetObject<UIButton>(new IntPtr(p + 0x050), ReversePrism.DataModels.UIButton.FromPointer); // 02466A3C5E18 0x50 BtnOmakase                  ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.GoNormal                                  = GetObject<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 02466A3C5E38 0x58 GoNormal                    ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.GoMax                                     = GetObject<GameObject>(new IntPtr(p + 0x060), ReversePrism.DataModels.GameObject.FromPointer); // 02466A3C5E58 0x60 GoMax                       ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.TxtLvMaxSubText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x068), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A3C5E78 0x68 TxtLvMaxSubText             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TicketSelectorGroup                       = GetObject<TicketSelectorViewGroup>(new IntPtr(p + 0x070), ReversePrism.DataModels.TicketSelectorViewGroup.FromPointer); // 02466A3C5E98 0x70 TicketSelectorGroup         ( 0001866635A0 ModelClassType TicketSelectorViewGroup TicketSelectorViewGroup TicketSelectorViewGroup Pointer )
-            value.SupportEffectView                         = GetObject<SupportEffectView>(new IntPtr(p + 0x078), ReversePrism.DataModels.SupportEffectView.FromPointer); // 02466A3C5EB8 0x78 SupportEffectView           ( 0001865F25A0 ModelClassType SupportEffectView SupportEffectView SupportEffectView Pointer )
-            value.Vm                                        = GetObject<SupportCharaTrainingViewModel>(new IntPtr(p + 0x080), ReversePrism.DataModels.SupportCharaTrainingViewModel.FromPointer); // 02466A3C5ED8 0x80 Vm                          ( 0001865E58C0 ModelClassType SupportCharaTrainingViewModel SupportCharaTrainingViewModel SupportCharaTrainingViewModel Pointer )
+            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0x20 CanvasGroup                 ( ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.TxtRequiredMoney                          = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x28 TxtRequiredMoney            ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TxtMoney                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x30 TxtMoney                    ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.GoAlert                                   = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0x38 GoAlert                     ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.BtnExecute                                = GetObject<UIButton>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIButton.FromPointer); // 0x40 BtnExecute                  ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.BtnReset                                  = GetObject<UIButton>(new IntPtr(p + 0x048), ReversePrism.DataModels.UIButton.FromPointer); // 0x48 BtnReset                    ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.BtnOmakase                                = GetObject<UIButton>(new IntPtr(p + 0x050), ReversePrism.DataModels.UIButton.FromPointer); // 0x50 BtnOmakase                  ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.GoNormal                                  = GetObject<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 0x58 GoNormal                    ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.GoMax                                     = GetObject<GameObject>(new IntPtr(p + 0x060), ReversePrism.DataModels.GameObject.FromPointer); // 0x60 GoMax                       ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.TxtLvMaxSubText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x068), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x68 TxtLvMaxSubText             ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TicketSelectorGroup                       = GetObject<TicketSelectorViewGroup>(new IntPtr(p + 0x070), ReversePrism.DataModels.TicketSelectorViewGroup.FromPointer); // 0x70 TicketSelectorGroup         ( ModelClassType TicketSelectorViewGroup TicketSelectorViewGroup TicketSelectorViewGroup Pointer )
+            value.SupportEffectView                         = GetObject<SupportEffectView>(new IntPtr(p + 0x078), ReversePrism.DataModels.SupportEffectView.FromPointer); // 0x78 SupportEffectView           ( ModelClassType SupportEffectView SupportEffectView SupportEffectView Pointer )
+            value.Vm                                        = GetObject<SupportCharaTrainingViewModel>(new IntPtr(p + 0x080), ReversePrism.DataModels.SupportCharaTrainingViewModel.FromPointer); // 0x80 Vm                          ( ModelClassType SupportCharaTrainingViewModel SupportCharaTrainingViewModel SupportCharaTrainingViewModel Pointer )
 
             return value;
         }

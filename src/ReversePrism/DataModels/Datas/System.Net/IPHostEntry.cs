@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 HostName                                 000186671910 ModelPrimitiveType string string string String
-    // 018 Aliases                                  000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 020 AddressList                              000185B88130 ModelClassListType IPAddress[] IPAddress[] List<IPAddress> Pointer
-    // 028 IsTrustedHost                            000186595210 ModelPrimitiveType bool bool bool Bool
+    // 010 HostName                                 ModelPrimitiveType string string string String
+    // 018 Aliases                                  ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 020 AddressList                              ModelClassListType IPAddress[] IPAddress[] List<IPAddress> Pointer
+    // 028 IsTrustedHost                            ModelPrimitiveType bool bool bool Bool
     public partial class IPHostEntry : DataModel
     {
         public string                                   HostName                                { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IPHostEntry() { Pointer= p0 };
 
-            value.HostName                                  = GetString(new IntPtr(p + 0x010)); // 024667A8B8A0 0x10 HostName                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.Aliases                                   = GetStringList(new IntPtr(p + 0x018)); // 024667A8B8C0 0x18 Aliases                     ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.AddressList                               = GetObjectList<IPAddress>(new IntPtr(p + 0x020), ReversePrism.DataModels.IPAddress.FromPointer); // 024667A8B8E0 0x20 AddressList                 ( 000185B88130 ModelClassListType IPAddress[] IPAddress[] List<IPAddress> Pointer )
-            value.IsTrustedHost                             = GetBool(new IntPtr(p + 0x028)); // 024667A8B900 0x28 IsTrustedHost               ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.HostName                                  = GetString(new IntPtr(p + 0x010)); // 0x10 HostName                    ( ModelPrimitiveType string string string String )
+            value.Aliases                                   = GetStringList(new IntPtr(p + 0x018)); // 0x18 Aliases                     ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.AddressList                               = GetObjectList<IPAddress>(new IntPtr(p + 0x020), ReversePrism.DataModels.IPAddress.FromPointer); // 0x20 AddressList                 ( ModelClassListType IPAddress[] IPAddress[] List<IPAddress> Pointer )
+            value.IsTrustedHost                             = GetBool(new IntPtr(p + 0x028)); // 0x28 IsTrustedHost               ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

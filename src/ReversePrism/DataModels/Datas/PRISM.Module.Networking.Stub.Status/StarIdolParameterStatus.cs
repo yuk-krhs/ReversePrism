@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<StarIdolParameterStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 StarFieldNumber                          int IL2CPP_TYPE_I4
-    // 018 Star                                     0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 Star                                     ModelPrimitiveType int int int Int32
     // 000 IdolParameterFieldNumber                 int IL2CPP_TYPE_I4
-    // 020 IdolParameter                            0001866B60B0 ModelClassType IdolParameterStatus IdolParameterStatus IdolParameterStatus Pointer
+    // 020 IdolParameter                            ModelClassType IdolParameterStatus IdolParameterStatus IdolParameterStatus Pointer
     public partial class StarIdolParameterStatus : DataModel
     {
         public int                                      Star                                    { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StarIdolParameterStatus() { Pointer= p0 };
 
-            value.Star                                      = GetInt32(new IntPtr(p + 0x018)); // 024660FCC318 0x18 Star                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IdolParameter                             = GetObject<IdolParameterStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IdolParameterStatus.FromPointer); // 024660FCC358 0x20 IdolParameter               ( 0001866B60B0 ModelClassType IdolParameterStatus IdolParameterStatus IdolParameterStatus Pointer )
+            value.Star                                      = GetInt32(new IntPtr(p + 0x018)); // 0x18 Star                        ( ModelPrimitiveType int int int Int32 )
+            value.IdolParameter                             = GetObject<IdolParameterStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IdolParameterStatus.FromPointer); // 0x20 IdolParameter               ( ModelClassType IdolParameterStatus IdolParameterStatus IdolParameterStatus Pointer )
 
             return value;
         }

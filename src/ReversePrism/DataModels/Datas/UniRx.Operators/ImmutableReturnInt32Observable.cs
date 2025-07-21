@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Caches                                   ImmutableReturnInt32Observable[] IL2CPP_TYPE_SZARRAY
-    // 010 X                                        0001865F4260 ModelPrimitiveType int int int Int32
+    // 010 X                                        ModelPrimitiveType int int int Int32
     public partial class ImmutableReturnInt32Observable : DataModel
     {
         public int                                      X                                       { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ImmutableReturnInt32Observable() { Pointer= p0 };
 
-            value.X                                         = GetInt32(new IntPtr(p + 0x010)); // 0246697945C8 0x10 X                           ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.X                                         = GetInt32(new IntPtr(p + 0x010)); // 0x10 X                           ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

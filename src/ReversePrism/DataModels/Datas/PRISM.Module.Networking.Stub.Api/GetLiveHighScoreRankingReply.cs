@@ -11,18 +11,18 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<GetLiveHighScoreRankingReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstSongIdFieldNumber                     int IL2CPP_TYPE_I4
-    // 018 MstSongId                                0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MstSongId                                ModelPrimitiveType int int int Int32
     // 000 DifficultyLevelFieldNumber               int IL2CPP_TYPE_I4
-    // 01C DifficultyLevel                          000186529820 ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32
+    // 01C DifficultyLevel                          ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32
     // 000 PageFieldNumber                          int IL2CPP_TYPE_I4
-    // 020 Page                                     00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer
+    // 020 Page                                     ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer
     // 000 SelfRankFieldNumber                      int IL2CPP_TYPE_I4
-    // 028 SelfRank                                 0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 028 SelfRank                                 ModelPrimitiveType int int int Int32
     // 000 SelfHighScoreFieldNumber                 int IL2CPP_TYPE_I4
-    // 02C SelfHighScore                            0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 02C SelfHighScore                            ModelPrimitiveType int int int Int32
     // 000 UserListFieldNumber                      int IL2CPP_TYPE_I4
     // 008 _repeated_userList_codec                 FieldCodec`1<LiveHighScoreRankingUserStatus> IL2CPP_TYPE_GENERICINST
-    // 030 UserList                                 000185CE32B8 ModelClassListType RepeatedField`1<LiveHighScoreRankingUserStatus> RepeatedField`1<LiveHighScoreRankingUserStatus> List<LiveHighScoreRankingUserStatus> Pointer
+    // 030 UserList                                 ModelClassListType RepeatedField`1<LiveHighScoreRankingUserStatus> RepeatedField`1<LiveHighScoreRankingUserStatus> List<LiveHighScoreRankingUserStatus> Pointer
     public partial class GetLiveHighScoreRankingReply : DataModel
     {
         public int                                      MstSongId                               { get; set; }
@@ -40,12 +40,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetLiveHighScoreRankingReply() { Pointer= p0 };
 
-            value.MstSongId                                 = GetInt32(new IntPtr(p + 0x018)); // 02466217AA88 0x18 MstSongId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.DifficultyLevel                           = (SongDifficultyLevel)GetInt32(new IntPtr(p + 0x01C)); // 02466217AAC8 0x1C DifficultyLevel             ( 000186529820 ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32 )
-            value.Page                                      = GetObject<LimitedValueStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 02466217AB08 0x20 Page                        ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
-            value.SelfRank                                  = GetInt32(new IntPtr(p + 0x028)); // 02466217AB48 0x28 SelfRank                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SelfHighScore                             = GetInt32(new IntPtr(p + 0x02C)); // 02466217AB88 0x2C SelfHighScore               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UserList                                  = GetObjectList<LiveHighScoreRankingUserStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.LiveHighScoreRankingUserStatus.FromPointer); // 02466217ABE8 0x30 UserList                    ( 000185CE32B8 ModelClassListType RepeatedField`1<LiveHighScoreRankingUserStatus> RepeatedField`1<LiveHighScoreRankingUserStatus> List<LiveHighScoreRankingUserStatus> Pointer )
+            value.MstSongId                                 = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstSongId                   ( ModelPrimitiveType int int int Int32 )
+            value.DifficultyLevel                           = (SongDifficultyLevel)GetInt32(new IntPtr(p + 0x01C)); // 0x1C DifficultyLevel             ( ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32 )
+            value.Page                                      = GetObject<LimitedValueStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 0x20 Page                        ( ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
+            value.SelfRank                                  = GetInt32(new IntPtr(p + 0x028)); // 0x28 SelfRank                    ( ModelPrimitiveType int int int Int32 )
+            value.SelfHighScore                             = GetInt32(new IntPtr(p + 0x02C)); // 0x2C SelfHighScore               ( ModelPrimitiveType int int int Int32 )
+            value.UserList                                  = GetObjectList<LiveHighScoreRankingUserStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.LiveHighScoreRankingUserStatus.FromPointer); // 0x30 UserList                    ( ModelClassListType RepeatedField`1<LiveHighScoreRankingUserStatus> RepeatedField`1<LiveHighScoreRankingUserStatus> List<LiveHighScoreRankingUserStatus> Pointer )
 
             return value;
         }

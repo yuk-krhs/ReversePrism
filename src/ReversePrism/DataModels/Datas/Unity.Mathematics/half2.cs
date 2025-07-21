@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 X                                        0001865EE010 ModelEnumType half half half Int32
-    // 012 Y                                        0001865EE010 ModelEnumType half half half Int32
+    // 010 X                                        ModelEnumType half half half Int32
+    // 012 Y                                        ModelEnumType half half half Int32
     // 000 zero                                     half2 IL2CPP_TYPE_VALUETYPE
     public partial class half2 : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new half2() { Pointer= p0 };
 
-            value.X                                         = (half)GetInt32(new IntPtr(p + 0x010)); // 024667EB92B8 0x10 X                           ( 0001865EE010 ModelEnumType half half half Int32 )
-            value.Y                                         = (half)GetInt32(new IntPtr(p + 0x012)); // 024667EB92D8 0x12 Y                           ( 0001865EE010 ModelEnumType half half half Int32 )
+            value.X                                         = (half)GetInt32(new IntPtr(p + 0x010)); // 0x10 X                           ( ModelEnumType half half half Int32 )
+            value.Y                                         = (half)GetInt32(new IntPtr(p + 0x012)); // 0x12 Y                           ( ModelEnumType half half half Int32 )
 
             return value;
         }

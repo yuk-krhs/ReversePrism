@@ -8,26 +8,29 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 UnitIcon                                 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 028 EpisodeTitleText                         0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 030 DifficultyText                           0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 038 DifficultyBg                             0001866920B0 ModelClassType Graphic Graphic Graphic Pointer
-    // 040 EpisodeGraphicController                 0001866EA450 ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer
-    // 048 MiniCharaOffScreen                       0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer
-    // 050 ButtonGrayOutController                  0001866EA450 ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer
-    // 058 AutoToggleButton                         000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer
-    // 060 ProduceLogButton                         0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 068 CanvasGroup                              000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
-    // 070 OneSeasonScheduleListView                00018652C490 ModelClassType ProduceAutoOneSeasonScheduleListView ProduceAutoOneSeasonScheduleListView ProduceAutoOneSeasonScheduleListView Pointer
-    // 078 ProduceLogPopupViewFactory               00018655E460 ModelClassType ProduceLogPopupViewFactory ProduceLogPopupViewFactory ProduceLogPopupViewFactory Pointer
-    // 080 onClickNextButtonSubject                 Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 088 onClickAutoToggleSubject                 Subject`1<bool> IL2CPP_TYPE_GENERICINST
-    // 090 onClickProduceLogButtonSubject           Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 098 MiniCharaCameraController                000186536460 ModelClassType CameraController CameraController CameraController Pointer
-    // 0A0 MinNextScheduleWaitTime                  0001866656B0 ModelPrimitiveType float float float Single
-    // 0A4 LastScheduleExecTime                     0001866656B0 ModelPrimitiveType float float float Single
-    // 0A8 ResourceTag                              00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
-    // 0B0 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
+    // 020 UnitIcon                                 ModelClassType UIImage UIImage UIImage Pointer
+    // 028 EpisodeTitleText                         ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 030 DifficultyText                           ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 038 DifficultyBg                             ModelClassType Graphic Graphic Graphic Pointer
+    // 040 EpisodeGraphicController                 ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer
+    // 048 MiniCharaOffScreen                       ModelClassType UIRawImage UIRawImage UIRawImage Pointer
+    // 050 LeftButtonGrayOutController              ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer
+    // 058 RightButtonGrayOutController             ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer
+    // 060 AutoToggleButton                         ModelClassType ToggleButton ToggleButton ToggleButton Pointer
+    // 068 ProduceLogButton                         ModelClassType UIButton UIButton UIButton Pointer
+    // 070 ProduceOptionButton                      ModelClassType UIButton UIButton UIButton Pointer
+    // 078 LeftCanvasGroup                          ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
+    // 080 RightCanvasGroup                         ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
+    // 088 OneSeasonScheduleListView                ModelClassType ProduceAutoOneSeasonScheduleListView ProduceAutoOneSeasonScheduleListView ProduceAutoOneSeasonScheduleListView Pointer
+    // 090 Model3dLoader                            ModelClassType SimpleModel3dLoader SimpleModel3dLoader SimpleModel3dLoader Pointer
+    // 098 onClickNextButtonSubject                 Subject`1<Unit> IL2CPP_TYPE_GENERICINST
+    // 0A0 onClickAutoToggleSubject                 Subject`1<bool> IL2CPP_TYPE_GENERICINST
+    // 0A8 onClickProduceLogButtonSubject           Subject`1<Unit> IL2CPP_TYPE_GENERICINST
+    // 0B0 onClickProduceOptionButtonSubject        Subject`1<Unit> IL2CPP_TYPE_GENERICINST
+    // 0B8 MiniCharaCameraController                ModelClassType CameraController CameraController CameraController Pointer
+    // 0C0 MinNextScheduleWaitTime                  ModelPrimitiveType float float float Single
+    // 0C4 LastScheduleExecTime                     ModelPrimitiveType float float float Single
+    // 0C8 Parent                                   ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
     public partial class ProduceAutoResultPopupView : DataModel
     {
         public UIImage?                                 UnitIcon                                { get; set; }
@@ -36,16 +39,18 @@ namespace ReversePrism.DataModels
         public Graphic?                                 DifficultyBg                            { get; set; }
         public UIGrayOutController?                     EpisodeGraphicController                { get; set; }
         public UIRawImage?                              MiniCharaOffScreen                      { get; set; }
-        public UIGrayOutController?                     ButtonGrayOutController                 { get; set; }
+        public UIGrayOutController?                     LeftButtonGrayOutController             { get; set; }
+        public UIGrayOutController?                     RightButtonGrayOutController            { get; set; }
         public ToggleButton?                            AutoToggleButton                        { get; set; }
         public UIButton?                                ProduceLogButton                        { get; set; }
-        public CanvasGroup?                             CanvasGroup                             { get; set; }
+        public UIButton?                                ProduceOptionButton                     { get; set; }
+        public CanvasGroup?                             LeftCanvasGroup                         { get; set; }
+        public CanvasGroup?                             RightCanvasGroup                        { get; set; }
         public ProduceAutoOneSeasonScheduleListView?    OneSeasonScheduleListView               { get; set; }
-        public ProduceLogPopupViewFactory?              ProduceLogPopupViewFactory              { get; set; }
+        public SimpleModel3dLoader?                     Model3dLoader                           { get; set; }
         public CameraController?                        MiniCharaCameraController               { get; set; }
         public float                                    MinNextScheduleWaitTime                 { get; set; }
         public float                                    LastScheduleExecTime                    { get; set; }
-        public IResourceTag?                            ResourceTag                             { get; set; }
         public IPopupFrameView?                         Parent                                  { get; set; }
 
         public static ProduceAutoResultPopupView? FromPointer(IntPtr p0)
@@ -56,23 +61,25 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceAutoResultPopupView() { Pointer= p0 };
 
-            value.UnitIcon                                  = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 02466A123378 0x20 UnitIcon                    ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.EpisodeTitleText                          = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A123398 0x28 EpisodeTitleText            ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.DifficultyText                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A1233B8 0x30 DifficultyText              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.DifficultyBg                              = GetObject<Graphic>(new IntPtr(p + 0x038), ReversePrism.DataModels.Graphic.FromPointer); // 02466A1233D8 0x38 DifficultyBg                ( 0001866920B0 ModelClassType Graphic Graphic Graphic Pointer )
-            value.EpisodeGraphicController                  = GetObject<UIGrayOutController>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIGrayOutController.FromPointer); // 02466A1233F8 0x40 EpisodeGraphicController    ( 0001866EA450 ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer )
-            value.MiniCharaOffScreen                        = GetObject<UIRawImage>(new IntPtr(p + 0x048), ReversePrism.DataModels.UIRawImage.FromPointer); // 02466A123418 0x48 MiniCharaOffScreen          ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
-            value.ButtonGrayOutController                   = GetObject<UIGrayOutController>(new IntPtr(p + 0x050), ReversePrism.DataModels.UIGrayOutController.FromPointer); // 02466A123438 0x50 ButtonGrayOutController     ( 0001866EA450 ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer )
-            value.AutoToggleButton                          = GetObject<ToggleButton>(new IntPtr(p + 0x058), ReversePrism.DataModels.ToggleButton.FromPointer); // 02466A123458 0x58 AutoToggleButton            ( 000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer )
-            value.ProduceLogButton                          = GetObject<UIButton>(new IntPtr(p + 0x060), ReversePrism.DataModels.UIButton.FromPointer); // 02466A123478 0x60 ProduceLogButton            ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x068), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466A123498 0x68 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.OneSeasonScheduleListView                 = GetObject<ProduceAutoOneSeasonScheduleListView>(new IntPtr(p + 0x070), ReversePrism.DataModels.ProduceAutoOneSeasonScheduleListView.FromPointer); // 02466A1234B8 0x70 OneSeasonScheduleListView   ( 00018652C490 ModelClassType ProduceAutoOneSeasonScheduleListView ProduceAutoOneSeasonScheduleListView ProduceAutoOneSeasonScheduleListView Pointer )
-            value.ProduceLogPopupViewFactory                = GetObject<ProduceLogPopupViewFactory>(new IntPtr(p + 0x078), ReversePrism.DataModels.ProduceLogPopupViewFactory.FromPointer); // 02466A1234D8 0x78 ProduceLogPopupViewFactory  ( 00018655E460 ModelClassType ProduceLogPopupViewFactory ProduceLogPopupViewFactory ProduceLogPopupViewFactory Pointer )
-            value.MiniCharaCameraController                 = GetObject<CameraController>(new IntPtr(p + 0x098), ReversePrism.DataModels.CameraController.FromPointer); // 02466A123558 0x98 MiniCharaCameraController   ( 000186536460 ModelClassType CameraController CameraController CameraController Pointer )
-            value.MinNextScheduleWaitTime                   = GetSingle(new IntPtr(p + 0x0A0)); // 02466A123578 0xA0 MinNextScheduleWaitTime     ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.LastScheduleExecTime                      = GetSingle(new IntPtr(p + 0x0A4)); // 02466A123598 0xA4 LastScheduleExecTime        ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.IResourceTag.FromPointer); // 02466A1235B8 0xA8 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466A1235D8 0xB0 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.UnitIcon                                  = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 0x20 UnitIcon                    ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.EpisodeTitleText                          = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x28 EpisodeTitleText            ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.DifficultyText                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x30 DifficultyText              ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.DifficultyBg                              = GetObject<Graphic>(new IntPtr(p + 0x038), ReversePrism.DataModels.Graphic.FromPointer); // 0x38 DifficultyBg                ( ModelClassType Graphic Graphic Graphic Pointer )
+            value.EpisodeGraphicController                  = GetObject<UIGrayOutController>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIGrayOutController.FromPointer); // 0x40 EpisodeGraphicController    ( ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer )
+            value.MiniCharaOffScreen                        = GetObject<UIRawImage>(new IntPtr(p + 0x048), ReversePrism.DataModels.UIRawImage.FromPointer); // 0x48 MiniCharaOffScreen          ( ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
+            value.LeftButtonGrayOutController               = GetObject<UIGrayOutController>(new IntPtr(p + 0x050), ReversePrism.DataModels.UIGrayOutController.FromPointer); // 0x50 LeftButtonGrayOutController ( ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer )
+            value.RightButtonGrayOutController              = GetObject<UIGrayOutController>(new IntPtr(p + 0x058), ReversePrism.DataModels.UIGrayOutController.FromPointer); // 0x58 RightButtonGrayOutController ( ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer )
+            value.AutoToggleButton                          = GetObject<ToggleButton>(new IntPtr(p + 0x060), ReversePrism.DataModels.ToggleButton.FromPointer); // 0x60 AutoToggleButton            ( ModelClassType ToggleButton ToggleButton ToggleButton Pointer )
+            value.ProduceLogButton                          = GetObject<UIButton>(new IntPtr(p + 0x068), ReversePrism.DataModels.UIButton.FromPointer); // 0x68 ProduceLogButton            ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.ProduceOptionButton                       = GetObject<UIButton>(new IntPtr(p + 0x070), ReversePrism.DataModels.UIButton.FromPointer); // 0x70 ProduceOptionButton         ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.LeftCanvasGroup                           = GetObject<CanvasGroup>(new IntPtr(p + 0x078), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0x78 LeftCanvasGroup             ( ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.RightCanvasGroup                          = GetObject<CanvasGroup>(new IntPtr(p + 0x080), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0x80 RightCanvasGroup            ( ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.OneSeasonScheduleListView                 = GetObject<ProduceAutoOneSeasonScheduleListView>(new IntPtr(p + 0x088), ReversePrism.DataModels.ProduceAutoOneSeasonScheduleListView.FromPointer); // 0x88 OneSeasonScheduleListView   ( ModelClassType ProduceAutoOneSeasonScheduleListView ProduceAutoOneSeasonScheduleListView ProduceAutoOneSeasonScheduleListView Pointer )
+            value.Model3dLoader                             = GetObject<SimpleModel3dLoader>(new IntPtr(p + 0x090), ReversePrism.DataModels.SimpleModel3dLoader.FromPointer); // 0x90 Model3dLoader               ( ModelClassType SimpleModel3dLoader SimpleModel3dLoader SimpleModel3dLoader Pointer )
+            value.MiniCharaCameraController                 = GetObject<CameraController>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.CameraController.FromPointer); // 0xB8 MiniCharaCameraController   ( ModelClassType CameraController CameraController CameraController Pointer )
+            value.MinNextScheduleWaitTime                   = GetSingle(new IntPtr(p + 0x0C0)); // 0xC0 MinNextScheduleWaitTime     ( ModelPrimitiveType float float float Single )
+            value.LastScheduleExecTime                      = GetSingle(new IntPtr(p + 0x0C4)); // 0xC4 LastScheduleExecTime        ( ModelPrimitiveType float float float Single )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0xC8 Parent                      ( ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

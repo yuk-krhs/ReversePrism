@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 040 Response                                 0001866CB3E0 ModelClassType IgnoreListResult IgnoreListResult IgnoreListResult Pointer
+    // 040 Response                                 ModelClassType IgnoreListResult IgnoreListResult IgnoreListResult Pointer
     public partial class OsapiIgnoreListResult : DataModel
     {
         public IgnoreListResult?                        Response                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new OsapiIgnoreListResult() { Pointer= p0 };
 
-            value.Response                                  = GetObject<IgnoreListResult>(new IntPtr(p + 0x040), ReversePrism.DataModels.IgnoreListResult.FromPointer); // 02466B5170F0 0x40 Response                    ( 0001866CB3E0 ModelClassType IgnoreListResult IgnoreListResult IgnoreListResult Pointer )
+            value.Response                                  = GetObject<IgnoreListResult>(new IntPtr(p + 0x040), ReversePrism.DataModels.IgnoreListResult.FromPointer); // 0x40 Response                    ( ModelClassType IgnoreListResult IgnoreListResult IgnoreListResult Pointer )
 
             return value;
         }

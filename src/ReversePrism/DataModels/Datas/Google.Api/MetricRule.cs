@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<MetricRule> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 SelectorFieldNumber                      int IL2CPP_TYPE_I4
-    // 018 Selector                                 000186671910 ModelPrimitiveType string string string String
+    // 018 Selector                                 ModelPrimitiveType string string string String
     // 000 MetricCostsFieldNumber                   int IL2CPP_TYPE_I4
     // 008 _map_metricCosts_codec                   Codec<string, long> IL2CPP_TYPE_GENERICINST
     // 020 metricCosts_                             MapField`2<string, long> IL2CPP_TYPE_GENERICINST
@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MetricRule() { Pointer= p0 };
 
-            value.Selector                                  = GetString(new IntPtr(p + 0x018)); // 02466A883ED8 0x18 Selector                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.Selector                                  = GetString(new IntPtr(p + 0x018)); // 0x18 Selector                    ( ModelPrimitiveType string string string String )
 
             return value;
         }

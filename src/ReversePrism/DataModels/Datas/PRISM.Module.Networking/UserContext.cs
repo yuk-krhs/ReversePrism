@@ -10,9 +10,9 @@ namespace ReversePrism.DataModels
 
     // 000 userId                                   string IL2CPP_TYPE_STRING
     // 008 loginToken                               string IL2CPP_TYPE_STRING
-    // 010 Authorization                            000186672530 ModelPrimitiveType string string string String
-    // 010 UserLanguage                             000186672F10 ModelPrimitiveType string string string String
-    // 018 UserCountry                              000186672F10 ModelPrimitiveType string string string String
+    // 010 Authorization                            ModelPrimitiveType string string string String
+    // 010 UserLanguage                             ModelPrimitiveType string string string String
+    // 018 UserCountry                              ModelPrimitiveType string string string String
     public partial class UserContext : DataModel
     {
         public string                                   Authorization                           { get; set; }
@@ -27,9 +27,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UserContext() { Pointer= p0 };
 
-            value.Authorization                             = GetString(new IntPtr(p + 0x010)); // 0245A4B8FA30 0x10 Authorization               ( 000186672530 ModelPrimitiveType string string string String )
-            value.UserLanguage                              = GetString(new IntPtr(p + 0x010)); // 0245A4B8FA50 0x10 UserLanguage                ( 000186672F10 ModelPrimitiveType string string string String )
-            value.UserCountry                               = GetString(new IntPtr(p + 0x018)); // 0245A4B8FA70 0x18 UserCountry                 ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Authorization                             = GetString(new IntPtr(p + 0x010)); // 0x10 Authorization               ( ModelPrimitiveType string string string String )
+            value.UserLanguage                              = GetString(new IntPtr(p + 0x010)); // 0x10 UserLanguage                ( ModelPrimitiveType string string string String )
+            value.UserCountry                               = GetString(new IntPtr(p + 0x018)); // 0x18 UserCountry                 ( ModelPrimitiveType string string string String )
 
             return value;
         }

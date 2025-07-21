@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 088 Relation                                 00018667C390 ModelClassType DataRelation DataRelation DataRelation Pointer
+    // 088 Relation                                 ModelClassType DataRelation DataRelation DataRelation Pointer
     public partial class DataRelationPropertyDescriptor : DataModel
     {
         public DataRelation?                            Relation                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DataRelationPropertyDescriptor() { Pointer= p0 };
 
-            value.Relation                                  = GetObject<DataRelation>(new IntPtr(p + 0x088), ReversePrism.DataModels.DataRelation.FromPointer); // 0246689365A8 0x88 Relation                    ( 00018667C390 ModelClassType DataRelation DataRelation DataRelation Pointer )
+            value.Relation                                  = GetObject<DataRelation>(new IntPtr(p + 0x088), ReversePrism.DataModels.DataRelation.FromPointer); // 0x88 Relation                    ( ModelClassType DataRelation DataRelation DataRelation Pointer )
 
             return value;
         }

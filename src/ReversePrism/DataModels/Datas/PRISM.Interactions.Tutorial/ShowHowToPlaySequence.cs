@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ConfigRef                                000186671910 ModelPrimitiveType string string string String
+    // 010 ConfigRef                                ModelPrimitiveType string string string String
     public partial class ShowHowToPlaySequence : DataModel
     {
         public string                                   ConfigRef                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ShowHowToPlaySequence() { Pointer= p0 };
 
-            value.ConfigRef                                 = GetString(new IntPtr(p + 0x010)); // 02466BCA88D8 0x10 ConfigRef                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.ConfigRef                                 = GetString(new IntPtr(p + 0x010)); // 0x10 ConfigRef                   ( ModelPrimitiveType string string string String )
 
             return value;
         }

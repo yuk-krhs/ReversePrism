@@ -8,13 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 068 Activator                                0001866ED780 ModelClassType IActivator IActivator IActivator Pointer
+    // 068 Activator                                ModelClassType IActivator IActivator IActivator Pointer
     // 070 _activationAttributes                    <object>[] IL2CPP_TYPE_SZARRAY
-    // 078 ContextProperties                        000186591B20 ModelClassType IList IList IList Pointer
-    // 080 ActivationType                           000186692850 ModelClassType Type Type Type Pointer
-    // 088 ActivationTypeName                       000186671910 ModelPrimitiveType string string string String
-    // 090 IsContextOk                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 098 SourceProxy                              00018664B480 ModelClassType RemotingProxy RemotingProxy RemotingProxy Pointer
+    // 078 ContextProperties                        ModelClassType IList IList IList Pointer
+    // 080 ActivationType                           ModelClassType Type Type Type Pointer
+    // 088 ActivationTypeName                       ModelPrimitiveType string string string String
+    // 090 IsContextOk                              ModelPrimitiveType bool bool bool Bool
+    // 098 SourceProxy                              ModelClassType RemotingProxy RemotingProxy RemotingProxy Pointer
     public partial class ConstructionCall : DataModel
     {
         public IActivator?                              Activator                               { get; set; }
@@ -32,12 +32,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ConstructionCall() { Pointer= p0 };
 
-            value.Activator                                 = GetObject<IActivator>(new IntPtr(p + 0x068), ReversePrism.DataModels.IActivator.FromPointer); // 024666C34EF0 0x68 Activator                   ( 0001866ED780 ModelClassType IActivator IActivator IActivator Pointer )
-            value.ContextProperties                         = GetObject<IList>(new IntPtr(p + 0x078), ReversePrism.DataModels.IList.FromPointer); // 024666C34F30 0x78 ContextProperties           ( 000186591B20 ModelClassType IList IList IList Pointer )
-            value.ActivationType                            = GetObject<Type>(new IntPtr(p + 0x080), ReversePrism.DataModels.Type.FromPointer); // 024666C34F50 0x80 ActivationType              ( 000186692850 ModelClassType Type Type Type Pointer )
-            value.ActivationTypeName                        = GetString(new IntPtr(p + 0x088)); // 024666C34F70 0x88 ActivationTypeName          ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsContextOk                               = GetBool(new IntPtr(p + 0x090)); // 024666C34F90 0x90 IsContextOk                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SourceProxy                               = GetObject<RemotingProxy>(new IntPtr(p + 0x098), ReversePrism.DataModels.RemotingProxy.FromPointer); // 024666C34FB0 0x98 SourceProxy                 ( 00018664B480 ModelClassType RemotingProxy RemotingProxy RemotingProxy Pointer )
+            value.Activator                                 = GetObject<IActivator>(new IntPtr(p + 0x068), ReversePrism.DataModels.IActivator.FromPointer); // 0x68 Activator                   ( ModelClassType IActivator IActivator IActivator Pointer )
+            value.ContextProperties                         = GetObject<IList>(new IntPtr(p + 0x078), ReversePrism.DataModels.IList.FromPointer); // 0x78 ContextProperties           ( ModelClassType IList IList IList Pointer )
+            value.ActivationType                            = GetObject<Type>(new IntPtr(p + 0x080), ReversePrism.DataModels.Type.FromPointer); // 0x80 ActivationType              ( ModelClassType Type Type Type Pointer )
+            value.ActivationTypeName                        = GetString(new IntPtr(p + 0x088)); // 0x88 ActivationTypeName          ( ModelPrimitiveType string string string String )
+            value.IsContextOk                               = GetBool(new IntPtr(p + 0x090)); // 0x90 IsContextOk                 ( ModelPrimitiveType bool bool bool Bool )
+            value.SourceProxy                               = GetObject<RemotingProxy>(new IntPtr(p + 0x098), ReversePrism.DataModels.RemotingProxy.FromPointer); // 0x98 SourceProxy                 ( ModelClassType RemotingProxy RemotingProxy RemotingProxy Pointer )
 
             return value;
         }

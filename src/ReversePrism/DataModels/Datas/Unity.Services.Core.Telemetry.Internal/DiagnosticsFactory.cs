@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_ProjectConfig                          000186600AC0 ModelClassType IProjectConfiguration IProjectConfiguration IProjectConfiguration Pointer
+    // 010 M_ProjectConfig                          ModelClassType IProjectConfiguration IProjectConfiguration IProjectConfiguration Pointer
     // 018 <CommonTags>k__BackingField              IReadOnlyDictionary`2<string, string> IL2CPP_TYPE_GENERICINST
-    // 020 Handler                                  0001866CEA40 ModelClassType DiagnosticsHandler DiagnosticsHandler DiagnosticsHandler Pointer
+    // 020 Handler                                  ModelClassType DiagnosticsHandler DiagnosticsHandler DiagnosticsHandler Pointer
     public partial class DiagnosticsFactory : DataModel
     {
         public IProjectConfiguration?                   M_ProjectConfig                         { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DiagnosticsFactory() { Pointer= p0 };
 
-            value.M_ProjectConfig                           = GetObject<IProjectConfiguration>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProjectConfiguration.FromPointer); // 0245A6637BB0 0x10 M_ProjectConfig             ( 000186600AC0 ModelClassType IProjectConfiguration IProjectConfiguration IProjectConfiguration Pointer )
-            value.Handler                                   = GetObject<DiagnosticsHandler>(new IntPtr(p + 0x020), ReversePrism.DataModels.DiagnosticsHandler.FromPointer); // 0245A6637BF0 0x20 Handler                     ( 0001866CEA40 ModelClassType DiagnosticsHandler DiagnosticsHandler DiagnosticsHandler Pointer )
+            value.M_ProjectConfig                           = GetObject<IProjectConfiguration>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProjectConfiguration.FromPointer); // 0x10 M_ProjectConfig             ( ModelClassType IProjectConfiguration IProjectConfiguration IProjectConfiguration Pointer )
+            value.Handler                                   = GetObject<DiagnosticsHandler>(new IntPtr(p + 0x020), ReversePrism.DataModels.DiagnosticsHandler.FromPointer); // 0x20 Handler                     ( ModelClassType DiagnosticsHandler DiagnosticsHandler DiagnosticsHandler Pointer )
 
             return value;
         }

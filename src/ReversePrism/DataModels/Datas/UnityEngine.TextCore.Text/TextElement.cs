@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_ElementType                            000186639F10 ModelEnumType TextElementType TextElementType TextElementType Int32
-    // 014 M_Unicode                                000186698DF0 ModelPrimitiveType uint uint uint UInt32
-    // 018 M_TextAsset                              000186635890 ModelClassType TextAsset TextAsset TextAsset Pointer
-    // 020 M_Glyph                                  0001865DA1C0 ModelClassType Glyph Glyph Glyph Pointer
-    // 028 M_GlyphIndex                             000186698DF0 ModelPrimitiveType uint uint uint UInt32
-    // 02C M_Scale                                  000186665900 ModelPrimitiveType float float float Single
+    // 010 M_ElementType                            ModelEnumType TextElementType TextElementType TextElementType Int32
+    // 014 M_Unicode                                ModelPrimitiveType uint uint uint UInt32
+    // 018 M_TextAsset                              ModelClassType TextAsset TextAsset TextAsset Pointer
+    // 020 M_Glyph                                  ModelClassType Glyph Glyph Glyph Pointer
+    // 028 M_GlyphIndex                             ModelPrimitiveType uint uint uint UInt32
+    // 02C M_Scale                                  ModelPrimitiveType float float float Single
     public partial class TextElement : DataModel
     {
         public TextElementType                          M_ElementType                           { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TextElement() { Pointer= p0 };
 
-            value.M_ElementType                             = (TextElementType)GetInt32(new IntPtr(p + 0x010)); // 0245A68A98A8 0x10 M_ElementType               ( 000186639F10 ModelEnumType TextElementType TextElementType TextElementType Int32 )
-            value.M_Unicode                                 = GetUInt32(new IntPtr(p + 0x014)); // 0245A68A98C8 0x14 M_Unicode                   ( 000186698DF0 ModelPrimitiveType uint uint uint UInt32 )
-            value.M_TextAsset                               = GetObject<TextAsset>(new IntPtr(p + 0x018), ReversePrism.DataModels.TextAsset.FromPointer); // 0245A68A98E8 0x18 M_TextAsset                 ( 000186635890 ModelClassType TextAsset TextAsset TextAsset Pointer )
-            value.M_Glyph                                   = GetObject<Glyph>(new IntPtr(p + 0x020), ReversePrism.DataModels.Glyph.FromPointer); // 0245A68A9908 0x20 M_Glyph                     ( 0001865DA1C0 ModelClassType Glyph Glyph Glyph Pointer )
-            value.M_GlyphIndex                              = GetUInt32(new IntPtr(p + 0x028)); // 0245A68A9928 0x28 M_GlyphIndex                ( 000186698DF0 ModelPrimitiveType uint uint uint UInt32 )
-            value.M_Scale                                   = GetSingle(new IntPtr(p + 0x02C)); // 0245A68A9948 0x2C M_Scale                     ( 000186665900 ModelPrimitiveType float float float Single )
+            value.M_ElementType                             = (TextElementType)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_ElementType               ( ModelEnumType TextElementType TextElementType TextElementType Int32 )
+            value.M_Unicode                                 = GetUInt32(new IntPtr(p + 0x014)); // 0x14 M_Unicode                   ( ModelPrimitiveType uint uint uint UInt32 )
+            value.M_TextAsset                               = GetObject<TextAsset>(new IntPtr(p + 0x018), ReversePrism.DataModels.TextAsset.FromPointer); // 0x18 M_TextAsset                 ( ModelClassType TextAsset TextAsset TextAsset Pointer )
+            value.M_Glyph                                   = GetObject<Glyph>(new IntPtr(p + 0x020), ReversePrism.DataModels.Glyph.FromPointer); // 0x20 M_Glyph                     ( ModelClassType Glyph Glyph Glyph Pointer )
+            value.M_GlyphIndex                              = GetUInt32(new IntPtr(p + 0x028)); // 0x28 M_GlyphIndex                ( ModelPrimitiveType uint uint uint UInt32 )
+            value.M_Scale                                   = GetSingle(new IntPtr(p + 0x02C)); // 0x2C M_Scale                     ( ModelPrimitiveType float float float Single )
 
             return value;
         }

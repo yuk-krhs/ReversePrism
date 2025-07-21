@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Value                                    000186595960 ModelPrimitiveType bool bool bool Bool
+    // 010 Value                                    ModelPrimitiveType bool bool bool Bool
     public partial class VolatileBoolean : DataModel
     {
         public bool                                     Value                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new VolatileBoolean() { Pointer= p0 };
 
-            value.Value                                     = GetBool(new IntPtr(p + 0x010)); // 024666B53EB8 0x10 Value                       ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Value                                     = GetBool(new IntPtr(p + 0x010)); // 0x10 Value                       ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

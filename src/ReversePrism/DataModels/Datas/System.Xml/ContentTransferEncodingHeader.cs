@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 ContentTransferEncoding                  000186611850 ModelEnumType ContentTransferEncoding ContentTransferEncoding ContentTransferEncoding Int32
-    // 028 ContentTransferEncodingValue             000186671910 ModelPrimitiveType string string string String
+    // 020 ContentTransferEncoding                  ModelEnumType ContentTransferEncoding ContentTransferEncoding ContentTransferEncoding Int32
+    // 028 ContentTransferEncodingValue             ModelPrimitiveType string string string String
     // 000 Binary                                   ContentTransferEncodingHeader IL2CPP_TYPE_CLASS
     // 008 EightBit                                 ContentTransferEncodingHeader IL2CPP_TYPE_CLASS
-    // 010 SevenBit                                 000186611F90 ModelClassType ContentTransferEncodingHeader ContentTransferEncodingHeader ContentTransferEncodingHeader Pointer
+    // 010 SevenBit                                 ModelClassType ContentTransferEncodingHeader ContentTransferEncodingHeader ContentTransferEncodingHeader Pointer
     public partial class ContentTransferEncodingHeader : DataModel
     {
         public ContentTransferEncoding                  ContentTransferEncoding                 { get; set; }
@@ -27,9 +27,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ContentTransferEncodingHeader() { Pointer= p0 };
 
-            value.ContentTransferEncoding                   = (ContentTransferEncoding)GetInt32(new IntPtr(p + 0x020)); // 024667CF07A8 0x20 ContentTransferEncoding     ( 000186611850 ModelEnumType ContentTransferEncoding ContentTransferEncoding ContentTransferEncoding Int32 )
-            value.ContentTransferEncodingValue              = GetString(new IntPtr(p + 0x028)); // 024667CF07C8 0x28 ContentTransferEncodingValue ( 000186671910 ModelPrimitiveType string string string String )
-            value.SevenBit                                  = GetObject<ContentTransferEncodingHeader>(new IntPtr(p + 0x010), ReversePrism.DataModels.ContentTransferEncodingHeader.FromPointer); // 024667CF0828 0x10 SevenBit                    ( 000186611F90 ModelClassType ContentTransferEncodingHeader ContentTransferEncodingHeader ContentTransferEncodingHeader Pointer )
+            value.ContentTransferEncoding                   = (ContentTransferEncoding)GetInt32(new IntPtr(p + 0x020)); // 0x20 ContentTransferEncoding     ( ModelEnumType ContentTransferEncoding ContentTransferEncoding ContentTransferEncoding Int32 )
+            value.ContentTransferEncodingValue              = GetString(new IntPtr(p + 0x028)); // 0x28 ContentTransferEncodingValue ( ModelPrimitiveType string string string String )
+            value.SevenBit                                  = GetObject<ContentTransferEncodingHeader>(new IntPtr(p + 0x010), ReversePrism.DataModels.ContentTransferEncodingHeader.FromPointer); // 0x10 SevenBit                    ( ModelClassType ContentTransferEncodingHeader ContentTransferEncodingHeader ContentTransferEncodingHeader Pointer )
 
             return value;
         }

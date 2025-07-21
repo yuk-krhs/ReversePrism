@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_RequirementIndex                       0001865F2F90 ModelPrimitiveType int int int Int32
-    // 018 M_Requirements                           000185CBD388 ModelEnumListType DeviceRequirement[] DeviceRequirement[] List<DeviceRequirement> Pointer
+    // 010 M_RequirementIndex                       ModelPrimitiveType int int int Int32
+    // 018 M_Requirements                           ModelEnumListType DeviceRequirement[] DeviceRequirement[] List<DeviceRequirement> Pointer
     // 020 m_Controls                               InputControlList`1<InputControl> IL2CPP_TYPE_GENERICINST
     public partial class Match : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Match() { Pointer= p0 };
 
-            value.M_RequirementIndex                        = GetInt32(new IntPtr(p + 0x010)); // 024667712390 0x10 M_RequirementIndex          ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.M_Requirements                            = GetEnumList<DeviceRequirement>(new IntPtr(p + 0x018)); // 0246677123B0 0x18 M_Requirements              ( 000185CBD388 ModelEnumListType DeviceRequirement[] DeviceRequirement[] List<DeviceRequirement> Pointer )
+            value.M_RequirementIndex                        = GetInt32(new IntPtr(p + 0x010)); // 0x10 M_RequirementIndex          ( ModelPrimitiveType int int int Int32 )
+            value.M_Requirements                            = GetEnumList<DeviceRequirement>(new IntPtr(p + 0x018)); // 0x18 M_Requirements              ( ModelEnumListType DeviceRequirement[] DeviceRequirement[] List<DeviceRequirement> Pointer )
 
             return value;
         }

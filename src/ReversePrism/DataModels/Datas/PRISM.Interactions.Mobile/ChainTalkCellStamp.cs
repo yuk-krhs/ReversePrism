@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Image                                    0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
+    // 020 Image                                    ModelClassType UIImage UIImage UIImage Pointer
     public partial class ChainTalkCellStamp : DataModel
     {
         public UIImage?                                 Image                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChainTalkCellStamp() { Pointer= p0 };
 
-            value.Image                                     = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 02466B14D4B8 0x20 Image                       ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
+            value.Image                                     = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 0x20 Image                       ( ModelClassType UIImage UIImage UIImage Pointer )
 
             return value;
         }

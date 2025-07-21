@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 038 StatusType                               0001866865D0 ModelEnumType ToggleStatusType ToggleStatusType ToggleStatusType Int32
-    // 03C KindType                                 000186685C00 ModelEnumType ToggleKindType ToggleKindType ToggleKindType Int32
+    // 038 StatusType                               ModelEnumType ToggleStatusType ToggleStatusType ToggleStatusType Int32
+    // 03C KindType                                 ModelEnumType ToggleKindType ToggleKindType ToggleKindType Int32
     public partial class TextSetInformation : DataModel
     {
         public ToggleStatusType                         StatusType                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TextSetInformation() { Pointer= p0 };
 
-            value.StatusType                                = (ToggleStatusType)GetInt32(new IntPtr(p + 0x038)); // 0245A4026CA0 0x38 StatusType                  ( 0001866865D0 ModelEnumType ToggleStatusType ToggleStatusType ToggleStatusType Int32 )
-            value.KindType                                  = (ToggleKindType)GetInt32(new IntPtr(p + 0x03C)); // 0245A4026CC0 0x3C KindType                    ( 000186685C00 ModelEnumType ToggleKindType ToggleKindType ToggleKindType Int32 )
+            value.StatusType                                = (ToggleStatusType)GetInt32(new IntPtr(p + 0x038)); // 0x38 StatusType                  ( ModelEnumType ToggleStatusType ToggleStatusType ToggleStatusType Int32 )
+            value.KindType                                  = (ToggleKindType)GetInt32(new IntPtr(p + 0x03C)); // 0x3C KindType                    ( ModelEnumType ToggleKindType ToggleKindType ToggleKindType Int32 )
 
             return value;
         }

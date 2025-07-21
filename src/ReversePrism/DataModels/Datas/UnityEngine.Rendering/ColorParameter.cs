@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 Hdr                                      000186597BE0 ModelPrimitiveType bool bool bool Bool
-    // 029 ShowAlpha                                000186597BE0 ModelPrimitiveType bool bool bool Bool
-    // 02A ShowEyeDropper                           000186597BE0 ModelPrimitiveType bool bool bool Bool
+    // 028 Hdr                                      ModelPrimitiveType bool bool bool Bool
+    // 029 ShowAlpha                                ModelPrimitiveType bool bool bool Bool
+    // 02A ShowEyeDropper                           ModelPrimitiveType bool bool bool Bool
     public partial class ColorParameter : DataModel
     {
         public bool                                     Hdr                                     { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ColorParameter() { Pointer= p0 };
 
-            value.Hdr                                       = GetBool(new IntPtr(p + 0x028)); // 0246691BC2B8 0x28 Hdr                         ( 000186597BE0 ModelPrimitiveType bool bool bool Bool )
-            value.ShowAlpha                                 = GetBool(new IntPtr(p + 0x029)); // 0246691BC2D8 0x29 ShowAlpha                   ( 000186597BE0 ModelPrimitiveType bool bool bool Bool )
-            value.ShowEyeDropper                            = GetBool(new IntPtr(p + 0x02A)); // 0246691BC2F8 0x2A ShowEyeDropper              ( 000186597BE0 ModelPrimitiveType bool bool bool Bool )
+            value.Hdr                                       = GetBool(new IntPtr(p + 0x028)); // 0x28 Hdr                         ( ModelPrimitiveType bool bool bool Bool )
+            value.ShowAlpha                                 = GetBool(new IntPtr(p + 0x029)); // 0x29 ShowAlpha                   ( ModelPrimitiveType bool bool bool Bool )
+            value.ShowEyeDropper                            = GetBool(new IntPtr(p + 0x02A)); // 0x2A ShowEyeDropper              ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

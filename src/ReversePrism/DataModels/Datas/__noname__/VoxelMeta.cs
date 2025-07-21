@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Cell                                     0001865B5C00 ModelClassType Cell Cell Cell Pointer
-    // 018 BrickIndices                             000185D18EF8 ModelPrimitiveListType List`1<ushort> List`1<ushort> List<ushort> Pointer
+    // 010 Cell                                     ModelClassType Cell Cell Cell Pointer
+    // 018 BrickIndices                             ModelPrimitiveListType List`1<ushort> List`1<ushort> List<ushort> Pointer
     public partial class VoxelMeta : DataModel
     {
         public Cell?                                    Cell                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new VoxelMeta() { Pointer= p0 };
 
-            value.Cell                                      = GetObject<Cell>(new IntPtr(p + 0x010), ReversePrism.DataModels.Cell.FromPointer); // 0246692097F8 0x10 Cell                        ( 0001865B5C00 ModelClassType Cell Cell Cell Pointer )
-            value.BrickIndices                              = GetUInt16List(new IntPtr(p + 0x018)); // 024669209818 0x18 BrickIndices                ( 000185D18EF8 ModelPrimitiveListType List`1<ushort> List`1<ushort> List<ushort> Pointer )
+            value.Cell                                      = GetObject<Cell>(new IntPtr(p + 0x010), ReversePrism.DataModels.Cell.FromPointer); // 0x10 Cell                        ( ModelClassType Cell Cell Cell Pointer )
+            value.BrickIndices                              = GetUInt16List(new IntPtr(p + 0x018)); // 0x18 BrickIndices                ( ModelPrimitiveListType List`1<ushort> List`1<ushort> List<ushort> Pointer )
 
             return value;
         }

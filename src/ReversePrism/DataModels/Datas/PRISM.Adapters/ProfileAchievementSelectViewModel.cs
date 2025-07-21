@@ -8,17 +8,17 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 AchievementIconModels                    000185B6F360 ModelClassListType AchievementIconViewModel[] AchievementIconViewModel[] List<AchievementIconViewModel> Pointer
-    // 018 DisplayAchievementIconModels             000185B6F360 ModelClassListType AchievementIconViewModel[] AchievementIconViewModel[] List<AchievementIconViewModel> Pointer
-    // 020 SlotPanelViewModels                      000185B6F360 ModelClassListType AchievementIconViewModel[] AchievementIconViewModel[] List<AchievementIconViewModel> Pointer
-    // 028 SortFilterModel                          0001865A9B90 ModelClassType ProfileAchievementSortFilterModel ProfileAchievementSortFilterModel ProfileAchievementSortFilterModel Pointer
-    // 030 SelectedTabType                          00018666A8C0 ModelEnumType AchievementType AchievementType AchievementType Int32
-    // 038 IsTabBadges                              000185B78CA0 ModelPrimitiveListType bool[] bool[] List<bool> Pointer
-    // 040 UserSelfPanelViewModel                   0001865C7B80 ModelClassType ProfileUserSelfPanelViewModel ProfileUserSelfPanelViewModel ProfileUserSelfPanelViewModel Pointer
-    // 048 CurrentSlotIndex                         0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 050 LastSelectedViewModel                    000186676180 ModelClassType AchievementIconViewModel AchievementIconViewModel AchievementIconViewModel Pointer
+    // 010 AchievementIconModels                    ModelClassListType AchievementIconViewModel[] AchievementIconViewModel[] List<AchievementIconViewModel> Pointer
+    // 018 DisplayAchievementIconModels             ModelClassListType AchievementIconViewModel[] AchievementIconViewModel[] List<AchievementIconViewModel> Pointer
+    // 020 SlotPanelViewModels                      ModelClassListType AchievementIconViewModel[] AchievementIconViewModel[] List<AchievementIconViewModel> Pointer
+    // 028 SortFilterModel                          ModelClassType ProfileAchievementSortFilterModel ProfileAchievementSortFilterModel ProfileAchievementSortFilterModel Pointer
+    // 030 SelectedTabType                          ModelEnumType AchievementType AchievementType AchievementType Int32
+    // 038 IsTabBadges                              ModelPrimitiveListType bool[] bool[] List<bool> Pointer
+    // 040 UserSelfPanelViewModel                   ModelClassType ProfileUserSelfPanelViewModel ProfileUserSelfPanelViewModel ProfileUserSelfPanelViewModel Pointer
+    // 048 CurrentSlotIndex                         ModelPrimitiveType int int int Int32
+    // 050 LastSelectedViewModel                    ModelClassType AchievementIconViewModel AchievementIconViewModel AchievementIconViewModel Pointer
     // 058 isNewSaveData                            SavableJsonObject`1<ProfileAchievementIsNewSaveData> IL2CPP_TYPE_GENERICINST
-    // 060 SettingsAchievementIds                   000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer
+    // 060 SettingsAchievementIds                   ModelPrimitiveListType int[] int[] List<int> Pointer
     public partial class ProfileAchievementSelectViewModel : DataModel
     {
         public List<AchievementIconViewModel>?          AchievementIconModels                   { get; set; }
@@ -40,16 +40,16 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProfileAchievementSelectViewModel() { Pointer= p0 };
 
-            value.AchievementIconModels                     = GetObjectList<AchievementIconViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.AchievementIconViewModel.FromPointer); // 0246666E5BB8 0x10 AchievementIconModels       ( 000185B6F360 ModelClassListType AchievementIconViewModel[] AchievementIconViewModel[] List<AchievementIconViewModel> Pointer )
-            value.DisplayAchievementIconModels              = GetObjectList<AchievementIconViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.AchievementIconViewModel.FromPointer); // 0246666E5BD8 0x18 DisplayAchievementIconModels ( 000185B6F360 ModelClassListType AchievementIconViewModel[] AchievementIconViewModel[] List<AchievementIconViewModel> Pointer )
-            value.SlotPanelViewModels                       = GetObjectList<AchievementIconViewModel>(new IntPtr(p + 0x020), ReversePrism.DataModels.AchievementIconViewModel.FromPointer); // 0246666E5BF8 0x20 SlotPanelViewModels         ( 000185B6F360 ModelClassListType AchievementIconViewModel[] AchievementIconViewModel[] List<AchievementIconViewModel> Pointer )
-            value.SortFilterModel                           = GetObject<ProfileAchievementSortFilterModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProfileAchievementSortFilterModel.FromPointer); // 0246666E5C18 0x28 SortFilterModel             ( 0001865A9B90 ModelClassType ProfileAchievementSortFilterModel ProfileAchievementSortFilterModel ProfileAchievementSortFilterModel Pointer )
-            value.SelectedTabType                           = (AchievementType)GetInt32(new IntPtr(p + 0x030)); // 0246666E5C38 0x30 SelectedTabType             ( 00018666A8C0 ModelEnumType AchievementType AchievementType AchievementType Int32 )
-            value.IsTabBadges                               = GetBoolList(new IntPtr(p + 0x038)); // 0246666E5C58 0x38 IsTabBadges                 ( 000185B78CA0 ModelPrimitiveListType bool[] bool[] List<bool> Pointer )
-            value.UserSelfPanelViewModel                    = GetObject<ProfileUserSelfPanelViewModel>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProfileUserSelfPanelViewModel.FromPointer); // 0246666E5C78 0x40 UserSelfPanelViewModel      ( 0001865C7B80 ModelClassType ProfileUserSelfPanelViewModel ProfileUserSelfPanelViewModel ProfileUserSelfPanelViewModel Pointer )
-            value.CurrentSlotIndex                          = GetInt32(new IntPtr(p + 0x048)); // 0246666E5C98 0x48 CurrentSlotIndex            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.LastSelectedViewModel                     = GetObject<AchievementIconViewModel>(new IntPtr(p + 0x050), ReversePrism.DataModels.AchievementIconViewModel.FromPointer); // 0246666E5CB8 0x50 LastSelectedViewModel       ( 000186676180 ModelClassType AchievementIconViewModel AchievementIconViewModel AchievementIconViewModel Pointer )
-            value.SettingsAchievementIds                    = GetInt32List(new IntPtr(p + 0x060)); // 0246666E5CF8 0x60 SettingsAchievementIds      ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.AchievementIconModels                     = GetObjectList<AchievementIconViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.AchievementIconViewModel.FromPointer); // 0x10 AchievementIconModels       ( ModelClassListType AchievementIconViewModel[] AchievementIconViewModel[] List<AchievementIconViewModel> Pointer )
+            value.DisplayAchievementIconModels              = GetObjectList<AchievementIconViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.AchievementIconViewModel.FromPointer); // 0x18 DisplayAchievementIconModels ( ModelClassListType AchievementIconViewModel[] AchievementIconViewModel[] List<AchievementIconViewModel> Pointer )
+            value.SlotPanelViewModels                       = GetObjectList<AchievementIconViewModel>(new IntPtr(p + 0x020), ReversePrism.DataModels.AchievementIconViewModel.FromPointer); // 0x20 SlotPanelViewModels         ( ModelClassListType AchievementIconViewModel[] AchievementIconViewModel[] List<AchievementIconViewModel> Pointer )
+            value.SortFilterModel                           = GetObject<ProfileAchievementSortFilterModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProfileAchievementSortFilterModel.FromPointer); // 0x28 SortFilterModel             ( ModelClassType ProfileAchievementSortFilterModel ProfileAchievementSortFilterModel ProfileAchievementSortFilterModel Pointer )
+            value.SelectedTabType                           = (AchievementType)GetInt32(new IntPtr(p + 0x030)); // 0x30 SelectedTabType             ( ModelEnumType AchievementType AchievementType AchievementType Int32 )
+            value.IsTabBadges                               = GetBoolList(new IntPtr(p + 0x038)); // 0x38 IsTabBadges                 ( ModelPrimitiveListType bool[] bool[] List<bool> Pointer )
+            value.UserSelfPanelViewModel                    = GetObject<ProfileUserSelfPanelViewModel>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProfileUserSelfPanelViewModel.FromPointer); // 0x40 UserSelfPanelViewModel      ( ModelClassType ProfileUserSelfPanelViewModel ProfileUserSelfPanelViewModel ProfileUserSelfPanelViewModel Pointer )
+            value.CurrentSlotIndex                          = GetInt32(new IntPtr(p + 0x048)); // 0x48 CurrentSlotIndex            ( ModelPrimitiveType int int int Int32 )
+            value.LastSelectedViewModel                     = GetObject<AchievementIconViewModel>(new IntPtr(p + 0x050), ReversePrism.DataModels.AchievementIconViewModel.FromPointer); // 0x50 LastSelectedViewModel       ( ModelClassType AchievementIconViewModel AchievementIconViewModel AchievementIconViewModel Pointer )
+            value.SettingsAchievementIds                    = GetInt32List(new IntPtr(p + 0x060)); // 0x60 SettingsAchievementIds      ( ModelPrimitiveListType int[] int[] List<int> Pointer )
 
             return value;
         }

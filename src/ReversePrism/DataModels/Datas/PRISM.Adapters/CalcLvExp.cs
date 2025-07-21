@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 expTable                                 ValueTuple`2<long, int>[] IL2CPP_TYPE_SZARRAY
-    // 018 MaxExp                                   0001865F7700 ModelPrimitiveType long long long Int64
-    // 020 MaxLv                                    0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MaxExp                                   ModelPrimitiveType long long long Int64
+    // 020 MaxLv                                    ModelPrimitiveType int int int Int32
     public partial class CalcLvExp : DataModel
     {
         public long                                     MaxExp                                  { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CalcLvExp() { Pointer= p0 };
 
-            value.MaxExp                                    = GetInt64(new IntPtr(p + 0x018)); // 024665ED2E80 0x18 MaxExp                      ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.MaxLv                                     = GetInt32(new IntPtr(p + 0x020)); // 024665ED2EA0 0x20 MaxLv                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MaxExp                                    = GetInt64(new IntPtr(p + 0x018)); // 0x18 MaxExp                      ( ModelPrimitiveType long long long Int64 )
+            value.MaxLv                                     = GetInt32(new IntPtr(p + 0x020)); // 0x20 MaxLv                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

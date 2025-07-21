@@ -9,9 +9,9 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 m_serializedStates                       IList`1<<object>> IL2CPP_TYPE_GENERICINST
-    // 018 M_savedSerializationInfo                 0001866636F0 ModelClassType SerializationInfo SerializationInfo SerializationInfo Pointer
+    // 018 M_savedSerializationInfo                 ModelClassType SerializationInfo SerializationInfo SerializationInfo Pointer
     // 020 m_realObject                             <object> IL2CPP_TYPE_OBJECT
-    // 028 M_realType                               00018669F180 ModelClassType RuntimeType RuntimeType RuntimeType Pointer
+    // 028 M_realType                               ModelClassType RuntimeType RuntimeType RuntimeType Pointer
     // 030 SerializeObjectState                     EventHandler`1<SafeSerializationEventArgs> IL2CPP_TYPE_GENERICINST
     // 000 RealTypeSerializationName                string IL2CPP_TYPE_STRING
     public partial class SafeSerializationManager : DataModel
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SafeSerializationManager() { Pointer= p0 };
 
-            value.M_savedSerializationInfo                  = GetObject<SerializationInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.SerializationInfo.FromPointer); // 0245A4C16EB8 0x18 M_savedSerializationInfo    ( 0001866636F0 ModelClassType SerializationInfo SerializationInfo SerializationInfo Pointer )
-            value.M_realType                                = GetObject<RuntimeType>(new IntPtr(p + 0x028), ReversePrism.DataModels.RuntimeType.FromPointer); // 0245A4C16EF8 0x28 M_realType                  ( 00018669F180 ModelClassType RuntimeType RuntimeType RuntimeType Pointer )
+            value.M_savedSerializationInfo                  = GetObject<SerializationInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.SerializationInfo.FromPointer); // 0x18 M_savedSerializationInfo    ( ModelClassType SerializationInfo SerializationInfo SerializationInfo Pointer )
+            value.M_realType                                = GetObject<RuntimeType>(new IntPtr(p + 0x028), ReversePrism.DataModels.RuntimeType.FromPointer); // 0x28 M_realType                  ( ModelClassType RuntimeType RuntimeType RuntimeType Pointer )
 
             return value;
         }

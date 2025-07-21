@@ -9,11 +9,11 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 AllocationSize                           int IL2CPP_TYPE_I4
-    // 010 Allocator                                000186699480 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32
+    // 010 Allocator                                ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32
     // 018 Blocks                                   IntPtr IL2CPP_TYPE_PTR
-    // 020 BlockCount                               0001865F2F90 ModelPrimitiveType int int int Int32
-    // 028 Ranges                                   0001866CD820 ModelEnumType Block Block Block Int32
-    // 048 RangeCount                               0001865F2F90 ModelPrimitiveType int int int Int32
+    // 020 BlockCount                               ModelPrimitiveType int int int Int32
+    // 028 Ranges                                   ModelEnumType Block Block Block Int32
+    // 048 RangeCount                               ModelPrimitiveType int int int Int32
     public partial class UnsafeStreamBlockData : DataModel
     {
         public AllocatorHandle                          Allocator                               { get; set; }
@@ -29,10 +29,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnsafeStreamBlockData() { Pointer= p0 };
 
-            value.Allocator                                 = (AllocatorHandle)GetInt32(new IntPtr(p + 0x010)); // 024669EEE840 0x10 Allocator                   ( 000186699480 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32 )
-            value.BlockCount                                = GetInt32(new IntPtr(p + 0x020)); // 024669EEE880 0x20 BlockCount                  ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.Ranges                                    = (Block)GetInt32(new IntPtr(p + 0x028)); // 024669EEE8A0 0x28 Ranges                      ( 0001866CD820 ModelEnumType Block Block Block Int32 )
-            value.RangeCount                                = GetInt32(new IntPtr(p + 0x048)); // 024669EEE8C0 0x48 RangeCount                  ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.Allocator                                 = (AllocatorHandle)GetInt32(new IntPtr(p + 0x010)); // 0x10 Allocator                   ( ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32 )
+            value.BlockCount                                = GetInt32(new IntPtr(p + 0x020)); // 0x20 BlockCount                  ( ModelPrimitiveType int int int Int32 )
+            value.Ranges                                    = (Block)GetInt32(new IntPtr(p + 0x028)); // 0x28 Ranges                      ( ModelEnumType Block Block Block Int32 )
+            value.RangeCount                                = GetInt32(new IntPtr(p + 0x048)); // 0x48 RangeCount                  ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

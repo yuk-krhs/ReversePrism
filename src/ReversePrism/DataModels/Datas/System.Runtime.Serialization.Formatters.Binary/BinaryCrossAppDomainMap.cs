@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CrossAppDomainArrayIndex                 0001865F2F90 ModelPrimitiveType int int int Int32
+    // 010 CrossAppDomainArrayIndex                 ModelPrimitiveType int int int Int32
     public partial class BinaryCrossAppDomainMap : DataModel
     {
         public int                                      CrossAppDomainArrayIndex                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BinaryCrossAppDomainMap() { Pointer= p0 };
 
-            value.CrossAppDomainArrayIndex                  = GetInt32(new IntPtr(p + 0x010)); // 024666CA2010 0x10 CrossAppDomainArrayIndex    ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.CrossAppDomainArrayIndex                  = GetInt32(new IntPtr(p + 0x010)); // 0x10 CrossAppDomainArrayIndex    ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Actions                                  000185CBC648 ModelEnumListType ReadActionJson[] ReadActionJson[] List<ReadActionJson> Pointer
-    // 018 Maps                                     000185CBC868 ModelEnumListType ReadMapJson[] ReadMapJson[] List<ReadMapJson> Pointer
+    // 010 Actions                                  ModelEnumListType ReadActionJson[] ReadActionJson[] List<ReadActionJson> Pointer
+    // 018 Maps                                     ModelEnumListType ReadMapJson[] ReadMapJson[] List<ReadMapJson> Pointer
     public partial class ReadFileJson : DataModel
     {
         public List<ReadActionJson>?                    Actions                                 { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ReadFileJson() { Pointer= p0 };
 
-            value.Actions                                   = GetEnumList<ReadActionJson>(new IntPtr(p + 0x010)); // 0246676BFC58 0x10 Actions                     ( 000185CBC648 ModelEnumListType ReadActionJson[] ReadActionJson[] List<ReadActionJson> Pointer )
-            value.Maps                                      = GetEnumList<ReadMapJson>(new IntPtr(p + 0x018)); // 0246676BFC78 0x18 Maps                        ( 000185CBC868 ModelEnumListType ReadMapJson[] ReadMapJson[] List<ReadMapJson> Pointer )
+            value.Actions                                   = GetEnumList<ReadActionJson>(new IntPtr(p + 0x010)); // 0x10 Actions                     ( ModelEnumListType ReadActionJson[] ReadActionJson[] List<ReadActionJson> Pointer )
+            value.Maps                                      = GetEnumList<ReadMapJson>(new IntPtr(p + 0x018)); // 0x18 Maps                        ( ModelEnumListType ReadMapJson[] ReadMapJson[] List<ReadMapJson> Pointer )
 
             return value;
         }

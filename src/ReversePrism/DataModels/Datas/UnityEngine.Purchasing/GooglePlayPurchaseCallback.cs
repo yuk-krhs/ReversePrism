@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_StoreCallback                          000186658CA0 ModelClassType IStoreCallback IStoreCallback IStoreCallback Pointer
-    // 018 M_GooglePlayConfigurationInternal        00018655D2D0 ModelClassType IGooglePlayConfigurationInternal IGooglePlayConfigurationInternal IGooglePlayConfigurationInternal Pointer
-    // 020 M_Util                                   0001866905E0 ModelClassType IUtil IUtil IUtil Pointer
+    // 010 M_StoreCallback                          ModelClassType IStoreCallback IStoreCallback IStoreCallback Pointer
+    // 018 M_GooglePlayConfigurationInternal        ModelClassType IGooglePlayConfigurationInternal IGooglePlayConfigurationInternal IGooglePlayConfigurationInternal Pointer
+    // 020 M_Util                                   ModelClassType IUtil IUtil IUtil Pointer
     public partial class GooglePlayPurchaseCallback : DataModel
     {
         public IStoreCallback?                          M_StoreCallback                         { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GooglePlayPurchaseCallback() { Pointer= p0 };
 
-            value.M_StoreCallback                           = GetObject<IStoreCallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.IStoreCallback.FromPointer); // 0245A68CC7C0 0x10 M_StoreCallback             ( 000186658CA0 ModelClassType IStoreCallback IStoreCallback IStoreCallback Pointer )
-            value.M_GooglePlayConfigurationInternal         = GetObject<IGooglePlayConfigurationInternal>(new IntPtr(p + 0x018), ReversePrism.DataModels.IGooglePlayConfigurationInternal.FromPointer); // 0245A68CC7E0 0x18 M_GooglePlayConfigurationInternal ( 00018655D2D0 ModelClassType IGooglePlayConfigurationInternal IGooglePlayConfigurationInternal IGooglePlayConfigurationInternal Pointer )
-            value.M_Util                                    = GetObject<IUtil>(new IntPtr(p + 0x020), ReversePrism.DataModels.IUtil.FromPointer); // 0245A68CC800 0x20 M_Util                      ( 0001866905E0 ModelClassType IUtil IUtil IUtil Pointer )
+            value.M_StoreCallback                           = GetObject<IStoreCallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.IStoreCallback.FromPointer); // 0x10 M_StoreCallback             ( ModelClassType IStoreCallback IStoreCallback IStoreCallback Pointer )
+            value.M_GooglePlayConfigurationInternal         = GetObject<IGooglePlayConfigurationInternal>(new IntPtr(p + 0x018), ReversePrism.DataModels.IGooglePlayConfigurationInternal.FromPointer); // 0x18 M_GooglePlayConfigurationInternal ( ModelClassType IGooglePlayConfigurationInternal IGooglePlayConfigurationInternal IGooglePlayConfigurationInternal Pointer )
+            value.M_Util                                    = GetObject<IUtil>(new IntPtr(p + 0x020), ReversePrism.DataModels.IUtil.FromPointer); // 0x20 M_Util                      ( ModelClassType IUtil IUtil IUtil Pointer )
 
             return value;
         }

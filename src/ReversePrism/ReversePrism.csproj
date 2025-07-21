@@ -14,6 +14,9 @@
   <ItemGroup>
     <Compile Remove="DataModels\Datas\AOT\**" />
     <Compile Remove="DataModels\Datas\AppGuard.Security\**" />
+    <Compile Remove="DataModels\Datas\Cinemachine.PostFX\**" />
+    <Compile Remove="DataModels\Datas\Cinemachine.Utility\**" />
+    <Compile Remove="DataModels\Datas\Cinemachine\**" />
     <Compile Remove="DataModels\Datas\Coffee.UIExtensions\**" />
     <Compile Remove="DataModels\Datas\Coffee.UIParticleExtensions\**" />
     <Compile Remove="DataModels\Datas\Coffee.UISoftMask\**" />
@@ -96,6 +99,7 @@
     <Compile Remove="DataModels\Datas\Google.Api\**" />
     <Compile Remove="DataModels\Datas\Google.Protobuf.Collections\**" />
     <Compile Remove="DataModels\Datas\Google.Protobuf.Compatibility\**" />
+    <Compile Remove="DataModels\Datas\Google.Protobuf.Compiler\**" />
     <Compile Remove="DataModels\Datas\Google.Protobuf.Reflection\**" />
     <Compile Remove="DataModels\Datas\Google.Protobuf.WellKnownTypes\**" />
     <Compile Remove="DataModels\Datas\Google.Protobuf\**" />
@@ -120,6 +124,7 @@
     <Compile Remove="DataModels\Datas\Limelight.Logger\**" />
     <Compile Remove="DataModels\Datas\Limelight.Runtime\**" />
     <Compile Remove="DataModels\Datas\Limelight\**" />
+    <Compile Remove="DataModels\Datas\MagicaCloth2\**" />
     <Compile Remove="DataModels\Datas\MemoryPack.Compression\**" />
     <Compile Remove="DataModels\Datas\MemoryPack.Formatters\**" />
     <Compile Remove="DataModels\Datas\MemoryPack.Internal\**" />
@@ -165,8 +170,10 @@
     <Compile Remove="DataModels\Datas\PRISM.Adapters.Common.GameHelpList\**" />
     <Compile Remove="DataModels\Datas\PRISM.Adapters.Common\**" />
     <Compile Remove="DataModels\Datas\PRISM.Adapters.Data\**" />
+    <Compile Remove="DataModels\Datas\PRISM.Adapters.Home\**" />
     <Compile Remove="DataModels\Datas\PRISM.Adapters.Interface\**" />
     <Compile Remove="DataModels\Datas\PRISM.Adapters.Introduction\**" />
+    <Compile Remove="DataModels\Datas\PRISM.Adapters.Live\**" />
     <Compile Remove="DataModels\Datas\PRISM.Adapters.Loading\**" />
     <Compile Remove="DataModels\Datas\PRISM.Adapters.Mobile\**" />
     <Compile Remove="DataModels\Datas\PRISM.Adapters.Notification\**" />
@@ -222,11 +229,14 @@
     <Compile Remove="DataModels\Datas\PRISM.Interactions.FriendInvitation\**" />
     <Compile Remove="DataModels\Datas\PRISM.Interactions.Friend\**" />
     <Compile Remove="DataModels\Datas\PRISM.Interactions.GameHelpList\**" />
+    <Compile Remove="DataModels\Datas\PRISM.Interactions.Gasha\**" />
     <Compile Remove="DataModels\Datas\PRISM.Interactions.GlobalMenu\**" />
     <Compile Remove="DataModels\Datas\PRISM.Interactions.Home\**" />
     <Compile Remove="DataModels\Datas\PRISM.Interactions.Introduction\**" />
+    <Compile Remove="DataModels\Datas\PRISM.Interactions.Item\**" />
     <Compile Remove="DataModels\Datas\PRISM.Interactions.Live\**" />
     <Compile Remove="DataModels\Datas\PRISM.Interactions.Loading\**" />
+    <Compile Remove="DataModels\Datas\PRISM.Interactions.Mission\**" />
     <Compile Remove="DataModels\Datas\PRISM.Interactions.Mobile\**" />
     <Compile Remove="DataModels\Datas\PRISM.Interactions.PresentBox\**" />
     <Compile Remove="DataModels\Datas\PRISM.Interactions.PrivacyOption\**" />
@@ -235,6 +245,7 @@
     <Compile Remove="DataModels\Datas\PRISM.Interactions.Profile\**" />
     <Compile Remove="DataModels\Datas\PRISM.Interactions.SeasonMission\**" />
     <Compile Remove="DataModels\Datas\PRISM.Interactions.Shop\**" />
+    <Compile Remove="DataModels\Datas\PRISM.Interactions.Stamina\**" />
     <Compile Remove="DataModels\Datas\PRISM.Interactions.Story\**" />
     <Compile Remove="DataModels\Datas\PRISM.Interactions.Support\**" />
     <Compile Remove="DataModels\Datas\PRISM.Interactions.Title\**" />
@@ -252,6 +263,7 @@
     <Compile Remove="DataModels\Datas\PRISM.Live\**" />
     <Compile Remove="DataModels\Datas\PRISM.Master\**" />
     <Compile Remove="DataModels\Datas\PRISM.Mission\**" />
+    <Compile Remove="DataModels\Datas\PRISM.Module.CustomMagicaCloth\**" />
     <Compile Remove="DataModels\Datas\PRISM.Module.Networking.Implementation.Service.Announce\**" />
     <Compile Remove="DataModels\Datas\PRISM.Module.Networking.Implementation\**" />
     <Compile Remove="DataModels\Datas\PRISM.Module.Networking.Stub.Api\**" />
@@ -331,6 +343,7 @@
     <Compile Remove="DataModels\Datas\System.Diagnostics.Contracts\**" />
     <Compile Remove="DataModels\Datas\System.Diagnostics.Tracing\**" />
     <Compile Remove="DataModels\Datas\System.Diagnostics\**" />
+    <Compile Remove="DataModels\Datas\System.Drawing\**" />
     <Compile Remove="DataModels\Datas\System.Dynamic.Utils\**" />
     <Compile Remove="DataModels\Datas\System.Dynamic\**" />
     <Compile Remove="DataModels\Datas\System.Globalization\**" />
@@ -458,6 +471,8 @@
     <Compile Remove="DataModels\Datas\Unity.Services.Qos.Internal\**" />
     <Compile Remove="DataModels\Datas\Unity.Services.Vivox.Internal\**" />
     <Compile Remove="DataModels\Datas\Unity.Services.Wire.Internal\**" />
+    <Compile Remove="DataModels\Datas\UnityEditor.Rendering.BuiltIn.ShaderGraph\**" />
+    <Compile Remove="DataModels\Datas\UnityEditor.Rendering.Universal\**" />
     <Compile Remove="DataModels\Datas\UnityEngine.AdaptivePerformance.Provider\**" />
     <Compile Remove="DataModels\Datas\UnityEngine.AdaptivePerformance.Samsung.Android\**" />
     <Compile Remove="DataModels\Datas\UnityEngine.AdaptivePerformance\**" />
@@ -475,6 +490,7 @@
     <Compile Remove="DataModels\Datas\UnityEngine.Experimental.GlobalIllumination\**" />
     <Compile Remove="DataModels\Datas\UnityEngine.Experimental.Playables\**" />
     <Compile Remove="DataModels\Datas\UnityEngine.Experimental.Rendering.RenderGraphModule\**" />
+    <Compile Remove="DataModels\Datas\UnityEngine.Experimental.Rendering.Universal\**" />
     <Compile Remove="DataModels\Datas\UnityEngine.Experimental.Rendering\**" />
     <Compile Remove="DataModels\Datas\UnityEngine.Experimental.U2D\**" />
     <Compile Remove="DataModels\Datas\UnityEngine.Experimental.Video\**" />
@@ -524,6 +540,10 @@
     <Compile Remove="DataModels\Datas\UnityEngine.Rendering.PostProcessing\**" />
     <Compile Remove="DataModels\Datas\UnityEngine.Rendering.RendererUtils\**" />
     <Compile Remove="DataModels\Datas\UnityEngine.Rendering.UI\**" />
+    <Compile Remove="DataModels\Datas\UnityEngine.Rendering.Universal.Internal\**" />
+    <Compile Remove="DataModels\Datas\UnityEngine.Rendering.Universal.LibTessDotNet\**" />
+    <Compile Remove="DataModels\Datas\UnityEngine.Rendering.Universal.UTess\**" />
+    <Compile Remove="DataModels\Datas\UnityEngine.Rendering.Universal\**" />
     <Compile Remove="DataModels\Datas\UnityEngine.Rendering\**" />
     <Compile Remove="DataModels\Datas\UnityEngine.SceneManagement\**" />
     <Compile Remove="DataModels\Datas\UnityEngine.Scripting.APIUpdating\**" />
@@ -759,6 +779,9 @@
     <Compile Remove="DataModels\Enums\__noname__\**" />
     <EmbeddedResource Remove="DataModels\Datas\AOT\**" />
     <EmbeddedResource Remove="DataModels\Datas\AppGuard.Security\**" />
+    <EmbeddedResource Remove="DataModels\Datas\Cinemachine.PostFX\**" />
+    <EmbeddedResource Remove="DataModels\Datas\Cinemachine.Utility\**" />
+    <EmbeddedResource Remove="DataModels\Datas\Cinemachine\**" />
     <EmbeddedResource Remove="DataModels\Datas\Coffee.UIExtensions\**" />
     <EmbeddedResource Remove="DataModels\Datas\Coffee.UIParticleExtensions\**" />
     <EmbeddedResource Remove="DataModels\Datas\Coffee.UISoftMask\**" />
@@ -841,6 +864,7 @@
     <EmbeddedResource Remove="DataModels\Datas\Google.Api\**" />
     <EmbeddedResource Remove="DataModels\Datas\Google.Protobuf.Collections\**" />
     <EmbeddedResource Remove="DataModels\Datas\Google.Protobuf.Compatibility\**" />
+    <EmbeddedResource Remove="DataModels\Datas\Google.Protobuf.Compiler\**" />
     <EmbeddedResource Remove="DataModels\Datas\Google.Protobuf.Reflection\**" />
     <EmbeddedResource Remove="DataModels\Datas\Google.Protobuf.WellKnownTypes\**" />
     <EmbeddedResource Remove="DataModels\Datas\Google.Protobuf\**" />
@@ -865,6 +889,7 @@
     <EmbeddedResource Remove="DataModels\Datas\Limelight.Logger\**" />
     <EmbeddedResource Remove="DataModels\Datas\Limelight.Runtime\**" />
     <EmbeddedResource Remove="DataModels\Datas\Limelight\**" />
+    <EmbeddedResource Remove="DataModels\Datas\MagicaCloth2\**" />
     <EmbeddedResource Remove="DataModels\Datas\MemoryPack.Compression\**" />
     <EmbeddedResource Remove="DataModels\Datas\MemoryPack.Formatters\**" />
     <EmbeddedResource Remove="DataModels\Datas\MemoryPack.Internal\**" />
@@ -910,8 +935,10 @@
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Adapters.Common.GameHelpList\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Adapters.Common\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Adapters.Data\**" />
+    <EmbeddedResource Remove="DataModels\Datas\PRISM.Adapters.Home\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Adapters.Interface\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Adapters.Introduction\**" />
+    <EmbeddedResource Remove="DataModels\Datas\PRISM.Adapters.Live\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Adapters.Loading\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Adapters.Mobile\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Adapters.Notification\**" />
@@ -967,11 +994,14 @@
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Interactions.FriendInvitation\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Interactions.Friend\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Interactions.GameHelpList\**" />
+    <EmbeddedResource Remove="DataModels\Datas\PRISM.Interactions.Gasha\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Interactions.GlobalMenu\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Interactions.Home\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Interactions.Introduction\**" />
+    <EmbeddedResource Remove="DataModels\Datas\PRISM.Interactions.Item\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Interactions.Live\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Interactions.Loading\**" />
+    <EmbeddedResource Remove="DataModels\Datas\PRISM.Interactions.Mission\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Interactions.Mobile\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Interactions.PresentBox\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Interactions.PrivacyOption\**" />
@@ -980,6 +1010,7 @@
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Interactions.Profile\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Interactions.SeasonMission\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Interactions.Shop\**" />
+    <EmbeddedResource Remove="DataModels\Datas\PRISM.Interactions.Stamina\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Interactions.Story\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Interactions.Support\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Interactions.Title\**" />
@@ -997,6 +1028,7 @@
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Live\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Master\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Mission\**" />
+    <EmbeddedResource Remove="DataModels\Datas\PRISM.Module.CustomMagicaCloth\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Module.Networking.Implementation.Service.Announce\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Module.Networking.Implementation\**" />
     <EmbeddedResource Remove="DataModels\Datas\PRISM.Module.Networking.Stub.Api\**" />
@@ -1076,6 +1108,7 @@
     <EmbeddedResource Remove="DataModels\Datas\System.Diagnostics.Contracts\**" />
     <EmbeddedResource Remove="DataModels\Datas\System.Diagnostics.Tracing\**" />
     <EmbeddedResource Remove="DataModels\Datas\System.Diagnostics\**" />
+    <EmbeddedResource Remove="DataModels\Datas\System.Drawing\**" />
     <EmbeddedResource Remove="DataModels\Datas\System.Dynamic.Utils\**" />
     <EmbeddedResource Remove="DataModels\Datas\System.Dynamic\**" />
     <EmbeddedResource Remove="DataModels\Datas\System.Globalization\**" />
@@ -1203,6 +1236,8 @@
     <EmbeddedResource Remove="DataModels\Datas\Unity.Services.Qos.Internal\**" />
     <EmbeddedResource Remove="DataModels\Datas\Unity.Services.Vivox.Internal\**" />
     <EmbeddedResource Remove="DataModels\Datas\Unity.Services.Wire.Internal\**" />
+    <EmbeddedResource Remove="DataModels\Datas\UnityEditor.Rendering.BuiltIn.ShaderGraph\**" />
+    <EmbeddedResource Remove="DataModels\Datas\UnityEditor.Rendering.Universal\**" />
     <EmbeddedResource Remove="DataModels\Datas\UnityEngine.AdaptivePerformance.Provider\**" />
     <EmbeddedResource Remove="DataModels\Datas\UnityEngine.AdaptivePerformance.Samsung.Android\**" />
     <EmbeddedResource Remove="DataModels\Datas\UnityEngine.AdaptivePerformance\**" />
@@ -1220,6 +1255,7 @@
     <EmbeddedResource Remove="DataModels\Datas\UnityEngine.Experimental.GlobalIllumination\**" />
     <EmbeddedResource Remove="DataModels\Datas\UnityEngine.Experimental.Playables\**" />
     <EmbeddedResource Remove="DataModels\Datas\UnityEngine.Experimental.Rendering.RenderGraphModule\**" />
+    <EmbeddedResource Remove="DataModels\Datas\UnityEngine.Experimental.Rendering.Universal\**" />
     <EmbeddedResource Remove="DataModels\Datas\UnityEngine.Experimental.Rendering\**" />
     <EmbeddedResource Remove="DataModels\Datas\UnityEngine.Experimental.U2D\**" />
     <EmbeddedResource Remove="DataModels\Datas\UnityEngine.Experimental.Video\**" />
@@ -1269,6 +1305,10 @@
     <EmbeddedResource Remove="DataModels\Datas\UnityEngine.Rendering.PostProcessing\**" />
     <EmbeddedResource Remove="DataModels\Datas\UnityEngine.Rendering.RendererUtils\**" />
     <EmbeddedResource Remove="DataModels\Datas\UnityEngine.Rendering.UI\**" />
+    <EmbeddedResource Remove="DataModels\Datas\UnityEngine.Rendering.Universal.Internal\**" />
+    <EmbeddedResource Remove="DataModels\Datas\UnityEngine.Rendering.Universal.LibTessDotNet\**" />
+    <EmbeddedResource Remove="DataModels\Datas\UnityEngine.Rendering.Universal.UTess\**" />
+    <EmbeddedResource Remove="DataModels\Datas\UnityEngine.Rendering.Universal\**" />
     <EmbeddedResource Remove="DataModels\Datas\UnityEngine.Rendering\**" />
     <EmbeddedResource Remove="DataModels\Datas\UnityEngine.SceneManagement\**" />
     <EmbeddedResource Remove="DataModels\Datas\UnityEngine.Scripting.APIUpdating\**" />
@@ -1504,6 +1544,9 @@
     <EmbeddedResource Remove="DataModels\Enums\__noname__\**" />
     <None Remove="DataModels\Datas\AOT\**" />
     <None Remove="DataModels\Datas\AppGuard.Security\**" />
+    <None Remove="DataModels\Datas\Cinemachine.PostFX\**" />
+    <None Remove="DataModels\Datas\Cinemachine.Utility\**" />
+    <None Remove="DataModels\Datas\Cinemachine\**" />
     <None Remove="DataModels\Datas\Coffee.UIExtensions\**" />
     <None Remove="DataModels\Datas\Coffee.UIParticleExtensions\**" />
     <None Remove="DataModels\Datas\Coffee.UISoftMask\**" />
@@ -1586,6 +1629,7 @@
     <None Remove="DataModels\Datas\Google.Api\**" />
     <None Remove="DataModels\Datas\Google.Protobuf.Collections\**" />
     <None Remove="DataModels\Datas\Google.Protobuf.Compatibility\**" />
+    <None Remove="DataModels\Datas\Google.Protobuf.Compiler\**" />
     <None Remove="DataModels\Datas\Google.Protobuf.Reflection\**" />
     <None Remove="DataModels\Datas\Google.Protobuf.WellKnownTypes\**" />
     <None Remove="DataModels\Datas\Google.Protobuf\**" />
@@ -1610,6 +1654,7 @@
     <None Remove="DataModels\Datas\Limelight.Logger\**" />
     <None Remove="DataModels\Datas\Limelight.Runtime\**" />
     <None Remove="DataModels\Datas\Limelight\**" />
+    <None Remove="DataModels\Datas\MagicaCloth2\**" />
     <None Remove="DataModels\Datas\MemoryPack.Compression\**" />
     <None Remove="DataModels\Datas\MemoryPack.Formatters\**" />
     <None Remove="DataModels\Datas\MemoryPack.Internal\**" />
@@ -1655,8 +1700,10 @@
     <None Remove="DataModels\Datas\PRISM.Adapters.Common.GameHelpList\**" />
     <None Remove="DataModels\Datas\PRISM.Adapters.Common\**" />
     <None Remove="DataModels\Datas\PRISM.Adapters.Data\**" />
+    <None Remove="DataModels\Datas\PRISM.Adapters.Home\**" />
     <None Remove="DataModels\Datas\PRISM.Adapters.Interface\**" />
     <None Remove="DataModels\Datas\PRISM.Adapters.Introduction\**" />
+    <None Remove="DataModels\Datas\PRISM.Adapters.Live\**" />
     <None Remove="DataModels\Datas\PRISM.Adapters.Loading\**" />
     <None Remove="DataModels\Datas\PRISM.Adapters.Mobile\**" />
     <None Remove="DataModels\Datas\PRISM.Adapters.Notification\**" />
@@ -1712,11 +1759,14 @@
     <None Remove="DataModels\Datas\PRISM.Interactions.FriendInvitation\**" />
     <None Remove="DataModels\Datas\PRISM.Interactions.Friend\**" />
     <None Remove="DataModels\Datas\PRISM.Interactions.GameHelpList\**" />
+    <None Remove="DataModels\Datas\PRISM.Interactions.Gasha\**" />
     <None Remove="DataModels\Datas\PRISM.Interactions.GlobalMenu\**" />
     <None Remove="DataModels\Datas\PRISM.Interactions.Home\**" />
     <None Remove="DataModels\Datas\PRISM.Interactions.Introduction\**" />
+    <None Remove="DataModels\Datas\PRISM.Interactions.Item\**" />
     <None Remove="DataModels\Datas\PRISM.Interactions.Live\**" />
     <None Remove="DataModels\Datas\PRISM.Interactions.Loading\**" />
+    <None Remove="DataModels\Datas\PRISM.Interactions.Mission\**" />
     <None Remove="DataModels\Datas\PRISM.Interactions.Mobile\**" />
     <None Remove="DataModels\Datas\PRISM.Interactions.PresentBox\**" />
     <None Remove="DataModels\Datas\PRISM.Interactions.PrivacyOption\**" />
@@ -1725,6 +1775,7 @@
     <None Remove="DataModels\Datas\PRISM.Interactions.Profile\**" />
     <None Remove="DataModels\Datas\PRISM.Interactions.SeasonMission\**" />
     <None Remove="DataModels\Datas\PRISM.Interactions.Shop\**" />
+    <None Remove="DataModels\Datas\PRISM.Interactions.Stamina\**" />
     <None Remove="DataModels\Datas\PRISM.Interactions.Story\**" />
     <None Remove="DataModels\Datas\PRISM.Interactions.Support\**" />
     <None Remove="DataModels\Datas\PRISM.Interactions.Title\**" />
@@ -1742,6 +1793,7 @@
     <None Remove="DataModels\Datas\PRISM.Live\**" />
     <None Remove="DataModels\Datas\PRISM.Master\**" />
     <None Remove="DataModels\Datas\PRISM.Mission\**" />
+    <None Remove="DataModels\Datas\PRISM.Module.CustomMagicaCloth\**" />
     <None Remove="DataModels\Datas\PRISM.Module.Networking.Implementation.Service.Announce\**" />
     <None Remove="DataModels\Datas\PRISM.Module.Networking.Implementation\**" />
     <None Remove="DataModels\Datas\PRISM.Module.Networking.Stub.Api\**" />
@@ -1821,6 +1873,7 @@
     <None Remove="DataModels\Datas\System.Diagnostics.Contracts\**" />
     <None Remove="DataModels\Datas\System.Diagnostics.Tracing\**" />
     <None Remove="DataModels\Datas\System.Diagnostics\**" />
+    <None Remove="DataModels\Datas\System.Drawing\**" />
     <None Remove="DataModels\Datas\System.Dynamic.Utils\**" />
     <None Remove="DataModels\Datas\System.Dynamic\**" />
     <None Remove="DataModels\Datas\System.Globalization\**" />
@@ -1948,6 +2001,8 @@
     <None Remove="DataModels\Datas\Unity.Services.Qos.Internal\**" />
     <None Remove="DataModels\Datas\Unity.Services.Vivox.Internal\**" />
     <None Remove="DataModels\Datas\Unity.Services.Wire.Internal\**" />
+    <None Remove="DataModels\Datas\UnityEditor.Rendering.BuiltIn.ShaderGraph\**" />
+    <None Remove="DataModels\Datas\UnityEditor.Rendering.Universal\**" />
     <None Remove="DataModels\Datas\UnityEngine.AdaptivePerformance.Provider\**" />
     <None Remove="DataModels\Datas\UnityEngine.AdaptivePerformance.Samsung.Android\**" />
     <None Remove="DataModels\Datas\UnityEngine.AdaptivePerformance\**" />
@@ -1965,6 +2020,7 @@
     <None Remove="DataModels\Datas\UnityEngine.Experimental.GlobalIllumination\**" />
     <None Remove="DataModels\Datas\UnityEngine.Experimental.Playables\**" />
     <None Remove="DataModels\Datas\UnityEngine.Experimental.Rendering.RenderGraphModule\**" />
+    <None Remove="DataModels\Datas\UnityEngine.Experimental.Rendering.Universal\**" />
     <None Remove="DataModels\Datas\UnityEngine.Experimental.Rendering\**" />
     <None Remove="DataModels\Datas\UnityEngine.Experimental.U2D\**" />
     <None Remove="DataModels\Datas\UnityEngine.Experimental.Video\**" />
@@ -2014,6 +2070,10 @@
     <None Remove="DataModels\Datas\UnityEngine.Rendering.PostProcessing\**" />
     <None Remove="DataModels\Datas\UnityEngine.Rendering.RendererUtils\**" />
     <None Remove="DataModels\Datas\UnityEngine.Rendering.UI\**" />
+    <None Remove="DataModels\Datas\UnityEngine.Rendering.Universal.Internal\**" />
+    <None Remove="DataModels\Datas\UnityEngine.Rendering.Universal.LibTessDotNet\**" />
+    <None Remove="DataModels\Datas\UnityEngine.Rendering.Universal.UTess\**" />
+    <None Remove="DataModels\Datas\UnityEngine.Rendering.Universal\**" />
     <None Remove="DataModels\Datas\UnityEngine.Rendering\**" />
     <None Remove="DataModels\Datas\UnityEngine.SceneManagement\**" />
     <None Remove="DataModels\Datas\UnityEngine.Scripting.APIUpdating\**" />
@@ -9602,29 +9662,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="DataModels\Datas\Google.Protobuf.Reflection\DescriptorProto.cs" />
-    <Compile Include="DataModels\Datas\Google.Protobuf.Reflection\EnumDescriptorProto.cs" />
-    <Compile Include="DataModels\Datas\Google.Protobuf.Reflection\EnumOptions.cs" />
-    <Compile Include="DataModels\Datas\Google.Protobuf.Reflection\EnumValueDescriptorProto.cs" />
-    <Compile Include="DataModels\Datas\Google.Protobuf.Reflection\EnumValueOptions.cs" />
-    <Compile Include="DataModels\Datas\Google.Protobuf.Reflection\ExtensionRangeOptions.cs" />
-    <Compile Include="DataModels\Datas\Google.Protobuf.Reflection\FieldDescriptorProto.cs" />
-    <Compile Include="DataModels\Datas\Google.Protobuf.Reflection\FieldOptions.cs" />
-    <Compile Include="DataModels\Datas\Google.Protobuf.Reflection\FileDescriptorProto.cs" />
-    <Compile Include="DataModels\Datas\Google.Protobuf.Reflection\FileOptions.cs" />
-    <Compile Include="DataModels\Datas\Google.Protobuf.Reflection\MessageOptions.cs" />
-    <Compile Include="DataModels\Datas\Google.Protobuf.Reflection\MethodDescriptorProto.cs" />
-    <Compile Include="DataModels\Datas\Google.Protobuf.Reflection\MethodOptions.cs" />
-    <Compile Include="DataModels\Datas\Google.Protobuf.Reflection\OneofDescriptorProto.cs" />
-    <Compile Include="DataModels\Datas\Google.Protobuf.Reflection\OneofOptions.cs" />
-    <Compile Include="DataModels\Datas\Google.Protobuf.Reflection\ServiceDescriptorProto.cs" />
-    <Compile Include="DataModels\Datas\Google.Protobuf.Reflection\ServiceOptions.cs" />
-    <Compile Include="DataModels\Datas\Google.Protobuf.Reflection\SourceCodeInfo.cs" />
-    <Compile Include="DataModels\Datas\Google.Protobuf.Reflection\UninterpretedOption.cs" />
-    <Compile Include="DataModels\Datas\Google.Protobuf.WellKnownTypes\Any.cs" />
     <Compile Include="DataModels\Datas\Google.Protobuf.WellKnownTypes\Timestamp.cs" />
-    <Compile Include="DataModels\Datas\Google.Protobuf\ByteString.cs" />
-    <Compile Include="DataModels\Datas\Google.Rpc\Status.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Api\AccessHomeReply.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Api\CardRankUpArgs.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Api\CardRankUpReply.cs" />
@@ -9686,6 +9724,10 @@
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Api\GetExchangeAvailableShinyPartyTokenListReply.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Api\GetExchangeGroupListArgs.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Api\GetExchangeGroupListReply.cs" />
+    <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Api\GetExchangePurchaseHistoryListArgs.cs" />
+    <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Api\GetExchangePurchaseHistoryListReply.cs" />
+    <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Api\GetExchangeSelectionTicketListArgs.cs" />
+    <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Api\GetExchangeSelectionTicketListReply.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Api\GetExchangeShinyPartyTokenListArgs.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Api\GetExchangeShinyPartyTokenListReply.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Api\GetFesIdolListReply.cs" />
@@ -9850,6 +9892,8 @@
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\ErrorDialogStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\EventBonusProduceIdolStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\EventBonusStatus.cs" />
+    <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\EventBreakTimeOptionStatus.cs" />
+    <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\EventBreakTimeStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\EventIconStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\EventPointRewardStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\EventRankingStatus.cs" />
@@ -9861,6 +9905,7 @@
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\ExchangeProductPriceRateStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\ExchangeProductPurchaseLimitStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\ExchangeProductStatus.cs" />
+    <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\ExchangePurchaseHistoryStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\ExertSupportEffectStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\ExpireDateStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\ExtraStoryStatus.cs" />
@@ -9946,6 +9991,7 @@
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\LiveActivatedSkillStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\LiveClearInfoStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\LiveComboInfoStatus.cs" />
+    <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\LiveEventIdolResultStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\LiveEventRankingStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\LiveEventResultStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\LiveHighScoreRankingUserStatus.cs" />
@@ -10005,6 +10051,7 @@
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\ProduceAdvOptionStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\ProduceAdvStateStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\ProduceAutoPlaySettingsStatus.cs" />
+    <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\ProduceAutoPlaySubSeasonSettingStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\ProduceBaseInfoStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\ProduceCardContentGroupStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\ProduceCardContentStatus.cs" />
@@ -10053,7 +10100,9 @@
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\SeasonRewardStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\SelectedEpisodeStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\SelectionSupportSkillStatus.cs" />
+    <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\SelectionTicketStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\SelfStatus.cs" />
+    <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\SetProduceUnitIdolStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\SetProductStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\ShinyPartyTokenProductStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\ShinyPartyTokenStatus.cs" />
@@ -10061,6 +10110,8 @@
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\ShopItemItemGroupStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\ShopItemJewelGroupStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\ShopItemLoginBonusPassGroupStatus.cs" />
+    <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\ShopItemPurchaseHistoryRecordStatus.cs" />
+    <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\ShopItemPurchaseHistoryStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\ShopItemSeasonPassGroupStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\ShopItemStatus.cs" />
     <Compile Include="DataModels\Datas\PRISM.Module.Networking.Stub.Status\SkillBufferDisplayStatus.cs" />
@@ -10137,11 +10188,14 @@
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\CostumeType.cs" />
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\CurrencyType.cs" />
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\CycleType.cs" />
+    <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\DressUpRoomCostumeSeasonalType.cs" />
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\DressUpRoomCostumeType.cs" />
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\DressUpRoomVoiceType.cs" />
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\EpisodeStateType.cs" />
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\ErrorDialogButtonType.cs" />
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\EventIconDisplayCondition.cs" />
+    <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\EventRankGrade.cs" />
+    <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\EventRankingRewardType.cs" />
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\EventRankingType.cs" />
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\EventRankingViewType.cs" />
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\EventScheduleType.cs" />
@@ -10184,6 +10238,7 @@
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\ItemNaviType.cs" />
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\ItemType.cs" />
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\LastUpdateDateType.cs" />
+    <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\LiveClearInfo.cs" />
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\LivePlayDisplayLotteryRewardType.cs" />
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\LivePlayRewardType.cs" />
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\LiveSkillEffectType.cs" />
@@ -10235,6 +10290,7 @@
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\ReceiptState.cs" />
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\RewardCategoryType.cs" />
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\ScheduleDetailType.cs" />
+    <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\ScheduleResultType.cs" />
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\ScheduleState.cs" />
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\ScheduleType.cs" />
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\ScoreRank.cs" />
@@ -10268,6 +10324,7 @@
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\TransferProviderType.cs" />
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\TransferRedirectURLType.cs" />
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\TreasurerType.cs" />
+    <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\TutorialCategory.cs" />
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\UploadFileType.cs" />
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\VitalityType.cs" />
     <Compile Include="DataModels\Enums\PRISM.Module.Networking.Stub.Constant\Weather.cs" />
@@ -10280,6 +10337,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="DataModels\Datas\Google.Protobuf.Reflection\" />
     <Folder Include="x64\" />
   </ItemGroup>
 

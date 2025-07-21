@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 UseMock                                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 018 Module                                   00018656CDE0 ModelClassType StandardPurchasingModule StandardPurchasingModule StandardPurchasingModule Pointer
+    // 010 UseMock                                  ModelPrimitiveType bool bool bool Bool
+    // 018 Module                                   ModelClassType StandardPurchasingModule StandardPurchasingModule StandardPurchasingModule Pointer
     public partial class MicrosoftConfiguration : DataModel
     {
         public bool                                     UseMock                                 { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MicrosoftConfiguration() { Pointer= p0 };
 
-            value.UseMock                                   = GetBool(new IntPtr(p + 0x010)); // 0245A68DF1F8 0x10 UseMock                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Module                                    = GetObject<StandardPurchasingModule>(new IntPtr(p + 0x018), ReversePrism.DataModels.StandardPurchasingModule.FromPointer); // 0245A68DF218 0x18 Module                      ( 00018656CDE0 ModelClassType StandardPurchasingModule StandardPurchasingModule StandardPurchasingModule Pointer )
+            value.UseMock                                   = GetBool(new IntPtr(p + 0x010)); // 0x10 UseMock                     ( ModelPrimitiveType bool bool bool Bool )
+            value.Module                                    = GetObject<StandardPurchasingModule>(new IntPtr(p + 0x018), ReversePrism.DataModels.StandardPurchasingModule.FromPointer); // 0x18 Module                      ( ModelClassType StandardPurchasingModule StandardPurchasingModule StandardPurchasingModule Pointer )
 
             return value;
         }

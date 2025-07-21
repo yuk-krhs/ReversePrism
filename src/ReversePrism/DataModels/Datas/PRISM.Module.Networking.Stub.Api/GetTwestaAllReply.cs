@@ -12,9 +12,9 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ArticleListFieldNumber                   int IL2CPP_TYPE_I4
     // 008 _repeated_articleList_codec              FieldCodec`1<TwestaArticleStatus> IL2CPP_TYPE_GENERICINST
-    // 018 ArticleList                              000185CF5E38 ModelClassListType RepeatedField`1<TwestaArticleStatus> RepeatedField`1<TwestaArticleStatus> List<TwestaArticleStatus> Pointer
+    // 018 ArticleList                              ModelClassListType RepeatedField`1<TwestaArticleStatus> RepeatedField`1<TwestaArticleStatus> List<TwestaArticleStatus> Pointer
     // 000 CursorFieldNumber                        int IL2CPP_TYPE_I4
-    // 020 Cursor                                   000186671910 ModelPrimitiveType string string string String
+    // 020 Cursor                                   ModelPrimitiveType string string string String
     public partial class GetTwestaAllReply : DataModel
     {
         public List<TwestaArticleStatus>?               ArticleList                             { get; set; }
@@ -28,8 +28,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetTwestaAllReply() { Pointer= p0 };
 
-            value.ArticleList                               = GetObjectList<TwestaArticleStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.TwestaArticleStatus.FromPointer); // 02466226D290 0x18 ArticleList                 ( 000185CF5E38 ModelClassListType RepeatedField`1<TwestaArticleStatus> RepeatedField`1<TwestaArticleStatus> List<TwestaArticleStatus> Pointer )
-            value.Cursor                                    = GetString(new IntPtr(p + 0x020)); // 02466226D2D0 0x20 Cursor                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.ArticleList                               = GetObjectList<TwestaArticleStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.TwestaArticleStatus.FromPointer); // 0x18 ArticleList                 ( ModelClassListType RepeatedField`1<TwestaArticleStatus> RepeatedField`1<TwestaArticleStatus> List<TwestaArticleStatus> Pointer )
+            value.Cursor                                    = GetString(new IntPtr(p + 0x020)); // 0x20 Cursor                      ( ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<SelectProduceAdvOptionArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 OptionNumberFieldNumber                  int IL2CPP_TYPE_I4
-    // 018 OptionNumber                             0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 OptionNumber                             ModelPrimitiveType int int int Int32
     public partial class SelectProduceAdvOptionArgs : DataModel
     {
         public int                                      OptionNumber                            { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SelectProduceAdvOptionArgs() { Pointer= p0 };
 
-            value.OptionNumber                              = GetInt32(new IntPtr(p + 0x018)); // 0246625612F0 0x18 OptionNumber                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OptionNumber                              = GetInt32(new IntPtr(p + 0x018)); // 0x18 OptionNumber                ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

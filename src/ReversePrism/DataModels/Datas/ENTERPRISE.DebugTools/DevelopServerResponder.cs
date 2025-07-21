@@ -10,9 +10,9 @@ namespace ReversePrism.DataModels
 
     // 000 DefaultUserName                          string IL2CPP_TYPE_STRING
     // 008 DefaultPassword                          string IL2CPP_TYPE_STRING
-    // 010 Client                                   0001866DBF30 ModelClassType HttpClient HttpClient HttpClient Pointer
-    // 018 UserName                                 000186671910 ModelPrimitiveType string string string String
-    // 020 Password                                 000186671910 ModelPrimitiveType string string string String
+    // 010 Client                                   ModelClassType HttpClient HttpClient HttpClient Pointer
+    // 018 UserName                                 ModelPrimitiveType string string string String
+    // 020 Password                                 ModelPrimitiveType string string string String
     public partial class DevelopServerResponder : DataModel
     {
         public HttpClient?                              Client                                  { get; set; }
@@ -27,9 +27,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DevelopServerResponder() { Pointer= p0 };
 
-            value.Client                                    = GetObject<HttpClient>(new IntPtr(p + 0x010), ReversePrism.DataModels.HttpClient.FromPointer); // 02466B763480 0x10 Client                      ( 0001866DBF30 ModelClassType HttpClient HttpClient HttpClient Pointer )
-            value.UserName                                  = GetString(new IntPtr(p + 0x018)); // 02466B7634A0 0x18 UserName                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.Password                                  = GetString(new IntPtr(p + 0x020)); // 02466B7634C0 0x20 Password                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.Client                                    = GetObject<HttpClient>(new IntPtr(p + 0x010), ReversePrism.DataModels.HttpClient.FromPointer); // 0x10 Client                      ( ModelClassType HttpClient HttpClient HttpClient Pointer )
+            value.UserName                                  = GetString(new IntPtr(p + 0x018)); // 0x18 UserName                    ( ModelPrimitiveType string string string String )
+            value.Password                                  = GetString(new IntPtr(p + 0x020)); // 0x20 Password                    ( ModelPrimitiveType string string string String )
 
             return value;
         }

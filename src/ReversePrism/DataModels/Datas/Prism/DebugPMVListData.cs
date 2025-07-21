@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 PMVDataList                              000185D21668 ModelClassListType List`1<PMVData> List`1<PMVData> List<PMVData> Pointer
+    // 018 PMVDataList                              ModelClassListType List`1<PMVData> List`1<PMVData> List<PMVData> Pointer
     public partial class DebugPMVListData : DataModel
     {
         public List<PMVData>?                           PMVDataList                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DebugPMVListData() { Pointer= p0 };
 
-            value.PMVDataList                               = GetObjectList<PMVData>(new IntPtr(p + 0x018), ReversePrism.DataModels.PMVData.FromPointer); // 024664D5CAD8 0x18 PMVDataList                 ( 000185D21668 ModelClassListType List`1<PMVData> List`1<PMVData> List<PMVData> Pointer )
+            value.PMVDataList                               = GetObjectList<PMVData>(new IntPtr(p + 0x018), ReversePrism.DataModels.PMVData.FromPointer); // 0x18 PMVDataList                 ( ModelClassListType List`1<PMVData> List`1<PMVData> List<PMVData> Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Description                              000186672F10 ModelPrimitiveType string string string String
+    // 010 Description                              ModelPrimitiveType string string string String
     public partial class AssemblyDescriptionAttribute : DataModel
     {
         public string                                   Description                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AssemblyDescriptionAttribute() { Pointer= p0 };
 
-            value.Description                               = GetString(new IntPtr(p + 0x010)); // 024666D389E8 0x10 Description                 ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Description                               = GetString(new IntPtr(p + 0x010)); // 0x10 Description                 ( ModelPrimitiveType string string string String )
 
             return value;
         }

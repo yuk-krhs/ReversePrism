@@ -8,20 +8,20 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Open                                     000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 018 BusyTimeout                              00018668A8A0 ModelEnumType TimeSpan TimeSpan TimeSpan Int32
+    // 010 Open                                     ModelPrimitiveType bool bool bool Bool
+    // 018 BusyTimeout                              ModelEnumType TimeSpan TimeSpan TimeSpan Int32
     // 000 _mappings                                Dictionary`2<string, TableMapping> IL2CPP_TYPE_GENERICINST
-    // 020 TransactionDepth                         0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 028 Rand                                     0001866093D0 ModelClassType Random Random Random Pointer
+    // 020 TransactionDepth                         ModelPrimitiveType int int int Int32
+    // 028 Rand                                     ModelClassType Random Random Random Pointer
     // 030 <Handle>k__BackingField                  <int> IL2CPP_TYPE_I
     // 008 NullHandle                               <int> IL2CPP_TYPE_I
     // 010 NullBackupHandle                         <int> IL2CPP_TYPE_I
-    // 038 DatabasePath                             000186671910 ModelPrimitiveType string string string String
-    // 040 LibVersionNumber                         0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 044 StoreDateTimeAsTicks                     000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 045 StoreTimeSpanAsTicks                     000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 048 DateTimeStringFormat                     000186671910 ModelPrimitiveType string string string String
-    // 050 DateTimeStyle                            0001865BE5C0 ModelEnumType DateTimeStyles DateTimeStyles DateTimeStyles Int32
+    // 038 DatabasePath                             ModelPrimitiveType string string string String
+    // 040 LibVersionNumber                         ModelPrimitiveType int int int Int32
+    // 044 StoreDateTimeAsTicks                     ModelPrimitiveType bool bool bool Bool
+    // 045 StoreTimeSpanAsTicks                     ModelPrimitiveType bool bool bool Bool
+    // 048 DateTimeStringFormat                     ModelPrimitiveType string string string String
+    // 050 DateTimeStyle                            ModelEnumType DateTimeStyles DateTimeStyles DateTimeStyles Int32
     // 058 _insertCommandMap                        Dictionary`2<Tuple`2<string, string>, PreparedSqliteInsertCommand> IL2CPP_TYPE_GENERICINST
     // 060 TableChanged                             EventHandler`1<NotifyTableChangedEventArgs> IL2CPP_TYPE_GENERICINST
     public partial class SQLiteConnection : DataModel
@@ -45,16 +45,16 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SQLiteConnection() { Pointer= p0 };
 
-            value.Open                                      = GetBool(new IntPtr(p + 0x010)); // 0245A3D2B8A8 0x10 Open                        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.BusyTimeout                               = (TimeSpan)GetInt32(new IntPtr(p + 0x018)); // 0245A3D2B8C8 0x18 BusyTimeout                 ( 00018668A8A0 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
-            value.TransactionDepth                          = GetInt32(new IntPtr(p + 0x020)); // 0245A3D2B908 0x20 TransactionDepth            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Rand                                      = GetObject<Random>(new IntPtr(p + 0x028), ReversePrism.DataModels.Random.FromPointer); // 0245A3D2B928 0x28 Rand                        ( 0001866093D0 ModelClassType Random Random Random Pointer )
-            value.DatabasePath                              = GetString(new IntPtr(p + 0x038)); // 0245A3D2B9A8 0x38 DatabasePath                ( 000186671910 ModelPrimitiveType string string string String )
-            value.LibVersionNumber                          = GetInt32(new IntPtr(p + 0x040)); // 0245A3D2B9C8 0x40 LibVersionNumber            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.StoreDateTimeAsTicks                      = GetBool(new IntPtr(p + 0x044)); // 0245A3D2B9E8 0x44 StoreDateTimeAsTicks        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.StoreTimeSpanAsTicks                      = GetBool(new IntPtr(p + 0x045)); // 0245A3D2BA08 0x45 StoreTimeSpanAsTicks        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.DateTimeStringFormat                      = GetString(new IntPtr(p + 0x048)); // 0245A3D2BA28 0x48 DateTimeStringFormat        ( 000186671910 ModelPrimitiveType string string string String )
-            value.DateTimeStyle                             = (DateTimeStyles)GetInt32(new IntPtr(p + 0x050)); // 0245A3D2BA48 0x50 DateTimeStyle               ( 0001865BE5C0 ModelEnumType DateTimeStyles DateTimeStyles DateTimeStyles Int32 )
+            value.Open                                      = GetBool(new IntPtr(p + 0x010)); // 0x10 Open                        ( ModelPrimitiveType bool bool bool Bool )
+            value.BusyTimeout                               = (TimeSpan)GetInt32(new IntPtr(p + 0x018)); // 0x18 BusyTimeout                 ( ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
+            value.TransactionDepth                          = GetInt32(new IntPtr(p + 0x020)); // 0x20 TransactionDepth            ( ModelPrimitiveType int int int Int32 )
+            value.Rand                                      = GetObject<Random>(new IntPtr(p + 0x028), ReversePrism.DataModels.Random.FromPointer); // 0x28 Rand                        ( ModelClassType Random Random Random Pointer )
+            value.DatabasePath                              = GetString(new IntPtr(p + 0x038)); // 0x38 DatabasePath                ( ModelPrimitiveType string string string String )
+            value.LibVersionNumber                          = GetInt32(new IntPtr(p + 0x040)); // 0x40 LibVersionNumber            ( ModelPrimitiveType int int int Int32 )
+            value.StoreDateTimeAsTicks                      = GetBool(new IntPtr(p + 0x044)); // 0x44 StoreDateTimeAsTicks        ( ModelPrimitiveType bool bool bool Bool )
+            value.StoreTimeSpanAsTicks                      = GetBool(new IntPtr(p + 0x045)); // 0x45 StoreTimeSpanAsTicks        ( ModelPrimitiveType bool bool bool Bool )
+            value.DateTimeStringFormat                      = GetString(new IntPtr(p + 0x048)); // 0x48 DateTimeStringFormat        ( ModelPrimitiveType string string string String )
+            value.DateTimeStyle                             = (DateTimeStyles)GetInt32(new IntPtr(p + 0x050)); // 0x50 DateTimeStyle               ( ModelEnumType DateTimeStyles DateTimeStyles DateTimeStyles Int32 )
 
             return value;
         }

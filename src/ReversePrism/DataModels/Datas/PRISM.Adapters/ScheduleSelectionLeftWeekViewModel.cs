@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CacheProduceTerm                         0001865F57A0 ModelClassType IProduceTermStatus IProduceTermStatus IProduceTermStatus Pointer
-    // 018 CacheSubSeason                           000186664B40 ModelClassType ISubSeasonStatus ISubSeasonStatus ISubSeasonStatus Pointer
+    // 010 CacheProduceTerm                         ModelClassType IProduceTermStatus IProduceTermStatus IProduceTermStatus Pointer
+    // 018 CacheSubSeason                           ModelClassType ISubSeasonStatus ISubSeasonStatus ISubSeasonStatus Pointer
     public partial class ScheduleSelectionLeftWeekViewModel : DataModel
     {
         public IProduceTermStatus?                      CacheProduceTerm                        { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ScheduleSelectionLeftWeekViewModel() { Pointer= p0 };
 
-            value.CacheProduceTerm                          = GetObject<IProduceTermStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProduceTermStatus.FromPointer); // 024665EB2AD8 0x10 CacheProduceTerm            ( 0001865F57A0 ModelClassType IProduceTermStatus IProduceTermStatus IProduceTermStatus Pointer )
-            value.CacheSubSeason                            = GetObject<ISubSeasonStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ISubSeasonStatus.FromPointer); // 024665EB2AF8 0x18 CacheSubSeason              ( 000186664B40 ModelClassType ISubSeasonStatus ISubSeasonStatus ISubSeasonStatus Pointer )
+            value.CacheProduceTerm                          = GetObject<IProduceTermStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProduceTermStatus.FromPointer); // 0x10 CacheProduceTerm            ( ModelClassType IProduceTermStatus IProduceTermStatus IProduceTermStatus Pointer )
+            value.CacheSubSeason                            = GetObject<ISubSeasonStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ISubSeasonStatus.FromPointer); // 0x18 CacheSubSeason              ( ModelClassType ISubSeasonStatus ISubSeasonStatus ISubSeasonStatus Pointer )
 
             return value;
         }

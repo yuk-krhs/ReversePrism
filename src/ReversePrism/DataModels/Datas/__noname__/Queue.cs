@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_DurationMilliseconds                   0001865F4260 ModelPrimitiveType int int int Int32
+    // 010 M_DurationMilliseconds                   ModelPrimitiveType int int int Int32
     public partial class Queue : DataModel
     {
         public int                                      M_DurationMilliseconds                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Queue() { Pointer= p0 };
 
-            value.M_DurationMilliseconds                    = GetInt32(new IntPtr(p + 0x010)); // 024667A6C7C8 0x10 M_DurationMilliseconds      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.M_DurationMilliseconds                    = GetInt32(new IntPtr(p + 0x010)); // 0x10 M_DurationMilliseconds      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

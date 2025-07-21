@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Index                                  0001865F4260 ModelPrimitiveType int int int Int32
+    // 010 M_Index                                  ModelPrimitiveType int int int Int32
     // 000 invalid                                  TextureId IL2CPP_TYPE_VALUETYPE
     public partial class TextureId : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TextureId() { Pointer= p0 };
 
-            value.M_Index                                   = GetInt32(new IntPtr(p + 0x010)); // 0245A67A5090 0x10 M_Index                     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.M_Index                                   = GetInt32(new IntPtr(p + 0x010)); // 0x10 M_Index                     ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

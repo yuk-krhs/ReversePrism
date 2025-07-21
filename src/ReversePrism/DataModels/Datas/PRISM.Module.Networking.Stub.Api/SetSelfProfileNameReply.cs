@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<SetSelfProfileNameReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ProfileFieldNumber                       int IL2CPP_TYPE_I4
-    // 018 Profile                                  000186750350 ModelClassType UserProfileStatus UserProfileStatus UserProfileStatus Pointer
+    // 018 Profile                                  ModelClassType UserProfileStatus UserProfileStatus UserProfileStatus Pointer
     public partial class SetSelfProfileNameReply : DataModel
     {
         public UserProfileStatus?                       Profile                                 { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SetSelfProfileNameReply() { Pointer= p0 };
 
-            value.Profile                                   = GetObject<UserProfileStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.UserProfileStatus.FromPointer); // 02466267C090 0x18 Profile                     ( 000186750350 ModelClassType UserProfileStatus UserProfileStatus UserProfileStatus Pointer )
+            value.Profile                                   = GetObject<UserProfileStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.UserProfileStatus.FromPointer); // 0x18 Profile                     ( ModelClassType UserProfileStatus UserProfileStatus UserProfileStatus Pointer )
 
             return value;
         }

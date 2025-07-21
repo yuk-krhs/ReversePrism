@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<GetSuspendedPvpArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 DeviceTokenFieldNumber                   int IL2CPP_TYPE_I4
-    // 018 DeviceToken                              000186671910 ModelPrimitiveType string string string String
+    // 018 DeviceToken                              ModelPrimitiveType string string string String
     public partial class GetSuspendedPvpArgs : DataModel
     {
         public string                                   DeviceToken                             { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetSuspendedPvpArgs() { Pointer= p0 };
 
-            value.DeviceToken                               = GetString(new IntPtr(p + 0x018)); // 024662013B80 0x18 DeviceToken                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.DeviceToken                               = GetString(new IntPtr(p + 0x018)); // 0x18 DeviceToken                 ( ModelPrimitiveType string string string String )
 
             return value;
         }

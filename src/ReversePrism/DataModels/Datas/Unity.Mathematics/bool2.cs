@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 X                                        000186598100 ModelPrimitiveType bool bool bool Bool
-    // 011 Y                                        000186598100 ModelPrimitiveType bool bool bool Bool
+    // 010 X                                        ModelPrimitiveType bool bool bool Bool
+    // 011 Y                                        ModelPrimitiveType bool bool bool Bool
     public partial class bool2 : DataModel
     {
         public bool                                     X                                       { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new bool2() { Pointer= p0 };
 
-            value.X                                         = GetBool(new IntPtr(p + 0x010)); // 024667E32D40 0x10 X                           ( 000186598100 ModelPrimitiveType bool bool bool Bool )
-            value.Y                                         = GetBool(new IntPtr(p + 0x011)); // 024667E32D60 0x11 Y                           ( 000186598100 ModelPrimitiveType bool bool bool Bool )
+            value.X                                         = GetBool(new IntPtr(p + 0x010)); // 0x10 X                           ( ModelPrimitiveType bool bool bool Bool )
+            value.Y                                         = GetBool(new IntPtr(p + 0x011)); // 0x11 Y                           ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

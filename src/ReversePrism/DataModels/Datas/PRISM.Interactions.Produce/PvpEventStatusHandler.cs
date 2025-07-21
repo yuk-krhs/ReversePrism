@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 OnEventStatusOpened                      0001866A1810 ModelClassType UnityEvent UnityEvent UnityEvent Pointer
-    // 028 OnEventStatusAggregation                 0001866A1810 ModelClassType UnityEvent UnityEvent UnityEvent Pointer
-    // 030 OnEventStatusDefault                     0001866A1810 ModelClassType UnityEvent UnityEvent UnityEvent Pointer
+    // 020 OnEventStatusOpened                      ModelClassType UnityEvent UnityEvent UnityEvent Pointer
+    // 028 OnEventStatusAggregation                 ModelClassType UnityEvent UnityEvent UnityEvent Pointer
+    // 030 OnEventStatusDefault                     ModelClassType UnityEvent UnityEvent UnityEvent Pointer
     public partial class PvpEventStatusHandler : DataModel
     {
         public UnityEvent?                              OnEventStatusOpened                     { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PvpEventStatusHandler() { Pointer= p0 };
 
-            value.OnEventStatusOpened                       = GetObject<UnityEvent>(new IntPtr(p + 0x020), ReversePrism.DataModels.UnityEvent.FromPointer); // 02466A0F5B58 0x20 OnEventStatusOpened         ( 0001866A1810 ModelClassType UnityEvent UnityEvent UnityEvent Pointer )
-            value.OnEventStatusAggregation                  = GetObject<UnityEvent>(new IntPtr(p + 0x028), ReversePrism.DataModels.UnityEvent.FromPointer); // 02466A0F5B78 0x28 OnEventStatusAggregation    ( 0001866A1810 ModelClassType UnityEvent UnityEvent UnityEvent Pointer )
-            value.OnEventStatusDefault                      = GetObject<UnityEvent>(new IntPtr(p + 0x030), ReversePrism.DataModels.UnityEvent.FromPointer); // 02466A0F5B98 0x30 OnEventStatusDefault        ( 0001866A1810 ModelClassType UnityEvent UnityEvent UnityEvent Pointer )
+            value.OnEventStatusOpened                       = GetObject<UnityEvent>(new IntPtr(p + 0x020), ReversePrism.DataModels.UnityEvent.FromPointer); // 0x20 OnEventStatusOpened         ( ModelClassType UnityEvent UnityEvent UnityEvent Pointer )
+            value.OnEventStatusAggregation                  = GetObject<UnityEvent>(new IntPtr(p + 0x028), ReversePrism.DataModels.UnityEvent.FromPointer); // 0x28 OnEventStatusAggregation    ( ModelClassType UnityEvent UnityEvent UnityEvent Pointer )
+            value.OnEventStatusDefault                      = GetObject<UnityEvent>(new IntPtr(p + 0x030), ReversePrism.DataModels.UnityEvent.FromPointer); // 0x30 OnEventStatusDefault        ( ModelClassType UnityEvent UnityEvent UnityEvent Pointer )
 
             return value;
         }

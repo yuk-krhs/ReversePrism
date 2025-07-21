@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 038 <OnCostumeIconLongPressed>k__BackingField Action`2<CostumeCategory, int> IL2CPP_TYPE_GENERICINST
-    // 040 <IsTryOnMode>k__BackingField             ReactiveProperty`1<bool> IL2CPP_TYPE_GENERICINST
+    // 040 <OnCostumeIconLongPressed>k__BackingField Action`2<CostumeCategory, int> IL2CPP_TYPE_GENERICINST
+    // 048 <IsTryOnMode>k__BackingField             ReactiveProperty`1<bool> IL2CPP_TYPE_GENERICINST
     public partial class CostumeSetListViewContext : DataModel
     {
 

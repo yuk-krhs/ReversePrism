@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 098 InvalidCultureName                       000186671910 ModelPrimitiveType string string string String
+    // 098 InvalidCultureName                       ModelPrimitiveType string string string String
     // 0A0 _invalidCultureId                        Nullable`1<int> IL2CPP_TYPE_GENERICINST
     public partial class CultureNotFoundException : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CultureNotFoundException() { Pointer= p0 };
 
-            value.InvalidCultureName                        = GetString(new IntPtr(p + 0x098)); // 024666D892F0 0x98 InvalidCultureName          ( 000186671910 ModelPrimitiveType string string string String )
+            value.InvalidCultureName                        = GetString(new IntPtr(p + 0x098)); // 0x98 InvalidCultureName          ( ModelPrimitiveType string string string String )
 
             return value;
         }

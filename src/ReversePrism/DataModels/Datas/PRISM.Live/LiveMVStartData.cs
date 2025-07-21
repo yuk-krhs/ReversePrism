@@ -8,19 +8,21 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 MusicMaster                              00018662C3A0 ModelClassType MstSong MstSong MstSong Pointer
-    // 018 CameraIndex                              0001865F4260 ModelPrimitiveType int int int Int32
-    // 020 OnStageIdols                             000185CAF458 ModelClassListType UnitIdol[] UnitIdol[] List<UnitIdol> Pointer
-    // 028 IsVocalSeparatedOn                       0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 02C BackgroundMode                           00018653FDD0 ModelEnumType LiveBackgroundMode LiveBackgroundMode LiveBackgroundMode Int32
-    // 030 ViewStack                                000185CC59D8 ModelClassListType ViewValue[] ViewValue[] List<ViewValue> Pointer
+    // 010 MusicMaster                              ModelClassType MstSong MstSong MstSong Pointer
+    // 018 CameraIndex                              ModelPrimitiveType int int int Int32
+    // 020 OnStageIdols                             ModelClassListType UnitIdolWithMstCostume[] UnitIdolWithMstCostume[] List<UnitIdolWithMstCostume> Pointer
+    // 028 IsVocalSeparatedOn                       ModelPrimitiveType bool bool bool Bool
+    // 02C BackgroundMode                           ModelEnumType LiveBackgroundMode LiveBackgroundMode LiveBackgroundMode Int32
+    // 030 RenderingDynamicRange                    ModelEnumType RenderingDynamicRange RenderingDynamicRange RenderingDynamicRange Int32
+    // 038 ViewStack                                ModelClassListType ViewValue[] ViewValue[] List<ViewValue> Pointer
     public partial class LiveMVStartData : DataModel
     {
         public MstSong?                                 MusicMaster                             { get; set; }
         public int                                      CameraIndex                             { get; set; }
-        public List<UnitIdol>?                          OnStageIdols                            { get; set; }
+        public List<UnitIdolWithMstCostume>?            OnStageIdols                            { get; set; }
         public bool                                     IsVocalSeparatedOn                      { get; set; }
         public LiveBackgroundMode                       BackgroundMode                          { get; set; }
+        public RenderingDynamicRange                    RenderingDynamicRange                   { get; set; }
         public List<ViewValue>?                         ViewStack                               { get; set; }
 
         public static LiveMVStartData? FromPointer(IntPtr p0)
@@ -31,12 +33,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveMVStartData() { Pointer= p0 };
 
-            value.MusicMaster                               = GetObject<MstSong>(new IntPtr(p + 0x010), ReversePrism.DataModels.MstSong.FromPointer); // 024664E96B08 0x10 MusicMaster                 ( 00018662C3A0 ModelClassType MstSong MstSong MstSong Pointer )
-            value.CameraIndex                               = GetInt32(new IntPtr(p + 0x018)); // 024664E96B28 0x18 CameraIndex                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.OnStageIdols                              = GetObjectList<UnitIdol>(new IntPtr(p + 0x020), ReversePrism.DataModels.UnitIdol.FromPointer); // 024664E96B48 0x20 OnStageIdols                ( 000185CAF458 ModelClassListType UnitIdol[] UnitIdol[] List<UnitIdol> Pointer )
-            value.IsVocalSeparatedOn                        = GetBool(new IntPtr(p + 0x028)); // 024664E96B68 0x28 IsVocalSeparatedOn          ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.BackgroundMode                            = (LiveBackgroundMode)GetInt32(new IntPtr(p + 0x02C)); // 024664E96B88 0x2C BackgroundMode              ( 00018653FDD0 ModelEnumType LiveBackgroundMode LiveBackgroundMode LiveBackgroundMode Int32 )
-            value.ViewStack                                 = GetObjectList<ViewValue>(new IntPtr(p + 0x030), ReversePrism.DataModels.ViewValue.FromPointer); // 024664E96BA8 0x30 ViewStack                   ( 000185CC59D8 ModelClassListType ViewValue[] ViewValue[] List<ViewValue> Pointer )
+            value.MusicMaster                               = GetObject<MstSong>(new IntPtr(p + 0x010), ReversePrism.DataModels.MstSong.FromPointer); // 0x10 MusicMaster                 ( ModelClassType MstSong MstSong MstSong Pointer )
+            value.CameraIndex                               = GetInt32(new IntPtr(p + 0x018)); // 0x18 CameraIndex                 ( ModelPrimitiveType int int int Int32 )
+            value.OnStageIdols                              = GetObjectList<UnitIdolWithMstCostume>(new IntPtr(p + 0x020), ReversePrism.DataModels.UnitIdolWithMstCostume.FromPointer); // 0x20 OnStageIdols                ( ModelClassListType UnitIdolWithMstCostume[] UnitIdolWithMstCostume[] List<UnitIdolWithMstCostume> Pointer )
+            value.IsVocalSeparatedOn                        = GetBool(new IntPtr(p + 0x028)); // 0x28 IsVocalSeparatedOn          ( ModelPrimitiveType bool bool bool Bool )
+            value.BackgroundMode                            = (LiveBackgroundMode)GetInt32(new IntPtr(p + 0x02C)); // 0x2C BackgroundMode              ( ModelEnumType LiveBackgroundMode LiveBackgroundMode LiveBackgroundMode Int32 )
+            value.RenderingDynamicRange                     = (RenderingDynamicRange)GetInt32(new IntPtr(p + 0x030)); // 0x30 RenderingDynamicRange       ( ModelEnumType RenderingDynamicRange RenderingDynamicRange RenderingDynamicRange Int32 )
+            value.ViewStack                                 = GetObjectList<ViewValue>(new IntPtr(p + 0x038), ReversePrism.DataModels.ViewValue.FromPointer); // 0x38 ViewStack                   ( ModelClassListType ViewValue[] ViewValue[] List<ViewValue> Pointer )
 
             return value;
         }

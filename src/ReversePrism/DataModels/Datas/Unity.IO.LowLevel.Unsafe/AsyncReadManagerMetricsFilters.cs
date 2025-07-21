@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 TypeIDs                                  000185B84580 ModelPrimitiveListType ulong[] ulong[] List<ulong> Pointer
-    // 018 States                                   000185B9C5B0 ModelEnumListType ProcessingState[] ProcessingState[] List<ProcessingState> Pointer
-    // 020 ReadTypes                                000185B7F350 ModelEnumListType FileReadType[] FileReadType[] List<FileReadType> Pointer
-    // 028 PriorityLevels                           000185B9C2E0 ModelEnumListType Priority[] Priority[] List<Priority> Pointer
-    // 030 Subsystems                               000185B709F0 ModelEnumListType AssetLoadingSubsystem[] AssetLoadingSubsystem[] List<AssetLoadingSubsystem> Pointer
+    // 010 TypeIDs                                  ModelPrimitiveListType ulong[] ulong[] List<ulong> Pointer
+    // 018 States                                   ModelEnumListType ProcessingState[] ProcessingState[] List<ProcessingState> Pointer
+    // 020 ReadTypes                                ModelEnumListType FileReadType[] FileReadType[] List<FileReadType> Pointer
+    // 028 PriorityLevels                           ModelEnumListType Priority[] Priority[] List<Priority> Pointer
+    // 030 Subsystems                               ModelEnumListType AssetLoadingSubsystem[] AssetLoadingSubsystem[] List<AssetLoadingSubsystem> Pointer
     public partial class AsyncReadManagerMetricsFilters : DataModel
     {
         public List<ulong>?                             TypeIDs                                 { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AsyncReadManagerMetricsFilters() { Pointer= p0 };
 
-            value.TypeIDs                                   = GetUInt64List(new IntPtr(p + 0x010)); // 0245A22F98E8 0x10 TypeIDs                     ( 000185B84580 ModelPrimitiveListType ulong[] ulong[] List<ulong> Pointer )
-            value.States                                    = GetEnumList<ProcessingState>(new IntPtr(p + 0x018)); // 0245A22F9908 0x18 States                      ( 000185B9C5B0 ModelEnumListType ProcessingState[] ProcessingState[] List<ProcessingState> Pointer )
-            value.ReadTypes                                 = GetEnumList<FileReadType>(new IntPtr(p + 0x020)); // 0245A22F9928 0x20 ReadTypes                   ( 000185B7F350 ModelEnumListType FileReadType[] FileReadType[] List<FileReadType> Pointer )
-            value.PriorityLevels                            = GetEnumList<Priority>(new IntPtr(p + 0x028)); // 0245A22F9948 0x28 PriorityLevels              ( 000185B9C2E0 ModelEnumListType Priority[] Priority[] List<Priority> Pointer )
-            value.Subsystems                                = GetEnumList<AssetLoadingSubsystem>(new IntPtr(p + 0x030)); // 0245A22F9968 0x30 Subsystems                  ( 000185B709F0 ModelEnumListType AssetLoadingSubsystem[] AssetLoadingSubsystem[] List<AssetLoadingSubsystem> Pointer )
+            value.TypeIDs                                   = GetUInt64List(new IntPtr(p + 0x010)); // 0x10 TypeIDs                     ( ModelPrimitiveListType ulong[] ulong[] List<ulong> Pointer )
+            value.States                                    = GetEnumList<ProcessingState>(new IntPtr(p + 0x018)); // 0x18 States                      ( ModelEnumListType ProcessingState[] ProcessingState[] List<ProcessingState> Pointer )
+            value.ReadTypes                                 = GetEnumList<FileReadType>(new IntPtr(p + 0x020)); // 0x20 ReadTypes                   ( ModelEnumListType FileReadType[] FileReadType[] List<FileReadType> Pointer )
+            value.PriorityLevels                            = GetEnumList<Priority>(new IntPtr(p + 0x028)); // 0x28 PriorityLevels              ( ModelEnumListType Priority[] Priority[] List<Priority> Pointer )
+            value.Subsystems                                = GetEnumList<AssetLoadingSubsystem>(new IntPtr(p + 0x030)); // 0x30 Subsystems                  ( ModelEnumListType AssetLoadingSubsystem[] AssetLoadingSubsystem[] List<AssetLoadingSubsystem> Pointer )
 
             return value;
         }

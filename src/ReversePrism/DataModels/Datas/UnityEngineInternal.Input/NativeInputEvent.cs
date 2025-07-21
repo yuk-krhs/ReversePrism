@@ -9,11 +9,11 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 structSize                               int IL2CPP_TYPE_I4
-    // 010 Type                                     00018668A690 ModelEnumType NativeInputEventType NativeInputEventType NativeInputEventType Int32
-    // 014 SizeInBytes                              000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
-    // 016 DeviceId                                 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
-    // 018 Time                                     0001865C2E50 ModelPrimitiveType double double double Double
-    // 020 EventId                                  0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 Type                                     ModelEnumType NativeInputEventType NativeInputEventType NativeInputEventType Int32
+    // 014 SizeInBytes                              ModelPrimitiveType ushort ushort ushort UInt16
+    // 016 DeviceId                                 ModelPrimitiveType ushort ushort ushort UInt16
+    // 018 Time                                     ModelPrimitiveType double double double Double
+    // 020 EventId                                  ModelPrimitiveType int int int Int32
     public partial class NativeInputEvent : DataModel
     {
         public NativeInputEventType                     Type                                    { get; set; }
@@ -30,11 +30,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NativeInputEvent() { Pointer= p0 };
 
-            value.Type                                      = (NativeInputEventType)GetInt32(new IntPtr(p + 0x010)); // 0245A692D468 0x10 Type                        ( 00018668A690 ModelEnumType NativeInputEventType NativeInputEventType NativeInputEventType Int32 )
-            value.SizeInBytes                               = GetUInt16(new IntPtr(p + 0x014)); // 0245A692D488 0x14 SizeInBytes                 ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.DeviceId                                  = GetUInt16(new IntPtr(p + 0x016)); // 0245A692D4A8 0x16 DeviceId                    ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.Time                                      = GetDouble(new IntPtr(p + 0x018)); // 0245A692D4C8 0x18 Time                        ( 0001865C2E50 ModelPrimitiveType double double double Double )
-            value.EventId                                   = GetInt32(new IntPtr(p + 0x020)); // 0245A692D4E8 0x20 EventId                     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Type                                      = (NativeInputEventType)GetInt32(new IntPtr(p + 0x010)); // 0x10 Type                        ( ModelEnumType NativeInputEventType NativeInputEventType NativeInputEventType Int32 )
+            value.SizeInBytes                               = GetUInt16(new IntPtr(p + 0x014)); // 0x14 SizeInBytes                 ( ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.DeviceId                                  = GetUInt16(new IntPtr(p + 0x016)); // 0x16 DeviceId                    ( ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Time                                      = GetDouble(new IntPtr(p + 0x018)); // 0x18 Time                        ( ModelPrimitiveType double double double Double )
+            value.EventId                                   = GetInt32(new IntPtr(p + 0x020)); // 0x20 EventId                     ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

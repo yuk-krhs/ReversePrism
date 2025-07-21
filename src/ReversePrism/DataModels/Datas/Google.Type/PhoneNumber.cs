@@ -13,9 +13,9 @@ namespace ReversePrism.DataModels
     // 000 E164NumberFieldNumber                    int IL2CPP_TYPE_I4
     // 000 ShortCodeFieldNumber                     int IL2CPP_TYPE_I4
     // 000 ExtensionFieldNumber                     int IL2CPP_TYPE_I4
-    // 018 Extension                                000186671910 ModelPrimitiveType string string string String
+    // 018 Extension                                ModelPrimitiveType string string string String
     // 020 kind_                                    <object> IL2CPP_TYPE_OBJECT
-    // 028 KindCase                                 000186568910 ModelEnumType KindOneofCase KindOneofCase KindOneofCase Int32
+    // 028 KindCase                                 ModelEnumType KindOneofCase KindOneofCase KindOneofCase Int32
     public partial class PhoneNumber : DataModel
     {
         public string                                   Extension                               { get; set; }
@@ -29,8 +29,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PhoneNumber() { Pointer= p0 };
 
-            value.Extension                                 = GetString(new IntPtr(p + 0x018)); // 02466A705EC0 0x18 Extension                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.KindCase                                  = (KindOneofCase)GetInt32(new IntPtr(p + 0x028)); // 02466A705F00 0x28 KindCase                    ( 000186568910 ModelEnumType KindOneofCase KindOneofCase KindOneofCase Int32 )
+            value.Extension                                 = GetString(new IntPtr(p + 0x018)); // 0x18 Extension                   ( ModelPrimitiveType string string string String )
+            value.KindCase                                  = (KindOneofCase)GetInt32(new IntPtr(p + 0x028)); // 0x28 KindCase                    ( ModelEnumType KindOneofCase KindOneofCase KindOneofCase Int32 )
 
             return value;
         }

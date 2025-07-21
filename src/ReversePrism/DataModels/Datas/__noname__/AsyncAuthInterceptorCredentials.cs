@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Interceptor                              0001866EC1C0 ModelClassType AsyncAuthInterceptor AsyncAuthInterceptor AsyncAuthInterceptor Pointer
+    // 010 Interceptor                              ModelClassType AsyncAuthInterceptor AsyncAuthInterceptor AsyncAuthInterceptor Pointer
     public partial class AsyncAuthInterceptorCredentials : DataModel
     {
         public AsyncAuthInterceptor?                    Interceptor                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AsyncAuthInterceptorCredentials() { Pointer= p0 };
 
-            value.Interceptor                               = GetObject<AsyncAuthInterceptor>(new IntPtr(p + 0x010), ReversePrism.DataModels.AsyncAuthInterceptor.FromPointer); // 02466BBBCBA8 0x10 Interceptor                 ( 0001866EC1C0 ModelClassType AsyncAuthInterceptor AsyncAuthInterceptor AsyncAuthInterceptor Pointer )
+            value.Interceptor                               = GetObject<AsyncAuthInterceptor>(new IntPtr(p + 0x010), ReversePrism.DataModels.AsyncAuthInterceptor.FromPointer); // 0x10 Interceptor                 ( ModelClassType AsyncAuthInterceptor AsyncAuthInterceptor AsyncAuthInterceptor Pointer )
 
             return value;
         }

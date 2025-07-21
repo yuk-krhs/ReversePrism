@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 058 Name                                     000186671910 ModelPrimitiveType string string string String
-    // 060 Values                                   000185CEE818 ModelClassListType List`1<JToken> List`1<JToken> List<JToken> Pointer
+    // 058 Name                                     ModelPrimitiveType string string string String
+    // 060 Values                                   ModelClassListType List`1<JToken> List`1<JToken> List<JToken> Pointer
     public partial class JConstructor : DataModel
     {
         public string                                   Name                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JConstructor() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x058)); // 024668849CC0 0x58 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Values                                    = GetObjectList<JToken>(new IntPtr(p + 0x060), ReversePrism.DataModels.JToken.FromPointer); // 024668849CE0 0x60 Values                      ( 000185CEE818 ModelClassListType List`1<JToken> List`1<JToken> List<JToken> Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x058)); // 0x58 Name                        ( ModelPrimitiveType string string string String )
+            value.Values                                    = GetObjectList<JToken>(new IntPtr(p + 0x060), ReversePrism.DataModels.JToken.FromPointer); // 0x60 Values                      ( ModelClassListType List`1<JToken> List`1<JToken> List<JToken> Pointer )
 
             return value;
         }

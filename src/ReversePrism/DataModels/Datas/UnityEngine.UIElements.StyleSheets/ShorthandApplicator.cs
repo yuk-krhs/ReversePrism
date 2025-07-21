@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 000 s_TransitionDelayList                    List`1<TimeValue> IL2CPP_TYPE_GENERICINST
     // 008 s_TransitionDurationList                 List`1<TimeValue> IL2CPP_TYPE_GENERICINST
-    // 010 S_TransitionPropertyList                 000185D0E1C8 ModelEnumListType List`1<StylePropertyName> List`1<StylePropertyName> List<StylePropertyName> Pointer
-    // 018 S_TransitionTimingFunctionList           000185CD7D48 ModelEnumListType List`1<EasingFunction> List`1<EasingFunction> List<EasingFunction> Pointer
+    // 010 S_TransitionPropertyList                 ModelEnumListType List`1<StylePropertyName> List`1<StylePropertyName> List<StylePropertyName> Pointer
+    // 018 S_TransitionTimingFunctionList           ModelEnumListType List`1<EasingFunction> List`1<EasingFunction> List<EasingFunction> Pointer
     public partial class ShorthandApplicator : DataModel
     {
         public List<StylePropertyName>?                 S_TransitionPropertyList                { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ShorthandApplicator() { Pointer= p0 };
 
-            value.S_TransitionPropertyList                  = GetEnumList<StylePropertyName>(new IntPtr(p + 0x010)); // 0245A6844E60 0x10 S_TransitionPropertyList    ( 000185D0E1C8 ModelEnumListType List`1<StylePropertyName> List`1<StylePropertyName> List<StylePropertyName> Pointer )
-            value.S_TransitionTimingFunctionList            = GetEnumList<EasingFunction>(new IntPtr(p + 0x018)); // 0245A6844E80 0x18 S_TransitionTimingFunctionList ( 000185CD7D48 ModelEnumListType List`1<EasingFunction> List`1<EasingFunction> List<EasingFunction> Pointer )
+            value.S_TransitionPropertyList                  = GetEnumList<StylePropertyName>(new IntPtr(p + 0x010)); // 0x10 S_TransitionPropertyList    ( ModelEnumListType List`1<StylePropertyName> List`1<StylePropertyName> List<StylePropertyName> Pointer )
+            value.S_TransitionTimingFunctionList            = GetEnumList<EasingFunction>(new IntPtr(p + 0x018)); // 0x18 S_TransitionTimingFunctionList ( ModelEnumListType List`1<EasingFunction> List`1<EasingFunction> List<EasingFunction> Pointer )
 
             return value;
         }

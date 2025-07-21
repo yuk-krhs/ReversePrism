@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Val                                      0001865D8B40 ModelEnumType ComInterfaceType ComInterfaceType ComInterfaceType Int32
+    // 010 Val                                      ModelEnumType ComInterfaceType ComInterfaceType ComInterfaceType Int32
     public partial class InterfaceTypeAttribute : DataModel
     {
         public ComInterfaceType                         Val                                     { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InterfaceTypeAttribute() { Pointer= p0 };
 
-            value.Val                                       = (ComInterfaceType)GetInt32(new IntPtr(p + 0x010)); // 024666CF2488 0x10 Val                         ( 0001865D8B40 ModelEnumType ComInterfaceType ComInterfaceType ComInterfaceType Int32 )
+            value.Val                                       = (ComInterfaceType)GetInt32(new IntPtr(p + 0x010)); // 0x10 Val                         ( ModelEnumType ComInterfaceType ComInterfaceType ComInterfaceType Int32 )
 
             return value;
         }

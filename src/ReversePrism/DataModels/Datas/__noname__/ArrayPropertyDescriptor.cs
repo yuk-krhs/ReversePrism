@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 098 Index                                    0001865F4260 ModelPrimitiveType int int int Int32
+    // 098 Index                                    ModelPrimitiveType int int int Int32
     public partial class ArrayPropertyDescriptor : DataModel
     {
         public int                                      Index                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ArrayPropertyDescriptor() { Pointer= p0 };
 
-            value.Index                                     = GetInt32(new IntPtr(p + 0x098)); // 024667B7D0F8 0x98 Index                       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x098)); // 0x98 Index                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

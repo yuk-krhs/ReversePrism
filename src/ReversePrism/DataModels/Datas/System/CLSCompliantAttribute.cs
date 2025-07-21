@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Compliant                                000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 Compliant                                ModelPrimitiveType bool bool bool Bool
     public partial class CLSCompliantAttribute : DataModel
     {
         public bool                                     Compliant                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CLSCompliantAttribute() { Pointer= p0 };
 
-            value.Compliant                                 = GetBool(new IntPtr(p + 0x010)); // 024666A0A318 0x10 Compliant                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Compliant                                 = GetBool(new IntPtr(p + 0x010)); // 0x10 Compliant                   ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

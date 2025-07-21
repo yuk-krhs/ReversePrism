@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_StyleValues                            0001865CF940 ModelClassType StyleValueCollection StyleValueCollection StyleValueCollection Pointer
+    // 010 M_StyleValues                            ModelClassType StyleValueCollection StyleValueCollection StyleValueCollection Pointer
     public partial class StyleValues : DataModel
     {
         public StyleValueCollection?                    M_StyleValues                           { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StyleValues() { Pointer= p0 };
 
-            value.M_StyleValues                             = GetObject<StyleValueCollection>(new IntPtr(p + 0x010), ReversePrism.DataModels.StyleValueCollection.FromPointer); // 0245A67B7848 0x10 M_StyleValues               ( 0001865CF940 ModelClassType StyleValueCollection StyleValueCollection StyleValueCollection Pointer )
+            value.M_StyleValues                             = GetObject<StyleValueCollection>(new IntPtr(p + 0x010), ReversePrism.DataModels.StyleValueCollection.FromPointer); // 0x10 M_StyleValues               ( ModelClassType StyleValueCollection StyleValueCollection StyleValueCollection Pointer )
 
             return value;
         }

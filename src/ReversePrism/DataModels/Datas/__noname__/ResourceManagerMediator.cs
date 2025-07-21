@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Rm                                       000186670CE0 ModelClassType ResourceManager ResourceManager ResourceManager Pointer
+    // 010 Rm                                       ModelClassType ResourceManager ResourceManager ResourceManager Pointer
     public partial class ResourceManagerMediator : DataModel
     {
         public ResourceManager?                         Rm                                      { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ResourceManagerMediator() { Pointer= p0 };
 
-            value.Rm                                        = GetObject<ResourceManager>(new IntPtr(p + 0x010), ReversePrism.DataModels.ResourceManager.FromPointer); // 024666D295F0 0x10 Rm                          ( 000186670CE0 ModelClassType ResourceManager ResourceManager ResourceManager Pointer )
+            value.Rm                                        = GetObject<ResourceManager>(new IntPtr(p + 0x010), ReversePrism.DataModels.ResourceManager.FromPointer); // 0x10 Rm                          ( ModelClassType ResourceManager ResourceManager ResourceManager Pointer )
 
             return value;
         }

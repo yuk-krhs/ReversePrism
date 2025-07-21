@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Region                                   0001866722E0 ModelPrimitiveType string string string String
-    // 018 AverageLatencyMs                         0001865F36C0 ModelPrimitiveType int int int Int32
-    // 01C PacketLossPercent                        000186666050 ModelPrimitiveType float float float Single
+    // 010 Region                                   ModelPrimitiveType string string string String
+    // 018 AverageLatencyMs                         ModelPrimitiveType int int int Int32
+    // 01C PacketLossPercent                        ModelPrimitiveType float float float Single
     public partial class QosResult : DataModel
     {
         public string                                   Region                                  { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new QosResult() { Pointer= p0 };
 
-            value.Region                                    = GetString(new IntPtr(p + 0x010)); // 02466BADD648 0x10 Region                      ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.AverageLatencyMs                          = GetInt32(new IntPtr(p + 0x018)); // 02466BADD668 0x18 AverageLatencyMs            ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.PacketLossPercent                         = GetSingle(new IntPtr(p + 0x01C)); // 02466BADD688 0x1C PacketLossPercent           ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Region                                    = GetString(new IntPtr(p + 0x010)); // 0x10 Region                      ( ModelPrimitiveType string string string String )
+            value.AverageLatencyMs                          = GetInt32(new IntPtr(p + 0x018)); // 0x18 AverageLatencyMs            ( ModelPrimitiveType int int int Int32 )
+            value.PacketLossPercent                         = GetSingle(new IntPtr(p + 0x01C)); // 0x1C PacketLossPercent           ( ModelPrimitiveType float float float Single )
 
             return value;
         }

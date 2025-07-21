@@ -28,6 +28,7 @@ namespace ReversePrism.DataModels
         BeforeFirework,
         OpenFirework,
         EndYear,
+        MorningGlory,
         Num,
     }
 }

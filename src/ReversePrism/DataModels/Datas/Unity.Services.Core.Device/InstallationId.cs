@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Identifier                               000186671BA0 ModelPrimitiveType string string string String
-    // 018 UnityAdsIdentifierProvider               00018668D720 ModelClassType IUserIdentifierProvider IUserIdentifierProvider IUserIdentifierProvider Pointer
-    // 020 UnityAnalyticsIdentifierProvider         00018668D720 ModelClassType IUserIdentifierProvider IUserIdentifierProvider IUserIdentifierProvider Pointer
+    // 010 Identifier                               ModelPrimitiveType string string string String
+    // 018 UnityAdsIdentifierProvider               ModelClassType IUserIdentifierProvider IUserIdentifierProvider IUserIdentifierProvider Pointer
+    // 020 UnityAnalyticsIdentifierProvider         ModelClassType IUserIdentifierProvider IUserIdentifierProvider IUserIdentifierProvider Pointer
     public partial class InstallationId : DataModel
     {
         public string                                   Identifier                              { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InstallationId() { Pointer= p0 };
 
-            value.Identifier                                = GetString(new IntPtr(p + 0x010)); // 0245A65F1498 0x10 Identifier                  ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.UnityAdsIdentifierProvider                = GetObject<IUserIdentifierProvider>(new IntPtr(p + 0x018), ReversePrism.DataModels.IUserIdentifierProvider.FromPointer); // 0245A65F14B8 0x18 UnityAdsIdentifierProvider  ( 00018668D720 ModelClassType IUserIdentifierProvider IUserIdentifierProvider IUserIdentifierProvider Pointer )
-            value.UnityAnalyticsIdentifierProvider          = GetObject<IUserIdentifierProvider>(new IntPtr(p + 0x020), ReversePrism.DataModels.IUserIdentifierProvider.FromPointer); // 0245A65F14D8 0x20 UnityAnalyticsIdentifierProvider ( 00018668D720 ModelClassType IUserIdentifierProvider IUserIdentifierProvider IUserIdentifierProvider Pointer )
+            value.Identifier                                = GetString(new IntPtr(p + 0x010)); // 0x10 Identifier                  ( ModelPrimitiveType string string string String )
+            value.UnityAdsIdentifierProvider                = GetObject<IUserIdentifierProvider>(new IntPtr(p + 0x018), ReversePrism.DataModels.IUserIdentifierProvider.FromPointer); // 0x18 UnityAdsIdentifierProvider  ( ModelClassType IUserIdentifierProvider IUserIdentifierProvider IUserIdentifierProvider Pointer )
+            value.UnityAnalyticsIdentifierProvider          = GetObject<IUserIdentifierProvider>(new IntPtr(p + 0x020), ReversePrism.DataModels.IUserIdentifierProvider.FromPointer); // 0x20 UnityAnalyticsIdentifierProvider ( ModelClassType IUserIdentifierProvider IUserIdentifierProvider IUserIdentifierProvider Pointer )
 
             return value;
         }

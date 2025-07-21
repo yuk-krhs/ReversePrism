@@ -14,6 +14,7 @@ namespace ReversePrism.DataModels
         EventPoint,
         HighScore,
         RankCompetition,
+        EventIdolPoint,
         Num,
     }
 }

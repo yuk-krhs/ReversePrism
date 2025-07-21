@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 178 Disposables                              0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
-    // 180 Index                                    0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 1A8 Disposables                              ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
+    // 1B0 Index                                    ModelPrimitiveType int int int Int32
     public partial class PFIdolIconView : DataModel
     {
         public CompositeDisposable?                     Disposables                             { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PFIdolIconView() { Pointer= p0 };
 
-            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x178), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0245A5AFE470 0x178 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
-            value.Index                                     = GetInt32(new IntPtr(p + 0x180)); // 0245A5AFE490 0x180 Index                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x1A8), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0x1A8 Disposables                 ( ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x1B0)); // 0x1B0 Index                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

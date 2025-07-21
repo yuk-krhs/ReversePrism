@@ -8,16 +8,16 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 CanvasGroup                              000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
-    // 028 Animator                                 0001866BBE80 ModelClassType AnimatorWithEvent AnimatorWithEvent AnimatorWithEvent Pointer
-    // 030 SkipTextImage                            0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 038 ChoiceSkipTextImage                      0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 040 FadeDuration                             0001866656B0 ModelPrimitiveType float float float Single
-    // 044 FadeWaitMiliseconds                      0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 048 AnimatorHashLongTapped                   0001865F4260 ModelPrimitiveType int int int Int32
-    // 050 FadeHandler                              00018667F930 ModelClassType FadeHandler FadeHandler FadeHandler Pointer
+    // 020 CanvasGroup                              ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
+    // 028 Animator                                 ModelClassType AnimatorWithEvent AnimatorWithEvent AnimatorWithEvent Pointer
+    // 030 SkipTextImage                            ModelClassType UIImage UIImage UIImage Pointer
+    // 038 ChoiceSkipTextImage                      ModelClassType UIImage UIImage UIImage Pointer
+    // 040 FadeDuration                             ModelPrimitiveType float float float Single
+    // 044 FadeWaitMiliseconds                      ModelPrimitiveType int int int Int32
+    // 048 AnimatorHashLongTapped                   ModelPrimitiveType int int int Int32
+    // 050 FadeHandler                              ModelClassType FadeHandler FadeHandler FadeHandler Pointer
     // 058 onLongTap                                Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 060 IsBeginLongTap                           000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 060 IsBeginLongTap                           ModelPrimitiveType bool bool bool Bool
     public partial class ADVSkipGauge : DataModel
     {
         public CanvasGroup?                             CanvasGroup                             { get; set; }
@@ -38,15 +38,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ADVSkipGauge() { Pointer= p0 };
 
-            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 024665E4E488 0x20 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.Animator                                  = GetObject<AnimatorWithEvent>(new IntPtr(p + 0x028), ReversePrism.DataModels.AnimatorWithEvent.FromPointer); // 024665E4E4A8 0x28 Animator                    ( 0001866BBE80 ModelClassType AnimatorWithEvent AnimatorWithEvent AnimatorWithEvent Pointer )
-            value.SkipTextImage                             = GetObject<UIImage>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIImage.FromPointer); // 024665E4E4C8 0x30 SkipTextImage               ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.ChoiceSkipTextImage                       = GetObject<UIImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIImage.FromPointer); // 024665E4E4E8 0x38 ChoiceSkipTextImage         ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.FadeDuration                              = GetSingle(new IntPtr(p + 0x040)); // 024665E4E508 0x40 FadeDuration                ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.FadeWaitMiliseconds                       = GetInt32(new IntPtr(p + 0x044)); // 024665E4E528 0x44 FadeWaitMiliseconds         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.AnimatorHashLongTapped                    = GetInt32(new IntPtr(p + 0x048)); // 024665E4E548 0x48 AnimatorHashLongTapped      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.FadeHandler                               = GetObject<FadeHandler>(new IntPtr(p + 0x050), ReversePrism.DataModels.FadeHandler.FromPointer); // 024665E4E568 0x50 FadeHandler                 ( 00018667F930 ModelClassType FadeHandler FadeHandler FadeHandler Pointer )
-            value.IsBeginLongTap                            = GetBool(new IntPtr(p + 0x060)); // 024665E4E5A8 0x60 IsBeginLongTap              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0x20 CanvasGroup                 ( ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.Animator                                  = GetObject<AnimatorWithEvent>(new IntPtr(p + 0x028), ReversePrism.DataModels.AnimatorWithEvent.FromPointer); // 0x28 Animator                    ( ModelClassType AnimatorWithEvent AnimatorWithEvent AnimatorWithEvent Pointer )
+            value.SkipTextImage                             = GetObject<UIImage>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIImage.FromPointer); // 0x30 SkipTextImage               ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.ChoiceSkipTextImage                       = GetObject<UIImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIImage.FromPointer); // 0x38 ChoiceSkipTextImage         ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.FadeDuration                              = GetSingle(new IntPtr(p + 0x040)); // 0x40 FadeDuration                ( ModelPrimitiveType float float float Single )
+            value.FadeWaitMiliseconds                       = GetInt32(new IntPtr(p + 0x044)); // 0x44 FadeWaitMiliseconds         ( ModelPrimitiveType int int int Int32 )
+            value.AnimatorHashLongTapped                    = GetInt32(new IntPtr(p + 0x048)); // 0x48 AnimatorHashLongTapped      ( ModelPrimitiveType int int int Int32 )
+            value.FadeHandler                               = GetObject<FadeHandler>(new IntPtr(p + 0x050), ReversePrism.DataModels.FadeHandler.FromPointer); // 0x50 FadeHandler                 ( ModelClassType FadeHandler FadeHandler FadeHandler Pointer )
+            value.IsBeginLongTap                            = GetBool(new IntPtr(p + 0x060)); // 0x60 IsBeginLongTap              ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

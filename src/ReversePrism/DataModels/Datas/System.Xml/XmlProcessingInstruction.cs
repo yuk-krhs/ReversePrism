@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Target                                   000186671910 ModelPrimitiveType string string string String
-    // 028 Data                                     000186671910 ModelPrimitiveType string string string String
+    // 020 Target                                   ModelPrimitiveType string string string String
+    // 028 Data                                     ModelPrimitiveType string string string String
     public partial class XmlProcessingInstruction : DataModel
     {
         public string                                   Target                                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlProcessingInstruction() { Pointer= p0 };
 
-            value.Target                                    = GetString(new IntPtr(p + 0x020)); // 0246674B1640 0x20 Target                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Data                                      = GetString(new IntPtr(p + 0x028)); // 0246674B1660 0x28 Data                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Target                                    = GetString(new IntPtr(p + 0x020)); // 0x20 Target                      ( ModelPrimitiveType string string string String )
+            value.Data                                      = GetString(new IntPtr(p + 0x028)); // 0x28 Data                        ( ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 PosWS                                    0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32
-    // 01C Rot                                      00018664A340 ModelEnumType Quaternion Quaternion Quaternion Int32
-    // 02C Scale                                    000186666050 ModelPrimitiveType float float float Single
+    // 010 PosWS                                    ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 01C Rot                                      ModelEnumType Quaternion Quaternion Quaternion Int32
+    // 02C Scale                                    ModelPrimitiveType float float float Single
     public partial class RefVolTransform : DataModel
     {
         public Vector3                                  PosWS                                   { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RefVolTransform() { Pointer= p0 };
 
-            value.PosWS                                     = (Vector3)GetInt32(new IntPtr(p + 0x010)); // 02466920D478 0x10 PosWS                       ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.Rot                                       = (Quaternion)GetInt32(new IntPtr(p + 0x01C)); // 02466920D498 0x1C Rot                         ( 00018664A340 ModelEnumType Quaternion Quaternion Quaternion Int32 )
-            value.Scale                                     = GetSingle(new IntPtr(p + 0x02C)); // 02466920D4B8 0x2C Scale                       ( 000186666050 ModelPrimitiveType float float float Single )
+            value.PosWS                                     = (Vector3)GetInt32(new IntPtr(p + 0x010)); // 0x10 PosWS                       ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.Rot                                       = (Quaternion)GetInt32(new IntPtr(p + 0x01C)); // 0x1C Rot                         ( ModelEnumType Quaternion Quaternion Quaternion Int32 )
+            value.Scale                                     = GetSingle(new IntPtr(p + 0x02C)); // 0x2C Scale                       ( ModelPrimitiveType float float float Single )
 
             return value;
         }

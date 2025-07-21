@@ -9,20 +9,20 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 _equalityComparer                        JTokenEqualityComparer IL2CPP_TYPE_CLASS
-    // 010 Parent                                   000186743A20 ModelClassType JContainer JContainer JContainer Pointer
-    // 018 Previous                                 0001865FFEA0 ModelClassType JToken JToken JToken Pointer
-    // 020 Next                                     0001865FFEA0 ModelClassType JToken JToken JToken Pointer
+    // 010 Parent                                   ModelClassType JContainer JContainer JContainer Pointer
+    // 018 Previous                                 ModelClassType JToken JToken JToken Pointer
+    // 020 Next                                     ModelClassType JToken JToken JToken Pointer
     // 028 _annotations                             <object> IL2CPP_TYPE_OBJECT
     // 008 BooleanTypes                             JTokenType[] IL2CPP_TYPE_SZARRAY
-    // 010 NumberTypes                              000185B8EAE0 ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer
-    // 018 BigIntegerTypes                          000185B8EAE0 ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer
-    // 020 StringTypes                              000185B8EAE0 ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer
-    // 028 GuidTypes                                000185B8EAE0 ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer
-    // 030 TimeSpanTypes                            000185B8EAE0 ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer
-    // 038 UriTypes                                 000185B8EAE0 ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer
-    // 040 CharTypes                                000185B8EAE0 ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer
-    // 048 DateTimeTypes                            000185B8EAE0 ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer
-    // 050 BytesTypes                               000185B8EAE0 ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer
+    // 010 NumberTypes                              ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer
+    // 018 BigIntegerTypes                          ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer
+    // 020 StringTypes                              ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer
+    // 028 GuidTypes                                ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer
+    // 030 TimeSpanTypes                            ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer
+    // 038 UriTypes                                 ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer
+    // 040 CharTypes                                ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer
+    // 048 DateTimeTypes                            ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer
+    // 050 BytesTypes                               ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer
     public partial class JToken : DataModel
     {
         public JContainer?                              Parent                                  { get; set; }
@@ -46,18 +46,18 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JToken() { Pointer= p0 };
 
-            value.Parent                                    = GetObject<JContainer>(new IntPtr(p + 0x010), ReversePrism.DataModels.JContainer.FromPointer); // 0245A609C4D0 0x10 Parent                      ( 000186743A20 ModelClassType JContainer JContainer JContainer Pointer )
-            value.Previous                                  = GetObject<JToken>(new IntPtr(p + 0x018), ReversePrism.DataModels.JToken.FromPointer); // 0245A609C4F0 0x18 Previous                    ( 0001865FFEA0 ModelClassType JToken JToken JToken Pointer )
-            value.Next                                      = GetObject<JToken>(new IntPtr(p + 0x020), ReversePrism.DataModels.JToken.FromPointer); // 0245A609C510 0x20 Next                        ( 0001865FFEA0 ModelClassType JToken JToken JToken Pointer )
-            value.NumberTypes                               = GetEnumList<JTokenType>(new IntPtr(p + 0x010)); // 0245A609C570 0x10 NumberTypes                 ( 000185B8EAE0 ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer )
-            value.BigIntegerTypes                           = GetEnumList<JTokenType>(new IntPtr(p + 0x018)); // 0245A609C590 0x18 BigIntegerTypes             ( 000185B8EAE0 ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer )
-            value.StringTypes                               = GetEnumList<JTokenType>(new IntPtr(p + 0x020)); // 0245A609C5B0 0x20 StringTypes                 ( 000185B8EAE0 ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer )
-            value.GuidTypes                                 = GetEnumList<JTokenType>(new IntPtr(p + 0x028)); // 0245A609C5D0 0x28 GuidTypes                   ( 000185B8EAE0 ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer )
-            value.TimeSpanTypes                             = GetEnumList<JTokenType>(new IntPtr(p + 0x030)); // 0245A609C5F0 0x30 TimeSpanTypes               ( 000185B8EAE0 ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer )
-            value.UriTypes                                  = GetEnumList<JTokenType>(new IntPtr(p + 0x038)); // 0245A609C610 0x38 UriTypes                    ( 000185B8EAE0 ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer )
-            value.CharTypes                                 = GetEnumList<JTokenType>(new IntPtr(p + 0x040)); // 0245A609C630 0x40 CharTypes                   ( 000185B8EAE0 ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer )
-            value.DateTimeTypes                             = GetEnumList<JTokenType>(new IntPtr(p + 0x048)); // 0245A609C650 0x48 DateTimeTypes               ( 000185B8EAE0 ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer )
-            value.BytesTypes                                = GetEnumList<JTokenType>(new IntPtr(p + 0x050)); // 0245A609C670 0x50 BytesTypes                  ( 000185B8EAE0 ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer )
+            value.Parent                                    = GetObject<JContainer>(new IntPtr(p + 0x010), ReversePrism.DataModels.JContainer.FromPointer); // 0x10 Parent                      ( ModelClassType JContainer JContainer JContainer Pointer )
+            value.Previous                                  = GetObject<JToken>(new IntPtr(p + 0x018), ReversePrism.DataModels.JToken.FromPointer); // 0x18 Previous                    ( ModelClassType JToken JToken JToken Pointer )
+            value.Next                                      = GetObject<JToken>(new IntPtr(p + 0x020), ReversePrism.DataModels.JToken.FromPointer); // 0x20 Next                        ( ModelClassType JToken JToken JToken Pointer )
+            value.NumberTypes                               = GetEnumList<JTokenType>(new IntPtr(p + 0x010)); // 0x10 NumberTypes                 ( ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer )
+            value.BigIntegerTypes                           = GetEnumList<JTokenType>(new IntPtr(p + 0x018)); // 0x18 BigIntegerTypes             ( ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer )
+            value.StringTypes                               = GetEnumList<JTokenType>(new IntPtr(p + 0x020)); // 0x20 StringTypes                 ( ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer )
+            value.GuidTypes                                 = GetEnumList<JTokenType>(new IntPtr(p + 0x028)); // 0x28 GuidTypes                   ( ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer )
+            value.TimeSpanTypes                             = GetEnumList<JTokenType>(new IntPtr(p + 0x030)); // 0x30 TimeSpanTypes               ( ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer )
+            value.UriTypes                                  = GetEnumList<JTokenType>(new IntPtr(p + 0x038)); // 0x38 UriTypes                    ( ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer )
+            value.CharTypes                                 = GetEnumList<JTokenType>(new IntPtr(p + 0x040)); // 0x40 CharTypes                   ( ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer )
+            value.DateTimeTypes                             = GetEnumList<JTokenType>(new IntPtr(p + 0x048)); // 0x48 DateTimeTypes               ( ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer )
+            value.BytesTypes                                = GetEnumList<JTokenType>(new IntPtr(p + 0x050)); // 0x50 BytesTypes                  ( ModelEnumListType JTokenType[] JTokenType[] List<JTokenType> Pointer )
 
             return value;
         }

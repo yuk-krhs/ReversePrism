@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ArgumentIndex                            0001865F4940 ModelPrimitiveType int int int Int32
+    // 010 ArgumentIndex                            ModelPrimitiveType int int int Int32
     public partial class ByRefUpdater : DataModel
     {
         public int                                      ArgumentIndex                           { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ByRefUpdater() { Pointer= p0 };
 
-            value.ArgumentIndex                             = GetInt32(new IntPtr(p + 0x010)); // 024669FF8688 0x10 ArgumentIndex               ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.ArgumentIndex                             = GetInt32(new IntPtr(p + 0x010)); // 0x10 ArgumentIndex               ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

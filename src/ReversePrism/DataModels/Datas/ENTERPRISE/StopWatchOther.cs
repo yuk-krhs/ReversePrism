@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ConstructedTimeFromApplicationLaunched   0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime
+    // 010 ConstructedTimeFromApplicationLaunched   ModelPrimitiveType DateTime DateTime DateTime DateTime
     public partial class StopWatchOther : DataModel
     {
         public DateTime                                 ConstructedTimeFromApplicationLaunched  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StopWatchOther() { Pointer= p0 };
 
-            value.ConstructedTimeFromApplicationLaunched    = GetDateTime(new IntPtr(p + 0x010)); // 024660EBD520 0x10 ConstructedTimeFromApplicationLaunched ( 0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.ConstructedTimeFromApplicationLaunched    = GetDateTime(new IntPtr(p + 0x010)); // 0x10 ConstructedTimeFromApplicationLaunched ( ModelPrimitiveType DateTime DateTime DateTime DateTime )
 
             return value;
         }

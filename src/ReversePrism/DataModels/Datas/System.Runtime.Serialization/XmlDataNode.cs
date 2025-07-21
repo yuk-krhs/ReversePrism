@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 050 xmlAttributes                            IList`1<XmlAttribute> IL2CPP_TYPE_GENERICINST
     // 058 xmlChildNodes                            IList`1<XmlNode> IL2CPP_TYPE_GENERICINST
-    // 060 OwnerDocument                            000186595990 ModelClassType XmlDocument XmlDocument XmlDocument Pointer
+    // 060 OwnerDocument                            ModelClassType XmlDocument XmlDocument XmlDocument Pointer
     public partial class XmlDataNode : DataModel
     {
         public XmlDocument?                             OwnerDocument                           { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlDataNode() { Pointer= p0 };
 
-            value.OwnerDocument                             = GetObject<XmlDocument>(new IntPtr(p + 0x060), ReversePrism.DataModels.XmlDocument.FromPointer); // 024667D9E550 0x60 OwnerDocument               ( 000186595990 ModelClassType XmlDocument XmlDocument XmlDocument Pointer )
+            value.OwnerDocument                             = GetObject<XmlDocument>(new IntPtr(p + 0x060), ReversePrism.DataModels.XmlDocument.FromPointer); // 0x60 OwnerDocument               ( ModelClassType XmlDocument XmlDocument XmlDocument Pointer )
 
             return value;
         }

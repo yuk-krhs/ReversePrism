@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 UseCount                                 0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 014 Limit                                    0001866992B0 ModelPrimitiveType uint uint uint UInt32
+    // 010 UseCount                                 ModelPrimitiveType uint uint uint UInt32
+    // 014 Limit                                    ModelPrimitiveType uint uint uint UInt32
     public partial class ResourceUsage : DataModel
     {
         public uint                                     UseCount                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ResourceUsage() { Pointer= p0 };
 
-            value.UseCount                                  = GetUInt32(new IntPtr(p + 0x010)); // 02466ACD4A80 0x10 UseCount                    ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.Limit                                     = GetUInt32(new IntPtr(p + 0x014)); // 02466ACD4AA0 0x14 Limit                       ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.UseCount                                  = GetUInt32(new IntPtr(p + 0x010)); // 0x10 UseCount                    ( ModelPrimitiveType uint uint uint UInt32 )
+            value.Limit                                     = GetUInt32(new IntPtr(p + 0x014)); // 0x14 Limit                       ( ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 Elements                                 000185B8FEA0 ModelClassListType LensFlareDataElementSRP[] LensFlareDataElementSRP[] List<LensFlareDataElementSRP> Pointer
+    // 018 Elements                                 ModelClassListType LensFlareDataElementSRP[] LensFlareDataElementSRP[] List<LensFlareDataElementSRP> Pointer
     public partial class LensFlareDataSRP : DataModel
     {
         public List<LensFlareDataElementSRP>?           Elements                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LensFlareDataSRP() { Pointer= p0 };
 
-            value.Elements                                  = GetObjectList<LensFlareDataElementSRP>(new IntPtr(p + 0x018), ReversePrism.DataModels.LensFlareDataElementSRP.FromPointer); // 0246692BCA58 0x18 Elements                    ( 000185B8FEA0 ModelClassListType LensFlareDataElementSRP[] LensFlareDataElementSRP[] List<LensFlareDataElementSRP> Pointer )
+            value.Elements                                  = GetObjectList<LensFlareDataElementSRP>(new IntPtr(p + 0x018), ReversePrism.DataModels.LensFlareDataElementSRP.FromPointer); // 0x18 Elements                    ( ModelClassListType LensFlareDataElementSRP[] LensFlareDataElementSRP[] List<LensFlareDataElementSRP> Pointer )
 
             return value;
         }

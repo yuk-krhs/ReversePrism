@@ -11,10 +11,10 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<GetGalleryMovieListReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstCharacterInfoIdFieldNumber            int IL2CPP_TYPE_I4
-    // 018 MstCharacterInfoId                       0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MstCharacterInfoId                       ModelPrimitiveType int int int Int32
     // 000 MovieListFieldNumber                     int IL2CPP_TYPE_I4
     // 008 _repeated_movieList_codec                FieldCodec`1<GalleryMovieStatus> IL2CPP_TYPE_GENERICINST
-    // 020 MovieList                                000185CD9F68 ModelClassListType RepeatedField`1<GalleryMovieStatus> RepeatedField`1<GalleryMovieStatus> List<GalleryMovieStatus> Pointer
+    // 020 MovieList                                ModelClassListType RepeatedField`1<GalleryMovieStatus> RepeatedField`1<GalleryMovieStatus> List<GalleryMovieStatus> Pointer
     public partial class GetGalleryMovieListReply : DataModel
     {
         public int                                      MstCharacterInfoId                      { get; set; }
@@ -28,8 +28,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetGalleryMovieListReply() { Pointer= p0 };
 
-            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x018)); // 024661516ED0 0x18 MstCharacterInfoId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MovieList                                 = GetObjectList<GalleryMovieStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.GalleryMovieStatus.FromPointer); // 024661516F30 0x20 MovieList                   ( 000185CD9F68 ModelClassListType RepeatedField`1<GalleryMovieStatus> RepeatedField`1<GalleryMovieStatus> List<GalleryMovieStatus> Pointer )
+            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstCharacterInfoId          ( ModelPrimitiveType int int int Int32 )
+            value.MovieList                                 = GetObjectList<GalleryMovieStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.GalleryMovieStatus.FromPointer); // 0x20 MovieList                   ( ModelClassListType RepeatedField`1<GalleryMovieStatus> RepeatedField`1<GalleryMovieStatus> List<GalleryMovieStatus> Pointer )
 
             return value;
         }

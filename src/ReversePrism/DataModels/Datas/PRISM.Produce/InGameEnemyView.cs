@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 CommonView                               0001866D6A90 ModelClassType InGamePlayerCommonView InGamePlayerCommonView InGamePlayerCommonView Pointer
-    // 028 HandContent                              000186732140 ModelClassType EnemyHandContent EnemyHandContent EnemyHandContent Pointer
-    // 030 EnemySkillContentListView                000186732D20 ModelClassType EnemySkillContentListView EnemySkillContentListView EnemySkillContentListView Pointer
-    // 038 AssetTag                                 000186671910 ModelPrimitiveType string string string String
+    // 020 CommonView                               ModelClassType InGamePlayerCommonView InGamePlayerCommonView InGamePlayerCommonView Pointer
+    // 028 HandContent                              ModelClassType EnemyHandContent EnemyHandContent EnemyHandContent Pointer
+    // 030 EnemySkillContentListView                ModelClassType EnemySkillContentListView EnemySkillContentListView EnemySkillContentListView Pointer
+    // 038 AssetTag                                 ModelPrimitiveType string string string String
     public partial class InGameEnemyView : DataModel
     {
         public InGamePlayerCommonView?                  CommonView                              { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InGameEnemyView() { Pointer= p0 };
 
-            value.CommonView                                = GetObject<InGamePlayerCommonView>(new IntPtr(p + 0x020), ReversePrism.DataModels.InGamePlayerCommonView.FromPointer); // 024665A32548 0x20 CommonView                  ( 0001866D6A90 ModelClassType InGamePlayerCommonView InGamePlayerCommonView InGamePlayerCommonView Pointer )
-            value.HandContent                               = GetObject<EnemyHandContent>(new IntPtr(p + 0x028), ReversePrism.DataModels.EnemyHandContent.FromPointer); // 024665A32568 0x28 HandContent                 ( 000186732140 ModelClassType EnemyHandContent EnemyHandContent EnemyHandContent Pointer )
-            value.EnemySkillContentListView                 = GetObject<EnemySkillContentListView>(new IntPtr(p + 0x030), ReversePrism.DataModels.EnemySkillContentListView.FromPointer); // 024665A32588 0x30 EnemySkillContentListView   ( 000186732D20 ModelClassType EnemySkillContentListView EnemySkillContentListView EnemySkillContentListView Pointer )
-            value.AssetTag                                  = GetString(new IntPtr(p + 0x038)); // 024665A325A8 0x38 AssetTag                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.CommonView                                = GetObject<InGamePlayerCommonView>(new IntPtr(p + 0x020), ReversePrism.DataModels.InGamePlayerCommonView.FromPointer); // 0x20 CommonView                  ( ModelClassType InGamePlayerCommonView InGamePlayerCommonView InGamePlayerCommonView Pointer )
+            value.HandContent                               = GetObject<EnemyHandContent>(new IntPtr(p + 0x028), ReversePrism.DataModels.EnemyHandContent.FromPointer); // 0x28 HandContent                 ( ModelClassType EnemyHandContent EnemyHandContent EnemyHandContent Pointer )
+            value.EnemySkillContentListView                 = GetObject<EnemySkillContentListView>(new IntPtr(p + 0x030), ReversePrism.DataModels.EnemySkillContentListView.FromPointer); // 0x30 EnemySkillContentListView   ( ModelClassType EnemySkillContentListView EnemySkillContentListView EnemySkillContentListView Pointer )
+            value.AssetTag                                  = GetString(new IntPtr(p + 0x038)); // 0x38 AssetTag                    ( ModelPrimitiveType string string string String )
 
             return value;
         }

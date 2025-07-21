@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 Name                                     000186671BA0 ModelPrimitiveType string string string String
-    // 020 Found                                    000186595210 ModelPrimitiveType bool bool bool Bool
-    // 028 Column                                   000186675CB0 ModelClassType DataColumn DataColumn DataColumn Pointer
+    // 018 Name                                     ModelPrimitiveType string string string String
+    // 020 Found                                    ModelPrimitiveType bool bool bool Bool
+    // 028 Column                                   ModelClassType DataColumn DataColumn DataColumn Pointer
     public partial class NameNode : DataModel
     {
         public string                                   Name                                    { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NameNode() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0246689A8450 0x18 Name                        ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.Found                                     = GetBool(new IntPtr(p + 0x020)); // 0246689A8470 0x20 Found                       ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.Column                                    = GetObject<DataColumn>(new IntPtr(p + 0x028), ReversePrism.DataModels.DataColumn.FromPointer); // 0246689A8490 0x28 Column                      ( 000186675CB0 ModelClassType DataColumn DataColumn DataColumn Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0x18 Name                        ( ModelPrimitiveType string string string String )
+            value.Found                                     = GetBool(new IntPtr(p + 0x020)); // 0x20 Found                       ( ModelPrimitiveType bool bool bool Bool )
+            value.Column                                    = GetObject<DataColumn>(new IntPtr(p + 0x028), ReversePrism.DataModels.DataColumn.FromPointer); // 0x28 Column                      ( ModelClassType DataColumn DataColumn DataColumn Pointer )
 
             return value;
         }

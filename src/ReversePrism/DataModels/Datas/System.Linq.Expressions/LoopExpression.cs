@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Body                                     0001865CF210 ModelClassType Expression Expression Expression Pointer
-    // 018 BreakLabel                               000186777830 ModelClassType LabelTarget LabelTarget LabelTarget Pointer
-    // 020 ContinueLabel                            000186777830 ModelClassType LabelTarget LabelTarget LabelTarget Pointer
+    // 010 Body                                     ModelClassType Expression Expression Expression Pointer
+    // 018 BreakLabel                               ModelClassType LabelTarget LabelTarget LabelTarget Pointer
+    // 020 ContinueLabel                            ModelClassType LabelTarget LabelTarget LabelTarget Pointer
     public partial class LoopExpression : DataModel
     {
         public Expression?                              Body                                    { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LoopExpression() { Pointer= p0 };
 
-            value.Body                                      = GetObject<Expression>(new IntPtr(p + 0x010), ReversePrism.DataModels.Expression.FromPointer); // 024669F808A8 0x10 Body                        ( 0001865CF210 ModelClassType Expression Expression Expression Pointer )
-            value.BreakLabel                                = GetObject<LabelTarget>(new IntPtr(p + 0x018), ReversePrism.DataModels.LabelTarget.FromPointer); // 024669F808C8 0x18 BreakLabel                  ( 000186777830 ModelClassType LabelTarget LabelTarget LabelTarget Pointer )
-            value.ContinueLabel                             = GetObject<LabelTarget>(new IntPtr(p + 0x020), ReversePrism.DataModels.LabelTarget.FromPointer); // 024669F808E8 0x20 ContinueLabel               ( 000186777830 ModelClassType LabelTarget LabelTarget LabelTarget Pointer )
+            value.Body                                      = GetObject<Expression>(new IntPtr(p + 0x010), ReversePrism.DataModels.Expression.FromPointer); // 0x10 Body                        ( ModelClassType Expression Expression Expression Pointer )
+            value.BreakLabel                                = GetObject<LabelTarget>(new IntPtr(p + 0x018), ReversePrism.DataModels.LabelTarget.FromPointer); // 0x18 BreakLabel                  ( ModelClassType LabelTarget LabelTarget LabelTarget Pointer )
+            value.ContinueLabel                             = GetObject<LabelTarget>(new IntPtr(p + 0x020), ReversePrism.DataModels.LabelTarget.FromPointer); // 0x20 ContinueLabel               ( ModelClassType LabelTarget LabelTarget LabelTarget Pointer )
 
             return value;
         }

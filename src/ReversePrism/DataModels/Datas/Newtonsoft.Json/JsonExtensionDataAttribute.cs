@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 WriteData                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 011 ReadData                                 000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 WriteData                                ModelPrimitiveType bool bool bool Bool
+    // 011 ReadData                                 ModelPrimitiveType bool bool bool Bool
     public partial class JsonExtensionDataAttribute : DataModel
     {
         public bool                                     WriteData                               { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JsonExtensionDataAttribute() { Pointer= p0 };
 
-            value.WriteData                                 = GetBool(new IntPtr(p + 0x010)); // 0245A607E900 0x10 WriteData                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ReadData                                  = GetBool(new IntPtr(p + 0x011)); // 0245A607E920 0x11 ReadData                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.WriteData                                 = GetBool(new IntPtr(p + 0x010)); // 0x10 WriteData                   ( ModelPrimitiveType bool bool bool Bool )
+            value.ReadData                                  = GetBool(new IntPtr(p + 0x011)); // 0x11 ReadData                    ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

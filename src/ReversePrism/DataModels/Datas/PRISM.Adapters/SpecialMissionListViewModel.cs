@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Mission                                  00018664BE30 ModelClassType ISpecialMissionMissionStatus ISpecialMissionMissionStatus ISpecialMissionMissionStatus Pointer
+    // 010 Mission                                  ModelClassType ISpecialMissionMissionStatus ISpecialMissionMissionStatus ISpecialMissionMissionStatus Pointer
     public partial class SpecialMissionListViewModel : DataModel
     {
         public ISpecialMissionMissionStatus?            Mission                                 { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SpecialMissionListViewModel() { Pointer= p0 };
 
-            value.Mission                                   = GetObject<ISpecialMissionMissionStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.ISpecialMissionMissionStatus.FromPointer); // 0246667B6510 0x10 Mission                     ( 00018664BE30 ModelClassType ISpecialMissionMissionStatus ISpecialMissionMissionStatus ISpecialMissionMissionStatus Pointer )
+            value.Mission                                   = GetObject<ISpecialMissionMissionStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.ISpecialMissionMissionStatus.FromPointer); // 0x10 Mission                     ( ModelClassType ISpecialMissionMissionStatus ISpecialMissionMissionStatus ISpecialMissionMissionStatus Pointer )
 
             return value;
         }

@@ -10,14 +10,14 @@ namespace ReversePrism.DataModels
 
     // 000 s_Layout                                 XRLayout IL2CPP_TYPE_CLASS
     // 008 s_PassAllocator                          Func`2<XRPassCreateInfo, XRPass> IL2CPP_TYPE_GENERICINST
-    // 010 S_MSAASamples                            0001865C6110 ModelEnumType MSAASamples MSAASamples MSAASamples Int32
-    // 018 S_OcclusionMeshMaterial                  00018660C770 ModelClassType Material Material Material Pointer
-    // 020 S_MirrorViewMaterial                     00018660C770 ModelClassType Material Material Material Pointer
+    // 010 S_MSAASamples                            ModelEnumType MSAASamples MSAASamples MSAASamples Int32
+    // 018 S_OcclusionMeshMaterial                  ModelClassType Material Material Material Pointer
+    // 020 S_MirrorViewMaterial                     ModelClassType Material Material Material Pointer
     // 028 s_LayoutOverride                         Action`2<XRLayout, Camera> IL2CPP_TYPE_GENERICINST
-    // 030 EmptyPass                                0001865848D0 ModelClassType XRPass XRPass XRPass Pointer
-    // 038 SinglePassAllowed                        000186595C30 ModelPrimitiveType bool bool bool Bool
-    // 03C FoveatedRenderingCaps                    0001865BC330 ModelEnumType FoveatedRenderingCaps FoveatedRenderingCaps FoveatedRenderingCaps Int32
-    // 040 DumpDebugInfo                            000186595C30 ModelPrimitiveType bool bool bool Bool
+    // 030 EmptyPass                                ModelClassType XRPass XRPass XRPass Pointer
+    // 038 SinglePassAllowed                        ModelPrimitiveType bool bool bool Bool
+    // 03C FoveatedRenderingCaps                    ModelEnumType FoveatedRenderingCaps FoveatedRenderingCaps FoveatedRenderingCaps Int32
+    // 040 DumpDebugInfo                            ModelPrimitiveType bool bool bool Bool
     public partial class XRSystem : DataModel
     {
         public MSAASamples                              S_MSAASamples                           { get; set; }
@@ -36,13 +36,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XRSystem() { Pointer= p0 };
 
-            value.S_MSAASamples                             = (MSAASamples)GetInt32(new IntPtr(p + 0x010)); // 0245A35CFF78 0x10 S_MSAASamples               ( 0001865C6110 ModelEnumType MSAASamples MSAASamples MSAASamples Int32 )
-            value.S_OcclusionMeshMaterial                   = GetObject<Material>(new IntPtr(p + 0x018), ReversePrism.DataModels.Material.FromPointer); // 0245A35CFF98 0x18 S_OcclusionMeshMaterial     ( 00018660C770 ModelClassType Material Material Material Pointer )
-            value.S_MirrorViewMaterial                      = GetObject<Material>(new IntPtr(p + 0x020), ReversePrism.DataModels.Material.FromPointer); // 0245A35CFFB8 0x20 S_MirrorViewMaterial        ( 00018660C770 ModelClassType Material Material Material Pointer )
-            value.EmptyPass                                 = GetObject<XRPass>(new IntPtr(p + 0x030), ReversePrism.DataModels.XRPass.FromPointer); // 0245A35CFFF8 0x30 EmptyPass                   ( 0001865848D0 ModelClassType XRPass XRPass XRPass Pointer )
-            value.SinglePassAllowed                         = GetBool(new IntPtr(p + 0x038)); // 0245A35D0018 0x38 SinglePassAllowed           ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
-            value.FoveatedRenderingCaps                     = (FoveatedRenderingCaps)GetInt32(new IntPtr(p + 0x03C)); // 0245A35D0038 0x3C FoveatedRenderingCaps       ( 0001865BC330 ModelEnumType FoveatedRenderingCaps FoveatedRenderingCaps FoveatedRenderingCaps Int32 )
-            value.DumpDebugInfo                             = GetBool(new IntPtr(p + 0x040)); // 0245A35D0058 0x40 DumpDebugInfo               ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.S_MSAASamples                             = (MSAASamples)GetInt32(new IntPtr(p + 0x010)); // 0x10 S_MSAASamples               ( ModelEnumType MSAASamples MSAASamples MSAASamples Int32 )
+            value.S_OcclusionMeshMaterial                   = GetObject<Material>(new IntPtr(p + 0x018), ReversePrism.DataModels.Material.FromPointer); // 0x18 S_OcclusionMeshMaterial     ( ModelClassType Material Material Material Pointer )
+            value.S_MirrorViewMaterial                      = GetObject<Material>(new IntPtr(p + 0x020), ReversePrism.DataModels.Material.FromPointer); // 0x20 S_MirrorViewMaterial        ( ModelClassType Material Material Material Pointer )
+            value.EmptyPass                                 = GetObject<XRPass>(new IntPtr(p + 0x030), ReversePrism.DataModels.XRPass.FromPointer); // 0x30 EmptyPass                   ( ModelClassType XRPass XRPass XRPass Pointer )
+            value.SinglePassAllowed                         = GetBool(new IntPtr(p + 0x038)); // 0x38 SinglePassAllowed           ( ModelPrimitiveType bool bool bool Bool )
+            value.FoveatedRenderingCaps                     = (FoveatedRenderingCaps)GetInt32(new IntPtr(p + 0x03C)); // 0x3C FoveatedRenderingCaps       ( ModelEnumType FoveatedRenderingCaps FoveatedRenderingCaps FoveatedRenderingCaps Int32 )
+            value.DumpDebugInfo                             = GetBool(new IntPtr(p + 0x040)); // 0x40 DumpDebugInfo               ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

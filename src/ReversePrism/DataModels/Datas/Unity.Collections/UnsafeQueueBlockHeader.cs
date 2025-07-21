@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 m_NextBlock                              IntPtr IL2CPP_TYPE_PTR
-    // 018 M_NumItems                               0001865F36C0 ModelPrimitiveType int int int Int32
+    // 018 M_NumItems                               ModelPrimitiveType int int int Int32
     public partial class UnsafeQueueBlockHeader : DataModel
     {
         public int                                      M_NumItems                              { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnsafeQueueBlockHeader() { Pointer= p0 };
 
-            value.M_NumItems                                = GetInt32(new IntPtr(p + 0x018)); // 024669CB89B8 0x18 M_NumItems                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.M_NumItems                                = GetInt32(new IntPtr(p + 0x018)); // 0x18 M_NumItems                  ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

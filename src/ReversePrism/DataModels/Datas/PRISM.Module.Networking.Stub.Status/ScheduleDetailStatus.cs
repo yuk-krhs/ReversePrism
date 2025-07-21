@@ -11,29 +11,29 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<ScheduleDetailStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ScheduleDetailTypeFieldNumber            int IL2CPP_TYPE_I4
-    // 018 ScheduleDetailType                       0001866D43F0 ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32
+    // 018 ScheduleDetailType                       ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32
     // 000 ScheduleLevelFieldNumber                 int IL2CPP_TYPE_I4
-    // 01C ScheduleLevel                            0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 01C ScheduleLevel                            ModelPrimitiveType int int int Int32
     // 000 TroubleFieldNumber                       int IL2CPP_TYPE_I4
-    // 020 Trouble                                  0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 Trouble                                  ModelPrimitiveType int int int Int32
     // 000 IsRecommendFieldNumber                   int IL2CPP_TYPE_I4
-    // 024 IsRecommend                              000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 024 IsRecommend                              ModelPrimitiveType bool bool bool Bool
     // 000 IsSupportBonusFieldNumber                int IL2CPP_TYPE_I4
-    // 025 IsSupportBonus                           000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 025 IsSupportBonus                           ModelPrimitiveType bool bool bool Bool
     // 000 SupportCharacterIconListFieldNumber      int IL2CPP_TYPE_I4
     // 008 _repeated_supportCharacterIconList_codec FieldCodec`1<SupportCharacterIconStatus> IL2CPP_TYPE_GENERICINST
-    // 028 SupportCharacterIconList                 000185CF4048 ModelClassListType RepeatedField`1<SupportCharacterIconStatus> RepeatedField`1<SupportCharacterIconStatus> List<SupportCharacterIconStatus> Pointer
+    // 028 SupportCharacterIconList                 ModelClassListType RepeatedField`1<SupportCharacterIconStatus> RepeatedField`1<SupportCharacterIconStatus> List<SupportCharacterIconStatus> Pointer
     // 000 VitalityCostFieldNumber                  int IL2CPP_TYPE_I4
-    // 030 VitalityCost                             0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 030 VitalityCost                             ModelPrimitiveType int int int Int32
     // 000 ScheduleRewardListFieldNumber            int IL2CPP_TYPE_I4
     // 010 _repeated_scheduleRewardList_codec       FieldCodec`1<ScheduleRewardStatus> IL2CPP_TYPE_GENERICINST
-    // 038 ScheduleRewardList                       000185CEF588 ModelClassListType RepeatedField`1<ScheduleRewardStatus> RepeatedField`1<ScheduleRewardStatus> List<ScheduleRewardStatus> Pointer
+    // 038 ScheduleRewardList                       ModelClassListType RepeatedField`1<ScheduleRewardStatus> RepeatedField`1<ScheduleRewardStatus> List<ScheduleRewardStatus> Pointer
     // 000 BuildUpParameterFieldNumber              int IL2CPP_TYPE_I4
-    // 040 BuildUpParameter                         00018650F070 ModelClassType BuildUpParameterStatus BuildUpParameterStatus BuildUpParameterStatus Pointer
+    // 040 BuildUpParameter                         ModelClassType BuildUpParameterStatus BuildUpParameterStatus BuildUpParameterStatus Pointer
     // 000 RecoverVitalityFieldNumber               int IL2CPP_TYPE_I4
-    // 048 RecoverVitality                          0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 048 RecoverVitality                          ModelPrimitiveType int int int Int32
     // 000 ChallengeMissionFieldNumber              int IL2CPP_TYPE_I4
-    // 050 ChallengeMission                         00018656C2A0 ModelClassType ChallengeMissionStatus ChallengeMissionStatus ChallengeMissionStatus Pointer
+    // 050 ChallengeMission                         ModelClassType ChallengeMissionStatus ChallengeMissionStatus ChallengeMissionStatus Pointer
     public partial class ScheduleDetailStatus : DataModel
     {
         public ScheduleDetailType                       ScheduleDetailType                      { get; set; }
@@ -56,17 +56,17 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ScheduleDetailStatus() { Pointer= p0 };
 
-            value.ScheduleDetailType                        = (ScheduleDetailType)GetInt32(new IntPtr(p + 0x018)); // 0246610AB120 0x18 ScheduleDetailType          ( 0001866D43F0 ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32 )
-            value.ScheduleLevel                             = GetInt32(new IntPtr(p + 0x01C)); // 0246610AB160 0x1C ScheduleLevel               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Trouble                                   = GetInt32(new IntPtr(p + 0x020)); // 0246610AB1A0 0x20 Trouble                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsRecommend                               = GetBool(new IntPtr(p + 0x024)); // 0246610AB1E0 0x24 IsRecommend                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsSupportBonus                            = GetBool(new IntPtr(p + 0x025)); // 0246610AB220 0x25 IsSupportBonus              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SupportCharacterIconList                  = GetObjectList<SupportCharacterIconStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.SupportCharacterIconStatus.FromPointer); // 0246610AB280 0x28 SupportCharacterIconList    ( 000185CF4048 ModelClassListType RepeatedField`1<SupportCharacterIconStatus> RepeatedField`1<SupportCharacterIconStatus> List<SupportCharacterIconStatus> Pointer )
-            value.VitalityCost                              = GetInt32(new IntPtr(p + 0x030)); // 0246610AB2C0 0x30 VitalityCost                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ScheduleRewardList                        = GetObjectList<ScheduleRewardStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ScheduleRewardStatus.FromPointer); // 0246610AB320 0x38 ScheduleRewardList          ( 000185CEF588 ModelClassListType RepeatedField`1<ScheduleRewardStatus> RepeatedField`1<ScheduleRewardStatus> List<ScheduleRewardStatus> Pointer )
-            value.BuildUpParameter                          = GetObject<BuildUpParameterStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.BuildUpParameterStatus.FromPointer); // 0246610AB360 0x40 BuildUpParameter            ( 00018650F070 ModelClassType BuildUpParameterStatus BuildUpParameterStatus BuildUpParameterStatus Pointer )
-            value.RecoverVitality                           = GetInt32(new IntPtr(p + 0x048)); // 0246610AB3A0 0x48 RecoverVitality             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ChallengeMission                          = GetObject<ChallengeMissionStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.ChallengeMissionStatus.FromPointer); // 0246610AB3E0 0x50 ChallengeMission            ( 00018656C2A0 ModelClassType ChallengeMissionStatus ChallengeMissionStatus ChallengeMissionStatus Pointer )
+            value.ScheduleDetailType                        = (ScheduleDetailType)GetInt32(new IntPtr(p + 0x018)); // 0x18 ScheduleDetailType          ( ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32 )
+            value.ScheduleLevel                             = GetInt32(new IntPtr(p + 0x01C)); // 0x1C ScheduleLevel               ( ModelPrimitiveType int int int Int32 )
+            value.Trouble                                   = GetInt32(new IntPtr(p + 0x020)); // 0x20 Trouble                     ( ModelPrimitiveType int int int Int32 )
+            value.IsRecommend                               = GetBool(new IntPtr(p + 0x024)); // 0x24 IsRecommend                 ( ModelPrimitiveType bool bool bool Bool )
+            value.IsSupportBonus                            = GetBool(new IntPtr(p + 0x025)); // 0x25 IsSupportBonus              ( ModelPrimitiveType bool bool bool Bool )
+            value.SupportCharacterIconList                  = GetObjectList<SupportCharacterIconStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.SupportCharacterIconStatus.FromPointer); // 0x28 SupportCharacterIconList    ( ModelClassListType RepeatedField`1<SupportCharacterIconStatus> RepeatedField`1<SupportCharacterIconStatus> List<SupportCharacterIconStatus> Pointer )
+            value.VitalityCost                              = GetInt32(new IntPtr(p + 0x030)); // 0x30 VitalityCost                ( ModelPrimitiveType int int int Int32 )
+            value.ScheduleRewardList                        = GetObjectList<ScheduleRewardStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ScheduleRewardStatus.FromPointer); // 0x38 ScheduleRewardList          ( ModelClassListType RepeatedField`1<ScheduleRewardStatus> RepeatedField`1<ScheduleRewardStatus> List<ScheduleRewardStatus> Pointer )
+            value.BuildUpParameter                          = GetObject<BuildUpParameterStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.BuildUpParameterStatus.FromPointer); // 0x40 BuildUpParameter            ( ModelClassType BuildUpParameterStatus BuildUpParameterStatus BuildUpParameterStatus Pointer )
+            value.RecoverVitality                           = GetInt32(new IntPtr(p + 0x048)); // 0x48 RecoverVitality             ( ModelPrimitiveType int int int Int32 )
+            value.ChallengeMission                          = GetObject<ChallengeMissionStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.ChallengeMissionStatus.FromPointer); // 0x50 ChallengeMission            ( ModelClassType ChallengeMissionStatus ChallengeMissionStatus ChallengeMissionStatus Pointer )
 
             return value;
         }

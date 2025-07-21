@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 C0                                       0001866C5E10 ModelEnumType float2 float2 float2 Int32
-    // 018 C1                                       0001866C5E10 ModelEnumType float2 float2 float2 Int32
-    // 020 C2                                       0001866C5E10 ModelEnumType float2 float2 float2 Int32
+    // 010 C0                                       ModelEnumType float2 float2 float2 Int32
+    // 018 C1                                       ModelEnumType float2 float2 float2 Int32
+    // 020 C2                                       ModelEnumType float2 float2 float2 Int32
     // 000 zero                                     float2x3 IL2CPP_TYPE_VALUETYPE
     public partial class float2x3 : DataModel
     {
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new float2x3() { Pointer= p0 };
 
-            value.C0                                        = (float2)GetInt32(new IntPtr(p + 0x010)); // 024667EC0FD0 0x10 C0                          ( 0001866C5E10 ModelEnumType float2 float2 float2 Int32 )
-            value.C1                                        = (float2)GetInt32(new IntPtr(p + 0x018)); // 024667EC0FF0 0x18 C1                          ( 0001866C5E10 ModelEnumType float2 float2 float2 Int32 )
-            value.C2                                        = (float2)GetInt32(new IntPtr(p + 0x020)); // 024667EC1010 0x20 C2                          ( 0001866C5E10 ModelEnumType float2 float2 float2 Int32 )
+            value.C0                                        = (float2)GetInt32(new IntPtr(p + 0x010)); // 0x10 C0                          ( ModelEnumType float2 float2 float2 Int32 )
+            value.C1                                        = (float2)GetInt32(new IntPtr(p + 0x018)); // 0x18 C1                          ( ModelEnumType float2 float2 float2 Int32 )
+            value.C2                                        = (float2)GetInt32(new IntPtr(p + 0x020)); // 0x20 C2                          ( ModelEnumType float2 float2 float2 Int32 )
 
             return value;
         }

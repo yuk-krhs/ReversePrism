@@ -8,7 +8,6 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 fesUnitSearchPopupViewFactory            PopupViewFactory`1<IFesUnitSearchPopupView> IL2CPP_TYPE_GENERICINST
     public partial class FesUnitSearchPopupCallerImplement : DataModel
     {
 

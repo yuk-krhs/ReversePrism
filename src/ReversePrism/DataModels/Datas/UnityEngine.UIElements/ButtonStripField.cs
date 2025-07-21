@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 430 M_Buttons                                000185CD0378 ModelClassListType List`1<Button> List`1<Button> List<Button> Pointer
+    // 440 M_Buttons                                ModelClassListType List`1<Button> List`1<Button> List<Button> Pointer
     public partial class ButtonStripField : DataModel
     {
         public List<Button>?                            M_Buttons                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ButtonStripField() { Pointer= p0 };
 
-            value.M_Buttons                                 = GetObjectList<Button>(new IntPtr(p + 0x430), ReversePrism.DataModels.Button.FromPointer); // 0245A66C0748 0x430 M_Buttons                   ( 000185CD0378 ModelClassListType List`1<Button> List`1<Button> List<Button> Pointer )
+            value.M_Buttons                                 = GetObjectList<Button>(new IntPtr(p + 0x440), ReversePrism.DataModels.Button.FromPointer); // 0x440 M_Buttons                   ( ModelClassListType List`1<Button> List`1<Button> List<Button> Pointer )
 
             return value;
         }

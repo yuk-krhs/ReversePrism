@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 StartLightColor                          0001865AB0A0 ModelEnumType Color Color Color Int32
-    // 028 StartLightIntensity                      000186666050 ModelPrimitiveType float float float Single
-    // 02C EndLightColor                            0001865AB0A0 ModelEnumType Color Color Color Int32
-    // 03C EndLightIntensity                        000186666050 ModelPrimitiveType float float float Single
+    // 018 StartLightColor                          ModelEnumType Color Color Color Int32
+    // 028 StartLightIntensity                      ModelPrimitiveType float float float Single
+    // 02C EndLightColor                            ModelEnumType Color Color Color Int32
+    // 03C EndLightIntensity                        ModelPrimitiveType float float float Single
     // 040 stageController                          ExposedReference`1<StageController> IL2CPP_TYPE_GENERICINST
     public partial class StageControllerPlayableAsset : DataModel
     {
@@ -28,10 +28,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StageControllerPlayableAsset() { Pointer= p0 };
 
-            value.StartLightColor                           = (Color)GetInt32(new IntPtr(p + 0x018)); // 024664E74230 0x18 StartLightColor             ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.StartLightIntensity                       = GetSingle(new IntPtr(p + 0x028)); // 024664E74250 0x28 StartLightIntensity         ( 000186666050 ModelPrimitiveType float float float Single )
-            value.EndLightColor                             = (Color)GetInt32(new IntPtr(p + 0x02C)); // 024664E74270 0x2C EndLightColor               ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.EndLightIntensity                         = GetSingle(new IntPtr(p + 0x03C)); // 024664E74290 0x3C EndLightIntensity           ( 000186666050 ModelPrimitiveType float float float Single )
+            value.StartLightColor                           = (Color)GetInt32(new IntPtr(p + 0x018)); // 0x18 StartLightColor             ( ModelEnumType Color Color Color Int32 )
+            value.StartLightIntensity                       = GetSingle(new IntPtr(p + 0x028)); // 0x28 StartLightIntensity         ( ModelPrimitiveType float float float Single )
+            value.EndLightColor                             = (Color)GetInt32(new IntPtr(p + 0x02C)); // 0x2C EndLightColor               ( ModelEnumType Color Color Color Int32 )
+            value.EndLightIntensity                         = GetSingle(new IntPtr(p + 0x03C)); // 0x3C EndLightIntensity           ( ModelPrimitiveType float float float Single )
 
             return value;
         }

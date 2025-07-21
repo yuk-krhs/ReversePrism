@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 IsScheduled                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 011 LowPriority                              000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 IsScheduled                              ModelPrimitiveType bool bool bool Bool
+    // 011 LowPriority                              ModelPrimitiveType bool bool bool Bool
     public partial class ActionItem : DataModel
     {
         public bool                                     IsScheduled                             { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ActionItem() { Pointer= p0 };
 
-            value.IsScheduled                               = GetBool(new IntPtr(p + 0x010)); // 02466BAB0D88 0x10 IsScheduled                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.LowPriority                               = GetBool(new IntPtr(p + 0x011)); // 02466BAB0DA8 0x11 LowPriority                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsScheduled                               = GetBool(new IntPtr(p + 0x010)); // 0x10 IsScheduled                 ( ModelPrimitiveType bool bool bool Bool )
+            value.LowPriority                               = GetBool(new IntPtr(p + 0x011)); // 0x11 LowPriority                 ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

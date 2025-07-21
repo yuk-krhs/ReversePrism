@@ -12,10 +12,10 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ProducerDestinationsFieldNumber          int IL2CPP_TYPE_I4
     // 008 _repeated_producerDestinations_codec     FieldCodec`1<MonitoringDestination> IL2CPP_TYPE_GENERICINST
-    // 018 ProducerDestinations                     000185CF9498 ModelClassListType RepeatedField`1<MonitoringDestination> RepeatedField`1<MonitoringDestination> List<MonitoringDestination> Pointer
+    // 018 ProducerDestinations                     ModelClassListType RepeatedField`1<MonitoringDestination> RepeatedField`1<MonitoringDestination> List<MonitoringDestination> Pointer
     // 000 ConsumerDestinationsFieldNumber          int IL2CPP_TYPE_I4
     // 010 _repeated_consumerDestinations_codec     FieldCodec`1<MonitoringDestination> IL2CPP_TYPE_GENERICINST
-    // 020 ConsumerDestinations                     000185CF9498 ModelClassListType RepeatedField`1<MonitoringDestination> RepeatedField`1<MonitoringDestination> List<MonitoringDestination> Pointer
+    // 020 ConsumerDestinations                     ModelClassListType RepeatedField`1<MonitoringDestination> RepeatedField`1<MonitoringDestination> List<MonitoringDestination> Pointer
     public partial class Monitoring : DataModel
     {
         public List<MonitoringDestination>?             ProducerDestinations                    { get; set; }
@@ -29,8 +29,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Monitoring() { Pointer= p0 };
 
-            value.ProducerDestinations                      = GetObjectList<MonitoringDestination>(new IntPtr(p + 0x018), ReversePrism.DataModels.MonitoringDestination.FromPointer); // 02466A86A598 0x18 ProducerDestinations        ( 000185CF9498 ModelClassListType RepeatedField`1<MonitoringDestination> RepeatedField`1<MonitoringDestination> List<MonitoringDestination> Pointer )
-            value.ConsumerDestinations                      = GetObjectList<MonitoringDestination>(new IntPtr(p + 0x020), ReversePrism.DataModels.MonitoringDestination.FromPointer); // 02466A86A5F8 0x20 ConsumerDestinations        ( 000185CF9498 ModelClassListType RepeatedField`1<MonitoringDestination> RepeatedField`1<MonitoringDestination> List<MonitoringDestination> Pointer )
+            value.ProducerDestinations                      = GetObjectList<MonitoringDestination>(new IntPtr(p + 0x018), ReversePrism.DataModels.MonitoringDestination.FromPointer); // 0x18 ProducerDestinations        ( ModelClassListType RepeatedField`1<MonitoringDestination> RepeatedField`1<MonitoringDestination> List<MonitoringDestination> Pointer )
+            value.ConsumerDestinations                      = GetObjectList<MonitoringDestination>(new IntPtr(p + 0x020), ReversePrism.DataModels.MonitoringDestination.FromPointer); // 0x20 ConsumerDestinations        ( ModelClassListType RepeatedField`1<MonitoringDestination> RepeatedField`1<MonitoringDestination> List<MonitoringDestination> Pointer )
 
             return value;
         }

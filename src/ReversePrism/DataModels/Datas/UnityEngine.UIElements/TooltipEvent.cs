@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 088 Tooltip                                  000186671910 ModelPrimitiveType string string string String
-    // 090 Rect                                     00018664F620 ModelEnumType Rect Rect Rect Int32
+    // 088 Tooltip                                  ModelPrimitiveType string string string String
+    // 090 Rect                                     ModelEnumType Rect Rect Rect Int32
     public partial class TooltipEvent : DataModel
     {
         public string                                   Tooltip                                 { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TooltipEvent() { Pointer= p0 };
 
-            value.Tooltip                                   = GetString(new IntPtr(p + 0x088)); // 0245A67932A0 0x88 Tooltip                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.Rect                                      = (Rect)GetInt32(new IntPtr(p + 0x090)); // 0245A67932C0 0x90 Rect                        ( 00018664F620 ModelEnumType Rect Rect Rect Int32 )
+            value.Tooltip                                   = GetString(new IntPtr(p + 0x088)); // 0x88 Tooltip                     ( ModelPrimitiveType string string string String )
+            value.Rect                                      = (Rect)GetInt32(new IntPtr(p + 0x090)); // 0x90 Rect                        ( ModelEnumType Rect Rect Rect Int32 )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 048 HasWrapperElement                        000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 050 Mapping                                  000185CB3AC8 ModelClassListType XmlMemberMapping[] XmlMemberMapping[] List<XmlMemberMapping> Pointer
+    // 048 HasWrapperElement                        ModelPrimitiveType bool bool bool Bool
+    // 050 Mapping                                  ModelClassListType XmlMemberMapping[] XmlMemberMapping[] List<XmlMemberMapping> Pointer
     public partial class XmlMembersMapping : DataModel
     {
         public bool                                     HasWrapperElement                       { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlMembersMapping() { Pointer= p0 };
 
-            value.HasWrapperElement                         = GetBool(new IntPtr(p + 0x048)); // 024667519350 0x48 HasWrapperElement           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Mapping                                   = GetObjectList<XmlMemberMapping>(new IntPtr(p + 0x050), ReversePrism.DataModels.XmlMemberMapping.FromPointer); // 024667519370 0x50 Mapping                     ( 000185CB3AC8 ModelClassListType XmlMemberMapping[] XmlMemberMapping[] List<XmlMemberMapping> Pointer )
+            value.HasWrapperElement                         = GetBool(new IntPtr(p + 0x048)); // 0x48 HasWrapperElement           ( ModelPrimitiveType bool bool bool Bool )
+            value.Mapping                                   = GetObjectList<XmlMemberMapping>(new IntPtr(p + 0x050), ReversePrism.DataModels.XmlMemberMapping.FromPointer); // 0x50 Mapping                     ( ModelClassListType XmlMemberMapping[] XmlMemberMapping[] List<XmlMemberMapping> Pointer )
 
             return value;
         }

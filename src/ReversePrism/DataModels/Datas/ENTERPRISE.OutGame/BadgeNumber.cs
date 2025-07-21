@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 TextComponent                            0001866F95C0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 028 Number                                   0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 TextComponent                            ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 028 Number                                   ModelPrimitiveType int int int Int32
     public partial class BadgeNumber : DataModel
     {
         public UITextMeshProUGUI?                       TextComponent                           { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BadgeNumber() { Pointer= p0 };
 
-            value.TextComponent                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0245A4F68F50 0x20 TextComponent               ( 0001866F95C0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.Number                                    = GetInt32(new IntPtr(p + 0x028)); // 0245A4F68F70 0x28 Number                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TextComponent                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x20 TextComponent               ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Number                                    = GetInt32(new IntPtr(p + 0x028)); // 0x28 Number                      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

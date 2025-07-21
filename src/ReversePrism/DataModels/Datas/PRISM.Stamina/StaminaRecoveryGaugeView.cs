@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 StaminaGaugeImage                        0001866CCDB0 ModelClassType Image Image Image Pointer
-    // 028 StaminaGaugeAfterImage                   0001866CCDB0 ModelClassType Image Image Image Pointer
-    // 030 StaminaFullGaugeImage                    0001866CCDB0 ModelClassType Image Image Image Pointer
-    // 038 IncreaseColorImage                       0001866CCDB0 ModelClassType Image Image Image Pointer
-    // 040 DecreaseColorImage                       0001866CCDB0 ModelClassType Image Image Image Pointer
+    // 020 StaminaGaugeImage                        ModelClassType Image Image Image Pointer
+    // 028 StaminaGaugeAfterImage                   ModelClassType Image Image Image Pointer
+    // 030 StaminaFullGaugeImage                    ModelClassType Image Image Image Pointer
+    // 038 IncreaseColorImage                       ModelClassType Image Image Image Pointer
+    // 040 DecreaseColorImage                       ModelClassType Image Image Image Pointer
     public partial class StaminaRecoveryGaugeView : DataModel
     {
         public Image?                                   StaminaGaugeImage                       { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StaminaRecoveryGaugeView() { Pointer= p0 };
 
-            value.StaminaGaugeImage                         = GetObject<Image>(new IntPtr(p + 0x020), ReversePrism.DataModels.Image.FromPointer); // 02466566EE70 0x20 StaminaGaugeImage           ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.StaminaGaugeAfterImage                    = GetObject<Image>(new IntPtr(p + 0x028), ReversePrism.DataModels.Image.FromPointer); // 02466566EE90 0x28 StaminaGaugeAfterImage      ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.StaminaFullGaugeImage                     = GetObject<Image>(new IntPtr(p + 0x030), ReversePrism.DataModels.Image.FromPointer); // 02466566EEB0 0x30 StaminaFullGaugeImage       ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.IncreaseColorImage                        = GetObject<Image>(new IntPtr(p + 0x038), ReversePrism.DataModels.Image.FromPointer); // 02466566EED0 0x38 IncreaseColorImage          ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.DecreaseColorImage                        = GetObject<Image>(new IntPtr(p + 0x040), ReversePrism.DataModels.Image.FromPointer); // 02466566EEF0 0x40 DecreaseColorImage          ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
+            value.StaminaGaugeImage                         = GetObject<Image>(new IntPtr(p + 0x020), ReversePrism.DataModels.Image.FromPointer); // 0x20 StaminaGaugeImage           ( ModelClassType Image Image Image Pointer )
+            value.StaminaGaugeAfterImage                    = GetObject<Image>(new IntPtr(p + 0x028), ReversePrism.DataModels.Image.FromPointer); // 0x28 StaminaGaugeAfterImage      ( ModelClassType Image Image Image Pointer )
+            value.StaminaFullGaugeImage                     = GetObject<Image>(new IntPtr(p + 0x030), ReversePrism.DataModels.Image.FromPointer); // 0x30 StaminaFullGaugeImage       ( ModelClassType Image Image Image Pointer )
+            value.IncreaseColorImage                        = GetObject<Image>(new IntPtr(p + 0x038), ReversePrism.DataModels.Image.FromPointer); // 0x38 IncreaseColorImage          ( ModelClassType Image Image Image Pointer )
+            value.DecreaseColorImage                        = GetObject<Image>(new IntPtr(p + 0x040), ReversePrism.DataModels.Image.FromPointer); // 0x40 DecreaseColorImage          ( ModelClassType Image Image Image Pointer )
 
             return value;
         }

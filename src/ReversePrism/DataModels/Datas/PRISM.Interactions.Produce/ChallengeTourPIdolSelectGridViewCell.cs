@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 030 PIdolIconView                            000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer
-    // 038 Disposable                               0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 030 PIdolIconView                            ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer
+    // 038 Disposable                               ModelClassType IDisposable IDisposable IDisposable Pointer
     public partial class ChallengeTourPIdolSelectGridViewCell : DataModel
     {
         public PFIdolIconView?                          PIdolIconView                           { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChallengeTourPIdolSelectGridViewCell() { Pointer= p0 };
 
-            value.PIdolIconView                             = GetObject<PFIdolIconView>(new IntPtr(p + 0x030), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 02466A23DCA0 0x30 PIdolIconView               ( 000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
-            value.Disposable                                = GetObject<IDisposable>(new IntPtr(p + 0x038), ReversePrism.DataModels.IDisposable.FromPointer); // 02466A23DCC0 0x38 Disposable                  ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.PIdolIconView                             = GetObject<PFIdolIconView>(new IntPtr(p + 0x030), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 0x30 PIdolIconView               ( ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
+            value.Disposable                                = GetObject<IDisposable>(new IntPtr(p + 0x038), ReversePrism.DataModels.IDisposable.FromPointer); // 0x38 Disposable                  ( ModelClassType IDisposable IDisposable IDisposable Pointer )
 
             return value;
         }

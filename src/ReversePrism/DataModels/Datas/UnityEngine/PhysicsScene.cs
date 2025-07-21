@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Handle                                 0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 M_Handle                                 ModelPrimitiveType int int int Int32
     public partial class PhysicsScene : DataModel
     {
         public int                                      M_Handle                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PhysicsScene() { Pointer= p0 };
 
-            value.M_Handle                                  = GetInt32(new IntPtr(p + 0x010)); // 0245A691E208 0x10 M_Handle                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_Handle                                  = GetInt32(new IntPtr(p + 0x010)); // 0x10 M_Handle                    ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,13 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 CharaButton                              0001865E3500 ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer
-    // 028 StoryButton                              0001865E3500 ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer
-    // 030 ProduceButton                            0001865E3500 ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer
-    // 038 LiveButton                               0001865E3500 ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer
-    // 040 GashaButton                              0001865E3500 ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer
-    // 048 HomeButton                               0001865E3500 ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer
-    // 050 ShopButton                               0001865E3500 ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer
+    // 020 CharaButton                              ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer
+    // 028 StoryButton                              ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer
+    // 030 ProduceButton                            ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer
+    // 038 LiveButton                               ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer
+    // 040 GashaButton                              ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer
+    // 048 HomeButton                               ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer
+    // 050 ShopButton                               ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer
     public partial class GlobalMenuFooterPanelView : DataModel
     {
         public CommonFooterButton?                      CharaButton                             { get; set; }
@@ -33,13 +33,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GlobalMenuFooterPanelView() { Pointer= p0 };
 
-            value.CharaButton                               = GetObject<CommonFooterButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.CommonFooterButton.FromPointer); // 02466BF30768 0x20 CharaButton                 ( 0001865E3500 ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer )
-            value.StoryButton                               = GetObject<CommonFooterButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.CommonFooterButton.FromPointer); // 02466BF30788 0x28 StoryButton                 ( 0001865E3500 ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer )
-            value.ProduceButton                             = GetObject<CommonFooterButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.CommonFooterButton.FromPointer); // 02466BF307A8 0x30 ProduceButton               ( 0001865E3500 ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer )
-            value.LiveButton                                = GetObject<CommonFooterButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.CommonFooterButton.FromPointer); // 02466BF307C8 0x38 LiveButton                  ( 0001865E3500 ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer )
-            value.GashaButton                               = GetObject<CommonFooterButton>(new IntPtr(p + 0x040), ReversePrism.DataModels.CommonFooterButton.FromPointer); // 02466BF307E8 0x40 GashaButton                 ( 0001865E3500 ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer )
-            value.HomeButton                                = GetObject<CommonFooterButton>(new IntPtr(p + 0x048), ReversePrism.DataModels.CommonFooterButton.FromPointer); // 02466BF30808 0x48 HomeButton                  ( 0001865E3500 ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer )
-            value.ShopButton                                = GetObject<CommonFooterButton>(new IntPtr(p + 0x050), ReversePrism.DataModels.CommonFooterButton.FromPointer); // 02466BF30828 0x50 ShopButton                  ( 0001865E3500 ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer )
+            value.CharaButton                               = GetObject<CommonFooterButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.CommonFooterButton.FromPointer); // 0x20 CharaButton                 ( ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer )
+            value.StoryButton                               = GetObject<CommonFooterButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.CommonFooterButton.FromPointer); // 0x28 StoryButton                 ( ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer )
+            value.ProduceButton                             = GetObject<CommonFooterButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.CommonFooterButton.FromPointer); // 0x30 ProduceButton               ( ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer )
+            value.LiveButton                                = GetObject<CommonFooterButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.CommonFooterButton.FromPointer); // 0x38 LiveButton                  ( ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer )
+            value.GashaButton                               = GetObject<CommonFooterButton>(new IntPtr(p + 0x040), ReversePrism.DataModels.CommonFooterButton.FromPointer); // 0x40 GashaButton                 ( ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer )
+            value.HomeButton                                = GetObject<CommonFooterButton>(new IntPtr(p + 0x048), ReversePrism.DataModels.CommonFooterButton.FromPointer); // 0x48 HomeButton                  ( ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer )
+            value.ShopButton                                = GetObject<CommonFooterButton>(new IntPtr(p + 0x050), ReversePrism.DataModels.CommonFooterButton.FromPointer); // 0x50 ShopButton                  ( ModelClassType CommonFooterButton CommonFooterButton CommonFooterButton Pointer )
 
             return value;
         }

@@ -10,14 +10,14 @@ namespace ReversePrism.DataModels
 
     // 000 k_GenerateEntries                        ProfilerMarker IL2CPP_TYPE_VALUETYPE
     // 008 k_ConvertEntriesToCommandsMarker         ProfilerMarker IL2CPP_TYPE_VALUETYPE
-    // 010 K_GenerateClosingCommandsMarker          0001865C9C30 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32
-    // 018 K_NudgeVerticesMarker                    0001865C9C30 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32
-    // 020 K_UpdateOpacityIdMarker                  0001865C9C30 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32
-    // 028 K_ComputeTransformMatrixMarker           0001865C9C30 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32
-    // 030 S_blitMaterial_LinearToGamma             00018660C770 ModelClassType Material Material Material Pointer
-    // 038 S_blitMaterial_GammaToLinear             00018660C770 ModelClassType Material Material Material Pointer
-    // 040 S_blitMaterial_NoChange                  00018660C770 ModelClassType Material Material Material Pointer
-    // 048 S_blitShader                             00018674CE60 ModelClassType Shader Shader Shader Pointer
+    // 010 K_GenerateClosingCommandsMarker          ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32
+    // 018 K_NudgeVerticesMarker                    ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32
+    // 020 K_UpdateOpacityIdMarker                  ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32
+    // 028 K_ComputeTransformMatrixMarker           ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32
+    // 030 S_blitMaterial_LinearToGamma             ModelClassType Material Material Material Pointer
+    // 038 S_blitMaterial_GammaToLinear             ModelClassType Material Material Material Pointer
+    // 040 S_blitMaterial_NoChange                  ModelClassType Material Material Material Pointer
+    // 048 S_blitShader                             ModelClassType Shader Shader Shader Pointer
     public partial class CommandGenerator : DataModel
     {
         public ProfilerMarker                           K_GenerateClosingCommandsMarker         { get; set; }
@@ -37,14 +37,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CommandGenerator() { Pointer= p0 };
 
-            value.K_GenerateClosingCommandsMarker           = (ProfilerMarker)GetInt32(new IntPtr(p + 0x010)); // 0245A683F148 0x10 K_GenerateClosingCommandsMarker ( 0001865C9C30 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
-            value.K_NudgeVerticesMarker                     = (ProfilerMarker)GetInt32(new IntPtr(p + 0x018)); // 0245A683F168 0x18 K_NudgeVerticesMarker       ( 0001865C9C30 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
-            value.K_UpdateOpacityIdMarker                   = (ProfilerMarker)GetInt32(new IntPtr(p + 0x020)); // 0245A683F188 0x20 K_UpdateOpacityIdMarker     ( 0001865C9C30 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
-            value.K_ComputeTransformMatrixMarker            = (ProfilerMarker)GetInt32(new IntPtr(p + 0x028)); // 0245A683F1A8 0x28 K_ComputeTransformMatrixMarker ( 0001865C9C30 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
-            value.S_blitMaterial_LinearToGamma              = GetObject<Material>(new IntPtr(p + 0x030), ReversePrism.DataModels.Material.FromPointer); // 0245A683F1C8 0x30 S_blitMaterial_LinearToGamma ( 00018660C770 ModelClassType Material Material Material Pointer )
-            value.S_blitMaterial_GammaToLinear              = GetObject<Material>(new IntPtr(p + 0x038), ReversePrism.DataModels.Material.FromPointer); // 0245A683F1E8 0x38 S_blitMaterial_GammaToLinear ( 00018660C770 ModelClassType Material Material Material Pointer )
-            value.S_blitMaterial_NoChange                   = GetObject<Material>(new IntPtr(p + 0x040), ReversePrism.DataModels.Material.FromPointer); // 0245A683F208 0x40 S_blitMaterial_NoChange     ( 00018660C770 ModelClassType Material Material Material Pointer )
-            value.S_blitShader                              = GetObject<Shader>(new IntPtr(p + 0x048), ReversePrism.DataModels.Shader.FromPointer); // 0245A683F228 0x48 S_blitShader                ( 00018674CE60 ModelClassType Shader Shader Shader Pointer )
+            value.K_GenerateClosingCommandsMarker           = (ProfilerMarker)GetInt32(new IntPtr(p + 0x010)); // 0x10 K_GenerateClosingCommandsMarker ( ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
+            value.K_NudgeVerticesMarker                     = (ProfilerMarker)GetInt32(new IntPtr(p + 0x018)); // 0x18 K_NudgeVerticesMarker       ( ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
+            value.K_UpdateOpacityIdMarker                   = (ProfilerMarker)GetInt32(new IntPtr(p + 0x020)); // 0x20 K_UpdateOpacityIdMarker     ( ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
+            value.K_ComputeTransformMatrixMarker            = (ProfilerMarker)GetInt32(new IntPtr(p + 0x028)); // 0x28 K_ComputeTransformMatrixMarker ( ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
+            value.S_blitMaterial_LinearToGamma              = GetObject<Material>(new IntPtr(p + 0x030), ReversePrism.DataModels.Material.FromPointer); // 0x30 S_blitMaterial_LinearToGamma ( ModelClassType Material Material Material Pointer )
+            value.S_blitMaterial_GammaToLinear              = GetObject<Material>(new IntPtr(p + 0x038), ReversePrism.DataModels.Material.FromPointer); // 0x38 S_blitMaterial_GammaToLinear ( ModelClassType Material Material Material Pointer )
+            value.S_blitMaterial_NoChange                   = GetObject<Material>(new IntPtr(p + 0x040), ReversePrism.DataModels.Material.FromPointer); // 0x40 S_blitMaterial_NoChange     ( ModelClassType Material Material Material Pointer )
+            value.S_blitShader                              = GetObject<Shader>(new IntPtr(p + 0x048), ReversePrism.DataModels.Shader.FromPointer); // 0x48 S_blitShader                ( ModelClassType Shader Shader Shader Pointer )
 
             return value;
         }

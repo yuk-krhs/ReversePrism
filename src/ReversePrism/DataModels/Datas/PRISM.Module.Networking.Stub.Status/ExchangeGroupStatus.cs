@@ -8,21 +8,21 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 BeginDate                                000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
-    // 020 EndDate                                  000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
+    // 010 BeginDate                                ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
+    // 020 EndDate                                  ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
     // 000 _parser                                  MessageParser`1<ExchangeGroupStatus> IL2CPP_TYPE_GENERICINST
     // 030 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstExchangeGroupIdFieldNumber            int IL2CPP_TYPE_I4
-    // 038 MstExchangeGroupId                       0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 038 MstExchangeGroupId                       ModelPrimitiveType int int int Int32
     // 000 ExchangeProductListFieldNumber           int IL2CPP_TYPE_I4
     // 008 _repeated_exchangeProductList_codec      FieldCodec`1<ExchangeProductStatus> IL2CPP_TYPE_GENERICINST
-    // 040 ExchangeProductList                      000185CD68B8 ModelClassListType RepeatedField`1<ExchangeProductStatus> RepeatedField`1<ExchangeProductStatus> List<ExchangeProductStatus> Pointer
+    // 040 ExchangeProductList                      ModelClassListType RepeatedField`1<ExchangeProductStatus> RepeatedField`1<ExchangeProductStatus> List<ExchangeProductStatus> Pointer
     // 000 BeginDateFieldNumber                     int IL2CPP_TYPE_I4
-    // 048 _BeginDate                               000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
+    // 048 _BeginDate                               ModelClassType Timestamp Timestamp Timestamp Pointer
     // 000 EndDateFieldNumber                       int IL2CPP_TYPE_I4
-    // 050 _EndDate                                 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
+    // 050 _EndDate                                 ModelClassType Timestamp Timestamp Timestamp Pointer
     // 000 SortIdFieldNumber                        int IL2CPP_TYPE_I4
-    // 058 SortId                                   0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 058 SortId                                   ModelPrimitiveType int int int Int32
     public partial class ExchangeGroupStatus : DataModel
     {
         public DateTime                                 BeginDate                               { get; set; }
@@ -41,13 +41,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExchangeGroupStatus() { Pointer= p0 };
 
-            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 02466119F108 0x10 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 02466119F128 0x20 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.MstExchangeGroupId                        = GetInt32(new IntPtr(p + 0x038)); // 02466119F1A8 0x38 MstExchangeGroupId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ExchangeProductList                       = GetObjectList<ExchangeProductStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.ExchangeProductStatus.FromPointer); // 02466119F208 0x40 ExchangeProductList         ( 000185CD68B8 ModelClassListType RepeatedField`1<ExchangeProductStatus> RepeatedField`1<ExchangeProductStatus> List<ExchangeProductStatus> Pointer )
-            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x048), ReversePrism.DataModels.Timestamp.FromPointer); // 02466119F248 0x48 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x050), ReversePrism.DataModels.Timestamp.FromPointer); // 02466119F288 0x50 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.SortId                                    = GetInt32(new IntPtr(p + 0x058)); // 02466119F2C8 0x58 SortId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 0x10 BeginDate                   ( ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 0x20 EndDate                     ( ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.MstExchangeGroupId                        = GetInt32(new IntPtr(p + 0x038)); // 0x38 MstExchangeGroupId          ( ModelPrimitiveType int int int Int32 )
+            value.ExchangeProductList                       = GetObjectList<ExchangeProductStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.ExchangeProductStatus.FromPointer); // 0x40 ExchangeProductList         ( ModelClassListType RepeatedField`1<ExchangeProductStatus> RepeatedField`1<ExchangeProductStatus> List<ExchangeProductStatus> Pointer )
+            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x048), ReversePrism.DataModels.Timestamp.FromPointer); // 0x48 _BeginDate                  ( ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x050), ReversePrism.DataModels.Timestamp.FromPointer); // 0x50 _EndDate                    ( ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.SortId                                    = GetInt32(new IntPtr(p + 0x058)); // 0x58 SortId                      ( ModelPrimitiveType int int int Int32 )
             value.BeginDate                     = ToDateTime(value._BeginDate);
             value.EndDate                       = ToDateTime(value._EndDate);
 

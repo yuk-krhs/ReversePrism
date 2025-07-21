@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 X                                        0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 014 Y                                        0001866992B0 ModelPrimitiveType uint uint uint UInt32
+    // 010 X                                        ModelPrimitiveType uint uint uint UInt32
+    // 014 Y                                        ModelPrimitiveType uint uint uint UInt32
     // 000 zero                                     uint2 IL2CPP_TYPE_VALUETYPE
     public partial class uint2 : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new uint2() { Pointer= p0 };
 
-            value.X                                         = GetUInt32(new IntPtr(p + 0x010)); // 0245A15CF640 0x10 X                           ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.Y                                         = GetUInt32(new IntPtr(p + 0x014)); // 0245A15CF660 0x14 Y                           ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.X                                         = GetUInt32(new IntPtr(p + 0x010)); // 0x10 X                           ( ModelPrimitiveType uint uint uint UInt32 )
+            value.Y                                         = GetUInt32(new IntPtr(p + 0x014)); // 0x14 Y                           ( ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

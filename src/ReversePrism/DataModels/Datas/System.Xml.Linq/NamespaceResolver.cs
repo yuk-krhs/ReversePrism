@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Scope                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 018 Declaration                              0001867709A0 ModelClassType NamespaceDeclaration NamespaceDeclaration NamespaceDeclaration Pointer
-    // 020 Rover                                    0001867709A0 ModelClassType NamespaceDeclaration NamespaceDeclaration NamespaceDeclaration Pointer
+    // 010 Scope                                    ModelPrimitiveType int int int Int32
+    // 018 Declaration                              ModelClassType NamespaceDeclaration NamespaceDeclaration NamespaceDeclaration Pointer
+    // 020 Rover                                    ModelClassType NamespaceDeclaration NamespaceDeclaration NamespaceDeclaration Pointer
     public partial class NamespaceResolver : DataModel
     {
         public int                                      Scope                                   { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NamespaceResolver() { Pointer= p0 };
 
-            value.Scope                                     = GetInt32(new IntPtr(p + 0x010)); // 02466BCB03C0 0x10 Scope                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Declaration                               = GetObject<NamespaceDeclaration>(new IntPtr(p + 0x018), ReversePrism.DataModels.NamespaceDeclaration.FromPointer); // 02466BCB03E0 0x18 Declaration                 ( 0001867709A0 ModelClassType NamespaceDeclaration NamespaceDeclaration NamespaceDeclaration Pointer )
-            value.Rover                                     = GetObject<NamespaceDeclaration>(new IntPtr(p + 0x020), ReversePrism.DataModels.NamespaceDeclaration.FromPointer); // 02466BCB0400 0x20 Rover                       ( 0001867709A0 ModelClassType NamespaceDeclaration NamespaceDeclaration NamespaceDeclaration Pointer )
+            value.Scope                                     = GetInt32(new IntPtr(p + 0x010)); // 0x10 Scope                       ( ModelPrimitiveType int int int Int32 )
+            value.Declaration                               = GetObject<NamespaceDeclaration>(new IntPtr(p + 0x018), ReversePrism.DataModels.NamespaceDeclaration.FromPointer); // 0x18 Declaration                 ( ModelClassType NamespaceDeclaration NamespaceDeclaration NamespaceDeclaration Pointer )
+            value.Rover                                     = GetObject<NamespaceDeclaration>(new IntPtr(p + 0x020), ReversePrism.DataModels.NamespaceDeclaration.FromPointer); // 0x20 Rover                       ( ModelClassType NamespaceDeclaration NamespaceDeclaration NamespaceDeclaration Pointer )
 
             return value;
         }

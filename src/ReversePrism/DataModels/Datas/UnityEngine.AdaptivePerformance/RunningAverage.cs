@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Values                                 000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer
-    // 018 M_NumValues                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 01C M_LastIndex                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 020 M_AverageValue                           0001866656B0 ModelPrimitiveType float float float Single
+    // 010 M_Values                                 ModelPrimitiveListType float[] float[] List<float> Pointer
+    // 018 M_NumValues                              ModelPrimitiveType int int int Int32
+    // 01C M_LastIndex                              ModelPrimitiveType int int int Int32
+    // 020 M_AverageValue                           ModelPrimitiveType float float float Single
     public partial class RunningAverage : DataModel
     {
         public List<float>?                             M_Values                                { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RunningAverage() { Pointer= p0 };
 
-            value.M_Values                                  = GetSingleList(new IntPtr(p + 0x010)); // 02466090BF88 0x10 M_Values                    ( 000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer )
-            value.M_NumValues                               = GetInt32(new IntPtr(p + 0x018)); // 02466090BFA8 0x18 M_NumValues                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_LastIndex                               = GetInt32(new IntPtr(p + 0x01C)); // 02466090BFC8 0x1C M_LastIndex                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_AverageValue                            = GetSingle(new IntPtr(p + 0x020)); // 02466090BFE8 0x20 M_AverageValue              ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_Values                                  = GetSingleList(new IntPtr(p + 0x010)); // 0x10 M_Values                    ( ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.M_NumValues                               = GetInt32(new IntPtr(p + 0x018)); // 0x18 M_NumValues                 ( ModelPrimitiveType int int int Int32 )
+            value.M_LastIndex                               = GetInt32(new IntPtr(p + 0x01C)); // 0x1C M_LastIndex                 ( ModelPrimitiveType int int int Int32 )
+            value.M_AverageValue                            = GetSingle(new IntPtr(p + 0x020)); // 0x20 M_AverageValue              ( ModelPrimitiveType float float float Single )
 
             return value;
         }

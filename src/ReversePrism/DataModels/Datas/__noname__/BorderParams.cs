@@ -8,25 +8,25 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Rect                                     00018664FAF0 ModelEnumType Rect Rect Rect Int32
-    // 020 PlaymodeTintColor                        0001865AB0A0 ModelEnumType Color Color Color Int32
-    // 030 LeftColor                                0001865AB0A0 ModelEnumType Color Color Color Int32
-    // 040 TopColor                                 0001865AB0A0 ModelEnumType Color Color Color Int32
-    // 050 RightColor                               0001865AB0A0 ModelEnumType Color Color Color Int32
-    // 060 BottomColor                              0001865AB0A0 ModelEnumType Color Color Color Int32
-    // 070 LeftWidth                                000186666050 ModelPrimitiveType float float float Single
-    // 074 TopWidth                                 000186666050 ModelPrimitiveType float float float Single
-    // 078 RightWidth                               000186666050 ModelPrimitiveType float float float Single
-    // 07C BottomWidth                              000186666050 ModelPrimitiveType float float float Single
-    // 080 TopLeftRadius                            0001866A8740 ModelEnumType Vector2 Vector2 Vector2 Int32
-    // 088 TopRightRadius                           0001866A8740 ModelEnumType Vector2 Vector2 Vector2 Int32
-    // 090 BottomRightRadius                        0001866A8740 ModelEnumType Vector2 Vector2 Vector2 Int32
-    // 098 BottomLeftRadius                         0001866A8740 ModelEnumType Vector2 Vector2 Vector2 Int32
-    // 0A0 Material                                 00018660C4B0 ModelClassType Material Material Material Pointer
-    // 0A8 LeftColorPage                            0001865D0830 ModelEnumType ColorPage ColorPage ColorPage Int32
-    // 0B0 TopColorPage                             0001865D0830 ModelEnumType ColorPage ColorPage ColorPage Int32
-    // 0B8 RightColorPage                           0001865D0830 ModelEnumType ColorPage ColorPage ColorPage Int32
-    // 0C0 BottomColorPage                          0001865D0830 ModelEnumType ColorPage ColorPage ColorPage Int32
+    // 010 Rect                                     ModelEnumType Rect Rect Rect Int32
+    // 020 PlaymodeTintColor                        ModelEnumType Color Color Color Int32
+    // 030 LeftColor                                ModelEnumType Color Color Color Int32
+    // 040 TopColor                                 ModelEnumType Color Color Color Int32
+    // 050 RightColor                               ModelEnumType Color Color Color Int32
+    // 060 BottomColor                              ModelEnumType Color Color Color Int32
+    // 070 LeftWidth                                ModelPrimitiveType float float float Single
+    // 074 TopWidth                                 ModelPrimitiveType float float float Single
+    // 078 RightWidth                               ModelPrimitiveType float float float Single
+    // 07C BottomWidth                              ModelPrimitiveType float float float Single
+    // 080 TopLeftRadius                            ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 088 TopRightRadius                           ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 090 BottomRightRadius                        ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 098 BottomLeftRadius                         ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 0A0 Material                                 ModelClassType Material Material Material Pointer
+    // 0A8 LeftColorPage                            ModelEnumType ColorPage ColorPage ColorPage Int32
+    // 0B0 TopColorPage                             ModelEnumType ColorPage ColorPage ColorPage Int32
+    // 0B8 RightColorPage                           ModelEnumType ColorPage ColorPage ColorPage Int32
+    // 0C0 BottomColorPage                          ModelEnumType ColorPage ColorPage ColorPage Int32
     public partial class BorderParams : DataModel
     {
         public Rect                                     Rect                                    { get; set; }
@@ -57,25 +57,25 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BorderParams() { Pointer= p0 };
 
-            value.Rect                                      = (Rect)GetInt32(new IntPtr(p + 0x010)); // 0245A67A95A8 0x10 Rect                        ( 00018664FAF0 ModelEnumType Rect Rect Rect Int32 )
-            value.PlaymodeTintColor                         = (Color)GetInt32(new IntPtr(p + 0x020)); // 0245A67A95C8 0x20 PlaymodeTintColor           ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.LeftColor                                 = (Color)GetInt32(new IntPtr(p + 0x030)); // 0245A67A95E8 0x30 LeftColor                   ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.TopColor                                  = (Color)GetInt32(new IntPtr(p + 0x040)); // 0245A67A9608 0x40 TopColor                    ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.RightColor                                = (Color)GetInt32(new IntPtr(p + 0x050)); // 0245A67A9628 0x50 RightColor                  ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.BottomColor                               = (Color)GetInt32(new IntPtr(p + 0x060)); // 0245A67A9648 0x60 BottomColor                 ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.LeftWidth                                 = GetSingle(new IntPtr(p + 0x070)); // 0245A67A9668 0x70 LeftWidth                   ( 000186666050 ModelPrimitiveType float float float Single )
-            value.TopWidth                                  = GetSingle(new IntPtr(p + 0x074)); // 0245A67A9688 0x74 TopWidth                    ( 000186666050 ModelPrimitiveType float float float Single )
-            value.RightWidth                                = GetSingle(new IntPtr(p + 0x078)); // 0245A67A96A8 0x78 RightWidth                  ( 000186666050 ModelPrimitiveType float float float Single )
-            value.BottomWidth                               = GetSingle(new IntPtr(p + 0x07C)); // 0245A67A96C8 0x7C BottomWidth                 ( 000186666050 ModelPrimitiveType float float float Single )
-            value.TopLeftRadius                             = (Vector2)GetInt32(new IntPtr(p + 0x080)); // 0245A67A96E8 0x80 TopLeftRadius               ( 0001866A8740 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.TopRightRadius                            = (Vector2)GetInt32(new IntPtr(p + 0x088)); // 0245A67A9708 0x88 TopRightRadius              ( 0001866A8740 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.BottomRightRadius                         = (Vector2)GetInt32(new IntPtr(p + 0x090)); // 0245A67A9728 0x90 BottomRightRadius           ( 0001866A8740 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.BottomLeftRadius                          = (Vector2)GetInt32(new IntPtr(p + 0x098)); // 0245A67A9748 0x98 BottomLeftRadius            ( 0001866A8740 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.Material                                  = GetObject<Material>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.Material.FromPointer); // 0245A67A9768 0xA0 Material                    ( 00018660C4B0 ModelClassType Material Material Material Pointer )
-            value.LeftColorPage                             = (ColorPage)GetInt32(new IntPtr(p + 0x0A8)); // 0245A67A9788 0xA8 LeftColorPage               ( 0001865D0830 ModelEnumType ColorPage ColorPage ColorPage Int32 )
-            value.TopColorPage                              = (ColorPage)GetInt32(new IntPtr(p + 0x0B0)); // 0245A67A97A8 0xB0 TopColorPage                ( 0001865D0830 ModelEnumType ColorPage ColorPage ColorPage Int32 )
-            value.RightColorPage                            = (ColorPage)GetInt32(new IntPtr(p + 0x0B8)); // 0245A67A97C8 0xB8 RightColorPage              ( 0001865D0830 ModelEnumType ColorPage ColorPage ColorPage Int32 )
-            value.BottomColorPage                           = (ColorPage)GetInt32(new IntPtr(p + 0x0C0)); // 0245A67A97E8 0xC0 BottomColorPage             ( 0001865D0830 ModelEnumType ColorPage ColorPage ColorPage Int32 )
+            value.Rect                                      = (Rect)GetInt32(new IntPtr(p + 0x010)); // 0x10 Rect                        ( ModelEnumType Rect Rect Rect Int32 )
+            value.PlaymodeTintColor                         = (Color)GetInt32(new IntPtr(p + 0x020)); // 0x20 PlaymodeTintColor           ( ModelEnumType Color Color Color Int32 )
+            value.LeftColor                                 = (Color)GetInt32(new IntPtr(p + 0x030)); // 0x30 LeftColor                   ( ModelEnumType Color Color Color Int32 )
+            value.TopColor                                  = (Color)GetInt32(new IntPtr(p + 0x040)); // 0x40 TopColor                    ( ModelEnumType Color Color Color Int32 )
+            value.RightColor                                = (Color)GetInt32(new IntPtr(p + 0x050)); // 0x50 RightColor                  ( ModelEnumType Color Color Color Int32 )
+            value.BottomColor                               = (Color)GetInt32(new IntPtr(p + 0x060)); // 0x60 BottomColor                 ( ModelEnumType Color Color Color Int32 )
+            value.LeftWidth                                 = GetSingle(new IntPtr(p + 0x070)); // 0x70 LeftWidth                   ( ModelPrimitiveType float float float Single )
+            value.TopWidth                                  = GetSingle(new IntPtr(p + 0x074)); // 0x74 TopWidth                    ( ModelPrimitiveType float float float Single )
+            value.RightWidth                                = GetSingle(new IntPtr(p + 0x078)); // 0x78 RightWidth                  ( ModelPrimitiveType float float float Single )
+            value.BottomWidth                               = GetSingle(new IntPtr(p + 0x07C)); // 0x7C BottomWidth                 ( ModelPrimitiveType float float float Single )
+            value.TopLeftRadius                             = (Vector2)GetInt32(new IntPtr(p + 0x080)); // 0x80 TopLeftRadius               ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.TopRightRadius                            = (Vector2)GetInt32(new IntPtr(p + 0x088)); // 0x88 TopRightRadius              ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.BottomRightRadius                         = (Vector2)GetInt32(new IntPtr(p + 0x090)); // 0x90 BottomRightRadius           ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.BottomLeftRadius                          = (Vector2)GetInt32(new IntPtr(p + 0x098)); // 0x98 BottomLeftRadius            ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.Material                                  = GetObject<Material>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.Material.FromPointer); // 0xA0 Material                    ( ModelClassType Material Material Material Pointer )
+            value.LeftColorPage                             = (ColorPage)GetInt32(new IntPtr(p + 0x0A8)); // 0xA8 LeftColorPage               ( ModelEnumType ColorPage ColorPage ColorPage Int32 )
+            value.TopColorPage                              = (ColorPage)GetInt32(new IntPtr(p + 0x0B0)); // 0xB0 TopColorPage                ( ModelEnumType ColorPage ColorPage ColorPage Int32 )
+            value.RightColorPage                            = (ColorPage)GetInt32(new IntPtr(p + 0x0B8)); // 0xB8 RightColorPage              ( ModelEnumType ColorPage ColorPage ColorPage Int32 )
+            value.BottomColorPage                           = (ColorPage)GetInt32(new IntPtr(p + 0x0C0)); // 0xC0 BottomColorPage             ( ModelEnumType ColorPage ColorPage ColorPage Int32 )
 
             return value;
         }

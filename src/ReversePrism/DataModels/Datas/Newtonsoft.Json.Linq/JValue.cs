@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 030 ValueType                                0001867485D0 ModelEnumType JTokenType JTokenType JTokenType Int32
+    // 030 ValueType                                ModelEnumType JTokenType JTokenType JTokenType Int32
     // 038 _value                                   <object> IL2CPP_TYPE_OBJECT
     public partial class JValue : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JValue() { Pointer= p0 };
 
-            value.ValueType                                 = (JTokenType)GetInt32(new IntPtr(p + 0x030)); // 0245A609E390 0x30 ValueType                   ( 0001867485D0 ModelEnumType JTokenType JTokenType JTokenType Int32 )
+            value.ValueType                                 = (JTokenType)GetInt32(new IntPtr(p + 0x030)); // 0x30 ValueType                   ( ModelEnumType JTokenType JTokenType JTokenType Int32 )
 
             return value;
         }

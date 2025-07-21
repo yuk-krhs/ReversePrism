@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 _CostumeIcon                             0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer
-    // 028 EmptyObject                              0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 030 EmptyIcon                                0001866CCDB0 ModelClassType Image Image Image Pointer
-    // 038 EmptyIconSprites                         000185CA4898 ModelClassListType Sprite[] Sprite[] List<Sprite> Pointer
+    // 020 _CostumeIcon                             ModelClassType UIRawImage UIRawImage UIRawImage Pointer
+    // 028 EmptyObject                              ModelClassType GameObject GameObject GameObject Pointer
+    // 030 EmptyIcon                                ModelClassType Image Image Image Pointer
+    // 038 EmptyIconSprites                         ModelClassListType Sprite[] Sprite[] List<Sprite> Pointer
     public partial class CostumeIcon : DataModel
     {
         public UIRawImage?                              _CostumeIcon                            { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CostumeIcon() { Pointer= p0 };
 
-            value._CostumeIcon                              = GetObject<UIRawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIRawImage.FromPointer); // 02466521AB08 0x20 _CostumeIcon                ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
-            value.EmptyObject                               = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 02466521AB28 0x28 EmptyObject                 ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.EmptyIcon                                 = GetObject<Image>(new IntPtr(p + 0x030), ReversePrism.DataModels.Image.FromPointer); // 02466521AB48 0x30 EmptyIcon                   ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.EmptyIconSprites                          = GetObjectList<Sprite>(new IntPtr(p + 0x038), ReversePrism.DataModels.Sprite.FromPointer); // 02466521AB68 0x38 EmptyIconSprites            ( 000185CA4898 ModelClassListType Sprite[] Sprite[] List<Sprite> Pointer )
+            value._CostumeIcon                              = GetObject<UIRawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIRawImage.FromPointer); // 0x20 _CostumeIcon                ( ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
+            value.EmptyObject                               = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0x28 EmptyObject                 ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.EmptyIcon                                 = GetObject<Image>(new IntPtr(p + 0x030), ReversePrism.DataModels.Image.FromPointer); // 0x30 EmptyIcon                   ( ModelClassType Image Image Image Pointer )
+            value.EmptyIconSprites                          = GetObjectList<Sprite>(new IntPtr(p + 0x038), ReversePrism.DataModels.Sprite.FromPointer); // 0x38 EmptyIconSprites            ( ModelClassListType Sprite[] Sprite[] List<Sprite> Pointer )
 
             return value;
         }

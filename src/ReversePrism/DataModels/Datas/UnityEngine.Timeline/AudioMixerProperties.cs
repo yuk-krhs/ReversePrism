@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Volume                                   000186666050 ModelPrimitiveType float float float Single
-    // 014 StereoPan                                000186666050 ModelPrimitiveType float float float Single
-    // 018 SpatialBlend                             000186666050 ModelPrimitiveType float float float Single
+    // 010 Volume                                   ModelPrimitiveType float float float Single
+    // 014 StereoPan                                ModelPrimitiveType float float float Single
+    // 018 SpatialBlend                             ModelPrimitiveType float float float Single
     public partial class AudioMixerProperties : DataModel
     {
         public float                                    Volume                                  { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AudioMixerProperties() { Pointer= p0 };
 
-            value.Volume                                    = GetSingle(new IntPtr(p + 0x010)); // 02466B2CB200 0x10 Volume                      ( 000186666050 ModelPrimitiveType float float float Single )
-            value.StereoPan                                 = GetSingle(new IntPtr(p + 0x014)); // 02466B2CB220 0x14 StereoPan                   ( 000186666050 ModelPrimitiveType float float float Single )
-            value.SpatialBlend                              = GetSingle(new IntPtr(p + 0x018)); // 02466B2CB240 0x18 SpatialBlend                ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Volume                                    = GetSingle(new IntPtr(p + 0x010)); // 0x10 Volume                      ( ModelPrimitiveType float float float Single )
+            value.StereoPan                                 = GetSingle(new IntPtr(p + 0x014)); // 0x14 StereoPan                   ( ModelPrimitiveType float float float Single )
+            value.SpatialBlend                              = GetSingle(new IntPtr(p + 0x018)); // 0x18 SpatialBlend                ( ModelPrimitiveType float float float Single )
 
             return value;
         }

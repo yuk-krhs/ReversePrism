@@ -11,10 +11,10 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<SetLiveUnitArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 UnitNumberFieldNumber                    int IL2CPP_TYPE_I4
-    // 018 UnitNumber                               0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 UnitNumber                               ModelPrimitiveType int int int Int32
     // 000 SlotListFieldNumber                      int IL2CPP_TYPE_I4
     // 008 _repeated_slotList_codec                 FieldCodec`1<LiveUnitSlotStatus> IL2CPP_TYPE_GENERICINST
-    // 020 SlotList                                 000185CE4778 ModelClassListType RepeatedField`1<LiveUnitSlotStatus> RepeatedField`1<LiveUnitSlotStatus> List<LiveUnitSlotStatus> Pointer
+    // 020 SlotList                                 ModelClassListType RepeatedField`1<LiveUnitSlotStatus> RepeatedField`1<LiveUnitSlotStatus> List<LiveUnitSlotStatus> Pointer
     public partial class SetLiveUnitArgs : DataModel
     {
         public int                                      UnitNumber                              { get; set; }
@@ -28,8 +28,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SetLiveUnitArgs() { Pointer= p0 };
 
-            value.UnitNumber                                = GetInt32(new IntPtr(p + 0x018)); // 024662198128 0x18 UnitNumber                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SlotList                                  = GetObjectList<LiveUnitSlotStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveUnitSlotStatus.FromPointer); // 024662198188 0x20 SlotList                    ( 000185CE4778 ModelClassListType RepeatedField`1<LiveUnitSlotStatus> RepeatedField`1<LiveUnitSlotStatus> List<LiveUnitSlotStatus> Pointer )
+            value.UnitNumber                                = GetInt32(new IntPtr(p + 0x018)); // 0x18 UnitNumber                  ( ModelPrimitiveType int int int Int32 )
+            value.SlotList                                  = GetObjectList<LiveUnitSlotStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveUnitSlotStatus.FromPointer); // 0x20 SlotList                    ( ModelClassListType RepeatedField`1<LiveUnitSlotStatus> RepeatedField`1<LiveUnitSlotStatus> List<LiveUnitSlotStatus> Pointer )
 
             return value;
         }

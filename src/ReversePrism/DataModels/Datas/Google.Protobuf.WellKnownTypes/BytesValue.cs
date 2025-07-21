@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<BytesValue> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ValueFieldNumber                         int IL2CPP_TYPE_I4
-    // 018 Value                                    00018659EF10 ModelClassType ByteString ByteString ByteString Pointer
+    // 018 Value                                    ModelClassType ByteString ByteString ByteString Pointer
     public partial class BytesValue : DataModel
     {
         public ByteString?                              Value                                   { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BytesValue() { Pointer= p0 };
 
-            value.Value                                     = GetObject<ByteString>(new IntPtr(p + 0x018), ReversePrism.DataModels.ByteString.FromPointer); // 02466A545618 0x18 Value                       ( 00018659EF10 ModelClassType ByteString ByteString ByteString Pointer )
+            value.Value                                     = GetObject<ByteString>(new IntPtr(p + 0x018), ReversePrism.DataModels.ByteString.FromPointer); // 0x18 Value                       ( ModelClassType ByteString ByteString ByteString Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 State                                    0001866992B0 ModelPrimitiveType uint uint uint UInt32
+    // 010 State                                    ModelPrimitiveType uint uint uint UInt32
     public partial class Random : DataModel
     {
         public uint                                     State                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Random() { Pointer= p0 };
 
-            value.State                                     = GetUInt32(new IntPtr(p + 0x010)); // 024667F0BBC8 0x10 State                       ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.State                                     = GetUInt32(new IntPtr(p + 0x010)); // 0x10 State                       ( ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

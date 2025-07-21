@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 090 FileName                                 000186671910 ModelPrimitiveType string string string String
-    // 098 FusionLog                                000186671910 ModelPrimitiveType string string string String
+    // 090 FileName                                 ModelPrimitiveType string string string String
+    // 098 FusionLog                                ModelPrimitiveType string string string String
     public partial class BadImageFormatException : DataModel
     {
         public string                                   FileName                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BadImageFormatException() { Pointer= p0 };
 
-            value.FileName                                  = GetString(new IntPtr(p + 0x090)); // 0246669DF638 0x90 FileName                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.FusionLog                                 = GetString(new IntPtr(p + 0x098)); // 0246669DF658 0x98 FusionLog                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.FileName                                  = GetString(new IntPtr(p + 0x090)); // 0x90 FileName                    ( ModelPrimitiveType string string string String )
+            value.FusionLog                                 = GetString(new IntPtr(p + 0x098)); // 0x98 FusionLog                   ( ModelPrimitiveType string string string String )
 
             return value;
         }

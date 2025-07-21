@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Configuration                            000186672F10 ModelPrimitiveType string string string String
+    // 010 Configuration                            ModelPrimitiveType string string string String
     public partial class AssemblyConfigurationAttribute : DataModel
     {
         public string                                   Configuration                           { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AssemblyConfigurationAttribute() { Pointer= p0 };
 
-            value.Configuration                             = GetString(new IntPtr(p + 0x010)); // 024666D38738 0x10 Configuration               ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Configuration                             = GetString(new IntPtr(p + 0x010)); // 0x10 Configuration               ( ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Column                                   0001866763C0 ModelClassType DataColumn DataColumn DataColumn Pointer
-    // 018 IsDescending                             000186596AF0 ModelPrimitiveType bool bool bool Bool
+    // 010 Column                                   ModelClassType DataColumn DataColumn DataColumn Pointer
+    // 018 IsDescending                             ModelPrimitiveType bool bool bool Bool
     public partial class IndexField : DataModel
     {
         public DataColumn?                              Column                                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IndexField() { Pointer= p0 };
 
-            value.Column                                    = GetObject<DataColumn>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataColumn.FromPointer); // 0246689336F8 0x10 Column                      ( 0001866763C0 ModelClassType DataColumn DataColumn DataColumn Pointer )
-            value.IsDescending                              = GetBool(new IntPtr(p + 0x018)); // 024668933718 0x18 IsDescending                ( 000186596AF0 ModelPrimitiveType bool bool bool Bool )
+            value.Column                                    = GetObject<DataColumn>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataColumn.FromPointer); // 0x10 Column                      ( ModelClassType DataColumn DataColumn DataColumn Pointer )
+            value.IsDescending                              = GetBool(new IntPtr(p + 0x018)); // 0x18 IsDescending                ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -16,6 +16,9 @@ namespace ReversePrism.DataModels
         Damage,
         SelfDamage,
         AvoidBuff,
+        DeBuffSelf,
+        RecoveryOpponent,
+        BuffOpponent,
         Num,
     }
 }

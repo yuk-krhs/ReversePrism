@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<SetFesUnitNameArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 FesUnitIdFieldNumber                     int IL2CPP_TYPE_I4
-    // 018 FesUnitId                                000186671910 ModelPrimitiveType string string string String
+    // 018 FesUnitId                                ModelPrimitiveType string string string String
     // 000 NameFieldNumber                          int IL2CPP_TYPE_I4
-    // 020 Name                                     000186671910 ModelPrimitiveType string string string String
+    // 020 Name                                     ModelPrimitiveType string string string String
     public partial class SetFesUnitNameArgs : DataModel
     {
         public string                                   FesUnitId                               { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SetFesUnitNameArgs() { Pointer= p0 };
 
-            value.FesUnitId                                 = GetString(new IntPtr(p + 0x018)); // 0246612A71B8 0x18 FesUnitId                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 0246612A71F8 0x20 Name                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.FesUnitId                                 = GetString(new IntPtr(p + 0x018)); // 0x18 FesUnitId                   ( ModelPrimitiveType string string string String )
+            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 0x20 Name                        ( ModelPrimitiveType string string string String )
 
             return value;
         }

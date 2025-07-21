@@ -10,13 +10,13 @@ namespace ReversePrism.DataModels
 
     // 000 s_MouseUsed                              bool IL2CPP_TYPE_BOOLEAN
     // 008 m_LastHit                                HitInfo[] IL2CPP_TYPE_SZARRAY
-    // 010 M_MouseDownHit                           000185CC2CD8 ModelEnumListType HitInfo[] HitInfo[] List<HitInfo> Pointer
-    // 018 M_CurrentHit                             000185CC2CD8 ModelEnumListType HitInfo[] HitInfo[] List<HitInfo> Pointer
-    // 020 M_Cameras                                000185B72EF0 ModelClassListType Camera[] Camera[] List<Camera> Pointer
+    // 010 M_MouseDownHit                           ModelEnumListType HitInfo[] HitInfo[] List<HitInfo> Pointer
+    // 018 M_CurrentHit                             ModelEnumListType HitInfo[] HitInfo[] List<HitInfo> Pointer
+    // 020 M_Cameras                                ModelClassListType Camera[] Camera[] List<Camera> Pointer
     // 028 s_GetMouseState                          Func`1<KeyValuePair`2<int, Vector2>> IL2CPP_TYPE_GENERICINST
-    // 030 S_MousePosition                          0001866A8990 ModelEnumType Vector2 Vector2 Vector2 Int32
-    // 038 S_MouseButtonPressedThisFrame            000186595C30 ModelPrimitiveType bool bool bool Bool
-    // 039 S_MouseButtonIsPressed                   000186595C30 ModelPrimitiveType bool bool bool Bool
+    // 030 S_MousePosition                          ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 038 S_MouseButtonPressedThisFrame            ModelPrimitiveType bool bool bool Bool
+    // 039 S_MouseButtonIsPressed                   ModelPrimitiveType bool bool bool Bool
     public partial class SendMouseEvents : DataModel
     {
         public List<HitInfo>?                           M_MouseDownHit                          { get; set; }
@@ -34,12 +34,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SendMouseEvents() { Pointer= p0 };
 
-            value.M_MouseDownHit                            = GetEnumList<HitInfo>(new IntPtr(p + 0x010)); // 0245A20A2C88 0x10 M_MouseDownHit              ( 000185CC2CD8 ModelEnumListType HitInfo[] HitInfo[] List<HitInfo> Pointer )
-            value.M_CurrentHit                              = GetEnumList<HitInfo>(new IntPtr(p + 0x018)); // 0245A20A2CA8 0x18 M_CurrentHit                ( 000185CC2CD8 ModelEnumListType HitInfo[] HitInfo[] List<HitInfo> Pointer )
-            value.M_Cameras                                 = GetObjectList<Camera>(new IntPtr(p + 0x020), ReversePrism.DataModels.Camera.FromPointer); // 0245A20A2CC8 0x20 M_Cameras                   ( 000185B72EF0 ModelClassListType Camera[] Camera[] List<Camera> Pointer )
-            value.S_MousePosition                           = (Vector2)GetInt32(new IntPtr(p + 0x030)); // 0245A20A2D08 0x30 S_MousePosition             ( 0001866A8990 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.S_MouseButtonPressedThisFrame             = GetBool(new IntPtr(p + 0x038)); // 0245A20A2D28 0x38 S_MouseButtonPressedThisFrame ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
-            value.S_MouseButtonIsPressed                    = GetBool(new IntPtr(p + 0x039)); // 0245A20A2D48 0x39 S_MouseButtonIsPressed      ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.M_MouseDownHit                            = GetEnumList<HitInfo>(new IntPtr(p + 0x010)); // 0x10 M_MouseDownHit              ( ModelEnumListType HitInfo[] HitInfo[] List<HitInfo> Pointer )
+            value.M_CurrentHit                              = GetEnumList<HitInfo>(new IntPtr(p + 0x018)); // 0x18 M_CurrentHit                ( ModelEnumListType HitInfo[] HitInfo[] List<HitInfo> Pointer )
+            value.M_Cameras                                 = GetObjectList<Camera>(new IntPtr(p + 0x020), ReversePrism.DataModels.Camera.FromPointer); // 0x20 M_Cameras                   ( ModelClassListType Camera[] Camera[] List<Camera> Pointer )
+            value.S_MousePosition                           = (Vector2)GetInt32(new IntPtr(p + 0x030)); // 0x30 S_MousePosition             ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.S_MouseButtonPressedThisFrame             = GetBool(new IntPtr(p + 0x038)); // 0x38 S_MouseButtonPressedThisFrame ( ModelPrimitiveType bool bool bool Bool )
+            value.S_MouseButtonIsPressed                    = GetBool(new IntPtr(p + 0x039)); // 0x39 S_MouseButtonIsPressed      ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

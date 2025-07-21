@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_red                                    0001866656B0 ModelPrimitiveType float float float Single
-    // 014 M_green                                  0001866656B0 ModelPrimitiveType float float float Single
-    // 018 M_blue                                   0001866656B0 ModelPrimitiveType float float float Single
-    // 01C M_intensity                              0001866656B0 ModelPrimitiveType float float float Single
+    // 010 M_red                                    ModelPrimitiveType float float float Single
+    // 014 M_green                                  ModelPrimitiveType float float float Single
+    // 018 M_blue                                   ModelPrimitiveType float float float Single
+    // 01C M_intensity                              ModelPrimitiveType float float float Single
     public partial class LinearColor : DataModel
     {
         public float                                    M_red                                   { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LinearColor() { Pointer= p0 };
 
-            value.M_red                                     = GetSingle(new IntPtr(p + 0x010)); // 0245A23893F8 0x10 M_red                       ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_green                                   = GetSingle(new IntPtr(p + 0x014)); // 0245A2389418 0x14 M_green                     ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_blue                                    = GetSingle(new IntPtr(p + 0x018)); // 0245A2389438 0x18 M_blue                      ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_intensity                               = GetSingle(new IntPtr(p + 0x01C)); // 0245A2389458 0x1C M_intensity                 ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_red                                     = GetSingle(new IntPtr(p + 0x010)); // 0x10 M_red                       ( ModelPrimitiveType float float float Single )
+            value.M_green                                   = GetSingle(new IntPtr(p + 0x014)); // 0x14 M_green                     ( ModelPrimitiveType float float float Single )
+            value.M_blue                                    = GetSingle(new IntPtr(p + 0x018)); // 0x18 M_blue                      ( ModelPrimitiveType float float float Single )
+            value.M_intensity                               = GetSingle(new IntPtr(p + 0x01C)); // 0x1C M_intensity                 ( ModelPrimitiveType float float float Single )
 
             return value;
         }

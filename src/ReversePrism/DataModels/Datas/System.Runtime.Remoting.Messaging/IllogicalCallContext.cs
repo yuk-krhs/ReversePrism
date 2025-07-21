@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Datastore                              0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 010 M_Datastore                              ModelClassType Hashtable Hashtable Hashtable Pointer
     // 018 m_HostContext                            <object> IL2CPP_TYPE_OBJECT
     public partial class IllogicalCallContext : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IllogicalCallContext() { Pointer= p0 };
 
-            value.M_Datastore                               = GetObject<Hashtable>(new IntPtr(p + 0x010), ReversePrism.DataModels.Hashtable.FromPointer); // 024666B2B8D0 0x10 M_Datastore                 ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.M_Datastore                               = GetObject<Hashtable>(new IntPtr(p + 0x010), ReversePrism.DataModels.Hashtable.FromPointer); // 0x10 M_Datastore                 ( ModelClassType Hashtable Hashtable Hashtable Pointer )
 
             return value;
         }

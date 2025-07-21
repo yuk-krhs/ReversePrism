@@ -13,21 +13,21 @@ namespace ReversePrism.DataModels
     // 008 k_EmptyParticlesList                     List`1<ParticleSystem> IL2CPP_TYPE_GENERICINST
     // 010 s_SubEmitterCollector                    HashSet`1<ParticleSystem> IL2CPP_TYPE_GENERICINST
     // 018 sourceGameObject                         ExposedReference`1<GameObject> IL2CPP_TYPE_GENERICINST
-    // 028 PrefabGameObject                         0001865D8420 ModelClassType GameObject GameObject GameObject Pointer
-    // 030 UpdateParticle                           000186595960 ModelPrimitiveType bool bool bool Bool
-    // 034 ParticleRandomSeed                       0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 038 UpdateDirector                           000186595960 ModelPrimitiveType bool bool bool Bool
-    // 039 UpdateITimeControl                       000186595960 ModelPrimitiveType bool bool bool Bool
-    // 03A SearchHierarchy                          000186595960 ModelPrimitiveType bool bool bool Bool
-    // 03B Active                                   000186595960 ModelPrimitiveType bool bool bool Bool
-    // 03C PostPlayback                             000186689970 ModelEnumType PostPlaybackState PostPlaybackState PostPlaybackState Int32
-    // 040 M_ControlDirectorAsset                   00018674D0F0 ModelClassType PlayableAsset PlayableAsset PlayableAsset Pointer
-    // 048 M_Duration                               0001865C2950 ModelPrimitiveType double double double Double
-    // 050 M_SupportLoop                            000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 028 PrefabGameObject                         ModelClassType GameObject GameObject GameObject Pointer
+    // 030 UpdateParticle                           ModelPrimitiveType bool bool bool Bool
+    // 034 ParticleRandomSeed                       ModelPrimitiveType uint uint uint UInt32
+    // 038 UpdateDirector                           ModelPrimitiveType bool bool bool Bool
+    // 039 UpdateITimeControl                       ModelPrimitiveType bool bool bool Bool
+    // 03A SearchHierarchy                          ModelPrimitiveType bool bool bool Bool
+    // 03B Active                                   ModelPrimitiveType bool bool bool Bool
+    // 03C PostPlayback                             ModelEnumType PostPlaybackState PostPlaybackState PostPlaybackState Int32
+    // 040 M_ControlDirectorAsset                   ModelClassType PlayableAsset PlayableAsset PlayableAsset Pointer
+    // 048 M_Duration                               ModelPrimitiveType double double double Double
+    // 050 M_SupportLoop                            ModelPrimitiveType bool bool bool Bool
     // 018 s_ProcessedDirectors                     HashSet`1<PlayableDirector> IL2CPP_TYPE_GENERICINST
     // 020 s_CreatedPrefabs                         HashSet`1<GameObject> IL2CPP_TYPE_GENERICINST
-    // 051 ControllingDirectors                     000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 052 ControllingParticles                     000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 051 ControllingDirectors                     ModelPrimitiveType bool bool bool Bool
+    // 052 ControllingParticles                     ModelPrimitiveType bool bool bool Bool
     public partial class ControlPlayableAsset : DataModel
     {
         public GameObject?                              PrefabGameObject                        { get; set; }
@@ -52,19 +52,19 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ControlPlayableAsset() { Pointer= p0 };
 
-            value.PrefabGameObject                          = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 02466B2CC5C0 0x28 PrefabGameObject            ( 0001865D8420 ModelClassType GameObject GameObject GameObject Pointer )
-            value.UpdateParticle                            = GetBool(new IntPtr(p + 0x030)); // 02466B2CC5E0 0x30 UpdateParticle              ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.ParticleRandomSeed                        = GetUInt32(new IntPtr(p + 0x034)); // 02466B2CC600 0x34 ParticleRandomSeed          ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.UpdateDirector                            = GetBool(new IntPtr(p + 0x038)); // 02466B2CC620 0x38 UpdateDirector              ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.UpdateITimeControl                        = GetBool(new IntPtr(p + 0x039)); // 02466B2CC640 0x39 UpdateITimeControl          ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.SearchHierarchy                           = GetBool(new IntPtr(p + 0x03A)); // 02466B2CC660 0x3A SearchHierarchy             ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Active                                    = GetBool(new IntPtr(p + 0x03B)); // 02466B2CC680 0x3B Active                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.PostPlayback                              = (PostPlaybackState)GetInt32(new IntPtr(p + 0x03C)); // 02466B2CC6A0 0x3C PostPlayback                ( 000186689970 ModelEnumType PostPlaybackState PostPlaybackState PostPlaybackState Int32 )
-            value.M_ControlDirectorAsset                    = GetObject<PlayableAsset>(new IntPtr(p + 0x040), ReversePrism.DataModels.PlayableAsset.FromPointer); // 02466B2CC6C0 0x40 M_ControlDirectorAsset      ( 00018674D0F0 ModelClassType PlayableAsset PlayableAsset PlayableAsset Pointer )
-            value.M_Duration                                = GetDouble(new IntPtr(p + 0x048)); // 02466B2CC6E0 0x48 M_Duration                  ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.M_SupportLoop                             = GetBool(new IntPtr(p + 0x050)); // 02466B2CC700 0x50 M_SupportLoop               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ControllingDirectors                      = GetBool(new IntPtr(p + 0x051)); // 02466B2CC760 0x51 ControllingDirectors        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ControllingParticles                      = GetBool(new IntPtr(p + 0x052)); // 02466B2CC780 0x52 ControllingParticles        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.PrefabGameObject                          = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0x28 PrefabGameObject            ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.UpdateParticle                            = GetBool(new IntPtr(p + 0x030)); // 0x30 UpdateParticle              ( ModelPrimitiveType bool bool bool Bool )
+            value.ParticleRandomSeed                        = GetUInt32(new IntPtr(p + 0x034)); // 0x34 ParticleRandomSeed          ( ModelPrimitiveType uint uint uint UInt32 )
+            value.UpdateDirector                            = GetBool(new IntPtr(p + 0x038)); // 0x38 UpdateDirector              ( ModelPrimitiveType bool bool bool Bool )
+            value.UpdateITimeControl                        = GetBool(new IntPtr(p + 0x039)); // 0x39 UpdateITimeControl          ( ModelPrimitiveType bool bool bool Bool )
+            value.SearchHierarchy                           = GetBool(new IntPtr(p + 0x03A)); // 0x3A SearchHierarchy             ( ModelPrimitiveType bool bool bool Bool )
+            value.Active                                    = GetBool(new IntPtr(p + 0x03B)); // 0x3B Active                      ( ModelPrimitiveType bool bool bool Bool )
+            value.PostPlayback                              = (PostPlaybackState)GetInt32(new IntPtr(p + 0x03C)); // 0x3C PostPlayback                ( ModelEnumType PostPlaybackState PostPlaybackState PostPlaybackState Int32 )
+            value.M_ControlDirectorAsset                    = GetObject<PlayableAsset>(new IntPtr(p + 0x040), ReversePrism.DataModels.PlayableAsset.FromPointer); // 0x40 M_ControlDirectorAsset      ( ModelClassType PlayableAsset PlayableAsset PlayableAsset Pointer )
+            value.M_Duration                                = GetDouble(new IntPtr(p + 0x048)); // 0x48 M_Duration                  ( ModelPrimitiveType double double double Double )
+            value.M_SupportLoop                             = GetBool(new IntPtr(p + 0x050)); // 0x50 M_SupportLoop               ( ModelPrimitiveType bool bool bool Bool )
+            value.ControllingDirectors                      = GetBool(new IntPtr(p + 0x051)); // 0x51 ControllingDirectors        ( ModelPrimitiveType bool bool bool Bool )
+            value.ControllingParticles                      = GetBool(new IntPtr(p + 0x052)); // 0x52 ControllingParticles        ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

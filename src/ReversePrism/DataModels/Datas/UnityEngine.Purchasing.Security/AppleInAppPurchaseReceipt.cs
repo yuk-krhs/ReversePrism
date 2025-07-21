@@ -8,17 +8,17 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Quantity                                 0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 018 ProductID                                000186671910 ModelPrimitiveType string string string String
-    // 020 TransactionID                            000186671910 ModelPrimitiveType string string string String
-    // 028 OriginalTransactionIdentifier            000186671910 ModelPrimitiveType string string string String
-    // 030 PurchaseDate                             0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    // 038 OriginalPurchaseDate                     0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    // 040 SubscriptionExpirationDate               0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    // 048 CancellationDate                         0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    // 050 IsFreeTrial                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 054 ProductType                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 058 IsIntroductoryPricePeriod                0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 Quantity                                 ModelPrimitiveType int int int Int32
+    // 018 ProductID                                ModelPrimitiveType string string string String
+    // 020 TransactionID                            ModelPrimitiveType string string string String
+    // 028 OriginalTransactionIdentifier            ModelPrimitiveType string string string String
+    // 030 PurchaseDate                             ModelPrimitiveType DateTime DateTime DateTime DateTime
+    // 038 OriginalPurchaseDate                     ModelPrimitiveType DateTime DateTime DateTime DateTime
+    // 040 SubscriptionExpirationDate               ModelPrimitiveType DateTime DateTime DateTime DateTime
+    // 048 CancellationDate                         ModelPrimitiveType DateTime DateTime DateTime DateTime
+    // 050 IsFreeTrial                              ModelPrimitiveType int int int Int32
+    // 054 ProductType                              ModelPrimitiveType int int int Int32
+    // 058 IsIntroductoryPricePeriod                ModelPrimitiveType int int int Int32
     public partial class AppleInAppPurchaseReceipt : DataModel
     {
         public int                                      Quantity                                { get; set; }
@@ -41,17 +41,17 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AppleInAppPurchaseReceipt() { Pointer= p0 };
 
-            value.Quantity                                  = GetInt32(new IntPtr(p + 0x010)); // 0245A692FE38 0x10 Quantity                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ProductID                                 = GetString(new IntPtr(p + 0x018)); // 0245A692FE58 0x18 ProductID                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.TransactionID                             = GetString(new IntPtr(p + 0x020)); // 0245A692FE78 0x20 TransactionID               ( 000186671910 ModelPrimitiveType string string string String )
-            value.OriginalTransactionIdentifier             = GetString(new IntPtr(p + 0x028)); // 0245A692FE98 0x28 OriginalTransactionIdentifier ( 000186671910 ModelPrimitiveType string string string String )
-            value.PurchaseDate                              = GetDateTime(new IntPtr(p + 0x030)); // 0245A692FEB8 0x30 PurchaseDate                ( 0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.OriginalPurchaseDate                      = GetDateTime(new IntPtr(p + 0x038)); // 0245A692FED8 0x38 OriginalPurchaseDate        ( 0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.SubscriptionExpirationDate                = GetDateTime(new IntPtr(p + 0x040)); // 0245A692FEF8 0x40 SubscriptionExpirationDate  ( 0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.CancellationDate                          = GetDateTime(new IntPtr(p + 0x048)); // 0245A692FF18 0x48 CancellationDate            ( 0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.IsFreeTrial                               = GetInt32(new IntPtr(p + 0x050)); // 0245A692FF38 0x50 IsFreeTrial                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ProductType                               = GetInt32(new IntPtr(p + 0x054)); // 0245A692FF58 0x54 ProductType                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsIntroductoryPricePeriod                 = GetInt32(new IntPtr(p + 0x058)); // 0245A692FF78 0x58 IsIntroductoryPricePeriod   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Quantity                                  = GetInt32(new IntPtr(p + 0x010)); // 0x10 Quantity                    ( ModelPrimitiveType int int int Int32 )
+            value.ProductID                                 = GetString(new IntPtr(p + 0x018)); // 0x18 ProductID                   ( ModelPrimitiveType string string string String )
+            value.TransactionID                             = GetString(new IntPtr(p + 0x020)); // 0x20 TransactionID               ( ModelPrimitiveType string string string String )
+            value.OriginalTransactionIdentifier             = GetString(new IntPtr(p + 0x028)); // 0x28 OriginalTransactionIdentifier ( ModelPrimitiveType string string string String )
+            value.PurchaseDate                              = GetDateTime(new IntPtr(p + 0x030)); // 0x30 PurchaseDate                ( ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.OriginalPurchaseDate                      = GetDateTime(new IntPtr(p + 0x038)); // 0x38 OriginalPurchaseDate        ( ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.SubscriptionExpirationDate                = GetDateTime(new IntPtr(p + 0x040)); // 0x40 SubscriptionExpirationDate  ( ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.CancellationDate                          = GetDateTime(new IntPtr(p + 0x048)); // 0x48 CancellationDate            ( ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.IsFreeTrial                               = GetInt32(new IntPtr(p + 0x050)); // 0x50 IsFreeTrial                 ( ModelPrimitiveType int int int Int32 )
+            value.ProductType                               = GetInt32(new IntPtr(p + 0x054)); // 0x54 ProductType                 ( ModelPrimitiveType int int int Int32 )
+            value.IsIntroductoryPricePeriod                 = GetInt32(new IntPtr(p + 0x058)); // 0x58 IsIntroductoryPricePeriod   ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 UnitID                                   0001865F36C0 ModelPrimitiveType int int int Int32
-    // 018 SwitchID                                 0001866722E0 ModelPrimitiveType string string string String
-    // 020 TargetNum                                0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 UnitID                                   ModelPrimitiveType int int int Int32
+    // 018 SwitchID                                 ModelPrimitiveType string string string String
+    // 020 TargetNum                                ModelPrimitiveType int int int Int32
     public partial class SwitchModelBehaviour : DataModel
     {
         public int                                      UnitID                                  { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SwitchModelBehaviour() { Pointer= p0 };
 
-            value.UnitID                                    = GetInt32(new IntPtr(p + 0x010)); // 024664E72C98 0x10 UnitID                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.SwitchID                                  = GetString(new IntPtr(p + 0x018)); // 024664E72CB8 0x18 SwitchID                    ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.TargetNum                                 = GetInt32(new IntPtr(p + 0x020)); // 024664E72CD8 0x20 TargetNum                   ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.UnitID                                    = GetInt32(new IntPtr(p + 0x010)); // 0x10 UnitID                      ( ModelPrimitiveType int int int Int32 )
+            value.SwitchID                                  = GetString(new IntPtr(p + 0x018)); // 0x18 SwitchID                    ( ModelPrimitiveType string string string String )
+            value.TargetNum                                 = GetInt32(new IntPtr(p + 0x020)); // 0x20 TargetNum                   ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

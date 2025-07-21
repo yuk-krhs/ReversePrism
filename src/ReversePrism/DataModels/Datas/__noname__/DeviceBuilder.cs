@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Device                                   0001866FAE50 ModelClassType InputDevice InputDevice InputDevice Pointer
+    // 010 Device                                   ModelClassType InputDevice InputDevice InputDevice Pointer
     public partial class DeviceBuilder : DataModel
     {
         public InputDevice?                             Device                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DeviceBuilder() { Pointer= p0 };
 
-            value.Device                                    = GetObject<InputDevice>(new IntPtr(p + 0x010), ReversePrism.DataModels.InputDevice.FromPointer); // 0246677307E8 0x10 Device                      ( 0001866FAE50 ModelClassType InputDevice InputDevice InputDevice Pointer )
+            value.Device                                    = GetObject<InputDevice>(new IntPtr(p + 0x010), ReversePrism.DataModels.InputDevice.FromPointer); // 0x10 Device                      ( ModelClassType InputDevice InputDevice InputDevice Pointer )
 
             return value;
         }

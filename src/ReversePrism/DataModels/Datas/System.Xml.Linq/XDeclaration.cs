@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Version                                  000186671910 ModelPrimitiveType string string string String
-    // 018 Encoding                                 000186671910 ModelPrimitiveType string string string String
-    // 020 Standalone                               000186671910 ModelPrimitiveType string string string String
+    // 010 Version                                  ModelPrimitiveType string string string String
+    // 018 Encoding                                 ModelPrimitiveType string string string String
+    // 020 Standalone                               ModelPrimitiveType string string string String
     public partial class XDeclaration : DataModel
     {
         public string                                   Version                                 { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XDeclaration() { Pointer= p0 };
 
-            value.Version                                   = GetString(new IntPtr(p + 0x010)); // 0246688C15A8 0x10 Version                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.Encoding                                  = GetString(new IntPtr(p + 0x018)); // 0246688C15C8 0x18 Encoding                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.Standalone                                = GetString(new IntPtr(p + 0x020)); // 0246688C15E8 0x20 Standalone                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.Version                                   = GetString(new IntPtr(p + 0x010)); // 0x10 Version                     ( ModelPrimitiveType string string string String )
+            value.Encoding                                  = GetString(new IntPtr(p + 0x018)); // 0x18 Encoding                    ( ModelPrimitiveType string string string String )
+            value.Standalone                                = GetString(new IntPtr(p + 0x020)); // 0x20 Standalone                  ( ModelPrimitiveType string string string String )
 
             return value;
         }

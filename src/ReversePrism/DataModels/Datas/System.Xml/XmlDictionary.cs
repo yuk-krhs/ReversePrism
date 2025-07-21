@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 000 empty                                    IXmlDictionary IL2CPP_TYPE_CLASS
     // 010 lookup                                   Dictionary`2<string, XmlDictionaryString> IL2CPP_TYPE_GENERICINST
-    // 018 Strings                                  000185CB37D8 ModelClassListType XmlDictionaryString[] XmlDictionaryString[] List<XmlDictionaryString> Pointer
-    // 020 NextId                                   0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 Strings                                  ModelClassListType XmlDictionaryString[] XmlDictionaryString[] List<XmlDictionaryString> Pointer
+    // 020 NextId                                   ModelPrimitiveType int int int Int32
     public partial class XmlDictionary : DataModel
     {
         public List<XmlDictionaryString>?               Strings                                 { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlDictionary() { Pointer= p0 };
 
-            value.Strings                                   = GetObjectList<XmlDictionaryString>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlDictionaryString.FromPointer); // 0245A4C714A0 0x18 Strings                     ( 000185CB37D8 ModelClassListType XmlDictionaryString[] XmlDictionaryString[] List<XmlDictionaryString> Pointer )
-            value.NextId                                    = GetInt32(new IntPtr(p + 0x020)); // 0245A4C714C0 0x20 NextId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Strings                                   = GetObjectList<XmlDictionaryString>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlDictionaryString.FromPointer); // 0x18 Strings                     ( ModelClassListType XmlDictionaryString[] XmlDictionaryString[] List<XmlDictionaryString> Pointer )
+            value.NextId                                    = GetInt32(new IntPtr(p + 0x020)); // 0x20 NextId                      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

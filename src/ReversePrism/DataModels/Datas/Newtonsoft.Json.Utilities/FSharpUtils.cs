@@ -10,9 +10,9 @@ namespace ReversePrism.DataModels
 
     // 000 Lock                                     <object> IL2CPP_TYPE_OBJECT
     // 008 _instance                                FSharpUtils IL2CPP_TYPE_CLASS
-    // 010 OfSeq                                    000186613630 ModelClassType MethodInfo MethodInfo MethodInfo Pointer
-    // 018 MapType                                  000186692850 ModelClassType Type Type Type Pointer
-    // 020 FSharpCoreAssembly                       00018658AEE0 ModelClassType Assembly Assembly Assembly Pointer
+    // 010 OfSeq                                    ModelClassType MethodInfo MethodInfo MethodInfo Pointer
+    // 018 MapType                                  ModelClassType Type Type Type Pointer
+    // 020 FSharpCoreAssembly                       ModelClassType Assembly Assembly Assembly Pointer
     // 028 <IsUnion>k__BackingField                 MethodCall`2<<object>, <object>> IL2CPP_TYPE_GENERICINST
     // 030 <GetUnionCases>k__BackingField           MethodCall`2<<object>, <object>> IL2CPP_TYPE_GENERICINST
     // 038 <PreComputeUnionTagReader>k__BackingField MethodCall`2<<object>, <object>> IL2CPP_TYPE_GENERICINST
@@ -39,9 +39,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FSharpUtils() { Pointer= p0 };
 
-            value.OfSeq                                     = GetObject<MethodInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.MethodInfo.FromPointer); // 0245A603A598 0x10 OfSeq                       ( 000186613630 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
-            value.MapType                                   = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 0245A603A5B8 0x18 MapType                     ( 000186692850 ModelClassType Type Type Type Pointer )
-            value.FSharpCoreAssembly                        = GetObject<Assembly>(new IntPtr(p + 0x020), ReversePrism.DataModels.Assembly.FromPointer); // 0245A603A5D8 0x20 FSharpCoreAssembly          ( 00018658AEE0 ModelClassType Assembly Assembly Assembly Pointer )
+            value.OfSeq                                     = GetObject<MethodInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.MethodInfo.FromPointer); // 0x10 OfSeq                       ( ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
+            value.MapType                                   = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 0x18 MapType                     ( ModelClassType Type Type Type Pointer )
+            value.FSharpCoreAssembly                        = GetObject<Assembly>(new IntPtr(p + 0x020), ReversePrism.DataModels.Assembly.FromPointer); // 0x20 FSharpCoreAssembly          ( ModelClassType Assembly Assembly Assembly Pointer )
 
             return value;
         }

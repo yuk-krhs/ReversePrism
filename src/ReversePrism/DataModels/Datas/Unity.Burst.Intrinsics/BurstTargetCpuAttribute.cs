@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 TargetCpu                                000186513700 ModelEnumType BurstTargetCpu BurstTargetCpu BurstTargetCpu Int32
+    // 010 TargetCpu                                ModelEnumType BurstTargetCpu BurstTargetCpu BurstTargetCpu Int32
     public partial class BurstTargetCpuAttribute : DataModel
     {
         public BurstTargetCpu                           TargetCpu                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BurstTargetCpuAttribute() { Pointer= p0 };
 
-            value.TargetCpu                                 = (BurstTargetCpu)GetInt32(new IntPtr(p + 0x010)); // 02466A96EAD0 0x10 TargetCpu                   ( 000186513700 ModelEnumType BurstTargetCpu BurstTargetCpu BurstTargetCpu Int32 )
+            value.TargetCpu                                 = (BurstTargetCpu)GetInt32(new IntPtr(p + 0x010)); // 0x10 TargetCpu                   ( ModelEnumType BurstTargetCpu BurstTargetCpu BurstTargetCpu Int32 )
 
             return value;
         }

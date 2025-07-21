@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 GenerateType                             000186622530 ModelEnumType GenerateType GenerateType GenerateType Int32
-    // 014 SerializeLayout                          0001867305D0 ModelEnumType SerializeLayout SerializeLayout SerializeLayout Int32
+    // 010 GenerateType                             ModelEnumType GenerateType GenerateType GenerateType Int32
+    // 014 SerializeLayout                          ModelEnumType SerializeLayout SerializeLayout SerializeLayout Int32
     public partial class MemoryPackableAttribute : DataModel
     {
         public GenerateType                             GenerateType                            { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MemoryPackableAttribute() { Pointer= p0 };
 
-            value.GenerateType                              = (GenerateType)GetInt32(new IntPtr(p + 0x010)); // 02466AF6EA18 0x10 GenerateType                ( 000186622530 ModelEnumType GenerateType GenerateType GenerateType Int32 )
-            value.SerializeLayout                           = (SerializeLayout)GetInt32(new IntPtr(p + 0x014)); // 02466AF6EA38 0x14 SerializeLayout             ( 0001867305D0 ModelEnumType SerializeLayout SerializeLayout SerializeLayout Int32 )
+            value.GenerateType                              = (GenerateType)GetInt32(new IntPtr(p + 0x010)); // 0x10 GenerateType                ( ModelEnumType GenerateType GenerateType GenerateType Int32 )
+            value.SerializeLayout                           = (SerializeLayout)GetInt32(new IntPtr(p + 0x014)); // 0x14 SerializeLayout             ( ModelEnumType SerializeLayout SerializeLayout SerializeLayout Int32 )
 
             return value;
         }

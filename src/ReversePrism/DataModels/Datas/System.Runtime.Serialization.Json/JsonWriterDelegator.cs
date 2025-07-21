@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 DateTimeFormat                           000186695190 ModelClassType DateTimeFormat DateTimeFormat DateTimeFormat Pointer
+    // 028 DateTimeFormat                           ModelClassType DateTimeFormat DateTimeFormat DateTimeFormat Pointer
     public partial class JsonWriterDelegator : DataModel
     {
         public DateTimeFormat?                          DateTimeFormat                          { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JsonWriterDelegator() { Pointer= p0 };
 
-            value.DateTimeFormat                            = GetObject<DateTimeFormat>(new IntPtr(p + 0x028), ReversePrism.DataModels.DateTimeFormat.FromPointer); // 0245A4DCEFA8 0x28 DateTimeFormat              ( 000186695190 ModelClassType DateTimeFormat DateTimeFormat DateTimeFormat Pointer )
+            value.DateTimeFormat                            = GetObject<DateTimeFormat>(new IntPtr(p + 0x028), ReversePrism.DataModels.DateTimeFormat.FromPointer); // 0x28 DateTimeFormat              ( ModelClassType DateTimeFormat DateTimeFormat DateTimeFormat Pointer )
 
             return value;
         }

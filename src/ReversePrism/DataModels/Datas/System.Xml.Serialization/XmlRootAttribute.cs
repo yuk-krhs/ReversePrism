@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 DataType                                 000186671910 ModelPrimitiveType string string string String
-    // 018 ElementName                              000186671910 ModelPrimitiveType string string string String
-    // 020 IsNullable                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 028 Ns                                       000186671910 ModelPrimitiveType string string string String
+    // 010 DataType                                 ModelPrimitiveType string string string String
+    // 018 ElementName                              ModelPrimitiveType string string string String
+    // 020 IsNullable                               ModelPrimitiveType bool bool bool Bool
+    // 028 Ns                                       ModelPrimitiveType string string string String
     public partial class XmlRootAttribute : DataModel
     {
         public string                                   DataType                                { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlRootAttribute() { Pointer= p0 };
 
-            value.DataType                                  = GetString(new IntPtr(p + 0x010)); // 024667513D30 0x10 DataType                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.ElementName                               = GetString(new IntPtr(p + 0x018)); // 024667513D50 0x18 ElementName                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsNullable                                = GetBool(new IntPtr(p + 0x020)); // 024667513D70 0x20 IsNullable                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Ns                                        = GetString(new IntPtr(p + 0x028)); // 024667513D90 0x28 Ns                          ( 000186671910 ModelPrimitiveType string string string String )
+            value.DataType                                  = GetString(new IntPtr(p + 0x010)); // 0x10 DataType                    ( ModelPrimitiveType string string string String )
+            value.ElementName                               = GetString(new IntPtr(p + 0x018)); // 0x18 ElementName                 ( ModelPrimitiveType string string string String )
+            value.IsNullable                                = GetBool(new IntPtr(p + 0x020)); // 0x20 IsNullable                  ( ModelPrimitiveType bool bool bool Bool )
+            value.Ns                                        = GetString(new IntPtr(p + 0x028)); // 0x28 Ns                          ( ModelPrimitiveType string string string String )
 
             return value;
         }

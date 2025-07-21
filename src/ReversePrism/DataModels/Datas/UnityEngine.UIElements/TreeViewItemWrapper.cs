@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Item                                     0001866B0920 ModelEnumType TreeItem TreeItem TreeItem Int32
-    // 020 Depth                                    0001865F4940 ModelPrimitiveType int int int Int32
+    // 010 Item                                     ModelEnumType TreeItem TreeItem TreeItem Int32
+    // 020 Depth                                    ModelPrimitiveType int int int Int32
     public partial class TreeViewItemWrapper : DataModel
     {
         public TreeItem                                 Item                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TreeViewItemWrapper() { Pointer= p0 };
 
-            value.Item                                      = (TreeItem)GetInt32(new IntPtr(p + 0x010)); // 0245A6703850 0x10 Item                        ( 0001866B0920 ModelEnumType TreeItem TreeItem TreeItem Int32 )
-            value.Depth                                     = GetInt32(new IntPtr(p + 0x020)); // 0245A6703870 0x20 Depth                       ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.Item                                      = (TreeItem)GetInt32(new IntPtr(p + 0x010)); // 0x10 Item                        ( ModelEnumType TreeItem TreeItem TreeItem Int32 )
+            value.Depth                                     = GetInt32(new IntPtr(p + 0x020)); // 0x20 Depth                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

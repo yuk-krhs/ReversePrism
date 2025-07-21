@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ProducerType                             0001866936B0 ModelClassType Type Type Type Pointer
+    // 010 ProducerType                             ModelClassType Type Type Type Pointer
     public partial class JobProducerTypeAttribute : DataModel
     {
         public Type?                                    ProducerType                            { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JobProducerTypeAttribute() { Pointer= p0 };
 
-            value.ProducerType                              = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0245A6865020 0x10 ProducerType                ( 0001866936B0 ModelClassType Type Type Type Pointer )
+            value.ProducerType                              = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0x10 ProducerType                ( ModelClassType Type Type Type Pointer )
 
             return value;
         }

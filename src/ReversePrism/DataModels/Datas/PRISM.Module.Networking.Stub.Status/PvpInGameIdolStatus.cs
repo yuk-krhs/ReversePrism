@@ -11,15 +11,15 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<PvpInGameIdolStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstProduceIdolIdFieldNumber              int IL2CPP_TYPE_I4
-    // 018 MstProduceIdolId                         0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MstProduceIdolId                         ModelPrimitiveType int int int Int32
     // 000 MstCharacterInfoIdFieldNumber            int IL2CPP_TYPE_I4
-    // 01C MstCharacterInfoId                       0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 01C MstCharacterInfoId                       ModelPrimitiveType int int int Int32
     // 000 ParameterFieldNumber                     int IL2CPP_TYPE_I4
-    // 020 Parameter                                0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer
+    // 020 Parameter                                ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer
     // 000 IdolSkillFieldNumber                     int IL2CPP_TYPE_I4
-    // 028 IdolSkill                                0001865E50C0 ModelClassType PvpInGameIdolSkillStatus PvpInGameIdolSkillStatus PvpInGameIdolSkillStatus Pointer
+    // 028 IdolSkill                                ModelClassType PvpInGameIdolSkillStatus PvpInGameIdolSkillStatus PvpInGameIdolSkillStatus Pointer
     // 000 IdolBaseParameterFieldNumber             int IL2CPP_TYPE_I4
-    // 030 IdolBaseParameter                        0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer
+    // 030 IdolBaseParameter                        ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer
     public partial class PvpInGameIdolStatus : DataModel
     {
         public int                                      MstProduceIdolId                        { get; set; }
@@ -36,11 +36,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PvpInGameIdolStatus() { Pointer= p0 };
 
-            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x018)); // 024661391600 0x18 MstProduceIdolId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x01C)); // 024661391640 0x1C MstCharacterInfoId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Parameter                                 = GetObject<ProduceParameterStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceParameterStatus.FromPointer); // 024661391680 0x20 Parameter                   ( 0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer )
-            value.IdolSkill                                 = GetObject<PvpInGameIdolSkillStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.PvpInGameIdolSkillStatus.FromPointer); // 0246613916C0 0x28 IdolSkill                   ( 0001865E50C0 ModelClassType PvpInGameIdolSkillStatus PvpInGameIdolSkillStatus PvpInGameIdolSkillStatus Pointer )
-            value.IdolBaseParameter                         = GetObject<ProduceParameterStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ProduceParameterStatus.FromPointer); // 024661391700 0x30 IdolBaseParameter           ( 0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer )
+            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstProduceIdolId            ( ModelPrimitiveType int int int Int32 )
+            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x01C)); // 0x1C MstCharacterInfoId          ( ModelPrimitiveType int int int Int32 )
+            value.Parameter                                 = GetObject<ProduceParameterStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceParameterStatus.FromPointer); // 0x20 Parameter                   ( ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer )
+            value.IdolSkill                                 = GetObject<PvpInGameIdolSkillStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.PvpInGameIdolSkillStatus.FromPointer); // 0x28 IdolSkill                   ( ModelClassType PvpInGameIdolSkillStatus PvpInGameIdolSkillStatus PvpInGameIdolSkillStatus Pointer )
+            value.IdolBaseParameter                         = GetObject<ProduceParameterStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.ProduceParameterStatus.FromPointer); // 0x30 IdolBaseParameter           ( ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer )
 
             return value;
         }

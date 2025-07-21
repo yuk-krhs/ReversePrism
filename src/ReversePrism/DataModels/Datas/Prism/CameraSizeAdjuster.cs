@@ -8,13 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 BaseAspectRatio                          0001866AA380 ModelEnumType Vector2Int Vector2Int Vector2Int Int32
-    // 028 BaseCameraSize                           0001866656B0 ModelPrimitiveType float float float Single
-    // 02C BaseCameraFOV                            0001866656B0 ModelPrimitiveType float float float Single
-    // 030 ShowBaseAspectArea                       000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 034 BaseAspectAreaColor                      0001865AA8E0 ModelEnumType Color Color Color Int32
-    // 048 Camera                                   0001865A1C90 ModelClassType Camera Camera Camera Pointer
-    // 050 BaseAspectAreaMat                        00018660BDD0 ModelClassType Material Material Material Pointer
+    // 020 BaseAspectRatio                          ModelEnumType Vector2Int Vector2Int Vector2Int Int32
+    // 028 BaseCameraSize                           ModelPrimitiveType float float float Single
+    // 02C BaseCameraFOV                            ModelPrimitiveType float float float Single
+    // 030 ShowBaseAspectArea                       ModelPrimitiveType bool bool bool Bool
+    // 034 BaseAspectAreaColor                      ModelEnumType Color Color Color Int32
+    // 048 Camera                                   ModelClassType Camera Camera Camera Pointer
+    // 050 BaseAspectAreaMat                        ModelClassType Material Material Material Pointer
     public partial class CameraSizeAdjuster : DataModel
     {
         public Vector2Int                               BaseAspectRatio                         { get; set; }
@@ -33,13 +33,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CameraSizeAdjuster() { Pointer= p0 };
 
-            value.BaseAspectRatio                           = (Vector2Int)GetInt32(new IntPtr(p + 0x020)); // 024664CA59F0 0x20 BaseAspectRatio             ( 0001866AA380 ModelEnumType Vector2Int Vector2Int Vector2Int Int32 )
-            value.BaseCameraSize                            = GetSingle(new IntPtr(p + 0x028)); // 024664CA5A10 0x28 BaseCameraSize              ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.BaseCameraFOV                             = GetSingle(new IntPtr(p + 0x02C)); // 024664CA5A30 0x2C BaseCameraFOV               ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.ShowBaseAspectArea                        = GetBool(new IntPtr(p + 0x030)); // 024664CA5A50 0x30 ShowBaseAspectArea          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.BaseAspectAreaColor                       = (Color)GetInt32(new IntPtr(p + 0x034)); // 024664CA5A70 0x34 BaseAspectAreaColor         ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.Camera                                    = GetObject<Camera>(new IntPtr(p + 0x048), ReversePrism.DataModels.Camera.FromPointer); // 024664CA5A90 0x48 Camera                      ( 0001865A1C90 ModelClassType Camera Camera Camera Pointer )
-            value.BaseAspectAreaMat                         = GetObject<Material>(new IntPtr(p + 0x050), ReversePrism.DataModels.Material.FromPointer); // 024664CA5AB0 0x50 BaseAspectAreaMat           ( 00018660BDD0 ModelClassType Material Material Material Pointer )
+            value.BaseAspectRatio                           = (Vector2Int)GetInt32(new IntPtr(p + 0x020)); // 0x20 BaseAspectRatio             ( ModelEnumType Vector2Int Vector2Int Vector2Int Int32 )
+            value.BaseCameraSize                            = GetSingle(new IntPtr(p + 0x028)); // 0x28 BaseCameraSize              ( ModelPrimitiveType float float float Single )
+            value.BaseCameraFOV                             = GetSingle(new IntPtr(p + 0x02C)); // 0x2C BaseCameraFOV               ( ModelPrimitiveType float float float Single )
+            value.ShowBaseAspectArea                        = GetBool(new IntPtr(p + 0x030)); // 0x30 ShowBaseAspectArea          ( ModelPrimitiveType bool bool bool Bool )
+            value.BaseAspectAreaColor                       = (Color)GetInt32(new IntPtr(p + 0x034)); // 0x34 BaseAspectAreaColor         ( ModelEnumType Color Color Color Int32 )
+            value.Camera                                    = GetObject<Camera>(new IntPtr(p + 0x048), ReversePrism.DataModels.Camera.FromPointer); // 0x48 Camera                      ( ModelClassType Camera Camera Camera Pointer )
+            value.BaseAspectAreaMat                         = GetObject<Material>(new IntPtr(p + 0x050), ReversePrism.DataModels.Material.FromPointer); // 0x50 BaseAspectAreaMat           ( ModelClassType Material Material Material Pointer )
 
             return value;
         }

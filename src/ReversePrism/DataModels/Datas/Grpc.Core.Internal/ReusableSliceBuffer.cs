@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 MaxCachedSegments                        int IL2CPP_TYPE_I4
-    // 010 CachedSegments                           000185CC1908 ModelClassListType SliceSegment[] SliceSegment[] List<SliceSegment> Pointer
-    // 018 PopulatedSegmentCount                    0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 CachedSegments                           ModelClassListType SliceSegment[] SliceSegment[] List<SliceSegment> Pointer
+    // 018 PopulatedSegmentCount                    ModelPrimitiveType int int int Int32
     public partial class ReusableSliceBuffer : DataModel
     {
         public List<SliceSegment>?                      CachedSegments                          { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ReusableSliceBuffer() { Pointer= p0 };
 
-            value.CachedSegments                            = GetObjectList<SliceSegment>(new IntPtr(p + 0x010), ReversePrism.DataModels.SliceSegment.FromPointer); // 024662FBA4B8 0x10 CachedSegments              ( 000185CC1908 ModelClassListType SliceSegment[] SliceSegment[] List<SliceSegment> Pointer )
-            value.PopulatedSegmentCount                     = GetInt32(new IntPtr(p + 0x018)); // 024662FBA4D8 0x18 PopulatedSegmentCount       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CachedSegments                            = GetObjectList<SliceSegment>(new IntPtr(p + 0x010), ReversePrism.DataModels.SliceSegment.FromPointer); // 0x10 CachedSegments              ( ModelClassListType SliceSegment[] SliceSegment[] List<SliceSegment> Pointer )
+            value.PopulatedSegmentCount                     = GetInt32(new IntPtr(p + 0x018)); // 0x18 PopulatedSegmentCount       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 DefaultValueType                         0001866936B0 ModelClassType Type Type Type Pointer
+    // 010 DefaultValueType                         ModelClassType Type Type Type Pointer
     public partial class GetValueOrDefault : DataModel
     {
         public Type?                                    DefaultValueType                        { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetValueOrDefault() { Pointer= p0 };
 
-            value.DefaultValueType                          = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 02466A0A5268 0x10 DefaultValueType            ( 0001866936B0 ModelClassType Type Type Type Pointer )
+            value.DefaultValueType                          = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0x10 DefaultValueType            ( ModelClassType Type Type Type Pointer )
 
             return value;
         }

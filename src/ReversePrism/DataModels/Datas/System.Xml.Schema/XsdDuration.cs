@@ -8,13 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Years                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 014 Months                                   0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 018 Days                                     0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 01C Hours                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 020 Minutes                                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 024 Seconds                                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 028 Nanoseconds                              000186698B70 ModelPrimitiveType uint uint uint UInt32
+    // 010 Years                                    ModelPrimitiveType int int int Int32
+    // 014 Months                                   ModelPrimitiveType int int int Int32
+    // 018 Days                                     ModelPrimitiveType int int int Int32
+    // 01C Hours                                    ModelPrimitiveType int int int Int32
+    // 020 Minutes                                  ModelPrimitiveType int int int Int32
+    // 024 Seconds                                  ModelPrimitiveType int int int Int32
+    // 028 Nanoseconds                              ModelPrimitiveType uint uint uint UInt32
     public partial class XsdDuration : DataModel
     {
         public int                                      Years                                   { get; set; }
@@ -33,13 +33,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XsdDuration() { Pointer= p0 };
 
-            value.Years                                     = GetInt32(new IntPtr(p + 0x010)); // 024667663D88 0x10 Years                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Months                                    = GetInt32(new IntPtr(p + 0x014)); // 024667663DA8 0x14 Months                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Days                                      = GetInt32(new IntPtr(p + 0x018)); // 024667663DC8 0x18 Days                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Hours                                     = GetInt32(new IntPtr(p + 0x01C)); // 024667663DE8 0x1C Hours                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Minutes                                   = GetInt32(new IntPtr(p + 0x020)); // 024667663E08 0x20 Minutes                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Seconds                                   = GetInt32(new IntPtr(p + 0x024)); // 024667663E28 0x24 Seconds                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Nanoseconds                               = GetUInt32(new IntPtr(p + 0x028)); // 024667663E48 0x28 Nanoseconds                 ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
+            value.Years                                     = GetInt32(new IntPtr(p + 0x010)); // 0x10 Years                       ( ModelPrimitiveType int int int Int32 )
+            value.Months                                    = GetInt32(new IntPtr(p + 0x014)); // 0x14 Months                      ( ModelPrimitiveType int int int Int32 )
+            value.Days                                      = GetInt32(new IntPtr(p + 0x018)); // 0x18 Days                        ( ModelPrimitiveType int int int Int32 )
+            value.Hours                                     = GetInt32(new IntPtr(p + 0x01C)); // 0x1C Hours                       ( ModelPrimitiveType int int int Int32 )
+            value.Minutes                                   = GetInt32(new IntPtr(p + 0x020)); // 0x20 Minutes                     ( ModelPrimitiveType int int int Int32 )
+            value.Seconds                                   = GetInt32(new IntPtr(p + 0x024)); // 0x24 Seconds                     ( ModelPrimitiveType int int int Int32 )
+            value.Nanoseconds                               = GetUInt32(new IntPtr(p + 0x028)); // 0x28 Nanoseconds                 ( ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 M_encoding                               00018672D9E0 ModelClassType Encoding Encoding Encoding Pointer
-    // 028 M_hasInitializedEncoding                 0001865974C0 ModelPrimitiveType bool bool bool Bool
+    // 020 M_encoding                               ModelClassType Encoding Encoding Encoding Pointer
+    // 028 M_hasInitializedEncoding                 ModelPrimitiveType bool bool bool Bool
     public partial class DefaultDecoder : DataModel
     {
         public Encoding?                                M_encoding                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DefaultDecoder() { Pointer= p0 };
 
-            value.M_encoding                                = GetObject<Encoding>(new IntPtr(p + 0x020), ReversePrism.DataModels.Encoding.FromPointer); // 024666BDE290 0x20 M_encoding                  ( 00018672D9E0 ModelClassType Encoding Encoding Encoding Pointer )
-            value.M_hasInitializedEncoding                  = GetBool(new IntPtr(p + 0x028)); // 024666BDE2B0 0x28 M_hasInitializedEncoding    ( 0001865974C0 ModelPrimitiveType bool bool bool Bool )
+            value.M_encoding                                = GetObject<Encoding>(new IntPtr(p + 0x020), ReversePrism.DataModels.Encoding.FromPointer); // 0x20 M_encoding                  ( ModelClassType Encoding Encoding Encoding Pointer )
+            value.M_hasInitializedEncoding                  = GetBool(new IntPtr(p + 0x028)); // 0x28 M_hasInitializedEncoding    ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

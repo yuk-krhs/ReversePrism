@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 AngularVelocity                          0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 010 AngularVelocity                          ModelEnumType Vector3 Vector3 Vector3 Int32
     public partial class GyroscopeState : DataModel
     {
         public Vector3                                  AngularVelocity                         { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GyroscopeState() { Pointer= p0 };
 
-            value.AngularVelocity                           = (Vector3)GetInt32(new IntPtr(p + 0x010)); // 024667856900 0x10 AngularVelocity             ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.AngularVelocity                           = (Vector3)GetInt32(new IntPtr(p + 0x010)); // 0x10 AngularVelocity             ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
 
             return value;
         }

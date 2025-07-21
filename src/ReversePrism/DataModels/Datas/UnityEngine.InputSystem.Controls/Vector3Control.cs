@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 118 X                                        000186730F50 ModelClassType AxisControl AxisControl AxisControl Pointer
-    // 120 Y                                        000186730F50 ModelClassType AxisControl AxisControl AxisControl Pointer
-    // 128 Z                                        000186730F50 ModelClassType AxisControl AxisControl AxisControl Pointer
+    // 118 X                                        ModelClassType AxisControl AxisControl AxisControl Pointer
+    // 120 Y                                        ModelClassType AxisControl AxisControl AxisControl Pointer
+    // 128 Z                                        ModelClassType AxisControl AxisControl AxisControl Pointer
     public partial class Vector3Control : DataModel
     {
         public AxisControl?                             X                                       { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Vector3Control() { Pointer= p0 };
 
-            value.X                                         = GetObject<AxisControl>(new IntPtr(p + 0x118), ReversePrism.DataModels.AxisControl.FromPointer); // 0245A33900D0 0x118 X                           ( 000186730F50 ModelClassType AxisControl AxisControl AxisControl Pointer )
-            value.Y                                         = GetObject<AxisControl>(new IntPtr(p + 0x120), ReversePrism.DataModels.AxisControl.FromPointer); // 0245A33900F0 0x120 Y                           ( 000186730F50 ModelClassType AxisControl AxisControl AxisControl Pointer )
-            value.Z                                         = GetObject<AxisControl>(new IntPtr(p + 0x128), ReversePrism.DataModels.AxisControl.FromPointer); // 0245A3390110 0x128 Z                           ( 000186730F50 ModelClassType AxisControl AxisControl AxisControl Pointer )
+            value.X                                         = GetObject<AxisControl>(new IntPtr(p + 0x118), ReversePrism.DataModels.AxisControl.FromPointer); // 0x118 X                           ( ModelClassType AxisControl AxisControl AxisControl Pointer )
+            value.Y                                         = GetObject<AxisControl>(new IntPtr(p + 0x120), ReversePrism.DataModels.AxisControl.FromPointer); // 0x120 Y                           ( ModelClassType AxisControl AxisControl AxisControl Pointer )
+            value.Z                                         = GetObject<AxisControl>(new IntPtr(p + 0x128), ReversePrism.DataModels.AxisControl.FromPointer); // 0x128 Z                           ( ModelClassType AxisControl AxisControl AxisControl Pointer )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 030 SelectFavoriteMarkPopupViewFactory       000186715A50 ModelClassType SelectFavoriteMarkPopupViewFactory SelectFavoriteMarkPopupViewFactory SelectFavoriteMarkPopupViewFactory Pointer
-    // 038 SCharaFullImageOverlayViewFactory        0001866A9850 ModelClassType SCharaFullImageOverlayViewFactory SCharaFullImageOverlayViewFactory SCharaFullImageOverlayViewFactory Pointer
+    // 030 SelectFavoriteMarkPopupViewFactory       ModelClassType SelectFavoriteMarkPopupViewFactory SelectFavoriteMarkPopupViewFactory SelectFavoriteMarkPopupViewFactory Pointer
+    // 038 SCharaFullImageOverlayViewFactory        ModelClassType SCharaFullImageOverlayViewFactory SCharaFullImageOverlayViewFactory SCharaFullImageOverlayViewFactory Pointer
     public partial class SCharaDetailPopupViewFactory : DataModel
     {
         public SelectFavoriteMarkPopupViewFactory?      SelectFavoriteMarkPopupViewFactory      { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SCharaDetailPopupViewFactory() { Pointer= p0 };
 
-            value.SelectFavoriteMarkPopupViewFactory        = GetObject<SelectFavoriteMarkPopupViewFactory>(new IntPtr(p + 0x030), ReversePrism.DataModels.SelectFavoriteMarkPopupViewFactory.FromPointer); // 02466A399DE0 0x30 SelectFavoriteMarkPopupViewFactory ( 000186715A50 ModelClassType SelectFavoriteMarkPopupViewFactory SelectFavoriteMarkPopupViewFactory SelectFavoriteMarkPopupViewFactory Pointer )
-            value.SCharaFullImageOverlayViewFactory         = GetObject<SCharaFullImageOverlayViewFactory>(new IntPtr(p + 0x038), ReversePrism.DataModels.SCharaFullImageOverlayViewFactory.FromPointer); // 02466A399E00 0x38 SCharaFullImageOverlayViewFactory ( 0001866A9850 ModelClassType SCharaFullImageOverlayViewFactory SCharaFullImageOverlayViewFactory SCharaFullImageOverlayViewFactory Pointer )
+            value.SelectFavoriteMarkPopupViewFactory        = GetObject<SelectFavoriteMarkPopupViewFactory>(new IntPtr(p + 0x030), ReversePrism.DataModels.SelectFavoriteMarkPopupViewFactory.FromPointer); // 0x30 SelectFavoriteMarkPopupViewFactory ( ModelClassType SelectFavoriteMarkPopupViewFactory SelectFavoriteMarkPopupViewFactory SelectFavoriteMarkPopupViewFactory Pointer )
+            value.SCharaFullImageOverlayViewFactory         = GetObject<SCharaFullImageOverlayViewFactory>(new IntPtr(p + 0x038), ReversePrism.DataModels.SCharaFullImageOverlayViewFactory.FromPointer); // 0x38 SCharaFullImageOverlayViewFactory ( ModelClassType SCharaFullImageOverlayViewFactory SCharaFullImageOverlayViewFactory SCharaFullImageOverlayViewFactory Pointer )
 
             return value;
         }

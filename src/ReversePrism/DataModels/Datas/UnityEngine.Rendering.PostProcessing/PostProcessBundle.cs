@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Attribute                                000186769DA0 ModelClassType PostProcessAttribute PostProcessAttribute PostProcessAttribute Pointer
-    // 018 Settings                                 00018676B100 ModelClassType PostProcessEffectSettings PostProcessEffectSettings PostProcessEffectSettings Pointer
-    // 020 M_Renderer                               00018676A820 ModelClassType PostProcessEffectRenderer PostProcessEffectRenderer PostProcessEffectRenderer Pointer
+    // 010 Attribute                                ModelClassType PostProcessAttribute PostProcessAttribute PostProcessAttribute Pointer
+    // 018 Settings                                 ModelClassType PostProcessEffectSettings PostProcessEffectSettings PostProcessEffectSettings Pointer
+    // 020 M_Renderer                               ModelClassType PostProcessEffectRenderer PostProcessEffectRenderer PostProcessEffectRenderer Pointer
     public partial class PostProcessBundle : DataModel
     {
         public PostProcessAttribute?                    Attribute                               { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PostProcessBundle() { Pointer= p0 };
 
-            value.Attribute                                 = GetObject<PostProcessAttribute>(new IntPtr(p + 0x010), ReversePrism.DataModels.PostProcessAttribute.FromPointer); // 0245A6582C50 0x10 Attribute                   ( 000186769DA0 ModelClassType PostProcessAttribute PostProcessAttribute PostProcessAttribute Pointer )
-            value.Settings                                  = GetObject<PostProcessEffectSettings>(new IntPtr(p + 0x018), ReversePrism.DataModels.PostProcessEffectSettings.FromPointer); // 0245A6582C70 0x18 Settings                    ( 00018676B100 ModelClassType PostProcessEffectSettings PostProcessEffectSettings PostProcessEffectSettings Pointer )
-            value.M_Renderer                                = GetObject<PostProcessEffectRenderer>(new IntPtr(p + 0x020), ReversePrism.DataModels.PostProcessEffectRenderer.FromPointer); // 0245A6582C90 0x20 M_Renderer                  ( 00018676A820 ModelClassType PostProcessEffectRenderer PostProcessEffectRenderer PostProcessEffectRenderer Pointer )
+            value.Attribute                                 = GetObject<PostProcessAttribute>(new IntPtr(p + 0x010), ReversePrism.DataModels.PostProcessAttribute.FromPointer); // 0x10 Attribute                   ( ModelClassType PostProcessAttribute PostProcessAttribute PostProcessAttribute Pointer )
+            value.Settings                                  = GetObject<PostProcessEffectSettings>(new IntPtr(p + 0x018), ReversePrism.DataModels.PostProcessEffectSettings.FromPointer); // 0x18 Settings                    ( ModelClassType PostProcessEffectSettings PostProcessEffectSettings PostProcessEffectSettings Pointer )
+            value.M_Renderer                                = GetObject<PostProcessEffectRenderer>(new IntPtr(p + 0x020), ReversePrism.DataModels.PostProcessEffectRenderer.FromPointer); // 0x20 M_Renderer                  ( ModelClassType PostProcessEffectRenderer PostProcessEffectRenderer PostProcessEffectRenderer Pointer )
 
             return value;
         }

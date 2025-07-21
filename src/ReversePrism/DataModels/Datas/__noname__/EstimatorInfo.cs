@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Status                                   00018654D570 ModelEnumType Status Status Status Int32
-    // 014 Estimated_latency                        0001866992B0 ModelPrimitiveType uint uint uint UInt32
+    // 010 Status                                   ModelEnumType Status Status Status Int32
+    // 014 Estimated_latency                        ModelPrimitiveType uint uint uint UInt32
     public partial class EstimatorInfo : DataModel
     {
         public Status                                   Status                                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EstimatorInfo() { Pointer= p0 };
 
-            value.Status                                    = (Status)GetInt32(new IntPtr(p + 0x010)); // 02466ACD6C48 0x10 Status                      ( 00018654D570 ModelEnumType Status Status Status Int32 )
-            value.Estimated_latency                         = GetUInt32(new IntPtr(p + 0x014)); // 02466ACD6C68 0x14 Estimated_latency           ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.Status                                    = (Status)GetInt32(new IntPtr(p + 0x010)); // 0x10 Status                      ( ModelEnumType Status Status Status Int32 )
+            value.Estimated_latency                         = GetUInt32(new IntPtr(p + 0x014)); // 0x14 Estimated_latency           ( ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

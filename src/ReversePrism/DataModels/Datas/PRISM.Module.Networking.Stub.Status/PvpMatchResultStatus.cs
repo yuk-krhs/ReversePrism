@@ -11,11 +11,11 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<PvpMatchResultStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 IsWinFieldNumber                         int IL2CPP_TYPE_I4
-    // 018 IsWin                                    000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 018 IsWin                                    ModelPrimitiveType bool bool bool Bool
     // 000 BeforeRankFieldNumber                    int IL2CPP_TYPE_I4
-    // 01C BeforeRank                               0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 01C BeforeRank                               ModelPrimitiveType int int int Int32
     // 000 AfterRankFieldNumber                     int IL2CPP_TYPE_I4
-    // 020 AfterRank                                0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 AfterRank                                ModelPrimitiveType int int int Int32
     public partial class PvpMatchResultStatus : DataModel
     {
         public bool                                     IsWin                                   { get; set; }
@@ -30,9 +30,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PvpMatchResultStatus() { Pointer= p0 };
 
-            value.IsWin                                     = GetBool(new IntPtr(p + 0x018)); // 02466139A9D8 0x18 IsWin                       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.BeforeRank                                = GetInt32(new IntPtr(p + 0x01C)); // 02466139AA18 0x1C BeforeRank                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.AfterRank                                 = GetInt32(new IntPtr(p + 0x020)); // 02466139AA58 0x20 AfterRank                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IsWin                                     = GetBool(new IntPtr(p + 0x018)); // 0x18 IsWin                       ( ModelPrimitiveType bool bool bool Bool )
+            value.BeforeRank                                = GetInt32(new IntPtr(p + 0x01C)); // 0x1C BeforeRank                  ( ModelPrimitiveType int int int Int32 )
+            value.AfterRank                                 = GetInt32(new IntPtr(p + 0x020)); // 0x20 AfterRank                   ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

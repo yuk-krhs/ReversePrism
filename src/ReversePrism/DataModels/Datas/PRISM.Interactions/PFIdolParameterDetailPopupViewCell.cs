@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Icon                                     000186703B70 ModelClassType PFIdolIconRectView PFIdolIconRectView PFIdolIconRectView Pointer
-    // 028 ParameterView                            000186530E30 ModelClassType VoDaViMeRankView VoDaViMeRankView VoDaViMeRankView Pointer
-    // 030 BaseParameterView                        000186531810 ModelClassType VoDaViMeView VoDaViMeView VoDaViMeView Pointer
+    // 020 Icon                                     ModelClassType PFIdolIconRectView PFIdolIconRectView PFIdolIconRectView Pointer
+    // 028 ParameterView                            ModelClassType VoDaViMeRankView VoDaViMeRankView VoDaViMeRankView Pointer
+    // 030 BaseParameterView                        ModelClassType VoDaViMeView VoDaViMeView VoDaViMeView Pointer
     public partial class PFIdolParameterDetailPopupViewCell : DataModel
     {
         public PFIdolIconRectView?                      Icon                                    { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PFIdolParameterDetailPopupViewCell() { Pointer= p0 };
 
-            value.Icon                                      = GetObject<PFIdolIconRectView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PFIdolIconRectView.FromPointer); // 02466A3587B0 0x20 Icon                        ( 000186703B70 ModelClassType PFIdolIconRectView PFIdolIconRectView PFIdolIconRectView Pointer )
-            value.ParameterView                             = GetObject<VoDaViMeRankView>(new IntPtr(p + 0x028), ReversePrism.DataModels.VoDaViMeRankView.FromPointer); // 02466A3587D0 0x28 ParameterView               ( 000186530E30 ModelClassType VoDaViMeRankView VoDaViMeRankView VoDaViMeRankView Pointer )
-            value.BaseParameterView                         = GetObject<VoDaViMeView>(new IntPtr(p + 0x030), ReversePrism.DataModels.VoDaViMeView.FromPointer); // 02466A3587F0 0x30 BaseParameterView           ( 000186531810 ModelClassType VoDaViMeView VoDaViMeView VoDaViMeView Pointer )
+            value.Icon                                      = GetObject<PFIdolIconRectView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PFIdolIconRectView.FromPointer); // 0x20 Icon                        ( ModelClassType PFIdolIconRectView PFIdolIconRectView PFIdolIconRectView Pointer )
+            value.ParameterView                             = GetObject<VoDaViMeRankView>(new IntPtr(p + 0x028), ReversePrism.DataModels.VoDaViMeRankView.FromPointer); // 0x28 ParameterView               ( ModelClassType VoDaViMeRankView VoDaViMeRankView VoDaViMeRankView Pointer )
+            value.BaseParameterView                         = GetObject<VoDaViMeView>(new IntPtr(p + 0x030), ReversePrism.DataModels.VoDaViMeView.FromPointer); // 0x30 BaseParameterView           ( ModelClassType VoDaViMeView VoDaViMeView VoDaViMeView Pointer )
 
             return value;
         }

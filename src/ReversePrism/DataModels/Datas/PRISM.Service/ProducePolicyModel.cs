@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 SeletedIndex                             0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 SeletedIndex                             ModelPrimitiveType int int int Int32
     public partial class ProducePolicyModel : DataModel
     {
         public int                                      SeletedIndex                            { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProducePolicyModel() { Pointer= p0 };
 
-            value.SeletedIndex                              = GetInt32(new IntPtr(p + 0x010)); // 024666610B90 0x10 SeletedIndex                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SeletedIndex                              = GetInt32(new IntPtr(p + 0x010)); // 0x10 SeletedIndex                ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

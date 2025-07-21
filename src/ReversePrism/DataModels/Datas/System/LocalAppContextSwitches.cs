@@ -8,8 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 000 DoNotUseTimeZoneInfo                     bool IL2CPP_TYPE_BOOLEAN
-    // 001 DoNotUseEcmaScriptV6EscapeControlCharacter bool IL2CPP_TYPE_BOOLEAN
+    // 000 s_allowArbitraryTypeInstantiation        int IL2CPP_TYPE_I4
     public partial class LocalAppContextSwitches : DataModel
     {
 

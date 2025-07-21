@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 loaderFactory                            Func`1<ISceneLoader> IL2CPP_TYPE_GENERICINST
-    // 018 CurrentLoader                            000186624190 ModelClassType ISceneLoader ISceneLoader ISceneLoader Pointer
-    // 020 ReloadingStep                            0001866C7310 ModelEnumType ReloadingStepMode ReloadingStepMode ReloadingStepMode Int32
+    // 018 CurrentLoader                            ModelClassType ISceneLoader ISceneLoader ISceneLoader Pointer
+    // 020 ReloadingStep                            ModelEnumType ReloadingStepMode ReloadingStepMode ReloadingStepMode Int32
     public partial class ReloadableSceneLoader : DataModel
     {
         public ISceneLoader?                            CurrentLoader                           { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ReloadableSceneLoader() { Pointer= p0 };
 
-            value.CurrentLoader                             = GetObject<ISceneLoader>(new IntPtr(p + 0x018), ReversePrism.DataModels.ISceneLoader.FromPointer); // 02466B735128 0x18 CurrentLoader               ( 000186624190 ModelClassType ISceneLoader ISceneLoader ISceneLoader Pointer )
-            value.ReloadingStep                             = (ReloadingStepMode)GetInt32(new IntPtr(p + 0x020)); // 02466B735148 0x20 ReloadingStep               ( 0001866C7310 ModelEnumType ReloadingStepMode ReloadingStepMode ReloadingStepMode Int32 )
+            value.CurrentLoader                             = GetObject<ISceneLoader>(new IntPtr(p + 0x018), ReversePrism.DataModels.ISceneLoader.FromPointer); // 0x18 CurrentLoader               ( ModelClassType ISceneLoader ISceneLoader ISceneLoader Pointer )
+            value.ReloadingStep                             = (ReloadingStepMode)GetInt32(new IntPtr(p + 0x020)); // 0x20 ReloadingStep               ( ModelEnumType ReloadingStepMode ReloadingStepMode ReloadingStepMode Int32 )
 
             return value;
         }

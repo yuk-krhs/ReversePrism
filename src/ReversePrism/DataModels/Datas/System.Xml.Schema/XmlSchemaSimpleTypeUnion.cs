@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 050 BaseTypes                                0001865BC5D0 ModelClassType XmlSchemaObjectCollection XmlSchemaObjectCollection XmlSchemaObjectCollection Pointer
-    // 058 MemberTypes                              000185CB4088 ModelClassListType XmlQualifiedName[] XmlQualifiedName[] List<XmlQualifiedName> Pointer
-    // 060 BaseMemberTypes                          000185CB4AA8 ModelClassListType XmlSchemaSimpleType[] XmlSchemaSimpleType[] List<XmlSchemaSimpleType> Pointer
+    // 050 BaseTypes                                ModelClassType XmlSchemaObjectCollection XmlSchemaObjectCollection XmlSchemaObjectCollection Pointer
+    // 058 MemberTypes                              ModelClassListType XmlQualifiedName[] XmlQualifiedName[] List<XmlQualifiedName> Pointer
+    // 060 BaseMemberTypes                          ModelClassListType XmlSchemaSimpleType[] XmlSchemaSimpleType[] List<XmlSchemaSimpleType> Pointer
     public partial class XmlSchemaSimpleTypeUnion : DataModel
     {
         public XmlSchemaObjectCollection?               BaseTypes                               { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlSchemaSimpleTypeUnion() { Pointer= p0 };
 
-            value.BaseTypes                                 = GetObject<XmlSchemaObjectCollection>(new IntPtr(p + 0x050), ReversePrism.DataModels.XmlSchemaObjectCollection.FromPointer); // 02466762C118 0x50 BaseTypes                   ( 0001865BC5D0 ModelClassType XmlSchemaObjectCollection XmlSchemaObjectCollection XmlSchemaObjectCollection Pointer )
-            value.MemberTypes                               = GetObjectList<XmlQualifiedName>(new IntPtr(p + 0x058), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 02466762C138 0x58 MemberTypes                 ( 000185CB4088 ModelClassListType XmlQualifiedName[] XmlQualifiedName[] List<XmlQualifiedName> Pointer )
-            value.BaseMemberTypes                           = GetObjectList<XmlSchemaSimpleType>(new IntPtr(p + 0x060), ReversePrism.DataModels.XmlSchemaSimpleType.FromPointer); // 02466762C158 0x60 BaseMemberTypes             ( 000185CB4AA8 ModelClassListType XmlSchemaSimpleType[] XmlSchemaSimpleType[] List<XmlSchemaSimpleType> Pointer )
+            value.BaseTypes                                 = GetObject<XmlSchemaObjectCollection>(new IntPtr(p + 0x050), ReversePrism.DataModels.XmlSchemaObjectCollection.FromPointer); // 0x50 BaseTypes                   ( ModelClassType XmlSchemaObjectCollection XmlSchemaObjectCollection XmlSchemaObjectCollection Pointer )
+            value.MemberTypes                               = GetObjectList<XmlQualifiedName>(new IntPtr(p + 0x058), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0x58 MemberTypes                 ( ModelClassListType XmlQualifiedName[] XmlQualifiedName[] List<XmlQualifiedName> Pointer )
+            value.BaseMemberTypes                           = GetObjectList<XmlSchemaSimpleType>(new IntPtr(p + 0x060), ReversePrism.DataModels.XmlSchemaSimpleType.FromPointer); // 0x60 BaseMemberTypes             ( ModelClassListType XmlSchemaSimpleType[] XmlSchemaSimpleType[] List<XmlSchemaSimpleType> Pointer )
 
             return value;
         }

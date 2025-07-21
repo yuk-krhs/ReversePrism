@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Provider                                 0001866401C0 ModelClassType MonoBtlsProvider MonoBtlsProvider MonoBtlsProvider Pointer
+    // 010 Provider                                 ModelClassType MonoBtlsProvider MonoBtlsProvider MonoBtlsProvider Pointer
     public partial class X509PalImplBtls : DataModel
     {
         public MonoBtlsProvider?                        Provider                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new X509PalImplBtls() { Pointer= p0 };
 
-            value.Provider                                  = GetObject<MonoBtlsProvider>(new IntPtr(p + 0x010), ReversePrism.DataModels.MonoBtlsProvider.FromPointer); // 0246679CD050 0x10 Provider                    ( 0001866401C0 ModelClassType MonoBtlsProvider MonoBtlsProvider MonoBtlsProvider Pointer )
+            value.Provider                                  = GetObject<MonoBtlsProvider>(new IntPtr(p + 0x010), ReversePrism.DataModels.MonoBtlsProvider.FromPointer); // 0x10 Provider                    ( ModelClassType MonoBtlsProvider MonoBtlsProvider MonoBtlsProvider Pointer )
 
             return value;
         }

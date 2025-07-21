@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Handle                                 000186640DC0 ModelEnumType PlayableOutputHandle PlayableOutputHandle PlayableOutputHandle Int32
+    // 010 M_Handle                                 ModelEnumType PlayableOutputHandle PlayableOutputHandle PlayableOutputHandle Int32
     // 000 m_NullPlayableOutput                     PlayableOutput IL2CPP_TYPE_VALUETYPE
     public partial class PlayableOutput : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PlayableOutput() { Pointer= p0 };
 
-            value.M_Handle                                  = (PlayableOutputHandle)GetInt32(new IntPtr(p + 0x010)); // 0245A23FF398 0x10 M_Handle                    ( 000186640DC0 ModelEnumType PlayableOutputHandle PlayableOutputHandle PlayableOutputHandle Int32 )
+            value.M_Handle                                  = (PlayableOutputHandle)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_Handle                    ( ModelEnumType PlayableOutputHandle PlayableOutputHandle PlayableOutputHandle Int32 )
 
             return value;
         }

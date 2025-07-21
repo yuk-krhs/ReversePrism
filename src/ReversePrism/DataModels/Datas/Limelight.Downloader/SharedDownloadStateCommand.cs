@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CapacityOverAlert                        000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 011 ResetConcurrencySettings                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 012 ForceReconnectRequest                    000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 013 SuppressBackgroundDownload               000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 014 NeedsPauseWithError                      000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 015 NeedsPauseAlways                         000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 CapacityOverAlert                        ModelPrimitiveType bool bool bool Bool
+    // 011 ResetConcurrencySettings                 ModelPrimitiveType bool bool bool Bool
+    // 012 ForceReconnectRequest                    ModelPrimitiveType bool bool bool Bool
+    // 013 SuppressBackgroundDownload               ModelPrimitiveType bool bool bool Bool
+    // 014 NeedsPauseWithError                      ModelPrimitiveType bool bool bool Bool
+    // 015 NeedsPauseAlways                         ModelPrimitiveType bool bool bool Bool
     public partial class SharedDownloadStateCommand : DataModel
     {
         public bool                                     CapacityOverAlert                       { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SharedDownloadStateCommand() { Pointer= p0 };
 
-            value.CapacityOverAlert                         = GetBool(new IntPtr(p + 0x010)); // 0245A3E28BE0 0x10 CapacityOverAlert           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ResetConcurrencySettings                  = GetBool(new IntPtr(p + 0x011)); // 0245A3E28C00 0x11 ResetConcurrencySettings    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ForceReconnectRequest                     = GetBool(new IntPtr(p + 0x012)); // 0245A3E28C20 0x12 ForceReconnectRequest       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SuppressBackgroundDownload                = GetBool(new IntPtr(p + 0x013)); // 0245A3E28C40 0x13 SuppressBackgroundDownload  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.NeedsPauseWithError                       = GetBool(new IntPtr(p + 0x014)); // 0245A3E28C60 0x14 NeedsPauseWithError         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.NeedsPauseAlways                          = GetBool(new IntPtr(p + 0x015)); // 0245A3E28C80 0x15 NeedsPauseAlways            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CapacityOverAlert                         = GetBool(new IntPtr(p + 0x010)); // 0x10 CapacityOverAlert           ( ModelPrimitiveType bool bool bool Bool )
+            value.ResetConcurrencySettings                  = GetBool(new IntPtr(p + 0x011)); // 0x11 ResetConcurrencySettings    ( ModelPrimitiveType bool bool bool Bool )
+            value.ForceReconnectRequest                     = GetBool(new IntPtr(p + 0x012)); // 0x12 ForceReconnectRequest       ( ModelPrimitiveType bool bool bool Bool )
+            value.SuppressBackgroundDownload                = GetBool(new IntPtr(p + 0x013)); // 0x13 SuppressBackgroundDownload  ( ModelPrimitiveType bool bool bool Bool )
+            value.NeedsPauseWithError                       = GetBool(new IntPtr(p + 0x014)); // 0x14 NeedsPauseWithError         ( ModelPrimitiveType bool bool bool Bool )
+            value.NeedsPauseAlways                          = GetBool(new IntPtr(p + 0x015)); // 0x15 NeedsPauseAlways            ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

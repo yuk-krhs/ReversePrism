@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 IsDesignOnly                             0001865965D0 ModelPrimitiveType bool bool bool Bool
+    // 010 IsDesignOnly                             ModelPrimitiveType bool bool bool Bool
     // 000 Yes                                      DesignOnlyAttribute IL2CPP_TYPE_CLASS
     // 008 No                                       DesignOnlyAttribute IL2CPP_TYPE_CLASS
-    // 010 Default                                  0001866C6F20 ModelClassType DesignOnlyAttribute DesignOnlyAttribute DesignOnlyAttribute Pointer
+    // 010 Default                                  ModelClassType DesignOnlyAttribute DesignOnlyAttribute DesignOnlyAttribute Pointer
     public partial class DesignOnlyAttribute : DataModel
     {
         public bool                                     IsDesignOnly                            { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DesignOnlyAttribute() { Pointer= p0 };
 
-            value.IsDesignOnly                              = GetBool(new IntPtr(p + 0x010)); // 024667B7BA00 0x10 IsDesignOnly                ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.Default                                   = GetObject<DesignOnlyAttribute>(new IntPtr(p + 0x010), ReversePrism.DataModels.DesignOnlyAttribute.FromPointer); // 024667B7BA60 0x10 Default                     ( 0001866C6F20 ModelClassType DesignOnlyAttribute DesignOnlyAttribute DesignOnlyAttribute Pointer )
+            value.IsDesignOnly                              = GetBool(new IntPtr(p + 0x010)); // 0x10 IsDesignOnly                ( ModelPrimitiveType bool bool bool Bool )
+            value.Default                                   = GetObject<DesignOnlyAttribute>(new IntPtr(p + 0x010), ReversePrism.DataModels.DesignOnlyAttribute.FromPointer); // 0x10 Default                     ( ModelClassType DesignOnlyAttribute DesignOnlyAttribute DesignOnlyAttribute Pointer )
 
             return value;
         }

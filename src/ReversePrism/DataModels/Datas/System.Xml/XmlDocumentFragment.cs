@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 LastChild                                00018659E450 ModelClassType XmlLinkedNode XmlLinkedNode XmlLinkedNode Pointer
+    // 018 LastChild                                ModelClassType XmlLinkedNode XmlLinkedNode XmlLinkedNode Pointer
     public partial class XmlDocumentFragment : DataModel
     {
         public XmlLinkedNode?                           LastChild                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlDocumentFragment() { Pointer= p0 };
 
-            value.LastChild                                 = GetObject<XmlLinkedNode>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlLinkedNode.FromPointer); // 0246674AF2E0 0x18 LastChild                   ( 00018659E450 ModelClassType XmlLinkedNode XmlLinkedNode XmlLinkedNode Pointer )
+            value.LastChild                                 = GetObject<XmlLinkedNode>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlLinkedNode.FromPointer); // 0x18 LastChild                   ( ModelClassType XmlLinkedNode XmlLinkedNode XmlLinkedNode Pointer )
 
             return value;
         }

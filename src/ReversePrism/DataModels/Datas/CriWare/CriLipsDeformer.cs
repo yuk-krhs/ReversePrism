@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 030 UserModifyDelegate                       00018655D7F0 ModelClassType UserModifyDelegateFunction UserModifyDelegateFunction UserModifyDelegateFunction Pointer
-    // 038 LipsMorph                                000186746520 ModelClassType ICriLipsMorph ICriLipsMorph ICriLipsMorph Pointer
-    // 040 Info                                     0001866EC0D0 ModelEnumType Info Info Info Int32
-    // 050 BlendAmount                              0001866ECA70 ModelEnumType MorphTargetBlendAmountAsJapanese MorphTargetBlendAmountAsJapanese MorphTargetBlendAmountAsJapanese Int32
-    // 068 AnalyzeModule                            000186746040 ModelClassType ICriLipsAnalyzeModule ICriLipsAnalyzeModule ICriLipsAnalyzeModule Pointer
-    // 070 SilicenInfo                              0001866EBE00 ModelEnumType Info Info Info Int32
+    // 030 UserModifyDelegate                       ModelClassType UserModifyDelegateFunction UserModifyDelegateFunction UserModifyDelegateFunction Pointer
+    // 038 LipsMorph                                ModelClassType ICriLipsMorph ICriLipsMorph ICriLipsMorph Pointer
+    // 040 Info                                     ModelEnumType Info Info Info Int32
+    // 050 BlendAmount                              ModelEnumType MorphTargetBlendAmountAsJapanese MorphTargetBlendAmountAsJapanese MorphTargetBlendAmountAsJapanese Int32
+    // 068 AnalyzeModule                            ModelClassType ICriLipsAnalyzeModule ICriLipsAnalyzeModule ICriLipsAnalyzeModule Pointer
+    // 070 SilicenInfo                              ModelEnumType Info Info Info Int32
     public partial class CriLipsDeformer : DataModel
     {
         public UserModifyDelegateFunction?              UserModifyDelegate                      { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CriLipsDeformer() { Pointer= p0 };
 
-            value.UserModifyDelegate                        = GetObject<UserModifyDelegateFunction>(new IntPtr(p + 0x030), ReversePrism.DataModels.UserModifyDelegateFunction.FromPointer); // 02466BC268F8 0x30 UserModifyDelegate          ( 00018655D7F0 ModelClassType UserModifyDelegateFunction UserModifyDelegateFunction UserModifyDelegateFunction Pointer )
-            value.LipsMorph                                 = GetObject<ICriLipsMorph>(new IntPtr(p + 0x038), ReversePrism.DataModels.ICriLipsMorph.FromPointer); // 02466BC26918 0x38 LipsMorph                   ( 000186746520 ModelClassType ICriLipsMorph ICriLipsMorph ICriLipsMorph Pointer )
-            value.Info                                      = (Info)GetInt32(new IntPtr(p + 0x040)); // 02466BC26938 0x40 Info                        ( 0001866EC0D0 ModelEnumType Info Info Info Int32 )
-            value.BlendAmount                               = (MorphTargetBlendAmountAsJapanese)GetInt32(new IntPtr(p + 0x050)); // 02466BC26958 0x50 BlendAmount                 ( 0001866ECA70 ModelEnumType MorphTargetBlendAmountAsJapanese MorphTargetBlendAmountAsJapanese MorphTargetBlendAmountAsJapanese Int32 )
-            value.AnalyzeModule                             = GetObject<ICriLipsAnalyzeModule>(new IntPtr(p + 0x068), ReversePrism.DataModels.ICriLipsAnalyzeModule.FromPointer); // 02466BC26978 0x68 AnalyzeModule               ( 000186746040 ModelClassType ICriLipsAnalyzeModule ICriLipsAnalyzeModule ICriLipsAnalyzeModule Pointer )
-            value.SilicenInfo                               = (Info)GetInt32(new IntPtr(p + 0x070)); // 02466BC26998 0x70 SilicenInfo                 ( 0001866EBE00 ModelEnumType Info Info Info Int32 )
+            value.UserModifyDelegate                        = GetObject<UserModifyDelegateFunction>(new IntPtr(p + 0x030), ReversePrism.DataModels.UserModifyDelegateFunction.FromPointer); // 0x30 UserModifyDelegate          ( ModelClassType UserModifyDelegateFunction UserModifyDelegateFunction UserModifyDelegateFunction Pointer )
+            value.LipsMorph                                 = GetObject<ICriLipsMorph>(new IntPtr(p + 0x038), ReversePrism.DataModels.ICriLipsMorph.FromPointer); // 0x38 LipsMorph                   ( ModelClassType ICriLipsMorph ICriLipsMorph ICriLipsMorph Pointer )
+            value.Info                                      = (Info)GetInt32(new IntPtr(p + 0x040)); // 0x40 Info                        ( ModelEnumType Info Info Info Int32 )
+            value.BlendAmount                               = (MorphTargetBlendAmountAsJapanese)GetInt32(new IntPtr(p + 0x050)); // 0x50 BlendAmount                 ( ModelEnumType MorphTargetBlendAmountAsJapanese MorphTargetBlendAmountAsJapanese MorphTargetBlendAmountAsJapanese Int32 )
+            value.AnalyzeModule                             = GetObject<ICriLipsAnalyzeModule>(new IntPtr(p + 0x068), ReversePrism.DataModels.ICriLipsAnalyzeModule.FromPointer); // 0x68 AnalyzeModule               ( ModelClassType ICriLipsAnalyzeModule ICriLipsAnalyzeModule ICriLipsAnalyzeModule Pointer )
+            value.SilicenInfo                               = (Info)GetInt32(new IntPtr(p + 0x070)); // 0x70 SilicenInfo                 ( ModelEnumType Info Info Info Int32 )
 
             return value;
         }

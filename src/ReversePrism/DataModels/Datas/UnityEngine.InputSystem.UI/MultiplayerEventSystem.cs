@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 060 M_PlayerRoot                             0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
+    // 060 M_PlayerRoot                             ModelClassType GameObject GameObject GameObject Pointer
     public partial class MultiplayerEventSystem : DataModel
     {
         public GameObject?                              M_PlayerRoot                            { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MultiplayerEventSystem() { Pointer= p0 };
 
-            value.M_PlayerRoot                              = GetObject<GameObject>(new IntPtr(p + 0x060), ReversePrism.DataModels.GameObject.FromPointer); // 02466780B2C0 0x60 M_PlayerRoot                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.M_PlayerRoot                              = GetObject<GameObject>(new IntPtr(p + 0x060), ReversePrism.DataModels.GameObject.FromPointer); // 0x60 M_PlayerRoot                ( ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

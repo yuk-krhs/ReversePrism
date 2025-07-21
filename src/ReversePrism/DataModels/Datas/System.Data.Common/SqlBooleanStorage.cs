@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 050 Values                                   000185CA4EB8 ModelEnumListType SqlBoolean[] SqlBoolean[] List<SqlBoolean> Pointer
+    // 050 Values                                   ModelEnumListType SqlBoolean[] SqlBoolean[] List<SqlBoolean> Pointer
     public partial class SqlBooleanStorage : DataModel
     {
         public List<SqlBoolean>?                        Values                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SqlBooleanStorage() { Pointer= p0 };
 
-            value.Values                                    = GetEnumList<SqlBoolean>(new IntPtr(p + 0x050)); // 024668A5A100 0x50 Values                      ( 000185CA4EB8 ModelEnumListType SqlBoolean[] SqlBoolean[] List<SqlBoolean> Pointer )
+            value.Values                                    = GetEnumList<SqlBoolean>(new IntPtr(p + 0x050)); // 0x50 Values                      ( ModelEnumListType SqlBoolean[] SqlBoolean[] List<SqlBoolean> Pointer )
 
             return value;
         }

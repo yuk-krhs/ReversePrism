@@ -13,5 +13,6 @@ namespace ReversePrism.DataModels
         Awaking,
         Training,
         Skill,
+        LiveSkill,
     }
 }

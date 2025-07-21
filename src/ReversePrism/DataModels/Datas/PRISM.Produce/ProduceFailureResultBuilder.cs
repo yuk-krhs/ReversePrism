@@ -8,9 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 customPopup                              AssetCollection`1<PopupContentBase> IL2CPP_TYPE_GENERICINST
-    // 028 View                                     0001865417E0 ModelClassType ProduceFailureResultView ProduceFailureResultView ProduceFailureResultView Pointer
-    // 030 AdvView                                  0001866D8520 ModelClassType InGameResultADVView InGameResultADVView InGameResultADVView Pointer
+    // 020 View                                     ModelClassType ProduceFailureResultView ProduceFailureResultView ProduceFailureResultView Pointer
+    // 028 AdvView                                  ModelClassType InGameResultADVView InGameResultADVView InGameResultADVView Pointer
     public partial class ProduceFailureResultBuilder : DataModel
     {
         public ProduceFailureResultView?                View                                    { get; set; }
@@ -24,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceFailureResultBuilder() { Pointer= p0 };
 
-            value.View                                      = GetObject<ProduceFailureResultView>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProduceFailureResultView.FromPointer); // 02466B6B3AA0 0x28 View                        ( 0001865417E0 ModelClassType ProduceFailureResultView ProduceFailureResultView ProduceFailureResultView Pointer )
-            value.AdvView                                   = GetObject<InGameResultADVView>(new IntPtr(p + 0x030), ReversePrism.DataModels.InGameResultADVView.FromPointer); // 02466B6B3AC0 0x30 AdvView                     ( 0001866D8520 ModelClassType InGameResultADVView InGameResultADVView InGameResultADVView Pointer )
+            value.View                                      = GetObject<ProduceFailureResultView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceFailureResultView.FromPointer); // 0x20 View                        ( ModelClassType ProduceFailureResultView ProduceFailureResultView ProduceFailureResultView Pointer )
+            value.AdvView                                   = GetObject<InGameResultADVView>(new IntPtr(p + 0x028), ReversePrism.DataModels.InGameResultADVView.FromPointer); // 0x28 AdvView                     ( ModelClassType InGameResultADVView InGameResultADVView InGameResultADVView Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 DataList                                 000185D1F568 ModelClassListType List`1<SceneData> List`1<SceneData> List<SceneData> Pointer
+    // 018 DataList                                 ModelClassListType List`1<SceneData> List`1<SceneData> List<SceneData> Pointer
     public partial class AuditionStageData : DataModel
     {
         public List<SceneData>?                         DataList                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AuditionStageData() { Pointer= p0 };
 
-            value.DataList                                  = GetObjectList<SceneData>(new IntPtr(p + 0x018), ReversePrism.DataModels.SceneData.FromPointer); // 024664D4FE08 0x18 DataList                    ( 000185D1F568 ModelClassListType List`1<SceneData> List`1<SceneData> List<SceneData> Pointer )
+            value.DataList                                  = GetObjectList<SceneData>(new IntPtr(p + 0x018), ReversePrism.DataModels.SceneData.FromPointer); // 0x18 DataList                    ( ModelClassListType List`1<SceneData> List`1<SceneData> List<SceneData> Pointer )
 
             return value;
         }

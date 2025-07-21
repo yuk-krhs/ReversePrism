@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Default                                  IMessageBroker IL2CPP_TYPE_CLASS
-    // 010 IsDisposed                               000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 IsDisposed                               ModelPrimitiveType bool bool bool Bool
     // 018 notifiers                                Dictionary`2<Type, <object>> IL2CPP_TYPE_GENERICINST
     public partial class MessageBroker : DataModel
     {
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MessageBroker() { Pointer= p0 };
 
-            value.IsDisposed                                = GetBool(new IntPtr(p + 0x010)); // 0246695B7CB0 0x10 IsDisposed                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsDisposed                                = GetBool(new IntPtr(p + 0x010)); // 0x10 IsDisposed                  ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

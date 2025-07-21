@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 030 IdolIconView                             0001866AAC10 ModelClassType SCharaIconRectView SCharaIconRectView SCharaIconRectView Pointer
-    // 038 CursorObject                             0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 040 PIdolDuplicatedObject                    0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 048 Disposable                               0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 030 IdolIconView                             ModelClassType SCharaIconRectView SCharaIconRectView SCharaIconRectView Pointer
+    // 038 CursorObject                             ModelClassType GameObject GameObject GameObject Pointer
+    // 040 PIdolDuplicatedObject                    ModelClassType GameObject GameObject GameObject Pointer
+    // 048 Disposable                               ModelClassType IDisposable IDisposable IDisposable Pointer
     public partial class ProduceSupportCharaSelectGridViewCell : DataModel
     {
         public SCharaIconRectView?                      IdolIconView                            { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceSupportCharaSelectGridViewCell() { Pointer= p0 };
 
-            value.IdolIconView                              = GetObject<SCharaIconRectView>(new IntPtr(p + 0x030), ReversePrism.DataModels.SCharaIconRectView.FromPointer); // 02466A17C6A0 0x30 IdolIconView                ( 0001866AAC10 ModelClassType SCharaIconRectView SCharaIconRectView SCharaIconRectView Pointer )
-            value.CursorObject                              = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 02466A17C6C0 0x38 CursorObject                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.PIdolDuplicatedObject                     = GetObject<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 02466A17C6E0 0x40 PIdolDuplicatedObject       ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.Disposable                                = GetObject<IDisposable>(new IntPtr(p + 0x048), ReversePrism.DataModels.IDisposable.FromPointer); // 02466A17C700 0x48 Disposable                  ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.IdolIconView                              = GetObject<SCharaIconRectView>(new IntPtr(p + 0x030), ReversePrism.DataModels.SCharaIconRectView.FromPointer); // 0x30 IdolIconView                ( ModelClassType SCharaIconRectView SCharaIconRectView SCharaIconRectView Pointer )
+            value.CursorObject                              = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0x38 CursorObject                ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.PIdolDuplicatedObject                     = GetObject<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 0x40 PIdolDuplicatedObject       ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.Disposable                                = GetObject<IDisposable>(new IntPtr(p + 0x048), ReversePrism.DataModels.IDisposable.FromPointer); // 0x48 Disposable                  ( ModelClassType IDisposable IDisposable IDisposable Pointer )
 
             return value;
         }

@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Members                                  000185CB9B18 ModelClassListType EnumMapMember[] EnumMapMember[] List<EnumMapMember> Pointer
-    // 018 IsFlags                                  0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 020 EnumNames                                000185B81DA0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 028 XmlNames                                 000185B81DA0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 030 Values                                   000185B7E5E0 ModelPrimitiveListType long[] long[] List<long> Pointer
+    // 010 Members                                  ModelClassListType EnumMapMember[] EnumMapMember[] List<EnumMapMember> Pointer
+    // 018 IsFlags                                  ModelPrimitiveType bool bool bool Bool
+    // 020 EnumNames                                ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 028 XmlNames                                 ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 030 Values                                   ModelPrimitiveListType long[] long[] List<long> Pointer
     public partial class EnumMap : DataModel
     {
         public List<EnumMapMember>?                     Members                                 { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EnumMap() { Pointer= p0 };
 
-            value.Members                                   = GetObjectList<EnumMapMember>(new IntPtr(p + 0x010), ReversePrism.DataModels.EnumMapMember.FromPointer); // 02466753B9B8 0x10 Members                     ( 000185CB9B18 ModelClassListType EnumMapMember[] EnumMapMember[] List<EnumMapMember> Pointer )
-            value.IsFlags                                   = GetBool(new IntPtr(p + 0x018)); // 02466753B9D8 0x18 IsFlags                     ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.EnumNames                                 = GetStringList(new IntPtr(p + 0x020)); // 02466753B9F8 0x20 EnumNames                   ( 000185B81DA0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.XmlNames                                  = GetStringList(new IntPtr(p + 0x028)); // 02466753BA18 0x28 XmlNames                    ( 000185B81DA0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.Values                                    = GetInt64List(new IntPtr(p + 0x030)); // 02466753BA38 0x30 Values                      ( 000185B7E5E0 ModelPrimitiveListType long[] long[] List<long> Pointer )
+            value.Members                                   = GetObjectList<EnumMapMember>(new IntPtr(p + 0x010), ReversePrism.DataModels.EnumMapMember.FromPointer); // 0x10 Members                     ( ModelClassListType EnumMapMember[] EnumMapMember[] List<EnumMapMember> Pointer )
+            value.IsFlags                                   = GetBool(new IntPtr(p + 0x018)); // 0x18 IsFlags                     ( ModelPrimitiveType bool bool bool Bool )
+            value.EnumNames                                 = GetStringList(new IntPtr(p + 0x020)); // 0x20 EnumNames                   ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.XmlNames                                  = GetStringList(new IntPtr(p + 0x028)); // 0x28 XmlNames                    ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.Values                                    = GetInt64List(new IntPtr(p + 0x030)); // 0x30 Values                      ( ModelPrimitiveListType long[] long[] List<long> Pointer )
 
             return value;
         }

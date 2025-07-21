@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Input                                    0001866D1480 ModelClassType Input Input Input Pointer
+    // 010 Input                                    ModelClassType Input Input Input Pointer
     public partial class Variables : DataModel
     {
         public Input?                                   Input                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Variables() { Pointer= p0 };
 
-            value.Input                                     = GetObject<Input>(new IntPtr(p + 0x010), ReversePrism.DataModels.Input.FromPointer); // 02466BE60C08 0x10 Input                       ( 0001866D1480 ModelClassType Input Input Input Pointer )
+            value.Input                                     = GetObject<Input>(new IntPtr(p + 0x010), ReversePrism.DataModels.Input.FromPointer); // 0x10 Input                       ( ModelClassType Input Input Input Pointer )
 
             return value;
         }

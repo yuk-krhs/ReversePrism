@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<UserProfileStoryStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 StoryTypeFieldNumber                     int IL2CPP_TYPE_I4
-    // 018 StoryType                                0001865B0320 ModelEnumType StoryType StoryType StoryType Int32
+    // 018 StoryType                                ModelEnumType StoryType StoryType StoryType Int32
     // 000 TotalFieldNumber                         int IL2CPP_TYPE_I4
-    // 01C Total                                    0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 01C Total                                    ModelPrimitiveType int int int Int32
     public partial class UserProfileStoryStatus : DataModel
     {
         public StoryType                                StoryType                               { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UserProfileStoryStatus() { Pointer= p0 };
 
-            value.StoryType                                 = (StoryType)GetInt32(new IntPtr(p + 0x018)); // 024662697FB0 0x18 StoryType                   ( 0001865B0320 ModelEnumType StoryType StoryType StoryType Int32 )
-            value.Total                                     = GetInt32(new IntPtr(p + 0x01C)); // 024662697FF0 0x1C Total                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.StoryType                                 = (StoryType)GetInt32(new IntPtr(p + 0x018)); // 0x18 StoryType                   ( ModelEnumType StoryType StoryType StoryType Int32 )
+            value.Total                                     = GetInt32(new IntPtr(p + 0x01C)); // 0x1C Total                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

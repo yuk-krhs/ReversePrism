@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 038 Ucs4Decoder                              0001866FE410 ModelClassType Ucs4Decoder Ucs4Decoder Ucs4Decoder Pointer
+    // 038 Ucs4Decoder                              ModelClassType Ucs4Decoder Ucs4Decoder Ucs4Decoder Pointer
     public partial class Ucs4Encoding : DataModel
     {
         public Ucs4Decoder?                             Ucs4Decoder                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Ucs4Encoding() { Pointer= p0 };
 
-            value.Ucs4Decoder                               = GetObject<Ucs4Decoder>(new IntPtr(p + 0x038), ReversePrism.DataModels.Ucs4Decoder.FromPointer); // 0246674FD220 0x38 Ucs4Decoder                 ( 0001866FE410 ModelClassType Ucs4Decoder Ucs4Decoder Ucs4Decoder Pointer )
+            value.Ucs4Decoder                               = GetObject<Ucs4Decoder>(new IntPtr(p + 0x038), ReversePrism.DataModels.Ucs4Decoder.FromPointer); // 0x38 Ucs4Decoder                 ( ModelClassType Ucs4Decoder Ucs4Decoder Ucs4Decoder Pointer )
 
             return value;
         }

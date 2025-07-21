@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Handle                                   00018665CA00 ModelEnumType RuntimeGPtrArrayHandle RuntimeGPtrArrayHandle RuntimeGPtrArrayHandle Int32
+    // 010 Handle                                   ModelEnumType RuntimeGPtrArrayHandle RuntimeGPtrArrayHandle RuntimeGPtrArrayHandle Int32
     public partial class SafeGPtrArrayHandle : DataModel
     {
         public RuntimeGPtrArrayHandle                   Handle                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SafeGPtrArrayHandle() { Pointer= p0 };
 
-            value.Handle                                    = (RuntimeGPtrArrayHandle)GetInt32(new IntPtr(p + 0x010)); // 0246669A8728 0x10 Handle                      ( 00018665CA00 ModelEnumType RuntimeGPtrArrayHandle RuntimeGPtrArrayHandle RuntimeGPtrArrayHandle Int32 )
+            value.Handle                                    = (RuntimeGPtrArrayHandle)GetInt32(new IntPtr(p + 0x010)); // 0x10 Handle                      ( ModelEnumType RuntimeGPtrArrayHandle RuntimeGPtrArrayHandle RuntimeGPtrArrayHandle Int32 )
 
             return value;
         }

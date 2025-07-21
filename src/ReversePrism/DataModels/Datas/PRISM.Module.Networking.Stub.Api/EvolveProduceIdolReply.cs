@@ -11,11 +11,11 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<EvolveProduceIdolReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ProduceIdolFieldNumber                   int IL2CPP_TYPE_I4
-    // 018 ProduceIdol                              000186550070 ModelClassType ProduceIdolStatus ProduceIdolStatus ProduceIdolStatus Pointer
+    // 018 ProduceIdol                              ModelClassType ProduceIdolStatus ProduceIdolStatus ProduceIdolStatus Pointer
     // 000 IdolBaseRewardFieldNumber                int IL2CPP_TYPE_I4
-    // 020 IdolBaseReward                           0001866ACBC0 ModelClassType IdolBaseRewardStatus IdolBaseRewardStatus IdolBaseRewardStatus Pointer
+    // 020 IdolBaseReward                           ModelClassType IdolBaseRewardStatus IdolBaseRewardStatus IdolBaseRewardStatus Pointer
     // 000 HavingGroupFieldNumber                   int IL2CPP_TYPE_I4
-    // 028 HavingGroup                              0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer
+    // 028 HavingGroup                              ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer
     public partial class EvolveProduceIdolReply : DataModel
     {
         public ProduceIdolStatus?                       ProduceIdol                             { get; set; }
@@ -30,9 +30,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EvolveProduceIdolReply() { Pointer= p0 };
 
-            value.ProduceIdol                               = GetObject<ProduceIdolStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceIdolStatus.FromPointer); // 02466252F298 0x18 ProduceIdol                 ( 000186550070 ModelClassType ProduceIdolStatus ProduceIdolStatus ProduceIdolStatus Pointer )
-            value.IdolBaseReward                            = GetObject<IdolBaseRewardStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IdolBaseRewardStatus.FromPointer); // 02466252F2D8 0x20 IdolBaseReward              ( 0001866ACBC0 ModelClassType IdolBaseRewardStatus IdolBaseRewardStatus IdolBaseRewardStatus Pointer )
-            value.HavingGroup                               = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 02466252F318 0x28 HavingGroup                 ( 0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
+            value.ProduceIdol                               = GetObject<ProduceIdolStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceIdolStatus.FromPointer); // 0x18 ProduceIdol                 ( ModelClassType ProduceIdolStatus ProduceIdolStatus ProduceIdolStatus Pointer )
+            value.IdolBaseReward                            = GetObject<IdolBaseRewardStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IdolBaseRewardStatus.FromPointer); // 0x20 IdolBaseReward              ( ModelClassType IdolBaseRewardStatus IdolBaseRewardStatus IdolBaseRewardStatus Pointer )
+            value.HavingGroup                               = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 0x28 HavingGroup                 ( ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
 
             return value;
         }

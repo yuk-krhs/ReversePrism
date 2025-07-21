@@ -13,9 +13,9 @@ namespace ReversePrism.DataModels
     // 000 TicksPerSecond                           long IL2CPP_TYPE_I8
     // 000 Native                                   NativeMethods IL2CPP_TYPE_CLASS
     // 008 UnixEpoch                                DateTime IL2CPP_TYPE_VALUETYPE
-    // 010 Tv_sec                                   0001865F7700 ModelPrimitiveType long long long Int64
-    // 018 Tv_nsec                                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 01C Clock_type                               0001865BA550 ModelEnumType ClockType ClockType ClockType Int32
+    // 010 Tv_sec                                   ModelPrimitiveType long long long Int64
+    // 018 Tv_nsec                                  ModelPrimitiveType int int int Int32
+    // 01C Clock_type                               ModelEnumType ClockType ClockType ClockType Int32
     public partial class Timespec : DataModel
     {
         public long                                     Tv_sec                                  { get; set; }
@@ -30,9 +30,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Timespec() { Pointer= p0 };
 
-            value.Tv_sec                                    = GetInt64(new IntPtr(p + 0x010)); // 0245A4153360 0x10 Tv_sec                      ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.Tv_nsec                                   = GetInt32(new IntPtr(p + 0x018)); // 0245A4153380 0x18 Tv_nsec                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Clock_type                                = (ClockType)GetInt32(new IntPtr(p + 0x01C)); // 0245A41533A0 0x1C Clock_type                  ( 0001865BA550 ModelEnumType ClockType ClockType ClockType Int32 )
+            value.Tv_sec                                    = GetInt64(new IntPtr(p + 0x010)); // 0x10 Tv_sec                      ( ModelPrimitiveType long long long Int64 )
+            value.Tv_nsec                                   = GetInt32(new IntPtr(p + 0x018)); // 0x18 Tv_nsec                     ( ModelPrimitiveType int int int Int32 )
+            value.Clock_type                                = (ClockType)GetInt32(new IntPtr(p + 0x01C)); // 0x1C Clock_type                  ( ModelEnumType ClockType ClockType ClockType Int32 )
 
             return value;
         }

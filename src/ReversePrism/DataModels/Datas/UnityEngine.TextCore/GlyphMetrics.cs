@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Width                                  0001866656B0 ModelPrimitiveType float float float Single
-    // 014 M_Height                                 0001866656B0 ModelPrimitiveType float float float Single
-    // 018 M_HorizontalBearingX                     0001866656B0 ModelPrimitiveType float float float Single
-    // 01C M_HorizontalBearingY                     0001866656B0 ModelPrimitiveType float float float Single
-    // 020 M_HorizontalAdvance                      0001866656B0 ModelPrimitiveType float float float Single
+    // 010 M_Width                                  ModelPrimitiveType float float float Single
+    // 014 M_Height                                 ModelPrimitiveType float float float Single
+    // 018 M_HorizontalBearingX                     ModelPrimitiveType float float float Single
+    // 01C M_HorizontalBearingY                     ModelPrimitiveType float float float Single
+    // 020 M_HorizontalAdvance                      ModelPrimitiveType float float float Single
     public partial class GlyphMetrics : DataModel
     {
         public float                                    M_Width                                 { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GlyphMetrics() { Pointer= p0 };
 
-            value.M_Width                                   = GetSingle(new IntPtr(p + 0x010)); // 0245A215B648 0x10 M_Width                     ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_Height                                  = GetSingle(new IntPtr(p + 0x014)); // 0245A215B668 0x14 M_Height                    ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_HorizontalBearingX                      = GetSingle(new IntPtr(p + 0x018)); // 0245A215B688 0x18 M_HorizontalBearingX        ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_HorizontalBearingY                      = GetSingle(new IntPtr(p + 0x01C)); // 0245A215B6A8 0x1C M_HorizontalBearingY        ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_HorizontalAdvance                       = GetSingle(new IntPtr(p + 0x020)); // 0245A215B6C8 0x20 M_HorizontalAdvance         ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_Width                                   = GetSingle(new IntPtr(p + 0x010)); // 0x10 M_Width                     ( ModelPrimitiveType float float float Single )
+            value.M_Height                                  = GetSingle(new IntPtr(p + 0x014)); // 0x14 M_Height                    ( ModelPrimitiveType float float float Single )
+            value.M_HorizontalBearingX                      = GetSingle(new IntPtr(p + 0x018)); // 0x18 M_HorizontalBearingX        ( ModelPrimitiveType float float float Single )
+            value.M_HorizontalBearingY                      = GetSingle(new IntPtr(p + 0x01C)); // 0x1C M_HorizontalBearingY        ( ModelPrimitiveType float float float Single )
+            value.M_HorizontalAdvance                       = GetSingle(new IntPtr(p + 0x020)); // 0x20 M_HorizontalAdvance         ( ModelPrimitiveType float float float Single )
 
             return value;
         }

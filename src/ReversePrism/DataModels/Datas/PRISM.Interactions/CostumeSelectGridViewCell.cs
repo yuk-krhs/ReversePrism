@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 030 CostumeIconView                          00018662D530 ModelClassType CostumeIconView CostumeIconView CostumeIconView Pointer
+    // 030 CostumeIconView                          ModelClassType CostumeIconView CostumeIconView CostumeIconView Pointer
     public partial class CostumeSelectGridViewCell : DataModel
     {
         public CostumeIconView?                         CostumeIconView                         { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CostumeSelectGridViewCell() { Pointer= p0 };
 
-            value.CostumeIconView                           = GetObject<CostumeIconView>(new IntPtr(p + 0x030), ReversePrism.DataModels.CostumeIconView.FromPointer); // 02466A2FA7D0 0x30 CostumeIconView             ( 00018662D530 ModelClassType CostumeIconView CostumeIconView CostumeIconView Pointer )
+            value.CostumeIconView                           = GetObject<CostumeIconView>(new IntPtr(p + 0x030), ReversePrism.DataModels.CostumeIconView.FromPointer); // 0x30 CostumeIconView             ( ModelClassType CostumeIconView CostumeIconView CostumeIconView Pointer )
 
             return value;
         }

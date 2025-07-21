@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 BindingType                              0001865F09E0 ModelEnumType MemberBindingType MemberBindingType MemberBindingType Int32
-    // 018 Member                                   0001865F2430 ModelClassType MemberInfo MemberInfo MemberInfo Pointer
+    // 010 BindingType                              ModelEnumType MemberBindingType MemberBindingType MemberBindingType Int32
+    // 018 Member                                   ModelClassType MemberInfo MemberInfo MemberInfo Pointer
     public partial class MemberBinding : DataModel
     {
         public MemberBindingType                        BindingType                             { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MemberBinding() { Pointer= p0 };
 
-            value.BindingType                               = (MemberBindingType)GetInt32(new IntPtr(p + 0x010)); // 024669FCECD8 0x10 BindingType                 ( 0001865F09E0 ModelEnumType MemberBindingType MemberBindingType MemberBindingType Int32 )
-            value.Member                                    = GetObject<MemberInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.MemberInfo.FromPointer); // 024669FCECF8 0x18 Member                      ( 0001865F2430 ModelClassType MemberInfo MemberInfo MemberInfo Pointer )
+            value.BindingType                               = (MemberBindingType)GetInt32(new IntPtr(p + 0x010)); // 0x10 BindingType                 ( ModelEnumType MemberBindingType MemberBindingType MemberBindingType Int32 )
+            value.Member                                    = GetObject<MemberInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.MemberInfo.FromPointer); // 0x18 Member                      ( ModelClassType MemberInfo MemberInfo MemberInfo Pointer )
 
             return value;
         }

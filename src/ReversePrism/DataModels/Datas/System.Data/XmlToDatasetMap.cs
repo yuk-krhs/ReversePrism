@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 TableSchemaMap                           000186748D80 ModelClassType XmlNodeIdHashtable XmlNodeIdHashtable XmlNodeIdHashtable Pointer
-    // 018 LastTableSchemaInfo                      0001867488A0 ModelClassType TableSchemaInfo TableSchemaInfo TableSchemaInfo Pointer
+    // 010 TableSchemaMap                           ModelClassType XmlNodeIdHashtable XmlNodeIdHashtable XmlNodeIdHashtable Pointer
+    // 018 LastTableSchemaInfo                      ModelClassType TableSchemaInfo TableSchemaInfo TableSchemaInfo Pointer
     public partial class XmlToDatasetMap : DataModel
     {
         public XmlNodeIdHashtable?                      TableSchemaMap                          { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlToDatasetMap() { Pointer= p0 };
 
-            value.TableSchemaMap                            = GetObject<XmlNodeIdHashtable>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlNodeIdHashtable.FromPointer); // 0246689E3258 0x10 TableSchemaMap              ( 000186748D80 ModelClassType XmlNodeIdHashtable XmlNodeIdHashtable XmlNodeIdHashtable Pointer )
-            value.LastTableSchemaInfo                       = GetObject<TableSchemaInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.TableSchemaInfo.FromPointer); // 0246689E3278 0x18 LastTableSchemaInfo         ( 0001867488A0 ModelClassType TableSchemaInfo TableSchemaInfo TableSchemaInfo Pointer )
+            value.TableSchemaMap                            = GetObject<XmlNodeIdHashtable>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlNodeIdHashtable.FromPointer); // 0x10 TableSchemaMap              ( ModelClassType XmlNodeIdHashtable XmlNodeIdHashtable XmlNodeIdHashtable Pointer )
+            value.LastTableSchemaInfo                       = GetObject<TableSchemaInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.TableSchemaInfo.FromPointer); // 0x18 LastTableSchemaInfo         ( ModelClassType TableSchemaInfo TableSchemaInfo TableSchemaInfo Pointer )
 
             return value;
         }

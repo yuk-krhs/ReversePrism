@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 PaidJewelNum                             0001865F7700 ModelPrimitiveType long long long Int64
-    // 018 FreeJewelNum                             0001865F7700 ModelPrimitiveType long long long Int64
+    // 010 PaidJewelNum                             ModelPrimitiveType long long long Int64
+    // 018 FreeJewelNum                             ModelPrimitiveType long long long Int64
     public partial class CheckJewelPopupViewModel : DataModel
     {
         public long                                     PaidJewelNum                            { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CheckJewelPopupViewModel() { Pointer= p0 };
 
-            value.PaidJewelNum                              = GetInt64(new IntPtr(p + 0x010)); // 0246663C1550 0x10 PaidJewelNum                ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.FreeJewelNum                              = GetInt64(new IntPtr(p + 0x018)); // 0246663C1570 0x18 FreeJewelNum                ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.PaidJewelNum                              = GetInt64(new IntPtr(p + 0x010)); // 0x10 PaidJewelNum                ( ModelPrimitiveType long long long Int64 )
+            value.FreeJewelNum                              = GetInt64(new IntPtr(p + 0x018)); // 0x18 FreeJewelNum                ( ModelPrimitiveType long long long Int64 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 MissionCompleted                         0001865C34E0 ModelClassType INotifyMissionCompletedStatus INotifyMissionCompletedStatus INotifyMissionCompletedStatus Pointer
+    // 010 MissionCompleted                         ModelClassType INotifyMissionCompletedStatus INotifyMissionCompletedStatus INotifyMissionCompletedStatus Pointer
     public partial class ResponseTrailer : DataModel
     {
         public INotifyMissionCompletedStatus?           MissionCompleted                        { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ResponseTrailer() { Pointer= p0 };
 
-            value.MissionCompleted                          = GetObject<INotifyMissionCompletedStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.INotifyMissionCompletedStatus.FromPointer); // 0245A4B8E238 0x10 MissionCompleted            ( 0001865C34E0 ModelClassType INotifyMissionCompletedStatus INotifyMissionCompletedStatus INotifyMissionCompletedStatus Pointer )
+            value.MissionCompleted                          = GetObject<INotifyMissionCompletedStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.INotifyMissionCompletedStatus.FromPointer); // 0x10 MissionCompleted            ( ModelClassType INotifyMissionCompletedStatus INotifyMissionCompletedStatus INotifyMissionCompletedStatus Pointer )
 
             return value;
         }

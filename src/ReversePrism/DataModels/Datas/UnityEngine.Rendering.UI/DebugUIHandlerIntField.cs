@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 060 NameLabel                                0001866320F0 ModelClassType Text Text Text Pointer
-    // 068 ValueLabel                               0001866320F0 ModelClassType Text Text Text Pointer
-    // 070 M_Field                                  000186586D40 ModelClassType IntField IntField IntField Pointer
+    // 060 NameLabel                                ModelClassType Text Text Text Pointer
+    // 068 ValueLabel                               ModelClassType Text Text Text Pointer
+    // 070 M_Field                                  ModelClassType IntField IntField IntField Pointer
     public partial class DebugUIHandlerIntField : DataModel
     {
         public Text?                                    NameLabel                               { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DebugUIHandlerIntField() { Pointer= p0 };
 
-            value.NameLabel                                 = GetObject<Text>(new IntPtr(p + 0x060), ReversePrism.DataModels.Text.FromPointer); // 02466938A330 0x60 NameLabel                   ( 0001866320F0 ModelClassType Text Text Text Pointer )
-            value.ValueLabel                                = GetObject<Text>(new IntPtr(p + 0x068), ReversePrism.DataModels.Text.FromPointer); // 02466938A350 0x68 ValueLabel                  ( 0001866320F0 ModelClassType Text Text Text Pointer )
-            value.M_Field                                   = GetObject<IntField>(new IntPtr(p + 0x070), ReversePrism.DataModels.IntField.FromPointer); // 02466938A370 0x70 M_Field                     ( 000186586D40 ModelClassType IntField IntField IntField Pointer )
+            value.NameLabel                                 = GetObject<Text>(new IntPtr(p + 0x060), ReversePrism.DataModels.Text.FromPointer); // 0x60 NameLabel                   ( ModelClassType Text Text Text Pointer )
+            value.ValueLabel                                = GetObject<Text>(new IntPtr(p + 0x068), ReversePrism.DataModels.Text.FromPointer); // 0x68 ValueLabel                  ( ModelClassType Text Text Text Pointer )
+            value.M_Field                                   = GetObject<IntField>(new IntPtr(p + 0x070), ReversePrism.DataModels.IntField.FromPointer); // 0x70 M_Field                     ( ModelClassType IntField IntField IntField Pointer )
 
             return value;
         }

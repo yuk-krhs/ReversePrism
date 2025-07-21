@@ -37,6 +37,7 @@ namespace ReversePrism.DataModels
         HomeShop,
         HomeExchange,
         HomeJewel,
+        EventTopMedalExchange,
         Num,
     }
 }

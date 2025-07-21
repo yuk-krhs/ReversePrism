@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Text                                   000186672F10 ModelPrimitiveType string string string String
-    // 018 M_Length                                 0001865F4260 ModelPrimitiveType int int int Int32
-    // 01C M_Position                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 020 M_MatchAnyElementInArray                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 021 M_DryRun                                 000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 M_Text                                   ModelPrimitiveType string string string String
+    // 018 M_Length                                 ModelPrimitiveType int int int Int32
+    // 01C M_Position                               ModelPrimitiveType int int int Int32
+    // 020 M_MatchAnyElementInArray                 ModelPrimitiveType bool bool bool Bool
+    // 021 M_DryRun                                 ModelPrimitiveType bool bool bool Bool
     public partial class JsonParser : DataModel
     {
         public string                                   M_Text                                  { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JsonParser() { Pointer= p0 };
 
-            value.M_Text                                    = GetString(new IntPtr(p + 0x010)); // 02466791A3F0 0x10 M_Text                      ( 000186672F10 ModelPrimitiveType string string string String )
-            value.M_Length                                  = GetInt32(new IntPtr(p + 0x018)); // 02466791A410 0x18 M_Length                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.M_Position                                = GetInt32(new IntPtr(p + 0x01C)); // 02466791A430 0x1C M_Position                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_MatchAnyElementInArray                  = GetBool(new IntPtr(p + 0x020)); // 02466791A450 0x20 M_MatchAnyElementInArray    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_DryRun                                  = GetBool(new IntPtr(p + 0x021)); // 02466791A470 0x21 M_DryRun                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_Text                                    = GetString(new IntPtr(p + 0x010)); // 0x10 M_Text                      ( ModelPrimitiveType string string string String )
+            value.M_Length                                  = GetInt32(new IntPtr(p + 0x018)); // 0x18 M_Length                    ( ModelPrimitiveType int int int Int32 )
+            value.M_Position                                = GetInt32(new IntPtr(p + 0x01C)); // 0x1C M_Position                  ( ModelPrimitiveType int int int Int32 )
+            value.M_MatchAnyElementInArray                  = GetBool(new IntPtr(p + 0x020)); // 0x20 M_MatchAnyElementInArray    ( ModelPrimitiveType bool bool bool Bool )
+            value.M_DryRun                                  = GetBool(new IntPtr(p + 0x021)); // 0x21 M_DryRun                    ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

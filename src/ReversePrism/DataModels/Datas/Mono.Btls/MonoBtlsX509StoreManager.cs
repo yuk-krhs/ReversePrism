@@ -10,11 +10,11 @@ namespace ReversePrism.DataModels
 
     // 000 initialized                              bool IL2CPP_TYPE_BOOLEAN
     // 008 machineTrustedRootPath                   string IL2CPP_TYPE_STRING
-    // 010 MachineIntermediateCAPath                000186672530 ModelPrimitiveType string string string String
-    // 018 MachineUntrustedPath                     000186672530 ModelPrimitiveType string string string String
-    // 020 UserTrustedRootPath                      000186672530 ModelPrimitiveType string string string String
-    // 028 UserIntermediateCAPath                   000186672530 ModelPrimitiveType string string string String
-    // 030 UserUntrustedPath                        000186672530 ModelPrimitiveType string string string String
+    // 010 MachineIntermediateCAPath                ModelPrimitiveType string string string String
+    // 018 MachineUntrustedPath                     ModelPrimitiveType string string string String
+    // 020 UserTrustedRootPath                      ModelPrimitiveType string string string String
+    // 028 UserIntermediateCAPath                   ModelPrimitiveType string string string String
+    // 030 UserUntrustedPath                        ModelPrimitiveType string string string String
     public partial class MonoBtlsX509StoreManager : DataModel
     {
         public string                                   MachineIntermediateCAPath               { get; set; }
@@ -31,11 +31,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MonoBtlsX509StoreManager() { Pointer= p0 };
 
-            value.MachineIntermediateCAPath                 = GetString(new IntPtr(p + 0x010)); // 0246679CBE70 0x10 MachineIntermediateCAPath   ( 000186672530 ModelPrimitiveType string string string String )
-            value.MachineUntrustedPath                      = GetString(new IntPtr(p + 0x018)); // 0246679CBE90 0x18 MachineUntrustedPath        ( 000186672530 ModelPrimitiveType string string string String )
-            value.UserTrustedRootPath                       = GetString(new IntPtr(p + 0x020)); // 0246679CBEB0 0x20 UserTrustedRootPath         ( 000186672530 ModelPrimitiveType string string string String )
-            value.UserIntermediateCAPath                    = GetString(new IntPtr(p + 0x028)); // 0246679CBED0 0x28 UserIntermediateCAPath      ( 000186672530 ModelPrimitiveType string string string String )
-            value.UserUntrustedPath                         = GetString(new IntPtr(p + 0x030)); // 0246679CBEF0 0x30 UserUntrustedPath           ( 000186672530 ModelPrimitiveType string string string String )
+            value.MachineIntermediateCAPath                 = GetString(new IntPtr(p + 0x010)); // 0x10 MachineIntermediateCAPath   ( ModelPrimitiveType string string string String )
+            value.MachineUntrustedPath                      = GetString(new IntPtr(p + 0x018)); // 0x18 MachineUntrustedPath        ( ModelPrimitiveType string string string String )
+            value.UserTrustedRootPath                       = GetString(new IntPtr(p + 0x020)); // 0x20 UserTrustedRootPath         ( ModelPrimitiveType string string string String )
+            value.UserIntermediateCAPath                    = GetString(new IntPtr(p + 0x028)); // 0x28 UserIntermediateCAPath      ( ModelPrimitiveType string string string String )
+            value.UserUntrustedPath                         = GetString(new IntPtr(p + 0x030)); // 0x30 UserUntrustedPath           ( ModelPrimitiveType string string string String )
 
             return value;
         }

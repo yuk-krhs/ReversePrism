@@ -8,21 +8,24 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Id                                       0001865F4260 ModelPrimitiveType int int int Int32
-    // 014 MstSongTypeId                            0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 MstUnitId                                0001865F4260 ModelPrimitiveType int int int Int32
-    // 01C MstSongPositionId                        0001865F4260 ModelPrimitiveType int int int Int32
-    // 020 SortId                                   0001865F4260 ModelPrimitiveType int int int Int32
-    // 024 Bpm                                      0001865F4260 ModelPrimitiveType int int int Int32
-    // 028 IsAdvanceDownload                        0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 029 IsSongParts                              0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 02A IsFocusCamera                            0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 02B Is3D                                     0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 02C Is2D                                     0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 030 PurchaseLink                             000186672F10 ModelPrimitiveType string string string String
-    // 038 PurchaseLinkActiveDate                   0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    // 040 BeginDate                                0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    // 048 SongType                                 00018662C9B0 ModelClassType MstSongType MstSongType MstSongType Pointer
+    // 010 Id                                       ModelPrimitiveType int int int Int32
+    // 014 MstSongTypeId                            ModelPrimitiveType int int int Int32
+    // 018 MstUnitId                                ModelPrimitiveType int int int Int32
+    // 01C MstSongPositionId                        ModelPrimitiveType int int int Int32
+    // 020 SortId                                   ModelPrimitiveType int int int Int32
+    // 024 Bpm                                      ModelPrimitiveType int int int Int32
+    // 028 IsAdvanceDownload                        ModelPrimitiveType bool bool bool Bool
+    // 029 IsSongParts                              ModelPrimitiveType bool bool bool Bool
+    // 02A IsFocusCamera                            ModelPrimitiveType bool bool bool Bool
+    // 02B Is3D                                     ModelPrimitiveType bool bool bool Bool
+    // 02C Is2D                                     ModelPrimitiveType bool bool bool Bool
+    // 02D IsHDR                                    ModelPrimitiveType bool bool bool Bool
+    // 02E IsLDR                                    ModelPrimitiveType bool bool bool Bool
+    // 030 ResultBg                                 ModelPrimitiveType int int int Int32
+    // 038 PurchaseLink                             ModelPrimitiveType string string string String
+    // 040 PurchaseLinkActiveDate                   ModelPrimitiveType DateTime DateTime DateTime DateTime
+    // 048 BeginDate                                ModelPrimitiveType DateTime DateTime DateTime DateTime
+    // 050 SongType                                 ModelClassType MstSongType MstSongType MstSongType Pointer
     public partial class MstSong : DataModel
     {
         public int                                      Id                                      { get; set; }
@@ -36,6 +39,9 @@ namespace ReversePrism.DataModels
         public bool                                     IsFocusCamera                           { get; set; }
         public bool                                     Is3D                                    { get; set; }
         public bool                                     Is2D                                    { get; set; }
+        public bool                                     IsHDR                                   { get; set; }
+        public bool                                     IsLDR                                   { get; set; }
+        public int                                      ResultBg                                { get; set; }
         public string                                   PurchaseLink                            { get; set; }
         public DateTime                                 PurchaseLinkActiveDate                  { get; set; }
         public DateTime                                 BeginDate                               { get; set; }
@@ -49,21 +55,24 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MstSong() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A467F078 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstSongTypeId                             = GetInt32(new IntPtr(p + 0x014)); // 0245A467F098 0x14 MstSongTypeId               ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x018)); // 0245A467F0B8 0x18 MstUnitId                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstSongPositionId                         = GetInt32(new IntPtr(p + 0x01C)); // 0245A467F0D8 0x1C MstSongPositionId           ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.SortId                                    = GetInt32(new IntPtr(p + 0x020)); // 0245A467F0F8 0x20 SortId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Bpm                                       = GetInt32(new IntPtr(p + 0x024)); // 0245A467F118 0x24 Bpm                         ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.IsAdvanceDownload                         = GetBool(new IntPtr(p + 0x028)); // 0245A467F138 0x28 IsAdvanceDownload           ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.IsSongParts                               = GetBool(new IntPtr(p + 0x029)); // 0245A467F158 0x29 IsSongParts                 ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.IsFocusCamera                             = GetBool(new IntPtr(p + 0x02A)); // 0245A467F178 0x2A IsFocusCamera               ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.Is3D                                      = GetBool(new IntPtr(p + 0x02B)); // 0245A467F198 0x2B Is3D                        ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.Is2D                                      = GetBool(new IntPtr(p + 0x02C)); // 0245A467F1B8 0x2C Is2D                        ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.PurchaseLink                              = GetString(new IntPtr(p + 0x030)); // 0245A467F1D8 0x30 PurchaseLink                ( 000186672F10 ModelPrimitiveType string string string String )
-            value.PurchaseLinkActiveDate                    = GetDateTime(new IntPtr(p + 0x038)); // 0245A467F1F8 0x38 PurchaseLinkActiveDate      ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x040)); // 0245A467F218 0x40 BeginDate                   ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.SongType                                  = GetObject<MstSongType>(new IntPtr(p + 0x048), ReversePrism.DataModels.MstSongType.FromPointer); // 0245A467F238 0x48 SongType                    ( 00018662C9B0 ModelClassType MstSongType MstSongType MstSongType Pointer )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0x10 Id                          ( ModelPrimitiveType int int int Int32 )
+            value.MstSongTypeId                             = GetInt32(new IntPtr(p + 0x014)); // 0x14 MstSongTypeId               ( ModelPrimitiveType int int int Int32 )
+            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstUnitId                   ( ModelPrimitiveType int int int Int32 )
+            value.MstSongPositionId                         = GetInt32(new IntPtr(p + 0x01C)); // 0x1C MstSongPositionId           ( ModelPrimitiveType int int int Int32 )
+            value.SortId                                    = GetInt32(new IntPtr(p + 0x020)); // 0x20 SortId                      ( ModelPrimitiveType int int int Int32 )
+            value.Bpm                                       = GetInt32(new IntPtr(p + 0x024)); // 0x24 Bpm                         ( ModelPrimitiveType int int int Int32 )
+            value.IsAdvanceDownload                         = GetBool(new IntPtr(p + 0x028)); // 0x28 IsAdvanceDownload           ( ModelPrimitiveType bool bool bool Bool )
+            value.IsSongParts                               = GetBool(new IntPtr(p + 0x029)); // 0x29 IsSongParts                 ( ModelPrimitiveType bool bool bool Bool )
+            value.IsFocusCamera                             = GetBool(new IntPtr(p + 0x02A)); // 0x2A IsFocusCamera               ( ModelPrimitiveType bool bool bool Bool )
+            value.Is3D                                      = GetBool(new IntPtr(p + 0x02B)); // 0x2B Is3D                        ( ModelPrimitiveType bool bool bool Bool )
+            value.Is2D                                      = GetBool(new IntPtr(p + 0x02C)); // 0x2C Is2D                        ( ModelPrimitiveType bool bool bool Bool )
+            value.IsHDR                                     = GetBool(new IntPtr(p + 0x02D)); // 0x2D IsHDR                       ( ModelPrimitiveType bool bool bool Bool )
+            value.IsLDR                                     = GetBool(new IntPtr(p + 0x02E)); // 0x2E IsLDR                       ( ModelPrimitiveType bool bool bool Bool )
+            value.ResultBg                                  = GetInt32(new IntPtr(p + 0x030)); // 0x30 ResultBg                    ( ModelPrimitiveType int int int Int32 )
+            value.PurchaseLink                              = GetString(new IntPtr(p + 0x038)); // 0x38 PurchaseLink                ( ModelPrimitiveType string string string String )
+            value.PurchaseLinkActiveDate                    = GetDateTime(new IntPtr(p + 0x040)); // 0x40 PurchaseLinkActiveDate      ( ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x048)); // 0x48 BeginDate                   ( ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.SongType                                  = GetObject<MstSongType>(new IntPtr(p + 0x050), ReversePrism.DataModels.MstSongType.FromPointer); // 0x50 SongType                    ( ModelClassType MstSongType MstSongType MstSongType Pointer )
 
             return value;
         }

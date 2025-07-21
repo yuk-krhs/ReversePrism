@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Pool                                   000185CED1B8 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer
-    // 018 M_Current                                0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 M_Pool                                   ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer
+    // 018 M_Current                                ModelPrimitiveType int int int Int32
     public partial class TargetPool : DataModel
     {
         public List<int>?                               M_Pool                                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TargetPool() { Pointer= p0 };
 
-            value.M_Pool                                    = GetInt32List(new IntPtr(p + 0x010)); // 0245A657FA10 0x10 M_Pool                      ( 000185CED1B8 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
-            value.M_Current                                 = GetInt32(new IntPtr(p + 0x018)); // 0245A657FA30 0x18 M_Current                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_Pool                                    = GetInt32List(new IntPtr(p + 0x010)); // 0x10 M_Pool                      ( ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
+            value.M_Current                                 = GetInt32(new IntPtr(p + 0x018)); // 0x18 M_Current                   ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

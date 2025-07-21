@@ -8,13 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 UniqueDownloadId                         0001865F2F90 ModelPrimitiveType int int int Int32
-    // 018 Url                                      000186671BA0 ModelPrimitiveType string string string String
-    // 020 Path                                     000186671BA0 ModelPrimitiveType string string string String
-    // 028 Size                                     00018669BB50 ModelPrimitiveType ulong ulong ulong UInt64
-    // 030 Checksum                                 00018669BB50 ModelPrimitiveType ulong ulong ulong UInt64
-    // 038 Strategy                                 0001865F2F90 ModelPrimitiveType int int int Int32
-    // 03C Priority                                 0001865F2F90 ModelPrimitiveType int int int Int32
+    // 010 UniqueDownloadId                         ModelPrimitiveType int int int Int32
+    // 018 Url                                      ModelPrimitiveType string string string String
+    // 020 Path                                     ModelPrimitiveType string string string String
+    // 028 Size                                     ModelPrimitiveType ulong ulong ulong UInt64
+    // 030 Checksum                                 ModelPrimitiveType ulong ulong ulong UInt64
+    // 038 Strategy                                 ModelPrimitiveType int int int Int32
+    // 03C Priority                                 ModelPrimitiveType int int int Int32
     public partial class Body : DataModel
     {
         public int                                      UniqueDownloadId                        { get; set; }
@@ -33,13 +33,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Body() { Pointer= p0 };
 
-            value.UniqueDownloadId                          = GetInt32(new IntPtr(p + 0x010)); // 02466B575620 0x10 UniqueDownloadId            ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.Url                                       = GetString(new IntPtr(p + 0x018)); // 02466B575640 0x18 Url                         ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.Path                                      = GetString(new IntPtr(p + 0x020)); // 02466B575660 0x20 Path                        ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.Size                                      = GetUInt64(new IntPtr(p + 0x028)); // 02466B575680 0x28 Size                        ( 00018669BB50 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.Checksum                                  = GetUInt64(new IntPtr(p + 0x030)); // 02466B5756A0 0x30 Checksum                    ( 00018669BB50 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.Strategy                                  = GetInt32(new IntPtr(p + 0x038)); // 02466B5756C0 0x38 Strategy                    ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.Priority                                  = GetInt32(new IntPtr(p + 0x03C)); // 02466B5756E0 0x3C Priority                    ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.UniqueDownloadId                          = GetInt32(new IntPtr(p + 0x010)); // 0x10 UniqueDownloadId            ( ModelPrimitiveType int int int Int32 )
+            value.Url                                       = GetString(new IntPtr(p + 0x018)); // 0x18 Url                         ( ModelPrimitiveType string string string String )
+            value.Path                                      = GetString(new IntPtr(p + 0x020)); // 0x20 Path                        ( ModelPrimitiveType string string string String )
+            value.Size                                      = GetUInt64(new IntPtr(p + 0x028)); // 0x28 Size                        ( ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.Checksum                                  = GetUInt64(new IntPtr(p + 0x030)); // 0x30 Checksum                    ( ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.Strategy                                  = GetInt32(new IntPtr(p + 0x038)); // 0x38 Strategy                    ( ModelPrimitiveType int int int Int32 )
+            value.Priority                                  = GetInt32(new IntPtr(p + 0x03C)); // 0x3C Priority                    ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

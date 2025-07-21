@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Model                                    0001866BAE90 ModelClassType HomeBannerModel HomeBannerModel HomeBannerModel Pointer
+    // 010 Model                                    ModelClassType HomeBannerModel HomeBannerModel HomeBannerModel Pointer
     public partial class HomeBannerViewModel : DataModel
     {
         public HomeBannerModel?                         Model                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HomeBannerViewModel() { Pointer= p0 };
 
-            value.Model                                     = GetObject<HomeBannerModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.HomeBannerModel.FromPointer); // 0245A5EAC8C8 0x10 Model                       ( 0001866BAE90 ModelClassType HomeBannerModel HomeBannerModel HomeBannerModel Pointer )
+            value.Model                                     = GetObject<HomeBannerModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.HomeBannerModel.FromPointer); // 0x10 Model                       ( ModelClassType HomeBannerModel HomeBannerModel HomeBannerModel Pointer )
 
             return value;
         }

@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Type                                     00018662B8A0 ModelEnumType TelemetryMetricTypes TelemetryMetricTypes TelemetryMetricTypes Int32
-    // 018 Name                                     000186671BA0 ModelPrimitiveType string string string String
-    // 020 TimeSeconds                              0001865C2BA0 ModelPrimitiveType double double double Double
+    // 010 Type                                     ModelEnumType TelemetryMetricTypes TelemetryMetricTypes TelemetryMetricTypes Int32
+    // 018 Name                                     ModelPrimitiveType string string string String
+    // 020 TimeSeconds                              ModelPrimitiveType double double double Double
     public partial class TelemetryMetricParams : DataModel
     {
         public TelemetryMetricTypes                     Type                                    { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TelemetryMetricParams() { Pointer= p0 };
 
-            value.Type                                      = (TelemetryMetricTypes)GetInt32(new IntPtr(p + 0x010)); // 0245A68F3E20 0x10 Type                        ( 00018662B8A0 ModelEnumType TelemetryMetricTypes TelemetryMetricTypes TelemetryMetricTypes Int32 )
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0245A68F3E40 0x18 Name                        ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.TimeSeconds                               = GetDouble(new IntPtr(p + 0x020)); // 0245A68F3E60 0x20 TimeSeconds                 ( 0001865C2BA0 ModelPrimitiveType double double double Double )
+            value.Type                                      = (TelemetryMetricTypes)GetInt32(new IntPtr(p + 0x010)); // 0x10 Type                        ( ModelEnumType TelemetryMetricTypes TelemetryMetricTypes TelemetryMetricTypes Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0x18 Name                        ( ModelPrimitiveType string string string String )
+            value.TimeSeconds                               = GetDouble(new IntPtr(p + 0x020)); // 0x20 TimeSeconds                 ( ModelPrimitiveType double double double Double )
 
             return value;
         }

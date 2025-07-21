@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CacheStartScheduleTrainingReply          000186654D60 ModelClassType IStartScheduleTrainingReply IStartScheduleTrainingReply IStartScheduleTrainingReply Pointer
+    // 010 CacheStartScheduleTrainingReply          ModelClassType IStartScheduleTrainingReply IStartScheduleTrainingReply IStartScheduleTrainingReply Pointer
     public partial class StartTraningModel : DataModel
     {
         public IStartScheduleTrainingReply?             CacheStartScheduleTrainingReply         { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StartTraningModel() { Pointer= p0 };
 
-            value.CacheStartScheduleTrainingReply           = GetObject<IStartScheduleTrainingReply>(new IntPtr(p + 0x010), ReversePrism.DataModels.IStartScheduleTrainingReply.FromPointer); // 02466663F508 0x10 CacheStartScheduleTrainingReply ( 000186654D60 ModelClassType IStartScheduleTrainingReply IStartScheduleTrainingReply IStartScheduleTrainingReply Pointer )
+            value.CacheStartScheduleTrainingReply           = GetObject<IStartScheduleTrainingReply>(new IntPtr(p + 0x010), ReversePrism.DataModels.IStartScheduleTrainingReply.FromPointer); // 0x10 CacheStartScheduleTrainingReply ( ModelClassType IStartScheduleTrainingReply IStartScheduleTrainingReply IStartScheduleTrainingReply Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Expression                               0001865FCF10 ModelClassType QueryExpression QueryExpression QueryExpression Pointer
+    // 010 Expression                               ModelClassType QueryExpression QueryExpression QueryExpression Pointer
     public partial class QueryScanFilter : DataModel
     {
         public QueryExpression?                         Expression                              { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new QueryScanFilter() { Pointer= p0 };
 
-            value.Expression                                = GetObject<QueryExpression>(new IntPtr(p + 0x010), ReversePrism.DataModels.QueryExpression.FromPointer); // 0246688A69D0 0x10 Expression                  ( 0001865FCF10 ModelClassType QueryExpression QueryExpression QueryExpression Pointer )
+            value.Expression                                = GetObject<QueryExpression>(new IntPtr(p + 0x010), ReversePrism.DataModels.QueryExpression.FromPointer); // 0x10 Expression                  ( ModelClassType QueryExpression QueryExpression QueryExpression Pointer )
 
             return value;
         }

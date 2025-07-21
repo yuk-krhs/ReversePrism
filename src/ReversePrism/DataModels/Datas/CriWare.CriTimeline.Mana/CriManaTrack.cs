@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 0A0 FrameSync                                000186595960 ModelPrimitiveType bool bool bool Bool
-    // 0A4 Guid                                     0001865DC840 ModelEnumType Guid Guid Guid Int32
+    // 0A0 FrameSync                                ModelPrimitiveType bool bool bool Bool
+    // 0A4 Guid                                     ModelEnumType Guid Guid Guid Int32
     // 000 bindDict                                 Dictionary`2<int, Guid> IL2CPP_TYPE_GENERICINST
     public partial class CriManaTrack : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CriManaTrack() { Pointer= p0 };
 
-            value.FrameSync                                 = GetBool(new IntPtr(p + 0x0A0)); // 02466AD51678 0xA0 FrameSync                   ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Guid                                      = (Guid)GetInt32(new IntPtr(p + 0x0A4)); // 02466AD51698 0xA4 Guid                        ( 0001865DC840 ModelEnumType Guid Guid Guid Int32 )
+            value.FrameSync                                 = GetBool(new IntPtr(p + 0x0A0)); // 0xA0 FrameSync                   ( ModelPrimitiveType bool bool bool Bool )
+            value.Guid                                      = (Guid)GetInt32(new IntPtr(p + 0x0A4)); // 0xA4 Guid                        ( ModelEnumType Guid Guid Guid Int32 )
 
             return value;
         }

@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 IncludeInSchema                          000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 018 Ns                                       000186671910 ModelPrimitiveType string string string String
-    // 020 TypeName                                 000186671910 ModelPrimitiveType string string string String
+    // 010 IncludeInSchema                          ModelPrimitiveType bool bool bool Bool
+    // 018 Ns                                       ModelPrimitiveType string string string String
+    // 020 TypeName                                 ModelPrimitiveType string string string String
     public partial class XmlTypeAttribute : DataModel
     {
         public bool                                     IncludeInSchema                         { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlTypeAttribute() { Pointer= p0 };
 
-            value.IncludeInSchema                           = GetBool(new IntPtr(p + 0x010)); // 0246675186E0 0x10 IncludeInSchema             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Ns                                        = GetString(new IntPtr(p + 0x018)); // 024667518700 0x18 Ns                          ( 000186671910 ModelPrimitiveType string string string String )
-            value.TypeName                                  = GetString(new IntPtr(p + 0x020)); // 024667518720 0x20 TypeName                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.IncludeInSchema                           = GetBool(new IntPtr(p + 0x010)); // 0x10 IncludeInSchema             ( ModelPrimitiveType bool bool bool Bool )
+            value.Ns                                        = GetString(new IntPtr(p + 0x018)); // 0x18 Ns                          ( ModelPrimitiveType string string string String )
+            value.TypeName                                  = GetString(new IntPtr(p + 0x020)); // 0x20 TypeName                    ( ModelPrimitiveType string string string String )
 
             return value;
         }

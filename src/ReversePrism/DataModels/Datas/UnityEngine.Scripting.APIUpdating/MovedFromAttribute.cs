@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Data                                     000186655AB0 ModelEnumType MovedFromAttributeData MovedFromAttributeData MovedFromAttributeData Int32
+    // 010 Data                                     ModelEnumType MovedFromAttributeData MovedFromAttributeData MovedFromAttributeData Int32
     public partial class MovedFromAttribute : DataModel
     {
         public MovedFromAttributeData                   Data                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MovedFromAttribute() { Pointer= p0 };
 
-            value.Data                                      = (MovedFromAttributeData)GetInt32(new IntPtr(p + 0x010)); // 0245A4FAABD8 0x10 Data                        ( 000186655AB0 ModelEnumType MovedFromAttributeData MovedFromAttributeData MovedFromAttributeData Int32 )
+            value.Data                                      = (MovedFromAttributeData)GetInt32(new IntPtr(p + 0x010)); // 0x10 Data                        ( ModelEnumType MovedFromAttributeData MovedFromAttributeData MovedFromAttributeData Int32 )
 
             return value;
         }

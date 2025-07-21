@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<SetIdolBaseCostumeReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 IdolBaseFieldNumber                      int IL2CPP_TYPE_I4
-    // 018 IdolBase                                 0001866AD5B0 ModelClassType IdolBaseStatus IdolBaseStatus IdolBaseStatus Pointer
+    // 018 IdolBase                                 ModelClassType IdolBaseStatus IdolBaseStatus IdolBaseStatus Pointer
     public partial class SetIdolBaseCostumeReply : DataModel
     {
         public IdolBaseStatus?                          IdolBase                                { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SetIdolBaseCostumeReply() { Pointer= p0 };
 
-            value.IdolBase                                  = GetObject<IdolBaseStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IdolBaseStatus.FromPointer); // 024662072770 0x18 IdolBase                    ( 0001866AD5B0 ModelClassType IdolBaseStatus IdolBaseStatus IdolBaseStatus Pointer )
+            value.IdolBase                                  = GetObject<IdolBaseStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IdolBaseStatus.FromPointer); // 0x18 IdolBase                    ( ModelClassType IdolBaseStatus IdolBaseStatus IdolBaseStatus Pointer )
 
             return value;
         }

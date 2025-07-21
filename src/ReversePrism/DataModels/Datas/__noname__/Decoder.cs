@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 030 LastByte                                 0001865F2F90 ModelPrimitiveType int int int Int32
+    // 030 LastByte                                 ModelPrimitiveType int int int Int32
     // 034 lastChar                                 char IL2CPP_TYPE_CHAR
     public partial class Decoder : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Decoder() { Pointer= p0 };
 
-            value.LastByte                                  = GetInt32(new IntPtr(p + 0x030)); // 024666BDDCE0 0x30 LastByte                    ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.LastByte                                  = GetInt32(new IntPtr(p + 0x030)); // 0x30 LastByte                    ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

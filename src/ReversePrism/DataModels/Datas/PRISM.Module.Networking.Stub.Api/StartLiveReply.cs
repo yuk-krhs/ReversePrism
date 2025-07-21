@@ -11,22 +11,19 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<StartLiveReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 StartTypeFieldNumber                     int IL2CPP_TYPE_I4
-    // 018 StartType                                000186582F90 ModelEnumType LiveStartType LiveStartType LiveStartType Int32
+    // 018 StartType                                ModelEnumType LiveStartType LiveStartType LiveStartType Int32
     // 000 AutoLiveFieldNumber                      int IL2CPP_TYPE_I4
-    // 020 AutoLive                                 00018656B490 ModelClassType StaminaStatus StaminaStatus StaminaStatus Pointer
+    // 020 AutoLive                                 ModelClassType StaminaStatus StaminaStatus StaminaStatus Pointer
     // 000 SkipLiveFieldNumber                      int IL2CPP_TYPE_I4
-    // 028 SkipLive                                 00018656B490 ModelClassType StaminaStatus StaminaStatus StaminaStatus Pointer
+    // 028 SkipLive                                 ModelClassType StaminaStatus StaminaStatus StaminaStatus Pointer
     // 000 LiveBonusFieldNumber                     int IL2CPP_TYPE_I4
-    // 030 LiveBonus                                00018656B490 ModelClassType StaminaStatus StaminaStatus StaminaStatus Pointer
-    // 000 LiveTokenFieldNumber                     int IL2CPP_TYPE_I4
-    // 038 LiveToken                                000186671910 ModelPrimitiveType string string string String
+    // 030 LiveBonus                                ModelClassType StaminaStatus StaminaStatus StaminaStatus Pointer
     public partial class StartLiveReply : DataModel
     {
         public LiveStartType                            StartType                               { get; set; }
         public StaminaStatus?                           AutoLive                                { get; set; }
         public StaminaStatus?                           SkipLive                                { get; set; }
         public StaminaStatus?                           LiveBonus                               { get; set; }
-        public string                                   LiveToken                               { get; set; }
 
         public static StartLiveReply? FromPointer(IntPtr p0)
         {
@@ -36,11 +33,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StartLiveReply() { Pointer= p0 };
 
-            value.StartType                                 = (LiveStartType)GetInt32(new IntPtr(p + 0x018)); // 0246621AA9F0 0x18 StartType                   ( 000186582F90 ModelEnumType LiveStartType LiveStartType LiveStartType Int32 )
-            value.AutoLive                                  = GetObject<StaminaStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.StaminaStatus.FromPointer); // 0246621AAA30 0x20 AutoLive                    ( 00018656B490 ModelClassType StaminaStatus StaminaStatus StaminaStatus Pointer )
-            value.SkipLive                                  = GetObject<StaminaStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.StaminaStatus.FromPointer); // 0246621AAA70 0x28 SkipLive                    ( 00018656B490 ModelClassType StaminaStatus StaminaStatus StaminaStatus Pointer )
-            value.LiveBonus                                 = GetObject<StaminaStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.StaminaStatus.FromPointer); // 0246621AAAB0 0x30 LiveBonus                   ( 00018656B490 ModelClassType StaminaStatus StaminaStatus StaminaStatus Pointer )
-            value.LiveToken                                 = GetString(new IntPtr(p + 0x038)); // 0246621AAAF0 0x38 LiveToken                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.StartType                                 = (LiveStartType)GetInt32(new IntPtr(p + 0x018)); // 0x18 StartType                   ( ModelEnumType LiveStartType LiveStartType LiveStartType Int32 )
+            value.AutoLive                                  = GetObject<StaminaStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.StaminaStatus.FromPointer); // 0x20 AutoLive                    ( ModelClassType StaminaStatus StaminaStatus StaminaStatus Pointer )
+            value.SkipLive                                  = GetObject<StaminaStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.StaminaStatus.FromPointer); // 0x28 SkipLive                    ( ModelClassType StaminaStatus StaminaStatus StaminaStatus Pointer )
+            value.LiveBonus                                 = GetObject<StaminaStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.StaminaStatus.FromPointer); // 0x30 LiveBonus                   ( ModelClassType StaminaStatus StaminaStatus StaminaStatus Pointer )
 
             return value;
         }

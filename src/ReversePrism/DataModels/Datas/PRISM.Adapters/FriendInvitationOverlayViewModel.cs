@@ -8,14 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 MstFrinedInvitationId                    0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 MyInvitationCode                         000186671910 ModelPrimitiveType string string string String
-    // 020 UseInvitationCode                        000186671910 ModelPrimitiveType string string string String
-    // 028 IsUseInvitationCode                      0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 030 OpenTime                                 000185D00B98 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
-    // 040 CloseTime                                000185D00B98 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
-    // 050 MyMission                                000186519EF0 ModelClassType IFriendInvitationMissionStatus IFriendInvitationMissionStatus IFriendInvitationMissionStatus Pointer
-    // 058 FriendMissions                           000185CE39E8 ModelClassListType List`1<IFriendInvitationMissionStatus> List`1<IFriendInvitationMissionStatus> List<IFriendInvitationMissionStatus> Pointer
+    // 010 MstFrinedInvitationId                    ModelPrimitiveType int int int Int32
+    // 018 MyInvitationCode                         ModelPrimitiveType string string string String
+    // 020 UseInvitationCode                        ModelPrimitiveType string string string String
+    // 028 IsUseInvitationCode                      ModelPrimitiveType bool bool bool Bool
+    // 030 OpenTime                                 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
+    // 040 CloseTime                                ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
+    // 050 MyMission                                ModelClassType IFriendInvitationMissionStatus IFriendInvitationMissionStatus IFriendInvitationMissionStatus Pointer
+    // 058 FriendMissions                           ModelClassListType List`1<IFriendInvitationMissionStatus> List`1<IFriendInvitationMissionStatus> List<IFriendInvitationMissionStatus> Pointer
     public partial class FriendInvitationOverlayViewModel : DataModel
     {
         public int                                      MstFrinedInvitationId                   { get; set; }
@@ -35,14 +35,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FriendInvitationOverlayViewModel() { Pointer= p0 };
 
-            value.MstFrinedInvitationId                     = GetInt32(new IntPtr(p + 0x010)); // 024666258FD0 0x10 MstFrinedInvitationId       ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MyInvitationCode                          = GetString(new IntPtr(p + 0x018)); // 024666258FF0 0x18 MyInvitationCode            ( 000186671910 ModelPrimitiveType string string string String )
-            value.UseInvitationCode                         = GetString(new IntPtr(p + 0x020)); // 024666259010 0x20 UseInvitationCode           ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsUseInvitationCode                       = GetBool(new IntPtr(p + 0x028)); // 024666259030 0x28 IsUseInvitationCode         ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.OpenTime                                  = GetDateTime(new IntPtr(p + 0x030)); // 024666259050 0x30 OpenTime                    ( 000185D00B98 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.CloseTime                                 = GetDateTime(new IntPtr(p + 0x040)); // 024666259070 0x40 CloseTime                   ( 000185D00B98 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.MyMission                                 = GetObject<IFriendInvitationMissionStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.IFriendInvitationMissionStatus.FromPointer); // 024666259090 0x50 MyMission                   ( 000186519EF0 ModelClassType IFriendInvitationMissionStatus IFriendInvitationMissionStatus IFriendInvitationMissionStatus Pointer )
-            value.FriendMissions                            = GetObjectList<IFriendInvitationMissionStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.IFriendInvitationMissionStatus.FromPointer); // 0246662590B0 0x58 FriendMissions              ( 000185CE39E8 ModelClassListType List`1<IFriendInvitationMissionStatus> List`1<IFriendInvitationMissionStatus> List<IFriendInvitationMissionStatus> Pointer )
+            value.MstFrinedInvitationId                     = GetInt32(new IntPtr(p + 0x010)); // 0x10 MstFrinedInvitationId       ( ModelPrimitiveType int int int Int32 )
+            value.MyInvitationCode                          = GetString(new IntPtr(p + 0x018)); // 0x18 MyInvitationCode            ( ModelPrimitiveType string string string String )
+            value.UseInvitationCode                         = GetString(new IntPtr(p + 0x020)); // 0x20 UseInvitationCode           ( ModelPrimitiveType string string string String )
+            value.IsUseInvitationCode                       = GetBool(new IntPtr(p + 0x028)); // 0x28 IsUseInvitationCode         ( ModelPrimitiveType bool bool bool Bool )
+            value.OpenTime                                  = GetDateTime(new IntPtr(p + 0x030)); // 0x30 OpenTime                    ( ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.CloseTime                                 = GetDateTime(new IntPtr(p + 0x040)); // 0x40 CloseTime                   ( ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.MyMission                                 = GetObject<IFriendInvitationMissionStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.IFriendInvitationMissionStatus.FromPointer); // 0x50 MyMission                   ( ModelClassType IFriendInvitationMissionStatus IFriendInvitationMissionStatus IFriendInvitationMissionStatus Pointer )
+            value.FriendMissions                            = GetObjectList<IFriendInvitationMissionStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.IFriendInvitationMissionStatus.FromPointer); // 0x58 FriendMissions              ( ModelClassListType List`1<IFriendInvitationMissionStatus> List`1<IFriendInvitationMissionStatus> List<IFriendInvitationMissionStatus> Pointer )
 
             return value;
         }

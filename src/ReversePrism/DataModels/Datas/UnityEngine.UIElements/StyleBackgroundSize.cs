@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Value                                  0001865910E0 ModelEnumType BackgroundSize BackgroundSize BackgroundSize Int32
-    // 024 M_Keyword                                0001865C8070 ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32
+    // 010 M_Value                                  ModelEnumType BackgroundSize BackgroundSize BackgroundSize Int32
+    // 024 M_Keyword                                ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32
     public partial class StyleBackgroundSize : DataModel
     {
         public BackgroundSize                           M_Value                                 { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StyleBackgroundSize() { Pointer= p0 };
 
-            value.M_Value                                   = (BackgroundSize)GetInt32(new IntPtr(p + 0x010)); // 0245A67AF390 0x10 M_Value                     ( 0001865910E0 ModelEnumType BackgroundSize BackgroundSize BackgroundSize Int32 )
-            value.M_Keyword                                 = (StyleKeyword)GetInt32(new IntPtr(p + 0x024)); // 0245A67AF3B0 0x24 M_Keyword                   ( 0001865C8070 ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32 )
+            value.M_Value                                   = (BackgroundSize)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_Value                     ( ModelEnumType BackgroundSize BackgroundSize BackgroundSize Int32 )
+            value.M_Keyword                                 = (StyleKeyword)GetInt32(new IntPtr(p + 0x024)); // 0x24 M_Keyword                   ( ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32 )
 
             return value;
         }

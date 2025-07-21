@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 EditorAiPatternSetList                   000185CD84B8 ModelClassListType List`1<EditorAiPatternSet> List`1<EditorAiPatternSet> List<EditorAiPatternSet> Pointer
+    // 010 EditorAiPatternSetList                   ModelClassListType List`1<EditorAiPatternSet> List`1<EditorAiPatternSet> List<EditorAiPatternSet> Pointer
     public partial class EditorAPatternSetList : DataModel
     {
         public List<EditorAiPatternSet>?                EditorAiPatternSetList                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EditorAPatternSetList() { Pointer= p0 };
 
-            value.EditorAiPatternSetList                    = GetObjectList<EditorAiPatternSet>(new IntPtr(p + 0x010), ReversePrism.DataModels.EditorAiPatternSet.FromPointer); // 024665B0E648 0x10 EditorAiPatternSetList      ( 000185CD84B8 ModelClassListType List`1<EditorAiPatternSet> List`1<EditorAiPatternSet> List<EditorAiPatternSet> Pointer )
+            value.EditorAiPatternSetList                    = GetObjectList<EditorAiPatternSet>(new IntPtr(p + 0x010), ReversePrism.DataModels.EditorAiPatternSet.FromPointer); // 0x10 EditorAiPatternSetList      ( ModelClassListType List`1<EditorAiPatternSet> List`1<EditorAiPatternSet> List<EditorAiPatternSet> Pointer )
 
             return value;
         }

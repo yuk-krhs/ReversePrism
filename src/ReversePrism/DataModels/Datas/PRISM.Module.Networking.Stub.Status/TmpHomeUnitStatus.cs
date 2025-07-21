@@ -12,10 +12,10 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 HomeUnitIdolListFieldNumber              int IL2CPP_TYPE_I4
     // 008 _repeated_homeUnitIdolList_codec         FieldCodec`1<TmpHomeUnitIdolStatus> IL2CPP_TYPE_GENERICINST
-    // 018 HomeUnitIdolList                         000185CF5288 ModelClassListType RepeatedField`1<TmpHomeUnitIdolStatus> RepeatedField`1<TmpHomeUnitIdolStatus> List<TmpHomeUnitIdolStatus> Pointer
+    // 018 HomeUnitIdolList                         ModelClassListType RepeatedField`1<TmpHomeUnitIdolStatus> RepeatedField`1<TmpHomeUnitIdolStatus> List<TmpHomeUnitIdolStatus> Pointer
     // 000 VoiceMotionListFieldNumber               int IL2CPP_TYPE_I4
     // 010 _repeated_voiceMotionList_codec          FieldCodec`1<HomeVoiceMotionStatus> IL2CPP_TYPE_GENERICINST
-    // 020 VoiceMotionList                          000185CDEAD8 ModelClassListType RepeatedField`1<HomeVoiceMotionStatus> RepeatedField`1<HomeVoiceMotionStatus> List<HomeVoiceMotionStatus> Pointer
+    // 020 VoiceMotionList                          ModelClassListType RepeatedField`1<HomeVoiceMotionStatus> RepeatedField`1<HomeVoiceMotionStatus> List<HomeVoiceMotionStatus> Pointer
     public partial class TmpHomeUnitStatus : DataModel
     {
         public List<TmpHomeUnitIdolStatus>?             HomeUnitIdolList                        { get; set; }
@@ -29,8 +29,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TmpHomeUnitStatus() { Pointer= p0 };
 
-            value.HomeUnitIdolList                          = GetObjectList<TmpHomeUnitIdolStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.TmpHomeUnitIdolStatus.FromPointer); // 0246620300D0 0x18 HomeUnitIdolList            ( 000185CF5288 ModelClassListType RepeatedField`1<TmpHomeUnitIdolStatus> RepeatedField`1<TmpHomeUnitIdolStatus> List<TmpHomeUnitIdolStatus> Pointer )
-            value.VoiceMotionList                           = GetObjectList<HomeVoiceMotionStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.HomeVoiceMotionStatus.FromPointer); // 024662030130 0x20 VoiceMotionList             ( 000185CDEAD8 ModelClassListType RepeatedField`1<HomeVoiceMotionStatus> RepeatedField`1<HomeVoiceMotionStatus> List<HomeVoiceMotionStatus> Pointer )
+            value.HomeUnitIdolList                          = GetObjectList<TmpHomeUnitIdolStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.TmpHomeUnitIdolStatus.FromPointer); // 0x18 HomeUnitIdolList            ( ModelClassListType RepeatedField`1<TmpHomeUnitIdolStatus> RepeatedField`1<TmpHomeUnitIdolStatus> List<TmpHomeUnitIdolStatus> Pointer )
+            value.VoiceMotionList                           = GetObjectList<HomeVoiceMotionStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.HomeVoiceMotionStatus.FromPointer); // 0x20 VoiceMotionList             ( ModelClassListType RepeatedField`1<HomeVoiceMotionStatus> RepeatedField`1<HomeVoiceMotionStatus> List<HomeVoiceMotionStatus> Pointer )
 
             return value;
         }

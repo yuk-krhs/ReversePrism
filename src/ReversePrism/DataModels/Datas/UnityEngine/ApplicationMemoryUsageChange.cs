@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 MemoryUsage                              0001866D0360 ModelEnumType ApplicationMemoryUsage ApplicationMemoryUsage ApplicationMemoryUsage Int32
+    // 010 MemoryUsage                              ModelEnumType ApplicationMemoryUsage ApplicationMemoryUsage ApplicationMemoryUsage Int32
     public partial class ApplicationMemoryUsageChange : DataModel
     {
         public ApplicationMemoryUsage                   MemoryUsage                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ApplicationMemoryUsageChange() { Pointer= p0 };
 
-            value.MemoryUsage                               = (ApplicationMemoryUsage)GetInt32(new IntPtr(p + 0x010)); // 0245A6868CB0 0x10 MemoryUsage                 ( 0001866D0360 ModelEnumType ApplicationMemoryUsage ApplicationMemoryUsage ApplicationMemoryUsage Int32 )
+            value.MemoryUsage                               = (ApplicationMemoryUsage)GetInt32(new IntPtr(p + 0x010)); // 0x10 MemoryUsage                 ( ModelEnumType ApplicationMemoryUsage ApplicationMemoryUsage ApplicationMemoryUsage Int32 )
 
             return value;
         }

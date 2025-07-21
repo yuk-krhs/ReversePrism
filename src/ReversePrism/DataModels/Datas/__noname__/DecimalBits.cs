@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Flags                                    0001865F36C0 ModelPrimitiveType int int int Int32
-    // 014 Hi                                       0001865F36C0 ModelPrimitiveType int int int Int32
-    // 018 Lo                                       0001865F36C0 ModelPrimitiveType int int int Int32
-    // 01C Mid                                      0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 Flags                                    ModelPrimitiveType int int int Int32
+    // 014 Hi                                       ModelPrimitiveType int int int Int32
+    // 018 Lo                                       ModelPrimitiveType int int int Int32
+    // 01C Mid                                      ModelPrimitiveType int int int Int32
     public partial class DecimalBits : DataModel
     {
         public int                                      Flags                                   { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DecimalBits() { Pointer= p0 };
 
-            value.Flags                                     = GetInt32(new IntPtr(p + 0x010)); // 02466AB0E210 0x10 Flags                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Hi                                        = GetInt32(new IntPtr(p + 0x014)); // 02466AB0E230 0x14 Hi                          ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Lo                                        = GetInt32(new IntPtr(p + 0x018)); // 02466AB0E250 0x18 Lo                          ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Mid                                       = GetInt32(new IntPtr(p + 0x01C)); // 02466AB0E270 0x1C Mid                         ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Flags                                     = GetInt32(new IntPtr(p + 0x010)); // 0x10 Flags                       ( ModelPrimitiveType int int int Int32 )
+            value.Hi                                        = GetInt32(new IntPtr(p + 0x014)); // 0x14 Hi                          ( ModelPrimitiveType int int int Int32 )
+            value.Lo                                        = GetInt32(new IntPtr(p + 0x018)); // 0x18 Lo                          ( ModelPrimitiveType int int int Int32 )
+            value.Mid                                       = GetInt32(new IntPtr(p + 0x01C)); // 0x1C Mid                         ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

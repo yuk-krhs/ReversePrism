@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 SubSequences                             000185B8A160 ModelClassListType ITutorialSequence[] ITutorialSequence[] List<ITutorialSequence> Pointer
+    // 010 SubSequences                             ModelClassListType ITutorialSequence[] ITutorialSequence[] List<ITutorialSequence> Pointer
     public partial class ParallelSequence : DataModel
     {
         public List<ITutorialSequence>?                 SubSequences                            { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ParallelSequence() { Pointer= p0 };
 
-            value.SubSequences                              = GetObjectList<ITutorialSequence>(new IntPtr(p + 0x010), ReversePrism.DataModels.ITutorialSequence.FromPointer); // 02466BC97478 0x10 SubSequences                ( 000185B8A160 ModelClassListType ITutorialSequence[] ITutorialSequence[] List<ITutorialSequence> Pointer )
+            value.SubSequences                              = GetObjectList<ITutorialSequence>(new IntPtr(p + 0x010), ReversePrism.DataModels.ITutorialSequence.FromPointer); // 0x10 SubSequences                ( ModelClassListType ITutorialSequence[] ITutorialSequence[] List<ITutorialSequence> Pointer )
 
             return value;
         }

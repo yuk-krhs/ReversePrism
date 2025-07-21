@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Id                                       0001865F4940 ModelPrimitiveType int int int Int32
-    // 018 NoteLines                                000185B98510 ModelClassListType NoteLineState[] NoteLineState[] List<NoteLineState> Pointer
-    // 020 TraceState                               0001866AF940 ModelEnumType NoteLineTraceState NoteLineTraceState NoteLineTraceState Int32
+    // 010 Id                                       ModelPrimitiveType int int int Int32
+    // 018 NoteLines                                ModelClassListType NoteLineState[] NoteLineState[] List<NoteLineState> Pointer
+    // 020 TraceState                               ModelEnumType NoteLineTraceState NoteLineTraceState NoteLineTraceState Int32
     public partial class NoteLineGroup : DataModel
     {
         public int                                      Id                                      { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NoteLineGroup() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 024665047F70 0x10 Id                          ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.NoteLines                                 = GetObjectList<NoteLineState>(new IntPtr(p + 0x018), ReversePrism.DataModels.NoteLineState.FromPointer); // 024665047F90 0x18 NoteLines                   ( 000185B98510 ModelClassListType NoteLineState[] NoteLineState[] List<NoteLineState> Pointer )
-            value.TraceState                                = (NoteLineTraceState)GetInt32(new IntPtr(p + 0x020)); // 024665047FB0 0x20 TraceState                  ( 0001866AF940 ModelEnumType NoteLineTraceState NoteLineTraceState NoteLineTraceState Int32 )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0x10 Id                          ( ModelPrimitiveType int int int Int32 )
+            value.NoteLines                                 = GetObjectList<NoteLineState>(new IntPtr(p + 0x018), ReversePrism.DataModels.NoteLineState.FromPointer); // 0x18 NoteLines                   ( ModelClassListType NoteLineState[] NoteLineState[] List<NoteLineState> Pointer )
+            value.TraceState                                = (NoteLineTraceState)GetInt32(new IntPtr(p + 0x020)); // 0x20 TraceState                  ( ModelEnumType NoteLineTraceState NoteLineTraceState NoteLineTraceState Int32 )
 
             return value;
         }

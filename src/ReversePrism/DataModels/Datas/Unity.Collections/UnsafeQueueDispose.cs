@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 m_Buffer                                 IntPtr IL2CPP_TYPE_PTR
     // 018 m_QueuePool                              IntPtr IL2CPP_TYPE_PTR
-    // 020 M_AllocatorLabel                         000186699480 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32
+    // 020 M_AllocatorLabel                         ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32
     public partial class UnsafeQueueDispose : DataModel
     {
         public AllocatorHandle                          M_AllocatorLabel                        { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnsafeQueueDispose() { Pointer= p0 };
 
-            value.M_AllocatorLabel                          = (AllocatorHandle)GetInt32(new IntPtr(p + 0x020)); // 0246608B8338 0x20 M_AllocatorLabel            ( 000186699480 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32 )
+            value.M_AllocatorLabel                          = (AllocatorHandle)GetInt32(new IntPtr(p + 0x020)); // 0x20 M_AllocatorLabel            ( ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32 )
 
             return value;
         }

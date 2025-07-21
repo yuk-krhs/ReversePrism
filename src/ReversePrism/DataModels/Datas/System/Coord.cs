@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 X                                        0001865F1520 ModelPrimitiveType short short short Int16
-    // 012 Y                                        0001865F1520 ModelPrimitiveType short short short Int16
+    // 010 X                                        ModelPrimitiveType short short short Int16
+    // 012 Y                                        ModelPrimitiveType short short short Int16
     public partial class Coord : DataModel
     {
         public short                                    X                                       { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Coord() { Pointer= p0 };
 
-            value.X                                         = GetInt16(new IntPtr(p + 0x010)); // 024666B201B8 0x10 X                           ( 0001865F1520 ModelPrimitiveType short short short Int16 )
-            value.Y                                         = GetInt16(new IntPtr(p + 0x012)); // 024666B201D8 0x12 Y                           ( 0001865F1520 ModelPrimitiveType short short short Int16 )
+            value.X                                         = GetInt16(new IntPtr(p + 0x010)); // 0x10 X                           ( ModelPrimitiveType short short short Int16 )
+            value.Y                                         = GetInt16(new IntPtr(p + 0x012)); // 0x12 Y                           ( ModelPrimitiveType short short short Int16 )
 
             return value;
         }

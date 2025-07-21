@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 060 Driver                                   00018662E6B0 ModelClassType TermInfoDriver TermInfoDriver TermInfoDriver Pointer
+    // 060 Driver                                   ModelClassType TermInfoDriver TermInfoDriver TermInfoDriver Pointer
     public partial class CStreamReader : DataModel
     {
         public TermInfoDriver?                          Driver                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CStreamReader() { Pointer= p0 };
 
-            value.Driver                                    = GetObject<TermInfoDriver>(new IntPtr(p + 0x060), ReversePrism.DataModels.TermInfoDriver.FromPointer); // 024666EBA998 0x60 Driver                      ( 00018662E6B0 ModelClassType TermInfoDriver TermInfoDriver TermInfoDriver Pointer )
+            value.Driver                                    = GetObject<TermInfoDriver>(new IntPtr(p + 0x060), ReversePrism.DataModels.TermInfoDriver.FromPointer); // 0x60 Driver                      ( ModelClassType TermInfoDriver TermInfoDriver TermInfoDriver Pointer )
 
             return value;
         }

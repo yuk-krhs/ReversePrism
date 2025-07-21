@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Reserved                                 0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 Reserved                                 ModelPrimitiveType int int int Int32
     public partial class TimeStretchConfig : DataModel
     {
         public int                                      Reserved                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TimeStretchConfig() { Pointer= p0 };
 
-            value.Reserved                                  = GetInt32(new IntPtr(p + 0x010)); // 02466ACE1DE0 0x10 Reserved                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Reserved                                  = GetInt32(new IntPtr(p + 0x010)); // 0x10 Reserved                    ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 VoDaViMeView                             000186531D10 ModelClassType VoDaViMeView VoDaViMeView VoDaViMeView Pointer
+    // 020 VoDaViMeView                             ModelClassType VoDaViMeView VoDaViMeView VoDaViMeView Pointer
     public partial class RewardStatusColumn : DataModel
     {
         public VoDaViMeView?                            VoDaViMeView                            { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RewardStatusColumn() { Pointer= p0 };
 
-            value.VoDaViMeView                              = GetObject<VoDaViMeView>(new IntPtr(p + 0x020), ReversePrism.DataModels.VoDaViMeView.FromPointer); // 02466A3846A0 0x20 VoDaViMeView                ( 000186531D10 ModelClassType VoDaViMeView VoDaViMeView VoDaViMeView Pointer )
+            value.VoDaViMeView                              = GetObject<VoDaViMeView>(new IntPtr(p + 0x020), ReversePrism.DataModels.VoDaViMeView.FromPointer); // 0x20 VoDaViMeView                ( ModelClassType VoDaViMeView VoDaViMeView VoDaViMeView Pointer )
 
             return value;
         }

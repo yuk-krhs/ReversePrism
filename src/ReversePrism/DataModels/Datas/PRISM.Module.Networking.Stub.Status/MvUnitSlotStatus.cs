@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<MvUnitSlotStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 SlotFieldNumber                          int IL2CPP_TYPE_I4
-    // 018 Slot                                     0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 Slot                                     ModelPrimitiveType int int int Int32
     // 000 IdolFieldNumber                          int IL2CPP_TYPE_I4
-    // 020 Idol                                     0001866788A0 ModelClassType MvIdolStatus MvIdolStatus MvIdolStatus Pointer
+    // 020 Idol                                     ModelClassType MvIdolStatus MvIdolStatus MvIdolStatus Pointer
     public partial class MvUnitSlotStatus : DataModel
     {
         public int                                      Slot                                    { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MvUnitSlotStatus() { Pointer= p0 };
 
-            value.Slot                                      = GetInt32(new IntPtr(p + 0x018)); // 0246612F19D8 0x18 Slot                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Idol                                      = GetObject<MvIdolStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.MvIdolStatus.FromPointer); // 0246612F1A18 0x20 Idol                        ( 0001866788A0 ModelClassType MvIdolStatus MvIdolStatus MvIdolStatus Pointer )
+            value.Slot                                      = GetInt32(new IntPtr(p + 0x018)); // 0x18 Slot                        ( ModelPrimitiveType int int int Int32 )
+            value.Idol                                      = GetObject<MvIdolStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.MvIdolStatus.FromPointer); // 0x20 Idol                        ( ModelClassType MvIdolStatus MvIdolStatus MvIdolStatus Pointer )
 
             return value;
         }

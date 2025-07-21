@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 TabGroup                                 0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer
-    // 028 TabStates                                000185CC4E38 ModelEnumListType State[] State[] List<State> Pointer
+    // 020 TabGroup                                 ModelClassType UITabGroup UITabGroup UITabGroup Pointer
+    // 028 TabStates                                ModelEnumListType State[] State[] List<State> Pointer
     public partial class UITabGroupEx : DataModel
     {
         public UITabGroup?                              TabGroup                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UITabGroupEx() { Pointer= p0 };
 
-            value.TabGroup                                  = GetObject<UITabGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITabGroup.FromPointer); // 024664D2DB38 0x20 TabGroup                    ( 0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
-            value.TabStates                                 = GetEnumList<State>(new IntPtr(p + 0x028)); // 024664D2DB58 0x28 TabStates                   ( 000185CC4E38 ModelEnumListType State[] State[] List<State> Pointer )
+            value.TabGroup                                  = GetObject<UITabGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITabGroup.FromPointer); // 0x20 TabGroup                    ( ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
+            value.TabStates                                 = GetEnumList<State>(new IntPtr(p + 0x028)); // 0x28 TabStates                   ( ModelEnumListType State[] State[] List<State> Pointer )
 
             return value;
         }

@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Target                                   0001866CD270 ModelClassType Image Image Image Pointer
-    // 018 Normal                                   0001866698F0 ModelClassType ImageStateInfo ImageStateInfo ImageStateInfo Pointer
-    // 020 Pressed                                  0001866698F0 ModelClassType ImageStateInfo ImageStateInfo ImageStateInfo Pointer
-    // 028 Selected                                 0001866698F0 ModelClassType ImageStateInfo ImageStateInfo ImageStateInfo Pointer
-    // 030 Disabled                                 0001866698F0 ModelClassType ImageStateInfo ImageStateInfo ImageStateInfo Pointer
+    // 010 Target                                   ModelClassType Image Image Image Pointer
+    // 018 Normal                                   ModelClassType ImageStateInfo ImageStateInfo ImageStateInfo Pointer
+    // 020 Pressed                                  ModelClassType ImageStateInfo ImageStateInfo ImageStateInfo Pointer
+    // 028 Selected                                 ModelClassType ImageStateInfo ImageStateInfo ImageStateInfo Pointer
+    // 030 Disabled                                 ModelClassType ImageStateInfo ImageStateInfo ImageStateInfo Pointer
     public partial class ImageInfo : DataModel
     {
         public Image?                                   Target                                  { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ImageInfo() { Pointer= p0 };
 
-            value.Target                                    = GetObject<Image>(new IntPtr(p + 0x010), ReversePrism.DataModels.Image.FromPointer); // 02466B0A7560 0x10 Target                      ( 0001866CD270 ModelClassType Image Image Image Pointer )
-            value.Normal                                    = GetObject<ImageStateInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.ImageStateInfo.FromPointer); // 02466B0A7580 0x18 Normal                      ( 0001866698F0 ModelClassType ImageStateInfo ImageStateInfo ImageStateInfo Pointer )
-            value.Pressed                                   = GetObject<ImageStateInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.ImageStateInfo.FromPointer); // 02466B0A75A0 0x20 Pressed                     ( 0001866698F0 ModelClassType ImageStateInfo ImageStateInfo ImageStateInfo Pointer )
-            value.Selected                                  = GetObject<ImageStateInfo>(new IntPtr(p + 0x028), ReversePrism.DataModels.ImageStateInfo.FromPointer); // 02466B0A75C0 0x28 Selected                    ( 0001866698F0 ModelClassType ImageStateInfo ImageStateInfo ImageStateInfo Pointer )
-            value.Disabled                                  = GetObject<ImageStateInfo>(new IntPtr(p + 0x030), ReversePrism.DataModels.ImageStateInfo.FromPointer); // 02466B0A75E0 0x30 Disabled                    ( 0001866698F0 ModelClassType ImageStateInfo ImageStateInfo ImageStateInfo Pointer )
+            value.Target                                    = GetObject<Image>(new IntPtr(p + 0x010), ReversePrism.DataModels.Image.FromPointer); // 0x10 Target                      ( ModelClassType Image Image Image Pointer )
+            value.Normal                                    = GetObject<ImageStateInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.ImageStateInfo.FromPointer); // 0x18 Normal                      ( ModelClassType ImageStateInfo ImageStateInfo ImageStateInfo Pointer )
+            value.Pressed                                   = GetObject<ImageStateInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.ImageStateInfo.FromPointer); // 0x20 Pressed                     ( ModelClassType ImageStateInfo ImageStateInfo ImageStateInfo Pointer )
+            value.Selected                                  = GetObject<ImageStateInfo>(new IntPtr(p + 0x028), ReversePrism.DataModels.ImageStateInfo.FromPointer); // 0x28 Selected                    ( ModelClassType ImageStateInfo ImageStateInfo ImageStateInfo Pointer )
+            value.Disabled                                  = GetObject<ImageStateInfo>(new IntPtr(p + 0x030), ReversePrism.DataModels.ImageStateInfo.FromPointer); // 0x30 Disabled                    ( ModelClassType ImageStateInfo ImageStateInfo ImageStateInfo Pointer )
 
             return value;
         }

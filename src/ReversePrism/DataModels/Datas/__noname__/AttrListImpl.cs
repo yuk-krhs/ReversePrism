@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 AttrNames                                000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
-    // 018 AttrValues                               000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
+    // 010 AttrNames                                ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
+    // 018 AttrValues                               ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
     public partial class AttrListImpl : DataModel
     {
         public List<string>?                            AttrNames                               { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AttrListImpl() { Pointer= p0 };
 
-            value.AttrNames                                 = GetStringList(new IntPtr(p + 0x010)); // 0246669AA7C0 0x10 AttrNames                   ( 000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
-            value.AttrValues                                = GetStringList(new IntPtr(p + 0x018)); // 0246669AA7E0 0x18 AttrValues                  ( 000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.AttrNames                                 = GetStringList(new IntPtr(p + 0x010)); // 0x10 AttrNames                   ( ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.AttrValues                                = GetStringList(new IntPtr(p + 0x018)); // 0x18 AttrValues                  ( ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
 
             return value;
         }

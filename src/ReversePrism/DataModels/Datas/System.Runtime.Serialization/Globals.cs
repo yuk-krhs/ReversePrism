@@ -11,92 +11,92 @@ namespace ReversePrism.DataModels
     // 000 ScanAllMembers                           BindingFlags IL2CPP_TYPE_VALUETYPE
     // 000 idQualifiedName                          XmlQualifiedName IL2CPP_TYPE_CLASS
     // 008 refQualifiedName                         XmlQualifiedName IL2CPP_TYPE_CLASS
-    // 010 TypeOfObject                             0001866931D0 ModelClassType Type Type Type Pointer
-    // 018 TypeOfValueType                          0001866931D0 ModelClassType Type Type Type Pointer
-    // 020 TypeOfArray                              0001866931D0 ModelClassType Type Type Type Pointer
-    // 028 TypeOfString                             0001866931D0 ModelClassType Type Type Type Pointer
-    // 030 TypeOfInt                                0001866931D0 ModelClassType Type Type Type Pointer
-    // 038 TypeOfULong                              0001866931D0 ModelClassType Type Type Type Pointer
-    // 040 TypeOfVoid                               0001866931D0 ModelClassType Type Type Type Pointer
-    // 048 TypeOfByteArray                          0001866931D0 ModelClassType Type Type Type Pointer
-    // 050 TypeOfTimeSpan                           0001866931D0 ModelClassType Type Type Type Pointer
-    // 058 TypeOfGuid                               0001866931D0 ModelClassType Type Type Type Pointer
-    // 060 TypeOfDateTimeOffset                     0001866931D0 ModelClassType Type Type Type Pointer
-    // 068 TypeOfDateTimeOffsetAdapter              0001866931D0 ModelClassType Type Type Type Pointer
-    // 070 TypeOfUri                                0001866931D0 ModelClassType Type Type Type Pointer
-    // 078 TypeOfTypeEnumerable                     0001866931D0 ModelClassType Type Type Type Pointer
-    // 080 TypeOfStreamingContext                   0001866931D0 ModelClassType Type Type Type Pointer
-    // 088 TypeOfISerializable                      0001866931D0 ModelClassType Type Type Type Pointer
-    // 090 TypeOfIDeserializationCallback           0001866931D0 ModelClassType Type Type Type Pointer
-    // 098 TypeOfIObjectReference                   0001866931D0 ModelClassType Type Type Type Pointer
-    // 0A0 TypeOfXmlFormatClassWriterDelegate       0001866931D0 ModelClassType Type Type Type Pointer
-    // 0A8 TypeOfXmlFormatCollectionWriterDelegate  0001866931D0 ModelClassType Type Type Type Pointer
-    // 0B0 TypeOfXmlFormatClassReaderDelegate       0001866931D0 ModelClassType Type Type Type Pointer
-    // 0B8 TypeOfXmlFormatCollectionReaderDelegate  0001866931D0 ModelClassType Type Type Type Pointer
-    // 0C0 TypeOfXmlFormatGetOnlyCollectionReaderDelegate 0001866931D0 ModelClassType Type Type Type Pointer
-    // 0C8 TypeOfKnownTypeAttribute                 0001866931D0 ModelClassType Type Type Type Pointer
-    // 0D0 TypeOfDataContractAttribute              0001866931D0 ModelClassType Type Type Type Pointer
-    // 0D8 TypeOfContractNamespaceAttribute         0001866931D0 ModelClassType Type Type Type Pointer
-    // 0E0 TypeOfDataMemberAttribute                0001866931D0 ModelClassType Type Type Type Pointer
-    // 0E8 TypeOfEnumMemberAttribute                0001866931D0 ModelClassType Type Type Type Pointer
-    // 0F0 TypeOfCollectionDataContractAttribute    0001866931D0 ModelClassType Type Type Type Pointer
-    // 0F8 TypeOfOptionalFieldAttribute             0001866931D0 ModelClassType Type Type Type Pointer
-    // 100 TypeOfObjectArray                        0001866931D0 ModelClassType Type Type Type Pointer
-    // 108 TypeOfOnSerializingAttribute             0001866931D0 ModelClassType Type Type Type Pointer
-    // 110 TypeOfOnSerializedAttribute              0001866931D0 ModelClassType Type Type Type Pointer
-    // 118 TypeOfOnDeserializingAttribute           0001866931D0 ModelClassType Type Type Type Pointer
-    // 120 TypeOfOnDeserializedAttribute            0001866931D0 ModelClassType Type Type Type Pointer
-    // 128 TypeOfFlagsAttribute                     0001866931D0 ModelClassType Type Type Type Pointer
-    // 130 TypeOfSerializableAttribute              0001866931D0 ModelClassType Type Type Type Pointer
-    // 138 TypeOfNonSerializedAttribute             0001866931D0 ModelClassType Type Type Type Pointer
-    // 140 TypeOfSerializationInfo                  0001866931D0 ModelClassType Type Type Type Pointer
-    // 148 TypeOfSerializationInfoEnumerator        0001866931D0 ModelClassType Type Type Type Pointer
-    // 150 TypeOfSerializationEntry                 0001866931D0 ModelClassType Type Type Type Pointer
-    // 158 TypeOfIXmlSerializable                   0001866931D0 ModelClassType Type Type Type Pointer
-    // 160 TypeOfXmlSchemaProviderAttribute         0001866931D0 ModelClassType Type Type Type Pointer
-    // 168 TypeOfXmlRootAttribute                   0001866931D0 ModelClassType Type Type Type Pointer
-    // 170 TypeOfXmlQualifiedName                   0001866931D0 ModelClassType Type Type Type Pointer
-    // 178 TypeOfXmlSchemaType                      0001866931D0 ModelClassType Type Type Type Pointer
-    // 180 TypeOfXmlSerializableServices            0001866931D0 ModelClassType Type Type Type Pointer
-    // 188 TypeOfXmlNodeArray                       0001866931D0 ModelClassType Type Type Type Pointer
-    // 190 TypeOfXmlSchemaSet                       0001866931D0 ModelClassType Type Type Type Pointer
+    // 010 TypeOfObject                             ModelClassType Type Type Type Pointer
+    // 018 TypeOfValueType                          ModelClassType Type Type Type Pointer
+    // 020 TypeOfArray                              ModelClassType Type Type Type Pointer
+    // 028 TypeOfString                             ModelClassType Type Type Type Pointer
+    // 030 TypeOfInt                                ModelClassType Type Type Type Pointer
+    // 038 TypeOfULong                              ModelClassType Type Type Type Pointer
+    // 040 TypeOfVoid                               ModelClassType Type Type Type Pointer
+    // 048 TypeOfByteArray                          ModelClassType Type Type Type Pointer
+    // 050 TypeOfTimeSpan                           ModelClassType Type Type Type Pointer
+    // 058 TypeOfGuid                               ModelClassType Type Type Type Pointer
+    // 060 TypeOfDateTimeOffset                     ModelClassType Type Type Type Pointer
+    // 068 TypeOfDateTimeOffsetAdapter              ModelClassType Type Type Type Pointer
+    // 070 TypeOfUri                                ModelClassType Type Type Type Pointer
+    // 078 TypeOfTypeEnumerable                     ModelClassType Type Type Type Pointer
+    // 080 TypeOfStreamingContext                   ModelClassType Type Type Type Pointer
+    // 088 TypeOfISerializable                      ModelClassType Type Type Type Pointer
+    // 090 TypeOfIDeserializationCallback           ModelClassType Type Type Type Pointer
+    // 098 TypeOfIObjectReference                   ModelClassType Type Type Type Pointer
+    // 0A0 TypeOfXmlFormatClassWriterDelegate       ModelClassType Type Type Type Pointer
+    // 0A8 TypeOfXmlFormatCollectionWriterDelegate  ModelClassType Type Type Type Pointer
+    // 0B0 TypeOfXmlFormatClassReaderDelegate       ModelClassType Type Type Type Pointer
+    // 0B8 TypeOfXmlFormatCollectionReaderDelegate  ModelClassType Type Type Type Pointer
+    // 0C0 TypeOfXmlFormatGetOnlyCollectionReaderDelegate ModelClassType Type Type Type Pointer
+    // 0C8 TypeOfKnownTypeAttribute                 ModelClassType Type Type Type Pointer
+    // 0D0 TypeOfDataContractAttribute              ModelClassType Type Type Type Pointer
+    // 0D8 TypeOfContractNamespaceAttribute         ModelClassType Type Type Type Pointer
+    // 0E0 TypeOfDataMemberAttribute                ModelClassType Type Type Type Pointer
+    // 0E8 TypeOfEnumMemberAttribute                ModelClassType Type Type Type Pointer
+    // 0F0 TypeOfCollectionDataContractAttribute    ModelClassType Type Type Type Pointer
+    // 0F8 TypeOfOptionalFieldAttribute             ModelClassType Type Type Type Pointer
+    // 100 TypeOfObjectArray                        ModelClassType Type Type Type Pointer
+    // 108 TypeOfOnSerializingAttribute             ModelClassType Type Type Type Pointer
+    // 110 TypeOfOnSerializedAttribute              ModelClassType Type Type Type Pointer
+    // 118 TypeOfOnDeserializingAttribute           ModelClassType Type Type Type Pointer
+    // 120 TypeOfOnDeserializedAttribute            ModelClassType Type Type Type Pointer
+    // 128 TypeOfFlagsAttribute                     ModelClassType Type Type Type Pointer
+    // 130 TypeOfSerializableAttribute              ModelClassType Type Type Type Pointer
+    // 138 TypeOfNonSerializedAttribute             ModelClassType Type Type Type Pointer
+    // 140 TypeOfSerializationInfo                  ModelClassType Type Type Type Pointer
+    // 148 TypeOfSerializationInfoEnumerator        ModelClassType Type Type Type Pointer
+    // 150 TypeOfSerializationEntry                 ModelClassType Type Type Type Pointer
+    // 158 TypeOfIXmlSerializable                   ModelClassType Type Type Type Pointer
+    // 160 TypeOfXmlSchemaProviderAttribute         ModelClassType Type Type Type Pointer
+    // 168 TypeOfXmlRootAttribute                   ModelClassType Type Type Type Pointer
+    // 170 TypeOfXmlQualifiedName                   ModelClassType Type Type Type Pointer
+    // 178 TypeOfXmlSchemaType                      ModelClassType Type Type Type Pointer
+    // 180 TypeOfXmlSerializableServices            ModelClassType Type Type Type Pointer
+    // 188 TypeOfXmlNodeArray                       ModelClassType Type Type Type Pointer
+    // 190 TypeOfXmlSchemaSet                       ModelClassType Type Type Type Pointer
     // 198 emptyObjectArray                         <object>[] IL2CPP_TYPE_SZARRAY
-    // 1A0 EmptyTypeArray                           000185B82F20 ModelClassListType Type[] Type[] List<Type> Pointer
-    // 1A8 TypeOfIPropertyChange                    0001866931D0 ModelClassType Type Type Type Pointer
-    // 1B0 TypeOfIExtensibleDataObject              0001866931D0 ModelClassType Type Type Type Pointer
-    // 1B8 TypeOfExtensionDataObject                0001866931D0 ModelClassType Type Type Type Pointer
-    // 1C0 TypeOfISerializableDataNode              0001866931D0 ModelClassType Type Type Type Pointer
-    // 1C8 TypeOfClassDataNode                      0001866931D0 ModelClassType Type Type Type Pointer
-    // 1D0 TypeOfCollectionDataNode                 0001866931D0 ModelClassType Type Type Type Pointer
-    // 1D8 TypeOfXmlDataNode                        0001866931D0 ModelClassType Type Type Type Pointer
-    // 1E0 TypeOfNullable                           0001866931D0 ModelClassType Type Type Type Pointer
-    // 1E8 TypeOfReflectionPointer                  0001866931D0 ModelClassType Type Type Type Pointer
-    // 1F0 TypeOfIDictionaryGeneric                 0001866931D0 ModelClassType Type Type Type Pointer
-    // 1F8 TypeOfIDictionary                        0001866931D0 ModelClassType Type Type Type Pointer
-    // 200 TypeOfIListGeneric                       0001866931D0 ModelClassType Type Type Type Pointer
-    // 208 TypeOfIList                              0001866931D0 ModelClassType Type Type Type Pointer
-    // 210 TypeOfICollectionGeneric                 0001866931D0 ModelClassType Type Type Type Pointer
-    // 218 TypeOfICollection                        0001866931D0 ModelClassType Type Type Type Pointer
-    // 220 TypeOfIEnumerableGeneric                 0001866931D0 ModelClassType Type Type Type Pointer
-    // 228 TypeOfIEnumerable                        0001866931D0 ModelClassType Type Type Type Pointer
-    // 230 TypeOfIEnumeratorGeneric                 0001866931D0 ModelClassType Type Type Type Pointer
-    // 238 TypeOfIEnumerator                        0001866931D0 ModelClassType Type Type Type Pointer
-    // 240 TypeOfKeyValuePair                       0001866931D0 ModelClassType Type Type Type Pointer
-    // 248 TypeOfKeyValue                           0001866931D0 ModelClassType Type Type Type Pointer
-    // 250 TypeOfIDictionaryEnumerator              0001866931D0 ModelClassType Type Type Type Pointer
-    // 258 TypeOfDictionaryEnumerator               0001866931D0 ModelClassType Type Type Type Pointer
-    // 260 TypeOfGenericDictionaryEnumerator        0001866931D0 ModelClassType Type Type Type Pointer
-    // 268 TypeOfDictionaryGeneric                  0001866931D0 ModelClassType Type Type Type Pointer
-    // 270 TypeOfHashtable                          0001866931D0 ModelClassType Type Type Type Pointer
-    // 278 TypeOfListGeneric                        0001866931D0 ModelClassType Type Type Type Pointer
-    // 280 TypeOfXmlElement                         0001866931D0 ModelClassType Type Type Type Pointer
-    // 288 TypeOfDBNull                             0001866931D0 ModelClassType Type Type Type Pointer
-    // 290 DataContractXsdBaseNamespaceUri          0001866A49A0 ModelClassType Uri Uri Uri Pointer
+    // 1A0 EmptyTypeArray                           ModelClassListType Type[] Type[] List<Type> Pointer
+    // 1A8 TypeOfIPropertyChange                    ModelClassType Type Type Type Pointer
+    // 1B0 TypeOfIExtensibleDataObject              ModelClassType Type Type Type Pointer
+    // 1B8 TypeOfExtensionDataObject                ModelClassType Type Type Type Pointer
+    // 1C0 TypeOfISerializableDataNode              ModelClassType Type Type Type Pointer
+    // 1C8 TypeOfClassDataNode                      ModelClassType Type Type Type Pointer
+    // 1D0 TypeOfCollectionDataNode                 ModelClassType Type Type Type Pointer
+    // 1D8 TypeOfXmlDataNode                        ModelClassType Type Type Type Pointer
+    // 1E0 TypeOfNullable                           ModelClassType Type Type Type Pointer
+    // 1E8 TypeOfReflectionPointer                  ModelClassType Type Type Type Pointer
+    // 1F0 TypeOfIDictionaryGeneric                 ModelClassType Type Type Type Pointer
+    // 1F8 TypeOfIDictionary                        ModelClassType Type Type Type Pointer
+    // 200 TypeOfIListGeneric                       ModelClassType Type Type Type Pointer
+    // 208 TypeOfIList                              ModelClassType Type Type Type Pointer
+    // 210 TypeOfICollectionGeneric                 ModelClassType Type Type Type Pointer
+    // 218 TypeOfICollection                        ModelClassType Type Type Type Pointer
+    // 220 TypeOfIEnumerableGeneric                 ModelClassType Type Type Type Pointer
+    // 228 TypeOfIEnumerable                        ModelClassType Type Type Type Pointer
+    // 230 TypeOfIEnumeratorGeneric                 ModelClassType Type Type Type Pointer
+    // 238 TypeOfIEnumerator                        ModelClassType Type Type Type Pointer
+    // 240 TypeOfKeyValuePair                       ModelClassType Type Type Type Pointer
+    // 248 TypeOfKeyValue                           ModelClassType Type Type Type Pointer
+    // 250 TypeOfIDictionaryEnumerator              ModelClassType Type Type Type Pointer
+    // 258 TypeOfDictionaryEnumerator               ModelClassType Type Type Type Pointer
+    // 260 TypeOfGenericDictionaryEnumerator        ModelClassType Type Type Type Pointer
+    // 268 TypeOfDictionaryGeneric                  ModelClassType Type Type Type Pointer
+    // 270 TypeOfHashtable                          ModelClassType Type Type Type Pointer
+    // 278 TypeOfListGeneric                        ModelClassType Type Type Type Pointer
+    // 280 TypeOfXmlElement                         ModelClassType Type Type Type Pointer
+    // 288 TypeOfDBNull                             ModelClassType Type Type Type Pointer
+    // 290 DataContractXsdBaseNamespaceUri          ModelClassType Uri Uri Uri Pointer
     // 000 DefaultIsRequired                        bool IL2CPP_TYPE_BOOLEAN
     // 000 DefaultEmitDefaultValue                  bool IL2CPP_TYPE_BOOLEAN
     // 000 DefaultOrder                             int IL2CPP_TYPE_I4
     // 000 DefaultIsReference                       bool IL2CPP_TYPE_BOOLEAN
-    // 298 NewObjectId                              000186674040 ModelPrimitiveType string string string String
+    // 298 NewObjectId                              ModelPrimitiveType string string string String
     // 000 SimpleSRSInternalsVisiblePattern         string IL2CPP_TYPE_STRING
     // 000 FullSRSInternalsVisiblePattern           string IL2CPP_TYPE_STRING
     // 000 NullObjectId                             string IL2CPP_TYPE_STRING
@@ -284,87 +284,87 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Globals() { Pointer= p0 };
 
-            value.TypeOfObject                              = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0245A4CB9F30 0x10 TypeOfObject                ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfValueType                           = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 0245A4CB9F50 0x18 TypeOfValueType             ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfArray                               = GetObject<Type>(new IntPtr(p + 0x020), ReversePrism.DataModels.Type.FromPointer); // 0245A4CB9F70 0x20 TypeOfArray                 ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfString                              = GetObject<Type>(new IntPtr(p + 0x028), ReversePrism.DataModels.Type.FromPointer); // 0245A4CB9F90 0x28 TypeOfString                ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfInt                                 = GetObject<Type>(new IntPtr(p + 0x030), ReversePrism.DataModels.Type.FromPointer); // 0245A4CB9FB0 0x30 TypeOfInt                   ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfULong                               = GetObject<Type>(new IntPtr(p + 0x038), ReversePrism.DataModels.Type.FromPointer); // 0245A4CB9FD0 0x38 TypeOfULong                 ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfVoid                                = GetObject<Type>(new IntPtr(p + 0x040), ReversePrism.DataModels.Type.FromPointer); // 0245A4CB9FF0 0x40 TypeOfVoid                  ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfByteArray                           = GetObject<Type>(new IntPtr(p + 0x048), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA010 0x48 TypeOfByteArray             ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfTimeSpan                            = GetObject<Type>(new IntPtr(p + 0x050), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA030 0x50 TypeOfTimeSpan              ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfGuid                                = GetObject<Type>(new IntPtr(p + 0x058), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA050 0x58 TypeOfGuid                  ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfDateTimeOffset                      = GetObject<Type>(new IntPtr(p + 0x060), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA070 0x60 TypeOfDateTimeOffset        ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfDateTimeOffsetAdapter               = GetObject<Type>(new IntPtr(p + 0x068), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA090 0x68 TypeOfDateTimeOffsetAdapter ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfUri                                 = GetObject<Type>(new IntPtr(p + 0x070), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA0B0 0x70 TypeOfUri                   ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfTypeEnumerable                      = GetObject<Type>(new IntPtr(p + 0x078), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA0D0 0x78 TypeOfTypeEnumerable        ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfStreamingContext                    = GetObject<Type>(new IntPtr(p + 0x080), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA0F0 0x80 TypeOfStreamingContext      ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfISerializable                       = GetObject<Type>(new IntPtr(p + 0x088), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA110 0x88 TypeOfISerializable         ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfIDeserializationCallback            = GetObject<Type>(new IntPtr(p + 0x090), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA130 0x90 TypeOfIDeserializationCallback ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfIObjectReference                    = GetObject<Type>(new IntPtr(p + 0x098), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA150 0x98 TypeOfIObjectReference      ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfXmlFormatClassWriterDelegate        = GetObject<Type>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA170 0xA0 TypeOfXmlFormatClassWriterDelegate ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfXmlFormatCollectionWriterDelegate   = GetObject<Type>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA190 0xA8 TypeOfXmlFormatCollectionWriterDelegate ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfXmlFormatClassReaderDelegate        = GetObject<Type>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA1B0 0xB0 TypeOfXmlFormatClassReaderDelegate ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfXmlFormatCollectionReaderDelegate   = GetObject<Type>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA1D0 0xB8 TypeOfXmlFormatCollectionReaderDelegate ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfXmlFormatGetOnlyCollectionReaderDelegate = GetObject<Type>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA1F0 0xC0 TypeOfXmlFormatGetOnlyCollectionReaderDelegate ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfKnownTypeAttribute                  = GetObject<Type>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA210 0xC8 TypeOfKnownTypeAttribute    ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfDataContractAttribute               = GetObject<Type>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA230 0xD0 TypeOfDataContractAttribute ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfContractNamespaceAttribute          = GetObject<Type>(new IntPtr(p + 0x0D8), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA250 0xD8 TypeOfContractNamespaceAttribute ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfDataMemberAttribute                 = GetObject<Type>(new IntPtr(p + 0x0E0), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA270 0xE0 TypeOfDataMemberAttribute   ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfEnumMemberAttribute                 = GetObject<Type>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA290 0xE8 TypeOfEnumMemberAttribute   ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfCollectionDataContractAttribute     = GetObject<Type>(new IntPtr(p + 0x0F0), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA2B0 0xF0 TypeOfCollectionDataContractAttribute ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfOptionalFieldAttribute              = GetObject<Type>(new IntPtr(p + 0x0F8), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA2D0 0xF8 TypeOfOptionalFieldAttribute ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfObjectArray                         = GetObject<Type>(new IntPtr(p + 0x100), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA2F0 0x100 TypeOfObjectArray           ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfOnSerializingAttribute              = GetObject<Type>(new IntPtr(p + 0x108), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA310 0x108 TypeOfOnSerializingAttribute ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfOnSerializedAttribute               = GetObject<Type>(new IntPtr(p + 0x110), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA330 0x110 TypeOfOnSerializedAttribute ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfOnDeserializingAttribute            = GetObject<Type>(new IntPtr(p + 0x118), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA350 0x118 TypeOfOnDeserializingAttribute ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfOnDeserializedAttribute             = GetObject<Type>(new IntPtr(p + 0x120), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA370 0x120 TypeOfOnDeserializedAttribute ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfFlagsAttribute                      = GetObject<Type>(new IntPtr(p + 0x128), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA390 0x128 TypeOfFlagsAttribute        ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfSerializableAttribute               = GetObject<Type>(new IntPtr(p + 0x130), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA3B0 0x130 TypeOfSerializableAttribute ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfNonSerializedAttribute              = GetObject<Type>(new IntPtr(p + 0x138), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA3D0 0x138 TypeOfNonSerializedAttribute ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfSerializationInfo                   = GetObject<Type>(new IntPtr(p + 0x140), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA3F0 0x140 TypeOfSerializationInfo     ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfSerializationInfoEnumerator         = GetObject<Type>(new IntPtr(p + 0x148), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA410 0x148 TypeOfSerializationInfoEnumerator ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfSerializationEntry                  = GetObject<Type>(new IntPtr(p + 0x150), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA430 0x150 TypeOfSerializationEntry    ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfIXmlSerializable                    = GetObject<Type>(new IntPtr(p + 0x158), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA450 0x158 TypeOfIXmlSerializable      ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfXmlSchemaProviderAttribute          = GetObject<Type>(new IntPtr(p + 0x160), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA470 0x160 TypeOfXmlSchemaProviderAttribute ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfXmlRootAttribute                    = GetObject<Type>(new IntPtr(p + 0x168), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA490 0x168 TypeOfXmlRootAttribute      ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfXmlQualifiedName                    = GetObject<Type>(new IntPtr(p + 0x170), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA4B0 0x170 TypeOfXmlQualifiedName      ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfXmlSchemaType                       = GetObject<Type>(new IntPtr(p + 0x178), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA4D0 0x178 TypeOfXmlSchemaType         ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfXmlSerializableServices             = GetObject<Type>(new IntPtr(p + 0x180), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA4F0 0x180 TypeOfXmlSerializableServices ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfXmlNodeArray                        = GetObject<Type>(new IntPtr(p + 0x188), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA510 0x188 TypeOfXmlNodeArray          ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfXmlSchemaSet                        = GetObject<Type>(new IntPtr(p + 0x190), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA530 0x190 TypeOfXmlSchemaSet          ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.EmptyTypeArray                            = GetObjectList<Type>(new IntPtr(p + 0x1A0), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA570 0x1A0 EmptyTypeArray              ( 000185B82F20 ModelClassListType Type[] Type[] List<Type> Pointer )
-            value.TypeOfIPropertyChange                     = GetObject<Type>(new IntPtr(p + 0x1A8), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA590 0x1A8 TypeOfIPropertyChange       ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfIExtensibleDataObject               = GetObject<Type>(new IntPtr(p + 0x1B0), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA5B0 0x1B0 TypeOfIExtensibleDataObject ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfExtensionDataObject                 = GetObject<Type>(new IntPtr(p + 0x1B8), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA5D0 0x1B8 TypeOfExtensionDataObject   ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfISerializableDataNode               = GetObject<Type>(new IntPtr(p + 0x1C0), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA5F0 0x1C0 TypeOfISerializableDataNode ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfClassDataNode                       = GetObject<Type>(new IntPtr(p + 0x1C8), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA610 0x1C8 TypeOfClassDataNode         ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfCollectionDataNode                  = GetObject<Type>(new IntPtr(p + 0x1D0), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA630 0x1D0 TypeOfCollectionDataNode    ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfXmlDataNode                         = GetObject<Type>(new IntPtr(p + 0x1D8), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA650 0x1D8 TypeOfXmlDataNode           ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfNullable                            = GetObject<Type>(new IntPtr(p + 0x1E0), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA670 0x1E0 TypeOfNullable              ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfReflectionPointer                   = GetObject<Type>(new IntPtr(p + 0x1E8), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA690 0x1E8 TypeOfReflectionPointer     ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfIDictionaryGeneric                  = GetObject<Type>(new IntPtr(p + 0x1F0), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA6B0 0x1F0 TypeOfIDictionaryGeneric    ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfIDictionary                         = GetObject<Type>(new IntPtr(p + 0x1F8), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA6D0 0x1F8 TypeOfIDictionary           ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfIListGeneric                        = GetObject<Type>(new IntPtr(p + 0x200), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA6F0 0x200 TypeOfIListGeneric          ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfIList                               = GetObject<Type>(new IntPtr(p + 0x208), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA710 0x208 TypeOfIList                 ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfICollectionGeneric                  = GetObject<Type>(new IntPtr(p + 0x210), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA730 0x210 TypeOfICollectionGeneric    ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfICollection                         = GetObject<Type>(new IntPtr(p + 0x218), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA750 0x218 TypeOfICollection           ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfIEnumerableGeneric                  = GetObject<Type>(new IntPtr(p + 0x220), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA770 0x220 TypeOfIEnumerableGeneric    ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfIEnumerable                         = GetObject<Type>(new IntPtr(p + 0x228), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA790 0x228 TypeOfIEnumerable           ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfIEnumeratorGeneric                  = GetObject<Type>(new IntPtr(p + 0x230), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA7B0 0x230 TypeOfIEnumeratorGeneric    ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfIEnumerator                         = GetObject<Type>(new IntPtr(p + 0x238), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA7D0 0x238 TypeOfIEnumerator           ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfKeyValuePair                        = GetObject<Type>(new IntPtr(p + 0x240), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA7F0 0x240 TypeOfKeyValuePair          ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfKeyValue                            = GetObject<Type>(new IntPtr(p + 0x248), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA810 0x248 TypeOfKeyValue              ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfIDictionaryEnumerator               = GetObject<Type>(new IntPtr(p + 0x250), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA830 0x250 TypeOfIDictionaryEnumerator ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfDictionaryEnumerator                = GetObject<Type>(new IntPtr(p + 0x258), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA850 0x258 TypeOfDictionaryEnumerator  ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfGenericDictionaryEnumerator         = GetObject<Type>(new IntPtr(p + 0x260), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA870 0x260 TypeOfGenericDictionaryEnumerator ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfDictionaryGeneric                   = GetObject<Type>(new IntPtr(p + 0x268), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA890 0x268 TypeOfDictionaryGeneric     ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfHashtable                           = GetObject<Type>(new IntPtr(p + 0x270), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA8B0 0x270 TypeOfHashtable             ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfListGeneric                         = GetObject<Type>(new IntPtr(p + 0x278), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA8D0 0x278 TypeOfListGeneric           ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfXmlElement                          = GetObject<Type>(new IntPtr(p + 0x280), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA8F0 0x280 TypeOfXmlElement            ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.TypeOfDBNull                              = GetObject<Type>(new IntPtr(p + 0x288), ReversePrism.DataModels.Type.FromPointer); // 0245A4CBA910 0x288 TypeOfDBNull                ( 0001866931D0 ModelClassType Type Type Type Pointer )
-            value.DataContractXsdBaseNamespaceUri           = GetObject<Uri>(new IntPtr(p + 0x290), ReversePrism.DataModels.Uri.FromPointer); // 0245A4CBA930 0x290 DataContractXsdBaseNamespaceUri ( 0001866A49A0 ModelClassType Uri Uri Uri Pointer )
-            value.NewObjectId                               = GetString(new IntPtr(p + 0x298)); // 0245A4CBA9D0 0x298 NewObjectId                 ( 000186674040 ModelPrimitiveType string string string String )
+            value.TypeOfObject                              = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0x10 TypeOfObject                ( ModelClassType Type Type Type Pointer )
+            value.TypeOfValueType                           = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 0x18 TypeOfValueType             ( ModelClassType Type Type Type Pointer )
+            value.TypeOfArray                               = GetObject<Type>(new IntPtr(p + 0x020), ReversePrism.DataModels.Type.FromPointer); // 0x20 TypeOfArray                 ( ModelClassType Type Type Type Pointer )
+            value.TypeOfString                              = GetObject<Type>(new IntPtr(p + 0x028), ReversePrism.DataModels.Type.FromPointer); // 0x28 TypeOfString                ( ModelClassType Type Type Type Pointer )
+            value.TypeOfInt                                 = GetObject<Type>(new IntPtr(p + 0x030), ReversePrism.DataModels.Type.FromPointer); // 0x30 TypeOfInt                   ( ModelClassType Type Type Type Pointer )
+            value.TypeOfULong                               = GetObject<Type>(new IntPtr(p + 0x038), ReversePrism.DataModels.Type.FromPointer); // 0x38 TypeOfULong                 ( ModelClassType Type Type Type Pointer )
+            value.TypeOfVoid                                = GetObject<Type>(new IntPtr(p + 0x040), ReversePrism.DataModels.Type.FromPointer); // 0x40 TypeOfVoid                  ( ModelClassType Type Type Type Pointer )
+            value.TypeOfByteArray                           = GetObject<Type>(new IntPtr(p + 0x048), ReversePrism.DataModels.Type.FromPointer); // 0x48 TypeOfByteArray             ( ModelClassType Type Type Type Pointer )
+            value.TypeOfTimeSpan                            = GetObject<Type>(new IntPtr(p + 0x050), ReversePrism.DataModels.Type.FromPointer); // 0x50 TypeOfTimeSpan              ( ModelClassType Type Type Type Pointer )
+            value.TypeOfGuid                                = GetObject<Type>(new IntPtr(p + 0x058), ReversePrism.DataModels.Type.FromPointer); // 0x58 TypeOfGuid                  ( ModelClassType Type Type Type Pointer )
+            value.TypeOfDateTimeOffset                      = GetObject<Type>(new IntPtr(p + 0x060), ReversePrism.DataModels.Type.FromPointer); // 0x60 TypeOfDateTimeOffset        ( ModelClassType Type Type Type Pointer )
+            value.TypeOfDateTimeOffsetAdapter               = GetObject<Type>(new IntPtr(p + 0x068), ReversePrism.DataModels.Type.FromPointer); // 0x68 TypeOfDateTimeOffsetAdapter ( ModelClassType Type Type Type Pointer )
+            value.TypeOfUri                                 = GetObject<Type>(new IntPtr(p + 0x070), ReversePrism.DataModels.Type.FromPointer); // 0x70 TypeOfUri                   ( ModelClassType Type Type Type Pointer )
+            value.TypeOfTypeEnumerable                      = GetObject<Type>(new IntPtr(p + 0x078), ReversePrism.DataModels.Type.FromPointer); // 0x78 TypeOfTypeEnumerable        ( ModelClassType Type Type Type Pointer )
+            value.TypeOfStreamingContext                    = GetObject<Type>(new IntPtr(p + 0x080), ReversePrism.DataModels.Type.FromPointer); // 0x80 TypeOfStreamingContext      ( ModelClassType Type Type Type Pointer )
+            value.TypeOfISerializable                       = GetObject<Type>(new IntPtr(p + 0x088), ReversePrism.DataModels.Type.FromPointer); // 0x88 TypeOfISerializable         ( ModelClassType Type Type Type Pointer )
+            value.TypeOfIDeserializationCallback            = GetObject<Type>(new IntPtr(p + 0x090), ReversePrism.DataModels.Type.FromPointer); // 0x90 TypeOfIDeserializationCallback ( ModelClassType Type Type Type Pointer )
+            value.TypeOfIObjectReference                    = GetObject<Type>(new IntPtr(p + 0x098), ReversePrism.DataModels.Type.FromPointer); // 0x98 TypeOfIObjectReference      ( ModelClassType Type Type Type Pointer )
+            value.TypeOfXmlFormatClassWriterDelegate        = GetObject<Type>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.Type.FromPointer); // 0xA0 TypeOfXmlFormatClassWriterDelegate ( ModelClassType Type Type Type Pointer )
+            value.TypeOfXmlFormatCollectionWriterDelegate   = GetObject<Type>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.Type.FromPointer); // 0xA8 TypeOfXmlFormatCollectionWriterDelegate ( ModelClassType Type Type Type Pointer )
+            value.TypeOfXmlFormatClassReaderDelegate        = GetObject<Type>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.Type.FromPointer); // 0xB0 TypeOfXmlFormatClassReaderDelegate ( ModelClassType Type Type Type Pointer )
+            value.TypeOfXmlFormatCollectionReaderDelegate   = GetObject<Type>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.Type.FromPointer); // 0xB8 TypeOfXmlFormatCollectionReaderDelegate ( ModelClassType Type Type Type Pointer )
+            value.TypeOfXmlFormatGetOnlyCollectionReaderDelegate = GetObject<Type>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.Type.FromPointer); // 0xC0 TypeOfXmlFormatGetOnlyCollectionReaderDelegate ( ModelClassType Type Type Type Pointer )
+            value.TypeOfKnownTypeAttribute                  = GetObject<Type>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.Type.FromPointer); // 0xC8 TypeOfKnownTypeAttribute    ( ModelClassType Type Type Type Pointer )
+            value.TypeOfDataContractAttribute               = GetObject<Type>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.Type.FromPointer); // 0xD0 TypeOfDataContractAttribute ( ModelClassType Type Type Type Pointer )
+            value.TypeOfContractNamespaceAttribute          = GetObject<Type>(new IntPtr(p + 0x0D8), ReversePrism.DataModels.Type.FromPointer); // 0xD8 TypeOfContractNamespaceAttribute ( ModelClassType Type Type Type Pointer )
+            value.TypeOfDataMemberAttribute                 = GetObject<Type>(new IntPtr(p + 0x0E0), ReversePrism.DataModels.Type.FromPointer); // 0xE0 TypeOfDataMemberAttribute   ( ModelClassType Type Type Type Pointer )
+            value.TypeOfEnumMemberAttribute                 = GetObject<Type>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.Type.FromPointer); // 0xE8 TypeOfEnumMemberAttribute   ( ModelClassType Type Type Type Pointer )
+            value.TypeOfCollectionDataContractAttribute     = GetObject<Type>(new IntPtr(p + 0x0F0), ReversePrism.DataModels.Type.FromPointer); // 0xF0 TypeOfCollectionDataContractAttribute ( ModelClassType Type Type Type Pointer )
+            value.TypeOfOptionalFieldAttribute              = GetObject<Type>(new IntPtr(p + 0x0F8), ReversePrism.DataModels.Type.FromPointer); // 0xF8 TypeOfOptionalFieldAttribute ( ModelClassType Type Type Type Pointer )
+            value.TypeOfObjectArray                         = GetObject<Type>(new IntPtr(p + 0x100), ReversePrism.DataModels.Type.FromPointer); // 0x100 TypeOfObjectArray           ( ModelClassType Type Type Type Pointer )
+            value.TypeOfOnSerializingAttribute              = GetObject<Type>(new IntPtr(p + 0x108), ReversePrism.DataModels.Type.FromPointer); // 0x108 TypeOfOnSerializingAttribute ( ModelClassType Type Type Type Pointer )
+            value.TypeOfOnSerializedAttribute               = GetObject<Type>(new IntPtr(p + 0x110), ReversePrism.DataModels.Type.FromPointer); // 0x110 TypeOfOnSerializedAttribute ( ModelClassType Type Type Type Pointer )
+            value.TypeOfOnDeserializingAttribute            = GetObject<Type>(new IntPtr(p + 0x118), ReversePrism.DataModels.Type.FromPointer); // 0x118 TypeOfOnDeserializingAttribute ( ModelClassType Type Type Type Pointer )
+            value.TypeOfOnDeserializedAttribute             = GetObject<Type>(new IntPtr(p + 0x120), ReversePrism.DataModels.Type.FromPointer); // 0x120 TypeOfOnDeserializedAttribute ( ModelClassType Type Type Type Pointer )
+            value.TypeOfFlagsAttribute                      = GetObject<Type>(new IntPtr(p + 0x128), ReversePrism.DataModels.Type.FromPointer); // 0x128 TypeOfFlagsAttribute        ( ModelClassType Type Type Type Pointer )
+            value.TypeOfSerializableAttribute               = GetObject<Type>(new IntPtr(p + 0x130), ReversePrism.DataModels.Type.FromPointer); // 0x130 TypeOfSerializableAttribute ( ModelClassType Type Type Type Pointer )
+            value.TypeOfNonSerializedAttribute              = GetObject<Type>(new IntPtr(p + 0x138), ReversePrism.DataModels.Type.FromPointer); // 0x138 TypeOfNonSerializedAttribute ( ModelClassType Type Type Type Pointer )
+            value.TypeOfSerializationInfo                   = GetObject<Type>(new IntPtr(p + 0x140), ReversePrism.DataModels.Type.FromPointer); // 0x140 TypeOfSerializationInfo     ( ModelClassType Type Type Type Pointer )
+            value.TypeOfSerializationInfoEnumerator         = GetObject<Type>(new IntPtr(p + 0x148), ReversePrism.DataModels.Type.FromPointer); // 0x148 TypeOfSerializationInfoEnumerator ( ModelClassType Type Type Type Pointer )
+            value.TypeOfSerializationEntry                  = GetObject<Type>(new IntPtr(p + 0x150), ReversePrism.DataModels.Type.FromPointer); // 0x150 TypeOfSerializationEntry    ( ModelClassType Type Type Type Pointer )
+            value.TypeOfIXmlSerializable                    = GetObject<Type>(new IntPtr(p + 0x158), ReversePrism.DataModels.Type.FromPointer); // 0x158 TypeOfIXmlSerializable      ( ModelClassType Type Type Type Pointer )
+            value.TypeOfXmlSchemaProviderAttribute          = GetObject<Type>(new IntPtr(p + 0x160), ReversePrism.DataModels.Type.FromPointer); // 0x160 TypeOfXmlSchemaProviderAttribute ( ModelClassType Type Type Type Pointer )
+            value.TypeOfXmlRootAttribute                    = GetObject<Type>(new IntPtr(p + 0x168), ReversePrism.DataModels.Type.FromPointer); // 0x168 TypeOfXmlRootAttribute      ( ModelClassType Type Type Type Pointer )
+            value.TypeOfXmlQualifiedName                    = GetObject<Type>(new IntPtr(p + 0x170), ReversePrism.DataModels.Type.FromPointer); // 0x170 TypeOfXmlQualifiedName      ( ModelClassType Type Type Type Pointer )
+            value.TypeOfXmlSchemaType                       = GetObject<Type>(new IntPtr(p + 0x178), ReversePrism.DataModels.Type.FromPointer); // 0x178 TypeOfXmlSchemaType         ( ModelClassType Type Type Type Pointer )
+            value.TypeOfXmlSerializableServices             = GetObject<Type>(new IntPtr(p + 0x180), ReversePrism.DataModels.Type.FromPointer); // 0x180 TypeOfXmlSerializableServices ( ModelClassType Type Type Type Pointer )
+            value.TypeOfXmlNodeArray                        = GetObject<Type>(new IntPtr(p + 0x188), ReversePrism.DataModels.Type.FromPointer); // 0x188 TypeOfXmlNodeArray          ( ModelClassType Type Type Type Pointer )
+            value.TypeOfXmlSchemaSet                        = GetObject<Type>(new IntPtr(p + 0x190), ReversePrism.DataModels.Type.FromPointer); // 0x190 TypeOfXmlSchemaSet          ( ModelClassType Type Type Type Pointer )
+            value.EmptyTypeArray                            = GetObjectList<Type>(new IntPtr(p + 0x1A0), ReversePrism.DataModels.Type.FromPointer); // 0x1A0 EmptyTypeArray              ( ModelClassListType Type[] Type[] List<Type> Pointer )
+            value.TypeOfIPropertyChange                     = GetObject<Type>(new IntPtr(p + 0x1A8), ReversePrism.DataModels.Type.FromPointer); // 0x1A8 TypeOfIPropertyChange       ( ModelClassType Type Type Type Pointer )
+            value.TypeOfIExtensibleDataObject               = GetObject<Type>(new IntPtr(p + 0x1B0), ReversePrism.DataModels.Type.FromPointer); // 0x1B0 TypeOfIExtensibleDataObject ( ModelClassType Type Type Type Pointer )
+            value.TypeOfExtensionDataObject                 = GetObject<Type>(new IntPtr(p + 0x1B8), ReversePrism.DataModels.Type.FromPointer); // 0x1B8 TypeOfExtensionDataObject   ( ModelClassType Type Type Type Pointer )
+            value.TypeOfISerializableDataNode               = GetObject<Type>(new IntPtr(p + 0x1C0), ReversePrism.DataModels.Type.FromPointer); // 0x1C0 TypeOfISerializableDataNode ( ModelClassType Type Type Type Pointer )
+            value.TypeOfClassDataNode                       = GetObject<Type>(new IntPtr(p + 0x1C8), ReversePrism.DataModels.Type.FromPointer); // 0x1C8 TypeOfClassDataNode         ( ModelClassType Type Type Type Pointer )
+            value.TypeOfCollectionDataNode                  = GetObject<Type>(new IntPtr(p + 0x1D0), ReversePrism.DataModels.Type.FromPointer); // 0x1D0 TypeOfCollectionDataNode    ( ModelClassType Type Type Type Pointer )
+            value.TypeOfXmlDataNode                         = GetObject<Type>(new IntPtr(p + 0x1D8), ReversePrism.DataModels.Type.FromPointer); // 0x1D8 TypeOfXmlDataNode           ( ModelClassType Type Type Type Pointer )
+            value.TypeOfNullable                            = GetObject<Type>(new IntPtr(p + 0x1E0), ReversePrism.DataModels.Type.FromPointer); // 0x1E0 TypeOfNullable              ( ModelClassType Type Type Type Pointer )
+            value.TypeOfReflectionPointer                   = GetObject<Type>(new IntPtr(p + 0x1E8), ReversePrism.DataModels.Type.FromPointer); // 0x1E8 TypeOfReflectionPointer     ( ModelClassType Type Type Type Pointer )
+            value.TypeOfIDictionaryGeneric                  = GetObject<Type>(new IntPtr(p + 0x1F0), ReversePrism.DataModels.Type.FromPointer); // 0x1F0 TypeOfIDictionaryGeneric    ( ModelClassType Type Type Type Pointer )
+            value.TypeOfIDictionary                         = GetObject<Type>(new IntPtr(p + 0x1F8), ReversePrism.DataModels.Type.FromPointer); // 0x1F8 TypeOfIDictionary           ( ModelClassType Type Type Type Pointer )
+            value.TypeOfIListGeneric                        = GetObject<Type>(new IntPtr(p + 0x200), ReversePrism.DataModels.Type.FromPointer); // 0x200 TypeOfIListGeneric          ( ModelClassType Type Type Type Pointer )
+            value.TypeOfIList                               = GetObject<Type>(new IntPtr(p + 0x208), ReversePrism.DataModels.Type.FromPointer); // 0x208 TypeOfIList                 ( ModelClassType Type Type Type Pointer )
+            value.TypeOfICollectionGeneric                  = GetObject<Type>(new IntPtr(p + 0x210), ReversePrism.DataModels.Type.FromPointer); // 0x210 TypeOfICollectionGeneric    ( ModelClassType Type Type Type Pointer )
+            value.TypeOfICollection                         = GetObject<Type>(new IntPtr(p + 0x218), ReversePrism.DataModels.Type.FromPointer); // 0x218 TypeOfICollection           ( ModelClassType Type Type Type Pointer )
+            value.TypeOfIEnumerableGeneric                  = GetObject<Type>(new IntPtr(p + 0x220), ReversePrism.DataModels.Type.FromPointer); // 0x220 TypeOfIEnumerableGeneric    ( ModelClassType Type Type Type Pointer )
+            value.TypeOfIEnumerable                         = GetObject<Type>(new IntPtr(p + 0x228), ReversePrism.DataModels.Type.FromPointer); // 0x228 TypeOfIEnumerable           ( ModelClassType Type Type Type Pointer )
+            value.TypeOfIEnumeratorGeneric                  = GetObject<Type>(new IntPtr(p + 0x230), ReversePrism.DataModels.Type.FromPointer); // 0x230 TypeOfIEnumeratorGeneric    ( ModelClassType Type Type Type Pointer )
+            value.TypeOfIEnumerator                         = GetObject<Type>(new IntPtr(p + 0x238), ReversePrism.DataModels.Type.FromPointer); // 0x238 TypeOfIEnumerator           ( ModelClassType Type Type Type Pointer )
+            value.TypeOfKeyValuePair                        = GetObject<Type>(new IntPtr(p + 0x240), ReversePrism.DataModels.Type.FromPointer); // 0x240 TypeOfKeyValuePair          ( ModelClassType Type Type Type Pointer )
+            value.TypeOfKeyValue                            = GetObject<Type>(new IntPtr(p + 0x248), ReversePrism.DataModels.Type.FromPointer); // 0x248 TypeOfKeyValue              ( ModelClassType Type Type Type Pointer )
+            value.TypeOfIDictionaryEnumerator               = GetObject<Type>(new IntPtr(p + 0x250), ReversePrism.DataModels.Type.FromPointer); // 0x250 TypeOfIDictionaryEnumerator ( ModelClassType Type Type Type Pointer )
+            value.TypeOfDictionaryEnumerator                = GetObject<Type>(new IntPtr(p + 0x258), ReversePrism.DataModels.Type.FromPointer); // 0x258 TypeOfDictionaryEnumerator  ( ModelClassType Type Type Type Pointer )
+            value.TypeOfGenericDictionaryEnumerator         = GetObject<Type>(new IntPtr(p + 0x260), ReversePrism.DataModels.Type.FromPointer); // 0x260 TypeOfGenericDictionaryEnumerator ( ModelClassType Type Type Type Pointer )
+            value.TypeOfDictionaryGeneric                   = GetObject<Type>(new IntPtr(p + 0x268), ReversePrism.DataModels.Type.FromPointer); // 0x268 TypeOfDictionaryGeneric     ( ModelClassType Type Type Type Pointer )
+            value.TypeOfHashtable                           = GetObject<Type>(new IntPtr(p + 0x270), ReversePrism.DataModels.Type.FromPointer); // 0x270 TypeOfHashtable             ( ModelClassType Type Type Type Pointer )
+            value.TypeOfListGeneric                         = GetObject<Type>(new IntPtr(p + 0x278), ReversePrism.DataModels.Type.FromPointer); // 0x278 TypeOfListGeneric           ( ModelClassType Type Type Type Pointer )
+            value.TypeOfXmlElement                          = GetObject<Type>(new IntPtr(p + 0x280), ReversePrism.DataModels.Type.FromPointer); // 0x280 TypeOfXmlElement            ( ModelClassType Type Type Type Pointer )
+            value.TypeOfDBNull                              = GetObject<Type>(new IntPtr(p + 0x288), ReversePrism.DataModels.Type.FromPointer); // 0x288 TypeOfDBNull                ( ModelClassType Type Type Type Pointer )
+            value.DataContractXsdBaseNamespaceUri           = GetObject<Uri>(new IntPtr(p + 0x290), ReversePrism.DataModels.Uri.FromPointer); // 0x290 DataContractXsdBaseNamespaceUri ( ModelClassType Uri Uri Uri Pointer )
+            value.NewObjectId                               = GetString(new IntPtr(p + 0x298)); // 0x298 NewObjectId                 ( ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -9,11 +9,11 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 buffer                                   IntPtr IL2CPP_TYPE_PTR
-    // 018 Length                                   0001865F36C0 ModelPrimitiveType int int int Int32
-    // 01C Capacity                                 0001865F36C0 ModelPrimitiveType int int int Int32
-    // 020 BitBuffer                                00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64
-    // 028 BitIndex                                 0001865F36C0 ModelPrimitiveType int int int Int32
-    // 02C FailedWrites                             0001865F36C0 ModelPrimitiveType int int int Int32
+    // 018 Length                                   ModelPrimitiveType int int int Int32
+    // 01C Capacity                                 ModelPrimitiveType int int int Int32
+    // 020 BitBuffer                                ModelPrimitiveType ulong ulong ulong UInt64
+    // 028 BitIndex                                 ModelPrimitiveType int int int Int32
+    // 02C FailedWrites                             ModelPrimitiveType int int int Int32
     public partial class StreamData : DataModel
     {
         public int                                      Length                                  { get; set; }
@@ -30,11 +30,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StreamData() { Pointer= p0 };
 
-            value.Length                                    = GetInt32(new IntPtr(p + 0x018)); // 0245A5175230 0x18 Length                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Capacity                                  = GetInt32(new IntPtr(p + 0x01C)); // 0245A5175250 0x1C Capacity                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.BitBuffer                                 = GetUInt64(new IntPtr(p + 0x020)); // 0245A5175270 0x20 BitBuffer                   ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.BitIndex                                  = GetInt32(new IntPtr(p + 0x028)); // 0245A5175290 0x28 BitIndex                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.FailedWrites                              = GetInt32(new IntPtr(p + 0x02C)); // 0245A51752B0 0x2C FailedWrites                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Length                                    = GetInt32(new IntPtr(p + 0x018)); // 0x18 Length                      ( ModelPrimitiveType int int int Int32 )
+            value.Capacity                                  = GetInt32(new IntPtr(p + 0x01C)); // 0x1C Capacity                    ( ModelPrimitiveType int int int Int32 )
+            value.BitBuffer                                 = GetUInt64(new IntPtr(p + 0x020)); // 0x20 BitBuffer                   ( ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.BitIndex                                  = GetInt32(new IntPtr(p + 0x028)); // 0x28 BitIndex                    ( ModelPrimitiveType int int int Int32 )
+            value.FailedWrites                              = GetInt32(new IntPtr(p + 0x02C)); // 0x2C FailedWrites                ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

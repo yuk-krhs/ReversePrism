@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 _disallowMultipleComponentArray          DisallowMultipleComponent[] IL2CPP_TYPE_SZARRAY
     // 008 _executeInEditModeArray                  ExecuteInEditMode[] IL2CPP_TYPE_SZARRAY
-    // 010 RequireComponentArray                    000185CA0DD8 ModelClassListType RequireComponent[] RequireComponent[] List<RequireComponent> Pointer
+    // 010 RequireComponentArray                    ModelClassListType RequireComponent[] RequireComponent[] List<RequireComponent> Pointer
     public partial class AttributeHelperEngine : DataModel
     {
         public List<RequireComponent>?                  RequireComponentArray                   { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AttributeHelperEngine() { Pointer= p0 };
 
-            value.RequireComponentArray                     = GetObjectList<RequireComponent>(new IntPtr(p + 0x010), ReversePrism.DataModels.RequireComponent.FromPointer); // 0245A2329E38 0x10 RequireComponentArray       ( 000185CA0DD8 ModelClassListType RequireComponent[] RequireComponent[] List<RequireComponent> Pointer )
+            value.RequireComponentArray                     = GetObjectList<RequireComponent>(new IntPtr(p + 0x010), ReversePrism.DataModels.RequireComponent.FromPointer); // 0x10 RequireComponentArray       ( ModelClassListType RequireComponent[] RequireComponent[] List<RequireComponent> Pointer )
 
             return value;
         }

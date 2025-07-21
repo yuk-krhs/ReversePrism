@@ -8,15 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 MstCharacterInfoId                       0001865F4260 ModelPrimitiveType int int int Int32
-    // 014 MstProduceIdolId                         0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 UnitIdol                                 00018670CE40 ModelClassType UnitIdol UnitIdol UnitIdol Pointer
-    // 020 Color                                    000186672F10 ModelPrimitiveType string string string String
-    // 028 BeforeLv                                 0001865F4260 ModelPrimitiveType int int int Int32
-    // 02C AfterLv                                  0001865F4260 ModelPrimitiveType int int int Int32
-    // 030 IsMaxLv                                  0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 038 IdolBaseReward                           000186571DC0 ModelClassType IIdolBaseRewardStatus IIdolBaseRewardStatus IIdolBaseRewardStatus Pointer
-    // 040 OtherSceneLoaderAddressables             000185D05E08 ModelClassListType List`1<SceneLoaderAddressable> List`1<SceneLoaderAddressable> List<SceneLoaderAddressable> Pointer
+    // 010 MstCharacterInfoId                       ModelPrimitiveType int int int Int32
+    // 014 MstProduceIdolId                         ModelPrimitiveType int int int Int32
+    // 018 UnitIdol                                 ModelClassType UnitIdol UnitIdol UnitIdol Pointer
+    // 020 Color                                    ModelPrimitiveType string string string String
+    // 028 BeforeLv                                 ModelPrimitiveType int int int Int32
+    // 02C AfterLv                                  ModelPrimitiveType int int int Int32
+    // 030 IsMaxLv                                  ModelPrimitiveType bool bool bool Bool
+    // 038 IdolBaseReward                           ModelClassType IIdolBaseRewardStatus IIdolBaseRewardStatus IIdolBaseRewardStatus Pointer
     public partial class AwakeningPerformanceViewModel : DataModel
     {
         public int                                      MstCharacterInfoId                      { get; set; }
@@ -27,7 +26,6 @@ namespace ReversePrism.DataModels
         public int                                      AfterLv                                 { get; set; }
         public bool                                     IsMaxLv                                 { get; set; }
         public IIdolBaseRewardStatus?                   IdolBaseReward                          { get; set; }
-        public List<SceneLoaderAddressable>?            OtherSceneLoaderAddressables            { get; set; }
 
         public static AwakeningPerformanceViewModel? FromPointer(IntPtr p0)
         {
@@ -37,15 +35,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AwakeningPerformanceViewModel() { Pointer= p0 };
 
-            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x010)); // 02466602BE70 0x10 MstCharacterInfoId          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x014)); // 02466602BE90 0x14 MstProduceIdolId            ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.UnitIdol                                  = GetObject<UnitIdol>(new IntPtr(p + 0x018), ReversePrism.DataModels.UnitIdol.FromPointer); // 02466602BEB0 0x18 UnitIdol                    ( 00018670CE40 ModelClassType UnitIdol UnitIdol UnitIdol Pointer )
-            value.Color                                     = GetString(new IntPtr(p + 0x020)); // 02466602BED0 0x20 Color                       ( 000186672F10 ModelPrimitiveType string string string String )
-            value.BeforeLv                                  = GetInt32(new IntPtr(p + 0x028)); // 02466602BEF0 0x28 BeforeLv                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.AfterLv                                   = GetInt32(new IntPtr(p + 0x02C)); // 02466602BF10 0x2C AfterLv                     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.IsMaxLv                                   = GetBool(new IntPtr(p + 0x030)); // 02466602BF30 0x30 IsMaxLv                     ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.IdolBaseReward                            = GetObject<IIdolBaseRewardStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.IIdolBaseRewardStatus.FromPointer); // 02466602BF50 0x38 IdolBaseReward              ( 000186571DC0 ModelClassType IIdolBaseRewardStatus IIdolBaseRewardStatus IIdolBaseRewardStatus Pointer )
-            value.OtherSceneLoaderAddressables              = GetObjectList<SceneLoaderAddressable>(new IntPtr(p + 0x040), ReversePrism.DataModels.SceneLoaderAddressable.FromPointer); // 02466602BF70 0x40 OtherSceneLoaderAddressables ( 000185D05E08 ModelClassListType List`1<SceneLoaderAddressable> List`1<SceneLoaderAddressable> List<SceneLoaderAddressable> Pointer )
+            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x010)); // 0x10 MstCharacterInfoId          ( ModelPrimitiveType int int int Int32 )
+            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x014)); // 0x14 MstProduceIdolId            ( ModelPrimitiveType int int int Int32 )
+            value.UnitIdol                                  = GetObject<UnitIdol>(new IntPtr(p + 0x018), ReversePrism.DataModels.UnitIdol.FromPointer); // 0x18 UnitIdol                    ( ModelClassType UnitIdol UnitIdol UnitIdol Pointer )
+            value.Color                                     = GetString(new IntPtr(p + 0x020)); // 0x20 Color                       ( ModelPrimitiveType string string string String )
+            value.BeforeLv                                  = GetInt32(new IntPtr(p + 0x028)); // 0x28 BeforeLv                    ( ModelPrimitiveType int int int Int32 )
+            value.AfterLv                                   = GetInt32(new IntPtr(p + 0x02C)); // 0x2C AfterLv                     ( ModelPrimitiveType int int int Int32 )
+            value.IsMaxLv                                   = GetBool(new IntPtr(p + 0x030)); // 0x30 IsMaxLv                     ( ModelPrimitiveType bool bool bool Bool )
+            value.IdolBaseReward                            = GetObject<IIdolBaseRewardStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.IIdolBaseRewardStatus.FromPointer); // 0x38 IdolBaseReward              ( ModelClassType IIdolBaseRewardStatus IIdolBaseRewardStatus IIdolBaseRewardStatus Pointer )
 
             return value;
         }

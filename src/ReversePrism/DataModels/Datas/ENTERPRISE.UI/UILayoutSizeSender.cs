@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 SenderHorizontalSize                     00018665E780 ModelClassType FloatEvent FloatEvent FloatEvent Pointer
-    // 028 SenderVerticalSize                       00018665E780 ModelClassType FloatEvent FloatEvent FloatEvent Pointer
+    // 020 SenderHorizontalSize                     ModelClassType FloatEvent FloatEvent FloatEvent Pointer
+    // 028 SenderVerticalSize                       ModelClassType FloatEvent FloatEvent FloatEvent Pointer
     public partial class UILayoutSizeSender : DataModel
     {
         public FloatEvent?                              SenderHorizontalSize                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UILayoutSizeSender() { Pointer= p0 };
 
-            value.SenderHorizontalSize                      = GetObject<FloatEvent>(new IntPtr(p + 0x020), ReversePrism.DataModels.FloatEvent.FromPointer); // 0245A4059EF0 0x20 SenderHorizontalSize        ( 00018665E780 ModelClassType FloatEvent FloatEvent FloatEvent Pointer )
-            value.SenderVerticalSize                        = GetObject<FloatEvent>(new IntPtr(p + 0x028), ReversePrism.DataModels.FloatEvent.FromPointer); // 0245A4059F10 0x28 SenderVerticalSize          ( 00018665E780 ModelClassType FloatEvent FloatEvent FloatEvent Pointer )
+            value.SenderHorizontalSize                      = GetObject<FloatEvent>(new IntPtr(p + 0x020), ReversePrism.DataModels.FloatEvent.FromPointer); // 0x20 SenderHorizontalSize        ( ModelClassType FloatEvent FloatEvent FloatEvent Pointer )
+            value.SenderVerticalSize                        = GetObject<FloatEvent>(new IntPtr(p + 0x028), ReversePrism.DataModels.FloatEvent.FromPointer); // 0x28 SenderVerticalSize          ( ModelClassType FloatEvent FloatEvent FloatEvent Pointer )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 LineNumber                               0001865F2F90 ModelPrimitiveType int int int Int32
-    // 014 LinePosition                             0001865F2F90 ModelPrimitiveType int int int Int32
+    // 010 LineNumber                               ModelPrimitiveType int int int Int32
+    // 014 LinePosition                             ModelPrimitiveType int int int Int32
     public partial class LineInfoAnnotation : DataModel
     {
         public int                                      LineNumber                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LineInfoAnnotation() { Pointer= p0 };
 
-            value.LineNumber                                = GetInt32(new IntPtr(p + 0x010)); // 02466BCACD08 0x10 LineNumber                  ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.LinePosition                              = GetInt32(new IntPtr(p + 0x014)); // 02466BCACD28 0x14 LinePosition                ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.LineNumber                                = GetInt32(new IntPtr(p + 0x010)); // 0x10 LineNumber                  ( ModelPrimitiveType int int int Int32 )
+            value.LinePosition                              = GetInt32(new IntPtr(p + 0x014)); // 0x14 LinePosition                ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

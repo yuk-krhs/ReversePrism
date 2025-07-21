@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Mask                                   0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 M_Mask                                   ModelPrimitiveType int int int Int32
     public partial class LayerMask : DataModel
     {
         public int                                      M_Mask                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LayerMask() { Pointer= p0 };
 
-            value.M_Mask                                    = GetInt32(new IntPtr(p + 0x010)); // 0245A2291D88 0x10 M_Mask                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_Mask                                    = GetInt32(new IntPtr(p + 0x010)); // 0x10 M_Mask                      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

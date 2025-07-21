@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_State                                  0001866F7420 ModelClassType InputActionState InputActionState InputActionState Pointer
+    // 010 M_State                                  ModelClassType InputActionState InputActionState InputActionState Pointer
     // 018 m_Ptr                                    IntPtr IL2CPP_TYPE_PTR
     public partial class ActionEventPtr : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ActionEventPtr() { Pointer= p0 };
 
-            value.M_State                                   = GetObject<InputActionState>(new IntPtr(p + 0x010), ReversePrism.DataModels.InputActionState.FromPointer); // 0246678E39A0 0x10 M_State                     ( 0001866F7420 ModelClassType InputActionState InputActionState InputActionState Pointer )
+            value.M_State                                   = GetObject<InputActionState>(new IntPtr(p + 0x010), ReversePrism.DataModels.InputActionState.FromPointer); // 0x10 M_State                     ( ModelClassType InputActionState InputActionState InputActionState Pointer )
 
             return value;
         }

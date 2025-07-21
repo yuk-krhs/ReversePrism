@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 060 SerializationSurrogate                   000186636940 ModelClassType ISerializationSurrogate ISerializationSurrogate ISerializationSurrogate Pointer
+    // 060 SerializationSurrogate                   ModelClassType ISerializationSurrogate ISerializationSurrogate ISerializationSurrogate Pointer
     public partial class SurrogateDataContractCriticalHelper : DataModel
     {
         public ISerializationSurrogate?                 SerializationSurrogate                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SurrogateDataContractCriticalHelper() { Pointer= p0 };
 
-            value.SerializationSurrogate                    = GetObject<ISerializationSurrogate>(new IntPtr(p + 0x060), ReversePrism.DataModels.ISerializationSurrogate.FromPointer); // 024667DD4678 0x60 SerializationSurrogate      ( 000186636940 ModelClassType ISerializationSurrogate ISerializationSurrogate ISerializationSurrogate Pointer )
+            value.SerializationSurrogate                    = GetObject<ISerializationSurrogate>(new IntPtr(p + 0x060), ReversePrism.DataModels.ISerializationSurrogate.FromPointer); // 0x60 SerializationSurrogate      ( ModelClassType ISerializationSurrogate ISerializationSurrogate ISerializationSurrogate Pointer )
 
             return value;
         }

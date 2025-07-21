@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 StartTime                                000186665B50 ModelPrimitiveType float float float Single
-    // 014 EndTime                                  000186665B50 ModelPrimitiveType float float float Single
-    // 018 IsActivated                              000186595480 ModelPrimitiveType bool bool bool Bool
-    // 01C Duration                                 0001866656B0 ModelPrimitiveType float float float Single
+    // 010 StartTime                                ModelPrimitiveType float float float Single
+    // 014 EndTime                                  ModelPrimitiveType float float float Single
+    // 018 IsActivated                              ModelPrimitiveType bool bool bool Bool
+    // 01C Duration                                 ModelPrimitiveType float float float Single
     public partial class RhythmGameLiveSkillEffect : DataModel
     {
         public float                                    StartTime                               { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RhythmGameLiveSkillEffect() { Pointer= p0 };
 
-            value.StartTime                                 = GetSingle(new IntPtr(p + 0x010)); // 024665011900 0x10 StartTime                   ( 000186665B50 ModelPrimitiveType float float float Single )
-            value.EndTime                                   = GetSingle(new IntPtr(p + 0x014)); // 024665011920 0x14 EndTime                     ( 000186665B50 ModelPrimitiveType float float float Single )
-            value.IsActivated                               = GetBool(new IntPtr(p + 0x018)); // 024665011940 0x18 IsActivated                 ( 000186595480 ModelPrimitiveType bool bool bool Bool )
-            value.Duration                                  = GetSingle(new IntPtr(p + 0x01C)); // 024665011960 0x1C Duration                    ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.StartTime                                 = GetSingle(new IntPtr(p + 0x010)); // 0x10 StartTime                   ( ModelPrimitiveType float float float Single )
+            value.EndTime                                   = GetSingle(new IntPtr(p + 0x014)); // 0x14 EndTime                     ( ModelPrimitiveType float float float Single )
+            value.IsActivated                               = GetBool(new IntPtr(p + 0x018)); // 0x18 IsActivated                 ( ModelPrimitiveType bool bool bool Bool )
+            value.Duration                                  = GetSingle(new IntPtr(p + 0x01C)); // 0x1C Duration                    ( ModelPrimitiveType float float float Single )
 
             return value;
         }

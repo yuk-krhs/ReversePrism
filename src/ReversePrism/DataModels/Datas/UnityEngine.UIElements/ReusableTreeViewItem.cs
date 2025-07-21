@@ -8,18 +8,18 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 040 M_Toggle                                 000186682E60 ModelClassType Toggle Toggle Toggle Pointer
-    // 048 M_Container                              0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer
-    // 050 M_IndentElement                          0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer
-    // 058 M_BindableContainer                      0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer
-    // 060 M_Checkmark                              0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer
-    // 068 onPointerUp                              Action`1<PointerUpEvent> IL2CPP_TYPE_GENERICINST
-    // 070 onToggleValueChanged                     Action`1<ChangeEvent`1<bool>> IL2CPP_TYPE_GENERICINST
-    // 078 M_Depth                                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 07C M_IndentWidth                            0001866656B0 ModelPrimitiveType float float float Single
-    // 080 m_PointerUpCallback                      EventCallback`1<PointerUpEvent> IL2CPP_TYPE_GENERICINST
-    // 088 m_ToggleValueChangedCallback             EventCallback`1<ChangeEvent`1<bool>> IL2CPP_TYPE_GENERICINST
-    // 090 m_ToggleGeometryChangedCallback          EventCallback`1<GeometryChangedEvent> IL2CPP_TYPE_GENERICINST
+    // 048 M_Toggle                                 ModelClassType Toggle Toggle Toggle Pointer
+    // 050 M_Container                              ModelClassType VisualElement VisualElement VisualElement Pointer
+    // 058 M_IndentElement                          ModelClassType VisualElement VisualElement VisualElement Pointer
+    // 060 M_BindableContainer                      ModelClassType VisualElement VisualElement VisualElement Pointer
+    // 068 M_Checkmark                              ModelClassType VisualElement VisualElement VisualElement Pointer
+    // 070 onPointerUp                              Action`1<PointerUpEvent> IL2CPP_TYPE_GENERICINST
+    // 078 onToggleValueChanged                     Action`1<ChangeEvent`1<bool>> IL2CPP_TYPE_GENERICINST
+    // 080 M_Depth                                  ModelPrimitiveType int int int Int32
+    // 084 M_IndentWidth                            ModelPrimitiveType float float float Single
+    // 088 m_PointerUpCallback                      EventCallback`1<PointerUpEvent> IL2CPP_TYPE_GENERICINST
+    // 090 m_ToggleValueChangedCallback             EventCallback`1<ChangeEvent`1<bool>> IL2CPP_TYPE_GENERICINST
+    // 098 m_ToggleGeometryChangedCallback          EventCallback`1<GeometryChangedEvent> IL2CPP_TYPE_GENERICINST
     public partial class ReusableTreeViewItem : DataModel
     {
         public Toggle?                                  M_Toggle                                { get; set; }
@@ -38,13 +38,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ReusableTreeViewItem() { Pointer= p0 };
 
-            value.M_Toggle                                  = GetObject<Toggle>(new IntPtr(p + 0x040), ReversePrism.DataModels.Toggle.FromPointer); // 0245A66B0930 0x40 M_Toggle                    ( 000186682E60 ModelClassType Toggle Toggle Toggle Pointer )
-            value.M_Container                               = GetObject<VisualElement>(new IntPtr(p + 0x048), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A66B0950 0x48 M_Container                 ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
-            value.M_IndentElement                           = GetObject<VisualElement>(new IntPtr(p + 0x050), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A66B0970 0x50 M_IndentElement             ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
-            value.M_BindableContainer                       = GetObject<VisualElement>(new IntPtr(p + 0x058), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A66B0990 0x58 M_BindableContainer         ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
-            value.M_Checkmark                               = GetObject<VisualElement>(new IntPtr(p + 0x060), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A66B09B0 0x60 M_Checkmark                 ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
-            value.M_Depth                                   = GetInt32(new IntPtr(p + 0x078)); // 0245A66B0A10 0x78 M_Depth                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_IndentWidth                             = GetSingle(new IntPtr(p + 0x07C)); // 0245A66B0A30 0x7C M_IndentWidth               ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_Toggle                                  = GetObject<Toggle>(new IntPtr(p + 0x048), ReversePrism.DataModels.Toggle.FromPointer); // 0x48 M_Toggle                    ( ModelClassType Toggle Toggle Toggle Pointer )
+            value.M_Container                               = GetObject<VisualElement>(new IntPtr(p + 0x050), ReversePrism.DataModels.VisualElement.FromPointer); // 0x50 M_Container                 ( ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.M_IndentElement                           = GetObject<VisualElement>(new IntPtr(p + 0x058), ReversePrism.DataModels.VisualElement.FromPointer); // 0x58 M_IndentElement             ( ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.M_BindableContainer                       = GetObject<VisualElement>(new IntPtr(p + 0x060), ReversePrism.DataModels.VisualElement.FromPointer); // 0x60 M_BindableContainer         ( ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.M_Checkmark                               = GetObject<VisualElement>(new IntPtr(p + 0x068), ReversePrism.DataModels.VisualElement.FromPointer); // 0x68 M_Checkmark                 ( ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.M_Depth                                   = GetInt32(new IntPtr(p + 0x080)); // 0x80 M_Depth                     ( ModelPrimitiveType int int int Int32 )
+            value.M_IndentWidth                             = GetSingle(new IntPtr(p + 0x084)); // 0x84 M_IndentWidth               ( ModelPrimitiveType float float float Single )
 
             return value;
         }

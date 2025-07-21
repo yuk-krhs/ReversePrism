@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 BeforePaidJewel                          0001865F7700 ModelPrimitiveType long long long Int64
-    // 018 BeforeFreeJewel                          0001865F7700 ModelPrimitiveType long long long Int64
-    // 020 StoreItems                               000185CE8CE8 ModelClassListType List`1<IStoreItemStatus> List`1<IStoreItemStatus> List<IStoreItemStatus> Pointer
-    // 028 SeasonPassItems                          000185CE8CE8 ModelClassListType List`1<IStoreItemStatus> List`1<IStoreItemStatus> List<IStoreItemStatus> Pointer
-    // 030 LoginBonusPassItems                      000185CE8CE8 ModelClassListType List`1<IStoreItemStatus> List`1<IStoreItemStatus> List<IStoreItemStatus> Pointer
+    // 010 BeforePaidJewel                          ModelPrimitiveType long long long Int64
+    // 018 BeforeFreeJewel                          ModelPrimitiveType long long long Int64
+    // 020 StoreItems                               ModelClassListType List`1<IStoreItemStatus> List`1<IStoreItemStatus> List<IStoreItemStatus> Pointer
+    // 028 SeasonPassItems                          ModelClassListType List`1<IStoreItemStatus> List`1<IStoreItemStatus> List<IStoreItemStatus> Pointer
+    // 030 LoginBonusPassItems                      ModelClassListType List`1<IStoreItemStatus> List`1<IStoreItemStatus> List<IStoreItemStatus> Pointer
     public partial class ShopDeferredPurchaseParam : DataModel
     {
         public long                                     BeforePaidJewel                         { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ShopDeferredPurchaseParam() { Pointer= p0 };
 
-            value.BeforePaidJewel                           = GetInt64(new IntPtr(p + 0x010)); // 0246655A83D8 0x10 BeforePaidJewel             ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.BeforeFreeJewel                           = GetInt64(new IntPtr(p + 0x018)); // 0246655A83F8 0x18 BeforeFreeJewel             ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.StoreItems                                = GetObjectList<IStoreItemStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IStoreItemStatus.FromPointer); // 0246655A8418 0x20 StoreItems                  ( 000185CE8CE8 ModelClassListType List`1<IStoreItemStatus> List`1<IStoreItemStatus> List<IStoreItemStatus> Pointer )
-            value.SeasonPassItems                           = GetObjectList<IStoreItemStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.IStoreItemStatus.FromPointer); // 0246655A8438 0x28 SeasonPassItems             ( 000185CE8CE8 ModelClassListType List`1<IStoreItemStatus> List`1<IStoreItemStatus> List<IStoreItemStatus> Pointer )
-            value.LoginBonusPassItems                       = GetObjectList<IStoreItemStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.IStoreItemStatus.FromPointer); // 0246655A8458 0x30 LoginBonusPassItems         ( 000185CE8CE8 ModelClassListType List`1<IStoreItemStatus> List`1<IStoreItemStatus> List<IStoreItemStatus> Pointer )
+            value.BeforePaidJewel                           = GetInt64(new IntPtr(p + 0x010)); // 0x10 BeforePaidJewel             ( ModelPrimitiveType long long long Int64 )
+            value.BeforeFreeJewel                           = GetInt64(new IntPtr(p + 0x018)); // 0x18 BeforeFreeJewel             ( ModelPrimitiveType long long long Int64 )
+            value.StoreItems                                = GetObjectList<IStoreItemStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IStoreItemStatus.FromPointer); // 0x20 StoreItems                  ( ModelClassListType List`1<IStoreItemStatus> List`1<IStoreItemStatus> List<IStoreItemStatus> Pointer )
+            value.SeasonPassItems                           = GetObjectList<IStoreItemStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.IStoreItemStatus.FromPointer); // 0x28 SeasonPassItems             ( ModelClassListType List`1<IStoreItemStatus> List`1<IStoreItemStatus> List<IStoreItemStatus> Pointer )
+            value.LoginBonusPassItems                       = GetObjectList<IStoreItemStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.IStoreItemStatus.FromPointer); // 0x30 LoginBonusPassItems         ( ModelClassListType List`1<IStoreItemStatus> List`1<IStoreItemStatus> List<IStoreItemStatus> Pointer )
 
             return value;
         }

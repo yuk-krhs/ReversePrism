@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 ScoreUpRate                              0001866656B0 ModelPrimitiveType float float float Single
+    // 020 ScoreUpRate                              ModelPrimitiveType float float float Single
     public partial class PerfectScoreUpSkillEffect : DataModel
     {
         public float                                    ScoreUpRate                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PerfectScoreUpSkillEffect() { Pointer= p0 };
 
-            value.ScoreUpRate                               = GetSingle(new IntPtr(p + 0x020)); // 024665012098 0x20 ScoreUpRate                 ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.ScoreUpRate                               = GetSingle(new IntPtr(p + 0x020)); // 0x20 ScoreUpRate                 ( ModelPrimitiveType float float float Single )
 
             return value;
         }

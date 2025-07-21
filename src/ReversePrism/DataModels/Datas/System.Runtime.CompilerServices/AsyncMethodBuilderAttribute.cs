@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 BuilderType                              0001866936B0 ModelClassType Type Type Type Pointer
+    // 010 BuilderType                              ModelClassType Type Type Type Pointer
     public partial class AsyncMethodBuilderAttribute : DataModel
     {
         public Type?                                    BuilderType                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AsyncMethodBuilderAttribute() { Pointer= p0 };
 
-            value.BuilderType                               = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 024668BD18D0 0x10 BuilderType                 ( 0001866936B0 ModelClassType Type Type Type Pointer )
+            value.BuilderType                               = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0x10 BuilderType                 ( ModelClassType Type Type Type Pointer )
 
             return value;
         }

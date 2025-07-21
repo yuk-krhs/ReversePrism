@@ -9,9 +9,9 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 enabled                                  ReactiveProperty`1<bool> IL2CPP_TYPE_GENERICINST
-    // 018 Count                                    0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 Count                                    ModelPrimitiveType int int int Int32
     // 020 tempDisableObjects                       HashSet`1<TempDisableObject> IL2CPP_TYPE_GENERICINST
-    // 028 Logger                                   00018654E3B0 ModelClassType CategorizedLogger CategorizedLogger CategorizedLogger Pointer
+    // 028 Logger                                   ModelClassType CategorizedLogger CategorizedLogger CategorizedLogger Pointer
     public partial class EnableCounter : DataModel
     {
         public int                                      Count                                   { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EnableCounter() { Pointer= p0 };
 
-            value.Count                                     = GetInt32(new IntPtr(p + 0x018)); // 024660B94020 0x18 Count                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Logger                                    = GetObject<CategorizedLogger>(new IntPtr(p + 0x028), ReversePrism.DataModels.CategorizedLogger.FromPointer); // 024660B94060 0x28 Logger                      ( 00018654E3B0 ModelClassType CategorizedLogger CategorizedLogger CategorizedLogger Pointer )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x018)); // 0x18 Count                       ( ModelPrimitiveType int int int Int32 )
+            value.Logger                                    = GetObject<CategorizedLogger>(new IntPtr(p + 0x028), ReversePrism.DataModels.CategorizedLogger.FromPointer); // 0x28 Logger                      ( ModelClassType CategorizedLogger CategorizedLogger CategorizedLogger Pointer )
 
             return value;
         }

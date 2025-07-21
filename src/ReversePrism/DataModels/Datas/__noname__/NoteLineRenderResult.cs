@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 IsRendering                              000186596AF0 ModelPrimitiveType bool bool bool Bool
-    // 011 IsJudging                                000186596AF0 ModelPrimitiveType bool bool bool Bool
-    // 014 JudgePosition                            000186666F40 ModelPrimitiveType float float float Single
+    // 010 IsRendering                              ModelPrimitiveType bool bool bool Bool
+    // 011 IsJudging                                ModelPrimitiveType bool bool bool Bool
+    // 014 JudgePosition                            ModelPrimitiveType float float float Single
     // 000 NotRendering                             NoteLineRenderResult IL2CPP_TYPE_VALUETYPE
     public partial class NoteLineRenderResult : DataModel
     {
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NoteLineRenderResult() { Pointer= p0 };
 
-            value.IsRendering                               = GetBool(new IntPtr(p + 0x010)); // 02466502F260 0x10 IsRendering                 ( 000186596AF0 ModelPrimitiveType bool bool bool Bool )
-            value.IsJudging                                 = GetBool(new IntPtr(p + 0x011)); // 02466502F280 0x11 IsJudging                   ( 000186596AF0 ModelPrimitiveType bool bool bool Bool )
-            value.JudgePosition                             = GetSingle(new IntPtr(p + 0x014)); // 02466502F2A0 0x14 JudgePosition               ( 000186666F40 ModelPrimitiveType float float float Single )
+            value.IsRendering                               = GetBool(new IntPtr(p + 0x010)); // 0x10 IsRendering                 ( ModelPrimitiveType bool bool bool Bool )
+            value.IsJudging                                 = GetBool(new IntPtr(p + 0x011)); // 0x11 IsJudging                   ( ModelPrimitiveType bool bool bool Bool )
+            value.JudgePosition                             = GetSingle(new IntPtr(p + 0x014)); // 0x14 JudgePosition               ( ModelPrimitiveType float float float Single )
 
             return value;
         }

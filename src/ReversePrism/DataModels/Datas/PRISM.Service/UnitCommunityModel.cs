@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Random                                   0001866093D0 ModelClassType Random Random Random Pointer
+    // 010 Random                                   ModelClassType Random Random Random Pointer
     public partial class UnitCommunityModel : DataModel
     {
         public Random?                                  Random                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnitCommunityModel() { Pointer= p0 };
 
-            value.Random                                    = GetObject<Random>(new IntPtr(p + 0x010), ReversePrism.DataModels.Random.FromPointer); // 0246664C8A40 0x10 Random                      ( 0001866093D0 ModelClassType Random Random Random Pointer )
+            value.Random                                    = GetObject<Random>(new IntPtr(p + 0x010), ReversePrism.DataModels.Random.FromPointer); // 0x10 Random                      ( ModelClassType Random Random Random Pointer )
 
             return value;
         }

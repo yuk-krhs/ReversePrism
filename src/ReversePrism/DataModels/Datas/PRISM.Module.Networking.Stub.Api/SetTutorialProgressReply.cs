@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<SetTutorialProgressReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 PhaseIdFieldNumber                       int IL2CPP_TYPE_I4
-    // 018 PhaseId                                  0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 PhaseId                                  ModelPrimitiveType int int int Int32
     // 000 IsSkipFieldNumber                        int IL2CPP_TYPE_I4
-    // 01C IsSkip                                   000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 01C IsSkip                                   ModelPrimitiveType bool bool bool Bool
     public partial class SetTutorialProgressReply : DataModel
     {
         public int                                      PhaseId                                 { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SetTutorialProgressReply() { Pointer= p0 };
 
-            value.PhaseId                                   = GetInt32(new IntPtr(p + 0x018)); // 024662BE4360 0x18 PhaseId                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsSkip                                    = GetBool(new IntPtr(p + 0x01C)); // 024662BE43A0 0x1C IsSkip                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.PhaseId                                   = GetInt32(new IntPtr(p + 0x018)); // 0x18 PhaseId                     ( ModelPrimitiveType int int int Int32 )
+            value.IsSkip                                    = GetBool(new IntPtr(p + 0x01C)); // 0x1C IsSkip                      ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 T                                        0001866AA650 ModelClassType Transform Transform Transform Pointer
-    // 018 P                                        0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32
-    // 024 R                                        00018664A340 ModelEnumType Quaternion Quaternion Quaternion Int32
+    // 010 T                                        ModelClassType Transform Transform Transform Pointer
+    // 018 P                                        ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 024 R                                        ModelEnumType Quaternion Quaternion Quaternion Int32
     public partial class IKSave : DataModel
     {
         public Transform?                               T                                       { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IKSave() { Pointer= p0 };
 
-            value.T                                         = GetObject<Transform>(new IntPtr(p + 0x010), ReversePrism.DataModels.Transform.FromPointer); // 0245A6A45390 0x10 T                           ( 0001866AA650 ModelClassType Transform Transform Transform Pointer )
-            value.P                                         = (Vector3)GetInt32(new IntPtr(p + 0x018)); // 0245A6A453B0 0x18 P                           ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.R                                         = (Quaternion)GetInt32(new IntPtr(p + 0x024)); // 0245A6A453D0 0x24 R                           ( 00018664A340 ModelEnumType Quaternion Quaternion Quaternion Int32 )
+            value.T                                         = GetObject<Transform>(new IntPtr(p + 0x010), ReversePrism.DataModels.Transform.FromPointer); // 0x10 T                           ( ModelClassType Transform Transform Transform Pointer )
+            value.P                                         = (Vector3)GetInt32(new IntPtr(p + 0x018)); // 0x18 P                           ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.R                                         = (Quaternion)GetInt32(new IntPtr(p + 0x024)); // 0x24 R                           ( ModelEnumType Quaternion Quaternion Quaternion Int32 )
 
             return value;
         }

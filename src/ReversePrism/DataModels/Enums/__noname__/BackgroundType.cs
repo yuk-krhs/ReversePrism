@@ -10,7 +10,6 @@ namespace ReversePrism.DataModels
 
     public enum BackgroundType
     {
-        None,
         Movie,
         Image,
     }

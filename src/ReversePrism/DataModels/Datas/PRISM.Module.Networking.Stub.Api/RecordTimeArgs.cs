@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<RecordTimeArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 KindFieldNumber                          int IL2CPP_TYPE_I4
-    // 018 Kind                                     000186671910 ModelPrimitiveType string string string String
+    // 018 Kind                                     ModelPrimitiveType string string string String
     public partial class RecordTimeArgs : DataModel
     {
         public string                                   Kind                                    { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RecordTimeArgs() { Pointer= p0 };
 
-            value.Kind                                      = GetString(new IntPtr(p + 0x018)); // 024662CD3410 0x18 Kind                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Kind                                      = GetString(new IntPtr(p + 0x018)); // 0x18 Kind                        ( ModelPrimitiveType string string string String )
 
             return value;
         }

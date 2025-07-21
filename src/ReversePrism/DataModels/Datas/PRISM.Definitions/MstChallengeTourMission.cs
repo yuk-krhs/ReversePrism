@@ -8,12 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Id                                       0001865F4260 ModelPrimitiveType int int int Int32
-    // 014 MissionType                              0001865F4260 ModelPrimitiveType int int int Int32
+    // 010 Id                                       ModelPrimitiveType int int int Int32
+    // 014 MissionType                              ModelPrimitiveType int int int Int32
+    // 018 Value                                    ModelPrimitiveType int int int Int32
     public partial class MstChallengeTourMission : DataModel
     {
         public int                                      Id                                      { get; set; }
         public int                                      MissionType                             { get; set; }
+        public int                                      Value                                   { get; set; }
 
         public static MstChallengeTourMission? FromPointer(IntPtr p0)
         {
@@ -23,8 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MstChallengeTourMission() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A4674458 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MissionType                               = GetInt32(new IntPtr(p + 0x014)); // 0245A4674478 0x14 MissionType                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0x10 Id                          ( ModelPrimitiveType int int int Int32 )
+            value.MissionType                               = GetInt32(new IntPtr(p + 0x014)); // 0x14 MissionType                 ( ModelPrimitiveType int int int Int32 )
+            value.Value                                     = GetInt32(new IntPtr(p + 0x018)); // 0x18 Value                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

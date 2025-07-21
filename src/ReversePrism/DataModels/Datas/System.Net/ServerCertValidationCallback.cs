@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_ValidationCallback                     000186649950 ModelClassType RemoteCertificateValidationCallback RemoteCertificateValidationCallback RemoteCertificateValidationCallback Pointer
-    // 018 M_Context                                0001865CCF60 ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer
+    // 010 M_ValidationCallback                     ModelClassType RemoteCertificateValidationCallback RemoteCertificateValidationCallback RemoteCertificateValidationCallback Pointer
+    // 018 M_Context                                ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer
     public partial class ServerCertValidationCallback : DataModel
     {
         public RemoteCertificateValidationCallback?     M_ValidationCallback                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ServerCertValidationCallback() { Pointer= p0 };
 
-            value.M_ValidationCallback                      = GetObject<RemoteCertificateValidationCallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.RemoteCertificateValidationCallback.FromPointer); // 02466797C810 0x10 M_ValidationCallback        ( 000186649950 ModelClassType RemoteCertificateValidationCallback RemoteCertificateValidationCallback RemoteCertificateValidationCallback Pointer )
-            value.M_Context                                 = GetObject<ExecutionContext>(new IntPtr(p + 0x018), ReversePrism.DataModels.ExecutionContext.FromPointer); // 02466797C830 0x18 M_Context                   ( 0001865CCF60 ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer )
+            value.M_ValidationCallback                      = GetObject<RemoteCertificateValidationCallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.RemoteCertificateValidationCallback.FromPointer); // 0x10 M_ValidationCallback        ( ModelClassType RemoteCertificateValidationCallback RemoteCertificateValidationCallback RemoteCertificateValidationCallback Pointer )
+            value.M_Context                                 = GetObject<ExecutionContext>(new IntPtr(p + 0x018), ReversePrism.DataModels.ExecutionContext.FromPointer); // 0x18 M_Context                   ( ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer )
 
             return value;
         }

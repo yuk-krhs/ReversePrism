@@ -10,10 +10,10 @@ namespace ReversePrism.DataModels
 
     // 000 k_AtlasBlit                              string IL2CPP_TYPE_STRING
     // 008 k_Editor                                 string IL2CPP_TYPE_STRING
-    // 010 K_Runtime                                000186674040 ModelPrimitiveType string string string String
-    // 018 K_RuntimeWorld                           000186674040 ModelPrimitiveType string string string String
-    // 020 K_GraphView                              000186674040 ModelPrimitiveType string string string String
-    // 028 K_ColorConversionBlit                    000186674040 ModelPrimitiveType string string string String
+    // 010 K_Runtime                                ModelPrimitiveType string string string String
+    // 018 K_RuntimeWorld                           ModelPrimitiveType string string string String
+    // 020 K_GraphView                              ModelPrimitiveType string string string String
+    // 028 K_ColorConversionBlit                    ModelPrimitiveType string string string String
     public partial class Shaders : DataModel
     {
         public string                                   K_Runtime                               { get; set; }
@@ -29,10 +29,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Shaders() { Pointer= p0 };
 
-            value.K_Runtime                                 = GetString(new IntPtr(p + 0x010)); // 0245A683AAD0 0x10 K_Runtime                   ( 000186674040 ModelPrimitiveType string string string String )
-            value.K_RuntimeWorld                            = GetString(new IntPtr(p + 0x018)); // 0245A683AAF0 0x18 K_RuntimeWorld              ( 000186674040 ModelPrimitiveType string string string String )
-            value.K_GraphView                               = GetString(new IntPtr(p + 0x020)); // 0245A683AB10 0x20 K_GraphView                 ( 000186674040 ModelPrimitiveType string string string String )
-            value.K_ColorConversionBlit                     = GetString(new IntPtr(p + 0x028)); // 0245A683AB30 0x28 K_ColorConversionBlit       ( 000186674040 ModelPrimitiveType string string string String )
+            value.K_Runtime                                 = GetString(new IntPtr(p + 0x010)); // 0x10 K_Runtime                   ( ModelPrimitiveType string string string String )
+            value.K_RuntimeWorld                            = GetString(new IntPtr(p + 0x018)); // 0x18 K_RuntimeWorld              ( ModelPrimitiveType string string string String )
+            value.K_GraphView                               = GetString(new IntPtr(p + 0x020)); // 0x20 K_GraphView                 ( ModelPrimitiveType string string string String )
+            value.K_ColorConversionBlit                     = GetString(new IntPtr(p + 0x028)); // 0x28 K_ColorConversionBlit       ( ModelPrimitiveType string string string String )
 
             return value;
         }

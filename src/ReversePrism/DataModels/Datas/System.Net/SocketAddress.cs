@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Size                                   0001865F2F90 ModelPrimitiveType int int int Int32
-    // 018 M_Buffer                                 000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 020 M_changed                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 024 M_hash                                   0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 M_Size                                   ModelPrimitiveType int int int Int32
+    // 018 M_Buffer                                 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 020 M_changed                                ModelPrimitiveType bool bool bool Bool
+    // 024 M_hash                                   ModelPrimitiveType int int int Int32
     public partial class SocketAddress : DataModel
     {
         public int                                      M_Size                                  { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SocketAddress() { Pointer= p0 };
 
-            value.M_Size                                    = GetInt32(new IntPtr(p + 0x010)); // 024667A640D8 0x10 M_Size                      ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.M_Buffer                                  = GetSByteList(new IntPtr(p + 0x018)); // 024667A640F8 0x18 M_Buffer                    ( 000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.M_changed                                 = GetBool(new IntPtr(p + 0x020)); // 024667A64118 0x20 M_changed                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_hash                                    = GetInt32(new IntPtr(p + 0x024)); // 024667A64138 0x24 M_hash                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_Size                                    = GetInt32(new IntPtr(p + 0x010)); // 0x10 M_Size                      ( ModelPrimitiveType int int int Int32 )
+            value.M_Buffer                                  = GetSByteList(new IntPtr(p + 0x018)); // 0x18 M_Buffer                    ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.M_changed                                 = GetBool(new IntPtr(p + 0x020)); // 0x20 M_changed                   ( ModelPrimitiveType bool bool bool Bool )
+            value.M_hash                                    = GetInt32(new IntPtr(p + 0x024)); // 0x24 M_hash                      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

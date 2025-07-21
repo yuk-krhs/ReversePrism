@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Value                                  000186691D20 ModelEnumType Translate Translate Translate Int32
-    // 028 M_Keyword                                0001865C8070 ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32
+    // 010 M_Value                                  ModelEnumType Translate Translate Translate Int32
+    // 028 M_Keyword                                ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32
     public partial class StyleTranslate : DataModel
     {
         public Translate                                M_Value                                 { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StyleTranslate() { Pointer= p0 };
 
-            value.M_Value                                   = (Translate)GetInt32(new IntPtr(p + 0x010)); // 0245A67AF2D0 0x10 M_Value                     ( 000186691D20 ModelEnumType Translate Translate Translate Int32 )
-            value.M_Keyword                                 = (StyleKeyword)GetInt32(new IntPtr(p + 0x028)); // 0245A67AF2F0 0x28 M_Keyword                   ( 0001865C8070 ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32 )
+            value.M_Value                                   = (Translate)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_Value                     ( ModelEnumType Translate Translate Translate Int32 )
+            value.M_Keyword                                 = (StyleKeyword)GetInt32(new IntPtr(p + 0x028)); // 0x28 M_Keyword                   ( ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32 )
 
             return value;
         }

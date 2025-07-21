@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 060 Writer                                   000186775B20 ModelClassType BsonBinaryWriter BsonBinaryWriter BsonBinaryWriter Pointer
-    // 068 Root                                     000186777BC0 ModelClassType BsonToken BsonToken BsonToken Pointer
-    // 070 Parent                                   000186777BC0 ModelClassType BsonToken BsonToken BsonToken Pointer
-    // 078 PropertyName                             000186671910 ModelPrimitiveType string string string String
+    // 060 Writer                                   ModelClassType BsonBinaryWriter BsonBinaryWriter BsonBinaryWriter Pointer
+    // 068 Root                                     ModelClassType BsonToken BsonToken BsonToken Pointer
+    // 070 Parent                                   ModelClassType BsonToken BsonToken BsonToken Pointer
+    // 078 PropertyName                             ModelPrimitiveType string string string String
     public partial class BsonWriter : DataModel
     {
         public BsonBinaryWriter?                        Writer                                  { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BsonWriter() { Pointer= p0 };
 
-            value.Writer                                    = GetObject<BsonBinaryWriter>(new IntPtr(p + 0x060), ReversePrism.DataModels.BsonBinaryWriter.FromPointer); // 0246688AE4A0 0x60 Writer                      ( 000186775B20 ModelClassType BsonBinaryWriter BsonBinaryWriter BsonBinaryWriter Pointer )
-            value.Root                                      = GetObject<BsonToken>(new IntPtr(p + 0x068), ReversePrism.DataModels.BsonToken.FromPointer); // 0246688AE4C0 0x68 Root                        ( 000186777BC0 ModelClassType BsonToken BsonToken BsonToken Pointer )
-            value.Parent                                    = GetObject<BsonToken>(new IntPtr(p + 0x070), ReversePrism.DataModels.BsonToken.FromPointer); // 0246688AE4E0 0x70 Parent                      ( 000186777BC0 ModelClassType BsonToken BsonToken BsonToken Pointer )
-            value.PropertyName                              = GetString(new IntPtr(p + 0x078)); // 0246688AE500 0x78 PropertyName                ( 000186671910 ModelPrimitiveType string string string String )
+            value.Writer                                    = GetObject<BsonBinaryWriter>(new IntPtr(p + 0x060), ReversePrism.DataModels.BsonBinaryWriter.FromPointer); // 0x60 Writer                      ( ModelClassType BsonBinaryWriter BsonBinaryWriter BsonBinaryWriter Pointer )
+            value.Root                                      = GetObject<BsonToken>(new IntPtr(p + 0x068), ReversePrism.DataModels.BsonToken.FromPointer); // 0x68 Root                        ( ModelClassType BsonToken BsonToken BsonToken Pointer )
+            value.Parent                                    = GetObject<BsonToken>(new IntPtr(p + 0x070), ReversePrism.DataModels.BsonToken.FromPointer); // 0x70 Parent                      ( ModelClassType BsonToken BsonToken BsonToken Pointer )
+            value.PropertyName                              = GetString(new IntPtr(p + 0x078)); // 0x78 PropertyName                ( ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 RequestTimeoutInSeconds                  0001865F36C0 ModelPrimitiveType int int int Int32
-    // 014 RedirectLimit                            0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 RequestTimeoutInSeconds                  ModelPrimitiveType int int int Int32
+    // 014 RedirectLimit                            ModelPrimitiveType int int int Int32
     public partial class HttpOptions : DataModel
     {
         public int                                      RequestTimeoutInSeconds                 { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HttpOptions() { Pointer= p0 };
 
-            value.RequestTimeoutInSeconds                   = GetInt32(new IntPtr(p + 0x010)); // 02466BAE3868 0x10 RequestTimeoutInSeconds     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.RedirectLimit                             = GetInt32(new IntPtr(p + 0x014)); // 02466BAE3888 0x14 RedirectLimit               ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.RequestTimeoutInSeconds                   = GetInt32(new IntPtr(p + 0x010)); // 0x10 RequestTimeoutInSeconds     ( ModelPrimitiveType int int int Int32 )
+            value.RedirectLimit                             = GetInt32(new IntPtr(p + 0x014)); // 0x14 RedirectLimit               ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

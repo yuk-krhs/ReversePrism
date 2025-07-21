@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 SkillResultDatas                         000185CB5B28 ModelClassListType SkillResultData[] SkillResultData[] List<SkillResultData> Pointer
+    // 010 SkillResultDatas                         ModelClassListType SkillResultData[] SkillResultData[] List<SkillResultData> Pointer
     public partial class CardResultGroupData : DataModel
     {
         public List<SkillResultData>?                   SkillResultDatas                        { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CardResultGroupData() { Pointer= p0 };
 
-            value.SkillResultDatas                          = GetObjectList<SkillResultData>(new IntPtr(p + 0x010), ReversePrism.DataModels.SkillResultData.FromPointer); // 024665B01DD8 0x10 SkillResultDatas            ( 000185CB5B28 ModelClassListType SkillResultData[] SkillResultData[] List<SkillResultData> Pointer )
+            value.SkillResultDatas                          = GetObjectList<SkillResultData>(new IntPtr(p + 0x010), ReversePrism.DataModels.SkillResultData.FromPointer); // 0x10 SkillResultDatas            ( ModelClassListType SkillResultData[] SkillResultData[] List<SkillResultData> Pointer )
 
             return value;
         }

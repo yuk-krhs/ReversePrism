@@ -8,16 +8,22 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 PanelObject                              0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 028 EndPanelObject                           0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 030 TimeText                                 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 038 Animator                                 0001866B8DE0 ModelClassType Animator Animator Animator Pointer
+    // 020 PanelObject                              ModelClassType GameObject GameObject GameObject Pointer
+    // 028 TitleObject                              ModelClassType GameObject GameObject GameObject Pointer
+    // 030 EndtitleObject                           ModelClassType GameObject GameObject GameObject Pointer
+    // 038 EndPanelObject                           ModelClassType GameObject GameObject GameObject Pointer
+    // 040 TimeText                                 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 048 Animator                                 ModelClassType Animator Animator Animator Pointer
+    // 050 AnimeObject                              ModelClassType GameObject GameObject GameObject Pointer
     public partial class HomeLimitedSalePanelView : DataModel
     {
         public GameObject?                              PanelObject                             { get; set; }
+        public GameObject?                              TitleObject                             { get; set; }
+        public GameObject?                              EndtitleObject                          { get; set; }
         public GameObject?                              EndPanelObject                          { get; set; }
         public UITextMeshProUGUI?                       TimeText                                { get; set; }
         public Animator?                                Animator                                { get; set; }
+        public GameObject?                              AnimeObject                             { get; set; }
 
         public static HomeLimitedSalePanelView? FromPointer(IntPtr p0)
         {
@@ -27,10 +33,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HomeLimitedSalePanelView() { Pointer= p0 };
 
-            value.PanelObject                               = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0246630F61F0 0x20 PanelObject                 ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.EndPanelObject                            = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0246630F6210 0x28 EndPanelObject              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.TimeText                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246630F6230 0x30 TimeText                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.Animator                                  = GetObject<Animator>(new IntPtr(p + 0x038), ReversePrism.DataModels.Animator.FromPointer); // 0246630F6250 0x38 Animator                    ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
+            value.PanelObject                               = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0x20 PanelObject                 ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.TitleObject                               = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0x28 TitleObject                 ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.EndtitleObject                            = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0x30 EndtitleObject              ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.EndPanelObject                            = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0x38 EndPanelObject              ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.TimeText                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x40 TimeText                    ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Animator                                  = GetObject<Animator>(new IntPtr(p + 0x048), ReversePrism.DataModels.Animator.FromPointer); // 0x48 Animator                    ( ModelClassType Animator Animator Animator Pointer )
+            value.AnimeObject                               = GetObject<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 0x50 AnimeObject                 ( ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

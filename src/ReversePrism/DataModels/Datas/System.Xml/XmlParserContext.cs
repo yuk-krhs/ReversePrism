@@ -8,16 +8,16 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Nt                                       0001865A0930 ModelClassType XmlNameTable XmlNameTable XmlNameTable Pointer
-    // 018 NsMgr                                    0001866BAB00 ModelClassType XmlNamespaceManager XmlNamespaceManager XmlNamespaceManager Pointer
-    // 020 DocTypeName                              000186671910 ModelPrimitiveType string string string String
-    // 028 PubId                                    000186671910 ModelPrimitiveType string string string String
-    // 030 SysId                                    000186671910 ModelPrimitiveType string string string String
-    // 038 InternalSubset                           000186671910 ModelPrimitiveType string string string String
-    // 040 XmlLang                                  000186671910 ModelPrimitiveType string string string String
-    // 048 XmlSpace                                 0001865CA260 ModelEnumType XmlSpace XmlSpace XmlSpace Int32
-    // 050 BaseURI                                  000186671910 ModelPrimitiveType string string string String
-    // 058 Encoding                                 00018672D9E0 ModelClassType Encoding Encoding Encoding Pointer
+    // 010 Nt                                       ModelClassType XmlNameTable XmlNameTable XmlNameTable Pointer
+    // 018 NsMgr                                    ModelClassType XmlNamespaceManager XmlNamespaceManager XmlNamespaceManager Pointer
+    // 020 DocTypeName                              ModelPrimitiveType string string string String
+    // 028 PubId                                    ModelPrimitiveType string string string String
+    // 030 SysId                                    ModelPrimitiveType string string string String
+    // 038 InternalSubset                           ModelPrimitiveType string string string String
+    // 040 XmlLang                                  ModelPrimitiveType string string string String
+    // 048 XmlSpace                                 ModelEnumType XmlSpace XmlSpace XmlSpace Int32
+    // 050 BaseURI                                  ModelPrimitiveType string string string String
+    // 058 Encoding                                 ModelClassType Encoding Encoding Encoding Pointer
     public partial class XmlParserContext : DataModel
     {
         public XmlNameTable?                            Nt                                      { get; set; }
@@ -39,16 +39,16 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlParserContext() { Pointer= p0 };
 
-            value.Nt                                        = GetObject<XmlNameTable>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlNameTable.FromPointer); // 02466741D150 0x10 Nt                          ( 0001865A0930 ModelClassType XmlNameTable XmlNameTable XmlNameTable Pointer )
-            value.NsMgr                                     = GetObject<XmlNamespaceManager>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlNamespaceManager.FromPointer); // 02466741D170 0x18 NsMgr                       ( 0001866BAB00 ModelClassType XmlNamespaceManager XmlNamespaceManager XmlNamespaceManager Pointer )
-            value.DocTypeName                               = GetString(new IntPtr(p + 0x020)); // 02466741D190 0x20 DocTypeName                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.PubId                                     = GetString(new IntPtr(p + 0x028)); // 02466741D1B0 0x28 PubId                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.SysId                                     = GetString(new IntPtr(p + 0x030)); // 02466741D1D0 0x30 SysId                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.InternalSubset                            = GetString(new IntPtr(p + 0x038)); // 02466741D1F0 0x38 InternalSubset              ( 000186671910 ModelPrimitiveType string string string String )
-            value.XmlLang                                   = GetString(new IntPtr(p + 0x040)); // 02466741D210 0x40 XmlLang                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.XmlSpace                                  = (XmlSpace)GetInt32(new IntPtr(p + 0x048)); // 02466741D230 0x48 XmlSpace                    ( 0001865CA260 ModelEnumType XmlSpace XmlSpace XmlSpace Int32 )
-            value.BaseURI                                   = GetString(new IntPtr(p + 0x050)); // 02466741D250 0x50 BaseURI                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.Encoding                                  = GetObject<Encoding>(new IntPtr(p + 0x058), ReversePrism.DataModels.Encoding.FromPointer); // 02466741D270 0x58 Encoding                    ( 00018672D9E0 ModelClassType Encoding Encoding Encoding Pointer )
+            value.Nt                                        = GetObject<XmlNameTable>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlNameTable.FromPointer); // 0x10 Nt                          ( ModelClassType XmlNameTable XmlNameTable XmlNameTable Pointer )
+            value.NsMgr                                     = GetObject<XmlNamespaceManager>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlNamespaceManager.FromPointer); // 0x18 NsMgr                       ( ModelClassType XmlNamespaceManager XmlNamespaceManager XmlNamespaceManager Pointer )
+            value.DocTypeName                               = GetString(new IntPtr(p + 0x020)); // 0x20 DocTypeName                 ( ModelPrimitiveType string string string String )
+            value.PubId                                     = GetString(new IntPtr(p + 0x028)); // 0x28 PubId                       ( ModelPrimitiveType string string string String )
+            value.SysId                                     = GetString(new IntPtr(p + 0x030)); // 0x30 SysId                       ( ModelPrimitiveType string string string String )
+            value.InternalSubset                            = GetString(new IntPtr(p + 0x038)); // 0x38 InternalSubset              ( ModelPrimitiveType string string string String )
+            value.XmlLang                                   = GetString(new IntPtr(p + 0x040)); // 0x40 XmlLang                     ( ModelPrimitiveType string string string String )
+            value.XmlSpace                                  = (XmlSpace)GetInt32(new IntPtr(p + 0x048)); // 0x48 XmlSpace                    ( ModelEnumType XmlSpace XmlSpace XmlSpace Int32 )
+            value.BaseURI                                   = GetString(new IntPtr(p + 0x050)); // 0x50 BaseURI                     ( ModelPrimitiveType string string string String )
+            value.Encoding                                  = GetObject<Encoding>(new IntPtr(p + 0x058), ReversePrism.DataModels.Encoding.FromPointer); // 0x58 Encoding                    ( ModelClassType Encoding Encoding Encoding Pointer )
 
             return value;
         }

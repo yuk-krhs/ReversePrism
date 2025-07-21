@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Time                                     00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64
+    // 010 Time                                     ModelPrimitiveType ulong ulong ulong UInt64
     public partial class CueEventMessage : DataModel
     {
         public ulong                                    Time                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CueEventMessage() { Pointer= p0 };
 
-            value.Time                                      = GetUInt64(new IntPtr(p + 0x010)); // 0245A4402270 0x10 Time                        ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.Time                                      = GetUInt64(new IntPtr(p + 0x010)); // 0x10 Time                        ( ModelPrimitiveType ulong ulong ulong UInt64 )
 
             return value;
         }

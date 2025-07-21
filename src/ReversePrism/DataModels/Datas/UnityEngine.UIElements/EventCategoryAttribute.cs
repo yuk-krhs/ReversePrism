@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Category                                 000186751B10 ModelEnumType EventCategory EventCategory EventCategory Int32
+    // 010 Category                                 ModelEnumType EventCategory EventCategory EventCategory Int32
     public partial class EventCategoryAttribute : DataModel
     {
         public EventCategory                            Category                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EventCategoryAttribute() { Pointer= p0 };
 
-            value.Category                                  = (EventCategory)GetInt32(new IntPtr(p + 0x010)); // 0245A681CA90 0x10 Category                    ( 000186751B10 ModelEnumType EventCategory EventCategory EventCategory Int32 )
+            value.Category                                  = (EventCategory)GetInt32(new IntPtr(p + 0x010)); // 0x10 Category                    ( ModelEnumType EventCategory EventCategory EventCategory Int32 )
 
             return value;
         }

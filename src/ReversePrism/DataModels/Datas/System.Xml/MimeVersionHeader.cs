@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Default                                  MimeVersionHeader IL2CPP_TYPE_CLASS
-    // 020 Version                                  000186671910 ModelPrimitiveType string string string String
+    // 020 Version                                  ModelPrimitiveType string string string String
     public partial class MimeVersionHeader : DataModel
     {
         public string                                   Version                                 { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MimeVersionHeader() { Pointer= p0 };
 
-            value.Version                                   = GetString(new IntPtr(p + 0x020)); // 024667CF01C8 0x20 Version                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Version                                   = GetString(new IntPtr(p + 0x020)); // 0x20 Version                     ( ModelPrimitiveType string string string String )
 
             return value;
         }

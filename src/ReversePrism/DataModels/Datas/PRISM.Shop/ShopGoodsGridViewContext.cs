@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 040 onClickPurchase                          Subject`1<ShopProductParam> IL2CPP_TYPE_GENERICINST
     // 048 onClickDetail                            Subject`1<ShopProductParam> IL2CPP_TYPE_GENERICINST
-    // 050 ShopLocalSave                            0001867622A0 ModelClassType ShopLocalSave ShopLocalSave ShopLocalSave Pointer
+    // 050 ShopLocalSave                            ModelClassType ShopLocalSave ShopLocalSave ShopLocalSave Pointer
     public partial class ShopGoodsGridViewContext : DataModel
     {
         public ShopLocalSave?                           ShopLocalSave                           { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ShopGoodsGridViewContext() { Pointer= p0 };
 
-            value.ShopLocalSave                             = GetObject<ShopLocalSave>(new IntPtr(p + 0x050), ReversePrism.DataModels.ShopLocalSave.FromPointer); // 02466557B718 0x50 ShopLocalSave               ( 0001867622A0 ModelClassType ShopLocalSave ShopLocalSave ShopLocalSave Pointer )
+            value.ShopLocalSave                             = GetObject<ShopLocalSave>(new IntPtr(p + 0x050), ReversePrism.DataModels.ShopLocalSave.FromPointer); // 0x50 ShopLocalSave               ( ModelClassType ShopLocalSave ShopLocalSave ShopLocalSave Pointer )
 
             return value;
         }

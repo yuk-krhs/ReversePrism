@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_Instance                               TMP_FontAssetUtilities IL2CPP_TYPE_CLASS
     // 008 k_SearchedAssets                         HashSet`1<int> IL2CPP_TYPE_GENERICINST
-    // 010 K_IsFontEngineInitialized                000186595C30 ModelPrimitiveType bool bool bool Bool
+    // 010 K_IsFontEngineInitialized                ModelPrimitiveType bool bool bool Bool
     public partial class TMP_FontAssetUtilities : DataModel
     {
         public bool                                     K_IsFontEngineInitialized               { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TMP_FontAssetUtilities() { Pointer= p0 };
 
-            value.K_IsFontEngineInitialized                 = GetBool(new IntPtr(p + 0x010)); // 0245A3A28408 0x10 K_IsFontEngineInitialized   ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.K_IsFontEngineInitialized                 = GetBool(new IntPtr(p + 0x010)); // 0x10 K_IsFontEngineInitialized   ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,17 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 State                                    00018673B520 ModelEnumType ServicesInitializationState ServicesInitializationState ServicesInitializationState Int32
-    // 018 Options                                  0001866F2260 ModelClassType InitializationOptions InitializationOptions InitializationOptions Pointer
-    // 020 CanInitialize                            000186595210 ModelPrimitiveType bool bool bool Bool
-    // 028 m_Initialization                         TaskCompletionSource`1<<object>> IL2CPP_TYPE_GENERICINST
-    // 030 Registry                                 000186625910 ModelClassType CoreRegistry CoreRegistry CoreRegistry Pointer
-    // 038 Metrics                                  000186624180 ModelClassType CoreMetrics CoreMetrics CoreMetrics Pointer
-    // 040 Diagnostics                              000186623340 ModelClassType CoreDiagnostics CoreDiagnostics CoreDiagnostics Pointer
+    // 010 State                                    ModelEnumType ServicesInitializationState ServicesInitializationState ServicesInitializationState Int32
+    // 014 CanInitialize                            ModelPrimitiveType bool bool bool Bool
+    // 018 m_Initialization                         TaskCompletionSource`1<<object>> IL2CPP_TYPE_GENERICINST
+    // 020 Registry                                 ModelClassType CoreRegistry CoreRegistry CoreRegistry Pointer
+    // 028 Metrics                                  ModelClassType CoreMetrics CoreMetrics CoreMetrics Pointer
+    // 030 Diagnostics                              ModelClassType CoreDiagnostics CoreDiagnostics CoreDiagnostics Pointer
     public partial class UnityServicesInternal : DataModel
     {
         public ServicesInitializationState              State                                   { get; set; }
-        public InitializationOptions?                   Options                                 { get; set; }
         public bool                                     CanInitialize                           { get; set; }
         public CoreRegistry?                            Registry                                { get; set; }
         public CoreMetrics?                             Metrics                                 { get; set; }
@@ -32,12 +30,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnityServicesInternal() { Pointer= p0 };
 
-            value.State                                     = (ServicesInitializationState)GetInt32(new IntPtr(p + 0x010)); // 0246608BE7D0 0x10 State                       ( 00018673B520 ModelEnumType ServicesInitializationState ServicesInitializationState ServicesInitializationState Int32 )
-            value.Options                                   = GetObject<InitializationOptions>(new IntPtr(p + 0x018), ReversePrism.DataModels.InitializationOptions.FromPointer); // 0246608BE7F0 0x18 Options                     ( 0001866F2260 ModelClassType InitializationOptions InitializationOptions InitializationOptions Pointer )
-            value.CanInitialize                             = GetBool(new IntPtr(p + 0x020)); // 0246608BE810 0x20 CanInitialize               ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.Registry                                  = GetObject<CoreRegistry>(new IntPtr(p + 0x030), ReversePrism.DataModels.CoreRegistry.FromPointer); // 0246608BE850 0x30 Registry                    ( 000186625910 ModelClassType CoreRegistry CoreRegistry CoreRegistry Pointer )
-            value.Metrics                                   = GetObject<CoreMetrics>(new IntPtr(p + 0x038), ReversePrism.DataModels.CoreMetrics.FromPointer); // 0246608BE870 0x38 Metrics                     ( 000186624180 ModelClassType CoreMetrics CoreMetrics CoreMetrics Pointer )
-            value.Diagnostics                               = GetObject<CoreDiagnostics>(new IntPtr(p + 0x040), ReversePrism.DataModels.CoreDiagnostics.FromPointer); // 0246608BE890 0x40 Diagnostics                 ( 000186623340 ModelClassType CoreDiagnostics CoreDiagnostics CoreDiagnostics Pointer )
+            value.State                                     = (ServicesInitializationState)GetInt32(new IntPtr(p + 0x010)); // 0x10 State                       ( ModelEnumType ServicesInitializationState ServicesInitializationState ServicesInitializationState Int32 )
+            value.CanInitialize                             = GetBool(new IntPtr(p + 0x014)); // 0x14 CanInitialize               ( ModelPrimitiveType bool bool bool Bool )
+            value.Registry                                  = GetObject<CoreRegistry>(new IntPtr(p + 0x020), ReversePrism.DataModels.CoreRegistry.FromPointer); // 0x20 Registry                    ( ModelClassType CoreRegistry CoreRegistry CoreRegistry Pointer )
+            value.Metrics                                   = GetObject<CoreMetrics>(new IntPtr(p + 0x028), ReversePrism.DataModels.CoreMetrics.FromPointer); // 0x28 Metrics                     ( ModelClassType CoreMetrics CoreMetrics CoreMetrics Pointer )
+            value.Diagnostics                               = GetObject<CoreDiagnostics>(new IntPtr(p + 0x030), ReversePrism.DataModels.CoreDiagnostics.FromPointer); // 0x30 Diagnostics                 ( ModelClassType CoreDiagnostics CoreDiagnostics CoreDiagnostics Pointer )
 
             return value;
         }

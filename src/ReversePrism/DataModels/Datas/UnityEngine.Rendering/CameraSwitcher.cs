@@ -8,16 +8,16 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 M_Cameras                                000185B72DE0 ModelClassListType Camera[] Camera[] List<Camera> Pointer
-    // 028 M_CurrentCameraIndex                     0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 030 M_OriginalCamera                         0001865A1C90 ModelClassType Camera Camera Camera Pointer
-    // 038 M_OriginalCameraPosition                 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32
-    // 044 M_OriginalCameraRotation                 000186649E40 ModelEnumType Quaternion Quaternion Quaternion Int32
-    // 058 M_CurrentCamera                          0001865A1C90 ModelClassType Camera Camera Camera Pointer
-    // 060 M_CameraNames                            000185B80930 ModelClassListType GUIContent[] GUIContent[] List<GUIContent> Pointer
-    // 068 M_CameraIndices                          000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer
-    // 070 M_DebugEntry                             000186584190 ModelClassType EnumField EnumField EnumField Pointer
-    // 078 M_DebugEntryEnumIndex                    0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 M_Cameras                                ModelClassListType Camera[] Camera[] List<Camera> Pointer
+    // 028 M_CurrentCameraIndex                     ModelPrimitiveType int int int Int32
+    // 030 M_OriginalCamera                         ModelClassType Camera Camera Camera Pointer
+    // 038 M_OriginalCameraPosition                 ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 044 M_OriginalCameraRotation                 ModelEnumType Quaternion Quaternion Quaternion Int32
+    // 058 M_CurrentCamera                          ModelClassType Camera Camera Camera Pointer
+    // 060 M_CameraNames                            ModelClassListType GUIContent[] GUIContent[] List<GUIContent> Pointer
+    // 068 M_CameraIndices                          ModelPrimitiveListType int[] int[] List<int> Pointer
+    // 070 M_DebugEntry                             ModelClassType EnumField EnumField EnumField Pointer
+    // 078 M_DebugEntryEnumIndex                    ModelPrimitiveType int int int Int32
     public partial class CameraSwitcher : DataModel
     {
         public List<Camera>?                            M_Cameras                               { get; set; }
@@ -39,16 +39,16 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CameraSwitcher() { Pointer= p0 };
 
-            value.M_Cameras                                 = GetObjectList<Camera>(new IntPtr(p + 0x020), ReversePrism.DataModels.Camera.FromPointer); // 024669159298 0x20 M_Cameras                   ( 000185B72DE0 ModelClassListType Camera[] Camera[] List<Camera> Pointer )
-            value.M_CurrentCameraIndex                      = GetInt32(new IntPtr(p + 0x028)); // 0246691592B8 0x28 M_CurrentCameraIndex        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_OriginalCamera                          = GetObject<Camera>(new IntPtr(p + 0x030), ReversePrism.DataModels.Camera.FromPointer); // 0246691592D8 0x30 M_OriginalCamera            ( 0001865A1C90 ModelClassType Camera Camera Camera Pointer )
-            value.M_OriginalCameraPosition                  = (Vector3)GetInt32(new IntPtr(p + 0x038)); // 0246691592F8 0x38 M_OriginalCameraPosition    ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.M_OriginalCameraRotation                  = (Quaternion)GetInt32(new IntPtr(p + 0x044)); // 024669159318 0x44 M_OriginalCameraRotation    ( 000186649E40 ModelEnumType Quaternion Quaternion Quaternion Int32 )
-            value.M_CurrentCamera                           = GetObject<Camera>(new IntPtr(p + 0x058), ReversePrism.DataModels.Camera.FromPointer); // 024669159338 0x58 M_CurrentCamera             ( 0001865A1C90 ModelClassType Camera Camera Camera Pointer )
-            value.M_CameraNames                             = GetObjectList<GUIContent>(new IntPtr(p + 0x060), ReversePrism.DataModels.GUIContent.FromPointer); // 024669159358 0x60 M_CameraNames               ( 000185B80930 ModelClassListType GUIContent[] GUIContent[] List<GUIContent> Pointer )
-            value.M_CameraIndices                           = GetInt32List(new IntPtr(p + 0x068)); // 024669159378 0x68 M_CameraIndices             ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.M_DebugEntry                              = GetObject<EnumField>(new IntPtr(p + 0x070), ReversePrism.DataModels.EnumField.FromPointer); // 024669159398 0x70 M_DebugEntry                ( 000186584190 ModelClassType EnumField EnumField EnumField Pointer )
-            value.M_DebugEntryEnumIndex                     = GetInt32(new IntPtr(p + 0x078)); // 0246691593B8 0x78 M_DebugEntryEnumIndex       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_Cameras                                 = GetObjectList<Camera>(new IntPtr(p + 0x020), ReversePrism.DataModels.Camera.FromPointer); // 0x20 M_Cameras                   ( ModelClassListType Camera[] Camera[] List<Camera> Pointer )
+            value.M_CurrentCameraIndex                      = GetInt32(new IntPtr(p + 0x028)); // 0x28 M_CurrentCameraIndex        ( ModelPrimitiveType int int int Int32 )
+            value.M_OriginalCamera                          = GetObject<Camera>(new IntPtr(p + 0x030), ReversePrism.DataModels.Camera.FromPointer); // 0x30 M_OriginalCamera            ( ModelClassType Camera Camera Camera Pointer )
+            value.M_OriginalCameraPosition                  = (Vector3)GetInt32(new IntPtr(p + 0x038)); // 0x38 M_OriginalCameraPosition    ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.M_OriginalCameraRotation                  = (Quaternion)GetInt32(new IntPtr(p + 0x044)); // 0x44 M_OriginalCameraRotation    ( ModelEnumType Quaternion Quaternion Quaternion Int32 )
+            value.M_CurrentCamera                           = GetObject<Camera>(new IntPtr(p + 0x058), ReversePrism.DataModels.Camera.FromPointer); // 0x58 M_CurrentCamera             ( ModelClassType Camera Camera Camera Pointer )
+            value.M_CameraNames                             = GetObjectList<GUIContent>(new IntPtr(p + 0x060), ReversePrism.DataModels.GUIContent.FromPointer); // 0x60 M_CameraNames               ( ModelClassListType GUIContent[] GUIContent[] List<GUIContent> Pointer )
+            value.M_CameraIndices                           = GetInt32List(new IntPtr(p + 0x068)); // 0x68 M_CameraIndices             ( ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.M_DebugEntry                              = GetObject<EnumField>(new IntPtr(p + 0x070), ReversePrism.DataModels.EnumField.FromPointer); // 0x70 M_DebugEntry                ( ModelClassType EnumField EnumField EnumField Pointer )
+            value.M_DebugEntryEnumIndex                     = GetInt32(new IntPtr(p + 0x078)); // 0x78 M_DebugEntryEnumIndex       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

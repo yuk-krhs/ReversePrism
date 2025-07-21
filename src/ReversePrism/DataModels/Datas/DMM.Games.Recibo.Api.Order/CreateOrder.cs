@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 038 RequestModel                             0001866683C0 ModelEnumType RequestModel RequestModel RequestModel Int32
+    // 038 RequestModel                             ModelEnumType RequestModel RequestModel RequestModel Int32
     public partial class CreateOrder : DataModel
     {
         public RequestModel                             RequestModel                            { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CreateOrder() { Pointer= p0 };
 
-            value.RequestModel                              = (RequestModel)GetInt32(new IntPtr(p + 0x038)); // 02466B508228 0x38 RequestModel                ( 0001866683C0 ModelEnumType RequestModel RequestModel RequestModel Int32 )
+            value.RequestModel                              = (RequestModel)GetInt32(new IntPtr(p + 0x038)); // 0x38 RequestModel                ( ModelEnumType RequestModel RequestModel RequestModel Int32 )
 
             return value;
         }

@@ -9,10 +9,10 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 klass                                    <int> IL2CPP_TYPE_I
-    // 018 Fhandle                                  000186698AA0 ModelEnumType RuntimeFieldHandle RuntimeFieldHandle RuntimeFieldHandle Int32
-    // 020 Name                                     000186671910 ModelPrimitiveType string string string String
-    // 028 Type                                     000186692850 ModelClassType Type Type Type Pointer
-    // 030 Attrs                                    0001865701D0 ModelEnumType FieldAttributes FieldAttributes FieldAttributes Int32
+    // 018 Fhandle                                  ModelEnumType RuntimeFieldHandle RuntimeFieldHandle RuntimeFieldHandle Int32
+    // 020 Name                                     ModelPrimitiveType string string string String
+    // 028 Type                                     ModelClassType Type Type Type Pointer
+    // 030 Attrs                                    ModelEnumType FieldAttributes FieldAttributes FieldAttributes Int32
     public partial class RuntimeFieldInfo : DataModel
     {
         public RuntimeFieldHandle                       Fhandle                                 { get; set; }
@@ -28,10 +28,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RuntimeFieldInfo() { Pointer= p0 };
 
-            value.Fhandle                                   = (RuntimeFieldHandle)GetInt32(new IntPtr(p + 0x018)); // 0245A34CF3C8 0x18 Fhandle                     ( 000186698AA0 ModelEnumType RuntimeFieldHandle RuntimeFieldHandle RuntimeFieldHandle Int32 )
-            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 0245A34CF3E8 0x20 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x028), ReversePrism.DataModels.Type.FromPointer); // 0245A34CF408 0x28 Type                        ( 000186692850 ModelClassType Type Type Type Pointer )
-            value.Attrs                                     = (FieldAttributes)GetInt32(new IntPtr(p + 0x030)); // 0245A34CF428 0x30 Attrs                       ( 0001865701D0 ModelEnumType FieldAttributes FieldAttributes FieldAttributes Int32 )
+            value.Fhandle                                   = (RuntimeFieldHandle)GetInt32(new IntPtr(p + 0x018)); // 0x18 Fhandle                     ( ModelEnumType RuntimeFieldHandle RuntimeFieldHandle RuntimeFieldHandle Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 0x20 Name                        ( ModelPrimitiveType string string string String )
+            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x028), ReversePrism.DataModels.Type.FromPointer); // 0x28 Type                        ( ModelClassType Type Type Type Pointer )
+            value.Attrs                                     = (FieldAttributes)GetInt32(new IntPtr(p + 0x030)); // 0x30 Attrs                       ( ModelEnumType FieldAttributes FieldAttributes FieldAttributes Int32 )
 
             return value;
         }

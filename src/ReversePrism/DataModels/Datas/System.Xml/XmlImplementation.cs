@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 NameTable                                0001865A0930 ModelClassType XmlNameTable XmlNameTable XmlNameTable Pointer
+    // 010 NameTable                                ModelClassType XmlNameTable XmlNameTable XmlNameTable Pointer
     public partial class XmlImplementation : DataModel
     {
         public XmlNameTable?                            NameTable                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlImplementation() { Pointer= p0 };
 
-            value.NameTable                                 = GetObject<XmlNameTable>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlNameTable.FromPointer); // 0246674ACAF0 0x10 NameTable                   ( 0001865A0930 ModelClassType XmlNameTable XmlNameTable XmlNameTable Pointer )
+            value.NameTable                                 = GetObject<XmlNameTable>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlNameTable.FromPointer); // 0x10 NameTable                   ( ModelClassType XmlNameTable XmlNameTable XmlNameTable Pointer )
 
             return value;
         }

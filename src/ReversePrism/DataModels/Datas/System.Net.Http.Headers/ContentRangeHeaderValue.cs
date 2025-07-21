@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Unit                                     000186671910 ModelPrimitiveType string string string String
+    // 010 Unit                                     ModelPrimitiveType string string string String
     // 018 <From>k__BackingField                    Nullable`1<long> IL2CPP_TYPE_GENERICINST
     // 028 <Length>k__BackingField                  Nullable`1<long> IL2CPP_TYPE_GENERICINST
     // 038 <To>k__BackingField                      Nullable`1<long> IL2CPP_TYPE_GENERICINST
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ContentRangeHeaderValue() { Pointer= p0 };
 
-            value.Unit                                      = GetString(new IntPtr(p + 0x010)); // 02466B8DE2F0 0x10 Unit                        ( 000186671910 ModelPrimitiveType string string string String )
+            value.Unit                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Unit                        ( ModelPrimitiveType string string string String )
 
             return value;
         }

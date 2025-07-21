@@ -9,19 +9,19 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 040 bottomTypeRP                             ReactiveProperty`1<Bottom> IL2CPP_TYPE_GENERICINST
-    // 048 TrainingDisplayPermit                    000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 049 MasterTrainingDisplayPermit              000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 050 IconId                                   000186671910 ModelPrimitiveType string string string String
-    // 058 Rarity                                   00018661FD00 ModelEnumType SupportCharacterRarity SupportCharacterRarity SupportCharacterRarity Int32
-    // 05C GoodSchedule                             000186614E40 ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32
-    // 060 Diamond                                  0001865913D0 ModelClassType ILimitedValueStatus ILimitedValueStatus ILimitedValueStatus Pointer
-    // 068 CharaLv                                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 06C MasterTrainingLv                         0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 070 Slot                                     0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 078 SupportEffectPassiveEffects              000185D10CF8 ModelClassListType List`1<SupportEffectPassiveEffect> List`1<SupportEffectPassiveEffect> List<SupportEffectPassiveEffect> Pointer
-    // 080 CanTraining                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 081 CanMasterTraining                        000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 088 PotentialSupportSkillGroupIdList         000185CED1B8 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer
+    // 048 TrainingDisplayPermit                    ModelPrimitiveType bool bool bool Bool
+    // 049 MasterTrainingDisplayPermit              ModelPrimitiveType bool bool bool Bool
+    // 050 IconId                                   ModelPrimitiveType string string string String
+    // 058 Rarity                                   ModelEnumType SupportCharacterRarity SupportCharacterRarity SupportCharacterRarity Int32
+    // 05C GoodSchedule                             ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32
+    // 060 Diamond                                  ModelClassType ILimitedValueStatus ILimitedValueStatus ILimitedValueStatus Pointer
+    // 068 CharaLv                                  ModelPrimitiveType int int int Int32
+    // 06C MasterTrainingLv                         ModelPrimitiveType int int int Int32
+    // 070 Slot                                     ModelPrimitiveType int int int Int32
+    // 078 SupportEffectPassiveEffects              ModelClassListType List`1<SupportEffectPassiveEffect> List`1<SupportEffectPassiveEffect> List<SupportEffectPassiveEffect> Pointer
+    // 080 CanTraining                              ModelPrimitiveType bool bool bool Bool
+    // 081 CanMasterTraining                        ModelPrimitiveType bool bool bool Bool
+    // 088 PotentialSupportSkillGroupIdList         ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer
     public partial class SCharaIcon : DataModel
     {
         public bool                                     TrainingDisplayPermit                   { get; set; }
@@ -46,19 +46,19 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SCharaIcon() { Pointer= p0 };
 
-            value.TrainingDisplayPermit                     = GetBool(new IntPtr(p + 0x048)); // 024664D08B18 0x48 TrainingDisplayPermit       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.MasterTrainingDisplayPermit               = GetBool(new IntPtr(p + 0x049)); // 024664D08B38 0x49 MasterTrainingDisplayPermit ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IconId                                    = GetString(new IntPtr(p + 0x050)); // 024664D08B58 0x50 IconId                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Rarity                                    = (SupportCharacterRarity)GetInt32(new IntPtr(p + 0x058)); // 024664D08B78 0x58 Rarity                      ( 00018661FD00 ModelEnumType SupportCharacterRarity SupportCharacterRarity SupportCharacterRarity Int32 )
-            value.GoodSchedule                              = (ScheduleDetailType)GetInt32(new IntPtr(p + 0x05C)); // 024664D08B98 0x5C GoodSchedule                ( 000186614E40 ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32 )
-            value.Diamond                                   = GetObject<ILimitedValueStatus>(new IntPtr(p + 0x060), ReversePrism.DataModels.ILimitedValueStatus.FromPointer); // 024664D08BB8 0x60 Diamond                     ( 0001865913D0 ModelClassType ILimitedValueStatus ILimitedValueStatus ILimitedValueStatus Pointer )
-            value.CharaLv                                   = GetInt32(new IntPtr(p + 0x068)); // 024664D08BD8 0x68 CharaLv                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MasterTrainingLv                          = GetInt32(new IntPtr(p + 0x06C)); // 024664D08BF8 0x6C MasterTrainingLv            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Slot                                      = GetInt32(new IntPtr(p + 0x070)); // 024664D08C18 0x70 Slot                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SupportEffectPassiveEffects               = GetObjectList<SupportEffectPassiveEffect>(new IntPtr(p + 0x078), ReversePrism.DataModels.SupportEffectPassiveEffect.FromPointer); // 024664D08C38 0x78 SupportEffectPassiveEffects ( 000185D10CF8 ModelClassListType List`1<SupportEffectPassiveEffect> List`1<SupportEffectPassiveEffect> List<SupportEffectPassiveEffect> Pointer )
-            value.CanTraining                               = GetBool(new IntPtr(p + 0x080)); // 024664D08C58 0x80 CanTraining                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CanMasterTraining                         = GetBool(new IntPtr(p + 0x081)); // 024664D08C78 0x81 CanMasterTraining           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.PotentialSupportSkillGroupIdList          = GetInt32List(new IntPtr(p + 0x088)); // 024664D08C98 0x88 PotentialSupportSkillGroupIdList ( 000185CED1B8 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
+            value.TrainingDisplayPermit                     = GetBool(new IntPtr(p + 0x048)); // 0x48 TrainingDisplayPermit       ( ModelPrimitiveType bool bool bool Bool )
+            value.MasterTrainingDisplayPermit               = GetBool(new IntPtr(p + 0x049)); // 0x49 MasterTrainingDisplayPermit ( ModelPrimitiveType bool bool bool Bool )
+            value.IconId                                    = GetString(new IntPtr(p + 0x050)); // 0x50 IconId                      ( ModelPrimitiveType string string string String )
+            value.Rarity                                    = (SupportCharacterRarity)GetInt32(new IntPtr(p + 0x058)); // 0x58 Rarity                      ( ModelEnumType SupportCharacterRarity SupportCharacterRarity SupportCharacterRarity Int32 )
+            value.GoodSchedule                              = (ScheduleDetailType)GetInt32(new IntPtr(p + 0x05C)); // 0x5C GoodSchedule                ( ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32 )
+            value.Diamond                                   = GetObject<ILimitedValueStatus>(new IntPtr(p + 0x060), ReversePrism.DataModels.ILimitedValueStatus.FromPointer); // 0x60 Diamond                     ( ModelClassType ILimitedValueStatus ILimitedValueStatus ILimitedValueStatus Pointer )
+            value.CharaLv                                   = GetInt32(new IntPtr(p + 0x068)); // 0x68 CharaLv                     ( ModelPrimitiveType int int int Int32 )
+            value.MasterTrainingLv                          = GetInt32(new IntPtr(p + 0x06C)); // 0x6C MasterTrainingLv            ( ModelPrimitiveType int int int Int32 )
+            value.Slot                                      = GetInt32(new IntPtr(p + 0x070)); // 0x70 Slot                        ( ModelPrimitiveType int int int Int32 )
+            value.SupportEffectPassiveEffects               = GetObjectList<SupportEffectPassiveEffect>(new IntPtr(p + 0x078), ReversePrism.DataModels.SupportEffectPassiveEffect.FromPointer); // 0x78 SupportEffectPassiveEffects ( ModelClassListType List`1<SupportEffectPassiveEffect> List`1<SupportEffectPassiveEffect> List<SupportEffectPassiveEffect> Pointer )
+            value.CanTraining                               = GetBool(new IntPtr(p + 0x080)); // 0x80 CanTraining                 ( ModelPrimitiveType bool bool bool Bool )
+            value.CanMasterTraining                         = GetBool(new IntPtr(p + 0x081)); // 0x81 CanMasterTraining           ( ModelPrimitiveType bool bool bool Bool )
+            value.PotentialSupportSkillGroupIdList          = GetInt32List(new IntPtr(p + 0x088)); // 0x88 PotentialSupportSkillGroupIdList ( ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
 
             return value;
         }

@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 TryStartIndex                            0001865F44E0 ModelPrimitiveType int int int Int32
-    // 014 TryEndIndex                              0001865F44E0 ModelPrimitiveType int int int Int32
-    // 018 FinallyStartIndex                        0001865F44E0 ModelPrimitiveType int int int Int32
-    // 01C FinallyEndIndex                          0001865F44E0 ModelPrimitiveType int int int Int32
+    // 010 TryStartIndex                            ModelPrimitiveType int int int Int32
+    // 014 TryEndIndex                              ModelPrimitiveType int int int Int32
+    // 018 FinallyStartIndex                        ModelPrimitiveType int int int Int32
+    // 01C FinallyEndIndex                          ModelPrimitiveType int int int Int32
     public partial class TryFaultHandler : DataModel
     {
         public int                                      TryStartIndex                           { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TryFaultHandler() { Pointer= p0 };
 
-            value.TryStartIndex                             = GetInt32(new IntPtr(p + 0x010)); // 02466A010AB8 0x10 TryStartIndex               ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
-            value.TryEndIndex                               = GetInt32(new IntPtr(p + 0x014)); // 02466A010AD8 0x14 TryEndIndex                 ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
-            value.FinallyStartIndex                         = GetInt32(new IntPtr(p + 0x018)); // 02466A010AF8 0x18 FinallyStartIndex           ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
-            value.FinallyEndIndex                           = GetInt32(new IntPtr(p + 0x01C)); // 02466A010B18 0x1C FinallyEndIndex             ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
+            value.TryStartIndex                             = GetInt32(new IntPtr(p + 0x010)); // 0x10 TryStartIndex               ( ModelPrimitiveType int int int Int32 )
+            value.TryEndIndex                               = GetInt32(new IntPtr(p + 0x014)); // 0x14 TryEndIndex                 ( ModelPrimitiveType int int int Int32 )
+            value.FinallyStartIndex                         = GetInt32(new IntPtr(p + 0x018)); // 0x18 FinallyStartIndex           ( ModelPrimitiveType int int int Int32 )
+            value.FinallyEndIndex                           = GetInt32(new IntPtr(p + 0x01C)); // 0x1C FinallyEndIndex             ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

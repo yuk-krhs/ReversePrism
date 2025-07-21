@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Mixer                                    00018674C490 ModelEnumType Playable Playable Playable Int32
-    // 020 ParentMixer                              00018674C490 ModelEnumType Playable Playable Playable Int32
-    // 030 Port                                     0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 Mixer                                    ModelEnumType Playable Playable Playable Int32
+    // 020 ParentMixer                              ModelEnumType Playable Playable Playable Int32
+    // 030 Port                                     ModelPrimitiveType int int int Int32
     public partial class WeightInfo : DataModel
     {
         public Playable                                 Mixer                                   { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new WeightInfo() { Pointer= p0 };
 
-            value.Mixer                                     = (Playable)GetInt32(new IntPtr(p + 0x010)); // 02466B294230 0x10 Mixer                       ( 00018674C490 ModelEnumType Playable Playable Playable Int32 )
-            value.ParentMixer                               = (Playable)GetInt32(new IntPtr(p + 0x020)); // 02466B294250 0x20 ParentMixer                 ( 00018674C490 ModelEnumType Playable Playable Playable Int32 )
-            value.Port                                      = GetInt32(new IntPtr(p + 0x030)); // 02466B294270 0x30 Port                        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Mixer                                     = (Playable)GetInt32(new IntPtr(p + 0x010)); // 0x10 Mixer                       ( ModelEnumType Playable Playable Playable Int32 )
+            value.ParentMixer                               = (Playable)GetInt32(new IntPtr(p + 0x020)); // 0x20 ParentMixer                 ( ModelEnumType Playable Playable Playable Int32 )
+            value.Port                                      = GetInt32(new IntPtr(p + 0x030)); // 0x30 Port                        ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

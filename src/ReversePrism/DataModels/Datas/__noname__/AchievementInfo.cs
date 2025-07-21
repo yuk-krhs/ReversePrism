@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 IsNew                                    000186595960 ModelPrimitiveType bool bool bool Bool
+    // 010 IsNew                                    ModelPrimitiveType bool bool bool Bool
     public partial class AchievementInfo : DataModel
     {
         public bool                                     IsNew                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AchievementInfo() { Pointer= p0 };
 
-            value.IsNew                                     = GetBool(new IntPtr(p + 0x010)); // 02466AE6FB20 0x10 IsNew                       ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.IsNew                                     = GetBool(new IntPtr(p + 0x010)); // 0x10 IsNew                       ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

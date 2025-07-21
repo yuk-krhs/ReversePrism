@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 source                                   IObservable`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 020 FrameCount                               0001865F4260 ModelPrimitiveType int int int Int32
-    // 024 FrameCountType                           0001865BD200 ModelEnumType FrameCountType FrameCountType FrameCountType Int32
+    // 020 FrameCount                               ModelPrimitiveType int int int Int32
+    // 024 FrameCountType                           ModelEnumType FrameCountType FrameCountType FrameCountType Int32
     public partial class BatchFrameObservable : DataModel
     {
         public int                                      FrameCount                              { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BatchFrameObservable() { Pointer= p0 };
 
-            value.FrameCount                                = GetInt32(new IntPtr(p + 0x020)); // 024669891438 0x20 FrameCount                  ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.FrameCountType                            = (FrameCountType)GetInt32(new IntPtr(p + 0x024)); // 024669891458 0x24 FrameCountType              ( 0001865BD200 ModelEnumType FrameCountType FrameCountType FrameCountType Int32 )
+            value.FrameCount                                = GetInt32(new IntPtr(p + 0x020)); // 0x20 FrameCount                  ( ModelPrimitiveType int int int Int32 )
+            value.FrameCountType                            = (FrameCountType)GetInt32(new IntPtr(p + 0x024)); // 0x24 FrameCountType              ( ModelEnumType FrameCountType FrameCountType FrameCountType Int32 )
 
             return value;
         }

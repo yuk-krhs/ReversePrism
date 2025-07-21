@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Mean                                     000185B80920 ModelPrimitiveListType float[] float[] List<float> Pointer
-    // 018 Std                                      000185B80920 ModelPrimitiveListType float[] float[] List<float> Pointer
+    // 010 Mean                                     ModelPrimitiveListType float[] float[] List<float> Pointer
+    // 018 Std                                      ModelPrimitiveListType float[] float[] List<float> Pointer
     public partial class Normalization : DataModel
     {
         public List<float>?                             Mean                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Normalization() { Pointer= p0 };
 
-            value.Mean                                      = GetSingleList(new IntPtr(p + 0x010)); // 02466BE3F498 0x10 Mean                        ( 000185B80920 ModelPrimitiveListType float[] float[] List<float> Pointer )
-            value.Std                                       = GetSingleList(new IntPtr(p + 0x018)); // 02466BE3F4B8 0x18 Std                         ( 000185B80920 ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.Mean                                      = GetSingleList(new IntPtr(p + 0x010)); // 0x10 Mean                        ( ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.Std                                       = GetSingleList(new IntPtr(p + 0x018)); // 0x18 Std                         ( ModelPrimitiveListType float[] float[] List<float> Pointer )
 
             return value;
         }

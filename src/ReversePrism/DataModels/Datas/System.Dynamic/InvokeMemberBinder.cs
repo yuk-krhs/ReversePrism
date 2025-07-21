@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 Name                                     000186672F10 ModelPrimitiveType string string string String
-    // 020 IgnoreCase                               0001865965D0 ModelPrimitiveType bool bool bool Bool
+    // 018 Name                                     ModelPrimitiveType string string string String
+    // 020 IgnoreCase                               ModelPrimitiveType bool bool bool Bool
     public partial class InvokeMemberBinder : DataModel
     {
         public string                                   Name                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InvokeMemberBinder() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 02466877FC88 0x18 Name                        ( 000186672F10 ModelPrimitiveType string string string String )
-            value.IgnoreCase                                = GetBool(new IntPtr(p + 0x020)); // 02466877FCA8 0x20 IgnoreCase                  ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0x18 Name                        ( ModelPrimitiveType string string string String )
+            value.IgnoreCase                                = GetBool(new IntPtr(p + 0x020)); // 0x20 IgnoreCase                  ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

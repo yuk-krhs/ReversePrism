@@ -8,21 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 DataListRefHeaderAndRow                  000185CE6458 ModelClassListType List`1<IMedalGashaRewardListData> List`1<IMedalGashaRewardListData> List<IMedalGashaRewardListData> Pointer
+    // 010 DataListRefHeaderAndRow                  ModelClassListType List`1<IMedalGashaRewardListData> List`1<IMedalGashaRewardListData> List<IMedalGashaRewardListData> Pointer
     // 000 ItemLimitPerRow                          int IL2CPP_TYPE_I4
-    // 018 ResourceTag                              00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
-    // 020 HasRemainFeatured                        0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 024 RemainCount                              0001865F4260 ModelPrimitiveType int int int Int32
-    // 028 BoxNumber                                0001865F8300 ModelPrimitiveType long long long Int64
-    // 030 IsLoop                                   0001865965D0 ModelPrimitiveType bool bool bool Bool
+    // 018 HasRemainFeatured                        ModelPrimitiveType bool bool bool Bool
+    // 01C RemainCount                              ModelPrimitiveType int int int Int32
     public partial class MedalGashaRewardAllListViewModel : DataModel
     {
         public List<IMedalGashaRewardListData>?         DataListRefHeaderAndRow                 { get; set; }
-        public IResourceTag?                            ResourceTag                             { get; set; }
         public bool                                     HasRemainFeatured                       { get; set; }
         public int                                      RemainCount                             { get; set; }
-        public long                                     BoxNumber                               { get; set; }
-        public bool                                     IsLoop                                  { get; set; }
 
         public static MedalGashaRewardAllListViewModel? FromPointer(IntPtr p0)
         {
@@ -32,12 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MedalGashaRewardAllListViewModel() { Pointer= p0 };
 
-            value.DataListRefHeaderAndRow                   = GetObjectList<IMedalGashaRewardListData>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMedalGashaRewardListData.FromPointer); // 024666302C88 0x10 DataListRefHeaderAndRow     ( 000185CE6458 ModelClassListType List`1<IMedalGashaRewardListData> List`1<IMedalGashaRewardListData> List<IMedalGashaRewardListData> Pointer )
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x018), ReversePrism.DataModels.IResourceTag.FromPointer); // 024666302CC8 0x18 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
-            value.HasRemainFeatured                         = GetBool(new IntPtr(p + 0x020)); // 024666302CE8 0x20 HasRemainFeatured           ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.RemainCount                               = GetInt32(new IntPtr(p + 0x024)); // 024666302D08 0x24 RemainCount                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.BoxNumber                                 = GetInt64(new IntPtr(p + 0x028)); // 024666302D28 0x28 BoxNumber                   ( 0001865F8300 ModelPrimitiveType long long long Int64 )
-            value.IsLoop                                    = GetBool(new IntPtr(p + 0x030)); // 024666302D48 0x30 IsLoop                      ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.DataListRefHeaderAndRow                   = GetObjectList<IMedalGashaRewardListData>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMedalGashaRewardListData.FromPointer); // 0x10 DataListRefHeaderAndRow     ( ModelClassListType List`1<IMedalGashaRewardListData> List`1<IMedalGashaRewardListData> List<IMedalGashaRewardListData> Pointer )
+            value.HasRemainFeatured                         = GetBool(new IntPtr(p + 0x018)); // 0x18 HasRemainFeatured           ( ModelPrimitiveType bool bool bool Bool )
+            value.RemainCount                               = GetInt32(new IntPtr(p + 0x01C)); // 0x1C RemainCount                 ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

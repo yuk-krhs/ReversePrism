@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Min                                      0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 014 Max                                      0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 018 IsNotNull                                000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 Min                                      ModelPrimitiveType int int int Int32
+    // 014 Max                                      ModelPrimitiveType int int int Int32
+    // 018 IsNotNull                                ModelPrimitiveType bool bool bool Bool
     public partial class Range : DataModel
     {
         public int                                      Min                                     { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Range() { Pointer= p0 };
 
-            value.Min                                       = GetInt32(new IntPtr(p + 0x010)); // 0246689A9EC0 0x10 Min                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Max                                       = GetInt32(new IntPtr(p + 0x014)); // 0246689A9EE0 0x14 Max                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsNotNull                                 = GetBool(new IntPtr(p + 0x018)); // 0246689A9F00 0x18 IsNotNull                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Min                                       = GetInt32(new IntPtr(p + 0x010)); // 0x10 Min                         ( ModelPrimitiveType int int int Int32 )
+            value.Max                                       = GetInt32(new IntPtr(p + 0x014)); // 0x14 Max                         ( ModelPrimitiveType int int int Int32 )
+            value.IsNotNull                                 = GetBool(new IntPtr(p + 0x018)); // 0x18 IsNotNull                   ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

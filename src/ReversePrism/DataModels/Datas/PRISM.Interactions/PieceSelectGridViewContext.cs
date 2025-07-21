@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 050 IsSurplus                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 051 PieceConversion                          000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 058 IsSurplus                                ModelPrimitiveType bool bool bool Bool
+    // 059 PieceConversion                          ModelPrimitiveType bool bool bool Bool
     public partial class PieceSelectGridViewContext : DataModel
     {
         public bool                                     IsSurplus                               { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PieceSelectGridViewContext() { Pointer= p0 };
 
-            value.IsSurplus                                 = GetBool(new IntPtr(p + 0x050)); // 02466A2A3750 0x50 IsSurplus                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.PieceConversion                           = GetBool(new IntPtr(p + 0x051)); // 02466A2A3770 0x51 PieceConversion             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsSurplus                                 = GetBool(new IntPtr(p + 0x058)); // 0x58 IsSurplus                   ( ModelPrimitiveType bool bool bool Bool )
+            value.PieceConversion                           = GetBool(new IntPtr(p + 0x059)); // 0x59 PieceConversion             ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

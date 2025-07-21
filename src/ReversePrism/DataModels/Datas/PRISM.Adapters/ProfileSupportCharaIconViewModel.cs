@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 IconData                                 0001866AA140 ModelClassType SCharaIcon SCharaIcon SCharaIcon Pointer
-    // 018 IsSelectChara                            0001865965D0 ModelPrimitiveType bool bool bool Bool
+    // 010 IconData                                 ModelClassType SCharaIcon SCharaIcon SCharaIcon Pointer
+    // 018 IsSelectChara                            ModelPrimitiveType bool bool bool Bool
     public partial class ProfileSupportCharaIconViewModel : DataModel
     {
         public SCharaIcon?                              IconData                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProfileSupportCharaIconViewModel() { Pointer= p0 };
 
-            value.IconData                                  = GetObject<SCharaIcon>(new IntPtr(p + 0x010), ReversePrism.DataModels.SCharaIcon.FromPointer); // 024666727D38 0x10 IconData                    ( 0001866AA140 ModelClassType SCharaIcon SCharaIcon SCharaIcon Pointer )
-            value.IsSelectChara                             = GetBool(new IntPtr(p + 0x018)); // 024666727D58 0x18 IsSelectChara               ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.IconData                                  = GetObject<SCharaIcon>(new IntPtr(p + 0x010), ReversePrism.DataModels.SCharaIcon.FromPointer); // 0x10 IconData                    ( ModelClassType SCharaIcon SCharaIcon SCharaIcon Pointer )
+            value.IsSelectChara                             = GetBool(new IntPtr(p + 0x018)); // 0x18 IsSelectChara               ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

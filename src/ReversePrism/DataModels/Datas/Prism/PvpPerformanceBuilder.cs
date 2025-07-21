@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 View                                     0001865EE200 ModelClassType PvpPerformanceView PvpPerformanceView PvpPerformanceView Pointer
+    // 020 View                                     ModelClassType PvpPerformanceView PvpPerformanceView PvpPerformanceView Pointer
     public partial class PvpPerformanceBuilder : DataModel
     {
         public PvpPerformanceView?                      View                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PvpPerformanceBuilder() { Pointer= p0 };
 
-            value.View                                      = GetObject<PvpPerformanceView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PvpPerformanceView.FromPointer); // 02466B6B2EA0 0x20 View                        ( 0001865EE200 ModelClassType PvpPerformanceView PvpPerformanceView PvpPerformanceView Pointer )
+            value.View                                      = GetObject<PvpPerformanceView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PvpPerformanceView.FromPointer); // 0x20 View                        ( ModelClassType PvpPerformanceView PvpPerformanceView PvpPerformanceView Pointer )
 
             return value;
         }

@@ -12,13 +12,13 @@ namespace ReversePrism.DataModels
     // 004 s_ShadowResolutionMultiplier             float IL2CPP_TYPE_R4
     // 008 s_RenderScaleMultiplier                  float IL2CPP_TYPE_R4
     // 00C s_DecalsMaxDistance                      float IL2CPP_TYPE_R4
-    // 010 MainLightShadowCascadesCountBias         0001865F38E0 ModelPrimitiveType int int int Int32
-    // 014 ShadowQualityBias                        0001865F38E0 ModelPrimitiveType int int int Int32
-    // 018 LutBias                                  000186666300 ModelPrimitiveType float float float Single
-    // 01C AntiAliasingQualityBias                  0001865F38E0 ModelPrimitiveType int int int Int32
-    // 020 SkipDynamicBatching                      000186595C30 ModelPrimitiveType bool bool bool Bool
-    // 021 SkipFrontToBackSorting                   000186595C30 ModelPrimitiveType bool bool bool Bool
-    // 022 SkipTransparentObjects                   000186595C30 ModelPrimitiveType bool bool bool Bool
+    // 010 MainLightShadowCascadesCountBias         ModelPrimitiveType int int int Int32
+    // 014 ShadowQualityBias                        ModelPrimitiveType int int int Int32
+    // 018 LutBias                                  ModelPrimitiveType float float float Single
+    // 01C AntiAliasingQualityBias                  ModelPrimitiveType int int int Int32
+    // 020 SkipDynamicBatching                      ModelPrimitiveType bool bool bool Bool
+    // 021 SkipFrontToBackSorting                   ModelPrimitiveType bool bool bool Bool
+    // 022 SkipTransparentObjects                   ModelPrimitiveType bool bool bool Bool
     public partial class AdaptivePerformanceRenderSettings : DataModel
     {
         public int                                      MainLightShadowCascadesCountBias        { get; set; }
@@ -37,13 +37,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AdaptivePerformanceRenderSettings() { Pointer= p0 };
 
-            value.MainLightShadowCascadesCountBias          = GetInt32(new IntPtr(p + 0x010)); // 02466B6F7B98 0x10 MainLightShadowCascadesCountBias ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
-            value.ShadowQualityBias                         = GetInt32(new IntPtr(p + 0x014)); // 02466B6F7BB8 0x14 ShadowQualityBias           ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
-            value.LutBias                                   = GetSingle(new IntPtr(p + 0x018)); // 02466B6F7BD8 0x18 LutBias                     ( 000186666300 ModelPrimitiveType float float float Single )
-            value.AntiAliasingQualityBias                   = GetInt32(new IntPtr(p + 0x01C)); // 02466B6F7BF8 0x1C AntiAliasingQualityBias     ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
-            value.SkipDynamicBatching                       = GetBool(new IntPtr(p + 0x020)); // 02466B6F7C18 0x20 SkipDynamicBatching         ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
-            value.SkipFrontToBackSorting                    = GetBool(new IntPtr(p + 0x021)); // 02466B6F7C38 0x21 SkipFrontToBackSorting      ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
-            value.SkipTransparentObjects                    = GetBool(new IntPtr(p + 0x022)); // 02466B6F7C58 0x22 SkipTransparentObjects      ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.MainLightShadowCascadesCountBias          = GetInt32(new IntPtr(p + 0x010)); // 0x10 MainLightShadowCascadesCountBias ( ModelPrimitiveType int int int Int32 )
+            value.ShadowQualityBias                         = GetInt32(new IntPtr(p + 0x014)); // 0x14 ShadowQualityBias           ( ModelPrimitiveType int int int Int32 )
+            value.LutBias                                   = GetSingle(new IntPtr(p + 0x018)); // 0x18 LutBias                     ( ModelPrimitiveType float float float Single )
+            value.AntiAliasingQualityBias                   = GetInt32(new IntPtr(p + 0x01C)); // 0x1C AntiAliasingQualityBias     ( ModelPrimitiveType int int int Int32 )
+            value.SkipDynamicBatching                       = GetBool(new IntPtr(p + 0x020)); // 0x20 SkipDynamicBatching         ( ModelPrimitiveType bool bool bool Bool )
+            value.SkipFrontToBackSorting                    = GetBool(new IntPtr(p + 0x021)); // 0x21 SkipFrontToBackSorting      ( ModelPrimitiveType bool bool bool Bool )
+            value.SkipTransparentObjects                    = GetBool(new IntPtr(p + 0x022)); // 0x22 SkipTransparentObjects      ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

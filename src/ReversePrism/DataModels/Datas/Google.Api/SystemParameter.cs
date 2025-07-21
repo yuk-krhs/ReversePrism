@@ -11,11 +11,11 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<SystemParameter> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 NameFieldNumber                          int IL2CPP_TYPE_I4
-    // 018 Name                                     000186671910 ModelPrimitiveType string string string String
+    // 018 Name                                     ModelPrimitiveType string string string String
     // 000 HttpHeaderFieldNumber                    int IL2CPP_TYPE_I4
-    // 020 HttpHeader                               000186671910 ModelPrimitiveType string string string String
+    // 020 HttpHeader                               ModelPrimitiveType string string string String
     // 000 UrlQueryParameterFieldNumber             int IL2CPP_TYPE_I4
-    // 028 UrlQueryParameter                        000186671910 ModelPrimitiveType string string string String
+    // 028 UrlQueryParameter                        ModelPrimitiveType string string string String
     public partial class SystemParameter : DataModel
     {
         public string                                   Name                                    { get; set; }
@@ -30,9 +30,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SystemParameter() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 02466A8FBA70 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.HttpHeader                                = GetString(new IntPtr(p + 0x020)); // 02466A8FBAB0 0x20 HttpHeader                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.UrlQueryParameter                         = GetString(new IntPtr(p + 0x028)); // 02466A8FBAF0 0x28 UrlQueryParameter           ( 000186671910 ModelPrimitiveType string string string String )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0x18 Name                        ( ModelPrimitiveType string string string String )
+            value.HttpHeader                                = GetString(new IntPtr(p + 0x020)); // 0x20 HttpHeader                  ( ModelPrimitiveType string string string String )
+            value.UrlQueryParameter                         = GetString(new IntPtr(p + 0x028)); // 0x28 UrlQueryParameter           ( ModelPrimitiveType string string string String )
 
             return value;
         }

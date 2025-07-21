@@ -16,6 +16,7 @@ namespace ReversePrism.DataModels
         Solo,
         Unit,
         Team,
+        Other,
         Num,
     }
 }

@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_TelemetryMetricsInstanceWrapper        00018666F890 ModelClassType ITelemetryMetricsInstanceWrapper ITelemetryMetricsInstanceWrapper ITelemetryMetricsInstanceWrapper Pointer
-    // 018 M_MetricType                             00018662BB80 ModelEnumType TelemetryMetricTypes TelemetryMetricTypes TelemetryMetricTypes Int32
-    // 020 M_MetricName                             000186672F10 ModelPrimitiveType string string string String
-    // 028 M_Stopwatch                              00018658E360 ModelClassType Stopwatch Stopwatch Stopwatch Pointer
+    // 010 M_TelemetryMetricsInstanceWrapper        ModelClassType ITelemetryMetricsInstanceWrapper ITelemetryMetricsInstanceWrapper ITelemetryMetricsInstanceWrapper Pointer
+    // 018 M_MetricType                             ModelEnumType TelemetryMetricTypes TelemetryMetricTypes TelemetryMetricTypes Int32
+    // 020 M_MetricName                             ModelPrimitiveType string string string String
+    // 028 M_Stopwatch                              ModelClassType Stopwatch Stopwatch Stopwatch Pointer
     public partial class TelemetryMetricEvent : DataModel
     {
         public ITelemetryMetricsInstanceWrapper?        M_TelemetryMetricsInstanceWrapper       { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TelemetryMetricEvent() { Pointer= p0 };
 
-            value.M_TelemetryMetricsInstanceWrapper         = GetObject<ITelemetryMetricsInstanceWrapper>(new IntPtr(p + 0x010), ReversePrism.DataModels.ITelemetryMetricsInstanceWrapper.FromPointer); // 0245A68F3D28 0x10 M_TelemetryMetricsInstanceWrapper ( 00018666F890 ModelClassType ITelemetryMetricsInstanceWrapper ITelemetryMetricsInstanceWrapper ITelemetryMetricsInstanceWrapper Pointer )
-            value.M_MetricType                              = (TelemetryMetricTypes)GetInt32(new IntPtr(p + 0x018)); // 0245A68F3D48 0x18 M_MetricType                ( 00018662BB80 ModelEnumType TelemetryMetricTypes TelemetryMetricTypes TelemetryMetricTypes Int32 )
-            value.M_MetricName                              = GetString(new IntPtr(p + 0x020)); // 0245A68F3D68 0x20 M_MetricName                ( 000186672F10 ModelPrimitiveType string string string String )
-            value.M_Stopwatch                               = GetObject<Stopwatch>(new IntPtr(p + 0x028), ReversePrism.DataModels.Stopwatch.FromPointer); // 0245A68F3D88 0x28 M_Stopwatch                 ( 00018658E360 ModelClassType Stopwatch Stopwatch Stopwatch Pointer )
+            value.M_TelemetryMetricsInstanceWrapper         = GetObject<ITelemetryMetricsInstanceWrapper>(new IntPtr(p + 0x010), ReversePrism.DataModels.ITelemetryMetricsInstanceWrapper.FromPointer); // 0x10 M_TelemetryMetricsInstanceWrapper ( ModelClassType ITelemetryMetricsInstanceWrapper ITelemetryMetricsInstanceWrapper ITelemetryMetricsInstanceWrapper Pointer )
+            value.M_MetricType                              = (TelemetryMetricTypes)GetInt32(new IntPtr(p + 0x018)); // 0x18 M_MetricType                ( ModelEnumType TelemetryMetricTypes TelemetryMetricTypes TelemetryMetricTypes Int32 )
+            value.M_MetricName                              = GetString(new IntPtr(p + 0x020)); // 0x20 M_MetricName                ( ModelPrimitiveType string string string String )
+            value.M_Stopwatch                               = GetObject<Stopwatch>(new IntPtr(p + 0x028), ReversePrism.DataModels.Stopwatch.FromPointer); // 0x28 M_Stopwatch                 ( ModelClassType Stopwatch Stopwatch Stopwatch Pointer )
 
             return value;
         }

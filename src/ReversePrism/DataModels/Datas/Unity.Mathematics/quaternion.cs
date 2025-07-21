@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Value                                    0001866C7C90 ModelEnumType float4 float4 float4 Int32
+    // 010 Value                                    ModelEnumType float4 float4 float4 Int32
     // 000 identity                                 quaternion IL2CPP_TYPE_VALUETYPE
     public partial class quaternion : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new quaternion() { Pointer= p0 };
 
-            value.Value                                     = (float4)GetInt32(new IntPtr(p + 0x010)); // 0245A15CBE20 0x10 Value                       ( 0001866C7C90 ModelEnumType float4 float4 float4 Int32 )
+            value.Value                                     = (float4)GetInt32(new IntPtr(p + 0x010)); // 0x10 Value                       ( ModelEnumType float4 float4 float4 Int32 )
 
             return value;
         }

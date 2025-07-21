@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Val                                      0001865F2F90 ModelPrimitiveType int int int Int32
+    // 010 Val                                      ModelPrimitiveType int int int Int32
     public partial class FieldOffsetAttribute : DataModel
     {
         public int                                      Val                                     { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FieldOffsetAttribute() { Pointer= p0 };
 
-            value.Val                                       = GetInt32(new IntPtr(p + 0x010)); // 0245A4D118D8 0x10 Val                         ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.Val                                       = GetInt32(new IntPtr(p + 0x010)); // 0x10 Val                         ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

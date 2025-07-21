@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 UiCharacterViewer                        0001866E2C70 ModelClassType UICharacterViewer UICharacterViewer UICharacterViewer Pointer
-    // 028 CharacterPositionAdjuster                000186553690 ModelClassType CenteringObjectsOutsideSafeArea CenteringObjectsOutsideSafeArea CenteringObjectsOutsideSafeArea Pointer
-    // 030 TitleView                                0001865E9D00 ModelClassType CommonTitleView CommonTitleView CommonTitleView Pointer
-    // 038 UnitSelectCellList                       00018672FD20 ModelClassType IntroductionUnitSelectCellList IntroductionUnitSelectCellList IntroductionUnitSelectCellList Pointer
+    // 020 UiCharacterViewer                        ModelClassType UICharacterViewer UICharacterViewer UICharacterViewer Pointer
+    // 028 CharacterPositionAdjuster                ModelClassType CenteringObjectsOutsideSafeArea CenteringObjectsOutsideSafeArea CenteringObjectsOutsideSafeArea Pointer
+    // 030 TitleView                                ModelClassType CommonTitleView CommonTitleView CommonTitleView Pointer
+    // 038 UnitSelectCellList                       ModelClassType IntroductionUnitSelectCellList IntroductionUnitSelectCellList IntroductionUnitSelectCellList Pointer
     public partial class IntroductionUnitSelectView : DataModel
     {
         public UICharacterViewer?                       UiCharacterViewer                       { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IntroductionUnitSelectView() { Pointer= p0 };
 
-            value.UiCharacterViewer                         = GetObject<UICharacterViewer>(new IntPtr(p + 0x020), ReversePrism.DataModels.UICharacterViewer.FromPointer); // 02466BCDCD40 0x20 UiCharacterViewer           ( 0001866E2C70 ModelClassType UICharacterViewer UICharacterViewer UICharacterViewer Pointer )
-            value.CharacterPositionAdjuster                 = GetObject<CenteringObjectsOutsideSafeArea>(new IntPtr(p + 0x028), ReversePrism.DataModels.CenteringObjectsOutsideSafeArea.FromPointer); // 02466BCDCD60 0x28 CharacterPositionAdjuster   ( 000186553690 ModelClassType CenteringObjectsOutsideSafeArea CenteringObjectsOutsideSafeArea CenteringObjectsOutsideSafeArea Pointer )
-            value.TitleView                                 = GetObject<CommonTitleView>(new IntPtr(p + 0x030), ReversePrism.DataModels.CommonTitleView.FromPointer); // 02466BCDCD80 0x30 TitleView                   ( 0001865E9D00 ModelClassType CommonTitleView CommonTitleView CommonTitleView Pointer )
-            value.UnitSelectCellList                        = GetObject<IntroductionUnitSelectCellList>(new IntPtr(p + 0x038), ReversePrism.DataModels.IntroductionUnitSelectCellList.FromPointer); // 02466BCDCDA0 0x38 UnitSelectCellList          ( 00018672FD20 ModelClassType IntroductionUnitSelectCellList IntroductionUnitSelectCellList IntroductionUnitSelectCellList Pointer )
+            value.UiCharacterViewer                         = GetObject<UICharacterViewer>(new IntPtr(p + 0x020), ReversePrism.DataModels.UICharacterViewer.FromPointer); // 0x20 UiCharacterViewer           ( ModelClassType UICharacterViewer UICharacterViewer UICharacterViewer Pointer )
+            value.CharacterPositionAdjuster                 = GetObject<CenteringObjectsOutsideSafeArea>(new IntPtr(p + 0x028), ReversePrism.DataModels.CenteringObjectsOutsideSafeArea.FromPointer); // 0x28 CharacterPositionAdjuster   ( ModelClassType CenteringObjectsOutsideSafeArea CenteringObjectsOutsideSafeArea CenteringObjectsOutsideSafeArea Pointer )
+            value.TitleView                                 = GetObject<CommonTitleView>(new IntPtr(p + 0x030), ReversePrism.DataModels.CommonTitleView.FromPointer); // 0x30 TitleView                   ( ModelClassType CommonTitleView CommonTitleView CommonTitleView Pointer )
+            value.UnitSelectCellList                        = GetObject<IntroductionUnitSelectCellList>(new IntPtr(p + 0x038), ReversePrism.DataModels.IntroductionUnitSelectCellList.FromPointer); // 0x38 UnitSelectCellList          ( ModelClassType IntroductionUnitSelectCellList IntroductionUnitSelectCellList IntroductionUnitSelectCellList Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 050 Node                                     0001865BB990 ModelClassType XmlSchemaObject XmlSchemaObject XmlSchemaObject Pointer
+    // 050 Node                                     ModelClassType XmlSchemaObject XmlSchemaObject XmlSchemaObject Pointer
     public partial class SchemaNamespaceManager : DataModel
     {
         public XmlSchemaObject?                         Node                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SchemaNamespaceManager() { Pointer= p0 };
 
-            value.Node                                      = GetObject<XmlSchemaObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.XmlSchemaObject.FromPointer); // 0246675F3450 0x50 Node                        ( 0001865BB990 ModelClassType XmlSchemaObject XmlSchemaObject XmlSchemaObject Pointer )
+            value.Node                                      = GetObject<XmlSchemaObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.XmlSchemaObject.FromPointer); // 0x50 Node                        ( ModelClassType XmlSchemaObject XmlSchemaObject XmlSchemaObject Pointer )
 
             return value;
         }

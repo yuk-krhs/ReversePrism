@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 InstallId                                0001865843B0 ModelClassType IInstallationId IInstallationId IInstallationId Pointer
+    // 010 InstallId                                ModelClassType IInstallationId IInstallationId IInstallationId Pointer
     // 000 k_UnityAnalyticsInstallationIdKey        string IL2CPP_TYPE_STRING
     public partial class InternalNewPlayerHelper : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InternalNewPlayerHelper() { Pointer= p0 };
 
-            value.InstallId                                 = GetObject<IInstallationId>(new IntPtr(p + 0x010), ReversePrism.DataModels.IInstallationId.FromPointer); // 02466B83F558 0x10 InstallId                   ( 0001865843B0 ModelClassType IInstallationId IInstallationId IInstallationId Pointer )
+            value.InstallId                                 = GetObject<IInstallationId>(new IntPtr(p + 0x010), ReversePrism.DataModels.IInstallationId.FromPointer); // 0x10 InstallId                   ( ModelClassType IInstallationId IInstallationId IInstallationId Pointer )
 
             return value;
         }

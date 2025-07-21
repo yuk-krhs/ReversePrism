@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_floatingPoint                          0001865C2E50 ModelPrimitiveType double double double Double
-    // 010 M_integer                                00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64
+    // 010 M_floatingPoint                          ModelPrimitiveType double double double Double
+    // 010 M_integer                                ModelPrimitiveType ulong ulong ulong UInt64
     public partial class tFloatUnion64 : DataModel
     {
         public double                                   M_floatingPoint                         { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new tFloatUnion64() { Pointer= p0 };
 
-            value.M_floatingPoint                           = GetDouble(new IntPtr(p + 0x010)); // 02466A90FC58 0x10 M_floatingPoint             ( 0001865C2E50 ModelPrimitiveType double double double Double )
-            value.M_integer                                 = GetUInt64(new IntPtr(p + 0x010)); // 02466A90FC78 0x10 M_integer                   ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.M_floatingPoint                           = GetDouble(new IntPtr(p + 0x010)); // 0x10 M_floatingPoint             ( ModelPrimitiveType double double double Double )
+            value.M_integer                                 = GetUInt64(new IntPtr(p + 0x010)); // 0x10 M_integer                   ( ModelPrimitiveType ulong ulong ulong UInt64 )
 
             return value;
         }

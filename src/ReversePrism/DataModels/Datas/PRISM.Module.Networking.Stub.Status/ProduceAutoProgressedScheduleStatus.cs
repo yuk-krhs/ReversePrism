@@ -11,20 +11,22 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<ProduceAutoProgressedScheduleStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 WeekFieldNumber                          int IL2CPP_TYPE_I4
-    // 018 Week                                     0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 Week                                     ModelPrimitiveType int int int Int32
     // 000 ScheduleTypeFieldNumber                  int IL2CPP_TYPE_I4
-    // 01C ScheduleType                             0001866E4270 ModelEnumType ScheduleType ScheduleType ScheduleType Int32
+    // 01C ScheduleType                             ModelEnumType ScheduleType ScheduleType ScheduleType Int32
     // 000 ScheduleDetailTypeFieldNumber            int IL2CPP_TYPE_I4
-    // 020 ScheduleDetailType                       0001866D43F0 ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32
+    // 020 ScheduleDetailType                       ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32
     // 000 ScheduleLevelFieldNumber                 int IL2CPP_TYPE_I4
-    // 024 ScheduleLevel                            0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 024 ScheduleLevel                            ModelPrimitiveType int int int Int32
     // 000 IsRecommendFieldNumber                   int IL2CPP_TYPE_I4
-    // 028 IsRecommend                              000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 028 IsRecommend                              ModelPrimitiveType bool bool bool Bool
     // 000 IsSupportBonusFieldNumber                int IL2CPP_TYPE_I4
-    // 029 IsSupportBonus                           000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 029 IsSupportBonus                           ModelPrimitiveType bool bool bool Bool
     // 000 SupportCharacterIconListFieldNumber      int IL2CPP_TYPE_I4
     // 008 _repeated_supportCharacterIconList_codec FieldCodec`1<SupportCharacterIconStatus> IL2CPP_TYPE_GENERICINST
-    // 030 SupportCharacterIconList                 000185CF4048 ModelClassListType RepeatedField`1<SupportCharacterIconStatus> RepeatedField`1<SupportCharacterIconStatus> List<SupportCharacterIconStatus> Pointer
+    // 030 SupportCharacterIconList                 ModelClassListType RepeatedField`1<SupportCharacterIconStatus> RepeatedField`1<SupportCharacterIconStatus> List<SupportCharacterIconStatus> Pointer
+    // 000 IsSpecifiedByPassiveEffectFieldNumber    int IL2CPP_TYPE_I4
+    // 038 IsSpecifiedByPassiveEffect               ModelPrimitiveType bool bool bool Bool
     public partial class ProduceAutoProgressedScheduleStatus : DataModel
     {
         public int                                      Week                                    { get; set; }
@@ -34,6 +36,7 @@ namespace ReversePrism.DataModels
         public bool                                     IsRecommend                             { get; set; }
         public bool                                     IsSupportBonus                          { get; set; }
         public List<SupportCharacterIconStatus>?        SupportCharacterIconList                { get; set; }
+        public bool                                     IsSpecifiedByPassiveEffect              { get; set; }
 
         public static ProduceAutoProgressedScheduleStatus? FromPointer(IntPtr p0)
         {
@@ -43,13 +46,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceAutoProgressedScheduleStatus() { Pointer= p0 };
 
-            value.Week                                      = GetInt32(new IntPtr(p + 0x018)); // 024661092718 0x18 Week                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ScheduleType                              = (ScheduleType)GetInt32(new IntPtr(p + 0x01C)); // 024661092758 0x1C ScheduleType                ( 0001866E4270 ModelEnumType ScheduleType ScheduleType ScheduleType Int32 )
-            value.ScheduleDetailType                        = (ScheduleDetailType)GetInt32(new IntPtr(p + 0x020)); // 024661092798 0x20 ScheduleDetailType          ( 0001866D43F0 ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32 )
-            value.ScheduleLevel                             = GetInt32(new IntPtr(p + 0x024)); // 0246610927D8 0x24 ScheduleLevel               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsRecommend                               = GetBool(new IntPtr(p + 0x028)); // 024661092818 0x28 IsRecommend                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsSupportBonus                            = GetBool(new IntPtr(p + 0x029)); // 024661092858 0x29 IsSupportBonus              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SupportCharacterIconList                  = GetObjectList<SupportCharacterIconStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.SupportCharacterIconStatus.FromPointer); // 0246610928B8 0x30 SupportCharacterIconList    ( 000185CF4048 ModelClassListType RepeatedField`1<SupportCharacterIconStatus> RepeatedField`1<SupportCharacterIconStatus> List<SupportCharacterIconStatus> Pointer )
+            value.Week                                      = GetInt32(new IntPtr(p + 0x018)); // 0x18 Week                        ( ModelPrimitiveType int int int Int32 )
+            value.ScheduleType                              = (ScheduleType)GetInt32(new IntPtr(p + 0x01C)); // 0x1C ScheduleType                ( ModelEnumType ScheduleType ScheduleType ScheduleType Int32 )
+            value.ScheduleDetailType                        = (ScheduleDetailType)GetInt32(new IntPtr(p + 0x020)); // 0x20 ScheduleDetailType          ( ModelEnumType ScheduleDetailType ScheduleDetailType ScheduleDetailType Int32 )
+            value.ScheduleLevel                             = GetInt32(new IntPtr(p + 0x024)); // 0x24 ScheduleLevel               ( ModelPrimitiveType int int int Int32 )
+            value.IsRecommend                               = GetBool(new IntPtr(p + 0x028)); // 0x28 IsRecommend                 ( ModelPrimitiveType bool bool bool Bool )
+            value.IsSupportBonus                            = GetBool(new IntPtr(p + 0x029)); // 0x29 IsSupportBonus              ( ModelPrimitiveType bool bool bool Bool )
+            value.SupportCharacterIconList                  = GetObjectList<SupportCharacterIconStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.SupportCharacterIconStatus.FromPointer); // 0x30 SupportCharacterIconList    ( ModelClassListType RepeatedField`1<SupportCharacterIconStatus> RepeatedField`1<SupportCharacterIconStatus> List<SupportCharacterIconStatus> Pointer )
+            value.IsSpecifiedByPassiveEffect                = GetBool(new IntPtr(p + 0x038)); // 0x38 IsSpecifiedByPassiveEffect  ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

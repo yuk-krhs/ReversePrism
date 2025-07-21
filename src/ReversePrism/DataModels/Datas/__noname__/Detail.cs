@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Consent_type                             0001865F36C0 ModelPrimitiveType int int int Int32
-    // 014 Consent_flg                              0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 Consent_type                             ModelPrimitiveType int int int Int32
+    // 014 Consent_flg                              ModelPrimitiveType int int int Int32
     public partial class Detail : DataModel
     {
         public int                                      Consent_type                            { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Detail() { Pointer= p0 };
 
-            value.Consent_type                              = GetInt32(new IntPtr(p + 0x010)); // 0245A4E7CC00 0x10 Consent_type                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Consent_flg                               = GetInt32(new IntPtr(p + 0x014)); // 0245A4E7CC20 0x14 Consent_flg                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Consent_type                              = GetInt32(new IntPtr(p + 0x010)); // 0x10 Consent_type                ( ModelPrimitiveType int int int Int32 )
+            value.Consent_flg                               = GetInt32(new IntPtr(p + 0x014)); // 0x14 Consent_flg                 ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

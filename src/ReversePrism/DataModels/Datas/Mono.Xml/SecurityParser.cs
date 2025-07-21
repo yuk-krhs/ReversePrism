@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 068 Root                                     0001867114A0 ModelClassType SecurityElement SecurityElement SecurityElement Pointer
-    // 070 Current                                  0001867114A0 ModelClassType SecurityElement SecurityElement SecurityElement Pointer
-    // 078 Stack                                    00018655EBF0 ModelClassType Stack Stack Stack Pointer
+    // 068 Root                                     ModelClassType SecurityElement SecurityElement SecurityElement Pointer
+    // 070 Current                                  ModelClassType SecurityElement SecurityElement SecurityElement Pointer
+    // 078 Stack                                    ModelClassType Stack Stack Stack Pointer
     public partial class SecurityParser : DataModel
     {
         public SecurityElement?                         Root                                    { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SecurityParser() { Pointer= p0 };
 
-            value.Root                                      = GetObject<SecurityElement>(new IntPtr(p + 0x068), ReversePrism.DataModels.SecurityElement.FromPointer); // 0246669A8AA8 0x68 Root                        ( 0001867114A0 ModelClassType SecurityElement SecurityElement SecurityElement Pointer )
-            value.Current                                   = GetObject<SecurityElement>(new IntPtr(p + 0x070), ReversePrism.DataModels.SecurityElement.FromPointer); // 0246669A8AC8 0x70 Current                     ( 0001867114A0 ModelClassType SecurityElement SecurityElement SecurityElement Pointer )
-            value.Stack                                     = GetObject<Stack>(new IntPtr(p + 0x078), ReversePrism.DataModels.Stack.FromPointer); // 0246669A8AE8 0x78 Stack                       ( 00018655EBF0 ModelClassType Stack Stack Stack Pointer )
+            value.Root                                      = GetObject<SecurityElement>(new IntPtr(p + 0x068), ReversePrism.DataModels.SecurityElement.FromPointer); // 0x68 Root                        ( ModelClassType SecurityElement SecurityElement SecurityElement Pointer )
+            value.Current                                   = GetObject<SecurityElement>(new IntPtr(p + 0x070), ReversePrism.DataModels.SecurityElement.FromPointer); // 0x70 Current                     ( ModelClassType SecurityElement SecurityElement SecurityElement Pointer )
+            value.Stack                                     = GetObject<Stack>(new IntPtr(p + 0x078), ReversePrism.DataModels.Stack.FromPointer); // 0x78 Stack                       ( ModelClassType Stack Stack Stack Pointer )
 
             return value;
         }

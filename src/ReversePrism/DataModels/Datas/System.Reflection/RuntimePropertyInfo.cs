@@ -10,9 +10,9 @@ namespace ReversePrism.DataModels
 
     // 010 klass                                    <int> IL2CPP_TYPE_I
     // 018 prop                                     <int> IL2CPP_TYPE_I
-    // 020 Info                                     0001866167E0 ModelEnumType MonoPropertyInfo MonoPropertyInfo MonoPropertyInfo Int32
-    // 050 Cached                                   00018670E470 ModelEnumType PInfo PInfo PInfo Int32
-    // 058 Cached_getter                            0001866EE830 ModelClassType GetterAdapter GetterAdapter GetterAdapter Pointer
+    // 020 Info                                     ModelEnumType MonoPropertyInfo MonoPropertyInfo MonoPropertyInfo Int32
+    // 050 Cached                                   ModelEnumType PInfo PInfo PInfo Int32
+    // 058 Cached_getter                            ModelClassType GetterAdapter GetterAdapter GetterAdapter Pointer
     public partial class RuntimePropertyInfo : DataModel
     {
         public MonoPropertyInfo                         Info                                    { get; set; }
@@ -27,9 +27,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RuntimePropertyInfo() { Pointer= p0 };
 
-            value.Info                                      = (MonoPropertyInfo)GetInt32(new IntPtr(p + 0x020)); // 0245A34D0608 0x20 Info                        ( 0001866167E0 ModelEnumType MonoPropertyInfo MonoPropertyInfo MonoPropertyInfo Int32 )
-            value.Cached                                    = (PInfo)GetInt32(new IntPtr(p + 0x050)); // 0245A34D0628 0x50 Cached                      ( 00018670E470 ModelEnumType PInfo PInfo PInfo Int32 )
-            value.Cached_getter                             = GetObject<GetterAdapter>(new IntPtr(p + 0x058), ReversePrism.DataModels.GetterAdapter.FromPointer); // 0245A34D0648 0x58 Cached_getter               ( 0001866EE830 ModelClassType GetterAdapter GetterAdapter GetterAdapter Pointer )
+            value.Info                                      = (MonoPropertyInfo)GetInt32(new IntPtr(p + 0x020)); // 0x20 Info                        ( ModelEnumType MonoPropertyInfo MonoPropertyInfo MonoPropertyInfo Int32 )
+            value.Cached                                    = (PInfo)GetInt32(new IntPtr(p + 0x050)); // 0x50 Cached                      ( ModelEnumType PInfo PInfo PInfo Int32 )
+            value.Cached_getter                             = GetObject<GetterAdapter>(new IntPtr(p + 0x058), ReversePrism.DataModels.GetterAdapter.FromPointer); // 0x58 Cached_getter               ( ModelClassType GetterAdapter GetterAdapter GetterAdapter Pointer )
 
             return value;
         }

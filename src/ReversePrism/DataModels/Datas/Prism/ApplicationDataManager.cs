@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 IsSetup                                  000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 IsSetup                                  ModelPrimitiveType bool bool bool Bool
     public partial class ApplicationDataManager : DataModel
     {
         public bool                                     IsSetup                                 { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ApplicationDataManager() { Pointer= p0 };
 
-            value.IsSetup                                   = GetBool(new IntPtr(p + 0x010)); // 024660E159D0 0x10 IsSetup                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsSetup                                   = GetBool(new IntPtr(p + 0x010)); // 0x10 IsSetup                     ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

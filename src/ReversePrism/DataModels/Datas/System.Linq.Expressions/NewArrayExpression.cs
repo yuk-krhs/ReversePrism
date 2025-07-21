@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Type                                     0001866936B0 ModelClassType Type Type Type Pointer
+    // 010 Type                                     ModelClassType Type Type Type Pointer
     // 018 <Expressions>k__BackingField             ReadOnlyCollection`1<Expression> IL2CPP_TYPE_GENERICINST
     public partial class NewArrayExpression : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NewArrayExpression() { Pointer= p0 };
 
-            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 024669F81640 0x10 Type                        ( 0001866936B0 ModelClassType Type Type Type Pointer )
+            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0x10 Type                        ( ModelClassType Type Type Type Pointer )
 
             return value;
         }

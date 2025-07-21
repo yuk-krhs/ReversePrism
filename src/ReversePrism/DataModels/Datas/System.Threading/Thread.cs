@@ -14,15 +14,15 @@ namespace ReversePrism.DataModels
     // FFFFFFFF m_CurrentUICulture                       CultureInfo IL2CPP_TYPE_CLASS
     // 008 s_asyncLocalCurrentCulture               AsyncLocal`1<CultureInfo> IL2CPP_TYPE_GENERICINST
     // 010 s_asyncLocalCurrentUICulture             AsyncLocal`1<CultureInfo> IL2CPP_TYPE_GENERICINST
-    // 010 Internal_thread                          00018671F860 ModelClassType InternalThread InternalThread InternalThread Pointer
+    // 010 Internal_thread                          ModelClassType InternalThread InternalThread InternalThread Pointer
     // 018 m_ThreadStartArg                         <object> IL2CPP_TYPE_OBJECT
     // 020 pending_exception                        <object> IL2CPP_TYPE_OBJECT
     // FFFFFFFF current_thread                           Thread IL2CPP_TYPE_CLASS
-    // 028 M_Delegate                               000186660E80 ModelClassType MulticastDelegate MulticastDelegate MulticastDelegate Pointer
-    // 030 M_ExecutionContext                       0001865CCA80 ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer
-    // 038 M_ExecutionContextBelongsToOuterScope    000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 040 Principal                                0001865DDD40 ModelClassType IPrincipal IPrincipal IPrincipal Pointer
-    // 048 Principal_version                        0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 028 M_Delegate                               ModelClassType MulticastDelegate MulticastDelegate MulticastDelegate Pointer
+    // 030 M_ExecutionContext                       ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer
+    // 038 M_ExecutionContextBelongsToOuterScope    ModelPrimitiveType bool bool bool Bool
+    // 040 Principal                                ModelClassType IPrincipal IPrincipal IPrincipal Pointer
+    // 048 Principal_version                        ModelPrimitiveType int int int Int32
     public partial class Thread : DataModel
     {
         public InternalThread?                          Internal_thread                         { get; set; }
@@ -40,12 +40,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Thread() { Pointer= p0 };
 
-            value.Internal_thread                           = GetObject<InternalThread>(new IntPtr(p + 0x010), ReversePrism.DataModels.InternalThread.FromPointer); // 0245A028B710 0x10 Internal_thread             ( 00018671F860 ModelClassType InternalThread InternalThread InternalThread Pointer )
-            value.M_Delegate                                = GetObject<MulticastDelegate>(new IntPtr(p + 0x028), ReversePrism.DataModels.MulticastDelegate.FromPointer); // 0245A028B790 0x28 M_Delegate                  ( 000186660E80 ModelClassType MulticastDelegate MulticastDelegate MulticastDelegate Pointer )
-            value.M_ExecutionContext                        = GetObject<ExecutionContext>(new IntPtr(p + 0x030), ReversePrism.DataModels.ExecutionContext.FromPointer); // 0245A028B7B0 0x30 M_ExecutionContext          ( 0001865CCA80 ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer )
-            value.M_ExecutionContextBelongsToOuterScope     = GetBool(new IntPtr(p + 0x038)); // 0245A028B7D0 0x38 M_ExecutionContextBelongsToOuterScope ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Principal                                 = GetObject<IPrincipal>(new IntPtr(p + 0x040), ReversePrism.DataModels.IPrincipal.FromPointer); // 0245A028B7F0 0x40 Principal                   ( 0001865DDD40 ModelClassType IPrincipal IPrincipal IPrincipal Pointer )
-            value.Principal_version                         = GetInt32(new IntPtr(p + 0x048)); // 0245A028B810 0x48 Principal_version           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Internal_thread                           = GetObject<InternalThread>(new IntPtr(p + 0x010), ReversePrism.DataModels.InternalThread.FromPointer); // 0x10 Internal_thread             ( ModelClassType InternalThread InternalThread InternalThread Pointer )
+            value.M_Delegate                                = GetObject<MulticastDelegate>(new IntPtr(p + 0x028), ReversePrism.DataModels.MulticastDelegate.FromPointer); // 0x28 M_Delegate                  ( ModelClassType MulticastDelegate MulticastDelegate MulticastDelegate Pointer )
+            value.M_ExecutionContext                        = GetObject<ExecutionContext>(new IntPtr(p + 0x030), ReversePrism.DataModels.ExecutionContext.FromPointer); // 0x30 M_ExecutionContext          ( ModelClassType ExecutionContext ExecutionContext ExecutionContext Pointer )
+            value.M_ExecutionContextBelongsToOuterScope     = GetBool(new IntPtr(p + 0x038)); // 0x38 M_ExecutionContextBelongsToOuterScope ( ModelPrimitiveType bool bool bool Bool )
+            value.Principal                                 = GetObject<IPrincipal>(new IntPtr(p + 0x040), ReversePrism.DataModels.IPrincipal.FromPointer); // 0x40 Principal                   ( ModelClassType IPrincipal IPrincipal IPrincipal Pointer )
+            value.Principal_version                         = GetInt32(new IntPtr(p + 0x048)); // 0x48 Principal_version           ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

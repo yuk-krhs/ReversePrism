@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Parent                                   0001865735E0 ModelClassType XContainer XContainer XContainer Pointer
+    // 010 Parent                                   ModelClassType XContainer XContainer XContainer Pointer
     // 018 annotations                              <object> IL2CPP_TYPE_OBJECT
     public partial class XObject : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XObject() { Pointer= p0 };
 
-            value.Parent                                    = GetObject<XContainer>(new IntPtr(p + 0x010), ReversePrism.DataModels.XContainer.FromPointer); // 0246686DAF58 0x10 Parent                      ( 0001865735E0 ModelClassType XContainer XContainer XContainer Pointer )
+            value.Parent                                    = GetObject<XContainer>(new IntPtr(p + 0x010), ReversePrism.DataModels.XContainer.FromPointer); // 0x10 Parent                      ( ModelClassType XContainer XContainer XContainer Pointer )
 
             return value;
         }

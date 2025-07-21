@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ObjectId                                 0001865F2F90 ModelPrimitiveType int int int Int32
-    // 014 MapId                                    0001865F2F90 ModelPrimitiveType int int int Int32
+    // 010 ObjectId                                 ModelPrimitiveType int int int Int32
+    // 014 MapId                                    ModelPrimitiveType int int int Int32
     public partial class BinaryObject : DataModel
     {
         public int                                      ObjectId                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BinaryObject() { Pointer= p0 };
 
-            value.ObjectId                                  = GetInt32(new IntPtr(p + 0x010)); // 024666CA1598 0x10 ObjectId                    ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.MapId                                     = GetInt32(new IntPtr(p + 0x014)); // 024666CA15B8 0x14 MapId                       ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.ObjectId                                  = GetInt32(new IntPtr(p + 0x010)); // 0x10 ObjectId                    ( ModelPrimitiveType int int int Int32 )
+            value.MapId                                     = GetInt32(new IntPtr(p + 0x014)); // 0x14 MapId                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

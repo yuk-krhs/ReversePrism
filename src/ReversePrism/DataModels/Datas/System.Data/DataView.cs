@@ -8,34 +8,34 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 DataViewManager                          0001866861A0 ModelClassType DataViewManager DataViewManager DataViewManager Pointer
-    // 028 Table                                    0001865B7E00 ModelClassType DataTable DataTable DataTable Pointer
-    // 030 Locked                                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 038 Index                                    0001866DFE20 ModelClassType Index Index Index Pointer
+    // 020 DataViewManager                          ModelClassType DataViewManager DataViewManager DataViewManager Pointer
+    // 028 Table                                    ModelClassType DataTable DataTable DataTable Pointer
+    // 030 Locked                                   ModelPrimitiveType bool bool bool Bool
+    // 038 Index                                    ModelClassType Index Index Index Pointer
     // 040 _findIndexes                             Dictionary`2<string, Index> IL2CPP_TYPE_GENERICINST
-    // 048 Sort                                     000186671910 ModelPrimitiveType string string string String
+    // 048 Sort                                     ModelPrimitiveType string string string String
     // 050 _comparison                              Comparison`1<DataRow> IL2CPP_TYPE_GENERICINST
-    // 058 RowFilter                                00018650B8F0 ModelClassType IFilter IFilter IFilter Pointer
-    // 060 RecordStates                             000186686B80 ModelEnumType DataViewRowState DataViewRowState DataViewRowState Int32
-    // 064 ShouldOpen                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 065 Open                                     000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 066 AllowNew                                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 067 AllowEdit                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 068 AllowDelete                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 069 ApplyDefaultSort                         000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 070 AddNewRow                                00018667D160 ModelClassType DataRow DataRow DataRow Pointer
-    // 078 AddNewMoved                              000186535BC0 ModelClassType ListChangedEventArgs ListChangedEventArgs ListChangedEventArgs Pointer
-    // 080 OnListChanged                            0001865365F0 ModelClassType ListChangedEventHandler ListChangedEventHandler ListChangedEventHandler Pointer
+    // 058 RowFilter                                ModelClassType IFilter IFilter IFilter Pointer
+    // 060 RecordStates                             ModelEnumType DataViewRowState DataViewRowState DataViewRowState Int32
+    // 064 ShouldOpen                               ModelPrimitiveType bool bool bool Bool
+    // 065 Open                                     ModelPrimitiveType bool bool bool Bool
+    // 066 AllowNew                                 ModelPrimitiveType bool bool bool Bool
+    // 067 AllowEdit                                ModelPrimitiveType bool bool bool Bool
+    // 068 AllowDelete                              ModelPrimitiveType bool bool bool Bool
+    // 069 ApplyDefaultSort                         ModelPrimitiveType bool bool bool Bool
+    // 070 AddNewRow                                ModelClassType DataRow DataRow DataRow Pointer
+    // 078 AddNewMoved                              ModelClassType ListChangedEventArgs ListChangedEventArgs ListChangedEventArgs Pointer
+    // 080 OnListChanged                            ModelClassType ListChangedEventHandler ListChangedEventHandler ListChangedEventHandler Pointer
     // 000 s_resetEventArgs                         ListChangedEventArgs IL2CPP_TYPE_CLASS
-    // 088 DelayedSort                              000186671910 ModelPrimitiveType string string string String
-    // 090 DelayedRecordStates                      000186686B80 ModelEnumType DataViewRowState DataViewRowState DataViewRowState Int32
-    // 094 FInitInProgress                          000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 095 FEndInitInProgress                       000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 088 DelayedSort                              ModelPrimitiveType string string string String
+    // 090 DelayedRecordStates                      ModelEnumType DataViewRowState DataViewRowState DataViewRowState Int32
+    // 094 FInitInProgress                          ModelPrimitiveType bool bool bool Bool
+    // 095 FEndInitInProgress                       ModelPrimitiveType bool bool bool Bool
     // 098 _rowViewCache                            Dictionary`2<DataRow, DataRowView> IL2CPP_TYPE_GENERICINST
     // 0A0 _rowViewBuffer                           Dictionary`2<DataRow, DataRowView> IL2CPP_TYPE_GENERICINST
-    // 0A8 DvListener                               000186685CC0 ModelClassType DataViewListener DataViewListener DataViewListener Pointer
+    // 0A8 DvListener                               ModelClassType DataViewListener DataViewListener DataViewListener Pointer
     // 008 s_objectTypeCount                        int IL2CPP_TYPE_I4
-    // 0B0 ObjectID                                 0001865F4260 ModelPrimitiveType int int int Int32
+    // 0B0 ObjectID                                 ModelPrimitiveType int int int Int32
     public partial class DataView : DataModel
     {
         public DataViewManager?                         DataViewManager                         { get; set; }
@@ -69,28 +69,28 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DataView() { Pointer= p0 };
 
-            value.DataViewManager                           = GetObject<DataViewManager>(new IntPtr(p + 0x020), ReversePrism.DataModels.DataViewManager.FromPointer); // 02466893DC60 0x20 DataViewManager             ( 0001866861A0 ModelClassType DataViewManager DataViewManager DataViewManager Pointer )
-            value.Table                                     = GetObject<DataTable>(new IntPtr(p + 0x028), ReversePrism.DataModels.DataTable.FromPointer); // 02466893DC80 0x28 Table                       ( 0001865B7E00 ModelClassType DataTable DataTable DataTable Pointer )
-            value.Locked                                    = GetBool(new IntPtr(p + 0x030)); // 02466893DCA0 0x30 Locked                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Index                                     = GetObject<Index>(new IntPtr(p + 0x038), ReversePrism.DataModels.Index.FromPointer); // 02466893DCC0 0x38 Index                       ( 0001866DFE20 ModelClassType Index Index Index Pointer )
-            value.Sort                                      = GetString(new IntPtr(p + 0x048)); // 02466893DD00 0x48 Sort                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.RowFilter                                 = GetObject<IFilter>(new IntPtr(p + 0x058), ReversePrism.DataModels.IFilter.FromPointer); // 02466893DD40 0x58 RowFilter                   ( 00018650B8F0 ModelClassType IFilter IFilter IFilter Pointer )
-            value.RecordStates                              = (DataViewRowState)GetInt32(new IntPtr(p + 0x060)); // 02466893DD60 0x60 RecordStates                ( 000186686B80 ModelEnumType DataViewRowState DataViewRowState DataViewRowState Int32 )
-            value.ShouldOpen                                = GetBool(new IntPtr(p + 0x064)); // 02466893DD80 0x64 ShouldOpen                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Open                                      = GetBool(new IntPtr(p + 0x065)); // 02466893DDA0 0x65 Open                        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.AllowNew                                  = GetBool(new IntPtr(p + 0x066)); // 02466893DDC0 0x66 AllowNew                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.AllowEdit                                 = GetBool(new IntPtr(p + 0x067)); // 02466893DDE0 0x67 AllowEdit                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.AllowDelete                               = GetBool(new IntPtr(p + 0x068)); // 02466893DE00 0x68 AllowDelete                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ApplyDefaultSort                          = GetBool(new IntPtr(p + 0x069)); // 02466893DE20 0x69 ApplyDefaultSort            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.AddNewRow                                 = GetObject<DataRow>(new IntPtr(p + 0x070), ReversePrism.DataModels.DataRow.FromPointer); // 02466893DE40 0x70 AddNewRow                   ( 00018667D160 ModelClassType DataRow DataRow DataRow Pointer )
-            value.AddNewMoved                               = GetObject<ListChangedEventArgs>(new IntPtr(p + 0x078), ReversePrism.DataModels.ListChangedEventArgs.FromPointer); // 02466893DE60 0x78 AddNewMoved                 ( 000186535BC0 ModelClassType ListChangedEventArgs ListChangedEventArgs ListChangedEventArgs Pointer )
-            value.OnListChanged                             = GetObject<ListChangedEventHandler>(new IntPtr(p + 0x080), ReversePrism.DataModels.ListChangedEventHandler.FromPointer); // 02466893DE80 0x80 OnListChanged               ( 0001865365F0 ModelClassType ListChangedEventHandler ListChangedEventHandler ListChangedEventHandler Pointer )
-            value.DelayedSort                               = GetString(new IntPtr(p + 0x088)); // 02466893DEC0 0x88 DelayedSort                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.DelayedRecordStates                       = (DataViewRowState)GetInt32(new IntPtr(p + 0x090)); // 02466893DEE0 0x90 DelayedRecordStates         ( 000186686B80 ModelEnumType DataViewRowState DataViewRowState DataViewRowState Int32 )
-            value.FInitInProgress                           = GetBool(new IntPtr(p + 0x094)); // 02466893DF00 0x94 FInitInProgress             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.FEndInitInProgress                        = GetBool(new IntPtr(p + 0x095)); // 02466893DF20 0x95 FEndInitInProgress          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.DvListener                                = GetObject<DataViewListener>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.DataViewListener.FromPointer); // 02466893DF80 0xA8 DvListener                  ( 000186685CC0 ModelClassType DataViewListener DataViewListener DataViewListener Pointer )
-            value.ObjectID                                  = GetInt32(new IntPtr(p + 0x0B0)); // 02466893DFC0 0xB0 ObjectID                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.DataViewManager                           = GetObject<DataViewManager>(new IntPtr(p + 0x020), ReversePrism.DataModels.DataViewManager.FromPointer); // 0x20 DataViewManager             ( ModelClassType DataViewManager DataViewManager DataViewManager Pointer )
+            value.Table                                     = GetObject<DataTable>(new IntPtr(p + 0x028), ReversePrism.DataModels.DataTable.FromPointer); // 0x28 Table                       ( ModelClassType DataTable DataTable DataTable Pointer )
+            value.Locked                                    = GetBool(new IntPtr(p + 0x030)); // 0x30 Locked                      ( ModelPrimitiveType bool bool bool Bool )
+            value.Index                                     = GetObject<Index>(new IntPtr(p + 0x038), ReversePrism.DataModels.Index.FromPointer); // 0x38 Index                       ( ModelClassType Index Index Index Pointer )
+            value.Sort                                      = GetString(new IntPtr(p + 0x048)); // 0x48 Sort                        ( ModelPrimitiveType string string string String )
+            value.RowFilter                                 = GetObject<IFilter>(new IntPtr(p + 0x058), ReversePrism.DataModels.IFilter.FromPointer); // 0x58 RowFilter                   ( ModelClassType IFilter IFilter IFilter Pointer )
+            value.RecordStates                              = (DataViewRowState)GetInt32(new IntPtr(p + 0x060)); // 0x60 RecordStates                ( ModelEnumType DataViewRowState DataViewRowState DataViewRowState Int32 )
+            value.ShouldOpen                                = GetBool(new IntPtr(p + 0x064)); // 0x64 ShouldOpen                  ( ModelPrimitiveType bool bool bool Bool )
+            value.Open                                      = GetBool(new IntPtr(p + 0x065)); // 0x65 Open                        ( ModelPrimitiveType bool bool bool Bool )
+            value.AllowNew                                  = GetBool(new IntPtr(p + 0x066)); // 0x66 AllowNew                    ( ModelPrimitiveType bool bool bool Bool )
+            value.AllowEdit                                 = GetBool(new IntPtr(p + 0x067)); // 0x67 AllowEdit                   ( ModelPrimitiveType bool bool bool Bool )
+            value.AllowDelete                               = GetBool(new IntPtr(p + 0x068)); // 0x68 AllowDelete                 ( ModelPrimitiveType bool bool bool Bool )
+            value.ApplyDefaultSort                          = GetBool(new IntPtr(p + 0x069)); // 0x69 ApplyDefaultSort            ( ModelPrimitiveType bool bool bool Bool )
+            value.AddNewRow                                 = GetObject<DataRow>(new IntPtr(p + 0x070), ReversePrism.DataModels.DataRow.FromPointer); // 0x70 AddNewRow                   ( ModelClassType DataRow DataRow DataRow Pointer )
+            value.AddNewMoved                               = GetObject<ListChangedEventArgs>(new IntPtr(p + 0x078), ReversePrism.DataModels.ListChangedEventArgs.FromPointer); // 0x78 AddNewMoved                 ( ModelClassType ListChangedEventArgs ListChangedEventArgs ListChangedEventArgs Pointer )
+            value.OnListChanged                             = GetObject<ListChangedEventHandler>(new IntPtr(p + 0x080), ReversePrism.DataModels.ListChangedEventHandler.FromPointer); // 0x80 OnListChanged               ( ModelClassType ListChangedEventHandler ListChangedEventHandler ListChangedEventHandler Pointer )
+            value.DelayedSort                               = GetString(new IntPtr(p + 0x088)); // 0x88 DelayedSort                 ( ModelPrimitiveType string string string String )
+            value.DelayedRecordStates                       = (DataViewRowState)GetInt32(new IntPtr(p + 0x090)); // 0x90 DelayedRecordStates         ( ModelEnumType DataViewRowState DataViewRowState DataViewRowState Int32 )
+            value.FInitInProgress                           = GetBool(new IntPtr(p + 0x094)); // 0x94 FInitInProgress             ( ModelPrimitiveType bool bool bool Bool )
+            value.FEndInitInProgress                        = GetBool(new IntPtr(p + 0x095)); // 0x95 FEndInitInProgress          ( ModelPrimitiveType bool bool bool Bool )
+            value.DvListener                                = GetObject<DataViewListener>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.DataViewListener.FromPointer); // 0xA8 DvListener                  ( ModelClassType DataViewListener DataViewListener DataViewListener Pointer )
+            value.ObjectID                                  = GetInt32(new IntPtr(p + 0x0B0)); // 0xB0 ObjectID                    ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

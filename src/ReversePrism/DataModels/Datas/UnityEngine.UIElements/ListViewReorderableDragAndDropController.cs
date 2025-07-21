@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 M_ListView                               000186740170 ModelClassType BaseListView BaseListView BaseListView Pointer
+    // 028 M_ListView                               ModelClassType BaseListView BaseListView BaseListView Pointer
     public partial class ListViewReorderableDragAndDropController : DataModel
     {
         public BaseListView?                            M_ListView                              { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ListViewReorderableDragAndDropController() { Pointer= p0 };
 
-            value.M_ListView                                = GetObject<BaseListView>(new IntPtr(p + 0x028), ReversePrism.DataModels.BaseListView.FromPointer); // 0245A6719530 0x28 M_ListView                  ( 000186740170 ModelClassType BaseListView BaseListView BaseListView Pointer )
+            value.M_ListView                                = GetObject<BaseListView>(new IntPtr(p + 0x028), ReversePrism.DataModels.BaseListView.FromPointer); // 0x28 M_ListView                  ( ModelClassType BaseListView BaseListView BaseListView Pointer )
 
             return value;
         }

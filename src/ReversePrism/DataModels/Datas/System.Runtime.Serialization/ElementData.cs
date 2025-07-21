@@ -8,13 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 LocalName                                0001866722E0 ModelPrimitiveType string string string String
-    // 018 Ns                                       0001866722E0 ModelPrimitiveType string string string String
-    // 020 Prefix                                   0001866722E0 ModelPrimitiveType string string string String
-    // 028 AttributeCount                           0001865F36C0 ModelPrimitiveType int int int Int32
-    // 030 Attributes                               000185B710D0 ModelClassListType AttributeData[] AttributeData[] List<AttributeData> Pointer
-    // 038 DataNode                                 00018674B4E0 ModelClassType IDataNode IDataNode IDataNode Pointer
-    // 040 ChildElementIndex                        0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 LocalName                                ModelPrimitiveType string string string String
+    // 018 Ns                                       ModelPrimitiveType string string string String
+    // 020 Prefix                                   ModelPrimitiveType string string string String
+    // 028 AttributeCount                           ModelPrimitiveType int int int Int32
+    // 030 Attributes                               ModelClassListType AttributeData[] AttributeData[] List<AttributeData> Pointer
+    // 038 DataNode                                 ModelClassType IDataNode IDataNode IDataNode Pointer
+    // 040 ChildElementIndex                        ModelPrimitiveType int int int Int32
     public partial class ElementData : DataModel
     {
         public string                                   LocalName                               { get; set; }
@@ -33,13 +33,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ElementData() { Pointer= p0 };
 
-            value.LocalName                                 = GetString(new IntPtr(p + 0x010)); // 024667D9D230 0x10 LocalName                   ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Ns                                        = GetString(new IntPtr(p + 0x018)); // 024667D9D250 0x18 Ns                          ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Prefix                                    = GetString(new IntPtr(p + 0x020)); // 024667D9D270 0x20 Prefix                      ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.AttributeCount                            = GetInt32(new IntPtr(p + 0x028)); // 024667D9D290 0x28 AttributeCount              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Attributes                                = GetObjectList<AttributeData>(new IntPtr(p + 0x030), ReversePrism.DataModels.AttributeData.FromPointer); // 024667D9D2B0 0x30 Attributes                  ( 000185B710D0 ModelClassListType AttributeData[] AttributeData[] List<AttributeData> Pointer )
-            value.DataNode                                  = GetObject<IDataNode>(new IntPtr(p + 0x038), ReversePrism.DataModels.IDataNode.FromPointer); // 024667D9D2D0 0x38 DataNode                    ( 00018674B4E0 ModelClassType IDataNode IDataNode IDataNode Pointer )
-            value.ChildElementIndex                         = GetInt32(new IntPtr(p + 0x040)); // 024667D9D2F0 0x40 ChildElementIndex           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.LocalName                                 = GetString(new IntPtr(p + 0x010)); // 0x10 LocalName                   ( ModelPrimitiveType string string string String )
+            value.Ns                                        = GetString(new IntPtr(p + 0x018)); // 0x18 Ns                          ( ModelPrimitiveType string string string String )
+            value.Prefix                                    = GetString(new IntPtr(p + 0x020)); // 0x20 Prefix                      ( ModelPrimitiveType string string string String )
+            value.AttributeCount                            = GetInt32(new IntPtr(p + 0x028)); // 0x28 AttributeCount              ( ModelPrimitiveType int int int Int32 )
+            value.Attributes                                = GetObjectList<AttributeData>(new IntPtr(p + 0x030), ReversePrism.DataModels.AttributeData.FromPointer); // 0x30 Attributes                  ( ModelClassListType AttributeData[] AttributeData[] List<AttributeData> Pointer )
+            value.DataNode                                  = GetObject<IDataNode>(new IntPtr(p + 0x038), ReversePrism.DataModels.IDataNode.FromPointer); // 0x38 DataNode                    ( ModelClassType IDataNode IDataNode IDataNode Pointer )
+            value.ChildElementIndex                         = GetInt32(new IntPtr(p + 0x040)); // 0x40 ChildElementIndex           ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

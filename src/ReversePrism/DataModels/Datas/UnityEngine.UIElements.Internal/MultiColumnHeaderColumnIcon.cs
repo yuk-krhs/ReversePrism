@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 ussClassName                             string IL2CPP_TYPE_STRING
-    // 410 IsImageInline                            000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 410 IsImageInline                            ModelPrimitiveType bool bool bool Bool
     public partial class MultiColumnHeaderColumnIcon : DataModel
     {
         public bool                                     IsImageInline                           { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MultiColumnHeaderColumnIcon() { Pointer= p0 };
 
-            value.IsImageInline                             = GetBool(new IntPtr(p + 0x410)); // 0245A68631B8 0x410 IsImageInline               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsImageInline                             = GetBool(new IntPtr(p + 0x410)); // 0x410 IsImageInline               ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

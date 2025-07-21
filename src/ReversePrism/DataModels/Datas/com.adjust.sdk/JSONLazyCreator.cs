@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Node                                   000186747380 ModelClassType JSONNode JSONNode JSONNode Pointer
-    // 018 M_Key                                    000186671910 ModelPrimitiveType string string string String
+    // 010 M_Node                                   ModelClassType JSONNode JSONNode JSONNode Pointer
+    // 018 M_Key                                    ModelPrimitiveType string string string String
     public partial class JSONLazyCreator : DataModel
     {
         public JSONNode?                                M_Node                                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JSONLazyCreator() { Pointer= p0 };
 
-            value.M_Node                                    = GetObject<JSONNode>(new IntPtr(p + 0x010), ReversePrism.DataModels.JSONNode.FromPointer); // 02466BB937E8 0x10 M_Node                      ( 000186747380 ModelClassType JSONNode JSONNode JSONNode Pointer )
-            value.M_Key                                     = GetString(new IntPtr(p + 0x018)); // 02466BB93808 0x18 M_Key                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.M_Node                                    = GetObject<JSONNode>(new IntPtr(p + 0x010), ReversePrism.DataModels.JSONNode.FromPointer); // 0x10 M_Node                      ( ModelClassType JSONNode JSONNode JSONNode Pointer )
+            value.M_Key                                     = GetString(new IntPtr(p + 0x018)); // 0x18 M_Key                       ( ModelPrimitiveType string string string String )
 
             return value;
         }

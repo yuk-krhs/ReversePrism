@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ResourceTag                              00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
-    // 018 AssetKey                                 000186672F10 ModelPrimitiveType string string string String
+    // 010 ResourceTag                              ModelClassType IResourceTag IResourceTag IResourceTag Pointer
+    // 018 AssetKey                                 ModelPrimitiveType string string string String
     public partial class ThumbnailPopupParameter : DataModel
     {
         public IResourceTag?                            ResourceTag                             { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ThumbnailPopupParameter() { Pointer= p0 };
 
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x010), ReversePrism.DataModels.IResourceTag.FromPointer); // 024666249630 0x10 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
-            value.AssetKey                                  = GetString(new IntPtr(p + 0x018)); // 024666249650 0x18 AssetKey                    ( 000186672F10 ModelPrimitiveType string string string String )
+            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x010), ReversePrism.DataModels.IResourceTag.FromPointer); // 0x10 ResourceTag                 ( ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
+            value.AssetKey                                  = GetString(new IntPtr(p + 0x018)); // 0x18 AssetKey                    ( ModelPrimitiveType string string string String )
 
             return value;
         }

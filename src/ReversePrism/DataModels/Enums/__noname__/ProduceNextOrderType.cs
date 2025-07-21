@@ -56,6 +56,14 @@ namespace ReversePrism.DataModels
         FinishScheduleMiniLive,
         StartScheduleTalkShow,
         FinishScheduleTalkShow,
+        StartScheduleScriptReading,
+        FinishScheduleScriptReading,
+        StartScheduleCostumeFitting,
+        FinishScheduleCostumeFitting,
+        StartSchedulePublicRelations,
+        FinishSchedulePublicRelations,
+        StartScheduleActingPractice,
+        FinishScheduleActingPractice,
         Num,
     }
 }

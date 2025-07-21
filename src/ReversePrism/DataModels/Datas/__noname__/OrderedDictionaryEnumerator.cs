@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ObjectReturnType                         0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 018 ArrayEnumerator                          00018675F880 ModelClassType IEnumerator IEnumerator IEnumerator Pointer
+    // 010 ObjectReturnType                         ModelPrimitiveType int int int Int32
+    // 018 ArrayEnumerator                          ModelClassType IEnumerator IEnumerator IEnumerator Pointer
     public partial class OrderedDictionaryEnumerator : DataModel
     {
         public int                                      ObjectReturnType                        { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new OrderedDictionaryEnumerator() { Pointer= p0 };
 
-            value.ObjectReturnType                          = GetInt32(new IntPtr(p + 0x010)); // 024667BDAB08 0x10 ObjectReturnType            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ArrayEnumerator                           = GetObject<IEnumerator>(new IntPtr(p + 0x018), ReversePrism.DataModels.IEnumerator.FromPointer); // 024667BDAB28 0x18 ArrayEnumerator             ( 00018675F880 ModelClassType IEnumerator IEnumerator IEnumerator Pointer )
+            value.ObjectReturnType                          = GetInt32(new IntPtr(p + 0x010)); // 0x10 ObjectReturnType            ( ModelPrimitiveType int int int Int32 )
+            value.ArrayEnumerator                           = GetObject<IEnumerator>(new IntPtr(p + 0x018), ReversePrism.DataModels.IEnumerator.FromPointer); // 0x18 ArrayEnumerator             ( ModelClassType IEnumerator IEnumerator IEnumerator Pointer )
 
             return value;
         }

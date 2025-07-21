@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<Int64Value> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ValueFieldNumber                         int IL2CPP_TYPE_I4
-    // 018 Value                                    0001865F7700 ModelPrimitiveType long long long Int64
+    // 018 Value                                    ModelPrimitiveType long long long Int64
     public partial class Int64Value : DataModel
     {
         public long                                     Value                                   { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Int64Value() { Pointer= p0 };
 
-            value.Value                                     = GetInt64(new IntPtr(p + 0x018)); // 02466A534DD8 0x18 Value                       ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.Value                                     = GetInt64(new IntPtr(p + 0x018)); // 0x18 Value                       ( ModelPrimitiveType long long long Int64 )
 
             return value;
         }

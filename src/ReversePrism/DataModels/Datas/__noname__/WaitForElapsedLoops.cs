@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 T                                        0001866BF4B0 ModelClassType Tween Tween Tween Pointer
-    // 018 ElapsedLoops                             0001865F4260 ModelPrimitiveType int int int Int32
+    // 010 T                                        ModelClassType Tween Tween Tween Pointer
+    // 018 ElapsedLoops                             ModelPrimitiveType int int int Int32
     public partial class WaitForElapsedLoops : DataModel
     {
         public Tween?                                   T                                       { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new WaitForElapsedLoops() { Pointer= p0 };
 
-            value.T                                         = GetObject<Tween>(new IntPtr(p + 0x010), ReversePrism.DataModels.Tween.FromPointer); // 02466BDD74C8 0x10 T                           ( 0001866BF4B0 ModelClassType Tween Tween Tween Pointer )
-            value.ElapsedLoops                              = GetInt32(new IntPtr(p + 0x018)); // 02466BDD74E8 0x18 ElapsedLoops                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.T                                         = GetObject<Tween>(new IntPtr(p + 0x010), ReversePrism.DataModels.Tween.FromPointer); // 0x10 T                           ( ModelClassType Tween Tween Tween Pointer )
+            value.ElapsedLoops                              = GetInt32(new IntPtr(p + 0x018)); // 0x18 ElapsedLoops                ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

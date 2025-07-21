@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Volume                                   000186666050 ModelPrimitiveType float float float Single
+    // 010 Volume                                   ModelPrimitiveType float float float Single
     public partial class AudioClipProperties : DataModel
     {
         public float                                    Volume                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AudioClipProperties() { Pointer= p0 };
 
-            value.Volume                                    = GetSingle(new IntPtr(p + 0x010)); // 02466B2CB180 0x10 Volume                      ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Volume                                    = GetSingle(new IntPtr(p + 0x010)); // 0x10 Volume                      ( ModelPrimitiveType float float float Single )
 
             return value;
         }

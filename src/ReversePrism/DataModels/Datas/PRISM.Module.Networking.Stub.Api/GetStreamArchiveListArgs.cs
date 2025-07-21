@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<GetStreamArchiveListArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 CursorFieldNumber                        int IL2CPP_TYPE_I4
-    // 018 Cursor                                   000186671910 ModelPrimitiveType string string string String
+    // 018 Cursor                                   ModelPrimitiveType string string string String
     // 000 IsFavoriteFieldNumber                    int IL2CPP_TYPE_I4
-    // 020 IsFavorite                               000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 020 IsFavorite                               ModelPrimitiveType bool bool bool Bool
     public partial class GetStreamArchiveListArgs : DataModel
     {
         public string                                   Cursor                                  { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetStreamArchiveListArgs() { Pointer= p0 };
 
-            value.Cursor                                    = GetString(new IntPtr(p + 0x018)); // 024662A3AFC8 0x18 Cursor                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsFavorite                                = GetBool(new IntPtr(p + 0x020)); // 024662A3B008 0x20 IsFavorite                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Cursor                                    = GetString(new IntPtr(p + 0x018)); // 0x18 Cursor                      ( ModelPrimitiveType string string string String )
+            value.IsFavorite                                = GetBool(new IntPtr(p + 0x020)); // 0x20 IsFavorite                  ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

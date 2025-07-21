@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ReturnValue                              0001865965D0 ModelPrimitiveType bool bool bool Bool
+    // 010 ReturnValue                              ModelPrimitiveType bool bool bool Bool
     public partial class NotNullWhenAttribute : DataModel
     {
         public bool                                     ReturnValue                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NotNullWhenAttribute() { Pointer= p0 };
 
-            value.ReturnValue                               = GetBool(new IntPtr(p + 0x010)); // 0246686DA818 0x10 ReturnValue                 ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.ReturnValue                               = GetBool(new IntPtr(p + 0x010)); // 0x10 ReturnValue                 ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

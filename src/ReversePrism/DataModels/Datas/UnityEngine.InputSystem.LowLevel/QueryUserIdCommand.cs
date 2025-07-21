@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 000 kMaxIdLength                             int IL2CPP_TYPE_I4
     // 000 kSize                                    int IL2CPP_TYPE_I4
-    // 010 BaseCommand                              0001865ECDD0 ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32
-    // 018 IdBuffer                                 00018669BCA0 ModelEnumType <idBuffer>e__FixedBuffer <idBuffer>e__FixedBuffer <idBuffer>e__FixedBuffer Int32
+    // 010 BaseCommand                              ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32
+    // 018 IdBuffer                                 ModelEnumType <idBuffer>e__FixedBuffer <idBuffer>e__FixedBuffer <idBuffer>e__FixedBuffer Int32
     public partial class QueryUserIdCommand : DataModel
     {
         public InputDeviceCommand                       BaseCommand                             { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new QueryUserIdCommand() { Pointer= p0 };
 
-            value.BaseCommand                               = (InputDeviceCommand)GetInt32(new IntPtr(p + 0x010)); // 024667854508 0x10 BaseCommand                 ( 0001865ECDD0 ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32 )
-            value.IdBuffer                                  = (<idBuffer>e__FixedBuffer)GetInt32(new IntPtr(p + 0x018)); // 024667854528 0x18 IdBuffer                    ( 00018669BCA0 ModelEnumType <idBuffer>e__FixedBuffer <idBuffer>e__FixedBuffer <idBuffer>e__FixedBuffer Int32 )
+            value.BaseCommand                               = (InputDeviceCommand)GetInt32(new IntPtr(p + 0x010)); // 0x10 BaseCommand                 ( ModelEnumType InputDeviceCommand InputDeviceCommand InputDeviceCommand Int32 )
+            value.IdBuffer                                  = (<idBuffer>e__FixedBuffer)GetInt32(new IntPtr(p + 0x018)); // 0x18 IdBuffer                    ( ModelEnumType <idBuffer>e__FixedBuffer <idBuffer>e__FixedBuffer <idBuffer>e__FixedBuffer Int32 )
 
             return value;
         }

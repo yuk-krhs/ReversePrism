@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 fixedInfo                                Win32_FIXED_INFO IL2CPP_TYPE_VALUETYPE
-    // 058 Initialized                              000186595C30 ModelPrimitiveType bool bool bool Bool
+    // 058 Initialized                              ModelPrimitiveType bool bool bool Bool
     public partial class Win32NetworkInterface : DataModel
     {
         public bool                                     Initialized                             { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Win32NetworkInterface() { Pointer= p0 };
 
-            value.Initialized                               = GetBool(new IntPtr(p + 0x058)); // 024667B4B770 0x58 Initialized                 ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.Initialized                               = GetBool(new IntPtr(p + 0x058)); // 0x58 Initialized                 ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

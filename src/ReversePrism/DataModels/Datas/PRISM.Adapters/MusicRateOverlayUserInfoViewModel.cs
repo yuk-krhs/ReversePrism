@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 UserName                                 000186672F10 ModelPrimitiveType string string string String
-    // 030 ProduceIdolId                            0001865F4260 ModelPrimitiveType int int int Int32
+    // 028 UserName                                 ModelPrimitiveType string string string String
+    // 030 ProduceIdolId                            ModelPrimitiveType int int int Int32
     public partial class MusicRateOverlayUserInfoViewModel : DataModel
     {
         public string                                   UserName                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MusicRateOverlayUserInfoViewModel() { Pointer= p0 };
 
-            value.UserName                                  = GetString(new IntPtr(p + 0x028)); // 024666464620 0x28 UserName                    ( 000186672F10 ModelPrimitiveType string string string String )
-            value.ProduceIdolId                             = GetInt32(new IntPtr(p + 0x030)); // 024666464640 0x30 ProduceIdolId               ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.UserName                                  = GetString(new IntPtr(p + 0x028)); // 0x28 UserName                    ( ModelPrimitiveType string string string String )
+            value.ProduceIdolId                             = GetInt32(new IntPtr(p + 0x030)); // 0x30 ProduceIdolId               ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

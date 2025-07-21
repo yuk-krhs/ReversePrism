@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 View                                     00018674AEF0 ModelClassType JewelContentView JewelContentView JewelContentView Pointer
-    // 028 ShopOverlayCaller                        0001867652C0 ModelClassType ShopOverlayCaller ShopOverlayCaller ShopOverlayCaller Pointer
-    // 030 JewelModel                               00018674B3C0 ModelClassType JewelModel JewelModel JewelModel Pointer
+    // 020 View                                     ModelClassType JewelContentView JewelContentView JewelContentView Pointer
+    // 028 ShopOverlayCaller                        ModelClassType ShopOverlayCaller ShopOverlayCaller ShopOverlayCaller Pointer
+    // 030 JewelModel                               ModelClassType JewelModel JewelModel JewelModel Pointer
     // 038 onClosePostProcessingEvent               Func`1<UniTask> IL2CPP_TYPE_GENERICINST
     public partial class JewelContent : DataModel
     {
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JewelContent() { Pointer= p0 };
 
-            value.View                                      = GetObject<JewelContentView>(new IntPtr(p + 0x020), ReversePrism.DataModels.JewelContentView.FromPointer); // 0246630F4190 0x20 View                        ( 00018674AEF0 ModelClassType JewelContentView JewelContentView JewelContentView Pointer )
-            value.ShopOverlayCaller                         = GetObject<ShopOverlayCaller>(new IntPtr(p + 0x028), ReversePrism.DataModels.ShopOverlayCaller.FromPointer); // 0246630F41B0 0x28 ShopOverlayCaller           ( 0001867652C0 ModelClassType ShopOverlayCaller ShopOverlayCaller ShopOverlayCaller Pointer )
-            value.JewelModel                                = GetObject<JewelModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.JewelModel.FromPointer); // 0246630F41D0 0x30 JewelModel                  ( 00018674B3C0 ModelClassType JewelModel JewelModel JewelModel Pointer )
+            value.View                                      = GetObject<JewelContentView>(new IntPtr(p + 0x020), ReversePrism.DataModels.JewelContentView.FromPointer); // 0x20 View                        ( ModelClassType JewelContentView JewelContentView JewelContentView Pointer )
+            value.ShopOverlayCaller                         = GetObject<ShopOverlayCaller>(new IntPtr(p + 0x028), ReversePrism.DataModels.ShopOverlayCaller.FromPointer); // 0x28 ShopOverlayCaller           ( ModelClassType ShopOverlayCaller ShopOverlayCaller ShopOverlayCaller Pointer )
+            value.JewelModel                                = GetObject<JewelModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.JewelModel.FromPointer); // 0x30 JewelModel                  ( ModelClassType JewelModel JewelModel JewelModel Pointer )
 
             return value;
         }

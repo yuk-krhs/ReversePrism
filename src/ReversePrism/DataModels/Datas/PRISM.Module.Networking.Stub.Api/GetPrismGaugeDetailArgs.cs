@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<GetPrismGaugeDetailArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 PrismGaugeIdFieldNumber                  int IL2CPP_TYPE_I4
-    // 018 PrismGaugeId                             000186671910 ModelPrimitiveType string string string String
+    // 018 PrismGaugeId                             ModelPrimitiveType string string string String
     public partial class GetPrismGaugeDetailArgs : DataModel
     {
         public string                                   PrismGaugeId                            { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetPrismGaugeDetailArgs() { Pointer= p0 };
 
-            value.PrismGaugeId                              = GetString(new IntPtr(p + 0x018)); // 0246619A57F0 0x18 PrismGaugeId                ( 000186671910 ModelPrimitiveType string string string String )
+            value.PrismGaugeId                              = GetString(new IntPtr(p + 0x018)); // 0x18 PrismGaugeId                ( ModelPrimitiveType string string string String )
 
             return value;
         }

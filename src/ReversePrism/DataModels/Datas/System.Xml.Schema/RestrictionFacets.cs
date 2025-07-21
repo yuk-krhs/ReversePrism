@@ -8,20 +8,20 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Length                                   0001865F2F90 ModelPrimitiveType int int int Int32
-    // 014 MinLength                                0001865F2F90 ModelPrimitiveType int int int Int32
-    // 018 MaxLength                                0001865F2F90 ModelPrimitiveType int int int Int32
-    // 020 Patterns                                 00018658A320 ModelClassType ArrayList ArrayList ArrayList Pointer
-    // 028 Enumeration                              00018658A320 ModelClassType ArrayList ArrayList ArrayList Pointer
-    // 030 WhiteSpace                               0001865C3FA0 ModelEnumType XmlSchemaWhiteSpace XmlSchemaWhiteSpace XmlSchemaWhiteSpace Int32
+    // 010 Length                                   ModelPrimitiveType int int int Int32
+    // 014 MinLength                                ModelPrimitiveType int int int Int32
+    // 018 MaxLength                                ModelPrimitiveType int int int Int32
+    // 020 Patterns                                 ModelClassType ArrayList ArrayList ArrayList Pointer
+    // 028 Enumeration                              ModelClassType ArrayList ArrayList ArrayList Pointer
+    // 030 WhiteSpace                               ModelEnumType XmlSchemaWhiteSpace XmlSchemaWhiteSpace XmlSchemaWhiteSpace Int32
     // 038 MaxInclusive                             <object> IL2CPP_TYPE_OBJECT
     // 040 MaxExclusive                             <object> IL2CPP_TYPE_OBJECT
     // 048 MinInclusive                             <object> IL2CPP_TYPE_OBJECT
     // 050 MinExclusive                             <object> IL2CPP_TYPE_OBJECT
-    // 058 TotalDigits                              0001865F2F90 ModelPrimitiveType int int int Int32
-    // 05C FractionDigits                           0001865F2F90 ModelPrimitiveType int int int Int32
-    // 060 Flags                                    000186674C90 ModelEnumType RestrictionFlags RestrictionFlags RestrictionFlags Int32
-    // 064 FixedFlags                               000186674C90 ModelEnumType RestrictionFlags RestrictionFlags RestrictionFlags Int32
+    // 058 TotalDigits                              ModelPrimitiveType int int int Int32
+    // 05C FractionDigits                           ModelPrimitiveType int int int Int32
+    // 060 Flags                                    ModelEnumType RestrictionFlags RestrictionFlags RestrictionFlags Int32
+    // 064 FixedFlags                               ModelEnumType RestrictionFlags RestrictionFlags RestrictionFlags Int32
     public partial class RestrictionFacets : DataModel
     {
         public int                                      Length                                  { get; set; }
@@ -43,16 +43,16 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RestrictionFacets() { Pointer= p0 };
 
-            value.Length                                    = GetInt32(new IntPtr(p + 0x010)); // 02466755FF28 0x10 Length                      ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.MinLength                                 = GetInt32(new IntPtr(p + 0x014)); // 02466755FF48 0x14 MinLength                   ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.MaxLength                                 = GetInt32(new IntPtr(p + 0x018)); // 02466755FF68 0x18 MaxLength                   ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.Patterns                                  = GetObject<ArrayList>(new IntPtr(p + 0x020), ReversePrism.DataModels.ArrayList.FromPointer); // 02466755FF88 0x20 Patterns                    ( 00018658A320 ModelClassType ArrayList ArrayList ArrayList Pointer )
-            value.Enumeration                               = GetObject<ArrayList>(new IntPtr(p + 0x028), ReversePrism.DataModels.ArrayList.FromPointer); // 02466755FFA8 0x28 Enumeration                 ( 00018658A320 ModelClassType ArrayList ArrayList ArrayList Pointer )
-            value.WhiteSpace                                = (XmlSchemaWhiteSpace)GetInt32(new IntPtr(p + 0x030)); // 02466755FFC8 0x30 WhiteSpace                  ( 0001865C3FA0 ModelEnumType XmlSchemaWhiteSpace XmlSchemaWhiteSpace XmlSchemaWhiteSpace Int32 )
-            value.TotalDigits                               = GetInt32(new IntPtr(p + 0x058)); // 024667560068 0x58 TotalDigits                 ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.FractionDigits                            = GetInt32(new IntPtr(p + 0x05C)); // 024667560088 0x5C FractionDigits              ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.Flags                                     = (RestrictionFlags)GetInt32(new IntPtr(p + 0x060)); // 0246675600A8 0x60 Flags                       ( 000186674C90 ModelEnumType RestrictionFlags RestrictionFlags RestrictionFlags Int32 )
-            value.FixedFlags                                = (RestrictionFlags)GetInt32(new IntPtr(p + 0x064)); // 0246675600C8 0x64 FixedFlags                  ( 000186674C90 ModelEnumType RestrictionFlags RestrictionFlags RestrictionFlags Int32 )
+            value.Length                                    = GetInt32(new IntPtr(p + 0x010)); // 0x10 Length                      ( ModelPrimitiveType int int int Int32 )
+            value.MinLength                                 = GetInt32(new IntPtr(p + 0x014)); // 0x14 MinLength                   ( ModelPrimitiveType int int int Int32 )
+            value.MaxLength                                 = GetInt32(new IntPtr(p + 0x018)); // 0x18 MaxLength                   ( ModelPrimitiveType int int int Int32 )
+            value.Patterns                                  = GetObject<ArrayList>(new IntPtr(p + 0x020), ReversePrism.DataModels.ArrayList.FromPointer); // 0x20 Patterns                    ( ModelClassType ArrayList ArrayList ArrayList Pointer )
+            value.Enumeration                               = GetObject<ArrayList>(new IntPtr(p + 0x028), ReversePrism.DataModels.ArrayList.FromPointer); // 0x28 Enumeration                 ( ModelClassType ArrayList ArrayList ArrayList Pointer )
+            value.WhiteSpace                                = (XmlSchemaWhiteSpace)GetInt32(new IntPtr(p + 0x030)); // 0x30 WhiteSpace                  ( ModelEnumType XmlSchemaWhiteSpace XmlSchemaWhiteSpace XmlSchemaWhiteSpace Int32 )
+            value.TotalDigits                               = GetInt32(new IntPtr(p + 0x058)); // 0x58 TotalDigits                 ( ModelPrimitiveType int int int Int32 )
+            value.FractionDigits                            = GetInt32(new IntPtr(p + 0x05C)); // 0x5C FractionDigits              ( ModelPrimitiveType int int int Int32 )
+            value.Flags                                     = (RestrictionFlags)GetInt32(new IntPtr(p + 0x060)); // 0x60 Flags                       ( ModelEnumType RestrictionFlags RestrictionFlags RestrictionFlags Int32 )
+            value.FixedFlags                                = (RestrictionFlags)GetInt32(new IntPtr(p + 0x064)); // 0x64 FixedFlags                  ( ModelEnumType RestrictionFlags RestrictionFlags RestrictionFlags Int32 )
 
             return value;
         }

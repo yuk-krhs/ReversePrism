@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 FieldViolationsFieldNumber               int IL2CPP_TYPE_I4
     // 008 _repeated_fieldViolations_codec          FieldCodec`1<FieldViolation> IL2CPP_TYPE_GENERICINST
-    // 018 FieldViolations                          000185CF8038 ModelClassListType RepeatedField`1<FieldViolation> RepeatedField`1<FieldViolation> List<FieldViolation> Pointer
+    // 018 FieldViolations                          ModelClassListType RepeatedField`1<FieldViolation> RepeatedField`1<FieldViolation> List<FieldViolation> Pointer
     public partial class BadRequest : DataModel
     {
         public List<FieldViolation>?                    FieldViolations                         { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BadRequest() { Pointer= p0 };
 
-            value.FieldViolations                           = GetObjectList<FieldViolation>(new IntPtr(p + 0x018), ReversePrism.DataModels.FieldViolation.FromPointer); // 02466A743CD0 0x18 FieldViolations             ( 000185CF8038 ModelClassListType RepeatedField`1<FieldViolation> RepeatedField`1<FieldViolation> List<FieldViolation> Pointer )
+            value.FieldViolations                           = GetObjectList<FieldViolation>(new IntPtr(p + 0x018), ReversePrism.DataModels.FieldViolation.FromPointer); // 0x18 FieldViolations             ( ModelClassListType RepeatedField`1<FieldViolation> RepeatedField`1<FieldViolation> List<FieldViolation> Pointer )
 
             return value;
         }

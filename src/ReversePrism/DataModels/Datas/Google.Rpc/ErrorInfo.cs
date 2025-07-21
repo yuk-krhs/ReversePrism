@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<ErrorInfo> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ReasonFieldNumber                        int IL2CPP_TYPE_I4
-    // 018 Reason                                   000186671910 ModelPrimitiveType string string string String
+    // 018 Reason                                   ModelPrimitiveType string string string String
     // 000 DomainFieldNumber                        int IL2CPP_TYPE_I4
-    // 020 Domain                                   000186671910 ModelPrimitiveType string string string String
+    // 020 Domain                                   ModelPrimitiveType string string string String
     // 000 MetadataFieldNumber                      int IL2CPP_TYPE_I4
     // 008 _map_metadata_codec                      Codec<string, string> IL2CPP_TYPE_GENERICINST
     // 028 metadata_                                MapField`2<string, string> IL2CPP_TYPE_GENERICINST
@@ -30,8 +30,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ErrorInfo() { Pointer= p0 };
 
-            value.Reason                                    = GetString(new IntPtr(p + 0x018)); // 02466A72ADD0 0x18 Reason                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Domain                                    = GetString(new IntPtr(p + 0x020)); // 02466A72AE10 0x20 Domain                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Reason                                    = GetString(new IntPtr(p + 0x018)); // 0x18 Reason                      ( ModelPrimitiveType string string string String )
+            value.Domain                                    = GetString(new IntPtr(p + 0x020)); // 0x20 Domain                      ( ModelPrimitiveType string string string String )
 
             return value;
         }

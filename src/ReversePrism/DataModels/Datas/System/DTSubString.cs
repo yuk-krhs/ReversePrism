@@ -9,10 +9,10 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 s                                        ReadOnlySpan`1<char> IL2CPP_TYPE_GENERICINST
-    // 020 Index                                    0001865F2F90 ModelPrimitiveType int int int Int32
-    // 024 Length                                   0001865F2F90 ModelPrimitiveType int int int Int32
-    // 028 Type                                     000186674F20 ModelEnumType DTSubStringType DTSubStringType DTSubStringType Int32
-    // 02C Value                                    0001865F2F90 ModelPrimitiveType int int int Int32
+    // 020 Index                                    ModelPrimitiveType int int int Int32
+    // 024 Length                                   ModelPrimitiveType int int int Int32
+    // 028 Type                                     ModelEnumType DTSubStringType DTSubStringType DTSubStringType Int32
+    // 02C Value                                    ModelPrimitiveType int int int Int32
     public partial class DTSubString : DataModel
     {
         public int                                      Index                                   { get; set; }
@@ -28,10 +28,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DTSubString() { Pointer= p0 };
 
-            value.Index                                     = GetInt32(new IntPtr(p + 0x020)); // 024666A0D370 0x20 Index                       ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.Length                                    = GetInt32(new IntPtr(p + 0x024)); // 024666A0D390 0x24 Length                      ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.Type                                      = (DTSubStringType)GetInt32(new IntPtr(p + 0x028)); // 024666A0D3B0 0x28 Type                        ( 000186674F20 ModelEnumType DTSubStringType DTSubStringType DTSubStringType Int32 )
-            value.Value                                     = GetInt32(new IntPtr(p + 0x02C)); // 024666A0D3D0 0x2C Value                       ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x020)); // 0x20 Index                       ( ModelPrimitiveType int int int Int32 )
+            value.Length                                    = GetInt32(new IntPtr(p + 0x024)); // 0x24 Length                      ( ModelPrimitiveType int int int Int32 )
+            value.Type                                      = (DTSubStringType)GetInt32(new IntPtr(p + 0x028)); // 0x28 Type                        ( ModelEnumType DTSubStringType DTSubStringType DTSubStringType Int32 )
+            value.Value                                     = GetInt32(new IntPtr(p + 0x02C)); // 0x2C Value                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

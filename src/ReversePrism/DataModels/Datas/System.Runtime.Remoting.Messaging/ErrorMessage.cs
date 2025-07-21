@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Uri                                      000186671910 ModelPrimitiveType string string string String
+    // 010 Uri                                      ModelPrimitiveType string string string String
     public partial class ErrorMessage : DataModel
     {
         public string                                   Uri                                     { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ErrorMessage() { Pointer= p0 };
 
-            value.Uri                                       = GetString(new IntPtr(p + 0x010)); // 024666C618D0 0x10 Uri                         ( 000186671910 ModelPrimitiveType string string string String )
+            value.Uri                                       = GetString(new IntPtr(p + 0x010)); // 0x10 Uri                         ( ModelPrimitiveType string string string String )
 
             return value;
         }

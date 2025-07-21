@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CoreReader                               0001865AA0B0 ModelClassType XmlReader XmlReader XmlReader Pointer
-    // 018 LastTask                                 000186680E70 ModelClassType Task Task Task Pointer
+    // 010 CoreReader                               ModelClassType XmlReader XmlReader XmlReader Pointer
+    // 018 LastTask                                 ModelClassType Task Task Task Pointer
     public partial class XmlAsyncCheckReader : DataModel
     {
         public XmlReader?                               CoreReader                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlAsyncCheckReader() { Pointer= p0 };
 
-            value.CoreReader                                = GetObject<XmlReader>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlReader.FromPointer); // 0246673D88D8 0x10 CoreReader                  ( 0001865AA0B0 ModelClassType XmlReader XmlReader XmlReader Pointer )
-            value.LastTask                                  = GetObject<Task>(new IntPtr(p + 0x018), ReversePrism.DataModels.Task.FromPointer); // 0246673D88F8 0x18 LastTask                    ( 000186680E70 ModelClassType Task Task Task Pointer )
+            value.CoreReader                                = GetObject<XmlReader>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlReader.FromPointer); // 0x10 CoreReader                  ( ModelClassType XmlReader XmlReader XmlReader Pointer )
+            value.LastTask                                  = GetObject<Task>(new IntPtr(p + 0x018), ReversePrism.DataModels.Task.FromPointer); // 0x18 LastTask                    ( ModelClassType Task Task Task Pointer )
 
             return value;
         }

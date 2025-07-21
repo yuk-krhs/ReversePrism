@@ -8,7 +8,6 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 sCharaDetailPopupViewFactory             PopupViewFactory`1<ISCharaDetailPopupView> IL2CPP_TYPE_GENERICINST
     public partial class SCharaDetailPopupCallerImplement : DataModel
     {
 

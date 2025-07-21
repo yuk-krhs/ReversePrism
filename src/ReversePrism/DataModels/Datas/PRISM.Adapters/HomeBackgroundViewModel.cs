@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 SwitchConditionList                      000185D2CD18 ModelClassListType List`1<SwitchObjectCondition> List`1<SwitchObjectCondition> List<SwitchObjectCondition> Pointer
+    // 010 SwitchConditionList                      ModelClassListType List`1<SwitchObjectCondition> List`1<SwitchObjectCondition> List<SwitchObjectCondition> Pointer
     // 000 TimeOfDay_Morning                        string IL2CPP_TYPE_STRING
     // 000 TimeOfDay_Dusk                           string IL2CPP_TYPE_STRING
     // 000 TimeOfDay_Night                          string IL2CPP_TYPE_STRING
@@ -22,10 +22,10 @@ namespace ReversePrism.DataModels
     // 000 Weather_Rain                             string IL2CPP_TYPE_STRING
     // 000 Weather_HeavyRain                        string IL2CPP_TYPE_STRING
     // 000 Weather_Snow                             string IL2CPP_TYPE_STRING
-    // 018 ViewType                                 000186540860 ModelEnumType Home3DViewType Home3DViewType Home3DViewType Int32
-    // 020 CutSceneName                             000186671910 ModelPrimitiveType string string string String
-    // 028 BgmViewModel                             0001866BC1D0 ModelClassType HomeBgmViewModel HomeBgmViewModel HomeBgmViewModel Pointer
-    // 030 TVScreenType                             0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 ViewType                                 ModelEnumType Home3DViewType Home3DViewType Home3DViewType Int32
+    // 020 CutSceneName                             ModelPrimitiveType string string string String
+    // 028 BgmViewModel                             ModelClassType HomeBgmViewModel HomeBgmViewModel HomeBgmViewModel Pointer
+    // 030 TVScreenType                             ModelPrimitiveType int int int Int32
     public partial class HomeBackgroundViewModel : DataModel
     {
         public List<SwitchObjectCondition>?             SwitchConditionList                     { get; set; }
@@ -42,11 +42,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HomeBackgroundViewModel() { Pointer= p0 };
 
-            value.SwitchConditionList                       = GetObjectList<SwitchObjectCondition>(new IntPtr(p + 0x010), ReversePrism.DataModels.SwitchObjectCondition.FromPointer); // 0245A3664D98 0x10 SwitchConditionList         ( 000185D2CD18 ModelClassListType List`1<SwitchObjectCondition> List`1<SwitchObjectCondition> List<SwitchObjectCondition> Pointer )
-            value.ViewType                                  = (Home3DViewType)GetInt32(new IntPtr(p + 0x018)); // 0245A3664F58 0x18 ViewType                    ( 000186540860 ModelEnumType Home3DViewType Home3DViewType Home3DViewType Int32 )
-            value.CutSceneName                              = GetString(new IntPtr(p + 0x020)); // 0245A3664F78 0x20 CutSceneName                ( 000186671910 ModelPrimitiveType string string string String )
-            value.BgmViewModel                              = GetObject<HomeBgmViewModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.HomeBgmViewModel.FromPointer); // 0245A3664F98 0x28 BgmViewModel                ( 0001866BC1D0 ModelClassType HomeBgmViewModel HomeBgmViewModel HomeBgmViewModel Pointer )
-            value.TVScreenType                              = GetInt32(new IntPtr(p + 0x030)); // 0245A3664FB8 0x30 TVScreenType                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SwitchConditionList                       = GetObjectList<SwitchObjectCondition>(new IntPtr(p + 0x010), ReversePrism.DataModels.SwitchObjectCondition.FromPointer); // 0x10 SwitchConditionList         ( ModelClassListType List`1<SwitchObjectCondition> List`1<SwitchObjectCondition> List<SwitchObjectCondition> Pointer )
+            value.ViewType                                  = (Home3DViewType)GetInt32(new IntPtr(p + 0x018)); // 0x18 ViewType                    ( ModelEnumType Home3DViewType Home3DViewType Home3DViewType Int32 )
+            value.CutSceneName                              = GetString(new IntPtr(p + 0x020)); // 0x20 CutSceneName                ( ModelPrimitiveType string string string String )
+            value.BgmViewModel                              = GetObject<HomeBgmViewModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.HomeBgmViewModel.FromPointer); // 0x28 BgmViewModel                ( ModelClassType HomeBgmViewModel HomeBgmViewModel HomeBgmViewModel Pointer )
+            value.TVScreenType                              = GetInt32(new IntPtr(p + 0x030)); // 0x30 TVScreenType                ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

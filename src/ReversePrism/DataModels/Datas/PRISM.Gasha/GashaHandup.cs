@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 NotificationRarity                       000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
-    // 028 NotificationNum                          000185CAE588 ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer
-    // 030 TapEffectSR                              0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 038 TapEffectSSR                             0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
+    // 020 NotificationRarity                       ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
+    // 028 NotificationNum                          ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer
+    // 030 TapEffectSR                              ModelClassType GameObject GameObject GameObject Pointer
+    // 038 TapEffectSSR                             ModelClassType GameObject GameObject GameObject Pointer
     public partial class GashaHandup : DataModel
     {
         public List<GameObject>?                        NotificationRarity                      { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GashaHandup() { Pointer= p0 };
 
-            value.NotificationRarity                        = GetObjectList<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 024664E27CF0 0x20 NotificationRarity          ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
-            value.NotificationNum                           = GetObjectList<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024664E27D10 0x28 NotificationNum             ( 000185CAE588 ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer )
-            value.TapEffectSR                               = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 024664E27D30 0x30 TapEffectSR                 ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.TapEffectSSR                              = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 024664E27D50 0x38 TapEffectSSR                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.NotificationRarity                        = GetObjectList<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0x20 NotificationRarity          ( ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.NotificationNum                           = GetObjectList<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x28 NotificationNum             ( ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer )
+            value.TapEffectSR                               = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0x30 TapEffectSR                 ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.TapEffectSSR                              = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0x38 TapEffectSSR                ( ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

@@ -8,60 +8,60 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 3C8 M_FirstLayoutPass                        0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 3CC M_HorizontalScrollerVisibility           0001866FCDA0 ModelEnumType ScrollerVisibility ScrollerVisibility ScrollerVisibility Int32
-    // 3D0 M_VerticalScrollerVisibility             0001866FCDA0 ModelEnumType ScrollerVisibility ScrollerVisibility ScrollerVisibility Int32
-    // 3D8 M_AttachedRootVisualContainer            0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer
-    // 3E0 M_SingleLineHeight                       0001866656B0 ModelPrimitiveType float float float Single
-    // 3E4 M_MouseWheelScrollSizeIsInline           000186595210 ModelPrimitiveType bool bool bool Bool
-    // 3E8 M_HorizontalPageSize                     0001866656B0 ModelPrimitiveType float float float Single
-    // 3EC M_VerticalPageSize                       0001866656B0 ModelPrimitiveType float float float Single
-    // 3F0 M_MouseWheelScrollSize                   0001866656B0 ModelPrimitiveType float float float Single
+    // 3C8 M_FirstLayoutPass                        ModelPrimitiveType int int int Int32
+    // 3CC M_HorizontalScrollerVisibility           ModelEnumType ScrollerVisibility ScrollerVisibility ScrollerVisibility Int32
+    // 3D0 M_VerticalScrollerVisibility             ModelEnumType ScrollerVisibility ScrollerVisibility ScrollerVisibility Int32
+    // 3D8 M_AttachedRootVisualContainer            ModelClassType VisualElement VisualElement VisualElement Pointer
+    // 3E0 M_SingleLineHeight                       ModelPrimitiveType float float float Single
+    // 3E4 M_MouseWheelScrollSizeIsInline           ModelPrimitiveType bool bool bool Bool
+    // 3E8 M_HorizontalPageSize                     ModelPrimitiveType float float float Single
+    // 3EC M_VerticalPageSize                       ModelPrimitiveType float float float Single
+    // 3F0 M_MouseWheelScrollSize                   ModelPrimitiveType float float float Single
     // 000 k_DefaultScrollDecelerationRate          float IL2CPP_TYPE_R4
-    // 3F4 M_ScrollDecelerationRate                 0001866656B0 ModelPrimitiveType float float float Single
+    // 3F4 M_ScrollDecelerationRate                 ModelPrimitiveType float float float Single
     // 004 k_DefaultElasticity                      float IL2CPP_TYPE_R4
-    // 3F8 M_Elasticity                             0001866656B0 ModelPrimitiveType float float float Single
-    // 3FC M_TouchScrollBehavior                    00018673B170 ModelEnumType TouchScrollBehavior TouchScrollBehavior TouchScrollBehavior Int32
-    // 400 M_NestedInteractionKind                  00018673AA00 ModelEnumType NestedInteractionKind NestedInteractionKind NestedInteractionKind Int32
+    // 3F8 M_Elasticity                             ModelPrimitiveType float float float Single
+    // 3FC M_TouchScrollBehavior                    ModelEnumType TouchScrollBehavior TouchScrollBehavior TouchScrollBehavior Int32
+    // 400 M_NestedInteractionKind                  ModelEnumType NestedInteractionKind NestedInteractionKind NestedInteractionKind Int32
     // 008 k_DefaultElasticAnimationInterval        long IL2CPP_TYPE_I8
-    // 408 M_ElasticAnimationIntervalMs             0001865F7700 ModelPrimitiveType long long long Int64
-    // 410 ContentViewport                          0001866B34A0 ModelClassType VisualElement VisualElement VisualElement Pointer
-    // 418 HorizontalScroller                       0001866FB5C0 ModelClassType Scroller Scroller Scroller Pointer
-    // 420 VerticalScroller                         0001866FB5C0 ModelClassType Scroller Scroller Scroller Pointer
-    // 428 M_ContentContainer                       0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer
-    // 430 M_ContentAndVerticalScrollContainer      0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer
-    // 010 UssClassName                             000186674040 ModelPrimitiveType string string string String
-    // 018 ViewportUssClassName                     000186674040 ModelPrimitiveType string string string String
-    // 020 HorizontalVariantViewportUssClassName    000186674040 ModelPrimitiveType string string string String
-    // 028 VerticalVariantViewportUssClassName      000186674040 ModelPrimitiveType string string string String
-    // 030 VerticalHorizontalVariantViewportUssClassName 000186674040 ModelPrimitiveType string string string String
-    // 038 ContentAndVerticalScrollUssClassName     000186674040 ModelPrimitiveType string string string String
-    // 040 ContentUssClassName                      000186674040 ModelPrimitiveType string string string String
-    // 048 HorizontalVariantContentUssClassName     000186674040 ModelPrimitiveType string string string String
-    // 050 VerticalVariantContentUssClassName       000186674040 ModelPrimitiveType string string string String
-    // 058 VerticalHorizontalVariantContentUssClassName 000186674040 ModelPrimitiveType string string string String
-    // 060 HScrollerUssClassName                    000186674040 ModelPrimitiveType string string string String
-    // 068 VScrollerUssClassName                    000186674040 ModelPrimitiveType string string string String
-    // 070 HorizontalVariantUssClassName            000186674040 ModelPrimitiveType string string string String
-    // 078 VerticalVariantUssClassName              000186674040 ModelPrimitiveType string string string String
-    // 080 VerticalHorizontalVariantUssClassName    000186674040 ModelPrimitiveType string string string String
-    // 088 ScrollVariantUssClassName                000186674040 ModelPrimitiveType string string string String
-    // 438 M_Mode                                   0001866F9AA0 ModelEnumType ScrollViewMode ScrollViewMode ScrollViewMode Int32
-    // 440 M_ScheduledLayoutPassResetItem           000186697790 ModelClassType IVisualElementScheduledItem IVisualElementScheduledItem IVisualElementScheduledItem Pointer
-    // 448 M_ScrollingPointerId                     0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 44C M_StartPosition                          0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
-    // 454 M_PointerStartPosition                   0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
-    // 45C M_Velocity                               0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
-    // 464 M_SpringBackVelocity                     0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
-    // 46C M_LowBounds                              0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
-    // 474 M_HighBounds                             0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
-    // 47C M_LastVelocityLerpTime                   0001866656B0 ModelPrimitiveType float float float Single
-    // 480 M_StartedMoving                          000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 481 M_TouchStoppedVelocity                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 488 M_CapturedTarget                         0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer
+    // 408 M_ElasticAnimationIntervalMs             ModelPrimitiveType long long long Int64
+    // 410 ContentViewport                          ModelClassType VisualElement VisualElement VisualElement Pointer
+    // 418 HorizontalScroller                       ModelClassType Scroller Scroller Scroller Pointer
+    // 420 VerticalScroller                         ModelClassType Scroller Scroller Scroller Pointer
+    // 428 M_ContentContainer                       ModelClassType VisualElement VisualElement VisualElement Pointer
+    // 430 M_ContentAndVerticalScrollContainer      ModelClassType VisualElement VisualElement VisualElement Pointer
+    // 010 UssClassName                             ModelPrimitiveType string string string String
+    // 018 ViewportUssClassName                     ModelPrimitiveType string string string String
+    // 020 HorizontalVariantViewportUssClassName    ModelPrimitiveType string string string String
+    // 028 VerticalVariantViewportUssClassName      ModelPrimitiveType string string string String
+    // 030 VerticalHorizontalVariantViewportUssClassName ModelPrimitiveType string string string String
+    // 038 ContentAndVerticalScrollUssClassName     ModelPrimitiveType string string string String
+    // 040 ContentUssClassName                      ModelPrimitiveType string string string String
+    // 048 HorizontalVariantContentUssClassName     ModelPrimitiveType string string string String
+    // 050 VerticalVariantContentUssClassName       ModelPrimitiveType string string string String
+    // 058 VerticalHorizontalVariantContentUssClassName ModelPrimitiveType string string string String
+    // 060 HScrollerUssClassName                    ModelPrimitiveType string string string String
+    // 068 VScrollerUssClassName                    ModelPrimitiveType string string string String
+    // 070 HorizontalVariantUssClassName            ModelPrimitiveType string string string String
+    // 078 VerticalVariantUssClassName              ModelPrimitiveType string string string String
+    // 080 VerticalHorizontalVariantUssClassName    ModelPrimitiveType string string string String
+    // 088 ScrollVariantUssClassName                ModelPrimitiveType string string string String
+    // 438 M_Mode                                   ModelEnumType ScrollViewMode ScrollViewMode ScrollViewMode Int32
+    // 440 M_ScheduledLayoutPassResetItem           ModelClassType IVisualElementScheduledItem IVisualElementScheduledItem IVisualElementScheduledItem Pointer
+    // 448 M_ScrollingPointerId                     ModelPrimitiveType int int int Int32
+    // 44C M_StartPosition                          ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 454 M_PointerStartPosition                   ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 45C M_Velocity                               ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 464 M_SpringBackVelocity                     ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 46C M_LowBounds                              ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 474 M_HighBounds                             ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 47C M_LastVelocityLerpTime                   ModelPrimitiveType float float float Single
+    // 480 M_StartedMoving                          ModelPrimitiveType bool bool bool Bool
+    // 481 M_TouchStoppedVelocity                   ModelPrimitiveType bool bool bool Bool
+    // 488 M_CapturedTarget                         ModelClassType VisualElement VisualElement VisualElement Pointer
     // 490 m_CapturedTargetPointerMoveCallback      EventCallback`1<PointerMoveEvent> IL2CPP_TYPE_GENERICINST
     // 498 m_CapturedTargetPointerUpCallback        EventCallback`1<PointerUpEvent> IL2CPP_TYPE_GENERICINST
-    // 4A0 M_PostPointerUpAnimation                 0001866979A0 ModelClassType IVisualElementScheduledItem IVisualElementScheduledItem IVisualElementScheduledItem Pointer
+    // 4A0 M_PostPointerUpAnimation                 ModelClassType IVisualElementScheduledItem IVisualElementScheduledItem IVisualElementScheduledItem Pointer
     public partial class ScrollView : DataModel
     {
         public int                                      M_FirstLayoutPass                       { get; set; }
@@ -122,55 +122,55 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ScrollView() { Pointer= p0 };
 
-            value.M_FirstLayoutPass                         = GetInt32(new IntPtr(p + 0x3C8)); // 0245A66F9948 0x3C8 M_FirstLayoutPass           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_HorizontalScrollerVisibility            = (ScrollerVisibility)GetInt32(new IntPtr(p + 0x3CC)); // 0245A66F9968 0x3CC M_HorizontalScrollerVisibility ( 0001866FCDA0 ModelEnumType ScrollerVisibility ScrollerVisibility ScrollerVisibility Int32 )
-            value.M_VerticalScrollerVisibility              = (ScrollerVisibility)GetInt32(new IntPtr(p + 0x3D0)); // 0245A66F9988 0x3D0 M_VerticalScrollerVisibility ( 0001866FCDA0 ModelEnumType ScrollerVisibility ScrollerVisibility ScrollerVisibility Int32 )
-            value.M_AttachedRootVisualContainer             = GetObject<VisualElement>(new IntPtr(p + 0x3D8), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A66F99A8 0x3D8 M_AttachedRootVisualContainer ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
-            value.M_SingleLineHeight                        = GetSingle(new IntPtr(p + 0x3E0)); // 0245A66F99C8 0x3E0 M_SingleLineHeight          ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_MouseWheelScrollSizeIsInline            = GetBool(new IntPtr(p + 0x3E4)); // 0245A66F99E8 0x3E4 M_MouseWheelScrollSizeIsInline ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.M_HorizontalPageSize                      = GetSingle(new IntPtr(p + 0x3E8)); // 0245A66F9A08 0x3E8 M_HorizontalPageSize        ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_VerticalPageSize                        = GetSingle(new IntPtr(p + 0x3EC)); // 0245A66F9A28 0x3EC M_VerticalPageSize          ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_MouseWheelScrollSize                    = GetSingle(new IntPtr(p + 0x3F0)); // 0245A66F9A48 0x3F0 M_MouseWheelScrollSize      ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_ScrollDecelerationRate                  = GetSingle(new IntPtr(p + 0x3F4)); // 0245A66F9A88 0x3F4 M_ScrollDecelerationRate    ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_Elasticity                              = GetSingle(new IntPtr(p + 0x3F8)); // 0245A66F9AC8 0x3F8 M_Elasticity                ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_TouchScrollBehavior                     = (TouchScrollBehavior)GetInt32(new IntPtr(p + 0x3FC)); // 0245A66F9AE8 0x3FC M_TouchScrollBehavior       ( 00018673B170 ModelEnumType TouchScrollBehavior TouchScrollBehavior TouchScrollBehavior Int32 )
-            value.M_NestedInteractionKind                   = (NestedInteractionKind)GetInt32(new IntPtr(p + 0x400)); // 0245A66F9B08 0x400 M_NestedInteractionKind     ( 00018673AA00 ModelEnumType NestedInteractionKind NestedInteractionKind NestedInteractionKind Int32 )
-            value.M_ElasticAnimationIntervalMs              = GetInt64(new IntPtr(p + 0x408)); // 0245A66F9B48 0x408 M_ElasticAnimationIntervalMs ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.ContentViewport                           = GetObject<VisualElement>(new IntPtr(p + 0x410), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A66F9B68 0x410 ContentViewport             ( 0001866B34A0 ModelClassType VisualElement VisualElement VisualElement Pointer )
-            value.HorizontalScroller                        = GetObject<Scroller>(new IntPtr(p + 0x418), ReversePrism.DataModels.Scroller.FromPointer); // 0245A66F9B88 0x418 HorizontalScroller          ( 0001866FB5C0 ModelClassType Scroller Scroller Scroller Pointer )
-            value.VerticalScroller                          = GetObject<Scroller>(new IntPtr(p + 0x420), ReversePrism.DataModels.Scroller.FromPointer); // 0245A66F9BA8 0x420 VerticalScroller            ( 0001866FB5C0 ModelClassType Scroller Scroller Scroller Pointer )
-            value.M_ContentContainer                        = GetObject<VisualElement>(new IntPtr(p + 0x428), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A66F9BC8 0x428 M_ContentContainer          ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
-            value.M_ContentAndVerticalScrollContainer       = GetObject<VisualElement>(new IntPtr(p + 0x430), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A66F9BE8 0x430 M_ContentAndVerticalScrollContainer ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
-            value.UssClassName                              = GetString(new IntPtr(p + 0x010)); // 0245A66F9C08 0x10 UssClassName                ( 000186674040 ModelPrimitiveType string string string String )
-            value.ViewportUssClassName                      = GetString(new IntPtr(p + 0x018)); // 0245A66F9C28 0x18 ViewportUssClassName        ( 000186674040 ModelPrimitiveType string string string String )
-            value.HorizontalVariantViewportUssClassName     = GetString(new IntPtr(p + 0x020)); // 0245A66F9C48 0x20 HorizontalVariantViewportUssClassName ( 000186674040 ModelPrimitiveType string string string String )
-            value.VerticalVariantViewportUssClassName       = GetString(new IntPtr(p + 0x028)); // 0245A66F9C68 0x28 VerticalVariantViewportUssClassName ( 000186674040 ModelPrimitiveType string string string String )
-            value.VerticalHorizontalVariantViewportUssClassName = GetString(new IntPtr(p + 0x030)); // 0245A66F9C88 0x30 VerticalHorizontalVariantViewportUssClassName ( 000186674040 ModelPrimitiveType string string string String )
-            value.ContentAndVerticalScrollUssClassName      = GetString(new IntPtr(p + 0x038)); // 0245A66F9CA8 0x38 ContentAndVerticalScrollUssClassName ( 000186674040 ModelPrimitiveType string string string String )
-            value.ContentUssClassName                       = GetString(new IntPtr(p + 0x040)); // 0245A66F9CC8 0x40 ContentUssClassName         ( 000186674040 ModelPrimitiveType string string string String )
-            value.HorizontalVariantContentUssClassName      = GetString(new IntPtr(p + 0x048)); // 0245A66F9CE8 0x48 HorizontalVariantContentUssClassName ( 000186674040 ModelPrimitiveType string string string String )
-            value.VerticalVariantContentUssClassName        = GetString(new IntPtr(p + 0x050)); // 0245A66F9D08 0x50 VerticalVariantContentUssClassName ( 000186674040 ModelPrimitiveType string string string String )
-            value.VerticalHorizontalVariantContentUssClassName = GetString(new IntPtr(p + 0x058)); // 0245A66F9D28 0x58 VerticalHorizontalVariantContentUssClassName ( 000186674040 ModelPrimitiveType string string string String )
-            value.HScrollerUssClassName                     = GetString(new IntPtr(p + 0x060)); // 0245A66F9D48 0x60 HScrollerUssClassName       ( 000186674040 ModelPrimitiveType string string string String )
-            value.VScrollerUssClassName                     = GetString(new IntPtr(p + 0x068)); // 0245A66F9D68 0x68 VScrollerUssClassName       ( 000186674040 ModelPrimitiveType string string string String )
-            value.HorizontalVariantUssClassName             = GetString(new IntPtr(p + 0x070)); // 0245A66F9D88 0x70 HorizontalVariantUssClassName ( 000186674040 ModelPrimitiveType string string string String )
-            value.VerticalVariantUssClassName               = GetString(new IntPtr(p + 0x078)); // 0245A66F9DA8 0x78 VerticalVariantUssClassName ( 000186674040 ModelPrimitiveType string string string String )
-            value.VerticalHorizontalVariantUssClassName     = GetString(new IntPtr(p + 0x080)); // 0245A66F9DC8 0x80 VerticalHorizontalVariantUssClassName ( 000186674040 ModelPrimitiveType string string string String )
-            value.ScrollVariantUssClassName                 = GetString(new IntPtr(p + 0x088)); // 0245A66F9DE8 0x88 ScrollVariantUssClassName   ( 000186674040 ModelPrimitiveType string string string String )
-            value.M_Mode                                    = (ScrollViewMode)GetInt32(new IntPtr(p + 0x438)); // 0245A66F9E08 0x438 M_Mode                      ( 0001866F9AA0 ModelEnumType ScrollViewMode ScrollViewMode ScrollViewMode Int32 )
-            value.M_ScheduledLayoutPassResetItem            = GetObject<IVisualElementScheduledItem>(new IntPtr(p + 0x440), ReversePrism.DataModels.IVisualElementScheduledItem.FromPointer); // 0245A66F9E28 0x440 M_ScheduledLayoutPassResetItem ( 000186697790 ModelClassType IVisualElementScheduledItem IVisualElementScheduledItem IVisualElementScheduledItem Pointer )
-            value.M_ScrollingPointerId                      = GetInt32(new IntPtr(p + 0x448)); // 0245A66F9E48 0x448 M_ScrollingPointerId        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_StartPosition                           = (Vector2)GetInt32(new IntPtr(p + 0x44C)); // 0245A66F9E68 0x44C M_StartPosition             ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.M_PointerStartPosition                    = (Vector2)GetInt32(new IntPtr(p + 0x454)); // 0245A66F9E88 0x454 M_PointerStartPosition      ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.M_Velocity                                = (Vector2)GetInt32(new IntPtr(p + 0x45C)); // 0245A66F9EA8 0x45C M_Velocity                  ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.M_SpringBackVelocity                      = (Vector2)GetInt32(new IntPtr(p + 0x464)); // 0245A66F9EC8 0x464 M_SpringBackVelocity        ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.M_LowBounds                               = (Vector2)GetInt32(new IntPtr(p + 0x46C)); // 0245A66F9EE8 0x46C M_LowBounds                 ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.M_HighBounds                              = (Vector2)GetInt32(new IntPtr(p + 0x474)); // 0245A66F9F08 0x474 M_HighBounds                ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.M_LastVelocityLerpTime                    = GetSingle(new IntPtr(p + 0x47C)); // 0245A66F9F28 0x47C M_LastVelocityLerpTime      ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_StartedMoving                           = GetBool(new IntPtr(p + 0x480)); // 0245A66F9F48 0x480 M_StartedMoving             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_TouchStoppedVelocity                    = GetBool(new IntPtr(p + 0x481)); // 0245A66F9F68 0x481 M_TouchStoppedVelocity      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_CapturedTarget                          = GetObject<VisualElement>(new IntPtr(p + 0x488), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A66F9F88 0x488 M_CapturedTarget            ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
-            value.M_PostPointerUpAnimation                  = GetObject<IVisualElementScheduledItem>(new IntPtr(p + 0x4A0), ReversePrism.DataModels.IVisualElementScheduledItem.FromPointer); // 0245A66F9FE8 0x4A0 M_PostPointerUpAnimation    ( 0001866979A0 ModelClassType IVisualElementScheduledItem IVisualElementScheduledItem IVisualElementScheduledItem Pointer )
+            value.M_FirstLayoutPass                         = GetInt32(new IntPtr(p + 0x3C8)); // 0x3C8 M_FirstLayoutPass           ( ModelPrimitiveType int int int Int32 )
+            value.M_HorizontalScrollerVisibility            = (ScrollerVisibility)GetInt32(new IntPtr(p + 0x3CC)); // 0x3CC M_HorizontalScrollerVisibility ( ModelEnumType ScrollerVisibility ScrollerVisibility ScrollerVisibility Int32 )
+            value.M_VerticalScrollerVisibility              = (ScrollerVisibility)GetInt32(new IntPtr(p + 0x3D0)); // 0x3D0 M_VerticalScrollerVisibility ( ModelEnumType ScrollerVisibility ScrollerVisibility ScrollerVisibility Int32 )
+            value.M_AttachedRootVisualContainer             = GetObject<VisualElement>(new IntPtr(p + 0x3D8), ReversePrism.DataModels.VisualElement.FromPointer); // 0x3D8 M_AttachedRootVisualContainer ( ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.M_SingleLineHeight                        = GetSingle(new IntPtr(p + 0x3E0)); // 0x3E0 M_SingleLineHeight          ( ModelPrimitiveType float float float Single )
+            value.M_MouseWheelScrollSizeIsInline            = GetBool(new IntPtr(p + 0x3E4)); // 0x3E4 M_MouseWheelScrollSizeIsInline ( ModelPrimitiveType bool bool bool Bool )
+            value.M_HorizontalPageSize                      = GetSingle(new IntPtr(p + 0x3E8)); // 0x3E8 M_HorizontalPageSize        ( ModelPrimitiveType float float float Single )
+            value.M_VerticalPageSize                        = GetSingle(new IntPtr(p + 0x3EC)); // 0x3EC M_VerticalPageSize          ( ModelPrimitiveType float float float Single )
+            value.M_MouseWheelScrollSize                    = GetSingle(new IntPtr(p + 0x3F0)); // 0x3F0 M_MouseWheelScrollSize      ( ModelPrimitiveType float float float Single )
+            value.M_ScrollDecelerationRate                  = GetSingle(new IntPtr(p + 0x3F4)); // 0x3F4 M_ScrollDecelerationRate    ( ModelPrimitiveType float float float Single )
+            value.M_Elasticity                              = GetSingle(new IntPtr(p + 0x3F8)); // 0x3F8 M_Elasticity                ( ModelPrimitiveType float float float Single )
+            value.M_TouchScrollBehavior                     = (TouchScrollBehavior)GetInt32(new IntPtr(p + 0x3FC)); // 0x3FC M_TouchScrollBehavior       ( ModelEnumType TouchScrollBehavior TouchScrollBehavior TouchScrollBehavior Int32 )
+            value.M_NestedInteractionKind                   = (NestedInteractionKind)GetInt32(new IntPtr(p + 0x400)); // 0x400 M_NestedInteractionKind     ( ModelEnumType NestedInteractionKind NestedInteractionKind NestedInteractionKind Int32 )
+            value.M_ElasticAnimationIntervalMs              = GetInt64(new IntPtr(p + 0x408)); // 0x408 M_ElasticAnimationIntervalMs ( ModelPrimitiveType long long long Int64 )
+            value.ContentViewport                           = GetObject<VisualElement>(new IntPtr(p + 0x410), ReversePrism.DataModels.VisualElement.FromPointer); // 0x410 ContentViewport             ( ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.HorizontalScroller                        = GetObject<Scroller>(new IntPtr(p + 0x418), ReversePrism.DataModels.Scroller.FromPointer); // 0x418 HorizontalScroller          ( ModelClassType Scroller Scroller Scroller Pointer )
+            value.VerticalScroller                          = GetObject<Scroller>(new IntPtr(p + 0x420), ReversePrism.DataModels.Scroller.FromPointer); // 0x420 VerticalScroller            ( ModelClassType Scroller Scroller Scroller Pointer )
+            value.M_ContentContainer                        = GetObject<VisualElement>(new IntPtr(p + 0x428), ReversePrism.DataModels.VisualElement.FromPointer); // 0x428 M_ContentContainer          ( ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.M_ContentAndVerticalScrollContainer       = GetObject<VisualElement>(new IntPtr(p + 0x430), ReversePrism.DataModels.VisualElement.FromPointer); // 0x430 M_ContentAndVerticalScrollContainer ( ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.UssClassName                              = GetString(new IntPtr(p + 0x010)); // 0x10 UssClassName                ( ModelPrimitiveType string string string String )
+            value.ViewportUssClassName                      = GetString(new IntPtr(p + 0x018)); // 0x18 ViewportUssClassName        ( ModelPrimitiveType string string string String )
+            value.HorizontalVariantViewportUssClassName     = GetString(new IntPtr(p + 0x020)); // 0x20 HorizontalVariantViewportUssClassName ( ModelPrimitiveType string string string String )
+            value.VerticalVariantViewportUssClassName       = GetString(new IntPtr(p + 0x028)); // 0x28 VerticalVariantViewportUssClassName ( ModelPrimitiveType string string string String )
+            value.VerticalHorizontalVariantViewportUssClassName = GetString(new IntPtr(p + 0x030)); // 0x30 VerticalHorizontalVariantViewportUssClassName ( ModelPrimitiveType string string string String )
+            value.ContentAndVerticalScrollUssClassName      = GetString(new IntPtr(p + 0x038)); // 0x38 ContentAndVerticalScrollUssClassName ( ModelPrimitiveType string string string String )
+            value.ContentUssClassName                       = GetString(new IntPtr(p + 0x040)); // 0x40 ContentUssClassName         ( ModelPrimitiveType string string string String )
+            value.HorizontalVariantContentUssClassName      = GetString(new IntPtr(p + 0x048)); // 0x48 HorizontalVariantContentUssClassName ( ModelPrimitiveType string string string String )
+            value.VerticalVariantContentUssClassName        = GetString(new IntPtr(p + 0x050)); // 0x50 VerticalVariantContentUssClassName ( ModelPrimitiveType string string string String )
+            value.VerticalHorizontalVariantContentUssClassName = GetString(new IntPtr(p + 0x058)); // 0x58 VerticalHorizontalVariantContentUssClassName ( ModelPrimitiveType string string string String )
+            value.HScrollerUssClassName                     = GetString(new IntPtr(p + 0x060)); // 0x60 HScrollerUssClassName       ( ModelPrimitiveType string string string String )
+            value.VScrollerUssClassName                     = GetString(new IntPtr(p + 0x068)); // 0x68 VScrollerUssClassName       ( ModelPrimitiveType string string string String )
+            value.HorizontalVariantUssClassName             = GetString(new IntPtr(p + 0x070)); // 0x70 HorizontalVariantUssClassName ( ModelPrimitiveType string string string String )
+            value.VerticalVariantUssClassName               = GetString(new IntPtr(p + 0x078)); // 0x78 VerticalVariantUssClassName ( ModelPrimitiveType string string string String )
+            value.VerticalHorizontalVariantUssClassName     = GetString(new IntPtr(p + 0x080)); // 0x80 VerticalHorizontalVariantUssClassName ( ModelPrimitiveType string string string String )
+            value.ScrollVariantUssClassName                 = GetString(new IntPtr(p + 0x088)); // 0x88 ScrollVariantUssClassName   ( ModelPrimitiveType string string string String )
+            value.M_Mode                                    = (ScrollViewMode)GetInt32(new IntPtr(p + 0x438)); // 0x438 M_Mode                      ( ModelEnumType ScrollViewMode ScrollViewMode ScrollViewMode Int32 )
+            value.M_ScheduledLayoutPassResetItem            = GetObject<IVisualElementScheduledItem>(new IntPtr(p + 0x440), ReversePrism.DataModels.IVisualElementScheduledItem.FromPointer); // 0x440 M_ScheduledLayoutPassResetItem ( ModelClassType IVisualElementScheduledItem IVisualElementScheduledItem IVisualElementScheduledItem Pointer )
+            value.M_ScrollingPointerId                      = GetInt32(new IntPtr(p + 0x448)); // 0x448 M_ScrollingPointerId        ( ModelPrimitiveType int int int Int32 )
+            value.M_StartPosition                           = (Vector2)GetInt32(new IntPtr(p + 0x44C)); // 0x44C M_StartPosition             ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.M_PointerStartPosition                    = (Vector2)GetInt32(new IntPtr(p + 0x454)); // 0x454 M_PointerStartPosition      ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.M_Velocity                                = (Vector2)GetInt32(new IntPtr(p + 0x45C)); // 0x45C M_Velocity                  ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.M_SpringBackVelocity                      = (Vector2)GetInt32(new IntPtr(p + 0x464)); // 0x464 M_SpringBackVelocity        ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.M_LowBounds                               = (Vector2)GetInt32(new IntPtr(p + 0x46C)); // 0x46C M_LowBounds                 ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.M_HighBounds                              = (Vector2)GetInt32(new IntPtr(p + 0x474)); // 0x474 M_HighBounds                ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.M_LastVelocityLerpTime                    = GetSingle(new IntPtr(p + 0x47C)); // 0x47C M_LastVelocityLerpTime      ( ModelPrimitiveType float float float Single )
+            value.M_StartedMoving                           = GetBool(new IntPtr(p + 0x480)); // 0x480 M_StartedMoving             ( ModelPrimitiveType bool bool bool Bool )
+            value.M_TouchStoppedVelocity                    = GetBool(new IntPtr(p + 0x481)); // 0x481 M_TouchStoppedVelocity      ( ModelPrimitiveType bool bool bool Bool )
+            value.M_CapturedTarget                          = GetObject<VisualElement>(new IntPtr(p + 0x488), ReversePrism.DataModels.VisualElement.FromPointer); // 0x488 M_CapturedTarget            ( ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.M_PostPointerUpAnimation                  = GetObject<IVisualElementScheduledItem>(new IntPtr(p + 0x4A0), ReversePrism.DataModels.IVisualElementScheduledItem.FromPointer); // 0x4A0 M_PostPointerUpAnimation    ( ModelClassType IVisualElementScheduledItem IVisualElementScheduledItem IVisualElementScheduledItem Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 M_scheduler                              0001866250D0 ModelClassType TaskScheduler TaskScheduler TaskScheduler Pointer
+    // 020 M_scheduler                              ModelClassType TaskScheduler TaskScheduler TaskScheduler Pointer
     public partial class TaskSchedulerAwaitTaskContinuation : DataModel
     {
         public TaskScheduler?                           M_scheduler                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TaskSchedulerAwaitTaskContinuation() { Pointer= p0 };
 
-            value.M_scheduler                               = GetObject<TaskScheduler>(new IntPtr(p + 0x020), ReversePrism.DataModels.TaskScheduler.FromPointer); // 0245A4158318 0x20 M_scheduler                 ( 0001866250D0 ModelClassType TaskScheduler TaskScheduler TaskScheduler Pointer )
+            value.M_scheduler                               = GetObject<TaskScheduler>(new IntPtr(p + 0x020), ReversePrism.DataModels.TaskScheduler.FromPointer); // 0x20 M_scheduler                 ( ModelClassType TaskScheduler TaskScheduler TaskScheduler Pointer )
 
             return value;
         }

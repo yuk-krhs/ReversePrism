@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<GameEventPointStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstEventIdFieldNumber                    int IL2CPP_TYPE_I4
-    // 018 MstEventId                               0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MstEventId                               ModelPrimitiveType int int int Int32
     // 000 EventPointFieldNumber                    int IL2CPP_TYPE_I4
-    // 020 EventPoint                               0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer
+    // 020 EventPoint                               ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer
     public partial class GameEventPointStatus : DataModel
     {
         public int                                      MstEventId                              { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GameEventPointStatus() { Pointer= p0 };
 
-            value.MstEventId                                = GetInt32(new IntPtr(p + 0x018)); // 02466130C940 0x18 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.EventPoint                                = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 02466130C980 0x20 EventPoint                  ( 0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
+            value.MstEventId                                = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstEventId                  ( ModelPrimitiveType int int int Int32 )
+            value.EventPoint                                = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0x20 EventPoint                  ( ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
 
             return value;
         }

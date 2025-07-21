@@ -8,34 +8,38 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 ComboNumberParent                        0001866AA150 ModelClassType Transform Transform Transform Pointer
-    // 028 ComboNumberDigitView                     0001865DDAD0 ModelClassType ComboDigitView ComboDigitView ComboDigitView Pointer
-    // 030 ComboNumberDigitEffectViews              000185B762D0 ModelClassListType ComboDigitView[] ComboDigitView[] List<ComboDigitView> Pointer
-    // 038 Spacing                                  0001866656B0 ModelPrimitiveType float float float Single
-    // 040 SkillEffect                              000186723C20 ModelClassType ParticleSystem ParticleSystem ParticleSystem Pointer
-    // 048 PunchStrength                            0001866656B0 ModelPrimitiveType float float float Single
-    // 04C PunchDuration                            0001866656B0 ModelPrimitiveType float float float Single
-    // 050 SpecialNumberEffect283                   00018653DAF0 ModelClassType SpecialComboNumberEffect SpecialComboNumberEffect SpecialComboNumberEffect Pointer
-    // 058 SpecialNumberEffect412                   00018653DAF0 ModelClassType SpecialComboNumberEffect SpecialComboNumberEffect SpecialComboNumberEffect Pointer
-    // 060 AllPerfectEffects                        000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
-    // 068 CurrentCombo                             0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 070 PunchTweener                             0001866C3DE0 ModelClassType Tweener Tweener Tweener Pointer
-    // 078 IsSkillActive                            000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 020 ComboNumberParent                        ModelClassType Transform Transform Transform Pointer
+    // 028 ComboNumberDigitView                     ModelClassType ComboDigitView ComboDigitView ComboDigitView Pointer
+    // 030 Spacing                                  ModelPrimitiveType float float float Single
+    // 038 SkillEffect                              ModelClassType ParticleSystem ParticleSystem ParticleSystem Pointer
+    // 040 PunchStrength                            ModelPrimitiveType float float float Single
+    // 044 PunchDuration                            ModelPrimitiveType float float float Single
+    // 048 SpecialNumberEffect283                   ModelClassType SpecialComboNumberEffect SpecialComboNumberEffect SpecialComboNumberEffect Pointer
+    // 050 SpecialNumberEffect412                   ModelClassType SpecialComboNumberEffect SpecialComboNumberEffect SpecialComboNumberEffect Pointer
+    // 058 AllGreatEffect                           ModelClassType ClearTypeEffect ClearTypeEffect ClearTypeEffect Pointer
+    // 060 AllPerfectEffect                         ModelClassType ClearTypeEffect ClearTypeEffect ClearTypeEffect Pointer
+    // 068 AllShinyEffect                           ModelClassType ClearTypeEffect ClearTypeEffect ClearTypeEffect Pointer
+    // 070 CurrentCombo                             ModelPrimitiveType int int int Int32
+    // 078 PunchTweener                             ModelClassType Tweener Tweener Tweener Pointer
+    // 080 IsSkillActive                            ModelPrimitiveType bool bool bool Bool
+    // 088 CurrentClearTypeEffect                   ModelClassType ClearTypeEffect ClearTypeEffect ClearTypeEffect Pointer
     public partial class ComboView : DataModel
     {
         public Transform?                               ComboNumberParent                       { get; set; }
         public ComboDigitView?                          ComboNumberDigitView                    { get; set; }
-        public List<ComboDigitView>?                    ComboNumberDigitEffectViews             { get; set; }
         public float                                    Spacing                                 { get; set; }
         public ParticleSystem?                          SkillEffect                             { get; set; }
         public float                                    PunchStrength                           { get; set; }
         public float                                    PunchDuration                           { get; set; }
         public SpecialComboNumberEffect?                SpecialNumberEffect283                  { get; set; }
         public SpecialComboNumberEffect?                SpecialNumberEffect412                  { get; set; }
-        public List<GameObject>?                        AllPerfectEffects                       { get; set; }
+        public ClearTypeEffect?                         AllGreatEffect                          { get; set; }
+        public ClearTypeEffect?                         AllPerfectEffect                        { get; set; }
+        public ClearTypeEffect?                         AllShinyEffect                          { get; set; }
         public int                                      CurrentCombo                            { get; set; }
         public Tweener?                                 PunchTweener                            { get; set; }
         public bool                                     IsSkillActive                           { get; set; }
+        public ClearTypeEffect?                         CurrentClearTypeEffect                  { get; set; }
 
         public static ComboView? FromPointer(IntPtr p0)
         {
@@ -45,19 +49,21 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ComboView() { Pointer= p0 };
 
-            value.ComboNumberParent                         = GetObject<Transform>(new IntPtr(p + 0x020), ReversePrism.DataModels.Transform.FromPointer); // 024664F26F98 0x20 ComboNumberParent           ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.ComboNumberDigitView                      = GetObject<ComboDigitView>(new IntPtr(p + 0x028), ReversePrism.DataModels.ComboDigitView.FromPointer); // 024664F26FB8 0x28 ComboNumberDigitView        ( 0001865DDAD0 ModelClassType ComboDigitView ComboDigitView ComboDigitView Pointer )
-            value.ComboNumberDigitEffectViews               = GetObjectList<ComboDigitView>(new IntPtr(p + 0x030), ReversePrism.DataModels.ComboDigitView.FromPointer); // 024664F26FD8 0x30 ComboNumberDigitEffectViews ( 000185B762D0 ModelClassListType ComboDigitView[] ComboDigitView[] List<ComboDigitView> Pointer )
-            value.Spacing                                   = GetSingle(new IntPtr(p + 0x038)); // 024664F26FF8 0x38 Spacing                     ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.SkillEffect                               = GetObject<ParticleSystem>(new IntPtr(p + 0x040), ReversePrism.DataModels.ParticleSystem.FromPointer); // 024664F27018 0x40 SkillEffect                 ( 000186723C20 ModelClassType ParticleSystem ParticleSystem ParticleSystem Pointer )
-            value.PunchStrength                             = GetSingle(new IntPtr(p + 0x048)); // 024664F27038 0x48 PunchStrength               ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.PunchDuration                             = GetSingle(new IntPtr(p + 0x04C)); // 024664F27058 0x4C PunchDuration               ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.SpecialNumberEffect283                    = GetObject<SpecialComboNumberEffect>(new IntPtr(p + 0x050), ReversePrism.DataModels.SpecialComboNumberEffect.FromPointer); // 024664F27078 0x50 SpecialNumberEffect283      ( 00018653DAF0 ModelClassType SpecialComboNumberEffect SpecialComboNumberEffect SpecialComboNumberEffect Pointer )
-            value.SpecialNumberEffect412                    = GetObject<SpecialComboNumberEffect>(new IntPtr(p + 0x058), ReversePrism.DataModels.SpecialComboNumberEffect.FromPointer); // 024664F27098 0x58 SpecialNumberEffect412      ( 00018653DAF0 ModelClassType SpecialComboNumberEffect SpecialComboNumberEffect SpecialComboNumberEffect Pointer )
-            value.AllPerfectEffects                         = GetObjectList<GameObject>(new IntPtr(p + 0x060), ReversePrism.DataModels.GameObject.FromPointer); // 024664F270B8 0x60 AllPerfectEffects           ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
-            value.CurrentCombo                              = GetInt32(new IntPtr(p + 0x068)); // 024664F270D8 0x68 CurrentCombo                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.PunchTweener                              = GetObject<Tweener>(new IntPtr(p + 0x070), ReversePrism.DataModels.Tweener.FromPointer); // 024664F270F8 0x70 PunchTweener                ( 0001866C3DE0 ModelClassType Tweener Tweener Tweener Pointer )
-            value.IsSkillActive                             = GetBool(new IntPtr(p + 0x078)); // 024664F27118 0x78 IsSkillActive               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ComboNumberParent                         = GetObject<Transform>(new IntPtr(p + 0x020), ReversePrism.DataModels.Transform.FromPointer); // 0x20 ComboNumberParent           ( ModelClassType Transform Transform Transform Pointer )
+            value.ComboNumberDigitView                      = GetObject<ComboDigitView>(new IntPtr(p + 0x028), ReversePrism.DataModels.ComboDigitView.FromPointer); // 0x28 ComboNumberDigitView        ( ModelClassType ComboDigitView ComboDigitView ComboDigitView Pointer )
+            value.Spacing                                   = GetSingle(new IntPtr(p + 0x030)); // 0x30 Spacing                     ( ModelPrimitiveType float float float Single )
+            value.SkillEffect                               = GetObject<ParticleSystem>(new IntPtr(p + 0x038), ReversePrism.DataModels.ParticleSystem.FromPointer); // 0x38 SkillEffect                 ( ModelClassType ParticleSystem ParticleSystem ParticleSystem Pointer )
+            value.PunchStrength                             = GetSingle(new IntPtr(p + 0x040)); // 0x40 PunchStrength               ( ModelPrimitiveType float float float Single )
+            value.PunchDuration                             = GetSingle(new IntPtr(p + 0x044)); // 0x44 PunchDuration               ( ModelPrimitiveType float float float Single )
+            value.SpecialNumberEffect283                    = GetObject<SpecialComboNumberEffect>(new IntPtr(p + 0x048), ReversePrism.DataModels.SpecialComboNumberEffect.FromPointer); // 0x48 SpecialNumberEffect283      ( ModelClassType SpecialComboNumberEffect SpecialComboNumberEffect SpecialComboNumberEffect Pointer )
+            value.SpecialNumberEffect412                    = GetObject<SpecialComboNumberEffect>(new IntPtr(p + 0x050), ReversePrism.DataModels.SpecialComboNumberEffect.FromPointer); // 0x50 SpecialNumberEffect412      ( ModelClassType SpecialComboNumberEffect SpecialComboNumberEffect SpecialComboNumberEffect Pointer )
+            value.AllGreatEffect                            = GetObject<ClearTypeEffect>(new IntPtr(p + 0x058), ReversePrism.DataModels.ClearTypeEffect.FromPointer); // 0x58 AllGreatEffect              ( ModelClassType ClearTypeEffect ClearTypeEffect ClearTypeEffect Pointer )
+            value.AllPerfectEffect                          = GetObject<ClearTypeEffect>(new IntPtr(p + 0x060), ReversePrism.DataModels.ClearTypeEffect.FromPointer); // 0x60 AllPerfectEffect            ( ModelClassType ClearTypeEffect ClearTypeEffect ClearTypeEffect Pointer )
+            value.AllShinyEffect                            = GetObject<ClearTypeEffect>(new IntPtr(p + 0x068), ReversePrism.DataModels.ClearTypeEffect.FromPointer); // 0x68 AllShinyEffect              ( ModelClassType ClearTypeEffect ClearTypeEffect ClearTypeEffect Pointer )
+            value.CurrentCombo                              = GetInt32(new IntPtr(p + 0x070)); // 0x70 CurrentCombo                ( ModelPrimitiveType int int int Int32 )
+            value.PunchTweener                              = GetObject<Tweener>(new IntPtr(p + 0x078), ReversePrism.DataModels.Tweener.FromPointer); // 0x78 PunchTweener                ( ModelClassType Tweener Tweener Tweener Pointer )
+            value.IsSkillActive                             = GetBool(new IntPtr(p + 0x080)); // 0x80 IsSkillActive               ( ModelPrimitiveType bool bool bool Bool )
+            value.CurrentClearTypeEffect                    = GetObject<ClearTypeEffect>(new IntPtr(p + 0x088), ReversePrism.DataModels.ClearTypeEffect.FromPointer); // 0x88 CurrentClearTypeEffect      ( ModelClassType ClearTypeEffect ClearTypeEffect ClearTypeEffect Pointer )
 
             return value;
         }

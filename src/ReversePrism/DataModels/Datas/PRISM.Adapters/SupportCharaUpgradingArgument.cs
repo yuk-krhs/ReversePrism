@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 JumpParam                                0001865E8C40 ModelClassType SupportCharaUpgradingViewParameter SupportCharaUpgradingViewParameter SupportCharaUpgradingViewParameter Pointer
+    // 010 JumpParam                                ModelClassType SupportCharaUpgradingViewParameter SupportCharaUpgradingViewParameter SupportCharaUpgradingViewParameter Pointer
     public partial class SupportCharaUpgradingArgument : DataModel
     {
         public SupportCharaUpgradingViewParameter?      JumpParam                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SupportCharaUpgradingArgument() { Pointer= p0 };
 
-            value.JumpParam                                 = GetObject<SupportCharaUpgradingViewParameter>(new IntPtr(p + 0x010), ReversePrism.DataModels.SupportCharaUpgradingViewParameter.FromPointer); // 0246660CCF40 0x10 JumpParam                   ( 0001865E8C40 ModelClassType SupportCharaUpgradingViewParameter SupportCharaUpgradingViewParameter SupportCharaUpgradingViewParameter Pointer )
+            value.JumpParam                                 = GetObject<SupportCharaUpgradingViewParameter>(new IntPtr(p + 0x010), ReversePrism.DataModels.SupportCharaUpgradingViewParameter.FromPointer); // 0x10 JumpParam                   ( ModelClassType SupportCharaUpgradingViewParameter SupportCharaUpgradingViewParameter SupportCharaUpgradingViewParameter Pointer )
 
             return value;
         }

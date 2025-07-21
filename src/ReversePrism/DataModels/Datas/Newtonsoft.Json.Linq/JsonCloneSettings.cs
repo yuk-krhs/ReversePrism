@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 SkipCopyAnnotations                      JsonCloneSettings IL2CPP_TYPE_CLASS
-    // 010 CopyAnnotations                          000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 CopyAnnotations                          ModelPrimitiveType bool bool bool Bool
     public partial class JsonCloneSettings : DataModel
     {
         public bool                                     CopyAnnotations                         { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JsonCloneSettings() { Pointer= p0 };
 
-            value.CopyAnnotations                           = GetBool(new IntPtr(p + 0x010)); // 024668848E08 0x10 CopyAnnotations             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CopyAnnotations                           = GetBool(new IntPtr(p + 0x010)); // 0x10 CopyAnnotations             ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

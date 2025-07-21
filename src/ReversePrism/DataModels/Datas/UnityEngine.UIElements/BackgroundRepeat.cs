@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 X                                        000186661D30 ModelEnumType Repeat Repeat Repeat Int32
-    // 014 Y                                        000186661D30 ModelEnumType Repeat Repeat Repeat Int32
+    // 010 X                                        ModelEnumType Repeat Repeat Repeat Int32
+    // 014 Y                                        ModelEnumType Repeat Repeat Repeat Int32
     public partial class BackgroundRepeat : DataModel
     {
         public Repeat                                   X                                       { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BackgroundRepeat() { Pointer= p0 };
 
-            value.X                                         = (Repeat)GetInt32(new IntPtr(p + 0x010)); // 0245A3F2D460 0x10 X                           ( 000186661D30 ModelEnumType Repeat Repeat Repeat Int32 )
-            value.Y                                         = (Repeat)GetInt32(new IntPtr(p + 0x014)); // 0245A3F2D480 0x14 Y                           ( 000186661D30 ModelEnumType Repeat Repeat Repeat Int32 )
+            value.X                                         = (Repeat)GetInt32(new IntPtr(p + 0x010)); // 0x10 X                           ( ModelEnumType Repeat Repeat Repeat Int32 )
+            value.Y                                         = (Repeat)GetInt32(new IntPtr(p + 0x014)); // 0x14 Y                           ( ModelEnumType Repeat Repeat Repeat Int32 )
 
             return value;
         }

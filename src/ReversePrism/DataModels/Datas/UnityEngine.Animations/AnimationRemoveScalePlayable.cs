@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Handle                                 000186640190 ModelEnumType PlayableHandle PlayableHandle PlayableHandle Int32
+    // 010 M_Handle                                 ModelEnumType PlayableHandle PlayableHandle PlayableHandle Int32
     // 000 m_NullPlayable                           AnimationRemoveScalePlayable IL2CPP_TYPE_VALUETYPE
     public partial class AnimationRemoveScalePlayable : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AnimationRemoveScalePlayable() { Pointer= p0 };
 
-            value.M_Handle                                  = (PlayableHandle)GetInt32(new IntPtr(p + 0x010)); // 0245A2243EC0 0x10 M_Handle                    ( 000186640190 ModelEnumType PlayableHandle PlayableHandle PlayableHandle Int32 )
+            value.M_Handle                                  = (PlayableHandle)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_Handle                    ( ModelEnumType PlayableHandle PlayableHandle PlayableHandle Int32 )
 
             return value;
         }

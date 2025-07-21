@@ -12,16 +12,16 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 LiveBonusRewardListFieldNumber           int IL2CPP_TYPE_I4
     // 008 _repeated_liveBonusRewardList_codec      FieldCodec`1<LivePlayRewardStatus> IL2CPP_TYPE_GENERICINST
-    // 018 LiveBonusRewardList                      000185CE3518 ModelClassListType RepeatedField`1<LivePlayRewardStatus> RepeatedField`1<LivePlayRewardStatus> List<LivePlayRewardStatus> Pointer
+    // 018 LiveBonusRewardList                      ModelClassListType RepeatedField`1<LivePlayRewardStatus> RepeatedField`1<LivePlayRewardStatus> List<LivePlayRewardStatus> Pointer
     // 000 ClearRewardListFieldNumber               int IL2CPP_TYPE_I4
     // 010 _repeated_clearRewardList_codec          FieldCodec`1<LivePlayRewardStatus> IL2CPP_TYPE_GENERICINST
-    // 020 ClearRewardList                          000185CE3518 ModelClassListType RepeatedField`1<LivePlayRewardStatus> RepeatedField`1<LivePlayRewardStatus> List<LivePlayRewardStatus> Pointer
+    // 020 ClearRewardList                          ModelClassListType RepeatedField`1<LivePlayRewardStatus> RepeatedField`1<LivePlayRewardStatus> List<LivePlayRewardStatus> Pointer
     // 000 ScoreRankRewardListFieldNumber           int IL2CPP_TYPE_I4
     // 018 _repeated_scoreRankRewardList_codec      FieldCodec`1<LivePlayRewardStatus> IL2CPP_TYPE_GENERICINST
-    // 028 ScoreRankRewardList                      000185CE3518 ModelClassListType RepeatedField`1<LivePlayRewardStatus> RepeatedField`1<LivePlayRewardStatus> List<LivePlayRewardStatus> Pointer
+    // 028 ScoreRankRewardList                      ModelClassListType RepeatedField`1<LivePlayRewardStatus> RepeatedField`1<LivePlayRewardStatus> List<LivePlayRewardStatus> Pointer
     // 000 OtherRewardListFieldNumber               int IL2CPP_TYPE_I4
     // 020 _repeated_otherRewardList_codec          FieldCodec`1<LivePlayRewardStatus> IL2CPP_TYPE_GENERICINST
-    // 030 OtherRewardList                          000185CE3518 ModelClassListType RepeatedField`1<LivePlayRewardStatus> RepeatedField`1<LivePlayRewardStatus> List<LivePlayRewardStatus> Pointer
+    // 030 OtherRewardList                          ModelClassListType RepeatedField`1<LivePlayRewardStatus> RepeatedField`1<LivePlayRewardStatus> List<LivePlayRewardStatus> Pointer
     public partial class LivePlayRewardPackStatus : DataModel
     {
         public List<LivePlayRewardStatus>?              LiveBonusRewardList                     { get; set; }
@@ -37,10 +37,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LivePlayRewardPackStatus() { Pointer= p0 };
 
-            value.LiveBonusRewardList                       = GetObjectList<LivePlayRewardStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.LivePlayRewardStatus.FromPointer); // 0246612D0700 0x18 LiveBonusRewardList         ( 000185CE3518 ModelClassListType RepeatedField`1<LivePlayRewardStatus> RepeatedField`1<LivePlayRewardStatus> List<LivePlayRewardStatus> Pointer )
-            value.ClearRewardList                           = GetObjectList<LivePlayRewardStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LivePlayRewardStatus.FromPointer); // 0246612D0760 0x20 ClearRewardList             ( 000185CE3518 ModelClassListType RepeatedField`1<LivePlayRewardStatus> RepeatedField`1<LivePlayRewardStatus> List<LivePlayRewardStatus> Pointer )
-            value.ScoreRankRewardList                       = GetObjectList<LivePlayRewardStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.LivePlayRewardStatus.FromPointer); // 0246612D07C0 0x28 ScoreRankRewardList         ( 000185CE3518 ModelClassListType RepeatedField`1<LivePlayRewardStatus> RepeatedField`1<LivePlayRewardStatus> List<LivePlayRewardStatus> Pointer )
-            value.OtherRewardList                           = GetObjectList<LivePlayRewardStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.LivePlayRewardStatus.FromPointer); // 0246612D0820 0x30 OtherRewardList             ( 000185CE3518 ModelClassListType RepeatedField`1<LivePlayRewardStatus> RepeatedField`1<LivePlayRewardStatus> List<LivePlayRewardStatus> Pointer )
+            value.LiveBonusRewardList                       = GetObjectList<LivePlayRewardStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.LivePlayRewardStatus.FromPointer); // 0x18 LiveBonusRewardList         ( ModelClassListType RepeatedField`1<LivePlayRewardStatus> RepeatedField`1<LivePlayRewardStatus> List<LivePlayRewardStatus> Pointer )
+            value.ClearRewardList                           = GetObjectList<LivePlayRewardStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LivePlayRewardStatus.FromPointer); // 0x20 ClearRewardList             ( ModelClassListType RepeatedField`1<LivePlayRewardStatus> RepeatedField`1<LivePlayRewardStatus> List<LivePlayRewardStatus> Pointer )
+            value.ScoreRankRewardList                       = GetObjectList<LivePlayRewardStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.LivePlayRewardStatus.FromPointer); // 0x28 ScoreRankRewardList         ( ModelClassListType RepeatedField`1<LivePlayRewardStatus> RepeatedField`1<LivePlayRewardStatus> List<LivePlayRewardStatus> Pointer )
+            value.OtherRewardList                           = GetObjectList<LivePlayRewardStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.LivePlayRewardStatus.FromPointer); // 0x30 OtherRewardList             ( ModelClassListType RepeatedField`1<LivePlayRewardStatus> RepeatedField`1<LivePlayRewardStatus> List<LivePlayRewardStatus> Pointer )
 
             return value;
         }

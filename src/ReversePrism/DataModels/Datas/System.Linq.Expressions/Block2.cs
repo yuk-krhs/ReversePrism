@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 _arg0                                    <object> IL2CPP_TYPE_OBJECT
-    // 018 Arg1                                     0001865CF210 ModelClassType Expression Expression Expression Pointer
+    // 018 Arg1                                     ModelClassType Expression Expression Expression Pointer
     public partial class Block2 : DataModel
     {
         public Expression?                              Arg1                                    { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Block2() { Pointer= p0 };
 
-            value.Arg1                                      = GetObject<Expression>(new IntPtr(p + 0x018), ReversePrism.DataModels.Expression.FromPointer); // 024669F95230 0x18 Arg1                        ( 0001865CF210 ModelClassType Expression Expression Expression Pointer )
+            value.Arg1                                      = GetObject<Expression>(new IntPtr(p + 0x018), ReversePrism.DataModels.Expression.FromPointer); // 0x18 Arg1                        ( ModelClassType Expression Expression Expression Pointer )
 
             return value;
         }

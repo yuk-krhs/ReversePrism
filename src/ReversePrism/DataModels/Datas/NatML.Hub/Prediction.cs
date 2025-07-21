@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Id                                       0001866722E0 ModelPrimitiveType string string string String
-    // 018 Status                                   0001866722E0 ModelPrimitiveType string string string String
-    // 020 Results                                  000185B7ED50 ModelClassListType Feature[] Feature[] List<Feature> Pointer
-    // 028 Error                                    0001866722E0 ModelPrimitiveType string string string String
+    // 010 Id                                       ModelPrimitiveType string string string String
+    // 018 Status                                   ModelPrimitiveType string string string String
+    // 020 Results                                  ModelClassListType Feature[] Feature[] List<Feature> Pointer
+    // 028 Error                                    ModelPrimitiveType string string string String
     public partial class Prediction : DataModel
     {
         public string                                   Id                                      { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Prediction() { Pointer= p0 };
 
-            value.Id                                        = GetString(new IntPtr(p + 0x010)); // 02466BE3FAB8 0x10 Id                          ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Status                                    = GetString(new IntPtr(p + 0x018)); // 02466BE3FAD8 0x18 Status                      ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Results                                   = GetObjectList<Feature>(new IntPtr(p + 0x020), ReversePrism.DataModels.Feature.FromPointer); // 02466BE3FAF8 0x20 Results                     ( 000185B7ED50 ModelClassListType Feature[] Feature[] List<Feature> Pointer )
-            value.Error                                     = GetString(new IntPtr(p + 0x028)); // 02466BE3FB18 0x28 Error                       ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Id                                        = GetString(new IntPtr(p + 0x010)); // 0x10 Id                          ( ModelPrimitiveType string string string String )
+            value.Status                                    = GetString(new IntPtr(p + 0x018)); // 0x18 Status                      ( ModelPrimitiveType string string string String )
+            value.Results                                   = GetObjectList<Feature>(new IntPtr(p + 0x020), ReversePrism.DataModels.Feature.FromPointer); // 0x20 Results                     ( ModelClassListType Feature[] Feature[] List<Feature> Pointer )
+            value.Error                                     = GetString(new IntPtr(p + 0x028)); // 0x28 Error                       ( ModelPrimitiveType string string string String )
 
             return value;
         }

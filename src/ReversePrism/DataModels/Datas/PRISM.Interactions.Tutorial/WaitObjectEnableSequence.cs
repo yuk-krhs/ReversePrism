@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ObjectName                               000186671910 ModelPrimitiveType string string string String
-    // 018 Exists                                   000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 ObjectName                               ModelPrimitiveType string string string String
+    // 018 Exists                                   ModelPrimitiveType bool bool bool Bool
     public partial class WaitObjectEnableSequence : DataModel
     {
         public string                                   ObjectName                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new WaitObjectEnableSequence() { Pointer= p0 };
 
-            value.ObjectName                                = GetString(new IntPtr(p + 0x010)); // 02466BCA9A50 0x10 ObjectName                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.Exists                                    = GetBool(new IntPtr(p + 0x018)); // 02466BCA9A70 0x18 Exists                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ObjectName                                = GetString(new IntPtr(p + 0x010)); // 0x10 ObjectName                  ( ModelPrimitiveType string string string String )
+            value.Exists                                    = GetBool(new IntPtr(p + 0x018)); // 0x18 Exists                      ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

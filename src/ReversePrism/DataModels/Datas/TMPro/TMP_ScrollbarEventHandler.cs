@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 IsSelected                               000186595960 ModelPrimitiveType bool bool bool Bool
+    // 020 IsSelected                               ModelPrimitiveType bool bool bool Bool
     public partial class TMP_ScrollbarEventHandler : DataModel
     {
         public bool                                     IsSelected                              { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TMP_ScrollbarEventHandler() { Pointer= p0 };
 
-            value.IsSelected                                = GetBool(new IntPtr(p + 0x020)); // 02466A696500 0x20 IsSelected                  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.IsSelected                                = GetBool(new IntPtr(p + 0x020)); // 0x20 IsSelected                  ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

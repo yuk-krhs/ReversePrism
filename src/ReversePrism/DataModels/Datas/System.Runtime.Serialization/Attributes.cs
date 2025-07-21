@@ -10,19 +10,19 @@ namespace ReversePrism.DataModels
 
     // 000 serializationLocalNames                  XmlDictionaryString[] IL2CPP_TYPE_SZARRAY
     // 008 schemaInstanceLocalNames                 XmlDictionaryString[] IL2CPP_TYPE_SZARRAY
-    // 010 Id                                       000186671BA0 ModelPrimitiveType string string string String
-    // 018 Ref                                      000186671BA0 ModelPrimitiveType string string string String
-    // 020 XsiTypeName                              000186671BA0 ModelPrimitiveType string string string String
-    // 028 XsiTypeNamespace                         000186671BA0 ModelPrimitiveType string string string String
-    // 030 XsiTypePrefix                            000186671BA0 ModelPrimitiveType string string string String
-    // 038 XsiNil                                   000186595210 ModelPrimitiveType bool bool bool Bool
-    // 040 ClrAssembly                              000186671BA0 ModelPrimitiveType string string string String
-    // 048 ClrType                                  000186671BA0 ModelPrimitiveType string string string String
-    // 050 ArraySZSize                              0001865F2F90 ModelPrimitiveType int int int Int32
-    // 058 FactoryTypeName                          000186671BA0 ModelPrimitiveType string string string String
-    // 060 FactoryTypeNamespace                     000186671BA0 ModelPrimitiveType string string string String
-    // 068 FactoryTypePrefix                        000186671BA0 ModelPrimitiveType string string string String
-    // 070 UnrecognizedAttributesFound              000186595210 ModelPrimitiveType bool bool bool Bool
+    // 010 Id                                       ModelPrimitiveType string string string String
+    // 018 Ref                                      ModelPrimitiveType string string string String
+    // 020 XsiTypeName                              ModelPrimitiveType string string string String
+    // 028 XsiTypeNamespace                         ModelPrimitiveType string string string String
+    // 030 XsiTypePrefix                            ModelPrimitiveType string string string String
+    // 038 XsiNil                                   ModelPrimitiveType bool bool bool Bool
+    // 040 ClrAssembly                              ModelPrimitiveType string string string String
+    // 048 ClrType                                  ModelPrimitiveType string string string String
+    // 050 ArraySZSize                              ModelPrimitiveType int int int Int32
+    // 058 FactoryTypeName                          ModelPrimitiveType string string string String
+    // 060 FactoryTypeNamespace                     ModelPrimitiveType string string string String
+    // 068 FactoryTypePrefix                        ModelPrimitiveType string string string String
+    // 070 UnrecognizedAttributesFound              ModelPrimitiveType bool bool bool Bool
     public partial class Attributes : DataModel
     {
         public string                                   Id                                      { get; set; }
@@ -47,19 +47,19 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Attributes() { Pointer= p0 };
 
-            value.Id                                        = GetString(new IntPtr(p + 0x010)); // 0245A4D28C80 0x10 Id                          ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.Ref                                       = GetString(new IntPtr(p + 0x018)); // 0245A4D28CA0 0x18 Ref                         ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.XsiTypeName                               = GetString(new IntPtr(p + 0x020)); // 0245A4D28CC0 0x20 XsiTypeName                 ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.XsiTypeNamespace                          = GetString(new IntPtr(p + 0x028)); // 0245A4D28CE0 0x28 XsiTypeNamespace            ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.XsiTypePrefix                             = GetString(new IntPtr(p + 0x030)); // 0245A4D28D00 0x30 XsiTypePrefix               ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.XsiNil                                    = GetBool(new IntPtr(p + 0x038)); // 0245A4D28D20 0x38 XsiNil                      ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.ClrAssembly                               = GetString(new IntPtr(p + 0x040)); // 0245A4D28D40 0x40 ClrAssembly                 ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.ClrType                                   = GetString(new IntPtr(p + 0x048)); // 0245A4D28D60 0x48 ClrType                     ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.ArraySZSize                               = GetInt32(new IntPtr(p + 0x050)); // 0245A4D28D80 0x50 ArraySZSize                 ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.FactoryTypeName                           = GetString(new IntPtr(p + 0x058)); // 0245A4D28DA0 0x58 FactoryTypeName             ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.FactoryTypeNamespace                      = GetString(new IntPtr(p + 0x060)); // 0245A4D28DC0 0x60 FactoryTypeNamespace        ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.FactoryTypePrefix                         = GetString(new IntPtr(p + 0x068)); // 0245A4D28DE0 0x68 FactoryTypePrefix           ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.UnrecognizedAttributesFound               = GetBool(new IntPtr(p + 0x070)); // 0245A4D28E00 0x70 UnrecognizedAttributesFound ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.Id                                        = GetString(new IntPtr(p + 0x010)); // 0x10 Id                          ( ModelPrimitiveType string string string String )
+            value.Ref                                       = GetString(new IntPtr(p + 0x018)); // 0x18 Ref                         ( ModelPrimitiveType string string string String )
+            value.XsiTypeName                               = GetString(new IntPtr(p + 0x020)); // 0x20 XsiTypeName                 ( ModelPrimitiveType string string string String )
+            value.XsiTypeNamespace                          = GetString(new IntPtr(p + 0x028)); // 0x28 XsiTypeNamespace            ( ModelPrimitiveType string string string String )
+            value.XsiTypePrefix                             = GetString(new IntPtr(p + 0x030)); // 0x30 XsiTypePrefix               ( ModelPrimitiveType string string string String )
+            value.XsiNil                                    = GetBool(new IntPtr(p + 0x038)); // 0x38 XsiNil                      ( ModelPrimitiveType bool bool bool Bool )
+            value.ClrAssembly                               = GetString(new IntPtr(p + 0x040)); // 0x40 ClrAssembly                 ( ModelPrimitiveType string string string String )
+            value.ClrType                                   = GetString(new IntPtr(p + 0x048)); // 0x48 ClrType                     ( ModelPrimitiveType string string string String )
+            value.ArraySZSize                               = GetInt32(new IntPtr(p + 0x050)); // 0x50 ArraySZSize                 ( ModelPrimitiveType int int int Int32 )
+            value.FactoryTypeName                           = GetString(new IntPtr(p + 0x058)); // 0x58 FactoryTypeName             ( ModelPrimitiveType string string string String )
+            value.FactoryTypeNamespace                      = GetString(new IntPtr(p + 0x060)); // 0x60 FactoryTypeNamespace        ( ModelPrimitiveType string string string String )
+            value.FactoryTypePrefix                         = GetString(new IntPtr(p + 0x068)); // 0x68 FactoryTypePrefix           ( ModelPrimitiveType string string string String )
+            value.UnrecognizedAttributesFound               = GetBool(new IntPtr(p + 0x070)); // 0x70 UnrecognizedAttributesFound ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

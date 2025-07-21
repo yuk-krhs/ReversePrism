@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 U64_0                                    00018669BB50 ModelPrimitiveType ulong ulong ulong UInt64
-    // 018 U64_1                                    00018669BB50 ModelPrimitiveType ulong ulong ulong UInt64
+    // 010 U64_0                                    ModelPrimitiveType ulong ulong ulong UInt64
+    // 018 U64_1                                    ModelPrimitiveType ulong ulong ulong UInt64
     // 000 kConst                                   ulong IL2CPP_TYPE_U8
     public partial class Hash128 : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Hash128() { Pointer= p0 };
 
-            value.U64_0                                     = GetUInt64(new IntPtr(p + 0x010)); // 0245A23379F0 0x10 U64_0                       ( 00018669BB50 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.U64_1                                     = GetUInt64(new IntPtr(p + 0x018)); // 0245A2337A10 0x18 U64_1                       ( 00018669BB50 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.U64_0                                     = GetUInt64(new IntPtr(p + 0x010)); // 0x10 U64_0                       ( ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.U64_1                                     = GetUInt64(new IntPtr(p + 0x018)); // 0x18 U64_1                       ( ModelPrimitiveType ulong ulong ulong UInt64 )
 
             return value;
         }

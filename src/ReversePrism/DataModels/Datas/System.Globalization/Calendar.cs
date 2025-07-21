@@ -46,10 +46,10 @@ namespace ReversePrism.DataModels
     // 000 CAL_TAIWANLUNISOLAR                      int IL2CPP_TYPE_I4
     // 000 CAL_PERSIAN                              int IL2CPP_TYPE_I4
     // 000 CAL_UMALQURA                             int IL2CPP_TYPE_I4
-    // 010 M_currentEraValue                        0001865F2F90 ModelPrimitiveType int int int Int32
-    // 014 M_isReadOnly                             000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 M_currentEraValue                        ModelPrimitiveType int int int Int32
+    // 014 M_isReadOnly                             ModelPrimitiveType bool bool bool Bool
     // 000 CurrentEra                               int IL2CPP_TYPE_I4
-    // 018 TwoDigitYearMax                          0001865F2F90 ModelPrimitiveType int int int Int32
+    // 018 TwoDigitYearMax                          ModelPrimitiveType int int int Int32
     public partial class Calendar : DataModel
     {
         public int                                      M_currentEraValue                       { get; set; }
@@ -64,9 +64,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Calendar() { Pointer= p0 };
 
-            value.M_currentEraValue                         = GetInt32(new IntPtr(p + 0x010)); // 0245A3CB49E8 0x10 M_currentEraValue           ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.M_isReadOnly                              = GetBool(new IntPtr(p + 0x014)); // 0245A3CB4A08 0x14 M_isReadOnly                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.TwoDigitYearMax                           = GetInt32(new IntPtr(p + 0x018)); // 0245A3CB4A48 0x18 TwoDigitYearMax             ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.M_currentEraValue                         = GetInt32(new IntPtr(p + 0x010)); // 0x10 M_currentEraValue           ( ModelPrimitiveType int int int Int32 )
+            value.M_isReadOnly                              = GetBool(new IntPtr(p + 0x014)); // 0x14 M_isReadOnly                ( ModelPrimitiveType bool bool bool Bool )
+            value.TwoDigitYearMax                           = GetInt32(new IntPtr(p + 0x018)); // 0x18 TwoDigitYearMax             ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

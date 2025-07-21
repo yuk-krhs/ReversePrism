@@ -11,13 +11,13 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<Api> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ServiceFieldNumber                       int IL2CPP_TYPE_I4
-    // 018 Service                                  000186671910 ModelPrimitiveType string string string String
+    // 018 Service                                  ModelPrimitiveType string string string String
     // 000 OperationFieldNumber                     int IL2CPP_TYPE_I4
-    // 020 Operation                                000186671910 ModelPrimitiveType string string string String
+    // 020 Operation                                ModelPrimitiveType string string string String
     // 000 ProtocolFieldNumber                      int IL2CPP_TYPE_I4
-    // 028 Protocol                                 000186671910 ModelPrimitiveType string string string String
+    // 028 Protocol                                 ModelPrimitiveType string string string String
     // 000 VersionFieldNumber                       int IL2CPP_TYPE_I4
-    // 030 Version                                  000186671910 ModelPrimitiveType string string string String
+    // 030 Version                                  ModelPrimitiveType string string string String
     public partial class Api : DataModel
     {
         public string                                   Service                                 { get; set; }
@@ -33,10 +33,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Api() { Pointer= p0 };
 
-            value.Service                                   = GetString(new IntPtr(p + 0x018)); // 02466A76D0E0 0x18 Service                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.Operation                                 = GetString(new IntPtr(p + 0x020)); // 02466A76D120 0x20 Operation                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.Protocol                                  = GetString(new IntPtr(p + 0x028)); // 02466A76D160 0x28 Protocol                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.Version                                   = GetString(new IntPtr(p + 0x030)); // 02466A76D1A0 0x30 Version                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Service                                   = GetString(new IntPtr(p + 0x018)); // 0x18 Service                     ( ModelPrimitiveType string string string String )
+            value.Operation                                 = GetString(new IntPtr(p + 0x020)); // 0x20 Operation                   ( ModelPrimitiveType string string string String )
+            value.Protocol                                  = GetString(new IntPtr(p + 0x028)); // 0x28 Protocol                    ( ModelPrimitiveType string string string String )
+            value.Version                                   = GetString(new IntPtr(p + 0x030)); // 0x30 Version                     ( ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -11,18 +11,18 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<SkipLiveArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstSongIdFieldNumber                     int IL2CPP_TYPE_I4
-    // 018 MstSongId                                0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MstSongId                                ModelPrimitiveType int int int Int32
     // 000 DifficultyLevelFieldNumber               int IL2CPP_TYPE_I4
-    // 01C DifficultyLevel                          000186529820 ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32
+    // 01C DifficultyLevel                          ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32
     // 000 LiveBoostFieldNumber                     int IL2CPP_TYPE_I4
-    // 020 LiveBoost                                0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 LiveBoost                                ModelPrimitiveType int int int Int32
     // 000 UnitNumberFieldNumber                    int IL2CPP_TYPE_I4
-    // 024 UnitNumber                               0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 024 UnitNumber                               ModelPrimitiveType int int int Int32
     // 000 SupportIdolListFieldNumber               int IL2CPP_TYPE_I4
     // 008 _repeated_supportIdolList_codec          FieldCodec`1<LiveSupportIdolStatus> IL2CPP_TYPE_GENERICINST
-    // 028 SupportIdolList                          000185CE3E48 ModelClassListType RepeatedField`1<LiveSupportIdolStatus> RepeatedField`1<LiveSupportIdolStatus> List<LiveSupportIdolStatus> Pointer
+    // 028 SupportIdolList                          ModelClassListType RepeatedField`1<LiveSupportIdolStatus> RepeatedField`1<LiveSupportIdolStatus> List<LiveSupportIdolStatus> Pointer
     // 000 StaminaTypeFieldNumber                   int IL2CPP_TYPE_I4
-    // 030 StaminaType                              000186517160 ModelEnumType SkipLiveStaminaType SkipLiveStaminaType SkipLiveStaminaType Int32
+    // 030 StaminaType                              ModelEnumType SkipLiveStaminaType SkipLiveStaminaType SkipLiveStaminaType Int32
     public partial class SkipLiveArgs : DataModel
     {
         public int                                      MstSongId                               { get; set; }
@@ -40,12 +40,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SkipLiveArgs() { Pointer= p0 };
 
-            value.MstSongId                                 = GetInt32(new IntPtr(p + 0x018)); // 0246621A41A0 0x18 MstSongId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.DifficultyLevel                           = (SongDifficultyLevel)GetInt32(new IntPtr(p + 0x01C)); // 0246621A41E0 0x1C DifficultyLevel             ( 000186529820 ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32 )
-            value.LiveBoost                                 = GetInt32(new IntPtr(p + 0x020)); // 0246621A4220 0x20 LiveBoost                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UnitNumber                                = GetInt32(new IntPtr(p + 0x024)); // 0246621A4260 0x24 UnitNumber                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SupportIdolList                           = GetObjectList<LiveSupportIdolStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.LiveSupportIdolStatus.FromPointer); // 0246621A42C0 0x28 SupportIdolList             ( 000185CE3E48 ModelClassListType RepeatedField`1<LiveSupportIdolStatus> RepeatedField`1<LiveSupportIdolStatus> List<LiveSupportIdolStatus> Pointer )
-            value.StaminaType                               = (SkipLiveStaminaType)GetInt32(new IntPtr(p + 0x030)); // 0246621A4300 0x30 StaminaType                 ( 000186517160 ModelEnumType SkipLiveStaminaType SkipLiveStaminaType SkipLiveStaminaType Int32 )
+            value.MstSongId                                 = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstSongId                   ( ModelPrimitiveType int int int Int32 )
+            value.DifficultyLevel                           = (SongDifficultyLevel)GetInt32(new IntPtr(p + 0x01C)); // 0x1C DifficultyLevel             ( ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32 )
+            value.LiveBoost                                 = GetInt32(new IntPtr(p + 0x020)); // 0x20 LiveBoost                   ( ModelPrimitiveType int int int Int32 )
+            value.UnitNumber                                = GetInt32(new IntPtr(p + 0x024)); // 0x24 UnitNumber                  ( ModelPrimitiveType int int int Int32 )
+            value.SupportIdolList                           = GetObjectList<LiveSupportIdolStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.LiveSupportIdolStatus.FromPointer); // 0x28 SupportIdolList             ( ModelClassListType RepeatedField`1<LiveSupportIdolStatus> RepeatedField`1<LiveSupportIdolStatus> List<LiveSupportIdolStatus> Pointer )
+            value.StaminaType                               = (SkipLiveStaminaType)GetInt32(new IntPtr(p + 0x030)); // 0x30 StaminaType                 ( ModelEnumType SkipLiveStaminaType SkipLiveStaminaType SkipLiveStaminaType Int32 )
 
             return value;
         }

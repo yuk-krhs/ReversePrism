@@ -8,18 +8,18 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Positions                              000185D1AE38 ModelEnumListType List`1<Vector3> List`1<Vector3> List<Vector3> Pointer
-    // 018 M_Colors                                 000185CD3678 ModelEnumListType List`1<Color32> List`1<Color32> List<Color32> Pointer
-    // 020 M_Uv0S                                   000185D1B118 ModelEnumListType List`1<Vector4> List`1<Vector4> List<Vector4> Pointer
-    // 028 M_Uv1S                                   000185D1B118 ModelEnumListType List`1<Vector4> List`1<Vector4> List<Vector4> Pointer
-    // 030 M_Uv2S                                   000185D1B118 ModelEnumListType List`1<Vector4> List`1<Vector4> List<Vector4> Pointer
-    // 038 M_Uv3S                                   000185D1B118 ModelEnumListType List`1<Vector4> List`1<Vector4> List<Vector4> Pointer
-    // 040 M_Normals                                000185D1AE38 ModelEnumListType List`1<Vector3> List`1<Vector3> List<Vector3> Pointer
-    // 048 M_Tangents                               000185D1B118 ModelEnumListType List`1<Vector4> List`1<Vector4> List<Vector4> Pointer
-    // 050 M_Indices                                000185CECF28 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer
+    // 010 M_Positions                              ModelEnumListType List`1<Vector3> List`1<Vector3> List<Vector3> Pointer
+    // 018 M_Colors                                 ModelEnumListType List`1<Color32> List`1<Color32> List<Color32> Pointer
+    // 020 M_Uv0S                                   ModelEnumListType List`1<Vector4> List`1<Vector4> List<Vector4> Pointer
+    // 028 M_Uv1S                                   ModelEnumListType List`1<Vector4> List`1<Vector4> List<Vector4> Pointer
+    // 030 M_Uv2S                                   ModelEnumListType List`1<Vector4> List`1<Vector4> List<Vector4> Pointer
+    // 038 M_Uv3S                                   ModelEnumListType List`1<Vector4> List`1<Vector4> List<Vector4> Pointer
+    // 040 M_Normals                                ModelEnumListType List`1<Vector3> List`1<Vector3> List<Vector3> Pointer
+    // 048 M_Tangents                               ModelEnumListType List`1<Vector4> List`1<Vector4> List<Vector4> Pointer
+    // 050 M_Indices                                ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer
     // 000 s_DefaultTangent                         Vector4 IL2CPP_TYPE_VALUETYPE
-    // 010 S_DefaultNormal                          0001866ACBA0 ModelEnumType Vector3 Vector3 Vector3 Int32
-    // 058 M_ListsInitalized                        000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 S_DefaultNormal                          ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 058 M_ListsInitalized                        ModelPrimitiveType bool bool bool Bool
     public partial class VertexHelper : DataModel
     {
         public List<Vector3>?                           M_Positions                             { get; set; }
@@ -42,17 +42,17 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new VertexHelper() { Pointer= p0 };
 
-            value.M_Positions                               = GetEnumList<Vector3>(new IntPtr(p + 0x010)); // 0245A3F927E0 0x10 M_Positions                 ( 000185D1AE38 ModelEnumListType List`1<Vector3> List`1<Vector3> List<Vector3> Pointer )
-            value.M_Colors                                  = GetEnumList<Color32>(new IntPtr(p + 0x018)); // 0245A3F92800 0x18 M_Colors                    ( 000185CD3678 ModelEnumListType List`1<Color32> List`1<Color32> List<Color32> Pointer )
-            value.M_Uv0S                                    = GetEnumList<Vector4>(new IntPtr(p + 0x020)); // 0245A3F92820 0x20 M_Uv0S                      ( 000185D1B118 ModelEnumListType List`1<Vector4> List`1<Vector4> List<Vector4> Pointer )
-            value.M_Uv1S                                    = GetEnumList<Vector4>(new IntPtr(p + 0x028)); // 0245A3F92840 0x28 M_Uv1S                      ( 000185D1B118 ModelEnumListType List`1<Vector4> List`1<Vector4> List<Vector4> Pointer )
-            value.M_Uv2S                                    = GetEnumList<Vector4>(new IntPtr(p + 0x030)); // 0245A3F92860 0x30 M_Uv2S                      ( 000185D1B118 ModelEnumListType List`1<Vector4> List`1<Vector4> List<Vector4> Pointer )
-            value.M_Uv3S                                    = GetEnumList<Vector4>(new IntPtr(p + 0x038)); // 0245A3F92880 0x38 M_Uv3S                      ( 000185D1B118 ModelEnumListType List`1<Vector4> List`1<Vector4> List<Vector4> Pointer )
-            value.M_Normals                                 = GetEnumList<Vector3>(new IntPtr(p + 0x040)); // 0245A3F928A0 0x40 M_Normals                   ( 000185D1AE38 ModelEnumListType List`1<Vector3> List`1<Vector3> List<Vector3> Pointer )
-            value.M_Tangents                                = GetEnumList<Vector4>(new IntPtr(p + 0x048)); // 0245A3F928C0 0x48 M_Tangents                  ( 000185D1B118 ModelEnumListType List`1<Vector4> List`1<Vector4> List<Vector4> Pointer )
-            value.M_Indices                                 = GetInt32List(new IntPtr(p + 0x050)); // 0245A3F928E0 0x50 M_Indices                   ( 000185CECF28 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
-            value.S_DefaultNormal                           = (Vector3)GetInt32(new IntPtr(p + 0x010)); // 0245A3F92920 0x10 S_DefaultNormal             ( 0001866ACBA0 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.M_ListsInitalized                         = GetBool(new IntPtr(p + 0x058)); // 0245A3F92940 0x58 M_ListsInitalized           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_Positions                               = GetEnumList<Vector3>(new IntPtr(p + 0x010)); // 0x10 M_Positions                 ( ModelEnumListType List`1<Vector3> List`1<Vector3> List<Vector3> Pointer )
+            value.M_Colors                                  = GetEnumList<Color32>(new IntPtr(p + 0x018)); // 0x18 M_Colors                    ( ModelEnumListType List`1<Color32> List`1<Color32> List<Color32> Pointer )
+            value.M_Uv0S                                    = GetEnumList<Vector4>(new IntPtr(p + 0x020)); // 0x20 M_Uv0S                      ( ModelEnumListType List`1<Vector4> List`1<Vector4> List<Vector4> Pointer )
+            value.M_Uv1S                                    = GetEnumList<Vector4>(new IntPtr(p + 0x028)); // 0x28 M_Uv1S                      ( ModelEnumListType List`1<Vector4> List`1<Vector4> List<Vector4> Pointer )
+            value.M_Uv2S                                    = GetEnumList<Vector4>(new IntPtr(p + 0x030)); // 0x30 M_Uv2S                      ( ModelEnumListType List`1<Vector4> List`1<Vector4> List<Vector4> Pointer )
+            value.M_Uv3S                                    = GetEnumList<Vector4>(new IntPtr(p + 0x038)); // 0x38 M_Uv3S                      ( ModelEnumListType List`1<Vector4> List`1<Vector4> List<Vector4> Pointer )
+            value.M_Normals                                 = GetEnumList<Vector3>(new IntPtr(p + 0x040)); // 0x40 M_Normals                   ( ModelEnumListType List`1<Vector3> List`1<Vector3> List<Vector3> Pointer )
+            value.M_Tangents                                = GetEnumList<Vector4>(new IntPtr(p + 0x048)); // 0x48 M_Tangents                  ( ModelEnumListType List`1<Vector4> List`1<Vector4> List<Vector4> Pointer )
+            value.M_Indices                                 = GetInt32List(new IntPtr(p + 0x050)); // 0x50 M_Indices                   ( ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
+            value.S_DefaultNormal                           = (Vector3)GetInt32(new IntPtr(p + 0x010)); // 0x10 S_DefaultNormal             ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.M_ListsInitalized                         = GetBool(new IntPtr(p + 0x058)); // 0x58 M_ListsInitalized           ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

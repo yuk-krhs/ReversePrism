@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 ImgBase                                  0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 028 TxtSkillType                             0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 020 ImgBase                                  ModelClassType UIImage UIImage UIImage Pointer
+    // 028 TxtSkillType                             ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     public partial class VoDaViMeLabel : DataModel
     {
         public UIImage?                                 ImgBase                                 { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new VoDaViMeLabel() { Pointer= p0 };
 
-            value.ImgBase                                   = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 024664F55CE0 0x20 ImgBase                     ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.TxtSkillType                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024664F55D00 0x28 TxtSkillType                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ImgBase                                   = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 0x20 ImgBase                     ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.TxtSkillType                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x28 TxtSkillType                ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

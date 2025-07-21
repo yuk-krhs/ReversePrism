@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Store                                    000186671910 ModelPrimitiveType string string string String
-    // 018 TransactionId                            000186671910 ModelPrimitiveType string string string String
-    // 020 Payload                                  000186671910 ModelPrimitiveType string string string String
+    // 010 Store                                    ModelPrimitiveType string string string String
+    // 018 TransactionId                            ModelPrimitiveType string string string String
+    // 020 Payload                                  ModelPrimitiveType string string string String
     public partial class PurchaseEventModel : DataModel
     {
         public string                                   Store                                   { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PurchaseEventModel() { Pointer= p0 };
 
-            value.Store                                     = GetString(new IntPtr(p + 0x010)); // 02466B4EFAD0 0x10 Store                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.TransactionId                             = GetString(new IntPtr(p + 0x018)); // 02466B4EFAF0 0x18 TransactionId               ( 000186671910 ModelPrimitiveType string string string String )
-            value.Payload                                   = GetString(new IntPtr(p + 0x020)); // 02466B4EFB10 0x20 Payload                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Store                                     = GetString(new IntPtr(p + 0x010)); // 0x10 Store                       ( ModelPrimitiveType string string string String )
+            value.TransactionId                             = GetString(new IntPtr(p + 0x018)); // 0x18 TransactionId               ( ModelPrimitiveType string string string String )
+            value.Payload                                   = GetString(new IntPtr(p + 0x020)); // 0x20 Payload                     ( ModelPrimitiveType string string string String )
 
             return value;
         }

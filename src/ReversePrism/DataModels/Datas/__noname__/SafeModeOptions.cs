@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 NestedTweenFailureBehaviour              000186698930 ModelEnumType NestedTweenFailureBehaviour NestedTweenFailureBehaviour NestedTweenFailureBehaviour Int32
+    // 010 NestedTweenFailureBehaviour              ModelEnumType NestedTweenFailureBehaviour NestedTweenFailureBehaviour NestedTweenFailureBehaviour Int32
     public partial class SafeModeOptions : DataModel
     {
         public NestedTweenFailureBehaviour              NestedTweenFailureBehaviour             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SafeModeOptions() { Pointer= p0 };
 
-            value.NestedTweenFailureBehaviour               = (NestedTweenFailureBehaviour)GetInt32(new IntPtr(p + 0x010)); // 0245A43A95A8 0x10 NestedTweenFailureBehaviour ( 000186698930 ModelEnumType NestedTweenFailureBehaviour NestedTweenFailureBehaviour NestedTweenFailureBehaviour Int32 )
+            value.NestedTweenFailureBehaviour               = (NestedTweenFailureBehaviour)GetInt32(new IntPtr(p + 0x010)); // 0x10 NestedTweenFailureBehaviour ( ModelEnumType NestedTweenFailureBehaviour NestedTweenFailureBehaviour NestedTweenFailureBehaviour Int32 )
 
             return value;
         }

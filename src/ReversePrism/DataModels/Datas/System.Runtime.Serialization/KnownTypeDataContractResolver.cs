@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Context                                  0001865A59A0 ModelClassType XmlObjectSerializerContext XmlObjectSerializerContext XmlObjectSerializerContext Pointer
+    // 010 Context                                  ModelClassType XmlObjectSerializerContext XmlObjectSerializerContext XmlObjectSerializerContext Pointer
     public partial class KnownTypeDataContractResolver : DataModel
     {
         public XmlObjectSerializerContext?              Context                                 { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new KnownTypeDataContractResolver() { Pointer= p0 };
 
-            value.Context                                   = GetObject<XmlObjectSerializerContext>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlObjectSerializerContext.FromPointer); // 024667DA7E30 0x10 Context                     ( 0001865A59A0 ModelClassType XmlObjectSerializerContext XmlObjectSerializerContext XmlObjectSerializerContext Pointer )
+            value.Context                                   = GetObject<XmlObjectSerializerContext>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlObjectSerializerContext.FromPointer); // 0x10 Context                     ( ModelClassType XmlObjectSerializerContext XmlObjectSerializerContext XmlObjectSerializerContext Pointer )
 
             return value;
         }

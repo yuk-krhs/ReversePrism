@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 View                                     00018676B4B0 ModelClassType EventStoryLastCategoryView EventStoryLastCategoryView EventStoryLastCategoryView Pointer
+    // 020 View                                     ModelClassType EventStoryLastCategoryView EventStoryLastCategoryView EventStoryLastCategoryView Pointer
     public partial class EventStoryLastCategoryBuilder : DataModel
     {
         public EventStoryLastCategoryView?              View                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EventStoryLastCategoryBuilder() { Pointer= p0 };
 
-            value.View                                      = GetObject<EventStoryLastCategoryView>(new IntPtr(p + 0x020), ReversePrism.DataModels.EventStoryLastCategoryView.FromPointer); // 02466B6D2B58 0x20 View                        ( 00018676B4B0 ModelClassType EventStoryLastCategoryView EventStoryLastCategoryView EventStoryLastCategoryView Pointer )
+            value.View                                      = GetObject<EventStoryLastCategoryView>(new IntPtr(p + 0x020), ReversePrism.DataModels.EventStoryLastCategoryView.FromPointer); // 0x20 View                        ( ModelClassType EventStoryLastCategoryView EventStoryLastCategoryView EventStoryLastCategoryView Pointer )
 
             return value;
         }

@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 MstPotentialLiveSkillID                  0001865F4260 ModelPrimitiveType int int int Int32
-    // 014 MstPotentialLiveSkillLevelID             0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 Lv                                       0001865F4260 ModelPrimitiveType int int int Int32
+    // 010 MstPotentialLiveSkillID                  ModelPrimitiveType int int int Int32
+    // 014 MstPotentialLiveSkillLevelID             ModelPrimitiveType int int int Int32
+    // 018 Lv                                       ModelPrimitiveType int int int Int32
     public partial class LiveSkillViewModel : DataModel
     {
         public int                                      MstPotentialLiveSkillID                 { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveSkillViewModel() { Pointer= p0 };
 
-            value.MstPotentialLiveSkillID                   = GetInt32(new IntPtr(p + 0x010)); // 024665FA1970 0x10 MstPotentialLiveSkillID     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstPotentialLiveSkillLevelID              = GetInt32(new IntPtr(p + 0x014)); // 024665FA1990 0x14 MstPotentialLiveSkillLevelID ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Lv                                        = GetInt32(new IntPtr(p + 0x018)); // 024665FA19B0 0x18 Lv                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.MstPotentialLiveSkillID                   = GetInt32(new IntPtr(p + 0x010)); // 0x10 MstPotentialLiveSkillID     ( ModelPrimitiveType int int int Int32 )
+            value.MstPotentialLiveSkillLevelID              = GetInt32(new IntPtr(p + 0x014)); // 0x14 MstPotentialLiveSkillLevelID ( ModelPrimitiveType int int int Int32 )
+            value.Lv                                        = GetInt32(new IntPtr(p + 0x018)); // 0x18 Lv                          ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

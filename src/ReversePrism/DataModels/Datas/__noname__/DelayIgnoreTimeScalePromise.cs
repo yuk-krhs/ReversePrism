@@ -9,12 +9,13 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 pool                                     TaskPool`1<DelayIgnoreTimeScalePromise> IL2CPP_TYPE_GENERICINST
-    // 010 NextNode                                 000186717B40 ModelClassType DelayIgnoreTimeScalePromise DelayIgnoreTimeScalePromise DelayIgnoreTimeScalePromise Pointer
-    // 018 DelayFrameTimeSpan                       0001866656B0 ModelPrimitiveType float float float Single
-    // 01C Elapsed                                  0001866656B0 ModelPrimitiveType float float float Single
-    // 020 InitialFrame                             0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 028 CancellationToken                        00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32
-    // 030 core                                     UniTaskCompletionSourceCore`1<<object>> IL2CPP_TYPE_GENERICINST
+    // 010 NextNode                                 ModelClassType DelayIgnoreTimeScalePromise DelayIgnoreTimeScalePromise DelayIgnoreTimeScalePromise Pointer
+    // 018 DelayFrameTimeSpan                       ModelPrimitiveType float float float Single
+    // 01C Elapsed                                  ModelPrimitiveType float float float Single
+    // 020 InitialFrame                             ModelPrimitiveType int int int Int32
+    // 028 CancellationToken                        ModelEnumType CancellationToken CancellationToken CancellationToken Int32
+    // 030 CancellationTokenRegistration            ModelEnumType CancellationTokenRegistration CancellationTokenRegistration CancellationTokenRegistration Int32
+    // 048 core                                     UniTaskCompletionSourceCore`1<<object>> IL2CPP_TYPE_GENERICINST
     public partial class DelayIgnoreTimeScalePromise : DataModel
     {
         public DelayIgnoreTimeScalePromise?             NextNode                                { get; set; }
@@ -22,6 +23,7 @@ namespace ReversePrism.DataModels
         public float                                    Elapsed                                 { get; set; }
         public int                                      InitialFrame                            { get; set; }
         public CancellationToken                        CancellationToken                       { get; set; }
+        public CancellationTokenRegistration            CancellationTokenRegistration           { get; set; }
 
         public static DelayIgnoreTimeScalePromise? FromPointer(IntPtr p0)
         {
@@ -31,11 +33,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DelayIgnoreTimeScalePromise() { Pointer= p0 };
 
-            value.NextNode                                  = GetObject<DelayIgnoreTimeScalePromise>(new IntPtr(p + 0x010), ReversePrism.DataModels.DelayIgnoreTimeScalePromise.FromPointer); // 024668C3E770 0x10 NextNode                    ( 000186717B40 ModelClassType DelayIgnoreTimeScalePromise DelayIgnoreTimeScalePromise DelayIgnoreTimeScalePromise Pointer )
-            value.DelayFrameTimeSpan                        = GetSingle(new IntPtr(p + 0x018)); // 024668C3E790 0x18 DelayFrameTimeSpan          ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.Elapsed                                   = GetSingle(new IntPtr(p + 0x01C)); // 024668C3E7B0 0x1C Elapsed                     ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.InitialFrame                              = GetInt32(new IntPtr(p + 0x020)); // 024668C3E7D0 0x20 InitialFrame                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CancellationToken                         = (CancellationToken)GetInt32(new IntPtr(p + 0x028)); // 024668C3E7F0 0x28 CancellationToken           ( 00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
+            value.NextNode                                  = GetObject<DelayIgnoreTimeScalePromise>(new IntPtr(p + 0x010), ReversePrism.DataModels.DelayIgnoreTimeScalePromise.FromPointer); // 0x10 NextNode                    ( ModelClassType DelayIgnoreTimeScalePromise DelayIgnoreTimeScalePromise DelayIgnoreTimeScalePromise Pointer )
+            value.DelayFrameTimeSpan                        = GetSingle(new IntPtr(p + 0x018)); // 0x18 DelayFrameTimeSpan          ( ModelPrimitiveType float float float Single )
+            value.Elapsed                                   = GetSingle(new IntPtr(p + 0x01C)); // 0x1C Elapsed                     ( ModelPrimitiveType float float float Single )
+            value.InitialFrame                              = GetInt32(new IntPtr(p + 0x020)); // 0x20 InitialFrame                ( ModelPrimitiveType int int int Int32 )
+            value.CancellationToken                         = (CancellationToken)GetInt32(new IntPtr(p + 0x028)); // 0x28 CancellationToken           ( ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
+            value.CancellationTokenRegistration             = (CancellationTokenRegistration)GetInt32(new IntPtr(p + 0x030)); // 0x30 CancellationTokenRegistration ( ModelEnumType CancellationTokenRegistration CancellationTokenRegistration CancellationTokenRegistration Int32 )
 
             return value;
         }

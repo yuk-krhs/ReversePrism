@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_ClickStatus                            000185D20B88 ModelClassListType List`1<ButtonClickStatus> List`1<ButtonClickStatus> List<ButtonClickStatus> Pointer
+    // 010 M_ClickStatus                            ModelClassListType List`1<ButtonClickStatus> List`1<ButtonClickStatus> List<ButtonClickStatus> Pointer
     // 000 <s_DoubleClickTime>k__BackingField       int IL2CPP_TYPE_I4
     public partial class ClickDetector : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ClickDetector() { Pointer= p0 };
 
-            value.M_ClickStatus                             = GetObjectList<ButtonClickStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.ButtonClickStatus.FromPointer); // 0245A66A73E0 0x10 M_ClickStatus               ( 000185D20B88 ModelClassListType List`1<ButtonClickStatus> List`1<ButtonClickStatus> List<ButtonClickStatus> Pointer )
+            value.M_ClickStatus                             = GetObjectList<ButtonClickStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.ButtonClickStatus.FromPointer); // 0x10 M_ClickStatus               ( ModelClassListType List`1<ButtonClickStatus> List`1<ButtonClickStatus> List<ButtonClickStatus> Pointer )
 
             return value;
         }

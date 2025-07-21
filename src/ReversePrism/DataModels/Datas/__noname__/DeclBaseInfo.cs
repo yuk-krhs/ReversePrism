@@ -8,18 +8,18 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Name                                     0001866BCA70 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer
-    // 018 Prefix                                   000186671BA0 ModelPrimitiveType string string string String
-    // 020 TypeName                                 0001866BCA70 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer
-    // 028 TypePrefix                               000186671BA0 ModelPrimitiveType string string string String
+    // 010 Name                                     ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer
+    // 018 Prefix                                   ModelPrimitiveType string string string String
+    // 020 TypeName                                 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer
+    // 028 TypePrefix                               ModelPrimitiveType string string string String
     // 030 _Default                                 <object> IL2CPP_TYPE_OBJECT
     // 038 _Revises                                 <object> IL2CPP_TYPE_OBJECT
-    // 040 MaxOccurs                                000186698DF0 ModelPrimitiveType uint uint uint UInt32
-    // 044 MinOccurs                                000186698DF0 ModelPrimitiveType uint uint uint UInt32
-    // 048 Checking                                 000186595210 ModelPrimitiveType bool bool bool Bool
-    // 050 ElementDecl                              0001866E8630 ModelClassType SchemaElementDecl SchemaElementDecl SchemaElementDecl Pointer
-    // 058 Attdef                                   0001866E7090 ModelClassType SchemaAttDef SchemaAttDef SchemaAttDef Pointer
-    // 060 Next                                     000186725C20 ModelClassType DeclBaseInfo DeclBaseInfo DeclBaseInfo Pointer
+    // 040 MaxOccurs                                ModelPrimitiveType uint uint uint UInt32
+    // 044 MinOccurs                                ModelPrimitiveType uint uint uint UInt32
+    // 048 Checking                                 ModelPrimitiveType bool bool bool Bool
+    // 050 ElementDecl                              ModelClassType SchemaElementDecl SchemaElementDecl SchemaElementDecl Pointer
+    // 058 Attdef                                   ModelClassType SchemaAttDef SchemaAttDef SchemaAttDef Pointer
+    // 060 Next                                     ModelClassType DeclBaseInfo DeclBaseInfo DeclBaseInfo Pointer
     public partial class DeclBaseInfo : DataModel
     {
         public XmlQualifiedName?                        Name                                    { get; set; }
@@ -41,16 +41,16 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DeclBaseInfo() { Pointer= p0 };
 
-            value.Name                                      = GetObject<XmlQualifiedName>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0246675FA3A8 0x10 Name                        ( 0001866BCA70 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
-            value.Prefix                                    = GetString(new IntPtr(p + 0x018)); // 0246675FA3C8 0x18 Prefix                      ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.TypeName                                  = GetObject<XmlQualifiedName>(new IntPtr(p + 0x020), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0246675FA3E8 0x20 TypeName                    ( 0001866BCA70 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
-            value.TypePrefix                                = GetString(new IntPtr(p + 0x028)); // 0246675FA408 0x28 TypePrefix                  ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.MaxOccurs                                 = GetUInt32(new IntPtr(p + 0x040)); // 0246675FA468 0x40 MaxOccurs                   ( 000186698DF0 ModelPrimitiveType uint uint uint UInt32 )
-            value.MinOccurs                                 = GetUInt32(new IntPtr(p + 0x044)); // 0246675FA488 0x44 MinOccurs                   ( 000186698DF0 ModelPrimitiveType uint uint uint UInt32 )
-            value.Checking                                  = GetBool(new IntPtr(p + 0x048)); // 0246675FA4A8 0x48 Checking                    ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.ElementDecl                               = GetObject<SchemaElementDecl>(new IntPtr(p + 0x050), ReversePrism.DataModels.SchemaElementDecl.FromPointer); // 0246675FA4C8 0x50 ElementDecl                 ( 0001866E8630 ModelClassType SchemaElementDecl SchemaElementDecl SchemaElementDecl Pointer )
-            value.Attdef                                    = GetObject<SchemaAttDef>(new IntPtr(p + 0x058), ReversePrism.DataModels.SchemaAttDef.FromPointer); // 0246675FA4E8 0x58 Attdef                      ( 0001866E7090 ModelClassType SchemaAttDef SchemaAttDef SchemaAttDef Pointer )
-            value.Next                                      = GetObject<DeclBaseInfo>(new IntPtr(p + 0x060), ReversePrism.DataModels.DeclBaseInfo.FromPointer); // 0246675FA508 0x60 Next                        ( 000186725C20 ModelClassType DeclBaseInfo DeclBaseInfo DeclBaseInfo Pointer )
+            value.Name                                      = GetObject<XmlQualifiedName>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0x10 Name                        ( ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
+            value.Prefix                                    = GetString(new IntPtr(p + 0x018)); // 0x18 Prefix                      ( ModelPrimitiveType string string string String )
+            value.TypeName                                  = GetObject<XmlQualifiedName>(new IntPtr(p + 0x020), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0x20 TypeName                    ( ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
+            value.TypePrefix                                = GetString(new IntPtr(p + 0x028)); // 0x28 TypePrefix                  ( ModelPrimitiveType string string string String )
+            value.MaxOccurs                                 = GetUInt32(new IntPtr(p + 0x040)); // 0x40 MaxOccurs                   ( ModelPrimitiveType uint uint uint UInt32 )
+            value.MinOccurs                                 = GetUInt32(new IntPtr(p + 0x044)); // 0x44 MinOccurs                   ( ModelPrimitiveType uint uint uint UInt32 )
+            value.Checking                                  = GetBool(new IntPtr(p + 0x048)); // 0x48 Checking                    ( ModelPrimitiveType bool bool bool Bool )
+            value.ElementDecl                               = GetObject<SchemaElementDecl>(new IntPtr(p + 0x050), ReversePrism.DataModels.SchemaElementDecl.FromPointer); // 0x50 ElementDecl                 ( ModelClassType SchemaElementDecl SchemaElementDecl SchemaElementDecl Pointer )
+            value.Attdef                                    = GetObject<SchemaAttDef>(new IntPtr(p + 0x058), ReversePrism.DataModels.SchemaAttDef.FromPointer); // 0x58 Attdef                      ( ModelClassType SchemaAttDef SchemaAttDef SchemaAttDef Pointer )
+            value.Next                                      = GetObject<DeclBaseInfo>(new IntPtr(p + 0x060), ReversePrism.DataModels.DeclBaseInfo.FromPointer); // 0x60 Next                        ( ModelClassType DeclBaseInfo DeclBaseInfo DeclBaseInfo Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 AiScoreRateSetList                       000185D1E808 ModelClassListType List`1<AiScoreRateSet> List`1<AiScoreRateSet> List<AiScoreRateSet> Pointer
+    // 010 AiScoreRateSetList                       ModelClassListType List`1<AiScoreRateSet> List`1<AiScoreRateSet> List<AiScoreRateSet> Pointer
     public partial class AiScoreRateData : DataModel
     {
         public List<AiScoreRateSet>?                    AiScoreRateSetList                      { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AiScoreRateData() { Pointer= p0 };
 
-            value.AiScoreRateSetList                        = GetObjectList<AiScoreRateSet>(new IntPtr(p + 0x010), ReversePrism.DataModels.AiScoreRateSet.FromPointer); // 024665B1FF50 0x10 AiScoreRateSetList          ( 000185D1E808 ModelClassListType List`1<AiScoreRateSet> List`1<AiScoreRateSet> List<AiScoreRateSet> Pointer )
+            value.AiScoreRateSetList                        = GetObjectList<AiScoreRateSet>(new IntPtr(p + 0x010), ReversePrism.DataModels.AiScoreRateSet.FromPointer); // 0x10 AiScoreRateSetList          ( ModelClassListType List`1<AiScoreRateSet> List`1<AiScoreRateSet> List<AiScoreRateSet> Pointer )
 
             return value;
         }

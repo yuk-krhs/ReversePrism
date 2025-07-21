@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 PfIdolIconView                           000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer
-    // 028 JumpDressUpButton                        0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 030 TxtDressSetName                          0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 038 IconViews                                000185B77940 ModelClassListType CostumeIconView[] CostumeIconView[] List<CostumeIconView> Pointer
-    // 040 BlankIconViews                           000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
+    // 020 PfIdolIconView                           ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer
+    // 028 JumpDressUpButton                        ModelClassType UIButton UIButton UIButton Pointer
+    // 030 TxtDressSetName                          ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 038 IconViews                                ModelClassListType CostumeIconView[] CostumeIconView[] List<CostumeIconView> Pointer
+    // 040 BlankIconViews                           ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
     // 048 onClickPIdolSubject                      Subject`1<int> IL2CPP_TYPE_GENERICINST
     // 050 onClickDressUpRoomSubject                Subject`1<ShopDetailCostumeViewModel> IL2CPP_TYPE_GENERICINST
     // 058 <OnCostumeIconDetail>k__BackingField     IObservable`1<ValueTuple`2<CostumePartType, int>> IL2CPP_TYPE_GENERICINST
@@ -32,11 +32,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ShopDetailCostumeCell() { Pointer= p0 };
 
-            value.PfIdolIconView                            = GetObject<PFIdolIconView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 02466B85D198 0x20 PfIdolIconView              ( 000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
-            value.JumpDressUpButton                         = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 02466B85D1B8 0x28 JumpDressUpButton           ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.TxtDressSetName                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B85D1D8 0x30 TxtDressSetName             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.IconViews                                 = GetObjectList<CostumeIconView>(new IntPtr(p + 0x038), ReversePrism.DataModels.CostumeIconView.FromPointer); // 02466B85D1F8 0x38 IconViews                   ( 000185B77940 ModelClassListType CostumeIconView[] CostumeIconView[] List<CostumeIconView> Pointer )
-            value.BlankIconViews                            = GetObjectList<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 02466B85D218 0x40 BlankIconViews              ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.PfIdolIconView                            = GetObject<PFIdolIconView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 0x20 PfIdolIconView              ( ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
+            value.JumpDressUpButton                         = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 0x28 JumpDressUpButton           ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.TxtDressSetName                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x30 TxtDressSetName             ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.IconViews                                 = GetObjectList<CostumeIconView>(new IntPtr(p + 0x038), ReversePrism.DataModels.CostumeIconView.FromPointer); // 0x38 IconViews                   ( ModelClassListType CostumeIconView[] CostumeIconView[] List<CostumeIconView> Pointer )
+            value.BlankIconViews                            = GetObjectList<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 0x40 BlankIconViews              ( ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
 
             return value;
         }

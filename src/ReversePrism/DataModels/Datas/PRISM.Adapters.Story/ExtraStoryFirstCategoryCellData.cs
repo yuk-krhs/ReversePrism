@@ -8,12 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CategoryId                               0001865F4260 ModelPrimitiveType int int int Int32
-    // 014 IsNew                                    0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 015 IsUnread                                 0001865965D0 ModelPrimitiveType bool bool bool Bool
+    // 010 CategoryId                               ModelPrimitiveType int int int Int32
+    // 014 SortId                                   ModelPrimitiveType int int int Int32
+    // 018 IsNew                                    ModelPrimitiveType bool bool bool Bool
+    // 019 IsUnread                                 ModelPrimitiveType bool bool bool Bool
     public partial class ExtraStoryFirstCategoryCellData : DataModel
     {
         public int                                      CategoryId                              { get; set; }
+        public int                                      SortId                                  { get; set; }
         public bool                                     IsNew                                   { get; set; }
         public bool                                     IsUnread                                { get; set; }
 
@@ -25,9 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExtraStoryFirstCategoryCellData() { Pointer= p0 };
 
-            value.CategoryId                                = GetInt32(new IntPtr(p + 0x010)); // 024666843EB8 0x10 CategoryId                  ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.IsNew                                     = GetBool(new IntPtr(p + 0x014)); // 024666843ED8 0x14 IsNew                       ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.IsUnread                                  = GetBool(new IntPtr(p + 0x015)); // 024666843EF8 0x15 IsUnread                    ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.CategoryId                                = GetInt32(new IntPtr(p + 0x010)); // 0x10 CategoryId                  ( ModelPrimitiveType int int int Int32 )
+            value.SortId                                    = GetInt32(new IntPtr(p + 0x014)); // 0x14 SortId                      ( ModelPrimitiveType int int int Int32 )
+            value.IsNew                                     = GetBool(new IntPtr(p + 0x018)); // 0x18 IsNew                       ( ModelPrimitiveType bool bool bool Bool )
+            value.IsUnread                                  = GetBool(new IntPtr(p + 0x019)); // 0x19 IsUnread                    ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

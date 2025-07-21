@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 XmlnsAttributeCount                      0001865F36C0 ModelPrimitiveType int int int Int32
-    // 014 XmlnsOffset                              0001865F36C0 ModelPrimitiveType int int int Int32
+    // 000 s_allowedTypes                           HashSet`1<Type> IL2CPP_TYPE_GENERICINST
+    // 010 m_allowedTypes                           HashSet`1<Type> IL2CPP_TYPE_GENERICINST
+    // 018 M_previousScope                          ModelClassType Scope Scope Scope Pointer
     public partial class Scope : DataModel
     {
-        public int                                      XmlnsAttributeCount                     { get; set; }
-        public int                                      XmlnsOffset                             { get; set; }
+        public Scope?                                   M_previousScope                         { get; set; }
 
         public static Scope? FromPointer(IntPtr p0)
         {
@@ -23,8 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Scope() { Pointer= p0 };
 
-            value.XmlnsAttributeCount                       = GetInt32(new IntPtr(p + 0x010)); // 024667CB9058 0x10 XmlnsAttributeCount         ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.XmlnsOffset                               = GetInt32(new IntPtr(p + 0x014)); // 024667CB9078 0x14 XmlnsOffset                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.M_previousScope                           = GetObject<Scope>(new IntPtr(p + 0x018), ReversePrism.DataModels.Scope.FromPointer); // 0x18 M_previousScope             ( ModelClassType Scope Scope Scope Pointer )
 
             return value;
         }

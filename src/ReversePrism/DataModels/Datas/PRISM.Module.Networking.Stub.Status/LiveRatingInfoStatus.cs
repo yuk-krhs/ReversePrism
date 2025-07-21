@@ -11,13 +11,13 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<LiveRatingInfoStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 HighScoreRatingFieldNumber               int IL2CPP_TYPE_I4
-    // 018 HighScoreRating                          0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 HighScoreRating                          ModelPrimitiveType int int int Int32
     // 000 TotalHighScoreRatingFieldNumber          int IL2CPP_TYPE_I4
-    // 01C TotalHighScoreRating                     0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 01C TotalHighScoreRating                     ModelPrimitiveType int int int Int32
     // 000 TechnicalRatingFieldNumber               int IL2CPP_TYPE_I4
-    // 020 TechnicalRating                          0001866656B0 ModelPrimitiveType float float float Single
+    // 020 TechnicalRating                          ModelPrimitiveType float float float Single
     // 000 TotalTechnicalRatingFieldNumber          int IL2CPP_TYPE_I4
-    // 024 TotalTechnicalRating                     0001866656B0 ModelPrimitiveType float float float Single
+    // 024 TotalTechnicalRating                     ModelPrimitiveType float float float Single
     public partial class LiveRatingInfoStatus : DataModel
     {
         public int                                      HighScoreRating                         { get; set; }
@@ -33,10 +33,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveRatingInfoStatus() { Pointer= p0 };
 
-            value.HighScoreRating                           = GetInt32(new IntPtr(p + 0x018)); // 0246612DFB68 0x18 HighScoreRating             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.TotalHighScoreRating                      = GetInt32(new IntPtr(p + 0x01C)); // 0246612DFBA8 0x1C TotalHighScoreRating        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.TechnicalRating                           = GetSingle(new IntPtr(p + 0x020)); // 0246612DFBE8 0x20 TechnicalRating             ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.TotalTechnicalRating                      = GetSingle(new IntPtr(p + 0x024)); // 0246612DFC28 0x24 TotalTechnicalRating        ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.HighScoreRating                           = GetInt32(new IntPtr(p + 0x018)); // 0x18 HighScoreRating             ( ModelPrimitiveType int int int Int32 )
+            value.TotalHighScoreRating                      = GetInt32(new IntPtr(p + 0x01C)); // 0x1C TotalHighScoreRating        ( ModelPrimitiveType int int int Int32 )
+            value.TechnicalRating                           = GetSingle(new IntPtr(p + 0x020)); // 0x20 TechnicalRating             ( ModelPrimitiveType float float float Single )
+            value.TotalTechnicalRating                      = GetSingle(new IntPtr(p + 0x024)); // 0x24 TotalTechnicalRating        ( ModelPrimitiveType float float float Single )
 
             return value;
         }

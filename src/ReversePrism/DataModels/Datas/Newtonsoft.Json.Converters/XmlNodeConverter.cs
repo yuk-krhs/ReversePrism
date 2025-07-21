@@ -16,10 +16,10 @@ namespace ReversePrism.DataModels
     // 000 SignificantWhitespaceName                string IL2CPP_TYPE_STRING
     // 000 DeclarationName                          string IL2CPP_TYPE_STRING
     // 000 JsonNamespaceUri                         string IL2CPP_TYPE_STRING
-    // 010 DeserializeRootElementName               000186671910 ModelPrimitiveType string string string String
-    // 018 WriteArrayAttribute                      000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 019 OmitRootObject                           000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 01A EncodeSpecialCharacters                  000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 DeserializeRootElementName               ModelPrimitiveType string string string String
+    // 018 WriteArrayAttribute                      ModelPrimitiveType bool bool bool Bool
+    // 019 OmitRootObject                           ModelPrimitiveType bool bool bool Bool
+    // 01A EncodeSpecialCharacters                  ModelPrimitiveType bool bool bool Bool
     public partial class XmlNodeConverter : DataModel
     {
         public string                                   DeserializeRootElementName              { get; set; }
@@ -35,10 +35,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlNodeConverter() { Pointer= p0 };
 
-            value.DeserializeRootElementName                = GetString(new IntPtr(p + 0x010)); // 0245A3B8B5A0 0x10 DeserializeRootElementName  ( 000186671910 ModelPrimitiveType string string string String )
-            value.WriteArrayAttribute                       = GetBool(new IntPtr(p + 0x018)); // 0245A3B8B5C0 0x18 WriteArrayAttribute         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.OmitRootObject                            = GetBool(new IntPtr(p + 0x019)); // 0245A3B8B5E0 0x19 OmitRootObject              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.EncodeSpecialCharacters                   = GetBool(new IntPtr(p + 0x01A)); // 0245A3B8B600 0x1A EncodeSpecialCharacters     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.DeserializeRootElementName                = GetString(new IntPtr(p + 0x010)); // 0x10 DeserializeRootElementName  ( ModelPrimitiveType string string string String )
+            value.WriteArrayAttribute                       = GetBool(new IntPtr(p + 0x018)); // 0x18 WriteArrayAttribute         ( ModelPrimitiveType bool bool bool Bool )
+            value.OmitRootObject                            = GetBool(new IntPtr(p + 0x019)); // 0x19 OmitRootObject              ( ModelPrimitiveType bool bool bool Bool )
+            value.EncodeSpecialCharacters                   = GetBool(new IntPtr(p + 0x01A)); // 0x1A EncodeSpecialCharacters     ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_ScrollView                             0001866F95B0 ModelClassType ScrollView ScrollView ScrollView Pointer
+    // 010 M_ScrollView                             ModelClassType ScrollView ScrollView ScrollView Pointer
     public partial class CollectionVirtualizationController : DataModel
     {
         public ScrollView?                              M_ScrollView                            { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CollectionVirtualizationController() { Pointer= p0 };
 
-            value.M_ScrollView                              = GetObject<ScrollView>(new IntPtr(p + 0x010), ReversePrism.DataModels.ScrollView.FromPointer); // 0245A66ABDE0 0x10 M_ScrollView                ( 0001866F95B0 ModelClassType ScrollView ScrollView ScrollView Pointer )
+            value.M_ScrollView                              = GetObject<ScrollView>(new IntPtr(p + 0x010), ReversePrism.DataModels.ScrollView.FromPointer); // 0x10 M_ScrollView                ( ModelClassType ScrollView ScrollView ScrollView Pointer )
 
             return value;
         }

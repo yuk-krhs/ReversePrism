@@ -8,16 +8,16 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Price                                    000186671BA0 ModelPrimitiveType string string string String
-    // 018 Currency                                 000186671BA0 ModelPrimitiveType string string string String
-    // 020 Sku                                      000186671BA0 ModelPrimitiveType string string string String
-    // 028 OrderId                                  000186671BA0 ModelPrimitiveType string string string String
-    // 030 Signature                                000186671BA0 ModelPrimitiveType string string string String
-    // 038 PurchaseToken                            000186671BA0 ModelPrimitiveType string string string String
-    // 040 BillingStore                             000186671BA0 ModelPrimitiveType string string string String
-    // 048 PurchaseTime                             000186671BA0 ModelPrimitiveType string string string String
-    // 050 PartnerList                              000185D0D578 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
-    // 058 CallbackList                             000185D0D578 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
+    // 010 Price                                    ModelPrimitiveType string string string String
+    // 018 Currency                                 ModelPrimitiveType string string string String
+    // 020 Sku                                      ModelPrimitiveType string string string String
+    // 028 OrderId                                  ModelPrimitiveType string string string String
+    // 030 Signature                                ModelPrimitiveType string string string String
+    // 038 PurchaseToken                            ModelPrimitiveType string string string String
+    // 040 BillingStore                             ModelPrimitiveType string string string String
+    // 048 PurchaseTime                             ModelPrimitiveType string string string String
+    // 050 PartnerList                              ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
+    // 058 CallbackList                             ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
     public partial class AdjustPlayStoreSubscription : DataModel
     {
         public string                                   Price                                   { get; set; }
@@ -39,16 +39,16 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AdjustPlayStoreSubscription() { Pointer= p0 };
 
-            value.Price                                     = GetString(new IntPtr(p + 0x010)); // 02466BB953F0 0x10 Price                       ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.Currency                                  = GetString(new IntPtr(p + 0x018)); // 02466BB95410 0x18 Currency                    ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.Sku                                       = GetString(new IntPtr(p + 0x020)); // 02466BB95430 0x20 Sku                         ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.OrderId                                   = GetString(new IntPtr(p + 0x028)); // 02466BB95450 0x28 OrderId                     ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.Signature                                 = GetString(new IntPtr(p + 0x030)); // 02466BB95470 0x30 Signature                   ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.PurchaseToken                             = GetString(new IntPtr(p + 0x038)); // 02466BB95490 0x38 PurchaseToken               ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.BillingStore                              = GetString(new IntPtr(p + 0x040)); // 02466BB954B0 0x40 BillingStore                ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.PurchaseTime                              = GetString(new IntPtr(p + 0x048)); // 02466BB954D0 0x48 PurchaseTime                ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.PartnerList                               = GetStringList(new IntPtr(p + 0x050)); // 02466BB954F0 0x50 PartnerList                 ( 000185D0D578 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
-            value.CallbackList                              = GetStringList(new IntPtr(p + 0x058)); // 02466BB95510 0x58 CallbackList                ( 000185D0D578 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.Price                                     = GetString(new IntPtr(p + 0x010)); // 0x10 Price                       ( ModelPrimitiveType string string string String )
+            value.Currency                                  = GetString(new IntPtr(p + 0x018)); // 0x18 Currency                    ( ModelPrimitiveType string string string String )
+            value.Sku                                       = GetString(new IntPtr(p + 0x020)); // 0x20 Sku                         ( ModelPrimitiveType string string string String )
+            value.OrderId                                   = GetString(new IntPtr(p + 0x028)); // 0x28 OrderId                     ( ModelPrimitiveType string string string String )
+            value.Signature                                 = GetString(new IntPtr(p + 0x030)); // 0x30 Signature                   ( ModelPrimitiveType string string string String )
+            value.PurchaseToken                             = GetString(new IntPtr(p + 0x038)); // 0x38 PurchaseToken               ( ModelPrimitiveType string string string String )
+            value.BillingStore                              = GetString(new IntPtr(p + 0x040)); // 0x40 BillingStore                ( ModelPrimitiveType string string string String )
+            value.PurchaseTime                              = GetString(new IntPtr(p + 0x048)); // 0x48 PurchaseTime                ( ModelPrimitiveType string string string String )
+            value.PartnerList                               = GetStringList(new IntPtr(p + 0x050)); // 0x50 PartnerList                 ( ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.CallbackList                              = GetStringList(new IntPtr(p + 0x058)); // 0x58 CallbackList                ( ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
 
             return value;
         }

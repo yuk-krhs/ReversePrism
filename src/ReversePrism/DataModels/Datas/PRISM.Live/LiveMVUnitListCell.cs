@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 078 DressIcons                               000185B77810 ModelClassListType CostumeIcon[] CostumeIcon[] List<CostumeIcon> Pointer
-    // 080 HairstyleIcons                           000185B77810 ModelClassListType CostumeIcon[] CostumeIcon[] List<CostumeIcon> Pointer
+    // 078 DressIcons                               ModelClassListType CostumeIcon[] CostumeIcon[] List<CostumeIcon> Pointer
+    // 080 HairstyleIcons                           ModelClassListType CostumeIcon[] CostumeIcon[] List<CostumeIcon> Pointer
     public partial class LiveMVUnitListCell : DataModel
     {
         public List<CostumeIcon>?                       DressIcons                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveMVUnitListCell() { Pointer= p0 };
 
-            value.DressIcons                                = GetObjectList<CostumeIcon>(new IntPtr(p + 0x078), ReversePrism.DataModels.CostumeIcon.FromPointer); // 02466521AAC8 0x78 DressIcons                  ( 000185B77810 ModelClassListType CostumeIcon[] CostumeIcon[] List<CostumeIcon> Pointer )
-            value.HairstyleIcons                            = GetObjectList<CostumeIcon>(new IntPtr(p + 0x080), ReversePrism.DataModels.CostumeIcon.FromPointer); // 02466521AAE8 0x80 HairstyleIcons              ( 000185B77810 ModelClassListType CostumeIcon[] CostumeIcon[] List<CostumeIcon> Pointer )
+            value.DressIcons                                = GetObjectList<CostumeIcon>(new IntPtr(p + 0x078), ReversePrism.DataModels.CostumeIcon.FromPointer); // 0x78 DressIcons                  ( ModelClassListType CostumeIcon[] CostumeIcon[] List<CostumeIcon> Pointer )
+            value.HairstyleIcons                            = GetObjectList<CostumeIcon>(new IntPtr(p + 0x080), ReversePrism.DataModels.CostumeIcon.FromPointer); // 0x80 HairstyleIcons              ( ModelClassListType CostumeIcon[] CostumeIcon[] List<CostumeIcon> Pointer )
 
             return value;
         }

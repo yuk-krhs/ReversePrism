@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 LastMousePos                             0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32
-    // 02C CurrentMousePos                          0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 020 LastMousePos                             ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 02C CurrentMousePos                          ModelEnumType Vector3 Vector3 Vector3 Int32
     public partial class UIDragEffect : DataModel
     {
         public Vector3                                  LastMousePos                            { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UIDragEffect() { Pointer= p0 };
 
-            value.LastMousePos                              = (Vector3)GetInt32(new IntPtr(p + 0x020)); // 0246609DD2D0 0x20 LastMousePos                ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.CurrentMousePos                           = (Vector3)GetInt32(new IntPtr(p + 0x02C)); // 0246609DD2F0 0x2C CurrentMousePos             ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.LastMousePos                              = (Vector3)GetInt32(new IntPtr(p + 0x020)); // 0x20 LastMousePos                ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.CurrentMousePos                           = (Vector3)GetInt32(new IntPtr(p + 0x02C)); // 0x2C CurrentMousePos             ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
 
             return value;
         }

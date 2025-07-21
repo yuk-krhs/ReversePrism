@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 000 emptySHA1                                sbyte[] IL2CPP_TYPE_SZARRAY
     // 008 emptySHA256                              sbyte[] IL2CPP_TYPE_SZARRAY
-    // 010 EmptySHA384                              000185B79D90 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 018 EmptySHA512                              000185B79D90 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 010 EmptySHA384                              ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 018 EmptySHA512                              ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     public partial class PKCS1 : DataModel
     {
         public List<sbyte>?                             EmptySHA384                             { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PKCS1() { Pointer= p0 };
 
-            value.EmptySHA384                               = GetSByteList(new IntPtr(p + 0x010)); // 02466B410F40 0x10 EmptySHA384                 ( 000185B79D90 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.EmptySHA512                               = GetSByteList(new IntPtr(p + 0x018)); // 02466B410F60 0x18 EmptySHA512                 ( 000185B79D90 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.EmptySHA384                               = GetSByteList(new IntPtr(p + 0x010)); // 0x10 EmptySHA384                 ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.EmptySHA512                               = GetSByteList(new IntPtr(p + 0x018)); // 0x18 EmptySHA512                 ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

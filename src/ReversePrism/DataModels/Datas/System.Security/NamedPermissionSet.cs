@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 030 Name                                     000186671910 ModelPrimitiveType string string string String
-    // 038 Description                              000186671910 ModelPrimitiveType string string string String
+    // 030 Name                                     ModelPrimitiveType string string string String
+    // 038 Description                              ModelPrimitiveType string string string String
     public partial class NamedPermissionSet : DataModel
     {
         public string                                   Name                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NamedPermissionSet() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x030)); // 024666BE0BD0 0x30 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Description                               = GetString(new IntPtr(p + 0x038)); // 024666BE0BF0 0x38 Description                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Name                                      = GetString(new IntPtr(p + 0x030)); // 0x30 Name                        ( ModelPrimitiveType string string string String )
+            value.Description                               = GetString(new IntPtr(p + 0x038)); // 0x38 Description                 ( ModelPrimitiveType string string string String )
 
             return value;
         }

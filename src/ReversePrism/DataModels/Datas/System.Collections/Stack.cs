@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 _array                                   <object>[] IL2CPP_TYPE_SZARRAY
-    // 018 Size                                     0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 01C Version                                  0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 Size                                     ModelPrimitiveType int int int Int32
+    // 01C Version                                  ModelPrimitiveType int int int Int32
     // 020 _syncRoot                                <object> IL2CPP_TYPE_OBJECT
     // 000 _defaultCapacity                         int IL2CPP_TYPE_I4
     public partial class Stack : DataModel
@@ -26,8 +26,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Stack() { Pointer= p0 };
 
-            value.Size                                      = GetInt32(new IntPtr(p + 0x018)); // 0245A68649A8 0x18 Size                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Version                                   = GetInt32(new IntPtr(p + 0x01C)); // 0245A68649C8 0x1C Version                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Size                                      = GetInt32(new IntPtr(p + 0x018)); // 0x18 Size                        ( ModelPrimitiveType int int int Int32 )
+            value.Version                                   = GetInt32(new IntPtr(p + 0x01C)); // 0x1C Version                     ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

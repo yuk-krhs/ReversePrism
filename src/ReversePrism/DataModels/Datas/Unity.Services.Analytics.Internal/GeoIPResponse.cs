@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Identifier                               0001866722E0 ModelPrimitiveType string string string String
-    // 018 Country                                  0001866722E0 ModelPrimitiveType string string string String
-    // 020 Region                                   0001866722E0 ModelPrimitiveType string string string String
-    // 028 AgeGateLimit                             0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 Identifier                               ModelPrimitiveType string string string String
+    // 018 Country                                  ModelPrimitiveType string string string String
+    // 020 Region                                   ModelPrimitiveType string string string String
+    // 028 AgeGateLimit                             ModelPrimitiveType int int int Int32
     public partial class GeoIPResponse : DataModel
     {
         public string                                   Identifier                              { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GeoIPResponse() { Pointer= p0 };
 
-            value.Identifier                                = GetString(new IntPtr(p + 0x010)); // 02466B830CA8 0x10 Identifier                  ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Country                                   = GetString(new IntPtr(p + 0x018)); // 02466B830CC8 0x18 Country                     ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Region                                    = GetString(new IntPtr(p + 0x020)); // 02466B830CE8 0x20 Region                      ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.AgeGateLimit                              = GetInt32(new IntPtr(p + 0x028)); // 02466B830D08 0x28 AgeGateLimit                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Identifier                                = GetString(new IntPtr(p + 0x010)); // 0x10 Identifier                  ( ModelPrimitiveType string string string String )
+            value.Country                                   = GetString(new IntPtr(p + 0x018)); // 0x18 Country                     ( ModelPrimitiveType string string string String )
+            value.Region                                    = GetString(new IntPtr(p + 0x020)); // 0x20 Region                      ( ModelPrimitiveType string string string String )
+            value.AgeGateLimit                              = GetInt32(new IntPtr(p + 0x028)); // 0x28 AgeGateLimit                ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Ns                                       00018657B5D0 ModelClassType XNamespace XNamespace XNamespace Pointer
-    // 018 NamespaceName                            000186671910 ModelPrimitiveType string string string String
+    // 010 Ns                                       ModelClassType XNamespace XNamespace XNamespace Pointer
+    // 018 NamespaceName                            ModelPrimitiveType string string string String
     public partial class NamespaceCache : DataModel
     {
         public XNamespace?                              Ns                                      { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NamespaceCache() { Pointer= p0 };
 
-            value.Ns                                        = GetObject<XNamespace>(new IntPtr(p + 0x010), ReversePrism.DataModels.XNamespace.FromPointer); // 02466BCAE090 0x10 Ns                          ( 00018657B5D0 ModelClassType XNamespace XNamespace XNamespace Pointer )
-            value.NamespaceName                             = GetString(new IntPtr(p + 0x018)); // 02466BCAE0B0 0x18 NamespaceName               ( 000186671910 ModelPrimitiveType string string string String )
+            value.Ns                                        = GetObject<XNamespace>(new IntPtr(p + 0x010), ReversePrism.DataModels.XNamespace.FromPointer); // 0x10 Ns                          ( ModelClassType XNamespace XNamespace XNamespace Pointer )
+            value.NamespaceName                             = GetString(new IntPtr(p + 0x018)); // 0x18 NamespaceName               ( ModelPrimitiveType string string string String )
 
             return value;
         }

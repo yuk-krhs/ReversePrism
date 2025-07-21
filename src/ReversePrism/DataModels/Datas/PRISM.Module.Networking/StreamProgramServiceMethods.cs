@@ -14,6 +14,7 @@ namespace ReversePrism.DataModels
     // 048 GetStreamArchiveList                     Method`2<IGetStreamArchiveListArgs, IGetStreamArchiveListReply> IL2CPP_TYPE_GENERICINST
     // 060 GetStreamArchiveLiveURL                  Method`2<IGetStreamArchiveLiveURLArgs, IGetStreamArchiveLiveURLReply> IL2CPP_TYPE_GENERICINST
     // 078 ToggleArchiveFavorite                    Method`2<IToggleArchiveFavoriteArgs, IToggleArchiveFavoriteReply> IL2CPP_TYPE_GENERICINST
+    // 090 ReleasePremiumStream                     Method`2<IReleasePremiumStreamArgs, IReleasePremiumStreamReply> IL2CPP_TYPE_GENERICINST
     public partial class StreamProgramServiceMethods : DataModel
     {
 

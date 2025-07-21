@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 RepaintMask                              0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 RepaintMask                              ModelPrimitiveType int int int Int32
     public partial class RenderState : DataModel
     {
         public int                                      RepaintMask                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RenderState() { Pointer= p0 };
 
-            value.RepaintMask                               = GetInt32(new IntPtr(p + 0x010)); // 02466B0A4820 0x10 RepaintMask                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.RepaintMask                               = GetInt32(new IntPtr(p + 0x010)); // 0x10 RepaintMask                 ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

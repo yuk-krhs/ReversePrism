@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<GetOrderResultArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 OrderIdFieldNumber                       int IL2CPP_TYPE_I4
-    // 018 OrderId                                  000186671910 ModelPrimitiveType string string string String
+    // 018 OrderId                                  ModelPrimitiveType string string string String
     public partial class GetOrderResultArgs : DataModel
     {
         public string                                   OrderId                                 { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetOrderResultArgs() { Pointer= p0 };
 
-            value.OrderId                                   = GetString(new IntPtr(p + 0x018)); // 024660B1AAA0 0x18 OrderId                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.OrderId                                   = GetString(new IntPtr(p + 0x018)); // 0x18 OrderId                     ( ModelPrimitiveType string string string String )
 
             return value;
         }

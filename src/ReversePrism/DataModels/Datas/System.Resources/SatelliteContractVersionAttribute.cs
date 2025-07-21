@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Version                                  000186672F10 ModelPrimitiveType string string string String
+    // 010 Version                                  ModelPrimitiveType string string string String
     public partial class SatelliteContractVersionAttribute : DataModel
     {
         public string                                   Version                                 { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SatelliteContractVersionAttribute() { Pointer= p0 };
 
-            value.Version                                   = GetString(new IntPtr(p + 0x010)); // 024666D28918 0x10 Version                     ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Version                                   = GetString(new IntPtr(p + 0x010)); // 0x10 Version                     ( ModelPrimitiveType string string string String )
 
             return value;
         }

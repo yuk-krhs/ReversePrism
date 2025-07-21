@@ -11,18 +11,18 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<MonitoredResourceDescriptor> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 NameFieldNumber                          int IL2CPP_TYPE_I4
-    // 018 Name                                     000186671910 ModelPrimitiveType string string string String
+    // 018 Name                                     ModelPrimitiveType string string string String
     // 000 TypeFieldNumber                          int IL2CPP_TYPE_I4
-    // 020 Type                                     000186671910 ModelPrimitiveType string string string String
+    // 020 Type                                     ModelPrimitiveType string string string String
     // 000 DisplayNameFieldNumber                   int IL2CPP_TYPE_I4
-    // 028 DisplayName                              000186671910 ModelPrimitiveType string string string String
+    // 028 DisplayName                              ModelPrimitiveType string string string String
     // 000 DescriptionFieldNumber                   int IL2CPP_TYPE_I4
-    // 030 Description                              000186671910 ModelPrimitiveType string string string String
+    // 030 Description                              ModelPrimitiveType string string string String
     // 000 LabelsFieldNumber                        int IL2CPP_TYPE_I4
     // 008 _repeated_labels_codec                   FieldCodec`1<LabelDescriptor> IL2CPP_TYPE_GENERICINST
-    // 038 Labels                                   000185CE27E8 ModelClassListType RepeatedField`1<LabelDescriptor> RepeatedField`1<LabelDescriptor> List<LabelDescriptor> Pointer
+    // 038 Labels                                   ModelClassListType RepeatedField`1<LabelDescriptor> RepeatedField`1<LabelDescriptor> List<LabelDescriptor> Pointer
     // 000 LaunchStageFieldNumber                   int IL2CPP_TYPE_I4
-    // 040 LaunchStage                              00018650A860 ModelEnumType LaunchStage LaunchStage LaunchStage Int32
+    // 040 LaunchStage                              ModelEnumType LaunchStage LaunchStage LaunchStage Int32
     public partial class MonitoredResourceDescriptor : DataModel
     {
         public string                                   Name                                    { get; set; }
@@ -40,12 +40,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MonitoredResourceDescriptor() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 02466A8652B8 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Type                                      = GetString(new IntPtr(p + 0x020)); // 02466A8652F8 0x20 Type                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.DisplayName                               = GetString(new IntPtr(p + 0x028)); // 02466A865338 0x28 DisplayName                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.Description                               = GetString(new IntPtr(p + 0x030)); // 02466A865378 0x30 Description                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.Labels                                    = GetObjectList<LabelDescriptor>(new IntPtr(p + 0x038), ReversePrism.DataModels.LabelDescriptor.FromPointer); // 02466A8653D8 0x38 Labels                      ( 000185CE27E8 ModelClassListType RepeatedField`1<LabelDescriptor> RepeatedField`1<LabelDescriptor> List<LabelDescriptor> Pointer )
-            value.LaunchStage                               = (LaunchStage)GetInt32(new IntPtr(p + 0x040)); // 02466A865418 0x40 LaunchStage                 ( 00018650A860 ModelEnumType LaunchStage LaunchStage LaunchStage Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0x18 Name                        ( ModelPrimitiveType string string string String )
+            value.Type                                      = GetString(new IntPtr(p + 0x020)); // 0x20 Type                        ( ModelPrimitiveType string string string String )
+            value.DisplayName                               = GetString(new IntPtr(p + 0x028)); // 0x28 DisplayName                 ( ModelPrimitiveType string string string String )
+            value.Description                               = GetString(new IntPtr(p + 0x030)); // 0x30 Description                 ( ModelPrimitiveType string string string String )
+            value.Labels                                    = GetObjectList<LabelDescriptor>(new IntPtr(p + 0x038), ReversePrism.DataModels.LabelDescriptor.FromPointer); // 0x38 Labels                      ( ModelClassListType RepeatedField`1<LabelDescriptor> RepeatedField`1<LabelDescriptor> List<LabelDescriptor> Pointer )
+            value.LaunchStage                               = (LaunchStage)GetInt32(new IntPtr(p + 0x040)); // 0x40 LaunchStage                 ( ModelEnumType LaunchStage LaunchStage LaunchStage Int32 )
 
             return value;
         }

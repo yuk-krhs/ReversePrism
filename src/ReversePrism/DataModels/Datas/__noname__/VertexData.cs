@@ -8,16 +8,16 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Posx                                     000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
-    // 012 Posy                                     000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
-    // 014 Posz                                     000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
-    // 016 Posw                                     000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
-    // 018 U                                        000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
-    // 01A V                                        000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
-    // 01C R0                                       00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    // 01D R1                                       00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    // 01E R2                                       00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    // 01F R3                                       00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 010 Posx                                     ModelPrimitiveType ushort ushort ushort UInt16
+    // 012 Posy                                     ModelPrimitiveType ushort ushort ushort UInt16
+    // 014 Posz                                     ModelPrimitiveType ushort ushort ushort UInt16
+    // 016 Posw                                     ModelPrimitiveType ushort ushort ushort UInt16
+    // 018 U                                        ModelPrimitiveType ushort ushort ushort UInt16
+    // 01A V                                        ModelPrimitiveType ushort ushort ushort UInt16
+    // 01C R0                                       ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 01D R1                                       ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 01E R2                                       ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 01F R3                                       ModelPrimitiveType sbyte sbyte sbyte SByte
     public partial class VertexData : DataModel
     {
         public ushort                                   Posx                                    { get; set; }
@@ -39,16 +39,16 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new VertexData() { Pointer= p0 };
 
-            value.Posx                                      = GetUInt16(new IntPtr(p + 0x010)); // 024664EF8A20 0x10 Posx                        ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.Posy                                      = GetUInt16(new IntPtr(p + 0x012)); // 024664EF8A40 0x12 Posy                        ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.Posz                                      = GetUInt16(new IntPtr(p + 0x014)); // 024664EF8A60 0x14 Posz                        ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.Posw                                      = GetUInt16(new IntPtr(p + 0x016)); // 024664EF8A80 0x16 Posw                        ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.U                                         = GetUInt16(new IntPtr(p + 0x018)); // 024664EF8AA0 0x18 U                           ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.V                                         = GetUInt16(new IntPtr(p + 0x01A)); // 024664EF8AC0 0x1A V                           ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.R0                                        = GetSByte(new IntPtr(p + 0x01C)); // 024664EF8AE0 0x1C R0                          ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.R1                                        = GetSByte(new IntPtr(p + 0x01D)); // 024664EF8B00 0x1D R1                          ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.R2                                        = GetSByte(new IntPtr(p + 0x01E)); // 024664EF8B20 0x1E R2                          ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.R3                                        = GetSByte(new IntPtr(p + 0x01F)); // 024664EF8B40 0x1F R3                          ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Posx                                      = GetUInt16(new IntPtr(p + 0x010)); // 0x10 Posx                        ( ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Posy                                      = GetUInt16(new IntPtr(p + 0x012)); // 0x12 Posy                        ( ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Posz                                      = GetUInt16(new IntPtr(p + 0x014)); // 0x14 Posz                        ( ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Posw                                      = GetUInt16(new IntPtr(p + 0x016)); // 0x16 Posw                        ( ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.U                                         = GetUInt16(new IntPtr(p + 0x018)); // 0x18 U                           ( ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.V                                         = GetUInt16(new IntPtr(p + 0x01A)); // 0x1A V                           ( ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.R0                                        = GetSByte(new IntPtr(p + 0x01C)); // 0x1C R0                          ( ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.R1                                        = GetSByte(new IntPtr(p + 0x01D)); // 0x1D R1                          ( ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.R2                                        = GetSByte(new IntPtr(p + 0x01E)); // 0x1E R2                          ( ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.R3                                        = GetSByte(new IntPtr(p + 0x01F)); // 0x1F R3                          ( ModelPrimitiveType sbyte sbyte sbyte SByte )
 
             return value;
         }

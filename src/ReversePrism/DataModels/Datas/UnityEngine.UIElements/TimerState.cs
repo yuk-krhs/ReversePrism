@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Start                                    0001865F7700 ModelPrimitiveType long long long Int64
-    // 018 Now                                      0001865F7700 ModelPrimitiveType long long long Int64
+    // 010 Start                                    ModelPrimitiveType long long long Int64
+    // 018 Now                                      ModelPrimitiveType long long long Int64
     public partial class TimerState : DataModel
     {
         public long                                     Start                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TimerState() { Pointer= p0 };
 
-            value.Start                                     = GetInt64(new IntPtr(p + 0x010)); // 0245A67AC0D0 0x10 Start                       ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.Now                                       = GetInt64(new IntPtr(p + 0x018)); // 0245A67AC0F0 0x18 Now                         ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.Start                                     = GetInt64(new IntPtr(p + 0x010)); // 0x10 Start                       ( ModelPrimitiveType long long long Int64 )
+            value.Now                                       = GetInt64(new IntPtr(p + 0x018)); // 0x18 Now                         ( ModelPrimitiveType long long long Int64 )
 
             return value;
         }

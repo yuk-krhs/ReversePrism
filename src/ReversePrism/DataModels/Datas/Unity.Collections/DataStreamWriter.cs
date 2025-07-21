@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Data                                   00018657A070 ModelEnumType StreamData StreamData StreamData Int32
+    // 010 M_Data                                   ModelEnumType StreamData StreamData StreamData Int32
     // 030 m_SendHandleData                         <int> IL2CPP_TYPE_I
     public partial class DataStreamWriter : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DataStreamWriter() { Pointer= p0 };
 
-            value.M_Data                                    = (StreamData)GetInt32(new IntPtr(p + 0x010)); // 0245A51751D0 0x10 M_Data                      ( 00018657A070 ModelEnumType StreamData StreamData StreamData Int32 )
+            value.M_Data                                    = (StreamData)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_Data                      ( ModelEnumType StreamData StreamData StreamData Int32 )
 
             return value;
         }

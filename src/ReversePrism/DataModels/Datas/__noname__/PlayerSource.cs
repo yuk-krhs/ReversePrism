@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Player                                   000186649820 ModelClassType CriAtomExPlayer CriAtomExPlayer CriAtomExPlayer Pointer
-    // 018 Source3d                                 000186644870 ModelClassType CriAtomEx3dSource CriAtomEx3dSource CriAtomEx3dSource Pointer
+    // 010 Player                                   ModelClassType CriAtomExPlayer CriAtomExPlayer CriAtomExPlayer Pointer
+    // 018 Source3d                                 ModelClassType CriAtomEx3dSource CriAtomEx3dSource CriAtomEx3dSource Pointer
     public partial class PlayerSource : DataModel
     {
         public CriAtomExPlayer?                         Player                                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PlayerSource() { Pointer= p0 };
 
-            value.Player                                    = GetObject<CriAtomExPlayer>(new IntPtr(p + 0x010), ReversePrism.DataModels.CriAtomExPlayer.FromPointer); // 02466AD56D20 0x10 Player                      ( 000186649820 ModelClassType CriAtomExPlayer CriAtomExPlayer CriAtomExPlayer Pointer )
-            value.Source3d                                  = GetObject<CriAtomEx3dSource>(new IntPtr(p + 0x018), ReversePrism.DataModels.CriAtomEx3dSource.FromPointer); // 02466AD56D40 0x18 Source3d                    ( 000186644870 ModelClassType CriAtomEx3dSource CriAtomEx3dSource CriAtomEx3dSource Pointer )
+            value.Player                                    = GetObject<CriAtomExPlayer>(new IntPtr(p + 0x010), ReversePrism.DataModels.CriAtomExPlayer.FromPointer); // 0x10 Player                      ( ModelClassType CriAtomExPlayer CriAtomExPlayer CriAtomExPlayer Pointer )
+            value.Source3d                                  = GetObject<CriAtomEx3dSource>(new IntPtr(p + 0x018), ReversePrism.DataModels.CriAtomEx3dSource.FromPointer); // 0x18 Source3d                    ( ModelClassType CriAtomEx3dSource CriAtomEx3dSource CriAtomEx3dSource Pointer )
 
             return value;
         }

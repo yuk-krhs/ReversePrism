@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<EvolveProduceIdolArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstProduceIdolIdFieldNumber              int IL2CPP_TYPE_I4
-    // 018 MstProduceIdolId                         0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MstProduceIdolId                         ModelPrimitiveType int int int Int32
     // 000 EvolutionLevelFieldNumber                int IL2CPP_TYPE_I4
-    // 01C EvolutionLevel                           0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 01C EvolutionLevel                           ModelPrimitiveType int int int Int32
     public partial class EvolveProduceIdolArgs : DataModel
     {
         public int                                      MstProduceIdolId                        { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EvolveProduceIdolArgs() { Pointer= p0 };
 
-            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x018)); // 02466252B798 0x18 MstProduceIdolId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.EvolutionLevel                            = GetInt32(new IntPtr(p + 0x01C)); // 02466252B7D8 0x1C EvolutionLevel              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstProduceIdolId            ( ModelPrimitiveType int int int Int32 )
+            value.EvolutionLevel                            = GetInt32(new IntPtr(p + 0x01C)); // 0x1C EvolutionLevel              ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

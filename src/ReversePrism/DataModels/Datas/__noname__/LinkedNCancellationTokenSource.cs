@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_linkedTokenCancelDelegate              Action`1<<object>> IL2CPP_TYPE_GENERICINST
-    // 040 LinkingRegistrations                     000185B73300 ModelEnumListType CancellationTokenRegistration[] CancellationTokenRegistration[] List<CancellationTokenRegistration> Pointer
+    // 040 LinkingRegistrations                     ModelEnumListType CancellationTokenRegistration[] CancellationTokenRegistration[] List<CancellationTokenRegistration> Pointer
     public partial class LinkedNCancellationTokenSource : DataModel
     {
         public List<CancellationTokenRegistration>?     LinkingRegistrations                    { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LinkedNCancellationTokenSource() { Pointer= p0 };
 
-            value.LinkingRegistrations                      = GetEnumList<CancellationTokenRegistration>(new IntPtr(p + 0x040)); // 0245A4AC9DD8 0x40 LinkingRegistrations        ( 000185B73300 ModelEnumListType CancellationTokenRegistration[] CancellationTokenRegistration[] List<CancellationTokenRegistration> Pointer )
+            value.LinkingRegistrations                      = GetEnumList<CancellationTokenRegistration>(new IntPtr(p + 0x040)); // 0x40 LinkingRegistrations        ( ModelEnumListType CancellationTokenRegistration[] CancellationTokenRegistration[] List<CancellationTokenRegistration> Pointer )
 
             return value;
         }

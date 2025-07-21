@@ -11,11 +11,11 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<UserProfileProduceStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 DifficultyFieldNumber                    int IL2CPP_TYPE_I4
-    // 018 Difficulty                               00018657D560 ModelEnumType ProduceScenarioDifficultyType ProduceScenarioDifficultyType ProduceScenarioDifficultyType Int32
+    // 018 Difficulty                               ModelEnumType ProduceScenarioDifficultyType ProduceScenarioDifficultyType ProduceScenarioDifficultyType Int32
     // 000 TotalFieldNumber                         int IL2CPP_TYPE_I4
-    // 01C Total                                    0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 01C Total                                    ModelPrimitiveType int int int Int32
     // 000 TotalOpenedFieldNumber                   int IL2CPP_TYPE_I4
-    // 020 TotalOpened                              0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 TotalOpened                              ModelPrimitiveType int int int Int32
     public partial class UserProfileProduceStatus : DataModel
     {
         public ProduceScenarioDifficultyType            Difficulty                              { get; set; }
@@ -30,9 +30,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UserProfileProduceStatus() { Pointer= p0 };
 
-            value.Difficulty                                = (ProduceScenarioDifficultyType)GetInt32(new IntPtr(p + 0x018)); // 024662694D48 0x18 Difficulty                  ( 00018657D560 ModelEnumType ProduceScenarioDifficultyType ProduceScenarioDifficultyType ProduceScenarioDifficultyType Int32 )
-            value.Total                                     = GetInt32(new IntPtr(p + 0x01C)); // 024662694D88 0x1C Total                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.TotalOpened                               = GetInt32(new IntPtr(p + 0x020)); // 024662694DC8 0x20 TotalOpened                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Difficulty                                = (ProduceScenarioDifficultyType)GetInt32(new IntPtr(p + 0x018)); // 0x18 Difficulty                  ( ModelEnumType ProduceScenarioDifficultyType ProduceScenarioDifficultyType ProduceScenarioDifficultyType Int32 )
+            value.Total                                     = GetInt32(new IntPtr(p + 0x01C)); // 0x1C Total                       ( ModelPrimitiveType int int int Int32 )
+            value.TotalOpened                               = GetInt32(new IntPtr(p + 0x020)); // 0x20 TotalOpened                 ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

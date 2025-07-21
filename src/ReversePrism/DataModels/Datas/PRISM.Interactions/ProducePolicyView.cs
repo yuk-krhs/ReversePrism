@@ -8,24 +8,26 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 TitleView                                0001865E9D00 ModelClassType CommonTitleView CommonTitleView CommonTitleView Pointer
-    // 028 OnClickPolicyDecideButtonList            000185D17588 ModelClassListType List`1<UIButton> List`1<UIButton> List<UIButton> Pointer
-    // 030 ProducePolicyChoiceContentList           000185CF6D28 ModelClassListType List`1<OneSchedulePolicyContent> List`1<OneSchedulePolicyContent> List<OneSchedulePolicyContent> Pointer
-    // 038 ProducePolicyListObject                  0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 040 ProducePolicyDetailContentComponent      000186564900 ModelClassType ProducePolicyDetailContent ProducePolicyDetailContent ProducePolicyDetailContent Pointer
-    // 048 ProducePolicyDetailObject                0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 050 CutinAnimator                            0001866B8DE0 ModelClassType Animator Animator Animator Pointer
-    // 058 SeasonNoImage                            0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer
-    // 060 SafeAreaRoot                             000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
-    // 068 VitalityGauge                            00018652E260 ModelClassType VitalityGauge VitalityGauge VitalityGauge Pointer
-    // 070 TitleGameObject                          0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 078 ProducePolicyConnector                   000186564100 ModelClassType ProducePolicyConnector ProducePolicyConnector ProducePolicyConnector Pointer
-    // 080 BdgRecommend                             000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
-    // 088 Ct                                       00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32
-    // 090 OnDecideButton                           0001866792B0 ModelClassType Action Action Action Pointer
-    // 098 ScenarioManager                          0001866C9D90 ModelClassType ScenarioManager ScenarioManager ScenarioManager Pointer
-    // 0A0 Disposable                               0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
-    // 0A8 BackKeyDisposable                        0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 020 TitleView                                ModelClassType CommonTitleView CommonTitleView CommonTitleView Pointer
+    // 028 OnClickPolicyDecideButtonList            ModelClassListType List`1<UIButton> List`1<UIButton> List<UIButton> Pointer
+    // 030 ProducePolicyChoiceContentList           ModelClassListType List`1<OneSchedulePolicyContent> List`1<OneSchedulePolicyContent> List<OneSchedulePolicyContent> Pointer
+    // 038 ProducePolicyListObject                  ModelClassType GameObject GameObject GameObject Pointer
+    // 040 ProducePolicyDetailContentComponent      ModelClassType ProducePolicyDetailContent ProducePolicyDetailContent ProducePolicyDetailContent Pointer
+    // 048 ProducePolicyDetailObject                ModelClassType GameObject GameObject GameObject Pointer
+    // 050 CutinAnimator                            ModelClassType Animator Animator Animator Pointer
+    // 058 SeasonNoImage                            ModelClassType UIRawImage UIRawImage UIRawImage Pointer
+    // 060 SafeAreaRoot                             ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 068 VitalityGauge                            ModelClassType ScheduleVitalityGauge ScheduleVitalityGauge ScheduleVitalityGauge Pointer
+    // 070 TitleGameObject                          ModelClassType GameObject GameObject GameObject Pointer
+    // 078 ProducePolicyConnector                   ModelClassType ProducePolicyConnector ProducePolicyConnector ProducePolicyConnector Pointer
+    // 080 ScreenTapSkipAnimationPlayer             ModelClassType ScreenTapSkipAnimationPlayer ScreenTapSkipAnimationPlayer ScreenTapSkipAnimationPlayer Pointer
+    // 088 BdgRecommend                             ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
+    // 090 Model3dLoader                            ModelClassType Model3dLoaderForProduceAdv Model3dLoaderForProduceAdv Model3dLoaderForProduceAdv Pointer
+    // 098 Ct                                       ModelEnumType CancellationToken CancellationToken CancellationToken Int32
+    // 0A0 OnDecideButton                           ModelClassType Action Action Action Pointer
+    // 0A8 ScenarioManager                          ModelClassType ScenarioManager ScenarioManager ScenarioManager Pointer
+    // 0B0 Disposable                               ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 0B8 BackKeyDisposable                        ModelClassType IDisposable IDisposable IDisposable Pointer
     public partial class ProducePolicyView : DataModel
     {
         public CommonTitleView?                         TitleView                               { get; set; }
@@ -37,10 +39,12 @@ namespace ReversePrism.DataModels
         public Animator?                                CutinAnimator                           { get; set; }
         public UIRawImage?                              SeasonNoImage                           { get; set; }
         public RectTransform?                           SafeAreaRoot                            { get; set; }
-        public VitalityGauge?                           VitalityGauge                           { get; set; }
+        public ScheduleVitalityGauge?                   VitalityGauge                           { get; set; }
         public GameObject?                              TitleGameObject                         { get; set; }
         public ProducePolicyConnector?                  ProducePolicyConnector                  { get; set; }
+        public ScreenTapSkipAnimationPlayer?            ScreenTapSkipAnimationPlayer            { get; set; }
         public List<GameObject>?                        BdgRecommend                            { get; set; }
+        public Model3dLoaderForProduceAdv?              Model3dLoader                           { get; set; }
         public CancellationToken                        Ct                                      { get; set; }
         public Action?                                  OnDecideButton                          { get; set; }
         public ScenarioManager?                         ScenarioManager                         { get; set; }
@@ -55,24 +59,26 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProducePolicyView() { Pointer= p0 };
 
-            value.TitleView                                 = GetObject<CommonTitleView>(new IntPtr(p + 0x020), ReversePrism.DataModels.CommonTitleView.FromPointer); // 02466A1D56F0 0x20 TitleView                   ( 0001865E9D00 ModelClassType CommonTitleView CommonTitleView CommonTitleView Pointer )
-            value.OnClickPolicyDecideButtonList             = GetObjectList<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 02466A1D5710 0x28 OnClickPolicyDecideButtonList ( 000185D17588 ModelClassListType List`1<UIButton> List`1<UIButton> List<UIButton> Pointer )
-            value.ProducePolicyChoiceContentList            = GetObjectList<OneSchedulePolicyContent>(new IntPtr(p + 0x030), ReversePrism.DataModels.OneSchedulePolicyContent.FromPointer); // 02466A1D5730 0x30 ProducePolicyChoiceContentList ( 000185CF6D28 ModelClassListType List`1<OneSchedulePolicyContent> List`1<OneSchedulePolicyContent> List<OneSchedulePolicyContent> Pointer )
-            value.ProducePolicyListObject                   = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 02466A1D5750 0x38 ProducePolicyListObject     ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ProducePolicyDetailContentComponent       = GetObject<ProducePolicyDetailContent>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProducePolicyDetailContent.FromPointer); // 02466A1D5770 0x40 ProducePolicyDetailContentComponent ( 000186564900 ModelClassType ProducePolicyDetailContent ProducePolicyDetailContent ProducePolicyDetailContent Pointer )
-            value.ProducePolicyDetailObject                 = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 02466A1D5790 0x48 ProducePolicyDetailObject   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.CutinAnimator                             = GetObject<Animator>(new IntPtr(p + 0x050), ReversePrism.DataModels.Animator.FromPointer); // 02466A1D57B0 0x50 CutinAnimator               ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
-            value.SeasonNoImage                             = GetObject<UIRawImage>(new IntPtr(p + 0x058), ReversePrism.DataModels.UIRawImage.FromPointer); // 02466A1D57D0 0x58 SeasonNoImage               ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
-            value.SafeAreaRoot                              = GetObject<RectTransform>(new IntPtr(p + 0x060), ReversePrism.DataModels.RectTransform.FromPointer); // 02466A1D57F0 0x60 SafeAreaRoot                ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.VitalityGauge                             = GetObject<VitalityGauge>(new IntPtr(p + 0x068), ReversePrism.DataModels.VitalityGauge.FromPointer); // 02466A1D5810 0x68 VitalityGauge               ( 00018652E260 ModelClassType VitalityGauge VitalityGauge VitalityGauge Pointer )
-            value.TitleGameObject                           = GetObject<GameObject>(new IntPtr(p + 0x070), ReversePrism.DataModels.GameObject.FromPointer); // 02466A1D5830 0x70 TitleGameObject             ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ProducePolicyConnector                    = GetObject<ProducePolicyConnector>(new IntPtr(p + 0x078), ReversePrism.DataModels.ProducePolicyConnector.FromPointer); // 02466A1D5850 0x78 ProducePolicyConnector      ( 000186564100 ModelClassType ProducePolicyConnector ProducePolicyConnector ProducePolicyConnector Pointer )
-            value.BdgRecommend                              = GetObjectList<GameObject>(new IntPtr(p + 0x080), ReversePrism.DataModels.GameObject.FromPointer); // 02466A1D5870 0x80 BdgRecommend                ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
-            value.Ct                                        = (CancellationToken)GetInt32(new IntPtr(p + 0x088)); // 02466A1D5890 0x88 Ct                          ( 00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
-            value.OnDecideButton                            = GetObject<Action>(new IntPtr(p + 0x090), ReversePrism.DataModels.Action.FromPointer); // 02466A1D58B0 0x90 OnDecideButton              ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.ScenarioManager                           = GetObject<ScenarioManager>(new IntPtr(p + 0x098), ReversePrism.DataModels.ScenarioManager.FromPointer); // 02466A1D58D0 0x98 ScenarioManager             ( 0001866C9D90 ModelClassType ScenarioManager ScenarioManager ScenarioManager Pointer )
-            value.Disposable                                = GetObject<IDisposable>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.IDisposable.FromPointer); // 02466A1D58F0 0xA0 Disposable                  ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
-            value.BackKeyDisposable                         = GetObject<IDisposable>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.IDisposable.FromPointer); // 02466A1D5910 0xA8 BackKeyDisposable           ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.TitleView                                 = GetObject<CommonTitleView>(new IntPtr(p + 0x020), ReversePrism.DataModels.CommonTitleView.FromPointer); // 0x20 TitleView                   ( ModelClassType CommonTitleView CommonTitleView CommonTitleView Pointer )
+            value.OnClickPolicyDecideButtonList             = GetObjectList<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 0x28 OnClickPolicyDecideButtonList ( ModelClassListType List`1<UIButton> List`1<UIButton> List<UIButton> Pointer )
+            value.ProducePolicyChoiceContentList            = GetObjectList<OneSchedulePolicyContent>(new IntPtr(p + 0x030), ReversePrism.DataModels.OneSchedulePolicyContent.FromPointer); // 0x30 ProducePolicyChoiceContentList ( ModelClassListType List`1<OneSchedulePolicyContent> List`1<OneSchedulePolicyContent> List<OneSchedulePolicyContent> Pointer )
+            value.ProducePolicyListObject                   = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0x38 ProducePolicyListObject     ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.ProducePolicyDetailContentComponent       = GetObject<ProducePolicyDetailContent>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProducePolicyDetailContent.FromPointer); // 0x40 ProducePolicyDetailContentComponent ( ModelClassType ProducePolicyDetailContent ProducePolicyDetailContent ProducePolicyDetailContent Pointer )
+            value.ProducePolicyDetailObject                 = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 0x48 ProducePolicyDetailObject   ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.CutinAnimator                             = GetObject<Animator>(new IntPtr(p + 0x050), ReversePrism.DataModels.Animator.FromPointer); // 0x50 CutinAnimator               ( ModelClassType Animator Animator Animator Pointer )
+            value.SeasonNoImage                             = GetObject<UIRawImage>(new IntPtr(p + 0x058), ReversePrism.DataModels.UIRawImage.FromPointer); // 0x58 SeasonNoImage               ( ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
+            value.SafeAreaRoot                              = GetObject<RectTransform>(new IntPtr(p + 0x060), ReversePrism.DataModels.RectTransform.FromPointer); // 0x60 SafeAreaRoot                ( ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.VitalityGauge                             = GetObject<ScheduleVitalityGauge>(new IntPtr(p + 0x068), ReversePrism.DataModels.ScheduleVitalityGauge.FromPointer); // 0x68 VitalityGauge               ( ModelClassType ScheduleVitalityGauge ScheduleVitalityGauge ScheduleVitalityGauge Pointer )
+            value.TitleGameObject                           = GetObject<GameObject>(new IntPtr(p + 0x070), ReversePrism.DataModels.GameObject.FromPointer); // 0x70 TitleGameObject             ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.ProducePolicyConnector                    = GetObject<ProducePolicyConnector>(new IntPtr(p + 0x078), ReversePrism.DataModels.ProducePolicyConnector.FromPointer); // 0x78 ProducePolicyConnector      ( ModelClassType ProducePolicyConnector ProducePolicyConnector ProducePolicyConnector Pointer )
+            value.ScreenTapSkipAnimationPlayer              = GetObject<ScreenTapSkipAnimationPlayer>(new IntPtr(p + 0x080), ReversePrism.DataModels.ScreenTapSkipAnimationPlayer.FromPointer); // 0x80 ScreenTapSkipAnimationPlayer ( ModelClassType ScreenTapSkipAnimationPlayer ScreenTapSkipAnimationPlayer ScreenTapSkipAnimationPlayer Pointer )
+            value.BdgRecommend                              = GetObjectList<GameObject>(new IntPtr(p + 0x088), ReversePrism.DataModels.GameObject.FromPointer); // 0x88 BdgRecommend                ( ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.Model3dLoader                             = GetObject<Model3dLoaderForProduceAdv>(new IntPtr(p + 0x090), ReversePrism.DataModels.Model3dLoaderForProduceAdv.FromPointer); // 0x90 Model3dLoader               ( ModelClassType Model3dLoaderForProduceAdv Model3dLoaderForProduceAdv Model3dLoaderForProduceAdv Pointer )
+            value.Ct                                        = (CancellationToken)GetInt32(new IntPtr(p + 0x098)); // 0x98 Ct                          ( ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
+            value.OnDecideButton                            = GetObject<Action>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.Action.FromPointer); // 0xA0 OnDecideButton              ( ModelClassType Action Action Action Pointer )
+            value.ScenarioManager                           = GetObject<ScenarioManager>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.ScenarioManager.FromPointer); // 0xA8 ScenarioManager             ( ModelClassType ScenarioManager ScenarioManager ScenarioManager Pointer )
+            value.Disposable                                = GetObject<IDisposable>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.IDisposable.FromPointer); // 0xB0 Disposable                  ( ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.BackKeyDisposable                         = GetObject<IDisposable>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.IDisposable.FromPointer); // 0xB8 BackKeyDisposable           ( ModelClassType IDisposable IDisposable IDisposable Pointer )
 
             return value;
         }

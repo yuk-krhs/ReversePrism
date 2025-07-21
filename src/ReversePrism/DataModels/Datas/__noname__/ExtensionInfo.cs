@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 NodeType                                 00018652E0C0 ModelEnumType ExpressionType ExpressionType ExpressionType Int32
-    // 018 Type                                     000186693960 ModelClassType Type Type Type Pointer
+    // 010 NodeType                                 ModelEnumType ExpressionType ExpressionType ExpressionType Int32
+    // 018 Type                                     ModelClassType Type Type Type Pointer
     public partial class ExtensionInfo : DataModel
     {
         public ExpressionType                           NodeType                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExtensionInfo() { Pointer= p0 };
 
-            value.NodeType                                  = (ExpressionType)GetInt32(new IntPtr(p + 0x010)); // 024669F74920 0x10 NodeType                    ( 00018652E0C0 ModelEnumType ExpressionType ExpressionType ExpressionType Int32 )
-            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 024669F74940 0x18 Type                        ( 000186693960 ModelClassType Type Type Type Pointer )
+            value.NodeType                                  = (ExpressionType)GetInt32(new IntPtr(p + 0x010)); // 0x10 NodeType                    ( ModelEnumType ExpressionType ExpressionType ExpressionType Int32 )
+            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 0x18 Type                        ( ModelClassType Type Type Type Pointer )
 
             return value;
         }

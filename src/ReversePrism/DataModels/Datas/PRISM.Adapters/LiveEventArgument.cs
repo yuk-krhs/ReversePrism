@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 EventId                                  0001865F4940 ModelPrimitiveType int int int Int32
+    // 010 EventId                                  ModelPrimitiveType int int int Int32
     public partial class LiveEventArgument : DataModel
     {
         public int                                      EventId                                 { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveEventArgument() { Pointer= p0 };
 
-            value.EventId                                   = GetInt32(new IntPtr(p + 0x010)); // 0246662D8708 0x10 EventId                     ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.EventId                                   = GetInt32(new IntPtr(p + 0x010)); // 0x10 EventId                     ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

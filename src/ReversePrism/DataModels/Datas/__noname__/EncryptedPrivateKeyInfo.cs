@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Algorithm                                000186671910 ModelPrimitiveType string string string String
-    // 018 Salt                                     000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 020 Iterations                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 028 Data                                     000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 010 Algorithm                                ModelPrimitiveType string string string String
+    // 018 Salt                                     ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 020 Iterations                               ModelPrimitiveType int int int Int32
+    // 028 Data                                     ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     public partial class EncryptedPrivateKeyInfo : DataModel
     {
         public string                                   Algorithm                               { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EncryptedPrivateKeyInfo() { Pointer= p0 };
 
-            value.Algorithm                                 = GetString(new IntPtr(p + 0x010)); // 02466B4113D8 0x10 Algorithm                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.Salt                                      = GetSByteList(new IntPtr(p + 0x018)); // 02466B4113F8 0x18 Salt                        ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Iterations                                = GetInt32(new IntPtr(p + 0x020)); // 02466B411418 0x20 Iterations                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Data                                      = GetSByteList(new IntPtr(p + 0x028)); // 02466B411438 0x28 Data                        ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Algorithm                                 = GetString(new IntPtr(p + 0x010)); // 0x10 Algorithm                   ( ModelPrimitiveType string string string String )
+            value.Salt                                      = GetSByteList(new IntPtr(p + 0x018)); // 0x18 Salt                        ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Iterations                                = GetInt32(new IntPtr(p + 0x020)); // 0x20 Iterations                  ( ModelPrimitiveType int int int Int32 )
+            value.Data                                      = GetSByteList(new IntPtr(p + 0x028)); // 0x28 Data                        ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

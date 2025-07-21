@@ -8,18 +8,18 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 TouchBleckObject                         0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 028 TouchBleckCanvas                         00018653FDA0 ModelClassType Canvas Canvas Canvas Pointer
-    // 030 Scroller                                 0001866FAE60 ModelClassType Scroller Scroller Scroller Pointer
-    // 038 Carousel                                 0001866DBA90 ModelClassType ScheduleSelectionListCarousel ScheduleSelectionListCarousel ScheduleSelectionListCarousel Pointer
-    // 040 IndicatorObjectList                      000185CDD468 ModelClassListType List`1<GameObject> List`1<GameObject> List<GameObject> Pointer
-    // 048 IndicatorOnObjectList                    000185CDD468 ModelClassListType List`1<GameObject> List`1<GameObject> List<GameObject> Pointer
-    // 050 IndicatorOffObjectList                   000185CDD468 ModelClassListType List`1<GameObject> List`1<GameObject> List<GameObject> Pointer
-    // 058 DetailDisplayCanvasGroup                 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
-    // 060 FinishWorkTutorialSequence               0001866807A0 ModelClassType ITutorialSequence ITutorialSequence ITutorialSequence Pointer
-    // 068 SafeAreaRoot                             000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
-    // 070 ScheduleDetailViewModel                  0001866DF950 ModelClassType ScheduleSelectionScheduleDetailViewModel ScheduleSelectionScheduleDetailViewModel ScheduleSelectionScheduleDetailViewModel Pointer
-    // 078 WeekSscheduleDetailList                  000185CE86C8 ModelClassListType List`1<IScheduleStatus> List`1<IScheduleStatus> List<IScheduleStatus> Pointer
+    // 020 TouchBleckObject                         ModelClassType GameObject GameObject GameObject Pointer
+    // 028 TouchBleckCanvas                         ModelClassType Canvas Canvas Canvas Pointer
+    // 030 Scroller                                 ModelClassType Scroller Scroller Scroller Pointer
+    // 038 Carousel                                 ModelClassType ScheduleSelectionListCarousel ScheduleSelectionListCarousel ScheduleSelectionListCarousel Pointer
+    // 040 IndicatorObjectList                      ModelClassListType List`1<GameObject> List`1<GameObject> List<GameObject> Pointer
+    // 048 IndicatorOnObjectList                    ModelClassListType List`1<GameObject> List`1<GameObject> List<GameObject> Pointer
+    // 050 IndicatorOffObjectList                   ModelClassListType List`1<GameObject> List`1<GameObject> List<GameObject> Pointer
+    // 058 DetailDisplayCanvasGroup                 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
+    // 060 FinishWorkTutorialSequence               ModelClassType ITutorialSequence ITutorialSequence ITutorialSequence Pointer
+    // 068 SafeAreaRoot                             ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 070 ScheduleDetailViewModel                  ModelClassType ScheduleSelectionScheduleDetailViewModel ScheduleSelectionScheduleDetailViewModel ScheduleSelectionScheduleDetailViewModel Pointer
+    // 078 WeekScheduleDetailList                   ModelClassListType IReadOnlyList`1<IScheduleStatus> IReadOnlyList`1<IScheduleStatus> List<IScheduleStatus> Pointer
     // 080 onClickScheduleExecute                   Subject`1<IScheduleDetailStatus> IL2CPP_TYPE_GENERICINST
     // 088 onClickScheduleCancel                    Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 090 onCallBlackActive                        Subject`1<bool> IL2CPP_TYPE_GENERICINST
@@ -29,12 +29,13 @@ namespace ReversePrism.DataModels
     // 0B0 onClickRightButton                       Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 0B8 onClickLeftButton                        Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 0C0 onScheduleDetailContent                  Subject`1<ScheduleDetailContent> IL2CPP_TYPE_GENERICINST
-    // 0C8 OnEndLoad                                0001866792B0 ModelClassType Action Action Action Pointer
+    // 0C8 OnEndLoad                                ModelClassType Action Action Action Pointer
     // 0D0 onNotifyAudition                         Subject`1<bool> IL2CPP_TYPE_GENERICINST
-    // 0D8 CacheScheduleDetailContent               0001866D1FB0 ModelClassType ScheduleDetailContent ScheduleDetailContent ScheduleDetailContent Pointer
-    // 0E0 IsAudition                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 0E4 LoadCount                                0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 0E8 BackKeyDisposable                        0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 0D8 CacheScheduleDetailContent               ModelClassType ScheduleDetailContent ScheduleDetailContent ScheduleDetailContent Pointer
+    // 0E0 IsAudition                               ModelPrimitiveType bool bool bool Bool
+    // 0E4 LoadCount                                ModelPrimitiveType int int int Int32
+    // 0E8 BackKeyDisposable                        ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 0F0 Model3dLoader                            ModelClassType IModel3dLoaderForScheduleDetail IModel3dLoaderForScheduleDetail IModel3dLoaderForScheduleDetail Pointer
     public partial class ScheduleSelectionScheduleDetailView : DataModel
     {
         public GameObject?                              TouchBleckObject                        { get; set; }
@@ -48,12 +49,13 @@ namespace ReversePrism.DataModels
         public ITutorialSequence?                       FinishWorkTutorialSequence              { get; set; }
         public RectTransform?                           SafeAreaRoot                            { get; set; }
         public ScheduleSelectionScheduleDetailViewModel? ScheduleDetailViewModel                 { get; set; }
-        public List<IScheduleStatus>?                   WeekSscheduleDetailList                 { get; set; }
+        public List<IScheduleStatus>?                   WeekScheduleDetailList                  { get; set; }
         public Action?                                  OnEndLoad                               { get; set; }
         public ScheduleDetailContent?                   CacheScheduleDetailContent              { get; set; }
         public bool                                     IsAudition                              { get; set; }
         public int                                      LoadCount                               { get; set; }
         public IDisposable?                             BackKeyDisposable                       { get; set; }
+        public IModel3dLoaderForScheduleDetail?         Model3dLoader                           { get; set; }
 
         public static ScheduleSelectionScheduleDetailView? FromPointer(IntPtr p0)
         {
@@ -63,23 +65,24 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ScheduleSelectionScheduleDetailView() { Pointer= p0 };
 
-            value.TouchBleckObject                          = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 02466A1EB948 0x20 TouchBleckObject            ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.TouchBleckCanvas                          = GetObject<Canvas>(new IntPtr(p + 0x028), ReversePrism.DataModels.Canvas.FromPointer); // 02466A1EB968 0x28 TouchBleckCanvas            ( 00018653FDA0 ModelClassType Canvas Canvas Canvas Pointer )
-            value.Scroller                                  = GetObject<Scroller>(new IntPtr(p + 0x030), ReversePrism.DataModels.Scroller.FromPointer); // 02466A1EB988 0x30 Scroller                    ( 0001866FAE60 ModelClassType Scroller Scroller Scroller Pointer )
-            value.Carousel                                  = GetObject<ScheduleSelectionListCarousel>(new IntPtr(p + 0x038), ReversePrism.DataModels.ScheduleSelectionListCarousel.FromPointer); // 02466A1EB9A8 0x38 Carousel                    ( 0001866DBA90 ModelClassType ScheduleSelectionListCarousel ScheduleSelectionListCarousel ScheduleSelectionListCarousel Pointer )
-            value.IndicatorObjectList                       = GetObjectList<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 02466A1EB9C8 0x40 IndicatorObjectList         ( 000185CDD468 ModelClassListType List`1<GameObject> List`1<GameObject> List<GameObject> Pointer )
-            value.IndicatorOnObjectList                     = GetObjectList<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 02466A1EB9E8 0x48 IndicatorOnObjectList       ( 000185CDD468 ModelClassListType List`1<GameObject> List`1<GameObject> List<GameObject> Pointer )
-            value.IndicatorOffObjectList                    = GetObjectList<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 02466A1EBA08 0x50 IndicatorOffObjectList      ( 000185CDD468 ModelClassListType List`1<GameObject> List`1<GameObject> List<GameObject> Pointer )
-            value.DetailDisplayCanvasGroup                  = GetObject<CanvasGroup>(new IntPtr(p + 0x058), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466A1EBA28 0x58 DetailDisplayCanvasGroup    ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.FinishWorkTutorialSequence                = GetObject<ITutorialSequence>(new IntPtr(p + 0x060), ReversePrism.DataModels.ITutorialSequence.FromPointer); // 02466A1EBA48 0x60 FinishWorkTutorialSequence  ( 0001866807A0 ModelClassType ITutorialSequence ITutorialSequence ITutorialSequence Pointer )
-            value.SafeAreaRoot                              = GetObject<RectTransform>(new IntPtr(p + 0x068), ReversePrism.DataModels.RectTransform.FromPointer); // 02466A1EBA68 0x68 SafeAreaRoot                ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.ScheduleDetailViewModel                   = GetObject<ScheduleSelectionScheduleDetailViewModel>(new IntPtr(p + 0x070), ReversePrism.DataModels.ScheduleSelectionScheduleDetailViewModel.FromPointer); // 02466A1EBA88 0x70 ScheduleDetailViewModel     ( 0001866DF950 ModelClassType ScheduleSelectionScheduleDetailViewModel ScheduleSelectionScheduleDetailViewModel ScheduleSelectionScheduleDetailViewModel Pointer )
-            value.WeekSscheduleDetailList                   = GetObjectList<IScheduleStatus>(new IntPtr(p + 0x078), ReversePrism.DataModels.IScheduleStatus.FromPointer); // 02466A1EBAA8 0x78 WeekSscheduleDetailList     ( 000185CE86C8 ModelClassListType List`1<IScheduleStatus> List`1<IScheduleStatus> List<IScheduleStatus> Pointer )
-            value.OnEndLoad                                 = GetObject<Action>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.Action.FromPointer); // 02466A1EBBE8 0xC8 OnEndLoad                   ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.CacheScheduleDetailContent                = GetObject<ScheduleDetailContent>(new IntPtr(p + 0x0D8), ReversePrism.DataModels.ScheduleDetailContent.FromPointer); // 02466A1EBC28 0xD8 CacheScheduleDetailContent  ( 0001866D1FB0 ModelClassType ScheduleDetailContent ScheduleDetailContent ScheduleDetailContent Pointer )
-            value.IsAudition                                = GetBool(new IntPtr(p + 0x0E0)); // 02466A1EBC48 0xE0 IsAudition                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.LoadCount                                 = GetInt32(new IntPtr(p + 0x0E4)); // 02466A1EBC68 0xE4 LoadCount                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.BackKeyDisposable                         = GetObject<IDisposable>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.IDisposable.FromPointer); // 02466A1EBC88 0xE8 BackKeyDisposable           ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.TouchBleckObject                          = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0x20 TouchBleckObject            ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.TouchBleckCanvas                          = GetObject<Canvas>(new IntPtr(p + 0x028), ReversePrism.DataModels.Canvas.FromPointer); // 0x28 TouchBleckCanvas            ( ModelClassType Canvas Canvas Canvas Pointer )
+            value.Scroller                                  = GetObject<Scroller>(new IntPtr(p + 0x030), ReversePrism.DataModels.Scroller.FromPointer); // 0x30 Scroller                    ( ModelClassType Scroller Scroller Scroller Pointer )
+            value.Carousel                                  = GetObject<ScheduleSelectionListCarousel>(new IntPtr(p + 0x038), ReversePrism.DataModels.ScheduleSelectionListCarousel.FromPointer); // 0x38 Carousel                    ( ModelClassType ScheduleSelectionListCarousel ScheduleSelectionListCarousel ScheduleSelectionListCarousel Pointer )
+            value.IndicatorObjectList                       = GetObjectList<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 0x40 IndicatorObjectList         ( ModelClassListType List`1<GameObject> List`1<GameObject> List<GameObject> Pointer )
+            value.IndicatorOnObjectList                     = GetObjectList<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 0x48 IndicatorOnObjectList       ( ModelClassListType List`1<GameObject> List`1<GameObject> List<GameObject> Pointer )
+            value.IndicatorOffObjectList                    = GetObjectList<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 0x50 IndicatorOffObjectList      ( ModelClassListType List`1<GameObject> List`1<GameObject> List<GameObject> Pointer )
+            value.DetailDisplayCanvasGroup                  = GetObject<CanvasGroup>(new IntPtr(p + 0x058), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0x58 DetailDisplayCanvasGroup    ( ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.FinishWorkTutorialSequence                = GetObject<ITutorialSequence>(new IntPtr(p + 0x060), ReversePrism.DataModels.ITutorialSequence.FromPointer); // 0x60 FinishWorkTutorialSequence  ( ModelClassType ITutorialSequence ITutorialSequence ITutorialSequence Pointer )
+            value.SafeAreaRoot                              = GetObject<RectTransform>(new IntPtr(p + 0x068), ReversePrism.DataModels.RectTransform.FromPointer); // 0x68 SafeAreaRoot                ( ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.ScheduleDetailViewModel                   = GetObject<ScheduleSelectionScheduleDetailViewModel>(new IntPtr(p + 0x070), ReversePrism.DataModels.ScheduleSelectionScheduleDetailViewModel.FromPointer); // 0x70 ScheduleDetailViewModel     ( ModelClassType ScheduleSelectionScheduleDetailViewModel ScheduleSelectionScheduleDetailViewModel ScheduleSelectionScheduleDetailViewModel Pointer )
+            value.WeekScheduleDetailList                    = GetObjectList<IScheduleStatus>(new IntPtr(p + 0x078), ReversePrism.DataModels.IScheduleStatus.FromPointer); // 0x78 WeekScheduleDetailList      ( ModelClassListType IReadOnlyList`1<IScheduleStatus> IReadOnlyList`1<IScheduleStatus> List<IScheduleStatus> Pointer )
+            value.OnEndLoad                                 = GetObject<Action>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.Action.FromPointer); // 0xC8 OnEndLoad                   ( ModelClassType Action Action Action Pointer )
+            value.CacheScheduleDetailContent                = GetObject<ScheduleDetailContent>(new IntPtr(p + 0x0D8), ReversePrism.DataModels.ScheduleDetailContent.FromPointer); // 0xD8 CacheScheduleDetailContent  ( ModelClassType ScheduleDetailContent ScheduleDetailContent ScheduleDetailContent Pointer )
+            value.IsAudition                                = GetBool(new IntPtr(p + 0x0E0)); // 0xE0 IsAudition                  ( ModelPrimitiveType bool bool bool Bool )
+            value.LoadCount                                 = GetInt32(new IntPtr(p + 0x0E4)); // 0xE4 LoadCount                   ( ModelPrimitiveType int int int Int32 )
+            value.BackKeyDisposable                         = GetObject<IDisposable>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.IDisposable.FromPointer); // 0xE8 BackKeyDisposable           ( ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.Model3dLoader                             = GetObject<IModel3dLoaderForScheduleDetail>(new IntPtr(p + 0x0F0), ReversePrism.DataModels.IModel3dLoaderForScheduleDetail.FromPointer); // 0xF0 Model3dLoader               ( ModelClassType IModel3dLoaderForScheduleDetail IModel3dLoaderForScheduleDetail IModel3dLoaderForScheduleDetail Pointer )
 
             return value;
         }

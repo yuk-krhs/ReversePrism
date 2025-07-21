@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 000 s_canceledTask                           Task IL2CPP_TYPE_CLASS
     // 010 _obj                                     <object> IL2CPP_TYPE_OBJECT
-    // 018 Token                                    0001865F19E0 ModelPrimitiveType short short short Int16
-    // 01A ContinueOnCapturedContext                000186596860 ModelPrimitiveType bool bool bool Bool
+    // 018 Token                                    ModelPrimitiveType short short short Int16
+    // 01A ContinueOnCapturedContext                ModelPrimitiveType bool bool bool Bool
     public partial class ValueTask : DataModel
     {
         public short                                    Token                                   { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ValueTask() { Pointer= p0 };
 
-            value.Token                                     = GetInt16(new IntPtr(p + 0x018)); // 0246619537E8 0x18 Token                       ( 0001865F19E0 ModelPrimitiveType short short short Int16 )
-            value.ContinueOnCapturedContext                 = GetBool(new IntPtr(p + 0x01A)); // 024661953808 0x1A ContinueOnCapturedContext   ( 000186596860 ModelPrimitiveType bool bool bool Bool )
+            value.Token                                     = GetInt16(new IntPtr(p + 0x018)); // 0x18 Token                       ( ModelPrimitiveType short short short Int16 )
+            value.ContinueOnCapturedContext                 = GetBool(new IntPtr(p + 0x01A)); // 0x1A ContinueOnCapturedContext   ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

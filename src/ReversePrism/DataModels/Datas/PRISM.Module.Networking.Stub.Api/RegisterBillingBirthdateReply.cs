@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<RegisterBillingBirthdateReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 BirthdateFieldNumber                     int IL2CPP_TYPE_I4
-    // 018 Birthdate                                000186671910 ModelPrimitiveType string string string String
+    // 018 Birthdate                                ModelPrimitiveType string string string String
     public partial class RegisterBillingBirthdateReply : DataModel
     {
         public string                                   Birthdate                               { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RegisterBillingBirthdateReply() { Pointer= p0 };
 
-            value.Birthdate                                 = GetString(new IntPtr(p + 0x018)); // 024660B2A740 0x18 Birthdate                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.Birthdate                                 = GetString(new IntPtr(p + 0x018)); // 0x18 Birthdate                   ( ModelPrimitiveType string string string String )
 
             return value;
         }

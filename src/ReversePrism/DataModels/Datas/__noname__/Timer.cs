@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Index                                    0001865F7700 ModelPrimitiveType long long long Int64
+    // 020 Index                                    ModelPrimitiveType long long long Int64
     public partial class Timer : DataModel
     {
         public long                                     Index                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Timer() { Pointer= p0 };
 
-            value.Index                                     = GetInt64(new IntPtr(p + 0x020)); // 0245A3C2D080 0x20 Index                       ( 0001865F7700 ModelPrimitiveType long long long Int64 )
+            value.Index                                     = GetInt64(new IntPtr(p + 0x020)); // 0x20 Index                       ( ModelPrimitiveType long long long Int64 )
 
             return value;
         }

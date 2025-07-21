@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 MissionCompletText                       0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 028 MissionGroupText                         0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 030 CheckMarkImg                             0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 038 MissionGroupBackImg                      0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 040 Animator                                 0001866B8DE0 ModelClassType Animator Animator Animator Pointer
-    // 048 MissionGroupObject                       0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
+    // 020 MissionCompletText                       ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 028 MissionGroupText                         ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 030 CheckMarkImg                             ModelClassType UIImage UIImage UIImage Pointer
+    // 038 MissionGroupBackImg                      ModelClassType UIImage UIImage UIImage Pointer
+    // 040 Animator                                 ModelClassType Animator Animator Animator Pointer
+    // 048 MissionGroupObject                       ModelClassType GameObject GameObject GameObject Pointer
     public partial class MissionNoticeView : DataModel
     {
         public UITextMeshProUGUI?                       MissionCompletText                      { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MissionNoticeView() { Pointer= p0 };
 
-            value.MissionCompletText                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0245A3FA34D8 0x20 MissionCompletText          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.MissionGroupText                          = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0245A3FA34F8 0x28 MissionGroupText            ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.CheckMarkImg                              = GetObject<UIImage>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIImage.FromPointer); // 0245A3FA3518 0x30 CheckMarkImg                ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.MissionGroupBackImg                       = GetObject<UIImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIImage.FromPointer); // 0245A3FA3538 0x38 MissionGroupBackImg         ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.Animator                                  = GetObject<Animator>(new IntPtr(p + 0x040), ReversePrism.DataModels.Animator.FromPointer); // 0245A3FA3558 0x40 Animator                    ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
-            value.MissionGroupObject                        = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 0245A3FA3578 0x48 MissionGroupObject          ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.MissionCompletText                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x20 MissionCompletText          ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.MissionGroupText                          = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x28 MissionGroupText            ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.CheckMarkImg                              = GetObject<UIImage>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIImage.FromPointer); // 0x30 CheckMarkImg                ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.MissionGroupBackImg                       = GetObject<UIImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIImage.FromPointer); // 0x38 MissionGroupBackImg         ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.Animator                                  = GetObject<Animator>(new IntPtr(p + 0x040), ReversePrism.DataModels.Animator.FromPointer); // 0x40 Animator                    ( ModelClassType Animator Animator Animator Pointer )
+            value.MissionGroupObject                        = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 0x48 MissionGroupObject          ( ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

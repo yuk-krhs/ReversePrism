@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 000 s_cachedTypeObjRef                       Type IL2CPP_TYPE_CLASS
     // 008 _objRefSurrogate                         ObjRefSurrogate IL2CPP_TYPE_CLASS
-    // 010 ObjRemotingSurrogate                     00018664BBF0 ModelClassType RemotingSurrogate RemotingSurrogate RemotingSurrogate Pointer
-    // 010 Next                                     0001865E4F40 ModelClassType ISurrogateSelector ISurrogateSelector ISurrogateSelector Pointer
+    // 010 ObjRemotingSurrogate                     ModelClassType RemotingSurrogate RemotingSurrogate RemotingSurrogate Pointer
+    // 010 Next                                     ModelClassType ISurrogateSelector ISurrogateSelector ISurrogateSelector Pointer
     public partial class RemotingSurrogateSelector : DataModel
     {
         public RemotingSurrogate?                       ObjRemotingSurrogate                    { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RemotingSurrogateSelector() { Pointer= p0 };
 
-            value.ObjRemotingSurrogate                      = GetObject<RemotingSurrogate>(new IntPtr(p + 0x010), ReversePrism.DataModels.RemotingSurrogate.FromPointer); // 024666C64408 0x10 ObjRemotingSurrogate        ( 00018664BBF0 ModelClassType RemotingSurrogate RemotingSurrogate RemotingSurrogate Pointer )
-            value.Next                                      = GetObject<ISurrogateSelector>(new IntPtr(p + 0x010), ReversePrism.DataModels.ISurrogateSelector.FromPointer); // 024666C64428 0x10 Next                        ( 0001865E4F40 ModelClassType ISurrogateSelector ISurrogateSelector ISurrogateSelector Pointer )
+            value.ObjRemotingSurrogate                      = GetObject<RemotingSurrogate>(new IntPtr(p + 0x010), ReversePrism.DataModels.RemotingSurrogate.FromPointer); // 0x10 ObjRemotingSurrogate        ( ModelClassType RemotingSurrogate RemotingSurrogate RemotingSurrogate Pointer )
+            value.Next                                      = GetObject<ISurrogateSelector>(new IntPtr(p + 0x010), ReversePrism.DataModels.ISurrogateSelector.FromPointer); // 0x10 Next                        ( ModelClassType ISurrogateSelector ISurrogateSelector ISurrogateSelector Pointer )
 
             return value;
         }

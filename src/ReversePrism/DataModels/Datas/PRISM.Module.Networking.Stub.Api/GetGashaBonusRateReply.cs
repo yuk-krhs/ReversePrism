@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 RateListFieldNumber                      int IL2CPP_TYPE_I4
     // 008 _repeated_rateList_codec                 FieldCodec`1<GashaBonusRateStatus> IL2CPP_TYPE_GENERICINST
-    // 018 RateList                                 000185CDAAF8 ModelClassListType RepeatedField`1<GashaBonusRateStatus> RepeatedField`1<GashaBonusRateStatus> List<GashaBonusRateStatus> Pointer
+    // 018 RateList                                 ModelClassListType RepeatedField`1<GashaBonusRateStatus> RepeatedField`1<GashaBonusRateStatus> List<GashaBonusRateStatus> Pointer
     public partial class GetGashaBonusRateReply : DataModel
     {
         public List<GashaBonusRateStatus>?              RateList                                { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetGashaBonusRateReply() { Pointer= p0 };
 
-            value.RateList                                  = GetObjectList<GashaBonusRateStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.GashaBonusRateStatus.FromPointer); // 024661999640 0x18 RateList                    ( 000185CDAAF8 ModelClassListType RepeatedField`1<GashaBonusRateStatus> RepeatedField`1<GashaBonusRateStatus> List<GashaBonusRateStatus> Pointer )
+            value.RateList                                  = GetObjectList<GashaBonusRateStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.GashaBonusRateStatus.FromPointer); // 0x18 RateList                    ( ModelClassListType RepeatedField`1<GashaBonusRateStatus> RepeatedField`1<GashaBonusRateStatus> List<GashaBonusRateStatus> Pointer )
 
             return value;
         }

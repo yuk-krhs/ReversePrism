@@ -8,9 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 Items                                    000185CBBF68 ModelEnumListType Item[] Item[] List<Item> Pointer
+    // 018 Title                                    ModelPrimitiveType string string string String
+    // 020 Items                                    ModelEnumListType Item[] Item[] List<Item> Pointer
     public partial class HowToPlayPopupResourceConfig : DataModel
     {
+        public string                                   Title                                   { get; set; }
         public List<Item>?                              Items                                   { get; set; }
 
         public static HowToPlayPopupResourceConfig? FromPointer(IntPtr p0)
@@ -21,7 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HowToPlayPopupResourceConfig() { Pointer= p0 };
 
-            value.Items                                     = GetEnumList<Item>(new IntPtr(p + 0x018)); // 024664CD02B0 0x18 Items                       ( 000185CBBF68 ModelEnumListType Item[] Item[] List<Item> Pointer )
+            value.Title                                     = GetString(new IntPtr(p + 0x018)); // 0x18 Title                       ( ModelPrimitiveType string string string String )
+            value.Items                                     = GetEnumList<Item>(new IntPtr(p + 0x020)); // 0x20 Items                       ( ModelEnumListType Item[] Item[] List<Item> Pointer )
 
             return value;
         }

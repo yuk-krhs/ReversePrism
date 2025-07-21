@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 SheetInstanceID                          0001865F4940 ModelPrimitiveType int int int Int32
-    // 014 Index                                    0001865F4940 ModelPrimitiveType int int int Int32
+    // 010 SheetInstanceID                          ModelPrimitiveType int int int Int32
+    // 014 Index                                    ModelPrimitiveType int int int Int32
     public partial class SheetHandleKey : DataModel
     {
         public int                                      SheetInstanceID                         { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SheetHandleKey() { Pointer= p0 };
 
-            value.SheetInstanceID                           = GetInt32(new IntPtr(p + 0x010)); // 0245A6848730 0x10 SheetInstanceID             ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.Index                                     = GetInt32(new IntPtr(p + 0x014)); // 0245A6848750 0x14 Index                       ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.SheetInstanceID                           = GetInt32(new IntPtr(p + 0x010)); // 0x10 SheetInstanceID             ( ModelPrimitiveType int int int Int32 )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x014)); // 0x14 Index                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

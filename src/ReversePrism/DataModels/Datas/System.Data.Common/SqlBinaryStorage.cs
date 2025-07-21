@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 050 Values                                   000185CA4C78 ModelEnumListType SqlBinary[] SqlBinary[] List<SqlBinary> Pointer
+    // 050 Values                                   ModelEnumListType SqlBinary[] SqlBinary[] List<SqlBinary> Pointer
     public partial class SqlBinaryStorage : DataModel
     {
         public List<SqlBinary>?                         Values                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SqlBinaryStorage() { Pointer= p0 };
 
-            value.Values                                    = GetEnumList<SqlBinary>(new IntPtr(p + 0x050)); // 024668A44128 0x50 Values                      ( 000185CA4C78 ModelEnumListType SqlBinary[] SqlBinary[] List<SqlBinary> Pointer )
+            value.Values                                    = GetEnumList<SqlBinary>(new IntPtr(p + 0x050)); // 0x50 Values                      ( ModelEnumListType SqlBinary[] SqlBinary[] List<SqlBinary> Pointer )
 
             return value;
         }

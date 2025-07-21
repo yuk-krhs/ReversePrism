@@ -9,9 +9,9 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 ChannelPort                              int IL2CPP_TYPE_I4
-    // 040 EndBlock                                 000185B7A070 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 048 CurrentRoomName                          000186671E00 ModelPrimitiveType string string string String
-    // 050 Channel                                  00018658F470 ModelClassType Channel Channel Channel Pointer
+    // 040 EndBlock                                 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 048 CurrentRoomName                          ModelPrimitiveType string string string String
+    // 050 Channel                                  ModelClassType Channel Channel Channel Pointer
     public partial class PrismStreamingGrpc : DataModel
     {
         public List<sbyte>?                             EndBlock                                { get; set; }
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PrismStreamingGrpc() { Pointer= p0 };
 
-            value.EndBlock                                  = GetSByteList(new IntPtr(p + 0x040)); // 024664F8EDE0 0x40 EndBlock                    ( 000185B7A070 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.CurrentRoomName                           = GetString(new IntPtr(p + 0x048)); // 024664F8EE00 0x48 CurrentRoomName             ( 000186671E00 ModelPrimitiveType string string string String )
-            value.Channel                                   = GetObject<Channel>(new IntPtr(p + 0x050), ReversePrism.DataModels.Channel.FromPointer); // 024664F8EE20 0x50 Channel                     ( 00018658F470 ModelClassType Channel Channel Channel Pointer )
+            value.EndBlock                                  = GetSByteList(new IntPtr(p + 0x040)); // 0x40 EndBlock                    ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.CurrentRoomName                           = GetString(new IntPtr(p + 0x048)); // 0x48 CurrentRoomName             ( ModelPrimitiveType string string string String )
+            value.Channel                                   = GetObject<Channel>(new IntPtr(p + 0x050), ReversePrism.DataModels.Channel.FromPointer); // 0x50 Channel                     ( ModelClassType Channel Channel Channel Pointer )
 
             return value;
         }

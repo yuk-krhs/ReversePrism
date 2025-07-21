@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CharacterId                              0001865F4260 ModelPrimitiveType int int int Int32
-    // 014 TargetSceneType                          0001865FE180 ModelEnumType IdolBaseCostumeTargetSceneType IdolBaseCostumeTargetSceneType IdolBaseCostumeTargetSceneType Int32
-    // 018 Costume                                  00018659D660 ModelClassType CharacterCostume CharacterCostume CharacterCostume Pointer
-    // 020 Enable                                   0001865965D0 ModelPrimitiveType bool bool bool Bool
+    // 010 CharacterId                              ModelPrimitiveType int int int Int32
+    // 014 TargetSceneType                          ModelEnumType IdolBaseCostumeTargetSceneType IdolBaseCostumeTargetSceneType IdolBaseCostumeTargetSceneType Int32
+    // 018 Costume                                  ModelClassType CharacterCostume CharacterCostume CharacterCostume Pointer
+    // 020 Enable                                   ModelPrimitiveType bool bool bool Bool
     public partial class CasualCostumeIdol : DataModel
     {
         public int                                      CharacterId                             { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CasualCostumeIdol() { Pointer= p0 };
 
-            value.CharacterId                               = GetInt32(new IntPtr(p + 0x010)); // 024665144F90 0x10 CharacterId                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.TargetSceneType                           = (IdolBaseCostumeTargetSceneType)GetInt32(new IntPtr(p + 0x014)); // 024665144FB0 0x14 TargetSceneType             ( 0001865FE180 ModelEnumType IdolBaseCostumeTargetSceneType IdolBaseCostumeTargetSceneType IdolBaseCostumeTargetSceneType Int32 )
-            value.Costume                                   = GetObject<CharacterCostume>(new IntPtr(p + 0x018), ReversePrism.DataModels.CharacterCostume.FromPointer); // 024665144FD0 0x18 Costume                     ( 00018659D660 ModelClassType CharacterCostume CharacterCostume CharacterCostume Pointer )
-            value.Enable                                    = GetBool(new IntPtr(p + 0x020)); // 024665144FF0 0x20 Enable                      ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.CharacterId                               = GetInt32(new IntPtr(p + 0x010)); // 0x10 CharacterId                 ( ModelPrimitiveType int int int Int32 )
+            value.TargetSceneType                           = (IdolBaseCostumeTargetSceneType)GetInt32(new IntPtr(p + 0x014)); // 0x14 TargetSceneType             ( ModelEnumType IdolBaseCostumeTargetSceneType IdolBaseCostumeTargetSceneType IdolBaseCostumeTargetSceneType Int32 )
+            value.Costume                                   = GetObject<CharacterCostume>(new IntPtr(p + 0x018), ReversePrism.DataModels.CharacterCostume.FromPointer); // 0x18 Costume                     ( ModelClassType CharacterCostume CharacterCostume CharacterCostume Pointer )
+            value.Enable                                    = GetBool(new IntPtr(p + 0x020)); // 0x20 Enable                      ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

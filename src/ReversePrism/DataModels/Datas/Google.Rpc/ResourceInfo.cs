@@ -11,13 +11,13 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<ResourceInfo> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ResourceTypeFieldNumber                  int IL2CPP_TYPE_I4
-    // 018 ResourceType                             000186671910 ModelPrimitiveType string string string String
+    // 018 ResourceType                             ModelPrimitiveType string string string String
     // 000 ResourceNameFieldNumber                  int IL2CPP_TYPE_I4
-    // 020 ResourceName                             000186671910 ModelPrimitiveType string string string String
+    // 020 ResourceName                             ModelPrimitiveType string string string String
     // 000 OwnerFieldNumber                         int IL2CPP_TYPE_I4
-    // 028 Owner                                    000186671910 ModelPrimitiveType string string string String
+    // 028 Owner                                    ModelPrimitiveType string string string String
     // 000 DescriptionFieldNumber                   int IL2CPP_TYPE_I4
-    // 030 Description                              000186671910 ModelPrimitiveType string string string String
+    // 030 Description                              ModelPrimitiveType string string string String
     public partial class ResourceInfo : DataModel
     {
         public string                                   ResourceType                            { get; set; }
@@ -33,10 +33,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ResourceInfo() { Pointer= p0 };
 
-            value.ResourceType                              = GetString(new IntPtr(p + 0x018)); // 02466A74DE30 0x18 ResourceType                ( 000186671910 ModelPrimitiveType string string string String )
-            value.ResourceName                              = GetString(new IntPtr(p + 0x020)); // 02466A74DE70 0x20 ResourceName                ( 000186671910 ModelPrimitiveType string string string String )
-            value.Owner                                     = GetString(new IntPtr(p + 0x028)); // 02466A74DEB0 0x28 Owner                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.Description                               = GetString(new IntPtr(p + 0x030)); // 02466A74DEF0 0x30 Description                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.ResourceType                              = GetString(new IntPtr(p + 0x018)); // 0x18 ResourceType                ( ModelPrimitiveType string string string String )
+            value.ResourceName                              = GetString(new IntPtr(p + 0x020)); // 0x20 ResourceName                ( ModelPrimitiveType string string string String )
+            value.Owner                                     = GetString(new IntPtr(p + 0x028)); // 0x28 Owner                       ( ModelPrimitiveType string string string String )
+            value.Description                               = GetString(new IntPtr(p + 0x030)); // 0x30 Description                 ( ModelPrimitiveType string string string String )
 
             return value;
         }

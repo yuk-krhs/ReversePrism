@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 090 Line                                     0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 094 Column                                   0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 090 Line                                     ModelPrimitiveType int int int Int32
+    // 094 Column                                   ModelPrimitiveType int int int Int32
     public partial class SmallXmlParserException : DataModel
     {
         public int                                      Line                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SmallXmlParserException() { Pointer= p0 };
 
-            value.Line                                      = GetInt32(new IntPtr(p + 0x090)); // 0246669AAC88 0x90 Line                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Column                                    = GetInt32(new IntPtr(p + 0x094)); // 0246669AACA8 0x94 Column                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Line                                      = GetInt32(new IntPtr(p + 0x090)); // 0x90 Line                        ( ModelPrimitiveType int int int Int32 )
+            value.Column                                    = GetInt32(new IntPtr(p + 0x094)); // 0x94 Column                      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

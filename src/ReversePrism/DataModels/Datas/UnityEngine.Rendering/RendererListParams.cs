@@ -9,11 +9,11 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Invalid                                  RendererListParams IL2CPP_TYPE_VALUETYPE
-    // 010 CullingResults                           000186665910 ModelEnumType CullingResults CullingResults CullingResults Int32
-    // 020 DrawSettings                             0001865C5020 ModelEnumType DrawingSettings DrawingSettings DrawingSettings Int32
-    // 0E4 FilteringSettings                        0001865D12A0 ModelEnumType FilteringSettings FilteringSettings FilteringSettings Int32
-    // 0FC TagName                                  000186664640 ModelEnumType ShaderTagId ShaderTagId ShaderTagId Int32
-    // 100 IsPassTagName                            000186595960 ModelPrimitiveType bool bool bool Bool
+    // 010 CullingResults                           ModelEnumType CullingResults CullingResults CullingResults Int32
+    // 020 DrawSettings                             ModelEnumType DrawingSettings DrawingSettings DrawingSettings Int32
+    // 0E4 FilteringSettings                        ModelEnumType FilteringSettings FilteringSettings FilteringSettings Int32
+    // 0FC TagName                                  ModelEnumType ShaderTagId ShaderTagId ShaderTagId Int32
+    // 100 IsPassTagName                            ModelPrimitiveType bool bool bool Bool
     // 108 tagValues                                Nullable`1<NativeArray`1<ShaderTagId>> IL2CPP_TYPE_GENERICINST
     // 120 stateBlocks                              Nullable`1<NativeArray`1<RenderStateBlock>> IL2CPP_TYPE_GENERICINST
     public partial class RendererListParams : DataModel
@@ -32,11 +32,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RendererListParams() { Pointer= p0 };
 
-            value.CullingResults                            = (CullingResults)GetInt32(new IntPtr(p + 0x010)); // 0245A6891480 0x10 CullingResults              ( 000186665910 ModelEnumType CullingResults CullingResults CullingResults Int32 )
-            value.DrawSettings                              = (DrawingSettings)GetInt32(new IntPtr(p + 0x020)); // 0245A68914A0 0x20 DrawSettings                ( 0001865C5020 ModelEnumType DrawingSettings DrawingSettings DrawingSettings Int32 )
-            value.FilteringSettings                         = (FilteringSettings)GetInt32(new IntPtr(p + 0x0E4)); // 0245A68914C0 0xE4 FilteringSettings           ( 0001865D12A0 ModelEnumType FilteringSettings FilteringSettings FilteringSettings Int32 )
-            value.TagName                                   = (ShaderTagId)GetInt32(new IntPtr(p + 0x0FC)); // 0245A68914E0 0xFC TagName                     ( 000186664640 ModelEnumType ShaderTagId ShaderTagId ShaderTagId Int32 )
-            value.IsPassTagName                             = GetBool(new IntPtr(p + 0x100)); // 0245A6891500 0x100 IsPassTagName               ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.CullingResults                            = (CullingResults)GetInt32(new IntPtr(p + 0x010)); // 0x10 CullingResults              ( ModelEnumType CullingResults CullingResults CullingResults Int32 )
+            value.DrawSettings                              = (DrawingSettings)GetInt32(new IntPtr(p + 0x020)); // 0x20 DrawSettings                ( ModelEnumType DrawingSettings DrawingSettings DrawingSettings Int32 )
+            value.FilteringSettings                         = (FilteringSettings)GetInt32(new IntPtr(p + 0x0E4)); // 0xE4 FilteringSettings           ( ModelEnumType FilteringSettings FilteringSettings FilteringSettings Int32 )
+            value.TagName                                   = (ShaderTagId)GetInt32(new IntPtr(p + 0x0FC)); // 0xFC TagName                     ( ModelEnumType ShaderTagId ShaderTagId ShaderTagId Int32 )
+            value.IsPassTagName                             = GetBool(new IntPtr(p + 0x100)); // 0x100 IsPassTagName               ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Provider                                 00018658F230 ModelClassType StorageLocationProvider StorageLocationProvider StorageLocationProvider Pointer
+    // 010 Provider                                 ModelClassType StorageLocationProvider StorageLocationProvider StorageLocationProvider Pointer
     public partial class ScrumbleProcessor : DataModel
     {
         public StorageLocationProvider?                 Provider                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ScrumbleProcessor() { Pointer= p0 };
 
-            value.Provider                                  = GetObject<StorageLocationProvider>(new IntPtr(p + 0x010), ReversePrism.DataModels.StorageLocationProvider.FromPointer); // 0245A44ADF38 0x10 Provider                    ( 00018658F230 ModelClassType StorageLocationProvider StorageLocationProvider StorageLocationProvider Pointer )
+            value.Provider                                  = GetObject<StorageLocationProvider>(new IntPtr(p + 0x010), ReversePrism.DataModels.StorageLocationProvider.FromPointer); // 0x10 Provider                    ( ModelClassType StorageLocationProvider StorageLocationProvider StorageLocationProvider Pointer )
 
             return value;
         }

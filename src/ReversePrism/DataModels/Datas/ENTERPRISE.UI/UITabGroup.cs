@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 OnTabSelected                            0001866187C0 ModelClassType TabEvent TabEvent TabEvent Pointer
-    // 028 Tabs                                     000185CAE378 ModelClassListType UITabButton[] UITabButton[] List<UITabButton> Pointer
-    // 030 SelectedIndex                            0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 034 IsRestructTab                            000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 020 OnTabSelected                            ModelClassType TabEvent TabEvent TabEvent Pointer
+    // 028 Tabs                                     ModelClassListType UITabButton[] UITabButton[] List<UITabButton> Pointer
+    // 030 SelectedIndex                            ModelPrimitiveType int int int Int32
+    // 034 IsRestructTab                            ModelPrimitiveType bool bool bool Bool
     public partial class UITabGroup : DataModel
     {
         public TabEvent?                                OnTabSelected                           { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UITabGroup() { Pointer= p0 };
 
-            value.OnTabSelected                             = GetObject<TabEvent>(new IntPtr(p + 0x020), ReversePrism.DataModels.TabEvent.FromPointer); // 024664C2F4E0 0x20 OnTabSelected               ( 0001866187C0 ModelClassType TabEvent TabEvent TabEvent Pointer )
-            value.Tabs                                      = GetObjectList<UITabButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITabButton.FromPointer); // 024664C2F500 0x28 Tabs                        ( 000185CAE378 ModelClassListType UITabButton[] UITabButton[] List<UITabButton> Pointer )
-            value.SelectedIndex                             = GetInt32(new IntPtr(p + 0x030)); // 024664C2F520 0x30 SelectedIndex               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsRestructTab                             = GetBool(new IntPtr(p + 0x034)); // 024664C2F540 0x34 IsRestructTab               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.OnTabSelected                             = GetObject<TabEvent>(new IntPtr(p + 0x020), ReversePrism.DataModels.TabEvent.FromPointer); // 0x20 OnTabSelected               ( ModelClassType TabEvent TabEvent TabEvent Pointer )
+            value.Tabs                                      = GetObjectList<UITabButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITabButton.FromPointer); // 0x28 Tabs                        ( ModelClassListType UITabButton[] UITabButton[] List<UITabButton> Pointer )
+            value.SelectedIndex                             = GetInt32(new IntPtr(p + 0x030)); // 0x30 SelectedIndex               ( ModelPrimitiveType int int int Int32 )
+            value.IsRestructTab                             = GetBool(new IntPtr(p + 0x034)); // 0x34 IsRestructTab               ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

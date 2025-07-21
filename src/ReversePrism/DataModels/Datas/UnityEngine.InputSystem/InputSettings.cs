@@ -8,24 +8,24 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 M_SupportedDevices                       000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 020 M_UpdateMode                             000186639810 ModelEnumType UpdateMode UpdateMode UpdateMode Int32
-    // 024 M_MaxEventBytesPerUpdate                 0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 028 M_MaxQueuedEventsPerUpdate               0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 02C M_CompensateForScreenOrientation         000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 030 M_BackgroundBehavior                     0001866389F0 ModelEnumType BackgroundBehavior BackgroundBehavior BackgroundBehavior Int32
-    // 034 M_EditorInputBehaviorInPlayMode          000186639100 ModelEnumType EditorInputBehaviorInPlayMode EditorInputBehaviorInPlayMode EditorInputBehaviorInPlayMode Int32
-    // 038 M_DefaultDeadzoneMin                     0001866656B0 ModelPrimitiveType float float float Single
-    // 03C M_DefaultDeadzoneMax                     0001866656B0 ModelPrimitiveType float float float Single
-    // 040 M_DefaultButtonPressPoint                0001866656B0 ModelPrimitiveType float float float Single
-    // 044 M_ButtonReleaseThreshold                 0001866656B0 ModelPrimitiveType float float float Single
-    // 048 M_DefaultTapTime                         0001866656B0 ModelPrimitiveType float float float Single
-    // 04C M_DefaultSlowTapTime                     0001866656B0 ModelPrimitiveType float float float Single
-    // 050 M_DefaultHoldTime                        0001866656B0 ModelPrimitiveType float float float Single
-    // 054 M_TapRadius                              0001866656B0 ModelPrimitiveType float float float Single
-    // 058 M_MultiTapDelayTime                      0001866656B0 ModelPrimitiveType float float float Single
-    // 05C M_DisableRedundantEventsMerging          000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 05D M_ShortcutKeysConsumeInputs              000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 018 M_SupportedDevices                       ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 020 M_UpdateMode                             ModelEnumType UpdateMode UpdateMode UpdateMode Int32
+    // 024 M_MaxEventBytesPerUpdate                 ModelPrimitiveType int int int Int32
+    // 028 M_MaxQueuedEventsPerUpdate               ModelPrimitiveType int int int Int32
+    // 02C M_CompensateForScreenOrientation         ModelPrimitiveType bool bool bool Bool
+    // 030 M_BackgroundBehavior                     ModelEnumType BackgroundBehavior BackgroundBehavior BackgroundBehavior Int32
+    // 034 M_EditorInputBehaviorInPlayMode          ModelEnumType EditorInputBehaviorInPlayMode EditorInputBehaviorInPlayMode EditorInputBehaviorInPlayMode Int32
+    // 038 M_DefaultDeadzoneMin                     ModelPrimitiveType float float float Single
+    // 03C M_DefaultDeadzoneMax                     ModelPrimitiveType float float float Single
+    // 040 M_DefaultButtonPressPoint                ModelPrimitiveType float float float Single
+    // 044 M_ButtonReleaseThreshold                 ModelPrimitiveType float float float Single
+    // 048 M_DefaultTapTime                         ModelPrimitiveType float float float Single
+    // 04C M_DefaultSlowTapTime                     ModelPrimitiveType float float float Single
+    // 050 M_DefaultHoldTime                        ModelPrimitiveType float float float Single
+    // 054 M_TapRadius                              ModelPrimitiveType float float float Single
+    // 058 M_MultiTapDelayTime                      ModelPrimitiveType float float float Single
+    // 05C M_DisableRedundantEventsMerging          ModelPrimitiveType bool bool bool Bool
+    // 05D M_ShortcutKeysConsumeInputs              ModelPrimitiveType bool bool bool Bool
     // 060 m_FeatureFlags                           HashSet`1<string> IL2CPP_TYPE_GENERICINST
     // 000 optimizedControlsFeatureEnabled          bool IL2CPP_TYPE_BOOLEAN
     // 001 readValueCachingFeatureEnabled           bool IL2CPP_TYPE_BOOLEAN
@@ -60,24 +60,24 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InputSettings() { Pointer= p0 };
 
-            value.M_SupportedDevices                        = GetStringList(new IntPtr(p + 0x018)); // 0245A2DD6508 0x18 M_SupportedDevices          ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.M_UpdateMode                              = (UpdateMode)GetInt32(new IntPtr(p + 0x020)); // 0245A2DD6528 0x20 M_UpdateMode                ( 000186639810 ModelEnumType UpdateMode UpdateMode UpdateMode Int32 )
-            value.M_MaxEventBytesPerUpdate                  = GetInt32(new IntPtr(p + 0x024)); // 0245A2DD6548 0x24 M_MaxEventBytesPerUpdate    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_MaxQueuedEventsPerUpdate                = GetInt32(new IntPtr(p + 0x028)); // 0245A2DD6568 0x28 M_MaxQueuedEventsPerUpdate  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_CompensateForScreenOrientation          = GetBool(new IntPtr(p + 0x02C)); // 0245A2DD6588 0x2C M_CompensateForScreenOrientation ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_BackgroundBehavior                      = (BackgroundBehavior)GetInt32(new IntPtr(p + 0x030)); // 0245A2DD65A8 0x30 M_BackgroundBehavior        ( 0001866389F0 ModelEnumType BackgroundBehavior BackgroundBehavior BackgroundBehavior Int32 )
-            value.M_EditorInputBehaviorInPlayMode           = (EditorInputBehaviorInPlayMode)GetInt32(new IntPtr(p + 0x034)); // 0245A2DD65C8 0x34 M_EditorInputBehaviorInPlayMode ( 000186639100 ModelEnumType EditorInputBehaviorInPlayMode EditorInputBehaviorInPlayMode EditorInputBehaviorInPlayMode Int32 )
-            value.M_DefaultDeadzoneMin                      = GetSingle(new IntPtr(p + 0x038)); // 0245A2DD65E8 0x38 M_DefaultDeadzoneMin        ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_DefaultDeadzoneMax                      = GetSingle(new IntPtr(p + 0x03C)); // 0245A2DD6608 0x3C M_DefaultDeadzoneMax        ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_DefaultButtonPressPoint                 = GetSingle(new IntPtr(p + 0x040)); // 0245A2DD6628 0x40 M_DefaultButtonPressPoint   ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_ButtonReleaseThreshold                  = GetSingle(new IntPtr(p + 0x044)); // 0245A2DD6648 0x44 M_ButtonReleaseThreshold    ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_DefaultTapTime                          = GetSingle(new IntPtr(p + 0x048)); // 0245A2DD6668 0x48 M_DefaultTapTime            ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_DefaultSlowTapTime                      = GetSingle(new IntPtr(p + 0x04C)); // 0245A2DD6688 0x4C M_DefaultSlowTapTime        ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_DefaultHoldTime                         = GetSingle(new IntPtr(p + 0x050)); // 0245A2DD66A8 0x50 M_DefaultHoldTime           ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_TapRadius                               = GetSingle(new IntPtr(p + 0x054)); // 0245A2DD66C8 0x54 M_TapRadius                 ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_MultiTapDelayTime                       = GetSingle(new IntPtr(p + 0x058)); // 0245A2DD66E8 0x58 M_MultiTapDelayTime         ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_DisableRedundantEventsMerging           = GetBool(new IntPtr(p + 0x05C)); // 0245A2DD6708 0x5C M_DisableRedundantEventsMerging ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_ShortcutKeysConsumeInputs               = GetBool(new IntPtr(p + 0x05D)); // 0245A2DD6728 0x5D M_ShortcutKeysConsumeInputs ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_SupportedDevices                        = GetStringList(new IntPtr(p + 0x018)); // 0x18 M_SupportedDevices          ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.M_UpdateMode                              = (UpdateMode)GetInt32(new IntPtr(p + 0x020)); // 0x20 M_UpdateMode                ( ModelEnumType UpdateMode UpdateMode UpdateMode Int32 )
+            value.M_MaxEventBytesPerUpdate                  = GetInt32(new IntPtr(p + 0x024)); // 0x24 M_MaxEventBytesPerUpdate    ( ModelPrimitiveType int int int Int32 )
+            value.M_MaxQueuedEventsPerUpdate                = GetInt32(new IntPtr(p + 0x028)); // 0x28 M_MaxQueuedEventsPerUpdate  ( ModelPrimitiveType int int int Int32 )
+            value.M_CompensateForScreenOrientation          = GetBool(new IntPtr(p + 0x02C)); // 0x2C M_CompensateForScreenOrientation ( ModelPrimitiveType bool bool bool Bool )
+            value.M_BackgroundBehavior                      = (BackgroundBehavior)GetInt32(new IntPtr(p + 0x030)); // 0x30 M_BackgroundBehavior        ( ModelEnumType BackgroundBehavior BackgroundBehavior BackgroundBehavior Int32 )
+            value.M_EditorInputBehaviorInPlayMode           = (EditorInputBehaviorInPlayMode)GetInt32(new IntPtr(p + 0x034)); // 0x34 M_EditorInputBehaviorInPlayMode ( ModelEnumType EditorInputBehaviorInPlayMode EditorInputBehaviorInPlayMode EditorInputBehaviorInPlayMode Int32 )
+            value.M_DefaultDeadzoneMin                      = GetSingle(new IntPtr(p + 0x038)); // 0x38 M_DefaultDeadzoneMin        ( ModelPrimitiveType float float float Single )
+            value.M_DefaultDeadzoneMax                      = GetSingle(new IntPtr(p + 0x03C)); // 0x3C M_DefaultDeadzoneMax        ( ModelPrimitiveType float float float Single )
+            value.M_DefaultButtonPressPoint                 = GetSingle(new IntPtr(p + 0x040)); // 0x40 M_DefaultButtonPressPoint   ( ModelPrimitiveType float float float Single )
+            value.M_ButtonReleaseThreshold                  = GetSingle(new IntPtr(p + 0x044)); // 0x44 M_ButtonReleaseThreshold    ( ModelPrimitiveType float float float Single )
+            value.M_DefaultTapTime                          = GetSingle(new IntPtr(p + 0x048)); // 0x48 M_DefaultTapTime            ( ModelPrimitiveType float float float Single )
+            value.M_DefaultSlowTapTime                      = GetSingle(new IntPtr(p + 0x04C)); // 0x4C M_DefaultSlowTapTime        ( ModelPrimitiveType float float float Single )
+            value.M_DefaultHoldTime                         = GetSingle(new IntPtr(p + 0x050)); // 0x50 M_DefaultHoldTime           ( ModelPrimitiveType float float float Single )
+            value.M_TapRadius                               = GetSingle(new IntPtr(p + 0x054)); // 0x54 M_TapRadius                 ( ModelPrimitiveType float float float Single )
+            value.M_MultiTapDelayTime                       = GetSingle(new IntPtr(p + 0x058)); // 0x58 M_MultiTapDelayTime         ( ModelPrimitiveType float float float Single )
+            value.M_DisableRedundantEventsMerging           = GetBool(new IntPtr(p + 0x05C)); // 0x5C M_DisableRedundantEventsMerging ( ModelPrimitiveType bool bool bool Bool )
+            value.M_ShortcutKeysConsumeInputs               = GetBool(new IntPtr(p + 0x05D)); // 0x5D M_ShortcutKeysConsumeInputs ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_GateCount                              0001866992B0 ModelPrimitiveType uint uint uint UInt32
+    // 010 M_GateCount                              ModelPrimitiveType uint uint uint UInt32
     // 018 m_Queue                                  Queue`1<EventRecord> IL2CPP_TYPE_GENERICINST
     public partial class DispatchContext : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DispatchContext() { Pointer= p0 };
 
-            value.M_GateCount                               = GetUInt32(new IntPtr(p + 0x010)); // 0245A671B0A0 0x10 M_GateCount                 ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.M_GateCount                               = GetUInt32(new IntPtr(p + 0x010)); // 0x10 M_GateCount                 ( ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Button                                   0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 028 ClearLabel                               0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 030 LockObject                               0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 038 SelectObject                             0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 040 GrayOutController                        0001866EA450 ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer
-    // 048 SelectedDisposable                       0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 020 Button                                   ModelClassType UIButton UIButton UIButton Pointer
+    // 028 ClearLabel                               ModelClassType GameObject GameObject GameObject Pointer
+    // 030 LockObject                               ModelClassType GameObject GameObject GameObject Pointer
+    // 038 SelectObject                             ModelClassType GameObject GameObject GameObject Pointer
+    // 040 GrayOutController                        ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer
+    // 048 SelectedDisposable                       ModelClassType IDisposable IDisposable IDisposable Pointer
     public partial class ProduceEpisodeEpisodeSelectDifficultyButton : DataModel
     {
         public UIButton?                                Button                                  { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceEpisodeEpisodeSelectDifficultyButton() { Pointer= p0 };
 
-            value.Button                                    = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 024664D66168 0x20 Button                      ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.ClearLabel                                = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 024664D66188 0x28 ClearLabel                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.LockObject                                = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 024664D661A8 0x30 LockObject                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.SelectObject                              = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 024664D661C8 0x38 SelectObject                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.GrayOutController                         = GetObject<UIGrayOutController>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIGrayOutController.FromPointer); // 024664D661E8 0x40 GrayOutController           ( 0001866EA450 ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer )
-            value.SelectedDisposable                        = GetObject<IDisposable>(new IntPtr(p + 0x048), ReversePrism.DataModels.IDisposable.FromPointer); // 024664D66208 0x48 SelectedDisposable          ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.Button                                    = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 0x20 Button                      ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.ClearLabel                                = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0x28 ClearLabel                  ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.LockObject                                = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0x30 LockObject                  ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.SelectObject                              = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0x38 SelectObject                ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.GrayOutController                         = GetObject<UIGrayOutController>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIGrayOutController.FromPointer); // 0x40 GrayOutController           ( ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer )
+            value.SelectedDisposable                        = GetObject<IDisposable>(new IntPtr(p + 0x048), ReversePrism.DataModels.IDisposable.FromPointer); // 0x48 SelectedDisposable          ( ModelClassType IDisposable IDisposable IDisposable Pointer )
 
             return value;
         }

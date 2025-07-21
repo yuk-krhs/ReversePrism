@@ -9,20 +9,14 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 MAX_CHARACTER                            int IL2CPP_TYPE_I4
-    // 020 Characters                               000185B74CD0 ModelClassListType Character[] Character[] List<Character> Pointer
-    // 000 characterAnimName                        string[] IL2CPP_TYPE_SZARRAY
-    // 008 characterPosition                        Vector3[] IL2CPP_TYPE_SZARRAY
-    // 010 CharacterLipSyncName                     000185B81AC0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 018 CharacterRotationY                       000185B80A20 ModelPrimitiveListType float[] float[] List<float> Pointer
-    // 020 CharacterRecordedAnimName                000185B81AC0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 028 LiveOffsetTime                           000186666300 ModelPrimitiveType float float float Single
+    // 020 Characters                               ModelClassListType Character[] Character[] List<Character> Pointer
+    // 028 LiveOffsetTime                           ModelPrimitiveType float float float Single
+    // 030 CharacterCreateData                      ModelClassListType CharacterCreateData[] CharacterCreateData[] List<CharacterCreateData> Pointer
     public partial class LiveCharacterController : DataModel
     {
         public List<Character>?                         Characters                              { get; set; }
-        public List<string>?                            CharacterLipSyncName                    { get; set; }
-        public List<float>?                             CharacterRotationY                      { get; set; }
-        public List<string>?                            CharacterRecordedAnimName               { get; set; }
         public float                                    LiveOffsetTime                          { get; set; }
+        public List<CharacterCreateData>?               CharacterCreateData                     { get; set; }
 
         public static LiveCharacterController? FromPointer(IntPtr p0)
         {
@@ -32,11 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveCharacterController() { Pointer= p0 };
 
-            value.Characters                                = GetObjectList<Character>(new IntPtr(p + 0x020), ReversePrism.DataModels.Character.FromPointer); // 0245A6961E38 0x20 Characters                  ( 000185B74CD0 ModelClassListType Character[] Character[] List<Character> Pointer )
-            value.CharacterLipSyncName                      = GetStringList(new IntPtr(p + 0x010)); // 0245A6961E98 0x10 CharacterLipSyncName        ( 000185B81AC0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.CharacterRotationY                        = GetSingleList(new IntPtr(p + 0x018)); // 0245A6961EB8 0x18 CharacterRotationY          ( 000185B80A20 ModelPrimitiveListType float[] float[] List<float> Pointer )
-            value.CharacterRecordedAnimName                 = GetStringList(new IntPtr(p + 0x020)); // 0245A6961ED8 0x20 CharacterRecordedAnimName   ( 000185B81AC0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.LiveOffsetTime                            = GetSingle(new IntPtr(p + 0x028)); // 0245A6961EF8 0x28 LiveOffsetTime              ( 000186666300 ModelPrimitiveType float float float Single )
+            value.Characters                                = GetObjectList<Character>(new IntPtr(p + 0x020), ReversePrism.DataModels.Character.FromPointer); // 0x20 Characters                  ( ModelClassListType Character[] Character[] List<Character> Pointer )
+            value.LiveOffsetTime                            = GetSingle(new IntPtr(p + 0x028)); // 0x28 LiveOffsetTime              ( ModelPrimitiveType float float float Single )
+            value.CharacterCreateData                       = GetObjectList<CharacterCreateData>(new IntPtr(p + 0x030), ReversePrism.DataModels.CharacterCreateData.FromPointer); // 0x30 CharacterCreateData         ( ModelClassListType CharacterCreateData[] CharacterCreateData[] List<CharacterCreateData> Pointer )
 
             return value;
         }

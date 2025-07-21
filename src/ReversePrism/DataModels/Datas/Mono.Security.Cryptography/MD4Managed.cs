@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 State                                    000185B83830 ModelPrimitiveListType uint[] uint[] List<uint> Pointer
-    // 030 Buffer                                   000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 038 Count                                    000185B83830 ModelPrimitiveListType uint[] uint[] List<uint> Pointer
-    // 040 X                                        000185B83830 ModelPrimitiveListType uint[] uint[] List<uint> Pointer
-    // 048 Digest                                   000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 028 State                                    ModelPrimitiveListType uint[] uint[] List<uint> Pointer
+    // 030 Buffer                                   ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 038 Count                                    ModelPrimitiveListType uint[] uint[] List<uint> Pointer
+    // 040 X                                        ModelPrimitiveListType uint[] uint[] List<uint> Pointer
+    // 048 Digest                                   ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     public partial class MD4Managed : DataModel
     {
         public List<uint>?                              State                                   { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MD4Managed() { Pointer= p0 };
 
-            value.State                                     = GetUInt32List(new IntPtr(p + 0x028)); // 02466B410778 0x28 State                       ( 000185B83830 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
-            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x030)); // 02466B410798 0x30 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Count                                     = GetUInt32List(new IntPtr(p + 0x038)); // 02466B4107B8 0x38 Count                       ( 000185B83830 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
-            value.X                                         = GetUInt32List(new IntPtr(p + 0x040)); // 02466B4107D8 0x40 X                           ( 000185B83830 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
-            value.Digest                                    = GetSByteList(new IntPtr(p + 0x048)); // 02466B4107F8 0x48 Digest                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.State                                     = GetUInt32List(new IntPtr(p + 0x028)); // 0x28 State                       ( ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x030)); // 0x30 Buffer                      ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Count                                     = GetUInt32List(new IntPtr(p + 0x038)); // 0x38 Count                       ( ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.X                                         = GetUInt32List(new IntPtr(p + 0x040)); // 0x40 X                           ( ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.Digest                                    = GetSByteList(new IntPtr(p + 0x048)); // 0x48 Digest                      ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

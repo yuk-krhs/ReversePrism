@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Reply                                    00018650C590 ModelClassType IFinishAuditionReply IFinishAuditionReply IFinishAuditionReply Pointer
+    // 010 Reply                                    ModelClassType IFinishAuditionReply IFinishAuditionReply IFinishAuditionReply Pointer
     public partial class LegacyAuditionSuccessResultParameter : DataModel
     {
         public IFinishAuditionReply?                    Reply                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LegacyAuditionSuccessResultParameter() { Pointer= p0 };
 
-            value.Reply                                     = GetObject<IFinishAuditionReply>(new IntPtr(p + 0x010), ReversePrism.DataModels.IFinishAuditionReply.FromPointer); // 02466562FE90 0x10 Reply                       ( 00018650C590 ModelClassType IFinishAuditionReply IFinishAuditionReply IFinishAuditionReply Pointer )
+            value.Reply                                     = GetObject<IFinishAuditionReply>(new IntPtr(p + 0x010), ReversePrism.DataModels.IFinishAuditionReply.FromPointer); // 0x10 Reply                       ( ModelClassType IFinishAuditionReply IFinishAuditionReply IFinishAuditionReply Pointer )
 
             return value;
         }

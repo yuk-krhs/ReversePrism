@@ -8,13 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CurrentFrameJudgingResults               000185CEF1C8 ModelEnumListType List`1<JudgmentResult> List`1<JudgmentResult> List<JudgmentResult> Pointer
-    // 018 PendingJudgmentResults                   000185CEF1C8 ModelEnumListType List`1<JudgmentResult> List`1<JudgmentResult> List<JudgmentResult> Pointer
-    // 020 TemporaryPendingJudgmentResults          000185CEF1C8 ModelEnumListType List`1<JudgmentResult> List`1<JudgmentResult> List<JudgmentResult> Pointer
+    // 010 CurrentFrameJudgingResults               ModelEnumListType List`1<JudgmentResult> List`1<JudgmentResult> List<JudgmentResult> Pointer
+    // 018 PendingJudgmentResults                   ModelEnumListType List`1<JudgmentResult> List`1<JudgmentResult> List<JudgmentResult> Pointer
+    // 020 TemporaryPendingJudgmentResults          ModelEnumListType List`1<JudgmentResult> List`1<JudgmentResult> List<JudgmentResult> Pointer
     // 000 EmptyJudgmentResults                     List`1<JudgmentResult> IL2CPP_TYPE_GENERICINST
-    // 028 State                                    00018668CAD0 ModelClassType RhythmGameState RhythmGameState RhythmGameState Pointer
-    // 030 JudgeManager                             00018658C210 ModelClassType IJudgeManager IJudgeManager IJudgeManager Pointer
-    // 038 InputManager                             00018668F440 ModelClassType TouchInputService TouchInputService TouchInputService Pointer
+    // 028 State                                    ModelClassType RhythmGameState RhythmGameState RhythmGameState Pointer
+    // 030 JudgeManager                             ModelClassType IJudgeManager IJudgeManager IJudgeManager Pointer
+    // 038 InputManager                             ModelClassType TouchInputService TouchInputService TouchInputService Pointer
     public partial class JudgeService : DataModel
     {
         public List<JudgmentResult>?                    CurrentFrameJudgingResults              { get; set; }
@@ -32,12 +32,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JudgeService() { Pointer= p0 };
 
-            value.CurrentFrameJudgingResults                = GetEnumList<JudgmentResult>(new IntPtr(p + 0x010)); // 02466500DE30 0x10 CurrentFrameJudgingResults  ( 000185CEF1C8 ModelEnumListType List`1<JudgmentResult> List`1<JudgmentResult> List<JudgmentResult> Pointer )
-            value.PendingJudgmentResults                    = GetEnumList<JudgmentResult>(new IntPtr(p + 0x018)); // 02466500DE50 0x18 PendingJudgmentResults      ( 000185CEF1C8 ModelEnumListType List`1<JudgmentResult> List`1<JudgmentResult> List<JudgmentResult> Pointer )
-            value.TemporaryPendingJudgmentResults           = GetEnumList<JudgmentResult>(new IntPtr(p + 0x020)); // 02466500DE70 0x20 TemporaryPendingJudgmentResults ( 000185CEF1C8 ModelEnumListType List`1<JudgmentResult> List`1<JudgmentResult> List<JudgmentResult> Pointer )
-            value.State                                     = GetObject<RhythmGameState>(new IntPtr(p + 0x028), ReversePrism.DataModels.RhythmGameState.FromPointer); // 02466500DEB0 0x28 State                       ( 00018668CAD0 ModelClassType RhythmGameState RhythmGameState RhythmGameState Pointer )
-            value.JudgeManager                              = GetObject<IJudgeManager>(new IntPtr(p + 0x030), ReversePrism.DataModels.IJudgeManager.FromPointer); // 02466500DED0 0x30 JudgeManager                ( 00018658C210 ModelClassType IJudgeManager IJudgeManager IJudgeManager Pointer )
-            value.InputManager                              = GetObject<TouchInputService>(new IntPtr(p + 0x038), ReversePrism.DataModels.TouchInputService.FromPointer); // 02466500DEF0 0x38 InputManager                ( 00018668F440 ModelClassType TouchInputService TouchInputService TouchInputService Pointer )
+            value.CurrentFrameJudgingResults                = GetEnumList<JudgmentResult>(new IntPtr(p + 0x010)); // 0x10 CurrentFrameJudgingResults  ( ModelEnumListType List`1<JudgmentResult> List`1<JudgmentResult> List<JudgmentResult> Pointer )
+            value.PendingJudgmentResults                    = GetEnumList<JudgmentResult>(new IntPtr(p + 0x018)); // 0x18 PendingJudgmentResults      ( ModelEnumListType List`1<JudgmentResult> List`1<JudgmentResult> List<JudgmentResult> Pointer )
+            value.TemporaryPendingJudgmentResults           = GetEnumList<JudgmentResult>(new IntPtr(p + 0x020)); // 0x20 TemporaryPendingJudgmentResults ( ModelEnumListType List`1<JudgmentResult> List`1<JudgmentResult> List<JudgmentResult> Pointer )
+            value.State                                     = GetObject<RhythmGameState>(new IntPtr(p + 0x028), ReversePrism.DataModels.RhythmGameState.FromPointer); // 0x28 State                       ( ModelClassType RhythmGameState RhythmGameState RhythmGameState Pointer )
+            value.JudgeManager                              = GetObject<IJudgeManager>(new IntPtr(p + 0x030), ReversePrism.DataModels.IJudgeManager.FromPointer); // 0x30 JudgeManager                ( ModelClassType IJudgeManager IJudgeManager IJudgeManager Pointer )
+            value.InputManager                              = GetObject<TouchInputService>(new IntPtr(p + 0x038), ReversePrism.DataModels.TouchInputService.FromPointer); // 0x38 InputManager                ( ModelClassType TouchInputService TouchInputService TouchInputService Pointer )
 
             return value;
         }

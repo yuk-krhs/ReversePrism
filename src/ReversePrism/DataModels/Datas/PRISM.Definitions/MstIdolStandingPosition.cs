@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 MstUnitId                                0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 Order                                    000185B7D9E0 ModelPrimitiveListType int[] int[] List<int> Pointer
+    // 010 MstUnitId                                ModelPrimitiveType int int int Int32
+    // 018 Order                                    ModelPrimitiveListType int[] int[] List<int> Pointer
     public partial class MstIdolStandingPosition : DataModel
     {
         public int                                      MstUnitId                               { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MstIdolStandingPosition() { Pointer= p0 };
 
-            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x010)); // 0245A470B7E8 0x10 MstUnitId                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Order                                     = GetInt32List(new IntPtr(p + 0x018)); // 0245A470B808 0x18 Order                       ( 000185B7D9E0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x010)); // 0x10 MstUnitId                   ( ModelPrimitiveType int int int Int32 )
+            value.Order                                     = GetInt32List(new IntPtr(p + 0x018)); // 0x18 Order                       ( ModelPrimitiveListType int[] int[] List<int> Pointer )
 
             return value;
         }

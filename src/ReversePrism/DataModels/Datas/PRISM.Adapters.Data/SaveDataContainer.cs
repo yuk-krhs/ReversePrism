@@ -40,6 +40,8 @@ namespace ReversePrism.DataModels
     // 228 AchievementUI                            SavableJsonObject`1<ProfileAchievementIsNewSaveData> IL2CPP_TYPE_GENERICINST
     // 230 ProfileIdolListSCSortFilter              SavableJsonObject`1<IdolListSCSortFilterPermanentData> IL2CPP_TYPE_GENERICINST
     // 238 PvpFUSortFilter                          SavableJsonObject`1<IdolListFUSortFilterPermanentData> IL2CPP_TYPE_GENERICINST
+    // 240 ItemList                                 SavableJsonObject`1<ItemListSaveData> IL2CPP_TYPE_GENERICINST
+    // 248 MissionFilter                            SavableJsonObject`1<MissionFilterSaveData> IL2CPP_TYPE_GENERICINST
     public partial class SaveDataContainer : DataModel
     {
 

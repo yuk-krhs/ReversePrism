@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 090 NativeErrorCode                          0001865F4260 ModelPrimitiveType int int int Int32
+    // 090 NativeErrorCode                          ModelPrimitiveType int int int Int32
     public partial class Win32Exception : DataModel
     {
         public int                                      NativeErrorCode                         { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Win32Exception() { Pointer= p0 };
 
-            value.NativeErrorCode                           = GetInt32(new IntPtr(p + 0x090)); // 024667B53FE0 0x90 NativeErrorCode             ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.NativeErrorCode                           = GetInt32(new IntPtr(p + 0x090)); // 0x90 NativeErrorCode             ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

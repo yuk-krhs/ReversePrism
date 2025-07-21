@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 048 M_MipPadding                             0001865F4260 ModelPrimitiveType int int int Int32
+    // 048 M_MipPadding                             ModelPrimitiveType int int int Int32
     // 000 k_MipmapFactorApprox                     float IL2CPP_TYPE_R4
     // 050 m_RequestedTextures                      Dictionary`2<int, Vector2Int> IL2CPP_TYPE_GENERICINST
     public partial class PowerOfTwoTextureAtlas : DataModel
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PowerOfTwoTextureAtlas() { Pointer= p0 };
 
-            value.M_MipPadding                              = GetInt32(new IntPtr(p + 0x048)); // 0246692D4988 0x48 M_MipPadding                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.M_MipPadding                              = GetInt32(new IntPtr(p + 0x048)); // 0x48 M_MipPadding                ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

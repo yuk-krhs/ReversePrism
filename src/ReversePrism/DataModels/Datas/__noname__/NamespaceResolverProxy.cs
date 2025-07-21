@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 WfWriter                                 0001865D5930 ModelClassType XmlWellFormedWriter XmlWellFormedWriter XmlWellFormedWriter Pointer
+    // 010 WfWriter                                 ModelClassType XmlWellFormedWriter XmlWellFormedWriter XmlWellFormedWriter Pointer
     public partial class NamespaceResolverProxy : DataModel
     {
         public XmlWellFormedWriter?                     WfWriter                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NamespaceResolverProxy() { Pointer= p0 };
 
-            value.WfWriter                                  = GetObject<XmlWellFormedWriter>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlWellFormedWriter.FromPointer); // 024667467C90 0x10 WfWriter                    ( 0001865D5930 ModelClassType XmlWellFormedWriter XmlWellFormedWriter XmlWellFormedWriter Pointer )
+            value.WfWriter                                  = GetObject<XmlWellFormedWriter>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlWellFormedWriter.FromPointer); // 0x10 WfWriter                    ( ModelClassType XmlWellFormedWriter XmlWellFormedWriter XmlWellFormedWriter Pointer )
 
             return value;
         }

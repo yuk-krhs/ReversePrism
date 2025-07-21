@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 000 ValueStates                              State IL2CPP_TYPE_VALUETYPE
     // 020 containerStack                           Stack`1<ContainerType> IL2CPP_TYPE_GENERICINST
-    // 028 Reader                                   000186532860 ModelClassType PushBackReader PushBackReader PushBackReader Pointer
-    // 030 State                                    000186532DC0 ModelEnumType State State State Int32
+    // 028 Reader                                   ModelClassType PushBackReader PushBackReader PushBackReader Pointer
+    // 030 State                                    ModelEnumType State State State Int32
     public partial class JsonTextTokenizer : DataModel
     {
         public PushBackReader?                          Reader                                  { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JsonTextTokenizer() { Pointer= p0 };
 
-            value.Reader                                    = GetObject<PushBackReader>(new IntPtr(p + 0x028), ReversePrism.DataModels.PushBackReader.FromPointer); // 02466A47E080 0x28 Reader                      ( 000186532860 ModelClassType PushBackReader PushBackReader PushBackReader Pointer )
-            value.State                                     = (State)GetInt32(new IntPtr(p + 0x030)); // 02466A47E0A0 0x30 State                       ( 000186532DC0 ModelEnumType State State State Int32 )
+            value.Reader                                    = GetObject<PushBackReader>(new IntPtr(p + 0x028), ReversePrism.DataModels.PushBackReader.FromPointer); // 0x28 Reader                      ( ModelClassType PushBackReader PushBackReader PushBackReader Pointer )
+            value.State                                     = (State)GetInt32(new IntPtr(p + 0x030)); // 0x30 State                       ( ModelEnumType State State State Int32 )
 
             return value;
         }

@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 ColorDefault                             0001865AB0A0 ModelEnumType Color Color Color Int32
-    // 030 ColorSelected                            0001865AB0A0 ModelEnumType Color Color Color Int32
-    // 040 ParentUIHandler                          0001865BF940 ModelClassType DebugUIHandlerWidget DebugUIHandlerWidget DebugUIHandlerWidget Pointer
-    // 048 PreviousUIHandler                        0001865BF940 ModelClassType DebugUIHandlerWidget DebugUIHandlerWidget DebugUIHandlerWidget Pointer
-    // 050 NextUIHandler                            0001865BF940 ModelClassType DebugUIHandlerWidget DebugUIHandlerWidget DebugUIHandlerWidget Pointer
-    // 058 M_Widget                                 00018658BD60 ModelClassType Widget Widget Widget Pointer
+    // 020 ColorDefault                             ModelEnumType Color Color Color Int32
+    // 030 ColorSelected                            ModelEnumType Color Color Color Int32
+    // 040 ParentUIHandler                          ModelClassType DebugUIHandlerWidget DebugUIHandlerWidget DebugUIHandlerWidget Pointer
+    // 048 PreviousUIHandler                        ModelClassType DebugUIHandlerWidget DebugUIHandlerWidget DebugUIHandlerWidget Pointer
+    // 050 NextUIHandler                            ModelClassType DebugUIHandlerWidget DebugUIHandlerWidget DebugUIHandlerWidget Pointer
+    // 058 M_Widget                                 ModelClassType Widget Widget Widget Pointer
     public partial class DebugUIHandlerWidget : DataModel
     {
         public Color                                    ColorDefault                            { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DebugUIHandlerWidget() { Pointer= p0 };
 
-            value.ColorDefault                              = (Color)GetInt32(new IntPtr(p + 0x020)); // 0245A26B67B8 0x20 ColorDefault                ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.ColorSelected                             = (Color)GetInt32(new IntPtr(p + 0x030)); // 0245A26B67D8 0x30 ColorSelected               ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.ParentUIHandler                           = GetObject<DebugUIHandlerWidget>(new IntPtr(p + 0x040), ReversePrism.DataModels.DebugUIHandlerWidget.FromPointer); // 0245A26B67F8 0x40 ParentUIHandler             ( 0001865BF940 ModelClassType DebugUIHandlerWidget DebugUIHandlerWidget DebugUIHandlerWidget Pointer )
-            value.PreviousUIHandler                         = GetObject<DebugUIHandlerWidget>(new IntPtr(p + 0x048), ReversePrism.DataModels.DebugUIHandlerWidget.FromPointer); // 0245A26B6818 0x48 PreviousUIHandler           ( 0001865BF940 ModelClassType DebugUIHandlerWidget DebugUIHandlerWidget DebugUIHandlerWidget Pointer )
-            value.NextUIHandler                             = GetObject<DebugUIHandlerWidget>(new IntPtr(p + 0x050), ReversePrism.DataModels.DebugUIHandlerWidget.FromPointer); // 0245A26B6838 0x50 NextUIHandler               ( 0001865BF940 ModelClassType DebugUIHandlerWidget DebugUIHandlerWidget DebugUIHandlerWidget Pointer )
-            value.M_Widget                                  = GetObject<Widget>(new IntPtr(p + 0x058), ReversePrism.DataModels.Widget.FromPointer); // 0245A26B6858 0x58 M_Widget                    ( 00018658BD60 ModelClassType Widget Widget Widget Pointer )
+            value.ColorDefault                              = (Color)GetInt32(new IntPtr(p + 0x020)); // 0x20 ColorDefault                ( ModelEnumType Color Color Color Int32 )
+            value.ColorSelected                             = (Color)GetInt32(new IntPtr(p + 0x030)); // 0x30 ColorSelected               ( ModelEnumType Color Color Color Int32 )
+            value.ParentUIHandler                           = GetObject<DebugUIHandlerWidget>(new IntPtr(p + 0x040), ReversePrism.DataModels.DebugUIHandlerWidget.FromPointer); // 0x40 ParentUIHandler             ( ModelClassType DebugUIHandlerWidget DebugUIHandlerWidget DebugUIHandlerWidget Pointer )
+            value.PreviousUIHandler                         = GetObject<DebugUIHandlerWidget>(new IntPtr(p + 0x048), ReversePrism.DataModels.DebugUIHandlerWidget.FromPointer); // 0x48 PreviousUIHandler           ( ModelClassType DebugUIHandlerWidget DebugUIHandlerWidget DebugUIHandlerWidget Pointer )
+            value.NextUIHandler                             = GetObject<DebugUIHandlerWidget>(new IntPtr(p + 0x050), ReversePrism.DataModels.DebugUIHandlerWidget.FromPointer); // 0x50 NextUIHandler               ( ModelClassType DebugUIHandlerWidget DebugUIHandlerWidget DebugUIHandlerWidget Pointer )
+            value.M_Widget                                  = GetObject<Widget>(new IntPtr(p + 0x058), ReversePrism.DataModels.Widget.FromPointer); // 0x58 M_Widget                    ( ModelClassType Widget Widget Widget Pointer )
 
             return value;
         }

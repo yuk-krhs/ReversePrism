@@ -8,13 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 ViewPrefab                               0001866F1140 ModelClassType OurStreamArchiveDetailScreenView OurStreamArchiveDetailScreenView OurStreamArchiveDetailScreenView Pointer
-    // 028 DetailPopupViewFactory                   0001866F42C0 ModelClassType OurStreamLiveContentDetailPopupViewFactory OurStreamLiveContentDetailPopupViewFactory OurStreamLiveContentDetailPopupViewFactory Pointer
-    // 030 ViewParent                               0001866AA150 ModelClassType Transform Transform Transform Pointer
+    // 020 ViewPrefab                               ModelClassType OurStreamArchiveDetailScreenView OurStreamArchiveDetailScreenView OurStreamArchiveDetailScreenView Pointer
+    // 028 ViewParent                               ModelClassType Transform Transform Transform Pointer
     public partial class OurStreamArchiveDetailScreenBuilder : DataModel
     {
         public OurStreamArchiveDetailScreenView?        ViewPrefab                              { get; set; }
-        public OurStreamLiveContentDetailPopupViewFactory? DetailPopupViewFactory                  { get; set; }
         public Transform?                               ViewParent                              { get; set; }
 
         public static OurStreamArchiveDetailScreenBuilder? FromPointer(IntPtr p0)
@@ -25,9 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new OurStreamArchiveDetailScreenBuilder() { Pointer= p0 };
 
-            value.ViewPrefab                                = GetObject<OurStreamArchiveDetailScreenView>(new IntPtr(p + 0x020), ReversePrism.DataModels.OurStreamArchiveDetailScreenView.FromPointer); // 02466B6D39E8 0x20 ViewPrefab                  ( 0001866F1140 ModelClassType OurStreamArchiveDetailScreenView OurStreamArchiveDetailScreenView OurStreamArchiveDetailScreenView Pointer )
-            value.DetailPopupViewFactory                    = GetObject<OurStreamLiveContentDetailPopupViewFactory>(new IntPtr(p + 0x028), ReversePrism.DataModels.OurStreamLiveContentDetailPopupViewFactory.FromPointer); // 02466B6D3A08 0x28 DetailPopupViewFactory      ( 0001866F42C0 ModelClassType OurStreamLiveContentDetailPopupViewFactory OurStreamLiveContentDetailPopupViewFactory OurStreamLiveContentDetailPopupViewFactory Pointer )
-            value.ViewParent                                = GetObject<Transform>(new IntPtr(p + 0x030), ReversePrism.DataModels.Transform.FromPointer); // 02466B6D3A28 0x30 ViewParent                  ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.ViewPrefab                                = GetObject<OurStreamArchiveDetailScreenView>(new IntPtr(p + 0x020), ReversePrism.DataModels.OurStreamArchiveDetailScreenView.FromPointer); // 0x20 ViewPrefab                  ( ModelClassType OurStreamArchiveDetailScreenView OurStreamArchiveDetailScreenView OurStreamArchiveDetailScreenView Pointer )
+            value.ViewParent                                = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 0x28 ViewParent                  ( ModelClassType Transform Transform Transform Pointer )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Conditions                               000185CC3D18 ModelClassListType SwitchObjectCondition[] SwitchObjectCondition[] List<SwitchObjectCondition> Pointer
-    // 018 ObjectsRoot                              0001865D8420 ModelClassType GameObject GameObject GameObject Pointer
+    // 010 Conditions                               ModelClassListType SwitchObjectCondition[] SwitchObjectCondition[] List<SwitchObjectCondition> Pointer
+    // 018 ObjectsRoot                              ModelClassType GameObject GameObject GameObject Pointer
     public partial class SwitchObjectData : DataModel
     {
         public List<SwitchObjectCondition>?             Conditions                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SwitchObjectData() { Pointer= p0 };
 
-            value.Conditions                                = GetObjectList<SwitchObjectCondition>(new IntPtr(p + 0x010), ReversePrism.DataModels.SwitchObjectCondition.FromPointer); // 0245A6B02188 0x10 Conditions                  ( 000185CC3D18 ModelClassListType SwitchObjectCondition[] SwitchObjectCondition[] List<SwitchObjectCondition> Pointer )
-            value.ObjectsRoot                               = GetObject<GameObject>(new IntPtr(p + 0x018), ReversePrism.DataModels.GameObject.FromPointer); // 0245A6B021A8 0x18 ObjectsRoot                 ( 0001865D8420 ModelClassType GameObject GameObject GameObject Pointer )
+            value.Conditions                                = GetObjectList<SwitchObjectCondition>(new IntPtr(p + 0x010), ReversePrism.DataModels.SwitchObjectCondition.FromPointer); // 0x10 Conditions                  ( ModelClassListType SwitchObjectCondition[] SwitchObjectCondition[] List<SwitchObjectCondition> Pointer )
+            value.ObjectsRoot                               = GetObject<GameObject>(new IntPtr(p + 0x018), ReversePrism.DataModels.GameObject.FromPointer); // 0x18 ObjectsRoot                 ( ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

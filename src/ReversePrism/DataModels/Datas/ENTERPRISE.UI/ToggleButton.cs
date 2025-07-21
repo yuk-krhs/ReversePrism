@@ -8,16 +8,16 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 1E0 IsOn                                     000186595480 ModelPrimitiveType bool bool bool Bool
-    // 1E1 IsHandledByGroup                         000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 1E8 SubscribedOnClick                        0001866792B0 ModelClassType Action Action Action Pointer
+    // 1E0 IsOn                                     ModelPrimitiveType bool bool bool Bool
+    // 1E1 IsHandledByGroup                         ModelPrimitiveType bool bool bool Bool
+    // 1E8 SubscribedOnClick                        ModelClassType Action Action Action Pointer
     // 1F0 statusChangeSubject                      Subject`1<bool> IL2CPP_TYPE_GENERICINST
-    // 1F8 SpriteOn                                 00018666B610 ModelClassType Sprite Sprite Sprite Pointer
-    // 200 SpriteColorOn                            0001865AA8E0 ModelEnumType Color Color Color Int32
-    // 210 TextColorOn                              0001865AA8E0 ModelEnumType Color Color Color Int32
-    // 220 SpriteOff                                00018666B610 ModelClassType Sprite Sprite Sprite Pointer
-    // 228 SpriteColorOff                           0001865AA8E0 ModelEnumType Color Color Color Int32
-    // 238 TextColorOff                             0001865AA8E0 ModelEnumType Color Color Color Int32
+    // 1F8 SpriteOn                                 ModelClassType Sprite Sprite Sprite Pointer
+    // 200 SpriteColorOn                            ModelEnumType Color Color Color Int32
+    // 210 TextColorOn                              ModelEnumType Color Color Color Int32
+    // 220 SpriteOff                                ModelClassType Sprite Sprite Sprite Pointer
+    // 228 SpriteColorOff                           ModelEnumType Color Color Color Int32
+    // 238 TextColorOff                             ModelEnumType Color Color Color Int32
     public partial class ToggleButton : DataModel
     {
         public bool                                     IsOn                                    { get; set; }
@@ -38,15 +38,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ToggleButton() { Pointer= p0 };
 
-            value.IsOn                                      = GetBool(new IntPtr(p + 0x1E0)); // 024664C6C280 0x1E0 IsOn                        ( 000186595480 ModelPrimitiveType bool bool bool Bool )
-            value.IsHandledByGroup                          = GetBool(new IntPtr(p + 0x1E1)); // 024664C6C2A0 0x1E1 IsHandledByGroup            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SubscribedOnClick                         = GetObject<Action>(new IntPtr(p + 0x1E8), ReversePrism.DataModels.Action.FromPointer); // 024664C6C2C0 0x1E8 SubscribedOnClick           ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.SpriteOn                                  = GetObject<Sprite>(new IntPtr(p + 0x1F8), ReversePrism.DataModels.Sprite.FromPointer); // 024664C6C300 0x1F8 SpriteOn                    ( 00018666B610 ModelClassType Sprite Sprite Sprite Pointer )
-            value.SpriteColorOn                             = (Color)GetInt32(new IntPtr(p + 0x200)); // 024664C6C320 0x200 SpriteColorOn               ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.TextColorOn                               = (Color)GetInt32(new IntPtr(p + 0x210)); // 024664C6C340 0x210 TextColorOn                 ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.SpriteOff                                 = GetObject<Sprite>(new IntPtr(p + 0x220), ReversePrism.DataModels.Sprite.FromPointer); // 024664C6C360 0x220 SpriteOff                   ( 00018666B610 ModelClassType Sprite Sprite Sprite Pointer )
-            value.SpriteColorOff                            = (Color)GetInt32(new IntPtr(p + 0x228)); // 024664C6C380 0x228 SpriteColorOff              ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.TextColorOff                              = (Color)GetInt32(new IntPtr(p + 0x238)); // 024664C6C3A0 0x238 TextColorOff                ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
+            value.IsOn                                      = GetBool(new IntPtr(p + 0x1E0)); // 0x1E0 IsOn                        ( ModelPrimitiveType bool bool bool Bool )
+            value.IsHandledByGroup                          = GetBool(new IntPtr(p + 0x1E1)); // 0x1E1 IsHandledByGroup            ( ModelPrimitiveType bool bool bool Bool )
+            value.SubscribedOnClick                         = GetObject<Action>(new IntPtr(p + 0x1E8), ReversePrism.DataModels.Action.FromPointer); // 0x1E8 SubscribedOnClick           ( ModelClassType Action Action Action Pointer )
+            value.SpriteOn                                  = GetObject<Sprite>(new IntPtr(p + 0x1F8), ReversePrism.DataModels.Sprite.FromPointer); // 0x1F8 SpriteOn                    ( ModelClassType Sprite Sprite Sprite Pointer )
+            value.SpriteColorOn                             = (Color)GetInt32(new IntPtr(p + 0x200)); // 0x200 SpriteColorOn               ( ModelEnumType Color Color Color Int32 )
+            value.TextColorOn                               = (Color)GetInt32(new IntPtr(p + 0x210)); // 0x210 TextColorOn                 ( ModelEnumType Color Color Color Int32 )
+            value.SpriteOff                                 = GetObject<Sprite>(new IntPtr(p + 0x220), ReversePrism.DataModels.Sprite.FromPointer); // 0x220 SpriteOff                   ( ModelClassType Sprite Sprite Sprite Pointer )
+            value.SpriteColorOff                            = (Color)GetInt32(new IntPtr(p + 0x228)); // 0x228 SpriteColorOff              ( ModelEnumType Color Color Color Int32 )
+            value.TextColorOff                              = (Color)GetInt32(new IntPtr(p + 0x238)); // 0x238 TextColorOff                ( ModelEnumType Color Color Color Int32 )
 
             return value;
         }

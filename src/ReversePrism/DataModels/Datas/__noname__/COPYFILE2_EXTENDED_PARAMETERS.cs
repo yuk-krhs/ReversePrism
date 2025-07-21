@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 DwSize                                   000186698DF0 ModelPrimitiveType uint uint uint UInt32
-    // 014 DwCopyFlags                              000186698DF0 ModelPrimitiveType uint uint uint UInt32
+    // 010 DwSize                                   ModelPrimitiveType uint uint uint UInt32
+    // 014 DwCopyFlags                              ModelPrimitiveType uint uint uint UInt32
     // 018 pfCancel                                 <int> IL2CPP_TYPE_I
     // 020 pProgressRoutine                         <int> IL2CPP_TYPE_I
     // 028 pvCallbackContext                        <int> IL2CPP_TYPE_I
@@ -26,8 +26,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new COPYFILE2_EXTENDED_PARAMETERS() { Pointer= p0 };
 
-            value.DwSize                                    = GetUInt32(new IntPtr(p + 0x010)); // 0246669A09F8 0x10 DwSize                      ( 000186698DF0 ModelPrimitiveType uint uint uint UInt32 )
-            value.DwCopyFlags                               = GetUInt32(new IntPtr(p + 0x014)); // 0246669A0A18 0x14 DwCopyFlags                 ( 000186698DF0 ModelPrimitiveType uint uint uint UInt32 )
+            value.DwSize                                    = GetUInt32(new IntPtr(p + 0x010)); // 0x10 DwSize                      ( ModelPrimitiveType uint uint uint UInt32 )
+            value.DwCopyFlags                               = GetUInt32(new IntPtr(p + 0x014)); // 0x14 DwCopyFlags                 ( ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

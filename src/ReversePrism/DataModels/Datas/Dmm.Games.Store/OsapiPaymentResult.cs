@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 040 Response                                 00018672BC40 ModelClassType PaymentResult PaymentResult PaymentResult Pointer
-    // 048 Callback                                 000186531A20 ModelClassType Callback Callback Callback Pointer
-    // 050 RequestCode                              0001865F36C0 ModelPrimitiveType int int int Int32
+    // 040 Response                                 ModelClassType PaymentResult PaymentResult PaymentResult Pointer
+    // 048 Callback                                 ModelClassType Callback Callback Callback Pointer
+    // 050 RequestCode                              ModelPrimitiveType int int int Int32
     public partial class OsapiPaymentResult : DataModel
     {
         public PaymentResult?                           Response                                { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new OsapiPaymentResult() { Pointer= p0 };
 
-            value.Response                                  = GetObject<PaymentResult>(new IntPtr(p + 0x040), ReversePrism.DataModels.PaymentResult.FromPointer); // 02466B517B78 0x40 Response                    ( 00018672BC40 ModelClassType PaymentResult PaymentResult PaymentResult Pointer )
-            value.Callback                                  = GetObject<Callback>(new IntPtr(p + 0x048), ReversePrism.DataModels.Callback.FromPointer); // 02466B517B98 0x48 Callback                    ( 000186531A20 ModelClassType Callback Callback Callback Pointer )
-            value.RequestCode                               = GetInt32(new IntPtr(p + 0x050)); // 02466B517BB8 0x50 RequestCode                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Response                                  = GetObject<PaymentResult>(new IntPtr(p + 0x040), ReversePrism.DataModels.PaymentResult.FromPointer); // 0x40 Response                    ( ModelClassType PaymentResult PaymentResult PaymentResult Pointer )
+            value.Callback                                  = GetObject<Callback>(new IntPtr(p + 0x048), ReversePrism.DataModels.Callback.FromPointer); // 0x48 Callback                    ( ModelClassType Callback Callback Callback Pointer )
+            value.RequestCode                               = GetInt32(new IntPtr(p + 0x050)); // 0x50 RequestCode                 ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

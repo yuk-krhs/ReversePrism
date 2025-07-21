@@ -8,57 +8,57 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Text                                     0001866722E0 ModelPrimitiveType string string string String
-    // 018 ScreenRect                               00018664FAF0 ModelEnumType Rect Rect Rect Int32
-    // 028 Margins                                  0001866AF040 ModelEnumType Vector4 Vector4 Vector4 Int32
-    // 038 Scale                                    000186666050 ModelPrimitiveType float float float Single
-    // 040 FontAsset                                0001865D4D50 ModelClassType FontAsset FontAsset FontAsset Pointer
-    // 048 Material                                 00018660C4B0 ModelClassType Material Material Material Pointer
-    // 050 SpriteAsset                              00018666CC70 ModelClassType SpriteAsset SpriteAsset SpriteAsset Pointer
-    // 058 StyleSheet                               000186649590 ModelClassType TextStyleSheet TextStyleSheet TextStyleSheet Pointer
-    // 060 FontStyle                                0001865B2E00 ModelEnumType FontStyles FontStyles FontStyles Int32
-    // 068 TextSettings                             000186647CE0 ModelClassType TextSettings TextSettings TextSettings Pointer
-    // 070 TextAlignment                            0001866327C0 ModelEnumType TextAlignment TextAlignment TextAlignment Int32
-    // 074 OverflowMode                             000186642A00 ModelEnumType TextOverflowMode TextOverflowMode TextOverflowMode Int32
-    // 078 WordWrap                                 000186595960 ModelPrimitiveType bool bool bool Bool
-    // 07C WordWrappingRatio                        000186666050 ModelPrimitiveType float float float Single
-    // 080 Color                                    0001865AB0A0 ModelEnumType Color Color Color Int32
-    // 090 FontColorGradient                        0001866840D0 ModelClassType TextColorGradient TextColorGradient TextColorGradient Pointer
-    // 098 FontColorGradientPreset                  0001866840D0 ModelClassType TextColorGradient TextColorGradient TextColorGradient Pointer
-    // 0A0 TintSprites                              000186595960 ModelPrimitiveType bool bool bool Bool
-    // 0A1 OverrideRichTextColors                   000186595960 ModelPrimitiveType bool bool bool Bool
-    // 0A2 ShouldConvertToLinearSpace               000186595960 ModelPrimitiveType bool bool bool Bool
-    // 0A4 FontSize                                 000186666050 ModelPrimitiveType float float float Single
-    // 0A8 AutoSize                                 000186595960 ModelPrimitiveType bool bool bool Bool
-    // 0AC FontSizeMin                              000186666050 ModelPrimitiveType float float float Single
-    // 0B0 FontSizeMax                              000186666050 ModelPrimitiveType float float float Single
-    // 0B4 EnableKerning                            000186595960 ModelPrimitiveType bool bool bool Bool
-    // 0B5 RichText                                 000186595960 ModelPrimitiveType bool bool bool Bool
-    // 0B6 IsRightToLeft                            000186595960 ModelPrimitiveType bool bool bool Bool
-    // 0B8 ExtraPadding                             000186666050 ModelPrimitiveType float float float Single
-    // 0BC ParseControlCharacters                   000186595960 ModelPrimitiveType bool bool bool Bool
-    // 0BD IsOrthographic                           000186595960 ModelPrimitiveType bool bool bool Bool
-    // 0BE TagNoParsing                             000186595960 ModelPrimitiveType bool bool bool Bool
-    // 0C0 CharacterSpacing                         000186666050 ModelPrimitiveType float float float Single
-    // 0C4 WordSpacing                              000186666050 ModelPrimitiveType float float float Single
-    // 0C8 LineSpacing                              000186666050 ModelPrimitiveType float float float Single
-    // 0CC ParagraphSpacing                         000186666050 ModelPrimitiveType float float float Single
-    // 0D0 LineSpacingMax                           000186666050 ModelPrimitiveType float float float Single
-    // 0D4 TextWrappingMode                         00018664B330 ModelEnumType TextWrappingMode TextWrappingMode TextWrappingMode Int32
-    // 0D8 MaxVisibleCharacters                     0001865F36C0 ModelPrimitiveType int int int Int32
-    // 0DC MaxVisibleWords                          0001865F36C0 ModelPrimitiveType int int int Int32
-    // 0E0 MaxVisibleLines                          0001865F36C0 ModelPrimitiveType int int int Int32
-    // 0E4 FirstVisibleCharacter                    0001865F36C0 ModelPrimitiveType int int int Int32
-    // 0E8 UseMaxVisibleDescender                   000186595960 ModelPrimitiveType bool bool bool Bool
-    // 0EC FontWeight                               00018663BD60 ModelEnumType TextFontWeight TextFontWeight TextFontWeight Int32
-    // 0F0 PageToDisplay                            0001865F36C0 ModelPrimitiveType int int int Int32
-    // 0F4 HorizontalMapping                        000186653D90 ModelEnumType TextureMapping TextureMapping TextureMapping Int32
-    // 0F8 VerticalMapping                          000186653D90 ModelEnumType TextureMapping TextureMapping TextureMapping Int32
-    // 0FC UvLineOffset                             000186666050 ModelPrimitiveType float float float Single
-    // 100 GeometrySortingOrder                     000186514C50 ModelEnumType VertexSortingOrder VertexSortingOrder VertexSortingOrder Int32
-    // 104 InverseYAxis                             000186595960 ModelPrimitiveType bool bool bool Bool
-    // 108 CharWidthMaxAdj                          000186666050 ModelPrimitiveType float float float Single
-    // 10C InputSource                              00018663F810 ModelEnumType TextInputSource TextInputSource TextInputSource Int32
+    // 010 Text                                     ModelPrimitiveType string string string String
+    // 018 ScreenRect                               ModelEnumType Rect Rect Rect Int32
+    // 028 Margins                                  ModelEnumType Vector4 Vector4 Vector4 Int32
+    // 038 Scale                                    ModelPrimitiveType float float float Single
+    // 040 FontAsset                                ModelClassType FontAsset FontAsset FontAsset Pointer
+    // 048 Material                                 ModelClassType Material Material Material Pointer
+    // 050 SpriteAsset                              ModelClassType SpriteAsset SpriteAsset SpriteAsset Pointer
+    // 058 StyleSheet                               ModelClassType TextStyleSheet TextStyleSheet TextStyleSheet Pointer
+    // 060 FontStyle                                ModelEnumType FontStyles FontStyles FontStyles Int32
+    // 068 TextSettings                             ModelClassType TextSettings TextSettings TextSettings Pointer
+    // 070 TextAlignment                            ModelEnumType TextAlignment TextAlignment TextAlignment Int32
+    // 074 OverflowMode                             ModelEnumType TextOverflowMode TextOverflowMode TextOverflowMode Int32
+    // 078 WordWrap                                 ModelPrimitiveType bool bool bool Bool
+    // 07C WordWrappingRatio                        ModelPrimitiveType float float float Single
+    // 080 Color                                    ModelEnumType Color Color Color Int32
+    // 090 FontColorGradient                        ModelClassType TextColorGradient TextColorGradient TextColorGradient Pointer
+    // 098 FontColorGradientPreset                  ModelClassType TextColorGradient TextColorGradient TextColorGradient Pointer
+    // 0A0 TintSprites                              ModelPrimitiveType bool bool bool Bool
+    // 0A1 OverrideRichTextColors                   ModelPrimitiveType bool bool bool Bool
+    // 0A2 ShouldConvertToLinearSpace               ModelPrimitiveType bool bool bool Bool
+    // 0A4 FontSize                                 ModelPrimitiveType float float float Single
+    // 0A8 AutoSize                                 ModelPrimitiveType bool bool bool Bool
+    // 0AC FontSizeMin                              ModelPrimitiveType float float float Single
+    // 0B0 FontSizeMax                              ModelPrimitiveType float float float Single
+    // 0B4 EnableKerning                            ModelPrimitiveType bool bool bool Bool
+    // 0B5 RichText                                 ModelPrimitiveType bool bool bool Bool
+    // 0B6 IsRightToLeft                            ModelPrimitiveType bool bool bool Bool
+    // 0B8 ExtraPadding                             ModelPrimitiveType float float float Single
+    // 0BC ParseControlCharacters                   ModelPrimitiveType bool bool bool Bool
+    // 0BD IsOrthographic                           ModelPrimitiveType bool bool bool Bool
+    // 0BE TagNoParsing                             ModelPrimitiveType bool bool bool Bool
+    // 0C0 CharacterSpacing                         ModelPrimitiveType float float float Single
+    // 0C4 WordSpacing                              ModelPrimitiveType float float float Single
+    // 0C8 LineSpacing                              ModelPrimitiveType float float float Single
+    // 0CC ParagraphSpacing                         ModelPrimitiveType float float float Single
+    // 0D0 LineSpacingMax                           ModelPrimitiveType float float float Single
+    // 0D4 TextWrappingMode                         ModelEnumType TextWrappingMode TextWrappingMode TextWrappingMode Int32
+    // 0D8 MaxVisibleCharacters                     ModelPrimitiveType int int int Int32
+    // 0DC MaxVisibleWords                          ModelPrimitiveType int int int Int32
+    // 0E0 MaxVisibleLines                          ModelPrimitiveType int int int Int32
+    // 0E4 FirstVisibleCharacter                    ModelPrimitiveType int int int Int32
+    // 0E8 UseMaxVisibleDescender                   ModelPrimitiveType bool bool bool Bool
+    // 0EC FontWeight                               ModelEnumType TextFontWeight TextFontWeight TextFontWeight Int32
+    // 0F0 PageToDisplay                            ModelPrimitiveType int int int Int32
+    // 0F4 HorizontalMapping                        ModelEnumType TextureMapping TextureMapping TextureMapping Int32
+    // 0F8 VerticalMapping                          ModelEnumType TextureMapping TextureMapping TextureMapping Int32
+    // 0FC UvLineOffset                             ModelPrimitiveType float float float Single
+    // 100 GeometrySortingOrder                     ModelEnumType VertexSortingOrder VertexSortingOrder VertexSortingOrder Int32
+    // 104 InverseYAxis                             ModelPrimitiveType bool bool bool Bool
+    // 108 CharWidthMaxAdj                          ModelPrimitiveType float float float Single
+    // 10C InputSource                              ModelEnumType TextInputSource TextInputSource TextInputSource Int32
     public partial class TextGenerationSettings : DataModel
     {
         public string                                   Text                                    { get; set; }
@@ -121,57 +121,57 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TextGenerationSettings() { Pointer= p0 };
 
-            value.Text                                      = GetString(new IntPtr(p + 0x010)); // 0245A68AF3B0 0x10 Text                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ScreenRect                                = (Rect)GetInt32(new IntPtr(p + 0x018)); // 0245A68AF3D0 0x18 ScreenRect                  ( 00018664FAF0 ModelEnumType Rect Rect Rect Int32 )
-            value.Margins                                   = (Vector4)GetInt32(new IntPtr(p + 0x028)); // 0245A68AF3F0 0x28 Margins                     ( 0001866AF040 ModelEnumType Vector4 Vector4 Vector4 Int32 )
-            value.Scale                                     = GetSingle(new IntPtr(p + 0x038)); // 0245A68AF410 0x38 Scale                       ( 000186666050 ModelPrimitiveType float float float Single )
-            value.FontAsset                                 = GetObject<FontAsset>(new IntPtr(p + 0x040), ReversePrism.DataModels.FontAsset.FromPointer); // 0245A68AF430 0x40 FontAsset                   ( 0001865D4D50 ModelClassType FontAsset FontAsset FontAsset Pointer )
-            value.Material                                  = GetObject<Material>(new IntPtr(p + 0x048), ReversePrism.DataModels.Material.FromPointer); // 0245A68AF450 0x48 Material                    ( 00018660C4B0 ModelClassType Material Material Material Pointer )
-            value.SpriteAsset                               = GetObject<SpriteAsset>(new IntPtr(p + 0x050), ReversePrism.DataModels.SpriteAsset.FromPointer); // 0245A68AF470 0x50 SpriteAsset                 ( 00018666CC70 ModelClassType SpriteAsset SpriteAsset SpriteAsset Pointer )
-            value.StyleSheet                                = GetObject<TextStyleSheet>(new IntPtr(p + 0x058), ReversePrism.DataModels.TextStyleSheet.FromPointer); // 0245A68AF490 0x58 StyleSheet                  ( 000186649590 ModelClassType TextStyleSheet TextStyleSheet TextStyleSheet Pointer )
-            value.FontStyle                                 = (FontStyles)GetInt32(new IntPtr(p + 0x060)); // 0245A68AF4B0 0x60 FontStyle                   ( 0001865B2E00 ModelEnumType FontStyles FontStyles FontStyles Int32 )
-            value.TextSettings                              = GetObject<TextSettings>(new IntPtr(p + 0x068), ReversePrism.DataModels.TextSettings.FromPointer); // 0245A68AF4D0 0x68 TextSettings                ( 000186647CE0 ModelClassType TextSettings TextSettings TextSettings Pointer )
-            value.TextAlignment                             = (TextAlignment)GetInt32(new IntPtr(p + 0x070)); // 0245A68AF4F0 0x70 TextAlignment               ( 0001866327C0 ModelEnumType TextAlignment TextAlignment TextAlignment Int32 )
-            value.OverflowMode                              = (TextOverflowMode)GetInt32(new IntPtr(p + 0x074)); // 0245A68AF510 0x74 OverflowMode                ( 000186642A00 ModelEnumType TextOverflowMode TextOverflowMode TextOverflowMode Int32 )
-            value.WordWrap                                  = GetBool(new IntPtr(p + 0x078)); // 0245A68AF530 0x78 WordWrap                    ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.WordWrappingRatio                         = GetSingle(new IntPtr(p + 0x07C)); // 0245A68AF550 0x7C WordWrappingRatio           ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Color                                     = (Color)GetInt32(new IntPtr(p + 0x080)); // 0245A68AF570 0x80 Color                       ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.FontColorGradient                         = GetObject<TextColorGradient>(new IntPtr(p + 0x090), ReversePrism.DataModels.TextColorGradient.FromPointer); // 0245A68AF590 0x90 FontColorGradient           ( 0001866840D0 ModelClassType TextColorGradient TextColorGradient TextColorGradient Pointer )
-            value.FontColorGradientPreset                   = GetObject<TextColorGradient>(new IntPtr(p + 0x098), ReversePrism.DataModels.TextColorGradient.FromPointer); // 0245A68AF5B0 0x98 FontColorGradientPreset     ( 0001866840D0 ModelClassType TextColorGradient TextColorGradient TextColorGradient Pointer )
-            value.TintSprites                               = GetBool(new IntPtr(p + 0x0A0)); // 0245A68AF5D0 0xA0 TintSprites                 ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.OverrideRichTextColors                    = GetBool(new IntPtr(p + 0x0A1)); // 0245A68AF5F0 0xA1 OverrideRichTextColors      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.ShouldConvertToLinearSpace                = GetBool(new IntPtr(p + 0x0A2)); // 0245A68AF610 0xA2 ShouldConvertToLinearSpace  ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.FontSize                                  = GetSingle(new IntPtr(p + 0x0A4)); // 0245A68AF630 0xA4 FontSize                    ( 000186666050 ModelPrimitiveType float float float Single )
-            value.AutoSize                                  = GetBool(new IntPtr(p + 0x0A8)); // 0245A68AF650 0xA8 AutoSize                    ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.FontSizeMin                               = GetSingle(new IntPtr(p + 0x0AC)); // 0245A68AF670 0xAC FontSizeMin                 ( 000186666050 ModelPrimitiveType float float float Single )
-            value.FontSizeMax                               = GetSingle(new IntPtr(p + 0x0B0)); // 0245A68AF690 0xB0 FontSizeMax                 ( 000186666050 ModelPrimitiveType float float float Single )
-            value.EnableKerning                             = GetBool(new IntPtr(p + 0x0B4)); // 0245A68AF6B0 0xB4 EnableKerning               ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.RichText                                  = GetBool(new IntPtr(p + 0x0B5)); // 0245A68AF6D0 0xB5 RichText                    ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.IsRightToLeft                             = GetBool(new IntPtr(p + 0x0B6)); // 0245A68AF6F0 0xB6 IsRightToLeft               ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.ExtraPadding                              = GetSingle(new IntPtr(p + 0x0B8)); // 0245A68AF710 0xB8 ExtraPadding                ( 000186666050 ModelPrimitiveType float float float Single )
-            value.ParseControlCharacters                    = GetBool(new IntPtr(p + 0x0BC)); // 0245A68AF730 0xBC ParseControlCharacters      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.IsOrthographic                            = GetBool(new IntPtr(p + 0x0BD)); // 0245A68AF750 0xBD IsOrthographic              ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.TagNoParsing                              = GetBool(new IntPtr(p + 0x0BE)); // 0245A68AF770 0xBE TagNoParsing                ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.CharacterSpacing                          = GetSingle(new IntPtr(p + 0x0C0)); // 0245A68AF790 0xC0 CharacterSpacing            ( 000186666050 ModelPrimitiveType float float float Single )
-            value.WordSpacing                               = GetSingle(new IntPtr(p + 0x0C4)); // 0245A68AF7B0 0xC4 WordSpacing                 ( 000186666050 ModelPrimitiveType float float float Single )
-            value.LineSpacing                               = GetSingle(new IntPtr(p + 0x0C8)); // 0245A68AF7D0 0xC8 LineSpacing                 ( 000186666050 ModelPrimitiveType float float float Single )
-            value.ParagraphSpacing                          = GetSingle(new IntPtr(p + 0x0CC)); // 0245A68AF7F0 0xCC ParagraphSpacing            ( 000186666050 ModelPrimitiveType float float float Single )
-            value.LineSpacingMax                            = GetSingle(new IntPtr(p + 0x0D0)); // 0245A68AF810 0xD0 LineSpacingMax              ( 000186666050 ModelPrimitiveType float float float Single )
-            value.TextWrappingMode                          = (TextWrappingMode)GetInt32(new IntPtr(p + 0x0D4)); // 0245A68AF830 0xD4 TextWrappingMode            ( 00018664B330 ModelEnumType TextWrappingMode TextWrappingMode TextWrappingMode Int32 )
-            value.MaxVisibleCharacters                      = GetInt32(new IntPtr(p + 0x0D8)); // 0245A68AF850 0xD8 MaxVisibleCharacters        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.MaxVisibleWords                           = GetInt32(new IntPtr(p + 0x0DC)); // 0245A68AF870 0xDC MaxVisibleWords             ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.MaxVisibleLines                           = GetInt32(new IntPtr(p + 0x0E0)); // 0245A68AF890 0xE0 MaxVisibleLines             ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.FirstVisibleCharacter                     = GetInt32(new IntPtr(p + 0x0E4)); // 0245A68AF8B0 0xE4 FirstVisibleCharacter       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.UseMaxVisibleDescender                    = GetBool(new IntPtr(p + 0x0E8)); // 0245A68AF8D0 0xE8 UseMaxVisibleDescender      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.FontWeight                                = (TextFontWeight)GetInt32(new IntPtr(p + 0x0EC)); // 0245A68AF8F0 0xEC FontWeight                  ( 00018663BD60 ModelEnumType TextFontWeight TextFontWeight TextFontWeight Int32 )
-            value.PageToDisplay                             = GetInt32(new IntPtr(p + 0x0F0)); // 0245A68AF910 0xF0 PageToDisplay               ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.HorizontalMapping                         = (TextureMapping)GetInt32(new IntPtr(p + 0x0F4)); // 0245A68AF930 0xF4 HorizontalMapping           ( 000186653D90 ModelEnumType TextureMapping TextureMapping TextureMapping Int32 )
-            value.VerticalMapping                           = (TextureMapping)GetInt32(new IntPtr(p + 0x0F8)); // 0245A68AF950 0xF8 VerticalMapping             ( 000186653D90 ModelEnumType TextureMapping TextureMapping TextureMapping Int32 )
-            value.UvLineOffset                              = GetSingle(new IntPtr(p + 0x0FC)); // 0245A68AF970 0xFC UvLineOffset                ( 000186666050 ModelPrimitiveType float float float Single )
-            value.GeometrySortingOrder                      = (VertexSortingOrder)GetInt32(new IntPtr(p + 0x100)); // 0245A68AF990 0x100 GeometrySortingOrder        ( 000186514C50 ModelEnumType VertexSortingOrder VertexSortingOrder VertexSortingOrder Int32 )
-            value.InverseYAxis                              = GetBool(new IntPtr(p + 0x104)); // 0245A68AF9B0 0x104 InverseYAxis                ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.CharWidthMaxAdj                           = GetSingle(new IntPtr(p + 0x108)); // 0245A68AF9D0 0x108 CharWidthMaxAdj             ( 000186666050 ModelPrimitiveType float float float Single )
-            value.InputSource                               = (TextInputSource)GetInt32(new IntPtr(p + 0x10C)); // 0245A68AF9F0 0x10C InputSource                 ( 00018663F810 ModelEnumType TextInputSource TextInputSource TextInputSource Int32 )
+            value.Text                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Text                        ( ModelPrimitiveType string string string String )
+            value.ScreenRect                                = (Rect)GetInt32(new IntPtr(p + 0x018)); // 0x18 ScreenRect                  ( ModelEnumType Rect Rect Rect Int32 )
+            value.Margins                                   = (Vector4)GetInt32(new IntPtr(p + 0x028)); // 0x28 Margins                     ( ModelEnumType Vector4 Vector4 Vector4 Int32 )
+            value.Scale                                     = GetSingle(new IntPtr(p + 0x038)); // 0x38 Scale                       ( ModelPrimitiveType float float float Single )
+            value.FontAsset                                 = GetObject<FontAsset>(new IntPtr(p + 0x040), ReversePrism.DataModels.FontAsset.FromPointer); // 0x40 FontAsset                   ( ModelClassType FontAsset FontAsset FontAsset Pointer )
+            value.Material                                  = GetObject<Material>(new IntPtr(p + 0x048), ReversePrism.DataModels.Material.FromPointer); // 0x48 Material                    ( ModelClassType Material Material Material Pointer )
+            value.SpriteAsset                               = GetObject<SpriteAsset>(new IntPtr(p + 0x050), ReversePrism.DataModels.SpriteAsset.FromPointer); // 0x50 SpriteAsset                 ( ModelClassType SpriteAsset SpriteAsset SpriteAsset Pointer )
+            value.StyleSheet                                = GetObject<TextStyleSheet>(new IntPtr(p + 0x058), ReversePrism.DataModels.TextStyleSheet.FromPointer); // 0x58 StyleSheet                  ( ModelClassType TextStyleSheet TextStyleSheet TextStyleSheet Pointer )
+            value.FontStyle                                 = (FontStyles)GetInt32(new IntPtr(p + 0x060)); // 0x60 FontStyle                   ( ModelEnumType FontStyles FontStyles FontStyles Int32 )
+            value.TextSettings                              = GetObject<TextSettings>(new IntPtr(p + 0x068), ReversePrism.DataModels.TextSettings.FromPointer); // 0x68 TextSettings                ( ModelClassType TextSettings TextSettings TextSettings Pointer )
+            value.TextAlignment                             = (TextAlignment)GetInt32(new IntPtr(p + 0x070)); // 0x70 TextAlignment               ( ModelEnumType TextAlignment TextAlignment TextAlignment Int32 )
+            value.OverflowMode                              = (TextOverflowMode)GetInt32(new IntPtr(p + 0x074)); // 0x74 OverflowMode                ( ModelEnumType TextOverflowMode TextOverflowMode TextOverflowMode Int32 )
+            value.WordWrap                                  = GetBool(new IntPtr(p + 0x078)); // 0x78 WordWrap                    ( ModelPrimitiveType bool bool bool Bool )
+            value.WordWrappingRatio                         = GetSingle(new IntPtr(p + 0x07C)); // 0x7C WordWrappingRatio           ( ModelPrimitiveType float float float Single )
+            value.Color                                     = (Color)GetInt32(new IntPtr(p + 0x080)); // 0x80 Color                       ( ModelEnumType Color Color Color Int32 )
+            value.FontColorGradient                         = GetObject<TextColorGradient>(new IntPtr(p + 0x090), ReversePrism.DataModels.TextColorGradient.FromPointer); // 0x90 FontColorGradient           ( ModelClassType TextColorGradient TextColorGradient TextColorGradient Pointer )
+            value.FontColorGradientPreset                   = GetObject<TextColorGradient>(new IntPtr(p + 0x098), ReversePrism.DataModels.TextColorGradient.FromPointer); // 0x98 FontColorGradientPreset     ( ModelClassType TextColorGradient TextColorGradient TextColorGradient Pointer )
+            value.TintSprites                               = GetBool(new IntPtr(p + 0x0A0)); // 0xA0 TintSprites                 ( ModelPrimitiveType bool bool bool Bool )
+            value.OverrideRichTextColors                    = GetBool(new IntPtr(p + 0x0A1)); // 0xA1 OverrideRichTextColors      ( ModelPrimitiveType bool bool bool Bool )
+            value.ShouldConvertToLinearSpace                = GetBool(new IntPtr(p + 0x0A2)); // 0xA2 ShouldConvertToLinearSpace  ( ModelPrimitiveType bool bool bool Bool )
+            value.FontSize                                  = GetSingle(new IntPtr(p + 0x0A4)); // 0xA4 FontSize                    ( ModelPrimitiveType float float float Single )
+            value.AutoSize                                  = GetBool(new IntPtr(p + 0x0A8)); // 0xA8 AutoSize                    ( ModelPrimitiveType bool bool bool Bool )
+            value.FontSizeMin                               = GetSingle(new IntPtr(p + 0x0AC)); // 0xAC FontSizeMin                 ( ModelPrimitiveType float float float Single )
+            value.FontSizeMax                               = GetSingle(new IntPtr(p + 0x0B0)); // 0xB0 FontSizeMax                 ( ModelPrimitiveType float float float Single )
+            value.EnableKerning                             = GetBool(new IntPtr(p + 0x0B4)); // 0xB4 EnableKerning               ( ModelPrimitiveType bool bool bool Bool )
+            value.RichText                                  = GetBool(new IntPtr(p + 0x0B5)); // 0xB5 RichText                    ( ModelPrimitiveType bool bool bool Bool )
+            value.IsRightToLeft                             = GetBool(new IntPtr(p + 0x0B6)); // 0xB6 IsRightToLeft               ( ModelPrimitiveType bool bool bool Bool )
+            value.ExtraPadding                              = GetSingle(new IntPtr(p + 0x0B8)); // 0xB8 ExtraPadding                ( ModelPrimitiveType float float float Single )
+            value.ParseControlCharacters                    = GetBool(new IntPtr(p + 0x0BC)); // 0xBC ParseControlCharacters      ( ModelPrimitiveType bool bool bool Bool )
+            value.IsOrthographic                            = GetBool(new IntPtr(p + 0x0BD)); // 0xBD IsOrthographic              ( ModelPrimitiveType bool bool bool Bool )
+            value.TagNoParsing                              = GetBool(new IntPtr(p + 0x0BE)); // 0xBE TagNoParsing                ( ModelPrimitiveType bool bool bool Bool )
+            value.CharacterSpacing                          = GetSingle(new IntPtr(p + 0x0C0)); // 0xC0 CharacterSpacing            ( ModelPrimitiveType float float float Single )
+            value.WordSpacing                               = GetSingle(new IntPtr(p + 0x0C4)); // 0xC4 WordSpacing                 ( ModelPrimitiveType float float float Single )
+            value.LineSpacing                               = GetSingle(new IntPtr(p + 0x0C8)); // 0xC8 LineSpacing                 ( ModelPrimitiveType float float float Single )
+            value.ParagraphSpacing                          = GetSingle(new IntPtr(p + 0x0CC)); // 0xCC ParagraphSpacing            ( ModelPrimitiveType float float float Single )
+            value.LineSpacingMax                            = GetSingle(new IntPtr(p + 0x0D0)); // 0xD0 LineSpacingMax              ( ModelPrimitiveType float float float Single )
+            value.TextWrappingMode                          = (TextWrappingMode)GetInt32(new IntPtr(p + 0x0D4)); // 0xD4 TextWrappingMode            ( ModelEnumType TextWrappingMode TextWrappingMode TextWrappingMode Int32 )
+            value.MaxVisibleCharacters                      = GetInt32(new IntPtr(p + 0x0D8)); // 0xD8 MaxVisibleCharacters        ( ModelPrimitiveType int int int Int32 )
+            value.MaxVisibleWords                           = GetInt32(new IntPtr(p + 0x0DC)); // 0xDC MaxVisibleWords             ( ModelPrimitiveType int int int Int32 )
+            value.MaxVisibleLines                           = GetInt32(new IntPtr(p + 0x0E0)); // 0xE0 MaxVisibleLines             ( ModelPrimitiveType int int int Int32 )
+            value.FirstVisibleCharacter                     = GetInt32(new IntPtr(p + 0x0E4)); // 0xE4 FirstVisibleCharacter       ( ModelPrimitiveType int int int Int32 )
+            value.UseMaxVisibleDescender                    = GetBool(new IntPtr(p + 0x0E8)); // 0xE8 UseMaxVisibleDescender      ( ModelPrimitiveType bool bool bool Bool )
+            value.FontWeight                                = (TextFontWeight)GetInt32(new IntPtr(p + 0x0EC)); // 0xEC FontWeight                  ( ModelEnumType TextFontWeight TextFontWeight TextFontWeight Int32 )
+            value.PageToDisplay                             = GetInt32(new IntPtr(p + 0x0F0)); // 0xF0 PageToDisplay               ( ModelPrimitiveType int int int Int32 )
+            value.HorizontalMapping                         = (TextureMapping)GetInt32(new IntPtr(p + 0x0F4)); // 0xF4 HorizontalMapping           ( ModelEnumType TextureMapping TextureMapping TextureMapping Int32 )
+            value.VerticalMapping                           = (TextureMapping)GetInt32(new IntPtr(p + 0x0F8)); // 0xF8 VerticalMapping             ( ModelEnumType TextureMapping TextureMapping TextureMapping Int32 )
+            value.UvLineOffset                              = GetSingle(new IntPtr(p + 0x0FC)); // 0xFC UvLineOffset                ( ModelPrimitiveType float float float Single )
+            value.GeometrySortingOrder                      = (VertexSortingOrder)GetInt32(new IntPtr(p + 0x100)); // 0x100 GeometrySortingOrder        ( ModelEnumType VertexSortingOrder VertexSortingOrder VertexSortingOrder Int32 )
+            value.InverseYAxis                              = GetBool(new IntPtr(p + 0x104)); // 0x104 InverseYAxis                ( ModelPrimitiveType bool bool bool Bool )
+            value.CharWidthMaxAdj                           = GetSingle(new IntPtr(p + 0x108)); // 0x108 CharWidthMaxAdj             ( ModelPrimitiveType float float float Single )
+            value.InputSource                               = (TextInputSource)GetInt32(new IntPtr(p + 0x10C)); // 0x10C InputSource                 ( ModelEnumType TextInputSource TextInputSource TextInputSource Int32 )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 088 NextButton                               0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 090 PrevButton                               0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
+    // 088 NextButton                               ModelClassType UIButton UIButton UIButton Pointer
+    // 090 PrevButton                               ModelClassType UIButton UIButton UIButton Pointer
     public partial class ChallengeTourStageListView : DataModel
     {
         public UIButton?                                NextButton                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChallengeTourStageListView() { Pointer= p0 };
 
-            value.NextButton                                = GetObject<UIButton>(new IntPtr(p + 0x088), ReversePrism.DataModels.UIButton.FromPointer); // 02466A238100 0x88 NextButton                  ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.PrevButton                                = GetObject<UIButton>(new IntPtr(p + 0x090), ReversePrism.DataModels.UIButton.FromPointer); // 02466A238120 0x90 PrevButton                  ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.NextButton                                = GetObject<UIButton>(new IntPtr(p + 0x088), ReversePrism.DataModels.UIButton.FromPointer); // 0x88 NextButton                  ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.PrevButton                                = GetObject<UIButton>(new IntPtr(p + 0x090), ReversePrism.DataModels.UIButton.FromPointer); // 0x90 PrevButton                  ( ModelClassType UIButton UIButton UIButton Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 MovieModel                               000186659170 ModelClassType MoviePlayerModel MoviePlayerModel MoviePlayerModel Pointer
+    // 010 MovieModel                               ModelClassType MoviePlayerModel MoviePlayerModel MoviePlayerModel Pointer
     public partial class ExchangeCharacterEffectViewModel : DataModel
     {
         public MoviePlayerModel?                        MovieModel                              { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExchangeCharacterEffectViewModel() { Pointer= p0 };
 
-            value.MovieModel                                = GetObject<MoviePlayerModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.MoviePlayerModel.FromPointer); // 0246663262D0 0x10 MovieModel                  ( 000186659170 ModelClassType MoviePlayerModel MoviePlayerModel MoviePlayerModel Pointer )
+            value.MovieModel                                = GetObject<MoviePlayerModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.MoviePlayerModel.FromPointer); // 0x10 MovieModel                  ( ModelClassType MoviePlayerModel MoviePlayerModel MoviePlayerModel Pointer )
 
             return value;
         }

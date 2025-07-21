@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 100 M_OnClick                                000186714020 ModelClassType ButtonClickedEvent ButtonClickedEvent ButtonClickedEvent Pointer
+    // 100 M_OnClick                                ModelClassType ButtonClickedEvent ButtonClickedEvent ButtonClickedEvent Pointer
     public partial class Button : DataModel
     {
         public ButtonClickedEvent?                      M_OnClick                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Button() { Pointer= p0 };
 
-            value.M_OnClick                                 = GetObject<ButtonClickedEvent>(new IntPtr(p + 0x100), ReversePrism.DataModels.ButtonClickedEvent.FromPointer); // 0245A1E9C8E0 0x100 M_OnClick                   ( 000186714020 ModelClassType ButtonClickedEvent ButtonClickedEvent ButtonClickedEvent Pointer )
+            value.M_OnClick                                 = GetObject<ButtonClickedEvent>(new IntPtr(p + 0x100), ReversePrism.DataModels.ButtonClickedEvent.FromPointer); // 0x100 M_OnClick                   ( ModelClassType ButtonClickedEvent ButtonClickedEvent ButtonClickedEvent Pointer )
 
             return value;
         }

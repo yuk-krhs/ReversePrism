@@ -9,10 +9,10 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 DefaultSuccess                           Status IL2CPP_TYPE_VALUETYPE
-    // 018 DefaultCancelled                         000186585D80 ModelEnumType Status Status Status Int32
-    // 010 StatusCode                               000186586A50 ModelEnumType StatusCode StatusCode StatusCode Int32
-    // 018 Detail                                   000186672F10 ModelPrimitiveType string string string String
-    // 020 DebugException                           0001865CB1C0 ModelClassType Exception Exception Exception Pointer
+    // 018 DefaultCancelled                         ModelEnumType Status Status Status Int32
+    // 010 StatusCode                               ModelEnumType StatusCode StatusCode StatusCode Int32
+    // 018 Detail                                   ModelPrimitiveType string string string String
+    // 020 DebugException                           ModelClassType Exception Exception Exception Pointer
     public partial class Status : DataModel
     {
         public Status                                   DefaultCancelled                        { get; set; }
@@ -28,10 +28,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Status() { Pointer= p0 };
 
-            value.DefaultCancelled                          = (Status)GetInt32(new IntPtr(p + 0x018)); // 0245A4BB71D8 0x18 DefaultCancelled            ( 000186585D80 ModelEnumType Status Status Status Int32 )
-            value.StatusCode                                = (StatusCode)GetInt32(new IntPtr(p + 0x010)); // 0245A4BB71F8 0x10 StatusCode                  ( 000186586A50 ModelEnumType StatusCode StatusCode StatusCode Int32 )
-            value.Detail                                    = GetString(new IntPtr(p + 0x018)); // 0245A4BB7218 0x18 Detail                      ( 000186672F10 ModelPrimitiveType string string string String )
-            value.DebugException                            = GetObject<Exception>(new IntPtr(p + 0x020), ReversePrism.DataModels.Exception.FromPointer); // 0245A4BB7238 0x20 DebugException              ( 0001865CB1C0 ModelClassType Exception Exception Exception Pointer )
+            value.DefaultCancelled                          = (Status)GetInt32(new IntPtr(p + 0x018)); // 0x18 DefaultCancelled            ( ModelEnumType Status Status Status Int32 )
+            value.StatusCode                                = (StatusCode)GetInt32(new IntPtr(p + 0x010)); // 0x10 StatusCode                  ( ModelEnumType StatusCode StatusCode StatusCode Int32 )
+            value.Detail                                    = GetString(new IntPtr(p + 0x018)); // 0x18 Detail                      ( ModelPrimitiveType string string string String )
+            value.DebugException                            = GetObject<Exception>(new IntPtr(p + 0x020), ReversePrism.DataModels.Exception.FromPointer); // 0x20 DebugException              ( ModelClassType Exception Exception Exception Pointer )
 
             return value;
         }

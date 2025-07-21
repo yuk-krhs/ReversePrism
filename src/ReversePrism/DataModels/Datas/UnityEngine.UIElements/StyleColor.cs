@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Value                                  0001865AA8E0 ModelEnumType Color Color Color Int32
-    // 020 M_Keyword                                0001865C8070 ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32
+    // 010 M_Value                                  ModelEnumType Color Color Color Int32
+    // 020 M_Keyword                                ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32
     public partial class StyleColor : DataModel
     {
         public Color                                    M_Value                                 { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StyleColor() { Pointer= p0 };
 
-            value.M_Value                                   = (Color)GetInt32(new IntPtr(p + 0x010)); // 0245A67B9110 0x10 M_Value                     ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.M_Keyword                                 = (StyleKeyword)GetInt32(new IntPtr(p + 0x020)); // 0245A67B9130 0x20 M_Keyword                   ( 0001865C8070 ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32 )
+            value.M_Value                                   = (Color)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_Value                     ( ModelEnumType Color Color Color Int32 )
+            value.M_Keyword                                 = (StyleKeyword)GetInt32(new IntPtr(p + 0x020)); // 0x20 M_Keyword                   ( ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32 )
 
             return value;
         }

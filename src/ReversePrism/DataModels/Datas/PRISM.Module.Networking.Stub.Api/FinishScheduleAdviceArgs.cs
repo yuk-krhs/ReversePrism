@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 DeleteProduceCardIdListFieldNumber       int IL2CPP_TYPE_I4
     // 008 _repeated_deleteProduceCardIdList_codec  FieldCodec`1<string> IL2CPP_TYPE_GENERICINST
-    // 018 DeleteProduceCardIdList                  000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
+    // 018 DeleteProduceCardIdList                  ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
     public partial class FinishScheduleAdviceArgs : DataModel
     {
         public List<string>?                            DeleteProduceCardIdList                 { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FinishScheduleAdviceArgs() { Pointer= p0 };
 
-            value.DeleteProduceCardIdList                   = GetStringList(new IntPtr(p + 0x018)); // 02466251B118 0x18 DeleteProduceCardIdList     ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.DeleteProduceCardIdList                   = GetStringList(new IntPtr(p + 0x018)); // 0x18 DeleteProduceCardIdList     ( ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
 
             return value;
         }

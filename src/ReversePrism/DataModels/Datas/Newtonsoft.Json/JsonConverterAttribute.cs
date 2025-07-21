@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ConverterType                            0001866936B0 ModelClassType Type Type Type Pointer
+    // 010 ConverterType                            ModelClassType Type Type Type Pointer
     // 018 <ConverterParameters>k__BackingField     <object>[] IL2CPP_TYPE_SZARRAY
     public partial class JsonConverterAttribute : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JsonConverterAttribute() { Pointer= p0 };
 
-            value.ConverterType                             = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0245A6023C20 0x10 ConverterType               ( 0001866936B0 ModelClassType Type Type Type Pointer )
+            value.ConverterType                             = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0x10 ConverterType               ( ModelClassType Type Type Type Pointer )
 
             return value;
         }

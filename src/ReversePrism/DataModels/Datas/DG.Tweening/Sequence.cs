@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 120 SequencedTweens                          000185D166C8 ModelClassListType List`1<Tween> List`1<Tween> List<Tween> Pointer
-    // 128 SequencedObjs                            000185CCAE88 ModelClassListType List`1<ABSSequentiable> List`1<ABSSequentiable> List<ABSSequentiable> Pointer
-    // 130 LastTweenInsertTime                      000186665900 ModelPrimitiveType float float float Single
+    // 120 SequencedTweens                          ModelClassListType List`1<Tween> List`1<Tween> List<Tween> Pointer
+    // 128 SequencedObjs                            ModelClassListType List`1<ABSSequentiable> List`1<ABSSequentiable> List<ABSSequentiable> Pointer
+    // 130 LastTweenInsertTime                      ModelPrimitiveType float float float Single
     public partial class Sequence : DataModel
     {
         public List<Tween>?                             SequencedTweens                         { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Sequence() { Pointer= p0 };
 
-            value.SequencedTweens                           = GetObjectList<Tween>(new IntPtr(p + 0x120), ReversePrism.DataModels.Tween.FromPointer); // 0245A43CEF68 0x120 SequencedTweens             ( 000185D166C8 ModelClassListType List`1<Tween> List`1<Tween> List<Tween> Pointer )
-            value.SequencedObjs                             = GetObjectList<ABSSequentiable>(new IntPtr(p + 0x128), ReversePrism.DataModels.ABSSequentiable.FromPointer); // 0245A43CEF88 0x128 SequencedObjs               ( 000185CCAE88 ModelClassListType List`1<ABSSequentiable> List`1<ABSSequentiable> List<ABSSequentiable> Pointer )
-            value.LastTweenInsertTime                       = GetSingle(new IntPtr(p + 0x130)); // 0245A43CEFA8 0x130 LastTweenInsertTime         ( 000186665900 ModelPrimitiveType float float float Single )
+            value.SequencedTweens                           = GetObjectList<Tween>(new IntPtr(p + 0x120), ReversePrism.DataModels.Tween.FromPointer); // 0x120 SequencedTweens             ( ModelClassListType List`1<Tween> List`1<Tween> List<Tween> Pointer )
+            value.SequencedObjs                             = GetObjectList<ABSSequentiable>(new IntPtr(p + 0x128), ReversePrism.DataModels.ABSSequentiable.FromPointer); // 0x128 SequencedObjs               ( ModelClassListType List`1<ABSSequentiable> List`1<ABSSequentiable> List<ABSSequentiable> Pointer )
+            value.LastTweenInsertTime                       = GetSingle(new IntPtr(p + 0x130)); // 0x130 LastTweenInsertTime         ( ModelPrimitiveType float float float Single )
 
             return value;
         }

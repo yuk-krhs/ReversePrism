@@ -8,23 +8,25 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Type                                     000186603140 ModelEnumType LiveUnitIdolType LiveUnitIdolType LiveUnitIdolType Int32
-    // 014 CharacterId                              0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 MstProduceIdolId                         0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 020 FesIdolId                                000186672F10 ModelPrimitiveType string string string String
-    // 028 FesIdolRank                              00018660DDC0 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32
-    // 02C UnitId                                   0001865F4260 ModelPrimitiveType int int int Int32
-    // 030 Parameter                                000186558560 ModelEnumType LiveIdolParameter LiveIdolParameter LiveIdolParameter Int32
-    // 04C UnitBonusRate                            0001866656B0 ModelPrimitiveType float float float Single
-    // 050 InitialStarLevel                         0001865F4260 ModelPrimitiveType int int int Int32
-    // 054 StarLevel                                0001865F4260 ModelPrimitiveType int int int Int32
-    // 058 CardId                                   0001865F4260 ModelPrimitiveType int int int Int32
-    // 05C FavoriteMarkId                           0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 060 Skill                                    00018657BD60 ModelClassType LiveSkill LiveSkill LiveSkill Pointer
-    // 068 CreateDate                               000185D00B98 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
-    // 078 Costume                                  00018659D660 ModelClassType CharacterCostume CharacterCostume CharacterCostume Pointer
-    // 080 DefaultCostumeIdArray                    000185B8A810 ModelEnumListType IdolCostumeId[] IdolCostumeId[] List<IdolCostumeId> Pointer
-    // 088 ShowUnitBonus                            000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 Type                                     ModelEnumType LiveUnitIdolType LiveUnitIdolType LiveUnitIdolType Int32
+    // 014 CharacterId                              ModelPrimitiveType int int int Int32
+    // 018 MstProduceIdolId                         ModelPrimitiveType int int int Int32
+    // 020 FesIdolId                                ModelPrimitiveType string string string String
+    // 028 FesIdolRank                              ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32
+    // 02C UnitId                                   ModelPrimitiveType int int int Int32
+    // 030 Parameter                                ModelEnumType LiveIdolParameter LiveIdolParameter LiveIdolParameter Int32
+    // 04C UnitBonusRate                            ModelPrimitiveType float float float Single
+    // 050 StarLevel                                ModelPrimitiveType int int int Int32
+    // 054 IdolLevel                                ModelPrimitiveType int int int Int32
+    // 058 IdolLevelGaugeRate                       ModelPrimitiveType float float float Single
+    // 05C DearnessLevel                            ModelPrimitiveType int int int Int32
+    // 060 DearnessLevelGaugeRate                   ModelPrimitiveType float float float Single
+    // 068 Fan                                      ModelPrimitiveType long long long Int64
+    // 070 FavoriteMarkId                           ModelPrimitiveType int int int Int32
+    // 078 Skill                                    ModelClassType MstPotentialLiveSkillLevel MstPotentialLiveSkillLevel MstPotentialLiveSkillLevel Pointer
+    // 080 CreateDate                               ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
+    // 090 Costume                                  ModelClassType CharacterCostume CharacterCostume CharacterCostume Pointer
+    // 098 ShowUnitBonus                            ModelPrimitiveType bool bool bool Bool
     public partial class LiveIdol : DataModel
     {
         public LiveUnitIdolType                         Type                                    { get; set; }
@@ -35,14 +37,16 @@ namespace ReversePrism.DataModels
         public int                                      UnitId                                  { get; set; }
         public LiveIdolParameter                        Parameter                               { get; set; }
         public float                                    UnitBonusRate                           { get; set; }
-        public int                                      InitialStarLevel                        { get; set; }
         public int                                      StarLevel                               { get; set; }
-        public int                                      CardId                                  { get; set; }
+        public int                                      IdolLevel                               { get; set; }
+        public float                                    IdolLevelGaugeRate                      { get; set; }
+        public int                                      DearnessLevel                           { get; set; }
+        public float                                    DearnessLevelGaugeRate                  { get; set; }
+        public long                                     Fan                                     { get; set; }
         public int                                      FavoriteMarkId                          { get; set; }
-        public LiveSkill?                               Skill                                   { get; set; }
+        public MstPotentialLiveSkillLevel?              Skill                                   { get; set; }
         public DateTime                                 CreateDate                              { get; set; }
         public CharacterCostume?                        Costume                                 { get; set; }
-        public List<IdolCostumeId>?                     DefaultCostumeIdArray                   { get; set; }
         public bool                                     ShowUnitBonus                           { get; set; }
 
         public static LiveIdol? FromPointer(IntPtr p0)
@@ -53,23 +57,25 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveIdol() { Pointer= p0 };
 
-            value.Type                                      = (LiveUnitIdolType)GetInt32(new IntPtr(p + 0x010)); // 024664D28CB0 0x10 Type                        ( 000186603140 ModelEnumType LiveUnitIdolType LiveUnitIdolType LiveUnitIdolType Int32 )
-            value.CharacterId                               = GetInt32(new IntPtr(p + 0x014)); // 024664D28CD0 0x14 CharacterId                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x018)); // 024664D28CF0 0x18 MstProduceIdolId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.FesIdolId                                 = GetString(new IntPtr(p + 0x020)); // 024664D28D10 0x20 FesIdolId                   ( 000186672F10 ModelPrimitiveType string string string String )
-            value.FesIdolRank                               = (ProduceParameterRank)GetInt32(new IntPtr(p + 0x028)); // 024664D28D30 0x28 FesIdolRank                 ( 00018660DDC0 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32 )
-            value.UnitId                                    = GetInt32(new IntPtr(p + 0x02C)); // 024664D28D50 0x2C UnitId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Parameter                                 = (LiveIdolParameter)GetInt32(new IntPtr(p + 0x030)); // 024664D28D70 0x30 Parameter                   ( 000186558560 ModelEnumType LiveIdolParameter LiveIdolParameter LiveIdolParameter Int32 )
-            value.UnitBonusRate                             = GetSingle(new IntPtr(p + 0x04C)); // 024664D28D90 0x4C UnitBonusRate               ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.InitialStarLevel                          = GetInt32(new IntPtr(p + 0x050)); // 024664D28DB0 0x50 InitialStarLevel            ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.StarLevel                                 = GetInt32(new IntPtr(p + 0x054)); // 024664D28DD0 0x54 StarLevel                   ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.CardId                                    = GetInt32(new IntPtr(p + 0x058)); // 024664D28DF0 0x58 CardId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.FavoriteMarkId                            = GetInt32(new IntPtr(p + 0x05C)); // 024664D28E10 0x5C FavoriteMarkId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Skill                                     = GetObject<LiveSkill>(new IntPtr(p + 0x060), ReversePrism.DataModels.LiveSkill.FromPointer); // 024664D28E30 0x60 Skill                       ( 00018657BD60 ModelClassType LiveSkill LiveSkill LiveSkill Pointer )
-            value.CreateDate                                = GetDateTime(new IntPtr(p + 0x068)); // 024664D28E50 0x68 CreateDate                  ( 000185D00B98 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.Costume                                   = GetObject<CharacterCostume>(new IntPtr(p + 0x078), ReversePrism.DataModels.CharacterCostume.FromPointer); // 024664D28E70 0x78 Costume                     ( 00018659D660 ModelClassType CharacterCostume CharacterCostume CharacterCostume Pointer )
-            value.DefaultCostumeIdArray                     = GetEnumList<IdolCostumeId>(new IntPtr(p + 0x080)); // 024664D28E90 0x80 DefaultCostumeIdArray       ( 000185B8A810 ModelEnumListType IdolCostumeId[] IdolCostumeId[] List<IdolCostumeId> Pointer )
-            value.ShowUnitBonus                             = GetBool(new IntPtr(p + 0x088)); // 024664D28EB0 0x88 ShowUnitBonus               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Type                                      = (LiveUnitIdolType)GetInt32(new IntPtr(p + 0x010)); // 0x10 Type                        ( ModelEnumType LiveUnitIdolType LiveUnitIdolType LiveUnitIdolType Int32 )
+            value.CharacterId                               = GetInt32(new IntPtr(p + 0x014)); // 0x14 CharacterId                 ( ModelPrimitiveType int int int Int32 )
+            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstProduceIdolId            ( ModelPrimitiveType int int int Int32 )
+            value.FesIdolId                                 = GetString(new IntPtr(p + 0x020)); // 0x20 FesIdolId                   ( ModelPrimitiveType string string string String )
+            value.FesIdolRank                               = (ProduceParameterRank)GetInt32(new IntPtr(p + 0x028)); // 0x28 FesIdolRank                 ( ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32 )
+            value.UnitId                                    = GetInt32(new IntPtr(p + 0x02C)); // 0x2C UnitId                      ( ModelPrimitiveType int int int Int32 )
+            value.Parameter                                 = (LiveIdolParameter)GetInt32(new IntPtr(p + 0x030)); // 0x30 Parameter                   ( ModelEnumType LiveIdolParameter LiveIdolParameter LiveIdolParameter Int32 )
+            value.UnitBonusRate                             = GetSingle(new IntPtr(p + 0x04C)); // 0x4C UnitBonusRate               ( ModelPrimitiveType float float float Single )
+            value.StarLevel                                 = GetInt32(new IntPtr(p + 0x050)); // 0x50 StarLevel                   ( ModelPrimitiveType int int int Int32 )
+            value.IdolLevel                                 = GetInt32(new IntPtr(p + 0x054)); // 0x54 IdolLevel                   ( ModelPrimitiveType int int int Int32 )
+            value.IdolLevelGaugeRate                        = GetSingle(new IntPtr(p + 0x058)); // 0x58 IdolLevelGaugeRate          ( ModelPrimitiveType float float float Single )
+            value.DearnessLevel                             = GetInt32(new IntPtr(p + 0x05C)); // 0x5C DearnessLevel               ( ModelPrimitiveType int int int Int32 )
+            value.DearnessLevelGaugeRate                    = GetSingle(new IntPtr(p + 0x060)); // 0x60 DearnessLevelGaugeRate      ( ModelPrimitiveType float float float Single )
+            value.Fan                                       = GetInt64(new IntPtr(p + 0x068)); // 0x68 Fan                         ( ModelPrimitiveType long long long Int64 )
+            value.FavoriteMarkId                            = GetInt32(new IntPtr(p + 0x070)); // 0x70 FavoriteMarkId              ( ModelPrimitiveType int int int Int32 )
+            value.Skill                                     = GetObject<MstPotentialLiveSkillLevel>(new IntPtr(p + 0x078), ReversePrism.DataModels.MstPotentialLiveSkillLevel.FromPointer); // 0x78 Skill                       ( ModelClassType MstPotentialLiveSkillLevel MstPotentialLiveSkillLevel MstPotentialLiveSkillLevel Pointer )
+            value.CreateDate                                = GetDateTime(new IntPtr(p + 0x080)); // 0x80 CreateDate                  ( ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.Costume                                   = GetObject<CharacterCostume>(new IntPtr(p + 0x090), ReversePrism.DataModels.CharacterCostume.FromPointer); // 0x90 Costume                     ( ModelClassType CharacterCostume CharacterCostume CharacterCostume Pointer )
+            value.ShowUnitBonus                             = GetBool(new IntPtr(p + 0x098)); // 0x98 ShowUnitBonus               ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

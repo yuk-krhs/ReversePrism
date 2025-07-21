@@ -11,12 +11,12 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<ReceiveSpecialMissionCompleteRewardReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 SpecialMissionFieldNumber                int IL2CPP_TYPE_I4
-    // 018 SpecialMission                           000186548D20 ModelClassType SpecialMissionStatus SpecialMissionStatus SpecialMissionStatus Pointer
+    // 018 SpecialMission                           ModelClassType SpecialMissionStatus SpecialMissionStatus SpecialMissionStatus Pointer
     // 000 RewardListFieldNumber                    int IL2CPP_TYPE_I4
     // 008 _repeated_rewardList_codec               FieldCodec`1<RewardProductStatus> IL2CPP_TYPE_GENERICINST
-    // 020 RewardList                               000185CEEEA8 ModelClassListType RepeatedField`1<RewardProductStatus> RepeatedField`1<RewardProductStatus> List<RewardProductStatus> Pointer
+    // 020 RewardList                               ModelClassListType RepeatedField`1<RewardProductStatus> RepeatedField`1<RewardProductStatus> List<RewardProductStatus> Pointer
     // 000 HavingGroupFieldNumber                   int IL2CPP_TYPE_I4
-    // 028 HavingGroup                              0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer
+    // 028 HavingGroup                              ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer
     public partial class ReceiveSpecialMissionCompleteRewardReply : DataModel
     {
         public SpecialMissionStatus?                    SpecialMission                          { get; set; }
@@ -31,9 +31,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ReceiveSpecialMissionCompleteRewardReply() { Pointer= p0 };
 
-            value.SpecialMission                            = GetObject<SpecialMissionStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.SpecialMissionStatus.FromPointer); // 024662841BC8 0x18 SpecialMission              ( 000186548D20 ModelClassType SpecialMissionStatus SpecialMissionStatus SpecialMissionStatus Pointer )
-            value.RewardList                                = GetObjectList<RewardProductStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.RewardProductStatus.FromPointer); // 024662841C28 0x20 RewardList                  ( 000185CEEEA8 ModelClassListType RepeatedField`1<RewardProductStatus> RepeatedField`1<RewardProductStatus> List<RewardProductStatus> Pointer )
-            value.HavingGroup                               = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 024662841C68 0x28 HavingGroup                 ( 0001866ACFE0 ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
+            value.SpecialMission                            = GetObject<SpecialMissionStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.SpecialMissionStatus.FromPointer); // 0x18 SpecialMission              ( ModelClassType SpecialMissionStatus SpecialMissionStatus SpecialMissionStatus Pointer )
+            value.RewardList                                = GetObjectList<RewardProductStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.RewardProductStatus.FromPointer); // 0x20 RewardList                  ( ModelClassListType RepeatedField`1<RewardProductStatus> RepeatedField`1<RewardProductStatus> List<RewardProductStatus> Pointer )
+            value.HavingGroup                               = GetObject<HavingProductGroupStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.HavingProductGroupStatus.FromPointer); // 0x28 HavingGroup                 ( ModelClassType HavingProductGroupStatus HavingProductGroupStatus HavingProductGroupStatus Pointer )
 
             return value;
         }

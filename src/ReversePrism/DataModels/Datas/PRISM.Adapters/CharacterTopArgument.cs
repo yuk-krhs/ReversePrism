@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 JumpParam                                0001865A5D50 ModelClassType CharacterTopParameter CharacterTopParameter CharacterTopParameter Pointer
+    // 010 Type                                     ModelEnumType DisplayType DisplayType DisplayType Int32
     public partial class CharacterTopArgument : DataModel
     {
-        public CharacterTopParameter?                   JumpParam                               { get; set; }
+        public DisplayType                              Type                                    { get; set; }
 
         public static CharacterTopArgument? FromPointer(IntPtr p0)
         {
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CharacterTopArgument() { Pointer= p0 };
 
-            value.JumpParam                                 = GetObject<CharacterTopParameter>(new IntPtr(p + 0x010), ReversePrism.DataModels.CharacterTopParameter.FromPointer); // 0246660E3DD0 0x10 JumpParam                   ( 0001865A5D50 ModelClassType CharacterTopParameter CharacterTopParameter CharacterTopParameter Pointer )
+            value.Type                                      = (DisplayType)GetInt32(new IntPtr(p + 0x010)); // 0x10 Type                        ( ModelEnumType DisplayType DisplayType DisplayType Int32 )
 
             return value;
         }

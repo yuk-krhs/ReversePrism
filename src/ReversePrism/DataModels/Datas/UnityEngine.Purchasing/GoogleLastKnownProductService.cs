@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 LastKnownOldProductId                    000186671910 ModelPrimitiveType string string string String
-    // 018 LastKnownProductId                       000186671910 ModelPrimitiveType string string string String
+    // 010 LastKnownOldProductId                    ModelPrimitiveType string string string String
+    // 018 LastKnownProductId                       ModelPrimitiveType string string string String
     // 020 <LastKnownProrationMode>k__BackingField  Nullable`1<GooglePlayProrationMode> IL2CPP_TYPE_GENERICINST
     public partial class GoogleLastKnownProductService : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GoogleLastKnownProductService() { Pointer= p0 };
 
-            value.LastKnownOldProductId                     = GetString(new IntPtr(p + 0x010)); // 0245A68C3BD0 0x10 LastKnownOldProductId       ( 000186671910 ModelPrimitiveType string string string String )
-            value.LastKnownProductId                        = GetString(new IntPtr(p + 0x018)); // 0245A68C3BF0 0x18 LastKnownProductId          ( 000186671910 ModelPrimitiveType string string string String )
+            value.LastKnownOldProductId                     = GetString(new IntPtr(p + 0x010)); // 0x10 LastKnownOldProductId       ( ModelPrimitiveType string string string String )
+            value.LastKnownProductId                        = GetString(new IntPtr(p + 0x018)); // 0x18 LastKnownProductId          ( ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Icon                                     000186675B10 ModelClassType AchievementIconView AchievementIconView AchievementIconView Pointer
-    // 028 IconDisposable                           0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 020 Icon                                     ModelClassType AchievementIconView AchievementIconView AchievementIconView Pointer
+    // 028 IconDisposable                           ModelClassType IDisposable IDisposable IDisposable Pointer
     public partial class RankingRewardAchievementIcon : DataModel
     {
         public AchievementIconView?                     Icon                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RankingRewardAchievementIcon() { Pointer= p0 };
 
-            value.Icon                                      = GetObject<AchievementIconView>(new IntPtr(p + 0x020), ReversePrism.DataModels.AchievementIconView.FromPointer); // 02466B5FF430 0x20 Icon                        ( 000186675B10 ModelClassType AchievementIconView AchievementIconView AchievementIconView Pointer )
-            value.IconDisposable                            = GetObject<IDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.IDisposable.FromPointer); // 02466B5FF450 0x28 IconDisposable              ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.Icon                                      = GetObject<AchievementIconView>(new IntPtr(p + 0x020), ReversePrism.DataModels.AchievementIconView.FromPointer); // 0x20 Icon                        ( ModelClassType AchievementIconView AchievementIconView AchievementIconView Pointer )
+            value.IconDisposable                            = GetObject<IDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.IDisposable.FromPointer); // 0x28 IconDisposable              ( ModelClassType IDisposable IDisposable IDisposable Pointer )
 
             return value;
         }

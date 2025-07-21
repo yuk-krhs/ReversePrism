@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_MediaType                              00018660B260 ModelEnumType MediaType MediaType MediaType Int32
+    // 010 M_MediaType                              ModelEnumType MediaType MediaType MediaType Int32
     public partial class TrackMediaType : DataModel
     {
         public MediaType                                M_MediaType                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TrackMediaType() { Pointer= p0 };
 
-            value.M_MediaType                               = (MediaType)GetInt32(new IntPtr(p + 0x010)); // 02466B311058 0x10 M_MediaType                 ( 00018660B260 ModelEnumType MediaType MediaType MediaType Int32 )
+            value.M_MediaType                               = (MediaType)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_MediaType                 ( ModelEnumType MediaType MediaType MediaType Int32 )
 
             return value;
         }

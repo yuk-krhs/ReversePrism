@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 ChildNodes                               000185CEA488 ModelClassListType List`1<IXmlNode> List`1<IXmlNode> List<IXmlNode> Pointer
+    // 018 ChildNodes                               ModelClassListType List`1<IXmlNode> List`1<IXmlNode> List<IXmlNode> Pointer
     public partial class XContainerWrapper : DataModel
     {
         public List<IXmlNode>?                          ChildNodes                              { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XContainerWrapper() { Pointer= p0 };
 
-            value.ChildNodes                                = GetObjectList<IXmlNode>(new IntPtr(p + 0x018), ReversePrism.DataModels.IXmlNode.FromPointer); // 0246688C2278 0x18 ChildNodes                  ( 000185CEA488 ModelClassListType List`1<IXmlNode> List`1<IXmlNode> List<IXmlNode> Pointer )
+            value.ChildNodes                                = GetObjectList<IXmlNode>(new IntPtr(p + 0x018), ReversePrism.DataModels.IXmlNode.FromPointer); // 0x18 ChildNodes                  ( ModelClassListType List`1<IXmlNode> List`1<IXmlNode> List<IXmlNode> Pointer )
 
             return value;
         }

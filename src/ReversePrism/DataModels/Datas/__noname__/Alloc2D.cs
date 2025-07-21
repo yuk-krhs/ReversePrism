@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Rect                                     000186651230 ModelEnumType RectInt RectInt RectInt Int32
-    // 020 Row                                      000186698AB0 ModelClassType Row Row Row Pointer
-    // 028 Alloc                                    0001865866A0 ModelEnumType Alloc Alloc Alloc Int32
+    // 010 Rect                                     ModelEnumType RectInt RectInt RectInt Int32
+    // 020 Row                                      ModelClassType Row Row Row Pointer
+    // 028 Alloc                                    ModelEnumType Alloc Alloc Alloc Int32
     public partial class Alloc2D : DataModel
     {
         public RectInt                                  Rect                                    { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Alloc2D() { Pointer= p0 };
 
-            value.Rect                                      = (RectInt)GetInt32(new IntPtr(p + 0x010)); // 0245A66A23A8 0x10 Rect                        ( 000186651230 ModelEnumType RectInt RectInt RectInt Int32 )
-            value.Row                                       = GetObject<Row>(new IntPtr(p + 0x020), ReversePrism.DataModels.Row.FromPointer); // 0245A66A23C8 0x20 Row                         ( 000186698AB0 ModelClassType Row Row Row Pointer )
-            value.Alloc                                     = (Alloc)GetInt32(new IntPtr(p + 0x028)); // 0245A66A23E8 0x28 Alloc                       ( 0001865866A0 ModelEnumType Alloc Alloc Alloc Int32 )
+            value.Rect                                      = (RectInt)GetInt32(new IntPtr(p + 0x010)); // 0x10 Rect                        ( ModelEnumType RectInt RectInt RectInt Int32 )
+            value.Row                                       = GetObject<Row>(new IntPtr(p + 0x020), ReversePrism.DataModels.Row.FromPointer); // 0x20 Row                         ( ModelClassType Row Row Row Pointer )
+            value.Alloc                                     = (Alloc)GetInt32(new IntPtr(p + 0x028)); // 0x28 Alloc                       ( ModelEnumType Alloc Alloc Alloc Int32 )
 
             return value;
         }

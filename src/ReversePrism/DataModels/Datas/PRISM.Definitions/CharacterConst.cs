@@ -30,8 +30,10 @@ namespace ReversePrism.DataModels
     // 000 ProducerCharacterId                      int IL2CPP_TYPE_I4
     // 000 HazukiBirthdayCueName                    string IL2CPP_TYPE_STRING
     // 000 GalleryEtcImageWidth                     float IL2CPP_TYPE_R4
-    // 000 FixedBonusNum                            int IL2CPP_TYPE_I4
-    // 000 AdditionalBonusNum                       int IL2CPP_TYPE_I4
+    // 000 MaxDigits5                               int IL2CPP_TYPE_I4
+    // 000 DressOrderItemsNumByGroup                int IL2CPP_TYPE_I4
+    // 000 DressOrderTicketAcquisitionStar          int IL2CPP_TYPE_I4
+    // 000 DressOrderTicketProductId                int IL2CPP_TYPE_I4
     public partial class CharacterConst : DataModel
     {
 

@@ -8,10 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 000 ResourceTagName                          string IL2CPP_TYPE_STRING
     // 000 CharaAnimationLength                     int IL2CPP_TYPE_I4
     // 000 AnimationIntervalFrame                   int IL2CPP_TYPE_I4
-    // 000 TargetFrameRate                          int IL2CPP_TYPE_I4
     public partial class LoadingConst : DataModel
     {
 

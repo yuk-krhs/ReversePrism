@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 AlreadyReadEventIds                      000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 010 AlreadyReadEventIds                      ModelPrimitiveListType string[] string[] List<string> Pointer
     // 018 <AlreadyReadEventIds>k__BackingField     HashSet`1<string> IL2CPP_TYPE_GENERICINST
     public partial class EventListSaveData : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EventListSaveData() { Pointer= p0 };
 
-            value.AlreadyReadEventIds                       = GetStringList(new IntPtr(p + 0x010)); // 0245A3A7A7C8 0x10 AlreadyReadEventIds         ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.AlreadyReadEventIds                       = GetStringList(new IntPtr(p + 0x010)); // 0x10 AlreadyReadEventIds         ( ModelPrimitiveListType string[] string[] List<string> Pointer )
 
             return value;
         }

@@ -11,35 +11,35 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<FesUnitStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 FesUnitIdFieldNumber                     int IL2CPP_TYPE_I4
-    // 018 FesUnitId                                000186671910 ModelPrimitiveType string string string String
+    // 018 FesUnitId                                ModelPrimitiveType string string string String
     // 000 MstUnitIdFieldNumber                     int IL2CPP_TYPE_I4
-    // 020 MstUnitId                                0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 MstUnitId                                ModelPrimitiveType int int int Int32
     // 000 NameFieldNumber                          int IL2CPP_TYPE_I4
-    // 028 Name                                     000186671910 ModelPrimitiveType string string string String
+    // 028 Name                                     ModelPrimitiveType string string string String
     // 000 MstFavoriteMarkIdFieldNumber             int IL2CPP_TYPE_I4
-    // 030 MstFavoriteMarkId                        0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 030 MstFavoriteMarkId                        ModelPrimitiveType int int int Int32
     // 000 ParameterFieldNumber                     int IL2CPP_TYPE_I4
-    // 038 Parameter                                0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer
+    // 038 Parameter                                ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer
     // 000 RankFieldNumber                          int IL2CPP_TYPE_I4
-    // 040 Rank                                     000186562070 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32
+    // 040 Rank                                     ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32
     // 000 FesIdolListFieldNumber                   int IL2CPP_TYPE_I4
     // 008 _repeated_fesIdolList_codec              FieldCodec`1<FesUnitIdolStatus> IL2CPP_TYPE_GENERICINST
-    // 048 FesIdolList                              000185CD8208 ModelClassListType RepeatedField`1<FesUnitIdolStatus> RepeatedField`1<FesUnitIdolStatus> List<FesUnitIdolStatus> Pointer
+    // 048 FesIdolList                              ModelClassListType RepeatedField`1<FesUnitIdolStatus> RepeatedField`1<FesUnitIdolStatus> List<FesUnitIdolStatus> Pointer
     // 000 ProduceHistoryFieldNumber                int IL2CPP_TYPE_I4
-    // 050 ProduceHistory                           000186545C20 ModelClassType ProduceHistoryStatus ProduceHistoryStatus ProduceHistoryStatus Pointer
+    // 050 ProduceHistory                           ModelClassType ProduceHistoryStatus ProduceHistoryStatus ProduceHistoryStatus Pointer
     // 000 SupportCharacterListFieldNumber          int IL2CPP_TYPE_I4
     // 010 _repeated_supportCharacterList_codec     FieldCodec`1<FesUnitSupportCharacterStatus> IL2CPP_TYPE_GENERICINST
-    // 058 SupportCharacterList                     000185CD8678 ModelClassListType RepeatedField`1<FesUnitSupportCharacterStatus> RepeatedField`1<FesUnitSupportCharacterStatus> List<FesUnitSupportCharacterStatus> Pointer
+    // 058 SupportCharacterList                     ModelClassListType RepeatedField`1<FesUnitSupportCharacterStatus> RepeatedField`1<FesUnitSupportCharacterStatus> List<FesUnitSupportCharacterStatus> Pointer
     // 000 SupportSkillListFieldNumber              int IL2CPP_TYPE_I4
     // 018 _repeated_supportSkillList_codec         FieldCodec`1<FesUnitAttachedSupportSkillStatus> IL2CPP_TYPE_GENERICINST
-    // 060 SupportSkillList                         000185CD7F78 ModelClassListType RepeatedField`1<FesUnitAttachedSupportSkillStatus> RepeatedField`1<FesUnitAttachedSupportSkillStatus> List<FesUnitAttachedSupportSkillStatus> Pointer
+    // 060 SupportSkillList                         ModelClassListType RepeatedField`1<FesUnitAttachedSupportSkillStatus> RepeatedField`1<FesUnitAttachedSupportSkillStatus> List<FesUnitAttachedSupportSkillStatus> Pointer
     // 000 CardDeckFieldNumber                      int IL2CPP_TYPE_I4
-    // 068 CardDeck                                 000186536800 ModelClassType ProduceCardDeckStatus ProduceCardDeckStatus ProduceCardDeckStatus Pointer
+    // 068 CardDeck                                 ModelClassType ProduceCardDeckStatus ProduceCardDeckStatus ProduceCardDeckStatus Pointer
     // 000 TransferProductListFieldNumber           int IL2CPP_TYPE_I4
     // 020 _repeated_transferProductList_codec      FieldCodec`1<ProductWithAmountStatus> IL2CPP_TYPE_GENERICINST
-    // 070 TransferProductList                      000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer
+    // 070 TransferProductList                      ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer
     // 000 InheritanceCountFieldNumber              int IL2CPP_TYPE_I4
-    // 078 InheritanceCount                         0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 078 InheritanceCount                         ModelPrimitiveType int int int Int32
     public partial class FesUnitStatus : DataModel
     {
         public string                                   FesUnitId                               { get; set; }
@@ -64,19 +64,19 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FesUnitStatus() { Pointer= p0 };
 
-            value.FesUnitId                                 = GetString(new IntPtr(p + 0x018)); // 0246613B17A8 0x18 FesUnitId                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x020)); // 0246613B17E8 0x20 MstUnitId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Name                                      = GetString(new IntPtr(p + 0x028)); // 0246613B1828 0x28 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.MstFavoriteMarkId                         = GetInt32(new IntPtr(p + 0x030)); // 0246613B1868 0x30 MstFavoriteMarkId           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Parameter                                 = GetObject<ProduceParameterStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProduceParameterStatus.FromPointer); // 0246613B18A8 0x38 Parameter                   ( 0001865627F0 ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer )
-            value.Rank                                      = (ProduceParameterRank)GetInt32(new IntPtr(p + 0x040)); // 0246613B18E8 0x40 Rank                        ( 000186562070 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32 )
-            value.FesIdolList                               = GetObjectList<FesUnitIdolStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.FesUnitIdolStatus.FromPointer); // 0246613B1948 0x48 FesIdolList                 ( 000185CD8208 ModelClassListType RepeatedField`1<FesUnitIdolStatus> RepeatedField`1<FesUnitIdolStatus> List<FesUnitIdolStatus> Pointer )
-            value.ProduceHistory                            = GetObject<ProduceHistoryStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.ProduceHistoryStatus.FromPointer); // 0246613B1988 0x50 ProduceHistory              ( 000186545C20 ModelClassType ProduceHistoryStatus ProduceHistoryStatus ProduceHistoryStatus Pointer )
-            value.SupportCharacterList                      = GetObjectList<FesUnitSupportCharacterStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.FesUnitSupportCharacterStatus.FromPointer); // 0246613B19E8 0x58 SupportCharacterList        ( 000185CD8678 ModelClassListType RepeatedField`1<FesUnitSupportCharacterStatus> RepeatedField`1<FesUnitSupportCharacterStatus> List<FesUnitSupportCharacterStatus> Pointer )
-            value.SupportSkillList                          = GetObjectList<FesUnitAttachedSupportSkillStatus>(new IntPtr(p + 0x060), ReversePrism.DataModels.FesUnitAttachedSupportSkillStatus.FromPointer); // 0246613B1A48 0x60 SupportSkillList            ( 000185CD7F78 ModelClassListType RepeatedField`1<FesUnitAttachedSupportSkillStatus> RepeatedField`1<FesUnitAttachedSupportSkillStatus> List<FesUnitAttachedSupportSkillStatus> Pointer )
-            value.CardDeck                                  = GetObject<ProduceCardDeckStatus>(new IntPtr(p + 0x068), ReversePrism.DataModels.ProduceCardDeckStatus.FromPointer); // 0246613B1A88 0x68 CardDeck                    ( 000186536800 ModelClassType ProduceCardDeckStatus ProduceCardDeckStatus ProduceCardDeckStatus Pointer )
-            value.TransferProductList                       = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x070), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0246613B1AE8 0x70 TransferProductList         ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
-            value.InheritanceCount                          = GetInt32(new IntPtr(p + 0x078)); // 0246613B1B28 0x78 InheritanceCount            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.FesUnitId                                 = GetString(new IntPtr(p + 0x018)); // 0x18 FesUnitId                   ( ModelPrimitiveType string string string String )
+            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x020)); // 0x20 MstUnitId                   ( ModelPrimitiveType int int int Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x028)); // 0x28 Name                        ( ModelPrimitiveType string string string String )
+            value.MstFavoriteMarkId                         = GetInt32(new IntPtr(p + 0x030)); // 0x30 MstFavoriteMarkId           ( ModelPrimitiveType int int int Int32 )
+            value.Parameter                                 = GetObject<ProduceParameterStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProduceParameterStatus.FromPointer); // 0x38 Parameter                   ( ModelClassType ProduceParameterStatus ProduceParameterStatus ProduceParameterStatus Pointer )
+            value.Rank                                      = (ProduceParameterRank)GetInt32(new IntPtr(p + 0x040)); // 0x40 Rank                        ( ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32 )
+            value.FesIdolList                               = GetObjectList<FesUnitIdolStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.FesUnitIdolStatus.FromPointer); // 0x48 FesIdolList                 ( ModelClassListType RepeatedField`1<FesUnitIdolStatus> RepeatedField`1<FesUnitIdolStatus> List<FesUnitIdolStatus> Pointer )
+            value.ProduceHistory                            = GetObject<ProduceHistoryStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.ProduceHistoryStatus.FromPointer); // 0x50 ProduceHistory              ( ModelClassType ProduceHistoryStatus ProduceHistoryStatus ProduceHistoryStatus Pointer )
+            value.SupportCharacterList                      = GetObjectList<FesUnitSupportCharacterStatus>(new IntPtr(p + 0x058), ReversePrism.DataModels.FesUnitSupportCharacterStatus.FromPointer); // 0x58 SupportCharacterList        ( ModelClassListType RepeatedField`1<FesUnitSupportCharacterStatus> RepeatedField`1<FesUnitSupportCharacterStatus> List<FesUnitSupportCharacterStatus> Pointer )
+            value.SupportSkillList                          = GetObjectList<FesUnitAttachedSupportSkillStatus>(new IntPtr(p + 0x060), ReversePrism.DataModels.FesUnitAttachedSupportSkillStatus.FromPointer); // 0x60 SupportSkillList            ( ModelClassListType RepeatedField`1<FesUnitAttachedSupportSkillStatus> RepeatedField`1<FesUnitAttachedSupportSkillStatus> List<FesUnitAttachedSupportSkillStatus> Pointer )
+            value.CardDeck                                  = GetObject<ProduceCardDeckStatus>(new IntPtr(p + 0x068), ReversePrism.DataModels.ProduceCardDeckStatus.FromPointer); // 0x68 CardDeck                    ( ModelClassType ProduceCardDeckStatus ProduceCardDeckStatus ProduceCardDeckStatus Pointer )
+            value.TransferProductList                       = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x070), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0x70 TransferProductList         ( ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
+            value.InheritanceCount                          = GetInt32(new IntPtr(p + 0x078)); // 0x78 InheritanceCount            ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

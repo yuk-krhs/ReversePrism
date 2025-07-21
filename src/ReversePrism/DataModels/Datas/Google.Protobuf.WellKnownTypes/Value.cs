@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 000 StructValueFieldNumber                   int IL2CPP_TYPE_I4
     // 000 ListValueFieldNumber                     int IL2CPP_TYPE_I4
     // 018 kind_                                    <object> IL2CPP_TYPE_OBJECT
-    // 020 KindCase                                 0001866D09C0 ModelEnumType KindOneofCase KindOneofCase KindOneofCase Int32
+    // 020 KindCase                                 ModelEnumType KindOneofCase KindOneofCase KindOneofCase Int32
     public partial class Value : DataModel
     {
         public KindOneofCase                            KindCase                                { get; set; }
@@ -30,7 +30,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Value() { Pointer= p0 };
 
-            value.KindCase                                  = (KindOneofCase)GetInt32(new IntPtr(p + 0x020)); // 02466A4DD108 0x20 KindCase                    ( 0001866D09C0 ModelEnumType KindOneofCase KindOneofCase KindOneofCase Int32 )
+            value.KindCase                                  = (KindOneofCase)GetInt32(new IntPtr(p + 0x020)); // 0x20 KindCase                    ( ModelEnumType KindOneofCase KindOneofCase KindOneofCase Int32 )
 
             return value;
         }

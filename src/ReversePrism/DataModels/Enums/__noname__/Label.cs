@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     public enum Label
     {
         Optional,
-        Required,
         Repeated,
+        Required,
     }
 }

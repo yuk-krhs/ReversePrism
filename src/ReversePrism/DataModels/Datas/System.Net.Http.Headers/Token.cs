@@ -9,9 +9,9 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Empty                                    Token IL2CPP_TYPE_VALUETYPE
-    // 010 Type                                     000186625F50 ModelEnumType Type Type Type Int32
-    // 014 StartPosition                            0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 018 EndPosition                              0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 Type                                     ModelEnumType Type Type Type Int32
+    // 014 StartPosition                            ModelPrimitiveType int int int Int32
+    // 018 EndPosition                              ModelPrimitiveType int int int Int32
     public partial class Token : DataModel
     {
         public Type                                     Type                                    { get; set; }
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Token() { Pointer= p0 };
 
-            value.Type                                      = (Type)GetInt32(new IntPtr(p + 0x010)); // 02466B8B2D80 0x10 Type                        ( 000186625F50 ModelEnumType Type Type Type Int32 )
-            value.StartPosition                             = GetInt32(new IntPtr(p + 0x014)); // 02466B8B2DA0 0x14 StartPosition               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.EndPosition                               = GetInt32(new IntPtr(p + 0x018)); // 02466B8B2DC0 0x18 EndPosition                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Type                                      = (Type)GetInt32(new IntPtr(p + 0x010)); // 0x10 Type                        ( ModelEnumType Type Type Type Int32 )
+            value.StartPosition                             = GetInt32(new IntPtr(p + 0x014)); // 0x14 StartPosition               ( ModelPrimitiveType int int int Int32 )
+            value.EndPosition                               = GetInt32(new IntPtr(p + 0x018)); // 0x18 EndPosition                 ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

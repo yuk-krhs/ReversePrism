@@ -8,31 +8,34 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 JacketIcon                               0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer
-    // 028 MusicTypeIcon                            0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer
-    // 030 MusicName                                0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 038 MusicLevel                               0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 040 MusicLevelColors                         000185B75890 ModelEnumListType Color[] Color[] List<Color> Pointer
-    // 048 FavoriteMark                             0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 050 NewMark                                  0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 058 ClearStatusLampView                      000186664330 ModelClassType MusicClearStatusLampView MusicClearStatusLampView MusicClearStatusLampView Pointer
-    // 060 ScoreRankParent                          0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 068 ScoreRankImage                           0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 070 NoScoreRankObject                        0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 078 ComboRankImage                           0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 080 NoComboRankObject                        0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 088 ResourceConfig                           000186587F10 ModelClassType LiveUIResourceConfig LiveUIResourceConfig LiveUIResourceConfig Pointer
-    // 090 HighScoreParent                          0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 098 HighScore                                0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 0A0 HighScoreRate                            0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 0A8 TechnicalScoreParent                     0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 0B0 TechnicalScore                           0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 0B8 TechnicalScoreRate                       0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 0C0 TechnicalScoreRateNormalColor            0001865AA8E0 ModelEnumType Color Color Color Int32
-    // 0D0 TechnicalScoreRateMaxColor               0001865AA8E0 ModelEnumType Color Color Color Int32
-    // 0E0 SwitchableDisplays                       000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
-    // 0E8 CachedMusicData                          000186664B50 ModelClassType MusicData MusicData MusicData Pointer
-    // 0F0 Cts                                      0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
+    // 020 JacketIcon                               ModelClassType UIRawImage UIRawImage UIRawImage Pointer
+    // 028 MusicTypeIcon                            ModelClassType UIRawImage UIRawImage UIRawImage Pointer
+    // 030 MusicName                                ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 038 MusicLevel                               ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 040 MusicLevelColors                         ModelEnumListType Color[] Color[] List<Color> Pointer
+    // 048 FavoriteMark                             ModelClassType GameObject GameObject GameObject Pointer
+    // 050 NewMark                                  ModelClassType GameObject GameObject GameObject Pointer
+    // 058 ClearStatusLampView                      ModelClassType MusicClearStatusLampView MusicClearStatusLampView MusicClearStatusLampView Pointer
+    // 060 ScoreRankParent                          ModelClassType GameObject GameObject GameObject Pointer
+    // 068 ScoreRankImage                           ModelClassType UIImage UIImage UIImage Pointer
+    // 070 NoScoreRankObject                        ModelClassType GameObject GameObject GameObject Pointer
+    // 078 ComboRankImage                           ModelClassType UIImage UIImage UIImage Pointer
+    // 080 NoComboRankObject                        ModelClassType GameObject GameObject GameObject Pointer
+    // 088 ResourceConfig                           ModelClassType LiveUIResourceConfig LiveUIResourceConfig LiveUIResourceConfig Pointer
+    // 090 Combo                                    ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 098 TotalNotes                               ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 0A0 HighScoreParent                          ModelClassType GameObject GameObject GameObject Pointer
+    // 0A8 HighScore                                ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 0B0 HighScoreRate                            ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 0B8 TechnicalScoreParent                     ModelClassType GameObject GameObject GameObject Pointer
+    // 0C0 TechnicalScore                           ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 0C8 TechnicalScoreRate                       ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 0D0 NormalColor                              ModelEnumType Color Color Color Int32
+    // 0E0 MaxColor                                 ModelEnumType Color Color Color Int32
+    // 0F0 ShinyColor                               ModelEnumType Color Color Color Int32
+    // 100 SwitchableDisplays                       ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
+    // 108 CachedMusicData                          ModelClassType MusicData MusicData MusicData Pointer
+    // 110 Cts                                      ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
     public partial class MusicListCellCommonView : DataModel
     {
         public UIRawImage?                              JacketIcon                              { get; set; }
@@ -49,14 +52,17 @@ namespace ReversePrism.DataModels
         public UIImage?                                 ComboRankImage                          { get; set; }
         public GameObject?                              NoComboRankObject                       { get; set; }
         public LiveUIResourceConfig?                    ResourceConfig                          { get; set; }
+        public UITextMeshProUGUI?                       Combo                                   { get; set; }
+        public UITextMeshProUGUI?                       TotalNotes                              { get; set; }
         public GameObject?                              HighScoreParent                         { get; set; }
         public UITextMeshProUGUI?                       HighScore                               { get; set; }
         public UITextMeshProUGUI?                       HighScoreRate                           { get; set; }
         public GameObject?                              TechnicalScoreParent                    { get; set; }
         public UITextMeshProUGUI?                       TechnicalScore                          { get; set; }
         public UITextMeshProUGUI?                       TechnicalScoreRate                      { get; set; }
-        public Color                                    TechnicalScoreRateNormalColor           { get; set; }
-        public Color                                    TechnicalScoreRateMaxColor              { get; set; }
+        public Color                                    NormalColor                             { get; set; }
+        public Color                                    MaxColor                                { get; set; }
+        public Color                                    ShinyColor                              { get; set; }
         public List<GameObject>?                        SwitchableDisplays                      { get; set; }
         public MusicData?                               CachedMusicData                         { get; set; }
         public CancellationTokenSource?                 Cts                                     { get; set; }
@@ -69,31 +75,34 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MusicListCellCommonView() { Pointer= p0 };
 
-            value.JacketIcon                                = GetObject<UIRawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIRawImage.FromPointer); // 0246651FA380 0x20 JacketIcon                  ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
-            value.MusicTypeIcon                             = GetObject<UIRawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIRawImage.FromPointer); // 0246651FA3A0 0x28 MusicTypeIcon               ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
-            value.MusicName                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246651FA3C0 0x30 MusicName                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.MusicLevel                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246651FA3E0 0x38 MusicLevel                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.MusicLevelColors                          = GetEnumList<Color>(new IntPtr(p + 0x040)); // 0246651FA400 0x40 MusicLevelColors            ( 000185B75890 ModelEnumListType Color[] Color[] List<Color> Pointer )
-            value.FavoriteMark                              = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 0246651FA420 0x48 FavoriteMark                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.NewMark                                   = GetObject<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 0246651FA440 0x50 NewMark                     ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ClearStatusLampView                       = GetObject<MusicClearStatusLampView>(new IntPtr(p + 0x058), ReversePrism.DataModels.MusicClearStatusLampView.FromPointer); // 0246651FA460 0x58 ClearStatusLampView         ( 000186664330 ModelClassType MusicClearStatusLampView MusicClearStatusLampView MusicClearStatusLampView Pointer )
-            value.ScoreRankParent                           = GetObject<GameObject>(new IntPtr(p + 0x060), ReversePrism.DataModels.GameObject.FromPointer); // 0246651FA480 0x60 ScoreRankParent             ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ScoreRankImage                            = GetObject<UIImage>(new IntPtr(p + 0x068), ReversePrism.DataModels.UIImage.FromPointer); // 0246651FA4A0 0x68 ScoreRankImage              ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.NoScoreRankObject                         = GetObject<GameObject>(new IntPtr(p + 0x070), ReversePrism.DataModels.GameObject.FromPointer); // 0246651FA4C0 0x70 NoScoreRankObject           ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ComboRankImage                            = GetObject<UIImage>(new IntPtr(p + 0x078), ReversePrism.DataModels.UIImage.FromPointer); // 0246651FA4E0 0x78 ComboRankImage              ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.NoComboRankObject                         = GetObject<GameObject>(new IntPtr(p + 0x080), ReversePrism.DataModels.GameObject.FromPointer); // 0246651FA500 0x80 NoComboRankObject           ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ResourceConfig                            = GetObject<LiveUIResourceConfig>(new IntPtr(p + 0x088), ReversePrism.DataModels.LiveUIResourceConfig.FromPointer); // 0246651FA520 0x88 ResourceConfig              ( 000186587F10 ModelClassType LiveUIResourceConfig LiveUIResourceConfig LiveUIResourceConfig Pointer )
-            value.HighScoreParent                           = GetObject<GameObject>(new IntPtr(p + 0x090), ReversePrism.DataModels.GameObject.FromPointer); // 0246651FA540 0x90 HighScoreParent             ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.HighScore                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x098), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246651FA560 0x98 HighScore                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.HighScoreRate                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246651FA580 0xA0 HighScoreRate               ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TechnicalScoreParent                      = GetObject<GameObject>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.GameObject.FromPointer); // 0246651FA5A0 0xA8 TechnicalScoreParent        ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.TechnicalScore                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246651FA5C0 0xB0 TechnicalScore              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TechnicalScoreRate                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246651FA5E0 0xB8 TechnicalScoreRate          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TechnicalScoreRateNormalColor             = (Color)GetInt32(new IntPtr(p + 0x0C0)); // 0246651FA600 0xC0 TechnicalScoreRateNormalColor ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.TechnicalScoreRateMaxColor                = (Color)GetInt32(new IntPtr(p + 0x0D0)); // 0246651FA620 0xD0 TechnicalScoreRateMaxColor  ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.SwitchableDisplays                        = GetObjectList<GameObject>(new IntPtr(p + 0x0E0), ReversePrism.DataModels.GameObject.FromPointer); // 0246651FA640 0xE0 SwitchableDisplays          ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
-            value.CachedMusicData                           = GetObject<MusicData>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.MusicData.FromPointer); // 0246651FA660 0xE8 CachedMusicData             ( 000186664B50 ModelClassType MusicData MusicData MusicData Pointer )
-            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x0F0), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0246651FA680 0xF0 Cts                         ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.JacketIcon                                = GetObject<UIRawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIRawImage.FromPointer); // 0x20 JacketIcon                  ( ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
+            value.MusicTypeIcon                             = GetObject<UIRawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIRawImage.FromPointer); // 0x28 MusicTypeIcon               ( ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
+            value.MusicName                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x30 MusicName                   ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.MusicLevel                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x38 MusicLevel                  ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.MusicLevelColors                          = GetEnumList<Color>(new IntPtr(p + 0x040)); // 0x40 MusicLevelColors            ( ModelEnumListType Color[] Color[] List<Color> Pointer )
+            value.FavoriteMark                              = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 0x48 FavoriteMark                ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.NewMark                                   = GetObject<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 0x50 NewMark                     ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.ClearStatusLampView                       = GetObject<MusicClearStatusLampView>(new IntPtr(p + 0x058), ReversePrism.DataModels.MusicClearStatusLampView.FromPointer); // 0x58 ClearStatusLampView         ( ModelClassType MusicClearStatusLampView MusicClearStatusLampView MusicClearStatusLampView Pointer )
+            value.ScoreRankParent                           = GetObject<GameObject>(new IntPtr(p + 0x060), ReversePrism.DataModels.GameObject.FromPointer); // 0x60 ScoreRankParent             ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.ScoreRankImage                            = GetObject<UIImage>(new IntPtr(p + 0x068), ReversePrism.DataModels.UIImage.FromPointer); // 0x68 ScoreRankImage              ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.NoScoreRankObject                         = GetObject<GameObject>(new IntPtr(p + 0x070), ReversePrism.DataModels.GameObject.FromPointer); // 0x70 NoScoreRankObject           ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.ComboRankImage                            = GetObject<UIImage>(new IntPtr(p + 0x078), ReversePrism.DataModels.UIImage.FromPointer); // 0x78 ComboRankImage              ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.NoComboRankObject                         = GetObject<GameObject>(new IntPtr(p + 0x080), ReversePrism.DataModels.GameObject.FromPointer); // 0x80 NoComboRankObject           ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.ResourceConfig                            = GetObject<LiveUIResourceConfig>(new IntPtr(p + 0x088), ReversePrism.DataModels.LiveUIResourceConfig.FromPointer); // 0x88 ResourceConfig              ( ModelClassType LiveUIResourceConfig LiveUIResourceConfig LiveUIResourceConfig Pointer )
+            value.Combo                                     = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x090), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x90 Combo                       ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TotalNotes                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x098), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x98 TotalNotes                  ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.HighScoreParent                           = GetObject<GameObject>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.GameObject.FromPointer); // 0xA0 HighScoreParent             ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.HighScore                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0xA8 HighScore                   ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.HighScoreRate                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0xB0 HighScoreRate               ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TechnicalScoreParent                      = GetObject<GameObject>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.GameObject.FromPointer); // 0xB8 TechnicalScoreParent        ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.TechnicalScore                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0xC0 TechnicalScore              ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TechnicalScoreRate                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0xC8 TechnicalScoreRate          ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.NormalColor                               = (Color)GetInt32(new IntPtr(p + 0x0D0)); // 0xD0 NormalColor                 ( ModelEnumType Color Color Color Int32 )
+            value.MaxColor                                  = (Color)GetInt32(new IntPtr(p + 0x0E0)); // 0xE0 MaxColor                    ( ModelEnumType Color Color Color Int32 )
+            value.ShinyColor                                = (Color)GetInt32(new IntPtr(p + 0x0F0)); // 0xF0 ShinyColor                  ( ModelEnumType Color Color Color Int32 )
+            value.SwitchableDisplays                        = GetObjectList<GameObject>(new IntPtr(p + 0x100), ReversePrism.DataModels.GameObject.FromPointer); // 0x100 SwitchableDisplays          ( ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.CachedMusicData                           = GetObject<MusicData>(new IntPtr(p + 0x108), ReversePrism.DataModels.MusicData.FromPointer); // 0x108 CachedMusicData             ( ModelClassType MusicData MusicData MusicData Pointer )
+            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x110), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0x110 Cts                         ( ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
 
             return value;
         }

@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Analytics                              0001866F3430 ModelClassType IAnalyticsService IAnalyticsService IAnalyticsService Pointer
-    // 018 M_Logger                                 0001865A19E0 ModelClassType ILogger ILogger ILogger Pointer
-    // 020 M_CoreAnalytics                          0001866F3DF0 ModelClassType IAnalyticsStandardEventComponent IAnalyticsStandardEventComponent IAnalyticsStandardEventComponent Pointer
+    // 010 M_Analytics                              ModelClassType IAnalyticsService IAnalyticsService IAnalyticsService Pointer
+    // 018 M_Logger                                 ModelClassType ILogger ILogger ILogger Pointer
+    // 020 M_CoreAnalytics                          ModelClassType IAnalyticsStandardEventComponent IAnalyticsStandardEventComponent IAnalyticsStandardEventComponent Pointer
     // 000 k_TransactionEventName                   string IL2CPP_TYPE_STRING
     // 000 k_TransactionFailedEventName             string IL2CPP_TYPE_STRING
     // 000 k_PurchasingPackageName                  string IL2CPP_TYPE_STRING
@@ -30,9 +30,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CoreAnalyticsAdapter() { Pointer= p0 };
 
-            value.M_Analytics                               = GetObject<IAnalyticsService>(new IntPtr(p + 0x010), ReversePrism.DataModels.IAnalyticsService.FromPointer); // 0245A4C16808 0x10 M_Analytics                 ( 0001866F3430 ModelClassType IAnalyticsService IAnalyticsService IAnalyticsService Pointer )
-            value.M_Logger                                  = GetObject<ILogger>(new IntPtr(p + 0x018), ReversePrism.DataModels.ILogger.FromPointer); // 0245A4C16828 0x18 M_Logger                    ( 0001865A19E0 ModelClassType ILogger ILogger ILogger Pointer )
-            value.M_CoreAnalytics                           = GetObject<IAnalyticsStandardEventComponent>(new IntPtr(p + 0x020), ReversePrism.DataModels.IAnalyticsStandardEventComponent.FromPointer); // 0245A4C16848 0x20 M_CoreAnalytics             ( 0001866F3DF0 ModelClassType IAnalyticsStandardEventComponent IAnalyticsStandardEventComponent IAnalyticsStandardEventComponent Pointer )
+            value.M_Analytics                               = GetObject<IAnalyticsService>(new IntPtr(p + 0x010), ReversePrism.DataModels.IAnalyticsService.FromPointer); // 0x10 M_Analytics                 ( ModelClassType IAnalyticsService IAnalyticsService IAnalyticsService Pointer )
+            value.M_Logger                                  = GetObject<ILogger>(new IntPtr(p + 0x018), ReversePrism.DataModels.ILogger.FromPointer); // 0x18 M_Logger                    ( ModelClassType ILogger ILogger ILogger Pointer )
+            value.M_CoreAnalytics                           = GetObject<IAnalyticsStandardEventComponent>(new IntPtr(p + 0x020), ReversePrism.DataModels.IAnalyticsStandardEventComponent.FromPointer); // 0x20 M_CoreAnalytics             ( ModelClassType IAnalyticsStandardEventComponent IAnalyticsStandardEventComponent IAnalyticsStandardEventComponent Pointer )
 
             return value;
         }

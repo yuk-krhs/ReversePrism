@@ -12,76 +12,76 @@ namespace ReversePrism.DataModels
     // 004 ID_FaceTex                               int IL2CPP_TYPE_I4
     // 008 ID_FaceColor                             int IL2CPP_TYPE_I4
     // 00C ID_FaceDilate                            int IL2CPP_TYPE_I4
-    // 010 ID_Shininess                             0001865F4040 ModelPrimitiveType int int int Int32
-    // 014 ID_OutlineOffset1                        0001865F4040 ModelPrimitiveType int int int Int32
-    // 018 ID_OutlineOffset2                        0001865F4040 ModelPrimitiveType int int int Int32
-    // 01C ID_OutlineOffset3                        0001865F4040 ModelPrimitiveType int int int Int32
-    // 020 ID_OutlineMode                           0001865F4040 ModelPrimitiveType int int int Int32
-    // 024 ID_IsoPerimeter                          0001865F4040 ModelPrimitiveType int int int Int32
-    // 028 ID_Softness                              0001865F4040 ModelPrimitiveType int int int Int32
-    // 02C ID_UnderlayColor                         0001865F4040 ModelPrimitiveType int int int Int32
-    // 030 ID_UnderlayOffsetX                       0001865F4040 ModelPrimitiveType int int int Int32
-    // 034 ID_UnderlayOffsetY                       0001865F4040 ModelPrimitiveType int int int Int32
-    // 038 ID_UnderlayDilate                        0001865F4040 ModelPrimitiveType int int int Int32
-    // 03C ID_UnderlaySoftness                      0001865F4040 ModelPrimitiveType int int int Int32
-    // 040 ID_UnderlayOffset                        0001865F4040 ModelPrimitiveType int int int Int32
-    // 044 ID_UnderlayIsoPerimeter                  0001865F4040 ModelPrimitiveType int int int Int32
-    // 048 ID_WeightNormal                          0001865F4040 ModelPrimitiveType int int int Int32
-    // 04C ID_WeightBold                            0001865F4040 ModelPrimitiveType int int int Int32
-    // 050 ID_OutlineTex                            0001865F4040 ModelPrimitiveType int int int Int32
-    // 054 ID_OutlineWidth                          0001865F4040 ModelPrimitiveType int int int Int32
-    // 058 ID_OutlineSoftness                       0001865F4040 ModelPrimitiveType int int int Int32
-    // 05C ID_OutlineColor                          0001865F4040 ModelPrimitiveType int int int Int32
-    // 060 ID_Outline2Color                         0001865F4040 ModelPrimitiveType int int int Int32
-    // 064 ID_Outline2Width                         0001865F4040 ModelPrimitiveType int int int Int32
-    // 068 ID_Padding                               0001865F4040 ModelPrimitiveType int int int Int32
-    // 06C ID_GradientScale                         0001865F4040 ModelPrimitiveType int int int Int32
-    // 070 ID_ScaleX                                0001865F4040 ModelPrimitiveType int int int Int32
-    // 074 ID_ScaleY                                0001865F4040 ModelPrimitiveType int int int Int32
-    // 078 ID_PerspectiveFilter                     0001865F4040 ModelPrimitiveType int int int Int32
-    // 07C ID_Sharpness                             0001865F4040 ModelPrimitiveType int int int Int32
-    // 080 ID_TextureWidth                          0001865F4040 ModelPrimitiveType int int int Int32
-    // 084 ID_TextureHeight                         0001865F4040 ModelPrimitiveType int int int Int32
-    // 088 ID_BevelAmount                           0001865F4040 ModelPrimitiveType int int int Int32
-    // 08C ID_GlowColor                             0001865F4040 ModelPrimitiveType int int int Int32
-    // 090 ID_GlowOffset                            0001865F4040 ModelPrimitiveType int int int Int32
-    // 094 ID_GlowPower                             0001865F4040 ModelPrimitiveType int int int Int32
-    // 098 ID_GlowOuter                             0001865F4040 ModelPrimitiveType int int int Int32
-    // 09C ID_GlowInner                             0001865F4040 ModelPrimitiveType int int int Int32
-    // 0A0 ID_LightAngle                            0001865F4040 ModelPrimitiveType int int int Int32
-    // 0A4 ID_EnvMap                                0001865F4040 ModelPrimitiveType int int int Int32
-    // 0A8 ID_EnvMatrix                             0001865F4040 ModelPrimitiveType int int int Int32
-    // 0AC ID_EnvMatrixRotation                     0001865F4040 ModelPrimitiveType int int int Int32
-    // 0B0 ID_MaskCoord                             0001865F4040 ModelPrimitiveType int int int Int32
-    // 0B4 ID_ClipRect                              0001865F4040 ModelPrimitiveType int int int Int32
-    // 0B8 ID_MaskSoftnessX                         0001865F4040 ModelPrimitiveType int int int Int32
-    // 0BC ID_MaskSoftnessY                         0001865F4040 ModelPrimitiveType int int int Int32
-    // 0C0 ID_VertexOffsetX                         0001865F4040 ModelPrimitiveType int int int Int32
-    // 0C4 ID_VertexOffsetY                         0001865F4040 ModelPrimitiveType int int int Int32
-    // 0C8 ID_UseClipRect                           0001865F4040 ModelPrimitiveType int int int Int32
-    // 0CC ID_StencilID                             0001865F4040 ModelPrimitiveType int int int Int32
-    // 0D0 ID_StencilOp                             0001865F4040 ModelPrimitiveType int int int Int32
-    // 0D4 ID_StencilComp                           0001865F4040 ModelPrimitiveType int int int Int32
-    // 0D8 ID_StencilReadMask                       0001865F4040 ModelPrimitiveType int int int Int32
-    // 0DC ID_StencilWriteMask                      0001865F4040 ModelPrimitiveType int int int Int32
-    // 0E0 ID_ShaderFlags                           0001865F4040 ModelPrimitiveType int int int Int32
-    // 0E4 ID_ScaleRatio_A                          0001865F4040 ModelPrimitiveType int int int Int32
-    // 0E8 ID_ScaleRatio_B                          0001865F4040 ModelPrimitiveType int int int Int32
-    // 0EC ID_ScaleRatio_C                          0001865F4040 ModelPrimitiveType int int int Int32
-    // 0F0 Keyword_Bevel                            000186672D00 ModelPrimitiveType string string string String
-    // 0F8 Keyword_Glow                             000186672D00 ModelPrimitiveType string string string String
-    // 100 Keyword_Underlay                         000186672D00 ModelPrimitiveType string string string String
-    // 108 Keyword_Ratios                           000186672D00 ModelPrimitiveType string string string String
-    // 110 Keyword_MASK_SOFT                        000186672D00 ModelPrimitiveType string string string String
-    // 118 Keyword_MASK_HARD                        000186672D00 ModelPrimitiveType string string string String
-    // 120 Keyword_MASK_TEX                         000186672D00 ModelPrimitiveType string string string String
-    // 128 Keyword_Outline                          000186672D00 ModelPrimitiveType string string string String
-    // 130 ShaderTag_ZTestMode                      000186672D00 ModelPrimitiveType string string string String
-    // 138 ShaderTag_CullMode                       000186672D00 ModelPrimitiveType string string string String
-    // 140 M_clamp                                  000186666300 ModelPrimitiveType float float float Single
-    // 144 IsInitialized                            000186596380 ModelPrimitiveType bool bool bool Bool
-    // 148 K_ShaderRef_MobileSDF                    00018674CE60 ModelClassType Shader Shader Shader Pointer
-    // 150 K_ShaderRef_MobileBitmap                 00018674CE60 ModelClassType Shader Shader Shader Pointer
+    // 010 ID_Shininess                             ModelPrimitiveType int int int Int32
+    // 014 ID_OutlineOffset1                        ModelPrimitiveType int int int Int32
+    // 018 ID_OutlineOffset2                        ModelPrimitiveType int int int Int32
+    // 01C ID_OutlineOffset3                        ModelPrimitiveType int int int Int32
+    // 020 ID_OutlineMode                           ModelPrimitiveType int int int Int32
+    // 024 ID_IsoPerimeter                          ModelPrimitiveType int int int Int32
+    // 028 ID_Softness                              ModelPrimitiveType int int int Int32
+    // 02C ID_UnderlayColor                         ModelPrimitiveType int int int Int32
+    // 030 ID_UnderlayOffsetX                       ModelPrimitiveType int int int Int32
+    // 034 ID_UnderlayOffsetY                       ModelPrimitiveType int int int Int32
+    // 038 ID_UnderlayDilate                        ModelPrimitiveType int int int Int32
+    // 03C ID_UnderlaySoftness                      ModelPrimitiveType int int int Int32
+    // 040 ID_UnderlayOffset                        ModelPrimitiveType int int int Int32
+    // 044 ID_UnderlayIsoPerimeter                  ModelPrimitiveType int int int Int32
+    // 048 ID_WeightNormal                          ModelPrimitiveType int int int Int32
+    // 04C ID_WeightBold                            ModelPrimitiveType int int int Int32
+    // 050 ID_OutlineTex                            ModelPrimitiveType int int int Int32
+    // 054 ID_OutlineWidth                          ModelPrimitiveType int int int Int32
+    // 058 ID_OutlineSoftness                       ModelPrimitiveType int int int Int32
+    // 05C ID_OutlineColor                          ModelPrimitiveType int int int Int32
+    // 060 ID_Outline2Color                         ModelPrimitiveType int int int Int32
+    // 064 ID_Outline2Width                         ModelPrimitiveType int int int Int32
+    // 068 ID_Padding                               ModelPrimitiveType int int int Int32
+    // 06C ID_GradientScale                         ModelPrimitiveType int int int Int32
+    // 070 ID_ScaleX                                ModelPrimitiveType int int int Int32
+    // 074 ID_ScaleY                                ModelPrimitiveType int int int Int32
+    // 078 ID_PerspectiveFilter                     ModelPrimitiveType int int int Int32
+    // 07C ID_Sharpness                             ModelPrimitiveType int int int Int32
+    // 080 ID_TextureWidth                          ModelPrimitiveType int int int Int32
+    // 084 ID_TextureHeight                         ModelPrimitiveType int int int Int32
+    // 088 ID_BevelAmount                           ModelPrimitiveType int int int Int32
+    // 08C ID_GlowColor                             ModelPrimitiveType int int int Int32
+    // 090 ID_GlowOffset                            ModelPrimitiveType int int int Int32
+    // 094 ID_GlowPower                             ModelPrimitiveType int int int Int32
+    // 098 ID_GlowOuter                             ModelPrimitiveType int int int Int32
+    // 09C ID_GlowInner                             ModelPrimitiveType int int int Int32
+    // 0A0 ID_LightAngle                            ModelPrimitiveType int int int Int32
+    // 0A4 ID_EnvMap                                ModelPrimitiveType int int int Int32
+    // 0A8 ID_EnvMatrix                             ModelPrimitiveType int int int Int32
+    // 0AC ID_EnvMatrixRotation                     ModelPrimitiveType int int int Int32
+    // 0B0 ID_MaskCoord                             ModelPrimitiveType int int int Int32
+    // 0B4 ID_ClipRect                              ModelPrimitiveType int int int Int32
+    // 0B8 ID_MaskSoftnessX                         ModelPrimitiveType int int int Int32
+    // 0BC ID_MaskSoftnessY                         ModelPrimitiveType int int int Int32
+    // 0C0 ID_VertexOffsetX                         ModelPrimitiveType int int int Int32
+    // 0C4 ID_VertexOffsetY                         ModelPrimitiveType int int int Int32
+    // 0C8 ID_UseClipRect                           ModelPrimitiveType int int int Int32
+    // 0CC ID_StencilID                             ModelPrimitiveType int int int Int32
+    // 0D0 ID_StencilOp                             ModelPrimitiveType int int int Int32
+    // 0D4 ID_StencilComp                           ModelPrimitiveType int int int Int32
+    // 0D8 ID_StencilReadMask                       ModelPrimitiveType int int int Int32
+    // 0DC ID_StencilWriteMask                      ModelPrimitiveType int int int Int32
+    // 0E0 ID_ShaderFlags                           ModelPrimitiveType int int int Int32
+    // 0E4 ID_ScaleRatio_A                          ModelPrimitiveType int int int Int32
+    // 0E8 ID_ScaleRatio_B                          ModelPrimitiveType int int int Int32
+    // 0EC ID_ScaleRatio_C                          ModelPrimitiveType int int int Int32
+    // 0F0 Keyword_Bevel                            ModelPrimitiveType string string string String
+    // 0F8 Keyword_Glow                             ModelPrimitiveType string string string String
+    // 100 Keyword_Underlay                         ModelPrimitiveType string string string String
+    // 108 Keyword_Ratios                           ModelPrimitiveType string string string String
+    // 110 Keyword_MASK_SOFT                        ModelPrimitiveType string string string String
+    // 118 Keyword_MASK_HARD                        ModelPrimitiveType string string string String
+    // 120 Keyword_MASK_TEX                         ModelPrimitiveType string string string String
+    // 128 Keyword_Outline                          ModelPrimitiveType string string string String
+    // 130 ShaderTag_ZTestMode                      ModelPrimitiveType string string string String
+    // 138 ShaderTag_CullMode                       ModelPrimitiveType string string string String
+    // 140 M_clamp                                  ModelPrimitiveType float float float Single
+    // 144 IsInitialized                            ModelPrimitiveType bool bool bool Bool
+    // 148 K_ShaderRef_MobileSDF                    ModelClassType Shader Shader Shader Pointer
+    // 150 K_ShaderRef_MobileBitmap                 ModelClassType Shader Shader Shader Pointer
     public partial class TextShaderUtilities : DataModel
     {
         public int                                      ID_Shininess                            { get; set; }
@@ -163,76 +163,76 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TextShaderUtilities() { Pointer= p0 };
 
-            value.ID_Shininess                              = GetInt32(new IntPtr(p + 0x010)); // 0245A68BE220 0x10 ID_Shininess                ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_OutlineOffset1                         = GetInt32(new IntPtr(p + 0x014)); // 0245A68BE240 0x14 ID_OutlineOffset1           ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_OutlineOffset2                         = GetInt32(new IntPtr(p + 0x018)); // 0245A68BE260 0x18 ID_OutlineOffset2           ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_OutlineOffset3                         = GetInt32(new IntPtr(p + 0x01C)); // 0245A68BE280 0x1C ID_OutlineOffset3           ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_OutlineMode                            = GetInt32(new IntPtr(p + 0x020)); // 0245A68BE2A0 0x20 ID_OutlineMode              ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_IsoPerimeter                           = GetInt32(new IntPtr(p + 0x024)); // 0245A68BE2C0 0x24 ID_IsoPerimeter             ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_Softness                               = GetInt32(new IntPtr(p + 0x028)); // 0245A68BE2E0 0x28 ID_Softness                 ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_UnderlayColor                          = GetInt32(new IntPtr(p + 0x02C)); // 0245A68BE300 0x2C ID_UnderlayColor            ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_UnderlayOffsetX                        = GetInt32(new IntPtr(p + 0x030)); // 0245A68BE320 0x30 ID_UnderlayOffsetX          ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_UnderlayOffsetY                        = GetInt32(new IntPtr(p + 0x034)); // 0245A68BE340 0x34 ID_UnderlayOffsetY          ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_UnderlayDilate                         = GetInt32(new IntPtr(p + 0x038)); // 0245A68BE360 0x38 ID_UnderlayDilate           ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_UnderlaySoftness                       = GetInt32(new IntPtr(p + 0x03C)); // 0245A68BE380 0x3C ID_UnderlaySoftness         ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_UnderlayOffset                         = GetInt32(new IntPtr(p + 0x040)); // 0245A68BE3A0 0x40 ID_UnderlayOffset           ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_UnderlayIsoPerimeter                   = GetInt32(new IntPtr(p + 0x044)); // 0245A68BE3C0 0x44 ID_UnderlayIsoPerimeter     ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_WeightNormal                           = GetInt32(new IntPtr(p + 0x048)); // 0245A68BE3E0 0x48 ID_WeightNormal             ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_WeightBold                             = GetInt32(new IntPtr(p + 0x04C)); // 0245A68BE400 0x4C ID_WeightBold               ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_OutlineTex                             = GetInt32(new IntPtr(p + 0x050)); // 0245A68BE420 0x50 ID_OutlineTex               ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_OutlineWidth                           = GetInt32(new IntPtr(p + 0x054)); // 0245A68BE440 0x54 ID_OutlineWidth             ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_OutlineSoftness                        = GetInt32(new IntPtr(p + 0x058)); // 0245A68BE460 0x58 ID_OutlineSoftness          ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_OutlineColor                           = GetInt32(new IntPtr(p + 0x05C)); // 0245A68BE480 0x5C ID_OutlineColor             ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_Outline2Color                          = GetInt32(new IntPtr(p + 0x060)); // 0245A68BE4A0 0x60 ID_Outline2Color            ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_Outline2Width                          = GetInt32(new IntPtr(p + 0x064)); // 0245A68BE4C0 0x64 ID_Outline2Width            ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_Padding                                = GetInt32(new IntPtr(p + 0x068)); // 0245A68BE4E0 0x68 ID_Padding                  ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_GradientScale                          = GetInt32(new IntPtr(p + 0x06C)); // 0245A68BE500 0x6C ID_GradientScale            ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_ScaleX                                 = GetInt32(new IntPtr(p + 0x070)); // 0245A68BE520 0x70 ID_ScaleX                   ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_ScaleY                                 = GetInt32(new IntPtr(p + 0x074)); // 0245A68BE540 0x74 ID_ScaleY                   ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_PerspectiveFilter                      = GetInt32(new IntPtr(p + 0x078)); // 0245A68BE560 0x78 ID_PerspectiveFilter        ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_Sharpness                              = GetInt32(new IntPtr(p + 0x07C)); // 0245A68BE580 0x7C ID_Sharpness                ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_TextureWidth                           = GetInt32(new IntPtr(p + 0x080)); // 0245A68BE5A0 0x80 ID_TextureWidth             ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_TextureHeight                          = GetInt32(new IntPtr(p + 0x084)); // 0245A68BE5C0 0x84 ID_TextureHeight            ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_BevelAmount                            = GetInt32(new IntPtr(p + 0x088)); // 0245A68BE5E0 0x88 ID_BevelAmount              ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_GlowColor                              = GetInt32(new IntPtr(p + 0x08C)); // 0245A68BE600 0x8C ID_GlowColor                ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_GlowOffset                             = GetInt32(new IntPtr(p + 0x090)); // 0245A68BE620 0x90 ID_GlowOffset               ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_GlowPower                              = GetInt32(new IntPtr(p + 0x094)); // 0245A68BE640 0x94 ID_GlowPower                ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_GlowOuter                              = GetInt32(new IntPtr(p + 0x098)); // 0245A68BE660 0x98 ID_GlowOuter                ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_GlowInner                              = GetInt32(new IntPtr(p + 0x09C)); // 0245A68BE680 0x9C ID_GlowInner                ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_LightAngle                             = GetInt32(new IntPtr(p + 0x0A0)); // 0245A68BE6A0 0xA0 ID_LightAngle               ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_EnvMap                                 = GetInt32(new IntPtr(p + 0x0A4)); // 0245A68BE6C0 0xA4 ID_EnvMap                   ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_EnvMatrix                              = GetInt32(new IntPtr(p + 0x0A8)); // 0245A68BE6E0 0xA8 ID_EnvMatrix                ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_EnvMatrixRotation                      = GetInt32(new IntPtr(p + 0x0AC)); // 0245A68BE700 0xAC ID_EnvMatrixRotation        ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_MaskCoord                              = GetInt32(new IntPtr(p + 0x0B0)); // 0245A68BE720 0xB0 ID_MaskCoord                ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_ClipRect                               = GetInt32(new IntPtr(p + 0x0B4)); // 0245A68BE740 0xB4 ID_ClipRect                 ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_MaskSoftnessX                          = GetInt32(new IntPtr(p + 0x0B8)); // 0245A68BE760 0xB8 ID_MaskSoftnessX            ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_MaskSoftnessY                          = GetInt32(new IntPtr(p + 0x0BC)); // 0245A68BE780 0xBC ID_MaskSoftnessY            ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_VertexOffsetX                          = GetInt32(new IntPtr(p + 0x0C0)); // 0245A68BE7A0 0xC0 ID_VertexOffsetX            ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_VertexOffsetY                          = GetInt32(new IntPtr(p + 0x0C4)); // 0245A68BE7C0 0xC4 ID_VertexOffsetY            ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_UseClipRect                            = GetInt32(new IntPtr(p + 0x0C8)); // 0245A68BE7E0 0xC8 ID_UseClipRect              ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_StencilID                              = GetInt32(new IntPtr(p + 0x0CC)); // 0245A68BE800 0xCC ID_StencilID                ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_StencilOp                              = GetInt32(new IntPtr(p + 0x0D0)); // 0245A68BE820 0xD0 ID_StencilOp                ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_StencilComp                            = GetInt32(new IntPtr(p + 0x0D4)); // 0245A68BE840 0xD4 ID_StencilComp              ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_StencilReadMask                        = GetInt32(new IntPtr(p + 0x0D8)); // 0245A68BE860 0xD8 ID_StencilReadMask          ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_StencilWriteMask                       = GetInt32(new IntPtr(p + 0x0DC)); // 0245A68BE880 0xDC ID_StencilWriteMask         ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_ShaderFlags                            = GetInt32(new IntPtr(p + 0x0E0)); // 0245A68BE8A0 0xE0 ID_ShaderFlags              ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_ScaleRatio_A                           = GetInt32(new IntPtr(p + 0x0E4)); // 0245A68BE8C0 0xE4 ID_ScaleRatio_A             ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_ScaleRatio_B                           = GetInt32(new IntPtr(p + 0x0E8)); // 0245A68BE8E0 0xE8 ID_ScaleRatio_B             ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.ID_ScaleRatio_C                           = GetInt32(new IntPtr(p + 0x0EC)); // 0245A68BE900 0xEC ID_ScaleRatio_C             ( 0001865F4040 ModelPrimitiveType int int int Int32 )
-            value.Keyword_Bevel                             = GetString(new IntPtr(p + 0x0F0)); // 0245A68BE920 0xF0 Keyword_Bevel               ( 000186672D00 ModelPrimitiveType string string string String )
-            value.Keyword_Glow                              = GetString(new IntPtr(p + 0x0F8)); // 0245A68BE940 0xF8 Keyword_Glow                ( 000186672D00 ModelPrimitiveType string string string String )
-            value.Keyword_Underlay                          = GetString(new IntPtr(p + 0x100)); // 0245A68BE960 0x100 Keyword_Underlay            ( 000186672D00 ModelPrimitiveType string string string String )
-            value.Keyword_Ratios                            = GetString(new IntPtr(p + 0x108)); // 0245A68BE980 0x108 Keyword_Ratios              ( 000186672D00 ModelPrimitiveType string string string String )
-            value.Keyword_MASK_SOFT                         = GetString(new IntPtr(p + 0x110)); // 0245A68BE9A0 0x110 Keyword_MASK_SOFT           ( 000186672D00 ModelPrimitiveType string string string String )
-            value.Keyword_MASK_HARD                         = GetString(new IntPtr(p + 0x118)); // 0245A68BE9C0 0x118 Keyword_MASK_HARD           ( 000186672D00 ModelPrimitiveType string string string String )
-            value.Keyword_MASK_TEX                          = GetString(new IntPtr(p + 0x120)); // 0245A68BE9E0 0x120 Keyword_MASK_TEX            ( 000186672D00 ModelPrimitiveType string string string String )
-            value.Keyword_Outline                           = GetString(new IntPtr(p + 0x128)); // 0245A68BEA00 0x128 Keyword_Outline             ( 000186672D00 ModelPrimitiveType string string string String )
-            value.ShaderTag_ZTestMode                       = GetString(new IntPtr(p + 0x130)); // 0245A68BEA20 0x130 ShaderTag_ZTestMode         ( 000186672D00 ModelPrimitiveType string string string String )
-            value.ShaderTag_CullMode                        = GetString(new IntPtr(p + 0x138)); // 0245A68BEA40 0x138 ShaderTag_CullMode          ( 000186672D00 ModelPrimitiveType string string string String )
-            value.M_clamp                                   = GetSingle(new IntPtr(p + 0x140)); // 0245A68BEA60 0x140 M_clamp                     ( 000186666300 ModelPrimitiveType float float float Single )
-            value.IsInitialized                             = GetBool(new IntPtr(p + 0x144)); // 0245A68BEA80 0x144 IsInitialized               ( 000186596380 ModelPrimitiveType bool bool bool Bool )
-            value.K_ShaderRef_MobileSDF                     = GetObject<Shader>(new IntPtr(p + 0x148), ReversePrism.DataModels.Shader.FromPointer); // 0245A68BEAA0 0x148 K_ShaderRef_MobileSDF       ( 00018674CE60 ModelClassType Shader Shader Shader Pointer )
-            value.K_ShaderRef_MobileBitmap                  = GetObject<Shader>(new IntPtr(p + 0x150), ReversePrism.DataModels.Shader.FromPointer); // 0245A68BEAC0 0x150 K_ShaderRef_MobileBitmap    ( 00018674CE60 ModelClassType Shader Shader Shader Pointer )
+            value.ID_Shininess                              = GetInt32(new IntPtr(p + 0x010)); // 0x10 ID_Shininess                ( ModelPrimitiveType int int int Int32 )
+            value.ID_OutlineOffset1                         = GetInt32(new IntPtr(p + 0x014)); // 0x14 ID_OutlineOffset1           ( ModelPrimitiveType int int int Int32 )
+            value.ID_OutlineOffset2                         = GetInt32(new IntPtr(p + 0x018)); // 0x18 ID_OutlineOffset2           ( ModelPrimitiveType int int int Int32 )
+            value.ID_OutlineOffset3                         = GetInt32(new IntPtr(p + 0x01C)); // 0x1C ID_OutlineOffset3           ( ModelPrimitiveType int int int Int32 )
+            value.ID_OutlineMode                            = GetInt32(new IntPtr(p + 0x020)); // 0x20 ID_OutlineMode              ( ModelPrimitiveType int int int Int32 )
+            value.ID_IsoPerimeter                           = GetInt32(new IntPtr(p + 0x024)); // 0x24 ID_IsoPerimeter             ( ModelPrimitiveType int int int Int32 )
+            value.ID_Softness                               = GetInt32(new IntPtr(p + 0x028)); // 0x28 ID_Softness                 ( ModelPrimitiveType int int int Int32 )
+            value.ID_UnderlayColor                          = GetInt32(new IntPtr(p + 0x02C)); // 0x2C ID_UnderlayColor            ( ModelPrimitiveType int int int Int32 )
+            value.ID_UnderlayOffsetX                        = GetInt32(new IntPtr(p + 0x030)); // 0x30 ID_UnderlayOffsetX          ( ModelPrimitiveType int int int Int32 )
+            value.ID_UnderlayOffsetY                        = GetInt32(new IntPtr(p + 0x034)); // 0x34 ID_UnderlayOffsetY          ( ModelPrimitiveType int int int Int32 )
+            value.ID_UnderlayDilate                         = GetInt32(new IntPtr(p + 0x038)); // 0x38 ID_UnderlayDilate           ( ModelPrimitiveType int int int Int32 )
+            value.ID_UnderlaySoftness                       = GetInt32(new IntPtr(p + 0x03C)); // 0x3C ID_UnderlaySoftness         ( ModelPrimitiveType int int int Int32 )
+            value.ID_UnderlayOffset                         = GetInt32(new IntPtr(p + 0x040)); // 0x40 ID_UnderlayOffset           ( ModelPrimitiveType int int int Int32 )
+            value.ID_UnderlayIsoPerimeter                   = GetInt32(new IntPtr(p + 0x044)); // 0x44 ID_UnderlayIsoPerimeter     ( ModelPrimitiveType int int int Int32 )
+            value.ID_WeightNormal                           = GetInt32(new IntPtr(p + 0x048)); // 0x48 ID_WeightNormal             ( ModelPrimitiveType int int int Int32 )
+            value.ID_WeightBold                             = GetInt32(new IntPtr(p + 0x04C)); // 0x4C ID_WeightBold               ( ModelPrimitiveType int int int Int32 )
+            value.ID_OutlineTex                             = GetInt32(new IntPtr(p + 0x050)); // 0x50 ID_OutlineTex               ( ModelPrimitiveType int int int Int32 )
+            value.ID_OutlineWidth                           = GetInt32(new IntPtr(p + 0x054)); // 0x54 ID_OutlineWidth             ( ModelPrimitiveType int int int Int32 )
+            value.ID_OutlineSoftness                        = GetInt32(new IntPtr(p + 0x058)); // 0x58 ID_OutlineSoftness          ( ModelPrimitiveType int int int Int32 )
+            value.ID_OutlineColor                           = GetInt32(new IntPtr(p + 0x05C)); // 0x5C ID_OutlineColor             ( ModelPrimitiveType int int int Int32 )
+            value.ID_Outline2Color                          = GetInt32(new IntPtr(p + 0x060)); // 0x60 ID_Outline2Color            ( ModelPrimitiveType int int int Int32 )
+            value.ID_Outline2Width                          = GetInt32(new IntPtr(p + 0x064)); // 0x64 ID_Outline2Width            ( ModelPrimitiveType int int int Int32 )
+            value.ID_Padding                                = GetInt32(new IntPtr(p + 0x068)); // 0x68 ID_Padding                  ( ModelPrimitiveType int int int Int32 )
+            value.ID_GradientScale                          = GetInt32(new IntPtr(p + 0x06C)); // 0x6C ID_GradientScale            ( ModelPrimitiveType int int int Int32 )
+            value.ID_ScaleX                                 = GetInt32(new IntPtr(p + 0x070)); // 0x70 ID_ScaleX                   ( ModelPrimitiveType int int int Int32 )
+            value.ID_ScaleY                                 = GetInt32(new IntPtr(p + 0x074)); // 0x74 ID_ScaleY                   ( ModelPrimitiveType int int int Int32 )
+            value.ID_PerspectiveFilter                      = GetInt32(new IntPtr(p + 0x078)); // 0x78 ID_PerspectiveFilter        ( ModelPrimitiveType int int int Int32 )
+            value.ID_Sharpness                              = GetInt32(new IntPtr(p + 0x07C)); // 0x7C ID_Sharpness                ( ModelPrimitiveType int int int Int32 )
+            value.ID_TextureWidth                           = GetInt32(new IntPtr(p + 0x080)); // 0x80 ID_TextureWidth             ( ModelPrimitiveType int int int Int32 )
+            value.ID_TextureHeight                          = GetInt32(new IntPtr(p + 0x084)); // 0x84 ID_TextureHeight            ( ModelPrimitiveType int int int Int32 )
+            value.ID_BevelAmount                            = GetInt32(new IntPtr(p + 0x088)); // 0x88 ID_BevelAmount              ( ModelPrimitiveType int int int Int32 )
+            value.ID_GlowColor                              = GetInt32(new IntPtr(p + 0x08C)); // 0x8C ID_GlowColor                ( ModelPrimitiveType int int int Int32 )
+            value.ID_GlowOffset                             = GetInt32(new IntPtr(p + 0x090)); // 0x90 ID_GlowOffset               ( ModelPrimitiveType int int int Int32 )
+            value.ID_GlowPower                              = GetInt32(new IntPtr(p + 0x094)); // 0x94 ID_GlowPower                ( ModelPrimitiveType int int int Int32 )
+            value.ID_GlowOuter                              = GetInt32(new IntPtr(p + 0x098)); // 0x98 ID_GlowOuter                ( ModelPrimitiveType int int int Int32 )
+            value.ID_GlowInner                              = GetInt32(new IntPtr(p + 0x09C)); // 0x9C ID_GlowInner                ( ModelPrimitiveType int int int Int32 )
+            value.ID_LightAngle                             = GetInt32(new IntPtr(p + 0x0A0)); // 0xA0 ID_LightAngle               ( ModelPrimitiveType int int int Int32 )
+            value.ID_EnvMap                                 = GetInt32(new IntPtr(p + 0x0A4)); // 0xA4 ID_EnvMap                   ( ModelPrimitiveType int int int Int32 )
+            value.ID_EnvMatrix                              = GetInt32(new IntPtr(p + 0x0A8)); // 0xA8 ID_EnvMatrix                ( ModelPrimitiveType int int int Int32 )
+            value.ID_EnvMatrixRotation                      = GetInt32(new IntPtr(p + 0x0AC)); // 0xAC ID_EnvMatrixRotation        ( ModelPrimitiveType int int int Int32 )
+            value.ID_MaskCoord                              = GetInt32(new IntPtr(p + 0x0B0)); // 0xB0 ID_MaskCoord                ( ModelPrimitiveType int int int Int32 )
+            value.ID_ClipRect                               = GetInt32(new IntPtr(p + 0x0B4)); // 0xB4 ID_ClipRect                 ( ModelPrimitiveType int int int Int32 )
+            value.ID_MaskSoftnessX                          = GetInt32(new IntPtr(p + 0x0B8)); // 0xB8 ID_MaskSoftnessX            ( ModelPrimitiveType int int int Int32 )
+            value.ID_MaskSoftnessY                          = GetInt32(new IntPtr(p + 0x0BC)); // 0xBC ID_MaskSoftnessY            ( ModelPrimitiveType int int int Int32 )
+            value.ID_VertexOffsetX                          = GetInt32(new IntPtr(p + 0x0C0)); // 0xC0 ID_VertexOffsetX            ( ModelPrimitiveType int int int Int32 )
+            value.ID_VertexOffsetY                          = GetInt32(new IntPtr(p + 0x0C4)); // 0xC4 ID_VertexOffsetY            ( ModelPrimitiveType int int int Int32 )
+            value.ID_UseClipRect                            = GetInt32(new IntPtr(p + 0x0C8)); // 0xC8 ID_UseClipRect              ( ModelPrimitiveType int int int Int32 )
+            value.ID_StencilID                              = GetInt32(new IntPtr(p + 0x0CC)); // 0xCC ID_StencilID                ( ModelPrimitiveType int int int Int32 )
+            value.ID_StencilOp                              = GetInt32(new IntPtr(p + 0x0D0)); // 0xD0 ID_StencilOp                ( ModelPrimitiveType int int int Int32 )
+            value.ID_StencilComp                            = GetInt32(new IntPtr(p + 0x0D4)); // 0xD4 ID_StencilComp              ( ModelPrimitiveType int int int Int32 )
+            value.ID_StencilReadMask                        = GetInt32(new IntPtr(p + 0x0D8)); // 0xD8 ID_StencilReadMask          ( ModelPrimitiveType int int int Int32 )
+            value.ID_StencilWriteMask                       = GetInt32(new IntPtr(p + 0x0DC)); // 0xDC ID_StencilWriteMask         ( ModelPrimitiveType int int int Int32 )
+            value.ID_ShaderFlags                            = GetInt32(new IntPtr(p + 0x0E0)); // 0xE0 ID_ShaderFlags              ( ModelPrimitiveType int int int Int32 )
+            value.ID_ScaleRatio_A                           = GetInt32(new IntPtr(p + 0x0E4)); // 0xE4 ID_ScaleRatio_A             ( ModelPrimitiveType int int int Int32 )
+            value.ID_ScaleRatio_B                           = GetInt32(new IntPtr(p + 0x0E8)); // 0xE8 ID_ScaleRatio_B             ( ModelPrimitiveType int int int Int32 )
+            value.ID_ScaleRatio_C                           = GetInt32(new IntPtr(p + 0x0EC)); // 0xEC ID_ScaleRatio_C             ( ModelPrimitiveType int int int Int32 )
+            value.Keyword_Bevel                             = GetString(new IntPtr(p + 0x0F0)); // 0xF0 Keyword_Bevel               ( ModelPrimitiveType string string string String )
+            value.Keyword_Glow                              = GetString(new IntPtr(p + 0x0F8)); // 0xF8 Keyword_Glow                ( ModelPrimitiveType string string string String )
+            value.Keyword_Underlay                          = GetString(new IntPtr(p + 0x100)); // 0x100 Keyword_Underlay            ( ModelPrimitiveType string string string String )
+            value.Keyword_Ratios                            = GetString(new IntPtr(p + 0x108)); // 0x108 Keyword_Ratios              ( ModelPrimitiveType string string string String )
+            value.Keyword_MASK_SOFT                         = GetString(new IntPtr(p + 0x110)); // 0x110 Keyword_MASK_SOFT           ( ModelPrimitiveType string string string String )
+            value.Keyword_MASK_HARD                         = GetString(new IntPtr(p + 0x118)); // 0x118 Keyword_MASK_HARD           ( ModelPrimitiveType string string string String )
+            value.Keyword_MASK_TEX                          = GetString(new IntPtr(p + 0x120)); // 0x120 Keyword_MASK_TEX            ( ModelPrimitiveType string string string String )
+            value.Keyword_Outline                           = GetString(new IntPtr(p + 0x128)); // 0x128 Keyword_Outline             ( ModelPrimitiveType string string string String )
+            value.ShaderTag_ZTestMode                       = GetString(new IntPtr(p + 0x130)); // 0x130 ShaderTag_ZTestMode         ( ModelPrimitiveType string string string String )
+            value.ShaderTag_CullMode                        = GetString(new IntPtr(p + 0x138)); // 0x138 ShaderTag_CullMode          ( ModelPrimitiveType string string string String )
+            value.M_clamp                                   = GetSingle(new IntPtr(p + 0x140)); // 0x140 M_clamp                     ( ModelPrimitiveType float float float Single )
+            value.IsInitialized                             = GetBool(new IntPtr(p + 0x144)); // 0x144 IsInitialized               ( ModelPrimitiveType bool bool bool Bool )
+            value.K_ShaderRef_MobileSDF                     = GetObject<Shader>(new IntPtr(p + 0x148), ReversePrism.DataModels.Shader.FromPointer); // 0x148 K_ShaderRef_MobileSDF       ( ModelClassType Shader Shader Shader Pointer )
+            value.K_ShaderRef_MobileBitmap                  = GetObject<Shader>(new IntPtr(p + 0x150), ReversePrism.DataModels.Shader.FromPointer); // 0x150 K_ShaderRef_MobileBitmap    ( ModelClassType Shader Shader Shader Pointer )
 
             return value;
         }

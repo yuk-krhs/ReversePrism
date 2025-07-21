@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 3C8 Binding                                  0001867102A0 ModelClassType IBinding IBinding IBinding Pointer
-    // 3D0 BindingPath                              000186671910 ModelPrimitiveType string string string String
+    // 3C8 Binding                                  ModelClassType IBinding IBinding IBinding Pointer
+    // 3D0 BindingPath                              ModelPrimitiveType string string string String
     public partial class BindableElement : DataModel
     {
         public IBinding?                                Binding                                 { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BindableElement() { Pointer= p0 };
 
-            value.Binding                                   = GetObject<IBinding>(new IntPtr(p + 0x3C8), ReversePrism.DataModels.IBinding.FromPointer); // 0245A5022FC8 0x3C8 Binding                     ( 0001867102A0 ModelClassType IBinding IBinding IBinding Pointer )
-            value.BindingPath                               = GetString(new IntPtr(p + 0x3D0)); // 0245A5022FE8 0x3D0 BindingPath                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.Binding                                   = GetObject<IBinding>(new IntPtr(p + 0x3C8), ReversePrism.DataModels.IBinding.FromPointer); // 0x3C8 Binding                     ( ModelClassType IBinding IBinding IBinding Pointer )
+            value.BindingPath                               = GetString(new IntPtr(p + 0x3D0)); // 0x3D0 BindingPath                 ( ModelPrimitiveType string string string String )
 
             return value;
         }

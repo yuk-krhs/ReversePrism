@@ -8,20 +8,20 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ChangedThisFrame                         000186595960 ModelPrimitiveType bool bool bool Bool
-    // 018 LeftButton                               0001867094C0 ModelEnumType ButtonState ButtonState ButtonState Int32
-    // 0B0 RightButton                              0001867094C0 ModelEnumType ButtonState ButtonState ButtonState Int32
-    // 148 MiddleButton                             0001867094C0 ModelEnumType ButtonState ButtonState ButtonState Int32
-    // 1E0 EventData                                00018652FB60 ModelClassType ExtendedPointerEventData ExtendedPointerEventData ExtendedPointerEventData Pointer
-    // 1E8 M_ScreenPosition                         0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
-    // 1F0 M_ScrollDelta                            0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
-    // 1F8 M_WorldPosition                          0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32
-    // 204 M_WorldOrientation                       000186649E40 ModelEnumType Quaternion Quaternion Quaternion Int32
-    // 214 M_Pressure                               0001866656B0 ModelPrimitiveType float float float Single
-    // 218 M_AzimuthAngle                           0001866656B0 ModelPrimitiveType float float float Single
-    // 21C M_AltitudeAngle                          0001866656B0 ModelPrimitiveType float float float Single
-    // 220 M_Twist                                  0001866656B0 ModelPrimitiveType float float float Single
-    // 224 M_Radius                                 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 010 ChangedThisFrame                         ModelPrimitiveType bool bool bool Bool
+    // 018 LeftButton                               ModelEnumType ButtonState ButtonState ButtonState Int32
+    // 0B0 RightButton                              ModelEnumType ButtonState ButtonState ButtonState Int32
+    // 148 MiddleButton                             ModelEnumType ButtonState ButtonState ButtonState Int32
+    // 1E0 EventData                                ModelClassType ExtendedPointerEventData ExtendedPointerEventData ExtendedPointerEventData Pointer
+    // 1E8 M_ScreenPosition                         ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 1F0 M_ScrollDelta                            ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 1F8 M_WorldPosition                          ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 204 M_WorldOrientation                       ModelEnumType Quaternion Quaternion Quaternion Int32
+    // 214 M_Pressure                               ModelPrimitiveType float float float Single
+    // 218 M_AzimuthAngle                           ModelPrimitiveType float float float Single
+    // 21C M_AltitudeAngle                          ModelPrimitiveType float float float Single
+    // 220 M_Twist                                  ModelPrimitiveType float float float Single
+    // 224 M_Radius                                 ModelEnumType Vector2 Vector2 Vector2 Int32
     public partial class PointerModel : DataModel
     {
         public bool                                     ChangedThisFrame                        { get; set; }
@@ -47,20 +47,20 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PointerModel() { Pointer= p0 };
 
-            value.ChangedThisFrame                          = GetBool(new IntPtr(p + 0x010)); // 02466777DF88 0x10 ChangedThisFrame            ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.LeftButton                                = (ButtonState)GetInt32(new IntPtr(p + 0x018)); // 02466777DFA8 0x18 LeftButton                  ( 0001867094C0 ModelEnumType ButtonState ButtonState ButtonState Int32 )
-            value.RightButton                               = (ButtonState)GetInt32(new IntPtr(p + 0x0B0)); // 02466777DFC8 0xB0 RightButton                 ( 0001867094C0 ModelEnumType ButtonState ButtonState ButtonState Int32 )
-            value.MiddleButton                              = (ButtonState)GetInt32(new IntPtr(p + 0x148)); // 02466777DFE8 0x148 MiddleButton                ( 0001867094C0 ModelEnumType ButtonState ButtonState ButtonState Int32 )
-            value.EventData                                 = GetObject<ExtendedPointerEventData>(new IntPtr(p + 0x1E0), ReversePrism.DataModels.ExtendedPointerEventData.FromPointer); // 02466777E008 0x1E0 EventData                   ( 00018652FB60 ModelClassType ExtendedPointerEventData ExtendedPointerEventData ExtendedPointerEventData Pointer )
-            value.M_ScreenPosition                          = (Vector2)GetInt32(new IntPtr(p + 0x1E8)); // 02466777E028 0x1E8 M_ScreenPosition            ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.M_ScrollDelta                             = (Vector2)GetInt32(new IntPtr(p + 0x1F0)); // 02466777E048 0x1F0 M_ScrollDelta               ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.M_WorldPosition                           = (Vector3)GetInt32(new IntPtr(p + 0x1F8)); // 02466777E068 0x1F8 M_WorldPosition             ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.M_WorldOrientation                        = (Quaternion)GetInt32(new IntPtr(p + 0x204)); // 02466777E088 0x204 M_WorldOrientation          ( 000186649E40 ModelEnumType Quaternion Quaternion Quaternion Int32 )
-            value.M_Pressure                                = GetSingle(new IntPtr(p + 0x214)); // 02466777E0A8 0x214 M_Pressure                  ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_AzimuthAngle                            = GetSingle(new IntPtr(p + 0x218)); // 02466777E0C8 0x218 M_AzimuthAngle              ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_AltitudeAngle                           = GetSingle(new IntPtr(p + 0x21C)); // 02466777E0E8 0x21C M_AltitudeAngle             ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_Twist                                   = GetSingle(new IntPtr(p + 0x220)); // 02466777E108 0x220 M_Twist                     ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_Radius                                  = (Vector2)GetInt32(new IntPtr(p + 0x224)); // 02466777E128 0x224 M_Radius                    ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.ChangedThisFrame                          = GetBool(new IntPtr(p + 0x010)); // 0x10 ChangedThisFrame            ( ModelPrimitiveType bool bool bool Bool )
+            value.LeftButton                                = (ButtonState)GetInt32(new IntPtr(p + 0x018)); // 0x18 LeftButton                  ( ModelEnumType ButtonState ButtonState ButtonState Int32 )
+            value.RightButton                               = (ButtonState)GetInt32(new IntPtr(p + 0x0B0)); // 0xB0 RightButton                 ( ModelEnumType ButtonState ButtonState ButtonState Int32 )
+            value.MiddleButton                              = (ButtonState)GetInt32(new IntPtr(p + 0x148)); // 0x148 MiddleButton                ( ModelEnumType ButtonState ButtonState ButtonState Int32 )
+            value.EventData                                 = GetObject<ExtendedPointerEventData>(new IntPtr(p + 0x1E0), ReversePrism.DataModels.ExtendedPointerEventData.FromPointer); // 0x1E0 EventData                   ( ModelClassType ExtendedPointerEventData ExtendedPointerEventData ExtendedPointerEventData Pointer )
+            value.M_ScreenPosition                          = (Vector2)GetInt32(new IntPtr(p + 0x1E8)); // 0x1E8 M_ScreenPosition            ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.M_ScrollDelta                             = (Vector2)GetInt32(new IntPtr(p + 0x1F0)); // 0x1F0 M_ScrollDelta               ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.M_WorldPosition                           = (Vector3)GetInt32(new IntPtr(p + 0x1F8)); // 0x1F8 M_WorldPosition             ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.M_WorldOrientation                        = (Quaternion)GetInt32(new IntPtr(p + 0x204)); // 0x204 M_WorldOrientation          ( ModelEnumType Quaternion Quaternion Quaternion Int32 )
+            value.M_Pressure                                = GetSingle(new IntPtr(p + 0x214)); // 0x214 M_Pressure                  ( ModelPrimitiveType float float float Single )
+            value.M_AzimuthAngle                            = GetSingle(new IntPtr(p + 0x218)); // 0x218 M_AzimuthAngle              ( ModelPrimitiveType float float float Single )
+            value.M_AltitudeAngle                           = GetSingle(new IntPtr(p + 0x21C)); // 0x21C M_AltitudeAngle             ( ModelPrimitiveType float float float Single )
+            value.M_Twist                                   = GetSingle(new IntPtr(p + 0x220)); // 0x220 M_Twist                     ( ModelPrimitiveType float float float Single )
+            value.M_Radius                                  = (Vector2)GetInt32(new IntPtr(p + 0x224)); // 0x224 M_Radius                    ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
 
             return value;
         }

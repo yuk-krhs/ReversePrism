@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Parent                                   000186632B50 ModelClassType RefCountDisposable RefCountDisposable RefCountDisposable Pointer
+    // 010 Parent                                   ModelClassType RefCountDisposable RefCountDisposable RefCountDisposable Pointer
     // 018 parentLock                               <object> IL2CPP_TYPE_OBJECT
     public partial class InnerDisposable : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InnerDisposable() { Pointer= p0 };
 
-            value.Parent                                    = GetObject<RefCountDisposable>(new IntPtr(p + 0x010), ReversePrism.DataModels.RefCountDisposable.FromPointer); // 0246694D62C8 0x10 Parent                      ( 000186632B50 ModelClassType RefCountDisposable RefCountDisposable RefCountDisposable Pointer )
+            value.Parent                                    = GetObject<RefCountDisposable>(new IntPtr(p + 0x010), ReversePrism.DataModels.RefCountDisposable.FromPointer); // 0x10 Parent                      ( ModelClassType RefCountDisposable RefCountDisposable RefCountDisposable Pointer )
 
             return value;
         }

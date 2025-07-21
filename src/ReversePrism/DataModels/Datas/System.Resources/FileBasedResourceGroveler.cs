@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Mediator                                 0001866D7A00 ModelClassType ResourceManagerMediator ResourceManagerMediator ResourceManagerMediator Pointer
+    // 010 Mediator                                 ModelClassType ResourceManagerMediator ResourceManagerMediator ResourceManagerMediator Pointer
     public partial class FileBasedResourceGroveler : DataModel
     {
         public ResourceManagerMediator?                 Mediator                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FileBasedResourceGroveler() { Pointer= p0 };
 
-            value.Mediator                                  = GetObject<ResourceManagerMediator>(new IntPtr(p + 0x010), ReversePrism.DataModels.ResourceManagerMediator.FromPointer); // 024666D28FA8 0x10 Mediator                    ( 0001866D7A00 ModelClassType ResourceManagerMediator ResourceManagerMediator ResourceManagerMediator Pointer )
+            value.Mediator                                  = GetObject<ResourceManagerMediator>(new IntPtr(p + 0x010), ReversePrism.DataModels.ResourceManagerMediator.FromPointer); // 0x10 Mediator                    ( ModelClassType ResourceManagerMediator ResourceManagerMediator ResourceManagerMediator Pointer )
 
             return value;
         }

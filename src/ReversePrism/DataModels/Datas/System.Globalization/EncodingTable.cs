@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 encodingDataPtr                          InternalEncodingDataItem[] IL2CPP_TYPE_SZARRAY
     // 008 codePageDataPtr                          InternalCodePageDataItem[] IL2CPP_TYPE_SZARRAY
-    // 010 LastEncodingItem                         0001865F38E0 ModelPrimitiveType int int int Int32
+    // 010 LastEncodingItem                         ModelPrimitiveType int int int Int32
     // 018 hashByName                               Dictionary`2<string, int> IL2CPP_TYPE_GENERICINST
     // 020 hashByCodePage                           Dictionary`2<int, CodePageDataItem> IL2CPP_TYPE_GENERICINST
     public partial class EncodingTable : DataModel
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EncodingTable() { Pointer= p0 };
 
-            value.LastEncodingItem                          = GetInt32(new IntPtr(p + 0x010)); // 0245A41BE8C8 0x10 LastEncodingItem            ( 0001865F38E0 ModelPrimitiveType int int int Int32 )
+            value.LastEncodingItem                          = GetInt32(new IntPtr(p + 0x010)); // 0x10 LastEncodingItem            ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

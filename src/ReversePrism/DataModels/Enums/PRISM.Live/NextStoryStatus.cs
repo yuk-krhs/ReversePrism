@@ -10,6 +10,7 @@ namespace ReversePrism.DataModels
 
     public enum NextStoryStatus
     {
+        None,
         Normal,
         ThisTimeNewStory,
         ThisTimeComplete,

@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 RecordListFieldNumber                    int IL2CPP_TYPE_I4
     // 008 _repeated_recordList_codec               FieldCodec`1<StoreItemPurchaseHistoryRecordStatus> IL2CPP_TYPE_GENERICINST
-    // 018 RecordList                               000185CF2AF8 ModelClassListType RepeatedField`1<StoreItemPurchaseHistoryRecordStatus> RepeatedField`1<StoreItemPurchaseHistoryRecordStatus> List<StoreItemPurchaseHistoryRecordStatus> Pointer
+    // 018 RecordList                               ModelClassListType RepeatedField`1<StoreItemPurchaseHistoryRecordStatus> RepeatedField`1<StoreItemPurchaseHistoryRecordStatus> List<StoreItemPurchaseHistoryRecordStatus> Pointer
     public partial class StoreItemPurchaseHistoryStatus : DataModel
     {
         public List<StoreItemPurchaseHistoryRecordStatus>? RecordList                              { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StoreItemPurchaseHistoryStatus() { Pointer= p0 };
 
-            value.RecordList                                = GetObjectList<StoreItemPurchaseHistoryRecordStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoreItemPurchaseHistoryRecordStatus.FromPointer); // 02466276C568 0x18 RecordList                  ( 000185CF2AF8 ModelClassListType RepeatedField`1<StoreItemPurchaseHistoryRecordStatus> RepeatedField`1<StoreItemPurchaseHistoryRecordStatus> List<StoreItemPurchaseHistoryRecordStatus> Pointer )
+            value.RecordList                                = GetObjectList<StoreItemPurchaseHistoryRecordStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoreItemPurchaseHistoryRecordStatus.FromPointer); // 0x18 RecordList                  ( ModelClassListType RepeatedField`1<StoreItemPurchaseHistoryRecordStatus> RepeatedField`1<StoreItemPurchaseHistoryRecordStatus> List<StoreItemPurchaseHistoryRecordStatus> Pointer )
 
             return value;
         }

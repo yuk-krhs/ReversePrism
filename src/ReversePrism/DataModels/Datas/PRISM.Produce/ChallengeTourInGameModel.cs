@@ -8,14 +8,16 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 168 EnemySkillExecuteTime                    000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer
-    // 170 Opponent                                 0001867230B0 ModelClassType IChallengeTourOpponentStatus IChallengeTourOpponentStatus IChallengeTourOpponentStatus Pointer
-    // 178 InGameTallyModel                         000186573AA0 ModelClassType ChallengeTourInGameTallyModel ChallengeTourInGameTallyModel ChallengeTourInGameTallyModel Pointer
+    // 158 EnemySkillExecuteTime                    ModelPrimitiveListType float[] float[] List<float> Pointer
+    // 160 Opponent                                 ModelClassType IChallengeTourOpponentStatus IChallengeTourOpponentStatus IChallengeTourOpponentStatus Pointer
+    // 168 InGameTallyModel                         ModelClassType ChallengeTourInGameTallyModel ChallengeTourInGameTallyModel ChallengeTourInGameTallyModel Pointer
+    // 170 ChallengeTourMissionProgressCalcModel    ModelClassType ChallengeTourMissionProgressCalcModel ChallengeTourMissionProgressCalcModel ChallengeTourMissionProgressCalcModel Pointer
     public partial class ChallengeTourInGameModel : DataModel
     {
         public List<float>?                             EnemySkillExecuteTime                   { get; set; }
         public IChallengeTourOpponentStatus?            Opponent                                { get; set; }
         public ChallengeTourInGameTallyModel?           InGameTallyModel                        { get; set; }
+        public ChallengeTourMissionProgressCalcModel?   ChallengeTourMissionProgressCalcModel   { get; set; }
 
         public static ChallengeTourInGameModel? FromPointer(IntPtr p0)
         {
@@ -25,9 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChallengeTourInGameModel() { Pointer= p0 };
 
-            value.EnemySkillExecuteTime                     = GetSingleList(new IntPtr(p + 0x168)); // 024665B479D0 0x168 EnemySkillExecuteTime       ( 000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer )
-            value.Opponent                                  = GetObject<IChallengeTourOpponentStatus>(new IntPtr(p + 0x170), ReversePrism.DataModels.IChallengeTourOpponentStatus.FromPointer); // 024665B479F0 0x170 Opponent                    ( 0001867230B0 ModelClassType IChallengeTourOpponentStatus IChallengeTourOpponentStatus IChallengeTourOpponentStatus Pointer )
-            value.InGameTallyModel                          = GetObject<ChallengeTourInGameTallyModel>(new IntPtr(p + 0x178), ReversePrism.DataModels.ChallengeTourInGameTallyModel.FromPointer); // 024665B47A10 0x178 InGameTallyModel            ( 000186573AA0 ModelClassType ChallengeTourInGameTallyModel ChallengeTourInGameTallyModel ChallengeTourInGameTallyModel Pointer )
+            value.EnemySkillExecuteTime                     = GetSingleList(new IntPtr(p + 0x158)); // 0x158 EnemySkillExecuteTime       ( ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.Opponent                                  = GetObject<IChallengeTourOpponentStatus>(new IntPtr(p + 0x160), ReversePrism.DataModels.IChallengeTourOpponentStatus.FromPointer); // 0x160 Opponent                    ( ModelClassType IChallengeTourOpponentStatus IChallengeTourOpponentStatus IChallengeTourOpponentStatus Pointer )
+            value.InGameTallyModel                          = GetObject<ChallengeTourInGameTallyModel>(new IntPtr(p + 0x168), ReversePrism.DataModels.ChallengeTourInGameTallyModel.FromPointer); // 0x168 InGameTallyModel            ( ModelClassType ChallengeTourInGameTallyModel ChallengeTourInGameTallyModel ChallengeTourInGameTallyModel Pointer )
+            value.ChallengeTourMissionProgressCalcModel     = GetObject<ChallengeTourMissionProgressCalcModel>(new IntPtr(p + 0x170), ReversePrism.DataModels.ChallengeTourMissionProgressCalcModel.FromPointer); // 0x170 ChallengeTourMissionProgressCalcModel ( ModelClassType ChallengeTourMissionProgressCalcModel ChallengeTourMissionProgressCalcModel ChallengeTourMissionProgressCalcModel Pointer )
 
             return value;
         }

@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Type                                     0001866936B0 ModelClassType Type Type Type Pointer
-    // 018 Value                                    0001865CF210 ModelClassType Expression Expression Expression Pointer
-    // 020 Target                                   000186777830 ModelClassType LabelTarget LabelTarget LabelTarget Pointer
-    // 028 Kind                                     00018668D710 ModelEnumType GotoExpressionKind GotoExpressionKind GotoExpressionKind Int32
+    // 010 Type                                     ModelClassType Type Type Type Pointer
+    // 018 Value                                    ModelClassType Expression Expression Expression Pointer
+    // 020 Target                                   ModelClassType LabelTarget LabelTarget LabelTarget Pointer
+    // 028 Kind                                     ModelEnumType GotoExpressionKind GotoExpressionKind GotoExpressionKind Int32
     public partial class GotoExpression : DataModel
     {
         public Type?                                    Type                                    { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GotoExpression() { Pointer= p0 };
 
-            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 024669F7DCE0 0x10 Type                        ( 0001866936B0 ModelClassType Type Type Type Pointer )
-            value.Value                                     = GetObject<Expression>(new IntPtr(p + 0x018), ReversePrism.DataModels.Expression.FromPointer); // 024669F7DD00 0x18 Value                       ( 0001865CF210 ModelClassType Expression Expression Expression Pointer )
-            value.Target                                    = GetObject<LabelTarget>(new IntPtr(p + 0x020), ReversePrism.DataModels.LabelTarget.FromPointer); // 024669F7DD20 0x20 Target                      ( 000186777830 ModelClassType LabelTarget LabelTarget LabelTarget Pointer )
-            value.Kind                                      = (GotoExpressionKind)GetInt32(new IntPtr(p + 0x028)); // 024669F7DD40 0x28 Kind                        ( 00018668D710 ModelEnumType GotoExpressionKind GotoExpressionKind GotoExpressionKind Int32 )
+            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0x10 Type                        ( ModelClassType Type Type Type Pointer )
+            value.Value                                     = GetObject<Expression>(new IntPtr(p + 0x018), ReversePrism.DataModels.Expression.FromPointer); // 0x18 Value                       ( ModelClassType Expression Expression Expression Pointer )
+            value.Target                                    = GetObject<LabelTarget>(new IntPtr(p + 0x020), ReversePrism.DataModels.LabelTarget.FromPointer); // 0x20 Target                      ( ModelClassType LabelTarget LabelTarget LabelTarget Pointer )
+            value.Kind                                      = (GotoExpressionKind)GetInt32(new IntPtr(p + 0x028)); // 0x28 Kind                        ( ModelEnumType GotoExpressionKind GotoExpressionKind GotoExpressionKind Int32 )
 
             return value;
         }

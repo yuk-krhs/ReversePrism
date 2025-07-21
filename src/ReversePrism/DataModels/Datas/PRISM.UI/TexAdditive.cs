@@ -11,12 +11,12 @@ namespace ReversePrism.DataModels
     // 000 TintColorID                              int IL2CPP_TYPE_I4
     // 004 EffectTextureID                          int IL2CPP_TYPE_I4
     // 008 AdditiveAmountID                         int IL2CPP_TYPE_I4
-    // 020 Graphic                                  0001866920B0 ModelClassType Graphic Graphic Graphic Pointer
-    // 028 TexAdditiveMat                           00018660BDD0 ModelClassType Material Material Material Pointer
-    // 030 Shader                                   00018674C760 ModelClassType Shader Shader Shader Pointer
-    // 038 TintColor                                0001865AA8E0 ModelEnumType Color Color Color Int32
-    // 048 EffectTexture                            00018664CFB0 ModelClassType Texture Texture Texture Pointer
-    // 050 AdditiveAmount                           0001866656B0 ModelPrimitiveType float float float Single
+    // 020 Graphic                                  ModelClassType Graphic Graphic Graphic Pointer
+    // 028 TexAdditiveMat                           ModelClassType Material Material Material Pointer
+    // 030 Shader                                   ModelClassType Shader Shader Shader Pointer
+    // 038 TintColor                                ModelEnumType Color Color Color Int32
+    // 048 EffectTexture                            ModelClassType Texture Texture Texture Pointer
+    // 050 AdditiveAmount                           ModelPrimitiveType float float float Single
     public partial class TexAdditive : DataModel
     {
         public Graphic?                                 Graphic                                 { get; set; }
@@ -34,12 +34,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TexAdditive() { Pointer= p0 };
 
-            value.Graphic                                   = GetObject<Graphic>(new IntPtr(p + 0x020), ReversePrism.DataModels.Graphic.FromPointer); // 024665D90BD0 0x20 Graphic                     ( 0001866920B0 ModelClassType Graphic Graphic Graphic Pointer )
-            value.TexAdditiveMat                            = GetObject<Material>(new IntPtr(p + 0x028), ReversePrism.DataModels.Material.FromPointer); // 024665D90BF0 0x28 TexAdditiveMat              ( 00018660BDD0 ModelClassType Material Material Material Pointer )
-            value.Shader                                    = GetObject<Shader>(new IntPtr(p + 0x030), ReversePrism.DataModels.Shader.FromPointer); // 024665D90C10 0x30 Shader                      ( 00018674C760 ModelClassType Shader Shader Shader Pointer )
-            value.TintColor                                 = (Color)GetInt32(new IntPtr(p + 0x038)); // 024665D90C30 0x38 TintColor                   ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.EffectTexture                             = GetObject<Texture>(new IntPtr(p + 0x048), ReversePrism.DataModels.Texture.FromPointer); // 024665D90C50 0x48 EffectTexture               ( 00018664CFB0 ModelClassType Texture Texture Texture Pointer )
-            value.AdditiveAmount                            = GetSingle(new IntPtr(p + 0x050)); // 024665D90C70 0x50 AdditiveAmount              ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.Graphic                                   = GetObject<Graphic>(new IntPtr(p + 0x020), ReversePrism.DataModels.Graphic.FromPointer); // 0x20 Graphic                     ( ModelClassType Graphic Graphic Graphic Pointer )
+            value.TexAdditiveMat                            = GetObject<Material>(new IntPtr(p + 0x028), ReversePrism.DataModels.Material.FromPointer); // 0x28 TexAdditiveMat              ( ModelClassType Material Material Material Pointer )
+            value.Shader                                    = GetObject<Shader>(new IntPtr(p + 0x030), ReversePrism.DataModels.Shader.FromPointer); // 0x30 Shader                      ( ModelClassType Shader Shader Shader Pointer )
+            value.TintColor                                 = (Color)GetInt32(new IntPtr(p + 0x038)); // 0x38 TintColor                   ( ModelEnumType Color Color Color Int32 )
+            value.EffectTexture                             = GetObject<Texture>(new IntPtr(p + 0x048), ReversePrism.DataModels.Texture.FromPointer); // 0x48 EffectTexture               ( ModelClassType Texture Texture Texture Pointer )
+            value.AdditiveAmount                            = GetSingle(new IntPtr(p + 0x050)); // 0x50 AdditiveAmount              ( ModelPrimitiveType float float float Single )
 
             return value;
         }

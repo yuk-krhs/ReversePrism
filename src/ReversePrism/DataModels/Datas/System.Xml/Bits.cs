@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 004 MASK_0011001100110011                    uint IL2CPP_TYPE_U4
     // 008 MASK_0000111100001111                    uint IL2CPP_TYPE_U4
     // 00C MASK_0000000011111111                    uint IL2CPP_TYPE_U4
-    // 010 MASK_1111111111111111                    00018669A140 ModelPrimitiveType uint uint uint UInt32
+    // 010 MASK_1111111111111111                    ModelPrimitiveType uint uint uint UInt32
     public partial class Bits : DataModel
     {
         public uint                                     MASK_1111111111111111                   { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Bits() { Pointer= p0 };
 
-            value.MASK_1111111111111111                     = GetUInt32(new IntPtr(p + 0x010)); // 0246673B8350 0x10 MASK_1111111111111111       ( 00018669A140 ModelPrimitiveType uint uint uint UInt32 )
+            value.MASK_1111111111111111                     = GetUInt32(new IntPtr(p + 0x010)); // 0x10 MASK_1111111111111111       ( ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

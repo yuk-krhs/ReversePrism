@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 CostumeSetListView                       000186633EA0 ModelClassType CostumeSetListView CostumeSetListView CostumeSetListView Pointer
+    // 020 CostumeSetListView                       ModelClassType CostumeSetListView CostumeSetListView CostumeSetListView Pointer
     public partial class DressUpRoomCostumeSetListView : DataModel
     {
         public CostumeSetListView?                      CostumeSetListView                      { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DressUpRoomCostumeSetListView() { Pointer= p0 };
 
-            value.CostumeSetListView                        = GetObject<CostumeSetListView>(new IntPtr(p + 0x020), ReversePrism.DataModels.CostumeSetListView.FromPointer); // 02466BC95DA0 0x20 CostumeSetListView          ( 000186633EA0 ModelClassType CostumeSetListView CostumeSetListView CostumeSetListView Pointer )
+            value.CostumeSetListView                        = GetObject<CostumeSetListView>(new IntPtr(p + 0x020), ReversePrism.DataModels.CostumeSetListView.FromPointer); // 0x20 CostumeSetListView          ( ModelClassType CostumeSetListView CostumeSetListView CostumeSetListView Pointer )
 
             return value;
         }

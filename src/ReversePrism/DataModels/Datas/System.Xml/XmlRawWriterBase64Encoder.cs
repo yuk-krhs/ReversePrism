@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 RawWriter                                0001865A8A90 ModelClassType XmlRawWriter XmlRawWriter XmlRawWriter Pointer
+    // 028 RawWriter                                ModelClassType XmlRawWriter XmlRawWriter XmlRawWriter Pointer
     public partial class XmlRawWriterBase64Encoder : DataModel
     {
         public XmlRawWriter?                            RawWriter                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlRawWriterBase64Encoder() { Pointer= p0 };
 
-            value.RawWriter                                 = GetObject<XmlRawWriter>(new IntPtr(p + 0x028), ReversePrism.DataModels.XmlRawWriter.FromPointer); // 024667398078 0x28 RawWriter                   ( 0001865A8A90 ModelClassType XmlRawWriter XmlRawWriter XmlRawWriter Pointer )
+            value.RawWriter                                 = GetObject<XmlRawWriter>(new IntPtr(p + 0x028), ReversePrism.DataModels.XmlRawWriter.FromPointer); // 0x28 RawWriter                   ( ModelClassType XmlRawWriter XmlRawWriter XmlRawWriter Pointer )
 
             return value;
         }

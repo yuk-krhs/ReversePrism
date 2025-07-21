@@ -11,8 +11,8 @@ namespace ReversePrism.DataModels
     // 000 PrefabPath                               string IL2CPP_TYPE_STRING
     // 000 PacketLengthSecond                       float IL2CPP_TYPE_R4
     // 000 BufferingTime                            float IL2CPP_TYPE_R4
-    // 020 SoundReceiver                            000186538320 ModelClassType SoundReceiver SoundReceiver SoundReceiver Pointer
-    // 028 IsViewPaused                             000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 020 SoundReceiver                            ModelClassType SoundReceiver SoundReceiver SoundReceiver Pointer
+    // 028 IsViewPaused                             ModelPrimitiveType bool bool bool Bool
     public partial class SoundView : DataModel
     {
         public SoundReceiver?                           SoundReceiver                           { get; set; }
@@ -26,8 +26,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SoundView() { Pointer= p0 };
 
-            value.SoundReceiver                             = GetObject<SoundReceiver>(new IntPtr(p + 0x020), ReversePrism.DataModels.SoundReceiver.FromPointer); // 024664F8EBA8 0x20 SoundReceiver               ( 000186538320 ModelClassType SoundReceiver SoundReceiver SoundReceiver Pointer )
-            value.IsViewPaused                              = GetBool(new IntPtr(p + 0x028)); // 024664F8EBC8 0x28 IsViewPaused                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.SoundReceiver                             = GetObject<SoundReceiver>(new IntPtr(p + 0x020), ReversePrism.DataModels.SoundReceiver.FromPointer); // 0x20 SoundReceiver               ( ModelClassType SoundReceiver SoundReceiver SoundReceiver Pointer )
+            value.IsViewPaused                              = GetBool(new IntPtr(p + 0x028)); // 0x28 IsViewPaused                ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Font                                     0001865AD2F0 ModelClassType Font Font Font Pointer
-    // 018 FontAsset                                0001865D4D50 ModelClassType FontAsset FontAsset FontAsset Pointer
+    // 010 Font                                     ModelClassType Font Font Font Pointer
+    // 018 FontAsset                                ModelClassType FontAsset FontAsset FontAsset Pointer
     public partial class FontReferenceMap : DataModel
     {
         public Font?                                    Font                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FontReferenceMap() { Pointer= p0 };
 
-            value.Font                                      = GetObject<Font>(new IntPtr(p + 0x010), ReversePrism.DataModels.Font.FromPointer); // 0245A68BDFE0 0x10 Font                        ( 0001865AD2F0 ModelClassType Font Font Font Pointer )
-            value.FontAsset                                 = GetObject<FontAsset>(new IntPtr(p + 0x018), ReversePrism.DataModels.FontAsset.FromPointer); // 0245A68BE000 0x18 FontAsset                   ( 0001865D4D50 ModelClassType FontAsset FontAsset FontAsset Pointer )
+            value.Font                                      = GetObject<Font>(new IntPtr(p + 0x010), ReversePrism.DataModels.Font.FromPointer); // 0x10 Font                        ( ModelClassType Font Font Font Pointer )
+            value.FontAsset                                 = GetObject<FontAsset>(new IntPtr(p + 0x018), ReversePrism.DataModels.FontAsset.FromPointer); // 0x18 FontAsset                   ( ModelClassType FontAsset FontAsset FontAsset Pointer )
 
             return value;
         }

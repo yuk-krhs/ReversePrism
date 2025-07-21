@@ -47,43 +47,42 @@ namespace ReversePrism.DataModels
     // 130 <OnShowAllTap>k__BackingField            Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 138 <OnSetAllTap>k__BackingField             Subject`1<Action> IL2CPP_TYPE_GENERICINST
     // 140 <OnHideAllTap>k__BackingField            Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 148 <OnShowWindow>k__BackingField            Func`3<HowToPlayPopupResourceConfig, Action, UniTask> IL2CPP_TYPE_GENERICINST
-    // 150 OnHideSkipBtn                            0001866792B0 ModelClassType Action Action Action Pointer
-    // 158 OnHideCommonWindow                       0001866792B0 ModelClassType Action Action Action Pointer
-    // 160 <OnDisableFixDrowSbuject>k__BackingField Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 168 <OnCanselCardSelect>k__BackingField      Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 170 <OnSetGameStop>k__BackingField           Action`1<bool> IL2CPP_TYPE_GENERICINST
-    // 178 <OnSetPP>k__BackingField                 Action`1<int> IL2CPP_TYPE_GENERICINST
-    // 180 <OnSetMentalRate>k__BackingField         Action`1<float> IL2CPP_TYPE_GENERICINST
-    // 188 OnResetGame                              0001866792B0 ModelClassType Action Action Action Pointer
-    // 190 OnBrekeMental                            0001866792B0 ModelClassType Action Action Action Pointer
-    // 198 OnDebffSkill                             0001866792B0 ModelClassType Action Action Action Pointer
-    // 1A0 <OnSetDrowTargetCard>k__BackingField     Action`1<int> IL2CPP_TYPE_GENERICINST
-    // 1A8 <OnSetDrowStartTargetCardList>k__BackingField Action`1<int[]> IL2CPP_TYPE_GENERICINST
-    // 1B0 <OnDisableNPC>k__BackingField            Action`1<bool> IL2CPP_TYPE_GENERICINST
-    // 1B8 <OnNotMaxAppeal>k__BackingField          Action`1<bool> IL2CPP_TYPE_GENERICINST
-    // 1C0 <OnAddUseCardAction>k__BackingField      Action`1<Action> IL2CPP_TYPE_GENERICINST
-    // 1C8 <OnRemoveUseCardAction>k__BackingField   Action`1<Action> IL2CPP_TYPE_GENERICINST
-    // 1D0 <OnAddUseEnemyCardAction>k__BackingField Action`1<Action> IL2CPP_TYPE_GENERICINST
-    // 1D8 <OnRemoveUseEnemyCardAction>k__BackingField Action`1<Action> IL2CPP_TYPE_GENERICINST
-    // 1E0 <OnAddUseUnitSkillAction>k__BackingField Action`1<Action`1<int>> IL2CPP_TYPE_GENERICINST
-    // 1E8 <OnRemoveUseUnitSkillAction>k__BackingField Action`1<Action`1<int>> IL2CPP_TYPE_GENERICINST
-    // 1F0 <OnAddChangePPAction>k__BackingField     Action`1<Action`2<int, int>> IL2CPP_TYPE_GENERICINST
-    // 1F8 <OnRemoveChangePPAction>k__BackingField  Action`1<Action`2<int, int>> IL2CPP_TYPE_GENERICINST
-    // 200 <OnAddStartMentalBreak>k__BackingField   Action`1<Action> IL2CPP_TYPE_GENERICINST
-    // 208 <OnRemoveStartMentalBreak>k__BackingField Action`1<Action> IL2CPP_TYPE_GENERICINST
-    // 210 <OnAddRecoverMentalBreak>k__BackingField Action`1<Action> IL2CPP_TYPE_GENERICINST
-    // 218 <OnRemoveRecoverMentalBreak>k__BackingField Action`1<Action> IL2CPP_TYPE_GENERICINST
-    // 220 <OnAddGetCurrentTimeLimit>k__BackingField Action`1<Action`1<float>> IL2CPP_TYPE_GENERICINST
-    // 228 <OnRemoveGetCurrentTimeLimit>k__BackingField Action`1<Action`1<float>> IL2CPP_TYPE_GENERICINST
-    // 230 <OnEndIngame>k__BackingField             Action`1<Action> IL2CPP_TYPE_GENERICINST
-    // 238 <OnStartIngame>k__BackingField           Action`1<Action> IL2CPP_TYPE_GENERICINST
-    // 240 <OnAddTapCanselSbuject>k__BackingField   Subject`1<Action> IL2CPP_TYPE_GENERICINST
-    // 248 <OnRemoveTapCanselSbuject>k__BackingField Subject`1<Action> IL2CPP_TYPE_GENERICINST
-    // 250 <OnAddTapCardSbuject>k__BackingField     Subject`1<Action> IL2CPP_TYPE_GENERICINST
-    // 258 <OnRemoveTapCardSbuject>k__BackingField  Subject`1<Action> IL2CPP_TYPE_GENERICINST
-    // 260 <OnAddTapBuffIconSbuject>k__BackingField Subject`1<Action> IL2CPP_TYPE_GENERICINST
-    // 268 <OnRemoveTapBuffIconSbuject>k__BackingField Subject`1<Action> IL2CPP_TYPE_GENERICINST
+    // 148 OnHideSkipBtn                            ModelClassType Action Action Action Pointer
+    // 150 OnHideCommonWindow                       ModelClassType Action Action Action Pointer
+    // 158 <OnDisableFixDrowSbuject>k__BackingField Subject`1<Unit> IL2CPP_TYPE_GENERICINST
+    // 160 <OnCanselCardSelect>k__BackingField      Subject`1<Unit> IL2CPP_TYPE_GENERICINST
+    // 168 <OnSetGameStop>k__BackingField           Action`1<bool> IL2CPP_TYPE_GENERICINST
+    // 170 <OnSetPP>k__BackingField                 Action`1<int> IL2CPP_TYPE_GENERICINST
+    // 178 <OnSetMentalRate>k__BackingField         Action`1<float> IL2CPP_TYPE_GENERICINST
+    // 180 OnResetGame                              ModelClassType Action Action Action Pointer
+    // 188 OnBrekeMental                            ModelClassType Action Action Action Pointer
+    // 190 OnDebffSkill                             ModelClassType Action Action Action Pointer
+    // 198 <OnSetDrowTargetCard>k__BackingField     Action`1<int> IL2CPP_TYPE_GENERICINST
+    // 1A0 <OnSetDrowStartTargetCardList>k__BackingField Action`1<int[]> IL2CPP_TYPE_GENERICINST
+    // 1A8 <OnDisableNPC>k__BackingField            Action`1<bool> IL2CPP_TYPE_GENERICINST
+    // 1B0 <OnNotMaxAppeal>k__BackingField          Action`1<bool> IL2CPP_TYPE_GENERICINST
+    // 1B8 <OnAddUseCardAction>k__BackingField      Action`1<Action> IL2CPP_TYPE_GENERICINST
+    // 1C0 <OnRemoveUseCardAction>k__BackingField   Action`1<Action> IL2CPP_TYPE_GENERICINST
+    // 1C8 <OnAddUseEnemyCardAction>k__BackingField Action`1<Action> IL2CPP_TYPE_GENERICINST
+    // 1D0 <OnRemoveUseEnemyCardAction>k__BackingField Action`1<Action> IL2CPP_TYPE_GENERICINST
+    // 1D8 <OnAddUseUnitSkillAction>k__BackingField Action`1<Action`1<int>> IL2CPP_TYPE_GENERICINST
+    // 1E0 <OnRemoveUseUnitSkillAction>k__BackingField Action`1<Action`1<int>> IL2CPP_TYPE_GENERICINST
+    // 1E8 <OnAddChangePPAction>k__BackingField     Action`1<Action`2<int, int>> IL2CPP_TYPE_GENERICINST
+    // 1F0 <OnRemoveChangePPAction>k__BackingField  Action`1<Action`2<int, int>> IL2CPP_TYPE_GENERICINST
+    // 1F8 <OnAddStartMentalBreak>k__BackingField   Action`1<Action> IL2CPP_TYPE_GENERICINST
+    // 200 <OnRemoveStartMentalBreak>k__BackingField Action`1<Action> IL2CPP_TYPE_GENERICINST
+    // 208 <OnAddRecoverMentalBreak>k__BackingField Action`1<Action> IL2CPP_TYPE_GENERICINST
+    // 210 <OnRemoveRecoverMentalBreak>k__BackingField Action`1<Action> IL2CPP_TYPE_GENERICINST
+    // 218 <OnAddGetCurrentTimeLimit>k__BackingField Action`1<Action`1<float>> IL2CPP_TYPE_GENERICINST
+    // 220 <OnRemoveGetCurrentTimeLimit>k__BackingField Action`1<Action`1<float>> IL2CPP_TYPE_GENERICINST
+    // 228 <OnEndIngame>k__BackingField             Action`1<Action> IL2CPP_TYPE_GENERICINST
+    // 230 <OnStartIngame>k__BackingField           Action`1<Action> IL2CPP_TYPE_GENERICINST
+    // 238 <OnAddTapCanselSbuject>k__BackingField   Subject`1<Action> IL2CPP_TYPE_GENERICINST
+    // 240 <OnRemoveTapCanselSbuject>k__BackingField Subject`1<Action> IL2CPP_TYPE_GENERICINST
+    // 248 <OnAddTapCardSbuject>k__BackingField     Subject`1<Action> IL2CPP_TYPE_GENERICINST
+    // 250 <OnRemoveTapCardSbuject>k__BackingField  Subject`1<Action> IL2CPP_TYPE_GENERICINST
+    // 258 <OnAddTapBuffIconSbuject>k__BackingField Subject`1<Action> IL2CPP_TYPE_GENERICINST
+    // 260 <OnRemoveTapBuffIconSbuject>k__BackingField Subject`1<Action> IL2CPP_TYPE_GENERICINST
     public partial class TutorialExternalAccess : DataModel
     {
         public Action?                                  OnHideSkipBtn                           { get; set; }
@@ -100,11 +99,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TutorialExternalAccess() { Pointer= p0 };
 
-            value.OnHideSkipBtn                             = GetObject<Action>(new IntPtr(p + 0x150), ReversePrism.DataModels.Action.FromPointer); // 024664DABC90 0x150 OnHideSkipBtn               ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.OnHideCommonWindow                        = GetObject<Action>(new IntPtr(p + 0x158), ReversePrism.DataModels.Action.FromPointer); // 024664DABCB0 0x158 OnHideCommonWindow          ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.OnResetGame                               = GetObject<Action>(new IntPtr(p + 0x188), ReversePrism.DataModels.Action.FromPointer); // 024664DABD70 0x188 OnResetGame                 ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.OnBrekeMental                             = GetObject<Action>(new IntPtr(p + 0x190), ReversePrism.DataModels.Action.FromPointer); // 024664DABD90 0x190 OnBrekeMental               ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.OnDebffSkill                              = GetObject<Action>(new IntPtr(p + 0x198), ReversePrism.DataModels.Action.FromPointer); // 024664DABDB0 0x198 OnDebffSkill                ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.OnHideSkipBtn                             = GetObject<Action>(new IntPtr(p + 0x148), ReversePrism.DataModels.Action.FromPointer); // 0x148 OnHideSkipBtn               ( ModelClassType Action Action Action Pointer )
+            value.OnHideCommonWindow                        = GetObject<Action>(new IntPtr(p + 0x150), ReversePrism.DataModels.Action.FromPointer); // 0x150 OnHideCommonWindow          ( ModelClassType Action Action Action Pointer )
+            value.OnResetGame                               = GetObject<Action>(new IntPtr(p + 0x180), ReversePrism.DataModels.Action.FromPointer); // 0x180 OnResetGame                 ( ModelClassType Action Action Action Pointer )
+            value.OnBrekeMental                             = GetObject<Action>(new IntPtr(p + 0x188), ReversePrism.DataModels.Action.FromPointer); // 0x188 OnBrekeMental               ( ModelClassType Action Action Action Pointer )
+            value.OnDebffSkill                              = GetObject<Action>(new IntPtr(p + 0x190), ReversePrism.DataModels.Action.FromPointer); // 0x190 OnDebffSkill                ( ModelClassType Action Action Action Pointer )
 
             return value;
         }

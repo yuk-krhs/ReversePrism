@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Material                                 00018660C4B0 ModelClassType Material Material Material Pointer
-    // 018 ReferenceCount                           0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 Material                                 ModelClassType Material Material Material Pointer
+    // 018 ReferenceCount                           ModelPrimitiveType int int int Int32
     public partial class MaterialEntry : DataModel
     {
         public Material?                                Material                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MaterialEntry() { Pointer= p0 };
 
-            value.Material                                  = GetObject<Material>(new IntPtr(p + 0x010), ReversePrism.DataModels.Material.FromPointer); // 02466BE7B0B8 0x10 Material                    ( 00018660C4B0 ModelClassType Material Material Material Pointer )
-            value.ReferenceCount                            = GetInt32(new IntPtr(p + 0x018)); // 02466BE7B0D8 0x18 ReferenceCount              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Material                                  = GetObject<Material>(new IntPtr(p + 0x010), ReversePrism.DataModels.Material.FromPointer); // 0x10 Material                    ( ModelClassType Material Material Material Pointer )
+            value.ReferenceCount                            = GetInt32(new IntPtr(p + 0x018)); // 0x18 ReferenceCount              ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

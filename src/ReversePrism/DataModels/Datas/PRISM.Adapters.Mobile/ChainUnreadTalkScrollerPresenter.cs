@@ -8,10 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 View                                     00018671FD50 ModelClassType IChainUnreadTalkScrollerView IChainUnreadTalkScrollerView IChainUnreadTalkScrollerView Pointer
+    // 010 View                                     ModelClassType IChainUnreadTalkScrollerView IChainUnreadTalkScrollerView IChainUnreadTalkScrollerView Pointer
+    // 018 ResourceLoader                           ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer
     public partial class ChainUnreadTalkScrollerPresenter : DataModel
     {
         public IChainUnreadTalkScrollerView?            View                                    { get; set; }
+        public IResourceLoader?                         ResourceLoader                          { get; set; }
 
         public static ChainUnreadTalkScrollerPresenter? FromPointer(IntPtr p0)
         {
@@ -21,7 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChainUnreadTalkScrollerPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<IChainUnreadTalkScrollerView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IChainUnreadTalkScrollerView.FromPointer); // 0246668CE970 0x10 View                        ( 00018671FD50 ModelClassType IChainUnreadTalkScrollerView IChainUnreadTalkScrollerView IChainUnreadTalkScrollerView Pointer )
+            value.View                                      = GetObject<IChainUnreadTalkScrollerView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IChainUnreadTalkScrollerView.FromPointer); // 0x10 View                        ( ModelClassType IChainUnreadTalkScrollerView IChainUnreadTalkScrollerView IChainUnreadTalkScrollerView Pointer )
+            value.ResourceLoader                            = GetObject<IResourceLoader>(new IntPtr(p + 0x018), ReversePrism.DataModels.IResourceLoader.FromPointer); // 0x18 ResourceLoader              ( ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer )
 
             return value;
         }

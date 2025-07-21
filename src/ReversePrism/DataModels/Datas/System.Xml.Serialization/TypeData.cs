@@ -8,18 +8,18 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Type                                     000186692850 ModelClassType Type Type Type Pointer
-    // 018 ElementName                              000186671910 ModelPrimitiveType string string string String
-    // 020 SType                                    0001866EBE30 ModelEnumType SchemaTypes SchemaTypes SchemaTypes Int32
-    // 028 ListItemType                             000186692850 ModelClassType Type Type Type Pointer
-    // 030 TypeName                                 000186671910 ModelPrimitiveType string string string String
-    // 038 FullTypeName                             000186671910 ModelPrimitiveType string string string String
-    // 040 ListItemTypeData                         0001866D2C90 ModelClassType TypeData TypeData TypeData Pointer
-    // 048 MappedType                               0001866D2C90 ModelClassType TypeData TypeData TypeData Pointer
-    // 050 Facet                                    0001865BDA60 ModelClassType XmlSchemaPatternFacet XmlSchemaPatternFacet XmlSchemaPatternFacet Pointer
-    // 058 TypeConvertor                            000186613630 ModelClassType MethodInfo MethodInfo MethodInfo Pointer
-    // 060 HasPublicConstructor                     000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 061 NullableOverride                         000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 Type                                     ModelClassType Type Type Type Pointer
+    // 018 ElementName                              ModelPrimitiveType string string string String
+    // 020 SType                                    ModelEnumType SchemaTypes SchemaTypes SchemaTypes Int32
+    // 028 ListItemType                             ModelClassType Type Type Type Pointer
+    // 030 TypeName                                 ModelPrimitiveType string string string String
+    // 038 FullTypeName                             ModelPrimitiveType string string string String
+    // 040 ListItemTypeData                         ModelClassType TypeData TypeData TypeData Pointer
+    // 048 MappedType                               ModelClassType TypeData TypeData TypeData Pointer
+    // 050 Facet                                    ModelClassType XmlSchemaPatternFacet XmlSchemaPatternFacet XmlSchemaPatternFacet Pointer
+    // 058 TypeConvertor                            ModelClassType MethodInfo MethodInfo MethodInfo Pointer
+    // 060 HasPublicConstructor                     ModelPrimitiveType bool bool bool Bool
+    // 061 NullableOverride                         ModelPrimitiveType bool bool bool Bool
     // 000 keywords                                 string[] IL2CPP_TYPE_SZARRAY
     public partial class TypeData : DataModel
     {
@@ -44,18 +44,18 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TypeData() { Pointer= p0 };
 
-            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 024667514248 0x10 Type                        ( 000186692850 ModelClassType Type Type Type Pointer )
-            value.ElementName                               = GetString(new IntPtr(p + 0x018)); // 024667514268 0x18 ElementName                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.SType                                     = (SchemaTypes)GetInt32(new IntPtr(p + 0x020)); // 024667514288 0x20 SType                       ( 0001866EBE30 ModelEnumType SchemaTypes SchemaTypes SchemaTypes Int32 )
-            value.ListItemType                              = GetObject<Type>(new IntPtr(p + 0x028), ReversePrism.DataModels.Type.FromPointer); // 0246675142A8 0x28 ListItemType                ( 000186692850 ModelClassType Type Type Type Pointer )
-            value.TypeName                                  = GetString(new IntPtr(p + 0x030)); // 0246675142C8 0x30 TypeName                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.FullTypeName                              = GetString(new IntPtr(p + 0x038)); // 0246675142E8 0x38 FullTypeName                ( 000186671910 ModelPrimitiveType string string string String )
-            value.ListItemTypeData                          = GetObject<TypeData>(new IntPtr(p + 0x040), ReversePrism.DataModels.TypeData.FromPointer); // 024667514308 0x40 ListItemTypeData            ( 0001866D2C90 ModelClassType TypeData TypeData TypeData Pointer )
-            value.MappedType                                = GetObject<TypeData>(new IntPtr(p + 0x048), ReversePrism.DataModels.TypeData.FromPointer); // 024667514328 0x48 MappedType                  ( 0001866D2C90 ModelClassType TypeData TypeData TypeData Pointer )
-            value.Facet                                     = GetObject<XmlSchemaPatternFacet>(new IntPtr(p + 0x050), ReversePrism.DataModels.XmlSchemaPatternFacet.FromPointer); // 024667514348 0x50 Facet                       ( 0001865BDA60 ModelClassType XmlSchemaPatternFacet XmlSchemaPatternFacet XmlSchemaPatternFacet Pointer )
-            value.TypeConvertor                             = GetObject<MethodInfo>(new IntPtr(p + 0x058), ReversePrism.DataModels.MethodInfo.FromPointer); // 024667514368 0x58 TypeConvertor               ( 000186613630 ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
-            value.HasPublicConstructor                      = GetBool(new IntPtr(p + 0x060)); // 024667514388 0x60 HasPublicConstructor        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.NullableOverride                          = GetBool(new IntPtr(p + 0x061)); // 0246675143A8 0x61 NullableOverride            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0x10 Type                        ( ModelClassType Type Type Type Pointer )
+            value.ElementName                               = GetString(new IntPtr(p + 0x018)); // 0x18 ElementName                 ( ModelPrimitiveType string string string String )
+            value.SType                                     = (SchemaTypes)GetInt32(new IntPtr(p + 0x020)); // 0x20 SType                       ( ModelEnumType SchemaTypes SchemaTypes SchemaTypes Int32 )
+            value.ListItemType                              = GetObject<Type>(new IntPtr(p + 0x028), ReversePrism.DataModels.Type.FromPointer); // 0x28 ListItemType                ( ModelClassType Type Type Type Pointer )
+            value.TypeName                                  = GetString(new IntPtr(p + 0x030)); // 0x30 TypeName                    ( ModelPrimitiveType string string string String )
+            value.FullTypeName                              = GetString(new IntPtr(p + 0x038)); // 0x38 FullTypeName                ( ModelPrimitiveType string string string String )
+            value.ListItemTypeData                          = GetObject<TypeData>(new IntPtr(p + 0x040), ReversePrism.DataModels.TypeData.FromPointer); // 0x40 ListItemTypeData            ( ModelClassType TypeData TypeData TypeData Pointer )
+            value.MappedType                                = GetObject<TypeData>(new IntPtr(p + 0x048), ReversePrism.DataModels.TypeData.FromPointer); // 0x48 MappedType                  ( ModelClassType TypeData TypeData TypeData Pointer )
+            value.Facet                                     = GetObject<XmlSchemaPatternFacet>(new IntPtr(p + 0x050), ReversePrism.DataModels.XmlSchemaPatternFacet.FromPointer); // 0x50 Facet                       ( ModelClassType XmlSchemaPatternFacet XmlSchemaPatternFacet XmlSchemaPatternFacet Pointer )
+            value.TypeConvertor                             = GetObject<MethodInfo>(new IntPtr(p + 0x058), ReversePrism.DataModels.MethodInfo.FromPointer); // 0x58 TypeConvertor               ( ModelClassType MethodInfo MethodInfo MethodInfo Pointer )
+            value.HasPublicConstructor                      = GetBool(new IntPtr(p + 0x060)); // 0x60 HasPublicConstructor        ( ModelPrimitiveType bool bool bool Bool )
+            value.NullableOverride                          = GetBool(new IntPtr(p + 0x061)); // 0x61 NullableOverride            ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

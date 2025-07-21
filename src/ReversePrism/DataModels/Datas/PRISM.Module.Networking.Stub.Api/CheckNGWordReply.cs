@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 HasNgWordListFieldNumber                 int IL2CPP_TYPE_I4
     // 008 _repeated_hasNgWordList_codec            FieldCodec`1<bool> IL2CPP_TYPE_GENERICINST
-    // 018 HasNgWordList                            000185CCFEC8 ModelPrimitiveListType RepeatedField`1<bool> RepeatedField`1<bool> List<bool> Pointer
+    // 018 HasNgWordList                            ModelPrimitiveListType RepeatedField`1<bool> RepeatedField`1<bool> List<bool> Pointer
     public partial class CheckNGWordReply : DataModel
     {
         public List<bool>?                              HasNgWordList                           { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CheckNGWordReply() { Pointer= p0 };
 
-            value.HasNgWordList                             = GetBoolList(new IntPtr(p + 0x018)); // 0246620D5A20 0x18 HasNgWordList               ( 000185CCFEC8 ModelPrimitiveListType RepeatedField`1<bool> RepeatedField`1<bool> List<bool> Pointer )
+            value.HasNgWordList                             = GetBoolList(new IntPtr(p + 0x018)); // 0x18 HasNgWordList               ( ModelPrimitiveListType RepeatedField`1<bool> RepeatedField`1<bool> List<bool> Pointer )
 
             return value;
         }

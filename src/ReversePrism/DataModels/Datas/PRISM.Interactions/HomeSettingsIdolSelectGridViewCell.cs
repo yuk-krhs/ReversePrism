@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 030 IdolIcon                                 0001866CCA00 ModelClassType HomeSettingsIdolIcon HomeSettingsIdolIcon HomeSettingsIdolIcon Pointer
+    // 030 IdolIcon                                 ModelClassType HomeSettingsIdolIcon HomeSettingsIdolIcon HomeSettingsIdolIcon Pointer
     public partial class HomeSettingsIdolSelectGridViewCell : DataModel
     {
         public HomeSettingsIdolIcon?                    IdolIcon                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HomeSettingsIdolSelectGridViewCell() { Pointer= p0 };
 
-            value.IdolIcon                                  = GetObject<HomeSettingsIdolIcon>(new IntPtr(p + 0x030), ReversePrism.DataModels.HomeSettingsIdolIcon.FromPointer); // 02466B5A00A8 0x30 IdolIcon                    ( 0001866CCA00 ModelClassType HomeSettingsIdolIcon HomeSettingsIdolIcon HomeSettingsIdolIcon Pointer )
+            value.IdolIcon                                  = GetObject<HomeSettingsIdolIcon>(new IntPtr(p + 0x030), ReversePrism.DataModels.HomeSettingsIdolIcon.FromPointer); // 0x30 IdolIcon                    ( ModelClassType HomeSettingsIdolIcon HomeSettingsIdolIcon HomeSettingsIdolIcon Pointer )
 
             return value;
         }

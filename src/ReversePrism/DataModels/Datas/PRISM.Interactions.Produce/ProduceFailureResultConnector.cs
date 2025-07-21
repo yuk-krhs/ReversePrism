@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 090 AdvView                                  0001866D8520 ModelClassType InGameResultADVView InGameResultADVView InGameResultADVView Pointer
+    // 088 AdvView                                  ModelClassType InGameResultADVView InGameResultADVView InGameResultADVView Pointer
     public partial class ProduceFailureResultConnector : DataModel
     {
         public InGameResultADVView?                     AdvView                                 { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceFailureResultConnector() { Pointer= p0 };
 
-            value.AdvView                                   = GetObject<InGameResultADVView>(new IntPtr(p + 0x090), ReversePrism.DataModels.InGameResultADVView.FromPointer); // 02466A242578 0x90 AdvView                     ( 0001866D8520 ModelClassType InGameResultADVView InGameResultADVView InGameResultADVView Pointer )
+            value.AdvView                                   = GetObject<InGameResultADVView>(new IntPtr(p + 0x088), ReversePrism.DataModels.InGameResultADVView.FromPointer); // 0x88 AdvView                     ( ModelClassType InGameResultADVView InGameResultADVView InGameResultADVView Pointer )
 
             return value;
         }

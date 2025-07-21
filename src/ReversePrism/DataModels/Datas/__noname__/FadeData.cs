@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Duration                                 000186666050 ModelPrimitiveType float float float Single
-    // 018 FadeType                                 0001866722E0 ModelPrimitiveType string string string String
-    // 020 EffectType                               0001866722E0 ModelPrimitiveType string string string String
+    // 010 Duration                                 ModelPrimitiveType float float float Single
+    // 018 FadeType                                 ModelPrimitiveType string string string String
+    // 020 EffectType                               ModelPrimitiveType string string string String
     public partial class FadeData : DataModel
     {
         public float                                    Duration                                { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FadeData() { Pointer= p0 };
 
-            value.Duration                                  = GetSingle(new IntPtr(p + 0x010)); // 024664E45EC0 0x10 Duration                    ( 000186666050 ModelPrimitiveType float float float Single )
-            value.FadeType                                  = GetString(new IntPtr(p + 0x018)); // 024664E45EE0 0x18 FadeType                    ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.EffectType                                = GetString(new IntPtr(p + 0x020)); // 024664E45F00 0x20 EffectType                  ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Duration                                  = GetSingle(new IntPtr(p + 0x010)); // 0x10 Duration                    ( ModelPrimitiveType float float float Single )
+            value.FadeType                                  = GetString(new IntPtr(p + 0x018)); // 0x18 FadeType                    ( ModelPrimitiveType string string string String )
+            value.EffectType                                = GetString(new IntPtr(p + 0x020)); // 0x20 EffectType                  ( ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Name                                     0001867406A0 ModelEnumType QName QName QName Int32
-    // 028 Val                                      0001866722E0 ModelPrimitiveType string string string String
-    // 030 ContentPos                               0001865F36C0 ModelPrimitiveType int int int Int32
-    // 034 HashCode                                 0001865F36C0 ModelPrimitiveType int int int Int32
-    // 038 PrevHash                                 0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 Name                                     ModelEnumType QName QName QName Int32
+    // 028 Val                                      ModelPrimitiveType string string string String
+    // 030 ContentPos                               ModelPrimitiveType int int int Int32
+    // 034 HashCode                                 ModelPrimitiveType int int int Int32
+    // 038 PrevHash                                 ModelPrimitiveType int int int Int32
     public partial class AttrInfo : DataModel
     {
         public QName                                    Name                                    { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AttrInfo() { Pointer= p0 };
 
-            value.Name                                      = (QName)GetInt32(new IntPtr(p + 0x010)); // 02466739EC08 0x10 Name                        ( 0001867406A0 ModelEnumType QName QName QName Int32 )
-            value.Val                                       = GetString(new IntPtr(p + 0x028)); // 02466739EC28 0x28 Val                         ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ContentPos                                = GetInt32(new IntPtr(p + 0x030)); // 02466739EC48 0x30 ContentPos                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.HashCode                                  = GetInt32(new IntPtr(p + 0x034)); // 02466739EC68 0x34 HashCode                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.PrevHash                                  = GetInt32(new IntPtr(p + 0x038)); // 02466739EC88 0x38 PrevHash                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Name                                      = (QName)GetInt32(new IntPtr(p + 0x010)); // 0x10 Name                        ( ModelEnumType QName QName QName Int32 )
+            value.Val                                       = GetString(new IntPtr(p + 0x028)); // 0x28 Val                         ( ModelPrimitiveType string string string String )
+            value.ContentPos                                = GetInt32(new IntPtr(p + 0x030)); // 0x30 ContentPos                  ( ModelPrimitiveType int int int Int32 )
+            value.HashCode                                  = GetInt32(new IntPtr(p + 0x034)); // 0x34 HashCode                    ( ModelPrimitiveType int int int Int32 )
+            value.PrevHash                                  = GetInt32(new IntPtr(p + 0x038)); // 0x38 PrevHash                    ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

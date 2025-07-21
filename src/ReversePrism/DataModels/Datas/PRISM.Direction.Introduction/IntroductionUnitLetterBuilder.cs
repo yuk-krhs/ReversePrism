@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 View                                     00018672E9D0 ModelClassType IntroductionUnitLetterView IntroductionUnitLetterView IntroductionUnitLetterView Pointer
+    // 020 View                                     ModelClassType IntroductionUnitLetterView IntroductionUnitLetterView IntroductionUnitLetterView Pointer
     public partial class IntroductionUnitLetterBuilder : DataModel
     {
         public IntroductionUnitLetterView?              View                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IntroductionUnitLetterBuilder() { Pointer= p0 };
 
-            value.View                                      = GetObject<IntroductionUnitLetterView>(new IntPtr(p + 0x020), ReversePrism.DataModels.IntroductionUnitLetterView.FromPointer); // 02466B6D5A68 0x20 View                        ( 00018672E9D0 ModelClassType IntroductionUnitLetterView IntroductionUnitLetterView IntroductionUnitLetterView Pointer )
+            value.View                                      = GetObject<IntroductionUnitLetterView>(new IntPtr(p + 0x020), ReversePrism.DataModels.IntroductionUnitLetterView.FromPointer); // 0x20 View                        ( ModelClassType IntroductionUnitLetterView IntroductionUnitLetterView IntroductionUnitLetterView Pointer )
 
             return value;
         }

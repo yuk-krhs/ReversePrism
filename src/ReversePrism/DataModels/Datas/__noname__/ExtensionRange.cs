@@ -10,21 +10,21 @@ namespace ReversePrism.DataModels
 
     // 000 _parser                                  MessageParser`1<ExtensionRange> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
-    // 018 HasBits0                                 0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 HasBits0                                 ModelPrimitiveType int int int Int32
     // 000 StartFieldNumber                         int IL2CPP_TYPE_I4
     // 008 StartDefaultValue                        int IL2CPP_TYPE_I4
-    // 01C Start                                    0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 01C Start                                    ModelPrimitiveType int int int Int32
     // 000 EndFieldNumber                           int IL2CPP_TYPE_I4
     // 00C EndDefaultValue                          int IL2CPP_TYPE_I4
-    // 020 End                                      0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 End                                      ModelPrimitiveType int int int Int32
     // 000 OptionsFieldNumber                       int IL2CPP_TYPE_I4
-    // 028 Options                                  000186532560 ModelClassType ExtensionRangeOptions ExtensionRangeOptions ExtensionRangeOptions Pointer
+    // 028 Options                                  ModelClassType ExtensionRangeOptions ExtensionRangeOptions ExtensionRangeOptions Pointer
     public partial class ExtensionRange : DataModel
     {
         public int                                      HasBits0                                { get; set; }
         public int                                      Start                                   { get; set; }
         public int                                      End                                     { get; set; }
-        public ExtensionRangeOptions?                   Options                                 { get; set; }
+      //public ExtensionRangeOptions?                   Options                                 { get; set; }
 
         public static ExtensionRange? FromPointer(IntPtr p0)
         {
@@ -34,10 +34,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExtensionRange() { Pointer= p0 };
 
-            value.HasBits0                                  = GetInt32(new IntPtr(p + 0x018)); // 0245A3B11940 0x18 HasBits0                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Start                                     = GetInt32(new IntPtr(p + 0x01C)); // 0245A3B119A0 0x1C Start                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.End                                       = GetInt32(new IntPtr(p + 0x020)); // 0245A3B11A00 0x20 End                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Options                                   = GetObject<ExtensionRangeOptions>(new IntPtr(p + 0x028), ReversePrism.DataModels.ExtensionRangeOptions.FromPointer); // 0245A3B11A40 0x28 Options                     ( 000186532560 ModelClassType ExtensionRangeOptions ExtensionRangeOptions ExtensionRangeOptions Pointer )
+            value.HasBits0                                  = GetInt32(new IntPtr(p + 0x018)); // 0x18 HasBits0                    ( ModelPrimitiveType int int int Int32 )
+            value.Start                                     = GetInt32(new IntPtr(p + 0x01C)); // 0x1C Start                       ( ModelPrimitiveType int int int Int32 )
+            value.End                                       = GetInt32(new IntPtr(p + 0x020)); // 0x20 End                         ( ModelPrimitiveType int int int Int32 )
+          //value.Options                                   = GetObject<ExtensionRangeOptions>(new IntPtr(p + 0x028), ReversePrism.DataModels.ExtensionRangeOptions.FromPointer); // 0x28 Options                     ( ModelClassType ExtensionRangeOptions ExtensionRangeOptions ExtensionRangeOptions Pointer )
 
             return value;
         }

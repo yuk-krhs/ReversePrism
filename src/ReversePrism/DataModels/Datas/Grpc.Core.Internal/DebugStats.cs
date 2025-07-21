@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 PendingBatchCompletions                  00018670E1C0 ModelClassType AtomicCounter AtomicCounter AtomicCounter Pointer
+    // 010 PendingBatchCompletions                  ModelClassType AtomicCounter AtomicCounter AtomicCounter Pointer
     public partial class DebugStats : DataModel
     {
         public AtomicCounter?                           PendingBatchCompletions                 { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DebugStats() { Pointer= p0 };
 
-            value.PendingBatchCompletions                   = GetObject<AtomicCounter>(new IntPtr(p + 0x010), ReversePrism.DataModels.AtomicCounter.FromPointer); // 024660E32EC8 0x10 PendingBatchCompletions     ( 00018670E1C0 ModelClassType AtomicCounter AtomicCounter AtomicCounter Pointer )
+            value.PendingBatchCompletions                   = GetObject<AtomicCounter>(new IntPtr(p + 0x010), ReversePrism.DataModels.AtomicCounter.FromPointer); // 0x10 PendingBatchCompletions     ( ModelClassType AtomicCounter AtomicCounter AtomicCounter Pointer )
 
             return value;
         }

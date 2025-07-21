@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<EditRankingCommentArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstEventIdFieldNumber                    int IL2CPP_TYPE_I4
-    // 018 MstEventId                               0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MstEventId                               ModelPrimitiveType int int int Int32
     // 000 CommentFieldNumber                       int IL2CPP_TYPE_I4
-    // 020 Comment                                  000186671910 ModelPrimitiveType string string string String
+    // 020 Comment                                  ModelPrimitiveType string string string String
     public partial class EditRankingCommentArgs : DataModel
     {
         public int                                      MstEventId                              { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EditRankingCommentArgs() { Pointer= p0 };
 
-            value.MstEventId                                = GetInt32(new IntPtr(p + 0x018)); // 024660FA4888 0x18 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Comment                                   = GetString(new IntPtr(p + 0x020)); // 024660FA48C8 0x20 Comment                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.MstEventId                                = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstEventId                  ( ModelPrimitiveType int int int Int32 )
+            value.Comment                                   = GetString(new IntPtr(p + 0x020)); // 0x20 Comment                     ( ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Position                                 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32
-    // 01C RotationY                                000186666050 ModelPrimitiveType float float float Single
-    // 020 AnimName                                 0001866722E0 ModelPrimitiveType string string string String
-    // 028 LipSyncName                              0001866722E0 ModelPrimitiveType string string string String
-    // 030 RecordedAnimName                         0001866722E0 ModelPrimitiveType string string string String
+    // 010 Position                                 ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 01C RotationY                                ModelPrimitiveType float float float Single
+    // 020 AnimName                                 ModelPrimitiveType string string string String
+    // 028 LipSyncName                              ModelPrimitiveType string string string String
+    // 030 RecordedAnimName                         ModelPrimitiveType string string string String
     public partial class CharacterCreateData : DataModel
     {
         public Vector3                                  Position                                { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CharacterCreateData() { Pointer= p0 };
 
-            value.Position                                  = (Vector3)GetInt32(new IntPtr(p + 0x010)); // 0245A60C20A8 0x10 Position                    ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.RotationY                                 = GetSingle(new IntPtr(p + 0x01C)); // 0245A60C20C8 0x1C RotationY                   ( 000186666050 ModelPrimitiveType float float float Single )
-            value.AnimName                                  = GetString(new IntPtr(p + 0x020)); // 0245A60C20E8 0x20 AnimName                    ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.LipSyncName                               = GetString(new IntPtr(p + 0x028)); // 0245A60C2108 0x28 LipSyncName                 ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.RecordedAnimName                          = GetString(new IntPtr(p + 0x030)); // 0245A60C2128 0x30 RecordedAnimName            ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Position                                  = (Vector3)GetInt32(new IntPtr(p + 0x010)); // 0x10 Position                    ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.RotationY                                 = GetSingle(new IntPtr(p + 0x01C)); // 0x1C RotationY                   ( ModelPrimitiveType float float float Single )
+            value.AnimName                                  = GetString(new IntPtr(p + 0x020)); // 0x20 AnimName                    ( ModelPrimitiveType string string string String )
+            value.LipSyncName                               = GetString(new IntPtr(p + 0x028)); // 0x28 LipSyncName                 ( ModelPrimitiveType string string string String )
+            value.RecordedAnimName                          = GetString(new IntPtr(p + 0x030)); // 0x30 RecordedAnimName            ( ModelPrimitiveType string string string String )
 
             return value;
         }

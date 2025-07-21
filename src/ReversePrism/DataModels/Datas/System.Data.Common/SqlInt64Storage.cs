@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 050 Values                                   000185CA61E8 ModelEnumListType SqlInt64[] SqlInt64[] List<SqlInt64> Pointer
+    // 050 Values                                   ModelEnumListType SqlInt64[] SqlInt64[] List<SqlInt64> Pointer
     public partial class SqlInt64Storage : DataModel
     {
         public List<SqlInt64>?                          Values                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SqlInt64Storage() { Pointer= p0 };
 
-            value.Values                                    = GetEnumList<SqlInt64>(new IntPtr(p + 0x050)); // 024668A58628 0x50 Values                      ( 000185CA61E8 ModelEnumListType SqlInt64[] SqlInt64[] List<SqlInt64> Pointer )
+            value.Values                                    = GetEnumList<SqlInt64>(new IntPtr(p + 0x050)); // 0x50 Values                      ( ModelEnumListType SqlInt64[] SqlInt64[] List<SqlInt64> Pointer )
 
             return value;
         }

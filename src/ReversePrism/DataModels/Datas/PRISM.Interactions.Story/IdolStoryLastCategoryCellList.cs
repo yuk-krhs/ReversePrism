@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 CellPrefab                               000186598130 ModelClassType StoryLastCategoryCell StoryLastCategoryCell StoryLastCategoryCell Pointer
-    // 028 Scroller                                 0001865988A0 ModelClassType StoryLastCategoryScroller StoryLastCategoryScroller StoryLastCategoryScroller Pointer
+    // 020 CellPrefab                               ModelClassType StoryLastCategoryCell StoryLastCategoryCell StoryLastCategoryCell Pointer
+    // 028 Scroller                                 ModelClassType StoryLastCategoryScroller StoryLastCategoryScroller StoryLastCategoryScroller Pointer
     // 030 onClickCellSubject                       Subject`1<IStoryLastCategoryCellData> IL2CPP_TYPE_GENERICINST
     // 038 onClickFavoriteToggleSubject             Subject`1<IStoryLastCategoryCellData> IL2CPP_TYPE_GENERICINST
     public partial class IdolStoryLastCategoryCellList : DataModel
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IdolStoryLastCategoryCellList() { Pointer= p0 };
 
-            value.CellPrefab                                = GetObject<StoryLastCategoryCell>(new IntPtr(p + 0x020), ReversePrism.DataModels.StoryLastCategoryCell.FromPointer); // 02466B9D1888 0x20 CellPrefab                  ( 000186598130 ModelClassType StoryLastCategoryCell StoryLastCategoryCell StoryLastCategoryCell Pointer )
-            value.Scroller                                  = GetObject<StoryLastCategoryScroller>(new IntPtr(p + 0x028), ReversePrism.DataModels.StoryLastCategoryScroller.FromPointer); // 02466B9D18A8 0x28 Scroller                    ( 0001865988A0 ModelClassType StoryLastCategoryScroller StoryLastCategoryScroller StoryLastCategoryScroller Pointer )
+            value.CellPrefab                                = GetObject<StoryLastCategoryCell>(new IntPtr(p + 0x020), ReversePrism.DataModels.StoryLastCategoryCell.FromPointer); // 0x20 CellPrefab                  ( ModelClassType StoryLastCategoryCell StoryLastCategoryCell StoryLastCategoryCell Pointer )
+            value.Scroller                                  = GetObject<StoryLastCategoryScroller>(new IntPtr(p + 0x028), ReversePrism.DataModels.StoryLastCategoryScroller.FromPointer); // 0x28 Scroller                    ( ModelClassType StoryLastCategoryScroller StoryLastCategoryScroller StoryLastCategoryScroller Pointer )
 
             return value;
         }

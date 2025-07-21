@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ForwardTo                                00018668ABC0 ModelClassType IUnityCallback IUnityCallback IUnityCallback Pointer
-    // 018 Util                                     0001866905E0 ModelClassType IUtil IUtil IUtil Pointer
+    // 010 ForwardTo                                ModelClassType IUnityCallback IUnityCallback IUnityCallback Pointer
+    // 018 Util                                     ModelClassType IUtil IUtil IUtil Pointer
     public partial class ScriptingUnityCallback : DataModel
     {
         public IUnityCallback?                          ForwardTo                               { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ScriptingUnityCallback() { Pointer= p0 };
 
-            value.ForwardTo                                 = GetObject<IUnityCallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.IUnityCallback.FromPointer); // 0245A68D30D8 0x10 ForwardTo                   ( 00018668ABC0 ModelClassType IUnityCallback IUnityCallback IUnityCallback Pointer )
-            value.Util                                      = GetObject<IUtil>(new IntPtr(p + 0x018), ReversePrism.DataModels.IUtil.FromPointer); // 0245A68D30F8 0x18 Util                        ( 0001866905E0 ModelClassType IUtil IUtil IUtil Pointer )
+            value.ForwardTo                                 = GetObject<IUnityCallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.IUnityCallback.FromPointer); // 0x10 ForwardTo                   ( ModelClassType IUnityCallback IUnityCallback IUnityCallback Pointer )
+            value.Util                                      = GetObject<IUtil>(new IntPtr(p + 0x018), ReversePrism.DataModels.IUtil.FromPointer); // 0x18 Util                        ( ModelClassType IUtil IUtil IUtil Pointer )
 
             return value;
         }

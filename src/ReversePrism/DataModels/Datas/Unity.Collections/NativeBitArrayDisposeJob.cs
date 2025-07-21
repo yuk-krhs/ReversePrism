@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Data                                     000186682020 ModelEnumType NativeBitArrayDispose NativeBitArrayDispose NativeBitArrayDispose Int32
+    // 010 Data                                     ModelEnumType NativeBitArrayDispose NativeBitArrayDispose NativeBitArrayDispose Int32
     public partial class NativeBitArrayDisposeJob : DataModel
     {
         public NativeBitArrayDispose                    Data                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NativeBitArrayDisposeJob() { Pointer= p0 };
 
-            value.Data                                      = (NativeBitArrayDispose)GetInt32(new IntPtr(p + 0x010)); // 0245A3566A70 0x10 Data                        ( 000186682020 ModelEnumType NativeBitArrayDispose NativeBitArrayDispose NativeBitArrayDispose Int32 )
+            value.Data                                      = (NativeBitArrayDispose)GetInt32(new IntPtr(p + 0x010)); // 0x10 Data                        ( ModelEnumType NativeBitArrayDispose NativeBitArrayDispose NativeBitArrayDispose Int32 )
 
             return value;
         }

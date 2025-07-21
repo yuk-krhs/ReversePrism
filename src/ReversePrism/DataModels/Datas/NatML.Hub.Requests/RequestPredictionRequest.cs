@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 Variables                                0001866D1970 ModelClassType Variables Variables Variables Pointer
+    // 018 Variables                                ModelClassType Variables Variables Variables Pointer
     public partial class RequestPredictionRequest : DataModel
     {
         public Variables?                               Variables                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RequestPredictionRequest() { Pointer= p0 };
 
-            value.Variables                                 = GetObject<Variables>(new IntPtr(p + 0x018), ReversePrism.DataModels.Variables.FromPointer); // 02466BE60640 0x18 Variables                   ( 0001866D1970 ModelClassType Variables Variables Variables Pointer )
+            value.Variables                                 = GetObject<Variables>(new IntPtr(p + 0x018), ReversePrism.DataModels.Variables.FromPointer); // 0x18 Variables                   ( ModelClassType Variables Variables Variables Pointer )
 
             return value;
         }

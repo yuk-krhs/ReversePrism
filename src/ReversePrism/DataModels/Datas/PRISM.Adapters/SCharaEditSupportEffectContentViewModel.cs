@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 SupportEffectContentViewModel            0001865EFDE0 ModelClassType SupportEffectContentViewModel SupportEffectContentViewModel SupportEffectContentViewModel Pointer
-    // 018 SDCharaIconViewModels                    000185D158E8 ModelClassListType IReadOnlyList`1<SCharaEditSDCharaIconViewModel> IReadOnlyList`1<SCharaEditSDCharaIconViewModel> List<SCharaEditSDCharaIconViewModel> Pointer
+    // 010 SupportEffectContentViewModel            ModelClassType SupportEffectContentViewModel SupportEffectContentViewModel SupportEffectContentViewModel Pointer
+    // 018 SDCharaIconViewModels                    ModelClassListType IReadOnlyList`1<SCharaEditSDCharaIconViewModel> IReadOnlyList`1<SCharaEditSDCharaIconViewModel> List<SCharaEditSDCharaIconViewModel> Pointer
     public partial class SCharaEditSupportEffectContentViewModel : DataModel
     {
         public SupportEffectContentViewModel?           SupportEffectContentViewModel           { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SCharaEditSupportEffectContentViewModel() { Pointer= p0 };
 
-            value.SupportEffectContentViewModel             = GetObject<SupportEffectContentViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.SupportEffectContentViewModel.FromPointer); // 02466627FCB0 0x10 SupportEffectContentViewModel ( 0001865EFDE0 ModelClassType SupportEffectContentViewModel SupportEffectContentViewModel SupportEffectContentViewModel Pointer )
-            value.SDCharaIconViewModels                     = GetObjectList<SCharaEditSDCharaIconViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.SCharaEditSDCharaIconViewModel.FromPointer); // 02466627FCD0 0x18 SDCharaIconViewModels       ( 000185D158E8 ModelClassListType IReadOnlyList`1<SCharaEditSDCharaIconViewModel> IReadOnlyList`1<SCharaEditSDCharaIconViewModel> List<SCharaEditSDCharaIconViewModel> Pointer )
+            value.SupportEffectContentViewModel             = GetObject<SupportEffectContentViewModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.SupportEffectContentViewModel.FromPointer); // 0x10 SupportEffectContentViewModel ( ModelClassType SupportEffectContentViewModel SupportEffectContentViewModel SupportEffectContentViewModel Pointer )
+            value.SDCharaIconViewModels                     = GetObjectList<SCharaEditSDCharaIconViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.SCharaEditSDCharaIconViewModel.FromPointer); // 0x18 SDCharaIconViewModels       ( ModelClassListType IReadOnlyList`1<SCharaEditSDCharaIconViewModel> IReadOnlyList`1<SCharaEditSDCharaIconViewModel> List<SCharaEditSDCharaIconViewModel> Pointer )
 
             return value;
         }

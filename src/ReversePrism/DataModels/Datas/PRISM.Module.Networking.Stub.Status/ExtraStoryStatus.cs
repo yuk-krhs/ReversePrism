@@ -11,17 +11,17 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<ExtraStoryStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 StoryFieldNumber                         int IL2CPP_TYPE_I4
-    // 018 Story                                    0001865A4D90 ModelClassType StoryStatus StoryStatus StoryStatus Pointer
+    // 018 Story                                    ModelClassType StoryStatus StoryStatus StoryStatus Pointer
     // 000 MstExtraStoryCategoryIdFieldNumber       int IL2CPP_TYPE_I4
-    // 020 MstExtraStoryCategoryId                  0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 MstExtraStoryCategoryId                  ModelPrimitiveType int int int Int32
     // 000 MstExtraStorySubCategoryIdFieldNumber    int IL2CPP_TYPE_I4
-    // 024 MstExtraStorySubCategoryId               0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 024 MstExtraStorySubCategoryId               ModelPrimitiveType int int int Int32
     // 000 UnlockPremiseMstExtraStoryIdFieldNumber  int IL2CPP_TYPE_I4
-    // 028 UnlockPremiseMstExtraStoryId             0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 028 UnlockPremiseMstExtraStoryId             ModelPrimitiveType int int int Int32
     // 000 ExtraStoryTypeFieldNumber                int IL2CPP_TYPE_I4
-    // 02C ExtraStoryType                           00018653F870 ModelEnumType ExtraStoryType ExtraStoryType ExtraStoryType Int32
+    // 02C ExtraStoryType                           ModelEnumType ExtraStoryType ExtraStoryType ExtraStoryType Int32
     // 000 ScenarioIdFieldNumber                    int IL2CPP_TYPE_I4
-    // 030 ScenarioId                               000186671910 ModelPrimitiveType string string string String
+    // 030 ScenarioId                               ModelPrimitiveType string string string String
     public partial class ExtraStoryStatus : DataModel
     {
         public StoryStatus?                             Story                                   { get; set; }
@@ -39,12 +39,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExtraStoryStatus() { Pointer= p0 };
 
-            value.Story                                     = GetObject<StoryStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoryStatus.FromPointer); // 0246629BE5B8 0x18 Story                       ( 0001865A4D90 ModelClassType StoryStatus StoryStatus StoryStatus Pointer )
-            value.MstExtraStoryCategoryId                   = GetInt32(new IntPtr(p + 0x020)); // 0246629BE5F8 0x20 MstExtraStoryCategoryId     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstExtraStorySubCategoryId                = GetInt32(new IntPtr(p + 0x024)); // 0246629BE638 0x24 MstExtraStorySubCategoryId  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UnlockPremiseMstExtraStoryId              = GetInt32(new IntPtr(p + 0x028)); // 0246629BE678 0x28 UnlockPremiseMstExtraStoryId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ExtraStoryType                            = (ExtraStoryType)GetInt32(new IntPtr(p + 0x02C)); // 0246629BE6B8 0x2C ExtraStoryType              ( 00018653F870 ModelEnumType ExtraStoryType ExtraStoryType ExtraStoryType Int32 )
-            value.ScenarioId                                = GetString(new IntPtr(p + 0x030)); // 0246629BE6F8 0x30 ScenarioId                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.Story                                     = GetObject<StoryStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoryStatus.FromPointer); // 0x18 Story                       ( ModelClassType StoryStatus StoryStatus StoryStatus Pointer )
+            value.MstExtraStoryCategoryId                   = GetInt32(new IntPtr(p + 0x020)); // 0x20 MstExtraStoryCategoryId     ( ModelPrimitiveType int int int Int32 )
+            value.MstExtraStorySubCategoryId                = GetInt32(new IntPtr(p + 0x024)); // 0x24 MstExtraStorySubCategoryId  ( ModelPrimitiveType int int int Int32 )
+            value.UnlockPremiseMstExtraStoryId              = GetInt32(new IntPtr(p + 0x028)); // 0x28 UnlockPremiseMstExtraStoryId ( ModelPrimitiveType int int int Int32 )
+            value.ExtraStoryType                            = (ExtraStoryType)GetInt32(new IntPtr(p + 0x02C)); // 0x2C ExtraStoryType              ( ModelEnumType ExtraStoryType ExtraStoryType ExtraStoryType Int32 )
+            value.ScenarioId                                = GetString(new IntPtr(p + 0x030)); // 0x30 ScenarioId                  ( ModelPrimitiveType string string string String )
 
             return value;
         }

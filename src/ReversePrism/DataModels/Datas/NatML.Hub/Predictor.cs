@@ -8,13 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Tag                                      0001866722E0 ModelPrimitiveType string string string String
-    // 018 Status                                   0001866722E0 ModelPrimitiveType string string string String
-    // 020 AspectMode                               0001866722E0 ModelPrimitiveType string string string String
-    // 028 Labels                                   000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 030 Normalization                            0001866A92B0 ModelClassType Normalization Normalization Normalization Pointer
-    // 038 AudioFormat                              0001867179C0 ModelClassType AudioFormat AudioFormat AudioFormat Pointer
-    // 040 Type                                     0001866722E0 ModelPrimitiveType string string string String
+    // 010 Tag                                      ModelPrimitiveType string string string String
+    // 018 Status                                   ModelPrimitiveType string string string String
+    // 020 AspectMode                               ModelPrimitiveType string string string String
+    // 028 Labels                                   ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 030 Normalization                            ModelClassType Normalization Normalization Normalization Pointer
+    // 038 AudioFormat                              ModelClassType AudioFormat AudioFormat AudioFormat Pointer
+    // 040 Type                                     ModelPrimitiveType string string string String
     public partial class Predictor : DataModel
     {
         public string                                   Tag                                     { get; set; }
@@ -33,13 +33,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Predictor() { Pointer= p0 };
 
-            value.Tag                                       = GetString(new IntPtr(p + 0x010)); // 02466BE3F6F8 0x10 Tag                         ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Status                                    = GetString(new IntPtr(p + 0x018)); // 02466BE3F718 0x18 Status                      ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.AspectMode                                = GetString(new IntPtr(p + 0x020)); // 02466BE3F738 0x20 AspectMode                  ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Labels                                    = GetStringList(new IntPtr(p + 0x028)); // 02466BE3F758 0x28 Labels                      ( 000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.Normalization                             = GetObject<Normalization>(new IntPtr(p + 0x030), ReversePrism.DataModels.Normalization.FromPointer); // 02466BE3F778 0x30 Normalization               ( 0001866A92B0 ModelClassType Normalization Normalization Normalization Pointer )
-            value.AudioFormat                               = GetObject<AudioFormat>(new IntPtr(p + 0x038), ReversePrism.DataModels.AudioFormat.FromPointer); // 02466BE3F798 0x38 AudioFormat                 ( 0001867179C0 ModelClassType AudioFormat AudioFormat AudioFormat Pointer )
-            value.Type                                      = GetString(new IntPtr(p + 0x040)); // 02466BE3F7B8 0x40 Type                        ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Tag                                       = GetString(new IntPtr(p + 0x010)); // 0x10 Tag                         ( ModelPrimitiveType string string string String )
+            value.Status                                    = GetString(new IntPtr(p + 0x018)); // 0x18 Status                      ( ModelPrimitiveType string string string String )
+            value.AspectMode                                = GetString(new IntPtr(p + 0x020)); // 0x20 AspectMode                  ( ModelPrimitiveType string string string String )
+            value.Labels                                    = GetStringList(new IntPtr(p + 0x028)); // 0x28 Labels                      ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.Normalization                             = GetObject<Normalization>(new IntPtr(p + 0x030), ReversePrism.DataModels.Normalization.FromPointer); // 0x30 Normalization               ( ModelClassType Normalization Normalization Normalization Pointer )
+            value.AudioFormat                               = GetObject<AudioFormat>(new IntPtr(p + 0x038), ReversePrism.DataModels.AudioFormat.FromPointer); // 0x38 AudioFormat                 ( ModelClassType AudioFormat AudioFormat AudioFormat Pointer )
+            value.Type                                      = GetString(new IntPtr(p + 0x040)); // 0x40 Type                        ( ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 IsRegistered                             000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 IsRegistered                             ModelPrimitiveType bool bool bool Bool
     public partial class ExceptionHandler : DataModel
     {
         public bool                                     IsRegistered                            { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExceptionHandler() { Pointer= p0 };
 
-            value.IsRegistered                              = GetBool(new IntPtr(p + 0x010)); // 02466BCDFB88 0x10 IsRegistered                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsRegistered                              = GetBool(new IntPtr(p + 0x010)); // 0x10 IsRegistered                ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

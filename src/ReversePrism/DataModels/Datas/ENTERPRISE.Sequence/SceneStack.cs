@@ -8,14 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 UseEditorLoader                          000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 021 IsReactivating                           000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 022 InAction                                 000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 020 UseEditorLoader                          ModelPrimitiveType bool bool bool Bool
+    // 021 IsReactivating                           ModelPrimitiveType bool bool bool Bool
+    // 022 InAction                                 ModelPrimitiveType bool bool bool Bool
     // 028 beforeUnloadScene                        Func`2<Scene, UniTask> IL2CPP_TYPE_GENERICINST
-    // 030 PrepareUnload                            0001866792B0 ModelClassType Action Action Action Pointer
-    // 038 BeforeLoad                               0001866792B0 ModelClassType Action Action Action Pointer
-    // 040 AfterLoad                                0001866792B0 ModelClassType Action Action Action Pointer
-    // 048 _SceneStack                              000185D2B3B8 ModelClassListType List`1<SceneDish> List`1<SceneDish> List<SceneDish> Pointer
+    // 030 PrepareUnload                            ModelClassType Action Action Action Pointer
+    // 038 BeforeLoad                               ModelClassType Action Action Action Pointer
+    // 040 AfterLoad                                ModelClassType Action Action Action Pointer
+    // 048 _SceneStack                              ModelClassListType List`1<SceneDish> List`1<SceneDish> List<SceneDish> Pointer
     public partial class SceneStack : DataModel
     {
         public bool                                     UseEditorLoader                         { get; set; }
@@ -34,13 +34,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SceneStack() { Pointer= p0 };
 
-            value.UseEditorLoader                           = GetBool(new IntPtr(p + 0x020)); // 0245A3EE4608 0x20 UseEditorLoader             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsReactivating                            = GetBool(new IntPtr(p + 0x021)); // 0245A3EE4628 0x21 IsReactivating              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.InAction                                  = GetBool(new IntPtr(p + 0x022)); // 0245A3EE4648 0x22 InAction                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.PrepareUnload                             = GetObject<Action>(new IntPtr(p + 0x030), ReversePrism.DataModels.Action.FromPointer); // 0245A3EE4688 0x30 PrepareUnload               ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.BeforeLoad                                = GetObject<Action>(new IntPtr(p + 0x038), ReversePrism.DataModels.Action.FromPointer); // 0245A3EE46A8 0x38 BeforeLoad                  ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.AfterLoad                                 = GetObject<Action>(new IntPtr(p + 0x040), ReversePrism.DataModels.Action.FromPointer); // 0245A3EE46C8 0x40 AfterLoad                   ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value._SceneStack                               = GetObjectList<SceneDish>(new IntPtr(p + 0x048), ReversePrism.DataModels.SceneDish.FromPointer); // 0245A3EE46E8 0x48 _SceneStack                 ( 000185D2B3B8 ModelClassListType List`1<SceneDish> List`1<SceneDish> List<SceneDish> Pointer )
+            value.UseEditorLoader                           = GetBool(new IntPtr(p + 0x020)); // 0x20 UseEditorLoader             ( ModelPrimitiveType bool bool bool Bool )
+            value.IsReactivating                            = GetBool(new IntPtr(p + 0x021)); // 0x21 IsReactivating              ( ModelPrimitiveType bool bool bool Bool )
+            value.InAction                                  = GetBool(new IntPtr(p + 0x022)); // 0x22 InAction                    ( ModelPrimitiveType bool bool bool Bool )
+            value.PrepareUnload                             = GetObject<Action>(new IntPtr(p + 0x030), ReversePrism.DataModels.Action.FromPointer); // 0x30 PrepareUnload               ( ModelClassType Action Action Action Pointer )
+            value.BeforeLoad                                = GetObject<Action>(new IntPtr(p + 0x038), ReversePrism.DataModels.Action.FromPointer); // 0x38 BeforeLoad                  ( ModelClassType Action Action Action Pointer )
+            value.AfterLoad                                 = GetObject<Action>(new IntPtr(p + 0x040), ReversePrism.DataModels.Action.FromPointer); // 0x40 AfterLoad                   ( ModelClassType Action Action Action Pointer )
+            value._SceneStack                               = GetObjectList<SceneDish>(new IntPtr(p + 0x048), ReversePrism.DataModels.SceneDish.FromPointer); // 0x48 _SceneStack                 ( ModelClassListType List`1<SceneDish> List`1<SceneDish> List<SceneDish> Pointer )
 
             return value;
         }

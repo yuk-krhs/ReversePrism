@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 PurchaseProduct                          0001865F9710 ModelClassType IProductStatus IProductStatus IProductStatus Pointer
-    // 018 ExchangeGroupGroupId                     0001865F36C0 ModelPrimitiveType int int int Int32
-    // 020 NewBdgObj                                0001865D8420 ModelClassType GameObject GameObject GameObject Pointer
-    // 028 GoodsClientModels                        000185CDA538 ModelClassListType List`1<ExchangeGoodsClientModel> List`1<ExchangeGoodsClientModel> List<ExchangeGoodsClientModel> Pointer
+    // 010 PurchaseProduct                          ModelClassType IProductStatus IProductStatus IProductStatus Pointer
+    // 018 ExchangeGroupGroupId                     ModelPrimitiveType int int int Int32
+    // 020 NewBdgObj                                ModelClassType GameObject GameObject GameObject Pointer
+    // 028 GoodsClientModels                        ModelClassListType List`1<ExchangeGoodsClientModel> List`1<ExchangeGoodsClientModel> List<ExchangeGoodsClientModel> Pointer
     public partial class TabData : DataModel
     {
         public IProductStatus?                          PurchaseProduct                         { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TabData() { Pointer= p0 };
 
-            value.PurchaseProduct                           = GetObject<IProductStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProductStatus.FromPointer); // 024666380C98 0x10 PurchaseProduct             ( 0001865F9710 ModelClassType IProductStatus IProductStatus IProductStatus Pointer )
-            value.ExchangeGroupGroupId                      = GetInt32(new IntPtr(p + 0x018)); // 024666380CB8 0x18 ExchangeGroupGroupId        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.NewBdgObj                                 = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 024666380CD8 0x20 NewBdgObj                   ( 0001865D8420 ModelClassType GameObject GameObject GameObject Pointer )
-            value.GoodsClientModels                         = GetObjectList<ExchangeGoodsClientModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.ExchangeGoodsClientModel.FromPointer); // 024666380CF8 0x28 GoodsClientModels           ( 000185CDA538 ModelClassListType List`1<ExchangeGoodsClientModel> List`1<ExchangeGoodsClientModel> List<ExchangeGoodsClientModel> Pointer )
+            value.PurchaseProduct                           = GetObject<IProductStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProductStatus.FromPointer); // 0x10 PurchaseProduct             ( ModelClassType IProductStatus IProductStatus IProductStatus Pointer )
+            value.ExchangeGroupGroupId                      = GetInt32(new IntPtr(p + 0x018)); // 0x18 ExchangeGroupGroupId        ( ModelPrimitiveType int int int Int32 )
+            value.NewBdgObj                                 = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0x20 NewBdgObj                   ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.GoodsClientModels                         = GetObjectList<ExchangeGoodsClientModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.ExchangeGoodsClientModel.FromPointer); // 0x28 GoodsClientModels           ( ModelClassListType List`1<ExchangeGoodsClientModel> List`1<ExchangeGoodsClientModel> List<ExchangeGoodsClientModel> Pointer )
 
             return value;
         }

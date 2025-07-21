@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 TransformNames                           000185B81DA0 ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 010 TransformNames                           ModelPrimitiveListType string[] string[] List<string> Pointer
     public partial class TupleElementNamesAttribute : DataModel
     {
         public List<string>?                            TransformNames                          { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TupleElementNamesAttribute() { Pointer= p0 };
 
-            value.TransformNames                            = GetStringList(new IntPtr(p + 0x010)); // 024666D06FA8 0x10 TransformNames              ( 000185B81DA0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.TransformNames                            = GetStringList(new IntPtr(p + 0x010)); // 0x10 TransformNames              ( ModelPrimitiveListType string[] string[] List<string> Pointer )
 
             return value;
         }

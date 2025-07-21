@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Type                                     0001866936B0 ModelClassType Type Type Type Pointer
-    // 018 TypeCode                                 000186644220 ModelEnumType PrimitiveTypeCode PrimitiveTypeCode PrimitiveTypeCode Int32
+    // 010 Type                                     ModelClassType Type Type Type Pointer
+    // 018 TypeCode                                 ModelEnumType PrimitiveTypeCode PrimitiveTypeCode PrimitiveTypeCode Int32
     public partial class TypeInformation : DataModel
     {
         public Type?                                    Type                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TypeInformation() { Pointer= p0 };
 
-            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0245A5FC9548 0x10 Type                        ( 0001866936B0 ModelClassType Type Type Type Pointer )
-            value.TypeCode                                  = (PrimitiveTypeCode)GetInt32(new IntPtr(p + 0x018)); // 0245A5FC9568 0x18 TypeCode                    ( 000186644220 ModelEnumType PrimitiveTypeCode PrimitiveTypeCode PrimitiveTypeCode Int32 )
+            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0x10 Type                        ( ModelClassType Type Type Type Pointer )
+            value.TypeCode                                  = (PrimitiveTypeCode)GetInt32(new IntPtr(p + 0x018)); // 0x18 TypeCode                    ( ModelEnumType PrimitiveTypeCode PrimitiveTypeCode PrimitiveTypeCode Int32 )
 
             return value;
         }

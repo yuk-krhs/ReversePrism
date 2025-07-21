@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ResultType                               000186675FC0 ModelEnumType ResultType ResultType ResultType Int32
-    // 014 StatusCode                               000186587260 ModelEnumType StatusCode StatusCode StatusCode Int32
-    // 018 ErrorCode                                000186671910 ModelPrimitiveType string string string String
-    // 020 Message                                  000186671910 ModelPrimitiveType string string string String
-    // 028 ErrorDetail                              0001867630D0 ModelClassType IErrorDialogStatus IErrorDialogStatus IErrorDialogStatus Pointer
-    // 030 Exception                                0001865CB1C0 ModelClassType Exception Exception Exception Pointer
+    // 010 ResultType                               ModelEnumType ResultType ResultType ResultType Int32
+    // 014 StatusCode                               ModelEnumType StatusCode StatusCode StatusCode Int32
+    // 018 ErrorCode                                ModelPrimitiveType string string string String
+    // 020 Message                                  ModelPrimitiveType string string string String
+    // 028 ErrorDetail                              ModelClassType IErrorDialogStatus IErrorDialogStatus IErrorDialogStatus Pointer
+    // 030 Exception                                ModelClassType Exception Exception Exception Pointer
     public partial class NetworkError : DataModel
     {
         public ResultType                               ResultType                              { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NetworkError() { Pointer= p0 };
 
-            value.ResultType                                = (ResultType)GetInt32(new IntPtr(p + 0x010)); // 0246605D0578 0x10 ResultType                  ( 000186675FC0 ModelEnumType ResultType ResultType ResultType Int32 )
-            value.StatusCode                                = (StatusCode)GetInt32(new IntPtr(p + 0x014)); // 0246605D0598 0x14 StatusCode                  ( 000186587260 ModelEnumType StatusCode StatusCode StatusCode Int32 )
-            value.ErrorCode                                 = GetString(new IntPtr(p + 0x018)); // 0246605D05B8 0x18 ErrorCode                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.Message                                   = GetString(new IntPtr(p + 0x020)); // 0246605D05D8 0x20 Message                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.ErrorDetail                               = GetObject<IErrorDialogStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.IErrorDialogStatus.FromPointer); // 0246605D05F8 0x28 ErrorDetail                 ( 0001867630D0 ModelClassType IErrorDialogStatus IErrorDialogStatus IErrorDialogStatus Pointer )
-            value.Exception                                 = GetObject<Exception>(new IntPtr(p + 0x030), ReversePrism.DataModels.Exception.FromPointer); // 0246605D0618 0x30 Exception                   ( 0001865CB1C0 ModelClassType Exception Exception Exception Pointer )
+            value.ResultType                                = (ResultType)GetInt32(new IntPtr(p + 0x010)); // 0x10 ResultType                  ( ModelEnumType ResultType ResultType ResultType Int32 )
+            value.StatusCode                                = (StatusCode)GetInt32(new IntPtr(p + 0x014)); // 0x14 StatusCode                  ( ModelEnumType StatusCode StatusCode StatusCode Int32 )
+            value.ErrorCode                                 = GetString(new IntPtr(p + 0x018)); // 0x18 ErrorCode                   ( ModelPrimitiveType string string string String )
+            value.Message                                   = GetString(new IntPtr(p + 0x020)); // 0x20 Message                     ( ModelPrimitiveType string string string String )
+            value.ErrorDetail                               = GetObject<IErrorDialogStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.IErrorDialogStatus.FromPointer); // 0x28 ErrorDetail                 ( ModelClassType IErrorDialogStatus IErrorDialogStatus IErrorDialogStatus Pointer )
+            value.Exception                                 = GetObject<Exception>(new IntPtr(p + 0x030), ReversePrism.DataModels.Exception.FromPointer); // 0x30 Exception                   ( ModelClassType Exception Exception Exception Pointer )
 
             return value;
         }

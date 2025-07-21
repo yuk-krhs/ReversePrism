@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Level                                    0001866A18A0 ModelEnumType AlertLevel AlertLevel AlertLevel Int32
-    // 011 Description                              0001866A0EE0 ModelEnumType AlertDescription AlertDescription AlertDescription Int32
+    // 010 Level                                    ModelEnumType AlertLevel AlertLevel AlertLevel Int32
+    // 011 Description                              ModelEnumType AlertDescription AlertDescription AlertDescription Int32
     public partial class Alert : DataModel
     {
         public AlertLevel                               Level                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Alert() { Pointer= p0 };
 
-            value.Level                                     = (AlertLevel)GetInt32(new IntPtr(p + 0x010)); // 02466B40DA58 0x10 Level                       ( 0001866A18A0 ModelEnumType AlertLevel AlertLevel AlertLevel Int32 )
-            value.Description                               = (AlertDescription)GetInt32(new IntPtr(p + 0x011)); // 02466B40DA78 0x11 Description                 ( 0001866A0EE0 ModelEnumType AlertDescription AlertDescription AlertDescription Int32 )
+            value.Level                                     = (AlertLevel)GetInt32(new IntPtr(p + 0x010)); // 0x10 Level                       ( ModelEnumType AlertLevel AlertLevel AlertLevel Int32 )
+            value.Description                               = (AlertDescription)GetInt32(new IntPtr(p + 0x011)); // 0x11 Description                 ( ModelEnumType AlertDescription AlertDescription AlertDescription Int32 )
 
             return value;
         }

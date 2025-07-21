@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 SingleQuoteCharEscapeFlags               bool[] IL2CPP_TYPE_SZARRAY
     // 008 DoubleQuoteCharEscapeFlags               bool[] IL2CPP_TYPE_SZARRAY
-    // 010 HtmlCharEscapeFlags                      000185B791B0 ModelPrimitiveListType bool[] bool[] List<bool> Pointer
+    // 010 HtmlCharEscapeFlags                      ModelPrimitiveListType bool[] bool[] List<bool> Pointer
     // 000 UnicodeTextLength                        int IL2CPP_TYPE_I4
     // 000 EscapedUnicodeText                       string IL2CPP_TYPE_STRING
     public partial class JavaScriptUtils : DataModel
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JavaScriptUtils() { Pointer= p0 };
 
-            value.HtmlCharEscapeFlags                       = GetBoolList(new IntPtr(p + 0x010)); // 0245A6072D88 0x10 HtmlCharEscapeFlags         ( 000185B791B0 ModelPrimitiveListType bool[] bool[] List<bool> Pointer )
+            value.HtmlCharEscapeFlags                       = GetBoolList(new IntPtr(p + 0x010)); // 0x10 HtmlCharEscapeFlags         ( ModelPrimitiveListType bool[] bool[] List<bool> Pointer )
 
             return value;
         }

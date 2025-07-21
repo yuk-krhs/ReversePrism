@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 View                                     000186626010 ModelClassType IScheduleSelectionLeftBottomAreaView IScheduleSelectionLeftBottomAreaView IScheduleSelectionLeftBottomAreaView Pointer
-    // 018 TokenSource                              0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
+    // 010 View                                     ModelClassType IScheduleSelectionLeftBottomAreaView IScheduleSelectionLeftBottomAreaView IScheduleSelectionLeftBottomAreaView Pointer
+    // 018 TokenSource                              ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
     public partial class ScheduleSelectionLeftBottomAreaPresenter : DataModel
     {
         public IScheduleSelectionLeftBottomAreaView?    View                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ScheduleSelectionLeftBottomAreaPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<IScheduleSelectionLeftBottomAreaView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IScheduleSelectionLeftBottomAreaView.FromPointer); // 024665EB20B8 0x10 View                        ( 000186626010 ModelClassType IScheduleSelectionLeftBottomAreaView IScheduleSelectionLeftBottomAreaView IScheduleSelectionLeftBottomAreaView Pointer )
-            value.TokenSource                               = GetObject<CancellationTokenSource>(new IntPtr(p + 0x018), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 024665EB20D8 0x18 TokenSource                 ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.View                                      = GetObject<IScheduleSelectionLeftBottomAreaView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IScheduleSelectionLeftBottomAreaView.FromPointer); // 0x10 View                        ( ModelClassType IScheduleSelectionLeftBottomAreaView IScheduleSelectionLeftBottomAreaView IScheduleSelectionLeftBottomAreaView Pointer )
+            value.TokenSource                               = GetObject<CancellationTokenSource>(new IntPtr(p + 0x018), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0x18 TokenSource                 ( ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
 
             return value;
         }

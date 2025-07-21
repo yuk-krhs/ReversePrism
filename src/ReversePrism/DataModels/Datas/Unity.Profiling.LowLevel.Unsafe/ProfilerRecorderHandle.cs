@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Handle                                   00018669C4F0 ModelPrimitiveType ulong ulong ulong UInt64
+    // 010 Handle                                   ModelPrimitiveType ulong ulong ulong UInt64
     public partial class ProfilerRecorderHandle : DataModel
     {
         public ulong                                    Handle                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProfilerRecorderHandle() { Pointer= p0 };
 
-            value.Handle                                    = GetUInt64(new IntPtr(p + 0x010)); // 0245A230C3C8 0x10 Handle                      ( 00018669C4F0 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.Handle                                    = GetUInt64(new IntPtr(p + 0x010)); // 0x10 Handle                      ( ModelPrimitiveType ulong ulong ulong UInt64 )
 
             return value;
         }

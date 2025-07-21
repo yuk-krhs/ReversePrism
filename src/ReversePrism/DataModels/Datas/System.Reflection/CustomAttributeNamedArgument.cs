@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 TypedValue                               00018666A500 ModelEnumType CustomAttributeTypedArgument CustomAttributeTypedArgument CustomAttributeTypedArgument Int32
-    // 020 IsField                                  0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 028 MemberName                               000186672F10 ModelPrimitiveType string string string String
-    // 030 AttributeType                            0001866936B0 ModelClassType Type Type Type Pointer
-    // 038 LazyMemberInfo                           0001865F1B00 ModelClassType MemberInfo MemberInfo MemberInfo Pointer
+    // 010 TypedValue                               ModelEnumType CustomAttributeTypedArgument CustomAttributeTypedArgument CustomAttributeTypedArgument Int32
+    // 020 IsField                                  ModelPrimitiveType bool bool bool Bool
+    // 028 MemberName                               ModelPrimitiveType string string string String
+    // 030 AttributeType                            ModelClassType Type Type Type Pointer
+    // 038 LazyMemberInfo                           ModelClassType MemberInfo MemberInfo MemberInfo Pointer
     public partial class CustomAttributeNamedArgument : DataModel
     {
         public CustomAttributeTypedArgument             TypedValue                              { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CustomAttributeNamedArgument() { Pointer= p0 };
 
-            value.TypedValue                                = (CustomAttributeTypedArgument)GetInt32(new IntPtr(p + 0x010)); // 0245A3DAB0E8 0x10 TypedValue                  ( 00018666A500 ModelEnumType CustomAttributeTypedArgument CustomAttributeTypedArgument CustomAttributeTypedArgument Int32 )
-            value.IsField                                   = GetBool(new IntPtr(p + 0x020)); // 0245A3DAB108 0x20 IsField                     ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.MemberName                                = GetString(new IntPtr(p + 0x028)); // 0245A3DAB128 0x28 MemberName                  ( 000186672F10 ModelPrimitiveType string string string String )
-            value.AttributeType                             = GetObject<Type>(new IntPtr(p + 0x030), ReversePrism.DataModels.Type.FromPointer); // 0245A3DAB148 0x30 AttributeType               ( 0001866936B0 ModelClassType Type Type Type Pointer )
-            value.LazyMemberInfo                            = GetObject<MemberInfo>(new IntPtr(p + 0x038), ReversePrism.DataModels.MemberInfo.FromPointer); // 0245A3DAB168 0x38 LazyMemberInfo              ( 0001865F1B00 ModelClassType MemberInfo MemberInfo MemberInfo Pointer )
+            value.TypedValue                                = (CustomAttributeTypedArgument)GetInt32(new IntPtr(p + 0x010)); // 0x10 TypedValue                  ( ModelEnumType CustomAttributeTypedArgument CustomAttributeTypedArgument CustomAttributeTypedArgument Int32 )
+            value.IsField                                   = GetBool(new IntPtr(p + 0x020)); // 0x20 IsField                     ( ModelPrimitiveType bool bool bool Bool )
+            value.MemberName                                = GetString(new IntPtr(p + 0x028)); // 0x28 MemberName                  ( ModelPrimitiveType string string string String )
+            value.AttributeType                             = GetObject<Type>(new IntPtr(p + 0x030), ReversePrism.DataModels.Type.FromPointer); // 0x30 AttributeType               ( ModelClassType Type Type Type Pointer )
+            value.LazyMemberInfo                            = GetObject<MemberInfo>(new IntPtr(p + 0x038), ReversePrism.DataModels.MemberInfo.FromPointer); // 0x38 LazyMemberInfo              ( ModelClassType MemberInfo MemberInfo MemberInfo Pointer )
 
             return value;
         }

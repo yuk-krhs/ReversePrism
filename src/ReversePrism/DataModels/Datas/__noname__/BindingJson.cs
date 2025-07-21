@@ -8,15 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Name                                     0001866722E0 ModelPrimitiveType string string string String
-    // 018 Id                                       0001866722E0 ModelPrimitiveType string string string String
-    // 020 Path                                     0001866722E0 ModelPrimitiveType string string string String
-    // 028 Interactions                             0001866722E0 ModelPrimitiveType string string string String
-    // 030 Processors                               0001866722E0 ModelPrimitiveType string string string String
-    // 038 Groups                                   0001866722E0 ModelPrimitiveType string string string String
-    // 040 Action                                   0001866722E0 ModelPrimitiveType string string string String
-    // 048 IsComposite                              000186595960 ModelPrimitiveType bool bool bool Bool
-    // 049 IsPartOfComposite                        000186595960 ModelPrimitiveType bool bool bool Bool
+    // 010 Name                                     ModelPrimitiveType string string string String
+    // 018 Id                                       ModelPrimitiveType string string string String
+    // 020 Path                                     ModelPrimitiveType string string string String
+    // 028 Interactions                             ModelPrimitiveType string string string String
+    // 030 Processors                               ModelPrimitiveType string string string String
+    // 038 Groups                                   ModelPrimitiveType string string string String
+    // 040 Action                                   ModelPrimitiveType string string string String
+    // 048 IsComposite                              ModelPrimitiveType bool bool bool Bool
+    // 049 IsPartOfComposite                        ModelPrimitiveType bool bool bool Bool
     public partial class BindingJson : DataModel
     {
         public string                                   Name                                    { get; set; }
@@ -37,15 +37,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BindingJson() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0246676BF610 0x10 Name                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Id                                        = GetString(new IntPtr(p + 0x018)); // 0246676BF630 0x18 Id                          ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Path                                      = GetString(new IntPtr(p + 0x020)); // 0246676BF650 0x20 Path                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Interactions                              = GetString(new IntPtr(p + 0x028)); // 0246676BF670 0x28 Interactions                ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Processors                                = GetString(new IntPtr(p + 0x030)); // 0246676BF690 0x30 Processors                  ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Groups                                    = GetString(new IntPtr(p + 0x038)); // 0246676BF6B0 0x38 Groups                      ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Action                                    = GetString(new IntPtr(p + 0x040)); // 0246676BF6D0 0x40 Action                      ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.IsComposite                               = GetBool(new IntPtr(p + 0x048)); // 0246676BF6F0 0x48 IsComposite                 ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.IsPartOfComposite                         = GetBool(new IntPtr(p + 0x049)); // 0246676BF710 0x49 IsPartOfComposite           ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Name                        ( ModelPrimitiveType string string string String )
+            value.Id                                        = GetString(new IntPtr(p + 0x018)); // 0x18 Id                          ( ModelPrimitiveType string string string String )
+            value.Path                                      = GetString(new IntPtr(p + 0x020)); // 0x20 Path                        ( ModelPrimitiveType string string string String )
+            value.Interactions                              = GetString(new IntPtr(p + 0x028)); // 0x28 Interactions                ( ModelPrimitiveType string string string String )
+            value.Processors                                = GetString(new IntPtr(p + 0x030)); // 0x30 Processors                  ( ModelPrimitiveType string string string String )
+            value.Groups                                    = GetString(new IntPtr(p + 0x038)); // 0x38 Groups                      ( ModelPrimitiveType string string string String )
+            value.Action                                    = GetString(new IntPtr(p + 0x040)); // 0x40 Action                      ( ModelPrimitiveType string string string String )
+            value.IsComposite                               = GetBool(new IntPtr(p + 0x048)); // 0x48 IsComposite                 ( ModelPrimitiveType bool bool bool Bool )
+            value.IsPartOfComposite                         = GetBool(new IntPtr(p + 0x049)); // 0x49 IsPartOfComposite           ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

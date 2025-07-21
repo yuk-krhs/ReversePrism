@@ -11,24 +11,24 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<EventScheduleStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 EventScheduleIdFieldNumber               int IL2CPP_TYPE_I4
-    // 018 EventScheduleId                          000186671910 ModelPrimitiveType string string string String
+    // 018 EventScheduleId                          ModelPrimitiveType string string string String
     // 000 EventScheduleTypeFieldNumber             int IL2CPP_TYPE_I4
-    // 020 EventScheduleType                        000186767070 ModelEnumType EventScheduleType EventScheduleType EventScheduleType Int32
+    // 020 EventScheduleType                        ModelEnumType EventScheduleType EventScheduleType EventScheduleType Int32
     // 000 DisplayPriorityFieldNumber               int IL2CPP_TYPE_I4
-    // 024 DisplayPriority                          0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 024 DisplayPriority                          ModelPrimitiveType int int int Int32
     // 000 ImageUrlFieldNumber                      int IL2CPP_TYPE_I4
-    // 028 ImageUrl                                 000186671910 ModelPrimitiveType string string string String
+    // 028 ImageUrl                                 ModelPrimitiveType string string string String
     // 000 TitleFieldNumber                         int IL2CPP_TYPE_I4
-    // 030 Title                                    000186671910 ModelPrimitiveType string string string String
+    // 030 Title                                    ModelPrimitiveType string string string String
     // 000 TagListFieldNumber                       int IL2CPP_TYPE_I4
     // 008 _repeated_tagList_codec                  FieldCodec`1<EventScheduleTagStatus> IL2CPP_TYPE_GENERICINST
-    // 038 TagList                                  000185CD5FD8 ModelClassListType RepeatedField`1<EventScheduleTagStatus> RepeatedField`1<EventScheduleTagStatus> List<EventScheduleTagStatus> Pointer
+    // 038 TagList                                  ModelClassListType RepeatedField`1<EventScheduleTagStatus> RepeatedField`1<EventScheduleTagStatus> List<EventScheduleTagStatus> Pointer
     // 000 PeriodFieldNumber                        int IL2CPP_TYPE_I4
-    // 040 Period                                   000186734A00 ModelClassType PeriodStatus PeriodStatus PeriodStatus Pointer
+    // 040 Period                                   ModelClassType PeriodStatus PeriodStatus PeriodStatus Pointer
     // 000 DisplayPeriodFieldNumber                 int IL2CPP_TYPE_I4
-    // 048 DisplayPeriod                            000186734A00 ModelClassType PeriodStatus PeriodStatus PeriodStatus Pointer
+    // 048 DisplayPeriod                            ModelClassType PeriodStatus PeriodStatus PeriodStatus Pointer
     // 000 JumpFieldNumber                          int IL2CPP_TYPE_I4
-    // 050 Jump                                     000186768670 ModelClassType JumpStatus JumpStatus JumpStatus Pointer
+    // 050 Jump                                     ModelClassType JumpStatus JumpStatus JumpStatus Pointer
     public partial class EventScheduleStatus : DataModel
     {
         public string                                   EventScheduleId                         { get; set; }
@@ -49,15 +49,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EventScheduleStatus() { Pointer= p0 };
 
-            value.EventScheduleId                           = GetString(new IntPtr(p + 0x018)); // 024661033C28 0x18 EventScheduleId             ( 000186671910 ModelPrimitiveType string string string String )
-            value.EventScheduleType                         = (EventScheduleType)GetInt32(new IntPtr(p + 0x020)); // 024661033C68 0x20 EventScheduleType           ( 000186767070 ModelEnumType EventScheduleType EventScheduleType EventScheduleType Int32 )
-            value.DisplayPriority                           = GetInt32(new IntPtr(p + 0x024)); // 024661033CA8 0x24 DisplayPriority             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ImageUrl                                  = GetString(new IntPtr(p + 0x028)); // 024661033CE8 0x28 ImageUrl                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.Title                                     = GetString(new IntPtr(p + 0x030)); // 024661033D28 0x30 Title                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.TagList                                   = GetObjectList<EventScheduleTagStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.EventScheduleTagStatus.FromPointer); // 024661033D88 0x38 TagList                     ( 000185CD5FD8 ModelClassListType RepeatedField`1<EventScheduleTagStatus> RepeatedField`1<EventScheduleTagStatus> List<EventScheduleTagStatus> Pointer )
-            value.Period                                    = GetObject<PeriodStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.PeriodStatus.FromPointer); // 024661033DC8 0x40 Period                      ( 000186734A00 ModelClassType PeriodStatus PeriodStatus PeriodStatus Pointer )
-            value.DisplayPeriod                             = GetObject<PeriodStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.PeriodStatus.FromPointer); // 024661033E08 0x48 DisplayPeriod               ( 000186734A00 ModelClassType PeriodStatus PeriodStatus PeriodStatus Pointer )
-            value.Jump                                      = GetObject<JumpStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.JumpStatus.FromPointer); // 024661033E48 0x50 Jump                        ( 000186768670 ModelClassType JumpStatus JumpStatus JumpStatus Pointer )
+            value.EventScheduleId                           = GetString(new IntPtr(p + 0x018)); // 0x18 EventScheduleId             ( ModelPrimitiveType string string string String )
+            value.EventScheduleType                         = (EventScheduleType)GetInt32(new IntPtr(p + 0x020)); // 0x20 EventScheduleType           ( ModelEnumType EventScheduleType EventScheduleType EventScheduleType Int32 )
+            value.DisplayPriority                           = GetInt32(new IntPtr(p + 0x024)); // 0x24 DisplayPriority             ( ModelPrimitiveType int int int Int32 )
+            value.ImageUrl                                  = GetString(new IntPtr(p + 0x028)); // 0x28 ImageUrl                    ( ModelPrimitiveType string string string String )
+            value.Title                                     = GetString(new IntPtr(p + 0x030)); // 0x30 Title                       ( ModelPrimitiveType string string string String )
+            value.TagList                                   = GetObjectList<EventScheduleTagStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.EventScheduleTagStatus.FromPointer); // 0x38 TagList                     ( ModelClassListType RepeatedField`1<EventScheduleTagStatus> RepeatedField`1<EventScheduleTagStatus> List<EventScheduleTagStatus> Pointer )
+            value.Period                                    = GetObject<PeriodStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.PeriodStatus.FromPointer); // 0x40 Period                      ( ModelClassType PeriodStatus PeriodStatus PeriodStatus Pointer )
+            value.DisplayPeriod                             = GetObject<PeriodStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.PeriodStatus.FromPointer); // 0x48 DisplayPeriod               ( ModelClassType PeriodStatus PeriodStatus PeriodStatus Pointer )
+            value.Jump                                      = GetObject<JumpStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.JumpStatus.FromPointer); // 0x50 Jump                        ( ModelClassType JumpStatus JumpStatus JumpStatus Pointer )
 
             return value;
         }

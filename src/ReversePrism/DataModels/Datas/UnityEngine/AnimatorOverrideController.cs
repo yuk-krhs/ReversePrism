@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 OnOverrideControllerDirty                0001866A4BA0 ModelClassType OnOverrideControllerDirtyCallback OnOverrideControllerDirtyCallback OnOverrideControllerDirtyCallback Pointer
+    // 018 OnOverrideControllerDirty                ModelClassType OnOverrideControllerDirtyCallback OnOverrideControllerDirtyCallback OnOverrideControllerDirtyCallback Pointer
     public partial class AnimatorOverrideController : DataModel
     {
         public OnOverrideControllerDirtyCallback?       OnOverrideControllerDirty               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AnimatorOverrideController() { Pointer= p0 };
 
-            value.OnOverrideControllerDirty                 = GetObject<OnOverrideControllerDirtyCallback>(new IntPtr(p + 0x018), ReversePrism.DataModels.OnOverrideControllerDirtyCallback.FromPointer); // 0245A2273F68 0x18 OnOverrideControllerDirty   ( 0001866A4BA0 ModelClassType OnOverrideControllerDirtyCallback OnOverrideControllerDirtyCallback OnOverrideControllerDirtyCallback Pointer )
+            value.OnOverrideControllerDirty                 = GetObject<OnOverrideControllerDirtyCallback>(new IntPtr(p + 0x018), ReversePrism.DataModels.OnOverrideControllerDirtyCallback.FromPointer); // 0x18 OnOverrideControllerDirty   ( ModelClassType OnOverrideControllerDirtyCallback OnOverrideControllerDirtyCallback OnOverrideControllerDirtyCallback Pointer )
 
             return value;
         }

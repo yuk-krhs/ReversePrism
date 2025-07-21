@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 LowFrequencyMotorSpeed                   0001866656B0 ModelPrimitiveType float float float Single
-    // 014 HighFrequencyMotorSpeed                  0001866656B0 ModelPrimitiveType float float float Single
+    // 010 LowFrequencyMotorSpeed                   ModelPrimitiveType float float float Single
+    // 014 HighFrequencyMotorSpeed                  ModelPrimitiveType float float float Single
     public partial class DualMotorRumble : DataModel
     {
         public float                                    LowFrequencyMotorSpeed                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DualMotorRumble() { Pointer= p0 };
 
-            value.LowFrequencyMotorSpeed                    = GetSingle(new IntPtr(p + 0x010)); // 0245A339F8E0 0x10 LowFrequencyMotorSpeed      ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.HighFrequencyMotorSpeed                   = GetSingle(new IntPtr(p + 0x014)); // 0245A339F900 0x14 HighFrequencyMotorSpeed     ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.LowFrequencyMotorSpeed                    = GetSingle(new IntPtr(p + 0x010)); // 0x10 LowFrequencyMotorSpeed      ( ModelPrimitiveType float float float Single )
+            value.HighFrequencyMotorSpeed                   = GetSingle(new IntPtr(p + 0x014)); // 0x14 HighFrequencyMotorSpeed     ( ModelPrimitiveType float float float Single )
 
             return value;
         }

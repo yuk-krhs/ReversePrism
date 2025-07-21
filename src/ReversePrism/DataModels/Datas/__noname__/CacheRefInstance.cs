@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Valid                                    000186595960 ModelPrimitiveType bool bool bool Bool
+    // 010 Valid                                    ModelPrimitiveType bool bool bool Bool
     public partial class CacheRefInstance : DataModel
     {
         public bool                                     Valid                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CacheRefInstance() { Pointer= p0 };
 
-            value.Valid                                     = GetBool(new IntPtr(p + 0x010)); // 0246678BEE70 0x10 Valid                       ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Valid                                     = GetBool(new IntPtr(p + 0x010)); // 0x10 Valid                       ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

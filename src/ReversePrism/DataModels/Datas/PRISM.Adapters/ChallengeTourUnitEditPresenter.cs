@@ -8,12 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 View                                     000186728B50 ModelClassType IChallengeTourUnitEditView IChallengeTourUnitEditView IChallengeTourUnitEditView Pointer
-    // 018 Argument                                 000186588FE0 ModelClassType ChallengeTourUnitEditArgument ChallengeTourUnitEditArgument ChallengeTourUnitEditArgument Pointer
-    // 020 ViewModel                                00018658B6C0 ModelClassType ChallengeTourUnitEditViewModel ChallengeTourUnitEditViewModel ChallengeTourUnitEditViewModel Pointer
-    // 028 TokenSource                              0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
-    // 030 Disposables                              0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
-    // 038 FuFavoriteDisposable                     0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 010 View                                     ModelClassType IChallengeTourUnitEditView IChallengeTourUnitEditView IChallengeTourUnitEditView Pointer
+    // 018 Argument                                 ModelClassType ChallengeTourUnitEditArgument ChallengeTourUnitEditArgument ChallengeTourUnitEditArgument Pointer
+    // 020 ViewModel                                ModelClassType ChallengeTourUnitEditViewModel ChallengeTourUnitEditViewModel ChallengeTourUnitEditViewModel Pointer
+    // 028 TokenSource                              ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
+    // 030 Disposables                              ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
     public partial class ChallengeTourUnitEditPresenter : DataModel
     {
         public IChallengeTourUnitEditView?              View                                    { get; set; }
@@ -21,7 +20,6 @@ namespace ReversePrism.DataModels
         public ChallengeTourUnitEditViewModel?          ViewModel                               { get; set; }
         public CancellationTokenSource?                 TokenSource                             { get; set; }
         public CompositeDisposable?                     Disposables                             { get; set; }
-        public IDisposable?                             FuFavoriteDisposable                    { get; set; }
 
         public static ChallengeTourUnitEditPresenter? FromPointer(IntPtr p0)
         {
@@ -31,12 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChallengeTourUnitEditPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<IChallengeTourUnitEditView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IChallengeTourUnitEditView.FromPointer); // 024666529400 0x10 View                        ( 000186728B50 ModelClassType IChallengeTourUnitEditView IChallengeTourUnitEditView IChallengeTourUnitEditView Pointer )
-            value.Argument                                  = GetObject<ChallengeTourUnitEditArgument>(new IntPtr(p + 0x018), ReversePrism.DataModels.ChallengeTourUnitEditArgument.FromPointer); // 024666529420 0x18 Argument                    ( 000186588FE0 ModelClassType ChallengeTourUnitEditArgument ChallengeTourUnitEditArgument ChallengeTourUnitEditArgument Pointer )
-            value.ViewModel                                 = GetObject<ChallengeTourUnitEditViewModel>(new IntPtr(p + 0x020), ReversePrism.DataModels.ChallengeTourUnitEditViewModel.FromPointer); // 024666529440 0x20 ViewModel                   ( 00018658B6C0 ModelClassType ChallengeTourUnitEditViewModel ChallengeTourUnitEditViewModel ChallengeTourUnitEditViewModel Pointer )
-            value.TokenSource                               = GetObject<CancellationTokenSource>(new IntPtr(p + 0x028), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 024666529460 0x28 TokenSource                 ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
-            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x030), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 024666529480 0x30 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
-            value.FuFavoriteDisposable                      = GetObject<IDisposable>(new IntPtr(p + 0x038), ReversePrism.DataModels.IDisposable.FromPointer); // 0246665294A0 0x38 FuFavoriteDisposable        ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.View                                      = GetObject<IChallengeTourUnitEditView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IChallengeTourUnitEditView.FromPointer); // 0x10 View                        ( ModelClassType IChallengeTourUnitEditView IChallengeTourUnitEditView IChallengeTourUnitEditView Pointer )
+            value.Argument                                  = GetObject<ChallengeTourUnitEditArgument>(new IntPtr(p + 0x018), ReversePrism.DataModels.ChallengeTourUnitEditArgument.FromPointer); // 0x18 Argument                    ( ModelClassType ChallengeTourUnitEditArgument ChallengeTourUnitEditArgument ChallengeTourUnitEditArgument Pointer )
+            value.ViewModel                                 = GetObject<ChallengeTourUnitEditViewModel>(new IntPtr(p + 0x020), ReversePrism.DataModels.ChallengeTourUnitEditViewModel.FromPointer); // 0x20 ViewModel                   ( ModelClassType ChallengeTourUnitEditViewModel ChallengeTourUnitEditViewModel ChallengeTourUnitEditViewModel Pointer )
+            value.TokenSource                               = GetObject<CancellationTokenSource>(new IntPtr(p + 0x028), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0x28 TokenSource                 ( ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x030), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0x30 Disposables                 ( ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
 
             return value;
         }

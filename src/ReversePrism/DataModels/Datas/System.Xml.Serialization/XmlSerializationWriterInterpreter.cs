@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 048 TypeMap                                  00018659F0F0 ModelClassType XmlMapping XmlMapping XmlMapping Pointer
-    // 050 Format                                   00018672E200 ModelEnumType SerializationFormat SerializationFormat SerializationFormat Int32
+    // 048 TypeMap                                  ModelClassType XmlMapping XmlMapping XmlMapping Pointer
+    // 050 Format                                   ModelEnumType SerializationFormat SerializationFormat SerializationFormat Int32
     public partial class XmlSerializationWriterInterpreter : DataModel
     {
         public XmlMapping?                              TypeMap                                 { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlSerializationWriterInterpreter() { Pointer= p0 };
 
-            value.TypeMap                                   = GetObject<XmlMapping>(new IntPtr(p + 0x048), ReversePrism.DataModels.XmlMapping.FromPointer); // 024667538DA0 0x48 TypeMap                     ( 00018659F0F0 ModelClassType XmlMapping XmlMapping XmlMapping Pointer )
-            value.Format                                    = (SerializationFormat)GetInt32(new IntPtr(p + 0x050)); // 024667538DC0 0x50 Format                      ( 00018672E200 ModelEnumType SerializationFormat SerializationFormat SerializationFormat Int32 )
+            value.TypeMap                                   = GetObject<XmlMapping>(new IntPtr(p + 0x048), ReversePrism.DataModels.XmlMapping.FromPointer); // 0x48 TypeMap                     ( ModelClassType XmlMapping XmlMapping XmlMapping Pointer )
+            value.Format                                    = (SerializationFormat)GetInt32(new IntPtr(p + 0x050)); // 0x50 Format                      ( ModelEnumType SerializationFormat SerializationFormat SerializationFormat Int32 )
 
             return value;
         }

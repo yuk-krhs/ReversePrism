@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 TargetDS                                 000186680790 ModelClassType DataSet DataSet DataSet Pointer
+    // 010 TargetDS                                 ModelClassType DataSet DataSet DataSet Pointer
     public partial class DSRowDiffIdUsageSection : DataModel
     {
         public DataSet?                                 TargetDS                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DSRowDiffIdUsageSection() { Pointer= p0 };
 
-            value.TargetDS                                  = GetObject<DataSet>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataSet.FromPointer); // 024668958C38 0x10 TargetDS                    ( 000186680790 ModelClassType DataSet DataSet DataSet Pointer )
+            value.TargetDS                                  = GetObject<DataSet>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataSet.FromPointer); // 0x10 TargetDS                    ( ModelClassType DataSet DataSet DataSet Pointer )
 
             return value;
         }

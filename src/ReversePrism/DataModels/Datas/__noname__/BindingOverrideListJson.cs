@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Bindings                                 000185D259A8 ModelEnumListType List`1<BindingOverrideJson> List`1<BindingOverrideJson> List<BindingOverrideJson> Pointer
+    // 010 Bindings                                 ModelEnumListType List`1<BindingOverrideJson> List`1<BindingOverrideJson> List<BindingOverrideJson> Pointer
     public partial class BindingOverrideListJson : DataModel
     {
         public List<BindingOverrideJson>?               Bindings                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BindingOverrideListJson() { Pointer= p0 };
 
-            value.Bindings                                  = GetEnumList<BindingOverrideJson>(new IntPtr(p + 0x010)); // 0246676BAB18 0x10 Bindings                    ( 000185D259A8 ModelEnumListType List`1<BindingOverrideJson> List`1<BindingOverrideJson> List<BindingOverrideJson> Pointer )
+            value.Bindings                                  = GetEnumList<BindingOverrideJson>(new IntPtr(p + 0x010)); // 0x10 Bindings                    ( ModelEnumListType List`1<BindingOverrideJson> List`1<BindingOverrideJson> List<BindingOverrideJson> Pointer )
 
             return value;
         }

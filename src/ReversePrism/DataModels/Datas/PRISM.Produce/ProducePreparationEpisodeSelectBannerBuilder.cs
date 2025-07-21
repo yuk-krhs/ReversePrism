@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 View                                     000186569420 ModelClassType ProducePreparationEpisodeSelectBannerView ProducePreparationEpisodeSelectBannerView ProducePreparationEpisodeSelectBannerView Pointer
+    // 020 View                                     ModelClassType ProducePreparationEpisodeSelectBannerView ProducePreparationEpisodeSelectBannerView ProducePreparationEpisodeSelectBannerView Pointer
     public partial class ProducePreparationEpisodeSelectBannerBuilder : DataModel
     {
         public ProducePreparationEpisodeSelectBannerView? View                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProducePreparationEpisodeSelectBannerBuilder() { Pointer= p0 };
 
-            value.View                                      = GetObject<ProducePreparationEpisodeSelectBannerView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProducePreparationEpisodeSelectBannerView.FromPointer); // 024665A3DBC0 0x20 View                        ( 000186569420 ModelClassType ProducePreparationEpisodeSelectBannerView ProducePreparationEpisodeSelectBannerView ProducePreparationEpisodeSelectBannerView Pointer )
+            value.View                                      = GetObject<ProducePreparationEpisodeSelectBannerView>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProducePreparationEpisodeSelectBannerView.FromPointer); // 0x20 View                        ( ModelClassType ProducePreparationEpisodeSelectBannerView ProducePreparationEpisodeSelectBannerView ProducePreparationEpisodeSelectBannerView Pointer )
 
             return value;
         }

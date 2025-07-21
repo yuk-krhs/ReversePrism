@@ -14,7 +14,7 @@ namespace ReversePrism.DataModels
     // 000 ExponentialBucketsFieldNumber            int IL2CPP_TYPE_I4
     // 000 ExplicitBucketsFieldNumber               int IL2CPP_TYPE_I4
     // 018 options_                                 <object> IL2CPP_TYPE_OBJECT
-    // 020 OptionsCase                              0001865ABED0 ModelEnumType OptionsOneofCase OptionsOneofCase OptionsOneofCase Int32
+    // 020 OptionsCase                              ModelEnumType OptionsOneofCase OptionsOneofCase OptionsOneofCase Int32
     public partial class BucketOptions : DataModel
     {
         public OptionsOneofCase                         OptionsCase                             { get; set; }
@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BucketOptions() { Pointer= p0 };
 
-            value.OptionsCase                               = (OptionsOneofCase)GetInt32(new IntPtr(p + 0x020)); // 02466A7F8CD8 0x20 OptionsCase                 ( 0001865ABED0 ModelEnumType OptionsOneofCase OptionsOneofCase OptionsOneofCase Int32 )
+            value.OptionsCase                               = (OptionsOneofCase)GetInt32(new IntPtr(p + 0x020)); // 0x20 OptionsCase                 ( ModelEnumType OptionsOneofCase OptionsOneofCase OptionsOneofCase Int32 )
 
             return value;
         }

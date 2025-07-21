@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Creator                                  000186525C60 ModelClassType LightDelegateCreator LightDelegateCreator LightDelegateCreator Pointer
+    // 010 Creator                                  ModelClassType LightDelegateCreator LightDelegateCreator LightDelegateCreator Pointer
     public partial class CreateDelegateInstruction : DataModel
     {
         public LightDelegateCreator?                    Creator                                 { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CreateDelegateInstruction() { Pointer= p0 };
 
-            value.Creator                                   = GetObject<LightDelegateCreator>(new IntPtr(p + 0x010), ReversePrism.DataModels.LightDelegateCreator.FromPointer); // 02466A0A44E0 0x10 Creator                     ( 000186525C60 ModelClassType LightDelegateCreator LightDelegateCreator LightDelegateCreator Pointer )
+            value.Creator                                   = GetObject<LightDelegateCreator>(new IntPtr(p + 0x010), ReversePrism.DataModels.LightDelegateCreator.FromPointer); // 0x10 Creator                     ( ModelClassType LightDelegateCreator LightDelegateCreator LightDelegateCreator Pointer )
 
             return value;
         }

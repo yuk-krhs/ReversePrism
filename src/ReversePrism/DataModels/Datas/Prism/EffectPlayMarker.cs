@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 Index                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 030 EffectName                               000186671910 ModelPrimitiveType string string string String
-    // 038 Value                                    000186671910 ModelPrimitiveType string string string String
+    // 028 Index                                    ModelPrimitiveType int int int Int32
+    // 030 EffectName                               ModelPrimitiveType string string string String
+    // 038 Value                                    ModelPrimitiveType string string string String
     public partial class EffectPlayMarker : DataModel
     {
         public int                                      Index                                   { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EffectPlayMarker() { Pointer= p0 };
 
-            value.Index                                     = GetInt32(new IntPtr(p + 0x028)); // 024664E1B590 0x28 Index                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.EffectName                                = GetString(new IntPtr(p + 0x030)); // 024664E1B5B0 0x30 EffectName                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.Value                                     = GetString(new IntPtr(p + 0x038)); // 024664E1B5D0 0x38 Value                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x028)); // 0x28 Index                       ( ModelPrimitiveType int int int Int32 )
+            value.EffectName                                = GetString(new IntPtr(p + 0x030)); // 0x30 EffectName                  ( ModelPrimitiveType string string string String )
+            value.Value                                     = GetString(new IntPtr(p + 0x038)); // 0x38 Value                       ( ModelPrimitiveType string string string String )
 
             return value;
         }

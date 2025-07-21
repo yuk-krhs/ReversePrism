@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 030 NumChannels                              000186699040 ModelPrimitiveType uint uint uint UInt32
-    // 038 SampleProcessFunc                        00018655FDB0 ModelClassType SampleProcessFunc SampleProcessFunc SampleProcessFunc Pointer
+    // 030 NumChannels                              ModelPrimitiveType uint uint uint UInt32
+    // 038 SampleProcessFunc                        ModelClassType SampleProcessFunc SampleProcessFunc SampleProcessFunc Pointer
     public partial class CriLipsSampler : DataModel
     {
         public uint                                     NumChannels                             { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CriLipsSampler() { Pointer= p0 };
 
-            value.NumChannels                               = GetUInt32(new IntPtr(p + 0x030)); // 02466BC24120 0x30 NumChannels                 ( 000186699040 ModelPrimitiveType uint uint uint UInt32 )
-            value.SampleProcessFunc                         = GetObject<SampleProcessFunc>(new IntPtr(p + 0x038), ReversePrism.DataModels.SampleProcessFunc.FromPointer); // 02466BC24140 0x38 SampleProcessFunc           ( 00018655FDB0 ModelClassType SampleProcessFunc SampleProcessFunc SampleProcessFunc Pointer )
+            value.NumChannels                               = GetUInt32(new IntPtr(p + 0x030)); // 0x30 NumChannels                 ( ModelPrimitiveType uint uint uint UInt32 )
+            value.SampleProcessFunc                         = GetObject<SampleProcessFunc>(new IntPtr(p + 0x038), ReversePrism.DataModels.SampleProcessFunc.FromPointer); // 0x38 SampleProcessFunc           ( ModelClassType SampleProcessFunc SampleProcessFunc SampleProcessFunc Pointer )
 
             return value;
         }

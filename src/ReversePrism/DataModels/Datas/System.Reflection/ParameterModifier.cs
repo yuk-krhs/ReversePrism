@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ByRef                                    000185B78FA0 ModelPrimitiveListType bool[] bool[] List<bool> Pointer
+    // 010 ByRef                                    ModelPrimitiveListType bool[] bool[] List<bool> Pointer
     public partial class ParameterModifier : DataModel
     {
         public List<bool>?                              ByRef                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ParameterModifier() { Pointer= p0 };
 
-            value.ByRef                                     = GetBoolList(new IntPtr(p + 0x010)); // 024666A7B7D8 0x10 ByRef                       ( 000185B78FA0 ModelPrimitiveListType bool[] bool[] List<bool> Pointer )
+            value.ByRef                                     = GetBoolList(new IntPtr(p + 0x010)); // 0x10 ByRef                       ( ModelPrimitiveListType bool[] bool[] List<bool> Pointer )
 
             return value;
         }

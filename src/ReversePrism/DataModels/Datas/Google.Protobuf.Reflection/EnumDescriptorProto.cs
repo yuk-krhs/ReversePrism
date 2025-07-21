@@ -12,18 +12,18 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 NameFieldNumber                          int IL2CPP_TYPE_I4
     // 008 NameDefaultValue                         string IL2CPP_TYPE_STRING
-    // 018 Name                                     000186671910 ModelPrimitiveType string string string String
+    // 018 Name                                     ModelPrimitiveType string string string String
     // 000 ValueFieldNumber                         int IL2CPP_TYPE_I4
     // 010 _repeated_value_codec                    FieldCodec`1<EnumValueDescriptorProto> IL2CPP_TYPE_GENERICINST
-    // 020 Value                                    000185CD4948 ModelClassListType RepeatedField`1<EnumValueDescriptorProto> RepeatedField`1<EnumValueDescriptorProto> List<EnumValueDescriptorProto> Pointer
+    // 020 Value                                    ModelClassListType RepeatedField`1<EnumValueDescriptorProto> RepeatedField`1<EnumValueDescriptorProto> List<EnumValueDescriptorProto> Pointer
     // 000 OptionsFieldNumber                       int IL2CPP_TYPE_I4
-    // 028 Options                                  00018673BF80 ModelClassType EnumOptions EnumOptions EnumOptions Pointer
+    // 028 Options                                  ModelClassType EnumOptions EnumOptions EnumOptions Pointer
     // 000 ReservedRangeFieldNumber                 int IL2CPP_TYPE_I4
     // 018 _repeated_reservedRange_codec            FieldCodec`1<EnumReservedRange> IL2CPP_TYPE_GENERICINST
-    // 030 ReservedRange                            000185CF8B48 ModelClassListType RepeatedField`1<EnumReservedRange> RepeatedField`1<EnumReservedRange> List<EnumReservedRange> Pointer
+    // 030 ReservedRange                            ModelClassListType RepeatedField`1<EnumReservedRange> RepeatedField`1<EnumReservedRange> List<EnumReservedRange> Pointer
     // 000 ReservedNameFieldNumber                  int IL2CPP_TYPE_I4
     // 020 _repeated_reservedName_codec             FieldCodec`1<string> IL2CPP_TYPE_GENERICINST
-    // 038 ReservedName                             000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
+    // 038 ReservedName                             ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
     public partial class EnumDescriptorProto : DataModel
     {
         public string                                   Name                                    { get; set; }
@@ -40,11 +40,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EnumDescriptorProto() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 024660B76710 0x18 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Value                                     = GetObjectList<EnumValueDescriptorProto>(new IntPtr(p + 0x020), ReversePrism.DataModels.EnumValueDescriptorProto.FromPointer); // 024660B76770 0x20 Value                       ( 000185CD4948 ModelClassListType RepeatedField`1<EnumValueDescriptorProto> RepeatedField`1<EnumValueDescriptorProto> List<EnumValueDescriptorProto> Pointer )
-            value.Options                                   = GetObject<EnumOptions>(new IntPtr(p + 0x028), ReversePrism.DataModels.EnumOptions.FromPointer); // 024660B767B0 0x28 Options                     ( 00018673BF80 ModelClassType EnumOptions EnumOptions EnumOptions Pointer )
-            value.ReservedRange                             = GetObjectList<EnumReservedRange>(new IntPtr(p + 0x030), ReversePrism.DataModels.EnumReservedRange.FromPointer); // 024660B76810 0x30 ReservedRange               ( 000185CF8B48 ModelClassListType RepeatedField`1<EnumReservedRange> RepeatedField`1<EnumReservedRange> List<EnumReservedRange> Pointer )
-            value.ReservedName                              = GetStringList(new IntPtr(p + 0x038)); // 024660B76870 0x38 ReservedName                ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x018)); // 0x18 Name                        ( ModelPrimitiveType string string string String )
+            value.Value                                     = GetObjectList<EnumValueDescriptorProto>(new IntPtr(p + 0x020), ReversePrism.DataModels.EnumValueDescriptorProto.FromPointer); // 0x20 Value                       ( ModelClassListType RepeatedField`1<EnumValueDescriptorProto> RepeatedField`1<EnumValueDescriptorProto> List<EnumValueDescriptorProto> Pointer )
+            value.Options                                   = GetObject<EnumOptions>(new IntPtr(p + 0x028), ReversePrism.DataModels.EnumOptions.FromPointer); // 0x28 Options                     ( ModelClassType EnumOptions EnumOptions EnumOptions Pointer )
+            value.ReservedRange                             = GetObjectList<EnumReservedRange>(new IntPtr(p + 0x030), ReversePrism.DataModels.EnumReservedRange.FromPointer); // 0x30 ReservedRange               ( ModelClassListType RepeatedField`1<EnumReservedRange> RepeatedField`1<EnumReservedRange> List<EnumReservedRange> Pointer )
+            value.ReservedName                              = GetStringList(new IntPtr(p + 0x038)); // 0x38 ReservedName                ( ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
 
             return value;
         }

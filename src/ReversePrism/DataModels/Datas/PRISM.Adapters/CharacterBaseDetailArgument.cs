@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 JumpParam                                0001866ABAB0 ModelClassType IdolBaseDetailViewParameter IdolBaseDetailViewParameter IdolBaseDetailViewParameter Pointer
+    // 010 JumpParam                                ModelClassType IdolBaseDetailViewParameter IdolBaseDetailViewParameter IdolBaseDetailViewParameter Pointer
     public partial class CharacterBaseDetailArgument : DataModel
     {
         public IdolBaseDetailViewParameter?             JumpParam                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CharacterBaseDetailArgument() { Pointer= p0 };
 
-            value.JumpParam                                 = GetObject<IdolBaseDetailViewParameter>(new IntPtr(p + 0x010), ReversePrism.DataModels.IdolBaseDetailViewParameter.FromPointer); // 024665EDB178 0x10 JumpParam                   ( 0001866ABAB0 ModelClassType IdolBaseDetailViewParameter IdolBaseDetailViewParameter IdolBaseDetailViewParameter Pointer )
+            value.JumpParam                                 = GetObject<IdolBaseDetailViewParameter>(new IntPtr(p + 0x010), ReversePrism.DataModels.IdolBaseDetailViewParameter.FromPointer); // 0x10 JumpParam                   ( ModelClassType IdolBaseDetailViewParameter IdolBaseDetailViewParameter IdolBaseDetailViewParameter Pointer )
 
             return value;
         }

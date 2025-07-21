@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 040 M_SamsungProviderLogging                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 041 M_HighSpeedVRR                           000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 042 M_AutomaticVRR                           000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 040 M_SamsungProviderLogging                 ModelPrimitiveType bool bool bool Bool
+    // 041 M_HighSpeedVRR                           ModelPrimitiveType bool bool bool Bool
+    // 042 M_AutomaticVRR                           ModelPrimitiveType bool bool bool Bool
     // 000 s_RuntimeInstance                        SamsungAndroidProviderSettings IL2CPP_TYPE_CLASS
     public partial class SamsungAndroidProviderSettings : DataModel
     {
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SamsungAndroidProviderSettings() { Pointer= p0 };
 
-            value.M_SamsungProviderLogging                  = GetBool(new IntPtr(p + 0x040)); // 0245A32D63A0 0x40 M_SamsungProviderLogging    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_HighSpeedVRR                            = GetBool(new IntPtr(p + 0x041)); // 0245A32D63C0 0x41 M_HighSpeedVRR              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_AutomaticVRR                            = GetBool(new IntPtr(p + 0x042)); // 0245A32D63E0 0x42 M_AutomaticVRR              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_SamsungProviderLogging                  = GetBool(new IntPtr(p + 0x040)); // 0x40 M_SamsungProviderLogging    ( ModelPrimitiveType bool bool bool Bool )
+            value.M_HighSpeedVRR                            = GetBool(new IntPtr(p + 0x041)); // 0x41 M_HighSpeedVRR              ( ModelPrimitiveType bool bool bool Bool )
+            value.M_AutomaticVRR                            = GetBool(new IntPtr(p + 0x042)); // 0x42 M_AutomaticVRR              ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

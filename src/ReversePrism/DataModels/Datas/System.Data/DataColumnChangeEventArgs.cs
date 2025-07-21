@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Column                                   0001866759E0 ModelClassType DataColumn DataColumn DataColumn Pointer
-    // 018 Row                                      00018667D390 ModelClassType DataRow DataRow DataRow Pointer
+    // 010 Column                                   ModelClassType DataColumn DataColumn DataColumn Pointer
+    // 018 Row                                      ModelClassType DataRow DataRow DataRow Pointer
     // 020 <ProposedValue>k__BackingField           <object> IL2CPP_TYPE_OBJECT
     public partial class DataColumnChangeEventArgs : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DataColumnChangeEventArgs() { Pointer= p0 };
 
-            value.Column                                    = GetObject<DataColumn>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataColumn.FromPointer); // 0246689236B0 0x10 Column                      ( 0001866759E0 ModelClassType DataColumn DataColumn DataColumn Pointer )
-            value.Row                                       = GetObject<DataRow>(new IntPtr(p + 0x018), ReversePrism.DataModels.DataRow.FromPointer); // 0246689236D0 0x18 Row                         ( 00018667D390 ModelClassType DataRow DataRow DataRow Pointer )
+            value.Column                                    = GetObject<DataColumn>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataColumn.FromPointer); // 0x10 Column                      ( ModelClassType DataColumn DataColumn DataColumn Pointer )
+            value.Row                                       = GetObject<DataRow>(new IntPtr(p + 0x018), ReversePrism.DataModels.DataRow.FromPointer); // 0x18 Row                         ( ModelClassType DataRow DataRow DataRow Pointer )
 
             return value;
         }

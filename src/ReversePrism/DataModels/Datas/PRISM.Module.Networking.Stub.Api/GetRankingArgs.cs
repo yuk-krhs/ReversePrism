@@ -10,17 +10,14 @@ namespace ReversePrism.DataModels
 
     // 000 _parser                                  MessageParser`1<GetRankingArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
-    // 000 MstEventIdFieldNumber                    int IL2CPP_TYPE_I4
-    // 018 MstEventId                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 000 RankingTypeFieldNumber                   int IL2CPP_TYPE_I4
-    // 01C RankingType                              000186762F80 ModelEnumType EventRankingType EventRankingType EventRankingType Int32
     // 000 RankingViewTypeFieldNumber               int IL2CPP_TYPE_I4
-    // 020 RankingViewType                          000186763670 ModelEnumType EventRankingViewType EventRankingViewType EventRankingViewType Int32
+    // 018 RankingViewType                          ModelEnumType EventRankingViewType EventRankingViewType EventRankingViewType Int32
+    // 000 MstEventRankingIdFieldNumber             int IL2CPP_TYPE_I4
+    // 01C MstEventRankingId                        ModelPrimitiveType int int int Int32
     public partial class GetRankingArgs : DataModel
     {
-        public int                                      MstEventId                              { get; set; }
-        public EventRankingType                         RankingType                             { get; set; }
         public EventRankingViewType                     RankingViewType                         { get; set; }
+        public int                                      MstEventRankingId                       { get; set; }
 
         public static GetRankingArgs? FromPointer(IntPtr p0)
         {
@@ -30,9 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetRankingArgs() { Pointer= p0 };
 
-            value.MstEventId                                = GetInt32(new IntPtr(p + 0x018)); // 024660FA76F8 0x18 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.RankingType                               = (EventRankingType)GetInt32(new IntPtr(p + 0x01C)); // 024660FA7738 0x1C RankingType                 ( 000186762F80 ModelEnumType EventRankingType EventRankingType EventRankingType Int32 )
-            value.RankingViewType                           = (EventRankingViewType)GetInt32(new IntPtr(p + 0x020)); // 024660FA7778 0x20 RankingViewType             ( 000186763670 ModelEnumType EventRankingViewType EventRankingViewType EventRankingViewType Int32 )
+            value.RankingViewType                           = (EventRankingViewType)GetInt32(new IntPtr(p + 0x018)); // 0x18 RankingViewType             ( ModelEnumType EventRankingViewType EventRankingViewType EventRankingViewType Int32 )
+            value.MstEventRankingId                         = GetInt32(new IntPtr(p + 0x01C)); // 0x1C MstEventRankingId           ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

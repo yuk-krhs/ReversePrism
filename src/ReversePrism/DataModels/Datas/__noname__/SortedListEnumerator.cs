@@ -8,15 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 SortedList                               000186532E70 ModelClassType SortedList SortedList SortedList Pointer
+    // 010 SortedList                               ModelClassType SortedList SortedList SortedList Pointer
     // 018 _key                                     <object> IL2CPP_TYPE_OBJECT
     // 020 _value                                   <object> IL2CPP_TYPE_OBJECT
-    // 028 Index                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 02C StartIndex                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 030 EndIndex                                 0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 034 Version                                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 038 Current                                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 03C GetObjectRetType                         0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 028 Index                                    ModelPrimitiveType int int int Int32
+    // 02C StartIndex                               ModelPrimitiveType int int int Int32
+    // 030 EndIndex                                 ModelPrimitiveType int int int Int32
+    // 034 Version                                  ModelPrimitiveType int int int Int32
+    // 038 Current                                  ModelPrimitiveType bool bool bool Bool
+    // 03C GetObjectRetType                         ModelPrimitiveType int int int Int32
     public partial class SortedListEnumerator : DataModel
     {
         public SortedList?                              SortedList                              { get; set; }
@@ -35,13 +35,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SortedListEnumerator() { Pointer= p0 };
 
-            value.SortedList                                = GetObject<SortedList>(new IntPtr(p + 0x010), ReversePrism.DataModels.SortedList.FromPointer); // 024666DD1BE8 0x10 SortedList                  ( 000186532E70 ModelClassType SortedList SortedList SortedList Pointer )
-            value.Index                                     = GetInt32(new IntPtr(p + 0x028)); // 024666DD1C48 0x28 Index                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.StartIndex                                = GetInt32(new IntPtr(p + 0x02C)); // 024666DD1C68 0x2C StartIndex                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.EndIndex                                  = GetInt32(new IntPtr(p + 0x030)); // 024666DD1C88 0x30 EndIndex                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Version                                   = GetInt32(new IntPtr(p + 0x034)); // 024666DD1CA8 0x34 Version                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Current                                   = GetBool(new IntPtr(p + 0x038)); // 024666DD1CC8 0x38 Current                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.GetObjectRetType                          = GetInt32(new IntPtr(p + 0x03C)); // 024666DD1CE8 0x3C GetObjectRetType            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SortedList                                = GetObject<SortedList>(new IntPtr(p + 0x010), ReversePrism.DataModels.SortedList.FromPointer); // 0x10 SortedList                  ( ModelClassType SortedList SortedList SortedList Pointer )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x028)); // 0x28 Index                       ( ModelPrimitiveType int int int Int32 )
+            value.StartIndex                                = GetInt32(new IntPtr(p + 0x02C)); // 0x2C StartIndex                  ( ModelPrimitiveType int int int Int32 )
+            value.EndIndex                                  = GetInt32(new IntPtr(p + 0x030)); // 0x30 EndIndex                    ( ModelPrimitiveType int int int Int32 )
+            value.Version                                   = GetInt32(new IntPtr(p + 0x034)); // 0x34 Version                     ( ModelPrimitiveType int int int Int32 )
+            value.Current                                   = GetBool(new IntPtr(p + 0x038)); // 0x38 Current                     ( ModelPrimitiveType bool bool bool Bool )
+            value.GetObjectRetType                          = GetInt32(new IntPtr(p + 0x03C)); // 0x3C GetObjectRetType            ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

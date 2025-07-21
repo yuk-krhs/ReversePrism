@@ -8,15 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 CanvasGroup                              000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
-    // 028 Btn                                      0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 030 ImgBg                                    0001866CCDB0 ModelClassType Image Image Image Pointer
-    // 038 ImgIdol                                  000186613190 ModelClassType RawImage RawImage RawImage Pointer
-    // 040 ImgFrame                                 0001866CCDB0 ModelClassType Image Image Image Pointer
-    // 048 ImgUnit                                  000186613190 ModelClassType RawImage RawImage RawImage Pointer
-    // 050 PIdolDetailPopupCaller                   000186709050 ModelClassType PIdolDetailPopupCaller PIdolDetailPopupCaller PIdolDetailPopupCaller Pointer
-    // 058 Ct                                       00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32
-    // 060 IsSetUp                                  000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 020 CanvasGroup                              ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
+    // 028 Btn                                      ModelClassType UIButton UIButton UIButton Pointer
+    // 030 ImgBg                                    ModelClassType Image Image Image Pointer
+    // 038 ImgIdol                                  ModelClassType RawImage RawImage RawImage Pointer
+    // 040 ImgFrame                                 ModelClassType Image Image Image Pointer
+    // 048 ImgUnit                                  ModelClassType RawImage RawImage RawImage Pointer
+    // 050 PIdolDetailPopupCaller                   ModelClassType PIdolDetailPopupCaller PIdolDetailPopupCaller PIdolDetailPopupCaller Pointer
+    // 058 Ct                                       ModelEnumType CancellationToken CancellationToken CancellationToken Int32
+    // 060 IsSetUp                                  ModelPrimitiveType bool bool bool Bool
     public partial class GashaSimpleProduceIco : DataModel
     {
         public CanvasGroup?                             CanvasGroup                             { get; set; }
@@ -37,15 +37,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GashaSimpleProduceIco() { Pointer= p0 };
 
-            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0246653C6A58 0x20 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.Btn                                       = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 0246653C6A78 0x28 Btn                         ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.ImgBg                                     = GetObject<Image>(new IntPtr(p + 0x030), ReversePrism.DataModels.Image.FromPointer); // 0246653C6A98 0x30 ImgBg                       ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.ImgIdol                                   = GetObject<RawImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.RawImage.FromPointer); // 0246653C6AB8 0x38 ImgIdol                     ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.ImgFrame                                  = GetObject<Image>(new IntPtr(p + 0x040), ReversePrism.DataModels.Image.FromPointer); // 0246653C6AD8 0x40 ImgFrame                    ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.ImgUnit                                   = GetObject<RawImage>(new IntPtr(p + 0x048), ReversePrism.DataModels.RawImage.FromPointer); // 0246653C6AF8 0x48 ImgUnit                     ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.PIdolDetailPopupCaller                    = GetObject<PIdolDetailPopupCaller>(new IntPtr(p + 0x050), ReversePrism.DataModels.PIdolDetailPopupCaller.FromPointer); // 0246653C6B18 0x50 PIdolDetailPopupCaller      ( 000186709050 ModelClassType PIdolDetailPopupCaller PIdolDetailPopupCaller PIdolDetailPopupCaller Pointer )
-            value.Ct                                        = (CancellationToken)GetInt32(new IntPtr(p + 0x058)); // 0246653C6B38 0x58 Ct                          ( 00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
-            value.IsSetUp                                   = GetBool(new IntPtr(p + 0x060)); // 0246653C6B58 0x60 IsSetUp                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0x20 CanvasGroup                 ( ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.Btn                                       = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 0x28 Btn                         ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.ImgBg                                     = GetObject<Image>(new IntPtr(p + 0x030), ReversePrism.DataModels.Image.FromPointer); // 0x30 ImgBg                       ( ModelClassType Image Image Image Pointer )
+            value.ImgIdol                                   = GetObject<RawImage>(new IntPtr(p + 0x038), ReversePrism.DataModels.RawImage.FromPointer); // 0x38 ImgIdol                     ( ModelClassType RawImage RawImage RawImage Pointer )
+            value.ImgFrame                                  = GetObject<Image>(new IntPtr(p + 0x040), ReversePrism.DataModels.Image.FromPointer); // 0x40 ImgFrame                    ( ModelClassType Image Image Image Pointer )
+            value.ImgUnit                                   = GetObject<RawImage>(new IntPtr(p + 0x048), ReversePrism.DataModels.RawImage.FromPointer); // 0x48 ImgUnit                     ( ModelClassType RawImage RawImage RawImage Pointer )
+            value.PIdolDetailPopupCaller                    = GetObject<PIdolDetailPopupCaller>(new IntPtr(p + 0x050), ReversePrism.DataModels.PIdolDetailPopupCaller.FromPointer); // 0x50 PIdolDetailPopupCaller      ( ModelClassType PIdolDetailPopupCaller PIdolDetailPopupCaller PIdolDetailPopupCaller Pointer )
+            value.Ct                                        = (CancellationToken)GetInt32(new IntPtr(p + 0x058)); // 0x58 Ct                          ( ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
+            value.IsSetUp                                   = GetBool(new IntPtr(p + 0x060)); // 0x60 IsSetUp                     ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

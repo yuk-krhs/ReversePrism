@@ -12,9 +12,9 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 StackEntriesFieldNumber                  int IL2CPP_TYPE_I4
     // 008 _repeated_stackEntries_codec             FieldCodec`1<string> IL2CPP_TYPE_GENERICINST
-    // 018 StackEntries                             000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
+    // 018 StackEntries                             ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
     // 000 DetailFieldNumber                        int IL2CPP_TYPE_I4
-    // 020 Detail                                   000186671910 ModelPrimitiveType string string string String
+    // 020 Detail                                   ModelPrimitiveType string string string String
     public partial class DebugInfo : DataModel
     {
         public List<string>?                            StackEntries                            { get; set; }
@@ -28,8 +28,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DebugInfo() { Pointer= p0 };
 
-            value.StackEntries                              = GetStringList(new IntPtr(p + 0x018)); // 02466A718498 0x18 StackEntries                ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
-            value.Detail                                    = GetString(new IntPtr(p + 0x020)); // 02466A7184D8 0x20 Detail                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.StackEntries                              = GetStringList(new IntPtr(p + 0x018)); // 0x18 StackEntries                ( ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.Detail                                    = GetString(new IntPtr(p + 0x020)); // 0x20 Detail                      ( ModelPrimitiveType string string string String )
 
             return value;
         }

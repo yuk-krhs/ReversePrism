@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 000 s_sizeOfGuid                             int IL2CPP_TYPE_I4
     // 008 s_rgiGuidOrder                           int[] IL2CPP_TYPE_SZARRAY
-    // 010 M_value                                  000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 010 Null                                     000186558080 ModelEnumType SqlGuid SqlGuid SqlGuid Int32
+    // 010 M_value                                  ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 010 Null                                     ModelEnumType SqlGuid SqlGuid SqlGuid Int32
     public partial class SqlGuid : DataModel
     {
         public List<sbyte>?                             M_value                                 { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SqlGuid() { Pointer= p0 };
 
-            value.M_value                                   = GetSByteList(new IntPtr(p + 0x010)); // 024668A0ED60 0x10 M_value                     ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Null                                      = (SqlGuid)GetInt32(new IntPtr(p + 0x010)); // 024668A0ED80 0x10 Null                        ( 000186558080 ModelEnumType SqlGuid SqlGuid SqlGuid Int32 )
+            value.M_value                                   = GetSByteList(new IntPtr(p + 0x010)); // 0x10 M_value                     ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Null                                      = (SqlGuid)GetInt32(new IntPtr(p + 0x010)); // 0x10 Null                        ( ModelEnumType SqlGuid SqlGuid SqlGuid Int32 )
 
             return value;
         }

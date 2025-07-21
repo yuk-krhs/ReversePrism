@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 FSpecified                               000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 028 FSpecified                               ModelPrimitiveType bool bool bool Bool
     public partial class XmlUnspecifiedAttribute : DataModel
     {
         public bool                                     FSpecified                              { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlUnspecifiedAttribute() { Pointer= p0 };
 
-            value.FSpecified                                = GetBool(new IntPtr(p + 0x028)); // 0246674D1C78 0x28 FSpecified                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.FSpecified                                = GetBool(new IntPtr(p + 0x028)); // 0x28 FSpecified                  ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 _NotifiedMobileIdList                    000185CECF28 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer
+    // 010 _NotifiedMobileIdList                    ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer
     public partial class NotifiedMobileIdList : DataModel
     {
         public List<int>?                               _NotifiedMobileIdList                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NotifiedMobileIdList() { Pointer= p0 };
 
-            value._NotifiedMobileIdList                     = GetInt32List(new IntPtr(p + 0x010)); // 0245A7282820 0x10 _NotifiedMobileIdList       ( 000185CECF28 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
+            value._NotifiedMobileIdList                     = GetInt32List(new IntPtr(p + 0x010)); // 0x10 _NotifiedMobileIdList       ( ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
 
             return value;
         }

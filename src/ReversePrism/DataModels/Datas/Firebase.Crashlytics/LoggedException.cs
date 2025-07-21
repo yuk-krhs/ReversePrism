@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 090 Name                                     000186671910 ModelPrimitiveType string string string String
-    // 098 CustomStackTrace                         000186671910 ModelPrimitiveType string string string String
+    // 090 Name                                     ModelPrimitiveType string string string String
+    // 098 CustomStackTrace                         ModelPrimitiveType string string string String
     // 0A0 <ParsedStackTrace>k__BackingField        Dictionary`2<string, string>[] IL2CPP_TYPE_SZARRAY
     public partial class LoggedException : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LoggedException() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x090)); // 02466BCE0AF0 0x90 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.CustomStackTrace                          = GetString(new IntPtr(p + 0x098)); // 02466BCE0B10 0x98 CustomStackTrace            ( 000186671910 ModelPrimitiveType string string string String )
+            value.Name                                      = GetString(new IntPtr(p + 0x090)); // 0x90 Name                        ( ModelPrimitiveType string string string String )
+            value.CustomStackTrace                          = GetString(new IntPtr(p + 0x098)); // 0x98 CustomStackTrace            ( ModelPrimitiveType string string string String )
 
             return value;
         }

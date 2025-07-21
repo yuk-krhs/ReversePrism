@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Sri                                      0001865C6FA0 ModelClassType XmlSerializationReaderInterpreter XmlSerializationReaderInterpreter XmlSerializationReaderInterpreter Pointer
-    // 018 TypeMap                                  0001865D1D40 ModelClassType XmlTypeMapping XmlTypeMapping XmlTypeMapping Pointer
+    // 010 Sri                                      ModelClassType XmlSerializationReaderInterpreter XmlSerializationReaderInterpreter XmlSerializationReaderInterpreter Pointer
+    // 018 TypeMap                                  ModelClassType XmlTypeMapping XmlTypeMapping XmlTypeMapping Pointer
     public partial class ReaderCallbackInfo : DataModel
     {
         public XmlSerializationReaderInterpreter?       Sri                                     { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ReaderCallbackInfo() { Pointer= p0 };
 
-            value.Sri                                       = GetObject<XmlSerializationReaderInterpreter>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlSerializationReaderInterpreter.FromPointer); // 0246675356E8 0x10 Sri                         ( 0001865C6FA0 ModelClassType XmlSerializationReaderInterpreter XmlSerializationReaderInterpreter XmlSerializationReaderInterpreter Pointer )
-            value.TypeMap                                   = GetObject<XmlTypeMapping>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlTypeMapping.FromPointer); // 024667535708 0x18 TypeMap                     ( 0001865D1D40 ModelClassType XmlTypeMapping XmlTypeMapping XmlTypeMapping Pointer )
+            value.Sri                                       = GetObject<XmlSerializationReaderInterpreter>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlSerializationReaderInterpreter.FromPointer); // 0x10 Sri                         ( ModelClassType XmlSerializationReaderInterpreter XmlSerializationReaderInterpreter XmlSerializationReaderInterpreter Pointer )
+            value.TypeMap                                   = GetObject<XmlTypeMapping>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlTypeMapping.FromPointer); // 0x18 TypeMap                     ( ModelClassType XmlTypeMapping XmlTypeMapping XmlTypeMapping Pointer )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Height                                   000186666050 ModelPrimitiveType float float float Single
-    // 014 Width                                    000186666050 ModelPrimitiveType float float float Single
+    // 010 Height                                   ModelPrimitiveType float float float Single
+    // 014 Width                                    ModelPrimitiveType float float float Single
     public partial class SizeTypeInfo : DataModel
     {
         public float                                    Height                                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SizeTypeInfo() { Pointer= p0 };
 
-            value.Height                                    = GetSingle(new IntPtr(p + 0x010)); // 02466B5F0F08 0x10 Height                      ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Width                                     = GetSingle(new IntPtr(p + 0x014)); // 02466B5F0F28 0x14 Width                       ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Height                                    = GetSingle(new IntPtr(p + 0x010)); // 0x10 Height                      ( ModelPrimitiveType float float float Single )
+            value.Width                                     = GetSingle(new IntPtr(p + 0x014)); // 0x14 Width                       ( ModelPrimitiveType float float float Single )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 Host                                     000186671910 ModelPrimitiveType string string string String
-    // 020 Domain                                   000186671910 ModelPrimitiveType string string string String
+    // 018 Host                                     ModelPrimitiveType string string string String
+    // 020 Domain                                   ModelPrimitiveType string string string String
     public partial class Type1Message : DataModel
     {
         public string                                   Host                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Type1Message() { Pointer= p0 };
 
-            value.Host                                      = GetString(new IntPtr(p + 0x018)); // 02466B40D200 0x18 Host                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Domain                                    = GetString(new IntPtr(p + 0x020)); // 02466B40D220 0x20 Domain                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Host                                      = GetString(new IntPtr(p + 0x018)); // 0x18 Host                        ( ModelPrimitiveType string string string String )
+            value.Domain                                    = GetString(new IntPtr(p + 0x020)); // 0x20 Domain                      ( ModelPrimitiveType string string string String )
 
             return value;
         }

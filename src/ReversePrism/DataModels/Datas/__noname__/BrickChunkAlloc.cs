@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 X                                        0001865F36C0 ModelPrimitiveType int int int Int32
-    // 014 Y                                        0001865F36C0 ModelPrimitiveType int int int Int32
-    // 018 Z                                        0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 X                                        ModelPrimitiveType int int int Int32
+    // 014 Y                                        ModelPrimitiveType int int int Int32
+    // 018 Z                                        ModelPrimitiveType int int int Int32
     public partial class BrickChunkAlloc : DataModel
     {
         public int                                      X                                       { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BrickChunkAlloc() { Pointer= p0 };
 
-            value.X                                         = GetInt32(new IntPtr(p + 0x010)); // 024669232B00 0x10 X                           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Y                                         = GetInt32(new IntPtr(p + 0x014)); // 024669232B20 0x14 Y                           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Z                                         = GetInt32(new IntPtr(p + 0x018)); // 024669232B40 0x18 Z                           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.X                                         = GetInt32(new IntPtr(p + 0x010)); // 0x10 X                           ( ModelPrimitiveType int int int Int32 )
+            value.Y                                         = GetInt32(new IntPtr(p + 0x014)); // 0x14 Y                           ( ModelPrimitiveType int int int Int32 )
+            value.Z                                         = GetInt32(new IntPtr(p + 0x018)); // 0x18 Z                           ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

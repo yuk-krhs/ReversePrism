@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 M_Version                                000186671BA0 ModelPrimitiveType string string string String
-    // 020 M_InstanceID                             0001865F2F90 ModelPrimitiveType int int int Int32
-    // 024 M_HashCode                               0001865F2F90 ModelPrimitiveType int int int Int32
-    // 028 M_Material                               00018660BFD0 ModelClassType Material Material Material Pointer
-    // 030 M_MaterialHashCode                       0001865F2F90 ModelPrimitiveType int int int Int32
+    // 018 M_Version                                ModelPrimitiveType string string string String
+    // 020 M_InstanceID                             ModelPrimitiveType int int int Int32
+    // 024 M_HashCode                               ModelPrimitiveType int int int Int32
+    // 028 M_Material                               ModelClassType Material Material Material Pointer
+    // 030 M_MaterialHashCode                       ModelPrimitiveType int int int Int32
     public partial class TextAsset : DataModel
     {
         public string                                   M_Version                               { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TextAsset() { Pointer= p0 };
 
-            value.M_Version                                 = GetString(new IntPtr(p + 0x018)); // 0245A68AA2F0 0x18 M_Version                   ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.M_InstanceID                              = GetInt32(new IntPtr(p + 0x020)); // 0245A68AA310 0x20 M_InstanceID                ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.M_HashCode                                = GetInt32(new IntPtr(p + 0x024)); // 0245A68AA330 0x24 M_HashCode                  ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.M_Material                                = GetObject<Material>(new IntPtr(p + 0x028), ReversePrism.DataModels.Material.FromPointer); // 0245A68AA350 0x28 M_Material                  ( 00018660BFD0 ModelClassType Material Material Material Pointer )
-            value.M_MaterialHashCode                        = GetInt32(new IntPtr(p + 0x030)); // 0245A68AA370 0x30 M_MaterialHashCode          ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.M_Version                                 = GetString(new IntPtr(p + 0x018)); // 0x18 M_Version                   ( ModelPrimitiveType string string string String )
+            value.M_InstanceID                              = GetInt32(new IntPtr(p + 0x020)); // 0x20 M_InstanceID                ( ModelPrimitiveType int int int Int32 )
+            value.M_HashCode                                = GetInt32(new IntPtr(p + 0x024)); // 0x24 M_HashCode                  ( ModelPrimitiveType int int int Int32 )
+            value.M_Material                                = GetObject<Material>(new IntPtr(p + 0x028), ReversePrism.DataModels.Material.FromPointer); // 0x28 M_Material                  ( ModelClassType Material Material Material Pointer )
+            value.M_MaterialHashCode                        = GetInt32(new IntPtr(p + 0x030)); // 0x30 M_MaterialHashCode          ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

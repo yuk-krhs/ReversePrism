@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 PurchasedProduct                         00018659E6D0 ModelClassType Product Product Product Pointer
-    // 018 Reason                                   0001865DBE10 ModelEnumType PurchaseFailureReason PurchaseFailureReason PurchaseFailureReason Int32
-    // 020 Message                                  000186671910 ModelPrimitiveType string string string String
+    // 010 PurchasedProduct                         ModelClassType Product Product Product Pointer
+    // 018 Reason                                   ModelEnumType PurchaseFailureReason PurchaseFailureReason PurchaseFailureReason Int32
+    // 020 Message                                  ModelPrimitiveType string string string String
     public partial class PurchaseFailedEventArgs : DataModel
     {
         public Product?                                 PurchasedProduct                        { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PurchaseFailedEventArgs() { Pointer= p0 };
 
-            value.PurchasedProduct                          = GetObject<Product>(new IntPtr(p + 0x010), ReversePrism.DataModels.Product.FromPointer); // 0245A68F2768 0x10 PurchasedProduct            ( 00018659E6D0 ModelClassType Product Product Product Pointer )
-            value.Reason                                    = (PurchaseFailureReason)GetInt32(new IntPtr(p + 0x018)); // 0245A68F2788 0x18 Reason                      ( 0001865DBE10 ModelEnumType PurchaseFailureReason PurchaseFailureReason PurchaseFailureReason Int32 )
-            value.Message                                   = GetString(new IntPtr(p + 0x020)); // 0245A68F27A8 0x20 Message                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.PurchasedProduct                          = GetObject<Product>(new IntPtr(p + 0x010), ReversePrism.DataModels.Product.FromPointer); // 0x10 PurchasedProduct            ( ModelClassType Product Product Product Pointer )
+            value.Reason                                    = (PurchaseFailureReason)GetInt32(new IntPtr(p + 0x018)); // 0x18 Reason                      ( ModelEnumType PurchaseFailureReason PurchaseFailureReason PurchaseFailureReason Int32 )
+            value.Message                                   = GetString(new IntPtr(p + 0x020)); // 0x20 Message                     ( ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 098 Reason                                   000186605160 ModelEnumType ConsentCheckExceptionReason ConsentCheckExceptionReason ConsentCheckExceptionReason Int32
+    // 098 Reason                                   ModelEnumType ConsentCheckExceptionReason ConsentCheckExceptionReason ConsentCheckExceptionReason Int32
     public partial class ConsentCheckException : DataModel
     {
         public ConsentCheckExceptionReason              Reason                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ConsentCheckException() { Pointer= p0 };
 
-            value.Reason                                    = (ConsentCheckExceptionReason)GetInt32(new IntPtr(p + 0x098)); // 02466B83F8C0 0x98 Reason                      ( 000186605160 ModelEnumType ConsentCheckExceptionReason ConsentCheckExceptionReason ConsentCheckExceptionReason Int32 )
+            value.Reason                                    = (ConsentCheckExceptionReason)GetInt32(new IntPtr(p + 0x098)); // 0x98 Reason                      ( ModelEnumType ConsentCheckExceptionReason ConsentCheckExceptionReason ConsentCheckExceptionReason Int32 )
 
             return value;
         }

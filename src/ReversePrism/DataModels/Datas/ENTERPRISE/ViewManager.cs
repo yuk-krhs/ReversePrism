@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 ParentObject                             0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 028 CurrentView                              00018651AA80 ModelClassType ViewBase ViewBase ViewBase Pointer
-    // 030 ViewTypeStacks                           000185D30108 ModelClassListType List`1<ViewValue> List`1<ViewValue> List<ViewValue> Pointer
-    // 038 IsChangeViewFlg                          000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 040 NextView                                 00018651AA80 ModelClassType ViewBase ViewBase ViewBase Pointer
-    // 048 ForceChangeCTS                           0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
+    // 020 ParentObject                             ModelClassType GameObject GameObject GameObject Pointer
+    // 028 CurrentView                              ModelClassType ViewBase ViewBase ViewBase Pointer
+    // 030 ViewTypeStacks                           ModelClassListType List`1<ViewValue> List`1<ViewValue> List<ViewValue> Pointer
+    // 038 IsChangeViewFlg                          ModelPrimitiveType bool bool bool Bool
+    // 040 NextView                                 ModelClassType ViewBase ViewBase ViewBase Pointer
+    // 048 ForceChangeCTS                           ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
     // 050 ExternalFinishChangeViewProcess          Func`1<UniTask> IL2CPP_TYPE_GENERICINST
     // 058 ExternalFadeOutProcess                   Func`2<int, UniTask> IL2CPP_TYPE_GENERICINST
     // 060 ExternalFadeInProcess                    Func`1<UniTask> IL2CPP_TYPE_GENERICINST
@@ -37,12 +37,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ViewManager() { Pointer= p0 };
 
-            value.ParentObject                              = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 024660A538A8 0x20 ParentObject                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.CurrentView                               = GetObject<ViewBase>(new IntPtr(p + 0x028), ReversePrism.DataModels.ViewBase.FromPointer); // 024660A538C8 0x28 CurrentView                 ( 00018651AA80 ModelClassType ViewBase ViewBase ViewBase Pointer )
-            value.ViewTypeStacks                            = GetObjectList<ViewValue>(new IntPtr(p + 0x030), ReversePrism.DataModels.ViewValue.FromPointer); // 024660A538E8 0x30 ViewTypeStacks              ( 000185D30108 ModelClassListType List`1<ViewValue> List`1<ViewValue> List<ViewValue> Pointer )
-            value.IsChangeViewFlg                           = GetBool(new IntPtr(p + 0x038)); // 024660A53908 0x38 IsChangeViewFlg             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.NextView                                  = GetObject<ViewBase>(new IntPtr(p + 0x040), ReversePrism.DataModels.ViewBase.FromPointer); // 024660A53928 0x40 NextView                    ( 00018651AA80 ModelClassType ViewBase ViewBase ViewBase Pointer )
-            value.ForceChangeCTS                            = GetObject<CancellationTokenSource>(new IntPtr(p + 0x048), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 024660A53948 0x48 ForceChangeCTS              ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.ParentObject                              = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0x20 ParentObject                ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.CurrentView                               = GetObject<ViewBase>(new IntPtr(p + 0x028), ReversePrism.DataModels.ViewBase.FromPointer); // 0x28 CurrentView                 ( ModelClassType ViewBase ViewBase ViewBase Pointer )
+            value.ViewTypeStacks                            = GetObjectList<ViewValue>(new IntPtr(p + 0x030), ReversePrism.DataModels.ViewValue.FromPointer); // 0x30 ViewTypeStacks              ( ModelClassListType List`1<ViewValue> List`1<ViewValue> List<ViewValue> Pointer )
+            value.IsChangeViewFlg                           = GetBool(new IntPtr(p + 0x038)); // 0x38 IsChangeViewFlg             ( ModelPrimitiveType bool bool bool Bool )
+            value.NextView                                  = GetObject<ViewBase>(new IntPtr(p + 0x040), ReversePrism.DataModels.ViewBase.FromPointer); // 0x40 NextView                    ( ModelClassType ViewBase ViewBase ViewBase Pointer )
+            value.ForceChangeCTS                            = GetObject<CancellationTokenSource>(new IntPtr(p + 0x048), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0x48 ForceChangeCTS              ( ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
 
             return value;
         }

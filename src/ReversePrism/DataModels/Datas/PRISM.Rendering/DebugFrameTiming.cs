@@ -10,9 +10,9 @@ namespace ReversePrism.DataModels
 
     // 000 Instance                                 DebugFrameTiming IL2CPP_TYPE_CLASS
     // 000 SampleHistorySize                        int IL2CPP_TYPE_I4
-    // 010 FrameTimeSample                          0001865D64C0 ModelEnumType FrameTimeSample FrameTimeSample FrameTimeSample Int32
-    // 028 FrameTimeSampleHistory                   0001865BF960 ModelClassType FrameTimeSampleHistory FrameTimeSampleHistory FrameTimeSampleHistory Pointer
-    // 030 FrameTimings                             000185B7FF10 ModelEnumListType FrameTiming[] FrameTiming[] List<FrameTiming> Pointer
+    // 010 FrameTimeSample                          ModelEnumType FrameTimeSample FrameTimeSample FrameTimeSample Int32
+    // 028 FrameTimeSampleHistory                   ModelClassType FrameTimeSampleHistory FrameTimeSampleHistory FrameTimeSampleHistory Pointer
+    // 030 FrameTimings                             ModelEnumListType FrameTiming[] FrameTiming[] List<FrameTiming> Pointer
     public partial class DebugFrameTiming : DataModel
     {
         public FrameTimeSample                          FrameTimeSample                         { get; set; }
@@ -27,9 +27,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DebugFrameTiming() { Pointer= p0 };
 
-            value.FrameTimeSample                           = (FrameTimeSample)GetInt32(new IntPtr(p + 0x010)); // 02466BB19F48 0x10 FrameTimeSample             ( 0001865D64C0 ModelEnumType FrameTimeSample FrameTimeSample FrameTimeSample Int32 )
-            value.FrameTimeSampleHistory                    = GetObject<FrameTimeSampleHistory>(new IntPtr(p + 0x028), ReversePrism.DataModels.FrameTimeSampleHistory.FromPointer); // 02466BB19F68 0x28 FrameTimeSampleHistory      ( 0001865BF960 ModelClassType FrameTimeSampleHistory FrameTimeSampleHistory FrameTimeSampleHistory Pointer )
-            value.FrameTimings                              = GetEnumList<FrameTiming>(new IntPtr(p + 0x030)); // 02466BB19F88 0x30 FrameTimings                ( 000185B7FF10 ModelEnumListType FrameTiming[] FrameTiming[] List<FrameTiming> Pointer )
+            value.FrameTimeSample                           = (FrameTimeSample)GetInt32(new IntPtr(p + 0x010)); // 0x10 FrameTimeSample             ( ModelEnumType FrameTimeSample FrameTimeSample FrameTimeSample Int32 )
+            value.FrameTimeSampleHistory                    = GetObject<FrameTimeSampleHistory>(new IntPtr(p + 0x028), ReversePrism.DataModels.FrameTimeSampleHistory.FromPointer); // 0x28 FrameTimeSampleHistory      ( ModelClassType FrameTimeSampleHistory FrameTimeSampleHistory FrameTimeSampleHistory Pointer )
+            value.FrameTimings                              = GetEnumList<FrameTiming>(new IntPtr(p + 0x030)); // 0x30 FrameTimings                ( ModelEnumListType FrameTiming[] FrameTiming[] List<FrameTiming> Pointer )
 
             return value;
         }

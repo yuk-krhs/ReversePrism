@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 TypeName                                 000186671910 ModelPrimitiveType string string string String
-    // 018 MethodName                               000186671910 ModelPrimitiveType string string string String
-    // 020 Arguments                                000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 010 TypeName                                 ModelPrimitiveType string string string String
+    // 018 MethodName                               ModelPrimitiveType string string string String
+    // 020 Arguments                                ModelPrimitiveListType string[] string[] List<string> Pointer
     public partial class ExecuteStaticMethodSequence : DataModel
     {
         public string                                   TypeName                                { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExecuteStaticMethodSequence() { Pointer= p0 };
 
-            value.TypeName                                  = GetString(new IntPtr(p + 0x010)); // 02466BC97DA8 0x10 TypeName                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.MethodName                                = GetString(new IntPtr(p + 0x018)); // 02466BC97DC8 0x18 MethodName                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.Arguments                                 = GetStringList(new IntPtr(p + 0x020)); // 02466BC97DE8 0x20 Arguments                   ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.TypeName                                  = GetString(new IntPtr(p + 0x010)); // 0x10 TypeName                    ( ModelPrimitiveType string string string String )
+            value.MethodName                                = GetString(new IntPtr(p + 0x018)); // 0x18 MethodName                  ( ModelPrimitiveType string string string String )
+            value.Arguments                                 = GetStringList(new IntPtr(p + 0x020)); // 0x20 Arguments                   ( ModelPrimitiveListType string[] string[] List<string> Pointer )
 
             return value;
         }

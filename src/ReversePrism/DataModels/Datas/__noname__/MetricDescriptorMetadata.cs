@@ -11,11 +11,11 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<MetricDescriptorMetadata> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 LaunchStageFieldNumber                   int IL2CPP_TYPE_I4
-    // 018 LaunchStage                              00018650A860 ModelEnumType LaunchStage LaunchStage LaunchStage Int32
+    // 018 LaunchStage                              ModelEnumType LaunchStage LaunchStage LaunchStage Int32
     // 000 SamplePeriodFieldNumber                  int IL2CPP_TYPE_I4
-    // 020 SamplePeriod                             00018670DB80 ModelClassType Duration Duration Duration Pointer
+    // 020 SamplePeriod                             ModelClassType Duration Duration Duration Pointer
     // 000 IngestDelayFieldNumber                   int IL2CPP_TYPE_I4
-    // 028 IngestDelay                              00018670DB80 ModelClassType Duration Duration Duration Pointer
+    // 028 IngestDelay                              ModelClassType Duration Duration Duration Pointer
     public partial class MetricDescriptorMetadata : DataModel
     {
         public LaunchStage                              LaunchStage                             { get; set; }
@@ -30,9 +30,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MetricDescriptorMetadata() { Pointer= p0 };
 
-            value.LaunchStage                               = (LaunchStage)GetInt32(new IntPtr(p + 0x018)); // 02466A861160 0x18 LaunchStage                 ( 00018650A860 ModelEnumType LaunchStage LaunchStage LaunchStage Int32 )
-            value.SamplePeriod                              = GetObject<Duration>(new IntPtr(p + 0x020), ReversePrism.DataModels.Duration.FromPointer); // 02466A8611A0 0x20 SamplePeriod                ( 00018670DB80 ModelClassType Duration Duration Duration Pointer )
-            value.IngestDelay                               = GetObject<Duration>(new IntPtr(p + 0x028), ReversePrism.DataModels.Duration.FromPointer); // 02466A8611E0 0x28 IngestDelay                 ( 00018670DB80 ModelClassType Duration Duration Duration Pointer )
+            value.LaunchStage                               = (LaunchStage)GetInt32(new IntPtr(p + 0x018)); // 0x18 LaunchStage                 ( ModelEnumType LaunchStage LaunchStage LaunchStage Int32 )
+            value.SamplePeriod                              = GetObject<Duration>(new IntPtr(p + 0x020), ReversePrism.DataModels.Duration.FromPointer); // 0x20 SamplePeriod                ( ModelClassType Duration Duration Duration Pointer )
+            value.IngestDelay                               = GetObject<Duration>(new IntPtr(p + 0x028), ReversePrism.DataModels.Duration.FromPointer); // 0x28 IngestDelay                 ( ModelClassType Duration Duration Duration Pointer )
 
             return value;
         }

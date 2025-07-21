@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 CanvasGroup                              000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
-    // 028 FadeTime                                 0001866656B0 ModelPrimitiveType float float float Single
-    // 030 Tween                                    0001866BEFF0 ModelClassType Tween Tween Tween Pointer
+    // 020 CanvasGroup                              ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
+    // 028 FadeTime                                 ModelPrimitiveType float float float Single
+    // 030 Tween                                    ModelClassType Tween Tween Tween Pointer
     public partial class SuspendPauseView : DataModel
     {
         public CanvasGroup?                             CanvasGroup                             { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SuspendPauseView() { Pointer= p0 };
 
-            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0246650C13C0 0x20 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.FadeTime                                  = GetSingle(new IntPtr(p + 0x028)); // 0246650C13E0 0x28 FadeTime                    ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.Tween                                     = GetObject<Tween>(new IntPtr(p + 0x030), ReversePrism.DataModels.Tween.FromPointer); // 0246650C1400 0x30 Tween                       ( 0001866BEFF0 ModelClassType Tween Tween Tween Pointer )
+            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0x20 CanvasGroup                 ( ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.FadeTime                                  = GetSingle(new IntPtr(p + 0x028)); // 0x28 FadeTime                    ( ModelPrimitiveType float float float Single )
+            value.Tween                                     = GetObject<Tween>(new IntPtr(p + 0x030), ReversePrism.DataModels.Tween.FromPointer); // 0x30 Tween                       ( ModelClassType Tween Tween Tween Pointer )
 
             return value;
         }

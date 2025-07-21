@@ -8,11 +8,6 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 000 HomeMainResourceTagName                  string IL2CPP_TYPE_STRING
-    // 000 HomeRemindItemResourceTagName            string IL2CPP_TYPE_STRING
-    // 000 HomeSettingsResourceTagName              string IL2CPP_TYPE_STRING
-    // 000 HomeLoginBonusResourceTagName            string IL2CPP_TYPE_STRING
-    // 000 ChallengeTourStageDetailTagName          string IL2CPP_TYPE_STRING
     // 000 HomeMotionPathFormat                     string IL2CPP_TYPE_STRING
     // 000 CacheTime                                int IL2CPP_TYPE_I4
     // 000 CharaMessageOpenMinTime                  float IL2CPP_TYPE_R4

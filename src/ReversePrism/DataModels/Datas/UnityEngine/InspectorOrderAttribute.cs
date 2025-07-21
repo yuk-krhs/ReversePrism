@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_inspectorSort                          00018670B590 ModelEnumType InspectorSort InspectorSort InspectorSort Int32
-    // 014 M_sortDirection                          00018670BD40 ModelEnumType InspectorSortDirection InspectorSortDirection InspectorSortDirection Int32
+    // 010 M_inspectorSort                          ModelEnumType InspectorSort InspectorSort InspectorSort Int32
+    // 014 M_sortDirection                          ModelEnumType InspectorSortDirection InspectorSortDirection InspectorSortDirection Int32
     public partial class InspectorOrderAttribute : DataModel
     {
         public InspectorSort                            M_inspectorSort                         { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InspectorOrderAttribute() { Pointer= p0 };
 
-            value.M_inspectorSort                           = (InspectorSort)GetInt32(new IntPtr(p + 0x010)); // 0245A687C1D0 0x10 M_inspectorSort             ( 00018670B590 ModelEnumType InspectorSort InspectorSort InspectorSort Int32 )
-            value.M_sortDirection                           = (InspectorSortDirection)GetInt32(new IntPtr(p + 0x014)); // 0245A687C1F0 0x14 M_sortDirection             ( 00018670BD40 ModelEnumType InspectorSortDirection InspectorSortDirection InspectorSortDirection Int32 )
+            value.M_inspectorSort                           = (InspectorSort)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_inspectorSort             ( ModelEnumType InspectorSort InspectorSort InspectorSort Int32 )
+            value.M_sortDirection                           = (InspectorSortDirection)GetInt32(new IntPtr(p + 0x014)); // 0x14 M_sortDirection             ( ModelEnumType InspectorSortDirection InspectorSortDirection InspectorSortDirection Int32 )
 
             return value;
         }

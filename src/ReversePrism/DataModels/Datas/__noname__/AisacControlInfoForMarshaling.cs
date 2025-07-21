@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 namePtr                                  <int> IL2CPP_TYPE_I
-    // 018 Id                                       0001866992B0 ModelPrimitiveType uint uint uint UInt32
+    // 018 Id                                       ModelPrimitiveType uint uint uint UInt32
     public partial class AisacControlInfoForMarshaling : DataModel
     {
         public uint                                     Id                                      { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AisacControlInfoForMarshaling() { Pointer= p0 };
 
-            value.Id                                        = GetUInt32(new IntPtr(p + 0x018)); // 02466AD2A490 0x18 Id                          ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.Id                                        = GetUInt32(new IntPtr(p + 0x018)); // 0x18 Id                          ( ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

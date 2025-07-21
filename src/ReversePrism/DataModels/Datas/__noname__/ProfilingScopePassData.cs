@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Sampler                                  0001865CD360 ModelClassType ProfilingSampler ProfilingSampler ProfilingSampler Pointer
+    // 010 Sampler                                  ModelClassType ProfilingSampler ProfilingSampler ProfilingSampler Pointer
     public partial class ProfilingScopePassData : DataModel
     {
         public ProfilingSampler?                        Sampler                                 { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProfilingScopePassData() { Pointer= p0 };
 
-            value.Sampler                                   = GetObject<ProfilingSampler>(new IntPtr(p + 0x010), ReversePrism.DataModels.ProfilingSampler.FromPointer); // 0246690D7E88 0x10 Sampler                     ( 0001865CD360 ModelClassType ProfilingSampler ProfilingSampler ProfilingSampler Pointer )
+            value.Sampler                                   = GetObject<ProfilingSampler>(new IntPtr(p + 0x010), ReversePrism.DataModels.ProfilingSampler.FromPointer); // 0x10 Sampler                     ( ModelClassType ProfilingSampler ProfilingSampler ProfilingSampler Pointer )
 
             return value;
         }

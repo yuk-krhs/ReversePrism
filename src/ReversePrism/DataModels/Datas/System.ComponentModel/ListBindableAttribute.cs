@@ -10,9 +10,9 @@ namespace ReversePrism.DataModels
 
     // 000 Yes                                      ListBindableAttribute IL2CPP_TYPE_CLASS
     // 008 No                                       ListBindableAttribute IL2CPP_TYPE_CLASS
-    // 010 Default                                  000186535170 ModelClassType ListBindableAttribute ListBindableAttribute ListBindableAttribute Pointer
-    // 010 IsDefault                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 011 ListBindable                             0001865965D0 ModelPrimitiveType bool bool bool Bool
+    // 010 Default                                  ModelClassType ListBindableAttribute ListBindableAttribute ListBindableAttribute Pointer
+    // 010 IsDefault                                ModelPrimitiveType bool bool bool Bool
+    // 011 ListBindable                             ModelPrimitiveType bool bool bool Bool
     public partial class ListBindableAttribute : DataModel
     {
         public ListBindableAttribute?                   Default                                 { get; set; }
@@ -27,9 +27,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ListBindableAttribute() { Pointer= p0 };
 
-            value.Default                                   = GetObject<ListBindableAttribute>(new IntPtr(p + 0x010), ReversePrism.DataModels.ListBindableAttribute.FromPointer); // 024667B877A8 0x10 Default                     ( 000186535170 ModelClassType ListBindableAttribute ListBindableAttribute ListBindableAttribute Pointer )
-            value.IsDefault                                 = GetBool(new IntPtr(p + 0x010)); // 024667B877C8 0x10 IsDefault                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ListBindable                              = GetBool(new IntPtr(p + 0x011)); // 024667B877E8 0x11 ListBindable                ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.Default                                   = GetObject<ListBindableAttribute>(new IntPtr(p + 0x010), ReversePrism.DataModels.ListBindableAttribute.FromPointer); // 0x10 Default                     ( ModelClassType ListBindableAttribute ListBindableAttribute ListBindableAttribute Pointer )
+            value.IsDefault                                 = GetBool(new IntPtr(p + 0x010)); // 0x10 IsDefault                   ( ModelPrimitiveType bool bool bool Bool )
+            value.ListBindable                              = GetBool(new IntPtr(p + 0x011)); // 0x11 ListBindable                ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 Behaviour                                0001865332C0 ModelClassType LipSyncBehaviour LipSyncBehaviour LipSyncBehaviour Pointer
+    // 018 Behaviour                                ModelClassType LipSyncBehaviour LipSyncBehaviour LipSyncBehaviour Pointer
     public partial class LipSyncClip : DataModel
     {
         public LipSyncBehaviour?                        Behaviour                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LipSyncClip() { Pointer= p0 };
 
-            value.Behaviour                                 = GetObject<LipSyncBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.LipSyncBehaviour.FromPointer); // 024664E723D0 0x18 Behaviour                   ( 0001865332C0 ModelClassType LipSyncBehaviour LipSyncBehaviour LipSyncBehaviour Pointer )
+            value.Behaviour                                 = GetObject<LipSyncBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.LipSyncBehaviour.FromPointer); // 0x18 Behaviour                   ( ModelClassType LipSyncBehaviour LipSyncBehaviour LipSyncBehaviour Pointer )
 
             return value;
         }

@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 View                                     000186604C80 ModelClassType IPvPRankingView IPvPRankingView IPvPRankingView Pointer
-    // 018 Argument                                 0001865F06F0 ModelClassType PvpRankingArgument PvpRankingArgument PvpRankingArgument Pointer
-    // 020 Model                                    0001865F17B0 ModelClassType PvpRankingModel PvpRankingModel PvpRankingModel Pointer
-    // 028 Disposables                              0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
-    // 030 Cts                                      0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
+    // 010 View                                     ModelClassType IPvPRankingView IPvPRankingView IPvPRankingView Pointer
+    // 018 Argument                                 ModelClassType PvpRankingArgument PvpRankingArgument PvpRankingArgument Pointer
+    // 020 Model                                    ModelClassType PvpRankingModel PvpRankingModel PvpRankingModel Pointer
+    // 028 Disposables                              ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
+    // 030 Cts                                      ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
     public partial class PvpRankingPresenter : DataModel
     {
         public IPvPRankingView?                         View                                    { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PvpRankingPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<IPvPRankingView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IPvPRankingView.FromPointer); // 024666687268 0x10 View                        ( 000186604C80 ModelClassType IPvPRankingView IPvPRankingView IPvPRankingView Pointer )
-            value.Argument                                  = GetObject<PvpRankingArgument>(new IntPtr(p + 0x018), ReversePrism.DataModels.PvpRankingArgument.FromPointer); // 024666687288 0x18 Argument                    ( 0001865F06F0 ModelClassType PvpRankingArgument PvpRankingArgument PvpRankingArgument Pointer )
-            value.Model                                     = GetObject<PvpRankingModel>(new IntPtr(p + 0x020), ReversePrism.DataModels.PvpRankingModel.FromPointer); // 0246666872A8 0x20 Model                       ( 0001865F17B0 ModelClassType PvpRankingModel PvpRankingModel PvpRankingModel Pointer )
-            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0246666872C8 0x28 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
-            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x030), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0246666872E8 0x30 Cts                         ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.View                                      = GetObject<IPvPRankingView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IPvPRankingView.FromPointer); // 0x10 View                        ( ModelClassType IPvPRankingView IPvPRankingView IPvPRankingView Pointer )
+            value.Argument                                  = GetObject<PvpRankingArgument>(new IntPtr(p + 0x018), ReversePrism.DataModels.PvpRankingArgument.FromPointer); // 0x18 Argument                    ( ModelClassType PvpRankingArgument PvpRankingArgument PvpRankingArgument Pointer )
+            value.Model                                     = GetObject<PvpRankingModel>(new IntPtr(p + 0x020), ReversePrism.DataModels.PvpRankingModel.FromPointer); // 0x20 Model                       ( ModelClassType PvpRankingModel PvpRankingModel PvpRankingModel Pointer )
+            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0x28 Disposables                 ( ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x030), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0x30 Cts                         ( ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
 
             return value;
         }

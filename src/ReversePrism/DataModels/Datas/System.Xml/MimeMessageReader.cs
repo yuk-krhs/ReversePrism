@@ -9,9 +9,9 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 CRLFCRLF                                 sbyte[] IL2CPP_TYPE_SZARRAY
-    // 010 GetContentStreamCalled                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 018 MimeHeaderReader                         000186618070 ModelClassType MimeHeaderReader MimeHeaderReader MimeHeaderReader Pointer
-    // 020 Reader                                   0001866BDB70 ModelClassType DelimittedStreamReader DelimittedStreamReader DelimittedStreamReader Pointer
+    // 010 GetContentStreamCalled                   ModelPrimitiveType bool bool bool Bool
+    // 018 MimeHeaderReader                         ModelClassType MimeHeaderReader MimeHeaderReader MimeHeaderReader Pointer
+    // 020 Reader                                   ModelClassType DelimittedStreamReader DelimittedStreamReader DelimittedStreamReader Pointer
     public partial class MimeMessageReader : DataModel
     {
         public bool                                     GetContentStreamCalled                  { get; set; }
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MimeMessageReader() { Pointer= p0 };
 
-            value.GetContentStreamCalled                    = GetBool(new IntPtr(p + 0x010)); // 024667CF08B8 0x10 GetContentStreamCalled      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.MimeHeaderReader                          = GetObject<MimeHeaderReader>(new IntPtr(p + 0x018), ReversePrism.DataModels.MimeHeaderReader.FromPointer); // 024667CF08D8 0x18 MimeHeaderReader            ( 000186618070 ModelClassType MimeHeaderReader MimeHeaderReader MimeHeaderReader Pointer )
-            value.Reader                                    = GetObject<DelimittedStreamReader>(new IntPtr(p + 0x020), ReversePrism.DataModels.DelimittedStreamReader.FromPointer); // 024667CF08F8 0x20 Reader                      ( 0001866BDB70 ModelClassType DelimittedStreamReader DelimittedStreamReader DelimittedStreamReader Pointer )
+            value.GetContentStreamCalled                    = GetBool(new IntPtr(p + 0x010)); // 0x10 GetContentStreamCalled      ( ModelPrimitiveType bool bool bool Bool )
+            value.MimeHeaderReader                          = GetObject<MimeHeaderReader>(new IntPtr(p + 0x018), ReversePrism.DataModels.MimeHeaderReader.FromPointer); // 0x18 MimeHeaderReader            ( ModelClassType MimeHeaderReader MimeHeaderReader MimeHeaderReader Pointer )
+            value.Reader                                    = GetObject<DelimittedStreamReader>(new IntPtr(p + 0x020), ReversePrism.DataModels.DelimittedStreamReader.FromPointer); // 0x20 Reader                      ( ModelClassType DelimittedStreamReader DelimittedStreamReader DelimittedStreamReader Pointer )
 
             return value;
         }

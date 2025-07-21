@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ChainUserId                              0001865F4260 ModelPrimitiveType int int int Int32
+    // 010 ChainUserId                              ModelPrimitiveType int int int Int32
     public partial class ChainProfileParameter : DataModel
     {
         public int                                      ChainUserId                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChainProfileParameter() { Pointer= p0 };
 
-            value.ChainUserId                               = GetInt32(new IntPtr(p + 0x010)); // 0246668C5F18 0x10 ChainUserId                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.ChainUserId                               = GetInt32(new IntPtr(p + 0x010)); // 0x10 ChainUserId                 ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

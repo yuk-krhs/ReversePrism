@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 RotationObj                              0001866AA150 ModelClassType Transform Transform Transform Pointer
+    // 020 RotationObj                              ModelClassType Transform Transform Transform Pointer
     public partial class ViewerCameraController : DataModel
     {
         public Transform?                               RotationObj                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ViewerCameraController() { Pointer= p0 };
 
-            value.RotationObj                               = GetObject<Transform>(new IntPtr(p + 0x020), ReversePrism.DataModels.Transform.FromPointer); // 024664B82570 0x20 RotationObj                 ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.RotationObj                               = GetObject<Transform>(new IntPtr(p + 0x020), ReversePrism.DataModels.Transform.FromPointer); // 0x20 RotationObj                 ( ModelClassType Transform Transform Transform Pointer )
 
             return value;
         }

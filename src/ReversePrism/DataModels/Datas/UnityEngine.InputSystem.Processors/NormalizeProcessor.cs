@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Min                                      000186666050 ModelPrimitiveType float float float Single
-    // 014 Max                                      000186666050 ModelPrimitiveType float float float Single
-    // 018 Zero                                     000186666050 ModelPrimitiveType float float float Single
+    // 010 Min                                      ModelPrimitiveType float float float Single
+    // 014 Max                                      ModelPrimitiveType float float float Single
+    // 018 Zero                                     ModelPrimitiveType float float float Single
     public partial class NormalizeProcessor : DataModel
     {
         public float                                    Min                                     { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NormalizeProcessor() { Pointer= p0 };
 
-            value.Min                                       = GetSingle(new IntPtr(p + 0x010)); // 024667893A38 0x10 Min                         ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Max                                       = GetSingle(new IntPtr(p + 0x014)); // 024667893A58 0x14 Max                         ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Zero                                      = GetSingle(new IntPtr(p + 0x018)); // 024667893A78 0x18 Zero                        ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Min                                       = GetSingle(new IntPtr(p + 0x010)); // 0x10 Min                         ( ModelPrimitiveType float float float Single )
+            value.Max                                       = GetSingle(new IntPtr(p + 0x014)); // 0x14 Max                         ( ModelPrimitiveType float float float Single )
+            value.Zero                                      = GetSingle(new IntPtr(p + 0x018)); // 0x18 Zero                        ( ModelPrimitiveType float float float Single )
 
             return value;
         }

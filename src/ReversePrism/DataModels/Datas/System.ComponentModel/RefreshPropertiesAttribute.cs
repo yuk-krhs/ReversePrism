@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 000 All                                      RefreshPropertiesAttribute IL2CPP_TYPE_CLASS
     // 008 Repaint                                  RefreshPropertiesAttribute IL2CPP_TYPE_CLASS
-    // 010 Default                                  00018663AB50 ModelClassType RefreshPropertiesAttribute RefreshPropertiesAttribute RefreshPropertiesAttribute Pointer
-    // 010 Refresh                                  00018663A400 ModelEnumType RefreshProperties RefreshProperties RefreshProperties Int32
+    // 010 Default                                  ModelClassType RefreshPropertiesAttribute RefreshPropertiesAttribute RefreshPropertiesAttribute Pointer
+    // 010 Refresh                                  ModelEnumType RefreshProperties RefreshProperties RefreshProperties Int32
     public partial class RefreshPropertiesAttribute : DataModel
     {
         public RefreshPropertiesAttribute?              Default                                 { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RefreshPropertiesAttribute() { Pointer= p0 };
 
-            value.Default                                   = GetObject<RefreshPropertiesAttribute>(new IntPtr(p + 0x010), ReversePrism.DataModels.RefreshPropertiesAttribute.FromPointer); // 024667BA5770 0x10 Default                     ( 00018663AB50 ModelClassType RefreshPropertiesAttribute RefreshPropertiesAttribute RefreshPropertiesAttribute Pointer )
-            value.Refresh                                   = (RefreshProperties)GetInt32(new IntPtr(p + 0x010)); // 024667BA5790 0x10 Refresh                     ( 00018663A400 ModelEnumType RefreshProperties RefreshProperties RefreshProperties Int32 )
+            value.Default                                   = GetObject<RefreshPropertiesAttribute>(new IntPtr(p + 0x010), ReversePrism.DataModels.RefreshPropertiesAttribute.FromPointer); // 0x10 Default                     ( ModelClassType RefreshPropertiesAttribute RefreshPropertiesAttribute RefreshPropertiesAttribute Pointer )
+            value.Refresh                                   = (RefreshProperties)GetInt32(new IntPtr(p + 0x010)); // 0x10 Refresh                     ( ModelEnumType RefreshProperties RefreshProperties RefreshProperties Int32 )
 
             return value;
         }

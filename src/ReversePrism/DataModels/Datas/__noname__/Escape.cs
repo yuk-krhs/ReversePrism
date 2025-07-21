@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Source                                   0001866722E0 ModelPrimitiveType string string string String
-    // 018 Index                                    0001865F36C0 ModelPrimitiveType int int int Int32
-    // 01C Start                                    0001865F36C0 ModelPrimitiveType int int int Int32
-    // 020 End                                      0001865F36C0 ModelPrimitiveType int int int Int32
-    // 024 Optional                                 0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 Source                                   ModelPrimitiveType string string string String
+    // 018 Index                                    ModelPrimitiveType int int int Int32
+    // 01C Start                                    ModelPrimitiveType int int int Int32
+    // 020 End                                      ModelPrimitiveType int int int Int32
+    // 024 Optional                                 ModelPrimitiveType int int int Int32
     public partial class Escape : DataModel
     {
         public string                                   Source                                  { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Escape() { Pointer= p0 };
 
-            value.Source                                    = GetString(new IntPtr(p + 0x010)); // 0246669AB300 0x10 Source                      ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Index                                     = GetInt32(new IntPtr(p + 0x018)); // 0246669AB320 0x18 Index                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Start                                     = GetInt32(new IntPtr(p + 0x01C)); // 0246669AB340 0x1C Start                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.End                                       = GetInt32(new IntPtr(p + 0x020)); // 0246669AB360 0x20 End                         ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Optional                                  = GetInt32(new IntPtr(p + 0x024)); // 0246669AB380 0x24 Optional                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Source                                    = GetString(new IntPtr(p + 0x010)); // 0x10 Source                      ( ModelPrimitiveType string string string String )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x018)); // 0x18 Index                       ( ModelPrimitiveType int int int Int32 )
+            value.Start                                     = GetInt32(new IntPtr(p + 0x01C)); // 0x1C Start                       ( ModelPrimitiveType int int int Int32 )
+            value.End                                       = GetInt32(new IntPtr(p + 0x020)); // 0x20 End                         ( ModelPrimitiveType int int int Int32 )
+            value.Optional                                  = GetInt32(new IntPtr(p + 0x024)); // 0x24 Optional                    ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

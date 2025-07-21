@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 PositiveInvariantFormatLiterals          FormatLiterals IL2CPP_TYPE_VALUETYPE
-    // 028 NegativeInvariantFormatLiterals          000186605990 ModelEnumType FormatLiterals FormatLiterals FormatLiterals Int32
+    // 028 NegativeInvariantFormatLiterals          ModelEnumType FormatLiterals FormatLiterals FormatLiterals Int32
     public partial class TimeSpanFormat : DataModel
     {
         public FormatLiterals                           NegativeInvariantFormatLiterals         { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TimeSpanFormat() { Pointer= p0 };
 
-            value.NegativeInvariantFormatLiterals           = (FormatLiterals)GetInt32(new IntPtr(p + 0x028)); // 024666D8A9B8 0x28 NegativeInvariantFormatLiterals ( 000186605990 ModelEnumType FormatLiterals FormatLiterals FormatLiterals Int32 )
+            value.NegativeInvariantFormatLiterals           = (FormatLiterals)GetInt32(new IntPtr(p + 0x028)); // 0x28 NegativeInvariantFormatLiterals ( ModelEnumType FormatLiterals FormatLiterals FormatLiterals Int32 )
 
             return value;
         }

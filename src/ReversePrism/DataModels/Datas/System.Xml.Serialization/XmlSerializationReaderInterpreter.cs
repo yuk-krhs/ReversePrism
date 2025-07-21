@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 0D0 TypeMap                                  00018659F0F0 ModelClassType XmlMapping XmlMapping XmlMapping Pointer
-    // 0D8 Format                                   00018672E200 ModelEnumType SerializationFormat SerializationFormat SerializationFormat Int32
+    // 0D0 TypeMap                                  ModelClassType XmlMapping XmlMapping XmlMapping Pointer
+    // 0D8 Format                                   ModelEnumType SerializationFormat SerializationFormat SerializationFormat Int32
     // 000 AnyType                                  XmlQualifiedName IL2CPP_TYPE_CLASS
     // 008 empty_array                              <object>[] IL2CPP_TYPE_SZARRAY
     public partial class XmlSerializationReaderInterpreter : DataModel
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlSerializationReaderInterpreter() { Pointer= p0 };
 
-            value.TypeMap                                   = GetObject<XmlMapping>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.XmlMapping.FromPointer); // 024667534928 0xD0 TypeMap                     ( 00018659F0F0 ModelClassType XmlMapping XmlMapping XmlMapping Pointer )
-            value.Format                                    = (SerializationFormat)GetInt32(new IntPtr(p + 0x0D8)); // 024667534948 0xD8 Format                      ( 00018672E200 ModelEnumType SerializationFormat SerializationFormat SerializationFormat Int32 )
+            value.TypeMap                                   = GetObject<XmlMapping>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.XmlMapping.FromPointer); // 0xD0 TypeMap                     ( ModelClassType XmlMapping XmlMapping XmlMapping Pointer )
+            value.Format                                    = (SerializationFormat)GetInt32(new IntPtr(p + 0x0D8)); // 0xD8 Format                      ( ModelEnumType SerializationFormat SerializationFormat SerializationFormat Int32 )
 
             return value;
         }

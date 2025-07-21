@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_ObjectArgument                         000186638250 ModelClassType Object Object Object Pointer
-    // 018 M_ObjectArgumentAssemblyTypeName         000186671910 ModelPrimitiveType string string string String
-    // 020 M_IntArgument                            0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 024 M_FloatArgument                          0001866656B0 ModelPrimitiveType float float float Single
-    // 028 M_StringArgument                         000186671910 ModelPrimitiveType string string string String
-    // 030 M_BoolArgument                           000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 M_ObjectArgument                         ModelClassType Object Object Object Pointer
+    // 018 M_ObjectArgumentAssemblyTypeName         ModelPrimitiveType string string string String
+    // 020 M_IntArgument                            ModelPrimitiveType int int int Int32
+    // 024 M_FloatArgument                          ModelPrimitiveType float float float Single
+    // 028 M_StringArgument                         ModelPrimitiveType string string string String
+    // 030 M_BoolArgument                           ModelPrimitiveType bool bool bool Bool
     public partial class ArgumentCache : DataModel
     {
         public Object?                                  M_ObjectArgument                        { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ArgumentCache() { Pointer= p0 };
 
-            value.M_ObjectArgument                          = GetObject<Object>(new IntPtr(p + 0x010), ReversePrism.DataModels.Object.FromPointer); // 0245A3F94838 0x10 M_ObjectArgument            ( 000186638250 ModelClassType Object Object Object Pointer )
-            value.M_ObjectArgumentAssemblyTypeName          = GetString(new IntPtr(p + 0x018)); // 0245A3F94858 0x18 M_ObjectArgumentAssemblyTypeName ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_IntArgument                             = GetInt32(new IntPtr(p + 0x020)); // 0245A3F94878 0x20 M_IntArgument               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_FloatArgument                           = GetSingle(new IntPtr(p + 0x024)); // 0245A3F94898 0x24 M_FloatArgument             ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_StringArgument                          = GetString(new IntPtr(p + 0x028)); // 0245A3F948B8 0x28 M_StringArgument            ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_BoolArgument                            = GetBool(new IntPtr(p + 0x030)); // 0245A3F948D8 0x30 M_BoolArgument              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_ObjectArgument                          = GetObject<Object>(new IntPtr(p + 0x010), ReversePrism.DataModels.Object.FromPointer); // 0x10 M_ObjectArgument            ( ModelClassType Object Object Object Pointer )
+            value.M_ObjectArgumentAssemblyTypeName          = GetString(new IntPtr(p + 0x018)); // 0x18 M_ObjectArgumentAssemblyTypeName ( ModelPrimitiveType string string string String )
+            value.M_IntArgument                             = GetInt32(new IntPtr(p + 0x020)); // 0x20 M_IntArgument               ( ModelPrimitiveType int int int Int32 )
+            value.M_FloatArgument                           = GetSingle(new IntPtr(p + 0x024)); // 0x24 M_FloatArgument             ( ModelPrimitiveType float float float Single )
+            value.M_StringArgument                          = GetString(new IntPtr(p + 0x028)); // 0x28 M_StringArgument            ( ModelPrimitiveType string string string String )
+            value.M_BoolArgument                            = GetBool(new IntPtr(p + 0x030)); // 0x30 M_BoolArgument              ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

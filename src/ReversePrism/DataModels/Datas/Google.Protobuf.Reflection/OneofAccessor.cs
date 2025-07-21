@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 caseDelegate                             Func`2<IMessage, int> IL2CPP_TYPE_GENERICINST
     // 018 clearDelegate                            Action`1<IMessage> IL2CPP_TYPE_GENERICINST
-    // 020 Descriptor                               0001866DFA70 ModelClassType OneofDescriptor OneofDescriptor OneofDescriptor Pointer
+    // 020 Descriptor                               ModelClassType OneofDescriptor OneofDescriptor OneofDescriptor Pointer
     public partial class OneofAccessor : DataModel
     {
         public OneofDescriptor?                         Descriptor                              { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new OneofAccessor() { Pointer= p0 };
 
-            value.Descriptor                                = GetObject<OneofDescriptor>(new IntPtr(p + 0x020), ReversePrism.DataModels.OneofDescriptor.FromPointer); // 02466A5FD770 0x20 Descriptor                  ( 0001866DFA70 ModelClassType OneofDescriptor OneofDescriptor OneofDescriptor Pointer )
+            value.Descriptor                                = GetObject<OneofDescriptor>(new IntPtr(p + 0x020), ReversePrism.DataModels.OneofDescriptor.FromPointer); // 0x20 Descriptor                  ( ModelClassType OneofDescriptor OneofDescriptor OneofDescriptor Pointer )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Intensity                                000186666050 ModelPrimitiveType float float float Single
-    // 014 Color                                    0001865AB0A0 ModelEnumType Color Color Color Int32
+    // 010 Intensity                                ModelPrimitiveType float float float Single
+    // 014 Color                                    ModelEnumType Color Color Color Int32
     public partial class TextureColorBehaviour : DataModel
     {
         public float                                    Intensity                               { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TextureColorBehaviour() { Pointer= p0 };
 
-            value.Intensity                                 = GetSingle(new IntPtr(p + 0x010)); // 024664E75668 0x10 Intensity                   ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Color                                     = (Color)GetInt32(new IntPtr(p + 0x014)); // 024664E75688 0x14 Color                       ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
+            value.Intensity                                 = GetSingle(new IntPtr(p + 0x010)); // 0x10 Intensity                   ( ModelPrimitiveType float float float Single )
+            value.Color                                     = (Color)GetInt32(new IntPtr(p + 0x014)); // 0x14 Color                       ( ModelEnumType Color Color Color Int32 )
 
             return value;
         }

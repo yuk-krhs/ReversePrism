@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<SetHomeSettingReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 FavoriteIdolSettingFieldNumber           int IL2CPP_TYPE_I4
-    // 018 FavoriteIdolSetting                      0001866CC290 ModelClassType HomeSettingFavoriteIdolStatus HomeSettingFavoriteIdolStatus HomeSettingFavoriteIdolStatus Pointer
+    // 018 FavoriteIdolSetting                      ModelClassType HomeSettingFavoriteIdolStatus HomeSettingFavoriteIdolStatus HomeSettingFavoriteIdolStatus Pointer
     public partial class SetHomeSettingReply : DataModel
     {
         public HomeSettingFavoriteIdolStatus?           FavoriteIdolSetting                     { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SetHomeSettingReply() { Pointer= p0 };
 
-            value.FavoriteIdolSetting                       = GetObject<HomeSettingFavoriteIdolStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.HomeSettingFavoriteIdolStatus.FromPointer); // 024662019F80 0x18 FavoriteIdolSetting         ( 0001866CC290 ModelClassType HomeSettingFavoriteIdolStatus HomeSettingFavoriteIdolStatus HomeSettingFavoriteIdolStatus Pointer )
+            value.FavoriteIdolSetting                       = GetObject<HomeSettingFavoriteIdolStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.HomeSettingFavoriteIdolStatus.FromPointer); // 0x18 FavoriteIdolSetting         ( ModelClassType HomeSettingFavoriteIdolStatus HomeSettingFavoriteIdolStatus HomeSettingFavoriteIdolStatus Pointer )
 
             return value;
         }

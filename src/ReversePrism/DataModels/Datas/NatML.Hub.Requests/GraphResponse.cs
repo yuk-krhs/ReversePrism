@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Errors                                   000185CBAFC8 ModelClassListType ResponseError[] ResponseError[] List<ResponseError> Pointer
+    // 010 Errors                                   ModelClassListType ResponseError[] ResponseError[] List<ResponseError> Pointer
     public partial class GraphResponse : DataModel
     {
         public List<ResponseError>?                     Errors                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GraphResponse() { Pointer= p0 };
 
-            value.Errors                                    = GetObjectList<ResponseError>(new IntPtr(p + 0x010), ReversePrism.DataModels.ResponseError.FromPointer); // 02466BE406D0 0x10 Errors                      ( 000185CBAFC8 ModelClassListType ResponseError[] ResponseError[] List<ResponseError> Pointer )
+            value.Errors                                    = GetObjectList<ResponseError>(new IntPtr(p + 0x010), ReversePrism.DataModels.ResponseError.FromPointer); // 0x10 Errors                      ( ModelClassListType ResponseError[] ResponseError[] List<ResponseError> Pointer )
 
             return value;
         }

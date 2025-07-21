@@ -10,9 +10,9 @@ namespace ReversePrism.DataModels
 
     // 000 Component                                DesignerCategoryAttribute IL2CPP_TYPE_CLASS
     // 008 Default                                  DesignerCategoryAttribute IL2CPP_TYPE_CLASS
-    // 010 Form                                     0001866C7900 ModelClassType DesignerCategoryAttribute DesignerCategoryAttribute DesignerCategoryAttribute Pointer
-    // 018 Generic                                  0001866C7900 ModelClassType DesignerCategoryAttribute DesignerCategoryAttribute DesignerCategoryAttribute Pointer
-    // 010 Category                                 000186672F10 ModelPrimitiveType string string string String
+    // 010 Form                                     ModelClassType DesignerCategoryAttribute DesignerCategoryAttribute DesignerCategoryAttribute Pointer
+    // 018 Generic                                  ModelClassType DesignerCategoryAttribute DesignerCategoryAttribute DesignerCategoryAttribute Pointer
+    // 010 Category                                 ModelPrimitiveType string string string String
     public partial class DesignerCategoryAttribute : DataModel
     {
         public DesignerCategoryAttribute?               Form                                    { get; set; }
@@ -27,9 +27,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DesignerCategoryAttribute() { Pointer= p0 };
 
-            value.Form                                      = GetObject<DesignerCategoryAttribute>(new IntPtr(p + 0x010), ReversePrism.DataModels.DesignerCategoryAttribute.FromPointer); // 024667B7BD38 0x10 Form                        ( 0001866C7900 ModelClassType DesignerCategoryAttribute DesignerCategoryAttribute DesignerCategoryAttribute Pointer )
-            value.Generic                                   = GetObject<DesignerCategoryAttribute>(new IntPtr(p + 0x018), ReversePrism.DataModels.DesignerCategoryAttribute.FromPointer); // 024667B7BD58 0x18 Generic                     ( 0001866C7900 ModelClassType DesignerCategoryAttribute DesignerCategoryAttribute DesignerCategoryAttribute Pointer )
-            value.Category                                  = GetString(new IntPtr(p + 0x010)); // 024667B7BD78 0x10 Category                    ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Form                                      = GetObject<DesignerCategoryAttribute>(new IntPtr(p + 0x010), ReversePrism.DataModels.DesignerCategoryAttribute.FromPointer); // 0x10 Form                        ( ModelClassType DesignerCategoryAttribute DesignerCategoryAttribute DesignerCategoryAttribute Pointer )
+            value.Generic                                   = GetObject<DesignerCategoryAttribute>(new IntPtr(p + 0x018), ReversePrism.DataModels.DesignerCategoryAttribute.FromPointer); // 0x18 Generic                     ( ModelClassType DesignerCategoryAttribute DesignerCategoryAttribute DesignerCategoryAttribute Pointer )
+            value.Category                                  = GetString(new IntPtr(p + 0x010)); // 0x10 Category                    ( ModelPrimitiveType string string string String )
 
             return value;
         }

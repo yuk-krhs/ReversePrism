@@ -9,9 +9,9 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 NON_EXISTING_TOUCH                       int IL2CPP_TYPE_I4
-    // 020 RectTransform                            000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
-    // 028 PointerId                                0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 02C InitialTouchPos                          0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 020 RectTransform                            ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 028 PointerId                                ModelPrimitiveType int int int Int32
+    // 02C InitialTouchPos                          ModelEnumType Vector2 Vector2 Vector2 Int32
     public partial class WindowDragHandler : DataModel
     {
         public RectTransform?                           RectTransform                           { get; set; }
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new WindowDragHandler() { Pointer= p0 };
 
-            value.RectTransform                             = GetObject<RectTransform>(new IntPtr(p + 0x020), ReversePrism.DataModels.RectTransform.FromPointer); // 02466B1E0320 0x20 RectTransform               ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.PointerId                                 = GetInt32(new IntPtr(p + 0x028)); // 02466B1E0340 0x28 PointerId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.InitialTouchPos                           = (Vector2)GetInt32(new IntPtr(p + 0x02C)); // 02466B1E0360 0x2C InitialTouchPos             ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.RectTransform                             = GetObject<RectTransform>(new IntPtr(p + 0x020), ReversePrism.DataModels.RectTransform.FromPointer); // 0x20 RectTransform               ( ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.PointerId                                 = GetInt32(new IntPtr(p + 0x028)); // 0x28 PointerId                   ( ModelPrimitiveType int int int Int32 )
+            value.InitialTouchPos                           = (Vector2)GetInt32(new IntPtr(p + 0x02C)); // 0x2C InitialTouchPos             ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
 
             return value;
         }

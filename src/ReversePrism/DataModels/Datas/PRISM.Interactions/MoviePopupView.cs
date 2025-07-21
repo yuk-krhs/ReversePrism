@@ -8,13 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 TabGroup                                 0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer
-    // 028 PIdolGridView                            00018654FF30 ModelClassType CategoryElementGridView CategoryElementGridView CategoryElementGridView Pointer
-    // 030 SCharaGridView                           00018654FF30 ModelClassType CategoryElementGridView CategoryElementGridView CategoryElementGridView Pointer
+    // 020 TabGroup                                 ModelClassType UITabGroup UITabGroup UITabGroup Pointer
+    // 028 PIdolGridView                            ModelClassType CategoryElementGridView CategoryElementGridView CategoryElementGridView Pointer
+    // 030 SCharaGridView                           ModelClassType CategoryElementGridView CategoryElementGridView CategoryElementGridView Pointer
     // 038 onClick                                  Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 040 onPlay                                   Subject`1<int> IL2CPP_TYPE_GENERICINST
     // 048 <OnDetailCellIcon>k__BackingField        IObservable`1<int> IL2CPP_TYPE_GENERICINST
-    // 050 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
+    // 050 Parent                                   ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
     public partial class MoviePopupView : DataModel
     {
         public UITabGroup?                              TabGroup                                { get; set; }
@@ -30,10 +30,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MoviePopupView() { Pointer= p0 };
 
-            value.TabGroup                                  = GetObject<UITabGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITabGroup.FromPointer); // 02466A352B08 0x20 TabGroup                    ( 0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
-            value.PIdolGridView                             = GetObject<CategoryElementGridView>(new IntPtr(p + 0x028), ReversePrism.DataModels.CategoryElementGridView.FromPointer); // 02466A352B28 0x28 PIdolGridView               ( 00018654FF30 ModelClassType CategoryElementGridView CategoryElementGridView CategoryElementGridView Pointer )
-            value.SCharaGridView                            = GetObject<CategoryElementGridView>(new IntPtr(p + 0x030), ReversePrism.DataModels.CategoryElementGridView.FromPointer); // 02466A352B48 0x30 SCharaGridView              ( 00018654FF30 ModelClassType CategoryElementGridView CategoryElementGridView CategoryElementGridView Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x050), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466A352BC8 0x50 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.TabGroup                                  = GetObject<UITabGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITabGroup.FromPointer); // 0x20 TabGroup                    ( ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
+            value.PIdolGridView                             = GetObject<CategoryElementGridView>(new IntPtr(p + 0x028), ReversePrism.DataModels.CategoryElementGridView.FromPointer); // 0x28 PIdolGridView               ( ModelClassType CategoryElementGridView CategoryElementGridView CategoryElementGridView Pointer )
+            value.SCharaGridView                            = GetObject<CategoryElementGridView>(new IntPtr(p + 0x030), ReversePrism.DataModels.CategoryElementGridView.FromPointer); // 0x30 SCharaGridView              ( ModelClassType CategoryElementGridView CategoryElementGridView CategoryElementGridView Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x050), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0x50 Parent                      ( ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

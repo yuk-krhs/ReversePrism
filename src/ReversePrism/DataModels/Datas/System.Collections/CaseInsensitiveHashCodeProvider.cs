@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CompareInfo                              0001865EB660 ModelClassType CompareInfo CompareInfo CompareInfo Pointer
+    // 010 CompareInfo                              ModelClassType CompareInfo CompareInfo CompareInfo Pointer
     public partial class CaseInsensitiveHashCodeProvider : DataModel
     {
         public CompareInfo?                             CompareInfo                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CaseInsensitiveHashCodeProvider() { Pointer= p0 };
 
-            value.CompareInfo                               = GetObject<CompareInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.CompareInfo.FromPointer); // 024666D96B88 0x10 CompareInfo                 ( 0001865EB660 ModelClassType CompareInfo CompareInfo CompareInfo Pointer )
+            value.CompareInfo                               = GetObject<CompareInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.CompareInfo.FromPointer); // 0x10 CompareInfo                 ( ModelClassType CompareInfo CompareInfo CompareInfo Pointer )
 
             return value;
         }

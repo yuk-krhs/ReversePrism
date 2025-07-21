@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_GlyphIndex                             000186698B70 ModelPrimitiveType uint uint uint UInt32
-    // 014 M_GlyphValueRecord                       000186683280 ModelEnumType GlyphValueRecord GlyphValueRecord GlyphValueRecord Int32
+    // 010 M_GlyphIndex                             ModelPrimitiveType uint uint uint UInt32
+    // 014 M_GlyphValueRecord                       ModelEnumType GlyphValueRecord GlyphValueRecord GlyphValueRecord Int32
     public partial class GlyphAdjustmentRecord : DataModel
     {
         public uint                                     M_GlyphIndex                            { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GlyphAdjustmentRecord() { Pointer= p0 };
 
-            value.M_GlyphIndex                              = GetUInt32(new IntPtr(p + 0x010)); // 0245A2163380 0x10 M_GlyphIndex                ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
-            value.M_GlyphValueRecord                        = (GlyphValueRecord)GetInt32(new IntPtr(p + 0x014)); // 0245A21633A0 0x14 M_GlyphValueRecord          ( 000186683280 ModelEnumType GlyphValueRecord GlyphValueRecord GlyphValueRecord Int32 )
+            value.M_GlyphIndex                              = GetUInt32(new IntPtr(p + 0x010)); // 0x10 M_GlyphIndex                ( ModelPrimitiveType uint uint uint UInt32 )
+            value.M_GlyphValueRecord                        = (GlyphValueRecord)GetInt32(new IntPtr(p + 0x014)); // 0x14 M_GlyphValueRecord          ( ModelEnumType GlyphValueRecord GlyphValueRecord GlyphValueRecord Int32 )
 
             return value;
         }

@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 BtnConversion                            0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 028 Check                                    000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer
-    // 030 TxtSelectedCount                         0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 038 SelectedLimitCount                       0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 BtnConversion                            ModelClassType UIButton UIButton UIButton Pointer
+    // 028 Check                                    ModelClassType ToggleButton ToggleButton ToggleButton Pointer
+    // 030 TxtSelectedCount                         ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 038 SelectedLimitCount                       ModelPrimitiveType int int int Int32
     // 040 onCheck                                  Subject`1<bool> IL2CPP_TYPE_GENERICINST
     // 048 onConversionSubject                      Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     public partial class PieceArchiveBottomView : DataModel
@@ -29,10 +29,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PieceArchiveBottomView() { Pointer= p0 };
 
-            value.BtnConversion                             = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 02466A2E4098 0x20 BtnConversion               ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.Check                                     = GetObject<ToggleButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.ToggleButton.FromPointer); // 02466A2E40B8 0x28 Check                       ( 000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer )
-            value.TxtSelectedCount                          = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A2E40D8 0x30 TxtSelectedCount            ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.SelectedLimitCount                        = GetInt32(new IntPtr(p + 0x038)); // 02466A2E40F8 0x38 SelectedLimitCount          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.BtnConversion                             = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 0x20 BtnConversion               ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.Check                                     = GetObject<ToggleButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.ToggleButton.FromPointer); // 0x28 Check                       ( ModelClassType ToggleButton ToggleButton ToggleButton Pointer )
+            value.TxtSelectedCount                          = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x30 TxtSelectedCount            ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.SelectedLimitCount                        = GetInt32(new IntPtr(p + 0x038)); // 0x38 SelectedLimitCount          ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

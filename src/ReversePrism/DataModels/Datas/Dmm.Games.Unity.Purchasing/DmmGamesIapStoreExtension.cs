@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Store                                    0001866E3D80 ModelClassType DmmGamesIapStore DmmGamesIapStore DmmGamesIapStore Pointer
+    // 010 Store                                    ModelClassType DmmGamesIapStore DmmGamesIapStore DmmGamesIapStore Pointer
     public partial class DmmGamesIapStoreExtension : DataModel
     {
         public DmmGamesIapStore?                        Store                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DmmGamesIapStoreExtension() { Pointer= p0 };
 
-            value.Store                                     = GetObject<DmmGamesIapStore>(new IntPtr(p + 0x010), ReversePrism.DataModels.DmmGamesIapStore.FromPointer); // 0245A4BEB8B8 0x10 Store                       ( 0001866E3D80 ModelClassType DmmGamesIapStore DmmGamesIapStore DmmGamesIapStore Pointer )
+            value.Store                                     = GetObject<DmmGamesIapStore>(new IntPtr(p + 0x010), ReversePrism.DataModels.DmmGamesIapStore.FromPointer); // 0x10 Store                       ( ModelClassType DmmGamesIapStore DmmGamesIapStore DmmGamesIapStore Pointer )
 
             return value;
         }

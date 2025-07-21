@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Month                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 014 Day                                      0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 018 IsPublic                                 000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 Month                                    ModelPrimitiveType int int int Int32
+    // 014 Day                                      ModelPrimitiveType int int int Int32
+    // 018 IsPublic                                 ModelPrimitiveType bool bool bool Bool
     public partial class ProfileEditBirthdayViewModel : DataModel
     {
         public int                                      Month                                   { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProfileEditBirthdayViewModel() { Pointer= p0 };
 
-            value.Month                                     = GetInt32(new IntPtr(p + 0x010)); // 0246666E61F0 0x10 Month                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Day                                       = GetInt32(new IntPtr(p + 0x014)); // 0246666E6210 0x14 Day                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsPublic                                  = GetBool(new IntPtr(p + 0x018)); // 0246666E6230 0x18 IsPublic                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Month                                     = GetInt32(new IntPtr(p + 0x010)); // 0x10 Month                       ( ModelPrimitiveType int int int Int32 )
+            value.Day                                       = GetInt32(new IntPtr(p + 0x014)); // 0x14 Day                         ( ModelPrimitiveType int int int Int32 )
+            value.IsPublic                                  = GetBool(new IntPtr(p + 0x018)); // 0x18 IsPublic                    ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

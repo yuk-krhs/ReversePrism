@@ -8,13 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Name                                     0001866D74F0 ModelClassType TypeIdentifier TypeIdentifier TypeIdentifier Pointer
-    // 018 Assembly_name                            000186671910 ModelPrimitiveType string string string String
-    // 020 Nested                                   000185D17128 ModelClassListType List`1<TypeIdentifier> List`1<TypeIdentifier> List<TypeIdentifier> Pointer
-    // 028 Generic_params                           000185D17338 ModelClassListType List`1<TypeSpec> List`1<TypeSpec> List<TypeSpec> Pointer
-    // 030 Modifier_spec                            000185CF4308 ModelClassListType List`1<ModifierSpec> List`1<ModifierSpec> List<ModifierSpec> Pointer
-    // 038 Is_byref                                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 040 Display_fullname                         000186671910 ModelPrimitiveType string string string String
+    // 010 Name                                     ModelClassType TypeIdentifier TypeIdentifier TypeIdentifier Pointer
+    // 018 Assembly_name                            ModelPrimitiveType string string string String
+    // 020 Nested                                   ModelClassListType List`1<TypeIdentifier> List`1<TypeIdentifier> List<TypeIdentifier> Pointer
+    // 028 Generic_params                           ModelClassListType List`1<TypeSpec> List`1<TypeSpec> List<TypeSpec> Pointer
+    // 030 Modifier_spec                            ModelClassListType List`1<ModifierSpec> List`1<ModifierSpec> List<ModifierSpec> Pointer
+    // 038 Is_byref                                 ModelPrimitiveType bool bool bool Bool
+    // 040 Display_fullname                         ModelPrimitiveType string string string String
     public partial class TypeSpec : DataModel
     {
         public TypeIdentifier?                          Name                                    { get; set; }
@@ -33,13 +33,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TypeSpec() { Pointer= p0 };
 
-            value.Name                                      = GetObject<TypeIdentifier>(new IntPtr(p + 0x010), ReversePrism.DataModels.TypeIdentifier.FromPointer); // 024666B09E60 0x10 Name                        ( 0001866D74F0 ModelClassType TypeIdentifier TypeIdentifier TypeIdentifier Pointer )
-            value.Assembly_name                             = GetString(new IntPtr(p + 0x018)); // 024666B09E80 0x18 Assembly_name               ( 000186671910 ModelPrimitiveType string string string String )
-            value.Nested                                    = GetObjectList<TypeIdentifier>(new IntPtr(p + 0x020), ReversePrism.DataModels.TypeIdentifier.FromPointer); // 024666B09EA0 0x20 Nested                      ( 000185D17128 ModelClassListType List`1<TypeIdentifier> List`1<TypeIdentifier> List<TypeIdentifier> Pointer )
-            value.Generic_params                            = GetObjectList<TypeSpec>(new IntPtr(p + 0x028), ReversePrism.DataModels.TypeSpec.FromPointer); // 024666B09EC0 0x28 Generic_params              ( 000185D17338 ModelClassListType List`1<TypeSpec> List`1<TypeSpec> List<TypeSpec> Pointer )
-            value.Modifier_spec                             = GetObjectList<ModifierSpec>(new IntPtr(p + 0x030), ReversePrism.DataModels.ModifierSpec.FromPointer); // 024666B09EE0 0x30 Modifier_spec               ( 000185CF4308 ModelClassListType List`1<ModifierSpec> List`1<ModifierSpec> List<ModifierSpec> Pointer )
-            value.Is_byref                                  = GetBool(new IntPtr(p + 0x038)); // 024666B09F00 0x38 Is_byref                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Display_fullname                          = GetString(new IntPtr(p + 0x040)); // 024666B09F20 0x40 Display_fullname            ( 000186671910 ModelPrimitiveType string string string String )
+            value.Name                                      = GetObject<TypeIdentifier>(new IntPtr(p + 0x010), ReversePrism.DataModels.TypeIdentifier.FromPointer); // 0x10 Name                        ( ModelClassType TypeIdentifier TypeIdentifier TypeIdentifier Pointer )
+            value.Assembly_name                             = GetString(new IntPtr(p + 0x018)); // 0x18 Assembly_name               ( ModelPrimitiveType string string string String )
+            value.Nested                                    = GetObjectList<TypeIdentifier>(new IntPtr(p + 0x020), ReversePrism.DataModels.TypeIdentifier.FromPointer); // 0x20 Nested                      ( ModelClassListType List`1<TypeIdentifier> List`1<TypeIdentifier> List<TypeIdentifier> Pointer )
+            value.Generic_params                            = GetObjectList<TypeSpec>(new IntPtr(p + 0x028), ReversePrism.DataModels.TypeSpec.FromPointer); // 0x28 Generic_params              ( ModelClassListType List`1<TypeSpec> List`1<TypeSpec> List<TypeSpec> Pointer )
+            value.Modifier_spec                             = GetObjectList<ModifierSpec>(new IntPtr(p + 0x030), ReversePrism.DataModels.ModifierSpec.FromPointer); // 0x30 Modifier_spec               ( ModelClassListType List`1<ModifierSpec> List`1<ModifierSpec> List<ModifierSpec> Pointer )
+            value.Is_byref                                  = GetBool(new IntPtr(p + 0x038)); // 0x38 Is_byref                    ( ModelPrimitiveType bool bool bool Bool )
+            value.Display_fullname                          = GetString(new IntPtr(p + 0x040)); // 0x40 Display_fullname            ( ModelPrimitiveType string string string String )
 
             return value;
         }

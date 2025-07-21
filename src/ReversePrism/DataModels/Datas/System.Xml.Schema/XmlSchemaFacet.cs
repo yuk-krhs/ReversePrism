@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 050 Value                                    000186671910 ModelPrimitiveType string string string String
-    // 058 IsFixed                                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 05C FacetType                                00018654F390 ModelEnumType FacetType FacetType FacetType Int32
+    // 050 Value                                    ModelPrimitiveType string string string String
+    // 058 IsFixed                                  ModelPrimitiveType bool bool bool Bool
+    // 05C FacetType                                ModelEnumType FacetType FacetType FacetType Int32
     public partial class XmlSchemaFacet : DataModel
     {
         public string                                   Value                                   { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlSchemaFacet() { Pointer= p0 };
 
-            value.Value                                     = GetString(new IntPtr(p + 0x050)); // 024667515160 0x50 Value                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsFixed                                   = GetBool(new IntPtr(p + 0x058)); // 024667515180 0x58 IsFixed                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.FacetType                                 = (FacetType)GetInt32(new IntPtr(p + 0x05C)); // 0246675151A0 0x5C FacetType                   ( 00018654F390 ModelEnumType FacetType FacetType FacetType Int32 )
+            value.Value                                     = GetString(new IntPtr(p + 0x050)); // 0x50 Value                       ( ModelPrimitiveType string string string String )
+            value.IsFixed                                   = GetBool(new IntPtr(p + 0x058)); // 0x58 IsFixed                     ( ModelPrimitiveType bool bool bool Bool )
+            value.FacetType                                 = (FacetType)GetInt32(new IntPtr(p + 0x05C)); // 0x5C FacetType                   ( ModelEnumType FacetType FacetType FacetType Int32 )
 
             return value;
         }

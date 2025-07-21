@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Lines                                    0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 Lines                                    ModelPrimitiveType int int int Int32
     public partial class MultilineReactivePropertyAttribute : DataModel
     {
         public int                                      Lines                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MultilineReactivePropertyAttribute() { Pointer= p0 };
 
-            value.Lines                                     = GetInt32(new IntPtr(p + 0x010)); // 02466960AD70 0x10 Lines                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Lines                                     = GetInt32(new IntPtr(p + 0x010)); // 0x10 Lines                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

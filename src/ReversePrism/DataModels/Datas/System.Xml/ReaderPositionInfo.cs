@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 LineInfo                                 00018669FB60 ModelClassType IXmlLineInfo IXmlLineInfo IXmlLineInfo Pointer
+    // 010 LineInfo                                 ModelClassType IXmlLineInfo IXmlLineInfo IXmlLineInfo Pointer
     public partial class ReaderPositionInfo : DataModel
     {
         public IXmlLineInfo?                            LineInfo                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ReaderPositionInfo() { Pointer= p0 };
 
-            value.LineInfo                                  = GetObject<IXmlLineInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.IXmlLineInfo.FromPointer); // 0246674D2918 0x10 LineInfo                    ( 00018669FB60 ModelClassType IXmlLineInfo IXmlLineInfo IXmlLineInfo Pointer )
+            value.LineInfo                                  = GetObject<IXmlLineInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.IXmlLineInfo.FromPointer); // 0x10 LineInfo                    ( ModelClassType IXmlLineInfo IXmlLineInfo IXmlLineInfo Pointer )
 
             return value;
         }

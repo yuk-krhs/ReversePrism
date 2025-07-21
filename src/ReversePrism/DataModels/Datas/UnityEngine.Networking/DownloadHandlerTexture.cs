@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 m_NativeData                             NativeArray`1<sbyte> IL2CPP_TYPE_GENERICINST
-    // 028 MNonReadable                             000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 028 MNonReadable                             ModelPrimitiveType bool bool bool Bool
     public partial class DownloadHandlerTexture : DataModel
     {
         public bool                                     MNonReadable                            { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DownloadHandlerTexture() { Pointer= p0 };
 
-            value.MNonReadable                              = GetBool(new IntPtr(p + 0x028)); // 0245A692E568 0x28 MNonReadable                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.MNonReadable                              = GetBool(new IntPtr(p + 0x028)); // 0x28 MNonReadable                ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

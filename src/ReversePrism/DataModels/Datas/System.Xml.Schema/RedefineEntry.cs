@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Redefine                                 0001865BE490 ModelClassType XmlSchemaRedefine XmlSchemaRedefine XmlSchemaRedefine Pointer
-    // 018 SchemaToUpdate                           0001866BE3D0 ModelClassType XmlSchema XmlSchema XmlSchema Pointer
+    // 010 Redefine                                 ModelClassType XmlSchemaRedefine XmlSchemaRedefine XmlSchemaRedefine Pointer
+    // 018 SchemaToUpdate                           ModelClassType XmlSchema XmlSchema XmlSchema Pointer
     public partial class RedefineEntry : DataModel
     {
         public XmlSchemaRedefine?                       Redefine                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RedefineEntry() { Pointer= p0 };
 
-            value.Redefine                                  = GetObject<XmlSchemaRedefine>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlSchemaRedefine.FromPointer); // 024667593588 0x10 Redefine                    ( 0001865BE490 ModelClassType XmlSchemaRedefine XmlSchemaRedefine XmlSchemaRedefine Pointer )
-            value.SchemaToUpdate                            = GetObject<XmlSchema>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlSchema.FromPointer); // 0246675935A8 0x18 SchemaToUpdate              ( 0001866BE3D0 ModelClassType XmlSchema XmlSchema XmlSchema Pointer )
+            value.Redefine                                  = GetObject<XmlSchemaRedefine>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlSchemaRedefine.FromPointer); // 0x10 Redefine                    ( ModelClassType XmlSchemaRedefine XmlSchemaRedefine XmlSchemaRedefine Pointer )
+            value.SchemaToUpdate                            = GetObject<XmlSchema>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlSchema.FromPointer); // 0x18 SchemaToUpdate              ( ModelClassType XmlSchema XmlSchema XmlSchema Pointer )
 
             return value;
         }

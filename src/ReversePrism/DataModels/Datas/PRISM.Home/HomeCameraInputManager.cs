@@ -9,10 +9,10 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 RotationSpeed                            float IL2CPP_TYPE_R4
-    // 020 DefaultRotation                          000186649E40 ModelEnumType Quaternion Quaternion Quaternion Int32
-    // 030 LastDragPos                              0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32
-    // 03C IsInputPossible                          000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 040 CameraTransform                          0001866AA150 ModelClassType Transform Transform Transform Pointer
+    // 020 DefaultRotation                          ModelEnumType Quaternion Quaternion Quaternion Int32
+    // 030 LastDragPos                              ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 03C IsInputPossible                          ModelPrimitiveType bool bool bool Bool
+    // 040 CameraTransform                          ModelClassType Transform Transform Transform Pointer
     public partial class HomeCameraInputManager : DataModel
     {
         public Quaternion                               DefaultRotation                         { get; set; }
@@ -28,10 +28,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HomeCameraInputManager() { Pointer= p0 };
 
-            value.DefaultRotation                           = (Quaternion)GetInt32(new IntPtr(p + 0x020)); // 02466535AE88 0x20 DefaultRotation             ( 000186649E40 ModelEnumType Quaternion Quaternion Quaternion Int32 )
-            value.LastDragPos                               = (Vector3)GetInt32(new IntPtr(p + 0x030)); // 02466535AEA8 0x30 LastDragPos                 ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.IsInputPossible                           = GetBool(new IntPtr(p + 0x03C)); // 02466535AEC8 0x3C IsInputPossible             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CameraTransform                           = GetObject<Transform>(new IntPtr(p + 0x040), ReversePrism.DataModels.Transform.FromPointer); // 02466535AEE8 0x40 CameraTransform             ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.DefaultRotation                           = (Quaternion)GetInt32(new IntPtr(p + 0x020)); // 0x20 DefaultRotation             ( ModelEnumType Quaternion Quaternion Quaternion Int32 )
+            value.LastDragPos                               = (Vector3)GetInt32(new IntPtr(p + 0x030)); // 0x30 LastDragPos                 ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.IsInputPossible                           = GetBool(new IntPtr(p + 0x03C)); // 0x3C IsInputPossible             ( ModelPrimitiveType bool bool bool Bool )
+            value.CameraTransform                           = GetObject<Transform>(new IntPtr(p + 0x040), ReversePrism.DataModels.Transform.FromPointer); // 0x40 CameraTransform             ( ModelClassType Transform Transform Transform Pointer )
 
             return value;
         }

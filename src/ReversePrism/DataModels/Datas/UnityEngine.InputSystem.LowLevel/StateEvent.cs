@@ -10,9 +10,9 @@ namespace ReversePrism.DataModels
 
     // 000 Type                                     int IL2CPP_TYPE_I4
     // 000 kStateDataSizeToSubtract                 int IL2CPP_TYPE_I4
-    // 010 BaseEvent                                0001866FCF10 ModelEnumType InputEvent InputEvent InputEvent Int32
-    // 024 StateFormat                              0001865BB6D0 ModelEnumType FourCC FourCC FourCC Int32
-    // 028 StateData                                00018657D690 ModelEnumType <stateData>e__FixedBuffer <stateData>e__FixedBuffer <stateData>e__FixedBuffer Int32
+    // 010 BaseEvent                                ModelEnumType InputEvent InputEvent InputEvent Int32
+    // 024 StateFormat                              ModelEnumType FourCC FourCC FourCC Int32
+    // 028 StateData                                ModelEnumType <stateData>e__FixedBuffer <stateData>e__FixedBuffer <stateData>e__FixedBuffer Int32
     public partial class StateEvent : DataModel
     {
         public InputEvent                               BaseEvent                               { get; set; }
@@ -27,9 +27,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StateEvent() { Pointer= p0 };
 
-            value.BaseEvent                                 = (InputEvent)GetInt32(new IntPtr(p + 0x010)); // 0246677143F0 0x10 BaseEvent                   ( 0001866FCF10 ModelEnumType InputEvent InputEvent InputEvent Int32 )
-            value.StateFormat                               = (FourCC)GetInt32(new IntPtr(p + 0x024)); // 024667714410 0x24 StateFormat                 ( 0001865BB6D0 ModelEnumType FourCC FourCC FourCC Int32 )
-            value.StateData                                 = (<stateData>e__FixedBuffer)GetInt32(new IntPtr(p + 0x028)); // 024667714430 0x28 StateData                   ( 00018657D690 ModelEnumType <stateData>e__FixedBuffer <stateData>e__FixedBuffer <stateData>e__FixedBuffer Int32 )
+            value.BaseEvent                                 = (InputEvent)GetInt32(new IntPtr(p + 0x010)); // 0x10 BaseEvent                   ( ModelEnumType InputEvent InputEvent InputEvent Int32 )
+            value.StateFormat                               = (FourCC)GetInt32(new IntPtr(p + 0x024)); // 0x24 StateFormat                 ( ModelEnumType FourCC FourCC FourCC Int32 )
+            value.StateData                                 = (<stateData>e__FixedBuffer)GetInt32(new IntPtr(p + 0x028)); // 0x28 StateData                   ( ModelEnumType <stateData>e__FixedBuffer <stateData>e__FixedBuffer <stateData>e__FixedBuffer Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Amount                                   0001865C2E50 ModelPrimitiveType double double double Double
+    // 010 Amount                                   ModelPrimitiveType double double double Double
     public partial class AmountParameter : DataModel
     {
         public double                                   Amount                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AmountParameter() { Pointer= p0 };
 
-            value.Amount                                    = GetDouble(new IntPtr(p + 0x010)); // 02466B544AA8 0x10 Amount                      ( 0001865C2E50 ModelPrimitiveType double double double Double )
+            value.Amount                                    = GetDouble(new IntPtr(p + 0x010)); // 0x10 Amount                      ( ModelPrimitiveType double double double Double )
 
             return value;
         }

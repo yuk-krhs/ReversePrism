@@ -13,6 +13,7 @@ namespace ReversePrism.DataModels
     // 030 SetCostumePreset                         Method`2<ISetCostumePresetArgs, ISetCostumePresetReply> IL2CPP_TYPE_GENERICINST
     // 048 SetCostumePresetName                     Method`2<ISetCostumePresetNameArgs, ISetCostumePresetNameReply> IL2CPP_TYPE_GENERICINST
     // 060 ClearCostumePreset                       Method`2<IClearCostumePresetArgs, IClearCostumePresetReply> IL2CPP_TYPE_GENERICINST
+    // 078 UnlockDressOrder                         Method`2<IUnlockDressOrderArgs, IUnlockDressOrderReply> IL2CPP_TYPE_GENERICINST
     public partial class CostumeServiceMethods : DataModel
     {
 

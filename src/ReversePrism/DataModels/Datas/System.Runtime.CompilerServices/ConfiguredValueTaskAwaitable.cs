@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Value                                    00018676B380 ModelEnumType ValueTask ValueTask ValueTask Int32
+    // 010 Value                                    ModelEnumType ValueTask ValueTask ValueTask Int32
     public partial class ConfiguredValueTaskAwaitable : DataModel
     {
         public ValueTask                                Value                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ConfiguredValueTaskAwaitable() { Pointer= p0 };
 
-            value.Value                                     = (ValueTask)GetInt32(new IntPtr(p + 0x010)); // 024666B56090 0x10 Value                       ( 00018676B380 ModelEnumType ValueTask ValueTask ValueTask Int32 )
+            value.Value                                     = (ValueTask)GetInt32(new IntPtr(p + 0x010)); // 0x10 Value                       ( ModelEnumType ValueTask ValueTask ValueTask Int32 )
 
             return value;
         }

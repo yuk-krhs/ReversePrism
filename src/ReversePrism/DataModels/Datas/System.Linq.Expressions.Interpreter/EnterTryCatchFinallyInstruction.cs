@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 HasFinally                               0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 020 TryHandler                               0001866B4640 ModelClassType TryCatchFinallyHandler TryCatchFinallyHandler TryCatchFinallyHandler Pointer
+    // 018 HasFinally                               ModelPrimitiveType bool bool bool Bool
+    // 020 TryHandler                               ModelClassType TryCatchFinallyHandler TryCatchFinallyHandler TryCatchFinallyHandler Pointer
     public partial class EnterTryCatchFinallyInstruction : DataModel
     {
         public bool                                     HasFinally                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EnterTryCatchFinallyInstruction() { Pointer= p0 };
 
-            value.HasFinally                                = GetBool(new IntPtr(p + 0x018)); // 02466A010100 0x18 HasFinally                  ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.TryHandler                                = GetObject<TryCatchFinallyHandler>(new IntPtr(p + 0x020), ReversePrism.DataModels.TryCatchFinallyHandler.FromPointer); // 02466A010120 0x20 TryHandler                  ( 0001866B4640 ModelClassType TryCatchFinallyHandler TryCatchFinallyHandler TryCatchFinallyHandler Pointer )
+            value.HasFinally                                = GetBool(new IntPtr(p + 0x018)); // 0x18 HasFinally                  ( ModelPrimitiveType bool bool bool Bool )
+            value.TryHandler                                = GetObject<TryCatchFinallyHandler>(new IntPtr(p + 0x020), ReversePrism.DataModels.TryCatchFinallyHandler.FromPointer); // 0x20 TryHandler                  ( ModelClassType TryCatchFinallyHandler TryCatchFinallyHandler TryCatchFinallyHandler Pointer )
 
             return value;
         }

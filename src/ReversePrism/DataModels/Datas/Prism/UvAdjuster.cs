@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 ScaleRate                                0001866656B0 ModelPrimitiveType float float float Single
-    // 028 RawImage                                 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer
+    // 020 ScaleRate                                ModelPrimitiveType float float float Single
+    // 028 RawImage                                 ModelClassType UIRawImage UIRawImage UIRawImage Pointer
     public partial class UvAdjuster : DataModel
     {
         public float                                    ScaleRate                               { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UvAdjuster() { Pointer= p0 };
 
-            value.ScaleRate                                 = GetSingle(new IntPtr(p + 0x020)); // 024664D93B30 0x20 ScaleRate                   ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.RawImage                                  = GetObject<UIRawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIRawImage.FromPointer); // 024664D93B50 0x28 RawImage                    ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
+            value.ScaleRate                                 = GetSingle(new IntPtr(p + 0x020)); // 0x20 ScaleRate                   ( ModelPrimitiveType float float float Single )
+            value.RawImage                                  = GetObject<UIRawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIRawImage.FromPointer); // 0x28 RawImage                    ( ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
 
             return value;
         }

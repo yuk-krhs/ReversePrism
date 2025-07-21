@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 038 IconViews                                000185B7EA70 ModelClassListType FUnitIconView[] FUnitIconView[] List<FUnitIconView> Pointer
+    // 038 IconViews                                ModelClassListType FUnitIconView[] FUnitIconView[] List<FUnitIconView> Pointer
     public partial class EnhancedUnitSelectGridCellView : DataModel
     {
         public List<FUnitIconView>?                     IconViews                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EnhancedUnitSelectGridCellView() { Pointer= p0 };
 
-            value.IconViews                                 = GetObjectList<FUnitIconView>(new IntPtr(p + 0x038), ReversePrism.DataModels.FUnitIconView.FromPointer); // 02466A2AD898 0x38 IconViews                   ( 000185B7EA70 ModelClassListType FUnitIconView[] FUnitIconView[] List<FUnitIconView> Pointer )
+            value.IconViews                                 = GetObjectList<FUnitIconView>(new IntPtr(p + 0x038), ReversePrism.DataModels.FUnitIconView.FromPointer); // 0x38 IconViews                   ( ModelClassListType FUnitIconView[] FUnitIconView[] List<FUnitIconView> Pointer )
 
             return value;
         }

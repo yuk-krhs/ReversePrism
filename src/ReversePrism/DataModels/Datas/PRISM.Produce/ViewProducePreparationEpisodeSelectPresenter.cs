@@ -8,24 +8,34 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 080 View                                     000186520FE0 ModelClassType ViewProducePreparationEpisodeSelectView ViewProducePreparationEpisodeSelectView ViewProducePreparationEpisodeSelectView Pointer
-    // 088 DifficultyReleasedConfigRef              000186671E00 ModelPrimitiveType string string string String
-    // 090 Ct                                       00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32
-    // 098 Model                                    00018651FD70 ModelClassType ViewProducePreparationEpisodeSelectModel ViewProducePreparationEpisodeSelectModel ViewProducePreparationEpisodeSelectModel Pointer
-    // 0A0 BannerPresenter                          000186568C90 ModelClassType ProducePreparationEpisodeSelectBannerPresenter ProducePreparationEpisodeSelectBannerPresenter ProducePreparationEpisodeSelectBannerPresenter Pointer
-    // 0A8 IsInitilizing                            000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 0B0 TutorialInfoSequence                     0001866807A0 ModelClassType ITutorialSequence ITutorialSequence ITutorialSequence Pointer
-    // 0B8 EndTutorialCaller                        000186730E10 ModelClassType EndTutorialConfirmPopupViewCaller EndTutorialConfirmPopupViewCaller EndTutorialConfirmPopupViewCaller Pointer
+    // 078 View                                     ModelClassType ViewProducePreparationEpisodeSelectView ViewProducePreparationEpisodeSelectView ViewProducePreparationEpisodeSelectView Pointer
+    // 080 DifficultyReleasedConfigRef              ModelPrimitiveType string string string String
+    // 088 DefaultBannerGroupViewReference          ModelClassType EpisodeSelectViewBannerGroupReferenceForLegacy EpisodeSelectViewBannerGroupReferenceForLegacy EpisodeSelectViewBannerGroupReferenceForLegacy Pointer
+    // 090 ProducePromotionBannerViewReference      ModelClassType EpisodeSelectViewBannerGroupReferenceForLegacy EpisodeSelectViewBannerGroupReferenceForLegacy EpisodeSelectViewBannerGroupReferenceForLegacy Pointer
+    // 098 Disposables                              ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
+    // 0A0 Ct                                       ModelEnumType CancellationToken CancellationToken CancellationToken Int32
+    // 0A8 Model                                    ModelClassType ViewProducePreparationEpisodeSelectModel ViewProducePreparationEpisodeSelectModel ViewProducePreparationEpisodeSelectModel Pointer
+    // 0B0 IsInitilizing                            ModelPrimitiveType bool bool bool Bool
+    // 0B8 TutorialInfoSequence                     ModelClassType ITutorialSequence ITutorialSequence ITutorialSequence Pointer
+    // 0C0 EndTutorialCaller                        ModelClassType EndTutorialConfirmPopupViewCaller EndTutorialConfirmPopupViewCaller EndTutorialConfirmPopupViewCaller Pointer
+    // 0C8 PromotionPopupCaller                     ModelClassType ProducePromotionPopupCaller ProducePromotionPopupCaller ProducePromotionPopupCaller Pointer
+    // 0D0 MissionOverlayCaller                     ModelClassType MissionOverlayCaller MissionOverlayCaller MissionOverlayCaller Pointer
+    // 0D8 JumpToChallengeTourConfingRef            ModelPrimitiveType string string string String
     public partial class ViewProducePreparationEpisodeSelectPresenter : DataModel
     {
         public ViewProducePreparationEpisodeSelectView? View                                    { get; set; }
         public string                                   DifficultyReleasedConfigRef             { get; set; }
+        public EpisodeSelectViewBannerGroupReferenceForLegacy? DefaultBannerGroupViewReference         { get; set; }
+        public EpisodeSelectViewBannerGroupReferenceForLegacy? ProducePromotionBannerViewReference     { get; set; }
+        public CompositeDisposable?                     Disposables                             { get; set; }
         public CancellationToken                        Ct                                      { get; set; }
         public ViewProducePreparationEpisodeSelectModel? Model                                   { get; set; }
-        public ProducePreparationEpisodeSelectBannerPresenter? BannerPresenter                         { get; set; }
         public bool                                     IsInitilizing                           { get; set; }
         public ITutorialSequence?                       TutorialInfoSequence                    { get; set; }
         public EndTutorialConfirmPopupViewCaller?       EndTutorialCaller                       { get; set; }
+        public ProducePromotionPopupCaller?             PromotionPopupCaller                    { get; set; }
+        public MissionOverlayCaller?                    MissionOverlayCaller                    { get; set; }
+        public string                                   JumpToChallengeTourConfingRef           { get; set; }
 
         public static ViewProducePreparationEpisodeSelectPresenter? FromPointer(IntPtr p0)
         {
@@ -35,14 +45,19 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ViewProducePreparationEpisodeSelectPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<ViewProducePreparationEpisodeSelectView>(new IntPtr(p + 0x080), ReversePrism.DataModels.ViewProducePreparationEpisodeSelectView.FromPointer); // 024665A58858 0x80 View                        ( 000186520FE0 ModelClassType ViewProducePreparationEpisodeSelectView ViewProducePreparationEpisodeSelectView ViewProducePreparationEpisodeSelectView Pointer )
-            value.DifficultyReleasedConfigRef               = GetString(new IntPtr(p + 0x088)); // 024665A58878 0x88 DifficultyReleasedConfigRef ( 000186671E00 ModelPrimitiveType string string string String )
-            value.Ct                                        = (CancellationToken)GetInt32(new IntPtr(p + 0x090)); // 024665A58898 0x90 Ct                          ( 00018653CB00 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
-            value.Model                                     = GetObject<ViewProducePreparationEpisodeSelectModel>(new IntPtr(p + 0x098), ReversePrism.DataModels.ViewProducePreparationEpisodeSelectModel.FromPointer); // 024665A588B8 0x98 Model                       ( 00018651FD70 ModelClassType ViewProducePreparationEpisodeSelectModel ViewProducePreparationEpisodeSelectModel ViewProducePreparationEpisodeSelectModel Pointer )
-            value.BannerPresenter                           = GetObject<ProducePreparationEpisodeSelectBannerPresenter>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.ProducePreparationEpisodeSelectBannerPresenter.FromPointer); // 024665A588D8 0xA0 BannerPresenter             ( 000186568C90 ModelClassType ProducePreparationEpisodeSelectBannerPresenter ProducePreparationEpisodeSelectBannerPresenter ProducePreparationEpisodeSelectBannerPresenter Pointer )
-            value.IsInitilizing                             = GetBool(new IntPtr(p + 0x0A8)); // 024665A588F8 0xA8 IsInitilizing               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.TutorialInfoSequence                      = GetObject<ITutorialSequence>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.ITutorialSequence.FromPointer); // 024665A58918 0xB0 TutorialInfoSequence        ( 0001866807A0 ModelClassType ITutorialSequence ITutorialSequence ITutorialSequence Pointer )
-            value.EndTutorialCaller                         = GetObject<EndTutorialConfirmPopupViewCaller>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.EndTutorialConfirmPopupViewCaller.FromPointer); // 024665A58938 0xB8 EndTutorialCaller           ( 000186730E10 ModelClassType EndTutorialConfirmPopupViewCaller EndTutorialConfirmPopupViewCaller EndTutorialConfirmPopupViewCaller Pointer )
+            value.View                                      = GetObject<ViewProducePreparationEpisodeSelectView>(new IntPtr(p + 0x078), ReversePrism.DataModels.ViewProducePreparationEpisodeSelectView.FromPointer); // 0x78 View                        ( ModelClassType ViewProducePreparationEpisodeSelectView ViewProducePreparationEpisodeSelectView ViewProducePreparationEpisodeSelectView Pointer )
+            value.DifficultyReleasedConfigRef               = GetString(new IntPtr(p + 0x080)); // 0x80 DifficultyReleasedConfigRef ( ModelPrimitiveType string string string String )
+            value.DefaultBannerGroupViewReference           = GetObject<EpisodeSelectViewBannerGroupReferenceForLegacy>(new IntPtr(p + 0x088), ReversePrism.DataModels.EpisodeSelectViewBannerGroupReferenceForLegacy.FromPointer); // 0x88 DefaultBannerGroupViewReference ( ModelClassType EpisodeSelectViewBannerGroupReferenceForLegacy EpisodeSelectViewBannerGroupReferenceForLegacy EpisodeSelectViewBannerGroupReferenceForLegacy Pointer )
+            value.ProducePromotionBannerViewReference       = GetObject<EpisodeSelectViewBannerGroupReferenceForLegacy>(new IntPtr(p + 0x090), ReversePrism.DataModels.EpisodeSelectViewBannerGroupReferenceForLegacy.FromPointer); // 0x90 ProducePromotionBannerViewReference ( ModelClassType EpisodeSelectViewBannerGroupReferenceForLegacy EpisodeSelectViewBannerGroupReferenceForLegacy EpisodeSelectViewBannerGroupReferenceForLegacy Pointer )
+            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x098), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0x98 Disposables                 ( ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.Ct                                        = (CancellationToken)GetInt32(new IntPtr(p + 0x0A0)); // 0xA0 Ct                          ( ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
+            value.Model                                     = GetObject<ViewProducePreparationEpisodeSelectModel>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.ViewProducePreparationEpisodeSelectModel.FromPointer); // 0xA8 Model                       ( ModelClassType ViewProducePreparationEpisodeSelectModel ViewProducePreparationEpisodeSelectModel ViewProducePreparationEpisodeSelectModel Pointer )
+            value.IsInitilizing                             = GetBool(new IntPtr(p + 0x0B0)); // 0xB0 IsInitilizing               ( ModelPrimitiveType bool bool bool Bool )
+            value.TutorialInfoSequence                      = GetObject<ITutorialSequence>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.ITutorialSequence.FromPointer); // 0xB8 TutorialInfoSequence        ( ModelClassType ITutorialSequence ITutorialSequence ITutorialSequence Pointer )
+            value.EndTutorialCaller                         = GetObject<EndTutorialConfirmPopupViewCaller>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.EndTutorialConfirmPopupViewCaller.FromPointer); // 0xC0 EndTutorialCaller           ( ModelClassType EndTutorialConfirmPopupViewCaller EndTutorialConfirmPopupViewCaller EndTutorialConfirmPopupViewCaller Pointer )
+            value.PromotionPopupCaller                      = GetObject<ProducePromotionPopupCaller>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.ProducePromotionPopupCaller.FromPointer); // 0xC8 PromotionPopupCaller        ( ModelClassType ProducePromotionPopupCaller ProducePromotionPopupCaller ProducePromotionPopupCaller Pointer )
+            value.MissionOverlayCaller                      = GetObject<MissionOverlayCaller>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.MissionOverlayCaller.FromPointer); // 0xD0 MissionOverlayCaller        ( ModelClassType MissionOverlayCaller MissionOverlayCaller MissionOverlayCaller Pointer )
+            value.JumpToChallengeTourConfingRef             = GetString(new IntPtr(p + 0x0D8)); // 0xD8 JumpToChallengeTourConfingRef ( ModelPrimitiveType string string string String )
 
             return value;
         }

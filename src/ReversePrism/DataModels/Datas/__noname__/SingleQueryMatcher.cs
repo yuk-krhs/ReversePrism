@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 Match                                    0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer
+    // 018 Match                                    ModelClassType VisualElement VisualElement VisualElement Pointer
     public partial class SingleQueryMatcher : DataModel
     {
         public VisualElement?                           Match                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SingleQueryMatcher() { Pointer= p0 };
 
-            value.Match                                     = GetObject<VisualElement>(new IntPtr(p + 0x018), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A680D128 0x18 Match                       ( 0001866B2D70 ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.Match                                     = GetObject<VisualElement>(new IntPtr(p + 0x018), ReversePrism.DataModels.VisualElement.FromPointer); // 0x18 Match                       ( ModelClassType VisualElement VisualElement VisualElement Pointer )
 
             return value;
         }

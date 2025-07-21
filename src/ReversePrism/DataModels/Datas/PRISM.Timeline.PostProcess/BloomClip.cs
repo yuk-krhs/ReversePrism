@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 Behaviour                                000186767280 ModelClassType BloomBehaviour BloomBehaviour BloomBehaviour Pointer
+    // 018 Behaviour                                ModelClassType BloomBehaviour BloomBehaviour BloomBehaviour Pointer
     public partial class BloomClip : DataModel
     {
         public BloomBehaviour?                          Behaviour                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BloomClip() { Pointer= p0 };
 
-            value.Behaviour                                 = GetObject<BloomBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.BloomBehaviour.FromPointer); // 0246650D8270 0x18 Behaviour                   ( 000186767280 ModelClassType BloomBehaviour BloomBehaviour BloomBehaviour Pointer )
+            value.Behaviour                                 = GetObject<BloomBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.BloomBehaviour.FromPointer); // 0x18 Behaviour                   ( ModelClassType BloomBehaviour BloomBehaviour BloomBehaviour Pointer )
 
             return value;
         }

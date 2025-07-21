@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 AngleX                                   000186666050 ModelPrimitiveType float float float Single
-    // 014 AngleY                                   000186666050 ModelPrimitiveType float float float Single
-    // 018 Fov                                      000186666050 ModelPrimitiveType float float float Single
+    // 010 AngleX                                   ModelPrimitiveType float float float Single
+    // 014 AngleY                                   ModelPrimitiveType float float float Single
+    // 018 Fov                                      ModelPrimitiveType float float float Single
     public partial class CameraTargetParameter : DataModel
     {
         public float                                    AngleX                                  { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CameraTargetParameter() { Pointer= p0 };
 
-            value.AngleX                                    = GetSingle(new IntPtr(p + 0x010)); // 0246654A65E8 0x10 AngleX                      ( 000186666050 ModelPrimitiveType float float float Single )
-            value.AngleY                                    = GetSingle(new IntPtr(p + 0x014)); // 0246654A6608 0x14 AngleY                      ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Fov                                       = GetSingle(new IntPtr(p + 0x018)); // 0246654A6628 0x18 Fov                         ( 000186666050 ModelPrimitiveType float float float Single )
+            value.AngleX                                    = GetSingle(new IntPtr(p + 0x010)); // 0x10 AngleX                      ( ModelPrimitiveType float float float Single )
+            value.AngleY                                    = GetSingle(new IntPtr(p + 0x014)); // 0x14 AngleY                      ( ModelPrimitiveType float float float Single )
+            value.Fov                                       = GetSingle(new IntPtr(p + 0x018)); // 0x18 Fov                         ( ModelPrimitiveType float float float Single )
 
             return value;
         }

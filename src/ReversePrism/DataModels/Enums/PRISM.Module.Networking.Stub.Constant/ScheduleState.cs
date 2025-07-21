@@ -14,6 +14,7 @@ namespace ReversePrism.DataModels
         UnExecuted,
         Executed,
         Open,
+        Close,
         Num,
     }
 }

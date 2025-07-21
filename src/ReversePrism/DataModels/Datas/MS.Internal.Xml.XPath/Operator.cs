@@ -9,9 +9,9 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_invertOp                               Op[] IL2CPP_TYPE_SZARRAY
-    // 010 OpType                                   000186536130 ModelEnumType Op Op Op Int32
-    // 018 Opnd1                                    0001866E9E90 ModelClassType AstNode AstNode AstNode Pointer
-    // 020 Opnd2                                    0001866E9E90 ModelClassType AstNode AstNode AstNode Pointer
+    // 010 OpType                                   ModelEnumType Op Op Op Int32
+    // 018 Opnd1                                    ModelClassType AstNode AstNode AstNode Pointer
+    // 020 Opnd2                                    ModelClassType AstNode AstNode AstNode Pointer
     public partial class Operator : DataModel
     {
         public Op                                       OpType                                  { get; set; }
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Operator() { Pointer= p0 };
 
-            value.OpType                                    = (Op)GetInt32(new IntPtr(p + 0x010)); // 024667693008 0x10 OpType                      ( 000186536130 ModelEnumType Op Op Op Int32 )
-            value.Opnd1                                     = GetObject<AstNode>(new IntPtr(p + 0x018), ReversePrism.DataModels.AstNode.FromPointer); // 024667693028 0x18 Opnd1                       ( 0001866E9E90 ModelClassType AstNode AstNode AstNode Pointer )
-            value.Opnd2                                     = GetObject<AstNode>(new IntPtr(p + 0x020), ReversePrism.DataModels.AstNode.FromPointer); // 024667693048 0x20 Opnd2                       ( 0001866E9E90 ModelClassType AstNode AstNode AstNode Pointer )
+            value.OpType                                    = (Op)GetInt32(new IntPtr(p + 0x010)); // 0x10 OpType                      ( ModelEnumType Op Op Op Int32 )
+            value.Opnd1                                     = GetObject<AstNode>(new IntPtr(p + 0x018), ReversePrism.DataModels.AstNode.FromPointer); // 0x18 Opnd1                       ( ModelClassType AstNode AstNode AstNode Pointer )
+            value.Opnd2                                     = GetObject<AstNode>(new IntPtr(p + 0x020), ReversePrism.DataModels.AstNode.FromPointer); // 0x20 Opnd2                       ( ModelClassType AstNode AstNode AstNode Pointer )
 
             return value;
         }

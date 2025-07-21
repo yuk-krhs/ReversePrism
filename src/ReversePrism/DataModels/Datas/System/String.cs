@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 000 PROBABILISTICMAP_BLOCK_INDEX_MASK        int IL2CPP_TYPE_I4
     // 000 PROBABILISTICMAP_BLOCK_INDEX_SHIFT       int IL2CPP_TYPE_I4
     // 000 PROBABILISTICMAP_SIZE                    int IL2CPP_TYPE_I4
-    // 010 StringLength                             0001865F5290 ModelPrimitiveType int int int Int32
+    // 010 StringLength                             ModelPrimitiveType int int int Int32
     // 014 _firstChar                               char IL2CPP_TYPE_CHAR
     // 000 Empty                                    string IL2CPP_TYPE_STRING
     public partial class String : DataModel
@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new String() { Pointer= p0 };
 
-            value.StringLength                              = GetInt32(new IntPtr(p + 0x010)); // 0245A0289D48 0x10 StringLength                ( 0001865F5290 ModelPrimitiveType int int int Int32 )
+            value.StringLength                              = GetInt32(new IntPtr(p + 0x010)); // 0x10 StringLength                ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

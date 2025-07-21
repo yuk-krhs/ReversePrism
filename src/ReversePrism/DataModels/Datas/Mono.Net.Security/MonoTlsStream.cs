@@ -8,14 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Provider                                 000186638170 ModelClassType MobileTlsProvider MobileTlsProvider MobileTlsProvider Pointer
-    // 018 NetworkStream                            00018669CF40 ModelClassType NetworkStream NetworkStream NetworkStream Pointer
-    // 020 Request                                  0001866E5D00 ModelClassType HttpWebRequest HttpWebRequest HttpWebRequest Pointer
-    // 028 Settings                                 000186617640 ModelClassType MonoTlsSettings MonoTlsSettings MonoTlsSettings Pointer
-    // 030 SslStream                                00018655DF50 ModelClassType SslStream SslStream SslStream Pointer
+    // 010 Provider                                 ModelClassType MobileTlsProvider MobileTlsProvider MobileTlsProvider Pointer
+    // 018 NetworkStream                            ModelClassType NetworkStream NetworkStream NetworkStream Pointer
+    // 020 Request                                  ModelClassType HttpWebRequest HttpWebRequest HttpWebRequest Pointer
+    // 028 Settings                                 ModelClassType MonoTlsSettings MonoTlsSettings MonoTlsSettings Pointer
+    // 030 SslStream                                ModelClassType SslStream SslStream SslStream Pointer
     // 038 sslStreamLock                            <object> IL2CPP_TYPE_OBJECT
-    // 040 Status                                   00018654AAC0 ModelEnumType WebExceptionStatus WebExceptionStatus WebExceptionStatus Int32
-    // 044 CertificateValidationFailed              000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 040 Status                                   ModelEnumType WebExceptionStatus WebExceptionStatus WebExceptionStatus Int32
+    // 044 CertificateValidationFailed              ModelPrimitiveType bool bool bool Bool
     public partial class MonoTlsStream : DataModel
     {
         public MobileTlsProvider?                       Provider                                { get; set; }
@@ -34,13 +34,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MonoTlsStream() { Pointer= p0 };
 
-            value.Provider                                  = GetObject<MobileTlsProvider>(new IntPtr(p + 0x010), ReversePrism.DataModels.MobileTlsProvider.FromPointer); // 02466797CCC8 0x10 Provider                    ( 000186638170 ModelClassType MobileTlsProvider MobileTlsProvider MobileTlsProvider Pointer )
-            value.NetworkStream                             = GetObject<NetworkStream>(new IntPtr(p + 0x018), ReversePrism.DataModels.NetworkStream.FromPointer); // 02466797CCE8 0x18 NetworkStream               ( 00018669CF40 ModelClassType NetworkStream NetworkStream NetworkStream Pointer )
-            value.Request                                   = GetObject<HttpWebRequest>(new IntPtr(p + 0x020), ReversePrism.DataModels.HttpWebRequest.FromPointer); // 02466797CD08 0x20 Request                     ( 0001866E5D00 ModelClassType HttpWebRequest HttpWebRequest HttpWebRequest Pointer )
-            value.Settings                                  = GetObject<MonoTlsSettings>(new IntPtr(p + 0x028), ReversePrism.DataModels.MonoTlsSettings.FromPointer); // 02466797CD28 0x28 Settings                    ( 000186617640 ModelClassType MonoTlsSettings MonoTlsSettings MonoTlsSettings Pointer )
-            value.SslStream                                 = GetObject<SslStream>(new IntPtr(p + 0x030), ReversePrism.DataModels.SslStream.FromPointer); // 02466797CD48 0x30 SslStream                   ( 00018655DF50 ModelClassType SslStream SslStream SslStream Pointer )
-            value.Status                                    = (WebExceptionStatus)GetInt32(new IntPtr(p + 0x040)); // 02466797CD88 0x40 Status                      ( 00018654AAC0 ModelEnumType WebExceptionStatus WebExceptionStatus WebExceptionStatus Int32 )
-            value.CertificateValidationFailed               = GetBool(new IntPtr(p + 0x044)); // 02466797CDA8 0x44 CertificateValidationFailed ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Provider                                  = GetObject<MobileTlsProvider>(new IntPtr(p + 0x010), ReversePrism.DataModels.MobileTlsProvider.FromPointer); // 0x10 Provider                    ( ModelClassType MobileTlsProvider MobileTlsProvider MobileTlsProvider Pointer )
+            value.NetworkStream                             = GetObject<NetworkStream>(new IntPtr(p + 0x018), ReversePrism.DataModels.NetworkStream.FromPointer); // 0x18 NetworkStream               ( ModelClassType NetworkStream NetworkStream NetworkStream Pointer )
+            value.Request                                   = GetObject<HttpWebRequest>(new IntPtr(p + 0x020), ReversePrism.DataModels.HttpWebRequest.FromPointer); // 0x20 Request                     ( ModelClassType HttpWebRequest HttpWebRequest HttpWebRequest Pointer )
+            value.Settings                                  = GetObject<MonoTlsSettings>(new IntPtr(p + 0x028), ReversePrism.DataModels.MonoTlsSettings.FromPointer); // 0x28 Settings                    ( ModelClassType MonoTlsSettings MonoTlsSettings MonoTlsSettings Pointer )
+            value.SslStream                                 = GetObject<SslStream>(new IntPtr(p + 0x030), ReversePrism.DataModels.SslStream.FromPointer); // 0x30 SslStream                   ( ModelClassType SslStream SslStream SslStream Pointer )
+            value.Status                                    = (WebExceptionStatus)GetInt32(new IntPtr(p + 0x040)); // 0x40 Status                      ( ModelEnumType WebExceptionStatus WebExceptionStatus WebExceptionStatus Int32 )
+            value.CertificateValidationFailed               = GetBool(new IntPtr(p + 0x044)); // 0x44 CertificateValidationFailed ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

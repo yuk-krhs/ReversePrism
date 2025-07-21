@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 DeviceName                               0001866722E0 ModelPrimitiveType string string string String
-    // 018 SamplingRate                             0001865F36C0 ModelPrimitiveType int int int Int32
-    // 01C NumChannels                              0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 DeviceName                               ModelPrimitiveType string string string String
+    // 018 SamplingRate                             ModelPrimitiveType int int int Int32
+    // 01C NumChannels                              ModelPrimitiveType int int int Int32
     public partial class MicrophoneConfig : DataModel
     {
         public string                                   DeviceName                              { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MicrophoneConfig() { Pointer= p0 };
 
-            value.DeviceName                                = GetString(new IntPtr(p + 0x010)); // 02466BC28C48 0x10 DeviceName                  ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.SamplingRate                              = GetInt32(new IntPtr(p + 0x018)); // 02466BC28C68 0x18 SamplingRate                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.NumChannels                               = GetInt32(new IntPtr(p + 0x01C)); // 02466BC28C88 0x1C NumChannels                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.DeviceName                                = GetString(new IntPtr(p + 0x010)); // 0x10 DeviceName                  ( ModelPrimitiveType string string string String )
+            value.SamplingRate                              = GetInt32(new IntPtr(p + 0x018)); // 0x18 SamplingRate                ( ModelPrimitiveType int int int Int32 )
+            value.NumChannels                               = GetInt32(new IntPtr(p + 0x01C)); // 0x1C NumChannels                 ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

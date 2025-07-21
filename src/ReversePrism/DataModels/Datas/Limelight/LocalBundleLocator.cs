@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 InstallDataRoot                          000186672F10 ModelPrimitiveType string string string String
+    // 010 InstallDataRoot                          ModelPrimitiveType string string string String
     public partial class LocalBundleLocator : DataModel
     {
         public string                                   InstallDataRoot                         { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LocalBundleLocator() { Pointer= p0 };
 
-            value.InstallDataRoot                           = GetString(new IntPtr(p + 0x010)); // 0245A3E04AB8 0x10 InstallDataRoot             ( 000186672F10 ModelPrimitiveType string string string String )
+            value.InstallDataRoot                           = GetString(new IntPtr(p + 0x010)); // 0x10 InstallDataRoot             ( ModelPrimitiveType string string string String )
 
             return value;
         }

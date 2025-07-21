@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 M_skin                                   0001866F2E90 ModelClassType UISkin UISkin UISkin Pointer
-    // 028 M_skinVersion                            0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 M_skin                                   ModelClassType UISkin UISkin UISkin Pointer
+    // 028 M_skinVersion                            ModelPrimitiveType int int int Int32
     public partial class SkinnedWindow : DataModel
     {
         public UISkin?                                  M_skin                                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SkinnedWindow() { Pointer= p0 };
 
-            value.M_skin                                    = GetObject<UISkin>(new IntPtr(p + 0x020), ReversePrism.DataModels.UISkin.FromPointer); // 02466B1E0540 0x20 M_skin                      ( 0001866F2E90 ModelClassType UISkin UISkin UISkin Pointer )
-            value.M_skinVersion                             = GetInt32(new IntPtr(p + 0x028)); // 02466B1E0560 0x28 M_skinVersion               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_skin                                    = GetObject<UISkin>(new IntPtr(p + 0x020), ReversePrism.DataModels.UISkin.FromPointer); // 0x20 M_skin                      ( ModelClassType UISkin UISkin UISkin Pointer )
+            value.M_skinVersion                             = GetInt32(new IntPtr(p + 0x028)); // 0x28 M_skinVersion               ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

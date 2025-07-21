@@ -9,25 +9,25 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 opRecordIdCount                          int IL2CPP_TYPE_I4
-    // 010 IsInitial                                000186595210 ModelPrimitiveType bool bool bool Bool
-    // 014 Count                                    0001865F2F90 ModelPrimitiveType int int int Int32
-    // 018 ExpectedType                             000186592980 ModelEnumType BinaryTypeEnum BinaryTypeEnum BinaryTypeEnum Int32
+    // 010 IsInitial                                ModelPrimitiveType bool bool bool Bool
+    // 014 Count                                    ModelPrimitiveType int int int Int32
+    // 018 ExpectedType                             ModelEnumType BinaryTypeEnum BinaryTypeEnum BinaryTypeEnum Int32
     // 020 expectedTypeInformation                  <object> IL2CPP_TYPE_OBJECT
-    // 028 Name                                     000186671BA0 ModelPrimitiveType string string string String
-    // 030 ObjectTypeEnum                           00018671D830 ModelEnumType InternalObjectTypeE InternalObjectTypeE InternalObjectTypeE Int32
-    // 034 MemberTypeEnum                           00018671C000 ModelEnumType InternalMemberTypeE InternalMemberTypeE InternalMemberTypeE Int32
-    // 038 MemberValueEnum                          00018671C760 ModelEnumType InternalMemberValueE InternalMemberValueE InternalMemberValueE Int32
-    // 040 DtType                                   000186692A80 ModelClassType Type Type Type Pointer
-    // 048 NumItems                                 0001865F2F90 ModelPrimitiveType int int int Int32
-    // 04C BinaryTypeEnum                           000186592980 ModelEnumType BinaryTypeEnum BinaryTypeEnum BinaryTypeEnum Int32
+    // 028 Name                                     ModelPrimitiveType string string string String
+    // 030 ObjectTypeEnum                           ModelEnumType InternalObjectTypeE InternalObjectTypeE InternalObjectTypeE Int32
+    // 034 MemberTypeEnum                           ModelEnumType InternalMemberTypeE InternalMemberTypeE InternalMemberTypeE Int32
+    // 038 MemberValueEnum                          ModelEnumType InternalMemberValueE InternalMemberValueE InternalMemberValueE Int32
+    // 040 DtType                                   ModelClassType Type Type Type Pointer
+    // 048 NumItems                                 ModelPrimitiveType int int int Int32
+    // 04C BinaryTypeEnum                           ModelEnumType BinaryTypeEnum BinaryTypeEnum BinaryTypeEnum Int32
     // 050 typeInformation                          <object> IL2CPP_TYPE_OBJECT
-    // 058 NullCount                                0001865F2F90 ModelPrimitiveType int int int Int32
-    // 05C MemberLength                             0001865F2F90 ModelPrimitiveType int int int Int32
-    // 060 BinaryTypeEnumA                          000185B71C30 ModelEnumListType BinaryTypeEnum[] BinaryTypeEnum[] List<BinaryTypeEnum> Pointer
+    // 058 NullCount                                ModelPrimitiveType int int int Int32
+    // 05C MemberLength                             ModelPrimitiveType int int int Int32
+    // 060 BinaryTypeEnumA                          ModelEnumListType BinaryTypeEnum[] BinaryTypeEnum[] List<BinaryTypeEnum> Pointer
     // 068 typeInformationA                         <object>[] IL2CPP_TYPE_SZARRAY
-    // 070 MemberNames                              000185B81660 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 078 MemberTypes                              000185B82D40 ModelClassListType Type[] Type[] List<Type> Pointer
-    // 080 Pr                                       000186720840 ModelClassType ParseRecord ParseRecord ParseRecord Pointer
+    // 070 MemberNames                              ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 078 MemberTypes                              ModelClassListType Type[] Type[] List<Type> Pointer
+    // 080 Pr                                       ModelClassType ParseRecord ParseRecord ParseRecord Pointer
     public partial class ObjectProgress : DataModel
     {
         public bool                                     IsInitial                               { get; set; }
@@ -55,22 +55,22 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ObjectProgress() { Pointer= p0 };
 
-            value.IsInitial                                 = GetBool(new IntPtr(p + 0x010)); // 024666CA49D0 0x10 IsInitial                   ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.Count                                     = GetInt32(new IntPtr(p + 0x014)); // 024666CA49F0 0x14 Count                       ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.ExpectedType                              = (BinaryTypeEnum)GetInt32(new IntPtr(p + 0x018)); // 024666CA4A10 0x18 ExpectedType                ( 000186592980 ModelEnumType BinaryTypeEnum BinaryTypeEnum BinaryTypeEnum Int32 )
-            value.Name                                      = GetString(new IntPtr(p + 0x028)); // 024666CA4A50 0x28 Name                        ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.ObjectTypeEnum                            = (InternalObjectTypeE)GetInt32(new IntPtr(p + 0x030)); // 024666CA4A70 0x30 ObjectTypeEnum              ( 00018671D830 ModelEnumType InternalObjectTypeE InternalObjectTypeE InternalObjectTypeE Int32 )
-            value.MemberTypeEnum                            = (InternalMemberTypeE)GetInt32(new IntPtr(p + 0x034)); // 024666CA4A90 0x34 MemberTypeEnum              ( 00018671C000 ModelEnumType InternalMemberTypeE InternalMemberTypeE InternalMemberTypeE Int32 )
-            value.MemberValueEnum                           = (InternalMemberValueE)GetInt32(new IntPtr(p + 0x038)); // 024666CA4AB0 0x38 MemberValueEnum             ( 00018671C760 ModelEnumType InternalMemberValueE InternalMemberValueE InternalMemberValueE Int32 )
-            value.DtType                                    = GetObject<Type>(new IntPtr(p + 0x040), ReversePrism.DataModels.Type.FromPointer); // 024666CA4AD0 0x40 DtType                      ( 000186692A80 ModelClassType Type Type Type Pointer )
-            value.NumItems                                  = GetInt32(new IntPtr(p + 0x048)); // 024666CA4AF0 0x48 NumItems                    ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.BinaryTypeEnum                            = (BinaryTypeEnum)GetInt32(new IntPtr(p + 0x04C)); // 024666CA4B10 0x4C BinaryTypeEnum              ( 000186592980 ModelEnumType BinaryTypeEnum BinaryTypeEnum BinaryTypeEnum Int32 )
-            value.NullCount                                 = GetInt32(new IntPtr(p + 0x058)); // 024666CA4B50 0x58 NullCount                   ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.MemberLength                              = GetInt32(new IntPtr(p + 0x05C)); // 024666CA4B70 0x5C MemberLength                ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.BinaryTypeEnumA                           = GetEnumList<BinaryTypeEnum>(new IntPtr(p + 0x060)); // 024666CA4B90 0x60 BinaryTypeEnumA             ( 000185B71C30 ModelEnumListType BinaryTypeEnum[] BinaryTypeEnum[] List<BinaryTypeEnum> Pointer )
-            value.MemberNames                               = GetStringList(new IntPtr(p + 0x070)); // 024666CA4BD0 0x70 MemberNames                 ( 000185B81660 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.MemberTypes                               = GetObjectList<Type>(new IntPtr(p + 0x078), ReversePrism.DataModels.Type.FromPointer); // 024666CA4BF0 0x78 MemberTypes                 ( 000185B82D40 ModelClassListType Type[] Type[] List<Type> Pointer )
-            value.Pr                                        = GetObject<ParseRecord>(new IntPtr(p + 0x080), ReversePrism.DataModels.ParseRecord.FromPointer); // 024666CA4C10 0x80 Pr                          ( 000186720840 ModelClassType ParseRecord ParseRecord ParseRecord Pointer )
+            value.IsInitial                                 = GetBool(new IntPtr(p + 0x010)); // 0x10 IsInitial                   ( ModelPrimitiveType bool bool bool Bool )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x014)); // 0x14 Count                       ( ModelPrimitiveType int int int Int32 )
+            value.ExpectedType                              = (BinaryTypeEnum)GetInt32(new IntPtr(p + 0x018)); // 0x18 ExpectedType                ( ModelEnumType BinaryTypeEnum BinaryTypeEnum BinaryTypeEnum Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x028)); // 0x28 Name                        ( ModelPrimitiveType string string string String )
+            value.ObjectTypeEnum                            = (InternalObjectTypeE)GetInt32(new IntPtr(p + 0x030)); // 0x30 ObjectTypeEnum              ( ModelEnumType InternalObjectTypeE InternalObjectTypeE InternalObjectTypeE Int32 )
+            value.MemberTypeEnum                            = (InternalMemberTypeE)GetInt32(new IntPtr(p + 0x034)); // 0x34 MemberTypeEnum              ( ModelEnumType InternalMemberTypeE InternalMemberTypeE InternalMemberTypeE Int32 )
+            value.MemberValueEnum                           = (InternalMemberValueE)GetInt32(new IntPtr(p + 0x038)); // 0x38 MemberValueEnum             ( ModelEnumType InternalMemberValueE InternalMemberValueE InternalMemberValueE Int32 )
+            value.DtType                                    = GetObject<Type>(new IntPtr(p + 0x040), ReversePrism.DataModels.Type.FromPointer); // 0x40 DtType                      ( ModelClassType Type Type Type Pointer )
+            value.NumItems                                  = GetInt32(new IntPtr(p + 0x048)); // 0x48 NumItems                    ( ModelPrimitiveType int int int Int32 )
+            value.BinaryTypeEnum                            = (BinaryTypeEnum)GetInt32(new IntPtr(p + 0x04C)); // 0x4C BinaryTypeEnum              ( ModelEnumType BinaryTypeEnum BinaryTypeEnum BinaryTypeEnum Int32 )
+            value.NullCount                                 = GetInt32(new IntPtr(p + 0x058)); // 0x58 NullCount                   ( ModelPrimitiveType int int int Int32 )
+            value.MemberLength                              = GetInt32(new IntPtr(p + 0x05C)); // 0x5C MemberLength                ( ModelPrimitiveType int int int Int32 )
+            value.BinaryTypeEnumA                           = GetEnumList<BinaryTypeEnum>(new IntPtr(p + 0x060)); // 0x60 BinaryTypeEnumA             ( ModelEnumListType BinaryTypeEnum[] BinaryTypeEnum[] List<BinaryTypeEnum> Pointer )
+            value.MemberNames                               = GetStringList(new IntPtr(p + 0x070)); // 0x70 MemberNames                 ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.MemberTypes                               = GetObjectList<Type>(new IntPtr(p + 0x078), ReversePrism.DataModels.Type.FromPointer); // 0x78 MemberTypes                 ( ModelClassListType Type[] Type[] List<Type> Pointer )
+            value.Pr                                        = GetObject<ParseRecord>(new IntPtr(p + 0x080), ReversePrism.DataModels.ParseRecord.FromPointer); // 0x80 Pr                          ( ModelClassType ParseRecord ParseRecord ParseRecord Pointer )
 
             return value;
         }

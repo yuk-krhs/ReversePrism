@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 058 HowToPlayPopupResourceConfigRef          000186671E00 ModelPrimitiveType string string string String
-    // 060 TitleView                                0001865E9EF0 ModelClassType CommonTitleView CommonTitleView CommonTitleView Pointer
-    // 068 GlobalButton                             0001865158C0 ModelClassType ButtonBase ButtonBase ButtonBase Pointer
-    // 070 TutorialSequence                         0001866807A0 ModelClassType ITutorialSequence ITutorialSequence ITutorialSequence Pointer
-    // 078 BackKeyDisposable                        0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 050 HowToPlayPopupResourceConfigRef          ModelPrimitiveType string string string String
+    // 058 TitleView                                ModelClassType CommonTitleView CommonTitleView CommonTitleView Pointer
+    // 060 GlobalButton                             ModelClassType ButtonBase ButtonBase ButtonBase Pointer
+    // 068 TutorialSequence                         ModelClassType ITutorialSequence ITutorialSequence ITutorialSequence Pointer
+    // 070 BackKeyDisposable                        ModelClassType IDisposable IDisposable IDisposable Pointer
     public partial class PRISMViewBase : DataModel
     {
         public string                                   HowToPlayPopupResourceConfigRef         { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PRISMViewBase() { Pointer= p0 };
 
-            value.HowToPlayPopupResourceConfigRef           = GetString(new IntPtr(p + 0x058)); // 0245A24F7990 0x58 HowToPlayPopupResourceConfigRef ( 000186671E00 ModelPrimitiveType string string string String )
-            value.TitleView                                 = GetObject<CommonTitleView>(new IntPtr(p + 0x060), ReversePrism.DataModels.CommonTitleView.FromPointer); // 0245A24F79B0 0x60 TitleView                   ( 0001865E9EF0 ModelClassType CommonTitleView CommonTitleView CommonTitleView Pointer )
-            value.GlobalButton                              = GetObject<ButtonBase>(new IntPtr(p + 0x068), ReversePrism.DataModels.ButtonBase.FromPointer); // 0245A24F79D0 0x68 GlobalButton                ( 0001865158C0 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.TutorialSequence                          = GetObject<ITutorialSequence>(new IntPtr(p + 0x070), ReversePrism.DataModels.ITutorialSequence.FromPointer); // 0245A24F79F0 0x70 TutorialSequence            ( 0001866807A0 ModelClassType ITutorialSequence ITutorialSequence ITutorialSequence Pointer )
-            value.BackKeyDisposable                         = GetObject<IDisposable>(new IntPtr(p + 0x078), ReversePrism.DataModels.IDisposable.FromPointer); // 0245A24F7A10 0x78 BackKeyDisposable           ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.HowToPlayPopupResourceConfigRef           = GetString(new IntPtr(p + 0x050)); // 0x50 HowToPlayPopupResourceConfigRef ( ModelPrimitiveType string string string String )
+            value.TitleView                                 = GetObject<CommonTitleView>(new IntPtr(p + 0x058), ReversePrism.DataModels.CommonTitleView.FromPointer); // 0x58 TitleView                   ( ModelClassType CommonTitleView CommonTitleView CommonTitleView Pointer )
+            value.GlobalButton                              = GetObject<ButtonBase>(new IntPtr(p + 0x060), ReversePrism.DataModels.ButtonBase.FromPointer); // 0x60 GlobalButton                ( ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.TutorialSequence                          = GetObject<ITutorialSequence>(new IntPtr(p + 0x068), ReversePrism.DataModels.ITutorialSequence.FromPointer); // 0x68 TutorialSequence            ( ModelClassType ITutorialSequence ITutorialSequence ITutorialSequence Pointer )
+            value.BackKeyDisposable                         = GetObject<IDisposable>(new IntPtr(p + 0x070), ReversePrism.DataModels.IDisposable.FromPointer); // 0x70 BackKeyDisposable           ( ModelClassType IDisposable IDisposable IDisposable Pointer )
 
             return value;
         }

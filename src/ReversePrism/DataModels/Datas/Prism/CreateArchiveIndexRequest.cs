@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<CreateArchiveIndexRequest> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 StreamingIdFieldNumber                   int IL2CPP_TYPE_I4
-    // 018 StreamingId                              000186671910 ModelPrimitiveType string string string String
+    // 018 StreamingId                              ModelPrimitiveType string string string String
     public partial class CreateArchiveIndexRequest : DataModel
     {
         public string                                   StreamingId                             { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CreateArchiveIndexRequest() { Pointer= p0 };
 
-            value.StreamingId                               = GetString(new IntPtr(p + 0x018)); // 024664BEA3B8 0x18 StreamingId                 ( 000186671910 ModelPrimitiveType string string string String )
+            value.StreamingId                               = GetString(new IntPtr(p + 0x018)); // 0x18 StreamingId                 ( ModelPrimitiveType string string string String )
 
             return value;
         }

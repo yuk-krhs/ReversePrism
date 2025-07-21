@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<ExchangeShinyPartyTokenArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstShinyPartyTokenProductIdFieldNumber   int IL2CPP_TYPE_I4
-    // 018 MstShinyPartyTokenProductId              0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MstShinyPartyTokenProductId              ModelPrimitiveType int int int Int32
     // 000 AmountFieldNumber                        int IL2CPP_TYPE_I4
-    // 01C Amount                                   0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 01C Amount                                   ModelPrimitiveType int int int Int32
     public partial class ExchangeShinyPartyTokenArgs : DataModel
     {
         public int                                      MstShinyPartyTokenProductId             { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExchangeShinyPartyTokenArgs() { Pointer= p0 };
 
-            value.MstShinyPartyTokenProductId               = GetInt32(new IntPtr(p + 0x018)); // 024661191BF0 0x18 MstShinyPartyTokenProductId ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Amount                                    = GetInt32(new IntPtr(p + 0x01C)); // 024661191C30 0x1C Amount                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstShinyPartyTokenProductId               = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstShinyPartyTokenProductId ( ModelPrimitiveType int int int Int32 )
+            value.Amount                                    = GetInt32(new IntPtr(p + 0x01C)); // 0x1C Amount                      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Buttons                                  0001865F36C0 ModelPrimitiveType int int int Int32
-    // 014 Stick                                    0001866A8740 ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 010 Buttons                                  ModelPrimitiveType int int int Int32
+    // 014 Stick                                    ModelEnumType Vector2 Vector2 Vector2 Int32
     public partial class JoystickState : DataModel
     {
         public int                                      Buttons                                 { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JoystickState() { Pointer= p0 };
 
-            value.Buttons                                   = GetInt32(new IntPtr(p + 0x010)); // 024667855C68 0x10 Buttons                     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Stick                                     = (Vector2)GetInt32(new IntPtr(p + 0x014)); // 024667855C88 0x14 Stick                       ( 0001866A8740 ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.Buttons                                   = GetInt32(new IntPtr(p + 0x010)); // 0x10 Buttons                     ( ModelPrimitiveType int int int Int32 )
+            value.Stick                                     = (Vector2)GetInt32(new IntPtr(p + 0x014)); // 0x14 Stick                       ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
 
             return value;
         }

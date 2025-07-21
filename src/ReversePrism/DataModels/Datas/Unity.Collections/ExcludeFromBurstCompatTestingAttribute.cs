@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Reason                                   000186671910 ModelPrimitiveType string string string String
+    // 010 Reason                                   ModelPrimitiveType string string string String
     public partial class ExcludeFromBurstCompatTestingAttribute : DataModel
     {
         public string                                   Reason                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExcludeFromBurstCompatTestingAttribute() { Pointer= p0 };
 
-            value.Reason                                    = GetString(new IntPtr(p + 0x010)); // 024669A57260 0x10 Reason                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Reason                                    = GetString(new IntPtr(p + 0x010)); // 0x10 Reason                      ( ModelPrimitiveType string string string String )
 
             return value;
         }

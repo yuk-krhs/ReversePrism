@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 s_DefaultPanelTextSettings               PanelTextSettings IL2CPP_TYPE_CLASS
     // 008 EditorGUIUtilityLoad                     Func`2<string, Object> IL2CPP_TYPE_GENERICINST
     // 010 GetCurrentLanguage                       Func`1<SystemLanguage> IL2CPP_TYPE_GENERICINST
-    // 018 S_DefaultEditorPanelTextSettingPath      000186673B80 ModelPrimitiveType string string string String
+    // 018 S_DefaultEditorPanelTextSettingPath      ModelPrimitiveType string string string String
     public partial class PanelTextSettings : DataModel
     {
         public string                                   S_DefaultEditorPanelTextSettingPath     { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PanelTextSettings() { Pointer= p0 };
 
-            value.S_DefaultEditorPanelTextSettingPath       = GetString(new IntPtr(p + 0x018)); // 0245A6807118 0x18 S_DefaultEditorPanelTextSettingPath ( 000186673B80 ModelPrimitiveType string string string String )
+            value.S_DefaultEditorPanelTextSettingPath       = GetString(new IntPtr(p + 0x018)); // 0x18 S_DefaultEditorPanelTextSettingPath ( ModelPrimitiveType string string string String )
 
             return value;
         }

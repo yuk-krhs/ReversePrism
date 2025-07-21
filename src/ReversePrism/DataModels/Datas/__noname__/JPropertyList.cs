@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Token                                    000186600110 ModelClassType JToken JToken JToken Pointer
+    // 010 Token                                    ModelClassType JToken JToken JToken Pointer
     public partial class JPropertyList : DataModel
     {
         public JToken?                                  Token                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JPropertyList() { Pointer= p0 };
 
-            value.Token                                     = GetObject<JToken>(new IntPtr(p + 0x010), ReversePrism.DataModels.JToken.FromPointer); // 024668866168 0x10 Token                       ( 000186600110 ModelClassType JToken JToken JToken Pointer )
+            value.Token                                     = GetObject<JToken>(new IntPtr(p + 0x010), ReversePrism.DataModels.JToken.FromPointer); // 0x10 Token                       ( ModelClassType JToken JToken JToken Pointer )
 
             return value;
         }

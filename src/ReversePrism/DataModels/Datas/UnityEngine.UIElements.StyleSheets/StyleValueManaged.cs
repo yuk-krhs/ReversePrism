@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Id                                       0001865C9B00 ModelEnumType StylePropertyId StylePropertyId StylePropertyId Int32
-    // 014 Keyword                                  0001865C82A0 ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32
+    // 010 Id                                       ModelEnumType StylePropertyId StylePropertyId StylePropertyId Int32
+    // 014 Keyword                                  ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32
     // 018 value                                    <object> IL2CPP_TYPE_OBJECT
     public partial class StyleValueManaged : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StyleValueManaged() { Pointer= p0 };
 
-            value.Id                                        = (StylePropertyId)GetInt32(new IntPtr(p + 0x010)); // 0245A6848DE0 0x10 Id                          ( 0001865C9B00 ModelEnumType StylePropertyId StylePropertyId StylePropertyId Int32 )
-            value.Keyword                                   = (StyleKeyword)GetInt32(new IntPtr(p + 0x014)); // 0245A6848E00 0x14 Keyword                     ( 0001865C82A0 ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32 )
+            value.Id                                        = (StylePropertyId)GetInt32(new IntPtr(p + 0x010)); // 0x10 Id                          ( ModelEnumType StylePropertyId StylePropertyId StylePropertyId Int32 )
+            value.Keyword                                   = (StyleKeyword)GetInt32(new IntPtr(p + 0x014)); // 0x14 Keyword                     ( ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32 )
 
             return value;
         }

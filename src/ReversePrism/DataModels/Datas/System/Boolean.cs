@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_value                                  0001865965D0 ModelPrimitiveType bool bool bool Bool
+    // 010 M_value                                  ModelPrimitiveType bool bool bool Bool
     // 000 True                                     int IL2CPP_TYPE_I4
     // 000 False                                    int IL2CPP_TYPE_I4
     // 000 TrueLiteral                              string IL2CPP_TYPE_STRING
@@ -27,7 +27,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Boolean() { Pointer= p0 };
 
-            value.M_value                                   = GetBool(new IntPtr(p + 0x010)); // 0245A15327B8 0x10 M_value                     ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.M_value                                   = GetBool(new IntPtr(p + 0x010)); // 0x10 M_value                     ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

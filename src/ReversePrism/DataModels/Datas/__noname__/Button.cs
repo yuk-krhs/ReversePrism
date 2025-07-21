@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 048 Action                                   0001866792B0 ModelClassType Action Action Action Pointer
+    // 048 Action                                   ModelClassType Action Action Action Pointer
     public partial class Button : DataModel
     {
         public Action?                                  Action                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Button() { Pointer= p0 };
 
-            value.Action                                    = GetObject<Action>(new IntPtr(p + 0x048), ReversePrism.DataModels.Action.FromPointer); // 0246691DC118 0x48 Action                      ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.Action                                    = GetObject<Action>(new IntPtr(p + 0x048), ReversePrism.DataModels.Action.FromPointer); // 0x48 Action                      ( ModelClassType Action Action Action Pointer )
 
             return value;
         }

@@ -8,13 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 CmnTableTds                              000185B75520 ModelClassListType CmnTableTd[] CmnTableTd[] List<CmnTableTd> Pointer
-    // 028 GoLastLine                               0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 030 GoWhite                                  0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 038 GoBlue                                   0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 040 RectTransform                            000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
-    // 048 Index                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 050 Tds                                      000185CD2988 ModelClassListType List`1<CmnTableTd> List`1<CmnTableTd> List<CmnTableTd> Pointer
+    // 020 CmnTableTds                              ModelClassListType CmnTableTd[] CmnTableTd[] List<CmnTableTd> Pointer
+    // 028 GoLastLine                               ModelClassType GameObject GameObject GameObject Pointer
+    // 030 GoWhite                                  ModelClassType GameObject GameObject GameObject Pointer
+    // 038 GoBlue                                   ModelClassType GameObject GameObject GameObject Pointer
+    // 040 RectTransform                            ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 048 Index                                    ModelPrimitiveType int int int Int32
+    // 050 Tds                                      ModelClassListType List`1<CmnTableTd> List`1<CmnTableTd> List<CmnTableTd> Pointer
     public partial class CmnTableTr : DataModel
     {
         public List<CmnTableTd>?                        CmnTableTds                             { get; set; }
@@ -33,13 +33,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CmnTableTr() { Pointer= p0 };
 
-            value.CmnTableTds                               = GetObjectList<CmnTableTd>(new IntPtr(p + 0x020), ReversePrism.DataModels.CmnTableTd.FromPointer); // 024664F36920 0x20 CmnTableTds                 ( 000185B75520 ModelClassListType CmnTableTd[] CmnTableTd[] List<CmnTableTd> Pointer )
-            value.GoLastLine                                = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 024664F36940 0x28 GoLastLine                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.GoWhite                                   = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 024664F36960 0x30 GoWhite                     ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.GoBlue                                    = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 024664F36980 0x38 GoBlue                      ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.RectTransform                             = GetObject<RectTransform>(new IntPtr(p + 0x040), ReversePrism.DataModels.RectTransform.FromPointer); // 024664F369A0 0x40 RectTransform               ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.Index                                     = GetInt32(new IntPtr(p + 0x048)); // 024664F369C0 0x48 Index                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Tds                                       = GetObjectList<CmnTableTd>(new IntPtr(p + 0x050), ReversePrism.DataModels.CmnTableTd.FromPointer); // 024664F369E0 0x50 Tds                         ( 000185CD2988 ModelClassListType List`1<CmnTableTd> List`1<CmnTableTd> List<CmnTableTd> Pointer )
+            value.CmnTableTds                               = GetObjectList<CmnTableTd>(new IntPtr(p + 0x020), ReversePrism.DataModels.CmnTableTd.FromPointer); // 0x20 CmnTableTds                 ( ModelClassListType CmnTableTd[] CmnTableTd[] List<CmnTableTd> Pointer )
+            value.GoLastLine                                = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0x28 GoLastLine                  ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.GoWhite                                   = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0x30 GoWhite                     ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.GoBlue                                    = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0x38 GoBlue                      ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.RectTransform                             = GetObject<RectTransform>(new IntPtr(p + 0x040), ReversePrism.DataModels.RectTransform.FromPointer); // 0x40 RectTransform               ( ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x048)); // 0x48 Index                       ( ModelPrimitiveType int int int Int32 )
+            value.Tds                                       = GetObjectList<CmnTableTd>(new IntPtr(p + 0x050), ReversePrism.DataModels.CmnTableTd.FromPointer); // 0x50 Tds                         ( ModelClassListType List`1<CmnTableTd> List`1<CmnTableTd> List<CmnTableTd> Pointer )
 
             return value;
         }

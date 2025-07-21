@@ -9,14 +9,14 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 DisplayEffectMax                         int IL2CPP_TYPE_I4
-    // 020 PlayerEffectPoints                       000185CACE28 ModelClassListType Transform[] Transform[] List<Transform> Pointer
-    // 028 EnemyEffectPoints                        000185CACE28 ModelClassListType Transform[] Transform[] List<Transform> Pointer
-    // 030 AppealEffectModels                       000185B99430 ModelClassListType PCardAndSkillAppealEffectModel[] PCardAndSkillAppealEffectModel[] List<PCardAndSkillAppealEffectModel> Pointer
-    // 038 OtherEffectModels                        000185B99620 ModelClassListType PCardAndSkillUIEffectModel[] PCardAndSkillUIEffectModel[] List<PCardAndSkillUIEffectModel> Pointer
-    // 040 MoveFrame                                0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 044 DisplayEffectCount                       0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 048 AnimationSpeed                           0001866656B0 ModelPrimitiveType float float float Single
-    // 050 TokenSource                              0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
+    // 020 PlayerEffectPoints                       ModelClassListType Transform[] Transform[] List<Transform> Pointer
+    // 028 EnemyEffectPoints                        ModelClassListType Transform[] Transform[] List<Transform> Pointer
+    // 030 AppealEffectModels                       ModelClassListType PCardAndSkillAppealEffectModel[] PCardAndSkillAppealEffectModel[] List<PCardAndSkillAppealEffectModel> Pointer
+    // 038 OtherEffectModels                        ModelClassListType PCardAndSkillUIEffectModel[] PCardAndSkillUIEffectModel[] List<PCardAndSkillUIEffectModel> Pointer
+    // 040 MoveFrame                                ModelPrimitiveType int int int Int32
+    // 044 DisplayEffectCount                       ModelPrimitiveType int int int Int32
+    // 048 AnimationSpeed                           ModelPrimitiveType float float float Single
+    // 050 TokenSource                              ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
     public partial class UsePCardAndSkillEffectController : DataModel
     {
         public List<Transform>?                         PlayerEffectPoints                      { get; set; }
@@ -36,14 +36,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UsePCardAndSkillEffectController() { Pointer= p0 };
 
-            value.PlayerEffectPoints                        = GetObjectList<Transform>(new IntPtr(p + 0x020), ReversePrism.DataModels.Transform.FromPointer); // 024665B43B78 0x20 PlayerEffectPoints          ( 000185CACE28 ModelClassListType Transform[] Transform[] List<Transform> Pointer )
-            value.EnemyEffectPoints                         = GetObjectList<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 024665B43B98 0x28 EnemyEffectPoints           ( 000185CACE28 ModelClassListType Transform[] Transform[] List<Transform> Pointer )
-            value.AppealEffectModels                        = GetObjectList<PCardAndSkillAppealEffectModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.PCardAndSkillAppealEffectModel.FromPointer); // 024665B43BB8 0x30 AppealEffectModels          ( 000185B99430 ModelClassListType PCardAndSkillAppealEffectModel[] PCardAndSkillAppealEffectModel[] List<PCardAndSkillAppealEffectModel> Pointer )
-            value.OtherEffectModels                         = GetObjectList<PCardAndSkillUIEffectModel>(new IntPtr(p + 0x038), ReversePrism.DataModels.PCardAndSkillUIEffectModel.FromPointer); // 024665B43BD8 0x38 OtherEffectModels           ( 000185B99620 ModelClassListType PCardAndSkillUIEffectModel[] PCardAndSkillUIEffectModel[] List<PCardAndSkillUIEffectModel> Pointer )
-            value.MoveFrame                                 = GetInt32(new IntPtr(p + 0x040)); // 024665B43BF8 0x40 MoveFrame                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.DisplayEffectCount                        = GetInt32(new IntPtr(p + 0x044)); // 024665B43C18 0x44 DisplayEffectCount          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.AnimationSpeed                            = GetSingle(new IntPtr(p + 0x048)); // 024665B43C38 0x48 AnimationSpeed              ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.TokenSource                               = GetObject<CancellationTokenSource>(new IntPtr(p + 0x050), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 024665B43C58 0x50 TokenSource                 ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.PlayerEffectPoints                        = GetObjectList<Transform>(new IntPtr(p + 0x020), ReversePrism.DataModels.Transform.FromPointer); // 0x20 PlayerEffectPoints          ( ModelClassListType Transform[] Transform[] List<Transform> Pointer )
+            value.EnemyEffectPoints                         = GetObjectList<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 0x28 EnemyEffectPoints           ( ModelClassListType Transform[] Transform[] List<Transform> Pointer )
+            value.AppealEffectModels                        = GetObjectList<PCardAndSkillAppealEffectModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.PCardAndSkillAppealEffectModel.FromPointer); // 0x30 AppealEffectModels          ( ModelClassListType PCardAndSkillAppealEffectModel[] PCardAndSkillAppealEffectModel[] List<PCardAndSkillAppealEffectModel> Pointer )
+            value.OtherEffectModels                         = GetObjectList<PCardAndSkillUIEffectModel>(new IntPtr(p + 0x038), ReversePrism.DataModels.PCardAndSkillUIEffectModel.FromPointer); // 0x38 OtherEffectModels           ( ModelClassListType PCardAndSkillUIEffectModel[] PCardAndSkillUIEffectModel[] List<PCardAndSkillUIEffectModel> Pointer )
+            value.MoveFrame                                 = GetInt32(new IntPtr(p + 0x040)); // 0x40 MoveFrame                   ( ModelPrimitiveType int int int Int32 )
+            value.DisplayEffectCount                        = GetInt32(new IntPtr(p + 0x044)); // 0x44 DisplayEffectCount          ( ModelPrimitiveType int int int Int32 )
+            value.AnimationSpeed                            = GetSingle(new IntPtr(p + 0x048)); // 0x48 AnimationSpeed              ( ModelPrimitiveType float float float Single )
+            value.TokenSource                               = GetObject<CancellationTokenSource>(new IntPtr(p + 0x050), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0x50 TokenSource                 ( ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
 
             return value;
         }

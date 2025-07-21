@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 IconView                                 000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer
-    // 028 IdolSkillIcon                            0001866BD790 ModelClassType IdolSkillIconView IdolSkillIconView IdolSkillIconView Pointer
-    // 030 LiveSkillIcon                            000186613190 ModelClassType RawImage RawImage RawImage Pointer
-    // 038 BtnLiveSkillIcon                         0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 040 LiveSkillLvText                          0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 048 VoDaViMeRankView                         000186530E30 ModelClassType VoDaViMeRankView VoDaViMeRankView VoDaViMeRankView Pointer
+    // 020 IconView                                 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer
+    // 028 IdolSkillIcon                            ModelClassType IdolSkillIconView IdolSkillIconView IdolSkillIconView Pointer
+    // 030 LiveSkillIcon                            ModelClassType RawImage RawImage RawImage Pointer
+    // 038 BtnLiveSkillIcon                         ModelClassType UIButton UIButton UIButton Pointer
+    // 040 LiveSkillLvText                          ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 048 VoDaViMeRankView                         ModelClassType VoDaViMeRankView VoDaViMeRankView VoDaViMeRankView Pointer
     // 050 onFIdolDetail                            Subject`1<string> IL2CPP_TYPE_GENERICINST
     // 058 onLiveSkillDetail                        Subject`1<LiveSkillViewModel> IL2CPP_TYPE_GENERICINST
     public partial class UnitMemberView : DataModel
@@ -33,12 +33,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnitMemberView() { Pointer= p0 };
 
-            value.IconView                                  = GetObject<PFIdolIconView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 02466A3199E8 0x20 IconView                    ( 000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
-            value.IdolSkillIcon                             = GetObject<IdolSkillIconView>(new IntPtr(p + 0x028), ReversePrism.DataModels.IdolSkillIconView.FromPointer); // 02466A319A08 0x28 IdolSkillIcon               ( 0001866BD790 ModelClassType IdolSkillIconView IdolSkillIconView IdolSkillIconView Pointer )
-            value.LiveSkillIcon                             = GetObject<RawImage>(new IntPtr(p + 0x030), ReversePrism.DataModels.RawImage.FromPointer); // 02466A319A28 0x30 LiveSkillIcon               ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.BtnLiveSkillIcon                          = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 02466A319A48 0x38 BtnLiveSkillIcon            ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.LiveSkillLvText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A319A68 0x40 LiveSkillLvText             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.VoDaViMeRankView                          = GetObject<VoDaViMeRankView>(new IntPtr(p + 0x048), ReversePrism.DataModels.VoDaViMeRankView.FromPointer); // 02466A319A88 0x48 VoDaViMeRankView            ( 000186530E30 ModelClassType VoDaViMeRankView VoDaViMeRankView VoDaViMeRankView Pointer )
+            value.IconView                                  = GetObject<PFIdolIconView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 0x20 IconView                    ( ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
+            value.IdolSkillIcon                             = GetObject<IdolSkillIconView>(new IntPtr(p + 0x028), ReversePrism.DataModels.IdolSkillIconView.FromPointer); // 0x28 IdolSkillIcon               ( ModelClassType IdolSkillIconView IdolSkillIconView IdolSkillIconView Pointer )
+            value.LiveSkillIcon                             = GetObject<RawImage>(new IntPtr(p + 0x030), ReversePrism.DataModels.RawImage.FromPointer); // 0x30 LiveSkillIcon               ( ModelClassType RawImage RawImage RawImage Pointer )
+            value.BtnLiveSkillIcon                          = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 0x38 BtnLiveSkillIcon            ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.LiveSkillLvText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x40 LiveSkillLvText             ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.VoDaViMeRankView                          = GetObject<VoDaViMeRankView>(new IntPtr(p + 0x048), ReversePrism.DataModels.VoDaViMeRankView.FromPointer); // 0x48 VoDaViMeRankView            ( ModelClassType VoDaViMeRankView VoDaViMeRankView VoDaViMeRankView Pointer )
 
             return value;
         }

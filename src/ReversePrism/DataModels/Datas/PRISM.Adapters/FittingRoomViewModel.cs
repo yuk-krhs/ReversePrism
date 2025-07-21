@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Idol                                     000186701120 ModelClassType DressUpRoomIdol DressUpRoomIdol DressUpRoomIdol Pointer
-    // 018 CueName                                  000186671910 ModelPrimitiveType string string string String
+    // 010 Idol                                     ModelClassType DressUpRoomIdol DressUpRoomIdol DressUpRoomIdol Pointer
+    // 018 CueName                                  ModelPrimitiveType string string string String
     public partial class FittingRoomViewModel : DataModel
     {
         public DressUpRoomIdol?                         Idol                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FittingRoomViewModel() { Pointer= p0 };
 
-            value.Idol                                      = GetObject<DressUpRoomIdol>(new IntPtr(p + 0x010), ReversePrism.DataModels.DressUpRoomIdol.FromPointer); // 0246662D5388 0x10 Idol                        ( 000186701120 ModelClassType DressUpRoomIdol DressUpRoomIdol DressUpRoomIdol Pointer )
-            value.CueName                                   = GetString(new IntPtr(p + 0x018)); // 0246662D53A8 0x18 CueName                     ( 000186671910 ModelPrimitiveType string string string String )
+            value.Idol                                      = GetObject<DressUpRoomIdol>(new IntPtr(p + 0x010), ReversePrism.DataModels.DressUpRoomIdol.FromPointer); // 0x10 Idol                        ( ModelClassType DressUpRoomIdol DressUpRoomIdol DressUpRoomIdol Pointer )
+            value.CueName                                   = GetString(new IntPtr(p + 0x018)); // 0x18 CueName                     ( ModelPrimitiveType string string string String )
 
             return value;
         }

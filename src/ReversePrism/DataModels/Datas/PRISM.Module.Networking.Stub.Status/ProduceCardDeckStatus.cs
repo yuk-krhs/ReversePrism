@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ProduceCardListFieldNumber               int IL2CPP_TYPE_I4
     // 008 _repeated_produceCardList_codec          FieldCodec`1<ProduceCardStatus> IL2CPP_TYPE_GENERICINST
-    // 018 ProduceCardList                          000185CEB1C8 ModelClassListType RepeatedField`1<ProduceCardStatus> RepeatedField`1<ProduceCardStatus> List<ProduceCardStatus> Pointer
+    // 018 ProduceCardList                          ModelClassListType RepeatedField`1<ProduceCardStatus> RepeatedField`1<ProduceCardStatus> List<ProduceCardStatus> Pointer
     public partial class ProduceCardDeckStatus : DataModel
     {
         public List<ProduceCardStatus>?                 ProduceCardList                         { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceCardDeckStatus() { Pointer= p0 };
 
-            value.ProduceCardList                           = GetObjectList<ProduceCardStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceCardStatus.FromPointer); // 02466109A338 0x18 ProduceCardList             ( 000185CEB1C8 ModelClassListType RepeatedField`1<ProduceCardStatus> RepeatedField`1<ProduceCardStatus> List<ProduceCardStatus> Pointer )
+            value.ProduceCardList                           = GetObjectList<ProduceCardStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceCardStatus.FromPointer); // 0x18 ProduceCardList             ( ModelClassListType RepeatedField`1<ProduceCardStatus> RepeatedField`1<ProduceCardStatus> List<ProduceCardStatus> Pointer )
 
             return value;
         }

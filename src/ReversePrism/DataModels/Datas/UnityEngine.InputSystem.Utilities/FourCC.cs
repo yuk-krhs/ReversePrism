@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Code                                   0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 M_Code                                   ModelPrimitiveType int int int Int32
     public partial class FourCC : DataModel
     {
         public int                                      M_Code                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FourCC() { Pointer= p0 };
 
-            value.M_Code                                    = GetInt32(new IntPtr(p + 0x010)); // 0245A2E35F38 0x10 M_Code                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_Code                                    = GetInt32(new IntPtr(p + 0x010)); // 0x10 M_Code                      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

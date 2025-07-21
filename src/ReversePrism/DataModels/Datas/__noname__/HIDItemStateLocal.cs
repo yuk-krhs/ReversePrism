@@ -17,7 +17,7 @@ namespace ReversePrism.DataModels
     // 040 stringIndex                              Nullable`1<int> IL2CPP_TYPE_GENERICINST
     // 048 stringMinimum                            Nullable`1<int> IL2CPP_TYPE_GENERICINST
     // 050 stringMaximum                            Nullable`1<int> IL2CPP_TYPE_GENERICINST
-    // 058 UsageList                                000185CED0A8 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer
+    // 058 UsageList                                ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer
     public partial class HIDItemStateLocal : DataModel
     {
         public List<int>?                               UsageList                               { get; set; }
@@ -30,7 +30,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HIDItemStateLocal() { Pointer= p0 };
 
-            value.UsageList                                 = GetInt32List(new IntPtr(p + 0x058)); // 024667831F68 0x58 UsageList                   ( 000185CED0A8 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
+            value.UsageList                                 = GetInt32List(new IntPtr(p + 0x058)); // 0x58 UsageList                   ( ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
 
             return value;
         }

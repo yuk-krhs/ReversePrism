@@ -40,9 +40,9 @@ namespace ReversePrism.DataModels
     // 000 DatePartDay                              int IL2CPP_TYPE_I4
     // 000 s_daysToMonth365                         int[] IL2CPP_TYPE_SZARRAY
     // 008 s_daysToMonth366                         int[] IL2CPP_TYPE_SZARRAY
-    // 010 MinValue                                 0001865BABC0 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    // 018 MaxValue                                 0001865BABC0 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    // 020 UnixEpoch                                0001865BABC0 ModelPrimitiveType DateTime DateTime DateTime DateTime
+    // 010 MinValue                                 ModelPrimitiveType DateTime DateTime DateTime DateTime
+    // 018 MaxValue                                 ModelPrimitiveType DateTime DateTime DateTime DateTime
+    // 020 UnixEpoch                                ModelPrimitiveType DateTime DateTime DateTime DateTime
     // 000 TicksMask                                ulong IL2CPP_TYPE_U8
     // 000 FlagsMask                                ulong IL2CPP_TYPE_U8
     // 000 LocalMask                                ulong IL2CPP_TYPE_U8
@@ -54,7 +54,7 @@ namespace ReversePrism.DataModels
     // 000 KindShift                                int IL2CPP_TYPE_I4
     // 000 TicksField                               string IL2CPP_TYPE_STRING
     // 000 DateDataField                            string IL2CPP_TYPE_STRING
-    // 010 DateData                                 00018669C270 ModelPrimitiveType ulong ulong ulong UInt64
+    // 010 DateData                                 ModelPrimitiveType ulong ulong ulong UInt64
     public partial class DateTime : DataModel
     {
         public DateTime                                 MinValue                                { get; set; }
@@ -70,10 +70,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DateTime() { Pointer= p0 };
 
-            value.MinValue                                  = GetDateTime(new IntPtr(p + 0x010)); // 0245A21C50D8 0x10 MinValue                    ( 0001865BABC0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.MaxValue                                  = GetDateTime(new IntPtr(p + 0x018)); // 0245A21C50F8 0x18 MaxValue                    ( 0001865BABC0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.UnixEpoch                                 = GetDateTime(new IntPtr(p + 0x020)); // 0245A21C5118 0x20 UnixEpoch                   ( 0001865BABC0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.DateData                                  = GetUInt64(new IntPtr(p + 0x010)); // 0245A21C5298 0x10 DateData                    ( 00018669C270 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.MinValue                                  = GetDateTime(new IntPtr(p + 0x010)); // 0x10 MinValue                    ( ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.MaxValue                                  = GetDateTime(new IntPtr(p + 0x018)); // 0x18 MaxValue                    ( ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.UnixEpoch                                 = GetDateTime(new IntPtr(p + 0x020)); // 0x20 UnixEpoch                   ( ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.DateData                                  = GetUInt64(new IntPtr(p + 0x010)); // 0x10 DateData                    ( ModelPrimitiveType ulong ulong ulong UInt64 )
 
             return value;
         }

@@ -9,18 +9,18 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 getCursorIdFunc                          GetCursorIdFunction IL2CPP_TYPE_CLASS
-    // 010 M_Values                                 000185D0E4D8 ModelEnumListType List`1<StylePropertyValue> List`1<StylePropertyValue> List<StylePropertyValue> Pointer
-    // 018 M_ValueCount                             000185CECF28 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer
-    // 020 M_Resolver                               0001865D1F90 ModelClassType StyleVariableResolver StyleVariableResolver StyleVariableResolver Pointer
-    // 028 M_Sheet                                  0001865CD5E0 ModelClassType StyleSheet StyleSheet StyleSheet Pointer
-    // 030 M_Properties                             000185CA7728 ModelClassListType StyleProperty[] StyleProperty[] List<StyleProperty> Pointer
-    // 038 M_PropertyIds                            000185CA7908 ModelEnumListType StylePropertyId[] StylePropertyId[] List<StylePropertyId> Pointer
-    // 040 M_CurrentValueIndex                      0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 044 M_CurrentPropertyIndex                   0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 048 Property                                 0001865C9050 ModelClassType StyleProperty StyleProperty StyleProperty Pointer
-    // 050 PropertyId                               0001865C9870 ModelEnumType StylePropertyId StylePropertyId StylePropertyId Int32
-    // 054 ValueCount                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 058 DpiScaling                               0001866656B0 ModelPrimitiveType float float float Single
+    // 010 M_Values                                 ModelEnumListType List`1<StylePropertyValue> List`1<StylePropertyValue> List<StylePropertyValue> Pointer
+    // 018 M_ValueCount                             ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer
+    // 020 M_Resolver                               ModelClassType StyleVariableResolver StyleVariableResolver StyleVariableResolver Pointer
+    // 028 M_Sheet                                  ModelClassType StyleSheet StyleSheet StyleSheet Pointer
+    // 030 M_Properties                             ModelClassListType StyleProperty[] StyleProperty[] List<StyleProperty> Pointer
+    // 038 M_PropertyIds                            ModelEnumListType StylePropertyId[] StylePropertyId[] List<StylePropertyId> Pointer
+    // 040 M_CurrentValueIndex                      ModelPrimitiveType int int int Int32
+    // 044 M_CurrentPropertyIndex                   ModelPrimitiveType int int int Int32
+    // 048 Property                                 ModelClassType StyleProperty StyleProperty StyleProperty Pointer
+    // 050 PropertyId                               ModelEnumType StylePropertyId StylePropertyId StylePropertyId Int32
+    // 054 ValueCount                               ModelPrimitiveType int int int Int32
+    // 058 DpiScaling                               ModelPrimitiveType float float float Single
     public partial class StylePropertyReader : DataModel
     {
         public List<StylePropertyValue>?                M_Values                                { get; set; }
@@ -44,18 +44,18 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StylePropertyReader() { Pointer= p0 };
 
-            value.M_Values                                  = GetEnumList<StylePropertyValue>(new IntPtr(p + 0x010)); // 0245A6848098 0x10 M_Values                    ( 000185D0E4D8 ModelEnumListType List`1<StylePropertyValue> List`1<StylePropertyValue> List<StylePropertyValue> Pointer )
-            value.M_ValueCount                              = GetInt32List(new IntPtr(p + 0x018)); // 0245A68480B8 0x18 M_ValueCount                ( 000185CECF28 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
-            value.M_Resolver                                = GetObject<StyleVariableResolver>(new IntPtr(p + 0x020), ReversePrism.DataModels.StyleVariableResolver.FromPointer); // 0245A68480D8 0x20 M_Resolver                  ( 0001865D1F90 ModelClassType StyleVariableResolver StyleVariableResolver StyleVariableResolver Pointer )
-            value.M_Sheet                                   = GetObject<StyleSheet>(new IntPtr(p + 0x028), ReversePrism.DataModels.StyleSheet.FromPointer); // 0245A68480F8 0x28 M_Sheet                     ( 0001865CD5E0 ModelClassType StyleSheet StyleSheet StyleSheet Pointer )
-            value.M_Properties                              = GetObjectList<StyleProperty>(new IntPtr(p + 0x030), ReversePrism.DataModels.StyleProperty.FromPointer); // 0245A6848118 0x30 M_Properties                ( 000185CA7728 ModelClassListType StyleProperty[] StyleProperty[] List<StyleProperty> Pointer )
-            value.M_PropertyIds                             = GetEnumList<StylePropertyId>(new IntPtr(p + 0x038)); // 0245A6848138 0x38 M_PropertyIds               ( 000185CA7908 ModelEnumListType StylePropertyId[] StylePropertyId[] List<StylePropertyId> Pointer )
-            value.M_CurrentValueIndex                       = GetInt32(new IntPtr(p + 0x040)); // 0245A6848158 0x40 M_CurrentValueIndex         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_CurrentPropertyIndex                    = GetInt32(new IntPtr(p + 0x044)); // 0245A6848178 0x44 M_CurrentPropertyIndex      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Property                                  = GetObject<StyleProperty>(new IntPtr(p + 0x048), ReversePrism.DataModels.StyleProperty.FromPointer); // 0245A6848198 0x48 Property                    ( 0001865C9050 ModelClassType StyleProperty StyleProperty StyleProperty Pointer )
-            value.PropertyId                                = (StylePropertyId)GetInt32(new IntPtr(p + 0x050)); // 0245A68481B8 0x50 PropertyId                  ( 0001865C9870 ModelEnumType StylePropertyId StylePropertyId StylePropertyId Int32 )
-            value.ValueCount                                = GetInt32(new IntPtr(p + 0x054)); // 0245A68481D8 0x54 ValueCount                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.DpiScaling                                = GetSingle(new IntPtr(p + 0x058)); // 0245A68481F8 0x58 DpiScaling                  ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_Values                                  = GetEnumList<StylePropertyValue>(new IntPtr(p + 0x010)); // 0x10 M_Values                    ( ModelEnumListType List`1<StylePropertyValue> List`1<StylePropertyValue> List<StylePropertyValue> Pointer )
+            value.M_ValueCount                              = GetInt32List(new IntPtr(p + 0x018)); // 0x18 M_ValueCount                ( ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
+            value.M_Resolver                                = GetObject<StyleVariableResolver>(new IntPtr(p + 0x020), ReversePrism.DataModels.StyleVariableResolver.FromPointer); // 0x20 M_Resolver                  ( ModelClassType StyleVariableResolver StyleVariableResolver StyleVariableResolver Pointer )
+            value.M_Sheet                                   = GetObject<StyleSheet>(new IntPtr(p + 0x028), ReversePrism.DataModels.StyleSheet.FromPointer); // 0x28 M_Sheet                     ( ModelClassType StyleSheet StyleSheet StyleSheet Pointer )
+            value.M_Properties                              = GetObjectList<StyleProperty>(new IntPtr(p + 0x030), ReversePrism.DataModels.StyleProperty.FromPointer); // 0x30 M_Properties                ( ModelClassListType StyleProperty[] StyleProperty[] List<StyleProperty> Pointer )
+            value.M_PropertyIds                             = GetEnumList<StylePropertyId>(new IntPtr(p + 0x038)); // 0x38 M_PropertyIds               ( ModelEnumListType StylePropertyId[] StylePropertyId[] List<StylePropertyId> Pointer )
+            value.M_CurrentValueIndex                       = GetInt32(new IntPtr(p + 0x040)); // 0x40 M_CurrentValueIndex         ( ModelPrimitiveType int int int Int32 )
+            value.M_CurrentPropertyIndex                    = GetInt32(new IntPtr(p + 0x044)); // 0x44 M_CurrentPropertyIndex      ( ModelPrimitiveType int int int Int32 )
+            value.Property                                  = GetObject<StyleProperty>(new IntPtr(p + 0x048), ReversePrism.DataModels.StyleProperty.FromPointer); // 0x48 Property                    ( ModelClassType StyleProperty StyleProperty StyleProperty Pointer )
+            value.PropertyId                                = (StylePropertyId)GetInt32(new IntPtr(p + 0x050)); // 0x50 PropertyId                  ( ModelEnumType StylePropertyId StylePropertyId StylePropertyId Int32 )
+            value.ValueCount                                = GetInt32(new IntPtr(p + 0x054)); // 0x54 ValueCount                  ( ModelPrimitiveType int int int Int32 )
+            value.DpiScaling                                = GetSingle(new IntPtr(p + 0x058)); // 0x58 DpiScaling                  ( ModelPrimitiveType float float float Single )
 
             return value;
         }

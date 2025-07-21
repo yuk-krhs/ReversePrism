@@ -8,20 +8,20 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Name                                     0001866722E0 ModelPrimitiveType string string string String
-    // 018 Extend                                   0001866722E0 ModelPrimitiveType string string string String
-    // 020 ExtendMultiple                           000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 028 Format                                   0001866722E0 ModelPrimitiveType string string string String
-    // 030 BeforeRender                             0001866722E0 ModelPrimitiveType string string string String
-    // 038 RunInBackground                          0001866722E0 ModelPrimitiveType string string string String
-    // 040 CommonUsages                             000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 048 DisplayName                              0001866722E0 ModelPrimitiveType string string string String
-    // 050 Description                              0001866722E0 ModelPrimitiveType string string string String
-    // 058 Type                                     0001866722E0 ModelPrimitiveType string string string String
-    // 060 Variant                                  0001866722E0 ModelPrimitiveType string string string String
-    // 068 IsGenericTypeOfDevice                    000186595960 ModelPrimitiveType bool bool bool Bool
-    // 069 HideInUI                                 000186595960 ModelPrimitiveType bool bool bool Bool
-    // 070 Controls                                 000185CBD2A8 ModelClassListType ControlItemJson[] ControlItemJson[] List<ControlItemJson> Pointer
+    // 010 Name                                     ModelPrimitiveType string string string String
+    // 018 Extend                                   ModelPrimitiveType string string string String
+    // 020 ExtendMultiple                           ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 028 Format                                   ModelPrimitiveType string string string String
+    // 030 BeforeRender                             ModelPrimitiveType string string string String
+    // 038 RunInBackground                          ModelPrimitiveType string string string String
+    // 040 CommonUsages                             ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 048 DisplayName                              ModelPrimitiveType string string string String
+    // 050 Description                              ModelPrimitiveType string string string String
+    // 058 Type                                     ModelPrimitiveType string string string String
+    // 060 Variant                                  ModelPrimitiveType string string string String
+    // 068 IsGenericTypeOfDevice                    ModelPrimitiveType bool bool bool Bool
+    // 069 HideInUI                                 ModelPrimitiveType bool bool bool Bool
+    // 070 Controls                                 ModelClassListType ControlItemJson[] ControlItemJson[] List<ControlItemJson> Pointer
     public partial class LayoutJson : DataModel
     {
         public string                                   Name                                    { get; set; }
@@ -47,20 +47,20 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LayoutJson() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0246678B88C0 0x10 Name                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Extend                                    = GetString(new IntPtr(p + 0x018)); // 0246678B88E0 0x18 Extend                      ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ExtendMultiple                            = GetStringList(new IntPtr(p + 0x020)); // 0246678B8900 0x20 ExtendMultiple              ( 000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.Format                                    = GetString(new IntPtr(p + 0x028)); // 0246678B8920 0x28 Format                      ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.BeforeRender                              = GetString(new IntPtr(p + 0x030)); // 0246678B8940 0x30 BeforeRender                ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.RunInBackground                           = GetString(new IntPtr(p + 0x038)); // 0246678B8960 0x38 RunInBackground             ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.CommonUsages                              = GetStringList(new IntPtr(p + 0x040)); // 0246678B8980 0x40 CommonUsages                ( 000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.DisplayName                               = GetString(new IntPtr(p + 0x048)); // 0246678B89A0 0x48 DisplayName                 ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Description                               = GetString(new IntPtr(p + 0x050)); // 0246678B89C0 0x50 Description                 ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Type                                      = GetString(new IntPtr(p + 0x058)); // 0246678B89E0 0x58 Type                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Variant                                   = GetString(new IntPtr(p + 0x060)); // 0246678B8A00 0x60 Variant                     ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.IsGenericTypeOfDevice                     = GetBool(new IntPtr(p + 0x068)); // 0246678B8A20 0x68 IsGenericTypeOfDevice       ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.HideInUI                                  = GetBool(new IntPtr(p + 0x069)); // 0246678B8A40 0x69 HideInUI                    ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Controls                                  = GetObjectList<ControlItemJson>(new IntPtr(p + 0x070), ReversePrism.DataModels.ControlItemJson.FromPointer); // 0246678B8A60 0x70 Controls                    ( 000185CBD2A8 ModelClassListType ControlItemJson[] ControlItemJson[] List<ControlItemJson> Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Name                        ( ModelPrimitiveType string string string String )
+            value.Extend                                    = GetString(new IntPtr(p + 0x018)); // 0x18 Extend                      ( ModelPrimitiveType string string string String )
+            value.ExtendMultiple                            = GetStringList(new IntPtr(p + 0x020)); // 0x20 ExtendMultiple              ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.Format                                    = GetString(new IntPtr(p + 0x028)); // 0x28 Format                      ( ModelPrimitiveType string string string String )
+            value.BeforeRender                              = GetString(new IntPtr(p + 0x030)); // 0x30 BeforeRender                ( ModelPrimitiveType string string string String )
+            value.RunInBackground                           = GetString(new IntPtr(p + 0x038)); // 0x38 RunInBackground             ( ModelPrimitiveType string string string String )
+            value.CommonUsages                              = GetStringList(new IntPtr(p + 0x040)); // 0x40 CommonUsages                ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.DisplayName                               = GetString(new IntPtr(p + 0x048)); // 0x48 DisplayName                 ( ModelPrimitiveType string string string String )
+            value.Description                               = GetString(new IntPtr(p + 0x050)); // 0x50 Description                 ( ModelPrimitiveType string string string String )
+            value.Type                                      = GetString(new IntPtr(p + 0x058)); // 0x58 Type                        ( ModelPrimitiveType string string string String )
+            value.Variant                                   = GetString(new IntPtr(p + 0x060)); // 0x60 Variant                     ( ModelPrimitiveType string string string String )
+            value.IsGenericTypeOfDevice                     = GetBool(new IntPtr(p + 0x068)); // 0x68 IsGenericTypeOfDevice       ( ModelPrimitiveType bool bool bool Bool )
+            value.HideInUI                                  = GetBool(new IntPtr(p + 0x069)); // 0x69 HideInUI                    ( ModelPrimitiveType bool bool bool Bool )
+            value.Controls                                  = GetObjectList<ControlItemJson>(new IntPtr(p + 0x070), ReversePrism.DataModels.ControlItemJson.FromPointer); // 0x70 Controls                    ( ModelClassListType ControlItemJson[] ControlItemJson[] List<ControlItemJson> Pointer )
 
             return value;
         }

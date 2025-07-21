@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ContentType                              000186672F10 ModelPrimitiveType string string string String
+    // 010 ContentType                              ModelPrimitiveType string string string String
     public partial class SetContentTypeHeaderDecorator : DataModel
     {
         public string                                   ContentType                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SetContentTypeHeaderDecorator() { Pointer= p0 };
 
-            value.ContentType                               = GetString(new IntPtr(p + 0x010)); // 02466BF34AA0 0x10 ContentType                 ( 000186672F10 ModelPrimitiveType string string string String )
+            value.ContentType                               = GetString(new IntPtr(p + 0x010)); // 0x10 ContentType                 ( ModelPrimitiveType string string string String )
 
             return value;
         }

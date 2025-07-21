@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 profileTag                               string IL2CPP_TYPE_STRING
     // 008 profileSampler                           ProfileSampler IL2CPP_TYPE_CLASS
-    // 010 RenderTargetIdentifiers                  000185CA0AC8 ModelEnumListType RenderTargetIdentifier[] RenderTargetIdentifier[] List<RenderTargetIdentifier> Pointer
+    // 010 RenderTargetIdentifiers                  ModelEnumListType RenderTargetIdentifier[] RenderTargetIdentifier[] List<RenderTargetIdentifier> Pointer
     public partial class DrawSkyBoxPass : DataModel
     {
         public List<RenderTargetIdentifier>?            RenderTargetIdentifiers                 { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DrawSkyBoxPass() { Pointer= p0 };
 
-            value.RenderTargetIdentifiers                   = GetEnumList<RenderTargetIdentifier>(new IntPtr(p + 0x010)); // 024660AB12E0 0x10 RenderTargetIdentifiers     ( 000185CA0AC8 ModelEnumListType RenderTargetIdentifier[] RenderTargetIdentifier[] List<RenderTargetIdentifier> Pointer )
+            value.RenderTargetIdentifiers                   = GetEnumList<RenderTargetIdentifier>(new IntPtr(p + 0x010)); // 0x10 RenderTargetIdentifiers     ( ModelEnumListType RenderTargetIdentifier[] RenderTargetIdentifier[] List<RenderTargetIdentifier> Pointer )
 
             return value;
         }

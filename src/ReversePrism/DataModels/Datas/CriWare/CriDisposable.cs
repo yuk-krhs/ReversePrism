@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Guid                                     0001865DC380 ModelEnumType Guid Guid Guid Int32
+    // 010 Guid                                     ModelEnumType Guid Guid Guid Int32
     public partial class CriDisposable : DataModel
     {
         public Guid                                     Guid                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CriDisposable() { Pointer= p0 };
 
-            value.Guid                                      = (Guid)GetInt32(new IntPtr(p + 0x010)); // 0245A4242C70 0x10 Guid                        ( 0001865DC380 ModelEnumType Guid Guid Guid Int32 )
+            value.Guid                                      = (Guid)GetInt32(new IntPtr(p + 0x010)); // 0x10 Guid                        ( ModelEnumType Guid Guid Guid Int32 )
 
             return value;
         }

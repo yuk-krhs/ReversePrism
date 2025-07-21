@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Legacy                                   00018672DDF0 ModelClassType IntroductionUnitLetterArgumentForLegacy IntroductionUnitLetterArgumentForLegacy IntroductionUnitLetterArgumentForLegacy Pointer
+    // 010 LetterGroupId                            ModelPrimitiveType int int int Int32
     public partial class IntroductionUnitLetterArgument : DataModel
     {
-        public IntroductionUnitLetterArgumentForLegacy? Legacy                                  { get; set; }
+        public int                                      LetterGroupId                           { get; set; }
 
         public static IntroductionUnitLetterArgument? FromPointer(IntPtr p0)
         {
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IntroductionUnitLetterArgument() { Pointer= p0 };
 
-            value.Legacy                                    = GetObject<IntroductionUnitLetterArgumentForLegacy>(new IntPtr(p + 0x010), ReversePrism.DataModels.IntroductionUnitLetterArgumentForLegacy.FromPointer); // 0246668A09B0 0x10 Legacy                      ( 00018672DDF0 ModelClassType IntroductionUnitLetterArgumentForLegacy IntroductionUnitLetterArgumentForLegacy IntroductionUnitLetterArgumentForLegacy Pointer )
+            value.LetterGroupId                             = GetInt32(new IntPtr(p + 0x010)); // 0x10 LetterGroupId               ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

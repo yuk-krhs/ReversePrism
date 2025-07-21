@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<ShortCode> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 RegionCodeFieldNumber                    int IL2CPP_TYPE_I4
-    // 018 RegionCode                               000186671910 ModelPrimitiveType string string string String
+    // 018 RegionCode                               ModelPrimitiveType string string string String
     // 000 NumberFieldNumber                        int IL2CPP_TYPE_I4
-    // 020 Number                                   000186671910 ModelPrimitiveType string string string String
+    // 020 Number                                   ModelPrimitiveType string string string String
     public partial class ShortCode : DataModel
     {
         public string                                   RegionCode                              { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ShortCode() { Pointer= p0 };
 
-            value.RegionCode                                = GetString(new IntPtr(p + 0x018)); // 02466A706A70 0x18 RegionCode                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.Number                                    = GetString(new IntPtr(p + 0x020)); // 02466A706AB0 0x20 Number                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.RegionCode                                = GetString(new IntPtr(p + 0x018)); // 0x18 RegionCode                  ( ModelPrimitiveType string string string String )
+            value.Number                                    = GetString(new IntPtr(p + 0x020)); // 0x20 Number                      ( ModelPrimitiveType string string string String )
 
             return value;
         }

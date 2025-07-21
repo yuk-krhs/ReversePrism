@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<GetPvpRankingArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstEventIdFieldNumber                    int IL2CPP_TYPE_I4
-    // 018 MstEventId                               0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MstEventId                               ModelPrimitiveType int int int Int32
     // 000 RankingViewTypeFieldNumber               int IL2CPP_TYPE_I4
-    // 01C RankingViewType                          000186763670 ModelEnumType EventRankingViewType EventRankingViewType EventRankingViewType Int32
+    // 01C RankingViewType                          ModelEnumType EventRankingViewType EventRankingViewType EventRankingViewType Int32
     public partial class GetPvpRankingArgs : DataModel
     {
         public int                                      MstEventId                              { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetPvpRankingArgs() { Pointer= p0 };
 
-            value.MstEventId                                = GetInt32(new IntPtr(p + 0x018)); // 024660FA6040 0x18 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.RankingViewType                           = (EventRankingViewType)GetInt32(new IntPtr(p + 0x01C)); // 024660FA6080 0x1C RankingViewType             ( 000186763670 ModelEnumType EventRankingViewType EventRankingViewType EventRankingViewType Int32 )
+            value.MstEventId                                = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstEventId                  ( ModelPrimitiveType int int int Int32 )
+            value.RankingViewType                           = (EventRankingViewType)GetInt32(new IntPtr(p + 0x01C)); // 0x1C RankingViewType             ( ModelEnumType EventRankingViewType EventRankingViewType EventRankingViewType Int32 )
 
             return value;
         }

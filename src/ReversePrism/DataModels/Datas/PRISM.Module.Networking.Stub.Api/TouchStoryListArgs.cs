@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 StoryIdListFieldNumber                   int IL2CPP_TYPE_I4
     // 008 _repeated_storyIdList_codec              FieldCodec`1<StoryIDStatus> IL2CPP_TYPE_GENERICINST
-    // 018 StoryIdList                              000185CF2FE8 ModelClassListType RepeatedField`1<StoryIDStatus> RepeatedField`1<StoryIDStatus> List<StoryIDStatus> Pointer
+    // 018 StoryIdList                              ModelClassListType RepeatedField`1<StoryIDStatus> RepeatedField`1<StoryIDStatus> List<StoryIDStatus> Pointer
     public partial class TouchStoryListArgs : DataModel
     {
         public List<StoryIDStatus>?                     StoryIdList                             { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TouchStoryListArgs() { Pointer= p0 };
 
-            value.StoryIdList                               = GetObjectList<StoryIDStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoryIDStatus.FromPointer); // 0246629B81D0 0x18 StoryIdList                 ( 000185CF2FE8 ModelClassListType RepeatedField`1<StoryIDStatus> RepeatedField`1<StoryIDStatus> List<StoryIDStatus> Pointer )
+            value.StoryIdList                               = GetObjectList<StoryIDStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoryIDStatus.FromPointer); // 0x18 StoryIdList                 ( ModelClassListType RepeatedField`1<StoryIDStatus> RepeatedField`1<StoryIDStatus> List<StoryIDStatus> Pointer )
 
             return value;
         }

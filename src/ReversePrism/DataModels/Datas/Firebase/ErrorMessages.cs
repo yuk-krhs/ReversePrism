@@ -10,10 +10,10 @@ namespace ReversePrism.DataModels
 
     // 000 DEPENDENCY_NOT_FOUND_ERROR_ANDROID       string IL2CPP_TYPE_STRING
     // 008 DEPENDENCY_NOT_FOUND_ERROR_IOS           string IL2CPP_TYPE_STRING
-    // 010 DEPENDENCY_NOT_FOUND_ERROR_GENERIC       000186672530 ModelPrimitiveType string string string String
-    // 018 DLL_NOT_FOUND_ERROR_ANDROID              000186672530 ModelPrimitiveType string string string String
-    // 020 DLL_NOT_FOUND_ERROR_IOS                  000186672530 ModelPrimitiveType string string string String
-    // 028 DLL_NOT_FOUND_ERROR_GENERIC              000186672530 ModelPrimitiveType string string string String
+    // 010 DEPENDENCY_NOT_FOUND_ERROR_GENERIC       ModelPrimitiveType string string string String
+    // 018 DLL_NOT_FOUND_ERROR_ANDROID              ModelPrimitiveType string string string String
+    // 020 DLL_NOT_FOUND_ERROR_IOS                  ModelPrimitiveType string string string String
+    // 028 DLL_NOT_FOUND_ERROR_GENERIC              ModelPrimitiveType string string string String
     public partial class ErrorMessages : DataModel
     {
         public string                                   DEPENDENCY_NOT_FOUND_ERROR_GENERIC      { get; set; }
@@ -29,10 +29,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ErrorMessages() { Pointer= p0 };
 
-            value.DEPENDENCY_NOT_FOUND_ERROR_GENERIC        = GetString(new IntPtr(p + 0x010)); // 02466B7D9200 0x10 DEPENDENCY_NOT_FOUND_ERROR_GENERIC ( 000186672530 ModelPrimitiveType string string string String )
-            value.DLL_NOT_FOUND_ERROR_ANDROID               = GetString(new IntPtr(p + 0x018)); // 02466B7D9220 0x18 DLL_NOT_FOUND_ERROR_ANDROID ( 000186672530 ModelPrimitiveType string string string String )
-            value.DLL_NOT_FOUND_ERROR_IOS                   = GetString(new IntPtr(p + 0x020)); // 02466B7D9240 0x20 DLL_NOT_FOUND_ERROR_IOS     ( 000186672530 ModelPrimitiveType string string string String )
-            value.DLL_NOT_FOUND_ERROR_GENERIC               = GetString(new IntPtr(p + 0x028)); // 02466B7D9260 0x28 DLL_NOT_FOUND_ERROR_GENERIC ( 000186672530 ModelPrimitiveType string string string String )
+            value.DEPENDENCY_NOT_FOUND_ERROR_GENERIC        = GetString(new IntPtr(p + 0x010)); // 0x10 DEPENDENCY_NOT_FOUND_ERROR_GENERIC ( ModelPrimitiveType string string string String )
+            value.DLL_NOT_FOUND_ERROR_ANDROID               = GetString(new IntPtr(p + 0x018)); // 0x18 DLL_NOT_FOUND_ERROR_ANDROID ( ModelPrimitiveType string string string String )
+            value.DLL_NOT_FOUND_ERROR_IOS                   = GetString(new IntPtr(p + 0x020)); // 0x20 DLL_NOT_FOUND_ERROR_IOS     ( ModelPrimitiveType string string string String )
+            value.DLL_NOT_FOUND_ERROR_GENERIC               = GetString(new IntPtr(p + 0x028)); // 0x28 DLL_NOT_FOUND_ERROR_GENERIC ( ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 IsDecimal                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 018 Dvalue                                   000185B7C4F0 ModelEnumListType Decimal[] Decimal[] List<Decimal> Pointer
+    // 010 IsDecimal                                ModelPrimitiveType bool bool bool Bool
+    // 018 Dvalue                                   ModelEnumListType Decimal[] Decimal[] List<Decimal> Pointer
     public partial class DecimalStruct : DataModel
     {
         public bool                                     IsDecimal                               { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DecimalStruct() { Pointer= p0 };
 
-            value.IsDecimal                                 = GetBool(new IntPtr(p + 0x010)); // 02466755A8A8 0x10 IsDecimal                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Dvalue                                    = GetEnumList<Decimal>(new IntPtr(p + 0x018)); // 02466755A8C8 0x18 Dvalue                      ( 000185B7C4F0 ModelEnumListType Decimal[] Decimal[] List<Decimal> Pointer )
+            value.IsDecimal                                 = GetBool(new IntPtr(p + 0x010)); // 0x10 IsDecimal                   ( ModelPrimitiveType bool bool bool Bool )
+            value.Dvalue                                    = GetEnumList<Decimal>(new IntPtr(p + 0x018)); // 0x18 Dvalue                      ( ModelEnumListType Decimal[] Decimal[] List<Decimal> Pointer )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Smr                                      000186514880 ModelClassType SkinnedMeshRenderer SkinnedMeshRenderer SkinnedMeshRenderer Pointer
-    // 018 Id                                       0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 Smr                                      ModelClassType SkinnedMeshRenderer SkinnedMeshRenderer SkinnedMeshRenderer Pointer
+    // 018 Id                                       ModelPrimitiveType int int int Int32
     public partial class ZBiasData : DataModel
     {
         public SkinnedMeshRenderer?                     Smr                                     { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ZBiasData() { Pointer= p0 };
 
-            value.Smr                                       = GetObject<SkinnedMeshRenderer>(new IntPtr(p + 0x010), ReversePrism.DataModels.SkinnedMeshRenderer.FromPointer); // 0245A69ADFB8 0x10 Smr                         ( 000186514880 ModelClassType SkinnedMeshRenderer SkinnedMeshRenderer SkinnedMeshRenderer Pointer )
-            value.Id                                        = GetInt32(new IntPtr(p + 0x018)); // 0245A69ADFD8 0x18 Id                          ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Smr                                       = GetObject<SkinnedMeshRenderer>(new IntPtr(p + 0x010), ReversePrism.DataModels.SkinnedMeshRenderer.FromPointer); // 0x10 Smr                         ( ModelClassType SkinnedMeshRenderer SkinnedMeshRenderer SkinnedMeshRenderer Pointer )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x018)); // 0x18 Id                          ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

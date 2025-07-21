@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 SheetName                                string IL2CPP_TYPE_STRING
     // 000 JinglePvpWin                             SoundKey IL2CPP_TYPE_VALUETYPE
-    // 010 JinglePvpLose                            000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32
+    // 010 JinglePvpLose                            ModelEnumType SoundKey SoundKey SoundKey Int32
     public partial class PvpSE : DataModel
     {
         public SoundKey                                 JinglePvpLose                           { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PvpSE() { Pointer= p0 };
 
-            value.JinglePvpLose                             = (SoundKey)GetInt32(new IntPtr(p + 0x010)); // 0246650EECC8 0x10 JinglePvpLose               ( 000186536C30 ModelEnumType SoundKey SoundKey SoundKey Int32 )
+            value.JinglePvpLose                             = (SoundKey)GetInt32(new IntPtr(p + 0x010)); // 0x10 JinglePvpLose               ( ModelEnumType SoundKey SoundKey SoundKey Int32 )
 
             return value;
         }

@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_GroupOptions                           000185CE4918 ModelClassListType List`1<IGroupBoxOption> List`1<IGroupBoxOption> List<IGroupBoxOption> Pointer
-    // 018 M_SelectedOption                         0001865631B0 ModelClassType IGroupBoxOption IGroupBoxOption IGroupBoxOption Pointer
-    // 020 M_GroupBox                               000186562CD0 ModelClassType IGroupBox IGroupBox IGroupBox Pointer
+    // 010 M_GroupOptions                           ModelClassListType List`1<IGroupBoxOption> List`1<IGroupBoxOption> List<IGroupBoxOption> Pointer
+    // 018 M_SelectedOption                         ModelClassType IGroupBoxOption IGroupBoxOption IGroupBoxOption Pointer
+    // 020 M_GroupBox                               ModelClassType IGroupBox IGroupBox IGroupBox Pointer
     public partial class DefaultGroupManager : DataModel
     {
         public List<IGroupBoxOption>?                   M_GroupOptions                          { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DefaultGroupManager() { Pointer= p0 };
 
-            value.M_GroupOptions                            = GetObjectList<IGroupBoxOption>(new IntPtr(p + 0x010), ReversePrism.DataModels.IGroupBoxOption.FromPointer); // 0245A679F408 0x10 M_GroupOptions              ( 000185CE4918 ModelClassListType List`1<IGroupBoxOption> List`1<IGroupBoxOption> List<IGroupBoxOption> Pointer )
-            value.M_SelectedOption                          = GetObject<IGroupBoxOption>(new IntPtr(p + 0x018), ReversePrism.DataModels.IGroupBoxOption.FromPointer); // 0245A679F428 0x18 M_SelectedOption            ( 0001865631B0 ModelClassType IGroupBoxOption IGroupBoxOption IGroupBoxOption Pointer )
-            value.M_GroupBox                                = GetObject<IGroupBox>(new IntPtr(p + 0x020), ReversePrism.DataModels.IGroupBox.FromPointer); // 0245A679F448 0x20 M_GroupBox                  ( 000186562CD0 ModelClassType IGroupBox IGroupBox IGroupBox Pointer )
+            value.M_GroupOptions                            = GetObjectList<IGroupBoxOption>(new IntPtr(p + 0x010), ReversePrism.DataModels.IGroupBoxOption.FromPointer); // 0x10 M_GroupOptions              ( ModelClassListType List`1<IGroupBoxOption> List`1<IGroupBoxOption> List<IGroupBoxOption> Pointer )
+            value.M_SelectedOption                          = GetObject<IGroupBoxOption>(new IntPtr(p + 0x018), ReversePrism.DataModels.IGroupBoxOption.FromPointer); // 0x18 M_SelectedOption            ( ModelClassType IGroupBoxOption IGroupBoxOption IGroupBoxOption Pointer )
+            value.M_GroupBox                                = GetObject<IGroupBox>(new IntPtr(p + 0x020), ReversePrism.DataModels.IGroupBox.FromPointer); // 0x20 M_GroupBox                  ( ModelClassType IGroupBox IGroupBox IGroupBox Pointer )
 
             return value;
         }

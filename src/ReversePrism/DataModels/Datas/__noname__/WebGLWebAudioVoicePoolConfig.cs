@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Voices                                   0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 Voices                                   ModelPrimitiveType int int int Int32
     public partial class WebGLWebAudioVoicePoolConfig : DataModel
     {
         public int                                      Voices                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new WebGLWebAudioVoicePoolConfig() { Pointer= p0 };
 
-            value.Voices                                    = GetInt32(new IntPtr(p + 0x010)); // 024660F623B0 0x10 Voices                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Voices                                    = GetInt32(new IntPtr(p + 0x010)); // 0x10 Voices                      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

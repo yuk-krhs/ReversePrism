@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 HistoryListFieldNumber                   int IL2CPP_TYPE_I4
     // 008 _repeated_historyList_codec              FieldCodec`1<ExchangePurchaseHistoryStatus> IL2CPP_TYPE_GENERICINST
-    // 018 HistoryList                              000185CD6AE8 ModelClassListType RepeatedField`1<ExchangePurchaseHistoryStatus> RepeatedField`1<ExchangePurchaseHistoryStatus> List<ExchangePurchaseHistoryStatus> Pointer
+    // 018 HistoryList                              ModelClassListType RepeatedField`1<ExchangePurchaseHistoryStatus> RepeatedField`1<ExchangePurchaseHistoryStatus> List<ExchangePurchaseHistoryStatus> Pointer
     public partial class GetExchangePurchaseHistoryListReply : DataModel
     {
         public List<ExchangePurchaseHistoryStatus>?     HistoryList                             { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetExchangePurchaseHistoryListReply() { Pointer= p0 };
 
-            value.HistoryList                               = GetObjectList<ExchangePurchaseHistoryStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ExchangePurchaseHistoryStatus.FromPointer); // 024661196A28 0x18 HistoryList                 ( 000185CD6AE8 ModelClassListType RepeatedField`1<ExchangePurchaseHistoryStatus> RepeatedField`1<ExchangePurchaseHistoryStatus> List<ExchangePurchaseHistoryStatus> Pointer )
+            value.HistoryList                               = GetObjectList<ExchangePurchaseHistoryStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ExchangePurchaseHistoryStatus.FromPointer); // 0x18 HistoryList                 ( ModelClassListType RepeatedField`1<ExchangePurchaseHistoryStatus> RepeatedField`1<ExchangePurchaseHistoryStatus> List<ExchangePurchaseHistoryStatus> Pointer )
 
             return value;
         }

@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<GetCostumePresetListArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstIdolIdFieldNumber                     int IL2CPP_TYPE_I4
-    // 018 MstIdolId                                0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MstIdolId                                ModelPrimitiveType int int int Int32
     // 000 PresetTypeFieldNumber                    int IL2CPP_TYPE_I4
-    // 01C PresetType                               000186630A70 ModelEnumType CostumePresetType CostumePresetType CostumePresetType Int32
+    // 01C PresetType                               ModelEnumType CostumePresetType CostumePresetType CostumePresetType Int32
     public partial class GetCostumePresetListArgs : DataModel
     {
         public int                                      MstIdolId                               { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetCostumePresetListArgs() { Pointer= p0 };
 
-            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x018)); // 0245A404E898 0x18 MstIdolId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.PresetType                                = (CostumePresetType)GetInt32(new IntPtr(p + 0x01C)); // 0245A404E8D8 0x1C PresetType                  ( 000186630A70 ModelEnumType CostumePresetType CostumePresetType CostumePresetType Int32 )
+            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstIdolId                   ( ModelPrimitiveType int int int Int32 )
+            value.PresetType                                = (CostumePresetType)GetInt32(new IntPtr(p + 0x01C)); // 0x1C PresetType                  ( ModelEnumType CostumePresetType CostumePresetType CostumePresetType Int32 )
 
             return value;
         }

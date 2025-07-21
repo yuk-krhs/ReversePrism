@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 060 InnerWriter                              000186764290 ModelClassType JsonWriter JsonWriter JsonWriter Pointer
-    // 068 TextWriter                               000186761790 ModelClassType JsonTextWriter JsonTextWriter JsonTextWriter Pointer
-    // 070 Sw                                       000186678A40 ModelClassType StringWriter StringWriter StringWriter Pointer
+    // 060 InnerWriter                              ModelClassType JsonWriter JsonWriter JsonWriter Pointer
+    // 068 TextWriter                               ModelClassType JsonTextWriter JsonTextWriter JsonTextWriter Pointer
+    // 070 Sw                                       ModelClassType StringWriter StringWriter StringWriter Pointer
     public partial class TraceJsonWriter : DataModel
     {
         public JsonWriter?                              InnerWriter                             { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TraceJsonWriter() { Pointer= p0 };
 
-            value.InnerWriter                               = GetObject<JsonWriter>(new IntPtr(p + 0x060), ReversePrism.DataModels.JsonWriter.FromPointer); // 0245A6671760 0x60 InnerWriter                 ( 000186764290 ModelClassType JsonWriter JsonWriter JsonWriter Pointer )
-            value.TextWriter                                = GetObject<JsonTextWriter>(new IntPtr(p + 0x068), ReversePrism.DataModels.JsonTextWriter.FromPointer); // 0245A6671780 0x68 TextWriter                  ( 000186761790 ModelClassType JsonTextWriter JsonTextWriter JsonTextWriter Pointer )
-            value.Sw                                        = GetObject<StringWriter>(new IntPtr(p + 0x070), ReversePrism.DataModels.StringWriter.FromPointer); // 0245A66717A0 0x70 Sw                          ( 000186678A40 ModelClassType StringWriter StringWriter StringWriter Pointer )
+            value.InnerWriter                               = GetObject<JsonWriter>(new IntPtr(p + 0x060), ReversePrism.DataModels.JsonWriter.FromPointer); // 0x60 InnerWriter                 ( ModelClassType JsonWriter JsonWriter JsonWriter Pointer )
+            value.TextWriter                                = GetObject<JsonTextWriter>(new IntPtr(p + 0x068), ReversePrism.DataModels.JsonTextWriter.FromPointer); // 0x68 TextWriter                  ( ModelClassType JsonTextWriter JsonTextWriter JsonTextWriter Pointer )
+            value.Sw                                        = GetObject<StringWriter>(new IntPtr(p + 0x070), ReversePrism.DataModels.StringWriter.FromPointer); // 0x70 Sw                          ( ModelClassType StringWriter StringWriter StringWriter Pointer )
 
             return value;
         }

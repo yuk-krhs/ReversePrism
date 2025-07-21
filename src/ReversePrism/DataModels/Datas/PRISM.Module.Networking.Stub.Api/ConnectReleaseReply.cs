@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<ConnectReleaseReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ResultFieldNumber                        int IL2CPP_TYPE_I4
-    // 018 Result                                   000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 018 Result                                   ModelPrimitiveType bool bool bool Bool
     // 000 UserFieldNumber                          int IL2CPP_TYPE_I4
-    // 020 User                                     000186722AD0 ModelClassType SelfStatus SelfStatus SelfStatus Pointer
+    // 020 User                                     ModelClassType SelfStatus SelfStatus SelfStatus Pointer
     public partial class ConnectReleaseReply : DataModel
     {
         public bool                                     Result                                  { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ConnectReleaseReply() { Pointer= p0 };
 
-            value.Result                                    = GetBool(new IntPtr(p + 0x018)); // 024662BB7EB8 0x18 Result                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.User                                      = GetObject<SelfStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.SelfStatus.FromPointer); // 024662BB7EF8 0x20 User                        ( 000186722AD0 ModelClassType SelfStatus SelfStatus SelfStatus Pointer )
+            value.Result                                    = GetBool(new IntPtr(p + 0x018)); // 0x18 Result                      ( ModelPrimitiveType bool bool bool Bool )
+            value.User                                      = GetObject<SelfStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.SelfStatus.FromPointer); // 0x20 User                        ( ModelClassType SelfStatus SelfStatus SelfStatus Pointer )
 
             return value;
         }

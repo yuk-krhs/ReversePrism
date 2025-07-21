@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<SourceContext> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 FileNameFieldNumber                      int IL2CPP_TYPE_I4
-    // 018 FileName                                 000186671910 ModelPrimitiveType string string string String
+    // 018 FileName                                 ModelPrimitiveType string string string String
     public partial class SourceContext : DataModel
     {
         public string                                   FileName                                { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SourceContext() { Pointer= p0 };
 
-            value.FileName                                  = GetString(new IntPtr(p + 0x018)); // 02466A4C4D88 0x18 FileName                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.FileName                                  = GetString(new IntPtr(p + 0x018)); // 0x18 FileName                    ( ModelPrimitiveType string string string String )
 
             return value;
         }

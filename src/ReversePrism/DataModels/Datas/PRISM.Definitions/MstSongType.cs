@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 All                                      MstSongType IL2CPP_TYPE_CLASS
-    // 010 Id                                       0001865F4260 ModelPrimitiveType int int int Int32
-    // 014 SongCategory                             0001865F4260 ModelPrimitiveType int int int Int32
+    // 010 Id                                       ModelPrimitiveType int int int Int32
+    // 014 SongCategory                             ModelPrimitiveType int int int Int32
     public partial class MstSongType : DataModel
     {
         public int                                      Id                                      { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MstSongType() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A4671BB8 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.SongCategory                              = GetInt32(new IntPtr(p + 0x014)); // 0245A4671BD8 0x14 SongCategory                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0x10 Id                          ( ModelPrimitiveType int int int Int32 )
+            value.SongCategory                              = GetInt32(new IntPtr(p + 0x014)); // 0x14 SongCategory                ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

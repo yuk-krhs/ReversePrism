@@ -8,13 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 StageTitleText                           0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 028 FunPanelView                             00018657A940 ModelClassType ChallengeTourResultFunPanelView ChallengeTourResultFunPanelView ChallengeTourResultFunPanelView Pointer
-    // 030 RewardPanelView                          00018657B590 ModelClassType ChallengeTourResultRewardPanelView ChallengeTourResultRewardPanelView ChallengeTourResultRewardPanelView Pointer
-    // 038 NextButton                               0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 040 rewardReceivePopupFactory                PopupViewFactory`1<IChallengeTourResultRewardReceivePopupView> IL2CPP_TYPE_GENERICINST
-    // 048 ViewModel                                00018657D540 ModelClassType ChallengeTourResultViewModel ChallengeTourResultViewModel ChallengeTourResultViewModel Pointer
-    // 050 ScriptController                         0001866D8C40 ModelClassType InGameResultScriptController InGameResultScriptController InGameResultScriptController Pointer
+    // 020 StageTitleText                           ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 028 FunPanelView                             ModelClassType ChallengeTourResultFunPanelView ChallengeTourResultFunPanelView ChallengeTourResultFunPanelView Pointer
+    // 030 RewardPanelView                          ModelClassType ChallengeTourResultRewardPanelView ChallengeTourResultRewardPanelView ChallengeTourResultRewardPanelView Pointer
+    // 038 NextButton                               ModelClassType UIButton UIButton UIButton Pointer
+    // 040 ViewModel                                ModelClassType ChallengeTourResultViewModel ChallengeTourResultViewModel ChallengeTourResultViewModel Pointer
+    // 048 ScriptController                         ModelClassType InGameResultScriptController InGameResultScriptController InGameResultScriptController Pointer
     public partial class ChallengeTourResultView : DataModel
     {
         public UITextMeshProUGUI?                       StageTitleText                          { get; set; }
@@ -32,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChallengeTourResultView() { Pointer= p0 };
 
-            value.StageTitleText                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A2264A8 0x20 StageTitleText              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.FunPanelView                              = GetObject<ChallengeTourResultFunPanelView>(new IntPtr(p + 0x028), ReversePrism.DataModels.ChallengeTourResultFunPanelView.FromPointer); // 02466A2264C8 0x28 FunPanelView                ( 00018657A940 ModelClassType ChallengeTourResultFunPanelView ChallengeTourResultFunPanelView ChallengeTourResultFunPanelView Pointer )
-            value.RewardPanelView                           = GetObject<ChallengeTourResultRewardPanelView>(new IntPtr(p + 0x030), ReversePrism.DataModels.ChallengeTourResultRewardPanelView.FromPointer); // 02466A2264E8 0x30 RewardPanelView             ( 00018657B590 ModelClassType ChallengeTourResultRewardPanelView ChallengeTourResultRewardPanelView ChallengeTourResultRewardPanelView Pointer )
-            value.NextButton                                = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 02466A226508 0x38 NextButton                  ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.ViewModel                                 = GetObject<ChallengeTourResultViewModel>(new IntPtr(p + 0x048), ReversePrism.DataModels.ChallengeTourResultViewModel.FromPointer); // 02466A226548 0x48 ViewModel                   ( 00018657D540 ModelClassType ChallengeTourResultViewModel ChallengeTourResultViewModel ChallengeTourResultViewModel Pointer )
-            value.ScriptController                          = GetObject<InGameResultScriptController>(new IntPtr(p + 0x050), ReversePrism.DataModels.InGameResultScriptController.FromPointer); // 02466A226568 0x50 ScriptController            ( 0001866D8C40 ModelClassType InGameResultScriptController InGameResultScriptController InGameResultScriptController Pointer )
+            value.StageTitleText                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x20 StageTitleText              ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.FunPanelView                              = GetObject<ChallengeTourResultFunPanelView>(new IntPtr(p + 0x028), ReversePrism.DataModels.ChallengeTourResultFunPanelView.FromPointer); // 0x28 FunPanelView                ( ModelClassType ChallengeTourResultFunPanelView ChallengeTourResultFunPanelView ChallengeTourResultFunPanelView Pointer )
+            value.RewardPanelView                           = GetObject<ChallengeTourResultRewardPanelView>(new IntPtr(p + 0x030), ReversePrism.DataModels.ChallengeTourResultRewardPanelView.FromPointer); // 0x30 RewardPanelView             ( ModelClassType ChallengeTourResultRewardPanelView ChallengeTourResultRewardPanelView ChallengeTourResultRewardPanelView Pointer )
+            value.NextButton                                = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 0x38 NextButton                  ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.ViewModel                                 = GetObject<ChallengeTourResultViewModel>(new IntPtr(p + 0x040), ReversePrism.DataModels.ChallengeTourResultViewModel.FromPointer); // 0x40 ViewModel                   ( ModelClassType ChallengeTourResultViewModel ChallengeTourResultViewModel ChallengeTourResultViewModel Pointer )
+            value.ScriptController                          = GetObject<InGameResultScriptController>(new IntPtr(p + 0x048), ReversePrism.DataModels.InGameResultScriptController.FromPointer); // 0x48 ScriptController            ( ModelClassType InGameResultScriptController InGameResultScriptController InGameResultScriptController Pointer )
 
             return value;
         }

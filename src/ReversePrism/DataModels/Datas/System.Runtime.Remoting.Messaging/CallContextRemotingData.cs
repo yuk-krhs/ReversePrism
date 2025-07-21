@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 LogicalCallID                            000186671910 ModelPrimitiveType string string string String
+    // 010 LogicalCallID                            ModelPrimitiveType string string string String
     public partial class CallContextRemotingData : DataModel
     {
         public string                                   LogicalCallID                           { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CallContextRemotingData() { Pointer= p0 };
 
-            value.LogicalCallID                             = GetString(new IntPtr(p + 0x010)); // 024666C5FBC8 0x10 LogicalCallID               ( 000186671910 ModelPrimitiveType string string string String )
+            value.LogicalCallID                             = GetString(new IntPtr(p + 0x010)); // 0x10 LogicalCallID               ( ModelPrimitiveType string string string String )
 
             return value;
         }

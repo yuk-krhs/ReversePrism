@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 000 dictionaries                             Dictionary`2<Type, Dictionary`2<<object>, string>> IL2CPP_TYPE_GENERICINST
+    // 000 dictionaries                             ConcurrentDictionary`2<Type, Dictionary`2<<object>, string>> IL2CPP_TYPE_GENERICINST
     public partial class OriginalEnumValueHelper : DataModel
     {
 

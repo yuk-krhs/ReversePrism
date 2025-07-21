@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 m_Data                                   IntPtr IL2CPP_TYPE_PTR
-    // 018 M_AllocatorLabel                         000186699480 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32
+    // 018 M_AllocatorLabel                         ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32
     public partial class NativeReferenceDispose : DataModel
     {
         public AllocatorHandle                          M_AllocatorLabel                        { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NativeReferenceDispose() { Pointer= p0 };
 
-            value.M_AllocatorLabel                          = (AllocatorHandle)GetInt32(new IntPtr(p + 0x018)); // 0246608B1A38 0x18 M_AllocatorLabel            ( 000186699480 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32 )
+            value.M_AllocatorLabel                          = (AllocatorHandle)GetInt32(new IntPtr(p + 0x018)); // 0x18 M_AllocatorLabel            ( ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32 )
 
             return value;
         }

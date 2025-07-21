@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 RealCurrency                             Nullable`1<RealCurrency> IL2CPP_TYPE_GENERICINST
-    // 028 VirtualCurrencies                        000185D1B9A8 ModelEnumListType List`1<VirtualCurrency> List`1<VirtualCurrency> List<VirtualCurrency> Pointer
-    // 030 Items                                    000185CEE198 ModelEnumListType List`1<Item> List`1<Item> List<Item> Pointer
+    // 028 VirtualCurrencies                        ModelEnumListType List`1<VirtualCurrency> List`1<VirtualCurrency> List<VirtualCurrency> Pointer
+    // 030 Items                                    ModelEnumListType List`1<Item> List`1<Item> List<Item> Pointer
     public partial class Product : DataModel
     {
         public List<VirtualCurrency>?                   VirtualCurrencies                       { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Product() { Pointer= p0 };
 
-            value.VirtualCurrencies                         = GetEnumList<VirtualCurrency>(new IntPtr(p + 0x028)); // 02466B8353E0 0x28 VirtualCurrencies           ( 000185D1B9A8 ModelEnumListType List`1<VirtualCurrency> List`1<VirtualCurrency> List<VirtualCurrency> Pointer )
-            value.Items                                     = GetEnumList<Item>(new IntPtr(p + 0x030)); // 02466B835400 0x30 Items                       ( 000185CEE198 ModelEnumListType List`1<Item> List`1<Item> List<Item> Pointer )
+            value.VirtualCurrencies                         = GetEnumList<VirtualCurrency>(new IntPtr(p + 0x028)); // 0x28 VirtualCurrencies           ( ModelEnumListType List`1<VirtualCurrency> List`1<VirtualCurrency> List<VirtualCurrency> Pointer )
+            value.Items                                     = GetEnumList<Item>(new IntPtr(p + 0x030)); // 0x30 Items                       ( ModelEnumListType List`1<Item> List`1<Item> List<Item> Pointer )
 
             return value;
         }

@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ForegroundQueue                          000186719A00 ModelClassType ParallelDownloadHandlerQueue ParallelDownloadHandlerQueue ParallelDownloadHandlerQueue Pointer
-    // 018 BackgroundQueue                          000186727A70 ModelClassType SequentialDownloadHandlerQueue SequentialDownloadHandlerQueue SequentialDownloadHandlerQueue Pointer
-    // 020 Terminated                               000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 ForegroundQueue                          ModelClassType ParallelDownloadHandlerQueue ParallelDownloadHandlerQueue ParallelDownloadHandlerQueue Pointer
+    // 018 BackgroundQueue                          ModelClassType SequentialDownloadHandlerQueue SequentialDownloadHandlerQueue SequentialDownloadHandlerQueue Pointer
+    // 020 Terminated                               ModelPrimitiveType bool bool bool Bool
     public partial class HybridDownloadHandlerQueue : DataModel
     {
         public ParallelDownloadHandlerQueue?            ForegroundQueue                         { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HybridDownloadHandlerQueue() { Pointer= p0 };
 
-            value.ForegroundQueue                           = GetObject<ParallelDownloadHandlerQueue>(new IntPtr(p + 0x010), ReversePrism.DataModels.ParallelDownloadHandlerQueue.FromPointer); // 0245A3E2F610 0x10 ForegroundQueue             ( 000186719A00 ModelClassType ParallelDownloadHandlerQueue ParallelDownloadHandlerQueue ParallelDownloadHandlerQueue Pointer )
-            value.BackgroundQueue                           = GetObject<SequentialDownloadHandlerQueue>(new IntPtr(p + 0x018), ReversePrism.DataModels.SequentialDownloadHandlerQueue.FromPointer); // 0245A3E2F630 0x18 BackgroundQueue             ( 000186727A70 ModelClassType SequentialDownloadHandlerQueue SequentialDownloadHandlerQueue SequentialDownloadHandlerQueue Pointer )
-            value.Terminated                                = GetBool(new IntPtr(p + 0x020)); // 0245A3E2F650 0x20 Terminated                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ForegroundQueue                           = GetObject<ParallelDownloadHandlerQueue>(new IntPtr(p + 0x010), ReversePrism.DataModels.ParallelDownloadHandlerQueue.FromPointer); // 0x10 ForegroundQueue             ( ModelClassType ParallelDownloadHandlerQueue ParallelDownloadHandlerQueue ParallelDownloadHandlerQueue Pointer )
+            value.BackgroundQueue                           = GetObject<SequentialDownloadHandlerQueue>(new IntPtr(p + 0x018), ReversePrism.DataModels.SequentialDownloadHandlerQueue.FromPointer); // 0x18 BackgroundQueue             ( ModelClassType SequentialDownloadHandlerQueue SequentialDownloadHandlerQueue SequentialDownloadHandlerQueue Pointer )
+            value.Terminated                                = GetBool(new IntPtr(p + 0x020)); // 0x20 Terminated                  ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

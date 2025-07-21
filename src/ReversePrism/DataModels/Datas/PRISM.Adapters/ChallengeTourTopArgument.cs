@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 IsUnitStageDesignation                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 014 SelectUnitIndex                          0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 018 SelectStageIndex                         0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 01C IsStageDetailFirstView                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 020 ViewStacks                               000185CC58D8 ModelClassListType ViewValue[] ViewValue[] List<ViewValue> Pointer
+    // 010 IsUnitStageDesignation                   ModelPrimitiveType bool bool bool Bool
+    // 014 SelectUnitIndex                          ModelPrimitiveType int int int Int32
+    // 018 SelectStageIndex                         ModelPrimitiveType int int int Int32
+    // 01C IsStageDetailFirstView                   ModelPrimitiveType bool bool bool Bool
+    // 020 ViewStacks                               ModelClassListType ViewValue[] ViewValue[] List<ViewValue> Pointer
     public partial class ChallengeTourTopArgument : DataModel
     {
         public bool                                     IsUnitStageDesignation                  { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChallengeTourTopArgument() { Pointer= p0 };
 
-            value.IsUnitStageDesignation                    = GetBool(new IntPtr(p + 0x010)); // 0246664F87D0 0x10 IsUnitStageDesignation      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SelectUnitIndex                           = GetInt32(new IntPtr(p + 0x014)); // 0246664F87F0 0x14 SelectUnitIndex             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SelectStageIndex                          = GetInt32(new IntPtr(p + 0x018)); // 0246664F8810 0x18 SelectStageIndex            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsStageDetailFirstView                    = GetBool(new IntPtr(p + 0x01C)); // 0246664F8830 0x1C IsStageDetailFirstView      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ViewStacks                                = GetObjectList<ViewValue>(new IntPtr(p + 0x020), ReversePrism.DataModels.ViewValue.FromPointer); // 0246664F8850 0x20 ViewStacks                  ( 000185CC58D8 ModelClassListType ViewValue[] ViewValue[] List<ViewValue> Pointer )
+            value.IsUnitStageDesignation                    = GetBool(new IntPtr(p + 0x010)); // 0x10 IsUnitStageDesignation      ( ModelPrimitiveType bool bool bool Bool )
+            value.SelectUnitIndex                           = GetInt32(new IntPtr(p + 0x014)); // 0x14 SelectUnitIndex             ( ModelPrimitiveType int int int Int32 )
+            value.SelectStageIndex                          = GetInt32(new IntPtr(p + 0x018)); // 0x18 SelectStageIndex            ( ModelPrimitiveType int int int Int32 )
+            value.IsStageDetailFirstView                    = GetBool(new IntPtr(p + 0x01C)); // 0x1C IsStageDetailFirstView      ( ModelPrimitiveType bool bool bool Bool )
+            value.ViewStacks                                = GetObjectList<ViewValue>(new IntPtr(p + 0x020), ReversePrism.DataModels.ViewValue.FromPointer); // 0x20 ViewStacks                  ( ModelClassListType ViewValue[] ViewValue[] List<ViewValue> Pointer )
 
             return value;
         }

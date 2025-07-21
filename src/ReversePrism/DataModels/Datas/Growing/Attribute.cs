@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 StartIndex                               0001865F36C0 ModelPrimitiveType int int int Int32
-    // 014 Length                                   0001865F36C0 ModelPrimitiveType int int int Int32
-    // 018 Text                                     0001866722E0 ModelPrimitiveType string string string String
-    // 020 Link                                     0001866722E0 ModelPrimitiveType string string string String
+    // 010 StartIndex                               ModelPrimitiveType int int int Int32
+    // 014 Length                                   ModelPrimitiveType int int int Int32
+    // 018 Text                                     ModelPrimitiveType string string string String
+    // 020 Link                                     ModelPrimitiveType string string string String
     public partial class Attribute : DataModel
     {
         public int                                      StartIndex                              { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Attribute() { Pointer= p0 };
 
-            value.StartIndex                                = GetInt32(new IntPtr(p + 0x010)); // 024664B85C10 0x10 StartIndex                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Length                                    = GetInt32(new IntPtr(p + 0x014)); // 024664B85C30 0x14 Length                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Text                                      = GetString(new IntPtr(p + 0x018)); // 024664B85C50 0x18 Text                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Link                                      = GetString(new IntPtr(p + 0x020)); // 024664B85C70 0x20 Link                        ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.StartIndex                                = GetInt32(new IntPtr(p + 0x010)); // 0x10 StartIndex                  ( ModelPrimitiveType int int int Int32 )
+            value.Length                                    = GetInt32(new IntPtr(p + 0x014)); // 0x14 Length                      ( ModelPrimitiveType int int int Int32 )
+            value.Text                                      = GetString(new IntPtr(p + 0x018)); // 0x18 Text                        ( ModelPrimitiveType string string string String )
+            value.Link                                      = GetString(new IntPtr(p + 0x020)); // 0x20 Link                        ( ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 FullTypeName                             000186671BA0 ModelPrimitiveType string string string String
-    // 018 AssemblyString                           000186671BA0 ModelPrimitiveType string string string String
-    // 020 HasTypeForwardedFrom                     000186595210 ModelPrimitiveType bool bool bool Bool
-    // 028 MemberInfos                              000185B93050 ModelClassListType MemberInfo[] MemberInfo[] List<MemberInfo> Pointer
-    // 030 MemberNames                              000185B81660 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 038 MemberTypes                              000185B82D40 ModelClassListType Type[] Type[] List<Type> Pointer
+    // 010 FullTypeName                             ModelPrimitiveType string string string String
+    // 018 AssemblyString                           ModelPrimitiveType string string string String
+    // 020 HasTypeForwardedFrom                     ModelPrimitiveType bool bool bool Bool
+    // 028 MemberInfos                              ModelClassListType MemberInfo[] MemberInfo[] List<MemberInfo> Pointer
+    // 030 MemberNames                              ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 038 MemberTypes                              ModelClassListType Type[] Type[] List<Type> Pointer
     public partial class SerObjectInfoCache : DataModel
     {
         public string                                   FullTypeName                            { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SerObjectInfoCache() { Pointer= p0 };
 
-            value.FullTypeName                              = GetString(new IntPtr(p + 0x010)); // 024666CC43F0 0x10 FullTypeName                ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.AssemblyString                            = GetString(new IntPtr(p + 0x018)); // 024666CC4410 0x18 AssemblyString              ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.HasTypeForwardedFrom                      = GetBool(new IntPtr(p + 0x020)); // 024666CC4430 0x20 HasTypeForwardedFrom        ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.MemberInfos                               = GetObjectList<MemberInfo>(new IntPtr(p + 0x028), ReversePrism.DataModels.MemberInfo.FromPointer); // 024666CC4450 0x28 MemberInfos                 ( 000185B93050 ModelClassListType MemberInfo[] MemberInfo[] List<MemberInfo> Pointer )
-            value.MemberNames                               = GetStringList(new IntPtr(p + 0x030)); // 024666CC4470 0x30 MemberNames                 ( 000185B81660 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.MemberTypes                               = GetObjectList<Type>(new IntPtr(p + 0x038), ReversePrism.DataModels.Type.FromPointer); // 024666CC4490 0x38 MemberTypes                 ( 000185B82D40 ModelClassListType Type[] Type[] List<Type> Pointer )
+            value.FullTypeName                              = GetString(new IntPtr(p + 0x010)); // 0x10 FullTypeName                ( ModelPrimitiveType string string string String )
+            value.AssemblyString                            = GetString(new IntPtr(p + 0x018)); // 0x18 AssemblyString              ( ModelPrimitiveType string string string String )
+            value.HasTypeForwardedFrom                      = GetBool(new IntPtr(p + 0x020)); // 0x20 HasTypeForwardedFrom        ( ModelPrimitiveType bool bool bool Bool )
+            value.MemberInfos                               = GetObjectList<MemberInfo>(new IntPtr(p + 0x028), ReversePrism.DataModels.MemberInfo.FromPointer); // 0x28 MemberInfos                 ( ModelClassListType MemberInfo[] MemberInfo[] List<MemberInfo> Pointer )
+            value.MemberNames                               = GetStringList(new IntPtr(p + 0x030)); // 0x30 MemberNames                 ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.MemberTypes                               = GetObjectList<Type>(new IntPtr(p + 0x038), ReversePrism.DataModels.Type.FromPointer); // 0x38 MemberTypes                 ( ModelClassListType Type[] Type[] List<Type> Pointer )
 
             return value;
         }

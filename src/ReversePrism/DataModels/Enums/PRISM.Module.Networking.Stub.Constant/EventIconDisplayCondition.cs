@@ -14,6 +14,7 @@ namespace ReversePrism.DataModels
         WithinDisplayPeriod,
         FreeGasha,
         ShopPerUserPeriodItem,
+        NormalLimitedPeriodJewel,
         Num,
     }
 }

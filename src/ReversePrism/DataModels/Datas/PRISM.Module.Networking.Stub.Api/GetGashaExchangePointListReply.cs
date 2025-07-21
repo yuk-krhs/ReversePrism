@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 PointListFieldNumber                     int IL2CPP_TYPE_I4
     // 008 _repeated_pointList_codec                FieldCodec`1<GashaExchangePointStatus> IL2CPP_TYPE_GENERICINST
-    // 018 PointList                                000185CDB1C8 ModelClassListType RepeatedField`1<GashaExchangePointStatus> RepeatedField`1<GashaExchangePointStatus> List<GashaExchangePointStatus> Pointer
+    // 018 PointList                                ModelClassListType RepeatedField`1<GashaExchangePointStatus> RepeatedField`1<GashaExchangePointStatus> List<GashaExchangePointStatus> Pointer
     public partial class GetGashaExchangePointListReply : DataModel
     {
         public List<GashaExchangePointStatus>?          PointList                               { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetGashaExchangePointListReply() { Pointer= p0 };
 
-            value.PointList                                 = GetObjectList<GashaExchangePointStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.GashaExchangePointStatus.FromPointer); // 02466199CDD0 0x18 PointList                   ( 000185CDB1C8 ModelClassListType RepeatedField`1<GashaExchangePointStatus> RepeatedField`1<GashaExchangePointStatus> List<GashaExchangePointStatus> Pointer )
+            value.PointList                                 = GetObjectList<GashaExchangePointStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.GashaExchangePointStatus.FromPointer); // 0x18 PointList                   ( ModelClassListType RepeatedField`1<GashaExchangePointStatus> RepeatedField`1<GashaExchangePointStatus> List<GashaExchangePointStatus> Pointer )
 
             return value;
         }

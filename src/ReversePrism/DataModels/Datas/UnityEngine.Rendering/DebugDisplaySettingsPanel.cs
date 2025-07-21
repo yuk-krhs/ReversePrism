@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Widgets                                000185D21C98 ModelClassListType List`1<Widget> List`1<Widget> List<Widget> Pointer
-    // 018 M_DisplayInfo                            0001866DBA60 ModelClassType DisplayInfoAttribute DisplayInfoAttribute DisplayInfoAttribute Pointer
+    // 010 M_Widgets                                ModelClassListType List`1<Widget> List`1<Widget> List<Widget> Pointer
+    // 018 M_DisplayInfo                            ModelClassType DisplayInfoAttribute DisplayInfoAttribute DisplayInfoAttribute Pointer
     public partial class DebugDisplaySettingsPanel : DataModel
     {
         public List<Widget>?                            M_Widgets                               { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DebugDisplaySettingsPanel() { Pointer= p0 };
 
-            value.M_Widgets                                 = GetObjectList<Widget>(new IntPtr(p + 0x010), ReversePrism.DataModels.Widget.FromPointer); // 0246691A5A18 0x10 M_Widgets                   ( 000185D21C98 ModelClassListType List`1<Widget> List`1<Widget> List<Widget> Pointer )
-            value.M_DisplayInfo                             = GetObject<DisplayInfoAttribute>(new IntPtr(p + 0x018), ReversePrism.DataModels.DisplayInfoAttribute.FromPointer); // 0246691A5A38 0x18 M_DisplayInfo               ( 0001866DBA60 ModelClassType DisplayInfoAttribute DisplayInfoAttribute DisplayInfoAttribute Pointer )
+            value.M_Widgets                                 = GetObjectList<Widget>(new IntPtr(p + 0x010), ReversePrism.DataModels.Widget.FromPointer); // 0x10 M_Widgets                   ( ModelClassListType List`1<Widget> List`1<Widget> List<Widget> Pointer )
+            value.M_DisplayInfo                             = GetObject<DisplayInfoAttribute>(new IntPtr(p + 0x018), ReversePrism.DataModels.DisplayInfoAttribute.FromPointer); // 0x18 M_DisplayInfo               ( ModelClassType DisplayInfoAttribute DisplayInfoAttribute DisplayInfoAttribute Pointer )
 
             return value;
         }

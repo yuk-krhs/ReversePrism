@@ -8,10 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 048 SelectedUnitEditTabType                  00018655F330 ModelEnumType LiveMVUnitConfirmationUnitEditTabType LiveMVUnitConfirmationUnitEditTabType LiveMVUnitConfirmationUnitEditTabType Int32
-    // 04C BackgroundMode                           00018653FB60 ModelEnumType LiveBackgroundMode LiveBackgroundMode LiveBackgroundMode Int32
+    // 050 ForceLDRMusicIds                         ModelPrimitiveListType int[] int[] List<int> Pointer
+    // 058 SelectedUnitEditTabType                  ModelEnumType LiveMVUnitConfirmationUnitEditTabType LiveMVUnitConfirmationUnitEditTabType LiveMVUnitConfirmationUnitEditTabType Int32
+    // 05C BackgroundMode                           ModelEnumType LiveBackgroundMode LiveBackgroundMode LiveBackgroundMode Int32
+    // 060 <ForceLDRMusicIds>k__BackingField        HashSet`1<int> IL2CPP_TYPE_GENERICINST
     public partial class LiveMVUnitConfirmationSaveData : DataModel
     {
+        public List<int>?                               ForceLDRMusicIds                        { get; set; }
         public LiveMVUnitConfirmationUnitEditTabType    SelectedUnitEditTabType                 { get; set; }
         public LiveBackgroundMode                       BackgroundMode                          { get; set; }
 
@@ -23,8 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveMVUnitConfirmationSaveData() { Pointer= p0 };
 
-            value.SelectedUnitEditTabType                   = (LiveMVUnitConfirmationUnitEditTabType)GetInt32(new IntPtr(p + 0x048)); // 0245A3A7D2E8 0x48 SelectedUnitEditTabType     ( 00018655F330 ModelEnumType LiveMVUnitConfirmationUnitEditTabType LiveMVUnitConfirmationUnitEditTabType LiveMVUnitConfirmationUnitEditTabType Int32 )
-            value.BackgroundMode                            = (LiveBackgroundMode)GetInt32(new IntPtr(p + 0x04C)); // 0245A3A7D308 0x4C BackgroundMode              ( 00018653FB60 ModelEnumType LiveBackgroundMode LiveBackgroundMode LiveBackgroundMode Int32 )
+            value.ForceLDRMusicIds                          = GetInt32List(new IntPtr(p + 0x050)); // 0x50 ForceLDRMusicIds            ( ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.SelectedUnitEditTabType                   = (LiveMVUnitConfirmationUnitEditTabType)GetInt32(new IntPtr(p + 0x058)); // 0x58 SelectedUnitEditTabType     ( ModelEnumType LiveMVUnitConfirmationUnitEditTabType LiveMVUnitConfirmationUnitEditTabType LiveMVUnitConfirmationUnitEditTabType Int32 )
+            value.BackgroundMode                            = (LiveBackgroundMode)GetInt32(new IntPtr(p + 0x05C)); // 0x5C BackgroundMode              ( ModelEnumType LiveBackgroundMode LiveBackgroundMode LiveBackgroundMode Int32 )
 
             return value;
         }

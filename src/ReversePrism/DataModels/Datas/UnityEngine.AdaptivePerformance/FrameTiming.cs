@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CurrentFrameTime                         0001866656B0 ModelPrimitiveType float float float Single
-    // 014 AverageFrameTime                         0001866656B0 ModelPrimitiveType float float float Single
-    // 018 CurrentGpuFrameTime                      0001866656B0 ModelPrimitiveType float float float Single
-    // 01C AverageGpuFrameTime                      0001866656B0 ModelPrimitiveType float float float Single
-    // 020 CurrentCpuFrameTime                      0001866656B0 ModelPrimitiveType float float float Single
-    // 024 AverageCpuFrameTime                      0001866656B0 ModelPrimitiveType float float float Single
+    // 010 CurrentFrameTime                         ModelPrimitiveType float float float Single
+    // 014 AverageFrameTime                         ModelPrimitiveType float float float Single
+    // 018 CurrentGpuFrameTime                      ModelPrimitiveType float float float Single
+    // 01C AverageGpuFrameTime                      ModelPrimitiveType float float float Single
+    // 020 CurrentCpuFrameTime                      ModelPrimitiveType float float float Single
+    // 024 AverageCpuFrameTime                      ModelPrimitiveType float float float Single
     public partial class FrameTiming : DataModel
     {
         public float                                    CurrentFrameTime                        { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FrameTiming() { Pointer= p0 };
 
-            value.CurrentFrameTime                          = GetSingle(new IntPtr(p + 0x010)); // 02466090A488 0x10 CurrentFrameTime            ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.AverageFrameTime                          = GetSingle(new IntPtr(p + 0x014)); // 02466090A4A8 0x14 AverageFrameTime            ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.CurrentGpuFrameTime                       = GetSingle(new IntPtr(p + 0x018)); // 02466090A4C8 0x18 CurrentGpuFrameTime         ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.AverageGpuFrameTime                       = GetSingle(new IntPtr(p + 0x01C)); // 02466090A4E8 0x1C AverageGpuFrameTime         ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.CurrentCpuFrameTime                       = GetSingle(new IntPtr(p + 0x020)); // 02466090A508 0x20 CurrentCpuFrameTime         ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.AverageCpuFrameTime                       = GetSingle(new IntPtr(p + 0x024)); // 02466090A528 0x24 AverageCpuFrameTime         ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.CurrentFrameTime                          = GetSingle(new IntPtr(p + 0x010)); // 0x10 CurrentFrameTime            ( ModelPrimitiveType float float float Single )
+            value.AverageFrameTime                          = GetSingle(new IntPtr(p + 0x014)); // 0x14 AverageFrameTime            ( ModelPrimitiveType float float float Single )
+            value.CurrentGpuFrameTime                       = GetSingle(new IntPtr(p + 0x018)); // 0x18 CurrentGpuFrameTime         ( ModelPrimitiveType float float float Single )
+            value.AverageGpuFrameTime                       = GetSingle(new IntPtr(p + 0x01C)); // 0x1C AverageGpuFrameTime         ( ModelPrimitiveType float float float Single )
+            value.CurrentCpuFrameTime                       = GetSingle(new IntPtr(p + 0x020)); // 0x20 CurrentCpuFrameTime         ( ModelPrimitiveType float float float Single )
+            value.AverageCpuFrameTime                       = GetSingle(new IntPtr(p + 0x024)); // 0x24 AverageCpuFrameTime         ( ModelPrimitiveType float float float Single )
 
             return value;
         }

@@ -9,16 +9,16 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 asyncCompletionWrapperCallback           AsyncCallback IL2CPP_TYPE_CLASS
-    // 010 Callback                                 0001866EDF20 ModelClassType AsyncCallback AsyncCallback AsyncCallback Pointer
-    // 018 CompletedSynchronously                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 019 EndCalled                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 020 Exception                                0001865CA820 ModelClassType Exception Exception Exception Pointer
-    // 028 IsCompleted                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 030 NextAsyncCompletion                      0001866CE8A0 ModelClassType AsyncCompletion AsyncCompletion AsyncCompletion Pointer
+    // 010 Callback                                 ModelClassType AsyncCallback AsyncCallback AsyncCallback Pointer
+    // 018 CompletedSynchronously                   ModelPrimitiveType bool bool bool Bool
+    // 019 EndCalled                                ModelPrimitiveType bool bool bool Bool
+    // 020 Exception                                ModelClassType Exception Exception Exception Pointer
+    // 028 IsCompleted                              ModelPrimitiveType bool bool bool Bool
+    // 030 NextAsyncCompletion                      ModelClassType AsyncCompletion AsyncCompletion AsyncCompletion Pointer
     // 038 state                                    <object> IL2CPP_TYPE_OBJECT
-    // 040 BeforePrepareAsyncCompletionAction       0001866792B0 ModelClassType Action Action Action Pointer
+    // 040 BeforePrepareAsyncCompletionAction       ModelClassType Action Action Action Pointer
     // 048 checkSyncValidationFunc                  Func`2<IAsyncResult, bool> IL2CPP_TYPE_GENERICINST
-    // 050 ManualResetEvent                         00018660A400 ModelClassType ManualResetEvent ManualResetEvent ManualResetEvent Pointer
+    // 050 ManualResetEvent                         ModelClassType ManualResetEvent ManualResetEvent ManualResetEvent Pointer
     // 058 thisLock                                 <object> IL2CPP_TYPE_OBJECT
     // 060 <OnCompleting>k__BackingField            Action`2<AsyncResult, Exception> IL2CPP_TYPE_GENERICINST
     // 068 <VirtualCallback>k__BackingField         Action`2<AsyncCallback, IAsyncResult> IL2CPP_TYPE_GENERICINST
@@ -41,14 +41,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AsyncResult() { Pointer= p0 };
 
-            value.Callback                                  = GetObject<AsyncCallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.AsyncCallback.FromPointer); // 024667C67BA0 0x10 Callback                    ( 0001866EDF20 ModelClassType AsyncCallback AsyncCallback AsyncCallback Pointer )
-            value.CompletedSynchronously                    = GetBool(new IntPtr(p + 0x018)); // 024667C67BC0 0x18 CompletedSynchronously      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.EndCalled                                 = GetBool(new IntPtr(p + 0x019)); // 024667C67BE0 0x19 EndCalled                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Exception                                 = GetObject<Exception>(new IntPtr(p + 0x020), ReversePrism.DataModels.Exception.FromPointer); // 024667C67C00 0x20 Exception                   ( 0001865CA820 ModelClassType Exception Exception Exception Pointer )
-            value.IsCompleted                               = GetBool(new IntPtr(p + 0x028)); // 024667C67C20 0x28 IsCompleted                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.NextAsyncCompletion                       = GetObject<AsyncCompletion>(new IntPtr(p + 0x030), ReversePrism.DataModels.AsyncCompletion.FromPointer); // 024667C67C40 0x30 NextAsyncCompletion         ( 0001866CE8A0 ModelClassType AsyncCompletion AsyncCompletion AsyncCompletion Pointer )
-            value.BeforePrepareAsyncCompletionAction        = GetObject<Action>(new IntPtr(p + 0x040), ReversePrism.DataModels.Action.FromPointer); // 024667C67C80 0x40 BeforePrepareAsyncCompletionAction ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.ManualResetEvent                          = GetObject<ManualResetEvent>(new IntPtr(p + 0x050), ReversePrism.DataModels.ManualResetEvent.FromPointer); // 024667C67CC0 0x50 ManualResetEvent            ( 00018660A400 ModelClassType ManualResetEvent ManualResetEvent ManualResetEvent Pointer )
+            value.Callback                                  = GetObject<AsyncCallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.AsyncCallback.FromPointer); // 0x10 Callback                    ( ModelClassType AsyncCallback AsyncCallback AsyncCallback Pointer )
+            value.CompletedSynchronously                    = GetBool(new IntPtr(p + 0x018)); // 0x18 CompletedSynchronously      ( ModelPrimitiveType bool bool bool Bool )
+            value.EndCalled                                 = GetBool(new IntPtr(p + 0x019)); // 0x19 EndCalled                   ( ModelPrimitiveType bool bool bool Bool )
+            value.Exception                                 = GetObject<Exception>(new IntPtr(p + 0x020), ReversePrism.DataModels.Exception.FromPointer); // 0x20 Exception                   ( ModelClassType Exception Exception Exception Pointer )
+            value.IsCompleted                               = GetBool(new IntPtr(p + 0x028)); // 0x28 IsCompleted                 ( ModelPrimitiveType bool bool bool Bool )
+            value.NextAsyncCompletion                       = GetObject<AsyncCompletion>(new IntPtr(p + 0x030), ReversePrism.DataModels.AsyncCompletion.FromPointer); // 0x30 NextAsyncCompletion         ( ModelClassType AsyncCompletion AsyncCompletion AsyncCompletion Pointer )
+            value.BeforePrepareAsyncCompletionAction        = GetObject<Action>(new IntPtr(p + 0x040), ReversePrism.DataModels.Action.FromPointer); // 0x40 BeforePrepareAsyncCompletionAction ( ModelClassType Action Action Action Pointer )
+            value.ManualResetEvent                          = GetObject<ManualResetEvent>(new IntPtr(p + 0x050), ReversePrism.DataModels.ManualResetEvent.FromPointer); // 0x50 ManualResetEvent            ( ModelClassType ManualResetEvent ManualResetEvent ManualResetEvent Pointer )
 
             return value;
         }

@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 U0                                       0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 014 U1                                       0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 018 U2                                       0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 010 Ulo64LE                                  00018669B890 ModelPrimitiveType ulong ulong ulong UInt64
-    // 014 Uhigh64LE                                00018669B890 ModelPrimitiveType ulong ulong ulong UInt64
+    // 010 U0                                       ModelPrimitiveType uint uint uint UInt32
+    // 014 U1                                       ModelPrimitiveType uint uint uint UInt32
+    // 018 U2                                       ModelPrimitiveType uint uint uint UInt32
+    // 010 Ulo64LE                                  ModelPrimitiveType ulong ulong ulong UInt64
+    // 014 Uhigh64LE                                ModelPrimitiveType ulong ulong ulong UInt64
     public partial class Buf12 : DataModel
     {
         public uint                                     U0                                      { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Buf12() { Pointer= p0 };
 
-            value.U0                                        = GetUInt32(new IntPtr(p + 0x010)); // 024666B21B70 0x10 U0                          ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.U1                                        = GetUInt32(new IntPtr(p + 0x014)); // 024666B21B90 0x14 U1                          ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.U2                                        = GetUInt32(new IntPtr(p + 0x018)); // 024666B21BB0 0x18 U2                          ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.Ulo64LE                                   = GetUInt64(new IntPtr(p + 0x010)); // 024666B21BD0 0x10 Ulo64LE                     ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.Uhigh64LE                                 = GetUInt64(new IntPtr(p + 0x014)); // 024666B21BF0 0x14 Uhigh64LE                   ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.U0                                        = GetUInt32(new IntPtr(p + 0x010)); // 0x10 U0                          ( ModelPrimitiveType uint uint uint UInt32 )
+            value.U1                                        = GetUInt32(new IntPtr(p + 0x014)); // 0x14 U1                          ( ModelPrimitiveType uint uint uint UInt32 )
+            value.U2                                        = GetUInt32(new IntPtr(p + 0x018)); // 0x18 U2                          ( ModelPrimitiveType uint uint uint UInt32 )
+            value.Ulo64LE                                   = GetUInt64(new IntPtr(p + 0x010)); // 0x10 Ulo64LE                     ( ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.Uhigh64LE                                 = GetUInt64(new IntPtr(p + 0x014)); // 0x14 Uhigh64LE                   ( ModelPrimitiveType ulong ulong ulong UInt64 )
 
             return value;
         }

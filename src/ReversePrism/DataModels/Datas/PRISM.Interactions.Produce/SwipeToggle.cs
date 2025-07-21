@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 MinSwipeDistance                         0001866656B0 ModelPrimitiveType float float float Single
-    // 024 StartTouchPosition                       0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
-    // 02C EndTouchPosition                         0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 020 MinSwipeDistance                         ModelPrimitiveType float float float Single
+    // 024 StartTouchPosition                       ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 02C EndTouchPosition                         ModelEnumType Vector2 Vector2 Vector2 Int32
     // 038 onSwipeSubject                           Subject`1<bool> IL2CPP_TYPE_GENERICINST
     public partial class SwipeToggle : DataModel
     {
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SwipeToggle() { Pointer= p0 };
 
-            value.MinSwipeDistance                          = GetSingle(new IntPtr(p + 0x020)); // 02466A1A3E08 0x20 MinSwipeDistance            ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.StartTouchPosition                        = (Vector2)GetInt32(new IntPtr(p + 0x024)); // 02466A1A3E28 0x24 StartTouchPosition          ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.EndTouchPosition                          = (Vector2)GetInt32(new IntPtr(p + 0x02C)); // 02466A1A3E48 0x2C EndTouchPosition            ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.MinSwipeDistance                          = GetSingle(new IntPtr(p + 0x020)); // 0x20 MinSwipeDistance            ( ModelPrimitiveType float float float Single )
+            value.StartTouchPosition                        = (Vector2)GetInt32(new IntPtr(p + 0x024)); // 0x24 StartTouchPosition          ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.EndTouchPosition                          = (Vector2)GetInt32(new IntPtr(p + 0x02C)); // 0x2C EndTouchPosition            ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
 
             return value;
         }

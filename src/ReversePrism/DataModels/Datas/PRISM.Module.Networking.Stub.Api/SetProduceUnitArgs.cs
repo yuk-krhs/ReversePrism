@@ -11,17 +11,17 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<SetProduceUnitArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstUnitIdFieldNumber                     int IL2CPP_TYPE_I4
-    // 018 MstUnitId                                0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MstUnitId                                ModelPrimitiveType int int int Int32
     // 000 UnitNumberFieldNumber                    int IL2CPP_TYPE_I4
-    // 01C UnitNumber                               0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 01C UnitNumber                               ModelPrimitiveType int int int Int32
     // 000 NameFieldNumber                          int IL2CPP_TYPE_I4
-    // 020 Name                                     000186671910 ModelPrimitiveType string string string String
+    // 020 Name                                     ModelPrimitiveType string string string String
     // 000 SetProduceUnitIdolListFieldNumber        int IL2CPP_TYPE_I4
     // 008 _repeated_setProduceUnitIdolList_codec   FieldCodec`1<SetProduceUnitIdolStatus> IL2CPP_TYPE_GENERICINST
-    // 028 SetProduceUnitIdolList                   000185CF0D08 ModelClassListType RepeatedField`1<SetProduceUnitIdolStatus> RepeatedField`1<SetProduceUnitIdolStatus> List<SetProduceUnitIdolStatus> Pointer
+    // 028 SetProduceUnitIdolList                   ModelClassListType RepeatedField`1<SetProduceUnitIdolStatus> RepeatedField`1<SetProduceUnitIdolStatus> List<SetProduceUnitIdolStatus> Pointer
     // 000 MstSupportCharacterIdListFieldNumber     int IL2CPP_TYPE_I4
     // 010 _repeated_mstSupportCharacterIdList_codec FieldCodec`1<int> IL2CPP_TYPE_GENERICINST
-    // 030 MstSupportCharacterIdList                000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer
+    // 030 MstSupportCharacterIdList                ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer
     public partial class SetProduceUnitArgs : DataModel
     {
         public int                                      MstUnitId                               { get; set; }
@@ -38,11 +38,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SetProduceUnitArgs() { Pointer= p0 };
 
-            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x018)); // 024662578730 0x18 MstUnitId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UnitNumber                                = GetInt32(new IntPtr(p + 0x01C)); // 024662578770 0x1C UnitNumber                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 0246625787B0 0x20 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.SetProduceUnitIdolList                    = GetObjectList<SetProduceUnitIdolStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.SetProduceUnitIdolStatus.FromPointer); // 024662578810 0x28 SetProduceUnitIdolList      ( 000185CF0D08 ModelClassListType RepeatedField`1<SetProduceUnitIdolStatus> RepeatedField`1<SetProduceUnitIdolStatus> List<SetProduceUnitIdolStatus> Pointer )
-            value.MstSupportCharacterIdList                 = GetInt32List(new IntPtr(p + 0x030)); // 024662578870 0x30 MstSupportCharacterIdList   ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstUnitId                   ( ModelPrimitiveType int int int Int32 )
+            value.UnitNumber                                = GetInt32(new IntPtr(p + 0x01C)); // 0x1C UnitNumber                  ( ModelPrimitiveType int int int Int32 )
+            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 0x20 Name                        ( ModelPrimitiveType string string string String )
+            value.SetProduceUnitIdolList                    = GetObjectList<SetProduceUnitIdolStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.SetProduceUnitIdolStatus.FromPointer); // 0x28 SetProduceUnitIdolList      ( ModelClassListType RepeatedField`1<SetProduceUnitIdolStatus> RepeatedField`1<SetProduceUnitIdolStatus> List<SetProduceUnitIdolStatus> Pointer )
+            value.MstSupportCharacterIdList                 = GetInt32List(new IntPtr(p + 0x030)); // 0x30 MstSupportCharacterIdList   ( ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Offset                                   0001865F3220 ModelPrimitiveType int int int Int32
+    // 010 Offset                                   ModelPrimitiveType int int int Int32
     public partial class OffsetInstruction : DataModel
     {
         public int                                      Offset                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new OffsetInstruction() { Pointer= p0 };
 
-            value.Offset                                    = GetInt32(new IntPtr(p + 0x010)); // 024669FF8810 0x10 Offset                      ( 0001865F3220 ModelPrimitiveType int int int Int32 )
+            value.Offset                                    = GetInt32(new IntPtr(p + 0x010)); // 0x10 Offset                      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

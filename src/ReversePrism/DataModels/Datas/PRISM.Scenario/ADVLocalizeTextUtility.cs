@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 000 PrologueStoryNo                          long IL2CPP_TYPE_I8
-    // 000 EpilogueStoryNo                          long IL2CPP_TYPE_I8
+    // 000 PrologueStoryNo                          int IL2CPP_TYPE_I4
+    // 000 EpilogueStoryNo                          int IL2CPP_TYPE_I4
     public partial class ADVLocalizeTextUtility : DataModel
     {
 

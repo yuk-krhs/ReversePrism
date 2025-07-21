@@ -8,14 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 M_Logging                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 019 M_AutomaticPerformanceModeEnabled        000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 01A M_EnableBoostOnStartup                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 01C M_StatsLoggingFrequencyInFrames          0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 020 M_IndexerSettings                        000186684310 ModelClassType AdaptivePerformanceIndexerSettings AdaptivePerformanceIndexerSettings AdaptivePerformanceIndexerSettings Pointer
-    // 028 M_ScalerSettings                         000186687550 ModelClassType AdaptivePerformanceScalerSettings AdaptivePerformanceScalerSettings AdaptivePerformanceScalerSettings Pointer
-    // 030 M_scalerProfileList                      000185B6F670 ModelClassListType AdaptivePerformanceScalerProfile[] AdaptivePerformanceScalerProfile[] List<AdaptivePerformanceScalerProfile> Pointer
-    // 038 M_DefaultScalerProfilerIndex             0001865F2F90 ModelPrimitiveType int int int Int32
+    // 018 M_Logging                                ModelPrimitiveType bool bool bool Bool
+    // 019 M_AutomaticPerformanceModeEnabled        ModelPrimitiveType bool bool bool Bool
+    // 01A M_EnableBoostOnStartup                   ModelPrimitiveType bool bool bool Bool
+    // 01C M_StatsLoggingFrequencyInFrames          ModelPrimitiveType int int int Int32
+    // 020 M_IndexerSettings                        ModelClassType AdaptivePerformanceIndexerSettings AdaptivePerformanceIndexerSettings AdaptivePerformanceIndexerSettings Pointer
+    // 028 M_ScalerSettings                         ModelClassType AdaptivePerformanceScalerSettings AdaptivePerformanceScalerSettings AdaptivePerformanceScalerSettings Pointer
+    // 030 M_scalerProfileList                      ModelClassListType AdaptivePerformanceScalerProfile[] AdaptivePerformanceScalerProfile[] List<AdaptivePerformanceScalerProfile> Pointer
+    // 038 M_DefaultScalerProfilerIndex             ModelPrimitiveType int int int Int32
     public partial class IAdaptivePerformanceSettings : DataModel
     {
         public bool                                     M_Logging                               { get; set; }
@@ -35,14 +35,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IAdaptivePerformanceSettings() { Pointer= p0 };
 
-            value.M_Logging                                 = GetBool(new IntPtr(p + 0x018)); // 0245A32D6180 0x18 M_Logging                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_AutomaticPerformanceModeEnabled         = GetBool(new IntPtr(p + 0x019)); // 0245A32D61A0 0x19 M_AutomaticPerformanceModeEnabled ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_EnableBoostOnStartup                    = GetBool(new IntPtr(p + 0x01A)); // 0245A32D61C0 0x1A M_EnableBoostOnStartup      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_StatsLoggingFrequencyInFrames           = GetInt32(new IntPtr(p + 0x01C)); // 0245A32D61E0 0x1C M_StatsLoggingFrequencyInFrames ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_IndexerSettings                         = GetObject<AdaptivePerformanceIndexerSettings>(new IntPtr(p + 0x020), ReversePrism.DataModels.AdaptivePerformanceIndexerSettings.FromPointer); // 0245A32D6200 0x20 M_IndexerSettings           ( 000186684310 ModelClassType AdaptivePerformanceIndexerSettings AdaptivePerformanceIndexerSettings AdaptivePerformanceIndexerSettings Pointer )
-            value.M_ScalerSettings                          = GetObject<AdaptivePerformanceScalerSettings>(new IntPtr(p + 0x028), ReversePrism.DataModels.AdaptivePerformanceScalerSettings.FromPointer); // 0245A32D6220 0x28 M_ScalerSettings            ( 000186687550 ModelClassType AdaptivePerformanceScalerSettings AdaptivePerformanceScalerSettings AdaptivePerformanceScalerSettings Pointer )
-            value.M_scalerProfileList                       = GetObjectList<AdaptivePerformanceScalerProfile>(new IntPtr(p + 0x030), ReversePrism.DataModels.AdaptivePerformanceScalerProfile.FromPointer); // 0245A32D6240 0x30 M_scalerProfileList         ( 000185B6F670 ModelClassListType AdaptivePerformanceScalerProfile[] AdaptivePerformanceScalerProfile[] List<AdaptivePerformanceScalerProfile> Pointer )
-            value.M_DefaultScalerProfilerIndex              = GetInt32(new IntPtr(p + 0x038)); // 0245A32D6260 0x38 M_DefaultScalerProfilerIndex ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.M_Logging                                 = GetBool(new IntPtr(p + 0x018)); // 0x18 M_Logging                   ( ModelPrimitiveType bool bool bool Bool )
+            value.M_AutomaticPerformanceModeEnabled         = GetBool(new IntPtr(p + 0x019)); // 0x19 M_AutomaticPerformanceModeEnabled ( ModelPrimitiveType bool bool bool Bool )
+            value.M_EnableBoostOnStartup                    = GetBool(new IntPtr(p + 0x01A)); // 0x1A M_EnableBoostOnStartup      ( ModelPrimitiveType bool bool bool Bool )
+            value.M_StatsLoggingFrequencyInFrames           = GetInt32(new IntPtr(p + 0x01C)); // 0x1C M_StatsLoggingFrequencyInFrames ( ModelPrimitiveType int int int Int32 )
+            value.M_IndexerSettings                         = GetObject<AdaptivePerformanceIndexerSettings>(new IntPtr(p + 0x020), ReversePrism.DataModels.AdaptivePerformanceIndexerSettings.FromPointer); // 0x20 M_IndexerSettings           ( ModelClassType AdaptivePerformanceIndexerSettings AdaptivePerformanceIndexerSettings AdaptivePerformanceIndexerSettings Pointer )
+            value.M_ScalerSettings                          = GetObject<AdaptivePerformanceScalerSettings>(new IntPtr(p + 0x028), ReversePrism.DataModels.AdaptivePerformanceScalerSettings.FromPointer); // 0x28 M_ScalerSettings            ( ModelClassType AdaptivePerformanceScalerSettings AdaptivePerformanceScalerSettings AdaptivePerformanceScalerSettings Pointer )
+            value.M_scalerProfileList                       = GetObjectList<AdaptivePerformanceScalerProfile>(new IntPtr(p + 0x030), ReversePrism.DataModels.AdaptivePerformanceScalerProfile.FromPointer); // 0x30 M_scalerProfileList         ( ModelClassListType AdaptivePerformanceScalerProfile[] AdaptivePerformanceScalerProfile[] List<AdaptivePerformanceScalerProfile> Pointer )
+            value.M_DefaultScalerProfilerIndex              = GetInt32(new IntPtr(p + 0x038)); // 0x38 M_DefaultScalerProfilerIndex ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

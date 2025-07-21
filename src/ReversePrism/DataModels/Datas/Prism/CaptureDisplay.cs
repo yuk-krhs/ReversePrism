@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Renderer                                 00018665F150 ModelClassType Renderer Renderer Renderer Pointer
-    // 028 KeepReserveBuffer                        000186655F80 ModelClassType RenderTexture RenderTexture RenderTexture Pointer
+    // 020 Renderer                                 ModelClassType Renderer Renderer Renderer Pointer
+    // 028 KeepReserveBuffer                        ModelClassType RenderTexture RenderTexture RenderTexture Pointer
     public partial class CaptureDisplay : DataModel
     {
         public Renderer?                                Renderer                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CaptureDisplay() { Pointer= p0 };
 
-            value.Renderer                                  = GetObject<Renderer>(new IntPtr(p + 0x020), ReversePrism.DataModels.Renderer.FromPointer); // 024664EC1110 0x20 Renderer                    ( 00018665F150 ModelClassType Renderer Renderer Renderer Pointer )
-            value.KeepReserveBuffer                         = GetObject<RenderTexture>(new IntPtr(p + 0x028), ReversePrism.DataModels.RenderTexture.FromPointer); // 024664EC1130 0x28 KeepReserveBuffer           ( 000186655F80 ModelClassType RenderTexture RenderTexture RenderTexture Pointer )
+            value.Renderer                                  = GetObject<Renderer>(new IntPtr(p + 0x020), ReversePrism.DataModels.Renderer.FromPointer); // 0x20 Renderer                    ( ModelClassType Renderer Renderer Renderer Pointer )
+            value.KeepReserveBuffer                         = GetObject<RenderTexture>(new IntPtr(p + 0x028), ReversePrism.DataModels.RenderTexture.FromPointer); // 0x28 KeepReserveBuffer           ( ModelClassType RenderTexture RenderTexture RenderTexture Pointer )
 
             return value;
         }

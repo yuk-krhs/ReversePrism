@@ -8,14 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 GashaProductItem                         000186610A30 ModelClassType GashaProductItemPresenter GashaProductItemPresenter GashaProductItemPresenter Pointer
-    // 028 TxtName                                  0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 030 Stars                                    000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
-    // 038 Raritys                                  000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
-    // 040 TxtVolue                                 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 048 ExtraProductItems                        000185B81C10 ModelClassListType GashaProductItemPresenter[] GashaProductItemPresenter[] List<GashaProductItemPresenter> Pointer
-    // 050 ExtraProductItemAmount                   000185CAE588 ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer
-    // 058 TxtPieceDetail                           0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 020 GashaProductItem                         ModelClassType GashaProductItemPresenter GashaProductItemPresenter GashaProductItemPresenter Pointer
+    // 028 TxtName                                  ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 030 Stars                                    ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
+    // 038 Raritys                                  ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
+    // 040 TxtVolue                                 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 048 ExtraProductItems                        ModelClassListType GashaProductItemPresenter[] GashaProductItemPresenter[] List<GashaProductItemPresenter> Pointer
+    // 050 ExtraProductItemAmount                   ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer
+    // 058 TxtPieceDetail                           ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     public partial class GashaHistoryDetailCell : DataModel
     {
         public GashaProductItemPresenter?               GashaProductItem                        { get; set; }
@@ -35,14 +35,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GashaHistoryDetailCell() { Pointer= p0 };
 
-            value.GashaProductItem                          = GetObject<GashaProductItemPresenter>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaProductItemPresenter.FromPointer); // 02466537AB40 0x20 GashaProductItem            ( 000186610A30 ModelClassType GashaProductItemPresenter GashaProductItemPresenter GashaProductItemPresenter Pointer )
-            value.TxtName                                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466537AB60 0x28 TxtName                     ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.Stars                                     = GetObjectList<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 02466537AB80 0x30 Stars                       ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
-            value.Raritys                                   = GetObjectList<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 02466537ABA0 0x38 Raritys                     ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
-            value.TxtVolue                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466537ABC0 0x40 TxtVolue                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ExtraProductItems                         = GetObjectList<GashaProductItemPresenter>(new IntPtr(p + 0x048), ReversePrism.DataModels.GashaProductItemPresenter.FromPointer); // 02466537ABE0 0x48 ExtraProductItems           ( 000185B81C10 ModelClassListType GashaProductItemPresenter[] GashaProductItemPresenter[] List<GashaProductItemPresenter> Pointer )
-            value.ExtraProductItemAmount                    = GetObjectList<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466537AC00 0x50 ExtraProductItemAmount      ( 000185CAE588 ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer )
-            value.TxtPieceDetail                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x058), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466537AC20 0x58 TxtPieceDetail              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.GashaProductItem                          = GetObject<GashaProductItemPresenter>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaProductItemPresenter.FromPointer); // 0x20 GashaProductItem            ( ModelClassType GashaProductItemPresenter GashaProductItemPresenter GashaProductItemPresenter Pointer )
+            value.TxtName                                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x28 TxtName                     ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Stars                                     = GetObjectList<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0x30 Stars                       ( ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.Raritys                                   = GetObjectList<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0x38 Raritys                     ( ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.TxtVolue                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x40 TxtVolue                    ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ExtraProductItems                         = GetObjectList<GashaProductItemPresenter>(new IntPtr(p + 0x048), ReversePrism.DataModels.GashaProductItemPresenter.FromPointer); // 0x48 ExtraProductItems           ( ModelClassListType GashaProductItemPresenter[] GashaProductItemPresenter[] List<GashaProductItemPresenter> Pointer )
+            value.ExtraProductItemAmount                    = GetObjectList<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x50 ExtraProductItemAmount      ( ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer )
+            value.TxtPieceDetail                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x058), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x58 TxtPieceDetail              ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

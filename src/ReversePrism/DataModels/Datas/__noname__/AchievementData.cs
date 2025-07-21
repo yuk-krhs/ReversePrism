@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ID                                       0001865F36C0 ModelPrimitiveType int int int Int32
-    // 018 Info                                     00018665E9E0 ModelClassType AchievementInfo AchievementInfo AchievementInfo Pointer
+    // 010 ID                                       ModelPrimitiveType int int int Int32
+    // 018 Info                                     ModelClassType AchievementInfo AchievementInfo AchievementInfo Pointer
     public partial class AchievementData : DataModel
     {
         public int                                      ID                                      { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AchievementData() { Pointer= p0 };
 
-            value.ID                                        = GetInt32(new IntPtr(p + 0x010)); // 02466AE6FBA0 0x10 ID                          ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Info                                      = GetObject<AchievementInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.AchievementInfo.FromPointer); // 02466AE6FBC0 0x18 Info                        ( 00018665E9E0 ModelClassType AchievementInfo AchievementInfo AchievementInfo Pointer )
+            value.ID                                        = GetInt32(new IntPtr(p + 0x010)); // 0x10 ID                          ( ModelPrimitiveType int int int Int32 )
+            value.Info                                      = GetObject<AchievementInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.AchievementInfo.FromPointer); // 0x18 Info                        ( ModelClassType AchievementInfo AchievementInfo AchievementInfo Pointer )
 
             return value;
         }

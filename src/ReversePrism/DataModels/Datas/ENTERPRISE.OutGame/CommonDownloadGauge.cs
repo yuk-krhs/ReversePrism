@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 DownloadUI                               0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 028 PercentageText                           0001866F9370 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 030 IsUIVisible                              000186595210 ModelPrimitiveType bool bool bool Bool
-    // 031 IsInternalVisible                        000186595480 ModelPrimitiveType bool bool bool Bool
+    // 020 DownloadUI                               ModelClassType GameObject GameObject GameObject Pointer
+    // 028 PercentageText                           ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 030 IsUIVisible                              ModelPrimitiveType bool bool bool Bool
+    // 031 IsInternalVisible                        ModelPrimitiveType bool bool bool Bool
     public partial class CommonDownloadGauge : DataModel
     {
         public GameObject?                              DownloadUI                              { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CommonDownloadGauge() { Pointer= p0 };
 
-            value.DownloadUI                                = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 024660A8FD60 0x20 DownloadUI                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.PercentageText                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024660A8FD80 0x28 PercentageText              ( 0001866F9370 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.IsUIVisible                               = GetBool(new IntPtr(p + 0x030)); // 024660A8FDA0 0x30 IsUIVisible                 ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.IsInternalVisible                         = GetBool(new IntPtr(p + 0x031)); // 024660A8FDC0 0x31 IsInternalVisible           ( 000186595480 ModelPrimitiveType bool bool bool Bool )
+            value.DownloadUI                                = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0x20 DownloadUI                  ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.PercentageText                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x28 PercentageText              ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.IsUIVisible                               = GetBool(new IntPtr(p + 0x030)); // 0x30 IsUIVisible                 ( ModelPrimitiveType bool bool bool Bool )
+            value.IsInternalVisible                         = GetBool(new IntPtr(p + 0x031)); // 0x31 IsInternalVisible           ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

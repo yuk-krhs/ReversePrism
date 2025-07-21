@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Adid                                     000186671910 ModelPrimitiveType string string string String
-    // 018 Message                                  000186671910 ModelPrimitiveType string string string String
-    // 020 Timestamp                                000186671910 ModelPrimitiveType string string string String
-    // 028 EventToken                               000186671910 ModelPrimitiveType string string string String
-    // 030 CallbackId                               000186671910 ModelPrimitiveType string string string String
+    // 010 Adid                                     ModelPrimitiveType string string string String
+    // 018 Message                                  ModelPrimitiveType string string string String
+    // 020 Timestamp                                ModelPrimitiveType string string string String
+    // 028 EventToken                               ModelPrimitiveType string string string String
+    // 030 CallbackId                               ModelPrimitiveType string string string String
     // 038 <JsonResponse>k__BackingField            Dictionary`2<string, <object>> IL2CPP_TYPE_GENERICINST
     public partial class AdjustEventSuccess : DataModel
     {
@@ -30,11 +30,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AdjustEventSuccess() { Pointer= p0 };
 
-            value.Adid                                      = GetString(new IntPtr(p + 0x010)); // 024664C8EBF0 0x10 Adid                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Message                                   = GetString(new IntPtr(p + 0x018)); // 024664C8EC10 0x18 Message                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.Timestamp                                 = GetString(new IntPtr(p + 0x020)); // 024664C8EC30 0x20 Timestamp                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.EventToken                                = GetString(new IntPtr(p + 0x028)); // 024664C8EC50 0x28 EventToken                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.CallbackId                                = GetString(new IntPtr(p + 0x030)); // 024664C8EC70 0x30 CallbackId                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.Adid                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Adid                        ( ModelPrimitiveType string string string String )
+            value.Message                                   = GetString(new IntPtr(p + 0x018)); // 0x18 Message                     ( ModelPrimitiveType string string string String )
+            value.Timestamp                                 = GetString(new IntPtr(p + 0x020)); // 0x20 Timestamp                   ( ModelPrimitiveType string string string String )
+            value.EventToken                                = GetString(new IntPtr(p + 0x028)); // 0x28 EventToken                  ( ModelPrimitiveType string string string String )
+            value.CallbackId                                = GetString(new IntPtr(p + 0x030)); // 0x30 CallbackId                  ( ModelPrimitiveType string string string String )
 
             return value;
         }

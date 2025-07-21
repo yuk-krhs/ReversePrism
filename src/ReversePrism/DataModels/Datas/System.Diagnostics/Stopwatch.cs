@@ -10,9 +10,9 @@ namespace ReversePrism.DataModels
 
     // 000 Frequency                                long IL2CPP_TYPE_I8
     // 008 IsHighResolution                         bool IL2CPP_TYPE_BOOLEAN
-    // 010 Elapsed                                  0001865F7700 ModelPrimitiveType long long long Int64
-    // 018 Started                                  0001865F7700 ModelPrimitiveType long long long Int64
-    // 020 Is_running                               000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 Elapsed                                  ModelPrimitiveType long long long Int64
+    // 018 Started                                  ModelPrimitiveType long long long Int64
+    // 020 Is_running                               ModelPrimitiveType bool bool bool Bool
     public partial class Stopwatch : DataModel
     {
         public long                                     Elapsed                                 { get; set; }
@@ -27,9 +27,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Stopwatch() { Pointer= p0 };
 
-            value.Elapsed                                   = GetInt64(new IntPtr(p + 0x010)); // 0245A3B5A190 0x10 Elapsed                     ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.Started                                   = GetInt64(new IntPtr(p + 0x018)); // 0245A3B5A1B0 0x18 Started                     ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.Is_running                                = GetBool(new IntPtr(p + 0x020)); // 0245A3B5A1D0 0x20 Is_running                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Elapsed                                   = GetInt64(new IntPtr(p + 0x010)); // 0x10 Elapsed                     ( ModelPrimitiveType long long long Int64 )
+            value.Started                                   = GetInt64(new IntPtr(p + 0x018)); // 0x18 Started                     ( ModelPrimitiveType long long long Int64 )
+            value.Is_running                                = GetBool(new IntPtr(p + 0x020)); // 0x20 Is_running                  ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

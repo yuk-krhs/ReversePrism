@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 088 Option                                   00018659F3C0 ModelClassType DesignerOptionCollection DesignerOptionCollection DesignerOptionCollection Pointer
+    // 088 Option                                   ModelClassType DesignerOptionCollection DesignerOptionCollection DesignerOptionCollection Pointer
     public partial class OptionPropertyDescriptor : DataModel
     {
         public DesignerOptionCollection?                Option                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new OptionPropertyDescriptor() { Pointer= p0 };
 
-            value.Option                                    = GetObject<DesignerOptionCollection>(new IntPtr(p + 0x088), ReversePrism.DataModels.DesignerOptionCollection.FromPointer); // 024667BA6A28 0x88 Option                      ( 00018659F3C0 ModelClassType DesignerOptionCollection DesignerOptionCollection DesignerOptionCollection Pointer )
+            value.Option                                    = GetObject<DesignerOptionCollection>(new IntPtr(p + 0x088), ReversePrism.DataModels.DesignerOptionCollection.FromPointer); // 0x88 Option                      ( ModelClassType DesignerOptionCollection DesignerOptionCollection DesignerOptionCollection Pointer )
 
             return value;
         }

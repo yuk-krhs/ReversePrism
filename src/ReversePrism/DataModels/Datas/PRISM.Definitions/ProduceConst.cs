@@ -15,6 +15,7 @@ namespace ReversePrism.DataModels
     // 000 MaxUnitNameLength                        int IL2CPP_TYPE_I4
     // 000 RestScenarioIDSuffix                     string IL2CPP_TYPE_STRING
     // 000 AdviceScenarioIDSuffix                   string IL2CPP_TYPE_STRING
+    // 000 SupportSkillPopupSizeUpCount             int IL2CPP_TYPE_I4
     public partial class ProduceConst : DataModel
     {
 

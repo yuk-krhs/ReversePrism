@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 IdolSkillIconView                        0001866BD790 ModelClassType IdolSkillIconView IdolSkillIconView IdolSkillIconView Pointer
-    // 028 VoDaViMeView                             000186532700 ModelClassType VoDaViMeWithAdditionalView VoDaViMeWithAdditionalView VoDaViMeWithAdditionalView Pointer
+    // 020 IdolSkillIconView                        ModelClassType IdolSkillIconView IdolSkillIconView IdolSkillIconView Pointer
+    // 028 VoDaViMeView                             ModelClassType VoDaViMeWithAdditionalView VoDaViMeWithAdditionalView VoDaViMeWithAdditionalView Pointer
     // 030 onSkillIconOrder                         Subject`1<int> IL2CPP_TYPE_GENERICINST
     public partial class IdolStatusSkillView : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IdolStatusSkillView() { Pointer= p0 };
 
-            value.IdolSkillIconView                         = GetObject<IdolSkillIconView>(new IntPtr(p + 0x020), ReversePrism.DataModels.IdolSkillIconView.FromPointer); // 02466A3C2180 0x20 IdolSkillIconView           ( 0001866BD790 ModelClassType IdolSkillIconView IdolSkillIconView IdolSkillIconView Pointer )
-            value.VoDaViMeView                              = GetObject<VoDaViMeWithAdditionalView>(new IntPtr(p + 0x028), ReversePrism.DataModels.VoDaViMeWithAdditionalView.FromPointer); // 02466A3C21A0 0x28 VoDaViMeView                ( 000186532700 ModelClassType VoDaViMeWithAdditionalView VoDaViMeWithAdditionalView VoDaViMeWithAdditionalView Pointer )
+            value.IdolSkillIconView                         = GetObject<IdolSkillIconView>(new IntPtr(p + 0x020), ReversePrism.DataModels.IdolSkillIconView.FromPointer); // 0x20 IdolSkillIconView           ( ModelClassType IdolSkillIconView IdolSkillIconView IdolSkillIconView Pointer )
+            value.VoDaViMeView                              = GetObject<VoDaViMeWithAdditionalView>(new IntPtr(p + 0x028), ReversePrism.DataModels.VoDaViMeWithAdditionalView.FromPointer); // 0x28 VoDaViMeView                ( ModelClassType VoDaViMeWithAdditionalView VoDaViMeWithAdditionalView VoDaViMeWithAdditionalView Pointer )
 
             return value;
         }

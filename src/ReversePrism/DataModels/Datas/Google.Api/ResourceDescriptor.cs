@@ -11,21 +11,21 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<ResourceDescriptor> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 TypeFieldNumber                          int IL2CPP_TYPE_I4
-    // 018 Type                                     000186671910 ModelPrimitiveType string string string String
+    // 018 Type                                     ModelPrimitiveType string string string String
     // 000 PatternFieldNumber                       int IL2CPP_TYPE_I4
     // 008 _repeated_pattern_codec                  FieldCodec`1<string> IL2CPP_TYPE_GENERICINST
-    // 020 Pattern                                  000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
+    // 020 Pattern                                  ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer
     // 000 NameFieldFieldNumber                     int IL2CPP_TYPE_I4
-    // 028 NameField                                000186671910 ModelPrimitiveType string string string String
+    // 028 NameField                                ModelPrimitiveType string string string String
     // 000 HistoryFieldNumber                       int IL2CPP_TYPE_I4
-    // 030 History                                  000186572690 ModelEnumType History History History Int32
+    // 030 History                                  ModelEnumType History History History Int32
     // 000 PluralFieldNumber                        int IL2CPP_TYPE_I4
-    // 038 Plural                                   000186671910 ModelPrimitiveType string string string String
+    // 038 Plural                                   ModelPrimitiveType string string string String
     // 000 SingularFieldNumber                      int IL2CPP_TYPE_I4
-    // 040 Singular                                 000186671910 ModelPrimitiveType string string string String
+    // 040 Singular                                 ModelPrimitiveType string string string String
     // 000 StyleFieldNumber                         int IL2CPP_TYPE_I4
     // 010 _repeated_style_codec                    FieldCodec`1<Style> IL2CPP_TYPE_GENERICINST
-    // 048 Style                                    000185CF9B48 ModelEnumListType RepeatedField`1<Style> RepeatedField`1<Style> List<Style> Pointer
+    // 048 Style                                    ModelEnumListType RepeatedField`1<Style> RepeatedField`1<Style> List<Style> Pointer
     public partial class ResourceDescriptor : DataModel
     {
         public string                                   Type                                    { get; set; }
@@ -44,13 +44,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ResourceDescriptor() { Pointer= p0 };
 
-            value.Type                                      = GetString(new IntPtr(p + 0x018)); // 02466A896048 0x18 Type                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Pattern                                   = GetStringList(new IntPtr(p + 0x020)); // 02466A8960A8 0x20 Pattern                     ( 000185CF3478 ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
-            value.NameField                                 = GetString(new IntPtr(p + 0x028)); // 02466A8960E8 0x28 NameField                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.History                                   = (History)GetInt32(new IntPtr(p + 0x030)); // 02466A896128 0x30 History                     ( 000186572690 ModelEnumType History History History Int32 )
-            value.Plural                                    = GetString(new IntPtr(p + 0x038)); // 02466A896168 0x38 Plural                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Singular                                  = GetString(new IntPtr(p + 0x040)); // 02466A8961A8 0x40 Singular                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.Style                                     = GetEnumList<Style>(new IntPtr(p + 0x048)); // 02466A896208 0x48 Style                       ( 000185CF9B48 ModelEnumListType RepeatedField`1<Style> RepeatedField`1<Style> List<Style> Pointer )
+            value.Type                                      = GetString(new IntPtr(p + 0x018)); // 0x18 Type                        ( ModelPrimitiveType string string string String )
+            value.Pattern                                   = GetStringList(new IntPtr(p + 0x020)); // 0x20 Pattern                     ( ModelPrimitiveListType RepeatedField`1<string> RepeatedField`1<string> List<string> Pointer )
+            value.NameField                                 = GetString(new IntPtr(p + 0x028)); // 0x28 NameField                   ( ModelPrimitiveType string string string String )
+            value.History                                   = (History)GetInt32(new IntPtr(p + 0x030)); // 0x30 History                     ( ModelEnumType History History History Int32 )
+            value.Plural                                    = GetString(new IntPtr(p + 0x038)); // 0x38 Plural                      ( ModelPrimitiveType string string string String )
+            value.Singular                                  = GetString(new IntPtr(p + 0x040)); // 0x40 Singular                    ( ModelPrimitiveType string string string String )
+            value.Style                                     = GetEnumList<Style>(new IntPtr(p + 0x048)); // 0x48 Style                       ( ModelEnumListType RepeatedField`1<Style> RepeatedField`1<Style> List<Style> Pointer )
 
             return value;
         }

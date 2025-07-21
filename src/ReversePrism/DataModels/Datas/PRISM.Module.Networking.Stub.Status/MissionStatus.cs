@@ -11,28 +11,28 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<MissionStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstMissionIdFieldNumber                  int IL2CPP_TYPE_I4
-    // 018 MstMissionId                             0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MstMissionId                             ModelPrimitiveType int int int Int32
     // 000 MstMissionProgressIdFieldNumber          int IL2CPP_TYPE_I4
-    // 01C MstMissionProgressId                     0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 01C MstMissionProgressId                     ModelPrimitiveType int int int Int32
     // 000 RequiredValueFieldNumber                 int IL2CPP_TYPE_I4
-    // 020 RequiredValue                            0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 RequiredValue                            ModelPrimitiveType int int int Int32
     // 000 CurrentValueFieldNumber                  int IL2CPP_TYPE_I4
-    // 024 CurrentValue                             0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 024 CurrentValue                             ModelPrimitiveType int int int Int32
     // 000 RewardListFieldNumber                    int IL2CPP_TYPE_I4
     // 008 _repeated_rewardList_codec               FieldCodec`1<ProductWithAmountStatus> IL2CPP_TYPE_GENERICINST
-    // 028 RewardList                               000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer
+    // 028 RewardList                               ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer
     // 000 StateFieldNumber                         int IL2CPP_TYPE_I4
-    // 030 State                                    000186629C10 ModelEnumType MissionState MissionState MissionState Int32
+    // 030 State                                    ModelEnumType MissionState MissionState MissionState Int32
     // 000 PeriodFieldNumber                        int IL2CPP_TYPE_I4
-    // 038 Period                                   000186734A00 ModelClassType PeriodStatus PeriodStatus PeriodStatus Pointer
+    // 038 Period                                   ModelClassType PeriodStatus PeriodStatus PeriodStatus Pointer
     // 000 SortIdFieldNumber                        int IL2CPP_TYPE_I4
-    // 040 SortId                                   0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 040 SortId                                   ModelPrimitiveType int int int Int32
     // 000 FilterTypeFieldNumber                    int IL2CPP_TYPE_I4
-    // 044 FilterType                               000186621470 ModelEnumType MissionFilterType MissionFilterType MissionFilterType Int32
+    // 044 FilterType                               ModelEnumType MissionFilterType MissionFilterType MissionFilterType Int32
     // 000 GaugePointFieldNumber                    int IL2CPP_TYPE_I4
-    // 048 GaugePoint                               0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 048 GaugePoint                               ModelPrimitiveType int int int Int32
     // 000 JumpFieldNumber                          int IL2CPP_TYPE_I4
-    // 050 Jump                                     000186768670 ModelClassType JumpStatus JumpStatus JumpStatus Pointer
+    // 050 Jump                                     ModelClassType JumpStatus JumpStatus JumpStatus Pointer
     public partial class MissionStatus : DataModel
     {
         public int                                      MstMissionId                            { get; set; }
@@ -55,17 +55,17 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MissionStatus() { Pointer= p0 };
 
-            value.MstMissionId                              = GetInt32(new IntPtr(p + 0x018)); // 024662266888 0x18 MstMissionId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstMissionProgressId                      = GetInt32(new IntPtr(p + 0x01C)); // 0246622668C8 0x1C MstMissionProgressId        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.RequiredValue                             = GetInt32(new IntPtr(p + 0x020)); // 024662266908 0x20 RequiredValue               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CurrentValue                              = GetInt32(new IntPtr(p + 0x024)); // 024662266948 0x24 CurrentValue                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.RewardList                                = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0246622669A8 0x28 RewardList                  ( 000185CECB38 ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
-            value.State                                     = (MissionState)GetInt32(new IntPtr(p + 0x030)); // 0246622669E8 0x30 State                       ( 000186629C10 ModelEnumType MissionState MissionState MissionState Int32 )
-            value.Period                                    = GetObject<PeriodStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.PeriodStatus.FromPointer); // 024662266A28 0x38 Period                      ( 000186734A00 ModelClassType PeriodStatus PeriodStatus PeriodStatus Pointer )
-            value.SortId                                    = GetInt32(new IntPtr(p + 0x040)); // 024662266A68 0x40 SortId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.FilterType                                = (MissionFilterType)GetInt32(new IntPtr(p + 0x044)); // 024662266AA8 0x44 FilterType                  ( 000186621470 ModelEnumType MissionFilterType MissionFilterType MissionFilterType Int32 )
-            value.GaugePoint                                = GetInt32(new IntPtr(p + 0x048)); // 024662266AE8 0x48 GaugePoint                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Jump                                      = GetObject<JumpStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.JumpStatus.FromPointer); // 024662266B28 0x50 Jump                        ( 000186768670 ModelClassType JumpStatus JumpStatus JumpStatus Pointer )
+            value.MstMissionId                              = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstMissionId                ( ModelPrimitiveType int int int Int32 )
+            value.MstMissionProgressId                      = GetInt32(new IntPtr(p + 0x01C)); // 0x1C MstMissionProgressId        ( ModelPrimitiveType int int int Int32 )
+            value.RequiredValue                             = GetInt32(new IntPtr(p + 0x020)); // 0x20 RequiredValue               ( ModelPrimitiveType int int int Int32 )
+            value.CurrentValue                              = GetInt32(new IntPtr(p + 0x024)); // 0x24 CurrentValue                ( ModelPrimitiveType int int int Int32 )
+            value.RewardList                                = GetObjectList<ProductWithAmountStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0x28 RewardList                  ( ModelClassListType RepeatedField`1<ProductWithAmountStatus> RepeatedField`1<ProductWithAmountStatus> List<ProductWithAmountStatus> Pointer )
+            value.State                                     = (MissionState)GetInt32(new IntPtr(p + 0x030)); // 0x30 State                       ( ModelEnumType MissionState MissionState MissionState Int32 )
+            value.Period                                    = GetObject<PeriodStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.PeriodStatus.FromPointer); // 0x38 Period                      ( ModelClassType PeriodStatus PeriodStatus PeriodStatus Pointer )
+            value.SortId                                    = GetInt32(new IntPtr(p + 0x040)); // 0x40 SortId                      ( ModelPrimitiveType int int int Int32 )
+            value.FilterType                                = (MissionFilterType)GetInt32(new IntPtr(p + 0x044)); // 0x44 FilterType                  ( ModelEnumType MissionFilterType MissionFilterType MissionFilterType Int32 )
+            value.GaugePoint                                = GetInt32(new IntPtr(p + 0x048)); // 0x48 GaugePoint                  ( ModelPrimitiveType int int int Int32 )
+            value.Jump                                      = GetObject<JumpStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.JumpStatus.FromPointer); // 0x50 Jump                        ( ModelClassType JumpStatus JumpStatus JumpStatus Pointer )
 
             return value;
         }

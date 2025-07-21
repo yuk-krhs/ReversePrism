@@ -11,13 +11,13 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<TotalHighScoreRatingStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 TotalRatingFieldNumber                   int IL2CPP_TYPE_I4
-    // 018 TotalRating                              0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 TotalRating                              ModelPrimitiveType int int int Int32
     // 000 HighScoreRatingFrameTypeFieldNumber      int IL2CPP_TYPE_I4
-    // 01C HighScoreRatingFrameType                 0001866B6560 ModelEnumType HighScoreRatingFrameType HighScoreRatingFrameType HighScoreRatingFrameType Int32
+    // 01C HighScoreRatingFrameType                 ModelEnumType HighScoreRatingFrameType HighScoreRatingFrameType HighScoreRatingFrameType Int32
     // 000 StarFieldNumber                          int IL2CPP_TYPE_I4
-    // 020 Star                                     0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 Star                                     ModelPrimitiveType int int int Int32
     // 000 MstIdFieldNumber                         int IL2CPP_TYPE_I4
-    // 024 MstId                                    0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 024 MstId                                    ModelPrimitiveType int int int Int32
     public partial class TotalHighScoreRatingStatus : DataModel
     {
         public int                                      TotalRating                             { get; set; }
@@ -33,10 +33,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TotalHighScoreRatingStatus() { Pointer= p0 };
 
-            value.TotalRating                               = GetInt32(new IntPtr(p + 0x018)); // 024661300FF0 0x18 TotalRating                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.HighScoreRatingFrameType                  = (HighScoreRatingFrameType)GetInt32(new IntPtr(p + 0x01C)); // 024661301030 0x1C HighScoreRatingFrameType    ( 0001866B6560 ModelEnumType HighScoreRatingFrameType HighScoreRatingFrameType HighScoreRatingFrameType Int32 )
-            value.Star                                      = GetInt32(new IntPtr(p + 0x020)); // 024661301070 0x20 Star                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstId                                     = GetInt32(new IntPtr(p + 0x024)); // 0246613010B0 0x24 MstId                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TotalRating                               = GetInt32(new IntPtr(p + 0x018)); // 0x18 TotalRating                 ( ModelPrimitiveType int int int Int32 )
+            value.HighScoreRatingFrameType                  = (HighScoreRatingFrameType)GetInt32(new IntPtr(p + 0x01C)); // 0x1C HighScoreRatingFrameType    ( ModelEnumType HighScoreRatingFrameType HighScoreRatingFrameType HighScoreRatingFrameType Int32 )
+            value.Star                                      = GetInt32(new IntPtr(p + 0x020)); // 0x20 Star                        ( ModelPrimitiveType int int int Int32 )
+            value.MstId                                     = GetInt32(new IntPtr(p + 0x024)); // 0x24 MstId                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

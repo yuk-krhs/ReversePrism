@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 TransitonAnimator                        0001866B8DE0 ModelClassType Animator Animator Animator Pointer
+    // 020 TransitonAnimator                        ModelClassType Animator Animator Animator Pointer
     public partial class HomeTransitionView : DataModel
     {
         public Animator?                                TransitonAnimator                       { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HomeTransitionView() { Pointer= p0 };
 
-            value.TransitonAnimator                         = GetObject<Animator>(new IntPtr(p + 0x020), ReversePrism.DataModels.Animator.FromPointer); // 02466B59EB90 0x20 TransitonAnimator           ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
+            value.TransitonAnimator                         = GetObject<Animator>(new IntPtr(p + 0x020), ReversePrism.DataModels.Animator.FromPointer); // 0x20 TransitonAnimator           ( ModelClassType Animator Animator Animator Pointer )
 
             return value;
         }

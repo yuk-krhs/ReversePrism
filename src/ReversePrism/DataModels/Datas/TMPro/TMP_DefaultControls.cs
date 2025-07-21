@@ -13,9 +13,9 @@ namespace ReversePrism.DataModels
     // 000 kThinHeight                              float IL2CPP_TYPE_R4
     // 000 s_TextElementSize                        Vector2 IL2CPP_TYPE_VALUETYPE
     // 008 s_ThickElementSize                       Vector2 IL2CPP_TYPE_VALUETYPE
-    // 010 S_ThinElementSize                        0001866A8990 ModelEnumType Vector2 Vector2 Vector2 Int32
-    // 018 S_DefaultSelectableColor                 0001865AB2F0 ModelEnumType Color Color Color Int32
-    // 028 S_TextColor                              0001865AB2F0 ModelEnumType Color Color Color Int32
+    // 010 S_ThinElementSize                        ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 018 S_DefaultSelectableColor                 ModelEnumType Color Color Color Int32
+    // 028 S_TextColor                              ModelEnumType Color Color Color Int32
     public partial class TMP_DefaultControls : DataModel
     {
         public Vector2                                  S_ThinElementSize                       { get; set; }
@@ -30,9 +30,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TMP_DefaultControls() { Pointer= p0 };
 
-            value.S_ThinElementSize                         = (Vector2)GetInt32(new IntPtr(p + 0x010)); // 02466A676278 0x10 S_ThinElementSize           ( 0001866A8990 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.S_DefaultSelectableColor                  = (Color)GetInt32(new IntPtr(p + 0x018)); // 02466A676298 0x18 S_DefaultSelectableColor    ( 0001865AB2F0 ModelEnumType Color Color Color Int32 )
-            value.S_TextColor                               = (Color)GetInt32(new IntPtr(p + 0x028)); // 02466A6762B8 0x28 S_TextColor                 ( 0001865AB2F0 ModelEnumType Color Color Color Int32 )
+            value.S_ThinElementSize                         = (Vector2)GetInt32(new IntPtr(p + 0x010)); // 0x10 S_ThinElementSize           ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.S_DefaultSelectableColor                  = (Color)GetInt32(new IntPtr(p + 0x018)); // 0x18 S_DefaultSelectableColor    ( ModelEnumType Color Color Color Int32 )
+            value.S_TextColor                               = (Color)GetInt32(new IntPtr(p + 0x028)); // 0x28 S_TextColor                 ( ModelEnumType Color Color Color Int32 )
 
             return value;
         }

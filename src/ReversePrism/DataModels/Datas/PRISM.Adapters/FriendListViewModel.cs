@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Friend                                   00018651BD40 ModelClassType IFriendStatus IFriendStatus IFriendStatus Pointer
+    // 010 Friend                                   ModelClassType IFriendStatus IFriendStatus IFriendStatus Pointer
     // 018 friendState                              ReactiveProperty`1<FriendState> IL2CPP_TYPE_GENERICINST
-    // 020 IdolIcon                                 00018670C7D0 ModelClassType PIdolIcon PIdolIcon PIdolIcon Pointer
-    // 028 AchievementIds                           000185B7D9E0 ModelPrimitiveListType int[] int[] List<int> Pointer
+    // 020 IdolIcon                                 ModelClassType PIdolIcon PIdolIcon PIdolIcon Pointer
+    // 028 AchievementIds                           ModelPrimitiveListType int[] int[] List<int> Pointer
     public partial class FriendListViewModel : DataModel
     {
         public IFriendStatus?                           Friend                                  { get; set; }
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FriendListViewModel() { Pointer= p0 };
 
-            value.Friend                                    = GetObject<IFriendStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IFriendStatus.FromPointer); // 0246663A2010 0x10 Friend                      ( 00018651BD40 ModelClassType IFriendStatus IFriendStatus IFriendStatus Pointer )
-            value.IdolIcon                                  = GetObject<PIdolIcon>(new IntPtr(p + 0x020), ReversePrism.DataModels.PIdolIcon.FromPointer); // 0246663A2050 0x20 IdolIcon                    ( 00018670C7D0 ModelClassType PIdolIcon PIdolIcon PIdolIcon Pointer )
-            value.AchievementIds                            = GetInt32List(new IntPtr(p + 0x028)); // 0246663A2070 0x28 AchievementIds              ( 000185B7D9E0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.Friend                                    = GetObject<IFriendStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IFriendStatus.FromPointer); // 0x10 Friend                      ( ModelClassType IFriendStatus IFriendStatus IFriendStatus Pointer )
+            value.IdolIcon                                  = GetObject<PIdolIcon>(new IntPtr(p + 0x020), ReversePrism.DataModels.PIdolIcon.FromPointer); // 0x20 IdolIcon                    ( ModelClassType PIdolIcon PIdolIcon PIdolIcon Pointer )
+            value.AchievementIds                            = GetInt32List(new IntPtr(p + 0x028)); // 0x28 AchievementIds              ( ModelPrimitiveListType int[] int[] List<int> Pointer )
 
             return value;
         }

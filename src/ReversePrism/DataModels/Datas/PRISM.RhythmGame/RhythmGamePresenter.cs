@@ -8,30 +8,32 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 View                                     00018668E5D0 ModelClassType RhythmGameView RhythmGameView RhythmGameView Pointer
-    // 018 ProgressManager                          000186569B60 ModelClassType LiveProgressManager LiveProgressManager LiveProgressManager Pointer
-    // 020 NoteDesign                               0001866203E0 ModelClassType IRhythmGameNoteDesign IRhythmGameNoteDesign IRhythmGameNoteDesign Pointer
-    // 028 TouchInputService                        00018668F440 ModelClassType TouchInputService TouchInputService TouchInputService Pointer
-    // 030 LiveSkillService                         00018657EE60 ModelClassType LiveSkillService LiveSkillService LiveSkillService Pointer
-    // 038 SoundService                             00018668C430 ModelClassType RhythmGameSoundService RhythmGameSoundService RhythmGameSoundService Pointer
-    // 040 LiveStartData                            000186582060 ModelClassType LiveStartData LiveStartData LiveStartData Pointer
-    // 048 Disposables                              0001865F38F0 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
-    // 050 Option                                   000186685BF0 ModelClassType RhythmGameOption RhythmGameOption RhythmGameOption Pointer
-    // 058 ObjectRenderService                      000186685200 ModelClassType RhythmGameObjectRenderService RhythmGameObjectRenderService RhythmGameObjectRenderService Pointer
-    // 060 VibrateService                           00018668DC50 ModelClassType RhythmGameVibrateService RhythmGameVibrateService RhythmGameVibrateService Pointer
-    // 068 ScoreService                             00018668BA60 ModelClassType RhythmGameScoreService RhythmGameScoreService RhythmGameScoreService Pointer
-    // 070 State                                    00018668C8C0 ModelClassType RhythmGameState RhythmGameState RhythmGameState Pointer
-    // 078 ObjectContainer                          0001866845F0 ModelClassType RhythmGameObjectContainer RhythmGameObjectContainer RhythmGameObjectContainer Pointer
-    // 080 JudgeService                             000186766460 ModelClassType JudgeService JudgeService JudgeService Pointer
-    // 088 Status                                   00018668D280 ModelEnumType RhythmGameStatus RhythmGameStatus RhythmGameStatus Int32
-    // 08C IsViewerMode                             0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 090 CancellationTokenSource                  0001865A4380 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
-    // 098 MvPauser                                 0001865D3220 ModelClassType IPausable IPausable IPausable Pointer
-    // 0A0 keyBeamOnLaneIndices                     HashSet`1<int> IL2CPP_TYPE_GENERICINST
-    // 0A8 onJudgeSubject                           Subject`1<ValueTuple`2<JudgmentResult, float>> IL2CPP_TYPE_GENERICINST
-    // 0B0 ResumeCountdownCancellationTokenSource   0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
+    // 010 Loader                                   ModelClassType RhythmGameLoader RhythmGameLoader RhythmGameLoader Pointer
+    // 018 View                                     ModelClassType RhythmGameView RhythmGameView RhythmGameView Pointer
+    // 020 ProgressManager                          ModelClassType LiveProgressManager LiveProgressManager LiveProgressManager Pointer
+    // 028 NoteDesign                               ModelClassType IRhythmGameNoteDesign IRhythmGameNoteDesign IRhythmGameNoteDesign Pointer
+    // 030 TouchInputService                        ModelClassType TouchInputService TouchInputService TouchInputService Pointer
+    // 038 LiveSkillService                         ModelClassType LiveSkillService LiveSkillService LiveSkillService Pointer
+    // 040 SoundService                             ModelClassType RhythmGameSoundService RhythmGameSoundService RhythmGameSoundService Pointer
+    // 048 LiveStartData                            ModelClassType LiveStartData LiveStartData LiveStartData Pointer
+    // 050 Disposables                              ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
+    // 058 Option                                   ModelClassType RhythmGameOption RhythmGameOption RhythmGameOption Pointer
+    // 060 ObjectRenderService                      ModelClassType RhythmGameObjectRenderService RhythmGameObjectRenderService RhythmGameObjectRenderService Pointer
+    // 068 VibrateService                           ModelClassType RhythmGameVibrateService RhythmGameVibrateService RhythmGameVibrateService Pointer
+    // 070 ScoreService                             ModelClassType RhythmGameScoreService RhythmGameScoreService RhythmGameScoreService Pointer
+    // 078 State                                    ModelClassType RhythmGameState RhythmGameState RhythmGameState Pointer
+    // 080 ObjectContainer                          ModelClassType RhythmGameObjectContainer RhythmGameObjectContainer RhythmGameObjectContainer Pointer
+    // 088 JudgeService                             ModelClassType JudgeService JudgeService JudgeService Pointer
+    // 090 Status                                   ModelEnumType RhythmGameStatus RhythmGameStatus RhythmGameStatus Int32
+    // 094 IsShinyEnabled                           ModelPrimitiveType bool bool bool Bool
+    // 095 IsViewerMode                             ModelPrimitiveType bool bool bool Bool
+    // 098 CancellationTokenSource                  ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
+    // 0A0 MvPauser                                 ModelClassType IPausable IPausable IPausable Pointer
+    // 0A8 keyBeamOnLaneIndices                     HashSet`1<int> IL2CPP_TYPE_GENERICINST
+    // 0B0 ResumeCountdownCancellationTokenSource   ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
     public partial class RhythmGamePresenter : DataModel
     {
+        public RhythmGameLoader?                        Loader                                  { get; set; }
         public RhythmGameView?                          View                                    { get; set; }
         public LiveProgressManager?                     ProgressManager                         { get; set; }
         public IRhythmGameNoteDesign?                   NoteDesign                              { get; set; }
@@ -48,6 +50,7 @@ namespace ReversePrism.DataModels
         public RhythmGameObjectContainer?               ObjectContainer                         { get; set; }
         public JudgeService?                            JudgeService                            { get; set; }
         public RhythmGameStatus                         Status                                  { get; set; }
+        public bool                                     IsShinyEnabled                          { get; set; }
         public bool                                     IsViewerMode                            { get; set; }
         public CancellationTokenSource?                 CancellationTokenSource                 { get; set; }
         public IPausable?                               MvPauser                                { get; set; }
@@ -61,26 +64,28 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RhythmGamePresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<RhythmGameView>(new IntPtr(p + 0x010), ReversePrism.DataModels.RhythmGameView.FromPointer); // 024664E975F8 0x10 View                        ( 00018668E5D0 ModelClassType RhythmGameView RhythmGameView RhythmGameView Pointer )
-            value.ProgressManager                           = GetObject<LiveProgressManager>(new IntPtr(p + 0x018), ReversePrism.DataModels.LiveProgressManager.FromPointer); // 024664E97618 0x18 ProgressManager             ( 000186569B60 ModelClassType LiveProgressManager LiveProgressManager LiveProgressManager Pointer )
-            value.NoteDesign                                = GetObject<IRhythmGameNoteDesign>(new IntPtr(p + 0x020), ReversePrism.DataModels.IRhythmGameNoteDesign.FromPointer); // 024664E97638 0x20 NoteDesign                  ( 0001866203E0 ModelClassType IRhythmGameNoteDesign IRhythmGameNoteDesign IRhythmGameNoteDesign Pointer )
-            value.TouchInputService                         = GetObject<TouchInputService>(new IntPtr(p + 0x028), ReversePrism.DataModels.TouchInputService.FromPointer); // 024664E97658 0x28 TouchInputService           ( 00018668F440 ModelClassType TouchInputService TouchInputService TouchInputService Pointer )
-            value.LiveSkillService                          = GetObject<LiveSkillService>(new IntPtr(p + 0x030), ReversePrism.DataModels.LiveSkillService.FromPointer); // 024664E97678 0x30 LiveSkillService            ( 00018657EE60 ModelClassType LiveSkillService LiveSkillService LiveSkillService Pointer )
-            value.SoundService                              = GetObject<RhythmGameSoundService>(new IntPtr(p + 0x038), ReversePrism.DataModels.RhythmGameSoundService.FromPointer); // 024664E97698 0x38 SoundService                ( 00018668C430 ModelClassType RhythmGameSoundService RhythmGameSoundService RhythmGameSoundService Pointer )
-            value.LiveStartData                             = GetObject<LiveStartData>(new IntPtr(p + 0x040), ReversePrism.DataModels.LiveStartData.FromPointer); // 024664E976B8 0x40 LiveStartData               ( 000186582060 ModelClassType LiveStartData LiveStartData LiveStartData Pointer )
-            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x048), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 024664E976D8 0x48 Disposables                 ( 0001865F38F0 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
-            value.Option                                    = GetObject<RhythmGameOption>(new IntPtr(p + 0x050), ReversePrism.DataModels.RhythmGameOption.FromPointer); // 024664E976F8 0x50 Option                      ( 000186685BF0 ModelClassType RhythmGameOption RhythmGameOption RhythmGameOption Pointer )
-            value.ObjectRenderService                       = GetObject<RhythmGameObjectRenderService>(new IntPtr(p + 0x058), ReversePrism.DataModels.RhythmGameObjectRenderService.FromPointer); // 024664E97718 0x58 ObjectRenderService         ( 000186685200 ModelClassType RhythmGameObjectRenderService RhythmGameObjectRenderService RhythmGameObjectRenderService Pointer )
-            value.VibrateService                            = GetObject<RhythmGameVibrateService>(new IntPtr(p + 0x060), ReversePrism.DataModels.RhythmGameVibrateService.FromPointer); // 024664E97738 0x60 VibrateService              ( 00018668DC50 ModelClassType RhythmGameVibrateService RhythmGameVibrateService RhythmGameVibrateService Pointer )
-            value.ScoreService                              = GetObject<RhythmGameScoreService>(new IntPtr(p + 0x068), ReversePrism.DataModels.RhythmGameScoreService.FromPointer); // 024664E97758 0x68 ScoreService                ( 00018668BA60 ModelClassType RhythmGameScoreService RhythmGameScoreService RhythmGameScoreService Pointer )
-            value.State                                     = GetObject<RhythmGameState>(new IntPtr(p + 0x070), ReversePrism.DataModels.RhythmGameState.FromPointer); // 024664E97778 0x70 State                       ( 00018668C8C0 ModelClassType RhythmGameState RhythmGameState RhythmGameState Pointer )
-            value.ObjectContainer                           = GetObject<RhythmGameObjectContainer>(new IntPtr(p + 0x078), ReversePrism.DataModels.RhythmGameObjectContainer.FromPointer); // 024664E97798 0x78 ObjectContainer             ( 0001866845F0 ModelClassType RhythmGameObjectContainer RhythmGameObjectContainer RhythmGameObjectContainer Pointer )
-            value.JudgeService                              = GetObject<JudgeService>(new IntPtr(p + 0x080), ReversePrism.DataModels.JudgeService.FromPointer); // 024664E977B8 0x80 JudgeService                ( 000186766460 ModelClassType JudgeService JudgeService JudgeService Pointer )
-            value.Status                                    = (RhythmGameStatus)GetInt32(new IntPtr(p + 0x088)); // 024664E977D8 0x88 Status                      ( 00018668D280 ModelEnumType RhythmGameStatus RhythmGameStatus RhythmGameStatus Int32 )
-            value.IsViewerMode                              = GetBool(new IntPtr(p + 0x08C)); // 024664E977F8 0x8C IsViewerMode                ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.CancellationTokenSource                   = GetObject<CancellationTokenSource>(new IntPtr(p + 0x090), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 024664E97818 0x90 CancellationTokenSource     ( 0001865A4380 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
-            value.MvPauser                                  = GetObject<IPausable>(new IntPtr(p + 0x098), ReversePrism.DataModels.IPausable.FromPointer); // 024664E97838 0x98 MvPauser                    ( 0001865D3220 ModelClassType IPausable IPausable IPausable Pointer )
-            value.ResumeCountdownCancellationTokenSource    = GetObject<CancellationTokenSource>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 024664E97898 0xB0 ResumeCountdownCancellationTokenSource ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.Loader                                    = GetObject<RhythmGameLoader>(new IntPtr(p + 0x010), ReversePrism.DataModels.RhythmGameLoader.FromPointer); // 0x10 Loader                      ( ModelClassType RhythmGameLoader RhythmGameLoader RhythmGameLoader Pointer )
+            value.View                                      = GetObject<RhythmGameView>(new IntPtr(p + 0x018), ReversePrism.DataModels.RhythmGameView.FromPointer); // 0x18 View                        ( ModelClassType RhythmGameView RhythmGameView RhythmGameView Pointer )
+            value.ProgressManager                           = GetObject<LiveProgressManager>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveProgressManager.FromPointer); // 0x20 ProgressManager             ( ModelClassType LiveProgressManager LiveProgressManager LiveProgressManager Pointer )
+            value.NoteDesign                                = GetObject<IRhythmGameNoteDesign>(new IntPtr(p + 0x028), ReversePrism.DataModels.IRhythmGameNoteDesign.FromPointer); // 0x28 NoteDesign                  ( ModelClassType IRhythmGameNoteDesign IRhythmGameNoteDesign IRhythmGameNoteDesign Pointer )
+            value.TouchInputService                         = GetObject<TouchInputService>(new IntPtr(p + 0x030), ReversePrism.DataModels.TouchInputService.FromPointer); // 0x30 TouchInputService           ( ModelClassType TouchInputService TouchInputService TouchInputService Pointer )
+            value.LiveSkillService                          = GetObject<LiveSkillService>(new IntPtr(p + 0x038), ReversePrism.DataModels.LiveSkillService.FromPointer); // 0x38 LiveSkillService            ( ModelClassType LiveSkillService LiveSkillService LiveSkillService Pointer )
+            value.SoundService                              = GetObject<RhythmGameSoundService>(new IntPtr(p + 0x040), ReversePrism.DataModels.RhythmGameSoundService.FromPointer); // 0x40 SoundService                ( ModelClassType RhythmGameSoundService RhythmGameSoundService RhythmGameSoundService Pointer )
+            value.LiveStartData                             = GetObject<LiveStartData>(new IntPtr(p + 0x048), ReversePrism.DataModels.LiveStartData.FromPointer); // 0x48 LiveStartData               ( ModelClassType LiveStartData LiveStartData LiveStartData Pointer )
+            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x050), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0x50 Disposables                 ( ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.Option                                    = GetObject<RhythmGameOption>(new IntPtr(p + 0x058), ReversePrism.DataModels.RhythmGameOption.FromPointer); // 0x58 Option                      ( ModelClassType RhythmGameOption RhythmGameOption RhythmGameOption Pointer )
+            value.ObjectRenderService                       = GetObject<RhythmGameObjectRenderService>(new IntPtr(p + 0x060), ReversePrism.DataModels.RhythmGameObjectRenderService.FromPointer); // 0x60 ObjectRenderService         ( ModelClassType RhythmGameObjectRenderService RhythmGameObjectRenderService RhythmGameObjectRenderService Pointer )
+            value.VibrateService                            = GetObject<RhythmGameVibrateService>(new IntPtr(p + 0x068), ReversePrism.DataModels.RhythmGameVibrateService.FromPointer); // 0x68 VibrateService              ( ModelClassType RhythmGameVibrateService RhythmGameVibrateService RhythmGameVibrateService Pointer )
+            value.ScoreService                              = GetObject<RhythmGameScoreService>(new IntPtr(p + 0x070), ReversePrism.DataModels.RhythmGameScoreService.FromPointer); // 0x70 ScoreService                ( ModelClassType RhythmGameScoreService RhythmGameScoreService RhythmGameScoreService Pointer )
+            value.State                                     = GetObject<RhythmGameState>(new IntPtr(p + 0x078), ReversePrism.DataModels.RhythmGameState.FromPointer); // 0x78 State                       ( ModelClassType RhythmGameState RhythmGameState RhythmGameState Pointer )
+            value.ObjectContainer                           = GetObject<RhythmGameObjectContainer>(new IntPtr(p + 0x080), ReversePrism.DataModels.RhythmGameObjectContainer.FromPointer); // 0x80 ObjectContainer             ( ModelClassType RhythmGameObjectContainer RhythmGameObjectContainer RhythmGameObjectContainer Pointer )
+            value.JudgeService                              = GetObject<JudgeService>(new IntPtr(p + 0x088), ReversePrism.DataModels.JudgeService.FromPointer); // 0x88 JudgeService                ( ModelClassType JudgeService JudgeService JudgeService Pointer )
+            value.Status                                    = (RhythmGameStatus)GetInt32(new IntPtr(p + 0x090)); // 0x90 Status                      ( ModelEnumType RhythmGameStatus RhythmGameStatus RhythmGameStatus Int32 )
+            value.IsShinyEnabled                            = GetBool(new IntPtr(p + 0x094)); // 0x94 IsShinyEnabled              ( ModelPrimitiveType bool bool bool Bool )
+            value.IsViewerMode                              = GetBool(new IntPtr(p + 0x095)); // 0x95 IsViewerMode                ( ModelPrimitiveType bool bool bool Bool )
+            value.CancellationTokenSource                   = GetObject<CancellationTokenSource>(new IntPtr(p + 0x098), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0x98 CancellationTokenSource     ( ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.MvPauser                                  = GetObject<IPausable>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.IPausable.FromPointer); // 0xA0 MvPauser                    ( ModelClassType IPausable IPausable IPausable Pointer )
+            value.ResumeCountdownCancellationTokenSource    = GetObject<CancellationTokenSource>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0xB0 ResumeCountdownCancellationTokenSource ( ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
 
             return value;
         }

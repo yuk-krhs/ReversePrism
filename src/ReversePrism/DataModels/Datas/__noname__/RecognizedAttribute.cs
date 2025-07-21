@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_name                                   000186671910 ModelPrimitiveType string string string String
-    // 018 M_token                                  00018661F5D0 ModelEnumType CookieToken CookieToken CookieToken Int32
+    // 010 M_name                                   ModelPrimitiveType string string string String
+    // 018 M_token                                  ModelEnumType CookieToken CookieToken CookieToken Int32
     public partial class RecognizedAttribute : DataModel
     {
         public string                                   M_name                                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RecognizedAttribute() { Pointer= p0 };
 
-            value.M_name                                    = GetString(new IntPtr(p + 0x010)); // 024667A95770 0x10 M_name                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_token                                   = (CookieToken)GetInt32(new IntPtr(p + 0x018)); // 024667A95790 0x18 M_token                     ( 00018661F5D0 ModelEnumType CookieToken CookieToken CookieToken Int32 )
+            value.M_name                                    = GetString(new IntPtr(p + 0x010)); // 0x10 M_name                      ( ModelPrimitiveType string string string String )
+            value.M_token                                   = (CookieToken)GetInt32(new IntPtr(p + 0x018)); // 0x18 M_token                     ( ModelEnumType CookieToken CookieToken CookieToken Int32 )
 
             return value;
         }

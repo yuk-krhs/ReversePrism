@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<GetProduceUnitArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstUnitIdFieldNumber                     int IL2CPP_TYPE_I4
-    // 018 MstUnitId                                0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MstUnitId                                ModelPrimitiveType int int int Int32
     public partial class GetProduceUnitArgs : DataModel
     {
         public int                                      MstUnitId                               { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetProduceUnitArgs() { Pointer= p0 };
 
-            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x018)); // 02466254C470 0x18 MstUnitId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstUnitId                   ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

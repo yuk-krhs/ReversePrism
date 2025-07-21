@@ -8,41 +8,45 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 AppVersionText                           0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 028 IdText                                   0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 030 MenuButton                               0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 038 WholeScreenButton                        0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 040 BgmCueSheetName                          000186671910 ModelPrimitiveType string string string String
-    // 048 BgmCueName                               000186671910 ModelPrimitiveType string string string String
-    // 050 MoviePlayer                              000186658A40 ModelClassType MoviePlayer MoviePlayer MoviePlayer Pointer
-    // 058 BackgroundImage                          0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer
-    // 060 Popup                                    00018667AF50 ModelClassType TitlePopupReference TitlePopupReference TitlePopupReference Pointer
-    // 068 LoadProgress                             000186678A90 ModelClassType TitleLoadProgressBarView TitleLoadProgressBarView TitleLoadProgressBarView Pointer
-    // 070 TouchToStart                             0001866B8DE0 ModelClassType Animator Animator Animator Pointer
-    // 078 DownloadOverlayViewFactory               0001866F1FE0 ModelClassType DownloadOverlayViewFactory DownloadOverlayViewFactory DownloadOverlayViewFactory Pointer
-    // 080 ResourceTag                              00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
-    // 088 TitleCall                                000186677ED0 ModelClassType TitleCall TitleCall TitleCall Pointer
-    // 090 BgmDisposable                            0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
-    // 098 TitleImageExists                         000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 09C LoadProgressValue                        0001866656B0 ModelPrimitiveType float float float Single
+    // 020 AppVersionText                           ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 028 IdText                                   ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 030 MenuButton                               ModelClassType UIButton UIButton UIButton Pointer
+    // 038 WholeScreenButton                        ModelClassType UIButton UIButton UIButton Pointer
+    // 040 MoviePlayer                              ModelClassType MoviePlayer MoviePlayer MoviePlayer Pointer
+    // 048 BackgroundImage                          ModelClassType UIRawImage UIRawImage UIRawImage Pointer
+    // 050 Popup                                    ModelClassType TitlePopupReference TitlePopupReference TitlePopupReference Pointer
+    // 058 LoadProgress                             ModelClassType TitleLoadProgressBarView TitleLoadProgressBarView TitleLoadProgressBarView Pointer
+    // 060 TouchToStart                             ModelClassType Animator Animator Animator Pointer
+    // 068 BackgroundType                           ModelEnumType TitleBackgroundType TitleBackgroundType TitleBackgroundType Int32
+    // 070 BackgroundKey                            ModelPrimitiveType string string string String
+    // 078 BgmCueSheetName                          ModelPrimitiveType string string string String
+    // 080 BgmCueName                               ModelPrimitiveType string string string String
+    // 088 TitleCallCueSheetName                    ModelPrimitiveType string string string String
+    // 090 TitleCallCueName                         ModelPrimitiveType string string string String
+    // 098 MstTitleBackground                       ModelClassType MstTitleBackground MstTitleBackground MstTitleBackground Pointer
+    // 0A0 IsTitleCallEnabled                       ModelPrimitiveType bool bool bool Bool
+    // 0A8 BgmDisposable                            ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 0B0 LoadProgressValue                        ModelPrimitiveType float float float Single
     public partial class TitleView : DataModel
     {
         public UITextMeshProUGUI?                       AppVersionText                          { get; set; }
         public UITextMeshProUGUI?                       IdText                                  { get; set; }
         public UIButton?                                MenuButton                              { get; set; }
         public UIButton?                                WholeScreenButton                       { get; set; }
-        public string                                   BgmCueSheetName                         { get; set; }
-        public string                                   BgmCueName                              { get; set; }
         public MoviePlayer?                             MoviePlayer                             { get; set; }
         public UIRawImage?                              BackgroundImage                         { get; set; }
         public TitlePopupReference?                     Popup                                   { get; set; }
         public TitleLoadProgressBarView?                LoadProgress                            { get; set; }
         public Animator?                                TouchToStart                            { get; set; }
-        public DownloadOverlayViewFactory?              DownloadOverlayViewFactory              { get; set; }
-        public IResourceTag?                            ResourceTag                             { get; set; }
-        public TitleCall?                               TitleCall                               { get; set; }
+        public TitleBackgroundType                      BackgroundType                          { get; set; }
+        public string                                   BackgroundKey                           { get; set; }
+        public string                                   BgmCueSheetName                         { get; set; }
+        public string                                   BgmCueName                              { get; set; }
+        public string                                   TitleCallCueSheetName                   { get; set; }
+        public string                                   TitleCallCueName                        { get; set; }
+        public MstTitleBackground?                      MstTitleBackground                      { get; set; }
+        public bool                                     IsTitleCallEnabled                      { get; set; }
         public IDisposable?                             BgmDisposable                           { get; set; }
-        public bool                                     TitleImageExists                        { get; set; }
         public float                                    LoadProgressValue                       { get; set; }
 
         public static TitleView? FromPointer(IntPtr p0)
@@ -53,23 +57,25 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TitleView() { Pointer= p0 };
 
-            value.AppVersionText                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0245A43FD0A0 0x20 AppVersionText              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.IdText                                    = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0245A43FD0C0 0x28 IdText                      ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.MenuButton                                = GetObject<UIButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIButton.FromPointer); // 0245A43FD0E0 0x30 MenuButton                  ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.WholeScreenButton                         = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 0245A43FD100 0x38 WholeScreenButton           ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.BgmCueSheetName                           = GetString(new IntPtr(p + 0x040)); // 0245A43FD120 0x40 BgmCueSheetName             ( 000186671910 ModelPrimitiveType string string string String )
-            value.BgmCueName                                = GetString(new IntPtr(p + 0x048)); // 0245A43FD140 0x48 BgmCueName                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.MoviePlayer                               = GetObject<MoviePlayer>(new IntPtr(p + 0x050), ReversePrism.DataModels.MoviePlayer.FromPointer); // 0245A43FD160 0x50 MoviePlayer                 ( 000186658A40 ModelClassType MoviePlayer MoviePlayer MoviePlayer Pointer )
-            value.BackgroundImage                           = GetObject<UIRawImage>(new IntPtr(p + 0x058), ReversePrism.DataModels.UIRawImage.FromPointer); // 0245A43FD180 0x58 BackgroundImage             ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
-            value.Popup                                     = GetObject<TitlePopupReference>(new IntPtr(p + 0x060), ReversePrism.DataModels.TitlePopupReference.FromPointer); // 0245A43FD1A0 0x60 Popup                       ( 00018667AF50 ModelClassType TitlePopupReference TitlePopupReference TitlePopupReference Pointer )
-            value.LoadProgress                              = GetObject<TitleLoadProgressBarView>(new IntPtr(p + 0x068), ReversePrism.DataModels.TitleLoadProgressBarView.FromPointer); // 0245A43FD1C0 0x68 LoadProgress                ( 000186678A90 ModelClassType TitleLoadProgressBarView TitleLoadProgressBarView TitleLoadProgressBarView Pointer )
-            value.TouchToStart                              = GetObject<Animator>(new IntPtr(p + 0x070), ReversePrism.DataModels.Animator.FromPointer); // 0245A43FD1E0 0x70 TouchToStart                ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
-            value.DownloadOverlayViewFactory                = GetObject<DownloadOverlayViewFactory>(new IntPtr(p + 0x078), ReversePrism.DataModels.DownloadOverlayViewFactory.FromPointer); // 0245A43FD200 0x78 DownloadOverlayViewFactory  ( 0001866F1FE0 ModelClassType DownloadOverlayViewFactory DownloadOverlayViewFactory DownloadOverlayViewFactory Pointer )
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x080), ReversePrism.DataModels.IResourceTag.FromPointer); // 0245A43FD220 0x80 ResourceTag                 ( 00018661C960 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
-            value.TitleCall                                 = GetObject<TitleCall>(new IntPtr(p + 0x088), ReversePrism.DataModels.TitleCall.FromPointer); // 0245A43FD240 0x88 TitleCall                   ( 000186677ED0 ModelClassType TitleCall TitleCall TitleCall Pointer )
-            value.BgmDisposable                             = GetObject<IDisposable>(new IntPtr(p + 0x090), ReversePrism.DataModels.IDisposable.FromPointer); // 0245A43FD260 0x90 BgmDisposable               ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
-            value.TitleImageExists                          = GetBool(new IntPtr(p + 0x098)); // 0245A43FD280 0x98 TitleImageExists            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.LoadProgressValue                         = GetSingle(new IntPtr(p + 0x09C)); // 0245A43FD2A0 0x9C LoadProgressValue           ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.AppVersionText                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x20 AppVersionText              ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.IdText                                    = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x28 IdText                      ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.MenuButton                                = GetObject<UIButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIButton.FromPointer); // 0x30 MenuButton                  ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.WholeScreenButton                         = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 0x38 WholeScreenButton           ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.MoviePlayer                               = GetObject<MoviePlayer>(new IntPtr(p + 0x040), ReversePrism.DataModels.MoviePlayer.FromPointer); // 0x40 MoviePlayer                 ( ModelClassType MoviePlayer MoviePlayer MoviePlayer Pointer )
+            value.BackgroundImage                           = GetObject<UIRawImage>(new IntPtr(p + 0x048), ReversePrism.DataModels.UIRawImage.FromPointer); // 0x48 BackgroundImage             ( ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
+            value.Popup                                     = GetObject<TitlePopupReference>(new IntPtr(p + 0x050), ReversePrism.DataModels.TitlePopupReference.FromPointer); // 0x50 Popup                       ( ModelClassType TitlePopupReference TitlePopupReference TitlePopupReference Pointer )
+            value.LoadProgress                              = GetObject<TitleLoadProgressBarView>(new IntPtr(p + 0x058), ReversePrism.DataModels.TitleLoadProgressBarView.FromPointer); // 0x58 LoadProgress                ( ModelClassType TitleLoadProgressBarView TitleLoadProgressBarView TitleLoadProgressBarView Pointer )
+            value.TouchToStart                              = GetObject<Animator>(new IntPtr(p + 0x060), ReversePrism.DataModels.Animator.FromPointer); // 0x60 TouchToStart                ( ModelClassType Animator Animator Animator Pointer )
+            value.BackgroundType                            = (TitleBackgroundType)GetInt32(new IntPtr(p + 0x068)); // 0x68 BackgroundType              ( ModelEnumType TitleBackgroundType TitleBackgroundType TitleBackgroundType Int32 )
+            value.BackgroundKey                             = GetString(new IntPtr(p + 0x070)); // 0x70 BackgroundKey               ( ModelPrimitiveType string string string String )
+            value.BgmCueSheetName                           = GetString(new IntPtr(p + 0x078)); // 0x78 BgmCueSheetName             ( ModelPrimitiveType string string string String )
+            value.BgmCueName                                = GetString(new IntPtr(p + 0x080)); // 0x80 BgmCueName                  ( ModelPrimitiveType string string string String )
+            value.TitleCallCueSheetName                     = GetString(new IntPtr(p + 0x088)); // 0x88 TitleCallCueSheetName       ( ModelPrimitiveType string string string String )
+            value.TitleCallCueName                          = GetString(new IntPtr(p + 0x090)); // 0x90 TitleCallCueName            ( ModelPrimitiveType string string string String )
+            value.MstTitleBackground                        = GetObject<MstTitleBackground>(new IntPtr(p + 0x098), ReversePrism.DataModels.MstTitleBackground.FromPointer); // 0x98 MstTitleBackground          ( ModelClassType MstTitleBackground MstTitleBackground MstTitleBackground Pointer )
+            value.IsTitleCallEnabled                        = GetBool(new IntPtr(p + 0x0A0)); // 0xA0 IsTitleCallEnabled          ( ModelPrimitiveType bool bool bool Bool )
+            value.BgmDisposable                             = GetObject<IDisposable>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.IDisposable.FromPointer); // 0xA8 BgmDisposable               ( ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.LoadProgressValue                         = GetSingle(new IntPtr(p + 0x0B0)); // 0xB0 LoadProgressValue           ( ModelPrimitiveType float float float Single )
 
             return value;
         }

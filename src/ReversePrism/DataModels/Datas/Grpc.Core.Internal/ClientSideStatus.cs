@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Status                                   000186585850 ModelEnumType Status Status Status Int32
-    // 028 Trailers                                 00018660C830 ModelClassType Metadata Metadata Metadata Pointer
+    // 010 Status                                   ModelEnumType Status Status Status Int32
+    // 028 Trailers                                 ModelClassType Metadata Metadata Metadata Pointer
     public partial class ClientSideStatus : DataModel
     {
         public Status                                   Status                                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ClientSideStatus() { Pointer= p0 };
 
-            value.Status                                    = (Status)GetInt32(new IntPtr(p + 0x010)); // 0245A4BB7910 0x10 Status                      ( 000186585850 ModelEnumType Status Status Status Int32 )
-            value.Trailers                                  = GetObject<Metadata>(new IntPtr(p + 0x028), ReversePrism.DataModels.Metadata.FromPointer); // 0245A4BB7930 0x28 Trailers                    ( 00018660C830 ModelClassType Metadata Metadata Metadata Pointer )
+            value.Status                                    = (Status)GetInt32(new IntPtr(p + 0x010)); // 0x10 Status                      ( ModelEnumType Status Status Status Int32 )
+            value.Trailers                                  = GetObject<Metadata>(new IntPtr(p + 0x028), ReversePrism.DataModels.Metadata.FromPointer); // 0x28 Trailers                    ( ModelClassType Metadata Metadata Metadata Pointer )
 
             return value;
         }

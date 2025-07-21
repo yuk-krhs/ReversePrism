@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 030 SelectFavoriteMarkPopupViewFactory       000186715A50 ModelClassType SelectFavoriteMarkPopupViewFactory SelectFavoriteMarkPopupViewFactory SelectFavoriteMarkPopupViewFactory Pointer
-    // 038 EfficacyDetailListPopupViewFactory       000186722210 ModelClassType EfficacyDetailListPopupViewFactory EfficacyDetailListPopupViewFactory EfficacyDetailListPopupViewFactory Pointer
-    // 040 FUnitDetailPopupViewFactory              00018654A430 ModelClassType FUnitDetailPopupViewFactory FUnitDetailPopupViewFactory FUnitDetailPopupViewFactory Pointer
-    // 048 LiveSkillDetailPopupViewFactory          00018657C770 ModelClassType LiveSkillDetailPopupViewFactory LiveSkillDetailPopupViewFactory LiveSkillDetailPopupViewFactory Pointer
+    // 030 SelectFavoriteMarkPopupViewFactory       ModelClassType SelectFavoriteMarkPopupViewFactory SelectFavoriteMarkPopupViewFactory SelectFavoriteMarkPopupViewFactory Pointer
+    // 038 EfficacyDetailListPopupViewFactory       ModelClassType EfficacyDetailListPopupViewFactory EfficacyDetailListPopupViewFactory EfficacyDetailListPopupViewFactory Pointer
+    // 040 FUnitDetailPopupViewFactory              ModelClassType FUnitDetailPopupViewFactory FUnitDetailPopupViewFactory FUnitDetailPopupViewFactory Pointer
+    // 048 LiveSkillDetailPopupViewFactory          ModelClassType LiveSkillDetailPopupViewFactory LiveSkillDetailPopupViewFactory LiveSkillDetailPopupViewFactory Pointer
     public partial class FIdolDetailPopupViewFactory : DataModel
     {
         public SelectFavoriteMarkPopupViewFactory?      SelectFavoriteMarkPopupViewFactory      { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FIdolDetailPopupViewFactory() { Pointer= p0 };
 
-            value.SelectFavoriteMarkPopupViewFactory        = GetObject<SelectFavoriteMarkPopupViewFactory>(new IntPtr(p + 0x030), ReversePrism.DataModels.SelectFavoriteMarkPopupViewFactory.FromPointer); // 02466A301A18 0x30 SelectFavoriteMarkPopupViewFactory ( 000186715A50 ModelClassType SelectFavoriteMarkPopupViewFactory SelectFavoriteMarkPopupViewFactory SelectFavoriteMarkPopupViewFactory Pointer )
-            value.EfficacyDetailListPopupViewFactory        = GetObject<EfficacyDetailListPopupViewFactory>(new IntPtr(p + 0x038), ReversePrism.DataModels.EfficacyDetailListPopupViewFactory.FromPointer); // 02466A301A38 0x38 EfficacyDetailListPopupViewFactory ( 000186722210 ModelClassType EfficacyDetailListPopupViewFactory EfficacyDetailListPopupViewFactory EfficacyDetailListPopupViewFactory Pointer )
-            value.FUnitDetailPopupViewFactory               = GetObject<FUnitDetailPopupViewFactory>(new IntPtr(p + 0x040), ReversePrism.DataModels.FUnitDetailPopupViewFactory.FromPointer); // 02466A301A58 0x40 FUnitDetailPopupViewFactory ( 00018654A430 ModelClassType FUnitDetailPopupViewFactory FUnitDetailPopupViewFactory FUnitDetailPopupViewFactory Pointer )
-            value.LiveSkillDetailPopupViewFactory           = GetObject<LiveSkillDetailPopupViewFactory>(new IntPtr(p + 0x048), ReversePrism.DataModels.LiveSkillDetailPopupViewFactory.FromPointer); // 02466A301A78 0x48 LiveSkillDetailPopupViewFactory ( 00018657C770 ModelClassType LiveSkillDetailPopupViewFactory LiveSkillDetailPopupViewFactory LiveSkillDetailPopupViewFactory Pointer )
+            value.SelectFavoriteMarkPopupViewFactory        = GetObject<SelectFavoriteMarkPopupViewFactory>(new IntPtr(p + 0x030), ReversePrism.DataModels.SelectFavoriteMarkPopupViewFactory.FromPointer); // 0x30 SelectFavoriteMarkPopupViewFactory ( ModelClassType SelectFavoriteMarkPopupViewFactory SelectFavoriteMarkPopupViewFactory SelectFavoriteMarkPopupViewFactory Pointer )
+            value.EfficacyDetailListPopupViewFactory        = GetObject<EfficacyDetailListPopupViewFactory>(new IntPtr(p + 0x038), ReversePrism.DataModels.EfficacyDetailListPopupViewFactory.FromPointer); // 0x38 EfficacyDetailListPopupViewFactory ( ModelClassType EfficacyDetailListPopupViewFactory EfficacyDetailListPopupViewFactory EfficacyDetailListPopupViewFactory Pointer )
+            value.FUnitDetailPopupViewFactory               = GetObject<FUnitDetailPopupViewFactory>(new IntPtr(p + 0x040), ReversePrism.DataModels.FUnitDetailPopupViewFactory.FromPointer); // 0x40 FUnitDetailPopupViewFactory ( ModelClassType FUnitDetailPopupViewFactory FUnitDetailPopupViewFactory FUnitDetailPopupViewFactory Pointer )
+            value.LiveSkillDetailPopupViewFactory           = GetObject<LiveSkillDetailPopupViewFactory>(new IntPtr(p + 0x048), ReversePrism.DataModels.LiveSkillDetailPopupViewFactory.FromPointer); // 0x48 LiveSkillDetailPopupViewFactory ( ModelClassType LiveSkillDetailPopupViewFactory LiveSkillDetailPopupViewFactory LiveSkillDetailPopupViewFactory Pointer )
 
             return value;
         }

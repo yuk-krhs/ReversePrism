@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<HomeCutSceneStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstHomeCutSceneIdFieldNumber             int IL2CPP_TYPE_I4
-    // 018 MstHomeCutSceneId                        0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MstHomeCutSceneId                        ModelPrimitiveType int int int Int32
     // 000 ResourceIdFieldNumber                    int IL2CPP_TYPE_I4
-    // 020 ResourceId                               000186671910 ModelPrimitiveType string string string String
+    // 020 ResourceId                               ModelPrimitiveType string string string String
     public partial class HomeCutSceneStatus : DataModel
     {
         public int                                      MstHomeCutSceneId                       { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HomeCutSceneStatus() { Pointer= p0 };
 
-            value.MstHomeCutSceneId                         = GetInt32(new IntPtr(p + 0x018)); // 024662022D58 0x18 MstHomeCutSceneId           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ResourceId                                = GetString(new IntPtr(p + 0x020)); // 024662022D98 0x20 ResourceId                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.MstHomeCutSceneId                         = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstHomeCutSceneId           ( ModelPrimitiveType int int int Int32 )
+            value.ResourceId                                = GetString(new IntPtr(p + 0x020)); // 0x20 ResourceId                  ( ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 LogHandler                               00018659FC60 ModelClassType ILogHandler ILogHandler ILogHandler Pointer
-    // 018 LogEnabled                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 01C FilterLogType                            0001865B0450 ModelEnumType LogType LogType LogType Int32
+    // 010 LogHandler                               ModelClassType ILogHandler ILogHandler ILogHandler Pointer
+    // 018 LogEnabled                               ModelPrimitiveType bool bool bool Bool
+    // 01C FilterLogType                            ModelEnumType LogType LogType LogType Int32
     public partial class SilentLogger : DataModel
     {
         public ILogHandler?                             LogHandler                              { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SilentLogger() { Pointer= p0 };
 
-            value.LogHandler                                = GetObject<ILogHandler>(new IntPtr(p + 0x010), ReversePrism.DataModels.ILogHandler.FromPointer); // 0245A3CBA7A0 0x10 LogHandler                  ( 00018659FC60 ModelClassType ILogHandler ILogHandler ILogHandler Pointer )
-            value.LogEnabled                                = GetBool(new IntPtr(p + 0x018)); // 0245A3CBA7C0 0x18 LogEnabled                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.FilterLogType                             = (LogType)GetInt32(new IntPtr(p + 0x01C)); // 0245A3CBA7E0 0x1C FilterLogType               ( 0001865B0450 ModelEnumType LogType LogType LogType Int32 )
+            value.LogHandler                                = GetObject<ILogHandler>(new IntPtr(p + 0x010), ReversePrism.DataModels.ILogHandler.FromPointer); // 0x10 LogHandler                  ( ModelClassType ILogHandler ILogHandler ILogHandler Pointer )
+            value.LogEnabled                                = GetBool(new IntPtr(p + 0x018)); // 0x18 LogEnabled                  ( ModelPrimitiveType bool bool bool Bool )
+            value.FilterLogType                             = (LogType)GetInt32(new IntPtr(p + 0x01C)); // 0x1C FilterLogType               ( ModelEnumType LogType LogType LogType Int32 )
 
             return value;
         }

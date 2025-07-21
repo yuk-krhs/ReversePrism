@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Name                                     000186675150 ModelPrimitiveType string string string String
-    // 018 Id                                       0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 01C GameValue                                000186666050 ModelPrimitiveType float float float Single
+    // 010 Name                                     ModelPrimitiveType string string string String
+    // 018 Id                                       ModelPrimitiveType uint uint uint UInt32
+    // 01C GameValue                                ModelPrimitiveType float float float Single
     public partial class GameVariableInfo : DataModel
     {
         public string                                   Name                                    { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GameVariableInfo() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0245A729FA38 0x10 Name                        ( 000186675150 ModelPrimitiveType string string string String )
-            value.Id                                        = GetUInt32(new IntPtr(p + 0x018)); // 0245A729FA58 0x18 Id                          ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.GameValue                                 = GetSingle(new IntPtr(p + 0x01C)); // 0245A729FA78 0x1C GameValue                   ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Name                        ( ModelPrimitiveType string string string String )
+            value.Id                                        = GetUInt32(new IntPtr(p + 0x018)); // 0x18 Id                          ( ModelPrimitiveType uint uint uint UInt32 )
+            value.GameValue                                 = GetSingle(new IntPtr(p + 0x01C)); // 0x1C GameValue                   ( ModelPrimitiveType float float float Single )
 
             return value;
         }

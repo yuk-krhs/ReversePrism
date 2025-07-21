@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 SourceProvider                           0001866580B0 ModelClassType IStorageLocationProvider IStorageLocationProvider IStorageLocationProvider Pointer
-    // 018 BackupProvider                           0001866580B0 ModelClassType IStorageLocationProvider IStorageLocationProvider IStorageLocationProvider Pointer
+    // 010 SourceProvider                           ModelClassType IStorageLocationProvider IStorageLocationProvider IStorageLocationProvider Pointer
+    // 018 BackupProvider                           ModelClassType IStorageLocationProvider IStorageLocationProvider IStorageLocationProvider Pointer
     public partial class StorageBackup : DataModel
     {
         public IStorageLocationProvider?                SourceProvider                          { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StorageBackup() { Pointer= p0 };
 
-            value.SourceProvider                            = GetObject<IStorageLocationProvider>(new IntPtr(p + 0x010), ReversePrism.DataModels.IStorageLocationProvider.FromPointer); // 0245A3D033D8 0x10 SourceProvider              ( 0001866580B0 ModelClassType IStorageLocationProvider IStorageLocationProvider IStorageLocationProvider Pointer )
-            value.BackupProvider                            = GetObject<IStorageLocationProvider>(new IntPtr(p + 0x018), ReversePrism.DataModels.IStorageLocationProvider.FromPointer); // 0245A3D033F8 0x18 BackupProvider              ( 0001866580B0 ModelClassType IStorageLocationProvider IStorageLocationProvider IStorageLocationProvider Pointer )
+            value.SourceProvider                            = GetObject<IStorageLocationProvider>(new IntPtr(p + 0x010), ReversePrism.DataModels.IStorageLocationProvider.FromPointer); // 0x10 SourceProvider              ( ModelClassType IStorageLocationProvider IStorageLocationProvider IStorageLocationProvider Pointer )
+            value.BackupProvider                            = GetObject<IStorageLocationProvider>(new IntPtr(p + 0x018), ReversePrism.DataModels.IStorageLocationProvider.FromPointer); // 0x18 BackupProvider              ( ModelClassType IStorageLocationProvider IStorageLocationProvider IStorageLocationProvider Pointer )
 
             return value;
         }

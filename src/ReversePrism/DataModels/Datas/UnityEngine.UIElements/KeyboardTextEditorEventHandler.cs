@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 M_ImguiEvent                             00018674D0D0 ModelClassType Event Event Event Pointer
-    // 028 M_Changed                                000186595210 ModelPrimitiveType bool bool bool Bool
+    // 020 M_ImguiEvent                             ModelClassType Event Event Event Pointer
+    // 028 M_Changed                                ModelPrimitiveType bool bool bool Bool
     public partial class KeyboardTextEditorEventHandler : DataModel
     {
         public Event?                                   M_ImguiEvent                            { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new KeyboardTextEditorEventHandler() { Pointer= p0 };
 
-            value.M_ImguiEvent                              = GetObject<Event>(new IntPtr(p + 0x020), ReversePrism.DataModels.Event.FromPointer); // 0245A66D8710 0x20 M_ImguiEvent                ( 00018674D0D0 ModelClassType Event Event Event Pointer )
-            value.M_Changed                                 = GetBool(new IntPtr(p + 0x028)); // 0245A66D8730 0x28 M_Changed                   ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.M_ImguiEvent                              = GetObject<Event>(new IntPtr(p + 0x020), ReversePrism.DataModels.Event.FromPointer); // 0x20 M_ImguiEvent                ( ModelClassType Event Event Event Pointer )
+            value.M_Changed                                 = GetBool(new IntPtr(p + 0x028)); // 0x28 M_Changed                   ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

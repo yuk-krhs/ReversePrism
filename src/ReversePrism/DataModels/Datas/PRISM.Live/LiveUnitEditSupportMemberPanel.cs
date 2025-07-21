@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Type                                     000186558A80 ModelEnumType LiveIdolParameterType LiveIdolParameterType LiveIdolParameterType Int32
-    // 028 IconViews                                000185B99CC0 ModelClassListType PFIdolIconView[] PFIdolIconView[] List<PFIdolIconView> Pointer
-    // 030 EmptyObjects                             000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
-    // 038 TotalParameterText                       0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 020 Type                                     ModelEnumType LiveIdolParameterType LiveIdolParameterType LiveIdolParameterType Int32
+    // 028 IconViews                                ModelClassListType PFIdolIconView[] PFIdolIconView[] List<PFIdolIconView> Pointer
+    // 030 EmptyObjects                             ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
+    // 038 TotalParameterText                       ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     public partial class LiveUnitEditSupportMemberPanel : DataModel
     {
         public LiveIdolParameterType                    Type                                    { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveUnitEditSupportMemberPanel() { Pointer= p0 };
 
-            value.Type                                      = (LiveIdolParameterType)GetInt32(new IntPtr(p + 0x020)); // 0246653225A0 0x20 Type                        ( 000186558A80 ModelEnumType LiveIdolParameterType LiveIdolParameterType LiveIdolParameterType Int32 )
-            value.IconViews                                 = GetObjectList<PFIdolIconView>(new IntPtr(p + 0x028), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 0246653225C0 0x28 IconViews                   ( 000185B99CC0 ModelClassListType PFIdolIconView[] PFIdolIconView[] List<PFIdolIconView> Pointer )
-            value.EmptyObjects                              = GetObjectList<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0246653225E0 0x30 EmptyObjects                ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
-            value.TotalParameterText                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665322600 0x38 TotalParameterText          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Type                                      = (LiveIdolParameterType)GetInt32(new IntPtr(p + 0x020)); // 0x20 Type                        ( ModelEnumType LiveIdolParameterType LiveIdolParameterType LiveIdolParameterType Int32 )
+            value.IconViews                                 = GetObjectList<PFIdolIconView>(new IntPtr(p + 0x028), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 0x28 IconViews                   ( ModelClassListType PFIdolIconView[] PFIdolIconView[] List<PFIdolIconView> Pointer )
+            value.EmptyObjects                              = GetObjectList<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0x30 EmptyObjects                ( ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.TotalParameterText                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x38 TotalParameterText          ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

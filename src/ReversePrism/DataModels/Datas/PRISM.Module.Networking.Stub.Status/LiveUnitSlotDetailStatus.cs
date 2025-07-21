@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<LiveUnitSlotDetailStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 SlotFieldNumber                          int IL2CPP_TYPE_I4
-    // 018 Slot                                     0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 Slot                                     ModelPrimitiveType int int int Int32
     // 000 UnitIdolFieldNumber                      int IL2CPP_TYPE_I4
-    // 020 UnitIdol                                 000186592F90 ModelClassType LiveUnitIdolDetailStatus LiveUnitIdolDetailStatus LiveUnitIdolDetailStatus Pointer
+    // 020 UnitIdol                                 ModelClassType LiveUnitIdolDetailStatus LiveUnitIdolDetailStatus LiveUnitIdolDetailStatus Pointer
     public partial class LiveUnitSlotDetailStatus : DataModel
     {
         public int                                      Slot                                    { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveUnitSlotDetailStatus() { Pointer= p0 };
 
-            value.Slot                                      = GetInt32(new IntPtr(p + 0x018)); // 0246612EF1E0 0x18 Slot                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UnitIdol                                  = GetObject<LiveUnitIdolDetailStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveUnitIdolDetailStatus.FromPointer); // 0246612EF220 0x20 UnitIdol                    ( 000186592F90 ModelClassType LiveUnitIdolDetailStatus LiveUnitIdolDetailStatus LiveUnitIdolDetailStatus Pointer )
+            value.Slot                                      = GetInt32(new IntPtr(p + 0x018)); // 0x18 Slot                        ( ModelPrimitiveType int int int Int32 )
+            value.UnitIdol                                  = GetObject<LiveUnitIdolDetailStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveUnitIdolDetailStatus.FromPointer); // 0x20 UnitIdol                    ( ModelClassType LiveUnitIdolDetailStatus LiveUnitIdolDetailStatus LiveUnitIdolDetailStatus Pointer )
 
             return value;
         }

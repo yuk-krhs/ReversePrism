@@ -8,14 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 StageViewModels                          000185B74930 ModelClassListType ChallengeTourStageViewModel[] ChallengeTourStageViewModel[] List<ChallengeTourStageViewModel> Pointer
-    // 018 ChallengeTourStatus                      000186727850 ModelClassType IChallengeTourStatus IChallengeTourStatus IChallengeTourStatus Pointer
-    // 020 FesUnitModel                             00018650A340 ModelClassType IFesUnitStatus IFesUnitStatus IFesUnitStatus Pointer
-    // 028 FesUnitDetailViewModel                   00018654AC20 ModelClassType FUnitDetailPopupViewModel FUnitDetailPopupViewModel FUnitDetailPopupViewModel Pointer
+    // 010 StageViewModels                          ModelClassListType ChallengeTourStageViewModel[] ChallengeTourStageViewModel[] List<ChallengeTourStageViewModel> Pointer
+    // 018 ChallengeTourStatus                      ModelClassType IChallengeTourStatus IChallengeTourStatus IChallengeTourStatus Pointer
+    // 020 FesUnitModel                             ModelClassType IFesUnitStatus IFesUnitStatus IFesUnitStatus Pointer
+    // 028 FesUnitDetailViewModel                   ModelClassType FUnitDetailPopupViewModel FUnitDetailPopupViewModel FUnitDetailPopupViewModel Pointer
     // 030 <ProduceCards>k__BackingField            IEnumerable`1<IProduceCardStatus> IL2CPP_TYPE_GENERICINST
-    // 038 PIdolUnitViewModels                      000185B74420 ModelClassListType ChallengeTourPIdolUnitViewModel[] ChallengeTourPIdolUnitViewModel[] List<ChallengeTourPIdolUnitViewModel> Pointer
-    // 040 PIdolUnitVoDaViMeParameter               0001865EF0E0 ModelClassType IProduceParameterStatus IProduceParameterStatus IProduceParameterStatus Pointer
-    // 048 StageViewModels                          000185B74930 ModelClassListType ChallengeTourStageViewModel[] ChallengeTourStageViewModel[] List<ChallengeTourStageViewModel> Pointer
+    // 038 PIdolUnitViewModels                      ModelClassListType ChallengeTourPIdolUnitViewModel[] ChallengeTourPIdolUnitViewModel[] List<ChallengeTourPIdolUnitViewModel> Pointer
+    // 040 PIdolUnitVoDaViMeParameter               ModelClassType IProduceParameterStatus IProduceParameterStatus IProduceParameterStatus Pointer
+    // 048 StageViewModels                          ModelClassListType ChallengeTourStageViewModel[] ChallengeTourStageViewModel[] List<ChallengeTourStageViewModel> Pointer
     public partial class ChallengeTourUnitViewModel : DataModel
     {
         public List<ChallengeTourStageViewModel>?       StageViewModels                         { get; set; }
@@ -33,12 +33,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChallengeTourUnitViewModel() { Pointer= p0 };
 
-            value.StageViewModels                           = GetObjectList<ChallengeTourStageViewModel>(new IntPtr(p + 0x048), ReversePrism.DataModels.ChallengeTourStageViewModel.FromPointer); // 0246664D5440 0x48 StageViewModels             ( 000185B74930 ModelClassListType ChallengeTourStageViewModel[] ChallengeTourStageViewModel[] List<ChallengeTourStageViewModel> Pointer )
-            value.ChallengeTourStatus                       = GetObject<IChallengeTourStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IChallengeTourStatus.FromPointer); // 0246664D5380 0x18 ChallengeTourStatus         ( 000186727850 ModelClassType IChallengeTourStatus IChallengeTourStatus IChallengeTourStatus Pointer )
-            value.FesUnitModel                              = GetObject<IFesUnitStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IFesUnitStatus.FromPointer); // 0246664D53A0 0x20 FesUnitModel                ( 00018650A340 ModelClassType IFesUnitStatus IFesUnitStatus IFesUnitStatus Pointer )
-            value.FesUnitDetailViewModel                    = GetObject<FUnitDetailPopupViewModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.FUnitDetailPopupViewModel.FromPointer); // 0246664D53C0 0x28 FesUnitDetailViewModel      ( 00018654AC20 ModelClassType FUnitDetailPopupViewModel FUnitDetailPopupViewModel FUnitDetailPopupViewModel Pointer )
-            value.PIdolUnitViewModels                       = GetObjectList<ChallengeTourPIdolUnitViewModel>(new IntPtr(p + 0x038), ReversePrism.DataModels.ChallengeTourPIdolUnitViewModel.FromPointer); // 0246664D5400 0x38 PIdolUnitViewModels         ( 000185B74420 ModelClassListType ChallengeTourPIdolUnitViewModel[] ChallengeTourPIdolUnitViewModel[] List<ChallengeTourPIdolUnitViewModel> Pointer )
-            value.PIdolUnitVoDaViMeParameter                = GetObject<IProduceParameterStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.IProduceParameterStatus.FromPointer); // 0246664D5420 0x40 PIdolUnitVoDaViMeParameter  ( 0001865EF0E0 ModelClassType IProduceParameterStatus IProduceParameterStatus IProduceParameterStatus Pointer )
+            value.StageViewModels                           = GetObjectList<ChallengeTourStageViewModel>(new IntPtr(p + 0x048), ReversePrism.DataModels.ChallengeTourStageViewModel.FromPointer); // 0x48 StageViewModels             ( ModelClassListType ChallengeTourStageViewModel[] ChallengeTourStageViewModel[] List<ChallengeTourStageViewModel> Pointer )
+            value.ChallengeTourStatus                       = GetObject<IChallengeTourStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IChallengeTourStatus.FromPointer); // 0x18 ChallengeTourStatus         ( ModelClassType IChallengeTourStatus IChallengeTourStatus IChallengeTourStatus Pointer )
+            value.FesUnitModel                              = GetObject<IFesUnitStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IFesUnitStatus.FromPointer); // 0x20 FesUnitModel                ( ModelClassType IFesUnitStatus IFesUnitStatus IFesUnitStatus Pointer )
+            value.FesUnitDetailViewModel                    = GetObject<FUnitDetailPopupViewModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.FUnitDetailPopupViewModel.FromPointer); // 0x28 FesUnitDetailViewModel      ( ModelClassType FUnitDetailPopupViewModel FUnitDetailPopupViewModel FUnitDetailPopupViewModel Pointer )
+            value.PIdolUnitViewModels                       = GetObjectList<ChallengeTourPIdolUnitViewModel>(new IntPtr(p + 0x038), ReversePrism.DataModels.ChallengeTourPIdolUnitViewModel.FromPointer); // 0x38 PIdolUnitViewModels         ( ModelClassListType ChallengeTourPIdolUnitViewModel[] ChallengeTourPIdolUnitViewModel[] List<ChallengeTourPIdolUnitViewModel> Pointer )
+            value.PIdolUnitVoDaViMeParameter                = GetObject<IProduceParameterStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.IProduceParameterStatus.FromPointer); // 0x40 PIdolUnitVoDaViMeParameter  ( ModelClassType IProduceParameterStatus IProduceParameterStatus IProduceParameterStatus Pointer )
 
             return value;
         }

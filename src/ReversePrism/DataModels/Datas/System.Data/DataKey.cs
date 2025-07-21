@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Columns                                  000185B78AF0 ModelClassListType DataColumn[] DataColumn[] List<DataColumn> Pointer
+    // 010 Columns                                  ModelClassListType DataColumn[] DataColumn[] List<DataColumn> Pointer
     public partial class DataKey : DataModel
     {
         public List<DataColumn>?                        Columns                                 { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DataKey() { Pointer= p0 };
 
-            value.Columns                                   = GetObjectList<DataColumn>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataColumn.FromPointer); // 024668900210 0x10 Columns                     ( 000185B78AF0 ModelClassListType DataColumn[] DataColumn[] List<DataColumn> Pointer )
+            value.Columns                                   = GetObjectList<DataColumn>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataColumn.FromPointer); // 0x10 Columns                     ( ModelClassListType DataColumn[] DataColumn[] List<DataColumn> Pointer )
 
             return value;
         }

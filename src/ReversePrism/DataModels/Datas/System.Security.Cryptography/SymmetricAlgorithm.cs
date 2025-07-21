@@ -8,15 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 BlockSizeValue                           0001865F3220 ModelPrimitiveType int int int Int32
-    // 014 FeedbackSizeValue                        0001865F3220 ModelPrimitiveType int int int Int32
-    // 018 IVValue                                  000185B79A50 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 020 KeyValue                                 000185B79A50 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 028 LegalBlockSizesValue                     000185B8F970 ModelClassListType KeySizes[] KeySizes[] List<KeySizes> Pointer
-    // 030 LegalKeySizesValue                       000185B8F970 ModelClassListType KeySizes[] KeySizes[] List<KeySizes> Pointer
-    // 038 KeySizeValue                             0001865F3220 ModelPrimitiveType int int int Int32
-    // 03C ModeValue                                0001865AD570 ModelEnumType CipherMode CipherMode CipherMode Int32
-    // 040 PaddingValue                             000186713600 ModelEnumType PaddingMode PaddingMode PaddingMode Int32
+    // 010 BlockSizeValue                           ModelPrimitiveType int int int Int32
+    // 014 FeedbackSizeValue                        ModelPrimitiveType int int int Int32
+    // 018 IVValue                                  ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 020 KeyValue                                 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 028 LegalBlockSizesValue                     ModelClassListType KeySizes[] KeySizes[] List<KeySizes> Pointer
+    // 030 LegalKeySizesValue                       ModelClassListType KeySizes[] KeySizes[] List<KeySizes> Pointer
+    // 038 KeySizeValue                             ModelPrimitiveType int int int Int32
+    // 03C ModeValue                                ModelEnumType CipherMode CipherMode CipherMode Int32
+    // 040 PaddingValue                             ModelEnumType PaddingMode PaddingMode PaddingMode Int32
     public partial class SymmetricAlgorithm : DataModel
     {
         public int                                      BlockSizeValue                          { get; set; }
@@ -37,15 +37,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SymmetricAlgorithm() { Pointer= p0 };
 
-            value.BlockSizeValue                            = GetInt32(new IntPtr(p + 0x010)); // 02466191DF00 0x10 BlockSizeValue              ( 0001865F3220 ModelPrimitiveType int int int Int32 )
-            value.FeedbackSizeValue                         = GetInt32(new IntPtr(p + 0x014)); // 02466191DF20 0x14 FeedbackSizeValue           ( 0001865F3220 ModelPrimitiveType int int int Int32 )
-            value.IVValue                                   = GetSByteList(new IntPtr(p + 0x018)); // 02466191DF40 0x18 IVValue                     ( 000185B79A50 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.KeyValue                                  = GetSByteList(new IntPtr(p + 0x020)); // 02466191DF60 0x20 KeyValue                    ( 000185B79A50 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.LegalBlockSizesValue                      = GetObjectList<KeySizes>(new IntPtr(p + 0x028), ReversePrism.DataModels.KeySizes.FromPointer); // 02466191DF80 0x28 LegalBlockSizesValue        ( 000185B8F970 ModelClassListType KeySizes[] KeySizes[] List<KeySizes> Pointer )
-            value.LegalKeySizesValue                        = GetObjectList<KeySizes>(new IntPtr(p + 0x030), ReversePrism.DataModels.KeySizes.FromPointer); // 02466191DFA0 0x30 LegalKeySizesValue          ( 000185B8F970 ModelClassListType KeySizes[] KeySizes[] List<KeySizes> Pointer )
-            value.KeySizeValue                              = GetInt32(new IntPtr(p + 0x038)); // 02466191DFC0 0x38 KeySizeValue                ( 0001865F3220 ModelPrimitiveType int int int Int32 )
-            value.ModeValue                                 = (CipherMode)GetInt32(new IntPtr(p + 0x03C)); // 02466191DFE0 0x3C ModeValue                   ( 0001865AD570 ModelEnumType CipherMode CipherMode CipherMode Int32 )
-            value.PaddingValue                              = (PaddingMode)GetInt32(new IntPtr(p + 0x040)); // 02466191E000 0x40 PaddingValue                ( 000186713600 ModelEnumType PaddingMode PaddingMode PaddingMode Int32 )
+            value.BlockSizeValue                            = GetInt32(new IntPtr(p + 0x010)); // 0x10 BlockSizeValue              ( ModelPrimitiveType int int int Int32 )
+            value.FeedbackSizeValue                         = GetInt32(new IntPtr(p + 0x014)); // 0x14 FeedbackSizeValue           ( ModelPrimitiveType int int int Int32 )
+            value.IVValue                                   = GetSByteList(new IntPtr(p + 0x018)); // 0x18 IVValue                     ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.KeyValue                                  = GetSByteList(new IntPtr(p + 0x020)); // 0x20 KeyValue                    ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.LegalBlockSizesValue                      = GetObjectList<KeySizes>(new IntPtr(p + 0x028), ReversePrism.DataModels.KeySizes.FromPointer); // 0x28 LegalBlockSizesValue        ( ModelClassListType KeySizes[] KeySizes[] List<KeySizes> Pointer )
+            value.LegalKeySizesValue                        = GetObjectList<KeySizes>(new IntPtr(p + 0x030), ReversePrism.DataModels.KeySizes.FromPointer); // 0x30 LegalKeySizesValue          ( ModelClassListType KeySizes[] KeySizes[] List<KeySizes> Pointer )
+            value.KeySizeValue                              = GetInt32(new IntPtr(p + 0x038)); // 0x38 KeySizeValue                ( ModelPrimitiveType int int int Int32 )
+            value.ModeValue                                 = (CipherMode)GetInt32(new IntPtr(p + 0x03C)); // 0x3C ModeValue                   ( ModelEnumType CipherMode CipherMode CipherMode Int32 )
+            value.PaddingValue                              = (PaddingMode)GetInt32(new IntPtr(p + 0x040)); // 0x40 PaddingValue                ( ModelEnumType PaddingMode PaddingMode PaddingMode Int32 )
 
             return value;
         }

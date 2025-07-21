@@ -10,6 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 ProduceCardDescription                   string IL2CPP_TYPE_STRING
     // 000 ReplaceRegex                             Regex IL2CPP_TYPE_CLASS
+    // 008 ReplaceRegexAvoidEffect                  Regex IL2CPP_TYPE_CLASS
     public partial class ProduceCardContentExtensions : DataModel
     {
 

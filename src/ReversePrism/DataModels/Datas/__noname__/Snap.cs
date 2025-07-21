@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Enable                                   000186595960 ModelPrimitiveType bool bool bool Bool
-    // 014 VelocityThreshold                        000186666050 ModelPrimitiveType float float float Single
-    // 018 Duration                                 000186666050 ModelPrimitiveType float float float Single
-    // 01C Easing                                   000186717DA0 ModelEnumType Ease Ease Ease Int32
+    // 010 Enable                                   ModelPrimitiveType bool bool bool Bool
+    // 014 VelocityThreshold                        ModelPrimitiveType float float float Single
+    // 018 Duration                                 ModelPrimitiveType float float float Single
+    // 01C Easing                                   ModelEnumType Ease Ease Ease Int32
     public partial class Snap : DataModel
     {
         public bool                                     Enable                                  { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Snap() { Pointer= p0 };
 
-            value.Enable                                    = GetBool(new IntPtr(p + 0x010)); // 02466BD249A8 0x10 Enable                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.VelocityThreshold                         = GetSingle(new IntPtr(p + 0x014)); // 02466BD249C8 0x14 VelocityThreshold           ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Duration                                  = GetSingle(new IntPtr(p + 0x018)); // 02466BD249E8 0x18 Duration                    ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Easing                                    = (Ease)GetInt32(new IntPtr(p + 0x01C)); // 02466BD24A08 0x1C Easing                      ( 000186717DA0 ModelEnumType Ease Ease Ease Int32 )
+            value.Enable                                    = GetBool(new IntPtr(p + 0x010)); // 0x10 Enable                      ( ModelPrimitiveType bool bool bool Bool )
+            value.VelocityThreshold                         = GetSingle(new IntPtr(p + 0x014)); // 0x14 VelocityThreshold           ( ModelPrimitiveType float float float Single )
+            value.Duration                                  = GetSingle(new IntPtr(p + 0x018)); // 0x18 Duration                    ( ModelPrimitiveType float float float Single )
+            value.Easing                                    = (Ease)GetInt32(new IntPtr(p + 0x01C)); // 0x1C Easing                      ( ModelEnumType Ease Ease Ease Int32 )
 
             return value;
         }

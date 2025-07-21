@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 MinVal                                   000186698DF0 ModelPrimitiveType uint uint uint UInt32
-    // 014 MaxVal                                   000186698DF0 ModelPrimitiveType uint uint uint UInt32
-    // 018 HasMaxAttr                               000186595210 ModelPrimitiveType bool bool bool Bool
-    // 019 HasMinAttr                               000186595210 ModelPrimitiveType bool bool bool Bool
-    // 01C Order                                    0001865F2F90 ModelPrimitiveType int int int Int32
+    // 010 MinVal                                   ModelPrimitiveType uint uint uint UInt32
+    // 014 MaxVal                                   ModelPrimitiveType uint uint uint UInt32
+    // 018 HasMaxAttr                               ModelPrimitiveType bool bool bool Bool
+    // 019 HasMinAttr                               ModelPrimitiveType bool bool bool Bool
+    // 01C Order                                    ModelPrimitiveType int int int Int32
     public partial class GroupContent : DataModel
     {
         public uint                                     MinVal                                  { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GroupContent() { Pointer= p0 };
 
-            value.MinVal                                    = GetUInt32(new IntPtr(p + 0x010)); // 0246675FD070 0x10 MinVal                      ( 000186698DF0 ModelPrimitiveType uint uint uint UInt32 )
-            value.MaxVal                                    = GetUInt32(new IntPtr(p + 0x014)); // 0246675FD090 0x14 MaxVal                      ( 000186698DF0 ModelPrimitiveType uint uint uint UInt32 )
-            value.HasMaxAttr                                = GetBool(new IntPtr(p + 0x018)); // 0246675FD0B0 0x18 HasMaxAttr                  ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.HasMinAttr                                = GetBool(new IntPtr(p + 0x019)); // 0246675FD0D0 0x19 HasMinAttr                  ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.Order                                     = GetInt32(new IntPtr(p + 0x01C)); // 0246675FD0F0 0x1C Order                       ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.MinVal                                    = GetUInt32(new IntPtr(p + 0x010)); // 0x10 MinVal                      ( ModelPrimitiveType uint uint uint UInt32 )
+            value.MaxVal                                    = GetUInt32(new IntPtr(p + 0x014)); // 0x14 MaxVal                      ( ModelPrimitiveType uint uint uint UInt32 )
+            value.HasMaxAttr                                = GetBool(new IntPtr(p + 0x018)); // 0x18 HasMaxAttr                  ( ModelPrimitiveType bool bool bool Bool )
+            value.HasMinAttr                                = GetBool(new IntPtr(p + 0x019)); // 0x19 HasMinAttr                  ( ModelPrimitiveType bool bool bool Bool )
+            value.Order                                     = GetInt32(new IntPtr(p + 0x01C)); // 0x1C Order                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

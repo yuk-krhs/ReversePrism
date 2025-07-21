@@ -8,51 +8,51 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 Implementation                           00018659D910 ModelClassType XmlImplementation XmlImplementation XmlImplementation Pointer
-    // 020 DomNameTable                             0001866EAD00 ModelClassType DomNameTable DomNameTable DomNameTable Pointer
-    // 028 LastChild                                00018659E450 ModelClassType XmlLinkedNode XmlLinkedNode XmlLinkedNode Pointer
-    // 030 Entities                                 0001865A0E30 ModelClassType XmlNamedNodeMap XmlNamedNodeMap XmlNamedNodeMap Pointer
-    // 038 HtElementIdMap                           0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer
-    // 040 HtElementIDAttrDecl                      0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer
-    // 048 SchemaInfo                               0001866E9EB0 ModelClassType SchemaInfo SchemaInfo SchemaInfo Pointer
-    // 050 Schemas                                  0001865BEE30 ModelClassType XmlSchemaSet XmlSchemaSet XmlSchemaSet Pointer
-    // 058 ReportValidity                           000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 059 ActualLoadingStatus                      000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 060 OnNodeInsertingDelegate                  0001865A23D0 ModelClassType XmlNodeChangedEventHandler XmlNodeChangedEventHandler XmlNodeChangedEventHandler Pointer
-    // 068 OnNodeInsertedDelegate                   0001865A23D0 ModelClassType XmlNodeChangedEventHandler XmlNodeChangedEventHandler XmlNodeChangedEventHandler Pointer
-    // 070 OnNodeRemovingDelegate                   0001865A23D0 ModelClassType XmlNodeChangedEventHandler XmlNodeChangedEventHandler XmlNodeChangedEventHandler Pointer
-    // 078 OnNodeRemovedDelegate                    0001865A23D0 ModelClassType XmlNodeChangedEventHandler XmlNodeChangedEventHandler XmlNodeChangedEventHandler Pointer
-    // 080 OnNodeChangingDelegate                   0001865A23D0 ModelClassType XmlNodeChangedEventHandler XmlNodeChangedEventHandler XmlNodeChangedEventHandler Pointer
-    // 088 OnNodeChangedDelegate                    0001865A23D0 ModelClassType XmlNodeChangedEventHandler XmlNodeChangedEventHandler XmlNodeChangedEventHandler Pointer
-    // 090 FEntRefNodesPresent                      000186595210 ModelPrimitiveType bool bool bool Bool
-    // 091 FCDataNodesPresent                       000186595210 ModelPrimitiveType bool bool bool Bool
-    // 092 PreserveWhitespace                       000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 093 IsLoading                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 098 StrDocumentName                          000186671BA0 ModelPrimitiveType string string string String
-    // 0A0 StrDocumentFragmentName                  000186671BA0 ModelPrimitiveType string string string String
-    // 0A8 StrCommentName                           000186671BA0 ModelPrimitiveType string string string String
-    // 0B0 StrTextName                              000186671BA0 ModelPrimitiveType string string string String
-    // 0B8 StrCDataSectionName                      000186671BA0 ModelPrimitiveType string string string String
-    // 0C0 StrEntityName                            000186671BA0 ModelPrimitiveType string string string String
-    // 0C8 StrID                                    000186671BA0 ModelPrimitiveType string string string String
-    // 0D0 StrXmlns                                 000186671BA0 ModelPrimitiveType string string string String
-    // 0D8 StrXml                                   000186671BA0 ModelPrimitiveType string string string String
-    // 0E0 StrSpace                                 000186671BA0 ModelPrimitiveType string string string String
-    // 0E8 StrLang                                  000186671BA0 ModelPrimitiveType string string string String
-    // 0F0 StrEmpty                                 000186671BA0 ModelPrimitiveType string string string String
-    // 0F8 StrNonSignificantWhitespaceName          000186671BA0 ModelPrimitiveType string string string String
-    // 100 StrSignificantWhitespaceName             000186671BA0 ModelPrimitiveType string string string String
-    // 108 StrReservedXmlns                         000186671BA0 ModelPrimitiveType string string string String
-    // 110 StrReservedXml                           000186671BA0 ModelPrimitiveType string string string String
-    // 118 BaseURI                                  000186671BA0 ModelPrimitiveType string string string String
-    // 120 Resolver                                 0001865ABBE0 ModelClassType XmlResolver XmlResolver XmlResolver Pointer
-    // 128 BSetResolver                             000186595210 ModelPrimitiveType bool bool bool Bool
+    // 018 Implementation                           ModelClassType XmlImplementation XmlImplementation XmlImplementation Pointer
+    // 020 DomNameTable                             ModelClassType DomNameTable DomNameTable DomNameTable Pointer
+    // 028 LastChild                                ModelClassType XmlLinkedNode XmlLinkedNode XmlLinkedNode Pointer
+    // 030 Entities                                 ModelClassType XmlNamedNodeMap XmlNamedNodeMap XmlNamedNodeMap Pointer
+    // 038 HtElementIdMap                           ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 040 HtElementIDAttrDecl                      ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 048 SchemaInfo                               ModelClassType SchemaInfo SchemaInfo SchemaInfo Pointer
+    // 050 Schemas                                  ModelClassType XmlSchemaSet XmlSchemaSet XmlSchemaSet Pointer
+    // 058 ReportValidity                           ModelPrimitiveType bool bool bool Bool
+    // 059 ActualLoadingStatus                      ModelPrimitiveType bool bool bool Bool
+    // 060 OnNodeInsertingDelegate                  ModelClassType XmlNodeChangedEventHandler XmlNodeChangedEventHandler XmlNodeChangedEventHandler Pointer
+    // 068 OnNodeInsertedDelegate                   ModelClassType XmlNodeChangedEventHandler XmlNodeChangedEventHandler XmlNodeChangedEventHandler Pointer
+    // 070 OnNodeRemovingDelegate                   ModelClassType XmlNodeChangedEventHandler XmlNodeChangedEventHandler XmlNodeChangedEventHandler Pointer
+    // 078 OnNodeRemovedDelegate                    ModelClassType XmlNodeChangedEventHandler XmlNodeChangedEventHandler XmlNodeChangedEventHandler Pointer
+    // 080 OnNodeChangingDelegate                   ModelClassType XmlNodeChangedEventHandler XmlNodeChangedEventHandler XmlNodeChangedEventHandler Pointer
+    // 088 OnNodeChangedDelegate                    ModelClassType XmlNodeChangedEventHandler XmlNodeChangedEventHandler XmlNodeChangedEventHandler Pointer
+    // 090 FEntRefNodesPresent                      ModelPrimitiveType bool bool bool Bool
+    // 091 FCDataNodesPresent                       ModelPrimitiveType bool bool bool Bool
+    // 092 PreserveWhitespace                       ModelPrimitiveType bool bool bool Bool
+    // 093 IsLoading                                ModelPrimitiveType bool bool bool Bool
+    // 098 StrDocumentName                          ModelPrimitiveType string string string String
+    // 0A0 StrDocumentFragmentName                  ModelPrimitiveType string string string String
+    // 0A8 StrCommentName                           ModelPrimitiveType string string string String
+    // 0B0 StrTextName                              ModelPrimitiveType string string string String
+    // 0B8 StrCDataSectionName                      ModelPrimitiveType string string string String
+    // 0C0 StrEntityName                            ModelPrimitiveType string string string String
+    // 0C8 StrID                                    ModelPrimitiveType string string string String
+    // 0D0 StrXmlns                                 ModelPrimitiveType string string string String
+    // 0D8 StrXml                                   ModelPrimitiveType string string string String
+    // 0E0 StrSpace                                 ModelPrimitiveType string string string String
+    // 0E8 StrLang                                  ModelPrimitiveType string string string String
+    // 0F0 StrEmpty                                 ModelPrimitiveType string string string String
+    // 0F8 StrNonSignificantWhitespaceName          ModelPrimitiveType string string string String
+    // 100 StrSignificantWhitespaceName             ModelPrimitiveType string string string String
+    // 108 StrReservedXmlns                         ModelPrimitiveType string string string String
+    // 110 StrReservedXml                           ModelPrimitiveType string string string String
+    // 118 BaseURI                                  ModelPrimitiveType string string string String
+    // 120 Resolver                                 ModelClassType XmlResolver XmlResolver XmlResolver Pointer
+    // 128 BSetResolver                             ModelPrimitiveType bool bool bool Bool
     // 130 objLock                                  <object> IL2CPP_TYPE_OBJECT
-    // 138 NamespaceXml                             000186589BC0 ModelClassType XmlAttribute XmlAttribute XmlAttribute Pointer
+    // 138 NamespaceXml                             ModelClassType XmlAttribute XmlAttribute XmlAttribute Pointer
     // 000 EmptyEnumerator                          EmptyEnumerator IL2CPP_TYPE_CLASS
     // 008 NotKnownSchemaInfo                       IXmlSchemaInfo IL2CPP_TYPE_CLASS
-    // 010 ValidSchemaInfo                          0001866A13F0 ModelClassType IXmlSchemaInfo IXmlSchemaInfo IXmlSchemaInfo Pointer
-    // 018 InvalidSchemaInfo                        0001866A13F0 ModelClassType IXmlSchemaInfo IXmlSchemaInfo IXmlSchemaInfo Pointer
+    // 010 ValidSchemaInfo                          ModelClassType IXmlSchemaInfo IXmlSchemaInfo IXmlSchemaInfo Pointer
+    // 018 InvalidSchemaInfo                        ModelClassType IXmlSchemaInfo IXmlSchemaInfo IXmlSchemaInfo Pointer
     public partial class XmlDocument : DataModel
     {
         public XmlImplementation?                       Implementation                          { get; set; }
@@ -106,48 +106,48 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlDocument() { Pointer= p0 };
 
-            value.Implementation                            = GetObject<XmlImplementation>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlImplementation.FromPointer); // 02466749C130 0x18 Implementation              ( 00018659D910 ModelClassType XmlImplementation XmlImplementation XmlImplementation Pointer )
-            value.DomNameTable                              = GetObject<DomNameTable>(new IntPtr(p + 0x020), ReversePrism.DataModels.DomNameTable.FromPointer); // 02466749C150 0x20 DomNameTable                ( 0001866EAD00 ModelClassType DomNameTable DomNameTable DomNameTable Pointer )
-            value.LastChild                                 = GetObject<XmlLinkedNode>(new IntPtr(p + 0x028), ReversePrism.DataModels.XmlLinkedNode.FromPointer); // 02466749C170 0x28 LastChild                   ( 00018659E450 ModelClassType XmlLinkedNode XmlLinkedNode XmlLinkedNode Pointer )
-            value.Entities                                  = GetObject<XmlNamedNodeMap>(new IntPtr(p + 0x030), ReversePrism.DataModels.XmlNamedNodeMap.FromPointer); // 02466749C190 0x30 Entities                    ( 0001865A0E30 ModelClassType XmlNamedNodeMap XmlNamedNodeMap XmlNamedNodeMap Pointer )
-            value.HtElementIdMap                            = GetObject<Hashtable>(new IntPtr(p + 0x038), ReversePrism.DataModels.Hashtable.FromPointer); // 02466749C1B0 0x38 HtElementIdMap              ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.HtElementIDAttrDecl                       = GetObject<Hashtable>(new IntPtr(p + 0x040), ReversePrism.DataModels.Hashtable.FromPointer); // 02466749C1D0 0x40 HtElementIDAttrDecl         ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.SchemaInfo                                = GetObject<SchemaInfo>(new IntPtr(p + 0x048), ReversePrism.DataModels.SchemaInfo.FromPointer); // 02466749C1F0 0x48 SchemaInfo                  ( 0001866E9EB0 ModelClassType SchemaInfo SchemaInfo SchemaInfo Pointer )
-            value.Schemas                                   = GetObject<XmlSchemaSet>(new IntPtr(p + 0x050), ReversePrism.DataModels.XmlSchemaSet.FromPointer); // 02466749C210 0x50 Schemas                     ( 0001865BEE30 ModelClassType XmlSchemaSet XmlSchemaSet XmlSchemaSet Pointer )
-            value.ReportValidity                            = GetBool(new IntPtr(p + 0x058)); // 02466749C230 0x58 ReportValidity              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ActualLoadingStatus                       = GetBool(new IntPtr(p + 0x059)); // 02466749C250 0x59 ActualLoadingStatus         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.OnNodeInsertingDelegate                   = GetObject<XmlNodeChangedEventHandler>(new IntPtr(p + 0x060), ReversePrism.DataModels.XmlNodeChangedEventHandler.FromPointer); // 02466749C270 0x60 OnNodeInsertingDelegate     ( 0001865A23D0 ModelClassType XmlNodeChangedEventHandler XmlNodeChangedEventHandler XmlNodeChangedEventHandler Pointer )
-            value.OnNodeInsertedDelegate                    = GetObject<XmlNodeChangedEventHandler>(new IntPtr(p + 0x068), ReversePrism.DataModels.XmlNodeChangedEventHandler.FromPointer); // 02466749C290 0x68 OnNodeInsertedDelegate      ( 0001865A23D0 ModelClassType XmlNodeChangedEventHandler XmlNodeChangedEventHandler XmlNodeChangedEventHandler Pointer )
-            value.OnNodeRemovingDelegate                    = GetObject<XmlNodeChangedEventHandler>(new IntPtr(p + 0x070), ReversePrism.DataModels.XmlNodeChangedEventHandler.FromPointer); // 02466749C2B0 0x70 OnNodeRemovingDelegate      ( 0001865A23D0 ModelClassType XmlNodeChangedEventHandler XmlNodeChangedEventHandler XmlNodeChangedEventHandler Pointer )
-            value.OnNodeRemovedDelegate                     = GetObject<XmlNodeChangedEventHandler>(new IntPtr(p + 0x078), ReversePrism.DataModels.XmlNodeChangedEventHandler.FromPointer); // 02466749C2D0 0x78 OnNodeRemovedDelegate       ( 0001865A23D0 ModelClassType XmlNodeChangedEventHandler XmlNodeChangedEventHandler XmlNodeChangedEventHandler Pointer )
-            value.OnNodeChangingDelegate                    = GetObject<XmlNodeChangedEventHandler>(new IntPtr(p + 0x080), ReversePrism.DataModels.XmlNodeChangedEventHandler.FromPointer); // 02466749C2F0 0x80 OnNodeChangingDelegate      ( 0001865A23D0 ModelClassType XmlNodeChangedEventHandler XmlNodeChangedEventHandler XmlNodeChangedEventHandler Pointer )
-            value.OnNodeChangedDelegate                     = GetObject<XmlNodeChangedEventHandler>(new IntPtr(p + 0x088), ReversePrism.DataModels.XmlNodeChangedEventHandler.FromPointer); // 02466749C310 0x88 OnNodeChangedDelegate       ( 0001865A23D0 ModelClassType XmlNodeChangedEventHandler XmlNodeChangedEventHandler XmlNodeChangedEventHandler Pointer )
-            value.FEntRefNodesPresent                       = GetBool(new IntPtr(p + 0x090)); // 02466749C330 0x90 FEntRefNodesPresent         ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.FCDataNodesPresent                        = GetBool(new IntPtr(p + 0x091)); // 02466749C350 0x91 FCDataNodesPresent          ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.PreserveWhitespace                        = GetBool(new IntPtr(p + 0x092)); // 02466749C370 0x92 PreserveWhitespace          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsLoading                                 = GetBool(new IntPtr(p + 0x093)); // 02466749C390 0x93 IsLoading                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.StrDocumentName                           = GetString(new IntPtr(p + 0x098)); // 02466749C3B0 0x98 StrDocumentName             ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.StrDocumentFragmentName                   = GetString(new IntPtr(p + 0x0A0)); // 02466749C3D0 0xA0 StrDocumentFragmentName     ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.StrCommentName                            = GetString(new IntPtr(p + 0x0A8)); // 02466749C3F0 0xA8 StrCommentName              ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.StrTextName                               = GetString(new IntPtr(p + 0x0B0)); // 02466749C410 0xB0 StrTextName                 ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.StrCDataSectionName                       = GetString(new IntPtr(p + 0x0B8)); // 02466749C430 0xB8 StrCDataSectionName         ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.StrEntityName                             = GetString(new IntPtr(p + 0x0C0)); // 02466749C450 0xC0 StrEntityName               ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.StrID                                     = GetString(new IntPtr(p + 0x0C8)); // 02466749C470 0xC8 StrID                       ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.StrXmlns                                  = GetString(new IntPtr(p + 0x0D0)); // 02466749C490 0xD0 StrXmlns                    ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.StrXml                                    = GetString(new IntPtr(p + 0x0D8)); // 02466749C4B0 0xD8 StrXml                      ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.StrSpace                                  = GetString(new IntPtr(p + 0x0E0)); // 02466749C4D0 0xE0 StrSpace                    ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.StrLang                                   = GetString(new IntPtr(p + 0x0E8)); // 02466749C4F0 0xE8 StrLang                     ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.StrEmpty                                  = GetString(new IntPtr(p + 0x0F0)); // 02466749C510 0xF0 StrEmpty                    ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.StrNonSignificantWhitespaceName           = GetString(new IntPtr(p + 0x0F8)); // 02466749C530 0xF8 StrNonSignificantWhitespaceName ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.StrSignificantWhitespaceName              = GetString(new IntPtr(p + 0x100)); // 02466749C550 0x100 StrSignificantWhitespaceName ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.StrReservedXmlns                          = GetString(new IntPtr(p + 0x108)); // 02466749C570 0x108 StrReservedXmlns            ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.StrReservedXml                            = GetString(new IntPtr(p + 0x110)); // 02466749C590 0x110 StrReservedXml              ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.BaseURI                                   = GetString(new IntPtr(p + 0x118)); // 02466749C5B0 0x118 BaseURI                     ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.Resolver                                  = GetObject<XmlResolver>(new IntPtr(p + 0x120), ReversePrism.DataModels.XmlResolver.FromPointer); // 02466749C5D0 0x120 Resolver                    ( 0001865ABBE0 ModelClassType XmlResolver XmlResolver XmlResolver Pointer )
-            value.BSetResolver                              = GetBool(new IntPtr(p + 0x128)); // 02466749C5F0 0x128 BSetResolver                ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.NamespaceXml                              = GetObject<XmlAttribute>(new IntPtr(p + 0x138), ReversePrism.DataModels.XmlAttribute.FromPointer); // 02466749C630 0x138 NamespaceXml                ( 000186589BC0 ModelClassType XmlAttribute XmlAttribute XmlAttribute Pointer )
-            value.ValidSchemaInfo                           = GetObject<IXmlSchemaInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.IXmlSchemaInfo.FromPointer); // 02466749C690 0x10 ValidSchemaInfo             ( 0001866A13F0 ModelClassType IXmlSchemaInfo IXmlSchemaInfo IXmlSchemaInfo Pointer )
-            value.InvalidSchemaInfo                         = GetObject<IXmlSchemaInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.IXmlSchemaInfo.FromPointer); // 02466749C6B0 0x18 InvalidSchemaInfo           ( 0001866A13F0 ModelClassType IXmlSchemaInfo IXmlSchemaInfo IXmlSchemaInfo Pointer )
+            value.Implementation                            = GetObject<XmlImplementation>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlImplementation.FromPointer); // 0x18 Implementation              ( ModelClassType XmlImplementation XmlImplementation XmlImplementation Pointer )
+            value.DomNameTable                              = GetObject<DomNameTable>(new IntPtr(p + 0x020), ReversePrism.DataModels.DomNameTable.FromPointer); // 0x20 DomNameTable                ( ModelClassType DomNameTable DomNameTable DomNameTable Pointer )
+            value.LastChild                                 = GetObject<XmlLinkedNode>(new IntPtr(p + 0x028), ReversePrism.DataModels.XmlLinkedNode.FromPointer); // 0x28 LastChild                   ( ModelClassType XmlLinkedNode XmlLinkedNode XmlLinkedNode Pointer )
+            value.Entities                                  = GetObject<XmlNamedNodeMap>(new IntPtr(p + 0x030), ReversePrism.DataModels.XmlNamedNodeMap.FromPointer); // 0x30 Entities                    ( ModelClassType XmlNamedNodeMap XmlNamedNodeMap XmlNamedNodeMap Pointer )
+            value.HtElementIdMap                            = GetObject<Hashtable>(new IntPtr(p + 0x038), ReversePrism.DataModels.Hashtable.FromPointer); // 0x38 HtElementIdMap              ( ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.HtElementIDAttrDecl                       = GetObject<Hashtable>(new IntPtr(p + 0x040), ReversePrism.DataModels.Hashtable.FromPointer); // 0x40 HtElementIDAttrDecl         ( ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.SchemaInfo                                = GetObject<SchemaInfo>(new IntPtr(p + 0x048), ReversePrism.DataModels.SchemaInfo.FromPointer); // 0x48 SchemaInfo                  ( ModelClassType SchemaInfo SchemaInfo SchemaInfo Pointer )
+            value.Schemas                                   = GetObject<XmlSchemaSet>(new IntPtr(p + 0x050), ReversePrism.DataModels.XmlSchemaSet.FromPointer); // 0x50 Schemas                     ( ModelClassType XmlSchemaSet XmlSchemaSet XmlSchemaSet Pointer )
+            value.ReportValidity                            = GetBool(new IntPtr(p + 0x058)); // 0x58 ReportValidity              ( ModelPrimitiveType bool bool bool Bool )
+            value.ActualLoadingStatus                       = GetBool(new IntPtr(p + 0x059)); // 0x59 ActualLoadingStatus         ( ModelPrimitiveType bool bool bool Bool )
+            value.OnNodeInsertingDelegate                   = GetObject<XmlNodeChangedEventHandler>(new IntPtr(p + 0x060), ReversePrism.DataModels.XmlNodeChangedEventHandler.FromPointer); // 0x60 OnNodeInsertingDelegate     ( ModelClassType XmlNodeChangedEventHandler XmlNodeChangedEventHandler XmlNodeChangedEventHandler Pointer )
+            value.OnNodeInsertedDelegate                    = GetObject<XmlNodeChangedEventHandler>(new IntPtr(p + 0x068), ReversePrism.DataModels.XmlNodeChangedEventHandler.FromPointer); // 0x68 OnNodeInsertedDelegate      ( ModelClassType XmlNodeChangedEventHandler XmlNodeChangedEventHandler XmlNodeChangedEventHandler Pointer )
+            value.OnNodeRemovingDelegate                    = GetObject<XmlNodeChangedEventHandler>(new IntPtr(p + 0x070), ReversePrism.DataModels.XmlNodeChangedEventHandler.FromPointer); // 0x70 OnNodeRemovingDelegate      ( ModelClassType XmlNodeChangedEventHandler XmlNodeChangedEventHandler XmlNodeChangedEventHandler Pointer )
+            value.OnNodeRemovedDelegate                     = GetObject<XmlNodeChangedEventHandler>(new IntPtr(p + 0x078), ReversePrism.DataModels.XmlNodeChangedEventHandler.FromPointer); // 0x78 OnNodeRemovedDelegate       ( ModelClassType XmlNodeChangedEventHandler XmlNodeChangedEventHandler XmlNodeChangedEventHandler Pointer )
+            value.OnNodeChangingDelegate                    = GetObject<XmlNodeChangedEventHandler>(new IntPtr(p + 0x080), ReversePrism.DataModels.XmlNodeChangedEventHandler.FromPointer); // 0x80 OnNodeChangingDelegate      ( ModelClassType XmlNodeChangedEventHandler XmlNodeChangedEventHandler XmlNodeChangedEventHandler Pointer )
+            value.OnNodeChangedDelegate                     = GetObject<XmlNodeChangedEventHandler>(new IntPtr(p + 0x088), ReversePrism.DataModels.XmlNodeChangedEventHandler.FromPointer); // 0x88 OnNodeChangedDelegate       ( ModelClassType XmlNodeChangedEventHandler XmlNodeChangedEventHandler XmlNodeChangedEventHandler Pointer )
+            value.FEntRefNodesPresent                       = GetBool(new IntPtr(p + 0x090)); // 0x90 FEntRefNodesPresent         ( ModelPrimitiveType bool bool bool Bool )
+            value.FCDataNodesPresent                        = GetBool(new IntPtr(p + 0x091)); // 0x91 FCDataNodesPresent          ( ModelPrimitiveType bool bool bool Bool )
+            value.PreserveWhitespace                        = GetBool(new IntPtr(p + 0x092)); // 0x92 PreserveWhitespace          ( ModelPrimitiveType bool bool bool Bool )
+            value.IsLoading                                 = GetBool(new IntPtr(p + 0x093)); // 0x93 IsLoading                   ( ModelPrimitiveType bool bool bool Bool )
+            value.StrDocumentName                           = GetString(new IntPtr(p + 0x098)); // 0x98 StrDocumentName             ( ModelPrimitiveType string string string String )
+            value.StrDocumentFragmentName                   = GetString(new IntPtr(p + 0x0A0)); // 0xA0 StrDocumentFragmentName     ( ModelPrimitiveType string string string String )
+            value.StrCommentName                            = GetString(new IntPtr(p + 0x0A8)); // 0xA8 StrCommentName              ( ModelPrimitiveType string string string String )
+            value.StrTextName                               = GetString(new IntPtr(p + 0x0B0)); // 0xB0 StrTextName                 ( ModelPrimitiveType string string string String )
+            value.StrCDataSectionName                       = GetString(new IntPtr(p + 0x0B8)); // 0xB8 StrCDataSectionName         ( ModelPrimitiveType string string string String )
+            value.StrEntityName                             = GetString(new IntPtr(p + 0x0C0)); // 0xC0 StrEntityName               ( ModelPrimitiveType string string string String )
+            value.StrID                                     = GetString(new IntPtr(p + 0x0C8)); // 0xC8 StrID                       ( ModelPrimitiveType string string string String )
+            value.StrXmlns                                  = GetString(new IntPtr(p + 0x0D0)); // 0xD0 StrXmlns                    ( ModelPrimitiveType string string string String )
+            value.StrXml                                    = GetString(new IntPtr(p + 0x0D8)); // 0xD8 StrXml                      ( ModelPrimitiveType string string string String )
+            value.StrSpace                                  = GetString(new IntPtr(p + 0x0E0)); // 0xE0 StrSpace                    ( ModelPrimitiveType string string string String )
+            value.StrLang                                   = GetString(new IntPtr(p + 0x0E8)); // 0xE8 StrLang                     ( ModelPrimitiveType string string string String )
+            value.StrEmpty                                  = GetString(new IntPtr(p + 0x0F0)); // 0xF0 StrEmpty                    ( ModelPrimitiveType string string string String )
+            value.StrNonSignificantWhitespaceName           = GetString(new IntPtr(p + 0x0F8)); // 0xF8 StrNonSignificantWhitespaceName ( ModelPrimitiveType string string string String )
+            value.StrSignificantWhitespaceName              = GetString(new IntPtr(p + 0x100)); // 0x100 StrSignificantWhitespaceName ( ModelPrimitiveType string string string String )
+            value.StrReservedXmlns                          = GetString(new IntPtr(p + 0x108)); // 0x108 StrReservedXmlns            ( ModelPrimitiveType string string string String )
+            value.StrReservedXml                            = GetString(new IntPtr(p + 0x110)); // 0x110 StrReservedXml              ( ModelPrimitiveType string string string String )
+            value.BaseURI                                   = GetString(new IntPtr(p + 0x118)); // 0x118 BaseURI                     ( ModelPrimitiveType string string string String )
+            value.Resolver                                  = GetObject<XmlResolver>(new IntPtr(p + 0x120), ReversePrism.DataModels.XmlResolver.FromPointer); // 0x120 Resolver                    ( ModelClassType XmlResolver XmlResolver XmlResolver Pointer )
+            value.BSetResolver                              = GetBool(new IntPtr(p + 0x128)); // 0x128 BSetResolver                ( ModelPrimitiveType bool bool bool Bool )
+            value.NamespaceXml                              = GetObject<XmlAttribute>(new IntPtr(p + 0x138), ReversePrism.DataModels.XmlAttribute.FromPointer); // 0x138 NamespaceXml                ( ModelClassType XmlAttribute XmlAttribute XmlAttribute Pointer )
+            value.ValidSchemaInfo                           = GetObject<IXmlSchemaInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.IXmlSchemaInfo.FromPointer); // 0x10 ValidSchemaInfo             ( ModelClassType IXmlSchemaInfo IXmlSchemaInfo IXmlSchemaInfo Pointer )
+            value.InvalidSchemaInfo                         = GetObject<IXmlSchemaInfo>(new IntPtr(p + 0x018), ReversePrism.DataModels.IXmlSchemaInfo.FromPointer); // 0x18 InvalidSchemaInfo           ( ModelClassType IXmlSchemaInfo IXmlSchemaInfo IXmlSchemaInfo Pointer )
 
             return value;
         }

@@ -10,9 +10,9 @@ namespace ReversePrism.DataModels
 
     // 000 s_TextureCounter                         int IL2CPP_TYPE_I4
     // 008 s_MarkerCopyTexture                      ProfilerMarker IL2CPP_TYPE_VALUETYPE
-    // 010 S_MarkerGetTextureData                   0001865C99C0 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32
-    // 018 S_MarkerUpdateTexture                    0001865C99C0 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32
-    // 010 Disposed                                 000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 S_MarkerGetTextureData                   ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32
+    // 018 S_MarkerUpdateTexture                    ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32
+    // 010 Disposed                                 ModelPrimitiveType bool bool bool Bool
     public partial class BaseShaderInfoStorage : DataModel
     {
         public ProfilerMarker                           S_MarkerGetTextureData                  { get; set; }
@@ -27,9 +27,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BaseShaderInfoStorage() { Pointer= p0 };
 
-            value.S_MarkerGetTextureData                    = (ProfilerMarker)GetInt32(new IntPtr(p + 0x010)); // 0245A68357B0 0x10 S_MarkerGetTextureData      ( 0001865C99C0 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
-            value.S_MarkerUpdateTexture                     = (ProfilerMarker)GetInt32(new IntPtr(p + 0x018)); // 0245A68357D0 0x18 S_MarkerUpdateTexture       ( 0001865C99C0 ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
-            value.Disposed                                  = GetBool(new IntPtr(p + 0x010)); // 0245A68357F0 0x10 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.S_MarkerGetTextureData                    = (ProfilerMarker)GetInt32(new IntPtr(p + 0x010)); // 0x10 S_MarkerGetTextureData      ( ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
+            value.S_MarkerUpdateTexture                     = (ProfilerMarker)GetInt32(new IntPtr(p + 0x018)); // 0x18 S_MarkerUpdateTexture       ( ModelEnumType ProfilerMarker ProfilerMarker ProfilerMarker Int32 )
+            value.Disposed                                  = GetBool(new IntPtr(p + 0x010)); // 0x10 Disposed                    ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

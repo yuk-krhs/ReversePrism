@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 FileFieldNumber                          int IL2CPP_TYPE_I4
     // 008 _repeated_file_codec                     FieldCodec`1<FileDescriptorProto> IL2CPP_TYPE_GENERICINST
-    // 018 File                                     000185CD8D78 ModelClassListType RepeatedField`1<FileDescriptorProto> RepeatedField`1<FileDescriptorProto> List<FileDescriptorProto> Pointer
+    // 018 File                                     ModelClassListType RepeatedField`1<FileDescriptorProto> RepeatedField`1<FileDescriptorProto> List<FileDescriptorProto> Pointer
     public partial class FileDescriptorSet : DataModel
     {
         public List<FileDescriptorProto>?               File                                    { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FileDescriptorSet() { Pointer= p0 };
 
-            value.File                                      = GetObjectList<FileDescriptorProto>(new IntPtr(p + 0x018), ReversePrism.DataModels.FileDescriptorProto.FromPointer); // 0245A3B188A0 0x18 File                        ( 000185CD8D78 ModelClassListType RepeatedField`1<FileDescriptorProto> RepeatedField`1<FileDescriptorProto> List<FileDescriptorProto> Pointer )
+            value.File                                      = GetObjectList<FileDescriptorProto>(new IntPtr(p + 0x018), ReversePrism.DataModels.FileDescriptorProto.FromPointer); // 0x18 File                        ( ModelClassListType RepeatedField`1<FileDescriptorProto> RepeatedField`1<FileDescriptorProto> List<FileDescriptorProto> Pointer )
 
             return value;
         }

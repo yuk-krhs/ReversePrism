@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Operator                                 0001865FDF40 ModelEnumType QueryOperator QueryOperator QueryOperator Int32
+    // 010 Operator                                 ModelEnumType QueryOperator QueryOperator QueryOperator Int32
     public partial class QueryExpression : DataModel
     {
         public QueryOperator                            Operator                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new QueryExpression() { Pointer= p0 };
 
-            value.Operator                                  = (QueryOperator)GetInt32(new IntPtr(p + 0x010)); // 0246688A0F70 0x10 Operator                    ( 0001865FDF40 ModelEnumType QueryOperator QueryOperator QueryOperator Int32 )
+            value.Operator                                  = (QueryOperator)GetInt32(new IntPtr(p + 0x010)); // 0x10 Operator                    ( ModelEnumType QueryOperator QueryOperator QueryOperator Int32 )
 
             return value;
         }

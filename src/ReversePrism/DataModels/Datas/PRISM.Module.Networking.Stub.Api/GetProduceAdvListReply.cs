@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 AdvListFieldNumber                       int IL2CPP_TYPE_I4
     // 008 _repeated_advList_codec                  FieldCodec`1<ProduceAdvStatus> IL2CPP_TYPE_GENERICINST
-    // 018 AdvList                                  000185CEA618 ModelClassListType RepeatedField`1<ProduceAdvStatus> RepeatedField`1<ProduceAdvStatus> List<ProduceAdvStatus> Pointer
+    // 018 AdvList                                  ModelClassListType RepeatedField`1<ProduceAdvStatus> RepeatedField`1<ProduceAdvStatus> List<ProduceAdvStatus> Pointer
     public partial class GetProduceAdvListReply : DataModel
     {
         public List<ProduceAdvStatus>?                  AdvList                                 { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetProduceAdvListReply() { Pointer= p0 };
 
-            value.AdvList                                   = GetObjectList<ProduceAdvStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceAdvStatus.FromPointer); // 02466253DAD8 0x18 AdvList                     ( 000185CEA618 ModelClassListType RepeatedField`1<ProduceAdvStatus> RepeatedField`1<ProduceAdvStatus> List<ProduceAdvStatus> Pointer )
+            value.AdvList                                   = GetObjectList<ProduceAdvStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceAdvStatus.FromPointer); // 0x18 AdvList                     ( ModelClassListType RepeatedField`1<ProduceAdvStatus> RepeatedField`1<ProduceAdvStatus> List<ProduceAdvStatus> Pointer )
 
             return value;
         }

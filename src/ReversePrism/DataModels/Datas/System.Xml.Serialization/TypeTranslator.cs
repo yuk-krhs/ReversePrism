@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 000 nameCache                                Hashtable IL2CPP_TYPE_CLASS
     // 008 primitiveTypes                           Hashtable IL2CPP_TYPE_CLASS
-    // 010 PrimitiveArrayTypes                      0001865DEF20 ModelClassType Hashtable Hashtable Hashtable Pointer
-    // 018 NullableTypes                            0001865DEF20 ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 010 PrimitiveArrayTypes                      ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 018 NullableTypes                            ModelClassType Hashtable Hashtable Hashtable Pointer
     public partial class TypeTranslator : DataModel
     {
         public Hashtable?                               PrimitiveArrayTypes                     { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TypeTranslator() { Pointer= p0 };
 
-            value.PrimitiveArrayTypes                       = GetObject<Hashtable>(new IntPtr(p + 0x010), ReversePrism.DataModels.Hashtable.FromPointer); // 024667515520 0x10 PrimitiveArrayTypes         ( 0001865DEF20 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.NullableTypes                             = GetObject<Hashtable>(new IntPtr(p + 0x018), ReversePrism.DataModels.Hashtable.FromPointer); // 024667515540 0x18 NullableTypes               ( 0001865DEF20 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.PrimitiveArrayTypes                       = GetObject<Hashtable>(new IntPtr(p + 0x010), ReversePrism.DataModels.Hashtable.FromPointer); // 0x10 PrimitiveArrayTypes         ( ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.NullableTypes                             = GetObject<Hashtable>(new IntPtr(p + 0x018), ReversePrism.DataModels.Hashtable.FromPointer); // 0x18 NullableTypes               ( ModelClassType Hashtable Hashtable Hashtable Pointer )
 
             return value;
         }

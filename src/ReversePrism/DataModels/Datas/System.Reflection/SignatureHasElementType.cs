@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 ElementType                              00018677A430 ModelClassType SignatureType SignatureType SignatureType Pointer
+    // 018 ElementType                              ModelClassType SignatureType SignatureType SignatureType Pointer
     public partial class SignatureHasElementType : DataModel
     {
         public SignatureType?                           ElementType                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SignatureHasElementType() { Pointer= p0 };
 
-            value.ElementType                               = GetObject<SignatureType>(new IntPtr(p + 0x018), ReversePrism.DataModels.SignatureType.FromPointer); // 024666D3A4E0 0x18 ElementType                 ( 00018677A430 ModelClassType SignatureType SignatureType SignatureType Pointer )
+            value.ElementType                               = GetObject<SignatureType>(new IntPtr(p + 0x018), ReversePrism.DataModels.SignatureType.FromPointer); // 0x18 ElementType                 ( ModelClassType SignatureType SignatureType SignatureType Pointer )
 
             return value;
         }

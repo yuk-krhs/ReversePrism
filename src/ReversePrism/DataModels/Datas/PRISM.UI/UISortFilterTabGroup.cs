@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 038 GoFilterBadge                            0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
+    // 038 GoFilterBadge                            ModelClassType GameObject GameObject GameObject Pointer
     public partial class UISortFilterTabGroup : DataModel
     {
         public GameObject?                              GoFilterBadge                           { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UISortFilterTabGroup() { Pointer= p0 };
 
-            value.GoFilterBadge                             = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0246655153E0 0x38 GoFilterBadge               ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.GoFilterBadge                             = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0x38 GoFilterBadge               ( ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

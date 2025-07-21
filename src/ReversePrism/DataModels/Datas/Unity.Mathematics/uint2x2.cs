@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 C0                                       0001866CA5B0 ModelEnumType uint2 uint2 uint2 Int32
-    // 018 C1                                       0001866CA5B0 ModelEnumType uint2 uint2 uint2 Int32
+    // 010 C0                                       ModelEnumType uint2 uint2 uint2 Int32
+    // 018 C1                                       ModelEnumType uint2 uint2 uint2 Int32
     // 000 identity                                 uint2x2 IL2CPP_TYPE_VALUETYPE
-    // 010 Zero                                     0001865F50F0 ModelEnumType uint2x2 uint2x2 uint2x2 Int32
+    // 010 Zero                                     ModelEnumType uint2x2 uint2x2 uint2x2 Int32
     public partial class uint2x2 : DataModel
     {
         public uint2                                    C0                                      { get; set; }
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new uint2x2() { Pointer= p0 };
 
-            value.C0                                        = (uint2)GetInt32(new IntPtr(p + 0x010)); // 0245A15CF5C0 0x10 C0                          ( 0001866CA5B0 ModelEnumType uint2 uint2 uint2 Int32 )
-            value.C1                                        = (uint2)GetInt32(new IntPtr(p + 0x018)); // 0245A15CF5E0 0x18 C1                          ( 0001866CA5B0 ModelEnumType uint2 uint2 uint2 Int32 )
-            value.Zero                                      = (uint2x2)GetInt32(new IntPtr(p + 0x010)); // 0245A15CF620 0x10 Zero                        ( 0001865F50F0 ModelEnumType uint2x2 uint2x2 uint2x2 Int32 )
+            value.C0                                        = (uint2)GetInt32(new IntPtr(p + 0x010)); // 0x10 C0                          ( ModelEnumType uint2 uint2 uint2 Int32 )
+            value.C1                                        = (uint2)GetInt32(new IntPtr(p + 0x018)); // 0x18 C1                          ( ModelEnumType uint2 uint2 uint2 Int32 )
+            value.Zero                                      = (uint2x2)GetInt32(new IntPtr(p + 0x010)); // 0x10 Zero                        ( ModelEnumType uint2x2 uint2x2 uint2x2 Int32 )
 
             return value;
         }

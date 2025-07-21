@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Handle                                 000186640190 ModelEnumType PlayableHandle PlayableHandle PlayableHandle Int32
+    // 010 M_Handle                                 ModelEnumType PlayableHandle PlayableHandle PlayableHandle Int32
     public partial class AudioMixerPlayable : DataModel
     {
         public PlayableHandle                           M_Handle                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AudioMixerPlayable() { Pointer= p0 };
 
-            value.M_Handle                                  = (PlayableHandle)GetInt32(new IntPtr(p + 0x010)); // 0245A21B6BB8 0x10 M_Handle                    ( 000186640190 ModelEnumType PlayableHandle PlayableHandle PlayableHandle Int32 )
+            value.M_Handle                                  = (PlayableHandle)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_Handle                    ( ModelEnumType PlayableHandle PlayableHandle PlayableHandle Int32 )
 
             return value;
         }

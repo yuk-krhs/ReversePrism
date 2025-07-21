@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 M_EventSystem                            00018676C3E0 ModelClassType EventSystem EventSystem EventSystem Pointer
+    // 018 M_EventSystem                            ModelClassType EventSystem EventSystem EventSystem Pointer
     public partial class BaseEventData : DataModel
     {
         public EventSystem?                             M_EventSystem                           { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BaseEventData() { Pointer= p0 };
 
-            value.M_EventSystem                             = GetObject<EventSystem>(new IntPtr(p + 0x018), ReversePrism.DataModels.EventSystem.FromPointer); // 0245A3EBC938 0x18 M_EventSystem               ( 00018676C3E0 ModelClassType EventSystem EventSystem EventSystem Pointer )
+            value.M_EventSystem                             = GetObject<EventSystem>(new IntPtr(p + 0x018), ReversePrism.DataModels.EventSystem.FromPointer); // 0x18 M_EventSystem               ( ModelClassType EventSystem EventSystem EventSystem Pointer )
 
             return value;
         }

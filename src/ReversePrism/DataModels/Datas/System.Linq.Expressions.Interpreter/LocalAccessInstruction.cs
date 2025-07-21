@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Index                                    0001865F44E0 ModelPrimitiveType int int int Int32
+    // 010 Index                                    ModelPrimitiveType int int int Int32
     public partial class LocalAccessInstruction : DataModel
     {
         public int                                      Index                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LocalAccessInstruction() { Pointer= p0 };
 
-            value.Index                                     = GetInt32(new IntPtr(p + 0x010)); // 02466A072798 0x10 Index                       ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x010)); // 0x10 Index                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

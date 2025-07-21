@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 m_Pointer                                IntPtr IL2CPP_TYPE_PTR
-    // 018 M_LengthInBytes                          0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 01C M_CapacityInBytes                        0001865F4260 ModelPrimitiveType int int int Int32
+    // 018 M_LengthInBytes                          ModelPrimitiveType int int int Int32
+    // 01C M_CapacityInBytes                        ModelPrimitiveType int int int Int32
     public partial class UnsafeScratchAllocator : DataModel
     {
         public int                                      M_LengthInBytes                         { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnsafeScratchAllocator() { Pointer= p0 };
 
-            value.M_LengthInBytes                           = GetInt32(new IntPtr(p + 0x018)); // 024669EEE6D8 0x18 M_LengthInBytes             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_CapacityInBytes                         = GetInt32(new IntPtr(p + 0x01C)); // 024669EEE6F8 0x1C M_CapacityInBytes           ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.M_LengthInBytes                           = GetInt32(new IntPtr(p + 0x018)); // 0x18 M_LengthInBytes             ( ModelPrimitiveType int int int Int32 )
+            value.M_CapacityInBytes                         = GetInt32(new IntPtr(p + 0x01C)); // 0x1C M_CapacityInBytes           ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Channel                                  00018658F970 ModelClassType Channel Channel Channel Pointer
+    // 010 Channel                                  ModelClassType Channel Channel Channel Pointer
     public partial class DefaultCallInvoker : DataModel
     {
         public Channel?                                 Channel                                 { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DefaultCallInvoker() { Pointer= p0 };
 
-            value.Channel                                   = GetObject<Channel>(new IntPtr(p + 0x010), ReversePrism.DataModels.Channel.FromPointer); // 0246693A6628 0x10 Channel                     ( 00018658F970 ModelClassType Channel Channel Channel Pointer )
+            value.Channel                                   = GetObject<Channel>(new IntPtr(p + 0x010), ReversePrism.DataModels.Channel.FromPointer); // 0x10 Channel                     ( ModelClassType Channel Channel Channel Pointer )
 
             return value;
         }

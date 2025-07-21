@@ -12,15 +12,15 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ProductRateListFieldNumber               int IL2CPP_TYPE_I4
     // 008 _repeated_productRateList_codec          FieldCodec`1<GashaBonusProductRateStatus> IL2CPP_TYPE_GENERICINST
-    // 018 ProductRateList                          000185CDA8B8 ModelClassListType RepeatedField`1<GashaBonusProductRateStatus> RepeatedField`1<GashaBonusProductRateStatus> List<GashaBonusProductRateStatus> Pointer
+    // 018 ProductRateList                          ModelClassListType RepeatedField`1<GashaBonusProductRateStatus> RepeatedField`1<GashaBonusProductRateStatus> List<GashaBonusProductRateStatus> Pointer
     // 000 BonusIdFieldNumber                       int IL2CPP_TYPE_I4
-    // 020 BonusId                                  000186671910 ModelPrimitiveType string string string String
+    // 020 BonusId                                  ModelPrimitiveType string string string String
     // 000 BodyFieldNumber                          int IL2CPP_TYPE_I4
-    // 028 Body                                     000186671910 ModelPrimitiveType string string string String
+    // 028 Body                                     ModelPrimitiveType string string string String
     // 000 CaptionFieldNumber                       int IL2CPP_TYPE_I4
-    // 030 Caption                                  000186671910 ModelPrimitiveType string string string String
+    // 030 Caption                                  ModelPrimitiveType string string string String
     // 000 StepNoFieldNumber                        int IL2CPP_TYPE_I4
-    // 038 StepNo                                   0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 038 StepNo                                   ModelPrimitiveType int int int Int32
     public partial class GashaBonusRateStatus : DataModel
     {
         public List<GashaBonusProductRateStatus>?       ProductRateList                         { get; set; }
@@ -37,11 +37,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GashaBonusRateStatus() { Pointer= p0 };
 
-            value.ProductRateList                           = GetObjectList<GashaBonusProductRateStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.GashaBonusProductRateStatus.FromPointer); // 024661523908 0x18 ProductRateList             ( 000185CDA8B8 ModelClassListType RepeatedField`1<GashaBonusProductRateStatus> RepeatedField`1<GashaBonusProductRateStatus> List<GashaBonusProductRateStatus> Pointer )
-            value.BonusId                                   = GetString(new IntPtr(p + 0x020)); // 024661523948 0x20 BonusId                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.Body                                      = GetString(new IntPtr(p + 0x028)); // 024661523988 0x28 Body                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Caption                                   = GetString(new IntPtr(p + 0x030)); // 0246615239C8 0x30 Caption                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.StepNo                                    = GetInt32(new IntPtr(p + 0x038)); // 024661523A08 0x38 StepNo                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ProductRateList                           = GetObjectList<GashaBonusProductRateStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.GashaBonusProductRateStatus.FromPointer); // 0x18 ProductRateList             ( ModelClassListType RepeatedField`1<GashaBonusProductRateStatus> RepeatedField`1<GashaBonusProductRateStatus> List<GashaBonusProductRateStatus> Pointer )
+            value.BonusId                                   = GetString(new IntPtr(p + 0x020)); // 0x20 BonusId                     ( ModelPrimitiveType string string string String )
+            value.Body                                      = GetString(new IntPtr(p + 0x028)); // 0x28 Body                        ( ModelPrimitiveType string string string String )
+            value.Caption                                   = GetString(new IntPtr(p + 0x030)); // 0x30 Caption                     ( ModelPrimitiveType string string string String )
+            value.StepNo                                    = GetInt32(new IntPtr(p + 0x038)); // 0x38 StepNo                      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

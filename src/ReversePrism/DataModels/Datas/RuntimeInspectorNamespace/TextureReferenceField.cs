@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 0B0 ReferencePreview                         000186613190 ModelClassType RawImage RawImage RawImage Pointer
+    // 0B0 ReferencePreview                         ModelClassType RawImage RawImage RawImage Pointer
     public partial class TextureReferenceField : DataModel
     {
         public RawImage?                                ReferencePreview                        { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TextureReferenceField() { Pointer= p0 };
 
-            value.ReferencePreview                          = GetObject<RawImage>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.RawImage.FromPointer); // 02466B248530 0xB0 ReferencePreview            ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
+            value.ReferencePreview                          = GetObject<RawImage>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.RawImage.FromPointer); // 0xB0 ReferencePreview            ( ModelClassType RawImage RawImage RawImage Pointer )
 
             return value;
         }

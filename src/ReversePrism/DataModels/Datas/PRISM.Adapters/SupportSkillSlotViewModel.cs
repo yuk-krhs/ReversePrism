@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 SupportSkill                             00018657DEF0 ModelClassType IInProducePotentialSupportSkillStatus IInProducePotentialSupportSkillStatus IInProducePotentialSupportSkillStatus Pointer
+    // 010 SupportSkill                             ModelClassType IInProducePotentialSupportSkillStatus IInProducePotentialSupportSkillStatus IInProducePotentialSupportSkillStatus Pointer
     public partial class SupportSkillSlotViewModel : DataModel
     {
         public IInProducePotentialSupportSkillStatus?   SupportSkill                            { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SupportSkillSlotViewModel() { Pointer= p0 };
 
-            value.SupportSkill                              = GetObject<IInProducePotentialSupportSkillStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IInProducePotentialSupportSkillStatus.FromPointer); // 024666555270 0x10 SupportSkill                ( 00018657DEF0 ModelClassType IInProducePotentialSupportSkillStatus IInProducePotentialSupportSkillStatus IInProducePotentialSupportSkillStatus Pointer )
+            value.SupportSkill                              = GetObject<IInProducePotentialSupportSkillStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IInProducePotentialSupportSkillStatus.FromPointer); // 0x10 SupportSkill                ( ModelClassType IInProducePotentialSupportSkillStatus IInProducePotentialSupportSkillStatus IInProducePotentialSupportSkillStatus Pointer )
 
             return value;
         }

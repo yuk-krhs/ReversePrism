@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 NamespaceList                            00018667E320 ModelClassType NamespaceList NamespaceList NamespaceList Pointer
+    // 010 NamespaceList                            ModelClassType NamespaceList NamespaceList NamespaceList Pointer
     // 018 particle                                 <object> IL2CPP_TYPE_OBJECT
     public partial class NamespaceListNode : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NamespaceListNode() { Pointer= p0 };
 
-            value.NamespaceList                             = GetObject<NamespaceList>(new IntPtr(p + 0x010), ReversePrism.DataModels.NamespaceList.FromPointer); // 02466755DA98 0x10 NamespaceList               ( 00018667E320 ModelClassType NamespaceList NamespaceList NamespaceList Pointer )
+            value.NamespaceList                             = GetObject<NamespaceList>(new IntPtr(p + 0x010), ReversePrism.DataModels.NamespaceList.FromPointer); // 0x10 NamespaceList               ( ModelClassType NamespaceList NamespaceList NamespaceList Pointer )
 
             return value;
         }

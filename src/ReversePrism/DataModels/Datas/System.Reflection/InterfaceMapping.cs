@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 TargetType                               000186692F60 ModelClassType Type Type Type Pointer
-    // 018 InterfaceType                            000186692F60 ModelClassType Type Type Type Pointer
-    // 020 TargetMethods                            000185B7F1F0 ModelClassListType MethodInfo[] MethodInfo[] List<MethodInfo> Pointer
-    // 028 InterfaceMethods                         000185B7F1F0 ModelClassListType MethodInfo[] MethodInfo[] List<MethodInfo> Pointer
+    // 010 TargetType                               ModelClassType Type Type Type Pointer
+    // 018 InterfaceType                            ModelClassType Type Type Type Pointer
+    // 020 TargetMethods                            ModelClassListType MethodInfo[] MethodInfo[] List<MethodInfo> Pointer
+    // 028 InterfaceMethods                         ModelClassListType MethodInfo[] MethodInfo[] List<MethodInfo> Pointer
     public partial class InterfaceMapping : DataModel
     {
         public Type?                                    TargetType                              { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InterfaceMapping() { Pointer= p0 };
 
-            value.TargetType                                = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 024666A7B8E8 0x10 TargetType                  ( 000186692F60 ModelClassType Type Type Type Pointer )
-            value.InterfaceType                             = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 024666A7B908 0x18 InterfaceType               ( 000186692F60 ModelClassType Type Type Type Pointer )
-            value.TargetMethods                             = GetObjectList<MethodInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.MethodInfo.FromPointer); // 024666A7B928 0x20 TargetMethods               ( 000185B7F1F0 ModelClassListType MethodInfo[] MethodInfo[] List<MethodInfo> Pointer )
-            value.InterfaceMethods                          = GetObjectList<MethodInfo>(new IntPtr(p + 0x028), ReversePrism.DataModels.MethodInfo.FromPointer); // 024666A7B948 0x28 InterfaceMethods            ( 000185B7F1F0 ModelClassListType MethodInfo[] MethodInfo[] List<MethodInfo> Pointer )
+            value.TargetType                                = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0x10 TargetType                  ( ModelClassType Type Type Type Pointer )
+            value.InterfaceType                             = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 0x18 InterfaceType               ( ModelClassType Type Type Type Pointer )
+            value.TargetMethods                             = GetObjectList<MethodInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.MethodInfo.FromPointer); // 0x20 TargetMethods               ( ModelClassListType MethodInfo[] MethodInfo[] List<MethodInfo> Pointer )
+            value.InterfaceMethods                          = GetObjectList<MethodInfo>(new IntPtr(p + 0x028), ReversePrism.DataModels.MethodInfo.FromPointer); // 0x28 InterfaceMethods            ( ModelClassListType MethodInfo[] MethodInfo[] List<MethodInfo> Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 kSizeInBits                              int IL2CPP_TYPE_I4
     // 000 kSizeInBytes                             int IL2CPP_TYPE_I4
-    // 010 Keys                                     0001866788C0 ModelEnumType <keys>e__FixedBuffer <keys>e__FixedBuffer <keys>e__FixedBuffer Int32
+    // 010 Keys                                     ModelEnumType <keys>e__FixedBuffer <keys>e__FixedBuffer <keys>e__FixedBuffer Int32
     public partial class KeyboardState : DataModel
     {
         public <keys>e__FixedBuffer                     Keys                                    { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new KeyboardState() { Pointer= p0 };
 
-            value.Keys                                      = (<keys>e__FixedBuffer)GetInt32(new IntPtr(p + 0x010)); // 024667855D60 0x10 Keys                        ( 0001866788C0 ModelEnumType <keys>e__FixedBuffer <keys>e__FixedBuffer <keys>e__FixedBuffer Int32 )
+            value.Keys                                      = (<keys>e__FixedBuffer)GetInt32(new IntPtr(p + 0x010)); // 0x10 Keys                        ( ModelEnumType <keys>e__FixedBuffer <keys>e__FixedBuffer <keys>e__FixedBuffer Int32 )
 
             return value;
         }

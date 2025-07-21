@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 068 onClickSubject                           Subject`1<IPvpOpponentStatus> IL2CPP_TYPE_GENERICINST
-    // 070 onClickDetailSubject                     Subject`1<IPvpOpponentStatus> IL2CPP_TYPE_GENERICINST
+    // 058 onClickSubject                           Subject`1<IPvpOpponentStatus> IL2CPP_TYPE_GENERICINST
+    // 060 onClickDetailSubject                     Subject`1<IPvpOpponentStatus> IL2CPP_TYPE_GENERICINST
     public partial class PvpUseListView : DataModel
     {
 

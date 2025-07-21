@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Host                                     0001866731A0 ModelPrimitiveType string string string String
-    // 018 CallOptions                              00018652BCF0 ModelEnumType CallOptions CallOptions CallOptions Int32
+    // 010 Host                                     ModelPrimitiveType string string string String
+    // 018 CallOptions                              ModelEnumType CallOptions CallOptions CallOptions Int32
     public partial class ClientBaseConfigurationInfo : DataModel
     {
         public string                                   Host                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ClientBaseConfigurationInfo() { Pointer= p0 };
 
-            value.Host                                      = GetString(new IntPtr(p + 0x010)); // 02466BBC17D0 0x10 Host                        ( 0001866731A0 ModelPrimitiveType string string string String )
-            value.CallOptions                               = (CallOptions)GetInt32(new IntPtr(p + 0x018)); // 02466BBC17F0 0x18 CallOptions                 ( 00018652BCF0 ModelEnumType CallOptions CallOptions CallOptions Int32 )
+            value.Host                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Host                        ( ModelPrimitiveType string string string String )
+            value.CallOptions                               = (CallOptions)GetInt32(new IntPtr(p + 0x018)); // 0x18 CallOptions                 ( ModelEnumType CallOptions CallOptions CallOptions Int32 )
 
             return value;
         }

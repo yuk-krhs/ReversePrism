@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_NlsVersion                             0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 014 M_SortId                                 0001865DBED0 ModelEnumType Guid Guid Guid Int32
+    // 010 M_NlsVersion                             ModelPrimitiveType int int int Int32
+    // 014 M_SortId                                 ModelEnumType Guid Guid Guid Int32
     public partial class SortVersion : DataModel
     {
         public int                                      M_NlsVersion                            { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SortVersion() { Pointer= p0 };
 
-            value.M_NlsVersion                              = GetInt32(new IntPtr(p + 0x010)); // 024666D892B0 0x10 M_NlsVersion                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_SortId                                  = (Guid)GetInt32(new IntPtr(p + 0x014)); // 024666D892D0 0x14 M_SortId                    ( 0001865DBED0 ModelEnumType Guid Guid Guid Int32 )
+            value.M_NlsVersion                              = GetInt32(new IntPtr(p + 0x010)); // 0x10 M_NlsVersion                ( ModelPrimitiveType int int int Int32 )
+            value.M_SortId                                  = (Guid)GetInt32(new IntPtr(p + 0x014)); // 0x14 M_SortId                    ( ModelEnumType Guid Guid Guid Int32 )
 
             return value;
         }

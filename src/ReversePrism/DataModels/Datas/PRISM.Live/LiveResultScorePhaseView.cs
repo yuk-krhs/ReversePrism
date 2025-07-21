@@ -8,11 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 058 MusicClearStatusLampView                 000186664330 ModelClassType MusicClearStatusLampView MusicClearStatusLampView MusicClearStatusLampView Pointer
-    // 060 ScoreInfoView                            0001865748C0 ModelClassType LiveResultScoreInfoView LiveResultScoreInfoView LiveResultScoreInfoView Pointer
-    // 068 ComboInfoView                            00018656D300 ModelClassType LiveResultComboInfoView LiveResultComboInfoView LiveResultComboInfoView Pointer
-    // 070 RateInfoView                             000186572550 ModelClassType LiveResultRateInfoView LiveResultRateInfoView LiveResultRateInfoView Pointer
-    // 078 AutoLiveAnnotation                       0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
+    // 060 MusicClearStatusLampView                 ModelClassType MusicClearStatusLampView MusicClearStatusLampView MusicClearStatusLampView Pointer
+    // 068 ScoreInfoView                            ModelClassType LiveResultScoreInfoView LiveResultScoreInfoView LiveResultScoreInfoView Pointer
+    // 070 ComboInfoView                            ModelClassType LiveResultComboInfoView LiveResultComboInfoView LiveResultComboInfoView Pointer
+    // 078 RateInfoView                             ModelClassType LiveResultRateInfoView LiveResultRateInfoView LiveResultRateInfoView Pointer
+    // 080 AutoLiveAnnotation                       ModelClassType GameObject GameObject GameObject Pointer
+    // 088 ShinyEnabledHowToPlayPopupOpener         ModelClassType HowToPlayPopupOpener HowToPlayPopupOpener HowToPlayPopupOpener Pointer
+    // 090 OpenRateOverlayButton                    ModelClassType UIButton UIButton UIButton Pointer
+    // 098 RateOverlayCaller                        ModelClassType MusicRateOverlayCaller MusicRateOverlayCaller MusicRateOverlayCaller Pointer
     public partial class LiveResultScorePhaseView : DataModel
     {
         public MusicClearStatusLampView?                MusicClearStatusLampView                { get; set; }
@@ -20,6 +23,9 @@ namespace ReversePrism.DataModels
         public LiveResultComboInfoView?                 ComboInfoView                           { get; set; }
         public LiveResultRateInfoView?                  RateInfoView                            { get; set; }
         public GameObject?                              AutoLiveAnnotation                      { get; set; }
+        public HowToPlayPopupOpener?                    ShinyEnabledHowToPlayPopupOpener        { get; set; }
+        public UIButton?                                OpenRateOverlayButton                   { get; set; }
+        public MusicRateOverlayCaller?                  RateOverlayCaller                       { get; set; }
 
         public static LiveResultScorePhaseView? FromPointer(IntPtr p0)
         {
@@ -29,11 +35,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveResultScorePhaseView() { Pointer= p0 };
 
-            value.MusicClearStatusLampView                  = GetObject<MusicClearStatusLampView>(new IntPtr(p + 0x058), ReversePrism.DataModels.MusicClearStatusLampView.FromPointer); // 0246652DFD38 0x58 MusicClearStatusLampView    ( 000186664330 ModelClassType MusicClearStatusLampView MusicClearStatusLampView MusicClearStatusLampView Pointer )
-            value.ScoreInfoView                             = GetObject<LiveResultScoreInfoView>(new IntPtr(p + 0x060), ReversePrism.DataModels.LiveResultScoreInfoView.FromPointer); // 0246652DFD58 0x60 ScoreInfoView               ( 0001865748C0 ModelClassType LiveResultScoreInfoView LiveResultScoreInfoView LiveResultScoreInfoView Pointer )
-            value.ComboInfoView                             = GetObject<LiveResultComboInfoView>(new IntPtr(p + 0x068), ReversePrism.DataModels.LiveResultComboInfoView.FromPointer); // 0246652DFD78 0x68 ComboInfoView               ( 00018656D300 ModelClassType LiveResultComboInfoView LiveResultComboInfoView LiveResultComboInfoView Pointer )
-            value.RateInfoView                              = GetObject<LiveResultRateInfoView>(new IntPtr(p + 0x070), ReversePrism.DataModels.LiveResultRateInfoView.FromPointer); // 0246652DFD98 0x70 RateInfoView                ( 000186572550 ModelClassType LiveResultRateInfoView LiveResultRateInfoView LiveResultRateInfoView Pointer )
-            value.AutoLiveAnnotation                        = GetObject<GameObject>(new IntPtr(p + 0x078), ReversePrism.DataModels.GameObject.FromPointer); // 0246652DFDB8 0x78 AutoLiveAnnotation          ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.MusicClearStatusLampView                  = GetObject<MusicClearStatusLampView>(new IntPtr(p + 0x060), ReversePrism.DataModels.MusicClearStatusLampView.FromPointer); // 0x60 MusicClearStatusLampView    ( ModelClassType MusicClearStatusLampView MusicClearStatusLampView MusicClearStatusLampView Pointer )
+            value.ScoreInfoView                             = GetObject<LiveResultScoreInfoView>(new IntPtr(p + 0x068), ReversePrism.DataModels.LiveResultScoreInfoView.FromPointer); // 0x68 ScoreInfoView               ( ModelClassType LiveResultScoreInfoView LiveResultScoreInfoView LiveResultScoreInfoView Pointer )
+            value.ComboInfoView                             = GetObject<LiveResultComboInfoView>(new IntPtr(p + 0x070), ReversePrism.DataModels.LiveResultComboInfoView.FromPointer); // 0x70 ComboInfoView               ( ModelClassType LiveResultComboInfoView LiveResultComboInfoView LiveResultComboInfoView Pointer )
+            value.RateInfoView                              = GetObject<LiveResultRateInfoView>(new IntPtr(p + 0x078), ReversePrism.DataModels.LiveResultRateInfoView.FromPointer); // 0x78 RateInfoView                ( ModelClassType LiveResultRateInfoView LiveResultRateInfoView LiveResultRateInfoView Pointer )
+            value.AutoLiveAnnotation                        = GetObject<GameObject>(new IntPtr(p + 0x080), ReversePrism.DataModels.GameObject.FromPointer); // 0x80 AutoLiveAnnotation          ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.ShinyEnabledHowToPlayPopupOpener          = GetObject<HowToPlayPopupOpener>(new IntPtr(p + 0x088), ReversePrism.DataModels.HowToPlayPopupOpener.FromPointer); // 0x88 ShinyEnabledHowToPlayPopupOpener ( ModelClassType HowToPlayPopupOpener HowToPlayPopupOpener HowToPlayPopupOpener Pointer )
+            value.OpenRateOverlayButton                     = GetObject<UIButton>(new IntPtr(p + 0x090), ReversePrism.DataModels.UIButton.FromPointer); // 0x90 OpenRateOverlayButton       ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.RateOverlayCaller                         = GetObject<MusicRateOverlayCaller>(new IntPtr(p + 0x098), ReversePrism.DataModels.MusicRateOverlayCaller.FromPointer); // 0x98 RateOverlayCaller           ( ModelClassType MusicRateOverlayCaller MusicRateOverlayCaller MusicRateOverlayCaller Pointer )
 
             return value;
         }

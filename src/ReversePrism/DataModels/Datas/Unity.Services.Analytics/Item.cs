@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ItemName                                 0001866722E0 ModelPrimitiveType string string string String
-    // 018 ItemType                                 0001866722E0 ModelPrimitiveType string string string String
-    // 020 ItemAmount                               0001865F7E40 ModelPrimitiveType long long long Int64
+    // 010 ItemName                                 ModelPrimitiveType string string string String
+    // 018 ItemType                                 ModelPrimitiveType string string string String
+    // 020 ItemAmount                               ModelPrimitiveType long long long Int64
     public partial class Item : DataModel
     {
         public string                                   ItemName                                { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Item() { Pointer= p0 };
 
-            value.ItemName                                  = GetString(new IntPtr(p + 0x010)); // 02466B836128 0x10 ItemName                    ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ItemType                                  = GetString(new IntPtr(p + 0x018)); // 02466B836148 0x18 ItemType                    ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ItemAmount                                = GetInt64(new IntPtr(p + 0x020)); // 02466B836168 0x20 ItemAmount                  ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
+            value.ItemName                                  = GetString(new IntPtr(p + 0x010)); // 0x10 ItemName                    ( ModelPrimitiveType string string string String )
+            value.ItemType                                  = GetString(new IntPtr(p + 0x018)); // 0x18 ItemType                    ( ModelPrimitiveType string string string String )
+            value.ItemAmount                                = GetInt64(new IntPtr(p + 0x020)); // 0x20 ItemAmount                  ( ModelPrimitiveType long long long Int64 )
 
             return value;
         }

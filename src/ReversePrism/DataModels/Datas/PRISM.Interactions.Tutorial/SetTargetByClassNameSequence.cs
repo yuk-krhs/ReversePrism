@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ClassName                                000186671910 ModelPrimitiveType string string string String
-    // 018 IncludeInactive                          000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 01C Index                                    0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 ClassName                                ModelPrimitiveType string string string String
+    // 018 IncludeInactive                          ModelPrimitiveType bool bool bool Bool
+    // 01C Index                                    ModelPrimitiveType int int int Int32
     public partial class SetTargetByClassNameSequence : DataModel
     {
         public string                                   ClassName                               { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SetTargetByClassNameSequence() { Pointer= p0 };
 
-            value.ClassName                                 = GetString(new IntPtr(p + 0x010)); // 02466BC97FC8 0x10 ClassName                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.IncludeInactive                           = GetBool(new IntPtr(p + 0x018)); // 02466BC97FE8 0x18 IncludeInactive             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Index                                     = GetInt32(new IntPtr(p + 0x01C)); // 02466BC98008 0x1C Index                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ClassName                                 = GetString(new IntPtr(p + 0x010)); // 0x10 ClassName                   ( ModelPrimitiveType string string string String )
+            value.IncludeInactive                           = GetBool(new IntPtr(p + 0x018)); // 0x18 IncludeInactive             ( ModelPrimitiveType bool bool bool Bool )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x01C)); // 0x1C Index                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

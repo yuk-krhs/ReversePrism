@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_inliningDepth                          0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 M_inliningDepth                          ModelPrimitiveType int int int Int32
     // 000 MAX_UNCHECKED_INLINING_DEPTH             int IL2CPP_TYPE_I4
     public partial class StackGuard : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StackGuard() { Pointer= p0 };
 
-            value.M_inliningDepth                           = GetInt32(new IntPtr(p + 0x010)); // 024666B88C00 0x10 M_inliningDepth             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_inliningDepth                           = GetInt32(new IntPtr(p + 0x010)); // 0x10 M_inliningDepth             ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 MemberTypes                              0001867149B0 ModelEnumType DynamicallyAccessedMemberTypes DynamicallyAccessedMemberTypes DynamicallyAccessedMemberTypes Int32
+    // 010 MemberTypes                              ModelEnumType DynamicallyAccessedMemberTypes DynamicallyAccessedMemberTypes DynamicallyAccessedMemberTypes Int32
     public partial class DynamicallyAccessedMembersAttribute : DataModel
     {
         public DynamicallyAccessedMemberTypes           MemberTypes                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DynamicallyAccessedMembersAttribute() { Pointer= p0 };
 
-            value.MemberTypes                               = (DynamicallyAccessedMemberTypes)GetInt32(new IntPtr(p + 0x010)); // 02466BB966C8 0x10 MemberTypes                 ( 0001867149B0 ModelEnumType DynamicallyAccessedMemberTypes DynamicallyAccessedMemberTypes DynamicallyAccessedMemberTypes Int32 )
+            value.MemberTypes                               = (DynamicallyAccessedMemberTypes)GetInt32(new IntPtr(p + 0x010)); // 0x10 MemberTypes                 ( ModelEnumType DynamicallyAccessedMemberTypes DynamicallyAccessedMemberTypes DynamicallyAccessedMemberTypes Int32 )
 
             return value;
         }

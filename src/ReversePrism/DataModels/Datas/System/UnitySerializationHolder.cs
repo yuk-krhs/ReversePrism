@@ -8,14 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_instantiation                          000185B82C10 ModelClassListType Type[] Type[] List<Type> Pointer
-    // 018 M_elementTypes                           000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer
-    // 020 M_genericParameterPosition               0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 028 M_declaringType                          000186692850 ModelClassType Type Type Type Pointer
-    // 030 M_declaringMethod                        000186612B80 ModelClassType MethodBase MethodBase MethodBase Pointer
-    // 038 M_data                                   000186671910 ModelPrimitiveType string string string String
-    // 040 M_assemblyName                           000186671910 ModelPrimitiveType string string string String
-    // 048 M_unityType                              0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 M_instantiation                          ModelClassListType Type[] Type[] List<Type> Pointer
+    // 018 M_elementTypes                           ModelPrimitiveListType int[] int[] List<int> Pointer
+    // 020 M_genericParameterPosition               ModelPrimitiveType int int int Int32
+    // 028 M_declaringType                          ModelClassType Type Type Type Pointer
+    // 030 M_declaringMethod                        ModelClassType MethodBase MethodBase MethodBase Pointer
+    // 038 M_data                                   ModelPrimitiveType string string string String
+    // 040 M_assemblyName                           ModelPrimitiveType string string string String
+    // 048 M_unityType                              ModelPrimitiveType int int int Int32
     public partial class UnitySerializationHolder : DataModel
     {
         public List<Type>?                              M_instantiation                         { get; set; }
@@ -35,14 +35,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnitySerializationHolder() { Pointer= p0 };
 
-            value.M_instantiation                           = GetObjectList<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 024666AC3480 0x10 M_instantiation             ( 000185B82C10 ModelClassListType Type[] Type[] List<Type> Pointer )
-            value.M_elementTypes                            = GetInt32List(new IntPtr(p + 0x018)); // 024666AC34A0 0x18 M_elementTypes              ( 000185B7D2C0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.M_genericParameterPosition                = GetInt32(new IntPtr(p + 0x020)); // 024666AC34C0 0x20 M_genericParameterPosition  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_declaringType                           = GetObject<Type>(new IntPtr(p + 0x028), ReversePrism.DataModels.Type.FromPointer); // 024666AC34E0 0x28 M_declaringType             ( 000186692850 ModelClassType Type Type Type Pointer )
-            value.M_declaringMethod                         = GetObject<MethodBase>(new IntPtr(p + 0x030), ReversePrism.DataModels.MethodBase.FromPointer); // 024666AC3500 0x30 M_declaringMethod           ( 000186612B80 ModelClassType MethodBase MethodBase MethodBase Pointer )
-            value.M_data                                    = GetString(new IntPtr(p + 0x038)); // 024666AC3520 0x38 M_data                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_assemblyName                            = GetString(new IntPtr(p + 0x040)); // 024666AC3540 0x40 M_assemblyName              ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_unityType                               = GetInt32(new IntPtr(p + 0x048)); // 024666AC3560 0x48 M_unityType                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_instantiation                           = GetObjectList<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0x10 M_instantiation             ( ModelClassListType Type[] Type[] List<Type> Pointer )
+            value.M_elementTypes                            = GetInt32List(new IntPtr(p + 0x018)); // 0x18 M_elementTypes              ( ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.M_genericParameterPosition                = GetInt32(new IntPtr(p + 0x020)); // 0x20 M_genericParameterPosition  ( ModelPrimitiveType int int int Int32 )
+            value.M_declaringType                           = GetObject<Type>(new IntPtr(p + 0x028), ReversePrism.DataModels.Type.FromPointer); // 0x28 M_declaringType             ( ModelClassType Type Type Type Pointer )
+            value.M_declaringMethod                         = GetObject<MethodBase>(new IntPtr(p + 0x030), ReversePrism.DataModels.MethodBase.FromPointer); // 0x30 M_declaringMethod           ( ModelClassType MethodBase MethodBase MethodBase Pointer )
+            value.M_data                                    = GetString(new IntPtr(p + 0x038)); // 0x38 M_data                      ( ModelPrimitiveType string string string String )
+            value.M_assemblyName                            = GetString(new IntPtr(p + 0x040)); // 0x40 M_assemblyName              ( ModelPrimitiveType string string string String )
+            value.M_unityType                               = GetInt32(new IntPtr(p + 0x048)); // 0x48 M_unityType                 ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Capacity                                 0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 014 ActiveInstanceCount                      0001866992B0 ModelPrimitiveType uint uint uint UInt32
+    // 010 Capacity                                 ModelPrimitiveType uint uint uint UInt32
+    // 014 ActiveInstanceCount                      ModelPrimitiveType uint uint uint UInt32
     public partial class VFXBatchInfo : DataModel
     {
         public uint                                     Capacity                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new VFXBatchInfo() { Pointer= p0 };
 
-            value.Capacity                                  = GetUInt32(new IntPtr(p + 0x010)); // 0245A2195480 0x10 Capacity                    ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.ActiveInstanceCount                       = GetUInt32(new IntPtr(p + 0x014)); // 0245A21954A0 0x14 ActiveInstanceCount         ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.Capacity                                  = GetUInt32(new IntPtr(p + 0x010)); // 0x10 Capacity                    ( ModelPrimitiveType uint uint uint UInt32 )
+            value.ActiveInstanceCount                       = GetUInt32(new IntPtr(p + 0x014)); // 0x14 ActiveInstanceCount         ( ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

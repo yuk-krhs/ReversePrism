@@ -8,14 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Events                                   000185B7C500 ModelClassListType EventDescriptor[] EventDescriptor[] List<EventDescriptor> Pointer
-    // 018 NamedSort                                000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 020 Comparer                                 000186735840 ModelClassType IComparer IComparer IComparer Pointer
-    // 028 EventsOwned                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 029 NeedSort                                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 02A ReadOnly                                 0001865965D0 ModelPrimitiveType bool bool bool Bool
+    // 010 Events                                   ModelClassListType EventDescriptor[] EventDescriptor[] List<EventDescriptor> Pointer
+    // 018 NamedSort                                ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 020 Comparer                                 ModelClassType IComparer IComparer IComparer Pointer
+    // 028 EventsOwned                              ModelPrimitiveType bool bool bool Bool
+    // 029 NeedSort                                 ModelPrimitiveType bool bool bool Bool
+    // 02A ReadOnly                                 ModelPrimitiveType bool bool bool Bool
     // 000 Empty                                    EventDescriptorCollection IL2CPP_TYPE_CLASS
-    // 02C Count                                    0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 02C Count                                    ModelPrimitiveType int int int Int32
     public partial class EventDescriptorCollection : DataModel
     {
         public List<EventDescriptor>?                   Events                                  { get; set; }
@@ -34,13 +34,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EventDescriptorCollection() { Pointer= p0 };
 
-            value.Events                                    = GetObjectList<EventDescriptor>(new IntPtr(p + 0x010), ReversePrism.DataModels.EventDescriptor.FromPointer); // 024667B82C20 0x10 Events                      ( 000185B7C500 ModelClassListType EventDescriptor[] EventDescriptor[] List<EventDescriptor> Pointer )
-            value.NamedSort                                 = GetStringList(new IntPtr(p + 0x018)); // 024667B82C40 0x18 NamedSort                   ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.Comparer                                  = GetObject<IComparer>(new IntPtr(p + 0x020), ReversePrism.DataModels.IComparer.FromPointer); // 024667B82C60 0x20 Comparer                    ( 000186735840 ModelClassType IComparer IComparer IComparer Pointer )
-            value.EventsOwned                               = GetBool(new IntPtr(p + 0x028)); // 024667B82C80 0x28 EventsOwned                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.NeedSort                                  = GetBool(new IntPtr(p + 0x029)); // 024667B82CA0 0x29 NeedSort                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ReadOnly                                  = GetBool(new IntPtr(p + 0x02A)); // 024667B82CC0 0x2A ReadOnly                    ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.Count                                     = GetInt32(new IntPtr(p + 0x02C)); // 024667B82D00 0x2C Count                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Events                                    = GetObjectList<EventDescriptor>(new IntPtr(p + 0x010), ReversePrism.DataModels.EventDescriptor.FromPointer); // 0x10 Events                      ( ModelClassListType EventDescriptor[] EventDescriptor[] List<EventDescriptor> Pointer )
+            value.NamedSort                                 = GetStringList(new IntPtr(p + 0x018)); // 0x18 NamedSort                   ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.Comparer                                  = GetObject<IComparer>(new IntPtr(p + 0x020), ReversePrism.DataModels.IComparer.FromPointer); // 0x20 Comparer                    ( ModelClassType IComparer IComparer IComparer Pointer )
+            value.EventsOwned                               = GetBool(new IntPtr(p + 0x028)); // 0x28 EventsOwned                 ( ModelPrimitiveType bool bool bool Bool )
+            value.NeedSort                                  = GetBool(new IntPtr(p + 0x029)); // 0x29 NeedSort                    ( ModelPrimitiveType bool bool bool Bool )
+            value.ReadOnly                                  = GetBool(new IntPtr(p + 0x02A)); // 0x2A ReadOnly                    ( ModelPrimitiveType bool bool bool Bool )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x02C)); // 0x2C Count                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

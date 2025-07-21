@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 ContentTabGroup                          0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer
-    // 028 TabButtonParent                          0001866AA150 ModelClassType Transform Transform Transform Pointer
-    // 030 TabButtonPrefab                          0001866F4F80 ModelClassType UITabButton UITabButton UITabButton Pointer
-    // 038 Tabs                                     000185D186F8 ModelClassListType List`1<UITabButton> List`1<UITabButton> List<UITabButton> Pointer
+    // 020 ContentTabGroup                          ModelClassType UITabGroup UITabGroup UITabGroup Pointer
+    // 028 TabButtonParent                          ModelClassType Transform Transform Transform Pointer
+    // 030 TabButtonPrefab                          ModelClassType UITabButton UITabButton UITabButton Pointer
+    // 038 Tabs                                     ModelClassListType List`1<UITabButton> List`1<UITabButton> List<UITabButton> Pointer
     // 040 clickSubject                             Subject`1<ValueTuple`2<int, LiveStatus>> IL2CPP_TYPE_GENERICINST
     public partial class OurStreamTabGroup : DataModel
     {
@@ -28,10 +28,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new OurStreamTabGroup() { Pointer= p0 };
 
-            value.ContentTabGroup                           = GetObject<UITabGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITabGroup.FromPointer); // 02466B19F7D0 0x20 ContentTabGroup             ( 0001866F5490 ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
-            value.TabButtonParent                           = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 02466B19F7F0 0x28 TabButtonParent             ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.TabButtonPrefab                           = GetObject<UITabButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITabButton.FromPointer); // 02466B19F810 0x30 TabButtonPrefab             ( 0001866F4F80 ModelClassType UITabButton UITabButton UITabButton Pointer )
-            value.Tabs                                      = GetObjectList<UITabButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITabButton.FromPointer); // 02466B19F830 0x38 Tabs                        ( 000185D186F8 ModelClassListType List`1<UITabButton> List`1<UITabButton> List<UITabButton> Pointer )
+            value.ContentTabGroup                           = GetObject<UITabGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITabGroup.FromPointer); // 0x20 ContentTabGroup             ( ModelClassType UITabGroup UITabGroup UITabGroup Pointer )
+            value.TabButtonParent                           = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 0x28 TabButtonParent             ( ModelClassType Transform Transform Transform Pointer )
+            value.TabButtonPrefab                           = GetObject<UITabButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITabButton.FromPointer); // 0x30 TabButtonPrefab             ( ModelClassType UITabButton UITabButton UITabButton Pointer )
+            value.Tabs                                      = GetObjectList<UITabButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITabButton.FromPointer); // 0x38 Tabs                        ( ModelClassListType List`1<UITabButton> List`1<UITabButton> List<UITabButton> Pointer )
 
             return value;
         }

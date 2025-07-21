@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 BaseTransform                            0001866AA650 ModelClassType Transform Transform Transform Pointer
+    // 020 BaseTransform                            ModelClassType Transform Transform Transform Pointer
     public partial class PositionConstrainLate : DataModel
     {
         public Transform?                               BaseTransform                           { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PositionConstrainLate() { Pointer= p0 };
 
-            value.BaseTransform                             = GetObject<Transform>(new IntPtr(p + 0x020), ReversePrism.DataModels.Transform.FromPointer); // 024664B81A28 0x20 BaseTransform               ( 0001866AA650 ModelClassType Transform Transform Transform Pointer )
+            value.BaseTransform                             = GetObject<Transform>(new IntPtr(p + 0x020), ReversePrism.DataModels.Transform.FromPointer); // 0x20 BaseTransform               ( ModelClassType Transform Transform Transform Pointer )
 
             return value;
         }

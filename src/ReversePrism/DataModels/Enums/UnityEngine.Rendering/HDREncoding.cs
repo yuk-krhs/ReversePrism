@@ -12,5 +12,7 @@ namespace ReversePrism.DataModels
     {
         Linear,
         PQ,
+        Gamma22,
+        sRGB,
     }
 }

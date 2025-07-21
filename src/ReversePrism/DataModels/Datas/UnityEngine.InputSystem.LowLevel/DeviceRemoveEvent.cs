@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Type                                     int IL2CPP_TYPE_I4
-    // 010 BaseEvent                                0001866FCF10 ModelEnumType InputEvent InputEvent InputEvent Int32
+    // 010 BaseEvent                                ModelEnumType InputEvent InputEvent InputEvent Int32
     public partial class DeviceRemoveEvent : DataModel
     {
         public InputEvent                               BaseEvent                               { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DeviceRemoveEvent() { Pointer= p0 };
 
-            value.BaseEvent                                 = (InputEvent)GetInt32(new IntPtr(p + 0x010)); // 024667857DE8 0x10 BaseEvent                   ( 0001866FCF10 ModelEnumType InputEvent InputEvent InputEvent Int32 )
+            value.BaseEvent                                 = (InputEvent)GetInt32(new IntPtr(p + 0x010)); // 0x10 BaseEvent                   ( ModelEnumType InputEvent InputEvent InputEvent Int32 )
 
             return value;
         }

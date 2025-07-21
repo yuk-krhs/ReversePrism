@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Sw                                       00018658EAD0 ModelClassType Stopwatch Stopwatch Stopwatch Pointer
-    // 018 CSource                                  0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
-    // 020 Running                                  000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 Sw                                       ModelClassType Stopwatch Stopwatch Stopwatch Pointer
+    // 018 CSource                                  ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
+    // 020 Running                                  ModelPrimitiveType bool bool bool Bool
     // 000 DefaultTimeoutMs                         int IL2CPP_TYPE_I4
     public partial class TimeSlicer : DataModel
     {
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TimeSlicer() { Pointer= p0 };
 
-            value.Sw                                        = GetObject<Stopwatch>(new IntPtr(p + 0x010), ReversePrism.DataModels.Stopwatch.FromPointer); // 0245A3DCAD98 0x10 Sw                          ( 00018658EAD0 ModelClassType Stopwatch Stopwatch Stopwatch Pointer )
-            value.CSource                                   = GetObject<CancellationTokenSource>(new IntPtr(p + 0x018), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0245A3DCADB8 0x18 CSource                     ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
-            value.Running                                   = GetBool(new IntPtr(p + 0x020)); // 0245A3DCADD8 0x20 Running                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Sw                                        = GetObject<Stopwatch>(new IntPtr(p + 0x010), ReversePrism.DataModels.Stopwatch.FromPointer); // 0x10 Sw                          ( ModelClassType Stopwatch Stopwatch Stopwatch Pointer )
+            value.CSource                                   = GetObject<CancellationTokenSource>(new IntPtr(p + 0x018), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0x18 CSource                     ( ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.Running                                   = GetBool(new IntPtr(p + 0x020)); // 0x20 Running                     ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

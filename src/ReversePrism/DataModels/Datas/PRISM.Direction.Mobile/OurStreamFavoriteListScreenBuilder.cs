@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 ViewPrefab                               0001866F3900 ModelClassType OurStreamFavoriteListScreenView OurStreamFavoriteListScreenView OurStreamFavoriteListScreenView Pointer
-    // 028 ViewParent                               0001866AA150 ModelClassType Transform Transform Transform Pointer
+    // 020 ViewPrefab                               ModelClassType OurStreamFavoriteListScreenView OurStreamFavoriteListScreenView OurStreamFavoriteListScreenView Pointer
+    // 028 ViewParent                               ModelClassType Transform Transform Transform Pointer
     public partial class OurStreamFavoriteListScreenBuilder : DataModel
     {
         public OurStreamFavoriteListScreenView?         ViewPrefab                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new OurStreamFavoriteListScreenBuilder() { Pointer= p0 };
 
-            value.ViewPrefab                                = GetObject<OurStreamFavoriteListScreenView>(new IntPtr(p + 0x020), ReversePrism.DataModels.OurStreamFavoriteListScreenView.FromPointer); // 02466B6D57C0 0x20 ViewPrefab                  ( 0001866F3900 ModelClassType OurStreamFavoriteListScreenView OurStreamFavoriteListScreenView OurStreamFavoriteListScreenView Pointer )
-            value.ViewParent                                = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 02466B6D57E0 0x28 ViewParent                  ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.ViewPrefab                                = GetObject<OurStreamFavoriteListScreenView>(new IntPtr(p + 0x020), ReversePrism.DataModels.OurStreamFavoriteListScreenView.FromPointer); // 0x20 ViewPrefab                  ( ModelClassType OurStreamFavoriteListScreenView OurStreamFavoriteListScreenView OurStreamFavoriteListScreenView Pointer )
+            value.ViewParent                                = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 0x28 ViewParent                  ( ModelClassType Transform Transform Transform Pointer )
 
             return value;
         }

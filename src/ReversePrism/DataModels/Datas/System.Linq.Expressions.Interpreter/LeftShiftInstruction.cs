@@ -10,12 +10,12 @@ namespace ReversePrism.DataModels
 
     // 000 s_SByte                                  Instruction IL2CPP_TYPE_CLASS
     // 008 s_Int16                                  Instruction IL2CPP_TYPE_CLASS
-    // 010 S_Int32                                  00018670E060 ModelClassType Instruction Instruction Instruction Pointer
-    // 018 S_Int64                                  00018670E060 ModelClassType Instruction Instruction Instruction Pointer
-    // 020 S_Byte                                   00018670E060 ModelClassType Instruction Instruction Instruction Pointer
-    // 028 S_UInt16                                 00018670E060 ModelClassType Instruction Instruction Instruction Pointer
-    // 030 S_UInt32                                 00018670E060 ModelClassType Instruction Instruction Instruction Pointer
-    // 038 S_UInt64                                 00018670E060 ModelClassType Instruction Instruction Instruction Pointer
+    // 010 S_Int32                                  ModelClassType Instruction Instruction Instruction Pointer
+    // 018 S_Int64                                  ModelClassType Instruction Instruction Instruction Pointer
+    // 020 S_Byte                                   ModelClassType Instruction Instruction Instruction Pointer
+    // 028 S_UInt16                                 ModelClassType Instruction Instruction Instruction Pointer
+    // 030 S_UInt32                                 ModelClassType Instruction Instruction Instruction Pointer
+    // 038 S_UInt64                                 ModelClassType Instruction Instruction Instruction Pointer
     public partial class LeftShiftInstruction : DataModel
     {
         public Instruction?                             S_Int32                                 { get; set; }
@@ -33,12 +33,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LeftShiftInstruction() { Pointer= p0 };
 
-            value.S_Int32                                   = GetObject<Instruction>(new IntPtr(p + 0x010), ReversePrism.DataModels.Instruction.FromPointer); // 02466A057A28 0x10 S_Int32                     ( 00018670E060 ModelClassType Instruction Instruction Instruction Pointer )
-            value.S_Int64                                   = GetObject<Instruction>(new IntPtr(p + 0x018), ReversePrism.DataModels.Instruction.FromPointer); // 02466A057A48 0x18 S_Int64                     ( 00018670E060 ModelClassType Instruction Instruction Instruction Pointer )
-            value.S_Byte                                    = GetObject<Instruction>(new IntPtr(p + 0x020), ReversePrism.DataModels.Instruction.FromPointer); // 02466A057A68 0x20 S_Byte                      ( 00018670E060 ModelClassType Instruction Instruction Instruction Pointer )
-            value.S_UInt16                                  = GetObject<Instruction>(new IntPtr(p + 0x028), ReversePrism.DataModels.Instruction.FromPointer); // 02466A057A88 0x28 S_UInt16                    ( 00018670E060 ModelClassType Instruction Instruction Instruction Pointer )
-            value.S_UInt32                                  = GetObject<Instruction>(new IntPtr(p + 0x030), ReversePrism.DataModels.Instruction.FromPointer); // 02466A057AA8 0x30 S_UInt32                    ( 00018670E060 ModelClassType Instruction Instruction Instruction Pointer )
-            value.S_UInt64                                  = GetObject<Instruction>(new IntPtr(p + 0x038), ReversePrism.DataModels.Instruction.FromPointer); // 02466A057AC8 0x38 S_UInt64                    ( 00018670E060 ModelClassType Instruction Instruction Instruction Pointer )
+            value.S_Int32                                   = GetObject<Instruction>(new IntPtr(p + 0x010), ReversePrism.DataModels.Instruction.FromPointer); // 0x10 S_Int32                     ( ModelClassType Instruction Instruction Instruction Pointer )
+            value.S_Int64                                   = GetObject<Instruction>(new IntPtr(p + 0x018), ReversePrism.DataModels.Instruction.FromPointer); // 0x18 S_Int64                     ( ModelClassType Instruction Instruction Instruction Pointer )
+            value.S_Byte                                    = GetObject<Instruction>(new IntPtr(p + 0x020), ReversePrism.DataModels.Instruction.FromPointer); // 0x20 S_Byte                      ( ModelClassType Instruction Instruction Instruction Pointer )
+            value.S_UInt16                                  = GetObject<Instruction>(new IntPtr(p + 0x028), ReversePrism.DataModels.Instruction.FromPointer); // 0x28 S_UInt16                    ( ModelClassType Instruction Instruction Instruction Pointer )
+            value.S_UInt32                                  = GetObject<Instruction>(new IntPtr(p + 0x030), ReversePrism.DataModels.Instruction.FromPointer); // 0x30 S_UInt32                    ( ModelClassType Instruction Instruction Instruction Pointer )
+            value.S_UInt64                                  = GetObject<Instruction>(new IntPtr(p + 0x038), ReversePrism.DataModels.Instruction.FromPointer); // 0x38 S_UInt64                    ( ModelClassType Instruction Instruction Instruction Pointer )
 
             return value;
         }

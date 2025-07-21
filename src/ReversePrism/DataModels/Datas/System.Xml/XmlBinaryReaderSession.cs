@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 MaxArrayEntries                          int IL2CPP_TYPE_I4
-    // 010 Strings                                  000185CB37D8 ModelClassListType XmlDictionaryString[] XmlDictionaryString[] List<XmlDictionaryString> Pointer
+    // 010 Strings                                  ModelClassListType XmlDictionaryString[] XmlDictionaryString[] List<XmlDictionaryString> Pointer
     // 018 stringDict                               Dictionary`2<int, XmlDictionaryString> IL2CPP_TYPE_GENERICINST
     public partial class XmlBinaryReaderSession : DataModel
     {
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlBinaryReaderSession() { Pointer= p0 };
 
-            value.Strings                                   = GetObjectList<XmlDictionaryString>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlDictionaryString.FromPointer); // 024667C91BC0 0x10 Strings                     ( 000185CB37D8 ModelClassListType XmlDictionaryString[] XmlDictionaryString[] List<XmlDictionaryString> Pointer )
+            value.Strings                                   = GetObjectList<XmlDictionaryString>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlDictionaryString.FromPointer); // 0x10 Strings                     ( ModelClassListType XmlDictionaryString[] XmlDictionaryString[] List<XmlDictionaryString> Pointer )
 
             return value;
         }

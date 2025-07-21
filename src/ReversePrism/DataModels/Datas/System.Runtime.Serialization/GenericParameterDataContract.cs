@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 Helper                                   00018672D950 ModelClassType GenericParameterDataContractCriticalHelper GenericParameterDataContractCriticalHelper GenericParameterDataContractCriticalHelper Pointer
+    // 028 Helper                                   ModelClassType GenericParameterDataContractCriticalHelper GenericParameterDataContractCriticalHelper GenericParameterDataContractCriticalHelper Pointer
     public partial class GenericParameterDataContract : DataModel
     {
         public GenericParameterDataContractCriticalHelper? Helper                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GenericParameterDataContract() { Pointer= p0 };
 
-            value.Helper                                    = GetObject<GenericParameterDataContractCriticalHelper>(new IntPtr(p + 0x028), ReversePrism.DataModels.GenericParameterDataContractCriticalHelper.FromPointer); // 0245A4CC2B08 0x28 Helper                      ( 00018672D950 ModelClassType GenericParameterDataContractCriticalHelper GenericParameterDataContractCriticalHelper GenericParameterDataContractCriticalHelper Pointer )
+            value.Helper                                    = GetObject<GenericParameterDataContractCriticalHelper>(new IntPtr(p + 0x028), ReversePrism.DataModels.GenericParameterDataContractCriticalHelper.FromPointer); // 0x28 Helper                      ( ModelClassType GenericParameterDataContractCriticalHelper GenericParameterDataContractCriticalHelper GenericParameterDataContractCriticalHelper Pointer )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Position                                 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32
-    // 01C Normal                                   0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 010 Position                                 ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 01C Normal                                   ModelEnumType Vector3 Vector3 Vector3 Int32
     public partial class MeshColliderParam : DataModel
     {
         public Vector3                                  Position                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MeshColliderParam() { Pointer= p0 };
 
-            value.Position                                  = (Vector3)GetInt32(new IntPtr(p + 0x010)); // 024664DF2DF0 0x10 Position                    ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.Normal                                    = (Vector3)GetInt32(new IntPtr(p + 0x01C)); // 024664DF2E10 0x1C Normal                      ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.Position                                  = (Vector3)GetInt32(new IntPtr(p + 0x010)); // 0x10 Position                    ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.Normal                                    = (Vector3)GetInt32(new IntPtr(p + 0x01C)); // 0x1C Normal                      ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
 
             return value;
         }

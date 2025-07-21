@@ -8,22 +8,22 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Flags                                  000186626FE0 ModelEnumType Enumerate Enumerate Enumerate Int32
-    // 018 M_Device                                 0001866FB5B0 ModelClassType InputDevice InputDevice InputDevice Pointer
-    // 020 M_StateOffsetToControlIndex              000185B83C70 ModelPrimitiveListType uint[] uint[] List<uint> Pointer
-    // 028 M_StateOffsetToControlIndexLength        0001865F4260 ModelPrimitiveType int int int Int32
-    // 030 M_AllControls                            000185B8C690 ModelClassListType InputControl[] InputControl[] List<InputControl> Pointer
+    // 010 M_Flags                                  ModelEnumType Enumerate Enumerate Enumerate Int32
+    // 018 M_Device                                 ModelClassType InputDevice InputDevice InputDevice Pointer
+    // 020 M_StateOffsetToControlIndex              ModelPrimitiveListType uint[] uint[] List<uint> Pointer
+    // 028 M_StateOffsetToControlIndexLength        ModelPrimitiveType int int int Int32
+    // 030 M_AllControls                            ModelClassListType InputControl[] InputControl[] List<InputControl> Pointer
     // 038 m_DefaultState                           IntPtr IL2CPP_TYPE_PTR
     // 040 m_CurrentState                           IntPtr IL2CPP_TYPE_PTR
     // 048 m_NoiseMask                              IntPtr IL2CPP_TYPE_PTR
-    // 050 M_EventPtr                               0001865EF0C0 ModelEnumType InputEventPtr InputEventPtr InputEventPtr Int32
-    // 058 M_CurrentControl                         0001865EB190 ModelClassType InputControl InputControl InputControl Pointer
-    // 060 M_CurrentIndexInStateOffsetToControlIndexMap 0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 064 M_CurrentControlStateBitOffset           000186698B70 ModelPrimitiveType uint uint uint UInt32
+    // 050 M_EventPtr                               ModelEnumType InputEventPtr InputEventPtr InputEventPtr Int32
+    // 058 M_CurrentControl                         ModelClassType InputControl InputControl InputControl Pointer
+    // 060 M_CurrentIndexInStateOffsetToControlIndexMap ModelPrimitiveType int int int Int32
+    // 064 M_CurrentControlStateBitOffset           ModelPrimitiveType uint uint uint UInt32
     // 068 m_EventState                             IntPtr IL2CPP_TYPE_PTR
-    // 070 M_CurrentBitOffset                       000186698B70 ModelPrimitiveType uint uint uint UInt32
-    // 074 M_EndBitOffset                           000186698B70 ModelPrimitiveType uint uint uint UInt32
-    // 078 M_MagnitudeThreshold                     0001866656B0 ModelPrimitiveType float float float Single
+    // 070 M_CurrentBitOffset                       ModelPrimitiveType uint uint uint UInt32
+    // 074 M_EndBitOffset                           ModelPrimitiveType uint uint uint UInt32
+    // 078 M_MagnitudeThreshold                     ModelPrimitiveType float float float Single
     public partial class InputEventControlEnumerator : DataModel
     {
         public Enumerate                                M_Flags                                 { get; set; }
@@ -47,18 +47,18 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InputEventControlEnumerator() { Pointer= p0 };
 
-            value.M_Flags                                   = (Enumerate)GetInt32(new IntPtr(p + 0x010)); // 024667730528 0x10 M_Flags                     ( 000186626FE0 ModelEnumType Enumerate Enumerate Enumerate Int32 )
-            value.M_Device                                  = GetObject<InputDevice>(new IntPtr(p + 0x018), ReversePrism.DataModels.InputDevice.FromPointer); // 024667730548 0x18 M_Device                    ( 0001866FB5B0 ModelClassType InputDevice InputDevice InputDevice Pointer )
-            value.M_StateOffsetToControlIndex               = GetUInt32List(new IntPtr(p + 0x020)); // 024667730568 0x20 M_StateOffsetToControlIndex ( 000185B83C70 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
-            value.M_StateOffsetToControlIndexLength         = GetInt32(new IntPtr(p + 0x028)); // 024667730588 0x28 M_StateOffsetToControlIndexLength ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.M_AllControls                             = GetObjectList<InputControl>(new IntPtr(p + 0x030), ReversePrism.DataModels.InputControl.FromPointer); // 0246677305A8 0x30 M_AllControls               ( 000185B8C690 ModelClassListType InputControl[] InputControl[] List<InputControl> Pointer )
-            value.M_EventPtr                                = (InputEventPtr)GetInt32(new IntPtr(p + 0x050)); // 024667730628 0x50 M_EventPtr                  ( 0001865EF0C0 ModelEnumType InputEventPtr InputEventPtr InputEventPtr Int32 )
-            value.M_CurrentControl                          = GetObject<InputControl>(new IntPtr(p + 0x058), ReversePrism.DataModels.InputControl.FromPointer); // 024667730648 0x58 M_CurrentControl            ( 0001865EB190 ModelClassType InputControl InputControl InputControl Pointer )
-            value.M_CurrentIndexInStateOffsetToControlIndexMap = GetInt32(new IntPtr(p + 0x060)); // 024667730668 0x60 M_CurrentIndexInStateOffsetToControlIndexMap ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_CurrentControlStateBitOffset            = GetUInt32(new IntPtr(p + 0x064)); // 024667730688 0x64 M_CurrentControlStateBitOffset ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
-            value.M_CurrentBitOffset                        = GetUInt32(new IntPtr(p + 0x070)); // 0246677306C8 0x70 M_CurrentBitOffset          ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
-            value.M_EndBitOffset                            = GetUInt32(new IntPtr(p + 0x074)); // 0246677306E8 0x74 M_EndBitOffset              ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
-            value.M_MagnitudeThreshold                      = GetSingle(new IntPtr(p + 0x078)); // 024667730708 0x78 M_MagnitudeThreshold        ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_Flags                                   = (Enumerate)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_Flags                     ( ModelEnumType Enumerate Enumerate Enumerate Int32 )
+            value.M_Device                                  = GetObject<InputDevice>(new IntPtr(p + 0x018), ReversePrism.DataModels.InputDevice.FromPointer); // 0x18 M_Device                    ( ModelClassType InputDevice InputDevice InputDevice Pointer )
+            value.M_StateOffsetToControlIndex               = GetUInt32List(new IntPtr(p + 0x020)); // 0x20 M_StateOffsetToControlIndex ( ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.M_StateOffsetToControlIndexLength         = GetInt32(new IntPtr(p + 0x028)); // 0x28 M_StateOffsetToControlIndexLength ( ModelPrimitiveType int int int Int32 )
+            value.M_AllControls                             = GetObjectList<InputControl>(new IntPtr(p + 0x030), ReversePrism.DataModels.InputControl.FromPointer); // 0x30 M_AllControls               ( ModelClassListType InputControl[] InputControl[] List<InputControl> Pointer )
+            value.M_EventPtr                                = (InputEventPtr)GetInt32(new IntPtr(p + 0x050)); // 0x50 M_EventPtr                  ( ModelEnumType InputEventPtr InputEventPtr InputEventPtr Int32 )
+            value.M_CurrentControl                          = GetObject<InputControl>(new IntPtr(p + 0x058), ReversePrism.DataModels.InputControl.FromPointer); // 0x58 M_CurrentControl            ( ModelClassType InputControl InputControl InputControl Pointer )
+            value.M_CurrentIndexInStateOffsetToControlIndexMap = GetInt32(new IntPtr(p + 0x060)); // 0x60 M_CurrentIndexInStateOffsetToControlIndexMap ( ModelPrimitiveType int int int Int32 )
+            value.M_CurrentControlStateBitOffset            = GetUInt32(new IntPtr(p + 0x064)); // 0x64 M_CurrentControlStateBitOffset ( ModelPrimitiveType uint uint uint UInt32 )
+            value.M_CurrentBitOffset                        = GetUInt32(new IntPtr(p + 0x070)); // 0x70 M_CurrentBitOffset          ( ModelPrimitiveType uint uint uint UInt32 )
+            value.M_EndBitOffset                            = GetUInt32(new IntPtr(p + 0x074)); // 0x74 M_EndBitOffset              ( ModelPrimitiveType uint uint uint UInt32 )
+            value.M_MagnitudeThreshold                      = GetSingle(new IntPtr(p + 0x078)); // 0x78 M_MagnitudeThreshold        ( ModelPrimitiveType float float float Single )
 
             return value;
         }

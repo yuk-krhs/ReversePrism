@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Enable                                   000186595960 ModelPrimitiveType bool bool bool Bool
-    // 018 SpectralLut                              000186685F20 ModelClassType Texture2D Texture2D Texture2D Pointer
-    // 020 Intensity                                000186666050 ModelPrimitiveType float float float Single
+    // 010 Enable                                   ModelPrimitiveType bool bool bool Bool
+    // 018 SpectralLut                              ModelClassType Texture2D Texture2D Texture2D Pointer
+    // 020 Intensity                                ModelPrimitiveType float float float Single
     public partial class ChromaticAberrationBehaviour : DataModel
     {
         public bool                                     Enable                                  { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChromaticAberrationBehaviour() { Pointer= p0 };
 
-            value.Enable                                    = GetBool(new IntPtr(p + 0x010)); // 0246650D8400 0x10 Enable                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.SpectralLut                               = GetObject<Texture2D>(new IntPtr(p + 0x018), ReversePrism.DataModels.Texture2D.FromPointer); // 0246650D8420 0x18 SpectralLut                 ( 000186685F20 ModelClassType Texture2D Texture2D Texture2D Pointer )
-            value.Intensity                                 = GetSingle(new IntPtr(p + 0x020)); // 0246650D8440 0x20 Intensity                   ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Enable                                    = GetBool(new IntPtr(p + 0x010)); // 0x10 Enable                      ( ModelPrimitiveType bool bool bool Bool )
+            value.SpectralLut                               = GetObject<Texture2D>(new IntPtr(p + 0x018), ReversePrism.DataModels.Texture2D.FromPointer); // 0x18 SpectralLut                 ( ModelClassType Texture2D Texture2D Texture2D Pointer )
+            value.Intensity                                 = GetSingle(new IntPtr(p + 0x020)); // 0x20 Intensity                   ( ModelPrimitiveType float float float Single )
 
             return value;
         }

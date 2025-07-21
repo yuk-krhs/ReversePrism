@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ProductType                              0001865F4260 ModelPrimitiveType int int int Int32
-    // 014 Id                                       0001865F4260 ModelPrimitiveType int int int Int32
+    // 010 ProductType                              ModelPrimitiveType int int int Int32
+    // 014 Id                                       ModelPrimitiveType int int int Int32
     public partial class MstGeneralItem : DataModel
     {
         public int                                      ProductType                             { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MstGeneralItem() { Pointer= p0 };
 
-            value.ProductType                               = GetInt32(new IntPtr(p + 0x010)); // 0245A461AA88 0x10 ProductType                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Id                                        = GetInt32(new IntPtr(p + 0x014)); // 0245A461AAA8 0x14 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.ProductType                               = GetInt32(new IntPtr(p + 0x010)); // 0x10 ProductType                 ( ModelPrimitiveType int int int Int32 )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x014)); // 0x14 Id                          ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

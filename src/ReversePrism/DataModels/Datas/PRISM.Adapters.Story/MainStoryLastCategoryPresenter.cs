@@ -8,13 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 View                                     0001865A6FB0 ModelClassType IMainStoryLastCategoryView IMainStoryLastCategoryView IMainStoryLastCategoryView Pointer
-    // 018 Argument                                 0001865C9640 ModelClassType MainStoryLastCategoryArgument MainStoryLastCategoryArgument MainStoryLastCategoryArgument Pointer
-    // 020 AdvTransitionerPresenter                 0001865A5E70 ModelClassType StoryToAdvTransitionerPresenter StoryToAdvTransitionerPresenter StoryToAdvTransitionerPresenter Pointer
-    // 028 Cts                                      0001865A4380 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
-    // 030 Disposables                              0001865F38F0 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
-    // 038 Model                                    0001865CB0B0 ModelClassType MainStoryLastCategoryModel MainStoryLastCategoryModel MainStoryLastCategoryModel Pointer
-    // 040 CellDataList                             000185D12F58 ModelClassListType IReadOnlyList`1<MainStoryLastCategoryCellData> IReadOnlyList`1<MainStoryLastCategoryCellData> List<MainStoryLastCategoryCellData> Pointer
+    // 010 View                                     ModelClassType IMainStoryLastCategoryView IMainStoryLastCategoryView IMainStoryLastCategoryView Pointer
+    // 018 Argument                                 ModelClassType MainStoryLastCategoryArgument MainStoryLastCategoryArgument MainStoryLastCategoryArgument Pointer
+    // 020 AdvTransitionerPresenter                 ModelClassType StoryToAdvTransitionerPresenter StoryToAdvTransitionerPresenter StoryToAdvTransitionerPresenter Pointer
+    // 028 Cts                                      ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
+    // 030 Disposables                              ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
+    // 038 Model                                    ModelClassType MainStoryLastCategoryModel MainStoryLastCategoryModel MainStoryLastCategoryModel Pointer
+    // 040 CellDataList                             ModelClassListType IReadOnlyList`1<IStoryLastCategoryCellData> IReadOnlyList`1<IStoryLastCategoryCellData> List<IStoryLastCategoryCellData> Pointer
     public partial class MainStoryLastCategoryPresenter : DataModel
     {
         public IMainStoryLastCategoryView?              View                                    { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
         public CancellationTokenSource?                 Cts                                     { get; set; }
         public CompositeDisposable?                     Disposables                             { get; set; }
         public MainStoryLastCategoryModel?              Model                                   { get; set; }
-        public List<MainStoryLastCategoryCellData>?     CellDataList                            { get; set; }
+        public List<IStoryLastCategoryCellData>?        CellDataList                            { get; set; }
 
         public static MainStoryLastCategoryPresenter? FromPointer(IntPtr p0)
         {
@@ -33,13 +33,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MainStoryLastCategoryPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<IMainStoryLastCategoryView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMainStoryLastCategoryView.FromPointer); // 02466681CE90 0x10 View                        ( 0001865A6FB0 ModelClassType IMainStoryLastCategoryView IMainStoryLastCategoryView IMainStoryLastCategoryView Pointer )
-            value.Argument                                  = GetObject<MainStoryLastCategoryArgument>(new IntPtr(p + 0x018), ReversePrism.DataModels.MainStoryLastCategoryArgument.FromPointer); // 02466681CEB0 0x18 Argument                    ( 0001865C9640 ModelClassType MainStoryLastCategoryArgument MainStoryLastCategoryArgument MainStoryLastCategoryArgument Pointer )
-            value.AdvTransitionerPresenter                  = GetObject<StoryToAdvTransitionerPresenter>(new IntPtr(p + 0x020), ReversePrism.DataModels.StoryToAdvTransitionerPresenter.FromPointer); // 02466681CED0 0x20 AdvTransitionerPresenter    ( 0001865A5E70 ModelClassType StoryToAdvTransitionerPresenter StoryToAdvTransitionerPresenter StoryToAdvTransitionerPresenter Pointer )
-            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x028), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 02466681CEF0 0x28 Cts                         ( 0001865A4380 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
-            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x030), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 02466681CF10 0x30 Disposables                 ( 0001865F38F0 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
-            value.Model                                     = GetObject<MainStoryLastCategoryModel>(new IntPtr(p + 0x038), ReversePrism.DataModels.MainStoryLastCategoryModel.FromPointer); // 02466681CF30 0x38 Model                       ( 0001865CB0B0 ModelClassType MainStoryLastCategoryModel MainStoryLastCategoryModel MainStoryLastCategoryModel Pointer )
-            value.CellDataList                              = GetObjectList<MainStoryLastCategoryCellData>(new IntPtr(p + 0x040), ReversePrism.DataModels.MainStoryLastCategoryCellData.FromPointer); // 02466681CF50 0x40 CellDataList                ( 000185D12F58 ModelClassListType IReadOnlyList`1<MainStoryLastCategoryCellData> IReadOnlyList`1<MainStoryLastCategoryCellData> List<MainStoryLastCategoryCellData> Pointer )
+            value.View                                      = GetObject<IMainStoryLastCategoryView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMainStoryLastCategoryView.FromPointer); // 0x10 View                        ( ModelClassType IMainStoryLastCategoryView IMainStoryLastCategoryView IMainStoryLastCategoryView Pointer )
+            value.Argument                                  = GetObject<MainStoryLastCategoryArgument>(new IntPtr(p + 0x018), ReversePrism.DataModels.MainStoryLastCategoryArgument.FromPointer); // 0x18 Argument                    ( ModelClassType MainStoryLastCategoryArgument MainStoryLastCategoryArgument MainStoryLastCategoryArgument Pointer )
+            value.AdvTransitionerPresenter                  = GetObject<StoryToAdvTransitionerPresenter>(new IntPtr(p + 0x020), ReversePrism.DataModels.StoryToAdvTransitionerPresenter.FromPointer); // 0x20 AdvTransitionerPresenter    ( ModelClassType StoryToAdvTransitionerPresenter StoryToAdvTransitionerPresenter StoryToAdvTransitionerPresenter Pointer )
+            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x028), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0x28 Cts                         ( ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x030), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0x30 Disposables                 ( ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.Model                                     = GetObject<MainStoryLastCategoryModel>(new IntPtr(p + 0x038), ReversePrism.DataModels.MainStoryLastCategoryModel.FromPointer); // 0x38 Model                       ( ModelClassType MainStoryLastCategoryModel MainStoryLastCategoryModel MainStoryLastCategoryModel Pointer )
+            value.CellDataList                              = GetObjectList<IStoryLastCategoryCellData>(new IntPtr(p + 0x040), ReversePrism.DataModels.IStoryLastCategoryCellData.FromPointer); // 0x40 CellDataList                ( ModelClassListType IReadOnlyList`1<IStoryLastCategoryCellData> IReadOnlyList`1<IStoryLastCategoryCellData> List<IStoryLastCategoryCellData> Pointer )
 
             return value;
         }

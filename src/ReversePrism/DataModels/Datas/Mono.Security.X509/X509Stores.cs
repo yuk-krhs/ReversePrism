@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 StorePath                                000186671910 ModelPrimitiveType string string string String
-    // 018 NewFormat                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 020 Trusted                                  00018656FB90 ModelClassType X509Store X509Store X509Store Pointer
+    // 010 StorePath                                ModelPrimitiveType string string string String
+    // 018 NewFormat                                ModelPrimitiveType bool bool bool Bool
+    // 020 Trusted                                  ModelClassType X509Store X509Store X509Store Pointer
     public partial class X509Stores : DataModel
     {
         public string                                   StorePath                               { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new X509Stores() { Pointer= p0 };
 
-            value.StorePath                                 = GetString(new IntPtr(p + 0x010)); // 024667A46728 0x10 StorePath                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.NewFormat                                 = GetBool(new IntPtr(p + 0x018)); // 024667A46748 0x18 NewFormat                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Trusted                                   = GetObject<X509Store>(new IntPtr(p + 0x020), ReversePrism.DataModels.X509Store.FromPointer); // 024667A46768 0x20 Trusted                     ( 00018656FB90 ModelClassType X509Store X509Store X509Store Pointer )
+            value.StorePath                                 = GetString(new IntPtr(p + 0x010)); // 0x10 StorePath                   ( ModelPrimitiveType string string string String )
+            value.NewFormat                                 = GetBool(new IntPtr(p + 0x018)); // 0x18 NewFormat                   ( ModelPrimitiveType bool bool bool Bool )
+            value.Trusted                                   = GetObject<X509Store>(new IntPtr(p + 0x020), ReversePrism.DataModels.X509Store.FromPointer); // 0x20 Trusted                     ( ModelClassType X509Store X509Store X509Store Pointer )
 
             return value;
         }

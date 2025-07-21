@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Provider                                 0001866FA090 ModelClassType IArgumentProvider IArgumentProvider IArgumentProvider Pointer
-    // 018 Arg0                                     0001865CF210 ModelClassType Expression Expression Expression Pointer
+    // 010 Provider                                 ModelClassType IArgumentProvider IArgumentProvider IArgumentProvider Pointer
+    // 018 Arg0                                     ModelClassType Expression Expression Expression Pointer
     public partial class ListArgumentProvider : DataModel
     {
         public IArgumentProvider?                       Provider                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ListArgumentProvider() { Pointer= p0 };
 
-            value.Provider                                  = GetObject<IArgumentProvider>(new IntPtr(p + 0x010), ReversePrism.DataModels.IArgumentProvider.FromPointer); // 02466A0EC088 0x10 Provider                    ( 0001866FA090 ModelClassType IArgumentProvider IArgumentProvider IArgumentProvider Pointer )
-            value.Arg0                                      = GetObject<Expression>(new IntPtr(p + 0x018), ReversePrism.DataModels.Expression.FromPointer); // 02466A0EC0A8 0x18 Arg0                        ( 0001865CF210 ModelClassType Expression Expression Expression Pointer )
+            value.Provider                                  = GetObject<IArgumentProvider>(new IntPtr(p + 0x010), ReversePrism.DataModels.IArgumentProvider.FromPointer); // 0x10 Provider                    ( ModelClassType IArgumentProvider IArgumentProvider IArgumentProvider Pointer )
+            value.Arg0                                      = GetObject<Expression>(new IntPtr(p + 0x018), ReversePrism.DataModels.Expression.FromPointer); // 0x18 Arg0                        ( ModelClassType Expression Expression Expression Pointer )
 
             return value;
         }

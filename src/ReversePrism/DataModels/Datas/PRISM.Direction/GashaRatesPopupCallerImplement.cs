@@ -8,7 +8,6 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 gashaRatesPopupViewFactory               PopupViewFactory`1<IGashaRatesPopupView> IL2CPP_TYPE_GENERICINST
     public partial class GashaRatesPopupCallerImplement : DataModel
     {
 

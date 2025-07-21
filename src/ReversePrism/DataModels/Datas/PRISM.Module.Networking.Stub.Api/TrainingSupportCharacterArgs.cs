@@ -11,10 +11,10 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<TrainingSupportCharacterArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstSupportCharacterIdFieldNumber         int IL2CPP_TYPE_I4
-    // 018 MstSupportCharacterId                    0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MstSupportCharacterId                    ModelPrimitiveType int int int Int32
     // 000 UseProductListFieldNumber                int IL2CPP_TYPE_I4
     // 008 _repeated_useProductList_codec           FieldCodec`1<UseProductStatus> IL2CPP_TYPE_GENERICINST
-    // 020 UseProductList                           000185CF6978 ModelClassListType RepeatedField`1<UseProductStatus> RepeatedField`1<UseProductStatus> List<UseProductStatus> Pointer
+    // 020 UseProductList                           ModelClassListType RepeatedField`1<UseProductStatus> RepeatedField`1<UseProductStatus> List<UseProductStatus> Pointer
     public partial class TrainingSupportCharacterArgs : DataModel
     {
         public int                                      MstSupportCharacterId                   { get; set; }
@@ -28,8 +28,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TrainingSupportCharacterArgs() { Pointer= p0 };
 
-            value.MstSupportCharacterId                     = GetInt32(new IntPtr(p + 0x018)); // 024662A65F88 0x18 MstSupportCharacterId       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UseProductList                            = GetObjectList<UseProductStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.UseProductStatus.FromPointer); // 024662A65FE8 0x20 UseProductList              ( 000185CF6978 ModelClassListType RepeatedField`1<UseProductStatus> RepeatedField`1<UseProductStatus> List<UseProductStatus> Pointer )
+            value.MstSupportCharacterId                     = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstSupportCharacterId       ( ModelPrimitiveType int int int Int32 )
+            value.UseProductList                            = GetObjectList<UseProductStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.UseProductStatus.FromPointer); // 0x20 UseProductList              ( ModelClassListType RepeatedField`1<UseProductStatus> RepeatedField`1<UseProductStatus> List<UseProductStatus> Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Overrides                                0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 010 Overrides                                ModelClassType Hashtable Hashtable Hashtable Pointer
     public partial class XmlAttributeOverrides : DataModel
     {
         public Hashtable?                               Overrides                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlAttributeOverrides() { Pointer= p0 };
 
-            value.Overrides                                 = GetObject<Hashtable>(new IntPtr(p + 0x010), ReversePrism.DataModels.Hashtable.FromPointer); // 024667514060 0x10 Overrides                   ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.Overrides                                 = GetObject<Hashtable>(new IntPtr(p + 0x010), ReversePrism.DataModels.Hashtable.FromPointer); // 0x10 Overrides                   ( ModelClassType Hashtable Hashtable Hashtable Pointer )
 
             return value;
         }

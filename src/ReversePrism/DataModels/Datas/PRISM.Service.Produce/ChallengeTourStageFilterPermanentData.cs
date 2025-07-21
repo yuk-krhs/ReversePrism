@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 IsFilters                                000185B78CA0 ModelPrimitiveListType bool[] bool[] List<bool> Pointer
+    // 010 IsFilters                                ModelPrimitiveListType bool[] bool[] List<bool> Pointer
     public partial class ChallengeTourStageFilterPermanentData : DataModel
     {
         public List<bool>?                              IsFilters                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChallengeTourStageFilterPermanentData() { Pointer= p0 };
 
-            value.IsFilters                                 = GetBoolList(new IntPtr(p + 0x010)); // 0245A3A78288 0x10 IsFilters                   ( 000185B78CA0 ModelPrimitiveListType bool[] bool[] List<bool> Pointer )
+            value.IsFilters                                 = GetBoolList(new IntPtr(p + 0x010)); // 0x10 IsFilters                   ( ModelPrimitiveListType bool[] bool[] List<bool> Pointer )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_instance                               TMP_ResourceManager IL2CPP_TYPE_CLASS
     // 008 s_TextSettings                           TMP_Settings IL2CPP_TYPE_CLASS
-    // 010 S_FontAssetReferences                    000185D11D28 ModelClassListType List`1<TMP_FontAsset> List`1<TMP_FontAsset> List<TMP_FontAsset> Pointer
+    // 010 S_FontAssetReferences                    ModelClassListType List`1<TMP_FontAsset> List`1<TMP_FontAsset> List<TMP_FontAsset> Pointer
     // 018 s_FontAssetReferenceLookup               Dictionary`2<int, TMP_FontAsset> IL2CPP_TYPE_GENERICINST
     public partial class TMP_ResourceManager : DataModel
     {
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TMP_ResourceManager() { Pointer= p0 };
 
-            value.S_FontAssetReferences                     = GetObjectList<TMP_FontAsset>(new IntPtr(p + 0x010), ReversePrism.DataModels.TMP_FontAsset.FromPointer); // 02466A69E788 0x10 S_FontAssetReferences       ( 000185D11D28 ModelClassListType List`1<TMP_FontAsset> List`1<TMP_FontAsset> List<TMP_FontAsset> Pointer )
+            value.S_FontAssetReferences                     = GetObjectList<TMP_FontAsset>(new IntPtr(p + 0x010), ReversePrism.DataModels.TMP_FontAsset.FromPointer); // 0x10 S_FontAssetReferences       ( ModelClassListType List`1<TMP_FontAsset> List`1<TMP_FontAsset> List<TMP_FontAsset> Pointer )
 
             return value;
         }

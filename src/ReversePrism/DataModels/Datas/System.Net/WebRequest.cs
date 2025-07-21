@@ -8,17 +8,18 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
+    // 000 DefaultTimeout                           int IL2CPP_TYPE_I4
     // 000 s_PrefixList                             ArrayList IL2CPP_TYPE_CLASS
     // 008 s_InternalSyncObject                     <object> IL2CPP_TYPE_OBJECT
-    // 010 S_DefaultTimerQueue                      000186612840 ModelClassType Queue Queue Queue Pointer
-    // 018 M_AuthenticationLevel                    000186722BD0 ModelEnumType AuthenticationLevel AuthenticationLevel AuthenticationLevel Int32
-    // 01C M_ImpersonationLevel                     000186688250 ModelEnumType TokenImpersonationLevel TokenImpersonationLevel TokenImpersonationLevel Int32
-    // 020 M_CachePolicy                            0001866657A0 ModelClassType RequestCachePolicy RequestCachePolicy RequestCachePolicy Pointer
-    // 028 M_CacheProtocol                          000186666150 ModelClassType RequestCacheProtocol RequestCacheProtocol RequestCacheProtocol Pointer
-    // 030 M_CacheBinding                           000186664450 ModelClassType RequestCacheBinding RequestCacheBinding RequestCacheBinding Pointer
-    // 018 WebRequestCreate                         00018670BC40 ModelClassType DesignerWebRequestCreate DesignerWebRequestCreate DesignerWebRequestCreate Pointer
-    // 020 S_DefaultWebProxy                        00018669AFF0 ModelClassType IWebProxy IWebProxy IWebProxy Pointer
-    // 028 S_DefaultWebProxyInitialized             000186595C30 ModelPrimitiveType bool bool bool Bool
+    // 010 S_DefaultTimerQueue                      ModelClassType Queue Queue Queue Pointer
+    // 018 M_AuthenticationLevel                    ModelEnumType AuthenticationLevel AuthenticationLevel AuthenticationLevel Int32
+    // 01C M_ImpersonationLevel                     ModelEnumType TokenImpersonationLevel TokenImpersonationLevel TokenImpersonationLevel Int32
+    // 020 M_CachePolicy                            ModelClassType RequestCachePolicy RequestCachePolicy RequestCachePolicy Pointer
+    // 028 M_CacheProtocol                          ModelClassType RequestCacheProtocol RequestCacheProtocol RequestCacheProtocol Pointer
+    // 030 M_CacheBinding                           ModelClassType RequestCacheBinding RequestCacheBinding RequestCacheBinding Pointer
+    // 018 WebRequestCreate                         ModelClassType DesignerWebRequestCreate DesignerWebRequestCreate DesignerWebRequestCreate Pointer
+    // 020 S_DefaultWebProxy                        ModelClassType IWebProxy IWebProxy IWebProxy Pointer
+    // 028 S_DefaultWebProxyInitialized             ModelPrimitiveType bool bool bool Bool
     public partial class WebRequest : DataModel
     {
         public Queue?                                   S_DefaultTimerQueue                     { get; set; }
@@ -39,15 +40,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new WebRequest() { Pointer= p0 };
 
-            value.S_DefaultTimerQueue                       = GetObject<Queue>(new IntPtr(p + 0x010), ReversePrism.DataModels.Queue.FromPointer); // 0246674F90E8 0x10 S_DefaultTimerQueue         ( 000186612840 ModelClassType Queue Queue Queue Pointer )
-            value.M_AuthenticationLevel                     = (AuthenticationLevel)GetInt32(new IntPtr(p + 0x018)); // 0246674F9108 0x18 M_AuthenticationLevel       ( 000186722BD0 ModelEnumType AuthenticationLevel AuthenticationLevel AuthenticationLevel Int32 )
-            value.M_ImpersonationLevel                      = (TokenImpersonationLevel)GetInt32(new IntPtr(p + 0x01C)); // 0246674F9128 0x1C M_ImpersonationLevel        ( 000186688250 ModelEnumType TokenImpersonationLevel TokenImpersonationLevel TokenImpersonationLevel Int32 )
-            value.M_CachePolicy                             = GetObject<RequestCachePolicy>(new IntPtr(p + 0x020), ReversePrism.DataModels.RequestCachePolicy.FromPointer); // 0246674F9148 0x20 M_CachePolicy               ( 0001866657A0 ModelClassType RequestCachePolicy RequestCachePolicy RequestCachePolicy Pointer )
-            value.M_CacheProtocol                           = GetObject<RequestCacheProtocol>(new IntPtr(p + 0x028), ReversePrism.DataModels.RequestCacheProtocol.FromPointer); // 0246674F9168 0x28 M_CacheProtocol             ( 000186666150 ModelClassType RequestCacheProtocol RequestCacheProtocol RequestCacheProtocol Pointer )
-            value.M_CacheBinding                            = GetObject<RequestCacheBinding>(new IntPtr(p + 0x030), ReversePrism.DataModels.RequestCacheBinding.FromPointer); // 0246674F9188 0x30 M_CacheBinding              ( 000186664450 ModelClassType RequestCacheBinding RequestCacheBinding RequestCacheBinding Pointer )
-            value.WebRequestCreate                          = GetObject<DesignerWebRequestCreate>(new IntPtr(p + 0x018), ReversePrism.DataModels.DesignerWebRequestCreate.FromPointer); // 0246674F91A8 0x18 WebRequestCreate            ( 00018670BC40 ModelClassType DesignerWebRequestCreate DesignerWebRequestCreate DesignerWebRequestCreate Pointer )
-            value.S_DefaultWebProxy                         = GetObject<IWebProxy>(new IntPtr(p + 0x020), ReversePrism.DataModels.IWebProxy.FromPointer); // 0246674F91C8 0x20 S_DefaultWebProxy           ( 00018669AFF0 ModelClassType IWebProxy IWebProxy IWebProxy Pointer )
-            value.S_DefaultWebProxyInitialized              = GetBool(new IntPtr(p + 0x028)); // 0246674F91E8 0x28 S_DefaultWebProxyInitialized ( 000186595C30 ModelPrimitiveType bool bool bool Bool )
+            value.S_DefaultTimerQueue                       = GetObject<Queue>(new IntPtr(p + 0x010), ReversePrism.DataModels.Queue.FromPointer); // 0x10 S_DefaultTimerQueue         ( ModelClassType Queue Queue Queue Pointer )
+            value.M_AuthenticationLevel                     = (AuthenticationLevel)GetInt32(new IntPtr(p + 0x018)); // 0x18 M_AuthenticationLevel       ( ModelEnumType AuthenticationLevel AuthenticationLevel AuthenticationLevel Int32 )
+            value.M_ImpersonationLevel                      = (TokenImpersonationLevel)GetInt32(new IntPtr(p + 0x01C)); // 0x1C M_ImpersonationLevel        ( ModelEnumType TokenImpersonationLevel TokenImpersonationLevel TokenImpersonationLevel Int32 )
+            value.M_CachePolicy                             = GetObject<RequestCachePolicy>(new IntPtr(p + 0x020), ReversePrism.DataModels.RequestCachePolicy.FromPointer); // 0x20 M_CachePolicy               ( ModelClassType RequestCachePolicy RequestCachePolicy RequestCachePolicy Pointer )
+            value.M_CacheProtocol                           = GetObject<RequestCacheProtocol>(new IntPtr(p + 0x028), ReversePrism.DataModels.RequestCacheProtocol.FromPointer); // 0x28 M_CacheProtocol             ( ModelClassType RequestCacheProtocol RequestCacheProtocol RequestCacheProtocol Pointer )
+            value.M_CacheBinding                            = GetObject<RequestCacheBinding>(new IntPtr(p + 0x030), ReversePrism.DataModels.RequestCacheBinding.FromPointer); // 0x30 M_CacheBinding              ( ModelClassType RequestCacheBinding RequestCacheBinding RequestCacheBinding Pointer )
+            value.WebRequestCreate                          = GetObject<DesignerWebRequestCreate>(new IntPtr(p + 0x018), ReversePrism.DataModels.DesignerWebRequestCreate.FromPointer); // 0x18 WebRequestCreate            ( ModelClassType DesignerWebRequestCreate DesignerWebRequestCreate DesignerWebRequestCreate Pointer )
+            value.S_DefaultWebProxy                         = GetObject<IWebProxy>(new IntPtr(p + 0x020), ReversePrism.DataModels.IWebProxy.FromPointer); // 0x20 S_DefaultWebProxy           ( ModelClassType IWebProxy IWebProxy IWebProxy Pointer )
+            value.S_DefaultWebProxyInitialized              = GetBool(new IntPtr(p + 0x028)); // 0x28 S_DefaultWebProxyInitialized ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

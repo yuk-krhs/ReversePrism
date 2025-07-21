@@ -60,6 +60,7 @@ namespace ReversePrism.DataModels
     // 000 Command_env_param                        int IL2CPP_TYPE_I4
     // 000 Command_shake_param                      int IL2CPP_TYPE_I4
     // 000 Command_text_prefab                      int IL2CPP_TYPE_I4
+    // 000 Command_change_unit                      int IL2CPP_TYPE_I4
     public partial class ScenarioDef : DataModel
     {
 

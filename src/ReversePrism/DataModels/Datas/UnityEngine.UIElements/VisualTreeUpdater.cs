@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Panel                                  000186745F20 ModelClassType BaseVisualElementPanel BaseVisualElementPanel BaseVisualElementPanel Pointer
-    // 018 M_UpdaterArray                           0001866FEB40 ModelClassType UpdaterArray UpdaterArray UpdaterArray Pointer
+    // 010 M_Panel                                  ModelClassType BaseVisualElementPanel BaseVisualElementPanel BaseVisualElementPanel Pointer
+    // 018 M_UpdaterArray                           ModelClassType UpdaterArray UpdaterArray UpdaterArray Pointer
     public partial class VisualTreeUpdater : DataModel
     {
         public BaseVisualElementPanel?                  M_Panel                                 { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new VisualTreeUpdater() { Pointer= p0 };
 
-            value.M_Panel                                   = GetObject<BaseVisualElementPanel>(new IntPtr(p + 0x010), ReversePrism.DataModels.BaseVisualElementPanel.FromPointer); // 0245A6820BD0 0x10 M_Panel                     ( 000186745F20 ModelClassType BaseVisualElementPanel BaseVisualElementPanel BaseVisualElementPanel Pointer )
-            value.M_UpdaterArray                            = GetObject<UpdaterArray>(new IntPtr(p + 0x018), ReversePrism.DataModels.UpdaterArray.FromPointer); // 0245A6820BF0 0x18 M_UpdaterArray              ( 0001866FEB40 ModelClassType UpdaterArray UpdaterArray UpdaterArray Pointer )
+            value.M_Panel                                   = GetObject<BaseVisualElementPanel>(new IntPtr(p + 0x010), ReversePrism.DataModels.BaseVisualElementPanel.FromPointer); // 0x10 M_Panel                     ( ModelClassType BaseVisualElementPanel BaseVisualElementPanel BaseVisualElementPanel Pointer )
+            value.M_UpdaterArray                            = GetObject<UpdaterArray>(new IntPtr(p + 0x018), ReversePrism.DataModels.UpdaterArray.FromPointer); // 0x18 M_UpdaterArray              ( ModelClassType UpdaterArray UpdaterArray UpdaterArray Pointer )
 
             return value;
         }

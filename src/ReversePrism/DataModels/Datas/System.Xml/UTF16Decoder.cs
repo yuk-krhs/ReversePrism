@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 BigEndian                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 024 LastByte                                 0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 BigEndian                                ModelPrimitiveType bool bool bool Bool
+    // 024 LastByte                                 ModelPrimitiveType int int int Int32
     public partial class UTF16Decoder : DataModel
     {
         public bool                                     BigEndian                               { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UTF16Decoder() { Pointer= p0 };
 
-            value.BigEndian                                 = GetBool(new IntPtr(p + 0x020)); // 0246674FCD38 0x20 BigEndian                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.LastByte                                  = GetInt32(new IntPtr(p + 0x024)); // 0246674FCD58 0x24 LastByte                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.BigEndian                                 = GetBool(new IntPtr(p + 0x020)); // 0x20 BigEndian                   ( ModelPrimitiveType bool bool bool Bool )
+            value.LastByte                                  = GetInt32(new IntPtr(p + 0x024)); // 0x24 LastByte                    ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

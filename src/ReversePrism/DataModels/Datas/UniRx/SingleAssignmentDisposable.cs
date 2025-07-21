@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 gate                                     <object> IL2CPP_TYPE_OBJECT
-    // 018 Current                                  0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
-    // 020 Disposed                                 000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 018 Current                                  ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 020 Disposed                                 ModelPrimitiveType bool bool bool Bool
     public partial class SingleAssignmentDisposable : DataModel
     {
         public IDisposable?                             Current                                 { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SingleAssignmentDisposable() { Pointer= p0 };
 
-            value.Current                                   = GetObject<IDisposable>(new IntPtr(p + 0x018), ReversePrism.DataModels.IDisposable.FromPointer); // 0245A3C2BFE8 0x18 Current                     ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
-            value.Disposed                                  = GetBool(new IntPtr(p + 0x020)); // 0245A3C2C008 0x20 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Current                                   = GetObject<IDisposable>(new IntPtr(p + 0x018), ReversePrism.DataModels.IDisposable.FromPointer); // 0x18 Current                     ( ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.Disposed                                  = GetBool(new IntPtr(p + 0x020)); // 0x20 Disposed                    ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

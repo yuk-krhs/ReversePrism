@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 UnitListWindow                           000186595110 ModelClassType LiveUnitListWindow LiveUnitListWindow LiveUnitListWindow Pointer
+    // 020 UnitListWindow                           ModelClassType LiveUnitListWindow LiveUnitListWindow LiveUnitListWindow Pointer
     // 028 onCellClicked                            Subject`1<int> IL2CPP_TYPE_GENERICINST
     public partial class UnitListWindowView : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnitListWindowView() { Pointer= p0 };
 
-            value.UnitListWindow                            = GetObject<LiveUnitListWindow>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveUnitListWindow.FromPointer); // 02466A2E3A48 0x20 UnitListWindow              ( 000186595110 ModelClassType LiveUnitListWindow LiveUnitListWindow LiveUnitListWindow Pointer )
+            value.UnitListWindow                            = GetObject<LiveUnitListWindow>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveUnitListWindow.FromPointer); // 0x20 UnitListWindow              ( ModelClassType LiveUnitListWindow LiveUnitListWindow LiveUnitListWindow Pointer )
 
             return value;
         }

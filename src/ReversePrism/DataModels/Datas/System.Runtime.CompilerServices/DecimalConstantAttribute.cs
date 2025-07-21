@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Dec                                      0001865C0970 ModelEnumType Decimal Decimal Decimal Int32
+    // 010 Dec                                      ModelEnumType Decimal Decimal Decimal Int32
     public partial class DecimalConstantAttribute : DataModel
     {
         public Decimal                                  Dec                                     { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DecimalConstantAttribute() { Pointer= p0 };
 
-            value.Dec                                       = (Decimal)GetInt32(new IntPtr(p + 0x010)); // 024666D06488 0x10 Dec                         ( 0001865C0970 ModelEnumType Decimal Decimal Decimal Int32 )
+            value.Dec                                       = (Decimal)GetInt32(new IntPtr(p + 0x010)); // 0x10 Dec                         ( ModelEnumType Decimal Decimal Decimal Int32 )
 
             return value;
         }

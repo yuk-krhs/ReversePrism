@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Serializer                             00018658BD20 ModelClassType IJsonSerializer IJsonSerializer IJsonSerializer Pointer
+    // 010 M_Serializer                             ModelClassType IJsonSerializer IJsonSerializer IJsonSerializer Pointer
     public partial class StreamingAssetsConfigurationLoader : DataModel
     {
         public IJsonSerializer?                         M_Serializer                            { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StreamingAssetsConfigurationLoader() { Pointer= p0 };
 
-            value.M_Serializer                              = GetObject<IJsonSerializer>(new IntPtr(p + 0x010), ReversePrism.DataModels.IJsonSerializer.FromPointer); // 0245A6612450 0x10 M_Serializer                ( 00018658BD20 ModelClassType IJsonSerializer IJsonSerializer IJsonSerializer Pointer )
+            value.M_Serializer                              = GetObject<IJsonSerializer>(new IntPtr(p + 0x010), ReversePrism.DataModels.IJsonSerializer.FromPointer); // 0x10 M_Serializer                ( ModelClassType IJsonSerializer IJsonSerializer IJsonSerializer Pointer )
 
             return value;
         }

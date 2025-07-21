@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Registry                               0001865D1540 ModelClassType IPackageRegistry IPackageRegistry IPackageRegistry Pointer
-    // 018 M_PackageHash                            0001865F4260 ModelPrimitiveType int int int Int32
+    // 010 M_Registry                               ModelClassType IPackageRegistry IPackageRegistry IPackageRegistry Pointer
+    // 018 M_PackageHash                            ModelPrimitiveType int int int Int32
     public partial class CoreRegistration : DataModel
     {
         public IPackageRegistry?                        M_Registry                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CoreRegistration() { Pointer= p0 };
 
-            value.M_Registry                                = GetObject<IPackageRegistry>(new IntPtr(p + 0x010), ReversePrism.DataModels.IPackageRegistry.FromPointer); // 02466BAFA010 0x10 M_Registry                  ( 0001865D1540 ModelClassType IPackageRegistry IPackageRegistry IPackageRegistry Pointer )
-            value.M_PackageHash                             = GetInt32(new IntPtr(p + 0x018)); // 02466BAFA030 0x18 M_PackageHash               ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.M_Registry                                = GetObject<IPackageRegistry>(new IntPtr(p + 0x010), ReversePrism.DataModels.IPackageRegistry.FromPointer); // 0x10 M_Registry                  ( ModelClassType IPackageRegistry IPackageRegistry IPackageRegistry Pointer )
+            value.M_PackageHash                             = GetInt32(new IntPtr(p + 0x018)); // 0x18 M_PackageHash               ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Tag                                      000186671910 ModelPrimitiveType string string string String
+    // 010 Tag                                      ModelPrimitiveType string string string String
     public partial class ResourceTag : DataModel
     {
         public string                                   Tag                                     { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ResourceTag() { Pointer= p0 };
 
-            value.Tag                                       = GetString(new IntPtr(p + 0x010)); // 0245A3973770 0x10 Tag                         ( 000186671910 ModelPrimitiveType string string string String )
+            value.Tag                                       = GetString(new IntPtr(p + 0x010)); // 0x10 Tag                         ( ModelPrimitiveType string string string String )
 
             return value;
         }

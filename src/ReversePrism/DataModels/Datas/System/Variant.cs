@@ -8,26 +8,26 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Vt                                       0001865F1520 ModelPrimitiveType short short short Int16
-    // 012 WReserved1                               000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
-    // 014 WReserved2                               000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
-    // 016 WReserved3                               000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
-    // 018 LlVal                                    0001865F7E40 ModelPrimitiveType long long long Int64
-    // 018 LVal                                     0001865F36C0 ModelPrimitiveType int int int Int32
-    // 018 BVal                                     00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    // 018 IVal                                     0001865F1520 ModelPrimitiveType short short short Int16
-    // 018 FltVal                                   000186666050 ModelPrimitiveType float float float Single
-    // 018 DblVal                                   0001865C2E50 ModelPrimitiveType double double double Double
-    // 018 BoolVal                                  0001865F1520 ModelPrimitiveType short short short Int16
+    // 010 Vt                                       ModelPrimitiveType short short short Int16
+    // 012 WReserved1                               ModelPrimitiveType ushort ushort ushort UInt16
+    // 014 WReserved2                               ModelPrimitiveType ushort ushort ushort UInt16
+    // 016 WReserved3                               ModelPrimitiveType ushort ushort ushort UInt16
+    // 018 LlVal                                    ModelPrimitiveType long long long Int64
+    // 018 LVal                                     ModelPrimitiveType int int int Int32
+    // 018 BVal                                     ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 018 IVal                                     ModelPrimitiveType short short short Int16
+    // 018 FltVal                                   ModelPrimitiveType float float float Single
+    // 018 DblVal                                   ModelPrimitiveType double double double Double
+    // 018 BoolVal                                  ModelPrimitiveType short short short Int16
     // 018 bstrVal                                  <int> IL2CPP_TYPE_I
-    // 018 CVal                                     00018665D780 ModelPrimitiveType sbyte sbyte sbyte SByte
-    // 018 UiVal                                    000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
-    // 018 UlVal                                    0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 018 UllVal                                   00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64
-    // 018 IntVal                                   0001865F36C0 ModelPrimitiveType int int int Int32
-    // 018 UintVal                                  0001866992B0 ModelPrimitiveType uint uint uint UInt32
+    // 018 CVal                                     ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 018 UiVal                                    ModelPrimitiveType ushort ushort ushort UInt16
+    // 018 UlVal                                    ModelPrimitiveType uint uint uint UInt32
+    // 018 UllVal                                   ModelPrimitiveType ulong ulong ulong UInt64
+    // 018 IntVal                                   ModelPrimitiveType int int int Int32
+    // 018 UintVal                                  ModelPrimitiveType uint uint uint UInt32
     // 018 pdispVal                                 <int> IL2CPP_TYPE_I
-    // 018 BRecord                                  000186732E90 ModelEnumType BRECORD BRECORD BRECORD Int32
+    // 018 BRecord                                  ModelEnumType BRECORD BRECORD BRECORD Int32
     public partial class Variant : DataModel
     {
         public short                                    Vt                                      { get; set; }
@@ -57,24 +57,24 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Variant() { Pointer= p0 };
 
-            value.Vt                                        = GetInt16(new IntPtr(p + 0x010)); // 024666B17D50 0x10 Vt                          ( 0001865F1520 ModelPrimitiveType short short short Int16 )
-            value.WReserved1                                = GetUInt16(new IntPtr(p + 0x012)); // 024666B17D70 0x12 WReserved1                  ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.WReserved2                                = GetUInt16(new IntPtr(p + 0x014)); // 024666B17D90 0x14 WReserved2                  ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.WReserved3                                = GetUInt16(new IntPtr(p + 0x016)); // 024666B17DB0 0x16 WReserved3                  ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.LlVal                                     = GetInt64(new IntPtr(p + 0x018)); // 024666B17DD0 0x18 LlVal                       ( 0001865F7E40 ModelPrimitiveType long long long Int64 )
-            value.LVal                                      = GetInt32(new IntPtr(p + 0x018)); // 024666B17DF0 0x18 LVal                        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.BVal                                      = GetSByte(new IntPtr(p + 0x018)); // 024666B17E10 0x18 BVal                        ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.IVal                                      = GetInt16(new IntPtr(p + 0x018)); // 024666B17E30 0x18 IVal                        ( 0001865F1520 ModelPrimitiveType short short short Int16 )
-            value.FltVal                                    = GetSingle(new IntPtr(p + 0x018)); // 024666B17E50 0x18 FltVal                      ( 000186666050 ModelPrimitiveType float float float Single )
-            value.DblVal                                    = GetDouble(new IntPtr(p + 0x018)); // 024666B17E70 0x18 DblVal                      ( 0001865C2E50 ModelPrimitiveType double double double Double )
-            value.BoolVal                                   = GetInt16(new IntPtr(p + 0x018)); // 024666B17E90 0x18 BoolVal                     ( 0001865F1520 ModelPrimitiveType short short short Int16 )
-            value.CVal                                      = GetSByte(new IntPtr(p + 0x018)); // 024666B17ED0 0x18 CVal                        ( 00018665D780 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.UiVal                                     = GetUInt16(new IntPtr(p + 0x018)); // 024666B17EF0 0x18 UiVal                       ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.UlVal                                     = GetUInt32(new IntPtr(p + 0x018)); // 024666B17F10 0x18 UlVal                       ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.UllVal                                    = GetUInt64(new IntPtr(p + 0x018)); // 024666B17F30 0x18 UllVal                      ( 00018669BD60 ModelPrimitiveType ulong ulong ulong UInt64 )
-            value.IntVal                                    = GetInt32(new IntPtr(p + 0x018)); // 024666B17F50 0x18 IntVal                      ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.UintVal                                   = GetUInt32(new IntPtr(p + 0x018)); // 024666B17F70 0x18 UintVal                     ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.BRecord                                   = (BRECORD)GetInt32(new IntPtr(p + 0x018)); // 024666B17FB0 0x18 BRecord                     ( 000186732E90 ModelEnumType BRECORD BRECORD BRECORD Int32 )
+            value.Vt                                        = GetInt16(new IntPtr(p + 0x010)); // 0x10 Vt                          ( ModelPrimitiveType short short short Int16 )
+            value.WReserved1                                = GetUInt16(new IntPtr(p + 0x012)); // 0x12 WReserved1                  ( ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.WReserved2                                = GetUInt16(new IntPtr(p + 0x014)); // 0x14 WReserved2                  ( ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.WReserved3                                = GetUInt16(new IntPtr(p + 0x016)); // 0x16 WReserved3                  ( ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.LlVal                                     = GetInt64(new IntPtr(p + 0x018)); // 0x18 LlVal                       ( ModelPrimitiveType long long long Int64 )
+            value.LVal                                      = GetInt32(new IntPtr(p + 0x018)); // 0x18 LVal                        ( ModelPrimitiveType int int int Int32 )
+            value.BVal                                      = GetSByte(new IntPtr(p + 0x018)); // 0x18 BVal                        ( ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.IVal                                      = GetInt16(new IntPtr(p + 0x018)); // 0x18 IVal                        ( ModelPrimitiveType short short short Int16 )
+            value.FltVal                                    = GetSingle(new IntPtr(p + 0x018)); // 0x18 FltVal                      ( ModelPrimitiveType float float float Single )
+            value.DblVal                                    = GetDouble(new IntPtr(p + 0x018)); // 0x18 DblVal                      ( ModelPrimitiveType double double double Double )
+            value.BoolVal                                   = GetInt16(new IntPtr(p + 0x018)); // 0x18 BoolVal                     ( ModelPrimitiveType short short short Int16 )
+            value.CVal                                      = GetSByte(new IntPtr(p + 0x018)); // 0x18 CVal                        ( ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.UiVal                                     = GetUInt16(new IntPtr(p + 0x018)); // 0x18 UiVal                       ( ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.UlVal                                     = GetUInt32(new IntPtr(p + 0x018)); // 0x18 UlVal                       ( ModelPrimitiveType uint uint uint UInt32 )
+            value.UllVal                                    = GetUInt64(new IntPtr(p + 0x018)); // 0x18 UllVal                      ( ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.IntVal                                    = GetInt32(new IntPtr(p + 0x018)); // 0x18 IntVal                      ( ModelPrimitiveType int int int Int32 )
+            value.UintVal                                   = GetUInt32(new IntPtr(p + 0x018)); // 0x18 UintVal                     ( ModelPrimitiveType uint uint uint UInt32 )
+            value.BRecord                                   = (BRECORD)GetInt32(new IntPtr(p + 0x018)); // 0x18 BRecord                     ( ModelEnumType BRECORD BRECORD BRECORD Int32 )
 
             return value;
         }

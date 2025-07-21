@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_BoneName                               000186671910 ModelPrimitiveType string string string String
-    // 018 M_HumanName                              000186671910 ModelPrimitiveType string string string String
-    // 020 Limit                                    0001866E7D80 ModelEnumType HumanLimit HumanLimit HumanLimit Int32
+    // 010 M_BoneName                               ModelPrimitiveType string string string String
+    // 018 M_HumanName                              ModelPrimitiveType string string string String
+    // 020 Limit                                    ModelEnumType HumanLimit HumanLimit HumanLimit Int32
     public partial class HumanBone : DataModel
     {
         public string                                   M_BoneName                              { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HumanBone() { Pointer= p0 };
 
-            value.M_BoneName                                = GetString(new IntPtr(p + 0x010)); // 0245A227E8D0 0x10 M_BoneName                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_HumanName                               = GetString(new IntPtr(p + 0x018)); // 0245A227E8F0 0x18 M_HumanName                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.Limit                                     = (HumanLimit)GetInt32(new IntPtr(p + 0x020)); // 0245A227E910 0x20 Limit                       ( 0001866E7D80 ModelEnumType HumanLimit HumanLimit HumanLimit Int32 )
+            value.M_BoneName                                = GetString(new IntPtr(p + 0x010)); // 0x10 M_BoneName                  ( ModelPrimitiveType string string string String )
+            value.M_HumanName                               = GetString(new IntPtr(p + 0x018)); // 0x18 M_HumanName                 ( ModelPrimitiveType string string string String )
+            value.Limit                                     = (HumanLimit)GetInt32(new IntPtr(p + 0x020)); // 0x20 Limit                       ( ModelEnumType HumanLimit HumanLimit HumanLimit Int32 )
 
             return value;
         }

@@ -8,15 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 NameLabel                                0001866320F0 ModelClassType Text Text Text Pointer
-    // 028 ScrollRect                               0001866F81F0 ModelClassType ScrollRect ScrollRect ScrollRect Pointer
-    // 030 Viewport                                 000186630900 ModelClassType RectTransform RectTransform RectTransform Pointer
-    // 038 Canvas                                   0001866A1570 ModelClassType DebugUIHandlerCanvas DebugUIHandlerCanvas DebugUIHandlerCanvas Pointer
-    // 040 M_ScrollTransform                        000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
-    // 048 M_ContentTransform                       000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
-    // 050 M_MaskTransform                          000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
-    // 058 M_ScrollTarget                           0001865BF940 ModelClassType DebugUIHandlerWidget DebugUIHandlerWidget DebugUIHandlerWidget Pointer
-    // 060 M_Panel                                  000186588470 ModelClassType Panel Panel Panel Pointer
+    // 020 NameLabel                                ModelClassType Text Text Text Pointer
+    // 028 ScrollRect                               ModelClassType ScrollRect ScrollRect ScrollRect Pointer
+    // 030 Viewport                                 ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 038 Canvas                                   ModelClassType DebugUIHandlerCanvas DebugUIHandlerCanvas DebugUIHandlerCanvas Pointer
+    // 040 M_ScrollTransform                        ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 048 M_ContentTransform                       ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 050 M_MaskTransform                          ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 058 M_ScrollTarget                           ModelClassType DebugUIHandlerWidget DebugUIHandlerWidget DebugUIHandlerWidget Pointer
+    // 060 M_Panel                                  ModelClassType Panel Panel Panel Pointer
     public partial class DebugUIHandlerPanel : DataModel
     {
         public Text?                                    NameLabel                               { get; set; }
@@ -37,15 +37,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DebugUIHandlerPanel() { Pointer= p0 };
 
-            value.NameLabel                                 = GetObject<Text>(new IntPtr(p + 0x020), ReversePrism.DataModels.Text.FromPointer); // 024669374E88 0x20 NameLabel                   ( 0001866320F0 ModelClassType Text Text Text Pointer )
-            value.ScrollRect                                = GetObject<ScrollRect>(new IntPtr(p + 0x028), ReversePrism.DataModels.ScrollRect.FromPointer); // 024669374EA8 0x28 ScrollRect                  ( 0001866F81F0 ModelClassType ScrollRect ScrollRect ScrollRect Pointer )
-            value.Viewport                                  = GetObject<RectTransform>(new IntPtr(p + 0x030), ReversePrism.DataModels.RectTransform.FromPointer); // 024669374EC8 0x30 Viewport                    ( 000186630900 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.Canvas                                    = GetObject<DebugUIHandlerCanvas>(new IntPtr(p + 0x038), ReversePrism.DataModels.DebugUIHandlerCanvas.FromPointer); // 024669374EE8 0x38 Canvas                      ( 0001866A1570 ModelClassType DebugUIHandlerCanvas DebugUIHandlerCanvas DebugUIHandlerCanvas Pointer )
-            value.M_ScrollTransform                         = GetObject<RectTransform>(new IntPtr(p + 0x040), ReversePrism.DataModels.RectTransform.FromPointer); // 024669374F08 0x40 M_ScrollTransform           ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.M_ContentTransform                        = GetObject<RectTransform>(new IntPtr(p + 0x048), ReversePrism.DataModels.RectTransform.FromPointer); // 024669374F28 0x48 M_ContentTransform          ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.M_MaskTransform                           = GetObject<RectTransform>(new IntPtr(p + 0x050), ReversePrism.DataModels.RectTransform.FromPointer); // 024669374F48 0x50 M_MaskTransform             ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.M_ScrollTarget                            = GetObject<DebugUIHandlerWidget>(new IntPtr(p + 0x058), ReversePrism.DataModels.DebugUIHandlerWidget.FromPointer); // 024669374F68 0x58 M_ScrollTarget              ( 0001865BF940 ModelClassType DebugUIHandlerWidget DebugUIHandlerWidget DebugUIHandlerWidget Pointer )
-            value.M_Panel                                   = GetObject<Panel>(new IntPtr(p + 0x060), ReversePrism.DataModels.Panel.FromPointer); // 024669374F88 0x60 M_Panel                     ( 000186588470 ModelClassType Panel Panel Panel Pointer )
+            value.NameLabel                                 = GetObject<Text>(new IntPtr(p + 0x020), ReversePrism.DataModels.Text.FromPointer); // 0x20 NameLabel                   ( ModelClassType Text Text Text Pointer )
+            value.ScrollRect                                = GetObject<ScrollRect>(new IntPtr(p + 0x028), ReversePrism.DataModels.ScrollRect.FromPointer); // 0x28 ScrollRect                  ( ModelClassType ScrollRect ScrollRect ScrollRect Pointer )
+            value.Viewport                                  = GetObject<RectTransform>(new IntPtr(p + 0x030), ReversePrism.DataModels.RectTransform.FromPointer); // 0x30 Viewport                    ( ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.Canvas                                    = GetObject<DebugUIHandlerCanvas>(new IntPtr(p + 0x038), ReversePrism.DataModels.DebugUIHandlerCanvas.FromPointer); // 0x38 Canvas                      ( ModelClassType DebugUIHandlerCanvas DebugUIHandlerCanvas DebugUIHandlerCanvas Pointer )
+            value.M_ScrollTransform                         = GetObject<RectTransform>(new IntPtr(p + 0x040), ReversePrism.DataModels.RectTransform.FromPointer); // 0x40 M_ScrollTransform           ( ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.M_ContentTransform                        = GetObject<RectTransform>(new IntPtr(p + 0x048), ReversePrism.DataModels.RectTransform.FromPointer); // 0x48 M_ContentTransform          ( ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.M_MaskTransform                           = GetObject<RectTransform>(new IntPtr(p + 0x050), ReversePrism.DataModels.RectTransform.FromPointer); // 0x50 M_MaskTransform             ( ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.M_ScrollTarget                            = GetObject<DebugUIHandlerWidget>(new IntPtr(p + 0x058), ReversePrism.DataModels.DebugUIHandlerWidget.FromPointer); // 0x58 M_ScrollTarget              ( ModelClassType DebugUIHandlerWidget DebugUIHandlerWidget DebugUIHandlerWidget Pointer )
+            value.M_Panel                                   = GetObject<Panel>(new IntPtr(p + 0x060), ReversePrism.DataModels.Panel.FromPointer); // 0x60 M_Panel                     ( ModelClassType Panel Panel Panel Pointer )
 
             return value;
         }

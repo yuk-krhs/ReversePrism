@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_UseReference                           000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 018 M_Action                                 0001865E7E40 ModelClassType InputAction InputAction InputAction Pointer
-    // 020 M_Reference                              0001865E9A50 ModelClassType InputActionReference InputActionReference InputActionReference Pointer
+    // 010 M_UseReference                           ModelPrimitiveType bool bool bool Bool
+    // 018 M_Action                                 ModelClassType InputAction InputAction InputAction Pointer
+    // 020 M_Reference                              ModelClassType InputActionReference InputActionReference InputActionReference Pointer
     public partial class InputActionProperty : DataModel
     {
         public bool                                     M_UseReference                          { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InputActionProperty() { Pointer= p0 };
 
-            value.M_UseReference                            = GetBool(new IntPtr(p + 0x010)); // 0246676D8068 0x10 M_UseReference              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_Action                                  = GetObject<InputAction>(new IntPtr(p + 0x018), ReversePrism.DataModels.InputAction.FromPointer); // 0246676D8088 0x18 M_Action                    ( 0001865E7E40 ModelClassType InputAction InputAction InputAction Pointer )
-            value.M_Reference                               = GetObject<InputActionReference>(new IntPtr(p + 0x020), ReversePrism.DataModels.InputActionReference.FromPointer); // 0246676D80A8 0x20 M_Reference                 ( 0001865E9A50 ModelClassType InputActionReference InputActionReference InputActionReference Pointer )
+            value.M_UseReference                            = GetBool(new IntPtr(p + 0x010)); // 0x10 M_UseReference              ( ModelPrimitiveType bool bool bool Bool )
+            value.M_Action                                  = GetObject<InputAction>(new IntPtr(p + 0x018), ReversePrism.DataModels.InputAction.FromPointer); // 0x18 M_Action                    ( ModelClassType InputAction InputAction InputAction Pointer )
+            value.M_Reference                               = GetObject<InputActionReference>(new IntPtr(p + 0x020), ReversePrism.DataModels.InputActionReference.FromPointer); // 0x20 M_Reference                 ( ModelClassType InputActionReference InputActionReference InputActionReference Pointer )
 
             return value;
         }

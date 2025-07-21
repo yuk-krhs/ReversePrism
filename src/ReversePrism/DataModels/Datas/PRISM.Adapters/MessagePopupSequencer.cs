@@ -9,6 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 sequencer                                IClosableSequencer`2<int, IMessagePopupView> IL2CPP_TYPE_GENERICINST
+    // 018 scrollSequencer                          IClosableSequencer`2<int, IMessagePopupView> IL2CPP_TYPE_GENERICINST
     public partial class MessagePopupSequencer : DataModel
     {
 

@@ -9,12 +9,12 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 parsedEnum                               <object> IL2CPP_TYPE_OBJECT
-    // 018 CanThrow                                 000186595210 ModelPrimitiveType bool bool bool Bool
-    // 01C M_failure                                0001865DF510 ModelEnumType ParseFailureKind ParseFailureKind ParseFailureKind Int32
-    // 020 M_failureMessageID                       000186671BA0 ModelPrimitiveType string string string String
-    // 028 M_failureParameter                       000186671BA0 ModelPrimitiveType string string string String
+    // 018 CanThrow                                 ModelPrimitiveType bool bool bool Bool
+    // 01C M_failure                                ModelEnumType ParseFailureKind ParseFailureKind ParseFailureKind Int32
+    // 020 M_failureMessageID                       ModelPrimitiveType string string string String
+    // 028 M_failureParameter                       ModelPrimitiveType string string string String
     // 030 m_failureMessageFormatArgument           <object> IL2CPP_TYPE_OBJECT
-    // 038 M_innerException                         0001865CAA70 ModelClassType Exception Exception Exception Pointer
+    // 038 M_innerException                         ModelClassType Exception Exception Exception Pointer
     public partial class EnumResult : DataModel
     {
         public bool                                     CanThrow                                { get; set; }
@@ -31,11 +31,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EnumResult() { Pointer= p0 };
 
-            value.CanThrow                                  = GetBool(new IntPtr(p + 0x018)); // 024666AC15D0 0x18 CanThrow                    ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.M_failure                                 = (ParseFailureKind)GetInt32(new IntPtr(p + 0x01C)); // 024666AC15F0 0x1C M_failure                   ( 0001865DF510 ModelEnumType ParseFailureKind ParseFailureKind ParseFailureKind Int32 )
-            value.M_failureMessageID                        = GetString(new IntPtr(p + 0x020)); // 024666AC1610 0x20 M_failureMessageID          ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.M_failureParameter                        = GetString(new IntPtr(p + 0x028)); // 024666AC1630 0x28 M_failureParameter          ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.M_innerException                          = GetObject<Exception>(new IntPtr(p + 0x038), ReversePrism.DataModels.Exception.FromPointer); // 024666AC1670 0x38 M_innerException            ( 0001865CAA70 ModelClassType Exception Exception Exception Pointer )
+            value.CanThrow                                  = GetBool(new IntPtr(p + 0x018)); // 0x18 CanThrow                    ( ModelPrimitiveType bool bool bool Bool )
+            value.M_failure                                 = (ParseFailureKind)GetInt32(new IntPtr(p + 0x01C)); // 0x1C M_failure                   ( ModelEnumType ParseFailureKind ParseFailureKind ParseFailureKind Int32 )
+            value.M_failureMessageID                        = GetString(new IntPtr(p + 0x020)); // 0x20 M_failureMessageID          ( ModelPrimitiveType string string string String )
+            value.M_failureParameter                        = GetString(new IntPtr(p + 0x028)); // 0x28 M_failureParameter          ( ModelPrimitiveType string string string String )
+            value.M_innerException                          = GetObject<Exception>(new IntPtr(p + 0x038), ReversePrism.DataModels.Exception.FromPointer); // 0x38 M_innerException            ( ModelClassType Exception Exception Exception Pointer )
 
             return value;
         }

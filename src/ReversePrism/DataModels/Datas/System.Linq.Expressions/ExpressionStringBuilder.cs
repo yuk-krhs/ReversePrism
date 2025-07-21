@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Out                                      0001866774E0 ModelClassType StringBuilder StringBuilder StringBuilder Pointer
+    // 010 Out                                      ModelClassType StringBuilder StringBuilder StringBuilder Pointer
     // 018 _ids                                     Dictionary`2<<object>, int> IL2CPP_TYPE_GENERICINST
     public partial class ExpressionStringBuilder : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExpressionStringBuilder() { Pointer= p0 };
 
-            value.Out                                       = GetObject<StringBuilder>(new IntPtr(p + 0x010), ReversePrism.DataModels.StringBuilder.FromPointer); // 024669F9DA08 0x10 Out                         ( 0001866774E0 ModelClassType StringBuilder StringBuilder StringBuilder Pointer )
+            value.Out                                       = GetObject<StringBuilder>(new IntPtr(p + 0x010), ReversePrism.DataModels.StringBuilder.FromPointer); // 0x10 Out                         ( ModelClassType StringBuilder StringBuilder StringBuilder Pointer )
 
             return value;
         }

@@ -11,6 +11,7 @@ namespace ReversePrism.DataModels
     public enum LayerMaskValue
     {
         UI,
+        SplitScreen,
         PostProcess,
         Audience,
         TouchEffect,

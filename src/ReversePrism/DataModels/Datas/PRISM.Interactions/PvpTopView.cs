@@ -8,17 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 HeaderPanel                              0001865E4990 ModelClassType PvpHeaderPanelView PvpHeaderPanelView PvpHeaderPanelView Pointer
-    // 028 PlayerPanel                              0001865EEFD0 ModelClassType PvpPlayerPanelView PvpPlayerPanelView PvpPlayerPanelView Pointer
-    // 030 UserListPanel                            0001865F9AB0 ModelClassType PvpUserListPanelView PvpUserListPanelView PvpUserListPanelView Pointer
-    // 038 UnitSetupButton                          0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 040 DefenceUnitSetupButton                   0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 048 RankingButton                            0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 050 UpdateButton                             0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 058 IconAtlas                                00018654FA50 ModelClassType SpriteAtlas SpriteAtlas SpriteAtlas Pointer
-    // 060 pvpConfirmPoppuFactory                   PopupViewFactory`1<IPvpConfirmPopupView> IL2CPP_TYPE_GENERICINST
-    // 068 fesUnitDetailPopupViewFactory            PopupViewFactory`1<IFUnitDetailPopupView> IL2CPP_TYPE_GENERICINST
-    // 070 pIdolUnitDetailPopupViewFactory          IPopupViewFactory`1<IChallengeTourPIdolUnitDetailPopupView> IL2CPP_TYPE_GENERICINST
+    // 020 HeaderPanel                              ModelClassType PvpHeaderPanelView PvpHeaderPanelView PvpHeaderPanelView Pointer
+    // 028 PlayerPanel                              ModelClassType PvpPlayerPanelView PvpPlayerPanelView PvpPlayerPanelView Pointer
+    // 030 UserListPanel                            ModelClassType PvpUserListPanelView PvpUserListPanelView PvpUserListPanelView Pointer
+    // 038 UnitSetupButton                          ModelClassType UIButton UIButton UIButton Pointer
+    // 040 DefenceUnitSetupButton                   ModelClassType UIButton UIButton UIButton Pointer
+    // 048 RankingButton                            ModelClassType UIButton UIButton UIButton Pointer
+    // 050 UpdateButton                             ModelClassType UIButton UIButton UIButton Pointer
+    // 058 IconAtlas                                ModelClassType SpriteAtlas SpriteAtlas SpriteAtlas Pointer
+    // 060 ResourceLoader                           ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer
     public partial class PvpTopView : DataModel
     {
         public PvpHeaderPanelView?                      HeaderPanel                             { get; set; }
@@ -29,6 +27,7 @@ namespace ReversePrism.DataModels
         public UIButton?                                RankingButton                           { get; set; }
         public UIButton?                                UpdateButton                            { get; set; }
         public SpriteAtlas?                             IconAtlas                               { get; set; }
+        public IResourceLoader?                         ResourceLoader                          { get; set; }
 
         public static PvpTopView? FromPointer(IntPtr p0)
         {
@@ -38,14 +37,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PvpTopView() { Pointer= p0 };
 
-            value.HeaderPanel                               = GetObject<PvpHeaderPanelView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PvpHeaderPanelView.FromPointer); // 02466A1A58E0 0x20 HeaderPanel                 ( 0001865E4990 ModelClassType PvpHeaderPanelView PvpHeaderPanelView PvpHeaderPanelView Pointer )
-            value.PlayerPanel                               = GetObject<PvpPlayerPanelView>(new IntPtr(p + 0x028), ReversePrism.DataModels.PvpPlayerPanelView.FromPointer); // 02466A1A5900 0x28 PlayerPanel                 ( 0001865EEFD0 ModelClassType PvpPlayerPanelView PvpPlayerPanelView PvpPlayerPanelView Pointer )
-            value.UserListPanel                             = GetObject<PvpUserListPanelView>(new IntPtr(p + 0x030), ReversePrism.DataModels.PvpUserListPanelView.FromPointer); // 02466A1A5920 0x30 UserListPanel               ( 0001865F9AB0 ModelClassType PvpUserListPanelView PvpUserListPanelView PvpUserListPanelView Pointer )
-            value.UnitSetupButton                           = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 02466A1A5940 0x38 UnitSetupButton             ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.DefenceUnitSetupButton                    = GetObject<UIButton>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIButton.FromPointer); // 02466A1A5960 0x40 DefenceUnitSetupButton      ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.RankingButton                             = GetObject<UIButton>(new IntPtr(p + 0x048), ReversePrism.DataModels.UIButton.FromPointer); // 02466A1A5980 0x48 RankingButton               ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.UpdateButton                              = GetObject<UIButton>(new IntPtr(p + 0x050), ReversePrism.DataModels.UIButton.FromPointer); // 02466A1A59A0 0x50 UpdateButton                ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.IconAtlas                                 = GetObject<SpriteAtlas>(new IntPtr(p + 0x058), ReversePrism.DataModels.SpriteAtlas.FromPointer); // 02466A1A59C0 0x58 IconAtlas                   ( 00018654FA50 ModelClassType SpriteAtlas SpriteAtlas SpriteAtlas Pointer )
+            value.HeaderPanel                               = GetObject<PvpHeaderPanelView>(new IntPtr(p + 0x020), ReversePrism.DataModels.PvpHeaderPanelView.FromPointer); // 0x20 HeaderPanel                 ( ModelClassType PvpHeaderPanelView PvpHeaderPanelView PvpHeaderPanelView Pointer )
+            value.PlayerPanel                               = GetObject<PvpPlayerPanelView>(new IntPtr(p + 0x028), ReversePrism.DataModels.PvpPlayerPanelView.FromPointer); // 0x28 PlayerPanel                 ( ModelClassType PvpPlayerPanelView PvpPlayerPanelView PvpPlayerPanelView Pointer )
+            value.UserListPanel                             = GetObject<PvpUserListPanelView>(new IntPtr(p + 0x030), ReversePrism.DataModels.PvpUserListPanelView.FromPointer); // 0x30 UserListPanel               ( ModelClassType PvpUserListPanelView PvpUserListPanelView PvpUserListPanelView Pointer )
+            value.UnitSetupButton                           = GetObject<UIButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.UIButton.FromPointer); // 0x38 UnitSetupButton             ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.DefenceUnitSetupButton                    = GetObject<UIButton>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIButton.FromPointer); // 0x40 DefenceUnitSetupButton      ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.RankingButton                             = GetObject<UIButton>(new IntPtr(p + 0x048), ReversePrism.DataModels.UIButton.FromPointer); // 0x48 RankingButton               ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.UpdateButton                              = GetObject<UIButton>(new IntPtr(p + 0x050), ReversePrism.DataModels.UIButton.FromPointer); // 0x50 UpdateButton                ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.IconAtlas                                 = GetObject<SpriteAtlas>(new IntPtr(p + 0x058), ReversePrism.DataModels.SpriteAtlas.FromPointer); // 0x58 IconAtlas                   ( ModelClassType SpriteAtlas SpriteAtlas SpriteAtlas Pointer )
+            value.ResourceLoader                            = GetObject<IResourceLoader>(new IntPtr(p + 0x060), ReversePrism.DataModels.IResourceLoader.FromPointer); // 0x60 ResourceLoader              ( ModelClassType IResourceLoader IResourceLoader IResourceLoader Pointer )
 
             return value;
         }

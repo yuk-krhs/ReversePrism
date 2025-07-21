@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 M_DropData                               00018663F0E0 ModelClassType DropData DropData DropData Pointer
-    // 030 M_TreeView                               000186743B70 ModelClassType BaseTreeView BaseTreeView BaseTreeView Pointer
-    // 038 M_ExpandDropItemScheduledItem            000186697790 ModelClassType IVisualElementScheduledItem IVisualElementScheduledItem IVisualElementScheduledItem Pointer
-    // 040 M_ExpandDropItemCallback                 0001866792B0 ModelClassType Action Action Action Pointer
+    // 028 M_DropData                               ModelClassType DropData DropData DropData Pointer
+    // 030 M_TreeView                               ModelClassType BaseTreeView BaseTreeView BaseTreeView Pointer
+    // 038 M_ExpandDropItemScheduledItem            ModelClassType IVisualElementScheduledItem IVisualElementScheduledItem IVisualElementScheduledItem Pointer
+    // 040 M_ExpandDropItemCallback                 ModelClassType Action Action Action Pointer
     public partial class TreeViewReorderableDragAndDropController : DataModel
     {
         public DropData?                                M_DropData                              { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TreeViewReorderableDragAndDropController() { Pointer= p0 };
 
-            value.M_DropData                                = GetObject<DropData>(new IntPtr(p + 0x028), ReversePrism.DataModels.DropData.FromPointer); // 0245A6719A90 0x28 M_DropData                  ( 00018663F0E0 ModelClassType DropData DropData DropData Pointer )
-            value.M_TreeView                                = GetObject<BaseTreeView>(new IntPtr(p + 0x030), ReversePrism.DataModels.BaseTreeView.FromPointer); // 0245A6719AB0 0x30 M_TreeView                  ( 000186743B70 ModelClassType BaseTreeView BaseTreeView BaseTreeView Pointer )
-            value.M_ExpandDropItemScheduledItem             = GetObject<IVisualElementScheduledItem>(new IntPtr(p + 0x038), ReversePrism.DataModels.IVisualElementScheduledItem.FromPointer); // 0245A6719AD0 0x38 M_ExpandDropItemScheduledItem ( 000186697790 ModelClassType IVisualElementScheduledItem IVisualElementScheduledItem IVisualElementScheduledItem Pointer )
-            value.M_ExpandDropItemCallback                  = GetObject<Action>(new IntPtr(p + 0x040), ReversePrism.DataModels.Action.FromPointer); // 0245A6719AF0 0x40 M_ExpandDropItemCallback    ( 0001866792B0 ModelClassType Action Action Action Pointer )
+            value.M_DropData                                = GetObject<DropData>(new IntPtr(p + 0x028), ReversePrism.DataModels.DropData.FromPointer); // 0x28 M_DropData                  ( ModelClassType DropData DropData DropData Pointer )
+            value.M_TreeView                                = GetObject<BaseTreeView>(new IntPtr(p + 0x030), ReversePrism.DataModels.BaseTreeView.FromPointer); // 0x30 M_TreeView                  ( ModelClassType BaseTreeView BaseTreeView BaseTreeView Pointer )
+            value.M_ExpandDropItemScheduledItem             = GetObject<IVisualElementScheduledItem>(new IntPtr(p + 0x038), ReversePrism.DataModels.IVisualElementScheduledItem.FromPointer); // 0x38 M_ExpandDropItemScheduledItem ( ModelClassType IVisualElementScheduledItem IVisualElementScheduledItem IVisualElementScheduledItem Pointer )
+            value.M_ExpandDropItemCallback                  = GetObject<Action>(new IntPtr(p + 0x040), ReversePrism.DataModels.Action.FromPointer); // 0x40 M_ExpandDropItemCallback    ( ModelClassType Action Action Action Pointer )
 
             return value;
         }

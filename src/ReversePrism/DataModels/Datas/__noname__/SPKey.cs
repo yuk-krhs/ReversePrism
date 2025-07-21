@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Uri                                      0001866A4270 ModelClassType Uri Uri Uri Pointer
-    // 018 Proxy                                    0001866A4270 ModelClassType Uri Uri Uri Pointer
-    // 020 Use_connect                              000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 Uri                                      ModelClassType Uri Uri Uri Pointer
+    // 018 Proxy                                    ModelClassType Uri Uri Uri Pointer
+    // 020 Use_connect                              ModelPrimitiveType bool bool bool Bool
     public partial class SPKey : DataModel
     {
         public Uri?                                     Uri                                     { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SPKey() { Pointer= p0 };
 
-            value.Uri                                       = GetObject<Uri>(new IntPtr(p + 0x010), ReversePrism.DataModels.Uri.FromPointer); // 024667AE89C0 0x10 Uri                         ( 0001866A4270 ModelClassType Uri Uri Uri Pointer )
-            value.Proxy                                     = GetObject<Uri>(new IntPtr(p + 0x018), ReversePrism.DataModels.Uri.FromPointer); // 024667AE89E0 0x18 Proxy                       ( 0001866A4270 ModelClassType Uri Uri Uri Pointer )
-            value.Use_connect                               = GetBool(new IntPtr(p + 0x020)); // 024667AE8A00 0x20 Use_connect                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Uri                                       = GetObject<Uri>(new IntPtr(p + 0x010), ReversePrism.DataModels.Uri.FromPointer); // 0x10 Uri                         ( ModelClassType Uri Uri Uri Pointer )
+            value.Proxy                                     = GetObject<Uri>(new IntPtr(p + 0x018), ReversePrism.DataModels.Uri.FromPointer); // 0x18 Proxy                       ( ModelClassType Uri Uri Uri Pointer )
+            value.Use_connect                               = GetBool(new IntPtr(p + 0x020)); // 0x20 Use_connect                 ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

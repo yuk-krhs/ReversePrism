@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 IsValid                                  000186595960 ModelPrimitiveType bool bool bool Bool
-    // 014 PageAndID                                0001865ACF10 ModelEnumType Color32 Color32 Color32 Int32
+    // 010 IsValid                                  ModelPrimitiveType bool bool bool Bool
+    // 014 PageAndID                                ModelEnumType Color32 Color32 Color32 Int32
     public partial class ColorPage : DataModel
     {
         public bool                                     IsValid                                 { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ColorPage() { Pointer= p0 };
 
-            value.IsValid                                   = GetBool(new IntPtr(p + 0x010)); // 0245A67A9508 0x10 IsValid                     ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.PageAndID                                 = (Color32)GetInt32(new IntPtr(p + 0x014)); // 0245A67A9528 0x14 PageAndID                   ( 0001865ACF10 ModelEnumType Color32 Color32 Color32 Int32 )
+            value.IsValid                                   = GetBool(new IntPtr(p + 0x010)); // 0x10 IsValid                     ( ModelPrimitiveType bool bool bool Bool )
+            value.PageAndID                                 = (Color32)GetInt32(new IntPtr(p + 0x014)); // 0x14 PageAndID                   ( ModelEnumType Color32 Color32 Color32 Int32 )
 
             return value;
         }

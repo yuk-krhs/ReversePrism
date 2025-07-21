@@ -8,11 +8,16 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ScheduleList                             000185CE86C8 ModelClassListType List`1<IScheduleStatus> List`1<IScheduleStatus> List<IScheduleStatus> Pointer
-    // 018 Data                                     000186530A50 ModelClassType ProduceAutoSettingModel ProduceAutoSettingModel ProduceAutoSettingModel Pointer
-    // 020 DeleteCardNum                            0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 028 Rnd                                      0001866093D0 ModelClassType Random Random Random Pointer
-    // 030 CalcDetalList                            000185CE8228 ModelClassListType List`1<IScheduleDetailStatus> List`1<IScheduleDetailStatus> List<IScheduleDetailStatus> Pointer
+    // 000 SupportBonusRate                         float IL2CPP_TYPE_R4
+    // 000 ScheduleSelectionTypeRate                float IL2CPP_TYPE_R4
+    // 000 SystemTypeRate                           float IL2CPP_TYPE_R4
+    // 000 LvRate                                   float IL2CPP_TYPE_R4
+    // 010 ScheduleList                             ModelClassListType List`1<IScheduleStatus> List`1<IScheduleStatus> List<IScheduleStatus> Pointer
+    // 018 Data                                     ModelClassType ProduceAutoSettingModel ProduceAutoSettingModel ProduceAutoSettingModel Pointer
+    // 020 DeleteCardNum                            ModelPrimitiveType int int int Int32
+    // 028 Rnd                                      ModelClassType Random Random Random Pointer
+    // 030 CalcDetalList                            ModelClassListType List`1<IScheduleDetailStatus> List`1<IScheduleDetailStatus> List<IScheduleDetailStatus> Pointer
+    // 038 BestScheduleList                         ModelClassListType List`1<IScheduleDetailStatus> List`1<IScheduleDetailStatus> List<IScheduleDetailStatus> Pointer
     public partial class ScheduleSelectionAIModel : DataModel
     {
         public List<IScheduleStatus>?                   ScheduleList                            { get; set; }
@@ -20,6 +25,7 @@ namespace ReversePrism.DataModels
         public int                                      DeleteCardNum                           { get; set; }
         public Random?                                  Rnd                                     { get; set; }
         public List<IScheduleDetailStatus>?             CalcDetalList                           { get; set; }
+        public List<IScheduleDetailStatus>?             BestScheduleList                        { get; set; }
 
         public static ScheduleSelectionAIModel? FromPointer(IntPtr p0)
         {
@@ -29,11 +35,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ScheduleSelectionAIModel() { Pointer= p0 };
 
-            value.ScheduleList                              = GetObjectList<IScheduleStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IScheduleStatus.FromPointer); // 0246664C6EE0 0x10 ScheduleList                ( 000185CE86C8 ModelClassListType List`1<IScheduleStatus> List`1<IScheduleStatus> List<IScheduleStatus> Pointer )
-            value.Data                                      = GetObject<ProduceAutoSettingModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceAutoSettingModel.FromPointer); // 0246664C6F00 0x18 Data                        ( 000186530A50 ModelClassType ProduceAutoSettingModel ProduceAutoSettingModel ProduceAutoSettingModel Pointer )
-            value.DeleteCardNum                             = GetInt32(new IntPtr(p + 0x020)); // 0246664C6F20 0x20 DeleteCardNum               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Rnd                                       = GetObject<Random>(new IntPtr(p + 0x028), ReversePrism.DataModels.Random.FromPointer); // 0246664C6F40 0x28 Rnd                         ( 0001866093D0 ModelClassType Random Random Random Pointer )
-            value.CalcDetalList                             = GetObjectList<IScheduleDetailStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.IScheduleDetailStatus.FromPointer); // 0246664C6F60 0x30 CalcDetalList               ( 000185CE8228 ModelClassListType List`1<IScheduleDetailStatus> List`1<IScheduleDetailStatus> List<IScheduleDetailStatus> Pointer )
+            value.ScheduleList                              = GetObjectList<IScheduleStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IScheduleStatus.FromPointer); // 0x10 ScheduleList                ( ModelClassListType List`1<IScheduleStatus> List`1<IScheduleStatus> List<IScheduleStatus> Pointer )
+            value.Data                                      = GetObject<ProduceAutoSettingModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceAutoSettingModel.FromPointer); // 0x18 Data                        ( ModelClassType ProduceAutoSettingModel ProduceAutoSettingModel ProduceAutoSettingModel Pointer )
+            value.DeleteCardNum                             = GetInt32(new IntPtr(p + 0x020)); // 0x20 DeleteCardNum               ( ModelPrimitiveType int int int Int32 )
+            value.Rnd                                       = GetObject<Random>(new IntPtr(p + 0x028), ReversePrism.DataModels.Random.FromPointer); // 0x28 Rnd                         ( ModelClassType Random Random Random Pointer )
+            value.CalcDetalList                             = GetObjectList<IScheduleDetailStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.IScheduleDetailStatus.FromPointer); // 0x30 CalcDetalList               ( ModelClassListType List`1<IScheduleDetailStatus> List`1<IScheduleDetailStatus> List<IScheduleDetailStatus> Pointer )
+            value.BestScheduleList                          = GetObjectList<IScheduleDetailStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.IScheduleDetailStatus.FromPointer); // 0x38 BestScheduleList            ( ModelClassListType List`1<IScheduleDetailStatus> List`1<IScheduleDetailStatus> List<IScheduleDetailStatus> Pointer )
 
             return value;
         }

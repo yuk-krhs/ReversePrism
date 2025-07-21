@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 BaseOffset                               0001865F36C0 ModelPrimitiveType int int int Int32
-    // 018 Line                                     0001865D8420 ModelClassType GameObject GameObject GameObject Pointer
+    // 010 BaseOffset                               ModelPrimitiveType int int int Int32
+    // 018 Line                                     ModelClassType GameObject GameObject GameObject Pointer
     public partial class GridLine : DataModel
     {
         public int                                      BaseOffset                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GridLine() { Pointer= p0 };
 
-            value.BaseOffset                                = GetInt32(new IntPtr(p + 0x010)); // 02466B09E3F0 0x10 BaseOffset                  ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Line                                      = GetObject<GameObject>(new IntPtr(p + 0x018), ReversePrism.DataModels.GameObject.FromPointer); // 02466B09E410 0x18 Line                        ( 0001865D8420 ModelClassType GameObject GameObject GameObject Pointer )
+            value.BaseOffset                                = GetInt32(new IntPtr(p + 0x010)); // 0x10 BaseOffset                  ( ModelPrimitiveType int int int Int32 )
+            value.Line                                      = GetObject<GameObject>(new IntPtr(p + 0x018), ReversePrism.DataModels.GameObject.FromPointer); // 0x18 Line                        ( ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

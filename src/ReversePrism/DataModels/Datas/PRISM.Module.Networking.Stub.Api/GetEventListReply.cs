@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 EventListFieldNumber                     int IL2CPP_TYPE_I4
     // 008 _repeated_eventList_codec                FieldCodec`1<GameEventStatus> IL2CPP_TYPE_GENERICINST
-    // 018 EventList                                000185CDA648 ModelClassListType RepeatedField`1<GameEventStatus> RepeatedField`1<GameEventStatus> List<GameEventStatus> Pointer
+    // 018 EventList                                ModelClassListType RepeatedField`1<GameEventStatus> RepeatedField`1<GameEventStatus> List<GameEventStatus> Pointer
     public partial class GetEventListReply : DataModel
     {
         public List<GameEventStatus>?                   EventList                               { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetEventListReply() { Pointer= p0 };
 
-            value.EventList                                 = GetObjectList<GameEventStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.GameEventStatus.FromPointer); // 0246621763E8 0x18 EventList                   ( 000185CDA648 ModelClassListType RepeatedField`1<GameEventStatus> RepeatedField`1<GameEventStatus> List<GameEventStatus> Pointer )
+            value.EventList                                 = GetObjectList<GameEventStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.GameEventStatus.FromPointer); // 0x18 EventList                   ( ModelClassListType RepeatedField`1<GameEventStatus> RepeatedField`1<GameEventStatus> List<GameEventStatus> Pointer )
 
             return value;
         }

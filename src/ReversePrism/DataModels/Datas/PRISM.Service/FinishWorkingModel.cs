@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CacheFinishScheduleWorkingReply          000186513C00 ModelClassType IFinishScheduleWorkingReply IFinishScheduleWorkingReply IFinishScheduleWorkingReply Pointer
+    // 010 CacheFinishScheduleWorkingReply          ModelClassType IFinishScheduleWorkingReply IFinishScheduleWorkingReply IFinishScheduleWorkingReply Pointer
     public partial class FinishWorkingModel : DataModel
     {
         public IFinishScheduleWorkingReply?             CacheFinishScheduleWorkingReply         { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FinishWorkingModel() { Pointer= p0 };
 
-            value.CacheFinishScheduleWorkingReply           = GetObject<IFinishScheduleWorkingReply>(new IntPtr(p + 0x010), ReversePrism.DataModels.IFinishScheduleWorkingReply.FromPointer); // 024666620EA0 0x10 CacheFinishScheduleWorkingReply ( 000186513C00 ModelClassType IFinishScheduleWorkingReply IFinishScheduleWorkingReply IFinishScheduleWorkingReply Pointer )
+            value.CacheFinishScheduleWorkingReply           = GetObject<IFinishScheduleWorkingReply>(new IntPtr(p + 0x010), ReversePrism.DataModels.IFinishScheduleWorkingReply.FromPointer); // 0x10 CacheFinishScheduleWorkingReply ( ModelClassType IFinishScheduleWorkingReply IFinishScheduleWorkingReply IFinishScheduleWorkingReply Pointer )
 
             return value;
         }

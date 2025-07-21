@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Parameters                               000185CF5998 ModelClassListType List`1<NameValueHeaderValue> List`1<NameValueHeaderValue> List<NameValueHeaderValue> Pointer
-    // 018 Media_type                               000186671BA0 ModelPrimitiveType string string string String
+    // 010 Parameters                               ModelClassListType List`1<NameValueHeaderValue> List`1<NameValueHeaderValue> List<NameValueHeaderValue> Pointer
+    // 018 Media_type                               ModelPrimitiveType string string string String
     public partial class MediaTypeHeaderValue : DataModel
     {
         public List<NameValueHeaderValue>?              Parameters                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MediaTypeHeaderValue() { Pointer= p0 };
 
-            value.Parameters                                = GetObjectList<NameValueHeaderValue>(new IntPtr(p + 0x010), ReversePrism.DataModels.NameValueHeaderValue.FromPointer); // 02466B8E8C40 0x10 Parameters                  ( 000185CF5998 ModelClassListType List`1<NameValueHeaderValue> List`1<NameValueHeaderValue> List<NameValueHeaderValue> Pointer )
-            value.Media_type                                = GetString(new IntPtr(p + 0x018)); // 02466B8E8C60 0x18 Media_type                  ( 000186671BA0 ModelPrimitiveType string string string String )
+            value.Parameters                                = GetObjectList<NameValueHeaderValue>(new IntPtr(p + 0x010), ReversePrism.DataModels.NameValueHeaderValue.FromPointer); // 0x10 Parameters                  ( ModelClassListType List`1<NameValueHeaderValue> List`1<NameValueHeaderValue> List<NameValueHeaderValue> Pointer )
+            value.Media_type                                = GetString(new IntPtr(p + 0x018)); // 0x18 Media_type                  ( ModelPrimitiveType string string string String )
 
             return value;
         }

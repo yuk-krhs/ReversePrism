@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<ChainChoiceStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ChoiceFieldNumber                        int IL2CPP_TYPE_I4
-    // 018 Choice                                   0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 Choice                                   ModelPrimitiveType int int int Int32
     public partial class ChainChoiceStatus : DataModel
     {
         public int                                      Choice                                  { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChainChoiceStatus() { Pointer= p0 };
 
-            value.Choice                                    = GetInt32(new IntPtr(p + 0x018)); // 02466227C9B0 0x18 Choice                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Choice                                    = GetInt32(new IntPtr(p + 0x018)); // 0x18 Choice                      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

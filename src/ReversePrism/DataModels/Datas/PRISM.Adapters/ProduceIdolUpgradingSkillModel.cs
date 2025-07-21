@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 IsLockedRP                               0001867695E0 ModelClassType BoolReactiveProperty BoolReactiveProperty BoolReactiveProperty Pointer
-    // 018 IdolSkill                                0001865780F0 ModelClassType IIdolSkillStatus IIdolSkillStatus IIdolSkillStatus Pointer
+    // 010 IsLockedRP                               ModelClassType BoolReactiveProperty BoolReactiveProperty BoolReactiveProperty Pointer
+    // 018 IdolSkill                                ModelClassType IIdolSkillStatus IIdolSkillStatus IIdolSkillStatus Pointer
     public partial class ProduceIdolUpgradingSkillModel : DataModel
     {
         public BoolReactiveProperty?                    IsLockedRP                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceIdolUpgradingSkillModel() { Pointer= p0 };
 
-            value.IsLockedRP                                = GetObject<BoolReactiveProperty>(new IntPtr(p + 0x010), ReversePrism.DataModels.BoolReactiveProperty.FromPointer); // 024666156828 0x10 IsLockedRP                  ( 0001867695E0 ModelClassType BoolReactiveProperty BoolReactiveProperty BoolReactiveProperty Pointer )
-            value.IdolSkill                                 = GetObject<IIdolSkillStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IIdolSkillStatus.FromPointer); // 024666156848 0x18 IdolSkill                   ( 0001865780F0 ModelClassType IIdolSkillStatus IIdolSkillStatus IIdolSkillStatus Pointer )
+            value.IsLockedRP                                = GetObject<BoolReactiveProperty>(new IntPtr(p + 0x010), ReversePrism.DataModels.BoolReactiveProperty.FromPointer); // 0x10 IsLockedRP                  ( ModelClassType BoolReactiveProperty BoolReactiveProperty BoolReactiveProperty Pointer )
+            value.IdolSkill                                 = GetObject<IIdolSkillStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IIdolSkillStatus.FromPointer); // 0x18 IdolSkill                   ( ModelClassType IIdolSkillStatus IIdolSkillStatus IIdolSkillStatus Pointer )
 
             return value;
         }

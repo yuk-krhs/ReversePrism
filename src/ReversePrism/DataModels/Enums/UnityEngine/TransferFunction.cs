@@ -15,5 +15,6 @@ namespace ReversePrism.DataModels
         BT1886,
         PQ,
         Linear,
+        Gamma22,
     }
 }

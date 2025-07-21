@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 IntervalBit                              0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 IntervalBit                              ModelPrimitiveType int int int Int32
     public partial class RuntimeElement : DataModel
     {
         public int                                      IntervalBit                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RuntimeElement() { Pointer= p0 };
 
-            value.IntervalBit                               = GetInt32(new IntPtr(p + 0x010)); // 02466B2A87C8 0x10 IntervalBit                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.IntervalBit                               = GetInt32(new IntPtr(p + 0x010)); // 0x10 IntervalBit                 ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,13 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Image                                    0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 028 Button                                   0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 030 Data                                     00018655F7A0 ModelClassType ChainTalkCellThumbnailData ChainTalkCellThumbnailData ChainTalkCellThumbnailData Pointer
+    // 020 Thumbnail                                ModelClassType MobileThumbnail MobileThumbnail MobileThumbnail Pointer
+    // 028 Data                                     ModelClassType ChainTalkCellThumbnailData ChainTalkCellThumbnailData ChainTalkCellThumbnailData Pointer
     public partial class ChainTalkCellThumbnail : DataModel
     {
-        public UIImage?                                 Image                                   { get; set; }
-        public UIButton?                                Button                                  { get; set; }
+        public MobileThumbnail?                         Thumbnail                               { get; set; }
         public ChainTalkCellThumbnailData?              Data                                    { get; set; }
 
         public static ChainTalkCellThumbnail? FromPointer(IntPtr p0)
@@ -25,9 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChainTalkCellThumbnail() { Pointer= p0 };
 
-            value.Image                                     = GetObject<UIImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIImage.FromPointer); // 02466B14D4D8 0x20 Image                       ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.Button                                    = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 02466B14D4F8 0x28 Button                      ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.Data                                      = GetObject<ChainTalkCellThumbnailData>(new IntPtr(p + 0x030), ReversePrism.DataModels.ChainTalkCellThumbnailData.FromPointer); // 02466B14D518 0x30 Data                        ( 00018655F7A0 ModelClassType ChainTalkCellThumbnailData ChainTalkCellThumbnailData ChainTalkCellThumbnailData Pointer )
+            value.Thumbnail                                 = GetObject<MobileThumbnail>(new IntPtr(p + 0x020), ReversePrism.DataModels.MobileThumbnail.FromPointer); // 0x20 Thumbnail                   ( ModelClassType MobileThumbnail MobileThumbnail MobileThumbnail Pointer )
+            value.Data                                      = GetObject<ChainTalkCellThumbnailData>(new IntPtr(p + 0x028), ReversePrism.DataModels.ChainTalkCellThumbnailData.FromPointer); // 0x28 Data                        ( ModelClassType ChainTalkCellThumbnailData ChainTalkCellThumbnailData ChainTalkCellThumbnailData Pointer )
 
             return value;
         }

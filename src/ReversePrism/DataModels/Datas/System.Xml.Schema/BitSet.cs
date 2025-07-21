@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Count                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 018 Bits                                     000185B83830 ModelPrimitiveListType uint[] uint[] List<uint> Pointer
+    // 010 Count                                    ModelPrimitiveType int int int Int32
+    // 018 Bits                                     ModelPrimitiveListType uint[] uint[] List<uint> Pointer
     public partial class BitSet : DataModel
     {
         public int                                      Count                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BitSet() { Pointer= p0 };
 
-            value.Count                                     = GetInt32(new IntPtr(p + 0x010)); // 0246675588B0 0x10 Count                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Bits                                      = GetUInt32List(new IntPtr(p + 0x018)); // 0246675588D0 0x18 Bits                        ( 000185B83830 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.Count                                     = GetInt32(new IntPtr(p + 0x010)); // 0x10 Count                       ( ModelPrimitiveType int int int Int32 )
+            value.Bits                                      = GetUInt32List(new IntPtr(p + 0x018)); // 0x18 Bits                        ( ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
 
             return value;
         }

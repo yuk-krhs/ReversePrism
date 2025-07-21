@@ -8,32 +8,32 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 FesIdol                                  000186779130 ModelClassType IFesIdolStatus IFesIdolStatus IFesIdolStatus Pointer
-    // 018 ForReference                             000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 020 FIdolIcon                                000186544DF0 ModelClassType FIdolIcon FIdolIcon FIdolIcon Pointer
-    // 028 MstFesIdolId                             000186671910 ModelPrimitiveType string string string String
-    // 030 MstFavoriteMarkId                        0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 038 Parameter                                0001865EF0E0 ModelClassType IProduceParameterStatus IProduceParameterStatus IProduceParameterStatus Pointer
-    // 040 BaseParameter                            000186575570 ModelClassType IIdolParameterStatus IIdolParameterStatus IIdolParameterStatus Pointer
-    // 048 LiveSkillViewModel                       00018657FCC0 ModelClassType LiveSkillViewModel LiveSkillViewModel LiveSkillViewModel Pointer
-    // 050 IdolSkillId                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 054 IdolSkillPp                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 058 IdolSkillAppealTypeList                  000185D18C38 ModelEnumListType IReadOnlyList`1<ProduceParameterType> IReadOnlyList`1<ProduceParameterType> List<ProduceParameterType> Pointer
-    // 060 IdolSkillActionEffectList                000185CFDBC8 ModelClassListType IReadOnlyList`1<IIdolSkillActionEffectStatus> IReadOnlyList`1<IIdolSkillActionEffectStatus> List<IIdolSkillActionEffectStatus> Pointer
-    // 068 IdolSkillActionCondition                 000186576230 ModelClassType IIdolSkillActionConditionStatus IIdolSkillActionConditionStatus IIdolSkillActionConditionStatus Pointer
-    // 070 IdolSkillLv                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 074 IdolSkillIconId                          0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 078 MstUnitId                                0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 080 UnitName                                 000186671910 ModelPrimitiveType string string string String
-    // 088 UnitRank                                 00018660D900 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32
-    // 090 UnitParameter                            0001865EF0E0 ModelClassType IProduceParameterStatus IProduceParameterStatus IProduceParameterStatus Pointer
-    // 098 UnitMemberIcons                          000185B7E340 ModelClassListType FIdolIcon[] FIdolIcon[] List<FIdolIcon> Pointer
-    // 0A0 MstEpisodeId                             0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 0A4 DifficultyLevel                          0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 0A8 CreateDate                               0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    // 0B0 IsAutoProduce                            000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 FesIdol                                  ModelClassType IFesIdolStatus IFesIdolStatus IFesIdolStatus Pointer
+    // 018 ForReference                             ModelPrimitiveType bool bool bool Bool
+    // 020 FIdolIcon                                ModelClassType FIdolIcon FIdolIcon FIdolIcon Pointer
+    // 028 MstFesIdolId                             ModelPrimitiveType string string string String
+    // 030 MstFavoriteMarkId                        ModelPrimitiveType int int int Int32
+    // 038 Parameter                                ModelClassType IProduceParameterStatus IProduceParameterStatus IProduceParameterStatus Pointer
+    // 040 BaseParameter                            ModelClassType IIdolParameterStatus IIdolParameterStatus IIdolParameterStatus Pointer
+    // 048 LiveSkillViewModel                       ModelClassType LiveSkillViewModel LiveSkillViewModel LiveSkillViewModel Pointer
+    // 050 IdolSkillId                              ModelPrimitiveType int int int Int32
+    // 054 IdolSkillPp                              ModelPrimitiveType int int int Int32
+    // 058 IdolSkillAppealTypeList                  ModelEnumListType IReadOnlyList`1<ProduceParameterType> IReadOnlyList`1<ProduceParameterType> List<ProduceParameterType> Pointer
+    // 060 IdolSkillActionEffectList                ModelClassListType IReadOnlyList`1<IIdolSkillActionEffectStatus> IReadOnlyList`1<IIdolSkillActionEffectStatus> List<IIdolSkillActionEffectStatus> Pointer
+    // 068 IdolSkillActionCondition                 ModelClassType IIdolSkillActionConditionStatus IIdolSkillActionConditionStatus IIdolSkillActionConditionStatus Pointer
+    // 070 IdolSkillLv                              ModelPrimitiveType int int int Int32
+    // 074 IdolSkillIconId                          ModelPrimitiveType int int int Int32
+    // 078 MstUnitId                                ModelPrimitiveType int int int Int32
+    // 080 UnitName                                 ModelPrimitiveType string string string String
+    // 088 UnitRank                                 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32
+    // 090 UnitParameter                            ModelClassType IProduceParameterStatus IProduceParameterStatus IProduceParameterStatus Pointer
+    // 098 UnitMemberIcons                          ModelClassListType FIdolIcon[] FIdolIcon[] List<FIdolIcon> Pointer
+    // 0A0 MstEpisodeId                             ModelPrimitiveType int int int Int32
+    // 0A4 DifficultyLevel                          ModelPrimitiveType int int int Int32
+    // 0A8 CreateDate                               ModelPrimitiveType DateTime DateTime DateTime DateTime
+    // 0B0 IsAutoProduce                            ModelPrimitiveType bool bool bool Bool
     // 0B8 <StrategyList>k__BackingField            ValueTuple`2<int, int>[] IL2CPP_TYPE_SZARRAY
-    // 0C0 InitialTabIndex                          0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 0C0 InitialTabIndex                          ModelPrimitiveType int int int Int32
     public partial class FIdolDetailPopupViewModel : DataModel
     {
         public IFesIdolStatus?                          FesIdol                                 { get; set; }
@@ -70,31 +70,31 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FIdolDetailPopupViewModel() { Pointer= p0 };
 
-            value.FesIdol                                   = GetObject<IFesIdolStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IFesIdolStatus.FromPointer); // 024665F56578 0x10 FesIdol                     ( 000186779130 ModelClassType IFesIdolStatus IFesIdolStatus IFesIdolStatus Pointer )
-            value.ForReference                              = GetBool(new IntPtr(p + 0x018)); // 024665F56598 0x18 ForReference                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.FIdolIcon                                 = GetObject<FIdolIcon>(new IntPtr(p + 0x020), ReversePrism.DataModels.FIdolIcon.FromPointer); // 024665F565B8 0x20 FIdolIcon                   ( 000186544DF0 ModelClassType FIdolIcon FIdolIcon FIdolIcon Pointer )
-            value.MstFesIdolId                              = GetString(new IntPtr(p + 0x028)); // 024665F565D8 0x28 MstFesIdolId                ( 000186671910 ModelPrimitiveType string string string String )
-            value.MstFavoriteMarkId                         = GetInt32(new IntPtr(p + 0x030)); // 024665F565F8 0x30 MstFavoriteMarkId           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Parameter                                 = GetObject<IProduceParameterStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.IProduceParameterStatus.FromPointer); // 024665F56618 0x38 Parameter                   ( 0001865EF0E0 ModelClassType IProduceParameterStatus IProduceParameterStatus IProduceParameterStatus Pointer )
-            value.BaseParameter                             = GetObject<IIdolParameterStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.IIdolParameterStatus.FromPointer); // 024665F56638 0x40 BaseParameter               ( 000186575570 ModelClassType IIdolParameterStatus IIdolParameterStatus IIdolParameterStatus Pointer )
-            value.LiveSkillViewModel                        = GetObject<LiveSkillViewModel>(new IntPtr(p + 0x048), ReversePrism.DataModels.LiveSkillViewModel.FromPointer); // 024665F56658 0x48 LiveSkillViewModel          ( 00018657FCC0 ModelClassType LiveSkillViewModel LiveSkillViewModel LiveSkillViewModel Pointer )
-            value.IdolSkillId                               = GetInt32(new IntPtr(p + 0x050)); // 024665F56678 0x50 IdolSkillId                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IdolSkillPp                               = GetInt32(new IntPtr(p + 0x054)); // 024665F56698 0x54 IdolSkillPp                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IdolSkillAppealTypeList                   = GetEnumList<ProduceParameterType>(new IntPtr(p + 0x058)); // 024665F566B8 0x58 IdolSkillAppealTypeList     ( 000185D18C38 ModelEnumListType IReadOnlyList`1<ProduceParameterType> IReadOnlyList`1<ProduceParameterType> List<ProduceParameterType> Pointer )
-            value.IdolSkillActionEffectList                 = GetObjectList<IIdolSkillActionEffectStatus>(new IntPtr(p + 0x060), ReversePrism.DataModels.IIdolSkillActionEffectStatus.FromPointer); // 024665F566D8 0x60 IdolSkillActionEffectList   ( 000185CFDBC8 ModelClassListType IReadOnlyList`1<IIdolSkillActionEffectStatus> IReadOnlyList`1<IIdolSkillActionEffectStatus> List<IIdolSkillActionEffectStatus> Pointer )
-            value.IdolSkillActionCondition                  = GetObject<IIdolSkillActionConditionStatus>(new IntPtr(p + 0x068), ReversePrism.DataModels.IIdolSkillActionConditionStatus.FromPointer); // 024665F566F8 0x68 IdolSkillActionCondition    ( 000186576230 ModelClassType IIdolSkillActionConditionStatus IIdolSkillActionConditionStatus IIdolSkillActionConditionStatus Pointer )
-            value.IdolSkillLv                               = GetInt32(new IntPtr(p + 0x070)); // 024665F56718 0x70 IdolSkillLv                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IdolSkillIconId                           = GetInt32(new IntPtr(p + 0x074)); // 024665F56738 0x74 IdolSkillIconId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x078)); // 024665F56758 0x78 MstUnitId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UnitName                                  = GetString(new IntPtr(p + 0x080)); // 024665F56778 0x80 UnitName                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.UnitRank                                  = (ProduceParameterRank)GetInt32(new IntPtr(p + 0x088)); // 024665F56798 0x88 UnitRank                    ( 00018660D900 ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32 )
-            value.UnitParameter                             = GetObject<IProduceParameterStatus>(new IntPtr(p + 0x090), ReversePrism.DataModels.IProduceParameterStatus.FromPointer); // 024665F567B8 0x90 UnitParameter               ( 0001865EF0E0 ModelClassType IProduceParameterStatus IProduceParameterStatus IProduceParameterStatus Pointer )
-            value.UnitMemberIcons                           = GetObjectList<FIdolIcon>(new IntPtr(p + 0x098), ReversePrism.DataModels.FIdolIcon.FromPointer); // 024665F567D8 0x98 UnitMemberIcons             ( 000185B7E340 ModelClassListType FIdolIcon[] FIdolIcon[] List<FIdolIcon> Pointer )
-            value.MstEpisodeId                              = GetInt32(new IntPtr(p + 0x0A0)); // 024665F567F8 0xA0 MstEpisodeId                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.DifficultyLevel                           = GetInt32(new IntPtr(p + 0x0A4)); // 024665F56818 0xA4 DifficultyLevel             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CreateDate                                = GetDateTime(new IntPtr(p + 0x0A8)); // 024665F56838 0xA8 CreateDate                  ( 0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.IsAutoProduce                             = GetBool(new IntPtr(p + 0x0B0)); // 024665F56858 0xB0 IsAutoProduce               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.InitialTabIndex                           = GetInt32(new IntPtr(p + 0x0C0)); // 024665F56898 0xC0 InitialTabIndex             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.FesIdol                                   = GetObject<IFesIdolStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IFesIdolStatus.FromPointer); // 0x10 FesIdol                     ( ModelClassType IFesIdolStatus IFesIdolStatus IFesIdolStatus Pointer )
+            value.ForReference                              = GetBool(new IntPtr(p + 0x018)); // 0x18 ForReference                ( ModelPrimitiveType bool bool bool Bool )
+            value.FIdolIcon                                 = GetObject<FIdolIcon>(new IntPtr(p + 0x020), ReversePrism.DataModels.FIdolIcon.FromPointer); // 0x20 FIdolIcon                   ( ModelClassType FIdolIcon FIdolIcon FIdolIcon Pointer )
+            value.MstFesIdolId                              = GetString(new IntPtr(p + 0x028)); // 0x28 MstFesIdolId                ( ModelPrimitiveType string string string String )
+            value.MstFavoriteMarkId                         = GetInt32(new IntPtr(p + 0x030)); // 0x30 MstFavoriteMarkId           ( ModelPrimitiveType int int int Int32 )
+            value.Parameter                                 = GetObject<IProduceParameterStatus>(new IntPtr(p + 0x038), ReversePrism.DataModels.IProduceParameterStatus.FromPointer); // 0x38 Parameter                   ( ModelClassType IProduceParameterStatus IProduceParameterStatus IProduceParameterStatus Pointer )
+            value.BaseParameter                             = GetObject<IIdolParameterStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.IIdolParameterStatus.FromPointer); // 0x40 BaseParameter               ( ModelClassType IIdolParameterStatus IIdolParameterStatus IIdolParameterStatus Pointer )
+            value.LiveSkillViewModel                        = GetObject<LiveSkillViewModel>(new IntPtr(p + 0x048), ReversePrism.DataModels.LiveSkillViewModel.FromPointer); // 0x48 LiveSkillViewModel          ( ModelClassType LiveSkillViewModel LiveSkillViewModel LiveSkillViewModel Pointer )
+            value.IdolSkillId                               = GetInt32(new IntPtr(p + 0x050)); // 0x50 IdolSkillId                 ( ModelPrimitiveType int int int Int32 )
+            value.IdolSkillPp                               = GetInt32(new IntPtr(p + 0x054)); // 0x54 IdolSkillPp                 ( ModelPrimitiveType int int int Int32 )
+            value.IdolSkillAppealTypeList                   = GetEnumList<ProduceParameterType>(new IntPtr(p + 0x058)); // 0x58 IdolSkillAppealTypeList     ( ModelEnumListType IReadOnlyList`1<ProduceParameterType> IReadOnlyList`1<ProduceParameterType> List<ProduceParameterType> Pointer )
+            value.IdolSkillActionEffectList                 = GetObjectList<IIdolSkillActionEffectStatus>(new IntPtr(p + 0x060), ReversePrism.DataModels.IIdolSkillActionEffectStatus.FromPointer); // 0x60 IdolSkillActionEffectList   ( ModelClassListType IReadOnlyList`1<IIdolSkillActionEffectStatus> IReadOnlyList`1<IIdolSkillActionEffectStatus> List<IIdolSkillActionEffectStatus> Pointer )
+            value.IdolSkillActionCondition                  = GetObject<IIdolSkillActionConditionStatus>(new IntPtr(p + 0x068), ReversePrism.DataModels.IIdolSkillActionConditionStatus.FromPointer); // 0x68 IdolSkillActionCondition    ( ModelClassType IIdolSkillActionConditionStatus IIdolSkillActionConditionStatus IIdolSkillActionConditionStatus Pointer )
+            value.IdolSkillLv                               = GetInt32(new IntPtr(p + 0x070)); // 0x70 IdolSkillLv                 ( ModelPrimitiveType int int int Int32 )
+            value.IdolSkillIconId                           = GetInt32(new IntPtr(p + 0x074)); // 0x74 IdolSkillIconId             ( ModelPrimitiveType int int int Int32 )
+            value.MstUnitId                                 = GetInt32(new IntPtr(p + 0x078)); // 0x78 MstUnitId                   ( ModelPrimitiveType int int int Int32 )
+            value.UnitName                                  = GetString(new IntPtr(p + 0x080)); // 0x80 UnitName                    ( ModelPrimitiveType string string string String )
+            value.UnitRank                                  = (ProduceParameterRank)GetInt32(new IntPtr(p + 0x088)); // 0x88 UnitRank                    ( ModelEnumType ProduceParameterRank ProduceParameterRank ProduceParameterRank Int32 )
+            value.UnitParameter                             = GetObject<IProduceParameterStatus>(new IntPtr(p + 0x090), ReversePrism.DataModels.IProduceParameterStatus.FromPointer); // 0x90 UnitParameter               ( ModelClassType IProduceParameterStatus IProduceParameterStatus IProduceParameterStatus Pointer )
+            value.UnitMemberIcons                           = GetObjectList<FIdolIcon>(new IntPtr(p + 0x098), ReversePrism.DataModels.FIdolIcon.FromPointer); // 0x98 UnitMemberIcons             ( ModelClassListType FIdolIcon[] FIdolIcon[] List<FIdolIcon> Pointer )
+            value.MstEpisodeId                              = GetInt32(new IntPtr(p + 0x0A0)); // 0xA0 MstEpisodeId                ( ModelPrimitiveType int int int Int32 )
+            value.DifficultyLevel                           = GetInt32(new IntPtr(p + 0x0A4)); // 0xA4 DifficultyLevel             ( ModelPrimitiveType int int int Int32 )
+            value.CreateDate                                = GetDateTime(new IntPtr(p + 0x0A8)); // 0xA8 CreateDate                  ( ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.IsAutoProduce                             = GetBool(new IntPtr(p + 0x0B0)); // 0xB0 IsAutoProduce               ( ModelPrimitiveType bool bool bool Bool )
+            value.InitialTabIndex                           = GetInt32(new IntPtr(p + 0x0C0)); // 0xC0 InitialTabIndex             ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

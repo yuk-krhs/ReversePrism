@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Stack                                    00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer
-    // 018 Subtree                                  0001865BAD20 ModelClassType ForwardAxis ForwardAxis ForwardAxis Pointer
-    // 020 Parent                                   00018667FA80 ModelClassType ActiveAxis ActiveAxis ActiveAxis Pointer
+    // 010 Stack                                    ModelClassType ArrayList ArrayList ArrayList Pointer
+    // 018 Subtree                                  ModelClassType ForwardAxis ForwardAxis ForwardAxis Pointer
+    // 020 Parent                                   ModelClassType ActiveAxis ActiveAxis ActiveAxis Pointer
     public partial class AxisStack : DataModel
     {
         public ArrayList?                               Stack                                   { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AxisStack() { Pointer= p0 };
 
-            value.Stack                                     = GetObject<ArrayList>(new IntPtr(p + 0x010), ReversePrism.DataModels.ArrayList.FromPointer); // 02466753D118 0x10 Stack                       ( 00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer )
-            value.Subtree                                   = GetObject<ForwardAxis>(new IntPtr(p + 0x018), ReversePrism.DataModels.ForwardAxis.FromPointer); // 02466753D138 0x18 Subtree                     ( 0001865BAD20 ModelClassType ForwardAxis ForwardAxis ForwardAxis Pointer )
-            value.Parent                                    = GetObject<ActiveAxis>(new IntPtr(p + 0x020), ReversePrism.DataModels.ActiveAxis.FromPointer); // 02466753D158 0x20 Parent                      ( 00018667FA80 ModelClassType ActiveAxis ActiveAxis ActiveAxis Pointer )
+            value.Stack                                     = GetObject<ArrayList>(new IntPtr(p + 0x010), ReversePrism.DataModels.ArrayList.FromPointer); // 0x10 Stack                       ( ModelClassType ArrayList ArrayList ArrayList Pointer )
+            value.Subtree                                   = GetObject<ForwardAxis>(new IntPtr(p + 0x018), ReversePrism.DataModels.ForwardAxis.FromPointer); // 0x18 Subtree                     ( ModelClassType ForwardAxis ForwardAxis ForwardAxis Pointer )
+            value.Parent                                    = GetObject<ActiveAxis>(new IntPtr(p + 0x020), ReversePrism.DataModels.ActiveAxis.FromPointer); // 0x20 Parent                      ( ModelClassType ActiveAxis ActiveAxis ActiveAxis Pointer )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Index                                    0001865F4940 ModelPrimitiveType int int int Int32
-    // 014 Flags                                    0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 Index                                    ModelPrimitiveType int int int Int32
+    // 014 Flags                                    ModelPrimitiveType int int int Int32
     public partial class LocalVariable : DataModel
     {
         public int                                      Index                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LocalVariable() { Pointer= p0 };
 
-            value.Index                                     = GetInt32(new IntPtr(p + 0x010)); // 02466A04E188 0x10 Index                       ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.Flags                                     = GetInt32(new IntPtr(p + 0x014)); // 02466A04E1A8 0x14 Flags                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x010)); // 0x10 Index                       ( ModelPrimitiveType int int int Int32 )
+            value.Flags                                     = GetInt32(new IntPtr(p + 0x014)); // 0x14 Flags                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

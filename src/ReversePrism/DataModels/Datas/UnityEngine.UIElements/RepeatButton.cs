@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 4A0 M_Clickable                              0001865B4AC0 ModelClassType Clickable Clickable Clickable Pointer
+    // 4A0 M_Clickable                              ModelClassType Clickable Clickable Clickable Pointer
     // 000 ussClassName                             string IL2CPP_TYPE_STRING
     public partial class RepeatButton : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RepeatButton() { Pointer= p0 };
 
-            value.M_Clickable                               = GetObject<Clickable>(new IntPtr(p + 0x4A0), ReversePrism.DataModels.Clickable.FromPointer); // 0245A66F3D08 0x4A0 M_Clickable                 ( 0001865B4AC0 ModelClassType Clickable Clickable Clickable Pointer )
+            value.M_Clickable                               = GetObject<Clickable>(new IntPtr(p + 0x4A0), ReversePrism.DataModels.Clickable.FromPointer); // 0x4A0 M_Clickable                 ( ModelClassType Clickable Clickable Clickable Pointer )
 
             return value;
         }

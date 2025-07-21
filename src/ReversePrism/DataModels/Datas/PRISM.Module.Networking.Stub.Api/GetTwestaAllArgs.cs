@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<GetTwestaAllArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 CursorFieldNumber                        int IL2CPP_TYPE_I4
-    // 018 Cursor                                   000186671910 ModelPrimitiveType string string string String
+    // 018 Cursor                                   ModelPrimitiveType string string string String
     public partial class GetTwestaAllArgs : DataModel
     {
         public string                                   Cursor                                  { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetTwestaAllArgs() { Pointer= p0 };
 
-            value.Cursor                                    = GetString(new IntPtr(p + 0x018)); // 02466226C628 0x18 Cursor                      ( 000186671910 ModelPrimitiveType string string string String )
+            value.Cursor                                    = GetString(new IntPtr(p + 0x018)); // 0x18 Cursor                      ( ModelPrimitiveType string string string String )
 
             return value;
         }

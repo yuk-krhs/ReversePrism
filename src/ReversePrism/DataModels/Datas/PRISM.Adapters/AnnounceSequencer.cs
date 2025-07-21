@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 sequencer                                IClosableSequencer`2<Unit, IAnnounceOverlayView> IL2CPP_TYPE_GENERICINST
     // 018 detailSequencer                          IClosableSequencer`2<int, IAnnounceDetailPopupView> IL2CPP_TYPE_GENERICINST
-    // 020 IsShowList                               000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 020 IsShowList                               ModelPrimitiveType bool bool bool Bool
     public partial class AnnounceSequencer : DataModel
     {
         public bool                                     IsShowList                              { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AnnounceSequencer() { Pointer= p0 };
 
-            value.IsShowList                                = GetBool(new IntPtr(p + 0x020)); // 0245A39B2BC0 0x20 IsShowList                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsShowList                                = GetBool(new IntPtr(p + 0x020)); // 0x20 IsShowList                  ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

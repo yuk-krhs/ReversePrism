@@ -8,13 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 050 LiveOptionButton                         000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer
-    // 058 LiveStageDetailButton                    000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer
-    // 060 AutoLiveButton                           0001867266F0 ModelClassType AutoLiveButton AutoLiveButton AutoLiveButton Pointer
-    // 068 SetLBUsageButton                         000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer
-    // 070 CurrentLBUsageCountText                  0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 078 EventMaxUsageCountText                   0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 080 SkipLiveButton                           0001865157F0 ModelClassType SkipLiveButton SkipLiveButton SkipLiveButton Pointer
+    // 058 LiveOptionButton                         ModelClassType ButtonBase ButtonBase ButtonBase Pointer
+    // 060 LiveStageDetailButton                    ModelClassType ButtonBase ButtonBase ButtonBase Pointer
+    // 068 AutoLiveButton                           ModelClassType AutoLiveButton AutoLiveButton AutoLiveButton Pointer
+    // 070 SetLBUsageButton                         ModelClassType ButtonBase ButtonBase ButtonBase Pointer
+    // 078 CurrentLBUsageCountText                  ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 080 EventMaxUsageCountText                   ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 088 SkipLiveButton                           ModelClassType SkipLiveButton SkipLiveButton SkipLiveButton Pointer
+    // 090 EventBannerImage                         ModelClassType UIImage UIImage UIImage Pointer
+    // 098 EventBannerButton                        ModelClassType UIButton UIButton UIButton Pointer
     public partial class LiveUnitConfirmationView : DataModel
     {
         public ButtonBase?                              LiveOptionButton                        { get; set; }
@@ -24,6 +26,8 @@ namespace ReversePrism.DataModels
         public UITextMeshProUGUI?                       CurrentLBUsageCountText                 { get; set; }
         public UITextMeshProUGUI?                       EventMaxUsageCountText                  { get; set; }
         public SkipLiveButton?                          SkipLiveButton                          { get; set; }
+        public UIImage?                                 EventBannerImage                        { get; set; }
+        public UIButton?                                EventBannerButton                       { get; set; }
 
         public static LiveUnitConfirmationView? FromPointer(IntPtr p0)
         {
@@ -33,13 +37,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveUnitConfirmationView() { Pointer= p0 };
 
-            value.LiveOptionButton                          = GetObject<ButtonBase>(new IntPtr(p + 0x050), ReversePrism.DataModels.ButtonBase.FromPointer); // 0246653174C8 0x50 LiveOptionButton            ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.LiveStageDetailButton                     = GetObject<ButtonBase>(new IntPtr(p + 0x058), ReversePrism.DataModels.ButtonBase.FromPointer); // 0246653174E8 0x58 LiveStageDetailButton       ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.AutoLiveButton                            = GetObject<AutoLiveButton>(new IntPtr(p + 0x060), ReversePrism.DataModels.AutoLiveButton.FromPointer); // 024665317508 0x60 AutoLiveButton              ( 0001867266F0 ModelClassType AutoLiveButton AutoLiveButton AutoLiveButton Pointer )
-            value.SetLBUsageButton                          = GetObject<ButtonBase>(new IntPtr(p + 0x068), ReversePrism.DataModels.ButtonBase.FromPointer); // 024665317528 0x68 SetLBUsageButton            ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.CurrentLBUsageCountText                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x070), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665317548 0x70 CurrentLBUsageCountText     ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.EventMaxUsageCountText                    = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x078), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665317568 0x78 EventMaxUsageCountText      ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.SkipLiveButton                            = GetObject<SkipLiveButton>(new IntPtr(p + 0x080), ReversePrism.DataModels.SkipLiveButton.FromPointer); // 024665317588 0x80 SkipLiveButton              ( 0001865157F0 ModelClassType SkipLiveButton SkipLiveButton SkipLiveButton Pointer )
+            value.LiveOptionButton                          = GetObject<ButtonBase>(new IntPtr(p + 0x058), ReversePrism.DataModels.ButtonBase.FromPointer); // 0x58 LiveOptionButton            ( ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.LiveStageDetailButton                     = GetObject<ButtonBase>(new IntPtr(p + 0x060), ReversePrism.DataModels.ButtonBase.FromPointer); // 0x60 LiveStageDetailButton       ( ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.AutoLiveButton                            = GetObject<AutoLiveButton>(new IntPtr(p + 0x068), ReversePrism.DataModels.AutoLiveButton.FromPointer); // 0x68 AutoLiveButton              ( ModelClassType AutoLiveButton AutoLiveButton AutoLiveButton Pointer )
+            value.SetLBUsageButton                          = GetObject<ButtonBase>(new IntPtr(p + 0x070), ReversePrism.DataModels.ButtonBase.FromPointer); // 0x70 SetLBUsageButton            ( ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.CurrentLBUsageCountText                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x078), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x78 CurrentLBUsageCountText     ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.EventMaxUsageCountText                    = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x080), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x80 EventMaxUsageCountText      ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.SkipLiveButton                            = GetObject<SkipLiveButton>(new IntPtr(p + 0x088), ReversePrism.DataModels.SkipLiveButton.FromPointer); // 0x88 SkipLiveButton              ( ModelClassType SkipLiveButton SkipLiveButton SkipLiveButton Pointer )
+            value.EventBannerImage                          = GetObject<UIImage>(new IntPtr(p + 0x090), ReversePrism.DataModels.UIImage.FromPointer); // 0x90 EventBannerImage            ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.EventBannerButton                         = GetObject<UIButton>(new IntPtr(p + 0x098), ReversePrism.DataModels.UIButton.FromPointer); // 0x98 EventBannerButton           ( ModelClassType UIButton UIButton UIButton Pointer )
 
             return value;
         }

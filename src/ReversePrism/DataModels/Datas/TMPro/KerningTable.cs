@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 KerningPairs                             000185CEF448 ModelClassListType List`1<KerningPair> List`1<KerningPair> List<KerningPair> Pointer
+    // 010 KerningPairs                             ModelClassListType List`1<KerningPair> List`1<KerningPair> List<KerningPair> Pointer
     public partial class KerningTable : DataModel
     {
         public List<KerningPair>?                       KerningPairs                            { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new KerningTable() { Pointer= p0 };
 
-            value.KerningPairs                              = GetObjectList<KerningPair>(new IntPtr(p + 0x010), ReversePrism.DataModels.KerningPair.FromPointer); // 024660989448 0x10 KerningPairs                ( 000185CEF448 ModelClassListType List`1<KerningPair> List`1<KerningPair> List<KerningPair> Pointer )
+            value.KerningPairs                              = GetObjectList<KerningPair>(new IntPtr(p + 0x010), ReversePrism.DataModels.KerningPair.FromPointer); // 0x10 KerningPairs                ( ModelClassListType List`1<KerningPair> List`1<KerningPair> List<KerningPair> Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 Expressions                              000185CFEED8 ModelClassListType List`1<QueryExpression> List`1<QueryExpression> List<QueryExpression> Pointer
+    // 018 Expressions                              ModelClassListType List`1<QueryExpression> List`1<QueryExpression> List<QueryExpression> Pointer
     public partial class CompositeExpression : DataModel
     {
         public List<QueryExpression>?                   Expressions                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CompositeExpression() { Pointer= p0 };
 
-            value.Expressions                               = GetObjectList<QueryExpression>(new IntPtr(p + 0x018), ReversePrism.DataModels.QueryExpression.FromPointer); // 0246688A1180 0x18 Expressions                 ( 000185CFEED8 ModelClassListType List`1<QueryExpression> List`1<QueryExpression> List<QueryExpression> Pointer )
+            value.Expressions                               = GetObjectList<QueryExpression>(new IntPtr(p + 0x018), ReversePrism.DataModels.QueryExpression.FromPointer); // 0x18 Expressions                 ( ModelClassListType List`1<QueryExpression> List`1<QueryExpression> List<QueryExpression> Pointer )
 
             return value;
         }

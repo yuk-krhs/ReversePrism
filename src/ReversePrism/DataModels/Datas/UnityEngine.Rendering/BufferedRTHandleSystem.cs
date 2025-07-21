@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 m_RTHandles                              Dictionary`2<int, RTHandle[]> IL2CPP_TYPE_GENERICINST
-    // 018 M_RTHandleSystem                         0001866066F0 ModelClassType RTHandleSystem RTHandleSystem RTHandleSystem Pointer
-    // 020 M_DisposedValue                          000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 018 M_RTHandleSystem                         ModelClassType RTHandleSystem RTHandleSystem RTHandleSystem Pointer
+    // 020 M_DisposedValue                          ModelPrimitiveType bool bool bool Bool
     public partial class BufferedRTHandleSystem : DataModel
     {
         public RTHandleSystem?                          M_RTHandleSystem                        { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BufferedRTHandleSystem() { Pointer= p0 };
 
-            value.M_RTHandleSystem                          = GetObject<RTHandleSystem>(new IntPtr(p + 0x018), ReversePrism.DataModels.RTHandleSystem.FromPointer); // 0246692BE5A8 0x18 M_RTHandleSystem            ( 0001866066F0 ModelClassType RTHandleSystem RTHandleSystem RTHandleSystem Pointer )
-            value.M_DisposedValue                           = GetBool(new IntPtr(p + 0x020)); // 0246692BE5C8 0x20 M_DisposedValue             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_RTHandleSystem                          = GetObject<RTHandleSystem>(new IntPtr(p + 0x018), ReversePrism.DataModels.RTHandleSystem.FromPointer); // 0x18 M_RTHandleSystem            ( ModelClassType RTHandleSystem RTHandleSystem RTHandleSystem Pointer )
+            value.M_DisposedValue                           = GetBool(new IntPtr(p + 0x020)); // 0x20 M_DisposedValue             ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

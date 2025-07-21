@@ -11,10 +11,10 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<GetGashaNotesReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 BodyFieldNumber                          int IL2CPP_TYPE_I4
-    // 018 Body                                     000186671910 ModelPrimitiveType string string string String
+    // 018 Body                                     ModelPrimitiveType string string string String
     // 000 NotesListFieldNumber                     int IL2CPP_TYPE_I4
     // 008 _repeated_notesList_codec                FieldCodec`1<GashaNotesStatus> IL2CPP_TYPE_GENERICINST
-    // 020 NotesList                                000185CDBD68 ModelClassListType RepeatedField`1<GashaNotesStatus> RepeatedField`1<GashaNotesStatus> List<GashaNotesStatus> Pointer
+    // 020 NotesList                                ModelClassListType RepeatedField`1<GashaNotesStatus> RepeatedField`1<GashaNotesStatus> List<GashaNotesStatus> Pointer
     public partial class GetGashaNotesReply : DataModel
     {
         public string                                   Body                                    { get; set; }
@@ -28,8 +28,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetGashaNotesReply() { Pointer= p0 };
 
-            value.Body                                      = GetString(new IntPtr(p + 0x018)); // 0246619A22B8 0x18 Body                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.NotesList                                 = GetObjectList<GashaNotesStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaNotesStatus.FromPointer); // 0246619A2318 0x20 NotesList                   ( 000185CDBD68 ModelClassListType RepeatedField`1<GashaNotesStatus> RepeatedField`1<GashaNotesStatus> List<GashaNotesStatus> Pointer )
+            value.Body                                      = GetString(new IntPtr(p + 0x018)); // 0x18 Body                        ( ModelPrimitiveType string string string String )
+            value.NotesList                                 = GetObjectList<GashaNotesStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaNotesStatus.FromPointer); // 0x20 NotesList                   ( ModelClassListType RepeatedField`1<GashaNotesStatus> RepeatedField`1<GashaNotesStatus> List<GashaNotesStatus> Pointer )
 
             return value;
         }

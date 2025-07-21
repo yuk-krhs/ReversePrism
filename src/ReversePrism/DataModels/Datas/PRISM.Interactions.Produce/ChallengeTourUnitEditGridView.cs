@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 090 CellPrefab                               00018658A1F0 ModelClassType ChallengeTourUnitEditGridViewCell ChallengeTourUnitEditGridViewCell ChallengeTourUnitEditGridViewCell Pointer
+    // 090 CellPrefab                               ModelClassType ChallengeTourUnitEditGridViewCell ChallengeTourUnitEditGridViewCell ChallengeTourUnitEditGridViewCell Pointer
     public partial class ChallengeTourUnitEditGridView : DataModel
     {
         public ChallengeTourUnitEditGridViewCell?       CellPrefab                              { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChallengeTourUnitEditGridView() { Pointer= p0 };
 
-            value.CellPrefab                                = GetObject<ChallengeTourUnitEditGridViewCell>(new IntPtr(p + 0x090), ReversePrism.DataModels.ChallengeTourUnitEditGridViewCell.FromPointer); // 02466A23DEE0 0x90 CellPrefab                  ( 00018658A1F0 ModelClassType ChallengeTourUnitEditGridViewCell ChallengeTourUnitEditGridViewCell ChallengeTourUnitEditGridViewCell Pointer )
+            value.CellPrefab                                = GetObject<ChallengeTourUnitEditGridViewCell>(new IntPtr(p + 0x090), ReversePrism.DataModels.ChallengeTourUnitEditGridViewCell.FromPointer); // 0x90 CellPrefab                  ( ModelClassType ChallengeTourUnitEditGridViewCell ChallengeTourUnitEditGridViewCell ChallengeTourUnitEditGridViewCell Pointer )
 
             return value;
         }

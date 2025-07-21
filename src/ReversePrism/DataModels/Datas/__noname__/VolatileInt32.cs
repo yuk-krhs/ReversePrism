@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Value                                    0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 Value                                    ModelPrimitiveType int int int Int32
     public partial class VolatileInt32 : DataModel
     {
         public int                                      Value                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new VolatileInt32() { Pointer= p0 };
 
-            value.Value                                     = GetInt32(new IntPtr(p + 0x010)); // 024666B53ED8 0x10 Value                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Value                                     = GetInt32(new IntPtr(p + 0x010)); // 0x10 Value                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -16,6 +16,7 @@ namespace ReversePrism.DataModels
     // 005 <EdgeColorOff>k__BackingField            bool IL2CPP_TYPE_BOOLEAN
     // 006 <VignetteOff>k__BackingField             bool IL2CPP_TYPE_BOOLEAN
     // 007 <RadialBlurOff>k__BackingField           bool IL2CPP_TYPE_BOOLEAN
+    // 008 <FXAAOff>k__BackingField                 bool IL2CPP_TYPE_BOOLEAN
     public partial class Render3DMode : DataModel
     {
 

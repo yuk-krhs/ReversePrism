@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Negative                                 0001865F36C0 ModelPrimitiveType int int int Int32
-    // 014 Positive                                 0001865F36C0 ModelPrimitiveType int int int Int32
-    // 018 MinValue                                 000186666050 ModelPrimitiveType float float float Single
-    // 01C MaxValue                                 000186666050 ModelPrimitiveType float float float Single
-    // 020 WhichSideWins                            0001866EA460 ModelEnumType WhichSideWins WhichSideWins WhichSideWins Int32
+    // 010 Negative                                 ModelPrimitiveType int int int Int32
+    // 014 Positive                                 ModelPrimitiveType int int int Int32
+    // 018 MinValue                                 ModelPrimitiveType float float float Single
+    // 01C MaxValue                                 ModelPrimitiveType float float float Single
+    // 020 WhichSideWins                            ModelEnumType WhichSideWins WhichSideWins WhichSideWins Int32
     public partial class AxisComposite : DataModel
     {
         public int                                      Negative                                { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AxisComposite() { Pointer= p0 };
 
-            value.Negative                                  = GetInt32(new IntPtr(p + 0x010)); // 024667945B10 0x10 Negative                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Positive                                  = GetInt32(new IntPtr(p + 0x014)); // 024667945B30 0x14 Positive                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.MinValue                                  = GetSingle(new IntPtr(p + 0x018)); // 024667945B50 0x18 MinValue                    ( 000186666050 ModelPrimitiveType float float float Single )
-            value.MaxValue                                  = GetSingle(new IntPtr(p + 0x01C)); // 024667945B70 0x1C MaxValue                    ( 000186666050 ModelPrimitiveType float float float Single )
-            value.WhichSideWins                             = (WhichSideWins)GetInt32(new IntPtr(p + 0x020)); // 024667945B90 0x20 WhichSideWins               ( 0001866EA460 ModelEnumType WhichSideWins WhichSideWins WhichSideWins Int32 )
+            value.Negative                                  = GetInt32(new IntPtr(p + 0x010)); // 0x10 Negative                    ( ModelPrimitiveType int int int Int32 )
+            value.Positive                                  = GetInt32(new IntPtr(p + 0x014)); // 0x14 Positive                    ( ModelPrimitiveType int int int Int32 )
+            value.MinValue                                  = GetSingle(new IntPtr(p + 0x018)); // 0x18 MinValue                    ( ModelPrimitiveType float float float Single )
+            value.MaxValue                                  = GetSingle(new IntPtr(p + 0x01C)); // 0x1C MaxValue                    ( ModelPrimitiveType float float float Single )
+            value.WhichSideWins                             = (WhichSideWins)GetInt32(new IntPtr(p + 0x020)); // 0x20 WhichSideWins               ( ModelEnumType WhichSideWins WhichSideWins WhichSideWins Int32 )
 
             return value;
         }

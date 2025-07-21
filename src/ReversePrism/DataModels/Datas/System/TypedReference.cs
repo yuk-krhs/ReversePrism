@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Type                                     00018669FE20 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
+    // 010 Type                                     ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32
     // 018 Value                                    <int> IL2CPP_TYPE_I
     // 020 Type                                     <int> IL2CPP_TYPE_I
     public partial class TypedReference : DataModel
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TypedReference() { Pointer= p0 };
 
-            value.Type                                      = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x010)); // 024666AC2DC8 0x10 Type                        ( 00018669FE20 ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
+            value.Type                                      = (RuntimeTypeHandle)GetInt32(new IntPtr(p + 0x010)); // 0x10 Type                        ( ModelEnumType RuntimeTypeHandle RuntimeTypeHandle RuntimeTypeHandle Int32 )
 
             return value;
         }

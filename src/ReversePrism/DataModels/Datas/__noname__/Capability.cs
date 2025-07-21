@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Path                                     0001866722E0 ModelPrimitiveType string string string String
-    // 018 Value                                    0001866722E0 ModelPrimitiveType string string string String
+    // 010 Path                                     ModelPrimitiveType string string string String
+    // 018 Value                                    ModelPrimitiveType string string string String
     public partial class Capability : DataModel
     {
         public string                                   Path                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Capability() { Pointer= p0 };
 
-            value.Path                                      = GetString(new IntPtr(p + 0x010)); // 0245A33CA8B0 0x10 Path                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Value                                     = GetString(new IntPtr(p + 0x018)); // 0245A33CA8D0 0x18 Value                       ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Path                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Path                        ( ModelPrimitiveType string string string String )
+            value.Value                                     = GetString(new IntPtr(p + 0x018)); // 0x18 Value                       ( ModelPrimitiveType string string string String )
 
             return value;
         }

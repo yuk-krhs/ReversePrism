@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Condition                                000186671910 ModelPrimitiveType string string string String
-    // 018 Enabled                                  000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 Condition                                ModelPrimitiveType string string string String
+    // 018 Enabled                                  ModelPrimitiveType bool bool bool Bool
     public partial class NativeConditionalAttribute : DataModel
     {
         public string                                   Condition                               { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NativeConditionalAttribute() { Pointer= p0 };
 
-            value.Condition                                 = GetString(new IntPtr(p + 0x010)); // 0245A692B350 0x10 Condition                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.Enabled                                   = GetBool(new IntPtr(p + 0x018)); // 0245A692B370 0x18 Enabled                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Condition                                 = GetString(new IntPtr(p + 0x010)); // 0x10 Condition                   ( ModelPrimitiveType string string string String )
+            value.Enabled                                   = GetBool(new IntPtr(p + 0x018)); // 0x18 Enabled                     ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_IsValid                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 014 Handle                                   0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 M_IsValid                                ModelPrimitiveType bool bool bool Bool
+    // 014 Handle                                   ModelPrimitiveType int int int Int32
     public partial class RendererListHandle : DataModel
     {
         public bool                                     M_IsValid                               { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RendererListHandle() { Pointer= p0 };
 
-            value.M_IsValid                                 = GetBool(new IntPtr(p + 0x010)); // 0246690F2688 0x10 M_IsValid                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Handle                                    = GetInt32(new IntPtr(p + 0x014)); // 0246690F26A8 0x14 Handle                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_IsValid                                 = GetBool(new IntPtr(p + 0x010)); // 0x10 M_IsValid                   ( ModelPrimitiveType bool bool bool Bool )
+            value.Handle                                    = GetInt32(new IntPtr(p + 0x014)); // 0x14 Handle                      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

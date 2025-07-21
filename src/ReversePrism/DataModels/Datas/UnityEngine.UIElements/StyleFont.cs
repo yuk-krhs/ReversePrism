@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Value                                  0001865AD0A0 ModelClassType Font Font Font Pointer
-    // 018 M_Keyword                                0001865C8070 ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32
+    // 010 M_Value                                  ModelClassType Font Font Font Pointer
+    // 018 M_Keyword                                ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32
     public partial class StyleFont : DataModel
     {
         public Font?                                    M_Value                                 { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StyleFont() { Pointer= p0 };
 
-            value.M_Value                                   = GetObject<Font>(new IntPtr(p + 0x010), ReversePrism.DataModels.Font.FromPointer); // 0245A67B9FC0 0x10 M_Value                     ( 0001865AD0A0 ModelClassType Font Font Font Pointer )
-            value.M_Keyword                                 = (StyleKeyword)GetInt32(new IntPtr(p + 0x018)); // 0245A67B9FE0 0x18 M_Keyword                   ( 0001865C8070 ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32 )
+            value.M_Value                                   = GetObject<Font>(new IntPtr(p + 0x010), ReversePrism.DataModels.Font.FromPointer); // 0x10 M_Value                     ( ModelClassType Font Font Font Pointer )
+            value.M_Keyword                                 = (StyleKeyword)GetInt32(new IntPtr(p + 0x018)); // 0x18 M_Keyword                   ( ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32 )
 
             return value;
         }

@@ -8,17 +8,17 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Root                                     0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 028 OutsideButton                            0001865140C0 ModelClassType Button Button Button Pointer
-    // 030 MessageBody                              000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
-    // 038 MessageText                              0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 040 MessageBackground                        000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
-    // 048 TimeToDisappear                          0001866656B0 ModelPrimitiveType float float float Single
-    // 04C MessageBodyExpandedSize                  0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
-    // 054 MessageBodyShrunkSize                    0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
-    // 060 ShowCanceller                            000186724470 ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32
-    // 068 HideCanceller                            000186724470 ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32
-    // 070 IsInitialized                            000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 020 Root                                     ModelClassType GameObject GameObject GameObject Pointer
+    // 028 OutsideButton                            ModelClassType Button Button Button Pointer
+    // 030 MessageBody                              ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 038 MessageText                              ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 040 MessageBackground                        ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 048 TimeToDisappear                          ModelPrimitiveType float float float Single
+    // 04C MessageBodyExpandedSize                  ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 054 MessageBodyShrunkSize                    ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 060 ShowCanceller                            ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32
+    // 068 HideCanceller                            ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32
+    // 070 IsInitialized                            ModelPrimitiveType bool bool bool Bool
     public partial class ErrorModalWindow : DataModel
     {
         public GameObject?                              Root                                    { get; set; }
@@ -41,17 +41,17 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ErrorModalWindow() { Pointer= p0 };
 
-            value.Root                                      = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0245A1EA04B8 0x20 Root                        ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.OutsideButton                             = GetObject<Button>(new IntPtr(p + 0x028), ReversePrism.DataModels.Button.FromPointer); // 0245A1EA04D8 0x28 OutsideButton               ( 0001865140C0 ModelClassType Button Button Button Pointer )
-            value.MessageBody                               = GetObject<RectTransform>(new IntPtr(p + 0x030), ReversePrism.DataModels.RectTransform.FromPointer); // 0245A1EA04F8 0x30 MessageBody                 ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.MessageText                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0245A1EA0518 0x38 MessageText                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.MessageBackground                         = GetObject<RectTransform>(new IntPtr(p + 0x040), ReversePrism.DataModels.RectTransform.FromPointer); // 0245A1EA0538 0x40 MessageBackground           ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.TimeToDisappear                           = GetSingle(new IntPtr(p + 0x048)); // 0245A1EA0558 0x48 TimeToDisappear             ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.MessageBodyExpandedSize                   = (Vector2)GetInt32(new IntPtr(p + 0x04C)); // 0245A1EA0578 0x4C MessageBodyExpandedSize     ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.MessageBodyShrunkSize                     = (Vector2)GetInt32(new IntPtr(p + 0x054)); // 0245A1EA0598 0x54 MessageBodyShrunkSize       ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.ShowCanceller                             = (AutoCancellationTokenSource)GetInt32(new IntPtr(p + 0x060)); // 0245A1EA05B8 0x60 ShowCanceller               ( 000186724470 ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32 )
-            value.HideCanceller                             = (AutoCancellationTokenSource)GetInt32(new IntPtr(p + 0x068)); // 0245A1EA05D8 0x68 HideCanceller               ( 000186724470 ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32 )
-            value.IsInitialized                             = GetBool(new IntPtr(p + 0x070)); // 0245A1EA05F8 0x70 IsInitialized               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Root                                      = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0x20 Root                        ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.OutsideButton                             = GetObject<Button>(new IntPtr(p + 0x028), ReversePrism.DataModels.Button.FromPointer); // 0x28 OutsideButton               ( ModelClassType Button Button Button Pointer )
+            value.MessageBody                               = GetObject<RectTransform>(new IntPtr(p + 0x030), ReversePrism.DataModels.RectTransform.FromPointer); // 0x30 MessageBody                 ( ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.MessageText                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x38 MessageText                 ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.MessageBackground                         = GetObject<RectTransform>(new IntPtr(p + 0x040), ReversePrism.DataModels.RectTransform.FromPointer); // 0x40 MessageBackground           ( ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.TimeToDisappear                           = GetSingle(new IntPtr(p + 0x048)); // 0x48 TimeToDisappear             ( ModelPrimitiveType float float float Single )
+            value.MessageBodyExpandedSize                   = (Vector2)GetInt32(new IntPtr(p + 0x04C)); // 0x4C MessageBodyExpandedSize     ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.MessageBodyShrunkSize                     = (Vector2)GetInt32(new IntPtr(p + 0x054)); // 0x54 MessageBodyShrunkSize       ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.ShowCanceller                             = (AutoCancellationTokenSource)GetInt32(new IntPtr(p + 0x060)); // 0x60 ShowCanceller               ( ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32 )
+            value.HideCanceller                             = (AutoCancellationTokenSource)GetInt32(new IntPtr(p + 0x068)); // 0x68 HideCanceller               ( ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32 )
+            value.IsInitialized                             = GetBool(new IntPtr(p + 0x070)); // 0x70 IsInitialized               ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

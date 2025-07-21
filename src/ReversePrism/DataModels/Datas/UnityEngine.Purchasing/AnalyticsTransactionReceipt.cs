@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 TransactionReceipt                       000186671910 ModelPrimitiveType string string string String
-    // 018 TransactionReceiptSignature              000186671910 ModelPrimitiveType string string string String
+    // 010 TransactionReceipt                       ModelPrimitiveType string string string String
+    // 018 TransactionReceiptSignature              ModelPrimitiveType string string string String
     // 020 <transactionServer>k__BackingField       Nullable`1<TransactionServer> IL2CPP_TYPE_GENERICINST
     public partial class AnalyticsTransactionReceipt : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AnalyticsTransactionReceipt() { Pointer= p0 };
 
-            value.TransactionReceipt                        = GetString(new IntPtr(p + 0x010)); // 0245A68F14B0 0x10 TransactionReceipt          ( 000186671910 ModelPrimitiveType string string string String )
-            value.TransactionReceiptSignature               = GetString(new IntPtr(p + 0x018)); // 0245A68F14D0 0x18 TransactionReceiptSignature ( 000186671910 ModelPrimitiveType string string string String )
+            value.TransactionReceipt                        = GetString(new IntPtr(p + 0x010)); // 0x10 TransactionReceipt          ( ModelPrimitiveType string string string String )
+            value.TransactionReceiptSignature               = GetString(new IntPtr(p + 0x018)); // 0x18 TransactionReceiptSignature ( ModelPrimitiveType string string string String )
 
             return value;
         }

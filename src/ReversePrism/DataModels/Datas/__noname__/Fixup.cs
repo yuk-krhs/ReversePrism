@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 source                                   <object> IL2CPP_TYPE_OBJECT
-    // 018 Ids                                      000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 020 Callback                                 0001865C6130 ModelClassType XmlSerializationFixupCallback XmlSerializationFixupCallback XmlSerializationFixupCallback Pointer
+    // 018 Ids                                      ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 020 Callback                                 ModelClassType XmlSerializationFixupCallback XmlSerializationFixupCallback XmlSerializationFixupCallback Pointer
     public partial class Fixup : DataModel
     {
         public List<string>?                            Ids                                     { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Fixup() { Pointer= p0 };
 
-            value.Ids                                       = GetStringList(new IntPtr(p + 0x018)); // 024667530F30 0x18 Ids                         ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.Callback                                  = GetObject<XmlSerializationFixupCallback>(new IntPtr(p + 0x020), ReversePrism.DataModels.XmlSerializationFixupCallback.FromPointer); // 024667530F50 0x20 Callback                    ( 0001865C6130 ModelClassType XmlSerializationFixupCallback XmlSerializationFixupCallback XmlSerializationFixupCallback Pointer )
+            value.Ids                                       = GetStringList(new IntPtr(p + 0x018)); // 0x18 Ids                         ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.Callback                                  = GetObject<XmlSerializationFixupCallback>(new IntPtr(p + 0x020), ReversePrism.DataModels.XmlSerializationFixupCallback.FromPointer); // 0x20 Callback                    ( ModelClassType XmlSerializationFixupCallback XmlSerializationFixupCallback XmlSerializationFixupCallback Pointer )
 
             return value;
         }

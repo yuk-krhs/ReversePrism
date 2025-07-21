@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ScheduleModel                            0001866D5EA0 ModelClassType ScheduleModel ScheduleModel ScheduleModel Pointer
+    // 010 ScheduleModel                            ModelClassType ScheduleModel ScheduleModel ScheduleModel Pointer
     public partial class ScheduleConnection : DataModel
     {
         public ScheduleModel?                           ScheduleModel                           { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ScheduleConnection() { Pointer= p0 };
 
-            value.ScheduleModel                             = GetObject<ScheduleModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.ScheduleModel.FromPointer); // 024665A8A800 0x10 ScheduleModel               ( 0001866D5EA0 ModelClassType ScheduleModel ScheduleModel ScheduleModel Pointer )
+            value.ScheduleModel                             = GetObject<ScheduleModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.ScheduleModel.FromPointer); // 0x10 ScheduleModel               ( ModelClassType ScheduleModel ScheduleModel ScheduleModel Pointer )
 
             return value;
         }

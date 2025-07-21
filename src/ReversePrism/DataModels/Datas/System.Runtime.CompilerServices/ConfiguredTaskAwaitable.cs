@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_configuredTaskAwaiter                  0001865165B0 ModelEnumType ConfiguredTaskAwaiter ConfiguredTaskAwaiter ConfiguredTaskAwaiter Int32
+    // 010 M_configuredTaskAwaiter                  ModelEnumType ConfiguredTaskAwaiter ConfiguredTaskAwaiter ConfiguredTaskAwaiter Int32
     public partial class ConfiguredTaskAwaitable : DataModel
     {
         public ConfiguredTaskAwaiter                    M_configuredTaskAwaiter                 { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ConfiguredTaskAwaitable() { Pointer= p0 };
 
-            value.M_configuredTaskAwaiter                   = (ConfiguredTaskAwaiter)GetInt32(new IntPtr(p + 0x010)); // 0246605D46E8 0x10 M_configuredTaskAwaiter     ( 0001865165B0 ModelEnumType ConfiguredTaskAwaiter ConfiguredTaskAwaiter ConfiguredTaskAwaiter Int32 )
+            value.M_configuredTaskAwaiter                   = (ConfiguredTaskAwaiter)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_configuredTaskAwaiter     ( ModelEnumType ConfiguredTaskAwaiter ConfiguredTaskAwaiter ConfiguredTaskAwaiter Int32 )
 
             return value;
         }

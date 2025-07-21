@@ -8,20 +8,20 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 View                                     000186562FC0 ModelClassType LiveMVView LiveMVView LiveMVView Pointer
-    // 028 SetTimeDelayFrame                        0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 02C SetTimeDelayTiming                       0001867531A0 ModelEnumType PlayerLoopTiming PlayerLoopTiming PlayerLoopTiming Int32
+    // 020 View                                     ModelClassType LiveMVView LiveMVView LiveMVView Pointer
+    // 028 SetTimeDelayFrame                        ModelPrimitiveType int int int Int32
+    // 02C SetTimeDelayTiming                       ModelEnumType PlayerLoopTiming PlayerLoopTiming PlayerLoopTiming Int32
     // 000 SeekWaitMilliSeconds                     int IL2CPP_TYPE_I4
-    // 030 IsPausing                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 038 Canceller                                0001865A4380 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
-    // 040 IsInitialized                            000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 048 MvPauser                                 0001865D2D40 ModelClassType IPausable IPausable IPausable Pointer
-    // 050 ProgressManager                          000186569620 ModelClassType LiveProgressManager LiveProgressManager LiveProgressManager Pointer
-    // 058 EffectPlayer                             0001867210F0 ModelClassType EffectPlayer EffectPlayer EffectPlayer Pointer
-    // 060 IsPlaying                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 068 CurrentLyrics                            000186671910 ModelPrimitiveType string string string String
-    // 070 IsRetrying                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 078 SeekCanceller                            0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
+    // 030 IsPausing                                ModelPrimitiveType bool bool bool Bool
+    // 038 Canceller                                ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
+    // 040 IsInitialized                            ModelPrimitiveType bool bool bool Bool
+    // 048 MvPauser                                 ModelClassType IPausable IPausable IPausable Pointer
+    // 050 ProgressManager                          ModelClassType LiveProgressManager LiveProgressManager LiveProgressManager Pointer
+    // 058 EffectPlayer                             ModelClassType EffectPlayer EffectPlayer EffectPlayer Pointer
+    // 060 IsPlaying                                ModelPrimitiveType bool bool bool Bool
+    // 068 CurrentLyrics                            ModelPrimitiveType string string string String
+    // 070 IsRetrying                               ModelPrimitiveType bool bool bool Bool
+    // 078 SeekCanceller                            ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
     public partial class LiveMVPresenter : DataModel
     {
         public LiveMVView?                              View                                    { get; set; }
@@ -46,19 +46,19 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveMVPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<LiveMVView>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveMVView.FromPointer); // 024664EA1DD0 0x20 View                        ( 000186562FC0 ModelClassType LiveMVView LiveMVView LiveMVView Pointer )
-            value.SetTimeDelayFrame                         = GetInt32(new IntPtr(p + 0x028)); // 024664EA1DF0 0x28 SetTimeDelayFrame           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SetTimeDelayTiming                        = (PlayerLoopTiming)GetInt32(new IntPtr(p + 0x02C)); // 024664EA1E10 0x2C SetTimeDelayTiming          ( 0001867531A0 ModelEnumType PlayerLoopTiming PlayerLoopTiming PlayerLoopTiming Int32 )
-            value.IsPausing                                 = GetBool(new IntPtr(p + 0x030)); // 024664EA1E50 0x30 IsPausing                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Canceller                                 = GetObject<CancellationTokenSource>(new IntPtr(p + 0x038), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 024664EA1E70 0x38 Canceller                   ( 0001865A4380 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
-            value.IsInitialized                             = GetBool(new IntPtr(p + 0x040)); // 024664EA1E90 0x40 IsInitialized               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.MvPauser                                  = GetObject<IPausable>(new IntPtr(p + 0x048), ReversePrism.DataModels.IPausable.FromPointer); // 024664EA1EB0 0x48 MvPauser                    ( 0001865D2D40 ModelClassType IPausable IPausable IPausable Pointer )
-            value.ProgressManager                           = GetObject<LiveProgressManager>(new IntPtr(p + 0x050), ReversePrism.DataModels.LiveProgressManager.FromPointer); // 024664EA1ED0 0x50 ProgressManager             ( 000186569620 ModelClassType LiveProgressManager LiveProgressManager LiveProgressManager Pointer )
-            value.EffectPlayer                              = GetObject<EffectPlayer>(new IntPtr(p + 0x058), ReversePrism.DataModels.EffectPlayer.FromPointer); // 024664EA1EF0 0x58 EffectPlayer                ( 0001867210F0 ModelClassType EffectPlayer EffectPlayer EffectPlayer Pointer )
-            value.IsPlaying                                 = GetBool(new IntPtr(p + 0x060)); // 024664EA1F10 0x60 IsPlaying                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CurrentLyrics                             = GetString(new IntPtr(p + 0x068)); // 024664EA1F30 0x68 CurrentLyrics               ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsRetrying                                = GetBool(new IntPtr(p + 0x070)); // 024664EA1F50 0x70 IsRetrying                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SeekCanceller                             = GetObject<CancellationTokenSource>(new IntPtr(p + 0x078), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 024664EA1F70 0x78 SeekCanceller               ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.View                                      = GetObject<LiveMVView>(new IntPtr(p + 0x020), ReversePrism.DataModels.LiveMVView.FromPointer); // 0x20 View                        ( ModelClassType LiveMVView LiveMVView LiveMVView Pointer )
+            value.SetTimeDelayFrame                         = GetInt32(new IntPtr(p + 0x028)); // 0x28 SetTimeDelayFrame           ( ModelPrimitiveType int int int Int32 )
+            value.SetTimeDelayTiming                        = (PlayerLoopTiming)GetInt32(new IntPtr(p + 0x02C)); // 0x2C SetTimeDelayTiming          ( ModelEnumType PlayerLoopTiming PlayerLoopTiming PlayerLoopTiming Int32 )
+            value.IsPausing                                 = GetBool(new IntPtr(p + 0x030)); // 0x30 IsPausing                   ( ModelPrimitiveType bool bool bool Bool )
+            value.Canceller                                 = GetObject<CancellationTokenSource>(new IntPtr(p + 0x038), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0x38 Canceller                   ( ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.IsInitialized                             = GetBool(new IntPtr(p + 0x040)); // 0x40 IsInitialized               ( ModelPrimitiveType bool bool bool Bool )
+            value.MvPauser                                  = GetObject<IPausable>(new IntPtr(p + 0x048), ReversePrism.DataModels.IPausable.FromPointer); // 0x48 MvPauser                    ( ModelClassType IPausable IPausable IPausable Pointer )
+            value.ProgressManager                           = GetObject<LiveProgressManager>(new IntPtr(p + 0x050), ReversePrism.DataModels.LiveProgressManager.FromPointer); // 0x50 ProgressManager             ( ModelClassType LiveProgressManager LiveProgressManager LiveProgressManager Pointer )
+            value.EffectPlayer                              = GetObject<EffectPlayer>(new IntPtr(p + 0x058), ReversePrism.DataModels.EffectPlayer.FromPointer); // 0x58 EffectPlayer                ( ModelClassType EffectPlayer EffectPlayer EffectPlayer Pointer )
+            value.IsPlaying                                 = GetBool(new IntPtr(p + 0x060)); // 0x60 IsPlaying                   ( ModelPrimitiveType bool bool bool Bool )
+            value.CurrentLyrics                             = GetString(new IntPtr(p + 0x068)); // 0x68 CurrentLyrics               ( ModelPrimitiveType string string string String )
+            value.IsRetrying                                = GetBool(new IntPtr(p + 0x070)); // 0x70 IsRetrying                  ( ModelPrimitiveType bool bool bool Bool )
+            value.SeekCanceller                             = GetObject<CancellationTokenSource>(new IntPtr(p + 0x078), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0x78 SeekCanceller               ( ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
 
             return value;
         }

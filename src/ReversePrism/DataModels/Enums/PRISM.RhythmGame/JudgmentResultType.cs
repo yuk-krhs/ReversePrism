@@ -16,5 +16,6 @@ namespace ReversePrism.DataModels
         Good,
         Great,
         Perfect,
+        Shiny,
     }
 }

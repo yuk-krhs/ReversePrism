@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Value                                    0001866656B0 ModelPrimitiveType float float float Single
-    // 014 Unit                                     0001865DEF50 ModelEnumType YogaUnit YogaUnit YogaUnit Int32
+    // 010 Value                                    ModelPrimitiveType float float float Single
+    // 014 Unit                                     ModelEnumType YogaUnit YogaUnit YogaUnit Int32
     public partial class YogaValue : DataModel
     {
         public float                                    Value                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new YogaValue() { Pointer= p0 };
 
-            value.Value                                     = GetSingle(new IntPtr(p + 0x010)); // 0245A66A1770 0x10 Value                       ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.Unit                                      = (YogaUnit)GetInt32(new IntPtr(p + 0x014)); // 0245A66A1790 0x14 Unit                        ( 0001865DEF50 ModelEnumType YogaUnit YogaUnit YogaUnit Int32 )
+            value.Value                                     = GetSingle(new IntPtr(p + 0x010)); // 0x10 Value                       ( ModelPrimitiveType float float float Single )
+            value.Unit                                      = (YogaUnit)GetInt32(new IntPtr(p + 0x014)); // 0x14 Unit                        ( ModelEnumType YogaUnit YogaUnit YogaUnit Int32 )
 
             return value;
         }

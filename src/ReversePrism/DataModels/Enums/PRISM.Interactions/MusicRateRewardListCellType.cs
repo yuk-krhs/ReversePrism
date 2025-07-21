@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     public enum MusicRateRewardListCellType
     {
-        NotAcquired,
-        Next,
-        Acquired,
+        Default,
+        UnlockShiny,
+        PostUnlockShiny,
     }
 }

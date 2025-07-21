@@ -8,14 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 EndDate                                  000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
+    // 010 EndDate                                  ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
     // 000 _parser                                  MessageParser`1<GetExchangeShinyPartyTokenListReply> IL2CPP_TYPE_GENERICINST
     // 020 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ShinyPartyTokenProductListFieldNumber    int IL2CPP_TYPE_I4
     // 008 _repeated_shinyPartyTokenProductList_codec FieldCodec`1<ShinyPartyTokenProductStatus> IL2CPP_TYPE_GENERICINST
-    // 028 ShinyPartyTokenProductList               000185CF0F48 ModelClassListType RepeatedField`1<ShinyPartyTokenProductStatus> RepeatedField`1<ShinyPartyTokenProductStatus> List<ShinyPartyTokenProductStatus> Pointer
+    // 028 ShinyPartyTokenProductList               ModelClassListType RepeatedField`1<ShinyPartyTokenProductStatus> RepeatedField`1<ShinyPartyTokenProductStatus> List<ShinyPartyTokenProductStatus> Pointer
     // 000 EndDateFieldNumber                       int IL2CPP_TYPE_I4
-    // 030 _EndDate                                 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
+    // 030 _EndDate                                 ModelClassType Timestamp Timestamp Timestamp Pointer
     public partial class GetExchangeShinyPartyTokenListReply : DataModel
     {
         public DateTime                                 EndDate                                 { get; set; }
@@ -30,9 +30,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetExchangeShinyPartyTokenListReply() { Pointer= p0 };
 
-            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x010)); // 02466119AEA8 0x10 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.ShinyPartyTokenProductList                = GetObjectList<ShinyPartyTokenProductStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ShinyPartyTokenProductStatus.FromPointer); // 02466119AF48 0x28 ShinyPartyTokenProductList  ( 000185CF0F48 ModelClassListType RepeatedField`1<ShinyPartyTokenProductStatus> RepeatedField`1<ShinyPartyTokenProductStatus> List<ShinyPartyTokenProductStatus> Pointer )
-            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x030), ReversePrism.DataModels.Timestamp.FromPointer); // 02466119AF88 0x30 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x010)); // 0x10 EndDate                     ( ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.ShinyPartyTokenProductList                = GetObjectList<ShinyPartyTokenProductStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.ShinyPartyTokenProductStatus.FromPointer); // 0x28 ShinyPartyTokenProductList  ( ModelClassListType RepeatedField`1<ShinyPartyTokenProductStatus> RepeatedField`1<ShinyPartyTokenProductStatus> List<ShinyPartyTokenProductStatus> Pointer )
+            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x030), ReversePrism.DataModels.Timestamp.FromPointer); // 0x30 _EndDate                    ( ModelClassType Timestamp Timestamp Timestamp Pointer )
             value.EndDate                       = ToDateTime(value._EndDate);
 
             return value;

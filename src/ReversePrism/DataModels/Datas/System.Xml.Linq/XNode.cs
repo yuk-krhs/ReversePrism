@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Next                                     00018657BFF0 ModelClassType XNode XNode XNode Pointer
+    // 020 Next                                     ModelClassType XNode XNode XNode Pointer
     public partial class XNode : DataModel
     {
         public XNode?                                   Next                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XNode() { Pointer= p0 };
 
-            value.Next                                      = GetObject<XNode>(new IntPtr(p + 0x020), ReversePrism.DataModels.XNode.FromPointer); // 0246686DB350 0x20 Next                        ( 00018657BFF0 ModelClassType XNode XNode XNode Pointer )
+            value.Next                                      = GetObject<XNode>(new IntPtr(p + 0x020), ReversePrism.DataModels.XNode.FromPointer); // 0x20 Next                        ( ModelClassType XNode XNode XNode Pointer )
 
             return value;
         }

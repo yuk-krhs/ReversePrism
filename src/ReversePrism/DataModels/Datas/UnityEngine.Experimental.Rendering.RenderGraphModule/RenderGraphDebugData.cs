@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 PassList                                 000185D2A1D8 ModelEnumListType List`1<PassDebugData> List`1<PassDebugData> List<PassDebugData> Pointer
+    // 010 PassList                                 ModelEnumListType List`1<PassDebugData> List`1<PassDebugData> List<PassDebugData> Pointer
     // 018 resourceLists                            List`1<ResourceDebugData>[] IL2CPP_TYPE_SZARRAY
     public partial class RenderGraphDebugData : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RenderGraphDebugData() { Pointer= p0 };
 
-            value.PassList                                  = GetEnumList<PassDebugData>(new IntPtr(p + 0x010)); // 0246690BEC80 0x10 PassList                    ( 000185D2A1D8 ModelEnumListType List`1<PassDebugData> List`1<PassDebugData> List<PassDebugData> Pointer )
+            value.PassList                                  = GetEnumList<PassDebugData>(new IntPtr(p + 0x010)); // 0x10 PassList                    ( ModelEnumListType List`1<PassDebugData> List`1<PassDebugData> List<PassDebugData> Pointer )
 
             return value;
         }

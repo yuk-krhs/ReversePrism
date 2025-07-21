@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_NextActivator                          0001866ED780 ModelClassType IActivator IActivator IActivator Pointer
+    // 010 M_NextActivator                          ModelClassType IActivator IActivator IActivator Pointer
     public partial class ContextLevelActivator : DataModel
     {
         public IActivator?                              M_NextActivator                         { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ContextLevelActivator() { Pointer= p0 };
 
-            value.M_NextActivator                           = GetObject<IActivator>(new IntPtr(p + 0x010), ReversePrism.DataModels.IActivator.FromPointer); // 024666C5E9B8 0x10 M_NextActivator             ( 0001866ED780 ModelClassType IActivator IActivator IActivator Pointer )
+            value.M_NextActivator                           = GetObject<IActivator>(new IntPtr(p + 0x010), ReversePrism.DataModels.IActivator.FromPointer); // 0x10 M_NextActivator             ( ModelClassType IActivator IActivator IActivator Pointer )
 
             return value;
         }

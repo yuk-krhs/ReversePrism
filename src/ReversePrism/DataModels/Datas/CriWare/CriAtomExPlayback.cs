@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Id                                       000186698B70 ModelPrimitiveType uint uint uint UInt32
+    // 010 Id                                       ModelPrimitiveType uint uint uint UInt32
     // 000 invalidId                                uint IL2CPP_TYPE_U4
     public partial class CriAtomExPlayback : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CriAtomExPlayback() { Pointer= p0 };
 
-            value.Id                                        = GetUInt32(new IntPtr(p + 0x010)); // 0245A416A6A0 0x10 Id                          ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
+            value.Id                                        = GetUInt32(new IntPtr(p + 0x010)); // 0x10 Id                          ( ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

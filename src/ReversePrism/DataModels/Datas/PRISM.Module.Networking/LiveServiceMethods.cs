@@ -28,6 +28,8 @@ namespace ReversePrism.DataModels
     // 198 GetLiveEnable                            Method`2<IGetLiveEnableArgs, IGetLiveEnableReply> IL2CPP_TYPE_GENERICINST
     // 1B0 StartMV                                  Method`2<IStartMVArgs, IStartMVReply> IL2CPP_TYPE_GENERICINST
     // 1C8 GetEventList                             Method`2<IGetEventListArgs, IGetEventListReply> IL2CPP_TYPE_GENERICINST
+    // 1E0 ResetLiveUnit                            Method`2<IResetLiveUnitArgs, IResetLiveUnitReply> IL2CPP_TYPE_GENERICINST
+    // 1F8 ResetMvUnit                              Method`2<IResetMvUnitArgs, IResetMvUnitReply> IL2CPP_TYPE_GENERICINST
     public partial class LiveServiceMethods : DataModel
     {
 

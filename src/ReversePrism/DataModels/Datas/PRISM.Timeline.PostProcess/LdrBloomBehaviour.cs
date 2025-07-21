@@ -8,18 +8,18 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Enable                                   000186595960 ModelPrimitiveType bool bool bool Bool
-    // 014 Intensity                                000186666050 ModelPrimitiveType float float float Single
-    // 018 Threshold                                000186666050 ModelPrimitiveType float float float Single
-    // 01C SoftKnee                                 000186666050 ModelPrimitiveType float float float Single
-    // 020 Clamp                                    000186666050 ModelPrimitiveType float float float Single
-    // 024 Diffusion                                000186666050 ModelPrimitiveType float float float Single
-    // 028 AnamorphicRatio                          000186666050 ModelPrimitiveType float float float Single
-    // 02C Color                                    0001865AB0A0 ModelEnumType Color Color Color Int32
-    // 040 DirtTexture                              00018664D720 ModelClassType Texture Texture Texture Pointer
-    // 048 DirtIntensity                            000186666050 ModelPrimitiveType float float float Single
-    // 04C Tiling                                   0001866A8740 ModelEnumType Vector2 Vector2 Vector2 Int32
-    // 054 Brightness                               0001865AB0A0 ModelEnumType Color Color Color Int32
+    // 010 Enable                                   ModelPrimitiveType bool bool bool Bool
+    // 014 Intensity                                ModelPrimitiveType float float float Single
+    // 018 Threshold                                ModelPrimitiveType float float float Single
+    // 01C SoftKnee                                 ModelPrimitiveType float float float Single
+    // 020 Clamp                                    ModelPrimitiveType float float float Single
+    // 024 Diffusion                                ModelPrimitiveType float float float Single
+    // 028 AnamorphicRatio                          ModelPrimitiveType float float float Single
+    // 02C Color                                    ModelEnumType Color Color Color Int32
+    // 040 DirtTexture                              ModelClassType Texture Texture Texture Pointer
+    // 048 DirtIntensity                            ModelPrimitiveType float float float Single
+    // 04C Tiling                                   ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 054 Brightness                               ModelEnumType Color Color Color Int32
     public partial class LdrBloomBehaviour : DataModel
     {
         public bool                                     Enable                                  { get; set; }
@@ -43,18 +43,18 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LdrBloomBehaviour() { Pointer= p0 };
 
-            value.Enable                                    = GetBool(new IntPtr(p + 0x010)); // 0246650D8DE0 0x10 Enable                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Intensity                                 = GetSingle(new IntPtr(p + 0x014)); // 0246650D8E00 0x14 Intensity                   ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Threshold                                 = GetSingle(new IntPtr(p + 0x018)); // 0246650D8E20 0x18 Threshold                   ( 000186666050 ModelPrimitiveType float float float Single )
-            value.SoftKnee                                  = GetSingle(new IntPtr(p + 0x01C)); // 0246650D8E40 0x1C SoftKnee                    ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Clamp                                     = GetSingle(new IntPtr(p + 0x020)); // 0246650D8E60 0x20 Clamp                       ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Diffusion                                 = GetSingle(new IntPtr(p + 0x024)); // 0246650D8E80 0x24 Diffusion                   ( 000186666050 ModelPrimitiveType float float float Single )
-            value.AnamorphicRatio                           = GetSingle(new IntPtr(p + 0x028)); // 0246650D8EA0 0x28 AnamorphicRatio             ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Color                                     = (Color)GetInt32(new IntPtr(p + 0x02C)); // 0246650D8EC0 0x2C Color                       ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.DirtTexture                               = GetObject<Texture>(new IntPtr(p + 0x040), ReversePrism.DataModels.Texture.FromPointer); // 0246650D8EE0 0x40 DirtTexture                 ( 00018664D720 ModelClassType Texture Texture Texture Pointer )
-            value.DirtIntensity                             = GetSingle(new IntPtr(p + 0x048)); // 0246650D8F00 0x48 DirtIntensity               ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Tiling                                    = (Vector2)GetInt32(new IntPtr(p + 0x04C)); // 0246650D8F20 0x4C Tiling                      ( 0001866A8740 ModelEnumType Vector2 Vector2 Vector2 Int32 )
-            value.Brightness                                = (Color)GetInt32(new IntPtr(p + 0x054)); // 0246650D8F40 0x54 Brightness                  ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
+            value.Enable                                    = GetBool(new IntPtr(p + 0x010)); // 0x10 Enable                      ( ModelPrimitiveType bool bool bool Bool )
+            value.Intensity                                 = GetSingle(new IntPtr(p + 0x014)); // 0x14 Intensity                   ( ModelPrimitiveType float float float Single )
+            value.Threshold                                 = GetSingle(new IntPtr(p + 0x018)); // 0x18 Threshold                   ( ModelPrimitiveType float float float Single )
+            value.SoftKnee                                  = GetSingle(new IntPtr(p + 0x01C)); // 0x1C SoftKnee                    ( ModelPrimitiveType float float float Single )
+            value.Clamp                                     = GetSingle(new IntPtr(p + 0x020)); // 0x20 Clamp                       ( ModelPrimitiveType float float float Single )
+            value.Diffusion                                 = GetSingle(new IntPtr(p + 0x024)); // 0x24 Diffusion                   ( ModelPrimitiveType float float float Single )
+            value.AnamorphicRatio                           = GetSingle(new IntPtr(p + 0x028)); // 0x28 AnamorphicRatio             ( ModelPrimitiveType float float float Single )
+            value.Color                                     = (Color)GetInt32(new IntPtr(p + 0x02C)); // 0x2C Color                       ( ModelEnumType Color Color Color Int32 )
+            value.DirtTexture                               = GetObject<Texture>(new IntPtr(p + 0x040), ReversePrism.DataModels.Texture.FromPointer); // 0x40 DirtTexture                 ( ModelClassType Texture Texture Texture Pointer )
+            value.DirtIntensity                             = GetSingle(new IntPtr(p + 0x048)); // 0x48 DirtIntensity               ( ModelPrimitiveType float float float Single )
+            value.Tiling                                    = (Vector2)GetInt32(new IntPtr(p + 0x04C)); // 0x4C Tiling                      ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.Brightness                                = (Color)GetInt32(new IntPtr(p + 0x054)); // 0x54 Brightness                  ( ModelEnumType Color Color Color Int32 )
 
             return value;
         }

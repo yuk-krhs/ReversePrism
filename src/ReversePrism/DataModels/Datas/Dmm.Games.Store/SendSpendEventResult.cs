@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Success                                  000186595960 ModelPrimitiveType bool bool bool Bool
-    // 018 Error                                    0001865C8690 ModelClassType Error Error Error Pointer
+    // 010 Success                                  ModelPrimitiveType bool bool bool Bool
+    // 018 Error                                    ModelClassType Error Error Error Pointer
     public partial class SendSpendEventResult : DataModel
     {
         public bool                                     Success                                 { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SendSpendEventResult() { Pointer= p0 };
 
-            value.Success                                   = GetBool(new IntPtr(p + 0x010)); // 02466B5306E0 0x10 Success                     ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Error                                     = GetObject<Error>(new IntPtr(p + 0x018), ReversePrism.DataModels.Error.FromPointer); // 02466B530700 0x18 Error                       ( 0001865C8690 ModelClassType Error Error Error Pointer )
+            value.Success                                   = GetBool(new IntPtr(p + 0x010)); // 0x10 Success                     ( ModelPrimitiveType bool bool bool Bool )
+            value.Error                                     = GetObject<Error>(new IntPtr(p + 0x018), ReversePrism.DataModels.Error.FromPointer); // 0x18 Error                       ( ModelClassType Error Error Error Pointer )
 
             return value;
         }

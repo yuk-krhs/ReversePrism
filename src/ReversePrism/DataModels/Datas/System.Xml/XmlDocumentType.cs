@@ -8,14 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Name                                     000186671910 ModelPrimitiveType string string string String
-    // 028 PublicId                                 000186671910 ModelPrimitiveType string string string String
-    // 030 SystemId                                 000186671910 ModelPrimitiveType string string string String
-    // 038 InternalSubset                           000186671910 ModelPrimitiveType string string string String
-    // 040 Namespaces                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 048 Entities                                 0001865A0E30 ModelClassType XmlNamedNodeMap XmlNamedNodeMap XmlNamedNodeMap Pointer
-    // 050 Notations                                0001865A0E30 ModelClassType XmlNamedNodeMap XmlNamedNodeMap XmlNamedNodeMap Pointer
-    // 058 SchemaInfo                               0001866E9EB0 ModelClassType SchemaInfo SchemaInfo SchemaInfo Pointer
+    // 020 Name                                     ModelPrimitiveType string string string String
+    // 028 PublicId                                 ModelPrimitiveType string string string String
+    // 030 SystemId                                 ModelPrimitiveType string string string String
+    // 038 InternalSubset                           ModelPrimitiveType string string string String
+    // 040 Namespaces                               ModelPrimitiveType bool bool bool Bool
+    // 048 Entities                                 ModelClassType XmlNamedNodeMap XmlNamedNodeMap XmlNamedNodeMap Pointer
+    // 050 Notations                                ModelClassType XmlNamedNodeMap XmlNamedNodeMap XmlNamedNodeMap Pointer
+    // 058 SchemaInfo                               ModelClassType SchemaInfo SchemaInfo SchemaInfo Pointer
     public partial class XmlDocumentType : DataModel
     {
         public string                                   Name                                    { get; set; }
@@ -35,14 +35,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlDocumentType() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 0246674AE560 0x20 Name                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.PublicId                                  = GetString(new IntPtr(p + 0x028)); // 0246674AE580 0x28 PublicId                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.SystemId                                  = GetString(new IntPtr(p + 0x030)); // 0246674AE5A0 0x30 SystemId                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.InternalSubset                            = GetString(new IntPtr(p + 0x038)); // 0246674AE5C0 0x38 InternalSubset              ( 000186671910 ModelPrimitiveType string string string String )
-            value.Namespaces                                = GetBool(new IntPtr(p + 0x040)); // 0246674AE5E0 0x40 Namespaces                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Entities                                  = GetObject<XmlNamedNodeMap>(new IntPtr(p + 0x048), ReversePrism.DataModels.XmlNamedNodeMap.FromPointer); // 0246674AE600 0x48 Entities                    ( 0001865A0E30 ModelClassType XmlNamedNodeMap XmlNamedNodeMap XmlNamedNodeMap Pointer )
-            value.Notations                                 = GetObject<XmlNamedNodeMap>(new IntPtr(p + 0x050), ReversePrism.DataModels.XmlNamedNodeMap.FromPointer); // 0246674AE620 0x50 Notations                   ( 0001865A0E30 ModelClassType XmlNamedNodeMap XmlNamedNodeMap XmlNamedNodeMap Pointer )
-            value.SchemaInfo                                = GetObject<SchemaInfo>(new IntPtr(p + 0x058), ReversePrism.DataModels.SchemaInfo.FromPointer); // 0246674AE640 0x58 SchemaInfo                  ( 0001866E9EB0 ModelClassType SchemaInfo SchemaInfo SchemaInfo Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x020)); // 0x20 Name                        ( ModelPrimitiveType string string string String )
+            value.PublicId                                  = GetString(new IntPtr(p + 0x028)); // 0x28 PublicId                    ( ModelPrimitiveType string string string String )
+            value.SystemId                                  = GetString(new IntPtr(p + 0x030)); // 0x30 SystemId                    ( ModelPrimitiveType string string string String )
+            value.InternalSubset                            = GetString(new IntPtr(p + 0x038)); // 0x38 InternalSubset              ( ModelPrimitiveType string string string String )
+            value.Namespaces                                = GetBool(new IntPtr(p + 0x040)); // 0x40 Namespaces                  ( ModelPrimitiveType bool bool bool Bool )
+            value.Entities                                  = GetObject<XmlNamedNodeMap>(new IntPtr(p + 0x048), ReversePrism.DataModels.XmlNamedNodeMap.FromPointer); // 0x48 Entities                    ( ModelClassType XmlNamedNodeMap XmlNamedNodeMap XmlNamedNodeMap Pointer )
+            value.Notations                                 = GetObject<XmlNamedNodeMap>(new IntPtr(p + 0x050), ReversePrism.DataModels.XmlNamedNodeMap.FromPointer); // 0x50 Notations                   ( ModelClassType XmlNamedNodeMap XmlNamedNodeMap XmlNamedNodeMap Pointer )
+            value.SchemaInfo                                = GetObject<SchemaInfo>(new IntPtr(p + 0x058), ReversePrism.DataModels.SchemaInfo.FromPointer); // 0x58 SchemaInfo                  ( ModelClassType SchemaInfo SchemaInfo SchemaInfo Pointer )
 
             return value;
         }

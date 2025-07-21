@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 S                                        000186671910 ModelPrimitiveType string string string String
-    // 020 Pos                                      0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 024 Length                                   0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 S                                        ModelPrimitiveType string string string String
+    // 020 Pos                                      ModelPrimitiveType int int int Int32
+    // 024 Length                                   ModelPrimitiveType int int int Int32
     public partial class StringReader : DataModel
     {
         public string                                   S                                       { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StringReader() { Pointer= p0 };
 
-            value.S                                         = GetString(new IntPtr(p + 0x018)); // 0245A5FAC668 0x18 S                           ( 000186671910 ModelPrimitiveType string string string String )
-            value.Pos                                       = GetInt32(new IntPtr(p + 0x020)); // 0245A5FAC688 0x20 Pos                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Length                                    = GetInt32(new IntPtr(p + 0x024)); // 0245A5FAC6A8 0x24 Length                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.S                                         = GetString(new IntPtr(p + 0x018)); // 0x18 S                           ( ModelPrimitiveType string string string String )
+            value.Pos                                       = GetInt32(new IntPtr(p + 0x020)); // 0x20 Pos                         ( ModelPrimitiveType int int int Int32 )
+            value.Length                                    = GetInt32(new IntPtr(p + 0x024)); // 0x24 Length                      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

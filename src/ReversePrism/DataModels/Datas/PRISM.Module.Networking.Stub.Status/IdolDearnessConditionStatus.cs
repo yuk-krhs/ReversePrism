@@ -11,11 +11,11 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<IdolDearnessConditionStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstIdolIdFieldNumber                     int IL2CPP_TYPE_I4
-    // 018 MstIdolId                                0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MstIdolId                                ModelPrimitiveType int int int Int32
     // 000 RequiredDearnessFieldNumber              int IL2CPP_TYPE_I4
-    // 01C RequiredDearness                         0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 01C RequiredDearness                         ModelPrimitiveType int int int Int32
     // 000 DearnessFieldNumber                      int IL2CPP_TYPE_I4
-    // 020 Dearness                                 0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 Dearness                                 ModelPrimitiveType int int int Int32
     public partial class IdolDearnessConditionStatus : DataModel
     {
         public int                                      MstIdolId                               { get; set; }
@@ -30,9 +30,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IdolDearnessConditionStatus() { Pointer= p0 };
 
-            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x018)); // 024661055000 0x18 MstIdolId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.RequiredDearness                          = GetInt32(new IntPtr(p + 0x01C)); // 024661055040 0x1C RequiredDearness            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Dearness                                  = GetInt32(new IntPtr(p + 0x020)); // 024661055080 0x20 Dearness                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.MstIdolId                                 = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstIdolId                   ( ModelPrimitiveType int int int Int32 )
+            value.RequiredDearness                          = GetInt32(new IntPtr(p + 0x01C)); // 0x1C RequiredDearness            ( ModelPrimitiveType int int int Int32 )
+            value.Dearness                                  = GetInt32(new IntPtr(p + 0x020)); // 0x20 Dearness                    ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

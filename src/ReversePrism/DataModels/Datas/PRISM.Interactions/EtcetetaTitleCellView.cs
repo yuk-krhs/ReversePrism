@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 038 Title                                    0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 040 Height                                   0001866656B0 ModelPrimitiveType float float float Single
+    // 038 Title                                    ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 040 Height                                   ModelPrimitiveType float float float Single
     public partial class EtcetetaTitleCellView : DataModel
     {
         public UITextMeshProUGUI?                       Title                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EtcetetaTitleCellView() { Pointer= p0 };
 
-            value.Title                                     = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A2FC190 0x38 Title                       ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.Height                                    = GetSingle(new IntPtr(p + 0x040)); // 02466A2FC1B0 0x40 Height                      ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.Title                                     = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x38 Title                       ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Height                                    = GetSingle(new IntPtr(p + 0x040)); // 0x40 Height                      ( ModelPrimitiveType float float float Single )
 
             return value;
         }

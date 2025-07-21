@@ -11,11 +11,11 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<Linear> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 NumFiniteBucketsFieldNumber              int IL2CPP_TYPE_I4
-    // 018 NumFiniteBuckets                         0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 NumFiniteBuckets                         ModelPrimitiveType int int int Int32
     // 000 WidthFieldNumber                         int IL2CPP_TYPE_I4
-    // 020 Width                                    0001865C2950 ModelPrimitiveType double double double Double
+    // 020 Width                                    ModelPrimitiveType double double double Double
     // 000 OffsetFieldNumber                        int IL2CPP_TYPE_I4
-    // 028 Offset                                   0001865C2950 ModelPrimitiveType double double double Double
+    // 028 Offset                                   ModelPrimitiveType double double double Double
     public partial class Linear : DataModel
     {
         public int                                      NumFiniteBuckets                        { get; set; }
@@ -30,9 +30,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Linear() { Pointer= p0 };
 
-            value.NumFiniteBuckets                          = GetInt32(new IntPtr(p + 0x018)); // 02466A7F9910 0x18 NumFiniteBuckets            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Width                                     = GetDouble(new IntPtr(p + 0x020)); // 02466A7F9950 0x20 Width                       ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.Offset                                    = GetDouble(new IntPtr(p + 0x028)); // 02466A7F9990 0x28 Offset                      ( 0001865C2950 ModelPrimitiveType double double double Double )
+            value.NumFiniteBuckets                          = GetInt32(new IntPtr(p + 0x018)); // 0x18 NumFiniteBuckets            ( ModelPrimitiveType int int int Int32 )
+            value.Width                                     = GetDouble(new IntPtr(p + 0x020)); // 0x20 Width                       ( ModelPrimitiveType double double double Double )
+            value.Offset                                    = GetDouble(new IntPtr(p + 0x028)); // 0x28 Offset                      ( ModelPrimitiveType double double double Double )
 
             return value;
         }

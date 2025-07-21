@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Callback                                 0001865C5890 ModelClassType IOCompletionCallback IOCompletionCallback IOCompletionCallback Pointer
+    // 010 Callback                                 ModelClassType IOCompletionCallback IOCompletionCallback IOCompletionCallback Pointer
     public partial class IOCompletionThunk : DataModel
     {
         public IOCompletionCallback?                    Callback                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IOCompletionThunk() { Pointer= p0 };
 
-            value.Callback                                  = GetObject<IOCompletionCallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.IOCompletionCallback.FromPointer); // 02466BAB20D0 0x10 Callback                    ( 0001865C5890 ModelClassType IOCompletionCallback IOCompletionCallback IOCompletionCallback Pointer )
+            value.Callback                                  = GetObject<IOCompletionCallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.IOCompletionCallback.FromPointer); // 0x10 Callback                    ( ModelClassType IOCompletionCallback IOCompletionCallback IOCompletionCallback Pointer )
 
             return value;
         }

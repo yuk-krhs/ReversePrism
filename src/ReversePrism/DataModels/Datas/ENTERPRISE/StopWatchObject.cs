@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Timer                                    00018658D980 ModelClassType StopWatchBase StopWatchBase StopWatchBase Pointer
-    // 028 ConstructedDateTime                      0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime
+    // 020 Timer                                    ModelClassType StopWatchBase StopWatchBase StopWatchBase Pointer
+    // 028 ConstructedDateTime                      ModelPrimitiveType DateTime DateTime DateTime DateTime
     public partial class StopWatchObject : DataModel
     {
         public StopWatchBase?                           Timer                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StopWatchObject() { Pointer= p0 };
 
-            value.Timer                                     = GetObject<StopWatchBase>(new IntPtr(p + 0x020), ReversePrism.DataModels.StopWatchBase.FromPointer); // 024660EB28C0 0x20 Timer                       ( 00018658D980 ModelClassType StopWatchBase StopWatchBase StopWatchBase Pointer )
-            value.ConstructedDateTime                       = GetDateTime(new IntPtr(p + 0x028)); // 024660EB28E0 0x28 ConstructedDateTime         ( 0001865B9010 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.Timer                                     = GetObject<StopWatchBase>(new IntPtr(p + 0x020), ReversePrism.DataModels.StopWatchBase.FromPointer); // 0x20 Timer                       ( ModelClassType StopWatchBase StopWatchBase StopWatchBase Pointer )
+            value.ConstructedDateTime                       = GetDateTime(new IntPtr(p + 0x028)); // 0x28 ConstructedDateTime         ( ModelPrimitiveType DateTime DateTime DateTime DateTime )
 
             return value;
         }

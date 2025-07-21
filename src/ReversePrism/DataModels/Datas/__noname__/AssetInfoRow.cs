@@ -8,15 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Label                                    0001865F7700 ModelPrimitiveType long long long Int64
-    // 018 Deps                                     000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 020 GroupChecksum                            000186698B70 ModelPrimitiveType uint uint uint UInt32
-    // 024 FileStatus                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 028 ResourceType                             0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 030 Checksum                                 0001865F7700 ModelPrimitiveType long long long Int64
-    // 038 Seed                                     0001865F7700 ModelPrimitiveType long long long Int64
-    // 040 Size                                     0001865F7700 ModelPrimitiveType long long long Int64
-    // 048 Priority                                 0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 Label                                    ModelPrimitiveType long long long Int64
+    // 018 Deps                                     ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 020 GroupChecksum                            ModelPrimitiveType uint uint uint UInt32
+    // 024 FileStatus                               ModelPrimitiveType int int int Int32
+    // 028 ResourceType                             ModelPrimitiveType int int int Int32
+    // 030 Checksum                                 ModelPrimitiveType long long long Int64
+    // 038 Seed                                     ModelPrimitiveType long long long Int64
+    // 040 Size                                     ModelPrimitiveType long long long Int64
+    // 048 Priority                                 ModelPrimitiveType int int int Int32
     public partial class AssetInfoRow : DataModel
     {
         public long                                     Label                                   { get; set; }
@@ -37,15 +37,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AssetInfoRow() { Pointer= p0 };
 
-            value.Label                                     = GetInt64(new IntPtr(p + 0x010)); // 0245A3E02758 0x10 Label                       ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.Deps                                      = GetSByteList(new IntPtr(p + 0x018)); // 0245A3E02778 0x18 Deps                        ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.GroupChecksum                             = GetUInt32(new IntPtr(p + 0x020)); // 0245A3E02798 0x20 GroupChecksum               ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
-            value.FileStatus                                = GetInt32(new IntPtr(p + 0x024)); // 0245A3E027B8 0x24 FileStatus                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ResourceType                              = GetInt32(new IntPtr(p + 0x028)); // 0245A3E027D8 0x28 ResourceType                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Checksum                                  = GetInt64(new IntPtr(p + 0x030)); // 0245A3E027F8 0x30 Checksum                    ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.Seed                                      = GetInt64(new IntPtr(p + 0x038)); // 0245A3E02818 0x38 Seed                        ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.Size                                      = GetInt64(new IntPtr(p + 0x040)); // 0245A3E02838 0x40 Size                        ( 0001865F7700 ModelPrimitiveType long long long Int64 )
-            value.Priority                                  = GetInt32(new IntPtr(p + 0x048)); // 0245A3E02858 0x48 Priority                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Label                                     = GetInt64(new IntPtr(p + 0x010)); // 0x10 Label                       ( ModelPrimitiveType long long long Int64 )
+            value.Deps                                      = GetSByteList(new IntPtr(p + 0x018)); // 0x18 Deps                        ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.GroupChecksum                             = GetUInt32(new IntPtr(p + 0x020)); // 0x20 GroupChecksum               ( ModelPrimitiveType uint uint uint UInt32 )
+            value.FileStatus                                = GetInt32(new IntPtr(p + 0x024)); // 0x24 FileStatus                  ( ModelPrimitiveType int int int Int32 )
+            value.ResourceType                              = GetInt32(new IntPtr(p + 0x028)); // 0x28 ResourceType                ( ModelPrimitiveType int int int Int32 )
+            value.Checksum                                  = GetInt64(new IntPtr(p + 0x030)); // 0x30 Checksum                    ( ModelPrimitiveType long long long Int64 )
+            value.Seed                                      = GetInt64(new IntPtr(p + 0x038)); // 0x38 Seed                        ( ModelPrimitiveType long long long Int64 )
+            value.Size                                      = GetInt64(new IntPtr(p + 0x040)); // 0x40 Size                        ( ModelPrimitiveType long long long Int64 )
+            value.Priority                                  = GetInt32(new IntPtr(p + 0x048)); // 0x48 Priority                    ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

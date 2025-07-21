@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CanGetNextStream                         000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 018 CurrentStream                            00018659C590 ModelClassType DelimittedReadStream DelimittedReadStream DelimittedReadStream Pointer
-    // 020 Delimitter                               000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 028 MatchBuffer                              000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 030 Scratch                                  000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 038 Stream                                   00018650CA60 ModelClassType BufferedReadStream BufferedReadStream BufferedReadStream Pointer
+    // 010 CanGetNextStream                         ModelPrimitiveType bool bool bool Bool
+    // 018 CurrentStream                            ModelClassType DelimittedReadStream DelimittedReadStream DelimittedReadStream Pointer
+    // 020 Delimitter                               ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 028 MatchBuffer                              ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 030 Scratch                                  ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 038 Stream                                   ModelClassType BufferedReadStream BufferedReadStream BufferedReadStream Pointer
     public partial class DelimittedStreamReader : DataModel
     {
         public bool                                     CanGetNextStream                        { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DelimittedStreamReader() { Pointer= p0 };
 
-            value.CanGetNextStream                          = GetBool(new IntPtr(p + 0x010)); // 024667CF1260 0x10 CanGetNextStream            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CurrentStream                             = GetObject<DelimittedReadStream>(new IntPtr(p + 0x018), ReversePrism.DataModels.DelimittedReadStream.FromPointer); // 024667CF1280 0x18 CurrentStream               ( 00018659C590 ModelClassType DelimittedReadStream DelimittedReadStream DelimittedReadStream Pointer )
-            value.Delimitter                                = GetSByteList(new IntPtr(p + 0x020)); // 024667CF12A0 0x20 Delimitter                  ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.MatchBuffer                               = GetSByteList(new IntPtr(p + 0x028)); // 024667CF12C0 0x28 MatchBuffer                 ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Scratch                                   = GetSByteList(new IntPtr(p + 0x030)); // 024667CF12E0 0x30 Scratch                     ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Stream                                    = GetObject<BufferedReadStream>(new IntPtr(p + 0x038), ReversePrism.DataModels.BufferedReadStream.FromPointer); // 024667CF1300 0x38 Stream                      ( 00018650CA60 ModelClassType BufferedReadStream BufferedReadStream BufferedReadStream Pointer )
+            value.CanGetNextStream                          = GetBool(new IntPtr(p + 0x010)); // 0x10 CanGetNextStream            ( ModelPrimitiveType bool bool bool Bool )
+            value.CurrentStream                             = GetObject<DelimittedReadStream>(new IntPtr(p + 0x018), ReversePrism.DataModels.DelimittedReadStream.FromPointer); // 0x18 CurrentStream               ( ModelClassType DelimittedReadStream DelimittedReadStream DelimittedReadStream Pointer )
+            value.Delimitter                                = GetSByteList(new IntPtr(p + 0x020)); // 0x20 Delimitter                  ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.MatchBuffer                               = GetSByteList(new IntPtr(p + 0x028)); // 0x28 MatchBuffer                 ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Scratch                                   = GetSByteList(new IntPtr(p + 0x030)); // 0x30 Scratch                     ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Stream                                    = GetObject<BufferedReadStream>(new IntPtr(p + 0x038), ReversePrism.DataModels.BufferedReadStream.FromPointer); // 0x38 Stream                      ( ModelClassType BufferedReadStream BufferedReadStream BufferedReadStream Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 NewExpression                            00018669EE70 ModelClassType NewExpression NewExpression NewExpression Pointer
+    // 010 NewExpression                            ModelClassType NewExpression NewExpression NewExpression Pointer
     // 018 <Initializers>k__BackingField            ReadOnlyCollection`1<ElementInit> IL2CPP_TYPE_GENERICINST
     public partial class ListInitExpression : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ListInitExpression() { Pointer= p0 };
 
-            value.NewExpression                             = GetObject<NewExpression>(new IntPtr(p + 0x010), ReversePrism.DataModels.NewExpression.FromPointer); // 024669FCC1A8 0x10 NewExpression               ( 00018669EE70 ModelClassType NewExpression NewExpression NewExpression Pointer )
+            value.NewExpression                             = GetObject<NewExpression>(new IntPtr(p + 0x010), ReversePrism.DataModels.NewExpression.FromPointer); // 0x10 NewExpression               ( ModelClassType NewExpression NewExpression NewExpression Pointer )
 
             return value;
         }

@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 000 s_default                                UTF8EncodingSealed IL2CPP_TYPE_CLASS
     // 008 s_preamble                               sbyte[] IL2CPP_TYPE_SZARRAY
-    // 038 EmitUTF8Identifier                       000186596860 ModelPrimitiveType bool bool bool Bool
-    // 039 IsThrowException                         000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 038 EmitUTF8Identifier                       ModelPrimitiveType bool bool bool Bool
+    // 039 IsThrowException                         ModelPrimitiveType bool bool bool Bool
     public partial class UTF8Encoding : DataModel
     {
         public bool                                     EmitUTF8Identifier                      { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UTF8Encoding() { Pointer= p0 };
 
-            value.EmitUTF8Identifier                        = GetBool(new IntPtr(p + 0x038)); // 0245A33E4EB0 0x38 EmitUTF8Identifier          ( 000186596860 ModelPrimitiveType bool bool bool Bool )
-            value.IsThrowException                          = GetBool(new IntPtr(p + 0x039)); // 0245A33E4ED0 0x39 IsThrowException            ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.EmitUTF8Identifier                        = GetBool(new IntPtr(p + 0x038)); // 0x38 EmitUTF8Identifier          ( ModelPrimitiveType bool bool bool Bool )
+            value.IsThrowException                          = GetBool(new IntPtr(p + 0x039)); // 0x39 IsThrowException            ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

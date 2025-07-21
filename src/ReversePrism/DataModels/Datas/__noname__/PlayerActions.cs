@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Wrapper                                0001866B2FE0 ModelClassType DefaultInputActions DefaultInputActions DefaultInputActions Pointer
+    // 010 M_Wrapper                                ModelClassType DefaultInputActions DefaultInputActions DefaultInputActions Pointer
     public partial class PlayerActions : DataModel
     {
         public DefaultInputActions?                     M_Wrapper                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PlayerActions() { Pointer= p0 };
 
-            value.M_Wrapper                                 = GetObject<DefaultInputActions>(new IntPtr(p + 0x010), ReversePrism.DataModels.DefaultInputActions.FromPointer); // 024667778A40 0x10 M_Wrapper                   ( 0001866B2FE0 ModelClassType DefaultInputActions DefaultInputActions DefaultInputActions Pointer )
+            value.M_Wrapper                                 = GetObject<DefaultInputActions>(new IntPtr(p + 0x010), ReversePrism.DataModels.DefaultInputActions.FromPointer); // 0x10 M_Wrapper                   ( ModelClassType DefaultInputActions DefaultInputActions DefaultInputActions Pointer )
 
             return value;
         }

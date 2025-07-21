@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Maps                                     000185CBCC88 ModelEnumListType WriteMapJson[] WriteMapJson[] List<WriteMapJson> Pointer
+    // 010 Maps                                     ModelEnumListType WriteMapJson[] WriteMapJson[] List<WriteMapJson> Pointer
     public partial class WriteFileJson : DataModel
     {
         public List<WriteMapJson>?                      Maps                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new WriteFileJson() { Pointer= p0 };
 
-            value.Maps                                      = GetEnumList<WriteMapJson>(new IntPtr(p + 0x010)); // 0246676BFAE8 0x10 Maps                        ( 000185CBCC88 ModelEnumListType WriteMapJson[] WriteMapJson[] List<WriteMapJson> Pointer )
+            value.Maps                                      = GetEnumList<WriteMapJson>(new IntPtr(p + 0x010)); // 0x10 Maps                        ( ModelEnumListType WriteMapJson[] WriteMapJson[] List<WriteMapJson> Pointer )
 
             return value;
         }

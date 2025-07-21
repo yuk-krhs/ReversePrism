@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Index                                    0001865F4940 ModelPrimitiveType int int int Int32
+    // 010 Index                                    ModelPrimitiveType int int int Int32
     // 018 FormatString                             ReadOnlySpan`1<char> IL2CPP_TYPE_GENERICINST
-    // 028 LastIndex                                0001865F4940 ModelPrimitiveType int int int Int32
-    // 02C Alignment                                0001865F4940 ModelPrimitiveType int int int Int32
+    // 028 LastIndex                                ModelPrimitiveType int int int Int32
+    // 02C Alignment                                ModelPrimitiveType int int int Int32
     public partial class ParseResult : DataModel
     {
         public int                                      Index                                   { get; set; }
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ParseResult() { Pointer= p0 };
 
-            value.Index                                     = GetInt32(new IntPtr(p + 0x010)); // 02466ABC7E48 0x10 Index                       ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.LastIndex                                 = GetInt32(new IntPtr(p + 0x028)); // 02466ABC7E88 0x28 LastIndex                   ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.Alignment                                 = GetInt32(new IntPtr(p + 0x02C)); // 02466ABC7EA8 0x2C Alignment                   ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x010)); // 0x10 Index                       ( ModelPrimitiveType int int int Int32 )
+            value.LastIndex                                 = GetInt32(new IntPtr(p + 0x028)); // 0x28 LastIndex                   ( ModelPrimitiveType int int int Int32 )
+            value.Alignment                                 = GetInt32(new IntPtr(p + 0x02C)); // 0x2C Alignment                   ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

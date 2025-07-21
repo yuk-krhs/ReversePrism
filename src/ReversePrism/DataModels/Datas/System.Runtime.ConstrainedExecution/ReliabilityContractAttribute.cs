@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ConsistencyGuarantee                     000186607740 ModelEnumType Consistency Consistency Consistency Int32
-    // 014 Cer                                      000186553BC0 ModelEnumType Cer Cer Cer Int32
+    // 010 ConsistencyGuarantee                     ModelEnumType Consistency Consistency Consistency Int32
+    // 014 Cer                                      ModelEnumType Cer Cer Cer Int32
     public partial class ReliabilityContractAttribute : DataModel
     {
         public Consistency                              ConsistencyGuarantee                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ReliabilityContractAttribute() { Pointer= p0 };
 
-            value.ConsistencyGuarantee                      = (Consistency)GetInt32(new IntPtr(p + 0x010)); // 024666D02A10 0x10 ConsistencyGuarantee        ( 000186607740 ModelEnumType Consistency Consistency Consistency Int32 )
-            value.Cer                                       = (Cer)GetInt32(new IntPtr(p + 0x014)); // 024666D02A30 0x14 Cer                         ( 000186553BC0 ModelEnumType Cer Cer Cer Int32 )
+            value.ConsistencyGuarantee                      = (Consistency)GetInt32(new IntPtr(p + 0x010)); // 0x10 ConsistencyGuarantee        ( ModelEnumType Consistency Consistency Consistency Int32 )
+            value.Cer                                       = (Cer)GetInt32(new IntPtr(p + 0x014)); // 0x14 Cer                         ( ModelEnumType Cer Cer Cer Int32 )
 
             return value;
         }

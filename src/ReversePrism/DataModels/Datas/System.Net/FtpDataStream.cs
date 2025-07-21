@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 Request                                  0001865D1530 ModelClassType FtpWebRequest FtpWebRequest FtpWebRequest Pointer
-    // 030 NetworkStream                            00018669CD10 ModelClassType NetworkStream NetworkStream NetworkStream Pointer
-    // 038 Writeable                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 039 Readable                                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 03A IsFullyRead                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 03B Closing                                  000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 028 Request                                  ModelClassType FtpWebRequest FtpWebRequest FtpWebRequest Pointer
+    // 030 NetworkStream                            ModelClassType NetworkStream NetworkStream NetworkStream Pointer
+    // 038 Writeable                                ModelPrimitiveType bool bool bool Bool
+    // 039 Readable                                 ModelPrimitiveType bool bool bool Bool
+    // 03A IsFullyRead                              ModelPrimitiveType bool bool bool Bool
+    // 03B Closing                                  ModelPrimitiveType bool bool bool Bool
     public partial class FtpDataStream : DataModel
     {
         public FtpWebRequest?                           Request                                 { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FtpDataStream() { Pointer= p0 };
 
-            value.Request                                   = GetObject<FtpWebRequest>(new IntPtr(p + 0x028), ReversePrism.DataModels.FtpWebRequest.FromPointer); // 024667A6AA48 0x28 Request                     ( 0001865D1530 ModelClassType FtpWebRequest FtpWebRequest FtpWebRequest Pointer )
-            value.NetworkStream                             = GetObject<NetworkStream>(new IntPtr(p + 0x030), ReversePrism.DataModels.NetworkStream.FromPointer); // 024667A6AA68 0x30 NetworkStream               ( 00018669CD10 ModelClassType NetworkStream NetworkStream NetworkStream Pointer )
-            value.Writeable                                 = GetBool(new IntPtr(p + 0x038)); // 024667A6AA88 0x38 Writeable                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Readable                                  = GetBool(new IntPtr(p + 0x039)); // 024667A6AAA8 0x39 Readable                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsFullyRead                               = GetBool(new IntPtr(p + 0x03A)); // 024667A6AAC8 0x3A IsFullyRead                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Closing                                   = GetBool(new IntPtr(p + 0x03B)); // 024667A6AAE8 0x3B Closing                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Request                                   = GetObject<FtpWebRequest>(new IntPtr(p + 0x028), ReversePrism.DataModels.FtpWebRequest.FromPointer); // 0x28 Request                     ( ModelClassType FtpWebRequest FtpWebRequest FtpWebRequest Pointer )
+            value.NetworkStream                             = GetObject<NetworkStream>(new IntPtr(p + 0x030), ReversePrism.DataModels.NetworkStream.FromPointer); // 0x30 NetworkStream               ( ModelClassType NetworkStream NetworkStream NetworkStream Pointer )
+            value.Writeable                                 = GetBool(new IntPtr(p + 0x038)); // 0x38 Writeable                   ( ModelPrimitiveType bool bool bool Bool )
+            value.Readable                                  = GetBool(new IntPtr(p + 0x039)); // 0x39 Readable                    ( ModelPrimitiveType bool bool bool Bool )
+            value.IsFullyRead                               = GetBool(new IntPtr(p + 0x03A)); // 0x3A IsFullyRead                 ( ModelPrimitiveType bool bool bool Bool )
+            value.Closing                                   = GetBool(new IntPtr(p + 0x03B)); // 0x3B Closing                     ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

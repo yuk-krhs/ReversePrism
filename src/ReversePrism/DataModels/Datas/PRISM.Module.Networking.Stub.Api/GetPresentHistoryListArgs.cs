@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<GetPresentHistoryListArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 CursorFieldNumber                        int IL2CPP_TYPE_I4
-    // 018 Cursor                                   000186671910 ModelPrimitiveType string string string String
+    // 018 Cursor                                   ModelPrimitiveType string string string String
     // 000 LimitFieldNumber                         int IL2CPP_TYPE_I4
-    // 020 Limit                                    0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 Limit                                    ModelPrimitiveType int int int Int32
     public partial class GetPresentHistoryListArgs : DataModel
     {
         public string                                   Cursor                                  { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetPresentHistoryListArgs() { Pointer= p0 };
 
-            value.Cursor                                    = GetString(new IntPtr(p + 0x018)); // 0246623F48F0 0x18 Cursor                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Limit                                     = GetInt32(new IntPtr(p + 0x020)); // 0246623F4930 0x20 Limit                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Cursor                                    = GetString(new IntPtr(p + 0x018)); // 0x18 Cursor                      ( ModelPrimitiveType string string string String )
+            value.Limit                                     = GetInt32(new IntPtr(p + 0x020)); // 0x20 Limit                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

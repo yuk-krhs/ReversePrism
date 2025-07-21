@@ -8,10 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Legacy                                   0001865C9AF0 ModelClassType MainStoryLastCategoryArgumentForLegacy MainStoryLastCategoryArgumentForLegacy MainStoryLastCategoryArgumentForLegacy Pointer
+    // 010 MainStoryFirstCategoryId                 ModelPrimitiveType int int int Int32
+    // 014 ScrollPosition                           ModelPrimitiveType float float float Single
+    // 018 AdvTransitionerModel                     ModelClassType StoryToAdvTransitionerModel StoryToAdvTransitionerModel StoryToAdvTransitionerModel Pointer
     public partial class MainStoryLastCategoryArgument : DataModel
     {
-        public MainStoryLastCategoryArgumentForLegacy?  Legacy                                  { get; set; }
+        public int                                      MainStoryFirstCategoryId                { get; set; }
+        public float                                    ScrollPosition                          { get; set; }
+        public StoryToAdvTransitionerModel?             AdvTransitionerModel                    { get; set; }
 
         public static MainStoryLastCategoryArgument? FromPointer(IntPtr p0)
         {
@@ -21,7 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MainStoryLastCategoryArgument() { Pointer= p0 };
 
-            value.Legacy                                    = GetObject<MainStoryLastCategoryArgumentForLegacy>(new IntPtr(p + 0x010), ReversePrism.DataModels.MainStoryLastCategoryArgumentForLegacy.FromPointer); // 02466681BA98 0x10 Legacy                      ( 0001865C9AF0 ModelClassType MainStoryLastCategoryArgumentForLegacy MainStoryLastCategoryArgumentForLegacy MainStoryLastCategoryArgumentForLegacy Pointer )
+            value.MainStoryFirstCategoryId                  = GetInt32(new IntPtr(p + 0x010)); // 0x10 MainStoryFirstCategoryId    ( ModelPrimitiveType int int int Int32 )
+            value.ScrollPosition                            = GetSingle(new IntPtr(p + 0x014)); // 0x14 ScrollPosition              ( ModelPrimitiveType float float float Single )
+            value.AdvTransitionerModel                      = GetObject<StoryToAdvTransitionerModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoryToAdvTransitionerModel.FromPointer); // 0x18 AdvTransitionerModel        ( ModelClassType StoryToAdvTransitionerModel StoryToAdvTransitionerModel StoryToAdvTransitionerModel Pointer )
 
             return value;
         }

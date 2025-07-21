@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_PrivacyEndpoint                        000186672F10 ModelPrimitiveType string string string String
+    // 010 M_PrivacyEndpoint                        ModelPrimitiveType string string string String
     public partial class GeoAPI : DataModel
     {
         public string                                   M_PrivacyEndpoint                       { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GeoAPI() { Pointer= p0 };
 
-            value.M_PrivacyEndpoint                         = GetString(new IntPtr(p + 0x010)); // 0245A6684408 0x10 M_PrivacyEndpoint           ( 000186672F10 ModelPrimitiveType string string string String )
+            value.M_PrivacyEndpoint                         = GetString(new IntPtr(p + 0x010)); // 0x10 M_PrivacyEndpoint           ( ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 Version                                  0001865B7BC0 ModelEnumType Version Version Version Int32
-    // 01C FreezePlacement                          000186595210 ModelPrimitiveType bool bool bool Bool
-    // 020 SimplificationLevels                     0001865F36C0 ModelPrimitiveType int int int Int32
-    // 024 MinDistanceBetweenProbes                 000186666050 ModelPrimitiveType float float float Single
-    // 028 RenderersLayerMask                       00018650B660 ModelEnumType LayerMask LayerMask LayerMask Int32
-    // 02C MinRendererVolumeSize                    000186666050 ModelPrimitiveType float float float Single
+    // 018 Version                                  ModelEnumType Version Version Version Int32
+    // 01C FreezePlacement                          ModelPrimitiveType bool bool bool Bool
+    // 020 SimplificationLevels                     ModelPrimitiveType int int int Int32
+    // 024 MinDistanceBetweenProbes                 ModelPrimitiveType float float float Single
+    // 028 RenderersLayerMask                       ModelEnumType LayerMask LayerMask LayerMask Int32
+    // 02C MinRendererVolumeSize                    ModelPrimitiveType float float float Single
     public partial class ProbeReferenceVolumeProfile : DataModel
     {
         public Version                                  Version                                 { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProbeReferenceVolumeProfile() { Pointer= p0 };
 
-            value.Version                                   = (Version)GetInt32(new IntPtr(p + 0x018)); // 02466927B980 0x18 Version                     ( 0001865B7BC0 ModelEnumType Version Version Version Int32 )
-            value.FreezePlacement                           = GetBool(new IntPtr(p + 0x01C)); // 02466927B9A0 0x1C FreezePlacement             ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.SimplificationLevels                      = GetInt32(new IntPtr(p + 0x020)); // 02466927B9C0 0x20 SimplificationLevels        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.MinDistanceBetweenProbes                  = GetSingle(new IntPtr(p + 0x024)); // 02466927B9E0 0x24 MinDistanceBetweenProbes    ( 000186666050 ModelPrimitiveType float float float Single )
-            value.RenderersLayerMask                        = (LayerMask)GetInt32(new IntPtr(p + 0x028)); // 02466927BA00 0x28 RenderersLayerMask          ( 00018650B660 ModelEnumType LayerMask LayerMask LayerMask Int32 )
-            value.MinRendererVolumeSize                     = GetSingle(new IntPtr(p + 0x02C)); // 02466927BA20 0x2C MinRendererVolumeSize       ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Version                                   = (Version)GetInt32(new IntPtr(p + 0x018)); // 0x18 Version                     ( ModelEnumType Version Version Version Int32 )
+            value.FreezePlacement                           = GetBool(new IntPtr(p + 0x01C)); // 0x1C FreezePlacement             ( ModelPrimitiveType bool bool bool Bool )
+            value.SimplificationLevels                      = GetInt32(new IntPtr(p + 0x020)); // 0x20 SimplificationLevels        ( ModelPrimitiveType int int int Int32 )
+            value.MinDistanceBetweenProbes                  = GetSingle(new IntPtr(p + 0x024)); // 0x24 MinDistanceBetweenProbes    ( ModelPrimitiveType float float float Single )
+            value.RenderersLayerMask                        = (LayerMask)GetInt32(new IntPtr(p + 0x028)); // 0x28 RenderersLayerMask          ( ModelEnumType LayerMask LayerMask LayerMask Int32 )
+            value.MinRendererVolumeSize                     = GetSingle(new IntPtr(p + 0x02C)); // 0x2C MinRendererVolumeSize       ( ModelPrimitiveType float float float Single )
 
             return value;
         }

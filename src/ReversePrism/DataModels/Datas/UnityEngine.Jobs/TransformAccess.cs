@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 hierarchy                                <int> IL2CPP_TYPE_I
-    // 018 Index                                    0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 Index                                    ModelPrimitiveType int int int Int32
     public partial class TransformAccess : DataModel
     {
         public int                                      Index                                   { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TransformAccess() { Pointer= p0 };
 
-            value.Index                                     = GetInt32(new IntPtr(p + 0x018)); // 0245A6883018 0x18 Index                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x018)); // 0x18 Index                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

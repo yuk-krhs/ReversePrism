@@ -8,19 +8,19 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 DataSet                                  000186680790 ModelClassType DataSet DataSet DataSet Pointer
-    // 018 NodeToSchemaMap                          0001865CE0A0 ModelClassType XmlToDatasetMap XmlToDatasetMap XmlToDatasetMap Pointer
-    // 020 NodeToRowMap                             0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer
-    // 028 ChildRowsStack                           00018655EBF0 ModelClassType Stack Stack Stack Pointer
-    // 030 HtableExcludedNS                         0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer
-    // 038 FIsXdr                                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 039 IsDiffgram                               000186595210 ModelPrimitiveType bool bool bool Bool
-    // 040 TopMostNode                              000186597700 ModelClassType XmlElement XmlElement XmlElement Pointer
-    // 048 IgnoreSchema                             000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 050 DataTable                                0001865B7E00 ModelClassType DataTable DataTable DataTable Pointer
-    // 058 IsTableLevel                             000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 059 FromInference                            000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 060 DataReader                               0001865A9BB0 ModelClassType XmlReader XmlReader XmlReader Pointer
+    // 010 DataSet                                  ModelClassType DataSet DataSet DataSet Pointer
+    // 018 NodeToSchemaMap                          ModelClassType XmlToDatasetMap XmlToDatasetMap XmlToDatasetMap Pointer
+    // 020 NodeToRowMap                             ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 028 ChildRowsStack                           ModelClassType Stack Stack Stack Pointer
+    // 030 HtableExcludedNS                         ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 038 FIsXdr                                   ModelPrimitiveType bool bool bool Bool
+    // 039 IsDiffgram                               ModelPrimitiveType bool bool bool Bool
+    // 040 TopMostNode                              ModelClassType XmlElement XmlElement XmlElement Pointer
+    // 048 IgnoreSchema                             ModelPrimitiveType bool bool bool Bool
+    // 050 DataTable                                ModelClassType DataTable DataTable DataTable Pointer
+    // 058 IsTableLevel                             ModelPrimitiveType bool bool bool Bool
+    // 059 FromInference                            ModelPrimitiveType bool bool bool Bool
+    // 060 DataReader                               ModelClassType XmlReader XmlReader XmlReader Pointer
     // 068 _XSD_XMLNS_NS                            <object> IL2CPP_TYPE_OBJECT
     // 070 _XDR_SCHEMA                              <object> IL2CPP_TYPE_OBJECT
     // 078 _XDRNS                                   <object> IL2CPP_TYPE_OBJECT
@@ -57,19 +57,19 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlDataLoader() { Pointer= p0 };
 
-            value.DataSet                                   = GetObject<DataSet>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataSet.FromPointer); // 0246689E26D8 0x10 DataSet                     ( 000186680790 ModelClassType DataSet DataSet DataSet Pointer )
-            value.NodeToSchemaMap                           = GetObject<XmlToDatasetMap>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlToDatasetMap.FromPointer); // 0246689E26F8 0x18 NodeToSchemaMap             ( 0001865CE0A0 ModelClassType XmlToDatasetMap XmlToDatasetMap XmlToDatasetMap Pointer )
-            value.NodeToRowMap                              = GetObject<Hashtable>(new IntPtr(p + 0x020), ReversePrism.DataModels.Hashtable.FromPointer); // 0246689E2718 0x20 NodeToRowMap                ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.ChildRowsStack                            = GetObject<Stack>(new IntPtr(p + 0x028), ReversePrism.DataModels.Stack.FromPointer); // 0246689E2738 0x28 ChildRowsStack              ( 00018655EBF0 ModelClassType Stack Stack Stack Pointer )
-            value.HtableExcludedNS                          = GetObject<Hashtable>(new IntPtr(p + 0x030), ReversePrism.DataModels.Hashtable.FromPointer); // 0246689E2758 0x30 HtableExcludedNS            ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.FIsXdr                                    = GetBool(new IntPtr(p + 0x038)); // 0246689E2778 0x38 FIsXdr                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsDiffgram                                = GetBool(new IntPtr(p + 0x039)); // 0246689E2798 0x39 IsDiffgram                  ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.TopMostNode                               = GetObject<XmlElement>(new IntPtr(p + 0x040), ReversePrism.DataModels.XmlElement.FromPointer); // 0246689E27B8 0x40 TopMostNode                 ( 000186597700 ModelClassType XmlElement XmlElement XmlElement Pointer )
-            value.IgnoreSchema                              = GetBool(new IntPtr(p + 0x048)); // 0246689E27D8 0x48 IgnoreSchema                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.DataTable                                 = GetObject<DataTable>(new IntPtr(p + 0x050), ReversePrism.DataModels.DataTable.FromPointer); // 0246689E27F8 0x50 DataTable                   ( 0001865B7E00 ModelClassType DataTable DataTable DataTable Pointer )
-            value.IsTableLevel                              = GetBool(new IntPtr(p + 0x058)); // 0246689E2818 0x58 IsTableLevel                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.FromInference                             = GetBool(new IntPtr(p + 0x059)); // 0246689E2838 0x59 FromInference               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.DataReader                                = GetObject<XmlReader>(new IntPtr(p + 0x060), ReversePrism.DataModels.XmlReader.FromPointer); // 0246689E2858 0x60 DataReader                  ( 0001865A9BB0 ModelClassType XmlReader XmlReader XmlReader Pointer )
+            value.DataSet                                   = GetObject<DataSet>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataSet.FromPointer); // 0x10 DataSet                     ( ModelClassType DataSet DataSet DataSet Pointer )
+            value.NodeToSchemaMap                           = GetObject<XmlToDatasetMap>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlToDatasetMap.FromPointer); // 0x18 NodeToSchemaMap             ( ModelClassType XmlToDatasetMap XmlToDatasetMap XmlToDatasetMap Pointer )
+            value.NodeToRowMap                              = GetObject<Hashtable>(new IntPtr(p + 0x020), ReversePrism.DataModels.Hashtable.FromPointer); // 0x20 NodeToRowMap                ( ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.ChildRowsStack                            = GetObject<Stack>(new IntPtr(p + 0x028), ReversePrism.DataModels.Stack.FromPointer); // 0x28 ChildRowsStack              ( ModelClassType Stack Stack Stack Pointer )
+            value.HtableExcludedNS                          = GetObject<Hashtable>(new IntPtr(p + 0x030), ReversePrism.DataModels.Hashtable.FromPointer); // 0x30 HtableExcludedNS            ( ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.FIsXdr                                    = GetBool(new IntPtr(p + 0x038)); // 0x38 FIsXdr                      ( ModelPrimitiveType bool bool bool Bool )
+            value.IsDiffgram                                = GetBool(new IntPtr(p + 0x039)); // 0x39 IsDiffgram                  ( ModelPrimitiveType bool bool bool Bool )
+            value.TopMostNode                               = GetObject<XmlElement>(new IntPtr(p + 0x040), ReversePrism.DataModels.XmlElement.FromPointer); // 0x40 TopMostNode                 ( ModelClassType XmlElement XmlElement XmlElement Pointer )
+            value.IgnoreSchema                              = GetBool(new IntPtr(p + 0x048)); // 0x48 IgnoreSchema                ( ModelPrimitiveType bool bool bool Bool )
+            value.DataTable                                 = GetObject<DataTable>(new IntPtr(p + 0x050), ReversePrism.DataModels.DataTable.FromPointer); // 0x50 DataTable                   ( ModelClassType DataTable DataTable DataTable Pointer )
+            value.IsTableLevel                              = GetBool(new IntPtr(p + 0x058)); // 0x58 IsTableLevel                ( ModelPrimitiveType bool bool bool Bool )
+            value.FromInference                             = GetBool(new IntPtr(p + 0x059)); // 0x59 FromInference               ( ModelPrimitiveType bool bool bool Bool )
+            value.DataReader                                = GetObject<XmlReader>(new IntPtr(p + 0x060), ReversePrism.DataModels.XmlReader.FromPointer); // 0x60 DataReader                  ( ModelClassType XmlReader XmlReader XmlReader Pointer )
 
             return value;
         }

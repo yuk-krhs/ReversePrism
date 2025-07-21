@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ViolationsFieldNumber                    int IL2CPP_TYPE_I4
     // 008 _repeated_violations_codec               FieldCodec`1<Violation> IL2CPP_TYPE_GENERICINST
-    // 018 Violations                               000185CF96C8 ModelClassListType RepeatedField`1<Violation> RepeatedField`1<Violation> List<Violation> Pointer
+    // 018 Violations                               ModelClassListType RepeatedField`1<Violation> RepeatedField`1<Violation> List<Violation> Pointer
     public partial class PreconditionFailure : DataModel
     {
         public List<Violation>?                         Violations                              { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PreconditionFailure() { Pointer= p0 };
 
-            value.Violations                                = GetObjectList<Violation>(new IntPtr(p + 0x018), ReversePrism.DataModels.Violation.FromPointer); // 02466A732BD0 0x18 Violations                  ( 000185CF96C8 ModelClassListType RepeatedField`1<Violation> RepeatedField`1<Violation> List<Violation> Pointer )
+            value.Violations                                = GetObjectList<Violation>(new IntPtr(p + 0x018), ReversePrism.DataModels.Violation.FromPointer); // 0x18 Violations                  ( ModelClassListType RepeatedField`1<Violation> RepeatedField`1<Violation> List<Violation> Pointer )
 
             return value;
         }

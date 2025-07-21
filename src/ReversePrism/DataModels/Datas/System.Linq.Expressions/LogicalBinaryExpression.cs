@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 NodeType                                 00018652DE40 ModelEnumType ExpressionType ExpressionType ExpressionType Int32
+    // 020 NodeType                                 ModelEnumType ExpressionType ExpressionType ExpressionType Int32
     public partial class LogicalBinaryExpression : DataModel
     {
         public ExpressionType                           NodeType                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LogicalBinaryExpression() { Pointer= p0 };
 
-            value.NodeType                                  = (ExpressionType)GetInt32(new IntPtr(p + 0x020)); // 024669F6BF50 0x20 NodeType                    ( 00018652DE40 ModelEnumType ExpressionType ExpressionType ExpressionType Int32 )
+            value.NodeType                                  = (ExpressionType)GetInt32(new IntPtr(p + 0x020)); // 0x20 NodeType                    ( ModelEnumType ExpressionType ExpressionType ExpressionType Int32 )
 
             return value;
         }

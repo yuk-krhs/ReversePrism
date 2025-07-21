@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Attributes                               0001865DECE0 ModelClassType Hashtable Hashtable Hashtable Pointer
-    // 018 Elements                                 0001865DECE0 ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 010 Attributes                               ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 018 Elements                                 ModelClassType Hashtable Hashtable Hashtable Pointer
     public partial class TypeInfo : DataModel
     {
         public Hashtable?                               Attributes                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TypeInfo() { Pointer= p0 };
 
-            value.Attributes                                = GetObject<Hashtable>(new IntPtr(p + 0x010), ReversePrism.DataModels.Hashtable.FromPointer); // 024666C314B0 0x10 Attributes                  ( 0001865DECE0 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.Elements                                  = GetObject<Hashtable>(new IntPtr(p + 0x018), ReversePrism.DataModels.Hashtable.FromPointer); // 024666C314D0 0x18 Elements                    ( 0001865DECE0 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.Attributes                                = GetObject<Hashtable>(new IntPtr(p + 0x010), ReversePrism.DataModels.Hashtable.FromPointer); // 0x10 Attributes                  ( ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.Elements                                  = GetObject<Hashtable>(new IntPtr(p + 0x018), ReversePrism.DataModels.Hashtable.FromPointer); // 0x18 Elements                    ( ModelClassType Hashtable Hashtable Hashtable Pointer )
 
             return value;
         }

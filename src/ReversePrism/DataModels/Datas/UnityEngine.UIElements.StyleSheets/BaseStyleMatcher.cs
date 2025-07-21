@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 s_CustomIdentRegex                       Regex IL2CPP_TYPE_CLASS
     // 010 m_ContextStack                           Stack`1<MatchContext> IL2CPP_TYPE_GENERICINST
-    // 018 M_CurrentContext                         0001866F5990 ModelEnumType MatchContext MatchContext MatchContext Int32
+    // 018 M_CurrentContext                         ModelEnumType MatchContext MatchContext MatchContext Int32
     public partial class BaseStyleMatcher : DataModel
     {
         public MatchContext                             M_CurrentContext                        { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BaseStyleMatcher() { Pointer= p0 };
 
-            value.M_CurrentContext                          = (MatchContext)GetInt32(new IntPtr(p + 0x018)); // 0245A6849F18 0x18 M_CurrentContext            ( 0001866F5990 ModelEnumType MatchContext MatchContext MatchContext Int32 )
+            value.M_CurrentContext                          = (MatchContext)GetInt32(new IntPtr(p + 0x018)); // 0x18 M_CurrentContext            ( ModelEnumType MatchContext MatchContext MatchContext Int32 )
 
             return value;
         }

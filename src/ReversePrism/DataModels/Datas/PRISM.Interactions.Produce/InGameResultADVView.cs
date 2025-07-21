@@ -8,24 +8,20 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 SafeAreaRoot                             000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
-    // 028 AdvUI                                    000186669720 ModelClassType ADVUI ADVUI ADVUI Pointer
-    // 030 InAdvDeactivatedObjectList               000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
-    // 038 VitalityGauge                            00018652E260 ModelClassType VitalityGauge VitalityGauge VitalityGauge Pointer
-    // 040 ParameterVariationContent                00018671D4D0 ModelClassType ParameterVariationContent ParameterVariationContent ParameterVariationContent Pointer
-    // 048 SupportEffectDemonstrateUIContent        0001865F0A00 ModelClassType SupportEffectDemonstrateUIContent SupportEffectDemonstrateUIContent SupportEffectDemonstrateUIContent Pointer
-    // 050 GetProduceCardPopupPrefab                000186761A40 ModelClassType PopupContentBase PopupContentBase PopupContentBase Pointer
-    // 058 GetSupportSkillPopupPrefab               000186761A40 ModelClassType PopupContentBase PopupContentBase PopupContentBase Pointer
+    // 020 SafeAreaRoot                             ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 028 AdvUI                                    ModelClassType AdvScreenView AdvScreenView AdvScreenView Pointer
+    // 030 InAdvDeactivatedObjectList               ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
+    // 038 VitalityGauge                            ModelClassType ScheduleVitalityGauge ScheduleVitalityGauge ScheduleVitalityGauge Pointer
+    // 040 ParameterVariationContent                ModelClassType ParameterVariationContent ParameterVariationContent ParameterVariationContent Pointer
+    // 048 SupportEffectDemonstrateUIContent        ModelClassType SupportEffectDemonstrateUIContent SupportEffectDemonstrateUIContent SupportEffectDemonstrateUIContent Pointer
     public partial class InGameResultADVView : DataModel
     {
         public RectTransform?                           SafeAreaRoot                            { get; set; }
-        public ADVUI?                                   AdvUI                                   { get; set; }
+        public AdvScreenView?                           AdvUI                                   { get; set; }
         public List<GameObject>?                        InAdvDeactivatedObjectList              { get; set; }
-        public VitalityGauge?                           VitalityGauge                           { get; set; }
+        public ScheduleVitalityGauge?                   VitalityGauge                           { get; set; }
         public ParameterVariationContent?               ParameterVariationContent               { get; set; }
         public SupportEffectDemonstrateUIContent?       SupportEffectDemonstrateUIContent       { get; set; }
-        public PopupContentBase?                        GetProduceCardPopupPrefab               { get; set; }
-        public PopupContentBase?                        GetSupportSkillPopupPrefab              { get; set; }
 
         public static InGameResultADVView? FromPointer(IntPtr p0)
         {
@@ -35,14 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InGameResultADVView() { Pointer= p0 };
 
-            value.SafeAreaRoot                              = GetObject<RectTransform>(new IntPtr(p + 0x020), ReversePrism.DataModels.RectTransform.FromPointer); // 02466A23EC10 0x20 SafeAreaRoot                ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.AdvUI                                     = GetObject<ADVUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.ADVUI.FromPointer); // 02466A23EC30 0x28 AdvUI                       ( 000186669720 ModelClassType ADVUI ADVUI ADVUI Pointer )
-            value.InAdvDeactivatedObjectList                = GetObjectList<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 02466A23EC50 0x30 InAdvDeactivatedObjectList  ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
-            value.VitalityGauge                             = GetObject<VitalityGauge>(new IntPtr(p + 0x038), ReversePrism.DataModels.VitalityGauge.FromPointer); // 02466A23EC70 0x38 VitalityGauge               ( 00018652E260 ModelClassType VitalityGauge VitalityGauge VitalityGauge Pointer )
-            value.ParameterVariationContent                 = GetObject<ParameterVariationContent>(new IntPtr(p + 0x040), ReversePrism.DataModels.ParameterVariationContent.FromPointer); // 02466A23EC90 0x40 ParameterVariationContent   ( 00018671D4D0 ModelClassType ParameterVariationContent ParameterVariationContent ParameterVariationContent Pointer )
-            value.SupportEffectDemonstrateUIContent         = GetObject<SupportEffectDemonstrateUIContent>(new IntPtr(p + 0x048), ReversePrism.DataModels.SupportEffectDemonstrateUIContent.FromPointer); // 02466A23ECB0 0x48 SupportEffectDemonstrateUIContent ( 0001865F0A00 ModelClassType SupportEffectDemonstrateUIContent SupportEffectDemonstrateUIContent SupportEffectDemonstrateUIContent Pointer )
-            value.GetProduceCardPopupPrefab                 = GetObject<PopupContentBase>(new IntPtr(p + 0x050), ReversePrism.DataModels.PopupContentBase.FromPointer); // 02466A23ECD0 0x50 GetProduceCardPopupPrefab   ( 000186761A40 ModelClassType PopupContentBase PopupContentBase PopupContentBase Pointer )
-            value.GetSupportSkillPopupPrefab                = GetObject<PopupContentBase>(new IntPtr(p + 0x058), ReversePrism.DataModels.PopupContentBase.FromPointer); // 02466A23ECF0 0x58 GetSupportSkillPopupPrefab  ( 000186761A40 ModelClassType PopupContentBase PopupContentBase PopupContentBase Pointer )
+            value.SafeAreaRoot                              = GetObject<RectTransform>(new IntPtr(p + 0x020), ReversePrism.DataModels.RectTransform.FromPointer); // 0x20 SafeAreaRoot                ( ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.AdvUI                                     = GetObject<AdvScreenView>(new IntPtr(p + 0x028), ReversePrism.DataModels.AdvScreenView.FromPointer); // 0x28 AdvUI                       ( ModelClassType AdvScreenView AdvScreenView AdvScreenView Pointer )
+            value.InAdvDeactivatedObjectList                = GetObjectList<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0x30 InAdvDeactivatedObjectList  ( ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.VitalityGauge                             = GetObject<ScheduleVitalityGauge>(new IntPtr(p + 0x038), ReversePrism.DataModels.ScheduleVitalityGauge.FromPointer); // 0x38 VitalityGauge               ( ModelClassType ScheduleVitalityGauge ScheduleVitalityGauge ScheduleVitalityGauge Pointer )
+            value.ParameterVariationContent                 = GetObject<ParameterVariationContent>(new IntPtr(p + 0x040), ReversePrism.DataModels.ParameterVariationContent.FromPointer); // 0x40 ParameterVariationContent   ( ModelClassType ParameterVariationContent ParameterVariationContent ParameterVariationContent Pointer )
+            value.SupportEffectDemonstrateUIContent         = GetObject<SupportEffectDemonstrateUIContent>(new IntPtr(p + 0x048), ReversePrism.DataModels.SupportEffectDemonstrateUIContent.FromPointer); // 0x48 SupportEffectDemonstrateUIContent ( ModelClassType SupportEffectDemonstrateUIContent SupportEffectDemonstrateUIContent SupportEffectDemonstrateUIContent Pointer )
 
             return value;
         }

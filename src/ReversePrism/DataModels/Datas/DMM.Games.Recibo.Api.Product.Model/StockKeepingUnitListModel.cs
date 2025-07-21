@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Skus                                     000185D0CDC8 ModelEnumListType List`1<StockKeepingUnit> List`1<StockKeepingUnit> List<StockKeepingUnit> Pointer
+    // 010 Skus                                     ModelEnumListType List`1<StockKeepingUnit> List`1<StockKeepingUnit> List<StockKeepingUnit> Pointer
     public partial class StockKeepingUnitListModel : DataModel
     {
         public List<StockKeepingUnit>?                  Skus                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StockKeepingUnitListModel() { Pointer= p0 };
 
-            value.Skus                                      = GetEnumList<StockKeepingUnit>(new IntPtr(p + 0x010)); // 0245A4DB68F8 0x10 Skus                        ( 000185D0CDC8 ModelEnumListType List`1<StockKeepingUnit> List`1<StockKeepingUnit> List<StockKeepingUnit> Pointer )
+            value.Skus                                      = GetEnumList<StockKeepingUnit>(new IntPtr(p + 0x010)); // 0x10 Skus                        ( ModelEnumListType List`1<StockKeepingUnit> List`1<StockKeepingUnit> List<StockKeepingUnit> Pointer )
 
             return value;
         }

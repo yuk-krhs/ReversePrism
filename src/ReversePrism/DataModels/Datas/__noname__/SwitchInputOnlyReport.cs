@@ -9,13 +9,13 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 kSize                                    int IL2CPP_TYPE_I4
-    // 010 Buttons0                                 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    // 011 Buttons1                                 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    // 012 Hat                                      00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    // 013 LeftX                                    00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    // 014 LeftY                                    00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    // 015 RightX                                   00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
-    // 016 RightY                                   00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 010 Buttons0                                 ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 011 Buttons1                                 ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 012 Hat                                      ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 013 LeftX                                    ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 014 LeftY                                    ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 015 RightX                                   ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 016 RightY                                   ModelPrimitiveType sbyte sbyte sbyte SByte
     public partial class SwitchInputOnlyReport : DataModel
     {
         public sbyte                                    Buttons0                                { get; set; }
@@ -34,13 +34,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SwitchInputOnlyReport() { Pointer= p0 };
 
-            value.Buttons0                                  = GetSByte(new IntPtr(p + 0x010)); // 024667813208 0x10 Buttons0                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Buttons1                                  = GetSByte(new IntPtr(p + 0x011)); // 024667813228 0x11 Buttons1                    ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.Hat                                       = GetSByte(new IntPtr(p + 0x012)); // 024667813248 0x12 Hat                         ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.LeftX                                     = GetSByte(new IntPtr(p + 0x013)); // 024667813268 0x13 LeftX                       ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.LeftY                                     = GetSByte(new IntPtr(p + 0x014)); // 024667813288 0x14 LeftY                       ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.RightX                                    = GetSByte(new IntPtr(p + 0x015)); // 0246678132A8 0x15 RightX                      ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
-            value.RightY                                    = GetSByte(new IntPtr(p + 0x016)); // 0246678132C8 0x16 RightY                      ( 00018659CEE0 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Buttons0                                  = GetSByte(new IntPtr(p + 0x010)); // 0x10 Buttons0                    ( ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Buttons1                                  = GetSByte(new IntPtr(p + 0x011)); // 0x11 Buttons1                    ( ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Hat                                       = GetSByte(new IntPtr(p + 0x012)); // 0x12 Hat                         ( ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.LeftX                                     = GetSByte(new IntPtr(p + 0x013)); // 0x13 LeftX                       ( ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.LeftY                                     = GetSByte(new IntPtr(p + 0x014)); // 0x14 LeftY                       ( ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.RightX                                    = GetSByte(new IntPtr(p + 0x015)); // 0x15 RightX                      ( ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.RightY                                    = GetSByte(new IntPtr(p + 0x016)); // 0x16 RightY                      ( ModelPrimitiveType sbyte sbyte sbyte SByte )
 
             return value;
         }

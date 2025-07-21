@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CommonCellData                           00018655C020 ModelClassType ChainTalkCellCommonData ChainTalkCellCommonData ChainTalkCellCommonData Pointer
+    // 010 CommonCellData                           ModelClassType ChainTalkCellCommonData ChainTalkCellCommonData ChainTalkCellCommonData Pointer
     public partial class ChainTalkCellDataForReadScroller : DataModel
     {
         public ChainTalkCellCommonData?                 CommonCellData                          { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChainTalkCellDataForReadScroller() { Pointer= p0 };
 
-            value.CommonCellData                            = GetObject<ChainTalkCellCommonData>(new IntPtr(p + 0x010), ReversePrism.DataModels.ChainTalkCellCommonData.FromPointer); // 0246668C7A30 0x10 CommonCellData              ( 00018655C020 ModelClassType ChainTalkCellCommonData ChainTalkCellCommonData ChainTalkCellCommonData Pointer )
+            value.CommonCellData                            = GetObject<ChainTalkCellCommonData>(new IntPtr(p + 0x010), ReversePrism.DataModels.ChainTalkCellCommonData.FromPointer); // 0x10 CommonCellData              ( ModelClassType ChainTalkCellCommonData ChainTalkCellCommonData ChainTalkCellCommonData Pointer )
 
             return value;
         }

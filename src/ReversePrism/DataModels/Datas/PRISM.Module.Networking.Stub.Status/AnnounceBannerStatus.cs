@@ -11,11 +11,11 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<AnnounceBannerStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ArticleIdFieldNumber                     int IL2CPP_TYPE_I4
-    // 018 ArticleId                                000186671910 ModelPrimitiveType string string string String
+    // 018 ArticleId                                ModelPrimitiveType string string string String
     // 000 BannerUrlFieldNumber                     int IL2CPP_TYPE_I4
-    // 020 BannerUrl                                000186671910 ModelPrimitiveType string string string String
+    // 020 BannerUrl                                ModelPrimitiveType string string string String
     // 000 SortIdFieldNumber                        int IL2CPP_TYPE_I4
-    // 028 SortId                                   0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 028 SortId                                   ModelPrimitiveType int int int Int32
     public partial class AnnounceBannerStatus : DataModel
     {
         public string                                   ArticleId                               { get; set; }
@@ -30,9 +30,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AnnounceBannerStatus() { Pointer= p0 };
 
-            value.ArticleId                                 = GetString(new IntPtr(p + 0x018)); // 024660EF74B8 0x18 ArticleId                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.BannerUrl                                 = GetString(new IntPtr(p + 0x020)); // 024660EF74F8 0x20 BannerUrl                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.SortId                                    = GetInt32(new IntPtr(p + 0x028)); // 024660EF7538 0x28 SortId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ArticleId                                 = GetString(new IntPtr(p + 0x018)); // 0x18 ArticleId                   ( ModelPrimitiveType string string string String )
+            value.BannerUrl                                 = GetString(new IntPtr(p + 0x020)); // 0x20 BannerUrl                   ( ModelPrimitiveType string string string String )
+            value.SortId                                    = GetInt32(new IntPtr(p + 0x028)); // 0x28 SortId                      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

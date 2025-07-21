@@ -11,8 +11,8 @@ namespace ReversePrism.DataModels
     // 000 oid                                      string IL2CPP_TYPE_STRING
     // 000 friendlyName                             string IL2CPP_TYPE_STRING
     // 000 all                                      X509KeyUsageFlags IL2CPP_TYPE_VALUETYPE
-    // 028 KeyUsages                                00018656CDF0 ModelEnumType X509KeyUsageFlags X509KeyUsageFlags X509KeyUsageFlags Int32
-    // 02C Status                                   0001866DC700 ModelEnumType AsnDecodeStatus AsnDecodeStatus AsnDecodeStatus Int32
+    // 028 KeyUsages                                ModelEnumType X509KeyUsageFlags X509KeyUsageFlags X509KeyUsageFlags Int32
+    // 02C Status                                   ModelEnumType AsnDecodeStatus AsnDecodeStatus AsnDecodeStatus Int32
     public partial class X509KeyUsageExtension : DataModel
     {
         public X509KeyUsageFlags                        KeyUsages                               { get; set; }
@@ -26,8 +26,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new X509KeyUsageExtension() { Pointer= p0 };
 
-            value.KeyUsages                                 = (X509KeyUsageFlags)GetInt32(new IntPtr(p + 0x028)); // 024667A461E0 0x28 KeyUsages                   ( 00018656CDF0 ModelEnumType X509KeyUsageFlags X509KeyUsageFlags X509KeyUsageFlags Int32 )
-            value.Status                                    = (AsnDecodeStatus)GetInt32(new IntPtr(p + 0x02C)); // 024667A46200 0x2C Status                      ( 0001866DC700 ModelEnumType AsnDecodeStatus AsnDecodeStatus AsnDecodeStatus Int32 )
+            value.KeyUsages                                 = (X509KeyUsageFlags)GetInt32(new IntPtr(p + 0x028)); // 0x28 KeyUsages                   ( ModelEnumType X509KeyUsageFlags X509KeyUsageFlags X509KeyUsageFlags Int32 )
+            value.Status                                    = (AsnDecodeStatus)GetInt32(new IntPtr(p + 0x02C)); // 0x2C Status                      ( ModelEnumType AsnDecodeStatus AsnDecodeStatus AsnDecodeStatus Int32 )
 
             return value;
         }

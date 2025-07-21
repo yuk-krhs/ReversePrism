@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 TypingTypeTyping                         000186567730 ModelEnumType ChainTalkTypingType ChainTalkTypingType ChainTalkTypingType Int32
-    // 014 TypingTypeThinking                       000186567730 ModelEnumType ChainTalkTypingType ChainTalkTypingType ChainTalkTypingType Int32
-    // 018 ThinkingSecond                           000186666050 ModelPrimitiveType float float float Single
-    // 01C SendNonTextSecond                        000186666050 ModelPrimitiveType float float float Single
-    // 020 TypingRate                               000186666050 ModelPrimitiveType float float float Single
+    // 010 TypingTypeTyping                         ModelEnumType ChainTalkTypingType ChainTalkTypingType ChainTalkTypingType Int32
+    // 014 TypingTypeThinking                       ModelEnumType ChainTalkTypingType ChainTalkTypingType ChainTalkTypingType Int32
+    // 018 ThinkingSecond                           ModelPrimitiveType float float float Single
+    // 01C SendNonTextSecond                        ModelPrimitiveType float float float Single
+    // 020 TypingRate                               ModelPrimitiveType float float float Single
     public partial class TypingData : DataModel
     {
         public ChainTalkTypingType                      TypingTypeTyping                        { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TypingData() { Pointer= p0 };
 
-            value.TypingTypeTyping                          = (ChainTalkTypingType)GetInt32(new IntPtr(p + 0x010)); // 02466B1743B0 0x10 TypingTypeTyping            ( 000186567730 ModelEnumType ChainTalkTypingType ChainTalkTypingType ChainTalkTypingType Int32 )
-            value.TypingTypeThinking                        = (ChainTalkTypingType)GetInt32(new IntPtr(p + 0x014)); // 02466B1743D0 0x14 TypingTypeThinking          ( 000186567730 ModelEnumType ChainTalkTypingType ChainTalkTypingType ChainTalkTypingType Int32 )
-            value.ThinkingSecond                            = GetSingle(new IntPtr(p + 0x018)); // 02466B1743F0 0x18 ThinkingSecond              ( 000186666050 ModelPrimitiveType float float float Single )
-            value.SendNonTextSecond                         = GetSingle(new IntPtr(p + 0x01C)); // 02466B174410 0x1C SendNonTextSecond           ( 000186666050 ModelPrimitiveType float float float Single )
-            value.TypingRate                                = GetSingle(new IntPtr(p + 0x020)); // 02466B174430 0x20 TypingRate                  ( 000186666050 ModelPrimitiveType float float float Single )
+            value.TypingTypeTyping                          = (ChainTalkTypingType)GetInt32(new IntPtr(p + 0x010)); // 0x10 TypingTypeTyping            ( ModelEnumType ChainTalkTypingType ChainTalkTypingType ChainTalkTypingType Int32 )
+            value.TypingTypeThinking                        = (ChainTalkTypingType)GetInt32(new IntPtr(p + 0x014)); // 0x14 TypingTypeThinking          ( ModelEnumType ChainTalkTypingType ChainTalkTypingType ChainTalkTypingType Int32 )
+            value.ThinkingSecond                            = GetSingle(new IntPtr(p + 0x018)); // 0x18 ThinkingSecond              ( ModelPrimitiveType float float float Single )
+            value.SendNonTextSecond                         = GetSingle(new IntPtr(p + 0x01C)); // 0x1C SendNonTextSecond           ( ModelPrimitiveType float float float Single )
+            value.TypingRate                                = GetSingle(new IntPtr(p + 0x020)); // 0x20 TypingRate                  ( ModelPrimitiveType float float float Single )
 
             return value;
         }

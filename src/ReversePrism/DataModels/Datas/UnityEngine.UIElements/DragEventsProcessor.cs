@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_IsRegistered                           000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 014 M_DragState                              0001865B6240 ModelEnumType DragState DragState DragState Int32
-    // 018 M_Start                                  0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32
-    // 028 M_Target                                 0001866B3770 ModelClassType VisualElement VisualElement VisualElement Pointer
+    // 010 M_IsRegistered                           ModelPrimitiveType bool bool bool Bool
+    // 014 M_DragState                              ModelEnumType DragState DragState DragState Int32
+    // 018 M_Start                                  ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 028 M_Target                                 ModelClassType VisualElement VisualElement VisualElement Pointer
     public partial class DragEventsProcessor : DataModel
     {
         public bool                                     M_IsRegistered                          { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DragEventsProcessor() { Pointer= p0 };
 
-            value.M_IsRegistered                            = GetBool(new IntPtr(p + 0x010)); // 0245A6716918 0x10 M_IsRegistered              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_DragState                               = (DragState)GetInt32(new IntPtr(p + 0x014)); // 0245A6716938 0x14 M_DragState                 ( 0001865B6240 ModelEnumType DragState DragState DragState Int32 )
-            value.M_Start                                   = (Vector3)GetInt32(new IntPtr(p + 0x018)); // 0245A6716958 0x18 M_Start                     ( 0001866AB820 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.M_Target                                  = GetObject<VisualElement>(new IntPtr(p + 0x028), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A6716978 0x28 M_Target                    ( 0001866B3770 ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.M_IsRegistered                            = GetBool(new IntPtr(p + 0x010)); // 0x10 M_IsRegistered              ( ModelPrimitiveType bool bool bool Bool )
+            value.M_DragState                               = (DragState)GetInt32(new IntPtr(p + 0x014)); // 0x14 M_DragState                 ( ModelEnumType DragState DragState DragState Int32 )
+            value.M_Start                                   = (Vector3)GetInt32(new IntPtr(p + 0x018)); // 0x18 M_Start                     ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.M_Target                                  = GetObject<VisualElement>(new IntPtr(p + 0x028), ReversePrism.DataModels.VisualElement.FromPointer); // 0x28 M_Target                    ( ModelClassType VisualElement VisualElement VisualElement Pointer )
 
             return value;
         }

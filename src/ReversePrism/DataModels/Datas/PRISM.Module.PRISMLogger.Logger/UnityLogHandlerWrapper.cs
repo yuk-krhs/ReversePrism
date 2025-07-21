@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 instance                                 UnityLogHandlerWrapper IL2CPP_TYPE_CLASS
-    // 010 BaseLogger                               00018659FF20 ModelClassType ILogHandler ILogHandler ILogHandler Pointer
+    // 010 BaseLogger                               ModelClassType ILogHandler ILogHandler ILogHandler Pointer
     public partial class UnityLogHandlerWrapper : DataModel
     {
         public ILogHandler?                             BaseLogger                              { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnityLogHandlerWrapper() { Pointer= p0 };
 
-            value.BaseLogger                                = GetObject<ILogHandler>(new IntPtr(p + 0x010), ReversePrism.DataModels.ILogHandler.FromPointer); // 02466BF67128 0x10 BaseLogger                  ( 00018659FF20 ModelClassType ILogHandler ILogHandler ILogHandler Pointer )
+            value.BaseLogger                                = GetObject<ILogHandler>(new IntPtr(p + 0x010), ReversePrism.DataModels.ILogHandler.FromPointer); // 0x10 BaseLogger                  ( ModelClassType ILogHandler ILogHandler ILogHandler Pointer )
 
             return value;
         }

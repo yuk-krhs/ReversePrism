@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ObjectRegistrationName                   0001866722E0 ModelPrimitiveType string string string String
-    // 018 Parameter                                0001866722E0 ModelPrimitiveType string string string String
-    // 020 BindingMask                              0001865EA2C0 ModelEnumType InputBinding InputBinding InputBinding Int32
-    // 078 Value                                    0001865149E0 ModelEnumType PrimitiveValue PrimitiveValue PrimitiveValue Int32
+    // 010 ObjectRegistrationName                   ModelPrimitiveType string string string String
+    // 018 Parameter                                ModelPrimitiveType string string string String
+    // 020 BindingMask                              ModelEnumType InputBinding InputBinding InputBinding Int32
+    // 078 Value                                    ModelEnumType PrimitiveValue PrimitiveValue PrimitiveValue Int32
     public partial class ParameterOverride : DataModel
     {
         public string                                   ObjectRegistrationName                  { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ParameterOverride() { Pointer= p0 };
 
-            value.ObjectRegistrationName                    = GetString(new IntPtr(p + 0x010)); // 0246676B83B0 0x10 ObjectRegistrationName      ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Parameter                                 = GetString(new IntPtr(p + 0x018)); // 0246676B83D0 0x18 Parameter                   ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.BindingMask                               = (InputBinding)GetInt32(new IntPtr(p + 0x020)); // 0246676B83F0 0x20 BindingMask                 ( 0001865EA2C0 ModelEnumType InputBinding InputBinding InputBinding Int32 )
-            value.Value                                     = (PrimitiveValue)GetInt32(new IntPtr(p + 0x078)); // 0246676B8410 0x78 Value                       ( 0001865149E0 ModelEnumType PrimitiveValue PrimitiveValue PrimitiveValue Int32 )
+            value.ObjectRegistrationName                    = GetString(new IntPtr(p + 0x010)); // 0x10 ObjectRegistrationName      ( ModelPrimitiveType string string string String )
+            value.Parameter                                 = GetString(new IntPtr(p + 0x018)); // 0x18 Parameter                   ( ModelPrimitiveType string string string String )
+            value.BindingMask                               = (InputBinding)GetInt32(new IntPtr(p + 0x020)); // 0x20 BindingMask                 ( ModelEnumType InputBinding InputBinding InputBinding Int32 )
+            value.Value                                     = (PrimitiveValue)GetInt32(new IntPtr(p + 0x078)); // 0x78 Value                       ( ModelEnumType PrimitiveValue PrimitiveValue PrimitiveValue Int32 )
 
             return value;
         }

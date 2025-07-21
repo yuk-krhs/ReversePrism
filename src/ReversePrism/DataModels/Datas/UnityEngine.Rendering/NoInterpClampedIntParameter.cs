@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Min                                      0001865F59B0 ModelPrimitiveType int int int Int32
-    // 024 Max                                      0001865F59B0 ModelPrimitiveType int int int Int32
+    // 020 Min                                      ModelPrimitiveType int int int Int32
+    // 024 Max                                      ModelPrimitiveType int int int Int32
     public partial class NoInterpClampedIntParameter : DataModel
     {
         public int                                      Min                                     { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NoInterpClampedIntParameter() { Pointer= p0 };
 
-            value.Min                                       = GetInt32(new IntPtr(p + 0x020)); // 024669359198 0x20 Min                         ( 0001865F59B0 ModelPrimitiveType int int int Int32 )
-            value.Max                                       = GetInt32(new IntPtr(p + 0x024)); // 0246693591B8 0x24 Max                         ( 0001865F59B0 ModelPrimitiveType int int int Int32 )
+            value.Min                                       = GetInt32(new IntPtr(p + 0x020)); // 0x20 Min                         ( ModelPrimitiveType int int int Int32 )
+            value.Max                                       = GetInt32(new IntPtr(p + 0x024)); // 0x24 Max                         ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

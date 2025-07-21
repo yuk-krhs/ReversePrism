@@ -9,9 +9,9 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 1B0 _onToggleChange                          Subject`1<bool> IL2CPP_TYPE_GENERICINST
-    // 1B8 ToggleAnimator                           0001866B8DE0 ModelClassType Animator Animator Animator Pointer
-    // 1C0 ToggleAnimationTriggers                  0001866B89A0 ModelClassType AnimationTriggers AnimationTriggers AnimationTriggers Pointer
-    // 1C8 IsSelected                               000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 1B8 ToggleAnimator                           ModelClassType Animator Animator Animator Pointer
+    // 1C0 ToggleAnimationTriggers                  ModelClassType AnimationTriggers AnimationTriggers AnimationTriggers Pointer
+    // 1C8 IsSelected                               ModelPrimitiveType bool bool bool Bool
     public partial class ToggleSwitch : DataModel
     {
         public Animator?                                ToggleAnimator                          { get; set; }
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ToggleSwitch() { Pointer= p0 };
 
-            value.ToggleAnimator                            = GetObject<Animator>(new IntPtr(p + 0x1B8), ReversePrism.DataModels.Animator.FromPointer); // 024664C6B410 0x1B8 ToggleAnimator              ( 0001866B8DE0 ModelClassType Animator Animator Animator Pointer )
-            value.ToggleAnimationTriggers                   = GetObject<AnimationTriggers>(new IntPtr(p + 0x1C0), ReversePrism.DataModels.AnimationTriggers.FromPointer); // 024664C6B430 0x1C0 ToggleAnimationTriggers     ( 0001866B89A0 ModelClassType AnimationTriggers AnimationTriggers AnimationTriggers Pointer )
-            value.IsSelected                                = GetBool(new IntPtr(p + 0x1C8)); // 024664C6B450 0x1C8 IsSelected                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ToggleAnimator                            = GetObject<Animator>(new IntPtr(p + 0x1B8), ReversePrism.DataModels.Animator.FromPointer); // 0x1B8 ToggleAnimator              ( ModelClassType Animator Animator Animator Pointer )
+            value.ToggleAnimationTriggers                   = GetObject<AnimationTriggers>(new IntPtr(p + 0x1C0), ReversePrism.DataModels.AnimationTriggers.FromPointer); // 0x1C0 ToggleAnimationTriggers     ( ModelClassType AnimationTriggers AnimationTriggers AnimationTriggers Pointer )
+            value.IsSelected                                = GetBool(new IntPtr(p + 0x1C8)); // 0x1C8 IsSelected                  ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

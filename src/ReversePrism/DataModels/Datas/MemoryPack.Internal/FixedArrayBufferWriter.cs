@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Buffer                                   000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 018 Written                                  0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 Buffer                                   ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 018 Written                                  ModelPrimitiveType int int int Int32
     public partial class FixedArrayBufferWriter : DataModel
     {
         public List<sbyte>?                             Buffer                                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FixedArrayBufferWriter() { Pointer= p0 };
 
-            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x010)); // 02466AFBEAC0 0x10 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Written                                   = GetInt32(new IntPtr(p + 0x018)); // 02466AFBEAE0 0x18 Written                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x010)); // 0x10 Buffer                      ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Written                                   = GetInt32(new IntPtr(p + 0x018)); // 0x18 Written                     ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

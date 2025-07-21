@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Name                                     0001866722E0 ModelPrimitiveType string string string String
-    // 018 Id                                       0001866722E0 ModelPrimitiveType string string string String
-    // 020 Actions                                  000185CBC648 ModelEnumListType ReadActionJson[] ReadActionJson[] List<ReadActionJson> Pointer
-    // 028 Bindings                                 000185CBC468 ModelEnumListType BindingJson[] BindingJson[] List<BindingJson> Pointer
+    // 010 Name                                     ModelPrimitiveType string string string String
+    // 018 Id                                       ModelPrimitiveType string string string String
+    // 020 Actions                                  ModelEnumListType ReadActionJson[] ReadActionJson[] List<ReadActionJson> Pointer
+    // 028 Bindings                                 ModelEnumListType BindingJson[] BindingJson[] List<BindingJson> Pointer
     public partial class ReadMapJson : DataModel
     {
         public string                                   Name                                    { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ReadMapJson() { Pointer= p0 };
 
-            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0246676AE600 0x10 Name                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Id                                        = GetString(new IntPtr(p + 0x018)); // 0246676AE620 0x18 Id                          ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Actions                                   = GetEnumList<ReadActionJson>(new IntPtr(p + 0x020)); // 0246676AE640 0x20 Actions                     ( 000185CBC648 ModelEnumListType ReadActionJson[] ReadActionJson[] List<ReadActionJson> Pointer )
-            value.Bindings                                  = GetEnumList<BindingJson>(new IntPtr(p + 0x028)); // 0246676AE660 0x28 Bindings                    ( 000185CBC468 ModelEnumListType BindingJson[] BindingJson[] List<BindingJson> Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Name                        ( ModelPrimitiveType string string string String )
+            value.Id                                        = GetString(new IntPtr(p + 0x018)); // 0x18 Id                          ( ModelPrimitiveType string string string String )
+            value.Actions                                   = GetEnumList<ReadActionJson>(new IntPtr(p + 0x020)); // 0x20 Actions                     ( ModelEnumListType ReadActionJson[] ReadActionJson[] List<ReadActionJson> Pointer )
+            value.Bindings                                  = GetEnumList<BindingJson>(new IntPtr(p + 0x028)); // 0x28 Bindings                    ( ModelEnumListType BindingJson[] BindingJson[] List<BindingJson> Pointer )
 
             return value;
         }

@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 ProducePolicyButton                      0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 028 ProducePolicyImage                       0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 030 ProducePolicyTitleText                   0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 038 ProducePolicyDescriptionText             0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 020 ProducePolicyButton                      ModelClassType UIButton UIButton UIButton Pointer
+    // 028 ProducePolicyImage                       ModelClassType UIImage UIImage UIImage Pointer
+    // 030 ProducePolicyTitleText                   ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 038 ProducePolicyDescriptionText             ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     public partial class OneSchedulePolicyContent : DataModel
     {
         public UIButton?                                ProducePolicyButton                     { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new OneSchedulePolicyContent() { Pointer= p0 };
 
-            value.ProducePolicyButton                       = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 024665D81910 0x20 ProducePolicyButton         ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.ProducePolicyImage                        = GetObject<UIImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIImage.FromPointer); // 024665D81930 0x28 ProducePolicyImage          ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.ProducePolicyTitleText                    = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665D81950 0x30 ProducePolicyTitleText      ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ProducePolicyDescriptionText              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665D81970 0x38 ProducePolicyDescriptionText ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ProducePolicyButton                       = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 0x20 ProducePolicyButton         ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.ProducePolicyImage                        = GetObject<UIImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIImage.FromPointer); // 0x28 ProducePolicyImage          ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.ProducePolicyTitleText                    = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x30 ProducePolicyTitleText      ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ProducePolicyDescriptionText              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x38 ProducePolicyDescriptionText ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

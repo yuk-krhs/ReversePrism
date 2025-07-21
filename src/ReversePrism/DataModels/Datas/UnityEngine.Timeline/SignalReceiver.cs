@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 M_Events                                 000186535A70 ModelClassType EventKeyValue EventKeyValue EventKeyValue Pointer
+    // 020 M_Events                                 ModelClassType EventKeyValue EventKeyValue EventKeyValue Pointer
     public partial class SignalReceiver : DataModel
     {
         public EventKeyValue?                           M_Events                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SignalReceiver() { Pointer= p0 };
 
-            value.M_Events                                  = GetObject<EventKeyValue>(new IntPtr(p + 0x020), ReversePrism.DataModels.EventKeyValue.FromPointer); // 02466B2FE720 0x20 M_Events                    ( 000186535A70 ModelClassType EventKeyValue EventKeyValue EventKeyValue Pointer )
+            value.M_Events                                  = GetObject<EventKeyValue>(new IntPtr(p + 0x020), ReversePrism.DataModels.EventKeyValue.FromPointer); // 0x20 M_Events                    ( ModelClassType EventKeyValue EventKeyValue EventKeyValue Pointer )
 
             return value;
         }

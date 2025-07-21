@@ -15,5 +15,6 @@ namespace ReversePrism.DataModels
         Comeback,
         ProducerBirthday,
         DailyMission,
+        Topic,
     }
 }

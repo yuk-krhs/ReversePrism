@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 QueueHead                                0001865FF900 ModelClassType QueueSegment QueueSegment QueueSegment Pointer
-    // 018 QueueTail                                0001865FF900 ModelClassType QueueSegment QueueSegment QueueSegment Pointer
+    // 010 QueueHead                                ModelClassType QueueSegment QueueSegment QueueSegment Pointer
+    // 018 QueueTail                                ModelClassType QueueSegment QueueSegment QueueSegment Pointer
     // 000 allThreadQueues                          SparseArray`1<WorkStealingQueue> IL2CPP_TYPE_GENERICINST
-    // 020 NumOutstandingThreadRequests             0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 NumOutstandingThreadRequests             ModelPrimitiveType int int int Int32
     public partial class ThreadPoolWorkQueue : DataModel
     {
         public QueueSegment?                            QueueHead                               { get; set; }
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ThreadPoolWorkQueue() { Pointer= p0 };
 
-            value.QueueHead                                 = GetObject<QueueSegment>(new IntPtr(p + 0x010), ReversePrism.DataModels.QueueSegment.FromPointer); // 0245A3AFD998 0x10 QueueHead                   ( 0001865FF900 ModelClassType QueueSegment QueueSegment QueueSegment Pointer )
-            value.QueueTail                                 = GetObject<QueueSegment>(new IntPtr(p + 0x018), ReversePrism.DataModels.QueueSegment.FromPointer); // 0245A3AFD9B8 0x18 QueueTail                   ( 0001865FF900 ModelClassType QueueSegment QueueSegment QueueSegment Pointer )
-            value.NumOutstandingThreadRequests              = GetInt32(new IntPtr(p + 0x020)); // 0245A3AFD9F8 0x20 NumOutstandingThreadRequests ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.QueueHead                                 = GetObject<QueueSegment>(new IntPtr(p + 0x010), ReversePrism.DataModels.QueueSegment.FromPointer); // 0x10 QueueHead                   ( ModelClassType QueueSegment QueueSegment QueueSegment Pointer )
+            value.QueueTail                                 = GetObject<QueueSegment>(new IntPtr(p + 0x018), ReversePrism.DataModels.QueueSegment.FromPointer); // 0x18 QueueTail                   ( ModelClassType QueueSegment QueueSegment QueueSegment Pointer )
+            value.NumOutstandingThreadRequests              = GetInt32(new IntPtr(p + 0x020)); // 0x20 NumOutstandingThreadRequests ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

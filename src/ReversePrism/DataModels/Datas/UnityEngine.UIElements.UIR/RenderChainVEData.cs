@@ -8,47 +8,48 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Prev                                     0001866B2FC0 ModelClassType VisualElement VisualElement VisualElement Pointer
-    // 018 Next                                     0001866B2FC0 ModelClassType VisualElement VisualElement VisualElement Pointer
-    // 020 GroupTransformAncestor                   0001866B2FC0 ModelClassType VisualElement VisualElement VisualElement Pointer
-    // 028 BoneTransformAncestor                    0001866B2FC0 ModelClassType VisualElement VisualElement VisualElement Pointer
-    // 030 PrevDirty                                0001866B2FC0 ModelClassType VisualElement VisualElement VisualElement Pointer
-    // 038 NextDirty                                0001866B2FC0 ModelClassType VisualElement VisualElement VisualElement Pointer
-    // 040 Flags                                    000186650ED0 ModelEnumType RenderDataFlags RenderDataFlags RenderDataFlags Int32
-    // 044 HierarchyDepth                           0001865F2F90 ModelPrimitiveType int int int Int32
-    // 048 DirtiedValues                            000186650770 ModelEnumType RenderDataDirtyTypes RenderDataDirtyTypes RenderDataDirtyTypes Int32
-    // 04C DirtyID                                  000186698DF0 ModelPrimitiveType uint uint uint UInt32
-    // 050 FirstCommand                             000186654740 ModelClassType RenderChainCommand RenderChainCommand RenderChainCommand Pointer
-    // 058 LastCommand                              000186654740 ModelClassType RenderChainCommand RenderChainCommand RenderChainCommand Pointer
-    // 060 FirstClosingCommand                      000186654740 ModelClassType RenderChainCommand RenderChainCommand RenderChainCommand Pointer
-    // 068 LastClosingCommand                       000186654740 ModelClassType RenderChainCommand RenderChainCommand RenderChainCommand Pointer
-    // 070 IsInChain                                000186595210 ModelPrimitiveType bool bool bool Bool
-    // 071 IsHierarchyHidden                        000186595210 ModelPrimitiveType bool bool bool Bool
-    // 072 LocalFlipsWinding                        000186595210 ModelPrimitiveType bool bool bool Bool
-    // 073 LocalTransformScaleZero                  000186595210 ModelPrimitiveType bool bool bool Bool
-    // 074 WorldFlipsWinding                        000186595210 ModelPrimitiveType bool bool bool Bool
-    // 078 ClipMethod                               0001865B9650 ModelEnumType ClipMethod ClipMethod ClipMethod Int32
-    // 07C ChildrenStencilRef                       0001865F2F90 ModelPrimitiveType int int int Int32
-    // 080 ChildrenMaskDepth                        0001865F2F90 ModelPrimitiveType int int int Int32
-    // 084 DisableNudging                           000186595210 ModelPrimitiveType bool bool bool Bool
-    // 088 Data                                     000186611C80 ModelClassType MeshHandle MeshHandle MeshHandle Pointer
-    // 090 ClosingData                              000186611C80 ModelClassType MeshHandle MeshHandle MeshHandle Pointer
-    // 098 VerticesSpace                            00018660DB20 ModelEnumType Matrix4x4 Matrix4x4 Matrix4x4 Int32
-    // 0D8 DisplacementUVStart                      0001865F2F90 ModelPrimitiveType int int int Int32
-    // 0DC DisplacementUVEnd                        0001865F2F90 ModelPrimitiveType int int int Int32
-    // 0E0 TransformID                              000186732510 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32
-    // 0E8 ClipRectID                               000186732510 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32
-    // 0F0 OpacityID                                000186732510 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32
-    // 0F8 TextCoreSettingsID                       000186732510 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32
-    // 100 ColorID                                  000186732510 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32
-    // 108 BackgroundColorID                        000186732510 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32
-    // 110 BorderLeftColorID                        000186732510 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32
-    // 118 BorderTopColorID                         000186732510 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32
-    // 120 BorderRightColorID                       000186732510 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32
-    // 128 BorderBottomColorID                      000186732510 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32
-    // 130 TintColorID                              000186732510 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32
-    // 138 CompositeOpacity                         000186665900 ModelPrimitiveType float float float Single
-    // 13C BackgroundColor                          0001865AABD0 ModelEnumType Color Color Color Int32
+    // 010 Prev                                     ModelClassType VisualElement VisualElement VisualElement Pointer
+    // 018 Next                                     ModelClassType VisualElement VisualElement VisualElement Pointer
+    // 020 GroupTransformAncestor                   ModelClassType VisualElement VisualElement VisualElement Pointer
+    // 028 BoneTransformAncestor                    ModelClassType VisualElement VisualElement VisualElement Pointer
+    // 030 PrevDirty                                ModelClassType VisualElement VisualElement VisualElement Pointer
+    // 038 NextDirty                                ModelClassType VisualElement VisualElement VisualElement Pointer
+    // 040 Flags                                    ModelEnumType RenderDataFlags RenderDataFlags RenderDataFlags Int32
+    // 044 HierarchyDepth                           ModelPrimitiveType int int int Int32
+    // 048 DirtiedValues                            ModelEnumType RenderDataDirtyTypes RenderDataDirtyTypes RenderDataDirtyTypes Int32
+    // 04C DirtyID                                  ModelPrimitiveType uint uint uint UInt32
+    // 050 FirstCommand                             ModelClassType RenderChainCommand RenderChainCommand RenderChainCommand Pointer
+    // 058 LastCommand                              ModelClassType RenderChainCommand RenderChainCommand RenderChainCommand Pointer
+    // 060 FirstClosingCommand                      ModelClassType RenderChainCommand RenderChainCommand RenderChainCommand Pointer
+    // 068 LastClosingCommand                       ModelClassType RenderChainCommand RenderChainCommand RenderChainCommand Pointer
+    // 070 IsInChain                                ModelPrimitiveType bool bool bool Bool
+    // 071 IsHierarchyHidden                        ModelPrimitiveType bool bool bool Bool
+    // 072 LocalFlipsWinding                        ModelPrimitiveType bool bool bool Bool
+    // 073 LocalTransformScaleZero                  ModelPrimitiveType bool bool bool Bool
+    // 074 WorldFlipsWinding                        ModelPrimitiveType bool bool bool Bool
+    // 075 WorldTransformScaleZero                  ModelPrimitiveType bool bool bool Bool
+    // 078 ClipMethod                               ModelEnumType ClipMethod ClipMethod ClipMethod Int32
+    // 07C ChildrenStencilRef                       ModelPrimitiveType int int int Int32
+    // 080 ChildrenMaskDepth                        ModelPrimitiveType int int int Int32
+    // 084 DisableNudging                           ModelPrimitiveType bool bool bool Bool
+    // 088 Data                                     ModelClassType MeshHandle MeshHandle MeshHandle Pointer
+    // 090 ClosingData                              ModelClassType MeshHandle MeshHandle MeshHandle Pointer
+    // 098 VerticesSpace                            ModelEnumType Matrix4x4 Matrix4x4 Matrix4x4 Int32
+    // 0D8 DisplacementUVStart                      ModelPrimitiveType int int int Int32
+    // 0DC DisplacementUVEnd                        ModelPrimitiveType int int int Int32
+    // 0E0 TransformID                              ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32
+    // 0E8 ClipRectID                               ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32
+    // 0F0 OpacityID                                ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32
+    // 0F8 TextCoreSettingsID                       ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32
+    // 100 ColorID                                  ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32
+    // 108 BackgroundColorID                        ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32
+    // 110 BorderLeftColorID                        ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32
+    // 118 BorderTopColorID                         ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32
+    // 120 BorderRightColorID                       ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32
+    // 128 BorderBottomColorID                      ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32
+    // 130 TintColorID                              ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32
+    // 138 CompositeOpacity                         ModelPrimitiveType float float float Single
+    // 13C BackgroundColor                          ModelEnumType Color Color Color Int32
     // 150 textures                                 BasicNode`1<TextureEntry> IL2CPP_TYPE_GENERICINST
     public partial class RenderChainVEData : DataModel
     {
@@ -71,6 +72,7 @@ namespace ReversePrism.DataModels
         public bool                                     LocalFlipsWinding                       { get; set; }
         public bool                                     LocalTransformScaleZero                 { get; set; }
         public bool                                     WorldFlipsWinding                       { get; set; }
+        public bool                                     WorldTransformScaleZero                 { get; set; }
         public ClipMethod                               ClipMethod                              { get; set; }
         public int                                      ChildrenStencilRef                      { get; set; }
         public int                                      ChildrenMaskDepth                       { get; set; }
@@ -102,47 +104,48 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RenderChainVEData() { Pointer= p0 };
 
-            value.Prev                                      = GetObject<VisualElement>(new IntPtr(p + 0x010), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A3F089D0 0x10 Prev                        ( 0001866B2FC0 ModelClassType VisualElement VisualElement VisualElement Pointer )
-            value.Next                                      = GetObject<VisualElement>(new IntPtr(p + 0x018), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A3F089F0 0x18 Next                        ( 0001866B2FC0 ModelClassType VisualElement VisualElement VisualElement Pointer )
-            value.GroupTransformAncestor                    = GetObject<VisualElement>(new IntPtr(p + 0x020), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A3F08A10 0x20 GroupTransformAncestor      ( 0001866B2FC0 ModelClassType VisualElement VisualElement VisualElement Pointer )
-            value.BoneTransformAncestor                     = GetObject<VisualElement>(new IntPtr(p + 0x028), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A3F08A30 0x28 BoneTransformAncestor       ( 0001866B2FC0 ModelClassType VisualElement VisualElement VisualElement Pointer )
-            value.PrevDirty                                 = GetObject<VisualElement>(new IntPtr(p + 0x030), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A3F08A50 0x30 PrevDirty                   ( 0001866B2FC0 ModelClassType VisualElement VisualElement VisualElement Pointer )
-            value.NextDirty                                 = GetObject<VisualElement>(new IntPtr(p + 0x038), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A3F08A70 0x38 NextDirty                   ( 0001866B2FC0 ModelClassType VisualElement VisualElement VisualElement Pointer )
-            value.Flags                                     = (RenderDataFlags)GetInt32(new IntPtr(p + 0x040)); // 0245A3F08A90 0x40 Flags                       ( 000186650ED0 ModelEnumType RenderDataFlags RenderDataFlags RenderDataFlags Int32 )
-            value.HierarchyDepth                            = GetInt32(new IntPtr(p + 0x044)); // 0245A3F08AB0 0x44 HierarchyDepth              ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.DirtiedValues                             = (RenderDataDirtyTypes)GetInt32(new IntPtr(p + 0x048)); // 0245A3F08AD0 0x48 DirtiedValues               ( 000186650770 ModelEnumType RenderDataDirtyTypes RenderDataDirtyTypes RenderDataDirtyTypes Int32 )
-            value.DirtyID                                   = GetUInt32(new IntPtr(p + 0x04C)); // 0245A3F08AF0 0x4C DirtyID                     ( 000186698DF0 ModelPrimitiveType uint uint uint UInt32 )
-            value.FirstCommand                              = GetObject<RenderChainCommand>(new IntPtr(p + 0x050), ReversePrism.DataModels.RenderChainCommand.FromPointer); // 0245A3F08B10 0x50 FirstCommand                ( 000186654740 ModelClassType RenderChainCommand RenderChainCommand RenderChainCommand Pointer )
-            value.LastCommand                               = GetObject<RenderChainCommand>(new IntPtr(p + 0x058), ReversePrism.DataModels.RenderChainCommand.FromPointer); // 0245A3F08B30 0x58 LastCommand                 ( 000186654740 ModelClassType RenderChainCommand RenderChainCommand RenderChainCommand Pointer )
-            value.FirstClosingCommand                       = GetObject<RenderChainCommand>(new IntPtr(p + 0x060), ReversePrism.DataModels.RenderChainCommand.FromPointer); // 0245A3F08B50 0x60 FirstClosingCommand         ( 000186654740 ModelClassType RenderChainCommand RenderChainCommand RenderChainCommand Pointer )
-            value.LastClosingCommand                        = GetObject<RenderChainCommand>(new IntPtr(p + 0x068), ReversePrism.DataModels.RenderChainCommand.FromPointer); // 0245A3F08B70 0x68 LastClosingCommand          ( 000186654740 ModelClassType RenderChainCommand RenderChainCommand RenderChainCommand Pointer )
-            value.IsInChain                                 = GetBool(new IntPtr(p + 0x070)); // 0245A3F08B90 0x70 IsInChain                   ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.IsHierarchyHidden                         = GetBool(new IntPtr(p + 0x071)); // 0245A3F08BB0 0x71 IsHierarchyHidden           ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.LocalFlipsWinding                         = GetBool(new IntPtr(p + 0x072)); // 0245A3F08BD0 0x72 LocalFlipsWinding           ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.LocalTransformScaleZero                   = GetBool(new IntPtr(p + 0x073)); // 0245A3F08BF0 0x73 LocalTransformScaleZero     ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.WorldFlipsWinding                         = GetBool(new IntPtr(p + 0x074)); // 0245A3F08C10 0x74 WorldFlipsWinding           ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.ClipMethod                                = (ClipMethod)GetInt32(new IntPtr(p + 0x078)); // 0245A3F08C30 0x78 ClipMethod                  ( 0001865B9650 ModelEnumType ClipMethod ClipMethod ClipMethod Int32 )
-            value.ChildrenStencilRef                        = GetInt32(new IntPtr(p + 0x07C)); // 0245A3F08C50 0x7C ChildrenStencilRef          ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.ChildrenMaskDepth                         = GetInt32(new IntPtr(p + 0x080)); // 0245A3F08C70 0x80 ChildrenMaskDepth           ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.DisableNudging                            = GetBool(new IntPtr(p + 0x084)); // 0245A3F08C90 0x84 DisableNudging              ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.Data                                      = GetObject<MeshHandle>(new IntPtr(p + 0x088), ReversePrism.DataModels.MeshHandle.FromPointer); // 0245A3F08CB0 0x88 Data                        ( 000186611C80 ModelClassType MeshHandle MeshHandle MeshHandle Pointer )
-            value.ClosingData                               = GetObject<MeshHandle>(new IntPtr(p + 0x090), ReversePrism.DataModels.MeshHandle.FromPointer); // 0245A3F08CD0 0x90 ClosingData                 ( 000186611C80 ModelClassType MeshHandle MeshHandle MeshHandle Pointer )
-            value.VerticesSpace                             = (Matrix4x4)GetInt32(new IntPtr(p + 0x098)); // 0245A3F08CF0 0x98 VerticesSpace               ( 00018660DB20 ModelEnumType Matrix4x4 Matrix4x4 Matrix4x4 Int32 )
-            value.DisplacementUVStart                       = GetInt32(new IntPtr(p + 0x0D8)); // 0245A3F08D10 0xD8 DisplacementUVStart         ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.DisplacementUVEnd                         = GetInt32(new IntPtr(p + 0x0DC)); // 0245A3F08D30 0xDC DisplacementUVEnd           ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.TransformID                               = (BMPAlloc)GetInt32(new IntPtr(p + 0x0E0)); // 0245A3F08D50 0xE0 TransformID                 ( 000186732510 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32 )
-            value.ClipRectID                                = (BMPAlloc)GetInt32(new IntPtr(p + 0x0E8)); // 0245A3F08D70 0xE8 ClipRectID                  ( 000186732510 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32 )
-            value.OpacityID                                 = (BMPAlloc)GetInt32(new IntPtr(p + 0x0F0)); // 0245A3F08D90 0xF0 OpacityID                   ( 000186732510 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32 )
-            value.TextCoreSettingsID                        = (BMPAlloc)GetInt32(new IntPtr(p + 0x0F8)); // 0245A3F08DB0 0xF8 TextCoreSettingsID          ( 000186732510 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32 )
-            value.ColorID                                   = (BMPAlloc)GetInt32(new IntPtr(p + 0x100)); // 0245A3F08DD0 0x100 ColorID                     ( 000186732510 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32 )
-            value.BackgroundColorID                         = (BMPAlloc)GetInt32(new IntPtr(p + 0x108)); // 0245A3F08DF0 0x108 BackgroundColorID           ( 000186732510 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32 )
-            value.BorderLeftColorID                         = (BMPAlloc)GetInt32(new IntPtr(p + 0x110)); // 0245A3F08E10 0x110 BorderLeftColorID           ( 000186732510 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32 )
-            value.BorderTopColorID                          = (BMPAlloc)GetInt32(new IntPtr(p + 0x118)); // 0245A3F08E30 0x118 BorderTopColorID            ( 000186732510 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32 )
-            value.BorderRightColorID                        = (BMPAlloc)GetInt32(new IntPtr(p + 0x120)); // 0245A3F08E50 0x120 BorderRightColorID          ( 000186732510 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32 )
-            value.BorderBottomColorID                       = (BMPAlloc)GetInt32(new IntPtr(p + 0x128)); // 0245A3F08E70 0x128 BorderBottomColorID         ( 000186732510 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32 )
-            value.TintColorID                               = (BMPAlloc)GetInt32(new IntPtr(p + 0x130)); // 0245A3F08E90 0x130 TintColorID                 ( 000186732510 ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32 )
-            value.CompositeOpacity                          = GetSingle(new IntPtr(p + 0x138)); // 0245A3F08EB0 0x138 CompositeOpacity            ( 000186665900 ModelPrimitiveType float float float Single )
-            value.BackgroundColor                           = (Color)GetInt32(new IntPtr(p + 0x13C)); // 0245A3F08ED0 0x13C BackgroundColor             ( 0001865AABD0 ModelEnumType Color Color Color Int32 )
+            value.Prev                                      = GetObject<VisualElement>(new IntPtr(p + 0x010), ReversePrism.DataModels.VisualElement.FromPointer); // 0x10 Prev                        ( ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.Next                                      = GetObject<VisualElement>(new IntPtr(p + 0x018), ReversePrism.DataModels.VisualElement.FromPointer); // 0x18 Next                        ( ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.GroupTransformAncestor                    = GetObject<VisualElement>(new IntPtr(p + 0x020), ReversePrism.DataModels.VisualElement.FromPointer); // 0x20 GroupTransformAncestor      ( ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.BoneTransformAncestor                     = GetObject<VisualElement>(new IntPtr(p + 0x028), ReversePrism.DataModels.VisualElement.FromPointer); // 0x28 BoneTransformAncestor       ( ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.PrevDirty                                 = GetObject<VisualElement>(new IntPtr(p + 0x030), ReversePrism.DataModels.VisualElement.FromPointer); // 0x30 PrevDirty                   ( ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.NextDirty                                 = GetObject<VisualElement>(new IntPtr(p + 0x038), ReversePrism.DataModels.VisualElement.FromPointer); // 0x38 NextDirty                   ( ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.Flags                                     = (RenderDataFlags)GetInt32(new IntPtr(p + 0x040)); // 0x40 Flags                       ( ModelEnumType RenderDataFlags RenderDataFlags RenderDataFlags Int32 )
+            value.HierarchyDepth                            = GetInt32(new IntPtr(p + 0x044)); // 0x44 HierarchyDepth              ( ModelPrimitiveType int int int Int32 )
+            value.DirtiedValues                             = (RenderDataDirtyTypes)GetInt32(new IntPtr(p + 0x048)); // 0x48 DirtiedValues               ( ModelEnumType RenderDataDirtyTypes RenderDataDirtyTypes RenderDataDirtyTypes Int32 )
+            value.DirtyID                                   = GetUInt32(new IntPtr(p + 0x04C)); // 0x4C DirtyID                     ( ModelPrimitiveType uint uint uint UInt32 )
+            value.FirstCommand                              = GetObject<RenderChainCommand>(new IntPtr(p + 0x050), ReversePrism.DataModels.RenderChainCommand.FromPointer); // 0x50 FirstCommand                ( ModelClassType RenderChainCommand RenderChainCommand RenderChainCommand Pointer )
+            value.LastCommand                               = GetObject<RenderChainCommand>(new IntPtr(p + 0x058), ReversePrism.DataModels.RenderChainCommand.FromPointer); // 0x58 LastCommand                 ( ModelClassType RenderChainCommand RenderChainCommand RenderChainCommand Pointer )
+            value.FirstClosingCommand                       = GetObject<RenderChainCommand>(new IntPtr(p + 0x060), ReversePrism.DataModels.RenderChainCommand.FromPointer); // 0x60 FirstClosingCommand         ( ModelClassType RenderChainCommand RenderChainCommand RenderChainCommand Pointer )
+            value.LastClosingCommand                        = GetObject<RenderChainCommand>(new IntPtr(p + 0x068), ReversePrism.DataModels.RenderChainCommand.FromPointer); // 0x68 LastClosingCommand          ( ModelClassType RenderChainCommand RenderChainCommand RenderChainCommand Pointer )
+            value.IsInChain                                 = GetBool(new IntPtr(p + 0x070)); // 0x70 IsInChain                   ( ModelPrimitiveType bool bool bool Bool )
+            value.IsHierarchyHidden                         = GetBool(new IntPtr(p + 0x071)); // 0x71 IsHierarchyHidden           ( ModelPrimitiveType bool bool bool Bool )
+            value.LocalFlipsWinding                         = GetBool(new IntPtr(p + 0x072)); // 0x72 LocalFlipsWinding           ( ModelPrimitiveType bool bool bool Bool )
+            value.LocalTransformScaleZero                   = GetBool(new IntPtr(p + 0x073)); // 0x73 LocalTransformScaleZero     ( ModelPrimitiveType bool bool bool Bool )
+            value.WorldFlipsWinding                         = GetBool(new IntPtr(p + 0x074)); // 0x74 WorldFlipsWinding           ( ModelPrimitiveType bool bool bool Bool )
+            value.WorldTransformScaleZero                   = GetBool(new IntPtr(p + 0x075)); // 0x75 WorldTransformScaleZero     ( ModelPrimitiveType bool bool bool Bool )
+            value.ClipMethod                                = (ClipMethod)GetInt32(new IntPtr(p + 0x078)); // 0x78 ClipMethod                  ( ModelEnumType ClipMethod ClipMethod ClipMethod Int32 )
+            value.ChildrenStencilRef                        = GetInt32(new IntPtr(p + 0x07C)); // 0x7C ChildrenStencilRef          ( ModelPrimitiveType int int int Int32 )
+            value.ChildrenMaskDepth                         = GetInt32(new IntPtr(p + 0x080)); // 0x80 ChildrenMaskDepth           ( ModelPrimitiveType int int int Int32 )
+            value.DisableNudging                            = GetBool(new IntPtr(p + 0x084)); // 0x84 DisableNudging              ( ModelPrimitiveType bool bool bool Bool )
+            value.Data                                      = GetObject<MeshHandle>(new IntPtr(p + 0x088), ReversePrism.DataModels.MeshHandle.FromPointer); // 0x88 Data                        ( ModelClassType MeshHandle MeshHandle MeshHandle Pointer )
+            value.ClosingData                               = GetObject<MeshHandle>(new IntPtr(p + 0x090), ReversePrism.DataModels.MeshHandle.FromPointer); // 0x90 ClosingData                 ( ModelClassType MeshHandle MeshHandle MeshHandle Pointer )
+            value.VerticesSpace                             = (Matrix4x4)GetInt32(new IntPtr(p + 0x098)); // 0x98 VerticesSpace               ( ModelEnumType Matrix4x4 Matrix4x4 Matrix4x4 Int32 )
+            value.DisplacementUVStart                       = GetInt32(new IntPtr(p + 0x0D8)); // 0xD8 DisplacementUVStart         ( ModelPrimitiveType int int int Int32 )
+            value.DisplacementUVEnd                         = GetInt32(new IntPtr(p + 0x0DC)); // 0xDC DisplacementUVEnd           ( ModelPrimitiveType int int int Int32 )
+            value.TransformID                               = (BMPAlloc)GetInt32(new IntPtr(p + 0x0E0)); // 0xE0 TransformID                 ( ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32 )
+            value.ClipRectID                                = (BMPAlloc)GetInt32(new IntPtr(p + 0x0E8)); // 0xE8 ClipRectID                  ( ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32 )
+            value.OpacityID                                 = (BMPAlloc)GetInt32(new IntPtr(p + 0x0F0)); // 0xF0 OpacityID                   ( ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32 )
+            value.TextCoreSettingsID                        = (BMPAlloc)GetInt32(new IntPtr(p + 0x0F8)); // 0xF8 TextCoreSettingsID          ( ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32 )
+            value.ColorID                                   = (BMPAlloc)GetInt32(new IntPtr(p + 0x100)); // 0x100 ColorID                     ( ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32 )
+            value.BackgroundColorID                         = (BMPAlloc)GetInt32(new IntPtr(p + 0x108)); // 0x108 BackgroundColorID           ( ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32 )
+            value.BorderLeftColorID                         = (BMPAlloc)GetInt32(new IntPtr(p + 0x110)); // 0x110 BorderLeftColorID           ( ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32 )
+            value.BorderTopColorID                          = (BMPAlloc)GetInt32(new IntPtr(p + 0x118)); // 0x118 BorderTopColorID            ( ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32 )
+            value.BorderRightColorID                        = (BMPAlloc)GetInt32(new IntPtr(p + 0x120)); // 0x120 BorderRightColorID          ( ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32 )
+            value.BorderBottomColorID                       = (BMPAlloc)GetInt32(new IntPtr(p + 0x128)); // 0x128 BorderBottomColorID         ( ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32 )
+            value.TintColorID                               = (BMPAlloc)GetInt32(new IntPtr(p + 0x130)); // 0x130 TintColorID                 ( ModelEnumType BMPAlloc BMPAlloc BMPAlloc Int32 )
+            value.CompositeOpacity                          = GetSingle(new IntPtr(p + 0x138)); // 0x138 CompositeOpacity            ( ModelPrimitiveType float float float Single )
+            value.BackgroundColor                           = (Color)GetInt32(new IntPtr(p + 0x13C)); // 0x13C BackgroundColor             ( ModelEnumType Color Color Color Int32 )
 
             return value;
         }

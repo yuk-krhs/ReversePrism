@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<SubSeasonTermStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstSubSeasonIdFieldNumber                int IL2CPP_TYPE_I4
-    // 018 MstSubSeasonId                           0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MstSubSeasonId                           ModelPrimitiveType int int int Int32
     // 000 WeekFieldNumber                          int IL2CPP_TYPE_I4
-    // 020 Week                                     00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer
+    // 020 Week                                     ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer
     public partial class SubSeasonTermStatus : DataModel
     {
         public int                                      MstSubSeasonId                          { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SubSeasonTermStatus() { Pointer= p0 };
 
-            value.MstSubSeasonId                            = GetInt32(new IntPtr(p + 0x018)); // 0246610BFD30 0x18 MstSubSeasonId              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Week                                      = GetObject<LimitedValueStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 0246610BFD70 0x20 Week                        ( 00018652EBE0 ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
+            value.MstSubSeasonId                            = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstSubSeasonId              ( ModelPrimitiveType int int int Int32 )
+            value.Week                                      = GetObject<LimitedValueStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.LimitedValueStatus.FromPointer); // 0x20 Week                        ( ModelClassType LimitedValueStatus LimitedValueStatus LimitedValueStatus Pointer )
 
             return value;
         }

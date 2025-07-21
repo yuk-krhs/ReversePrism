@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 018 transitionTable                          int[][] IL2CPP_TYPE_SZARRAY
-    // 020 Symbols                                  0001866005F0 ModelClassType SymbolsDictionary SymbolsDictionary SymbolsDictionary Pointer
+    // 020 Symbols                                  ModelClassType SymbolsDictionary SymbolsDictionary SymbolsDictionary Pointer
     public partial class DfaContentValidator : DataModel
     {
         public SymbolsDictionary?                       Symbols                                 { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DfaContentValidator() { Pointer= p0 };
 
-            value.Symbols                                   = GetObject<SymbolsDictionary>(new IntPtr(p + 0x020), ReversePrism.DataModels.SymbolsDictionary.FromPointer); // 02466755EBD0 0x20 Symbols                     ( 0001866005F0 ModelClassType SymbolsDictionary SymbolsDictionary SymbolsDictionary Pointer )
+            value.Symbols                                   = GetObject<SymbolsDictionary>(new IntPtr(p + 0x020), ReversePrism.DataModels.SymbolsDictionary.FromPointer); // 0x20 Symbols                     ( ModelClassType SymbolsDictionary SymbolsDictionary SymbolsDictionary Pointer )
 
             return value;
         }

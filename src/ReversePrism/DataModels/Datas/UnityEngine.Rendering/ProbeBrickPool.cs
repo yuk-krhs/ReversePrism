@@ -13,14 +13,14 @@ namespace ReversePrism.DataModels
     // 000 kBrickProbeCountPerDim                   int IL2CPP_TYPE_I4
     // 000 kBrickProbeCountTotal                    int IL2CPP_TYPE_I4
     // 000 kChunkProbeCountPerDim                   int IL2CPP_TYPE_I4
-    // 010 EstimatedVMemCost                        0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 EstimatedVMemCost                        ModelPrimitiveType int int int Int32
     // 000 kMaxPoolWidth                            int IL2CPP_TYPE_I4
-    // 018 M_Pool                                   0001865B49A0 ModelEnumType DataLocation DataLocation DataLocation Int32
-    // 068 M_NextFreeChunk                          0001865B4220 ModelEnumType BrickChunkAlloc BrickChunkAlloc BrickChunkAlloc Int32
+    // 018 M_Pool                                   ModelEnumType DataLocation DataLocation DataLocation Int32
+    // 068 M_NextFreeChunk                          ModelEnumType BrickChunkAlloc BrickChunkAlloc BrickChunkAlloc Int32
     // 078 m_FreeList                               Stack`1<BrickChunkAlloc> IL2CPP_TYPE_GENERICINST
-    // 080 M_AvailableChunkCount                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 084 M_SHBands                                000186521B60 ModelEnumType ProbeVolumeSHBands ProbeVolumeSHBands ProbeVolumeSHBands Int32
-    // 088 M_ContainsValidity                       000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 080 M_AvailableChunkCount                    ModelPrimitiveType int int int Int32
+    // 084 M_SHBands                                ModelEnumType ProbeVolumeSHBands ProbeVolumeSHBands ProbeVolumeSHBands Int32
+    // 088 M_ContainsValidity                       ModelPrimitiveType bool bool bool Bool
     public partial class ProbeBrickPool : DataModel
     {
         public int                                      EstimatedVMemCost                       { get; set; }
@@ -38,12 +38,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProbeBrickPool() { Pointer= p0 };
 
-            value.EstimatedVMemCost                         = GetInt32(new IntPtr(p + 0x010)); // 024669235410 0x10 EstimatedVMemCost           ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_Pool                                    = (DataLocation)GetInt32(new IntPtr(p + 0x018)); // 024669235450 0x18 M_Pool                      ( 0001865B49A0 ModelEnumType DataLocation DataLocation DataLocation Int32 )
-            value.M_NextFreeChunk                           = (BrickChunkAlloc)GetInt32(new IntPtr(p + 0x068)); // 024669235470 0x68 M_NextFreeChunk             ( 0001865B4220 ModelEnumType BrickChunkAlloc BrickChunkAlloc BrickChunkAlloc Int32 )
-            value.M_AvailableChunkCount                     = GetInt32(new IntPtr(p + 0x080)); // 0246692354B0 0x80 M_AvailableChunkCount       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_SHBands                                 = (ProbeVolumeSHBands)GetInt32(new IntPtr(p + 0x084)); // 0246692354D0 0x84 M_SHBands                   ( 000186521B60 ModelEnumType ProbeVolumeSHBands ProbeVolumeSHBands ProbeVolumeSHBands Int32 )
-            value.M_ContainsValidity                        = GetBool(new IntPtr(p + 0x088)); // 0246692354F0 0x88 M_ContainsValidity          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.EstimatedVMemCost                         = GetInt32(new IntPtr(p + 0x010)); // 0x10 EstimatedVMemCost           ( ModelPrimitiveType int int int Int32 )
+            value.M_Pool                                    = (DataLocation)GetInt32(new IntPtr(p + 0x018)); // 0x18 M_Pool                      ( ModelEnumType DataLocation DataLocation DataLocation Int32 )
+            value.M_NextFreeChunk                           = (BrickChunkAlloc)GetInt32(new IntPtr(p + 0x068)); // 0x68 M_NextFreeChunk             ( ModelEnumType BrickChunkAlloc BrickChunkAlloc BrickChunkAlloc Int32 )
+            value.M_AvailableChunkCount                     = GetInt32(new IntPtr(p + 0x080)); // 0x80 M_AvailableChunkCount       ( ModelPrimitiveType int int int Int32 )
+            value.M_SHBands                                 = (ProbeVolumeSHBands)GetInt32(new IntPtr(p + 0x084)); // 0x84 M_SHBands                   ( ModelEnumType ProbeVolumeSHBands ProbeVolumeSHBands ProbeVolumeSHBands Int32 )
+            value.M_ContainsValidity                        = GetBool(new IntPtr(p + 0x088)); // 0x88 M_ContainsValidity          ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

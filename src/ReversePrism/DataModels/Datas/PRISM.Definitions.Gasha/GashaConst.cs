@@ -10,6 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 PrismGaugeHelpId                         int IL2CPP_TYPE_I4
     // 000 ExchangePointHelpId                      int IL2CPP_TYPE_I4
+    // 000 SeCueSheetName                           string IL2CPP_TYPE_STRING
     public partial class GashaConst : DataModel
     {
 

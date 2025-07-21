@@ -13,7 +13,7 @@ namespace ReversePrism.DataModels
     // 000 kMouseMiddleId                           int IL2CPP_TYPE_I4
     // 000 kFakeTouchesId                           int IL2CPP_TYPE_I4
     // 058 m_PointerData                            Dictionary`2<int, PointerEventData> IL2CPP_TYPE_GENERICINST
-    // 060 M_MouseState                             000186585ED0 ModelClassType MouseState MouseState MouseState Pointer
+    // 060 M_MouseState                             ModelClassType MouseState MouseState MouseState Pointer
     public partial class PointerInputModule : DataModel
     {
         public MouseState?                              M_MouseState                            { get; set; }
@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PointerInputModule() { Pointer= p0 };
 
-            value.M_MouseState                              = GetObject<MouseState>(new IntPtr(p + 0x060), ReversePrism.DataModels.MouseState.FromPointer); // 0245A3EB9128 0x60 M_MouseState                ( 000186585ED0 ModelClassType MouseState MouseState MouseState Pointer )
+            value.M_MouseState                              = GetObject<MouseState>(new IntPtr(p + 0x060), ReversePrism.DataModels.MouseState.FromPointer); // 0x60 M_MouseState                ( ModelClassType MouseState MouseState MouseState Pointer )
 
             return value;
         }

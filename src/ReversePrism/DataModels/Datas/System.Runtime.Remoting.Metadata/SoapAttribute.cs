@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 UseAttribute                             000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 018 ProtXmlNamespace                         000186671E00 ModelPrimitiveType string string string String
+    // 010 UseAttribute                             ModelPrimitiveType bool bool bool Bool
+    // 018 ProtXmlNamespace                         ModelPrimitiveType string string string String
     // 020 ReflectInfo                              <object> IL2CPP_TYPE_OBJECT
     public partial class SoapAttribute : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SoapAttribute() { Pointer= p0 };
 
-            value.UseAttribute                              = GetBool(new IntPtr(p + 0x010)); // 024666C2B7B8 0x10 UseAttribute                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ProtXmlNamespace                          = GetString(new IntPtr(p + 0x018)); // 024666C2B7D8 0x18 ProtXmlNamespace            ( 000186671E00 ModelPrimitiveType string string string String )
+            value.UseAttribute                              = GetBool(new IntPtr(p + 0x010)); // 0x10 UseAttribute                ( ModelPrimitiveType bool bool bool Bool )
+            value.ProtXmlNamespace                          = GetString(new IntPtr(p + 0x018)); // 0x18 ProtXmlNamespace            ( ModelPrimitiveType string string string String )
 
             return value;
         }

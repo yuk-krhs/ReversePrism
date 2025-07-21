@@ -8,15 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Currency                                 000186671BA0 ModelPrimitiveType string string string String
-    // 018 EventToken                               000186671BA0 ModelPrimitiveType string string string String
-    // 020 CallbackId                               000186671BA0 ModelPrimitiveType string string string String
-    // 028 TransactionId                            000186671BA0 ModelPrimitiveType string string string String
+    // 010 Currency                                 ModelPrimitiveType string string string String
+    // 018 EventToken                               ModelPrimitiveType string string string String
+    // 020 CallbackId                               ModelPrimitiveType string string string String
+    // 028 TransactionId                            ModelPrimitiveType string string string String
     // 030 revenue                                  Nullable`1<double> IL2CPP_TYPE_GENERICINST
-    // 040 PartnerList                              000185D0D578 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
-    // 048 CallbackList                             000185D0D578 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
-    // 050 Receipt                                  000186671BA0 ModelPrimitiveType string string string String
-    // 058 IsReceiptSet                             000186595210 ModelPrimitiveType bool bool bool Bool
+    // 040 PartnerList                              ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
+    // 048 CallbackList                             ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
+    // 050 Receipt                                  ModelPrimitiveType string string string String
+    // 058 IsReceiptSet                             ModelPrimitiveType bool bool bool Bool
     public partial class AdjustEvent : DataModel
     {
         public string                                   Currency                                { get; set; }
@@ -36,14 +36,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AdjustEvent() { Pointer= p0 };
 
-            value.Currency                                  = GetString(new IntPtr(p + 0x010)); // 02466BB94930 0x10 Currency                    ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.EventToken                                = GetString(new IntPtr(p + 0x018)); // 02466BB94950 0x18 EventToken                  ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.CallbackId                                = GetString(new IntPtr(p + 0x020)); // 02466BB94970 0x20 CallbackId                  ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.TransactionId                             = GetString(new IntPtr(p + 0x028)); // 02466BB94990 0x28 TransactionId               ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.PartnerList                               = GetStringList(new IntPtr(p + 0x040)); // 02466BB949D0 0x40 PartnerList                 ( 000185D0D578 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
-            value.CallbackList                              = GetStringList(new IntPtr(p + 0x048)); // 02466BB949F0 0x48 CallbackList                ( 000185D0D578 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
-            value.Receipt                                   = GetString(new IntPtr(p + 0x050)); // 02466BB94A10 0x50 Receipt                     ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.IsReceiptSet                              = GetBool(new IntPtr(p + 0x058)); // 02466BB94A30 0x58 IsReceiptSet                ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.Currency                                  = GetString(new IntPtr(p + 0x010)); // 0x10 Currency                    ( ModelPrimitiveType string string string String )
+            value.EventToken                                = GetString(new IntPtr(p + 0x018)); // 0x18 EventToken                  ( ModelPrimitiveType string string string String )
+            value.CallbackId                                = GetString(new IntPtr(p + 0x020)); // 0x20 CallbackId                  ( ModelPrimitiveType string string string String )
+            value.TransactionId                             = GetString(new IntPtr(p + 0x028)); // 0x28 TransactionId               ( ModelPrimitiveType string string string String )
+            value.PartnerList                               = GetStringList(new IntPtr(p + 0x040)); // 0x40 PartnerList                 ( ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.CallbackList                              = GetStringList(new IntPtr(p + 0x048)); // 0x48 CallbackList                ( ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.Receipt                                   = GetString(new IntPtr(p + 0x050)); // 0x50 Receipt                     ( ModelPrimitiveType string string string String )
+            value.IsReceiptSet                              = GetBool(new IntPtr(p + 0x058)); // 0x58 IsReceiptSet                ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 058 Installer                                000186651610 ModelClassType CriFsInstaller CriFsInstaller CriFsInstaller Pointer
+    // 058 Installer                                ModelClassType CriFsInstaller CriFsInstaller CriFsInstaller Pointer
     public partial class CriFsInstallRequestLegacy : DataModel
     {
         public CriFsInstaller?                          Installer                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CriFsInstallRequestLegacy() { Pointer= p0 };
 
-            value.Installer                                 = GetObject<CriFsInstaller>(new IntPtr(p + 0x058), ReversePrism.DataModels.CriFsInstaller.FromPointer); // 02466AD1E5B8 0x58 Installer                   ( 000186651610 ModelClassType CriFsInstaller CriFsInstaller CriFsInstaller Pointer )
+            value.Installer                                 = GetObject<CriFsInstaller>(new IntPtr(p + 0x058), ReversePrism.DataModels.CriFsInstaller.FromPointer); // 0x58 Installer                   ( ModelClassType CriFsInstaller CriFsInstaller CriFsInstaller Pointer )
 
             return value;
         }

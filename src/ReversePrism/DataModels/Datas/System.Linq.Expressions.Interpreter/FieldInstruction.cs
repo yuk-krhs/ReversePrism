@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Field                                    000186573D70 ModelClassType FieldInfo FieldInfo FieldInfo Pointer
+    // 010 Field                                    ModelClassType FieldInfo FieldInfo FieldInfo Pointer
     public partial class FieldInstruction : DataModel
     {
         public FieldInfo?                               Field                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FieldInstruction() { Pointer= p0 };
 
-            value.Field                                     = GetObject<FieldInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.FieldInfo.FromPointer); // 02466A0191A0 0x10 Field                       ( 000186573D70 ModelClassType FieldInfo FieldInfo FieldInfo Pointer )
+            value.Field                                     = GetObject<FieldInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.FieldInfo.FromPointer); // 0x10 Field                       ( ModelClassType FieldInfo FieldInfo FieldInfo Pointer )
 
             return value;
         }

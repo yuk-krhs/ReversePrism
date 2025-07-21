@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<GetShopPurchaseHistoryReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 StoreItemPurchaseHistoryFieldNumber      int IL2CPP_TYPE_I4
-    // 018 StoreItemPurchaseHistory                 0001865916F0 ModelClassType StoreItemPurchaseHistoryStatus StoreItemPurchaseHistoryStatus StoreItemPurchaseHistoryStatus Pointer
+    // 018 StoreItemPurchaseHistory                 ModelClassType StoreItemPurchaseHistoryStatus StoreItemPurchaseHistoryStatus StoreItemPurchaseHistoryStatus Pointer
     // 000 ShopItemPurchaseHistoryFieldNumber       int IL2CPP_TYPE_I4
-    // 020 ShopItemPurchaseHistory                  0001867605E0 ModelClassType ShopItemPurchaseHistoryStatus ShopItemPurchaseHistoryStatus ShopItemPurchaseHistoryStatus Pointer
+    // 020 ShopItemPurchaseHistory                  ModelClassType ShopItemPurchaseHistoryStatus ShopItemPurchaseHistoryStatus ShopItemPurchaseHistoryStatus Pointer
     public partial class GetShopPurchaseHistoryReply : DataModel
     {
         public StoreItemPurchaseHistoryStatus?          StoreItemPurchaseHistory                { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetShopPurchaseHistoryReply() { Pointer= p0 };
 
-            value.StoreItemPurchaseHistory                  = GetObject<StoreItemPurchaseHistoryStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoreItemPurchaseHistoryStatus.FromPointer); // 02466274B3D0 0x18 StoreItemPurchaseHistory    ( 0001865916F0 ModelClassType StoreItemPurchaseHistoryStatus StoreItemPurchaseHistoryStatus StoreItemPurchaseHistoryStatus Pointer )
-            value.ShopItemPurchaseHistory                   = GetObject<ShopItemPurchaseHistoryStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ShopItemPurchaseHistoryStatus.FromPointer); // 02466274B410 0x20 ShopItemPurchaseHistory     ( 0001867605E0 ModelClassType ShopItemPurchaseHistoryStatus ShopItemPurchaseHistoryStatus ShopItemPurchaseHistoryStatus Pointer )
+            value.StoreItemPurchaseHistory                  = GetObject<StoreItemPurchaseHistoryStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.StoreItemPurchaseHistoryStatus.FromPointer); // 0x18 StoreItemPurchaseHistory    ( ModelClassType StoreItemPurchaseHistoryStatus StoreItemPurchaseHistoryStatus StoreItemPurchaseHistoryStatus Pointer )
+            value.ShopItemPurchaseHistory                   = GetObject<ShopItemPurchaseHistoryStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ShopItemPurchaseHistoryStatus.FromPointer); // 0x20 ShopItemPurchaseHistory     ( ModelClassType ShopItemPurchaseHistoryStatus ShopItemPurchaseHistoryStatus ShopItemPurchaseHistoryStatus Pointer )
 
             return value;
         }

@@ -8,25 +8,25 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Id                                       0001866722E0 ModelPrimitiveType string string string String
-    // 018 NickName                                 0001866722E0 ModelPrimitiveType string string string String
-    // 020 DisplayName                              0001866722E0 ModelPrimitiveType string string string String
-    // 028 Grade                                    0001866722E0 ModelPrimitiveType string string string String
-    // 030 Age                                      0001866722E0 ModelPrimitiveType string string string String
-    // 038 AboutMe                                  0001866722E0 ModelPrimitiveType string string string String
-    // 040 Birthday                                 0001866722E0 ModelPrimitiveType string string string String
-    // 048 BloodType                                0001866722E0 ModelPrimitiveType string string string String
-    // 050 ChannelUserId                            0001866722E0 ModelPrimitiveType string string string String
-    // 058 ClientUserId                             0001866722E0 ModelPrimitiveType string string string String
-    // 060 Gender                                   0001866722E0 ModelPrimitiveType string string string String
-    // 068 HasApp                                   000186595960 ModelPrimitiveType bool bool bool Bool
-    // 070 ProfileUrl                               0001866722E0 ModelPrimitiveType string string string String
-    // 078 ThumbnailUrl                             0001866722E0 ModelPrimitiveType string string string String
-    // 080 ThumbnailUrlSmall                        0001866722E0 ModelPrimitiveType string string string String
-    // 088 ThumbnailUrlLarge                        0001866722E0 ModelPrimitiveType string string string String
-    // 090 ThumbnailUrlHuge                         0001866722E0 ModelPrimitiveType string string string String
-    // 098 UserType                                 0001866722E0 ModelPrimitiveType string string string String
-    // 0A0 Addresses                                00018668CD70 ModelClassType Address Address Address Pointer
+    // 010 Id                                       ModelPrimitiveType string string string String
+    // 018 NickName                                 ModelPrimitiveType string string string String
+    // 020 DisplayName                              ModelPrimitiveType string string string String
+    // 028 Grade                                    ModelPrimitiveType string string string String
+    // 030 Age                                      ModelPrimitiveType string string string String
+    // 038 AboutMe                                  ModelPrimitiveType string string string String
+    // 040 Birthday                                 ModelPrimitiveType string string string String
+    // 048 BloodType                                ModelPrimitiveType string string string String
+    // 050 ChannelUserId                            ModelPrimitiveType string string string String
+    // 058 ClientUserId                             ModelPrimitiveType string string string String
+    // 060 Gender                                   ModelPrimitiveType string string string String
+    // 068 HasApp                                   ModelPrimitiveType bool bool bool Bool
+    // 070 ProfileUrl                               ModelPrimitiveType string string string String
+    // 078 ThumbnailUrl                             ModelPrimitiveType string string string String
+    // 080 ThumbnailUrlSmall                        ModelPrimitiveType string string string String
+    // 088 ThumbnailUrlLarge                        ModelPrimitiveType string string string String
+    // 090 ThumbnailUrlHuge                         ModelPrimitiveType string string string String
+    // 098 UserType                                 ModelPrimitiveType string string string String
+    // 0A0 Addresses                                ModelClassType Address Address Address Pointer
     public partial class PeopleItem : DataModel
     {
         public string                                   Id                                      { get; set; }
@@ -57,25 +57,25 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PeopleItem() { Pointer= p0 };
 
-            value.Id                                        = GetString(new IntPtr(p + 0x010)); // 02466B551BD0 0x10 Id                          ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.NickName                                  = GetString(new IntPtr(p + 0x018)); // 02466B551BF0 0x18 NickName                    ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.DisplayName                               = GetString(new IntPtr(p + 0x020)); // 02466B551C10 0x20 DisplayName                 ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Grade                                     = GetString(new IntPtr(p + 0x028)); // 02466B551C30 0x28 Grade                       ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Age                                       = GetString(new IntPtr(p + 0x030)); // 02466B551C50 0x30 Age                         ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.AboutMe                                   = GetString(new IntPtr(p + 0x038)); // 02466B551C70 0x38 AboutMe                     ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Birthday                                  = GetString(new IntPtr(p + 0x040)); // 02466B551C90 0x40 Birthday                    ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.BloodType                                 = GetString(new IntPtr(p + 0x048)); // 02466B551CB0 0x48 BloodType                   ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ChannelUserId                             = GetString(new IntPtr(p + 0x050)); // 02466B551CD0 0x50 ChannelUserId               ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ClientUserId                              = GetString(new IntPtr(p + 0x058)); // 02466B551CF0 0x58 ClientUserId                ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Gender                                    = GetString(new IntPtr(p + 0x060)); // 02466B551D10 0x60 Gender                      ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.HasApp                                    = GetBool(new IntPtr(p + 0x068)); // 02466B551D30 0x68 HasApp                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.ProfileUrl                                = GetString(new IntPtr(p + 0x070)); // 02466B551D50 0x70 ProfileUrl                  ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ThumbnailUrl                              = GetString(new IntPtr(p + 0x078)); // 02466B551D70 0x78 ThumbnailUrl                ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ThumbnailUrlSmall                         = GetString(new IntPtr(p + 0x080)); // 02466B551D90 0x80 ThumbnailUrlSmall           ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ThumbnailUrlLarge                         = GetString(new IntPtr(p + 0x088)); // 02466B551DB0 0x88 ThumbnailUrlLarge           ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.ThumbnailUrlHuge                          = GetString(new IntPtr(p + 0x090)); // 02466B551DD0 0x90 ThumbnailUrlHuge            ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.UserType                                  = GetString(new IntPtr(p + 0x098)); // 02466B551DF0 0x98 UserType                    ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Addresses                                 = GetObject<Address>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.Address.FromPointer); // 02466B551E10 0xA0 Addresses                   ( 00018668CD70 ModelClassType Address Address Address Pointer )
+            value.Id                                        = GetString(new IntPtr(p + 0x010)); // 0x10 Id                          ( ModelPrimitiveType string string string String )
+            value.NickName                                  = GetString(new IntPtr(p + 0x018)); // 0x18 NickName                    ( ModelPrimitiveType string string string String )
+            value.DisplayName                               = GetString(new IntPtr(p + 0x020)); // 0x20 DisplayName                 ( ModelPrimitiveType string string string String )
+            value.Grade                                     = GetString(new IntPtr(p + 0x028)); // 0x28 Grade                       ( ModelPrimitiveType string string string String )
+            value.Age                                       = GetString(new IntPtr(p + 0x030)); // 0x30 Age                         ( ModelPrimitiveType string string string String )
+            value.AboutMe                                   = GetString(new IntPtr(p + 0x038)); // 0x38 AboutMe                     ( ModelPrimitiveType string string string String )
+            value.Birthday                                  = GetString(new IntPtr(p + 0x040)); // 0x40 Birthday                    ( ModelPrimitiveType string string string String )
+            value.BloodType                                 = GetString(new IntPtr(p + 0x048)); // 0x48 BloodType                   ( ModelPrimitiveType string string string String )
+            value.ChannelUserId                             = GetString(new IntPtr(p + 0x050)); // 0x50 ChannelUserId               ( ModelPrimitiveType string string string String )
+            value.ClientUserId                              = GetString(new IntPtr(p + 0x058)); // 0x58 ClientUserId                ( ModelPrimitiveType string string string String )
+            value.Gender                                    = GetString(new IntPtr(p + 0x060)); // 0x60 Gender                      ( ModelPrimitiveType string string string String )
+            value.HasApp                                    = GetBool(new IntPtr(p + 0x068)); // 0x68 HasApp                      ( ModelPrimitiveType bool bool bool Bool )
+            value.ProfileUrl                                = GetString(new IntPtr(p + 0x070)); // 0x70 ProfileUrl                  ( ModelPrimitiveType string string string String )
+            value.ThumbnailUrl                              = GetString(new IntPtr(p + 0x078)); // 0x78 ThumbnailUrl                ( ModelPrimitiveType string string string String )
+            value.ThumbnailUrlSmall                         = GetString(new IntPtr(p + 0x080)); // 0x80 ThumbnailUrlSmall           ( ModelPrimitiveType string string string String )
+            value.ThumbnailUrlLarge                         = GetString(new IntPtr(p + 0x088)); // 0x88 ThumbnailUrlLarge           ( ModelPrimitiveType string string string String )
+            value.ThumbnailUrlHuge                          = GetString(new IntPtr(p + 0x090)); // 0x90 ThumbnailUrlHuge            ( ModelPrimitiveType string string string String )
+            value.UserType                                  = GetString(new IntPtr(p + 0x098)); // 0x98 UserType                    ( ModelPrimitiveType string string string String )
+            value.Addresses                                 = GetObject<Address>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.Address.FromPointer); // 0xA0 Addresses                   ( ModelClassType Address Address Address Pointer )
 
             return value;
         }

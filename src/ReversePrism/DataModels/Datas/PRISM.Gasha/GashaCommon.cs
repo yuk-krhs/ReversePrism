@@ -8,11 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 000 DetailPContentAddress                    string IL2CPP_TYPE_STRING
-    // 000 DetailSContentAddress                    string IL2CPP_TYPE_STRING
-    // 000 UICharacterContentAddress                string IL2CPP_TYPE_STRING
     // 000 ResourcesTag                             string IL2CPP_TYPE_STRING
-    // 000 DetailPopupTag                           string IL2CPP_TYPE_STRING
     public partial class GashaCommon : DataModel
     {
 

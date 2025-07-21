@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Status                                   0001865B0870 ModelEnumType IO_STATUS IO_STATUS IO_STATUS Int32
+    // 010 Status                                   ModelEnumType IO_STATUS IO_STATUS IO_STATUS Int32
     // 018 Information                              <int> IL2CPP_TYPE_I
     public partial class IO_STATUS_BLOCK : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IO_STATUS_BLOCK() { Pointer= p0 };
 
-            value.Status                                    = (IO_STATUS)GetInt32(new IntPtr(p + 0x010)); // 0246669A2670 0x10 Status                      ( 0001865B0870 ModelEnumType IO_STATUS IO_STATUS IO_STATUS Int32 )
+            value.Status                                    = (IO_STATUS)GetInt32(new IntPtr(p + 0x010)); // 0x10 Status                      ( ModelEnumType IO_STATUS IO_STATUS IO_STATUS Int32 )
 
             return value;
         }

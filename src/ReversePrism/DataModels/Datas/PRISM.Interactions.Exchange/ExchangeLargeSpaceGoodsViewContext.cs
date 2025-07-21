@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 040 onClickPurchase                          Subject`1<ExchangeLargeSpaceGoodsGridViewModel> IL2CPP_TYPE_GENERICINST
-    // 048 LocalSave                                000186516CF0 ModelClassType ExchangeSaveData ExchangeSaveData ExchangeSaveData Pointer
+    // 048 LocalSave                                ModelClassType ExchangeSaveData ExchangeSaveData ExchangeSaveData Pointer
     public partial class ExchangeLargeSpaceGoodsViewContext : DataModel
     {
         public ExchangeSaveData?                        LocalSave                               { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExchangeLargeSpaceGoodsViewContext() { Pointer= p0 };
 
-            value.LocalSave                                 = GetObject<ExchangeSaveData>(new IntPtr(p + 0x048), ReversePrism.DataModels.ExchangeSaveData.FromPointer); // 02466B94FB00 0x48 LocalSave                   ( 000186516CF0 ModelClassType ExchangeSaveData ExchangeSaveData ExchangeSaveData Pointer )
+            value.LocalSave                                 = GetObject<ExchangeSaveData>(new IntPtr(p + 0x048), ReversePrism.DataModels.ExchangeSaveData.FromPointer); // 0x48 LocalSave                   ( ModelClassType ExchangeSaveData ExchangeSaveData ExchangeSaveData Pointer )
 
             return value;
         }

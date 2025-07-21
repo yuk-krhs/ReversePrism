@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Context                                  0001866B6090 ModelClassType DefaultSerializationContext DefaultSerializationContext DefaultSerializationContext Pointer
+    // 010 Context                                  ModelClassType DefaultSerializationContext DefaultSerializationContext DefaultSerializationContext Pointer
     public partial class UsageScope : DataModel
     {
         public DefaultSerializationContext?             Context                                 { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UsageScope() { Pointer= p0 };
 
-            value.Context                                   = GetObject<DefaultSerializationContext>(new IntPtr(p + 0x010), ReversePrism.DataModels.DefaultSerializationContext.FromPointer); // 0246694135E8 0x10 Context                     ( 0001866B6090 ModelClassType DefaultSerializationContext DefaultSerializationContext DefaultSerializationContext Pointer )
+            value.Context                                   = GetObject<DefaultSerializationContext>(new IntPtr(p + 0x010), ReversePrism.DataModels.DefaultSerializationContext.FromPointer); // 0x10 Context                     ( ModelClassType DefaultSerializationContext DefaultSerializationContext DefaultSerializationContext Pointer )
 
             return value;
         }

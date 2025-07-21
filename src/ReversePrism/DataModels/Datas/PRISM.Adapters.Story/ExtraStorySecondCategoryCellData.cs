@@ -8,16 +8,18 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 SubCategoryId                            0001865F4260 ModelPrimitiveType int int int Int32
-    // 014 IsNew                                    0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 015 IsUnread                                 0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 018 ExtraStoryType                           0001865F40A0 ModelEnumType ExtraStoryType ExtraStoryType ExtraStoryType Int32
+    // 010 SubCategoryId                            ModelPrimitiveType int int int Int32
+    // 014 SortId                                   ModelPrimitiveType int int int Int32
+    // 018 IsNew                                    ModelPrimitiveType bool bool bool Bool
+    // 019 IsUnread                                 ModelPrimitiveType bool bool bool Bool
+    // 01C JumpType                                 ModelEnumType ExtraStorySubCategoryJumpType ExtraStorySubCategoryJumpType ExtraStorySubCategoryJumpType Int32
     public partial class ExtraStorySecondCategoryCellData : DataModel
     {
         public int                                      SubCategoryId                           { get; set; }
+        public int                                      SortId                                  { get; set; }
         public bool                                     IsNew                                   { get; set; }
         public bool                                     IsUnread                                { get; set; }
-        public ExtraStoryType                           ExtraStoryType                          { get; set; }
+        public ExtraStorySubCategoryJumpType            JumpType                                { get; set; }
 
         public static ExtraStorySecondCategoryCellData? FromPointer(IntPtr p0)
         {
@@ -27,10 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExtraStorySecondCategoryCellData() { Pointer= p0 };
 
-            value.SubCategoryId                             = GetInt32(new IntPtr(p + 0x010)); // 0246667FCA68 0x10 SubCategoryId               ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.IsNew                                     = GetBool(new IntPtr(p + 0x014)); // 0246667FCA88 0x14 IsNew                       ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.IsUnread                                  = GetBool(new IntPtr(p + 0x015)); // 0246667FCAA8 0x15 IsUnread                    ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.ExtraStoryType                            = (ExtraStoryType)GetInt32(new IntPtr(p + 0x018)); // 0246667FCAC8 0x18 ExtraStoryType              ( 0001865F40A0 ModelEnumType ExtraStoryType ExtraStoryType ExtraStoryType Int32 )
+            value.SubCategoryId                             = GetInt32(new IntPtr(p + 0x010)); // 0x10 SubCategoryId               ( ModelPrimitiveType int int int Int32 )
+            value.SortId                                    = GetInt32(new IntPtr(p + 0x014)); // 0x14 SortId                      ( ModelPrimitiveType int int int Int32 )
+            value.IsNew                                     = GetBool(new IntPtr(p + 0x018)); // 0x18 IsNew                       ( ModelPrimitiveType bool bool bool Bool )
+            value.IsUnread                                  = GetBool(new IntPtr(p + 0x019)); // 0x19 IsUnread                    ( ModelPrimitiveType bool bool bool Bool )
+            value.JumpType                                  = (ExtraStorySubCategoryJumpType)GetInt32(new IntPtr(p + 0x01C)); // 0x1C JumpType                    ( ModelEnumType ExtraStorySubCategoryJumpType ExtraStorySubCategoryJumpType ExtraStorySubCategoryJumpType Int32 )
 
             return value;
         }

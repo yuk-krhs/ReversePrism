@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 BaseInfo                                 0001865E3630 ModelClassType IProduceBaseInfoStatus IProduceBaseInfoStatus IProduceBaseInfoStatus Pointer
-    // 018 UnitModel                                00018659BBD0 ModelClassType ProduceUnitModel ProduceUnitModel ProduceUnitModel Pointer
+    // 010 BaseInfo                                 ModelClassType IProduceBaseInfoStatus IProduceBaseInfoStatus IProduceBaseInfoStatus Pointer
+    // 018 UnitModel                                ModelClassType ProduceUnitModel ProduceUnitModel ProduceUnitModel Pointer
     public partial class ProduceResumeModel : DataModel
     {
         public IProduceBaseInfoStatus?                  BaseInfo                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceResumeModel() { Pointer= p0 };
 
-            value.BaseInfo                                  = GetObject<IProduceBaseInfoStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProduceBaseInfoStatus.FromPointer); // 0246662638D0 0x10 BaseInfo                    ( 0001865E3630 ModelClassType IProduceBaseInfoStatus IProduceBaseInfoStatus IProduceBaseInfoStatus Pointer )
-            value.UnitModel                                 = GetObject<ProduceUnitModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceUnitModel.FromPointer); // 0246662638F0 0x18 UnitModel                   ( 00018659BBD0 ModelClassType ProduceUnitModel ProduceUnitModel ProduceUnitModel Pointer )
+            value.BaseInfo                                  = GetObject<IProduceBaseInfoStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IProduceBaseInfoStatus.FromPointer); // 0x10 BaseInfo                    ( ModelClassType IProduceBaseInfoStatus IProduceBaseInfoStatus IProduceBaseInfoStatus Pointer )
+            value.UnitModel                                 = GetObject<ProduceUnitModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceUnitModel.FromPointer); // 0x18 UnitModel                   ( ModelClassType ProduceUnitModel ProduceUnitModel ProduceUnitModel Pointer )
 
             return value;
         }

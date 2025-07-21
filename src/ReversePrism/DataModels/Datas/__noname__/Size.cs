@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 000 Small                                    string IL2CPP_TYPE_STRING
     // 008 Normal                                   string IL2CPP_TYPE_STRING
-    // 010 Large                                    000186674040 ModelPrimitiveType string string string String
-    // 018 Huge                                     000186674040 ModelPrimitiveType string string string String
+    // 010 Large                                    ModelPrimitiveType string string string String
+    // 018 Huge                                     ModelPrimitiveType string string string String
     public partial class Size : DataModel
     {
         public string                                   Large                                   { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Size() { Pointer= p0 };
 
-            value.Large                                     = GetString(new IntPtr(p + 0x010)); // 02466B544C10 0x10 Large                       ( 000186674040 ModelPrimitiveType string string string String )
-            value.Huge                                      = GetString(new IntPtr(p + 0x018)); // 02466B544C30 0x18 Huge                        ( 000186674040 ModelPrimitiveType string string string String )
+            value.Large                                     = GetString(new IntPtr(p + 0x010)); // 0x10 Large                       ( ModelPrimitiveType string string string String )
+            value.Huge                                      = GetString(new IntPtr(p + 0x018)); // 0x18 Huge                        ( ModelPrimitiveType string string string String )
 
             return value;
         }

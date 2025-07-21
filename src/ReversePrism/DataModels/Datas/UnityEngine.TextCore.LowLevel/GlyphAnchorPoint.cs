@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_XCoordinate                            0001866656B0 ModelPrimitiveType float float float Single
-    // 014 M_YCoordinate                            0001866656B0 ModelPrimitiveType float float float Single
+    // 010 M_XCoordinate                            ModelPrimitiveType float float float Single
+    // 014 M_YCoordinate                            ModelPrimitiveType float float float Single
     public partial class GlyphAnchorPoint : DataModel
     {
         public float                                    M_XCoordinate                           { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GlyphAnchorPoint() { Pointer= p0 };
 
-            value.M_XCoordinate                             = GetSingle(new IntPtr(p + 0x010)); // 0245A2165558 0x10 M_XCoordinate               ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_YCoordinate                             = GetSingle(new IntPtr(p + 0x014)); // 0245A2165578 0x14 M_YCoordinate               ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_XCoordinate                             = GetSingle(new IntPtr(p + 0x010)); // 0x10 M_XCoordinate               ( ModelPrimitiveType float float float Single )
+            value.M_YCoordinate                             = GetSingle(new IntPtr(p + 0x014)); // 0x14 M_YCoordinate               ( ModelPrimitiveType float float float Single )
 
             return value;
         }

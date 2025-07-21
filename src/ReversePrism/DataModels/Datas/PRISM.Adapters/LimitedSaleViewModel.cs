@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 010 isLimitedSale                            ReactiveProperty`1<bool> IL2CPP_TYPE_GENERICINST
     // 018 limitedText                              ReactiveProperty`1<string> IL2CPP_TYPE_GENERICINST
-    // 020 Status                                   000186764540 ModelClassType IEventIconStatus IEventIconStatus IEventIconStatus Pointer
-    // 028 Disposables                              0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
+    // 020 Status                                   ModelClassType IEventIconStatus IEventIconStatus IEventIconStatus Pointer
+    // 028 Disposables                              ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
     // 030 onChangeViewModel                        Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 038 onChangeLimitedSaleState                 Subject`1<bool> IL2CPP_TYPE_GENERICINST
     public partial class LimitedSaleViewModel : DataModel
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LimitedSaleViewModel() { Pointer= p0 };
 
-            value.Status                                    = GetObject<IEventIconStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IEventIconStatus.FromPointer); // 0245A5B3FE30 0x20 Status                      ( 000186764540 ModelClassType IEventIconStatus IEventIconStatus IEventIconStatus Pointer )
-            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0245A5B3FE50 0x28 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.Status                                    = GetObject<IEventIconStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IEventIconStatus.FromPointer); // 0x20 Status                      ( ModelClassType IEventIconStatus IEventIconStatus IEventIconStatus Pointer )
+            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0x28 Disposables                 ( ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Rnd                                      0001866093D0 ModelClassType Random Random Random Pointer
+    // 010 Rnd                                      ModelClassType Random Random Random Pointer
     public partial class ProduceStrategySelectModel : DataModel
     {
         public Random?                                  Rnd                                     { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceStrategySelectModel() { Pointer= p0 };
 
-            value.Rnd                                       = GetObject<Random>(new IntPtr(p + 0x010), ReversePrism.DataModels.Random.FromPointer); // 0246664C6898 0x10 Rnd                         ( 0001866093D0 ModelClassType Random Random Random Pointer )
+            value.Rnd                                       = GetObject<Random>(new IntPtr(p + 0x010), ReversePrism.DataModels.Random.FromPointer); // 0x10 Rnd                         ( ModelClassType Random Random Random Pointer )
 
             return value;
         }

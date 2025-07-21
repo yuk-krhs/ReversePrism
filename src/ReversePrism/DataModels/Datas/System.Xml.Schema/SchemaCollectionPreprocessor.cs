@@ -8,17 +8,17 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 040 Schema                                   0001866BE120 ModelClassType XmlSchema XmlSchema XmlSchema Pointer
-    // 048 TargetNamespace                          000186671910 ModelPrimitiveType string string string String
-    // 050 BuildinIncluded                          000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 054 ElementFormDefault                       0001865B66F0 ModelEnumType XmlSchemaForm XmlSchemaForm XmlSchemaForm Int32
-    // 058 AttributeFormDefault                     0001865B66F0 ModelEnumType XmlSchemaForm XmlSchemaForm XmlSchemaForm Int32
-    // 05C BlockDefault                             0001865B4BE0 ModelEnumType XmlSchemaDerivationMethod XmlSchemaDerivationMethod XmlSchemaDerivationMethod Int32
-    // 060 FinalDefault                             0001865B4BE0 ModelEnumType XmlSchemaDerivationMethod XmlSchemaDerivationMethod XmlSchemaDerivationMethod Int32
-    // 068 SchemaLocations                          0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer
-    // 070 ReferenceNamespaces                      0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer
-    // 078 Xmlns                                    000186671910 ModelPrimitiveType string string string String
-    // 080 XmlResolver                              0001865ABBE0 ModelClassType XmlResolver XmlResolver XmlResolver Pointer
+    // 040 Schema                                   ModelClassType XmlSchema XmlSchema XmlSchema Pointer
+    // 048 TargetNamespace                          ModelPrimitiveType string string string String
+    // 050 BuildinIncluded                          ModelPrimitiveType bool bool bool Bool
+    // 054 ElementFormDefault                       ModelEnumType XmlSchemaForm XmlSchemaForm XmlSchemaForm Int32
+    // 058 AttributeFormDefault                     ModelEnumType XmlSchemaForm XmlSchemaForm XmlSchemaForm Int32
+    // 05C BlockDefault                             ModelEnumType XmlSchemaDerivationMethod XmlSchemaDerivationMethod XmlSchemaDerivationMethod Int32
+    // 060 FinalDefault                             ModelEnumType XmlSchemaDerivationMethod XmlSchemaDerivationMethod XmlSchemaDerivationMethod Int32
+    // 068 SchemaLocations                          ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 070 ReferenceNamespaces                      ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 078 Xmlns                                    ModelPrimitiveType string string string String
+    // 080 XmlResolver                              ModelClassType XmlResolver XmlResolver XmlResolver Pointer
     public partial class SchemaCollectionPreprocessor : DataModel
     {
         public XmlSchema?                               Schema                                  { get; set; }
@@ -41,17 +41,17 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SchemaCollectionPreprocessor() { Pointer= p0 };
 
-            value.Schema                                    = GetObject<XmlSchema>(new IntPtr(p + 0x040), ReversePrism.DataModels.XmlSchema.FromPointer); // 0246675B5080 0x40 Schema                      ( 0001866BE120 ModelClassType XmlSchema XmlSchema XmlSchema Pointer )
-            value.TargetNamespace                           = GetString(new IntPtr(p + 0x048)); // 0246675B50A0 0x48 TargetNamespace             ( 000186671910 ModelPrimitiveType string string string String )
-            value.BuildinIncluded                           = GetBool(new IntPtr(p + 0x050)); // 0246675B50C0 0x50 BuildinIncluded             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ElementFormDefault                        = (XmlSchemaForm)GetInt32(new IntPtr(p + 0x054)); // 0246675B50E0 0x54 ElementFormDefault          ( 0001865B66F0 ModelEnumType XmlSchemaForm XmlSchemaForm XmlSchemaForm Int32 )
-            value.AttributeFormDefault                      = (XmlSchemaForm)GetInt32(new IntPtr(p + 0x058)); // 0246675B5100 0x58 AttributeFormDefault        ( 0001865B66F0 ModelEnumType XmlSchemaForm XmlSchemaForm XmlSchemaForm Int32 )
-            value.BlockDefault                              = (XmlSchemaDerivationMethod)GetInt32(new IntPtr(p + 0x05C)); // 0246675B5120 0x5C BlockDefault                ( 0001865B4BE0 ModelEnumType XmlSchemaDerivationMethod XmlSchemaDerivationMethod XmlSchemaDerivationMethod Int32 )
-            value.FinalDefault                              = (XmlSchemaDerivationMethod)GetInt32(new IntPtr(p + 0x060)); // 0246675B5140 0x60 FinalDefault                ( 0001865B4BE0 ModelEnumType XmlSchemaDerivationMethod XmlSchemaDerivationMethod XmlSchemaDerivationMethod Int32 )
-            value.SchemaLocations                           = GetObject<Hashtable>(new IntPtr(p + 0x068), ReversePrism.DataModels.Hashtable.FromPointer); // 0246675B5160 0x68 SchemaLocations             ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.ReferenceNamespaces                       = GetObject<Hashtable>(new IntPtr(p + 0x070), ReversePrism.DataModels.Hashtable.FromPointer); // 0246675B5180 0x70 ReferenceNamespaces         ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.Xmlns                                     = GetString(new IntPtr(p + 0x078)); // 0246675B51A0 0x78 Xmlns                       ( 000186671910 ModelPrimitiveType string string string String )
-            value.XmlResolver                               = GetObject<XmlResolver>(new IntPtr(p + 0x080), ReversePrism.DataModels.XmlResolver.FromPointer); // 0246675B51C0 0x80 XmlResolver                 ( 0001865ABBE0 ModelClassType XmlResolver XmlResolver XmlResolver Pointer )
+            value.Schema                                    = GetObject<XmlSchema>(new IntPtr(p + 0x040), ReversePrism.DataModels.XmlSchema.FromPointer); // 0x40 Schema                      ( ModelClassType XmlSchema XmlSchema XmlSchema Pointer )
+            value.TargetNamespace                           = GetString(new IntPtr(p + 0x048)); // 0x48 TargetNamespace             ( ModelPrimitiveType string string string String )
+            value.BuildinIncluded                           = GetBool(new IntPtr(p + 0x050)); // 0x50 BuildinIncluded             ( ModelPrimitiveType bool bool bool Bool )
+            value.ElementFormDefault                        = (XmlSchemaForm)GetInt32(new IntPtr(p + 0x054)); // 0x54 ElementFormDefault          ( ModelEnumType XmlSchemaForm XmlSchemaForm XmlSchemaForm Int32 )
+            value.AttributeFormDefault                      = (XmlSchemaForm)GetInt32(new IntPtr(p + 0x058)); // 0x58 AttributeFormDefault        ( ModelEnumType XmlSchemaForm XmlSchemaForm XmlSchemaForm Int32 )
+            value.BlockDefault                              = (XmlSchemaDerivationMethod)GetInt32(new IntPtr(p + 0x05C)); // 0x5C BlockDefault                ( ModelEnumType XmlSchemaDerivationMethod XmlSchemaDerivationMethod XmlSchemaDerivationMethod Int32 )
+            value.FinalDefault                              = (XmlSchemaDerivationMethod)GetInt32(new IntPtr(p + 0x060)); // 0x60 FinalDefault                ( ModelEnumType XmlSchemaDerivationMethod XmlSchemaDerivationMethod XmlSchemaDerivationMethod Int32 )
+            value.SchemaLocations                           = GetObject<Hashtable>(new IntPtr(p + 0x068), ReversePrism.DataModels.Hashtable.FromPointer); // 0x68 SchemaLocations             ( ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.ReferenceNamespaces                       = GetObject<Hashtable>(new IntPtr(p + 0x070), ReversePrism.DataModels.Hashtable.FromPointer); // 0x70 ReferenceNamespaces         ( ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.Xmlns                                     = GetString(new IntPtr(p + 0x078)); // 0x78 Xmlns                       ( ModelPrimitiveType string string string String )
+            value.XmlResolver                               = GetObject<XmlResolver>(new IntPtr(p + 0x080), ReversePrism.DataModels.XmlResolver.FromPointer); // 0x80 XmlResolver                 ( ModelClassType XmlResolver XmlResolver XmlResolver Pointer )
 
             return value;
         }

@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 TutorialExternalAccess                   0001866B98B0 ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer
+    // 010 TutorialExternalAccess                   ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer
     // 018 getHandPosFanc                           Func`1<Vector3> IL2CPP_TYPE_GENERICINST
-    // 020 MoveOffset                               0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32
+    // 020 MoveOffset                               ModelEnumType Vector2 Vector2 Vector2 Int32
     public partial class ProduceTutorialShowInfoHandSkillEvent : DataModel
     {
         public TutorialExternalAccess?                  TutorialExternalAccess                  { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceTutorialShowInfoHandSkillEvent() { Pointer= p0 };
 
-            value.TutorialExternalAccess                    = GetObject<TutorialExternalAccess>(new IntPtr(p + 0x010), ReversePrism.DataModels.TutorialExternalAccess.FromPointer); // 024665D9F8C8 0x10 TutorialExternalAccess      ( 0001866B98B0 ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer )
-            value.MoveOffset                                = (Vector2)GetInt32(new IntPtr(p + 0x020)); // 024665D9F908 0x20 MoveOffset                  ( 0001866A7FB0 ModelEnumType Vector2 Vector2 Vector2 Int32 )
+            value.TutorialExternalAccess                    = GetObject<TutorialExternalAccess>(new IntPtr(p + 0x010), ReversePrism.DataModels.TutorialExternalAccess.FromPointer); // 0x10 TutorialExternalAccess      ( ModelClassType TutorialExternalAccess TutorialExternalAccess TutorialExternalAccess Pointer )
+            value.MoveOffset                                = (Vector2)GetInt32(new IntPtr(p + 0x020)); // 0x20 MoveOffset                  ( ModelEnumType Vector2 Vector2 Vector2 Int32 )
 
             return value;
         }

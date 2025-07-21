@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 ElementName                              000186671910 ModelPrimitiveType string string string String
-    // 030 IsElement                                000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 028 ElementName                              ModelPrimitiveType string string string String
+    // 030 IsElement                                ModelPrimitiveType bool bool bool Bool
     public partial class SoapFieldAttribute : DataModel
     {
         public string                                   ElementName                             { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SoapFieldAttribute() { Pointer= p0 };
 
-            value.ElementName                               = GetString(new IntPtr(p + 0x028)); // 024666C5ED80 0x28 ElementName                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.IsElement                                 = GetBool(new IntPtr(p + 0x030)); // 024666C5EDA0 0x30 IsElement                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ElementName                               = GetString(new IntPtr(p + 0x028)); // 0x28 ElementName                 ( ModelPrimitiveType string string string String )
+            value.IsElement                                 = GetBool(new IntPtr(p + 0x030)); // 0x30 IsElement                   ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

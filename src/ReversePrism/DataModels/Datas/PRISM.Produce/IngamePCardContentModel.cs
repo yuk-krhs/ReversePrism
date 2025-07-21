@@ -8,15 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 OriginalAppealTypes                      000185D18C38 ModelEnumListType IReadOnlyList`1<ProduceParameterType> IReadOnlyList`1<ProduceParameterType> List<ProduceParameterType> Pointer
-    // 018 AppealTypes                              000185D22D68 ModelEnumListType List`1<ProduceParameterType> List`1<ProduceParameterType> List<ProduceParameterType> Pointer
-    // 020 DisplaySortCardEffects                   000185D10BE8 ModelClassListType IReadOnlyList`1<IngameActionEffectModel> IReadOnlyList`1<IngameActionEffectModel> List<IngameActionEffectModel> Pointer
-    // 028 CardEffects                              000185D10BE8 ModelClassListType IReadOnlyList`1<IngameActionEffectModel> IReadOnlyList`1<IngameActionEffectModel> List<IngameActionEffectModel> Pointer
-    // 030 BaseCost                                 0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 034 Phase                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 038 Rank                                     0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 03C ConditionTypeId                          0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 040 ConditionValue                           0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 OriginalAppealTypes                      ModelEnumListType IReadOnlyList`1<ProduceParameterType> IReadOnlyList`1<ProduceParameterType> List<ProduceParameterType> Pointer
+    // 018 AppealTypes                              ModelEnumListType List`1<ProduceParameterType> List`1<ProduceParameterType> List<ProduceParameterType> Pointer
+    // 020 DisplaySortCardEffects                   ModelClassListType IReadOnlyList`1<IngameActionEffectModel> IReadOnlyList`1<IngameActionEffectModel> List<IngameActionEffectModel> Pointer
+    // 028 CardEffects                              ModelClassListType IReadOnlyList`1<IngameActionEffectModel> IReadOnlyList`1<IngameActionEffectModel> List<IngameActionEffectModel> Pointer
+    // 030 BaseCost                                 ModelPrimitiveType int int int Int32
+    // 034 Phase                                    ModelPrimitiveType int int int Int32
+    // 038 Rank                                     ModelPrimitiveType int int int Int32
+    // 03C ConditionTypeId                          ModelPrimitiveType int int int Int32
+    // 040 ConditionValue                           ModelPrimitiveType int int int Int32
     public partial class IngamePCardContentModel : DataModel
     {
         public List<ProduceParameterType>?              OriginalAppealTypes                     { get; set; }
@@ -37,15 +37,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IngamePCardContentModel() { Pointer= p0 };
 
-            value.OriginalAppealTypes                       = GetEnumList<ProduceParameterType>(new IntPtr(p + 0x010)); // 024665BE7238 0x10 OriginalAppealTypes         ( 000185D18C38 ModelEnumListType IReadOnlyList`1<ProduceParameterType> IReadOnlyList`1<ProduceParameterType> List<ProduceParameterType> Pointer )
-            value.AppealTypes                               = GetEnumList<ProduceParameterType>(new IntPtr(p + 0x018)); // 024665BE7258 0x18 AppealTypes                 ( 000185D22D68 ModelEnumListType List`1<ProduceParameterType> List`1<ProduceParameterType> List<ProduceParameterType> Pointer )
-            value.DisplaySortCardEffects                    = GetObjectList<IngameActionEffectModel>(new IntPtr(p + 0x020), ReversePrism.DataModels.IngameActionEffectModel.FromPointer); // 024665BE7278 0x20 DisplaySortCardEffects      ( 000185D10BE8 ModelClassListType IReadOnlyList`1<IngameActionEffectModel> IReadOnlyList`1<IngameActionEffectModel> List<IngameActionEffectModel> Pointer )
-            value.CardEffects                               = GetObjectList<IngameActionEffectModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.IngameActionEffectModel.FromPointer); // 024665BE7298 0x28 CardEffects                 ( 000185D10BE8 ModelClassListType IReadOnlyList`1<IngameActionEffectModel> IReadOnlyList`1<IngameActionEffectModel> List<IngameActionEffectModel> Pointer )
-            value.BaseCost                                  = GetInt32(new IntPtr(p + 0x030)); // 024665BE72B8 0x30 BaseCost                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Phase                                     = GetInt32(new IntPtr(p + 0x034)); // 024665BE72D8 0x34 Phase                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Rank                                      = GetInt32(new IntPtr(p + 0x038)); // 024665BE72F8 0x38 Rank                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ConditionTypeId                           = GetInt32(new IntPtr(p + 0x03C)); // 024665BE7318 0x3C ConditionTypeId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ConditionValue                            = GetInt32(new IntPtr(p + 0x040)); // 024665BE7338 0x40 ConditionValue              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OriginalAppealTypes                       = GetEnumList<ProduceParameterType>(new IntPtr(p + 0x010)); // 0x10 OriginalAppealTypes         ( ModelEnumListType IReadOnlyList`1<ProduceParameterType> IReadOnlyList`1<ProduceParameterType> List<ProduceParameterType> Pointer )
+            value.AppealTypes                               = GetEnumList<ProduceParameterType>(new IntPtr(p + 0x018)); // 0x18 AppealTypes                 ( ModelEnumListType List`1<ProduceParameterType> List`1<ProduceParameterType> List<ProduceParameterType> Pointer )
+            value.DisplaySortCardEffects                    = GetObjectList<IngameActionEffectModel>(new IntPtr(p + 0x020), ReversePrism.DataModels.IngameActionEffectModel.FromPointer); // 0x20 DisplaySortCardEffects      ( ModelClassListType IReadOnlyList`1<IngameActionEffectModel> IReadOnlyList`1<IngameActionEffectModel> List<IngameActionEffectModel> Pointer )
+            value.CardEffects                               = GetObjectList<IngameActionEffectModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.IngameActionEffectModel.FromPointer); // 0x28 CardEffects                 ( ModelClassListType IReadOnlyList`1<IngameActionEffectModel> IReadOnlyList`1<IngameActionEffectModel> List<IngameActionEffectModel> Pointer )
+            value.BaseCost                                  = GetInt32(new IntPtr(p + 0x030)); // 0x30 BaseCost                    ( ModelPrimitiveType int int int Int32 )
+            value.Phase                                     = GetInt32(new IntPtr(p + 0x034)); // 0x34 Phase                       ( ModelPrimitiveType int int int Int32 )
+            value.Rank                                      = GetInt32(new IntPtr(p + 0x038)); // 0x38 Rank                        ( ModelPrimitiveType int int int Int32 )
+            value.ConditionTypeId                           = GetInt32(new IntPtr(p + 0x03C)); // 0x3C ConditionTypeId             ( ModelPrimitiveType int int int Int32 )
+            value.ConditionValue                            = GetInt32(new IntPtr(p + 0x040)); // 0x40 ConditionValue              ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

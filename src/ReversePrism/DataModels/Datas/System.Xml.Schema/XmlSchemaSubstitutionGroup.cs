@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 038 MembersList                              00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer
-    // 040 Examplar                                 0001866BC7E0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer
+    // 038 MembersList                              ModelClassType ArrayList ArrayList ArrayList Pointer
+    // 040 Examplar                                 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer
     public partial class XmlSchemaSubstitutionGroup : DataModel
     {
         public ArrayList?                               MembersList                             { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlSchemaSubstitutionGroup() { Pointer= p0 };
 
-            value.MembersList                               = GetObject<ArrayList>(new IntPtr(p + 0x038), ReversePrism.DataModels.ArrayList.FromPointer); // 0246675B1BB8 0x38 MembersList                 ( 00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer )
-            value.Examplar                                  = GetObject<XmlQualifiedName>(new IntPtr(p + 0x040), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0246675B1BD8 0x40 Examplar                    ( 0001866BC7E0 ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
+            value.MembersList                               = GetObject<ArrayList>(new IntPtr(p + 0x038), ReversePrism.DataModels.ArrayList.FromPointer); // 0x38 MembersList                 ( ModelClassType ArrayList ArrayList ArrayList Pointer )
+            value.Examplar                                  = GetObject<XmlQualifiedName>(new IntPtr(p + 0x040), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0x40 Examplar                    ( ModelClassType XmlQualifiedName XmlQualifiedName XmlQualifiedName Pointer )
 
             return value;
         }

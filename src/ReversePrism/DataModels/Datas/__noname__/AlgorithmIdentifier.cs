@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 AlgorithmId                              000186671BA0 ModelPrimitiveType string string string String
-    // 018 Parameters                               000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 010 AlgorithmId                              ModelPrimitiveType string string string String
+    // 018 Parameters                               ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     public partial class AlgorithmIdentifier : DataModel
     {
         public string                                   AlgorithmId                             { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AlgorithmIdentifier() { Pointer= p0 };
 
-            value.AlgorithmId                               = GetString(new IntPtr(p + 0x010)); // 0246679A7FB8 0x10 AlgorithmId                 ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.Parameters                                = GetSByteList(new IntPtr(p + 0x018)); // 0246679A7FD8 0x18 Parameters                  ( 000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.AlgorithmId                               = GetString(new IntPtr(p + 0x010)); // 0x10 AlgorithmId                 ( ModelPrimitiveType string string string String )
+            value.Parameters                                = GetSByteList(new IntPtr(p + 0x018)); // 0x18 Parameters                  ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

@@ -8,14 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Text                                   000186671910 ModelPrimitiveType string string string String
-    // 018 M_Image                                  00018664CFB0 ModelClassType Texture Texture Texture Pointer
-    // 020 M_Tooltip                                000186671910 ModelPrimitiveType string string string String
-    // 028 OnTextChanged                            0001866792B0 ModelClassType Action Action Action Pointer
+    // 010 M_Text                                   ModelPrimitiveType string string string String
+    // 018 M_Image                                  ModelClassType Texture Texture Texture Pointer
+    // 020 M_Tooltip                                ModelPrimitiveType string string string String
+    // 028 OnTextChanged                            ModelClassType Action Action Action Pointer
     // 000 s_Text                                   GUIContent IL2CPP_TYPE_CLASS
     // 008 s_Image                                  GUIContent IL2CPP_TYPE_CLASS
-    // 010 S_TextImage                              0001865DC850 ModelClassType GUIContent GUIContent GUIContent Pointer
-    // 018 None                                     0001865DC390 ModelClassType GUIContent GUIContent GUIContent Pointer
+    // 010 S_TextImage                              ModelClassType GUIContent GUIContent GUIContent Pointer
+    // 018 None                                     ModelClassType GUIContent GUIContent GUIContent Pointer
     public partial class GUIContent : DataModel
     {
         public string                                   M_Text                                  { get; set; }
@@ -33,12 +33,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GUIContent() { Pointer= p0 };
 
-            value.M_Text                                    = GetString(new IntPtr(p + 0x010)); // 0245A21C8AC8 0x10 M_Text                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_Image                                   = GetObject<Texture>(new IntPtr(p + 0x018), ReversePrism.DataModels.Texture.FromPointer); // 0245A21C8AE8 0x18 M_Image                     ( 00018664CFB0 ModelClassType Texture Texture Texture Pointer )
-            value.M_Tooltip                                 = GetString(new IntPtr(p + 0x020)); // 0245A21C8B08 0x20 M_Tooltip                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.OnTextChanged                             = GetObject<Action>(new IntPtr(p + 0x028), ReversePrism.DataModels.Action.FromPointer); // 0245A21C8B28 0x28 OnTextChanged               ( 0001866792B0 ModelClassType Action Action Action Pointer )
-            value.S_TextImage                               = GetObject<GUIContent>(new IntPtr(p + 0x010), ReversePrism.DataModels.GUIContent.FromPointer); // 0245A21C8B88 0x10 S_TextImage                 ( 0001865DC850 ModelClassType GUIContent GUIContent GUIContent Pointer )
-            value.None                                      = GetObject<GUIContent>(new IntPtr(p + 0x018), ReversePrism.DataModels.GUIContent.FromPointer); // 0245A21C8BA8 0x18 None                        ( 0001865DC390 ModelClassType GUIContent GUIContent GUIContent Pointer )
+            value.M_Text                                    = GetString(new IntPtr(p + 0x010)); // 0x10 M_Text                      ( ModelPrimitiveType string string string String )
+            value.M_Image                                   = GetObject<Texture>(new IntPtr(p + 0x018), ReversePrism.DataModels.Texture.FromPointer); // 0x18 M_Image                     ( ModelClassType Texture Texture Texture Pointer )
+            value.M_Tooltip                                 = GetString(new IntPtr(p + 0x020)); // 0x20 M_Tooltip                   ( ModelPrimitiveType string string string String )
+            value.OnTextChanged                             = GetObject<Action>(new IntPtr(p + 0x028), ReversePrism.DataModels.Action.FromPointer); // 0x28 OnTextChanged               ( ModelClassType Action Action Action Pointer )
+            value.S_TextImage                               = GetObject<GUIContent>(new IntPtr(p + 0x010), ReversePrism.DataModels.GUIContent.FromPointer); // 0x10 S_TextImage                 ( ModelClassType GUIContent GUIContent GUIContent Pointer )
+            value.None                                      = GetObject<GUIContent>(new IntPtr(p + 0x018), ReversePrism.DataModels.GUIContent.FromPointer); // 0x18 None                        ( ModelClassType GUIContent GUIContent GUIContent Pointer )
 
             return value;
         }

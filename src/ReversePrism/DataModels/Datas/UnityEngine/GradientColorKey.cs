@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Color                                    0001865AB0A0 ModelEnumType Color Color Color Int32
-    // 020 Time                                     000186666050 ModelPrimitiveType float float float Single
+    // 010 Color                                    ModelEnumType Color Color Color Int32
+    // 020 Time                                     ModelPrimitiveType float float float Single
     public partial class GradientColorKey : DataModel
     {
         public Color                                    Color                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GradientColorKey() { Pointer= p0 };
 
-            value.Color                                     = (Color)GetInt32(new IntPtr(p + 0x010)); // 0245A23B3AB0 0x10 Color                       ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.Time                                      = GetSingle(new IntPtr(p + 0x020)); // 0245A23B3AD0 0x20 Time                        ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Color                                     = (Color)GetInt32(new IntPtr(p + 0x010)); // 0x10 Color                       ( ModelEnumType Color Color Color Int32 )
+            value.Time                                      = GetSingle(new IntPtr(p + 0x020)); // 0x20 Time                        ( ModelPrimitiveType float float float Single )
 
             return value;
         }

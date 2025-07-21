@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Index                                    0001865F36C0 ModelPrimitiveType int int int Int32
-    // 018 GashaId                                  0001866722E0 ModelPrimitiveType string string string String
+    // 010 Index                                    ModelPrimitiveType int int int Int32
+    // 018 GashaId                                  ModelPrimitiveType string string string String
     public partial class GashaTabData : DataModel
     {
         public int                                      Index                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GashaTabData() { Pointer= p0 };
 
-            value.Index                                     = GetInt32(new IntPtr(p + 0x010)); // 024665373808 0x10 Index                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.GashaId                                   = GetString(new IntPtr(p + 0x018)); // 024665373828 0x18 GashaId                     ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x010)); // 0x10 Index                       ( ModelPrimitiveType int int int Int32 )
+            value.GashaId                                   = GetString(new IntPtr(p + 0x018)); // 0x18 GashaId                     ( ModelPrimitiveType string string string String )
 
             return value;
         }

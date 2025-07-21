@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Mode                                     00018662D590 ModelEnumType Mode Mode Mode Int32
+    // 010 Mode                                     ModelEnumType Mode Mode Mode Int32
     public partial class TrackballAttribute : DataModel
     {
         public Mode                                     Mode                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TrackballAttribute() { Pointer= p0 };
 
-            value.Mode                                      = (Mode)GetInt32(new IntPtr(p + 0x010)); // 02466B4A3BD0 0x10 Mode                        ( 00018662D590 ModelEnumType Mode Mode Mode Int32 )
+            value.Mode                                      = (Mode)GetInt32(new IntPtr(p + 0x010)); // 0x10 Mode                        ( ModelEnumType Mode Mode Mode Int32 )
 
             return value;
         }

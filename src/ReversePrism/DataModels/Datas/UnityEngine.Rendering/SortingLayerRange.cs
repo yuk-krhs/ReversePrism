@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_LowerBound                             0001865F1060 ModelPrimitiveType short short short Int16
-    // 012 M_UpperBound                             0001865F1060 ModelPrimitiveType short short short Int16
+    // 010 M_LowerBound                             ModelPrimitiveType short short short Int16
+    // 012 M_UpperBound                             ModelPrimitiveType short short short Int16
     public partial class SortingLayerRange : DataModel
     {
         public short                                    M_LowerBound                            { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SortingLayerRange() { Pointer= p0 };
 
-            value.M_LowerBound                              = GetInt16(new IntPtr(p + 0x010)); // 024660AAEBD8 0x10 M_LowerBound                ( 0001865F1060 ModelPrimitiveType short short short Int16 )
-            value.M_UpperBound                              = GetInt16(new IntPtr(p + 0x012)); // 024660AAEBF8 0x12 M_UpperBound                ( 0001865F1060 ModelPrimitiveType short short short Int16 )
+            value.M_LowerBound                              = GetInt16(new IntPtr(p + 0x010)); // 0x10 M_LowerBound                ( ModelPrimitiveType short short short Int16 )
+            value.M_UpperBound                              = GetInt16(new IntPtr(p + 0x012)); // 0x12 M_UpperBound                ( ModelPrimitiveType short short short Int16 )
 
             return value;
         }

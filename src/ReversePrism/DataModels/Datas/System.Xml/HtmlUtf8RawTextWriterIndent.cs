@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 0C0 IndentLevel                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 0C4 EndBlockPos                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 0C8 IndentChars                              000186671910 ModelPrimitiveType string string string String
-    // 0D0 NewLineOnAttributes                      000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 0C0 IndentLevel                              ModelPrimitiveType int int int Int32
+    // 0C4 EndBlockPos                              ModelPrimitiveType int int int Int32
+    // 0C8 IndentChars                              ModelPrimitiveType string string string String
+    // 0D0 NewLineOnAttributes                      ModelPrimitiveType bool bool bool Bool
     public partial class HtmlUtf8RawTextWriterIndent : DataModel
     {
         public int                                      IndentLevel                             { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HtmlUtf8RawTextWriterIndent() { Pointer= p0 };
 
-            value.IndentLevel                               = GetInt32(new IntPtr(p + 0x0C0)); // 0246673BCF60 0xC0 IndentLevel                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.EndBlockPos                               = GetInt32(new IntPtr(p + 0x0C4)); // 0246673BCF80 0xC4 EndBlockPos                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IndentChars                               = GetString(new IntPtr(p + 0x0C8)); // 0246673BCFA0 0xC8 IndentChars                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.NewLineOnAttributes                       = GetBool(new IntPtr(p + 0x0D0)); // 0246673BCFC0 0xD0 NewLineOnAttributes         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IndentLevel                               = GetInt32(new IntPtr(p + 0x0C0)); // 0xC0 IndentLevel                 ( ModelPrimitiveType int int int Int32 )
+            value.EndBlockPos                               = GetInt32(new IntPtr(p + 0x0C4)); // 0xC4 EndBlockPos                 ( ModelPrimitiveType int int int Int32 )
+            value.IndentChars                               = GetString(new IntPtr(p + 0x0C8)); // 0xC8 IndentChars                 ( ModelPrimitiveType string string string String )
+            value.NewLineOnAttributes                       = GetBool(new IntPtr(p + 0x0D0)); // 0xD0 NewLineOnAttributes         ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,13 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 BeforeDiamond                            0001866CF8A0 ModelClassType DiamondDisplay DiamondDisplay DiamondDisplay Pointer
-    // 028 AfterDiamond                             0001866CF8A0 ModelClassType DiamondDisplay DiamondDisplay DiamondDisplay Pointer
-    // 030 MaxDiamond                               0001866CF8A0 ModelClassType DiamondDisplay DiamondDisplay DiamondDisplay Pointer
-    // 038 GoBeforeAfter                            0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 040 GoMax                                    0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 048 BtnUp                                    0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 050 BtnDown                                  0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
+    // 020 BeforeDiamond                            ModelClassType DiamondDisplay DiamondDisplay DiamondDisplay Pointer
+    // 028 AfterDiamond                             ModelClassType DiamondDisplay DiamondDisplay DiamondDisplay Pointer
+    // 030 MaxDiamond                               ModelClassType DiamondDisplay DiamondDisplay DiamondDisplay Pointer
+    // 038 GoBeforeAfter                            ModelClassType GameObject GameObject GameObject Pointer
+    // 040 GoMax                                    ModelClassType GameObject GameObject GameObject Pointer
+    // 048 BtnUp                                    ModelClassType UIButton UIButton UIButton Pointer
+    // 050 BtnDown                                  ModelClassType UIButton UIButton UIButton Pointer
     // 058 onUp                                     Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     // 060 onDown                                   Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     public partial class DiamondLvSelector : DataModel
@@ -35,13 +35,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DiamondLvSelector() { Pointer= p0 };
 
-            value.BeforeDiamond                             = GetObject<DiamondDisplay>(new IntPtr(p + 0x020), ReversePrism.DataModels.DiamondDisplay.FromPointer); // 02466A3C4B90 0x20 BeforeDiamond               ( 0001866CF8A0 ModelClassType DiamondDisplay DiamondDisplay DiamondDisplay Pointer )
-            value.AfterDiamond                              = GetObject<DiamondDisplay>(new IntPtr(p + 0x028), ReversePrism.DataModels.DiamondDisplay.FromPointer); // 02466A3C4BB0 0x28 AfterDiamond                ( 0001866CF8A0 ModelClassType DiamondDisplay DiamondDisplay DiamondDisplay Pointer )
-            value.MaxDiamond                                = GetObject<DiamondDisplay>(new IntPtr(p + 0x030), ReversePrism.DataModels.DiamondDisplay.FromPointer); // 02466A3C4BD0 0x30 MaxDiamond                  ( 0001866CF8A0 ModelClassType DiamondDisplay DiamondDisplay DiamondDisplay Pointer )
-            value.GoBeforeAfter                             = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 02466A3C4BF0 0x38 GoBeforeAfter               ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.GoMax                                     = GetObject<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 02466A3C4C10 0x40 GoMax                       ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.BtnUp                                     = GetObject<UIButton>(new IntPtr(p + 0x048), ReversePrism.DataModels.UIButton.FromPointer); // 02466A3C4C30 0x48 BtnUp                       ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.BtnDown                                   = GetObject<UIButton>(new IntPtr(p + 0x050), ReversePrism.DataModels.UIButton.FromPointer); // 02466A3C4C50 0x50 BtnDown                     ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.BeforeDiamond                             = GetObject<DiamondDisplay>(new IntPtr(p + 0x020), ReversePrism.DataModels.DiamondDisplay.FromPointer); // 0x20 BeforeDiamond               ( ModelClassType DiamondDisplay DiamondDisplay DiamondDisplay Pointer )
+            value.AfterDiamond                              = GetObject<DiamondDisplay>(new IntPtr(p + 0x028), ReversePrism.DataModels.DiamondDisplay.FromPointer); // 0x28 AfterDiamond                ( ModelClassType DiamondDisplay DiamondDisplay DiamondDisplay Pointer )
+            value.MaxDiamond                                = GetObject<DiamondDisplay>(new IntPtr(p + 0x030), ReversePrism.DataModels.DiamondDisplay.FromPointer); // 0x30 MaxDiamond                  ( ModelClassType DiamondDisplay DiamondDisplay DiamondDisplay Pointer )
+            value.GoBeforeAfter                             = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0x38 GoBeforeAfter               ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.GoMax                                     = GetObject<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 0x40 GoMax                       ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.BtnUp                                     = GetObject<UIButton>(new IntPtr(p + 0x048), ReversePrism.DataModels.UIButton.FromPointer); // 0x48 BtnUp                       ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.BtnDown                                   = GetObject<UIButton>(new IntPtr(p + 0x050), ReversePrism.DataModels.UIButton.FromPointer); // 0x50 BtnDown                     ( ModelClassType UIButton UIButton UIButton Pointer )
 
             return value;
         }

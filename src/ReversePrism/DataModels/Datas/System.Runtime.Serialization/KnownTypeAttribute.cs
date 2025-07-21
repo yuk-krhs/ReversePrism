@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 MethodName                               000186671910 ModelPrimitiveType string string string String
-    // 018 Type                                     000186692850 ModelClassType Type Type Type Pointer
+    // 010 MethodName                               ModelPrimitiveType string string string String
+    // 018 Type                                     ModelClassType Type Type Type Pointer
     public partial class KnownTypeAttribute : DataModel
     {
         public string                                   MethodName                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new KnownTypeAttribute() { Pointer= p0 };
 
-            value.MethodName                                = GetString(new IntPtr(p + 0x010)); // 0245A4D2B348 0x10 MethodName                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 0245A4D2B368 0x18 Type                        ( 000186692850 ModelClassType Type Type Type Pointer )
+            value.MethodName                                = GetString(new IntPtr(p + 0x010)); // 0x10 MethodName                  ( ModelPrimitiveType string string string String )
+            value.Type                                      = GetObject<Type>(new IntPtr(p + 0x018), ReversePrism.DataModels.Type.FromPointer); // 0x18 Type                        ( ModelClassType Type Type Type Pointer )
 
             return value;
         }

@@ -16,7 +16,7 @@ namespace ReversePrism.DataModels
     // 000 DaysPerYear                              int IL2CPP_TYPE_I4
     // 000 TicksPerDay                              long IL2CPP_TYPE_I8
     // 008 DaysToMonth365                           int[] IL2CPP_TYPE_SZARRAY
-    // 010 DaysToMonth366                           000185B7DCD0 ModelPrimitiveListType int[] int[] List<int> Pointer
+    // 010 DaysToMonth366                           ModelPrimitiveListType int[] int[] List<int> Pointer
     public partial class DateTimeUtils : DataModel
     {
         public List<int>?                               DaysToMonth366                          { get; set; }
@@ -29,7 +29,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DateTimeUtils() { Pointer= p0 };
 
-            value.DaysToMonth366                            = GetInt32List(new IntPtr(p + 0x010)); // 0245A60C10E0 0x10 DaysToMonth366              ( 000185B7DCD0 ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.DaysToMonth366                            = GetInt32List(new IntPtr(p + 0x010)); // 0x10 DaysToMonth366              ( ModelPrimitiveListType int[] int[] List<int> Pointer )
 
             return value;
         }

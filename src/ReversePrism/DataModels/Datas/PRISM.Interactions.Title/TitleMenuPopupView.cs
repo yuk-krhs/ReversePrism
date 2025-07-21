@@ -8,22 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 TitleMenuContent                         000186679460 ModelClassType TitleMenuContent TitleMenuContent TitleMenuContent Pointer
-    // 028 CacheClearContent                        0001865210E0 ModelClassType CacheClearContent CacheClearContent CacheClearContent Pointer
-    // 030 transferContactPopupFactory              PopupViewFactory`1<ITransferContactPopupView> IL2CPP_TYPE_GENERICINST
-    // 038 PlayerDataDeleteContent                  000186750D00 ModelClassType PlayerDataDeleteContent PlayerDataDeleteContent PlayerDataDeleteContent Pointer
-    // 040 CacheCleaerProgressFactory               0001866058B0 ModelClassType SystemCacheClearProgressViewFactory SystemCacheClearProgressViewFactory SystemCacheClearProgressViewFactory Pointer
-    // 048 MessagePopup                             000186734520 ModelClassType ICommonSequencerContainer ICommonSequencerContainer ICommonSequencerContainer Pointer
-    // 050 ResourceTag                              00018661C240 ModelClassType IResourceTag IResourceTag IResourceTag Pointer
-    // 058 MenuContent                              000186679460 ModelClassType TitleMenuContent TitleMenuContent TitleMenuContent Pointer
+    // 020 TitleMenuContent                         ModelClassType TitleMenuContent TitleMenuContent TitleMenuContent Pointer
+    // 028 CacheClearContent                        ModelClassType CacheClearContent CacheClearContent CacheClearContent Pointer
+    // 030 PlayerDataDeleteContent                  ModelClassType PlayerDataDeleteContent PlayerDataDeleteContent PlayerDataDeleteContent Pointer
+    // 038 MenuContent                              ModelClassType TitleMenuContent TitleMenuContent TitleMenuContent Pointer
     public partial class TitleMenuPopupView : DataModel
     {
         public TitleMenuContent?                        TitleMenuContent                        { get; set; }
         public CacheClearContent?                       CacheClearContent                       { get; set; }
         public PlayerDataDeleteContent?                 PlayerDataDeleteContent                 { get; set; }
-        public SystemCacheClearProgressViewFactory?     CacheCleaerProgressFactory              { get; set; }
-        public ICommonSequencerContainer?               MessagePopup                            { get; set; }
-        public IResourceTag?                            ResourceTag                             { get; set; }
         public TitleMenuContent?                        MenuContent                             { get; set; }
 
         public static TitleMenuPopupView? FromPointer(IntPtr p0)
@@ -34,13 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TitleMenuPopupView() { Pointer= p0 };
 
-            value.TitleMenuContent                          = GetObject<TitleMenuContent>(new IntPtr(p + 0x020), ReversePrism.DataModels.TitleMenuContent.FromPointer); // 0245A43FBD40 0x20 TitleMenuContent            ( 000186679460 ModelClassType TitleMenuContent TitleMenuContent TitleMenuContent Pointer )
-            value.CacheClearContent                         = GetObject<CacheClearContent>(new IntPtr(p + 0x028), ReversePrism.DataModels.CacheClearContent.FromPointer); // 0245A43FBD60 0x28 CacheClearContent           ( 0001865210E0 ModelClassType CacheClearContent CacheClearContent CacheClearContent Pointer )
-            value.PlayerDataDeleteContent                   = GetObject<PlayerDataDeleteContent>(new IntPtr(p + 0x038), ReversePrism.DataModels.PlayerDataDeleteContent.FromPointer); // 0245A43FBDA0 0x38 PlayerDataDeleteContent     ( 000186750D00 ModelClassType PlayerDataDeleteContent PlayerDataDeleteContent PlayerDataDeleteContent Pointer )
-            value.CacheCleaerProgressFactory                = GetObject<SystemCacheClearProgressViewFactory>(new IntPtr(p + 0x040), ReversePrism.DataModels.SystemCacheClearProgressViewFactory.FromPointer); // 0245A43FBDC0 0x40 CacheCleaerProgressFactory  ( 0001866058B0 ModelClassType SystemCacheClearProgressViewFactory SystemCacheClearProgressViewFactory SystemCacheClearProgressViewFactory Pointer )
-            value.MessagePopup                              = GetObject<ICommonSequencerContainer>(new IntPtr(p + 0x048), ReversePrism.DataModels.ICommonSequencerContainer.FromPointer); // 0245A43FBDE0 0x48 MessagePopup                ( 000186734520 ModelClassType ICommonSequencerContainer ICommonSequencerContainer ICommonSequencerContainer Pointer )
-            value.ResourceTag                               = GetObject<IResourceTag>(new IntPtr(p + 0x050), ReversePrism.DataModels.IResourceTag.FromPointer); // 0245A43FBE00 0x50 ResourceTag                 ( 00018661C240 ModelClassType IResourceTag IResourceTag IResourceTag Pointer )
-            value.MenuContent                               = GetObject<TitleMenuContent>(new IntPtr(p + 0x058), ReversePrism.DataModels.TitleMenuContent.FromPointer); // 0245A43FBE20 0x58 MenuContent                 ( 000186679460 ModelClassType TitleMenuContent TitleMenuContent TitleMenuContent Pointer )
+            value.TitleMenuContent                          = GetObject<TitleMenuContent>(new IntPtr(p + 0x020), ReversePrism.DataModels.TitleMenuContent.FromPointer); // 0x20 TitleMenuContent            ( ModelClassType TitleMenuContent TitleMenuContent TitleMenuContent Pointer )
+            value.CacheClearContent                         = GetObject<CacheClearContent>(new IntPtr(p + 0x028), ReversePrism.DataModels.CacheClearContent.FromPointer); // 0x28 CacheClearContent           ( ModelClassType CacheClearContent CacheClearContent CacheClearContent Pointer )
+            value.PlayerDataDeleteContent                   = GetObject<PlayerDataDeleteContent>(new IntPtr(p + 0x030), ReversePrism.DataModels.PlayerDataDeleteContent.FromPointer); // 0x30 PlayerDataDeleteContent     ( ModelClassType PlayerDataDeleteContent PlayerDataDeleteContent PlayerDataDeleteContent Pointer )
+            value.MenuContent                               = GetObject<TitleMenuContent>(new IntPtr(p + 0x038), ReversePrism.DataModels.TitleMenuContent.FromPointer); // 0x38 MenuContent                 ( ModelClassType TitleMenuContent TitleMenuContent TitleMenuContent Pointer )
 
             return value;
         }

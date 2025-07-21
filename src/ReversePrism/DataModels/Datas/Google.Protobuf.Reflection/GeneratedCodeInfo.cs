@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 AnnotationFieldNumber                    int IL2CPP_TYPE_I4
     // 008 _repeated_annotation_codec               FieldCodec`1<Annotation> IL2CPP_TYPE_GENERICINST
-    // 018 Annotation                               000185CF8D88 ModelClassListType RepeatedField`1<Annotation> RepeatedField`1<Annotation> List<Annotation> Pointer
+    // 018 Annotation                               ModelClassListType RepeatedField`1<Annotation> RepeatedField`1<Annotation> List<Annotation> Pointer
     public partial class GeneratedCodeInfo : DataModel
     {
         public List<Annotation>?                        Annotation                              { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GeneratedCodeInfo() { Pointer= p0 };
 
-            value.Annotation                                = GetObjectList<Annotation>(new IntPtr(p + 0x018), ReversePrism.DataModels.Annotation.FromPointer); // 024660B93908 0x18 Annotation                  ( 000185CF8D88 ModelClassListType RepeatedField`1<Annotation> RepeatedField`1<Annotation> List<Annotation> Pointer )
+            value.Annotation                                = GetObjectList<Annotation>(new IntPtr(p + 0x018), ReversePrism.DataModels.Annotation.FromPointer); // 0x18 Annotation                  ( ModelClassListType RepeatedField`1<Annotation> RepeatedField`1<Annotation> List<Annotation> Pointer )
 
             return value;
         }

@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 buffer                                   Span`1<sbyte> IL2CPP_TYPE_GENERICINST
-    // 020 State                                    0001866B7680 ModelEnumType WriterInternalState WriterInternalState WriterInternalState Int32
+    // 020 State                                    ModelEnumType WriterInternalState WriterInternalState WriterInternalState Int32
     public partial class WriteContext : DataModel
     {
         public WriterInternalState                      State                                   { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new WriteContext() { Pointer= p0 };
 
-            value.State                                     = (WriterInternalState)GetInt32(new IntPtr(p + 0x020)); // 024663995F60 0x20 State                       ( 0001866B7680 ModelEnumType WriterInternalState WriterInternalState WriterInternalState Int32 )
+            value.State                                     = (WriterInternalState)GetInt32(new IntPtr(p + 0x020)); // 0x20 State                       ( ModelEnumType WriterInternalState WriterInternalState WriterInternalState Int32 )
 
             return value;
         }

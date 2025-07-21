@@ -8,14 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Scheme                                   000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
-    // 012 User                                     000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
-    // 014 Host                                     000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
-    // 016 PortValue                                000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
-    // 018 Path                                     000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
-    // 01A Query                                    000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
-    // 01C Fragment                                 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
-    // 01E End                                      000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16
+    // 010 Scheme                                   ModelPrimitiveType ushort ushort ushort UInt16
+    // 012 User                                     ModelPrimitiveType ushort ushort ushort UInt16
+    // 014 Host                                     ModelPrimitiveType ushort ushort ushort UInt16
+    // 016 PortValue                                ModelPrimitiveType ushort ushort ushort UInt16
+    // 018 Path                                     ModelPrimitiveType ushort ushort ushort UInt16
+    // 01A Query                                    ModelPrimitiveType ushort ushort ushort UInt16
+    // 01C Fragment                                 ModelPrimitiveType ushort ushort ushort UInt16
+    // 01E End                                      ModelPrimitiveType ushort ushort ushort UInt16
     public partial class Offset : DataModel
     {
         public ushort                                   Scheme                                  { get; set; }
@@ -35,14 +35,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Offset() { Pointer= p0 };
 
-            value.Scheme                                    = GetUInt16(new IntPtr(p + 0x010)); // 0245A4C5E728 0x10 Scheme                      ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.User                                      = GetUInt16(new IntPtr(p + 0x012)); // 0245A4C5E748 0x12 User                        ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.Host                                      = GetUInt16(new IntPtr(p + 0x014)); // 0245A4C5E768 0x14 Host                        ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.PortValue                                 = GetUInt16(new IntPtr(p + 0x016)); // 0245A4C5E788 0x16 PortValue                   ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.Path                                      = GetUInt16(new IntPtr(p + 0x018)); // 0245A4C5E7A8 0x18 Path                        ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.Query                                     = GetUInt16(new IntPtr(p + 0x01A)); // 0245A4C5E7C8 0x1A Query                       ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.Fragment                                  = GetUInt16(new IntPtr(p + 0x01C)); // 0245A4C5E7E8 0x1C Fragment                    ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
-            value.End                                       = GetUInt16(new IntPtr(p + 0x01E)); // 0245A4C5E808 0x1E End                         ( 000186696FC0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Scheme                                    = GetUInt16(new IntPtr(p + 0x010)); // 0x10 Scheme                      ( ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.User                                      = GetUInt16(new IntPtr(p + 0x012)); // 0x12 User                        ( ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Host                                      = GetUInt16(new IntPtr(p + 0x014)); // 0x14 Host                        ( ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.PortValue                                 = GetUInt16(new IntPtr(p + 0x016)); // 0x16 PortValue                   ( ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Path                                      = GetUInt16(new IntPtr(p + 0x018)); // 0x18 Path                        ( ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Query                                     = GetUInt16(new IntPtr(p + 0x01A)); // 0x1A Query                       ( ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Fragment                                  = GetUInt16(new IntPtr(p + 0x01C)); // 0x1C Fragment                    ( ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.End                                       = GetUInt16(new IntPtr(p + 0x01E)); // 0x1E End                         ( ModelPrimitiveType ushort ushort ushort UInt16 )
 
             return value;
         }

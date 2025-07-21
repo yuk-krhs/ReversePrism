@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 DefaultRecursionLimit                    int IL2CPP_TYPE_I4
     // 000 DefaultSizeLimit                         int IL2CPP_TYPE_I4
     // 010 buffer                                   ReadOnlySpan`1<sbyte> IL2CPP_TYPE_GENERICINST
-    // 020 State                                    00018663CBD0 ModelEnumType ParserInternalState ParserInternalState ParserInternalState Int32
+    // 020 State                                    ModelEnumType ParserInternalState ParserInternalState ParserInternalState Int32
     public partial class ParseContext : DataModel
     {
         public ParserInternalState                      State                                   { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ParseContext() { Pointer= p0 };
 
-            value.State                                     = (ParserInternalState)GetInt32(new IntPtr(p + 0x020)); // 024663996C00 0x20 State                       ( 00018663CBD0 ModelEnumType ParserInternalState ParserInternalState ParserInternalState Int32 )
+            value.State                                     = (ParserInternalState)GetInt32(new IntPtr(p + 0x020)); // 0x20 State                       ( ModelEnumType ParserInternalState ParserInternalState ParserInternalState Int32 )
 
             return value;
         }

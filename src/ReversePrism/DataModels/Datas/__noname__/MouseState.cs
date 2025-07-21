@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_TrackedButtons                         000185D27D28 ModelClassListType List`1<ButtonState> List`1<ButtonState> List<ButtonState> Pointer
+    // 010 M_TrackedButtons                         ModelClassListType List`1<ButtonState> List`1<ButtonState> List<ButtonState> Pointer
     public partial class MouseState : DataModel
     {
         public List<ButtonState>?                       M_TrackedButtons                        { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MouseState() { Pointer= p0 };
 
-            value.M_TrackedButtons                          = GetObjectList<ButtonState>(new IntPtr(p + 0x010), ReversePrism.DataModels.ButtonState.FromPointer); // 0245A3EBEB30 0x10 M_TrackedButtons            ( 000185D27D28 ModelClassListType List`1<ButtonState> List`1<ButtonState> List<ButtonState> Pointer )
+            value.M_TrackedButtons                          = GetObjectList<ButtonState>(new IntPtr(p + 0x010), ReversePrism.DataModels.ButtonState.FromPointer); // 0x10 M_TrackedButtons            ( ModelClassListType List`1<ButtonState> List`1<ButtonState> List<ButtonState> Pointer )
 
             return value;
         }

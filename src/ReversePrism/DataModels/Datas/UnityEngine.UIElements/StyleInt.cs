@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Value                                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 014 M_Keyword                                0001865C8070 ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32
+    // 010 M_Value                                  ModelPrimitiveType int int int Int32
+    // 014 M_Keyword                                ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32
     public partial class StyleInt : DataModel
     {
         public int                                      M_Value                                 { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StyleInt() { Pointer= p0 };
 
-            value.M_Value                                   = GetInt32(new IntPtr(p + 0x010)); // 0245A67BA850 0x10 M_Value                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_Keyword                                 = (StyleKeyword)GetInt32(new IntPtr(p + 0x014)); // 0245A67BA870 0x14 M_Keyword                   ( 0001865C8070 ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32 )
+            value.M_Value                                   = GetInt32(new IntPtr(p + 0x010)); // 0x10 M_Value                     ( ModelPrimitiveType int int int Int32 )
+            value.M_Keyword                                 = (StyleKeyword)GetInt32(new IntPtr(p + 0x014)); // 0x14 M_Keyword                   ( ModelEnumType StyleKeyword StyleKeyword StyleKeyword Int32 )
 
             return value;
         }

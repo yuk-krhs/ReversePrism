@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<JumpStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ButtonGoToTypeFieldNumber                int IL2CPP_TYPE_I4
-    // 018 ButtonGoToType                           000186516C00 ModelEnumType ButtonGoToType ButtonGoToType ButtonGoToType Int32
+    // 018 ButtonGoToType                           ModelEnumType ButtonGoToType ButtonGoToType ButtonGoToType Int32
     // 000 ParameterFieldNumber                     int IL2CPP_TYPE_I4
-    // 020 Parameter                                000186671910 ModelPrimitiveType string string string String
+    // 020 Parameter                                ModelPrimitiveType string string string String
     public partial class JumpStatus : DataModel
     {
         public ButtonGoToType                           ButtonGoToType                          { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JumpStatus() { Pointer= p0 };
 
-            value.ButtonGoToType                            = (ButtonGoToType)GetInt32(new IntPtr(p + 0x018)); // 024660EE4460 0x18 ButtonGoToType              ( 000186516C00 ModelEnumType ButtonGoToType ButtonGoToType ButtonGoToType Int32 )
-            value.Parameter                                 = GetString(new IntPtr(p + 0x020)); // 024660EE44A0 0x20 Parameter                   ( 000186671910 ModelPrimitiveType string string string String )
+            value.ButtonGoToType                            = (ButtonGoToType)GetInt32(new IntPtr(p + 0x018)); // 0x18 ButtonGoToType              ( ModelEnumType ButtonGoToType ButtonGoToType ButtonGoToType Int32 )
+            value.Parameter                                 = GetString(new IntPtr(p + 0x020)); // 0x20 Parameter                   ( ModelPrimitiveType string string string String )
 
             return value;
         }

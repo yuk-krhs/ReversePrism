@@ -8,23 +8,23 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 048 GaugeImage                               0001866CCDB0 ModelClassType Image Image Image Pointer
-    // 050 CurrentScoreText                         0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer
-    // 058 NormalGaugeSprite                        00018666B610 ModelClassType Sprite Sprite Sprite Pointer
-    // 060 CautionGaugeSprite                       00018666B610 ModelClassType Sprite Sprite Sprite Pointer
-    // 068 FrameImage                               0001866CCDB0 ModelClassType Image Image Image Pointer
-    // 070 NormalFrameSprite                        00018666B610 ModelClassType Sprite Sprite Sprite Pointer
-    // 078 CautionFrameSprite                       00018666B610 ModelClassType Sprite Sprite Sprite Pointer
-    // 080 BeforeLife                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 084 AnimationStartLife                       0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 088 AnimationRenderLife                      0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 08C AnimationTargetLife                      0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 090 AnimationTime                            0001866656B0 ModelPrimitiveType float float float Single
-    // 094 CurrentLerpTime                          0001866656B0 ModelPrimitiveType float float float Single
-    // 098 NegativeAnimationSpeed                   000186666CB0 ModelPrimitiveType float float float Single
-    // 09C PositiveAnimationSpeed                   000186666CB0 ModelPrimitiveType float float float Single
-    // 0A0 IsInitialized                            000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 0A8 EasingFunction                           000186719D80 ModelClassType EasingFunction EasingFunction EasingFunction Pointer
+    // 048 GaugeImage                               ModelClassType Image Image Image Pointer
+    // 050 CurrentScoreText                         ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer
+    // 058 NormalGaugeSprite                        ModelClassType Sprite Sprite Sprite Pointer
+    // 060 CautionGaugeSprite                       ModelClassType Sprite Sprite Sprite Pointer
+    // 068 FrameImage                               ModelClassType Image Image Image Pointer
+    // 070 NormalFrameSprite                        ModelClassType Sprite Sprite Sprite Pointer
+    // 078 CautionFrameSprite                       ModelClassType Sprite Sprite Sprite Pointer
+    // 080 BeforeLife                               ModelPrimitiveType int int int Int32
+    // 084 AnimationStartLife                       ModelPrimitiveType int int int Int32
+    // 088 AnimationRenderLife                      ModelPrimitiveType int int int Int32
+    // 08C AnimationTargetLife                      ModelPrimitiveType int int int Int32
+    // 090 AnimationTime                            ModelPrimitiveType float float float Single
+    // 094 CurrentLerpTime                          ModelPrimitiveType float float float Single
+    // 098 NegativeAnimationSpeed                   ModelPrimitiveType float float float Single
+    // 09C PositiveAnimationSpeed                   ModelPrimitiveType float float float Single
+    // 0A0 IsInitialized                            ModelPrimitiveType bool bool bool Bool
+    // 0A8 EasingFunction                           ModelClassType EasingFunction EasingFunction EasingFunction Pointer
     public partial class RhythmGameLifeGauge : DataModel
     {
         public Image?                                   GaugeImage                              { get; set; }
@@ -53,23 +53,23 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RhythmGameLifeGauge() { Pointer= p0 };
 
-            value.GaugeImage                                = GetObject<Image>(new IntPtr(p + 0x048), ReversePrism.DataModels.Image.FromPointer); // 0246650BF6C0 0x48 GaugeImage                  ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.CurrentScoreText                          = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 0246650BF6E0 0x50 CurrentScoreText            ( 0001866409F0 ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
-            value.NormalGaugeSprite                         = GetObject<Sprite>(new IntPtr(p + 0x058), ReversePrism.DataModels.Sprite.FromPointer); // 0246650BF700 0x58 NormalGaugeSprite           ( 00018666B610 ModelClassType Sprite Sprite Sprite Pointer )
-            value.CautionGaugeSprite                        = GetObject<Sprite>(new IntPtr(p + 0x060), ReversePrism.DataModels.Sprite.FromPointer); // 0246650BF720 0x60 CautionGaugeSprite          ( 00018666B610 ModelClassType Sprite Sprite Sprite Pointer )
-            value.FrameImage                                = GetObject<Image>(new IntPtr(p + 0x068), ReversePrism.DataModels.Image.FromPointer); // 0246650BF740 0x68 FrameImage                  ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.NormalFrameSprite                         = GetObject<Sprite>(new IntPtr(p + 0x070), ReversePrism.DataModels.Sprite.FromPointer); // 0246650BF760 0x70 NormalFrameSprite           ( 00018666B610 ModelClassType Sprite Sprite Sprite Pointer )
-            value.CautionFrameSprite                        = GetObject<Sprite>(new IntPtr(p + 0x078), ReversePrism.DataModels.Sprite.FromPointer); // 0246650BF780 0x78 CautionFrameSprite          ( 00018666B610 ModelClassType Sprite Sprite Sprite Pointer )
-            value.BeforeLife                                = GetInt32(new IntPtr(p + 0x080)); // 0246650BF7A0 0x80 BeforeLife                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.AnimationStartLife                        = GetInt32(new IntPtr(p + 0x084)); // 0246650BF7C0 0x84 AnimationStartLife          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.AnimationRenderLife                       = GetInt32(new IntPtr(p + 0x088)); // 0246650BF7E0 0x88 AnimationRenderLife         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.AnimationTargetLife                       = GetInt32(new IntPtr(p + 0x08C)); // 0246650BF800 0x8C AnimationTargetLife         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.AnimationTime                             = GetSingle(new IntPtr(p + 0x090)); // 0246650BF820 0x90 AnimationTime               ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.CurrentLerpTime                           = GetSingle(new IntPtr(p + 0x094)); // 0246650BF840 0x94 CurrentLerpTime             ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.NegativeAnimationSpeed                    = GetSingle(new IntPtr(p + 0x098)); // 0246650BF860 0x98 NegativeAnimationSpeed      ( 000186666CB0 ModelPrimitiveType float float float Single )
-            value.PositiveAnimationSpeed                    = GetSingle(new IntPtr(p + 0x09C)); // 0246650BF880 0x9C PositiveAnimationSpeed      ( 000186666CB0 ModelPrimitiveType float float float Single )
-            value.IsInitialized                             = GetBool(new IntPtr(p + 0x0A0)); // 0246650BF8A0 0xA0 IsInitialized               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.EasingFunction                            = GetObject<EasingFunction>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.EasingFunction.FromPointer); // 0246650BF8C0 0xA8 EasingFunction              ( 000186719D80 ModelClassType EasingFunction EasingFunction EasingFunction Pointer )
+            value.GaugeImage                                = GetObject<Image>(new IntPtr(p + 0x048), ReversePrism.DataModels.Image.FromPointer); // 0x48 GaugeImage                  ( ModelClassType Image Image Image Pointer )
+            value.CurrentScoreText                          = GetObject<TextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.TextMeshProUGUI.FromPointer); // 0x50 CurrentScoreText            ( ModelClassType TextMeshProUGUI TextMeshProUGUI TextMeshProUGUI Pointer )
+            value.NormalGaugeSprite                         = GetObject<Sprite>(new IntPtr(p + 0x058), ReversePrism.DataModels.Sprite.FromPointer); // 0x58 NormalGaugeSprite           ( ModelClassType Sprite Sprite Sprite Pointer )
+            value.CautionGaugeSprite                        = GetObject<Sprite>(new IntPtr(p + 0x060), ReversePrism.DataModels.Sprite.FromPointer); // 0x60 CautionGaugeSprite          ( ModelClassType Sprite Sprite Sprite Pointer )
+            value.FrameImage                                = GetObject<Image>(new IntPtr(p + 0x068), ReversePrism.DataModels.Image.FromPointer); // 0x68 FrameImage                  ( ModelClassType Image Image Image Pointer )
+            value.NormalFrameSprite                         = GetObject<Sprite>(new IntPtr(p + 0x070), ReversePrism.DataModels.Sprite.FromPointer); // 0x70 NormalFrameSprite           ( ModelClassType Sprite Sprite Sprite Pointer )
+            value.CautionFrameSprite                        = GetObject<Sprite>(new IntPtr(p + 0x078), ReversePrism.DataModels.Sprite.FromPointer); // 0x78 CautionFrameSprite          ( ModelClassType Sprite Sprite Sprite Pointer )
+            value.BeforeLife                                = GetInt32(new IntPtr(p + 0x080)); // 0x80 BeforeLife                  ( ModelPrimitiveType int int int Int32 )
+            value.AnimationStartLife                        = GetInt32(new IntPtr(p + 0x084)); // 0x84 AnimationStartLife          ( ModelPrimitiveType int int int Int32 )
+            value.AnimationRenderLife                       = GetInt32(new IntPtr(p + 0x088)); // 0x88 AnimationRenderLife         ( ModelPrimitiveType int int int Int32 )
+            value.AnimationTargetLife                       = GetInt32(new IntPtr(p + 0x08C)); // 0x8C AnimationTargetLife         ( ModelPrimitiveType int int int Int32 )
+            value.AnimationTime                             = GetSingle(new IntPtr(p + 0x090)); // 0x90 AnimationTime               ( ModelPrimitiveType float float float Single )
+            value.CurrentLerpTime                           = GetSingle(new IntPtr(p + 0x094)); // 0x94 CurrentLerpTime             ( ModelPrimitiveType float float float Single )
+            value.NegativeAnimationSpeed                    = GetSingle(new IntPtr(p + 0x098)); // 0x98 NegativeAnimationSpeed      ( ModelPrimitiveType float float float Single )
+            value.PositiveAnimationSpeed                    = GetSingle(new IntPtr(p + 0x09C)); // 0x9C PositiveAnimationSpeed      ( ModelPrimitiveType float float float Single )
+            value.IsInitialized                             = GetBool(new IntPtr(p + 0x0A0)); // 0xA0 IsInitialized               ( ModelPrimitiveType bool bool bool Bool )
+            value.EasingFunction                            = GetObject<EasingFunction>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.EasingFunction.FromPointer); // 0xA8 EasingFunction              ( ModelClassType EasingFunction EasingFunction EasingFunction Pointer )
 
             return value;
         }

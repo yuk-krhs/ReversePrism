@@ -10,9 +10,10 @@ namespace ReversePrism.DataModels
 
     public enum Resolution
     {
-        x128,
+        Unknown,
         x256,
         x512,
         x1024,
+        SameAsModelBuffer,
     }
 }

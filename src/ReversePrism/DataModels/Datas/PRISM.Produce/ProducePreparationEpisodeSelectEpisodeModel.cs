@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 EpisodeStatus                            0001867618B0 ModelClassType IEpisodeStatus IEpisodeStatus IEpisodeStatus Pointer
-    // 018 Attribute                                0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 EpisodeStatus                            ModelClassType IEpisodeStatus IEpisodeStatus IEpisodeStatus Pointer
+    // 018 Attribute                                ModelPrimitiveType int int int Int32
     public partial class ProducePreparationEpisodeSelectEpisodeModel : DataModel
     {
         public IEpisodeStatus?                          EpisodeStatus                           { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProducePreparationEpisodeSelectEpisodeModel() { Pointer= p0 };
 
-            value.EpisodeStatus                             = GetObject<IEpisodeStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IEpisodeStatus.FromPointer); // 024665A3DA38 0x10 EpisodeStatus               ( 0001867618B0 ModelClassType IEpisodeStatus IEpisodeStatus IEpisodeStatus Pointer )
-            value.Attribute                                 = GetInt32(new IntPtr(p + 0x018)); // 024665A3DA58 0x18 Attribute                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.EpisodeStatus                             = GetObject<IEpisodeStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IEpisodeStatus.FromPointer); // 0x10 EpisodeStatus               ( ModelClassType IEpisodeStatus IEpisodeStatus IEpisodeStatus Pointer )
+            value.Attribute                                 = GetInt32(new IntPtr(p + 0x018)); // 0x18 Attribute                   ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

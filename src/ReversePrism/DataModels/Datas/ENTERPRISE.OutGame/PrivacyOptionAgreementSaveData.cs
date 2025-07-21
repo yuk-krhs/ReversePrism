@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 IsAgreeingAnalyitics                     000186595960 ModelPrimitiveType bool bool bool Bool
-    // 021 IsAgreeingAdvertisement                  000186595960 ModelPrimitiveType bool bool bool Bool
+    // 020 IsAgreeingAnalyitics                     ModelPrimitiveType bool bool bool Bool
+    // 021 IsAgreeingAdvertisement                  ModelPrimitiveType bool bool bool Bool
     public partial class PrivacyOptionAgreementSaveData : DataModel
     {
         public bool                                     IsAgreeingAnalyitics                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PrivacyOptionAgreementSaveData() { Pointer= p0 };
 
-            value.IsAgreeingAnalyitics                      = GetBool(new IntPtr(p + 0x020)); // 0245A3A80410 0x20 IsAgreeingAnalyitics        ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.IsAgreeingAdvertisement                   = GetBool(new IntPtr(p + 0x021)); // 0245A3A80430 0x21 IsAgreeingAdvertisement     ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.IsAgreeingAnalyitics                      = GetBool(new IntPtr(p + 0x020)); // 0x20 IsAgreeingAnalyitics        ( ModelPrimitiveType bool bool bool Bool )
+            value.IsAgreeingAdvertisement                   = GetBool(new IntPtr(p + 0x021)); // 0x21 IsAgreeingAdvertisement     ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

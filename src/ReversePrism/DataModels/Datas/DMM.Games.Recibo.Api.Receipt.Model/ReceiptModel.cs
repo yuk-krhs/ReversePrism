@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 InappPurchaseData                        000186671910 ModelPrimitiveType string string string String
+    // 010 InappPurchaseData                        ModelPrimitiveType string string string String
     // 018 <ReceiptInfo>k__BackingField             Nullable`1<ReceiptInfo> IL2CPP_TYPE_GENERICINST
-    // 068 InappDataSignature                       000186671910 ModelPrimitiveType string string string String
+    // 068 InappDataSignature                       ModelPrimitiveType string string string String
     public partial class ReceiptModel : DataModel
     {
         public string                                   InappPurchaseData                       { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ReceiptModel() { Pointer= p0 };
 
-            value.InappPurchaseData                         = GetString(new IntPtr(p + 0x010)); // 0245A4BFF090 0x10 InappPurchaseData           ( 000186671910 ModelPrimitiveType string string string String )
-            value.InappDataSignature                        = GetString(new IntPtr(p + 0x068)); // 0245A4BFF0D0 0x68 InappDataSignature          ( 000186671910 ModelPrimitiveType string string string String )
+            value.InappPurchaseData                         = GetString(new IntPtr(p + 0x010)); // 0x10 InappPurchaseData           ( ModelPrimitiveType string string string String )
+            value.InappDataSignature                        = GetString(new IntPtr(p + 0x068)); // 0x68 InappDataSignature          ( ModelPrimitiveType string string string String )
 
             return value;
         }

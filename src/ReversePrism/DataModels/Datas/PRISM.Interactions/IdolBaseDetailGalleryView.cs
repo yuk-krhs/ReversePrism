@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 CanvasGroup                              000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
-    // 028 BtnAlbum                                 0001865E1C70 ModelClassType GalleryButton GalleryButton GalleryButton Pointer
-    // 030 BtnCostume                               0001865E1C70 ModelClassType GalleryButton GalleryButton GalleryButton Pointer
-    // 038 BtnVoice                                 0001865E1C70 ModelClassType GalleryButton GalleryButton GalleryButton Pointer
-    // 040 BtnMovie                                 0001865E1C70 ModelClassType GalleryButton GalleryButton GalleryButton Pointer
-    // 048 BtnEtcetera                              0001865E1C70 ModelClassType GalleryButton GalleryButton GalleryButton Pointer
+    // 020 CanvasGroup                              ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
+    // 028 BtnAlbum                                 ModelClassType GalleryButton GalleryButton GalleryButton Pointer
+    // 030 BtnCostume                               ModelClassType GalleryButton GalleryButton GalleryButton Pointer
+    // 038 BtnVoice                                 ModelClassType GalleryButton GalleryButton GalleryButton Pointer
+    // 040 BtnMovie                                 ModelClassType GalleryButton GalleryButton GalleryButton Pointer
+    // 048 BtnEtcetera                              ModelClassType GalleryButton GalleryButton GalleryButton Pointer
     // 050 <OnTap>k__BackingField                   IObservable`1<GalleryContents> IL2CPP_TYPE_GENERICINST
     public partial class IdolBaseDetailGalleryView : DataModel
     {
@@ -32,12 +32,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IdolBaseDetailGalleryView() { Pointer= p0 };
 
-            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466A2C02E0 0x20 CanvasGroup                 ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.BtnAlbum                                  = GetObject<GalleryButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.GalleryButton.FromPointer); // 02466A2C0300 0x28 BtnAlbum                    ( 0001865E1C70 ModelClassType GalleryButton GalleryButton GalleryButton Pointer )
-            value.BtnCostume                                = GetObject<GalleryButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.GalleryButton.FromPointer); // 02466A2C0320 0x30 BtnCostume                  ( 0001865E1C70 ModelClassType GalleryButton GalleryButton GalleryButton Pointer )
-            value.BtnVoice                                  = GetObject<GalleryButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.GalleryButton.FromPointer); // 02466A2C0340 0x38 BtnVoice                    ( 0001865E1C70 ModelClassType GalleryButton GalleryButton GalleryButton Pointer )
-            value.BtnMovie                                  = GetObject<GalleryButton>(new IntPtr(p + 0x040), ReversePrism.DataModels.GalleryButton.FromPointer); // 02466A2C0360 0x40 BtnMovie                    ( 0001865E1C70 ModelClassType GalleryButton GalleryButton GalleryButton Pointer )
-            value.BtnEtcetera                               = GetObject<GalleryButton>(new IntPtr(p + 0x048), ReversePrism.DataModels.GalleryButton.FromPointer); // 02466A2C0380 0x48 BtnEtcetera                 ( 0001865E1C70 ModelClassType GalleryButton GalleryButton GalleryButton Pointer )
+            value.CanvasGroup                               = GetObject<CanvasGroup>(new IntPtr(p + 0x020), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0x20 CanvasGroup                 ( ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.BtnAlbum                                  = GetObject<GalleryButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.GalleryButton.FromPointer); // 0x28 BtnAlbum                    ( ModelClassType GalleryButton GalleryButton GalleryButton Pointer )
+            value.BtnCostume                                = GetObject<GalleryButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.GalleryButton.FromPointer); // 0x30 BtnCostume                  ( ModelClassType GalleryButton GalleryButton GalleryButton Pointer )
+            value.BtnVoice                                  = GetObject<GalleryButton>(new IntPtr(p + 0x038), ReversePrism.DataModels.GalleryButton.FromPointer); // 0x38 BtnVoice                    ( ModelClassType GalleryButton GalleryButton GalleryButton Pointer )
+            value.BtnMovie                                  = GetObject<GalleryButton>(new IntPtr(p + 0x040), ReversePrism.DataModels.GalleryButton.FromPointer); // 0x40 BtnMovie                    ( ModelClassType GalleryButton GalleryButton GalleryButton Pointer )
+            value.BtnEtcetera                               = GetObject<GalleryButton>(new IntPtr(p + 0x048), ReversePrism.DataModels.GalleryButton.FromPointer); // 0x48 BtnEtcetera                 ( ModelClassType GalleryButton GalleryButton GalleryButton Pointer )
 
             return value;
         }

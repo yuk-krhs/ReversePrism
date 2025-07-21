@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Lut3DBaker                               0001865F75D0 ModelClassType ComputeShader ComputeShader ComputeShader Pointer
-    // 018 Texture3dLerp                            0001865F75D0 ModelClassType ComputeShader ComputeShader ComputeShader Pointer
+    // 010 Lut3DBaker                               ModelClassType ComputeShader ComputeShader ComputeShader Pointer
+    // 018 Texture3dLerp                            ModelClassType ComputeShader ComputeShader ComputeShader Pointer
     public partial class ComputeShaders : DataModel
     {
         public ComputeShader?                           Lut3DBaker                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ComputeShaders() { Pointer= p0 };
 
-            value.Lut3DBaker                                = GetObject<ComputeShader>(new IntPtr(p + 0x010), ReversePrism.DataModels.ComputeShader.FromPointer); // 0245A60DB4D8 0x10 Lut3DBaker                  ( 0001865F75D0 ModelClassType ComputeShader ComputeShader ComputeShader Pointer )
-            value.Texture3dLerp                             = GetObject<ComputeShader>(new IntPtr(p + 0x018), ReversePrism.DataModels.ComputeShader.FromPointer); // 0245A60DB4F8 0x18 Texture3dLerp               ( 0001865F75D0 ModelClassType ComputeShader ComputeShader ComputeShader Pointer )
+            value.Lut3DBaker                                = GetObject<ComputeShader>(new IntPtr(p + 0x010), ReversePrism.DataModels.ComputeShader.FromPointer); // 0x10 Lut3DBaker                  ( ModelClassType ComputeShader ComputeShader ComputeShader Pointer )
+            value.Texture3dLerp                             = GetObject<ComputeShader>(new IntPtr(p + 0x018), ReversePrism.DataModels.ComputeShader.FromPointer); // 0x18 Texture3dLerp               ( ModelClassType ComputeShader ComputeShader ComputeShader Pointer )
 
             return value;
         }

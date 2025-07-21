@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Data                                     00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte
+    // 010 Data                                     ModelPrimitiveType sbyte sbyte sbyte SByte
     public partial class BitArray8 : DataModel
     {
         public sbyte                                    Data                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BitArray8() { Pointer= p0 };
 
-            value.Data                                      = GetSByte(new IntPtr(p + 0x010)); // 0246692FF110 0x10 Data                        ( 00018659CA20 ModelPrimitiveType sbyte sbyte sbyte SByte )
+            value.Data                                      = GetSByte(new IntPtr(p + 0x010)); // 0x10 Data                        ( ModelPrimitiveType sbyte sbyte sbyte SByte )
 
             return value;
         }

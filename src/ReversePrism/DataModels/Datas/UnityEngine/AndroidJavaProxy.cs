@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 JavaInterface                            0001866ACD40 ModelClassType AndroidJavaClass AndroidJavaClass AndroidJavaClass Pointer
+    // 010 JavaInterface                            ModelClassType AndroidJavaClass AndroidJavaClass AndroidJavaClass Pointer
     // 018 proxyObject                              <int> IL2CPP_TYPE_I
     // 000 s_JavaLangSystemClass                    GlobalJavaObjectRef IL2CPP_TYPE_CLASS
     // 008 s_HashCodeMethodID                       <int> IL2CPP_TYPE_I
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AndroidJavaProxy() { Pointer= p0 };
 
-            value.JavaInterface                             = GetObject<AndroidJavaClass>(new IntPtr(p + 0x010), ReversePrism.DataModels.AndroidJavaClass.FromPointer); // 0245A68C7EA8 0x10 JavaInterface               ( 0001866ACD40 ModelClassType AndroidJavaClass AndroidJavaClass AndroidJavaClass Pointer )
+            value.JavaInterface                             = GetObject<AndroidJavaClass>(new IntPtr(p + 0x010), ReversePrism.DataModels.AndroidJavaClass.FromPointer); // 0x10 JavaInterface               ( ModelClassType AndroidJavaClass AndroidJavaClass AndroidJavaClass Pointer )
 
             return value;
         }

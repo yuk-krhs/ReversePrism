@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CacheWeekScheduleList                    000185CEA198 ModelClassListType List`1<IWeekScheduleStatus> List`1<IWeekScheduleStatus> List<IWeekScheduleStatus> Pointer
-    // 018 CacheProduceTerm                         0001865F57A0 ModelClassType IProduceTermStatus IProduceTermStatus IProduceTermStatus Pointer
-    // 020 CacheSubSeason                           000186664B40 ModelClassType ISubSeasonStatus ISubSeasonStatus ISubSeasonStatus Pointer
+    // 010 CacheWeekScheduleList                    ModelClassListType List`1<IWeekScheduleStatus> List`1<IWeekScheduleStatus> List<IWeekScheduleStatus> Pointer
+    // 018 CacheProduceTerm                         ModelClassType IProduceTermStatus IProduceTermStatus IProduceTermStatus Pointer
+    // 020 CacheSubSeason                           ModelClassType ISubSeasonStatus ISubSeasonStatus ISubSeasonStatus Pointer
     public partial class ScheduleSelectionScheduleDisplayViewModel : DataModel
     {
         public List<IWeekScheduleStatus>?               CacheWeekScheduleList                   { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ScheduleSelectionScheduleDisplayViewModel() { Pointer= p0 };
 
-            value.CacheWeekScheduleList                     = GetObjectList<IWeekScheduleStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IWeekScheduleStatus.FromPointer); // 0246666BE2F0 0x10 CacheWeekScheduleList       ( 000185CEA198 ModelClassListType List`1<IWeekScheduleStatus> List`1<IWeekScheduleStatus> List<IWeekScheduleStatus> Pointer )
-            value.CacheProduceTerm                          = GetObject<IProduceTermStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IProduceTermStatus.FromPointer); // 0246666BE310 0x18 CacheProduceTerm            ( 0001865F57A0 ModelClassType IProduceTermStatus IProduceTermStatus IProduceTermStatus Pointer )
-            value.CacheSubSeason                            = GetObject<ISubSeasonStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ISubSeasonStatus.FromPointer); // 0246666BE330 0x20 CacheSubSeason              ( 000186664B40 ModelClassType ISubSeasonStatus ISubSeasonStatus ISubSeasonStatus Pointer )
+            value.CacheWeekScheduleList                     = GetObjectList<IWeekScheduleStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IWeekScheduleStatus.FromPointer); // 0x10 CacheWeekScheduleList       ( ModelClassListType List`1<IWeekScheduleStatus> List`1<IWeekScheduleStatus> List<IWeekScheduleStatus> Pointer )
+            value.CacheProduceTerm                          = GetObject<IProduceTermStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IProduceTermStatus.FromPointer); // 0x18 CacheProduceTerm            ( ModelClassType IProduceTermStatus IProduceTermStatus IProduceTermStatus Pointer )
+            value.CacheSubSeason                            = GetObject<ISubSeasonStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ISubSeasonStatus.FromPointer); // 0x20 CacheSubSeason              ( ModelClassType ISubSeasonStatus ISubSeasonStatus ISubSeasonStatus Pointer )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CharacterId                              0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 Costume                                  00018659D660 ModelClassType CharacterCostume CharacterCostume CharacterCostume Pointer
+    // 010 CharacterId                              ModelPrimitiveType int int int Int32
+    // 018 Costume                                  ModelClassType CharacterCostume CharacterCostume CharacterCostume Pointer
     public partial class DressUpRoomIdol : DataModel
     {
         public int                                      CharacterId                             { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DressUpRoomIdol() { Pointer= p0 };
 
-            value.CharacterId                               = GetInt32(new IntPtr(p + 0x010)); // 02466628A3A8 0x10 CharacterId                 ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Costume                                   = GetObject<CharacterCostume>(new IntPtr(p + 0x018), ReversePrism.DataModels.CharacterCostume.FromPointer); // 02466628A3C8 0x18 Costume                     ( 00018659D660 ModelClassType CharacterCostume CharacterCostume CharacterCostume Pointer )
+            value.CharacterId                               = GetInt32(new IntPtr(p + 0x010)); // 0x10 CharacterId                 ( ModelPrimitiveType int int int Int32 )
+            value.Costume                                   = GetObject<CharacterCostume>(new IntPtr(p + 0x018), ReversePrism.DataModels.CharacterCostume.FromPointer); // 0x18 Costume                     ( ModelClassType CharacterCostume CharacterCostume CharacterCostume Pointer )
 
             return value;
         }

@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Silhouette                               0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 018 IsActive                                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 019 IsDisplay                                000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 Silhouette                               ModelClassType GameObject GameObject GameObject Pointer
+    // 018 IsActive                                 ModelPrimitiveType bool bool bool Bool
+    // 019 IsDisplay                                ModelPrimitiveType bool bool bool Bool
     public partial class ScenarioSilhouette : DataModel
     {
         public GameObject?                              Silhouette                              { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ScenarioSilhouette() { Pointer= p0 };
 
-            value.Silhouette                                = GetObject<GameObject>(new IntPtr(p + 0x010), ReversePrism.DataModels.GameObject.FromPointer); // 0245A6999FD0 0x10 Silhouette                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.IsActive                                  = GetBool(new IntPtr(p + 0x018)); // 0245A6999FF0 0x18 IsActive                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsDisplay                                 = GetBool(new IntPtr(p + 0x019)); // 0245A699A010 0x19 IsDisplay                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Silhouette                                = GetObject<GameObject>(new IntPtr(p + 0x010), ReversePrism.DataModels.GameObject.FromPointer); // 0x10 Silhouette                  ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.IsActive                                  = GetBool(new IntPtr(p + 0x018)); // 0x18 IsActive                    ( ModelPrimitiveType bool bool bool Bool )
+            value.IsDisplay                                 = GetBool(new IntPtr(p + 0x019)); // 0x19 IsDisplay                   ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

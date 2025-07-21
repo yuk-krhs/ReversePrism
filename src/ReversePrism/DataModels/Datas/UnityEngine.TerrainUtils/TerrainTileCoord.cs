@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 TileX                                    0001865F4940 ModelPrimitiveType int int int Int32
-    // 014 TileZ                                    0001865F4940 ModelPrimitiveType int int int Int32
+    // 010 TileX                                    ModelPrimitiveType int int int Int32
+    // 014 TileZ                                    ModelPrimitiveType int int int Int32
     public partial class TerrainTileCoord : DataModel
     {
         public int                                      TileX                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TerrainTileCoord() { Pointer= p0 };
 
-            value.TileX                                     = GetInt32(new IntPtr(p + 0x010)); // 0245A6929A78 0x10 TileX                       ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.TileZ                                     = GetInt32(new IntPtr(p + 0x014)); // 0245A6929A98 0x14 TileZ                       ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.TileX                                     = GetInt32(new IntPtr(p + 0x010)); // 0x10 TileX                       ( ModelPrimitiveType int int int Int32 )
+            value.TileZ                                     = GetInt32(new IntPtr(p + 0x014)); // 0x14 TileZ                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

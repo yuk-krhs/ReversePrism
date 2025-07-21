@@ -8,15 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 040 PlayerName                               0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 048 LatestLoginDate                          0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 050 Comment                                  0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 058 StateObjects                             000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
-    // 060 IconView                                 000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer
-    // 068 AchievementPanelView                     000186676870 ModelClassType AchievementPanelView AchievementPanelView AchievementPanelView Pointer
-    // 070 NewImageObject                           0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 078 ViewModel                                0001865C78D0 ModelClassType FriendListViewModel FriendListViewModel FriendListViewModel Pointer
-    // 080 FriendStateDisposable                    0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 040 PlayerName                               ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 048 LatestLoginDate                          ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 050 Comment                                  ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 058 StateObjects                             ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer
+    // 060 IconView                                 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer
+    // 068 AchievementPanelView                     ModelClassType AchievementPanelView AchievementPanelView AchievementPanelView Pointer
+    // 070 NewImageObject                           ModelClassType GameObject GameObject GameObject Pointer
+    // 078 ViewModel                                ModelClassType FriendListViewModel FriendListViewModel FriendListViewModel Pointer
+    // 080 FriendStateDisposable                    ModelClassType IDisposable IDisposable IDisposable Pointer
     public partial class FriendListViewCell : DataModel
     {
         public UITextMeshProUGUI?                       PlayerName                              { get; set; }
@@ -37,15 +37,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FriendListViewCell() { Pointer= p0 };
 
-            value.PlayerName                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BE75FE0 0x40 PlayerName                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.LatestLoginDate                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BE76000 0x48 LatestLoginDate             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.Comment                                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BE76020 0x50 Comment                     ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.StateObjects                              = GetObjectList<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 02466BE76040 0x58 StateObjects                ( 000185B81520 ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
-            value.IconView                                  = GetObject<PFIdolIconView>(new IntPtr(p + 0x060), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 02466BE76060 0x60 IconView                    ( 000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
-            value.AchievementPanelView                      = GetObject<AchievementPanelView>(new IntPtr(p + 0x068), ReversePrism.DataModels.AchievementPanelView.FromPointer); // 02466BE76080 0x68 AchievementPanelView        ( 000186676870 ModelClassType AchievementPanelView AchievementPanelView AchievementPanelView Pointer )
-            value.NewImageObject                            = GetObject<GameObject>(new IntPtr(p + 0x070), ReversePrism.DataModels.GameObject.FromPointer); // 02466BE760A0 0x70 NewImageObject              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ViewModel                                 = GetObject<FriendListViewModel>(new IntPtr(p + 0x078), ReversePrism.DataModels.FriendListViewModel.FromPointer); // 02466BE760C0 0x78 ViewModel                   ( 0001865C78D0 ModelClassType FriendListViewModel FriendListViewModel FriendListViewModel Pointer )
-            value.FriendStateDisposable                     = GetObject<IDisposable>(new IntPtr(p + 0x080), ReversePrism.DataModels.IDisposable.FromPointer); // 02466BE760E0 0x80 FriendStateDisposable       ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.PlayerName                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x40 PlayerName                  ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.LatestLoginDate                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x48 LatestLoginDate             ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Comment                                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x50 Comment                     ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.StateObjects                              = GetObjectList<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 0x58 StateObjects                ( ModelClassListType GameObject[] GameObject[] List<GameObject> Pointer )
+            value.IconView                                  = GetObject<PFIdolIconView>(new IntPtr(p + 0x060), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 0x60 IconView                    ( ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
+            value.AchievementPanelView                      = GetObject<AchievementPanelView>(new IntPtr(p + 0x068), ReversePrism.DataModels.AchievementPanelView.FromPointer); // 0x68 AchievementPanelView        ( ModelClassType AchievementPanelView AchievementPanelView AchievementPanelView Pointer )
+            value.NewImageObject                            = GetObject<GameObject>(new IntPtr(p + 0x070), ReversePrism.DataModels.GameObject.FromPointer); // 0x70 NewImageObject              ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.ViewModel                                 = GetObject<FriendListViewModel>(new IntPtr(p + 0x078), ReversePrism.DataModels.FriendListViewModel.FromPointer); // 0x78 ViewModel                   ( ModelClassType FriendListViewModel FriendListViewModel FriendListViewModel Pointer )
+            value.FriendStateDisposable                     = GetObject<IDisposable>(new IntPtr(p + 0x080), ReversePrism.DataModels.IDisposable.FromPointer); // 0x80 FriendStateDisposable       ( ModelClassType IDisposable IDisposable IDisposable Pointer )
 
             return value;
         }

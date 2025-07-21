@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Method                                   0001866722E0 ModelPrimitiveType string string string String
-    // 018 Url                                      0001866722E0 ModelPrimitiveType string string string String
+    // 010 Method                                   ModelPrimitiveType string string string String
+    // 018 Url                                      ModelPrimitiveType string string string String
     // 020 Headers                                  Dictionary`2<string, string> IL2CPP_TYPE_GENERICINST
-    // 028 Body                                     000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 030 Options                                  0001866E11A0 ModelEnumType HttpOptions HttpOptions HttpOptions Int32
+    // 028 Body                                     ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 030 Options                                  ModelEnumType HttpOptions HttpOptions HttpOptions Int32
     public partial class HttpRequest : DataModel
     {
         public string                                   Method                                  { get; set; }
@@ -28,10 +28,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HttpRequest() { Pointer= p0 };
 
-            value.Method                                    = GetString(new IntPtr(p + 0x010)); // 02466BAE38A8 0x10 Method                      ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Url                                       = GetString(new IntPtr(p + 0x018)); // 02466BAE38C8 0x18 Url                         ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Body                                      = GetSByteList(new IntPtr(p + 0x028)); // 02466BAE3908 0x28 Body                        ( 000185B79C30 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Options                                   = (HttpOptions)GetInt32(new IntPtr(p + 0x030)); // 02466BAE3928 0x30 Options                     ( 0001866E11A0 ModelEnumType HttpOptions HttpOptions HttpOptions Int32 )
+            value.Method                                    = GetString(new IntPtr(p + 0x010)); // 0x10 Method                      ( ModelPrimitiveType string string string String )
+            value.Url                                       = GetString(new IntPtr(p + 0x018)); // 0x18 Url                         ( ModelPrimitiveType string string string String )
+            value.Body                                      = GetSByteList(new IntPtr(p + 0x028)); // 0x28 Body                        ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Options                                   = (HttpOptions)GetInt32(new IntPtr(p + 0x030)); // 0x30 Options                     ( ModelEnumType HttpOptions HttpOptions HttpOptions Int32 )
 
             return value;
         }

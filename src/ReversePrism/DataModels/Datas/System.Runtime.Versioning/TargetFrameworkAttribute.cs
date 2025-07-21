@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 FrameworkName                            000186671910 ModelPrimitiveType string string string String
-    // 018 FrameworkDisplayName                     000186671910 ModelPrimitiveType string string string String
+    // 010 FrameworkName                            ModelPrimitiveType string string string String
+    // 018 FrameworkDisplayName                     ModelPrimitiveType string string string String
     public partial class TargetFrameworkAttribute : DataModel
     {
         public string                                   FrameworkName                           { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TargetFrameworkAttribute() { Pointer= p0 };
 
-            value.FrameworkName                             = GetString(new IntPtr(p + 0x010)); // 024666C64DA8 0x10 FrameworkName               ( 000186671910 ModelPrimitiveType string string string String )
-            value.FrameworkDisplayName                      = GetString(new IntPtr(p + 0x018)); // 024666C64DC8 0x18 FrameworkDisplayName        ( 000186671910 ModelPrimitiveType string string string String )
+            value.FrameworkName                             = GetString(new IntPtr(p + 0x010)); // 0x10 FrameworkName               ( ModelPrimitiveType string string string String )
+            value.FrameworkDisplayName                      = GetString(new IntPtr(p + 0x018)); // 0x18 FrameworkDisplayName        ( ModelPrimitiveType string string string String )
 
             return value;
         }

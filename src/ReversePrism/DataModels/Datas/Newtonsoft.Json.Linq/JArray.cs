@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 058 Values                                   000185CEE818 ModelClassListType List`1<JToken> List`1<JToken> List<JToken> Pointer
+    // 058 Values                                   ModelClassListType List`1<JToken> List`1<JToken> List<JToken> Pointer
     public partial class JArray : DataModel
     {
         public List<JToken>?                            Values                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JArray() { Pointer= p0 };
 
-            value.Values                                    = GetObjectList<JToken>(new IntPtr(p + 0x058), ReversePrism.DataModels.JToken.FromPointer); // 024668840568 0x58 Values                      ( 000185CEE818 ModelClassListType List`1<JToken> List`1<JToken> List<JToken> Pointer )
+            value.Values                                    = GetObjectList<JToken>(new IntPtr(p + 0x058), ReversePrism.DataModels.JToken.FromPointer); // 0x58 Values                      ( ModelClassListType List`1<JToken> List`1<JToken> List<JToken> Pointer )
 
             return value;
         }

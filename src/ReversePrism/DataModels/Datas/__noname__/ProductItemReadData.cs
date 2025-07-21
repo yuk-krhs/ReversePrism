@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ShopItemType                             00018661A910 ModelEnumType ShopItemType ShopItemType ShopItemType Int32
-    // 014 ItemMasterType                           000186774F50 ModelEnumType ItemMasterType ItemMasterType ItemMasterType Int32
-    // 018 Id                                       0001865F36C0 ModelPrimitiveType int int int Int32
-    // 01C IsRead                                   000186595960 ModelPrimitiveType bool bool bool Bool
-    // 020 EndDate                                  000185D00A78 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
+    // 010 ShopItemType                             ModelEnumType ShopItemType ShopItemType ShopItemType Int32
+    // 014 ItemMasterType                           ModelEnumType ItemMasterType ItemMasterType ItemMasterType Int32
+    // 018 Id                                       ModelPrimitiveType int int int Int32
+    // 01C IsRead                                   ModelPrimitiveType bool bool bool Bool
+    // 020 EndDate                                  ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
     public partial class ProductItemReadData : DataModel
     {
         public ShopItemType                             ShopItemType                            { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProductItemReadData() { Pointer= p0 };
 
-            value.ShopItemType                              = (ShopItemType)GetInt32(new IntPtr(p + 0x010)); // 0245A3AA7B48 0x10 ShopItemType                ( 00018661A910 ModelEnumType ShopItemType ShopItemType ShopItemType Int32 )
-            value.ItemMasterType                            = (ItemMasterType)GetInt32(new IntPtr(p + 0x014)); // 0245A3AA7B68 0x14 ItemMasterType              ( 000186774F50 ModelEnumType ItemMasterType ItemMasterType ItemMasterType Int32 )
-            value.Id                                        = GetInt32(new IntPtr(p + 0x018)); // 0245A3AA7B88 0x18 Id                          ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.IsRead                                    = GetBool(new IntPtr(p + 0x01C)); // 0245A3AA7BA8 0x1C IsRead                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 0245A3AA7BC8 0x20 EndDate                     ( 000185D00A78 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.ShopItemType                              = (ShopItemType)GetInt32(new IntPtr(p + 0x010)); // 0x10 ShopItemType                ( ModelEnumType ShopItemType ShopItemType ShopItemType Int32 )
+            value.ItemMasterType                            = (ItemMasterType)GetInt32(new IntPtr(p + 0x014)); // 0x14 ItemMasterType              ( ModelEnumType ItemMasterType ItemMasterType ItemMasterType Int32 )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x018)); // 0x18 Id                          ( ModelPrimitiveType int int int Int32 )
+            value.IsRead                                    = GetBool(new IntPtr(p + 0x01C)); // 0x1C IsRead                      ( ModelPrimitiveType bool bool bool Bool )
+            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 0x20 EndDate                     ( ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
 
             return value;
         }

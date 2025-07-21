@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 ViewPrefab                               000186530170 ModelClassType CallTopScreenView CallTopScreenView CallTopScreenView Pointer
-    // 028 ViewParent                               0001866AA150 ModelClassType Transform Transform Transform Pointer
+    // 020 ViewPrefab                               ModelClassType CallTopScreenView CallTopScreenView CallTopScreenView Pointer
+    // 028 ViewParent                               ModelClassType Transform Transform Transform Pointer
     public partial class CallTopScreenBuilder : DataModel
     {
         public CallTopScreenView?                       ViewPrefab                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CallTopScreenBuilder() { Pointer= p0 };
 
-            value.ViewPrefab                                = GetObject<CallTopScreenView>(new IntPtr(p + 0x020), ReversePrism.DataModels.CallTopScreenView.FromPointer); // 02466B6D3728 0x20 ViewPrefab                  ( 000186530170 ModelClassType CallTopScreenView CallTopScreenView CallTopScreenView Pointer )
-            value.ViewParent                                = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 02466B6D3748 0x28 ViewParent                  ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
+            value.ViewPrefab                                = GetObject<CallTopScreenView>(new IntPtr(p + 0x020), ReversePrism.DataModels.CallTopScreenView.FromPointer); // 0x20 ViewPrefab                  ( ModelClassType CallTopScreenView CallTopScreenView CallTopScreenView Pointer )
+            value.ViewParent                                = GetObject<Transform>(new IntPtr(p + 0x028), ReversePrism.DataModels.Transform.FromPointer); // 0x28 ViewParent                  ( ModelClassType Transform Transform Transform Pointer )
 
             return value;
         }

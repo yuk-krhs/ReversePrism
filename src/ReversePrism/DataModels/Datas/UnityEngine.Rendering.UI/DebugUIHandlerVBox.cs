@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 060 M_Container                              0001866A1D00 ModelClassType DebugUIHandlerContainer DebugUIHandlerContainer DebugUIHandlerContainer Pointer
+    // 060 M_Container                              ModelClassType DebugUIHandlerContainer DebugUIHandlerContainer DebugUIHandlerContainer Pointer
     public partial class DebugUIHandlerVBox : DataModel
     {
         public DebugUIHandlerContainer?                 M_Container                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DebugUIHandlerVBox() { Pointer= p0 };
 
-            value.M_Container                               = GetObject<DebugUIHandlerContainer>(new IntPtr(p + 0x060), ReversePrism.DataModels.DebugUIHandlerContainer.FromPointer); // 02466939D0A0 0x60 M_Container                 ( 0001866A1D00 ModelClassType DebugUIHandlerContainer DebugUIHandlerContainer DebugUIHandlerContainer Pointer )
+            value.M_Container                               = GetObject<DebugUIHandlerContainer>(new IntPtr(p + 0x060), ReversePrism.DataModels.DebugUIHandlerContainer.FromPointer); // 0x60 M_Container                 ( ModelClassType DebugUIHandlerContainer DebugUIHandlerContainer DebugUIHandlerContainer Pointer )
 
             return value;
         }

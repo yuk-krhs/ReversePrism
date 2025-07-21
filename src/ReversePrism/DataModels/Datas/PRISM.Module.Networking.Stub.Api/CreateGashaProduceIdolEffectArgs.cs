@@ -11,18 +11,18 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<CreateGashaProduceIdolEffectArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 Phase1FieldNumber                        int IL2CPP_TYPE_I4
-    // 018 Phase1                                   000186671910 ModelPrimitiveType string string string String
+    // 018 Phase1                                   ModelPrimitiveType string string string String
     // 000 Phase2FieldNumber                        int IL2CPP_TYPE_I4
-    // 020 Phase2                                   000186671910 ModelPrimitiveType string string string String
+    // 020 Phase2                                   ModelPrimitiveType string string string String
     // 000 Phase3FieldNumber                        int IL2CPP_TYPE_I4
-    // 028 Phase3                                   000186671910 ModelPrimitiveType string string string String
+    // 028 Phase3                                   ModelPrimitiveType string string string String
     // 000 Phase4Step1FieldNumber                   int IL2CPP_TYPE_I4
-    // 030 Phase4Step1                              000186671910 ModelPrimitiveType string string string String
+    // 030 Phase4Step1                              ModelPrimitiveType string string string String
     // 000 Phase4Step2FieldNumber                   int IL2CPP_TYPE_I4
-    // 038 Phase4Step2                              000186671910 ModelPrimitiveType string string string String
+    // 038 Phase4Step2                              ModelPrimitiveType string string string String
     // 000 CharacterListFieldNumber                 int IL2CPP_TYPE_I4
     // 008 _repeated_characterList_codec            FieldCodec`1<ProduceCharacterEffectCharacterStatus> IL2CPP_TYPE_GENERICINST
-    // 040 CharacterList                            000185CEB438 ModelClassListType RepeatedField`1<ProduceCharacterEffectCharacterStatus> RepeatedField`1<ProduceCharacterEffectCharacterStatus> List<ProduceCharacterEffectCharacterStatus> Pointer
+    // 040 CharacterList                            ModelClassListType RepeatedField`1<ProduceCharacterEffectCharacterStatus> RepeatedField`1<ProduceCharacterEffectCharacterStatus> List<ProduceCharacterEffectCharacterStatus> Pointer
     public partial class CreateGashaProduceIdolEffectArgs : DataModel
     {
         public string                                   Phase1                                  { get; set; }
@@ -40,12 +40,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CreateGashaProduceIdolEffectArgs() { Pointer= p0 };
 
-            value.Phase1                                    = GetString(new IntPtr(p + 0x018)); // 024661992CA8 0x18 Phase1                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Phase2                                    = GetString(new IntPtr(p + 0x020)); // 024661992CE8 0x20 Phase2                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Phase3                                    = GetString(new IntPtr(p + 0x028)); // 024661992D28 0x28 Phase3                      ( 000186671910 ModelPrimitiveType string string string String )
-            value.Phase4Step1                               = GetString(new IntPtr(p + 0x030)); // 024661992D68 0x30 Phase4Step1                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.Phase4Step2                               = GetString(new IntPtr(p + 0x038)); // 024661992DA8 0x38 Phase4Step2                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.CharacterList                             = GetObjectList<ProduceCharacterEffectCharacterStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProduceCharacterEffectCharacterStatus.FromPointer); // 024661992E08 0x40 CharacterList               ( 000185CEB438 ModelClassListType RepeatedField`1<ProduceCharacterEffectCharacterStatus> RepeatedField`1<ProduceCharacterEffectCharacterStatus> List<ProduceCharacterEffectCharacterStatus> Pointer )
+            value.Phase1                                    = GetString(new IntPtr(p + 0x018)); // 0x18 Phase1                      ( ModelPrimitiveType string string string String )
+            value.Phase2                                    = GetString(new IntPtr(p + 0x020)); // 0x20 Phase2                      ( ModelPrimitiveType string string string String )
+            value.Phase3                                    = GetString(new IntPtr(p + 0x028)); // 0x28 Phase3                      ( ModelPrimitiveType string string string String )
+            value.Phase4Step1                               = GetString(new IntPtr(p + 0x030)); // 0x30 Phase4Step1                 ( ModelPrimitiveType string string string String )
+            value.Phase4Step2                               = GetString(new IntPtr(p + 0x038)); // 0x38 Phase4Step2                 ( ModelPrimitiveType string string string String )
+            value.CharacterList                             = GetObjectList<ProduceCharacterEffectCharacterStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.ProduceCharacterEffectCharacterStatus.FromPointer); // 0x40 CharacterList               ( ModelClassListType RepeatedField`1<ProduceCharacterEffectCharacterStatus> RepeatedField`1<ProduceCharacterEffectCharacterStatus> List<ProduceCharacterEffectCharacterStatus> Pointer )
 
             return value;
         }

@@ -9,9 +9,9 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 nativePlayerHn                           <int> IL2CPP_TYPE_I
-    // 018 BasePlaybackId                           0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 01C TargetPlaybackId                         0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 020 CueLinkType                              0001865F36C0 ModelPrimitiveType int int int Int32
+    // 018 BasePlaybackId                           ModelPrimitiveType uint uint uint UInt32
+    // 01C TargetPlaybackId                         ModelPrimitiveType uint uint uint UInt32
+    // 020 CueLinkType                              ModelPrimitiveType int int int Int32
     public partial class CueLinkInfo : DataModel
     {
         public uint                                     BasePlaybackId                          { get; set; }
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CueLinkInfo() { Pointer= p0 };
 
-            value.BasePlaybackId                            = GetUInt32(new IntPtr(p + 0x018)); // 02466AC8B370 0x18 BasePlaybackId              ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.TargetPlaybackId                          = GetUInt32(new IntPtr(p + 0x01C)); // 02466AC8B390 0x1C TargetPlaybackId            ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.CueLinkType                               = GetInt32(new IntPtr(p + 0x020)); // 02466AC8B3B0 0x20 CueLinkType                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.BasePlaybackId                            = GetUInt32(new IntPtr(p + 0x018)); // 0x18 BasePlaybackId              ( ModelPrimitiveType uint uint uint UInt32 )
+            value.TargetPlaybackId                          = GetUInt32(new IntPtr(p + 0x01C)); // 0x1C TargetPlaybackId            ( ModelPrimitiveType uint uint uint UInt32 )
+            value.CueLinkType                               = GetInt32(new IntPtr(p + 0x020)); // 0x20 CueLinkType                 ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

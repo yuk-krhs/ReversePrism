@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ProductModel                             00018676FA20 ModelClassType ShopPurchaseProductModel ShopPurchaseProductModel ShopPurchaseProductModel Pointer
+    // 010 ProductModel                             ModelClassType ShopPurchaseProductModel ShopPurchaseProductModel ShopPurchaseProductModel Pointer
     public partial class ShopPassPurchaseConfirmContentViewPopupViewModel : DataModel
     {
         public ShopPurchaseProductModel?                ProductModel                            { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ShopPassPurchaseConfirmContentViewPopupViewModel() { Pointer= p0 };
 
-            value.ProductModel                              = GetObject<ShopPurchaseProductModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.ShopPurchaseProductModel.FromPointer); // 0246667ABCE8 0x10 ProductModel                ( 00018676FA20 ModelClassType ShopPurchaseProductModel ShopPurchaseProductModel ShopPurchaseProductModel Pointer )
+            value.ProductModel                              = GetObject<ShopPurchaseProductModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.ShopPurchaseProductModel.FromPointer); // 0x10 ProductModel                ( ModelClassType ShopPurchaseProductModel ShopPurchaseProductModel ShopPurchaseProductModel Pointer )
 
             return value;
         }

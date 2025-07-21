@@ -8,7 +8,6 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 fIdolDetailPopupViewFactory              PopupViewFactory`1<IFIdolDetailPopupView> IL2CPP_TYPE_GENERICINST
     public partial class FIdolDetailPopupCallerImplement : DataModel
     {
 

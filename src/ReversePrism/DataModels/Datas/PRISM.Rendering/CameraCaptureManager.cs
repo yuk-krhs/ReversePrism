@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CaptureDataList                          000185D20088 ModelClassListType List`1<CaptureData> List`1<CaptureData> List<CaptureData> Pointer
+    // 010 CaptureDataList                          ModelClassListType List`1<CaptureData> List`1<CaptureData> List<CaptureData> Pointer
     public partial class CameraCaptureManager : DataModel
     {
         public List<CaptureData>?                       CaptureDataList                         { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CameraCaptureManager() { Pointer= p0 };
 
-            value.CaptureDataList                           = GetObjectList<CaptureData>(new IntPtr(p + 0x010), ReversePrism.DataModels.CaptureData.FromPointer); // 024660DE8900 0x10 CaptureDataList             ( 000185D20088 ModelClassListType List`1<CaptureData> List`1<CaptureData> List<CaptureData> Pointer )
+            value.CaptureDataList                           = GetObjectList<CaptureData>(new IntPtr(p + 0x010), ReversePrism.DataModels.CaptureData.FromPointer); // 0x10 CaptureDataList             ( ModelClassListType List`1<CaptureData> List`1<CaptureData> List<CaptureData> Pointer )
 
             return value;
         }

@@ -26,7 +26,7 @@ namespace ReversePrism.DataModels
     // 000 DefaultFloatFormatHandling               FloatFormatHandling IL2CPP_TYPE_VALUETYPE
     // 000 DefaultStringEscapeHandling              StringEscapeHandling IL2CPP_TYPE_VALUETYPE
     // 000 DefaultTypeNameAssemblyFormatHandling    TypeNameAssemblyFormatHandling IL2CPP_TYPE_VALUETYPE
-    // 010 DefaultCulture                           0001865B5450 ModelClassType CultureInfo CultureInfo CultureInfo Pointer
+    // 010 DefaultCulture                           ModelClassType CultureInfo CultureInfo CultureInfo Pointer
     // 000 DefaultCheckAdditionalContent            bool IL2CPP_TYPE_BOOLEAN
     // 000 DefaultDateFormatString                  string IL2CPP_TYPE_STRING
     // 000 DefaultMaxDepth                          int IL2CPP_TYPE_I4
@@ -37,12 +37,12 @@ namespace ReversePrism.DataModels
     // 030 _floatFormatHandling                     Nullable`1<FloatFormatHandling> IL2CPP_TYPE_GENERICINST
     // 038 _floatParseHandling                      Nullable`1<FloatParseHandling> IL2CPP_TYPE_GENERICINST
     // 040 _stringEscapeHandling                    Nullable`1<StringEscapeHandling> IL2CPP_TYPE_GENERICINST
-    // 048 Culture                                  0001865B4AB0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer
+    // 048 Culture                                  ModelClassType CultureInfo CultureInfo CultureInfo Pointer
     // 050 _checkAdditionalContent                  Nullable`1<bool> IL2CPP_TYPE_GENERICINST
     // 054 _maxDepth                                Nullable`1<int> IL2CPP_TYPE_GENERICINST
-    // 05C MaxDepthSet                              000186595210 ModelPrimitiveType bool bool bool Bool
-    // 060 DateFormatString                         000186671BA0 ModelPrimitiveType string string string String
-    // 068 DateFormatStringSet                      000186595210 ModelPrimitiveType bool bool bool Bool
+    // 05C MaxDepthSet                              ModelPrimitiveType bool bool bool Bool
+    // 060 DateFormatString                         ModelPrimitiveType string string string String
+    // 068 DateFormatStringSet                      ModelPrimitiveType bool bool bool Bool
     // 06C _typeNameAssemblyFormatHandling          Nullable`1<TypeNameAssemblyFormatHandling> IL2CPP_TYPE_GENERICINST
     // 074 _defaultValueHandling                    Nullable`1<DefaultValueHandling> IL2CPP_TYPE_GENERICINST
     // 07C _preserveReferencesHandling              Nullable`1<PreserveReferencesHandling> IL2CPP_TYPE_GENERICINST
@@ -55,11 +55,11 @@ namespace ReversePrism.DataModels
     // 0C8 _typeNameHandling                        Nullable`1<TypeNameHandling> IL2CPP_TYPE_GENERICINST
     // 0D0 _metadataPropertyHandling                Nullable`1<MetadataPropertyHandling> IL2CPP_TYPE_GENERICINST
     // 0D8 <Converters>k__BackingField              IList`1<JsonConverter> IL2CPP_TYPE_GENERICINST
-    // 0E0 ContractResolver                         00018673D2D0 ModelClassType IContractResolver IContractResolver IContractResolver Pointer
-    // 0E8 EqualityComparer                         000186762030 ModelClassType IEqualityComparer IEqualityComparer IEqualityComparer Pointer
+    // 0E0 ContractResolver                         ModelClassType IContractResolver IContractResolver IContractResolver Pointer
+    // 0E8 EqualityComparer                         ModelClassType IEqualityComparer IEqualityComparer IEqualityComparer Pointer
     // 0F0 <ReferenceResolverProvider>k__BackingField Func`1<IReferenceResolver> IL2CPP_TYPE_GENERICINST
-    // 0F8 TraceWriter                              00018667A660 ModelClassType ITraceWriter ITraceWriter ITraceWriter Pointer
-    // 100 SerializationBinder                      000186635FA0 ModelClassType ISerializationBinder ISerializationBinder ISerializationBinder Pointer
+    // 0F8 TraceWriter                              ModelClassType ITraceWriter ITraceWriter ITraceWriter Pointer
+    // 100 SerializationBinder                      ModelClassType ISerializationBinder ISerializationBinder ISerializationBinder Pointer
     // 108 <Error>k__BackingField                   EventHandler`1<ErrorEventArgs> IL2CPP_TYPE_GENERICINST
     public partial class JsonSerializerSettings : DataModel
     {
@@ -81,15 +81,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JsonSerializerSettings() { Pointer= p0 };
 
-            value.DefaultCulture                            = GetObject<CultureInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.CultureInfo.FromPointer); // 0245A3B74DD8 0x10 DefaultCulture              ( 0001865B5450 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
-            value.Culture                                   = GetObject<CultureInfo>(new IntPtr(p + 0x048), ReversePrism.DataModels.CultureInfo.FromPointer); // 0245A3B74F38 0x48 Culture                     ( 0001865B4AB0 ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
-            value.MaxDepthSet                               = GetBool(new IntPtr(p + 0x05C)); // 0245A3B74F98 0x5C MaxDepthSet                 ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.DateFormatString                          = GetString(new IntPtr(p + 0x060)); // 0245A3B74FB8 0x60 DateFormatString            ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.DateFormatStringSet                       = GetBool(new IntPtr(p + 0x068)); // 0245A3B74FD8 0x68 DateFormatStringSet         ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.ContractResolver                          = GetObject<IContractResolver>(new IntPtr(p + 0x0E0), ReversePrism.DataModels.IContractResolver.FromPointer); // 0245A3B75178 0xE0 ContractResolver            ( 00018673D2D0 ModelClassType IContractResolver IContractResolver IContractResolver Pointer )
-            value.EqualityComparer                          = GetObject<IEqualityComparer>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.IEqualityComparer.FromPointer); // 0245A3B75198 0xE8 EqualityComparer            ( 000186762030 ModelClassType IEqualityComparer IEqualityComparer IEqualityComparer Pointer )
-            value.TraceWriter                               = GetObject<ITraceWriter>(new IntPtr(p + 0x0F8), ReversePrism.DataModels.ITraceWriter.FromPointer); // 0245A3B751D8 0xF8 TraceWriter                 ( 00018667A660 ModelClassType ITraceWriter ITraceWriter ITraceWriter Pointer )
-            value.SerializationBinder                       = GetObject<ISerializationBinder>(new IntPtr(p + 0x100), ReversePrism.DataModels.ISerializationBinder.FromPointer); // 0245A3B751F8 0x100 SerializationBinder         ( 000186635FA0 ModelClassType ISerializationBinder ISerializationBinder ISerializationBinder Pointer )
+            value.DefaultCulture                            = GetObject<CultureInfo>(new IntPtr(p + 0x010), ReversePrism.DataModels.CultureInfo.FromPointer); // 0x10 DefaultCulture              ( ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
+            value.Culture                                   = GetObject<CultureInfo>(new IntPtr(p + 0x048), ReversePrism.DataModels.CultureInfo.FromPointer); // 0x48 Culture                     ( ModelClassType CultureInfo CultureInfo CultureInfo Pointer )
+            value.MaxDepthSet                               = GetBool(new IntPtr(p + 0x05C)); // 0x5C MaxDepthSet                 ( ModelPrimitiveType bool bool bool Bool )
+            value.DateFormatString                          = GetString(new IntPtr(p + 0x060)); // 0x60 DateFormatString            ( ModelPrimitiveType string string string String )
+            value.DateFormatStringSet                       = GetBool(new IntPtr(p + 0x068)); // 0x68 DateFormatStringSet         ( ModelPrimitiveType bool bool bool Bool )
+            value.ContractResolver                          = GetObject<IContractResolver>(new IntPtr(p + 0x0E0), ReversePrism.DataModels.IContractResolver.FromPointer); // 0xE0 ContractResolver            ( ModelClassType IContractResolver IContractResolver IContractResolver Pointer )
+            value.EqualityComparer                          = GetObject<IEqualityComparer>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.IEqualityComparer.FromPointer); // 0xE8 EqualityComparer            ( ModelClassType IEqualityComparer IEqualityComparer IEqualityComparer Pointer )
+            value.TraceWriter                               = GetObject<ITraceWriter>(new IntPtr(p + 0x0F8), ReversePrism.DataModels.ITraceWriter.FromPointer); // 0xF8 TraceWriter                 ( ModelClassType ITraceWriter ITraceWriter ITraceWriter Pointer )
+            value.SerializationBinder                       = GetObject<ISerializationBinder>(new IntPtr(p + 0x100), ReversePrism.DataModels.ISerializationBinder.FromPointer); // 0x100 SerializationBinder         ( ModelClassType ISerializationBinder ISerializationBinder ISerializationBinder Pointer )
 
             return value;
         }

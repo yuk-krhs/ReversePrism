@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 CellGroupList                            0001866C5F50 ModelClassType IdolStoryFirstCategoryCellGroupList IdolStoryFirstCategoryCellGroupList IdolStoryFirstCategoryCellGroupList Pointer
-    // 028 UnreadStoryToggle                        000186735EA0 ModelClassType UnreadStoryToggle UnreadStoryToggle UnreadStoryToggle Pointer
+    // 020 CellGroupList                            ModelClassType IdolStoryFirstCategoryCellGroupList IdolStoryFirstCategoryCellGroupList IdolStoryFirstCategoryCellGroupList Pointer
+    // 028 UnreadStoryToggle                        ModelClassType UnreadStoryToggle UnreadStoryToggle UnreadStoryToggle Pointer
     public partial class StoryTopIdolContentView : DataModel
     {
         public IdolStoryFirstCategoryCellGroupList?     CellGroupList                           { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StoryTopIdolContentView() { Pointer= p0 };
 
-            value.CellGroupList                             = GetObject<IdolStoryFirstCategoryCellGroupList>(new IntPtr(p + 0x020), ReversePrism.DataModels.IdolStoryFirstCategoryCellGroupList.FromPointer); // 02466BA16530 0x20 CellGroupList               ( 0001866C5F50 ModelClassType IdolStoryFirstCategoryCellGroupList IdolStoryFirstCategoryCellGroupList IdolStoryFirstCategoryCellGroupList Pointer )
-            value.UnreadStoryToggle                         = GetObject<UnreadStoryToggle>(new IntPtr(p + 0x028), ReversePrism.DataModels.UnreadStoryToggle.FromPointer); // 02466BA16550 0x28 UnreadStoryToggle           ( 000186735EA0 ModelClassType UnreadStoryToggle UnreadStoryToggle UnreadStoryToggle Pointer )
+            value.CellGroupList                             = GetObject<IdolStoryFirstCategoryCellGroupList>(new IntPtr(p + 0x020), ReversePrism.DataModels.IdolStoryFirstCategoryCellGroupList.FromPointer); // 0x20 CellGroupList               ( ModelClassType IdolStoryFirstCategoryCellGroupList IdolStoryFirstCategoryCellGroupList IdolStoryFirstCategoryCellGroupList Pointer )
+            value.UnreadStoryToggle                         = GetObject<UnreadStoryToggle>(new IntPtr(p + 0x028), ReversePrism.DataModels.UnreadStoryToggle.FromPointer); // 0x28 UnreadStoryToggle           ( ModelClassType UnreadStoryToggle UnreadStoryToggle UnreadStoryToggle Pointer )
 
             return value;
         }

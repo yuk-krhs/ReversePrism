@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 StartLightColor                          0001865AA8E0 ModelEnumType Color Color Color Int32
-    // 020 StartLightIntensity                      0001866656B0 ModelPrimitiveType float float float Single
-    // 024 EndLightColor                            0001865AA8E0 ModelEnumType Color Color Color Int32
-    // 034 EndLightIntensity                        0001866656B0 ModelPrimitiveType float float float Single
-    // 038 StageController                          000186562560 ModelClassType StageController StageController StageController Pointer
+    // 010 StartLightColor                          ModelEnumType Color Color Color Int32
+    // 020 StartLightIntensity                      ModelPrimitiveType float float float Single
+    // 024 EndLightColor                            ModelEnumType Color Color Color Int32
+    // 034 EndLightIntensity                        ModelPrimitiveType float float float Single
+    // 038 StageController                          ModelClassType StageController StageController StageController Pointer
     public partial class StageControllerPlayableBehaviour : DataModel
     {
         public Color                                    StartLightColor                         { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StageControllerPlayableBehaviour() { Pointer= p0 };
 
-            value.StartLightColor                           = (Color)GetInt32(new IntPtr(p + 0x010)); // 024664E74660 0x10 StartLightColor             ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.StartLightIntensity                       = GetSingle(new IntPtr(p + 0x020)); // 024664E74680 0x20 StartLightIntensity         ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.EndLightColor                             = (Color)GetInt32(new IntPtr(p + 0x024)); // 024664E746A0 0x24 EndLightColor               ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.EndLightIntensity                         = GetSingle(new IntPtr(p + 0x034)); // 024664E746C0 0x34 EndLightIntensity           ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.StageController                           = GetObject<StageController>(new IntPtr(p + 0x038), ReversePrism.DataModels.StageController.FromPointer); // 024664E746E0 0x38 StageController             ( 000186562560 ModelClassType StageController StageController StageController Pointer )
+            value.StartLightColor                           = (Color)GetInt32(new IntPtr(p + 0x010)); // 0x10 StartLightColor             ( ModelEnumType Color Color Color Int32 )
+            value.StartLightIntensity                       = GetSingle(new IntPtr(p + 0x020)); // 0x20 StartLightIntensity         ( ModelPrimitiveType float float float Single )
+            value.EndLightColor                             = (Color)GetInt32(new IntPtr(p + 0x024)); // 0x24 EndLightColor               ( ModelEnumType Color Color Color Int32 )
+            value.EndLightIntensity                         = GetSingle(new IntPtr(p + 0x034)); // 0x34 EndLightIntensity           ( ModelPrimitiveType float float float Single )
+            value.StageController                           = GetObject<StageController>(new IntPtr(p + 0x038), ReversePrism.DataModels.StageController.FromPointer); // 0x38 StageController             ( ModelClassType StageController StageController StageController Pointer )
 
             return value;
         }

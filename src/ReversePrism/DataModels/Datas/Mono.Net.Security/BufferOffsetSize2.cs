@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 InitialSize                              0001865F4940 ModelPrimitiveType int int int Int32
+    // 028 InitialSize                              ModelPrimitiveType int int int Int32
     public partial class BufferOffsetSize2 : DataModel
     {
         public int                                      InitialSize                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BufferOffsetSize2() { Pointer= p0 };
 
-            value.InitialSize                               = GetInt32(new IntPtr(p + 0x028)); // 024667974610 0x28 InitialSize                 ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.InitialSize                               = GetInt32(new IntPtr(p + 0x028)); // 0x28 InitialSize                 ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

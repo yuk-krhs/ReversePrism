@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Reader                                   00018661BDA0 ModelClassType IResourceReader IResourceReader IResourceReader Pointer
-    // 018 Table                                    0001865DE820 ModelClassType Hashtable Hashtable Hashtable Pointer
-    // 020 CaseInsensitiveTable                     0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 010 Reader                                   ModelClassType IResourceReader IResourceReader IResourceReader Pointer
+    // 018 Table                                    ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 020 CaseInsensitiveTable                     ModelClassType Hashtable Hashtable Hashtable Pointer
     public partial class ResourceSet : DataModel
     {
         public IResourceReader?                         Reader                                  { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ResourceSet() { Pointer= p0 };
 
-            value.Reader                                    = GetObject<IResourceReader>(new IntPtr(p + 0x010), ReversePrism.DataModels.IResourceReader.FromPointer); // 024666D22438 0x10 Reader                      ( 00018661BDA0 ModelClassType IResourceReader IResourceReader IResourceReader Pointer )
-            value.Table                                     = GetObject<Hashtable>(new IntPtr(p + 0x018), ReversePrism.DataModels.Hashtable.FromPointer); // 024666D22458 0x18 Table                       ( 0001865DE820 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.CaseInsensitiveTable                      = GetObject<Hashtable>(new IntPtr(p + 0x020), ReversePrism.DataModels.Hashtable.FromPointer); // 024666D22478 0x20 CaseInsensitiveTable        ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.Reader                                    = GetObject<IResourceReader>(new IntPtr(p + 0x010), ReversePrism.DataModels.IResourceReader.FromPointer); // 0x10 Reader                      ( ModelClassType IResourceReader IResourceReader IResourceReader Pointer )
+            value.Table                                     = GetObject<Hashtable>(new IntPtr(p + 0x018), ReversePrism.DataModels.Hashtable.FromPointer); // 0x18 Table                       ( ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.CaseInsensitiveTable                      = GetObject<Hashtable>(new IntPtr(p + 0x020), ReversePrism.DataModels.Hashtable.FromPointer); // 0x20 CaseInsensitiveTable        ( ModelClassType Hashtable Hashtable Hashtable Pointer )
 
             return value;
         }

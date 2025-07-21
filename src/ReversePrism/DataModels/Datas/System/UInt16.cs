@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_value                                  000186697450 ModelPrimitiveType ushort ushort ushort UInt16
+    // 010 M_value                                  ModelPrimitiveType ushort ushort ushort UInt16
     // 000 MaxValue                                 ushort IL2CPP_TYPE_U2
     // 000 MinValue                                 ushort IL2CPP_TYPE_U2
     public partial class UInt16 : DataModel
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UInt16() { Pointer= p0 };
 
-            value.M_value                                   = GetUInt16(new IntPtr(p + 0x010)); // 0245A35BB418 0x10 M_value                     ( 000186697450 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.M_value                                   = GetUInt16(new IntPtr(p + 0x010)); // 0x10 M_value                     ( ModelPrimitiveType ushort ushort ushort UInt16 )
 
             return value;
         }

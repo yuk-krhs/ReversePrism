@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 TabContentPairs                          000185CBF0F8 ModelClassListType TabContentPair[] TabContentPair[] List<TabContentPair> Pointer
+    // 020 TabContentPairs                          ModelClassListType TabContentPair[] TabContentPair[] List<TabContentPair> Pointer
     // 028 onClickTabSubject                        Subject`1<int> IL2CPP_TYPE_GENERICINST
     public partial class MobileHeaderTabGroup : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MobileHeaderTabGroup() { Pointer= p0 };
 
-            value.TabContentPairs                           = GetObjectList<TabContentPair>(new IntPtr(p + 0x020), ReversePrism.DataModels.TabContentPair.FromPointer); // 02466B14C058 0x20 TabContentPairs             ( 000185CBF0F8 ModelClassListType TabContentPair[] TabContentPair[] List<TabContentPair> Pointer )
+            value.TabContentPairs                           = GetObjectList<TabContentPair>(new IntPtr(p + 0x020), ReversePrism.DataModels.TabContentPair.FromPointer); // 0x20 TabContentPairs             ( ModelClassListType TabContentPair[] TabContentPair[] List<TabContentPair> Pointer )
 
             return value;
         }

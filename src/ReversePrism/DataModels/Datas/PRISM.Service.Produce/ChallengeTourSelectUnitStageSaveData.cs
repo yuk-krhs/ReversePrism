@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 SelectUnitIndex                          0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 014 SelectStageIndex                         0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 SelectUnitIndex                          ModelPrimitiveType int int int Int32
+    // 014 SelectStageIndex                         ModelPrimitiveType int int int Int32
     public partial class ChallengeTourSelectUnitStageSaveData : DataModel
     {
         public int                                      SelectUnitIndex                         { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChallengeTourSelectUnitStageSaveData() { Pointer= p0 };
 
-            value.SelectUnitIndex                           = GetInt32(new IntPtr(p + 0x010)); // 0245A3A790C0 0x10 SelectUnitIndex             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SelectStageIndex                          = GetInt32(new IntPtr(p + 0x014)); // 0245A3A790E0 0x14 SelectStageIndex            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.SelectUnitIndex                           = GetInt32(new IntPtr(p + 0x010)); // 0x10 SelectUnitIndex             ( ModelPrimitiveType int int int Int32 )
+            value.SelectStageIndex                          = GetInt32(new IntPtr(p + 0x014)); // 0x14 SelectStageIndex            ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

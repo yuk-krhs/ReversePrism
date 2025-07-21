@@ -8,14 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ShopLocalSave                            0001867622A0 ModelClassType ShopLocalSave ShopLocalSave ShopLocalSave Pointer
-    // 018 Age                                      0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 01C PriceType                                000186775930 ModelEnumType ProductPriceType ProductPriceType ProductPriceType Int32
-    // 020 ShopMstItemID                            0001865F4260 ModelPrimitiveType int int int Int32
-    // 024 CostumeCategoryID                        0001865F4260 ModelPrimitiveType int int int Int32
-    // 028 CostumeGroupID                           0001865F4260 ModelPrimitiveType int int int Int32
-    // 030 ContentProductList                       000185D093B8 ModelClassListType List`1<ShopProductParam> List`1<ShopProductParam> List<ShopProductParam> Pointer
-    // 038 DisplayOrder                             0001865F4260 ModelPrimitiveType int int int Int32
+    // 010 ShopLocalSave                            ModelClassType ShopLocalSave ShopLocalSave ShopLocalSave Pointer
+    // 018 Age                                      ModelPrimitiveType int int int Int32
+    // 01C PriceType                                ModelEnumType ProductPriceType ProductPriceType ProductPriceType Int32
+    // 020 ShopMstItemID                            ModelPrimitiveType int int int Int32
+    // 024 CostumeCategoryID                        ModelPrimitiveType int int int Int32
+    // 028 CostumeGroupID                           ModelPrimitiveType int int int Int32
+    // 030 ContentProductList                       ModelClassListType List`1<ShopProductParam> List`1<ShopProductParam> List<ShopProductParam> Pointer
+    // 038 DisplayOrder                             ModelPrimitiveType int int int Int32
     public partial class ShopCostumeGridViewModel : DataModel
     {
         public ShopLocalSave?                           ShopLocalSave                           { get; set; }
@@ -35,14 +35,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ShopCostumeGridViewModel() { Pointer= p0 };
 
-            value.ShopLocalSave                             = GetObject<ShopLocalSave>(new IntPtr(p + 0x010), ReversePrism.DataModels.ShopLocalSave.FromPointer); // 024666770120 0x10 ShopLocalSave               ( 0001867622A0 ModelClassType ShopLocalSave ShopLocalSave ShopLocalSave Pointer )
-            value.Age                                       = GetInt32(new IntPtr(p + 0x018)); // 024666770140 0x18 Age                         ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.PriceType                                 = (ProductPriceType)GetInt32(new IntPtr(p + 0x01C)); // 024666770160 0x1C PriceType                   ( 000186775930 ModelEnumType ProductPriceType ProductPriceType ProductPriceType Int32 )
-            value.ShopMstItemID                             = GetInt32(new IntPtr(p + 0x020)); // 024666770180 0x20 ShopMstItemID               ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.CostumeCategoryID                         = GetInt32(new IntPtr(p + 0x024)); // 0246667701A0 0x24 CostumeCategoryID           ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.CostumeGroupID                            = GetInt32(new IntPtr(p + 0x028)); // 0246667701C0 0x28 CostumeGroupID              ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.ContentProductList                        = GetObjectList<ShopProductParam>(new IntPtr(p + 0x030), ReversePrism.DataModels.ShopProductParam.FromPointer); // 0246667701E0 0x30 ContentProductList          ( 000185D093B8 ModelClassListType List`1<ShopProductParam> List`1<ShopProductParam> List<ShopProductParam> Pointer )
-            value.DisplayOrder                              = GetInt32(new IntPtr(p + 0x038)); // 024666770200 0x38 DisplayOrder                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.ShopLocalSave                             = GetObject<ShopLocalSave>(new IntPtr(p + 0x010), ReversePrism.DataModels.ShopLocalSave.FromPointer); // 0x10 ShopLocalSave               ( ModelClassType ShopLocalSave ShopLocalSave ShopLocalSave Pointer )
+            value.Age                                       = GetInt32(new IntPtr(p + 0x018)); // 0x18 Age                         ( ModelPrimitiveType int int int Int32 )
+            value.PriceType                                 = (ProductPriceType)GetInt32(new IntPtr(p + 0x01C)); // 0x1C PriceType                   ( ModelEnumType ProductPriceType ProductPriceType ProductPriceType Int32 )
+            value.ShopMstItemID                             = GetInt32(new IntPtr(p + 0x020)); // 0x20 ShopMstItemID               ( ModelPrimitiveType int int int Int32 )
+            value.CostumeCategoryID                         = GetInt32(new IntPtr(p + 0x024)); // 0x24 CostumeCategoryID           ( ModelPrimitiveType int int int Int32 )
+            value.CostumeGroupID                            = GetInt32(new IntPtr(p + 0x028)); // 0x28 CostumeGroupID              ( ModelPrimitiveType int int int Int32 )
+            value.ContentProductList                        = GetObjectList<ShopProductParam>(new IntPtr(p + 0x030), ReversePrism.DataModels.ShopProductParam.FromPointer); // 0x30 ContentProductList          ( ModelClassListType List`1<ShopProductParam> List`1<ShopProductParam> List<ShopProductParam> Pointer )
+            value.DisplayOrder                              = GetInt32(new IntPtr(p + 0x038)); // 0x38 DisplayOrder                ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

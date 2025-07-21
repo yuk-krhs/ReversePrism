@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 NameText                                 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 028 ValueText                                0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 030 Gauge                                    000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
-    // 038 GaugeSizeRect                            000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
-    // 040 EffectParticle                           0001866EC400 ModelClassType UIParticle UIParticle UIParticle Pointer
+    // 020 NameText                                 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 028 ValueText                                ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 030 Gauge                                    ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 038 GaugeSizeRect                            ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 040 EffectParticle                           ModelClassType UIParticle UIParticle UIParticle Pointer
     public partial class PvpPlayerAppealGauge : DataModel
     {
         public UITextMeshProUGUI?                       NameText                                { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PvpPlayerAppealGauge() { Pointer= p0 };
 
-            value.NameText                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246650D9F40 0x20 NameText                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ValueText                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246650D9F60 0x28 ValueText                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.Gauge                                     = GetObject<RectTransform>(new IntPtr(p + 0x030), ReversePrism.DataModels.RectTransform.FromPointer); // 0246650D9F80 0x30 Gauge                       ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.GaugeSizeRect                             = GetObject<RectTransform>(new IntPtr(p + 0x038), ReversePrism.DataModels.RectTransform.FromPointer); // 0246650D9FA0 0x38 GaugeSizeRect               ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.EffectParticle                            = GetObject<UIParticle>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIParticle.FromPointer); // 0246650D9FC0 0x40 EffectParticle              ( 0001866EC400 ModelClassType UIParticle UIParticle UIParticle Pointer )
+            value.NameText                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x20 NameText                    ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ValueText                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x28 ValueText                   ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Gauge                                     = GetObject<RectTransform>(new IntPtr(p + 0x030), ReversePrism.DataModels.RectTransform.FromPointer); // 0x30 Gauge                       ( ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.GaugeSizeRect                             = GetObject<RectTransform>(new IntPtr(p + 0x038), ReversePrism.DataModels.RectTransform.FromPointer); // 0x38 GaugeSizeRect               ( ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.EffectParticle                            = GetObject<UIParticle>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIParticle.FromPointer); // 0x40 EffectParticle              ( ModelClassType UIParticle UIParticle UIParticle Pointer )
 
             return value;
         }

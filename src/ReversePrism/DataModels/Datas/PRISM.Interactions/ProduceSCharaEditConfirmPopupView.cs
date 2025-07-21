@@ -9,13 +9,13 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 020 onClosed                                 Subject`1<bool> IL2CPP_TYPE_GENERICINST
-    // 028 AndroidBackKeyDisableScope               0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
-    // 030 EditView                                 0001865E95D0 ModelClassType SupportCharacterEditView SupportCharacterEditView SupportCharacterEditView Pointer
-    // 038 sCharaDetailPopupViewFactory             PopupViewFactory`1<ISCharaDetailPopupView> IL2CPP_TYPE_GENERICINST
-    // 040 PopupFrameParameter                      000186762FA0 ModelClassType PopupFrameParameter PopupFrameParameter PopupFrameParameter Pointer
+    // 028 AndroidBackKeyDisableScope               ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 030 EditView                                 ModelClassType SupportCharacterEditView SupportCharacterEditView SupportCharacterEditView Pointer
+    // 038 PopupFrameParameter                      ModelClassType PopupFrameParameter PopupFrameParameter PopupFrameParameter Pointer
+    // 040 onClickSelfSCharaIcon                    Subject`1<int> IL2CPP_TYPE_GENERICINST
     // 048 onLongPressSelfSCharaIcon                Subject`1<int> IL2CPP_TYPE_GENERICINST
     // 050 onLongPressFriendSCharaIcon              Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 058 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
+    // 058 Parent                                   ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
     public partial class ProduceSCharaEditConfirmPopupView : DataModel
     {
         public IDisposable?                             AndroidBackKeyDisableScope              { get; set; }
@@ -31,10 +31,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceSCharaEditConfirmPopupView() { Pointer= p0 };
 
-            value.AndroidBackKeyDisableScope                = GetObject<IDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.IDisposable.FromPointer); // 02466A198EE8 0x28 AndroidBackKeyDisableScope  ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
-            value.EditView                                  = GetObject<SupportCharacterEditView>(new IntPtr(p + 0x030), ReversePrism.DataModels.SupportCharacterEditView.FromPointer); // 02466A198F08 0x30 EditView                    ( 0001865E95D0 ModelClassType SupportCharacterEditView SupportCharacterEditView SupportCharacterEditView Pointer )
-            value.PopupFrameParameter                       = GetObject<PopupFrameParameter>(new IntPtr(p + 0x040), ReversePrism.DataModels.PopupFrameParameter.FromPointer); // 02466A198F48 0x40 PopupFrameParameter         ( 000186762FA0 ModelClassType PopupFrameParameter PopupFrameParameter PopupFrameParameter Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x058), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466A198FA8 0x58 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.AndroidBackKeyDisableScope                = GetObject<IDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.IDisposable.FromPointer); // 0x28 AndroidBackKeyDisableScope  ( ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.EditView                                  = GetObject<SupportCharacterEditView>(new IntPtr(p + 0x030), ReversePrism.DataModels.SupportCharacterEditView.FromPointer); // 0x30 EditView                    ( ModelClassType SupportCharacterEditView SupportCharacterEditView SupportCharacterEditView Pointer )
+            value.PopupFrameParameter                       = GetObject<PopupFrameParameter>(new IntPtr(p + 0x038), ReversePrism.DataModels.PopupFrameParameter.FromPointer); // 0x38 PopupFrameParameter         ( ModelClassType PopupFrameParameter PopupFrameParameter PopupFrameParameter Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x058), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0x58 Parent                      ( ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

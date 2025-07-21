@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 168 EnemySkillExecuteTime                    000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer
-    // 170 EventEffect                              0001866053B0 ModelClassType IPvpEventEffectStatus IPvpEventEffectStatus IPvpEventEffectStatus Pointer
+    // 158 EnemySkillExecuteTime                    ModelPrimitiveListType float[] float[] List<float> Pointer
+    // 160 EventEffect                              ModelClassType IPvpEventEffectStatus IPvpEventEffectStatus IPvpEventEffectStatus Pointer
     public partial class PvpInGameModel : DataModel
     {
         public List<float>?                             EnemySkillExecuteTime                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PvpInGameModel() { Pointer= p0 };
 
-            value.EnemySkillExecuteTime                     = GetSingleList(new IntPtr(p + 0x168)); // 0246650DAAF0 0x168 EnemySkillExecuteTime       ( 000185B80520 ModelPrimitiveListType float[] float[] List<float> Pointer )
-            value.EventEffect                               = GetObject<IPvpEventEffectStatus>(new IntPtr(p + 0x170), ReversePrism.DataModels.IPvpEventEffectStatus.FromPointer); // 0246650DAB10 0x170 EventEffect                 ( 0001866053B0 ModelClassType IPvpEventEffectStatus IPvpEventEffectStatus IPvpEventEffectStatus Pointer )
+            value.EnemySkillExecuteTime                     = GetSingleList(new IntPtr(p + 0x158)); // 0x158 EnemySkillExecuteTime       ( ModelPrimitiveListType float[] float[] List<float> Pointer )
+            value.EventEffect                               = GetObject<IPvpEventEffectStatus>(new IntPtr(p + 0x160), ReversePrism.DataModels.IPvpEventEffectStatus.FromPointer); // 0x160 EventEffect                 ( ModelClassType IPvpEventEffectStatus IPvpEventEffectStatus IPvpEventEffectStatus Pointer )
 
             return value;
         }

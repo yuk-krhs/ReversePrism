@@ -8,24 +8,23 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 TotalObject                              0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 028 DetailObject                             0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 030 IdolName                                 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 038 IdolIcon                                 000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer
-    // 040 BonusRateText                            0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 048 MaxRateText                              0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 050 BaseEffectText                           0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 058 BaseMaxText                              0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 060 StarEffectText                           0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 068 StarMaxText                              0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 070 LvEffectText                             0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 078 LvMaxText                                0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 080 DeniedColor                              0001865AA8E0 ModelEnumType Color Color Color Int32
-    // 090 AvailableColor                           0001865AA8E0 ModelEnumType Color Color Color Int32
-    // 0A0 MaxColor                                 0001865AA8E0 ModelEnumType Color Color Color Int32
-    // 0B0 GrayOutObject                            0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 0B8 IdolDetailPopupCaller                    000186709050 ModelClassType PIdolDetailPopupCaller PIdolDetailPopupCaller PIdolDetailPopupCaller Pointer
-    // 0C0 IconDisposable                           0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 040 TotalObject                              ModelClassType GameObject GameObject GameObject Pointer
+    // 048 DetailObject                             ModelClassType GameObject GameObject GameObject Pointer
+    // 050 IdolName                                 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 058 IdolIcon                                 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer
+    // 060 BonusRateText                            ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 068 MaxRateText                              ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 070 BaseEffectText                           ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 078 BaseMaxText                              ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 080 StarEffectText                           ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 088 StarMaxText                              ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 090 LvEffectText                             ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 098 LvMaxText                                ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 0A0 DeniedColor                              ModelEnumType Color Color Color Int32
+    // 0B0 AvailableColor                           ModelEnumType Color Color Color Int32
+    // 0C0 MaxColor                                 ModelEnumType Color Color Color Int32
+    // 0D0 GrayOutObject                            ModelClassType GameObject GameObject GameObject Pointer
+    // 0D8 Disposables                              ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
     public partial class LiveEventBonusListCell : DataModel
     {
         public GameObject?                              TotalObject                             { get; set; }
@@ -44,8 +43,7 @@ namespace ReversePrism.DataModels
         public Color                                    AvailableColor                          { get; set; }
         public Color                                    MaxColor                                { get; set; }
         public GameObject?                              GrayOutObject                           { get; set; }
-        public PIdolDetailPopupCaller?                  IdolDetailPopupCaller                   { get; set; }
-        public IDisposable?                             IconDisposable                          { get; set; }
+        public CompositeDisposable?                     Disposables                             { get; set; }
 
         public static LiveEventBonusListCell? FromPointer(IntPtr p0)
         {
@@ -55,24 +53,23 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveEventBonusListCell() { Pointer= p0 };
 
-            value.TotalObject                               = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 02466B9CBE58 0x20 TotalObject                 ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.DetailObject                              = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 02466B9CBE78 0x28 DetailObject                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.IdolName                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B9CBE98 0x30 IdolName                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.IdolIcon                                  = GetObject<PFIdolIconView>(new IntPtr(p + 0x038), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 02466B9CBEB8 0x38 IdolIcon                    ( 000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
-            value.BonusRateText                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B9CBED8 0x40 BonusRateText               ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.MaxRateText                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B9CBEF8 0x48 MaxRateText                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.BaseEffectText                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B9CBF18 0x50 BaseEffectText              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.BaseMaxText                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x058), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B9CBF38 0x58 BaseMaxText                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.StarEffectText                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x060), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B9CBF58 0x60 StarEffectText              ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.StarMaxText                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x068), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B9CBF78 0x68 StarMaxText                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.LvEffectText                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x070), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B9CBF98 0x70 LvEffectText                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.LvMaxText                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x078), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B9CBFB8 0x78 LvMaxText                   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.DeniedColor                               = (Color)GetInt32(new IntPtr(p + 0x080)); // 02466B9CBFD8 0x80 DeniedColor                 ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.AvailableColor                            = (Color)GetInt32(new IntPtr(p + 0x090)); // 02466B9CBFF8 0x90 AvailableColor              ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.MaxColor                                  = (Color)GetInt32(new IntPtr(p + 0x0A0)); // 02466B9CC018 0xA0 MaxColor                    ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.GrayOutObject                             = GetObject<GameObject>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.GameObject.FromPointer); // 02466B9CC038 0xB0 GrayOutObject               ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.IdolDetailPopupCaller                     = GetObject<PIdolDetailPopupCaller>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.PIdolDetailPopupCaller.FromPointer); // 02466B9CC058 0xB8 IdolDetailPopupCaller       ( 000186709050 ModelClassType PIdolDetailPopupCaller PIdolDetailPopupCaller PIdolDetailPopupCaller Pointer )
-            value.IconDisposable                            = GetObject<IDisposable>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.IDisposable.FromPointer); // 02466B9CC078 0xC0 IconDisposable              ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.TotalObject                               = GetObject<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 0x40 TotalObject                 ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.DetailObject                              = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 0x48 DetailObject                ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.IdolName                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x50 IdolName                    ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.IdolIcon                                  = GetObject<PFIdolIconView>(new IntPtr(p + 0x058), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 0x58 IdolIcon                    ( ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
+            value.BonusRateText                             = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x060), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x60 BonusRateText               ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.MaxRateText                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x068), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x68 MaxRateText                 ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.BaseEffectText                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x070), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x70 BaseEffectText              ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.BaseMaxText                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x078), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x78 BaseMaxText                 ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.StarEffectText                            = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x080), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x80 StarEffectText              ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.StarMaxText                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x088), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x88 StarMaxText                 ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.LvEffectText                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x090), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x90 LvEffectText                ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.LvMaxText                                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x098), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x98 LvMaxText                   ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.DeniedColor                               = (Color)GetInt32(new IntPtr(p + 0x0A0)); // 0xA0 DeniedColor                 ( ModelEnumType Color Color Color Int32 )
+            value.AvailableColor                            = (Color)GetInt32(new IntPtr(p + 0x0B0)); // 0xB0 AvailableColor              ( ModelEnumType Color Color Color Int32 )
+            value.MaxColor                                  = (Color)GetInt32(new IntPtr(p + 0x0C0)); // 0xC0 MaxColor                    ( ModelEnumType Color Color Color Int32 )
+            value.GrayOutObject                             = GetObject<GameObject>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.GameObject.FromPointer); // 0xD0 GrayOutObject               ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x0D8), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0xD8 Disposables                 ( ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
 
             return value;
         }

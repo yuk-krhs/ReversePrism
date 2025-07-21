@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CurrentCpuLevel                          0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 014 CurrentGpuLevel                          0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 018 PerformanceBottleneck                    000186730BA0 ModelEnumType PerformanceBottleneck PerformanceBottleneck PerformanceBottleneck Int32
-    // 01C CpuPerformanceBoost                      000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 01D GpuPerformanceBoost                      000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 020 ClusterInfo                              0001865BB6C0 ModelEnumType ClusterInfo ClusterInfo ClusterInfo Int32
+    // 010 CurrentCpuLevel                          ModelPrimitiveType int int int Int32
+    // 014 CurrentGpuLevel                          ModelPrimitiveType int int int Int32
+    // 018 PerformanceBottleneck                    ModelEnumType PerformanceBottleneck PerformanceBottleneck PerformanceBottleneck Int32
+    // 01C CpuPerformanceBoost                      ModelPrimitiveType bool bool bool Bool
+    // 01D GpuPerformanceBoost                      ModelPrimitiveType bool bool bool Bool
+    // 020 ClusterInfo                              ModelEnumType ClusterInfo ClusterInfo ClusterInfo Int32
     public partial class PerformanceMetrics : DataModel
     {
         public int                                      CurrentCpuLevel                         { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PerformanceMetrics() { Pointer= p0 };
 
-            value.CurrentCpuLevel                           = GetInt32(new IntPtr(p + 0x010)); // 02466090A368 0x10 CurrentCpuLevel             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CurrentGpuLevel                           = GetInt32(new IntPtr(p + 0x014)); // 02466090A388 0x14 CurrentGpuLevel             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.PerformanceBottleneck                     = (PerformanceBottleneck)GetInt32(new IntPtr(p + 0x018)); // 02466090A3A8 0x18 PerformanceBottleneck       ( 000186730BA0 ModelEnumType PerformanceBottleneck PerformanceBottleneck PerformanceBottleneck Int32 )
-            value.CpuPerformanceBoost                       = GetBool(new IntPtr(p + 0x01C)); // 02466090A3C8 0x1C CpuPerformanceBoost         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.GpuPerformanceBoost                       = GetBool(new IntPtr(p + 0x01D)); // 02466090A3E8 0x1D GpuPerformanceBoost         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ClusterInfo                               = (ClusterInfo)GetInt32(new IntPtr(p + 0x020)); // 02466090A408 0x20 ClusterInfo                 ( 0001865BB6C0 ModelEnumType ClusterInfo ClusterInfo ClusterInfo Int32 )
+            value.CurrentCpuLevel                           = GetInt32(new IntPtr(p + 0x010)); // 0x10 CurrentCpuLevel             ( ModelPrimitiveType int int int Int32 )
+            value.CurrentGpuLevel                           = GetInt32(new IntPtr(p + 0x014)); // 0x14 CurrentGpuLevel             ( ModelPrimitiveType int int int Int32 )
+            value.PerformanceBottleneck                     = (PerformanceBottleneck)GetInt32(new IntPtr(p + 0x018)); // 0x18 PerformanceBottleneck       ( ModelEnumType PerformanceBottleneck PerformanceBottleneck PerformanceBottleneck Int32 )
+            value.CpuPerformanceBoost                       = GetBool(new IntPtr(p + 0x01C)); // 0x1C CpuPerformanceBoost         ( ModelPrimitiveType bool bool bool Bool )
+            value.GpuPerformanceBoost                       = GetBool(new IntPtr(p + 0x01D)); // 0x1D GpuPerformanceBoost         ( ModelPrimitiveType bool bool bool Bool )
+            value.ClusterInfo                               = (ClusterInfo)GetInt32(new IntPtr(p + 0x020)); // 0x20 ClusterInfo                 ( ModelEnumType ClusterInfo ClusterInfo ClusterInfo Int32 )
 
             return value;
         }

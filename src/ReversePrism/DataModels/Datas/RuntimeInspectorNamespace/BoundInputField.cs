@@ -8,18 +8,18 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Initialized                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 021 InputValid                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 022 InputAltered                             000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 028 InputField                               0001866FF160 ModelClassType InputField InputField InputField Pointer
-    // 030 InputFieldBackground                     0001866CCDB0 ModelClassType Image Image Image Pointer
-    // 038 DefaultEmptyValue                        000186674520 ModelPrimitiveType string string string String
-    // 040 CacheTextOnValueChange                   000186597BE0 ModelPrimitiveType bool bool bool Bool
-    // 048 RecentText                               000186671910 ModelPrimitiveType string string string String
-    // 050 M_skinVersion                            0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 058 M_skin                                   0001866F2E90 ModelClassType UISkin UISkin UISkin Pointer
-    // 060 OnValueChanged                           000186705580 ModelClassType OnValueChangedDelegate OnValueChangedDelegate OnValueChangedDelegate Pointer
-    // 068 OnValueSubmitted                         000186705580 ModelClassType OnValueChangedDelegate OnValueChangedDelegate OnValueChangedDelegate Pointer
+    // 020 Initialized                              ModelPrimitiveType bool bool bool Bool
+    // 021 InputValid                               ModelPrimitiveType bool bool bool Bool
+    // 022 InputAltered                             ModelPrimitiveType bool bool bool Bool
+    // 028 InputField                               ModelClassType InputField InputField InputField Pointer
+    // 030 InputFieldBackground                     ModelClassType Image Image Image Pointer
+    // 038 DefaultEmptyValue                        ModelPrimitiveType string string string String
+    // 040 CacheTextOnValueChange                   ModelPrimitiveType bool bool bool Bool
+    // 048 RecentText                               ModelPrimitiveType string string string String
+    // 050 M_skinVersion                            ModelPrimitiveType int int int Int32
+    // 058 M_skin                                   ModelClassType UISkin UISkin UISkin Pointer
+    // 060 OnValueChanged                           ModelClassType OnValueChangedDelegate OnValueChangedDelegate OnValueChangedDelegate Pointer
+    // 068 OnValueSubmitted                         ModelClassType OnValueChangedDelegate OnValueChangedDelegate OnValueChangedDelegate Pointer
     public partial class BoundInputField : DataModel
     {
         public bool                                     Initialized                             { get; set; }
@@ -43,18 +43,18 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BoundInputField() { Pointer= p0 };
 
-            value.Initialized                               = GetBool(new IntPtr(p + 0x020)); // 02466B236878 0x20 Initialized                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.InputValid                                = GetBool(new IntPtr(p + 0x021)); // 02466B236898 0x21 InputValid                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.InputAltered                              = GetBool(new IntPtr(p + 0x022)); // 02466B2368B8 0x22 InputAltered                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.InputField                                = GetObject<InputField>(new IntPtr(p + 0x028), ReversePrism.DataModels.InputField.FromPointer); // 02466B2368D8 0x28 InputField                  ( 0001866FF160 ModelClassType InputField InputField InputField Pointer )
-            value.InputFieldBackground                      = GetObject<Image>(new IntPtr(p + 0x030), ReversePrism.DataModels.Image.FromPointer); // 02466B2368F8 0x30 InputFieldBackground        ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.DefaultEmptyValue                         = GetString(new IntPtr(p + 0x038)); // 02466B236918 0x38 DefaultEmptyValue           ( 000186674520 ModelPrimitiveType string string string String )
-            value.CacheTextOnValueChange                    = GetBool(new IntPtr(p + 0x040)); // 02466B236938 0x40 CacheTextOnValueChange      ( 000186597BE0 ModelPrimitiveType bool bool bool Bool )
-            value.RecentText                                = GetString(new IntPtr(p + 0x048)); // 02466B236958 0x48 RecentText                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.M_skinVersion                             = GetInt32(new IntPtr(p + 0x050)); // 02466B236978 0x50 M_skinVersion               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_skin                                    = GetObject<UISkin>(new IntPtr(p + 0x058), ReversePrism.DataModels.UISkin.FromPointer); // 02466B236998 0x58 M_skin                      ( 0001866F2E90 ModelClassType UISkin UISkin UISkin Pointer )
-            value.OnValueChanged                            = GetObject<OnValueChangedDelegate>(new IntPtr(p + 0x060), ReversePrism.DataModels.OnValueChangedDelegate.FromPointer); // 02466B2369B8 0x60 OnValueChanged              ( 000186705580 ModelClassType OnValueChangedDelegate OnValueChangedDelegate OnValueChangedDelegate Pointer )
-            value.OnValueSubmitted                          = GetObject<OnValueChangedDelegate>(new IntPtr(p + 0x068), ReversePrism.DataModels.OnValueChangedDelegate.FromPointer); // 02466B2369D8 0x68 OnValueSubmitted            ( 000186705580 ModelClassType OnValueChangedDelegate OnValueChangedDelegate OnValueChangedDelegate Pointer )
+            value.Initialized                               = GetBool(new IntPtr(p + 0x020)); // 0x20 Initialized                 ( ModelPrimitiveType bool bool bool Bool )
+            value.InputValid                                = GetBool(new IntPtr(p + 0x021)); // 0x21 InputValid                  ( ModelPrimitiveType bool bool bool Bool )
+            value.InputAltered                              = GetBool(new IntPtr(p + 0x022)); // 0x22 InputAltered                ( ModelPrimitiveType bool bool bool Bool )
+            value.InputField                                = GetObject<InputField>(new IntPtr(p + 0x028), ReversePrism.DataModels.InputField.FromPointer); // 0x28 InputField                  ( ModelClassType InputField InputField InputField Pointer )
+            value.InputFieldBackground                      = GetObject<Image>(new IntPtr(p + 0x030), ReversePrism.DataModels.Image.FromPointer); // 0x30 InputFieldBackground        ( ModelClassType Image Image Image Pointer )
+            value.DefaultEmptyValue                         = GetString(new IntPtr(p + 0x038)); // 0x38 DefaultEmptyValue           ( ModelPrimitiveType string string string String )
+            value.CacheTextOnValueChange                    = GetBool(new IntPtr(p + 0x040)); // 0x40 CacheTextOnValueChange      ( ModelPrimitiveType bool bool bool Bool )
+            value.RecentText                                = GetString(new IntPtr(p + 0x048)); // 0x48 RecentText                  ( ModelPrimitiveType string string string String )
+            value.M_skinVersion                             = GetInt32(new IntPtr(p + 0x050)); // 0x50 M_skinVersion               ( ModelPrimitiveType int int int Int32 )
+            value.M_skin                                    = GetObject<UISkin>(new IntPtr(p + 0x058), ReversePrism.DataModels.UISkin.FromPointer); // 0x58 M_skin                      ( ModelClassType UISkin UISkin UISkin Pointer )
+            value.OnValueChanged                            = GetObject<OnValueChangedDelegate>(new IntPtr(p + 0x060), ReversePrism.DataModels.OnValueChangedDelegate.FromPointer); // 0x60 OnValueChanged              ( ModelClassType OnValueChangedDelegate OnValueChangedDelegate OnValueChangedDelegate Pointer )
+            value.OnValueSubmitted                          = GetObject<OnValueChangedDelegate>(new IntPtr(p + 0x068), ReversePrism.DataModels.OnValueChangedDelegate.FromPointer); // 0x68 OnValueSubmitted            ( ModelClassType OnValueChangedDelegate OnValueChangedDelegate OnValueChangedDelegate Pointer )
 
             return value;
         }

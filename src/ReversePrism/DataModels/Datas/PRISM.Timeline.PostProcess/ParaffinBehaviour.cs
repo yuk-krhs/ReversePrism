@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Enable                                   000186595960 ModelPrimitiveType bool bool bool Bool
-    // 014 Color                                    0001865AB0A0 ModelEnumType Color Color Color Int32
-    // 024 Rotate                                   000186666050 ModelPrimitiveType float float float Single
-    // 028 Edge0                                    000186666050 ModelPrimitiveType float float float Single
-    // 02C Edge1                                    000186666050 ModelPrimitiveType float float float Single
+    // 010 Enable                                   ModelPrimitiveType bool bool bool Bool
+    // 014 Color                                    ModelEnumType Color Color Color Int32
+    // 024 Rotate                                   ModelPrimitiveType float float float Single
+    // 028 Edge0                                    ModelPrimitiveType float float float Single
+    // 02C Edge1                                    ModelPrimitiveType float float float Single
     public partial class ParaffinBehaviour : DataModel
     {
         public bool                                     Enable                                  { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ParaffinBehaviour() { Pointer= p0 };
 
-            value.Enable                                    = GetBool(new IntPtr(p + 0x010)); // 0246650D9150 0x10 Enable                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Color                                     = (Color)GetInt32(new IntPtr(p + 0x014)); // 0246650D9170 0x14 Color                       ( 0001865AB0A0 ModelEnumType Color Color Color Int32 )
-            value.Rotate                                    = GetSingle(new IntPtr(p + 0x024)); // 0246650D9190 0x24 Rotate                      ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Edge0                                     = GetSingle(new IntPtr(p + 0x028)); // 0246650D91B0 0x28 Edge0                       ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Edge1                                     = GetSingle(new IntPtr(p + 0x02C)); // 0246650D91D0 0x2C Edge1                       ( 000186666050 ModelPrimitiveType float float float Single )
+            value.Enable                                    = GetBool(new IntPtr(p + 0x010)); // 0x10 Enable                      ( ModelPrimitiveType bool bool bool Bool )
+            value.Color                                     = (Color)GetInt32(new IntPtr(p + 0x014)); // 0x14 Color                       ( ModelEnumType Color Color Color Int32 )
+            value.Rotate                                    = GetSingle(new IntPtr(p + 0x024)); // 0x24 Rotate                      ( ModelPrimitiveType float float float Single )
+            value.Edge0                                     = GetSingle(new IntPtr(p + 0x028)); // 0x28 Edge0                       ( ModelPrimitiveType float float float Single )
+            value.Edge1                                     = GetSingle(new IntPtr(p + 0x02C)); // 0x2C Edge1                       ( ModelPrimitiveType float float float Single )
 
             return value;
         }

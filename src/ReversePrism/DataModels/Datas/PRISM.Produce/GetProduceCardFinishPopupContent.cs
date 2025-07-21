@@ -9,11 +9,11 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 AssetPath                                string IL2CPP_TYPE_STRING
-    // 060 ProduceCardPrefab                        0001865353C0 ModelClassType ProduceCardContent ProduceCardContent ProduceCardContent Pointer
-    // 068 ProduceCardArea                          000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
-    // 070 GetMesseageText                          0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 078 CacheGetAmount                           0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 080 CacheProduceCardStatusList               000185CE7148 ModelClassListType List`1<IProduceCardStatus> List`1<IProduceCardStatus> List<IProduceCardStatus> Pointer
+    // 060 ProduceCardPrefab                        ModelClassType ProduceCardContent ProduceCardContent ProduceCardContent Pointer
+    // 068 ProduceCardArea                          ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 070 GetMesseageText                          ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 078 CacheGetAmount                           ModelPrimitiveType int int int Int32
+    // 080 CacheProduceCardStatusList               ModelClassListType List`1<IProduceCardStatus> List`1<IProduceCardStatus> List<IProduceCardStatus> Pointer
     public partial class GetProduceCardFinishPopupContent : DataModel
     {
         public ProduceCardContent?                      ProduceCardPrefab                       { get; set; }
@@ -30,11 +30,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetProduceCardFinishPopupContent() { Pointer= p0 };
 
-            value.ProduceCardPrefab                         = GetObject<ProduceCardContent>(new IntPtr(p + 0x060), ReversePrism.DataModels.ProduceCardContent.FromPointer); // 024665D2AAD8 0x60 ProduceCardPrefab           ( 0001865353C0 ModelClassType ProduceCardContent ProduceCardContent ProduceCardContent Pointer )
-            value.ProduceCardArea                           = GetObject<RectTransform>(new IntPtr(p + 0x068), ReversePrism.DataModels.RectTransform.FromPointer); // 024665D2AAF8 0x68 ProduceCardArea             ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.GetMesseageText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x070), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665D2AB18 0x70 GetMesseageText             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.CacheGetAmount                            = GetInt32(new IntPtr(p + 0x078)); // 024665D2AB38 0x78 CacheGetAmount              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CacheProduceCardStatusList                = GetObjectList<IProduceCardStatus>(new IntPtr(p + 0x080), ReversePrism.DataModels.IProduceCardStatus.FromPointer); // 024665D2AB58 0x80 CacheProduceCardStatusList  ( 000185CE7148 ModelClassListType List`1<IProduceCardStatus> List`1<IProduceCardStatus> List<IProduceCardStatus> Pointer )
+            value.ProduceCardPrefab                         = GetObject<ProduceCardContent>(new IntPtr(p + 0x060), ReversePrism.DataModels.ProduceCardContent.FromPointer); // 0x60 ProduceCardPrefab           ( ModelClassType ProduceCardContent ProduceCardContent ProduceCardContent Pointer )
+            value.ProduceCardArea                           = GetObject<RectTransform>(new IntPtr(p + 0x068), ReversePrism.DataModels.RectTransform.FromPointer); // 0x68 ProduceCardArea             ( ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.GetMesseageText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x070), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x70 GetMesseageText             ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.CacheGetAmount                            = GetInt32(new IntPtr(p + 0x078)); // 0x78 CacheGetAmount              ( ModelPrimitiveType int int int Int32 )
+            value.CacheProduceCardStatusList                = GetObjectList<IProduceCardStatus>(new IntPtr(p + 0x080), ReversePrism.DataModels.IProduceCardStatus.FromPointer); // 0x80 CacheProduceCardStatusList  ( ModelClassListType List`1<IProduceCardStatus> List`1<IProduceCardStatus> List<IProduceCardStatus> Pointer )
 
             return value;
         }

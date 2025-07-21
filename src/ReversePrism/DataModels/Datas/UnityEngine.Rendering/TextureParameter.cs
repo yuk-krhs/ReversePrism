@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Dimension                                000186651D60 ModelEnumType TextureDimension TextureDimension TextureDimension Int32
+    // 020 Dimension                                ModelEnumType TextureDimension TextureDimension TextureDimension Int32
     public partial class TextureParameter : DataModel
     {
         public TextureDimension                         Dimension                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TextureParameter() { Pointer= p0 };
 
-            value.Dimension                                 = (TextureDimension)GetInt32(new IntPtr(p + 0x020)); // 02466935A848 0x20 Dimension                   ( 000186651D60 ModelEnumType TextureDimension TextureDimension TextureDimension Int32 )
+            value.Dimension                                 = (TextureDimension)GetInt32(new IntPtr(p + 0x020)); // 0x20 Dimension                   ( ModelEnumType TextureDimension TextureDimension TextureDimension Int32 )
 
             return value;
         }

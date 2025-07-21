@@ -11,12 +11,12 @@ namespace ReversePrism.DataModels
     // 000 AwakenButtonTextId                       int IL2CPP_TYPE_I4
     // 000 TrainingButtonTextId                     int IL2CPP_TYPE_I4
     // 000 SkillLvUpButtonTextId                    int IL2CPP_TYPE_I4
-    // 020 CanAwakenButton                          000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer
-    // 028 CanTrainingButton                        000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer
-    // 030 CanSkillLvUpButton                       000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer
-    // 038 AwakenButtonText                         0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 040 TrainingButtonText                       0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 048 SkillLvUpButtonText                      0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 020 CanAwakenButton                          ModelClassType ToggleButton ToggleButton ToggleButton Pointer
+    // 028 CanTrainingButton                        ModelClassType ToggleButton ToggleButton ToggleButton Pointer
+    // 030 CanSkillLvUpButton                       ModelClassType ToggleButton ToggleButton ToggleButton Pointer
+    // 038 AwakenButtonText                         ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 040 TrainingButtonText                       ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 048 SkillLvUpButtonText                      ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 050 onButtonChenged                          Subject`1<ValueTuple`3<bool, bool, bool>> IL2CPP_TYPE_GENERICINST
     public partial class PIdolUpgradingButtonView : DataModel
     {
@@ -35,12 +35,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PIdolUpgradingButtonView() { Pointer= p0 };
 
-            value.CanAwakenButton                           = GetObject<ToggleButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.ToggleButton.FromPointer); // 02466A3F5668 0x20 CanAwakenButton             ( 000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer )
-            value.CanTrainingButton                         = GetObject<ToggleButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.ToggleButton.FromPointer); // 02466A3F5688 0x28 CanTrainingButton           ( 000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer )
-            value.CanSkillLvUpButton                        = GetObject<ToggleButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.ToggleButton.FromPointer); // 02466A3F56A8 0x30 CanSkillLvUpButton          ( 000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer )
-            value.AwakenButtonText                          = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A3F56C8 0x38 AwakenButtonText            ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TrainingButtonText                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A3F56E8 0x40 TrainingButtonText          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.SkillLvUpButtonText                       = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A3F5708 0x48 SkillLvUpButtonText         ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.CanAwakenButton                           = GetObject<ToggleButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.ToggleButton.FromPointer); // 0x20 CanAwakenButton             ( ModelClassType ToggleButton ToggleButton ToggleButton Pointer )
+            value.CanTrainingButton                         = GetObject<ToggleButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.ToggleButton.FromPointer); // 0x28 CanTrainingButton           ( ModelClassType ToggleButton ToggleButton ToggleButton Pointer )
+            value.CanSkillLvUpButton                        = GetObject<ToggleButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.ToggleButton.FromPointer); // 0x30 CanSkillLvUpButton          ( ModelClassType ToggleButton ToggleButton ToggleButton Pointer )
+            value.AwakenButtonText                          = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x38 AwakenButtonText            ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TrainingButtonText                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x40 TrainingButtonText          ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.SkillLvUpButtonText                       = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x48 SkillLvUpButtonText         ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

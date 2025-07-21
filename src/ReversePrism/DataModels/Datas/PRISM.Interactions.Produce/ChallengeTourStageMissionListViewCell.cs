@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 040 ItemIcon                                 00018657D9E0 ModelClassType ChallengeTourRewardIcon ChallengeTourRewardIcon ChallengeTourRewardIcon Pointer
-    // 048 StarObject                               0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 050 DescriptionText                          0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 040 ItemIcon                                 ModelClassType ChallengeTourRewardIcon ChallengeTourRewardIcon ChallengeTourRewardIcon Pointer
+    // 048 StarObject                               ModelClassType GameObject GameObject GameObject Pointer
+    // 050 DescriptionText                          ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     public partial class ChallengeTourStageMissionListViewCell : DataModel
     {
         public ChallengeTourRewardIcon?                 ItemIcon                                { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChallengeTourStageMissionListViewCell() { Pointer= p0 };
 
-            value.ItemIcon                                  = GetObject<ChallengeTourRewardIcon>(new IntPtr(p + 0x040), ReversePrism.DataModels.ChallengeTourRewardIcon.FromPointer); // 02466A2382A0 0x40 ItemIcon                    ( 00018657D9E0 ModelClassType ChallengeTourRewardIcon ChallengeTourRewardIcon ChallengeTourRewardIcon Pointer )
-            value.StarObject                                = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 02466A2382C0 0x48 StarObject                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.DescriptionText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A2382E0 0x50 DescriptionText             ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ItemIcon                                  = GetObject<ChallengeTourRewardIcon>(new IntPtr(p + 0x040), ReversePrism.DataModels.ChallengeTourRewardIcon.FromPointer); // 0x40 ItemIcon                    ( ModelClassType ChallengeTourRewardIcon ChallengeTourRewardIcon ChallengeTourRewardIcon Pointer )
+            value.StarObject                                = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 0x48 StarObject                  ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.DescriptionText                           = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x50 DescriptionText             ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
 
             return value;
         }

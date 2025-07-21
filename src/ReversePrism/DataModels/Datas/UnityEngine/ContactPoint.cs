@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Point                                  0001866ABA80 ModelEnumType Vector3 Vector3 Vector3 Int32
-    // 01C M_Normal                                 0001866ABA80 ModelEnumType Vector3 Vector3 Vector3 Int32
-    // 028 M_Impulse                                0001866ABA80 ModelEnumType Vector3 Vector3 Vector3 Int32
-    // 034 M_ThisColliderInstanceID                 0001865F2F90 ModelPrimitiveType int int int Int32
-    // 038 M_OtherColliderInstanceID                0001865F2F90 ModelPrimitiveType int int int Int32
-    // 03C M_Separation                             000186665900 ModelPrimitiveType float float float Single
+    // 010 M_Point                                  ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 01C M_Normal                                 ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 028 M_Impulse                                ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 034 M_ThisColliderInstanceID                 ModelPrimitiveType int int int Int32
+    // 038 M_OtherColliderInstanceID                ModelPrimitiveType int int int Int32
+    // 03C M_Separation                             ModelPrimitiveType float float float Single
     public partial class ContactPoint : DataModel
     {
         public Vector3                                  M_Point                                 { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ContactPoint() { Pointer= p0 };
 
-            value.M_Point                                   = (Vector3)GetInt32(new IntPtr(p + 0x010)); // 0245A2144CD8 0x10 M_Point                     ( 0001866ABA80 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.M_Normal                                  = (Vector3)GetInt32(new IntPtr(p + 0x01C)); // 0245A2144CF8 0x1C M_Normal                    ( 0001866ABA80 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.M_Impulse                                 = (Vector3)GetInt32(new IntPtr(p + 0x028)); // 0245A2144D18 0x28 M_Impulse                   ( 0001866ABA80 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.M_ThisColliderInstanceID                  = GetInt32(new IntPtr(p + 0x034)); // 0245A2144D38 0x34 M_ThisColliderInstanceID    ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.M_OtherColliderInstanceID                 = GetInt32(new IntPtr(p + 0x038)); // 0245A2144D58 0x38 M_OtherColliderInstanceID   ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.M_Separation                              = GetSingle(new IntPtr(p + 0x03C)); // 0245A2144D78 0x3C M_Separation                ( 000186665900 ModelPrimitiveType float float float Single )
+            value.M_Point                                   = (Vector3)GetInt32(new IntPtr(p + 0x010)); // 0x10 M_Point                     ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.M_Normal                                  = (Vector3)GetInt32(new IntPtr(p + 0x01C)); // 0x1C M_Normal                    ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.M_Impulse                                 = (Vector3)GetInt32(new IntPtr(p + 0x028)); // 0x28 M_Impulse                   ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.M_ThisColliderInstanceID                  = GetInt32(new IntPtr(p + 0x034)); // 0x34 M_ThisColliderInstanceID    ( ModelPrimitiveType int int int Int32 )
+            value.M_OtherColliderInstanceID                 = GetInt32(new IntPtr(p + 0x038)); // 0x38 M_OtherColliderInstanceID   ( ModelPrimitiveType int int int Int32 )
+            value.M_Separation                              = GetSingle(new IntPtr(p + 0x03C)); // 0x3C M_Separation                ( ModelPrimitiveType float float float Single )
 
             return value;
         }

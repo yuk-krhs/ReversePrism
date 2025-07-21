@@ -8,14 +8,14 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Collection                               0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer
-    // 018 NameTable                                0001865A0930 ModelClassType XmlNameTable XmlNameTable XmlNameTable Pointer
-    // 020 SchemaNames                              0001866EA5B0 ModelClassType SchemaNames SchemaNames SchemaNames Pointer
-    // 028 WLock                                    00018661FAD0 ModelClassType ReaderWriterLock ReaderWriterLock ReaderWriterLock Pointer
-    // 030 Timeout                                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 034 IsThreadSafe                             000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 038 ValidationEventHandler                   000186765AD0 ModelClassType ValidationEventHandler ValidationEventHandler ValidationEventHandler Pointer
-    // 040 XmlResolver                              0001865ABBE0 ModelClassType XmlResolver XmlResolver XmlResolver Pointer
+    // 010 Collection                               ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 018 NameTable                                ModelClassType XmlNameTable XmlNameTable XmlNameTable Pointer
+    // 020 SchemaNames                              ModelClassType SchemaNames SchemaNames SchemaNames Pointer
+    // 028 WLock                                    ModelClassType ReaderWriterLock ReaderWriterLock ReaderWriterLock Pointer
+    // 030 Timeout                                  ModelPrimitiveType int int int Int32
+    // 034 IsThreadSafe                             ModelPrimitiveType bool bool bool Bool
+    // 038 ValidationEventHandler                   ModelClassType ValidationEventHandler ValidationEventHandler ValidationEventHandler Pointer
+    // 040 XmlResolver                              ModelClassType XmlResolver XmlResolver XmlResolver Pointer
     public partial class XmlSchemaCollection : DataModel
     {
         public Hashtable?                               Collection                              { get; set; }
@@ -35,14 +35,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlSchemaCollection() { Pointer= p0 };
 
-            value.Collection                                = GetObject<Hashtable>(new IntPtr(p + 0x010), ReversePrism.DataModels.Hashtable.FromPointer); // 024667464540 0x10 Collection                  ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.NameTable                                 = GetObject<XmlNameTable>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlNameTable.FromPointer); // 024667464560 0x18 NameTable                   ( 0001865A0930 ModelClassType XmlNameTable XmlNameTable XmlNameTable Pointer )
-            value.SchemaNames                               = GetObject<SchemaNames>(new IntPtr(p + 0x020), ReversePrism.DataModels.SchemaNames.FromPointer); // 024667464580 0x20 SchemaNames                 ( 0001866EA5B0 ModelClassType SchemaNames SchemaNames SchemaNames Pointer )
-            value.WLock                                     = GetObject<ReaderWriterLock>(new IntPtr(p + 0x028), ReversePrism.DataModels.ReaderWriterLock.FromPointer); // 0246674645A0 0x28 WLock                       ( 00018661FAD0 ModelClassType ReaderWriterLock ReaderWriterLock ReaderWriterLock Pointer )
-            value.Timeout                                   = GetInt32(new IntPtr(p + 0x030)); // 0246674645C0 0x30 Timeout                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsThreadSafe                              = GetBool(new IntPtr(p + 0x034)); // 0246674645E0 0x34 IsThreadSafe                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ValidationEventHandler                    = GetObject<ValidationEventHandler>(new IntPtr(p + 0x038), ReversePrism.DataModels.ValidationEventHandler.FromPointer); // 024667464600 0x38 ValidationEventHandler      ( 000186765AD0 ModelClassType ValidationEventHandler ValidationEventHandler ValidationEventHandler Pointer )
-            value.XmlResolver                               = GetObject<XmlResolver>(new IntPtr(p + 0x040), ReversePrism.DataModels.XmlResolver.FromPointer); // 024667464620 0x40 XmlResolver                 ( 0001865ABBE0 ModelClassType XmlResolver XmlResolver XmlResolver Pointer )
+            value.Collection                                = GetObject<Hashtable>(new IntPtr(p + 0x010), ReversePrism.DataModels.Hashtable.FromPointer); // 0x10 Collection                  ( ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.NameTable                                 = GetObject<XmlNameTable>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlNameTable.FromPointer); // 0x18 NameTable                   ( ModelClassType XmlNameTable XmlNameTable XmlNameTable Pointer )
+            value.SchemaNames                               = GetObject<SchemaNames>(new IntPtr(p + 0x020), ReversePrism.DataModels.SchemaNames.FromPointer); // 0x20 SchemaNames                 ( ModelClassType SchemaNames SchemaNames SchemaNames Pointer )
+            value.WLock                                     = GetObject<ReaderWriterLock>(new IntPtr(p + 0x028), ReversePrism.DataModels.ReaderWriterLock.FromPointer); // 0x28 WLock                       ( ModelClassType ReaderWriterLock ReaderWriterLock ReaderWriterLock Pointer )
+            value.Timeout                                   = GetInt32(new IntPtr(p + 0x030)); // 0x30 Timeout                     ( ModelPrimitiveType int int int Int32 )
+            value.IsThreadSafe                              = GetBool(new IntPtr(p + 0x034)); // 0x34 IsThreadSafe                ( ModelPrimitiveType bool bool bool Bool )
+            value.ValidationEventHandler                    = GetObject<ValidationEventHandler>(new IntPtr(p + 0x038), ReversePrism.DataModels.ValidationEventHandler.FromPointer); // 0x38 ValidationEventHandler      ( ModelClassType ValidationEventHandler ValidationEventHandler ValidationEventHandler Pointer )
+            value.XmlResolver                               = GetObject<XmlResolver>(new IntPtr(p + 0x040), ReversePrism.DataModels.XmlResolver.FromPointer); // 0x40 XmlResolver                 ( ModelClassType XmlResolver XmlResolver XmlResolver Pointer )
 
             return value;
         }

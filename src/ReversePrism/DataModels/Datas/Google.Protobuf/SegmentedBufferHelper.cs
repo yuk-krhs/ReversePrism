@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 totalLength                              Nullable`1<int> IL2CPP_TYPE_GENERICINST
     // 018 readOnlySequenceEnumerator               Enumerator<sbyte> IL2CPP_TYPE_GENERICINST
-    // 050 CodedInputStream                         0001865C15B0 ModelClassType CodedInputStream CodedInputStream CodedInputStream Pointer
+    // 050 CodedInputStream                         ModelClassType CodedInputStream CodedInputStream CodedInputStream Pointer
     public partial class SegmentedBufferHelper : DataModel
     {
         public CodedInputStream?                        CodedInputStream                        { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SegmentedBufferHelper() { Pointer= p0 };
 
-            value.CodedInputStream                          = GetObject<CodedInputStream>(new IntPtr(p + 0x050), ReversePrism.DataModels.CodedInputStream.FromPointer); // 0245A1F49790 0x50 CodedInputStream            ( 0001865C15B0 ModelClassType CodedInputStream CodedInputStream CodedInputStream Pointer )
+            value.CodedInputStream                          = GetObject<CodedInputStream>(new IntPtr(p + 0x050), ReversePrism.DataModels.CodedInputStream.FromPointer); // 0x50 CodedInputStream            ( ModelClassType CodedInputStream CodedInputStream CodedInputStream Pointer )
 
             return value;
         }

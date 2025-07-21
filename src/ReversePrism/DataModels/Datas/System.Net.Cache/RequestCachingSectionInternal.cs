@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 DisableAllCaching                        000186596AF0 ModelPrimitiveType bool bool bool Bool
+    // 010 DisableAllCaching                        ModelPrimitiveType bool bool bool Bool
     public partial class RequestCachingSectionInternal : DataModel
     {
         public bool                                     DisableAllCaching                       { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RequestCachingSectionInternal() { Pointer= p0 };
 
-            value.DisableAllCaching                         = GetBool(new IntPtr(p + 0x010)); // 024667B4C228 0x10 DisableAllCaching           ( 000186596AF0 ModelPrimitiveType bool bool bool Bool )
+            value.DisableAllCaching                         = GetBool(new IntPtr(p + 0x010)); // 0x10 DisableAllCaching           ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

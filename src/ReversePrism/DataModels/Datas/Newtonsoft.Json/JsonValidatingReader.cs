@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 078 Reader                                   00018675A030 ModelClassType JsonReader JsonReader JsonReader Pointer
+    // 078 Reader                                   ModelClassType JsonReader JsonReader JsonReader Pointer
     // 080 _stack                                   Stack`1<SchemaScope> IL2CPP_TYPE_GENERICINST
-    // 088 Schema                                   00018675AD30 ModelClassType JsonSchema JsonSchema JsonSchema Pointer
-    // 090 Model                                    00018675BEF0 ModelClassType JsonSchemaModel JsonSchemaModel JsonSchemaModel Pointer
-    // 098 CurrentScope                             000186672980 ModelClassType SchemaScope SchemaScope SchemaScope Pointer
-    // 0A0 ValidationEventHandler                   000186765630 ModelClassType ValidationEventHandler ValidationEventHandler ValidationEventHandler Pointer
+    // 088 Schema                                   ModelClassType JsonSchema JsonSchema JsonSchema Pointer
+    // 090 Model                                    ModelClassType JsonSchemaModel JsonSchemaModel JsonSchemaModel Pointer
+    // 098 CurrentScope                             ModelClassType SchemaScope SchemaScope SchemaScope Pointer
+    // 0A0 ValidationEventHandler                   ModelClassType ValidationEventHandler ValidationEventHandler ValidationEventHandler Pointer
     // 000 EmptySchemaList                          IList`1<JsonSchemaModel> IL2CPP_TYPE_GENERICINST
     public partial class JsonValidatingReader : DataModel
     {
@@ -31,11 +31,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JsonValidatingReader() { Pointer= p0 };
 
-            value.Reader                                    = GetObject<JsonReader>(new IntPtr(p + 0x078), ReversePrism.DataModels.JsonReader.FromPointer); // 024668735298 0x78 Reader                      ( 00018675A030 ModelClassType JsonReader JsonReader JsonReader Pointer )
-            value.Schema                                    = GetObject<JsonSchema>(new IntPtr(p + 0x088), ReversePrism.DataModels.JsonSchema.FromPointer); // 0246687352D8 0x88 Schema                      ( 00018675AD30 ModelClassType JsonSchema JsonSchema JsonSchema Pointer )
-            value.Model                                     = GetObject<JsonSchemaModel>(new IntPtr(p + 0x090), ReversePrism.DataModels.JsonSchemaModel.FromPointer); // 0246687352F8 0x90 Model                       ( 00018675BEF0 ModelClassType JsonSchemaModel JsonSchemaModel JsonSchemaModel Pointer )
-            value.CurrentScope                              = GetObject<SchemaScope>(new IntPtr(p + 0x098), ReversePrism.DataModels.SchemaScope.FromPointer); // 024668735318 0x98 CurrentScope                ( 000186672980 ModelClassType SchemaScope SchemaScope SchemaScope Pointer )
-            value.ValidationEventHandler                    = GetObject<ValidationEventHandler>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.ValidationEventHandler.FromPointer); // 024668735338 0xA0 ValidationEventHandler      ( 000186765630 ModelClassType ValidationEventHandler ValidationEventHandler ValidationEventHandler Pointer )
+            value.Reader                                    = GetObject<JsonReader>(new IntPtr(p + 0x078), ReversePrism.DataModels.JsonReader.FromPointer); // 0x78 Reader                      ( ModelClassType JsonReader JsonReader JsonReader Pointer )
+            value.Schema                                    = GetObject<JsonSchema>(new IntPtr(p + 0x088), ReversePrism.DataModels.JsonSchema.FromPointer); // 0x88 Schema                      ( ModelClassType JsonSchema JsonSchema JsonSchema Pointer )
+            value.Model                                     = GetObject<JsonSchemaModel>(new IntPtr(p + 0x090), ReversePrism.DataModels.JsonSchemaModel.FromPointer); // 0x90 Model                       ( ModelClassType JsonSchemaModel JsonSchemaModel JsonSchemaModel Pointer )
+            value.CurrentScope                              = GetObject<SchemaScope>(new IntPtr(p + 0x098), ReversePrism.DataModels.SchemaScope.FromPointer); // 0x98 CurrentScope                ( ModelClassType SchemaScope SchemaScope SchemaScope Pointer )
+            value.ValidationEventHandler                    = GetObject<ValidationEventHandler>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.ValidationEventHandler.FromPointer); // 0xA0 ValidationEventHandler      ( ModelClassType ValidationEventHandler ValidationEventHandler ValidationEventHandler Pointer )
 
             return value;
         }

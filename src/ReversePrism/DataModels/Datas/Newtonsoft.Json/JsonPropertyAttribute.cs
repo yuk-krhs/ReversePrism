@@ -19,11 +19,11 @@ namespace ReversePrism.DataModels
     // 04C _itemIsReference                         Nullable`1<bool> IL2CPP_TYPE_GENERICINST
     // 050 _itemReferenceLoopHandling               Nullable`1<ReferenceLoopHandling> IL2CPP_TYPE_GENERICINST
     // 058 _itemTypeNameHandling                    Nullable`1<TypeNameHandling> IL2CPP_TYPE_GENERICINST
-    // 060 ItemConverterType                        000186692850 ModelClassType Type Type Type Pointer
+    // 060 ItemConverterType                        ModelClassType Type Type Type Pointer
     // 068 <ItemConverterParameters>k__BackingField <object>[] IL2CPP_TYPE_SZARRAY
-    // 070 NamingStrategyType                       000186692850 ModelClassType Type Type Type Pointer
+    // 070 NamingStrategyType                       ModelClassType Type Type Type Pointer
     // 078 <NamingStrategyParameters>k__BackingField <object>[] IL2CPP_TYPE_SZARRAY
-    // 080 PropertyName                             000186671910 ModelPrimitiveType string string string String
+    // 080 PropertyName                             ModelPrimitiveType string string string String
     public partial class JsonPropertyAttribute : DataModel
     {
         public Type?                                    ItemConverterType                       { get; set; }
@@ -38,9 +38,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JsonPropertyAttribute() { Pointer= p0 };
 
-            value.ItemConverterType                         = GetObject<Type>(new IntPtr(p + 0x060), ReversePrism.DataModels.Type.FromPointer); // 0245A606B4A0 0x60 ItemConverterType           ( 000186692850 ModelClassType Type Type Type Pointer )
-            value.NamingStrategyType                        = GetObject<Type>(new IntPtr(p + 0x070), ReversePrism.DataModels.Type.FromPointer); // 0245A606B4E0 0x70 NamingStrategyType          ( 000186692850 ModelClassType Type Type Type Pointer )
-            value.PropertyName                              = GetString(new IntPtr(p + 0x080)); // 0245A606B520 0x80 PropertyName                ( 000186671910 ModelPrimitiveType string string string String )
+            value.ItemConverterType                         = GetObject<Type>(new IntPtr(p + 0x060), ReversePrism.DataModels.Type.FromPointer); // 0x60 ItemConverterType           ( ModelClassType Type Type Type Pointer )
+            value.NamingStrategyType                        = GetObject<Type>(new IntPtr(p + 0x070), ReversePrism.DataModels.Type.FromPointer); // 0x70 NamingStrategyType          ( ModelClassType Type Type Type Pointer )
+            value.PropertyName                              = GetString(new IntPtr(p + 0x080)); // 0x80 PropertyName                ( ModelPrimitiveType string string string String )
 
             return value;
         }

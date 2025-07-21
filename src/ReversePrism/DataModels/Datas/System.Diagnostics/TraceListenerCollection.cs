@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 List                                     00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer
+    // 010 List                                     ModelClassType ArrayList ArrayList ArrayList Pointer
     public partial class TraceListenerCollection : DataModel
     {
         public ArrayList?                               List                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TraceListenerCollection() { Pointer= p0 };
 
-            value.List                                      = GetObject<ArrayList>(new IntPtr(p + 0x010), ReversePrism.DataModels.ArrayList.FromPointer); // 0245A4D3F2C0 0x10 List                        ( 00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer )
+            value.List                                      = GetObject<ArrayList>(new IntPtr(p + 0x010), ReversePrism.DataModels.ArrayList.FromPointer); // 0x10 List                        ( ModelClassType ArrayList ArrayList ArrayList Pointer )
 
             return value;
         }

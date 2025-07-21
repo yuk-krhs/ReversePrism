@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Rank                                     0001865F4260 ModelPrimitiveType int int int Int32
+    // 010 Rank                                     ModelPrimitiveType int int int Int32
     public partial class RankingData : DataModel
     {
         public int                                      Rank                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RankingData() { Pointer= p0 };
 
-            value.Rank                                      = GetInt32(new IntPtr(p + 0x010)); // 02466523F5A0 0x10 Rank                        ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Rank                                      = GetInt32(new IntPtr(p + 0x010)); // 0x10 Rank                        ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

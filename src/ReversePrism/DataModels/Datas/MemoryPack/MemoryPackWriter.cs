@@ -11,12 +11,12 @@ namespace ReversePrism.DataModels
     // 000 DepthLimit                               int IL2CPP_TYPE_I4
     // 010 bufferWriter                             IBufferWriter`1<sbyte> IL2CPP_TYPE_GENERICINST
     // 018 bufferReference                          Span`1<sbyte> IL2CPP_TYPE_GENERICINST
-    // 028 BufferLength                             0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 02C AdvancedCount                            0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 030 Depth                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 034 WrittenCount                             0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 038 SerializeStringAsUtf8                    0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 040 OptionalState                            0001865FA4C0 ModelClassType MemoryPackWriterOptionalState MemoryPackWriterOptionalState MemoryPackWriterOptionalState Pointer
+    // 028 BufferLength                             ModelPrimitiveType int int int Int32
+    // 02C AdvancedCount                            ModelPrimitiveType int int int Int32
+    // 030 Depth                                    ModelPrimitiveType int int int Int32
+    // 034 WrittenCount                             ModelPrimitiveType int int int Int32
+    // 038 SerializeStringAsUtf8                    ModelPrimitiveType bool bool bool Bool
+    // 040 OptionalState                            ModelClassType MemoryPackWriterOptionalState MemoryPackWriterOptionalState MemoryPackWriterOptionalState Pointer
     public partial class MemoryPackWriter : DataModel
     {
         public int                                      BufferLength                            { get; set; }
@@ -34,12 +34,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MemoryPackWriter() { Pointer= p0 };
 
-            value.BufferLength                              = GetInt32(new IntPtr(p + 0x028)); // 02466AB07B20 0x28 BufferLength                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.AdvancedCount                             = GetInt32(new IntPtr(p + 0x02C)); // 02466AB07B40 0x2C AdvancedCount               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Depth                                     = GetInt32(new IntPtr(p + 0x030)); // 02466AB07B60 0x30 Depth                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.WrittenCount                              = GetInt32(new IntPtr(p + 0x034)); // 02466AB07B80 0x34 WrittenCount                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.SerializeStringAsUtf8                     = GetBool(new IntPtr(p + 0x038)); // 02466AB07BA0 0x38 SerializeStringAsUtf8       ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.OptionalState                             = GetObject<MemoryPackWriterOptionalState>(new IntPtr(p + 0x040), ReversePrism.DataModels.MemoryPackWriterOptionalState.FromPointer); // 02466AB07BC0 0x40 OptionalState               ( 0001865FA4C0 ModelClassType MemoryPackWriterOptionalState MemoryPackWriterOptionalState MemoryPackWriterOptionalState Pointer )
+            value.BufferLength                              = GetInt32(new IntPtr(p + 0x028)); // 0x28 BufferLength                ( ModelPrimitiveType int int int Int32 )
+            value.AdvancedCount                             = GetInt32(new IntPtr(p + 0x02C)); // 0x2C AdvancedCount               ( ModelPrimitiveType int int int Int32 )
+            value.Depth                                     = GetInt32(new IntPtr(p + 0x030)); // 0x30 Depth                       ( ModelPrimitiveType int int int Int32 )
+            value.WrittenCount                              = GetInt32(new IntPtr(p + 0x034)); // 0x34 WrittenCount                ( ModelPrimitiveType int int int Int32 )
+            value.SerializeStringAsUtf8                     = GetBool(new IntPtr(p + 0x038)); // 0x38 SerializeStringAsUtf8       ( ModelPrimitiveType bool bool bool Bool )
+            value.OptionalState                             = GetObject<MemoryPackWriterOptionalState>(new IntPtr(p + 0x040), ReversePrism.DataModels.MemoryPackWriterOptionalState.FromPointer); // 0x40 OptionalState               ( ModelClassType MemoryPackWriterOptionalState MemoryPackWriterOptionalState MemoryPackWriterOptionalState Pointer )
 
             return value;
         }

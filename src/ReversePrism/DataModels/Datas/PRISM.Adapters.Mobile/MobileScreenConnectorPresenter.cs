@@ -8,12 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 View                                     0001865B8310 ModelClassType IMobileScreenConnectorView IMobileScreenConnectorView IMobileScreenConnectorView Pointer
-    // 018 Container                                0001865B71F0 ModelClassType IMobileScreenCommonInfoContainer IMobileScreenCommonInfoContainer IMobileScreenCommonInfoContainer Pointer
+    // 010 View                                     ModelClassType IMobileScreenConnectorView IMobileScreenConnectorView IMobileScreenConnectorView Pointer
+    // 018 Container                                ModelClassType IMobileScreenCommonInfoContainer IMobileScreenCommonInfoContainer IMobileScreenCommonInfoContainer Pointer
     // 020 parameterStack                           Stack`1<IMobileScreenParameter> IL2CPP_TYPE_GENERICINST
     // 028 screenPresenters                         Dictionary`2<int, IMobileScreenPresenter> IL2CPP_TYPE_GENERICINST
     // 030 onScreenJumpFinishedSubject              Subject`1<ScreenType> IL2CPP_TYPE_GENERICINST
-    // 038 overlayCloser                            Action`1<Action> IL2CPP_TYPE_GENERICINST
+    // 038 onFinishMobileToJumpView                 Subject`1<Unit> IL2CPP_TYPE_GENERICINST
+    // 040 overlayCloser                            Action`1<Action> IL2CPP_TYPE_GENERICINST
     public partial class MobileScreenConnectorPresenter : DataModel
     {
         public IMobileScreenConnectorView?              View                                    { get; set; }
@@ -27,8 +28,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MobileScreenConnectorPresenter() { Pointer= p0 };
 
-            value.View                                      = GetObject<IMobileScreenConnectorView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMobileScreenConnectorView.FromPointer); // 0246668EC888 0x10 View                        ( 0001865B8310 ModelClassType IMobileScreenConnectorView IMobileScreenConnectorView IMobileScreenConnectorView Pointer )
-            value.Container                                 = GetObject<IMobileScreenCommonInfoContainer>(new IntPtr(p + 0x018), ReversePrism.DataModels.IMobileScreenCommonInfoContainer.FromPointer); // 0246668EC8A8 0x18 Container                   ( 0001865B71F0 ModelClassType IMobileScreenCommonInfoContainer IMobileScreenCommonInfoContainer IMobileScreenCommonInfoContainer Pointer )
+            value.View                                      = GetObject<IMobileScreenConnectorView>(new IntPtr(p + 0x010), ReversePrism.DataModels.IMobileScreenConnectorView.FromPointer); // 0x10 View                        ( ModelClassType IMobileScreenConnectorView IMobileScreenConnectorView IMobileScreenConnectorView Pointer )
+            value.Container                                 = GetObject<IMobileScreenCommonInfoContainer>(new IntPtr(p + 0x018), ReversePrism.DataModels.IMobileScreenCommonInfoContainer.FromPointer); // 0x18 Container                   ( ModelClassType IMobileScreenCommonInfoContainer IMobileScreenCommonInfoContainer IMobileScreenCommonInfoContainer Pointer )
 
             return value;
         }

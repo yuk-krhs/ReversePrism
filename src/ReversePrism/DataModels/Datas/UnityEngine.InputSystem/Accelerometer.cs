@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 170 Acceleration                             000186777340 ModelClassType Vector3Control Vector3Control Vector3Control Pointer
+    // 170 Acceleration                             ModelClassType Vector3Control Vector3Control Vector3Control Pointer
     // 000 <current>k__BackingField                 Accelerometer IL2CPP_TYPE_CLASS
     public partial class Accelerometer : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Accelerometer() { Pointer= p0 };
 
-            value.Acceleration                              = GetObject<Vector3Control>(new IntPtr(p + 0x170), ReversePrism.DataModels.Vector3Control.FromPointer); // 0245A33B0270 0x170 Acceleration                ( 000186777340 ModelClassType Vector3Control Vector3Control Vector3Control Pointer )
+            value.Acceleration                              = GetObject<Vector3Control>(new IntPtr(p + 0x170), ReversePrism.DataModels.Vector3Control.FromPointer); // 0x170 Acceleration                ( ModelClassType Vector3Control Vector3Control Vector3Control Pointer )
 
             return value;
         }

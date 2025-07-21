@@ -9,8 +9,8 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 ServiceBinderAccessibility               DynamicallyAccessedMemberTypes IL2CPP_TYPE_VALUETYPE
-    // 010 BindType                                 0001866936B0 ModelClassType Type Type Type Pointer
-    // 018 BindMethodName                           000186672F10 ModelPrimitiveType string string string String
+    // 010 BindType                                 ModelClassType Type Type Type Pointer
+    // 018 BindMethodName                           ModelPrimitiveType string string string String
     public partial class BindServiceMethodAttribute : DataModel
     {
         public Type?                                    BindType                                { get; set; }
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BindServiceMethodAttribute() { Pointer= p0 };
 
-            value.BindType                                  = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 02466BBBC8E0 0x10 BindType                    ( 0001866936B0 ModelClassType Type Type Type Pointer )
-            value.BindMethodName                            = GetString(new IntPtr(p + 0x018)); // 02466BBBC900 0x18 BindMethodName              ( 000186672F10 ModelPrimitiveType string string string String )
+            value.BindType                                  = GetObject<Type>(new IntPtr(p + 0x010), ReversePrism.DataModels.Type.FromPointer); // 0x10 BindType                    ( ModelClassType Type Type Type Pointer )
+            value.BindMethodName                            = GetString(new IntPtr(p + 0x018)); // 0x18 BindMethodName              ( ModelPrimitiveType string string string String )
 
             return value;
         }

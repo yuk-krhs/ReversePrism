@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 OffsetFromWriteStart                     0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 014 Size                                     0001866992B0 ModelPrimitiveType uint uint uint UInt32
+    // 010 OffsetFromWriteStart                     ModelPrimitiveType uint uint uint UInt32
+    // 014 Size                                     ModelPrimitiveType uint uint uint UInt32
     // 018 source                                   <uint> IL2CPP_TYPE_U
     public partial class GfxUpdateBufferRange : DataModel
     {
@@ -24,8 +24,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GfxUpdateBufferRange() { Pointer= p0 };
 
-            value.OffsetFromWriteStart                      = GetUInt32(new IntPtr(p + 0x010)); // 0245A68211D0 0x10 OffsetFromWriteStart        ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.Size                                      = GetUInt32(new IntPtr(p + 0x014)); // 0245A68211F0 0x14 Size                        ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.OffsetFromWriteStart                      = GetUInt32(new IntPtr(p + 0x010)); // 0x10 OffsetFromWriteStart        ( ModelPrimitiveType uint uint uint UInt32 )
+            value.Size                                      = GetUInt32(new IntPtr(p + 0x014)); // 0x14 Size                        ( ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

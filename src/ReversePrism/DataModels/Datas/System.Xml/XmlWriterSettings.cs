@@ -8,29 +8,29 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 UseAsync                                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 018 Encoding                                 00018672D9E0 ModelClassType Encoding Encoding Encoding Pointer
-    // 020 OmitXmlDecl                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 024 NewLineHandling                          00018669F5C0 ModelEnumType NewLineHandling NewLineHandling NewLineHandling Int32
-    // 028 NewLineChars                             000186671910 ModelPrimitiveType string string string String
-    // 030 Indent                                   0001866B28F0 ModelEnumType TriState TriState TriState Int32
-    // 038 IndentChars                              000186671910 ModelPrimitiveType string string string String
-    // 040 NewLineOnAttributes                      000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 041 CloseOutput                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 044 NamespaceHandling                        00018667D970 ModelEnumType NamespaceHandling NamespaceHandling NamespaceHandling Int32
-    // 048 ConformanceLevel                         000186600120 ModelEnumType ConformanceLevel ConformanceLevel ConformanceLevel Int32
-    // 04C CheckCharacters                          000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 04D WriteEndDocumentOnClose                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 050 OutputMethod                             0001865A76D0 ModelEnumType XmlOutputMethod XmlOutputMethod XmlOutputMethod Int32
-    // 058 CdataSections                            000185D1DC48 ModelClassListType List`1<XmlQualifiedName> List`1<XmlQualifiedName> List<XmlQualifiedName> Pointer
-    // 060 DoNotEscapeUriAttributes                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 061 MergeCDataSections                       000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 068 MediaType                                000186671910 ModelPrimitiveType string string string String
-    // 070 DocTypeSystem                            000186671910 ModelPrimitiveType string string string String
-    // 078 DocTypePublic                            000186671910 ModelPrimitiveType string string string String
-    // 080 Standalone                               0001865CB0D0 ModelEnumType XmlStandalone XmlStandalone XmlStandalone Int32
-    // 084 AutoXmlDecl                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 085 IsReadOnly                               000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 UseAsync                                 ModelPrimitiveType bool bool bool Bool
+    // 018 Encoding                                 ModelClassType Encoding Encoding Encoding Pointer
+    // 020 OmitXmlDecl                              ModelPrimitiveType bool bool bool Bool
+    // 024 NewLineHandling                          ModelEnumType NewLineHandling NewLineHandling NewLineHandling Int32
+    // 028 NewLineChars                             ModelPrimitiveType string string string String
+    // 030 Indent                                   ModelEnumType TriState TriState TriState Int32
+    // 038 IndentChars                              ModelPrimitiveType string string string String
+    // 040 NewLineOnAttributes                      ModelPrimitiveType bool bool bool Bool
+    // 041 CloseOutput                              ModelPrimitiveType bool bool bool Bool
+    // 044 NamespaceHandling                        ModelEnumType NamespaceHandling NamespaceHandling NamespaceHandling Int32
+    // 048 ConformanceLevel                         ModelEnumType ConformanceLevel ConformanceLevel ConformanceLevel Int32
+    // 04C CheckCharacters                          ModelPrimitiveType bool bool bool Bool
+    // 04D WriteEndDocumentOnClose                  ModelPrimitiveType bool bool bool Bool
+    // 050 OutputMethod                             ModelEnumType XmlOutputMethod XmlOutputMethod XmlOutputMethod Int32
+    // 058 CdataSections                            ModelClassListType List`1<XmlQualifiedName> List`1<XmlQualifiedName> List<XmlQualifiedName> Pointer
+    // 060 DoNotEscapeUriAttributes                 ModelPrimitiveType bool bool bool Bool
+    // 061 MergeCDataSections                       ModelPrimitiveType bool bool bool Bool
+    // 068 MediaType                                ModelPrimitiveType string string string String
+    // 070 DocTypeSystem                            ModelPrimitiveType string string string String
+    // 078 DocTypePublic                            ModelPrimitiveType string string string String
+    // 080 Standalone                               ModelEnumType XmlStandalone XmlStandalone XmlStandalone Int32
+    // 084 AutoXmlDecl                              ModelPrimitiveType bool bool bool Bool
+    // 085 IsReadOnly                               ModelPrimitiveType bool bool bool Bool
     public partial class XmlWriterSettings : DataModel
     {
         public bool                                     UseAsync                                { get; set; }
@@ -65,29 +65,29 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlWriterSettings() { Pointer= p0 };
 
-            value.UseAsync                                  = GetBool(new IntPtr(p + 0x010)); // 0246673BB4A0 0x10 UseAsync                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Encoding                                  = GetObject<Encoding>(new IntPtr(p + 0x018), ReversePrism.DataModels.Encoding.FromPointer); // 0246673BB4C0 0x18 Encoding                    ( 00018672D9E0 ModelClassType Encoding Encoding Encoding Pointer )
-            value.OmitXmlDecl                               = GetBool(new IntPtr(p + 0x020)); // 0246673BB4E0 0x20 OmitXmlDecl                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.NewLineHandling                           = (NewLineHandling)GetInt32(new IntPtr(p + 0x024)); // 0246673BB500 0x24 NewLineHandling             ( 00018669F5C0 ModelEnumType NewLineHandling NewLineHandling NewLineHandling Int32 )
-            value.NewLineChars                              = GetString(new IntPtr(p + 0x028)); // 0246673BB520 0x28 NewLineChars                ( 000186671910 ModelPrimitiveType string string string String )
-            value.Indent                                    = (TriState)GetInt32(new IntPtr(p + 0x030)); // 0246673BB540 0x30 Indent                      ( 0001866B28F0 ModelEnumType TriState TriState TriState Int32 )
-            value.IndentChars                               = GetString(new IntPtr(p + 0x038)); // 0246673BB560 0x38 IndentChars                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.NewLineOnAttributes                       = GetBool(new IntPtr(p + 0x040)); // 0246673BB580 0x40 NewLineOnAttributes         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CloseOutput                               = GetBool(new IntPtr(p + 0x041)); // 0246673BB5A0 0x41 CloseOutput                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.NamespaceHandling                         = (NamespaceHandling)GetInt32(new IntPtr(p + 0x044)); // 0246673BB5C0 0x44 NamespaceHandling           ( 00018667D970 ModelEnumType NamespaceHandling NamespaceHandling NamespaceHandling Int32 )
-            value.ConformanceLevel                          = (ConformanceLevel)GetInt32(new IntPtr(p + 0x048)); // 0246673BB5E0 0x48 ConformanceLevel            ( 000186600120 ModelEnumType ConformanceLevel ConformanceLevel ConformanceLevel Int32 )
-            value.CheckCharacters                           = GetBool(new IntPtr(p + 0x04C)); // 0246673BB600 0x4C CheckCharacters             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.WriteEndDocumentOnClose                   = GetBool(new IntPtr(p + 0x04D)); // 0246673BB620 0x4D WriteEndDocumentOnClose     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.OutputMethod                              = (XmlOutputMethod)GetInt32(new IntPtr(p + 0x050)); // 0246673BB640 0x50 OutputMethod                ( 0001865A76D0 ModelEnumType XmlOutputMethod XmlOutputMethod XmlOutputMethod Int32 )
-            value.CdataSections                             = GetObjectList<XmlQualifiedName>(new IntPtr(p + 0x058), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0246673BB660 0x58 CdataSections               ( 000185D1DC48 ModelClassListType List`1<XmlQualifiedName> List`1<XmlQualifiedName> List<XmlQualifiedName> Pointer )
-            value.DoNotEscapeUriAttributes                  = GetBool(new IntPtr(p + 0x060)); // 0246673BB680 0x60 DoNotEscapeUriAttributes    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.MergeCDataSections                        = GetBool(new IntPtr(p + 0x061)); // 0246673BB6A0 0x61 MergeCDataSections          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.MediaType                                 = GetString(new IntPtr(p + 0x068)); // 0246673BB6C0 0x68 MediaType                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.DocTypeSystem                             = GetString(new IntPtr(p + 0x070)); // 0246673BB6E0 0x70 DocTypeSystem               ( 000186671910 ModelPrimitiveType string string string String )
-            value.DocTypePublic                             = GetString(new IntPtr(p + 0x078)); // 0246673BB700 0x78 DocTypePublic               ( 000186671910 ModelPrimitiveType string string string String )
-            value.Standalone                                = (XmlStandalone)GetInt32(new IntPtr(p + 0x080)); // 0246673BB720 0x80 Standalone                  ( 0001865CB0D0 ModelEnumType XmlStandalone XmlStandalone XmlStandalone Int32 )
-            value.AutoXmlDecl                               = GetBool(new IntPtr(p + 0x084)); // 0246673BB740 0x84 AutoXmlDecl                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsReadOnly                                = GetBool(new IntPtr(p + 0x085)); // 0246673BB760 0x85 IsReadOnly                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.UseAsync                                  = GetBool(new IntPtr(p + 0x010)); // 0x10 UseAsync                    ( ModelPrimitiveType bool bool bool Bool )
+            value.Encoding                                  = GetObject<Encoding>(new IntPtr(p + 0x018), ReversePrism.DataModels.Encoding.FromPointer); // 0x18 Encoding                    ( ModelClassType Encoding Encoding Encoding Pointer )
+            value.OmitXmlDecl                               = GetBool(new IntPtr(p + 0x020)); // 0x20 OmitXmlDecl                 ( ModelPrimitiveType bool bool bool Bool )
+            value.NewLineHandling                           = (NewLineHandling)GetInt32(new IntPtr(p + 0x024)); // 0x24 NewLineHandling             ( ModelEnumType NewLineHandling NewLineHandling NewLineHandling Int32 )
+            value.NewLineChars                              = GetString(new IntPtr(p + 0x028)); // 0x28 NewLineChars                ( ModelPrimitiveType string string string String )
+            value.Indent                                    = (TriState)GetInt32(new IntPtr(p + 0x030)); // 0x30 Indent                      ( ModelEnumType TriState TriState TriState Int32 )
+            value.IndentChars                               = GetString(new IntPtr(p + 0x038)); // 0x38 IndentChars                 ( ModelPrimitiveType string string string String )
+            value.NewLineOnAttributes                       = GetBool(new IntPtr(p + 0x040)); // 0x40 NewLineOnAttributes         ( ModelPrimitiveType bool bool bool Bool )
+            value.CloseOutput                               = GetBool(new IntPtr(p + 0x041)); // 0x41 CloseOutput                 ( ModelPrimitiveType bool bool bool Bool )
+            value.NamespaceHandling                         = (NamespaceHandling)GetInt32(new IntPtr(p + 0x044)); // 0x44 NamespaceHandling           ( ModelEnumType NamespaceHandling NamespaceHandling NamespaceHandling Int32 )
+            value.ConformanceLevel                          = (ConformanceLevel)GetInt32(new IntPtr(p + 0x048)); // 0x48 ConformanceLevel            ( ModelEnumType ConformanceLevel ConformanceLevel ConformanceLevel Int32 )
+            value.CheckCharacters                           = GetBool(new IntPtr(p + 0x04C)); // 0x4C CheckCharacters             ( ModelPrimitiveType bool bool bool Bool )
+            value.WriteEndDocumentOnClose                   = GetBool(new IntPtr(p + 0x04D)); // 0x4D WriteEndDocumentOnClose     ( ModelPrimitiveType bool bool bool Bool )
+            value.OutputMethod                              = (XmlOutputMethod)GetInt32(new IntPtr(p + 0x050)); // 0x50 OutputMethod                ( ModelEnumType XmlOutputMethod XmlOutputMethod XmlOutputMethod Int32 )
+            value.CdataSections                             = GetObjectList<XmlQualifiedName>(new IntPtr(p + 0x058), ReversePrism.DataModels.XmlQualifiedName.FromPointer); // 0x58 CdataSections               ( ModelClassListType List`1<XmlQualifiedName> List`1<XmlQualifiedName> List<XmlQualifiedName> Pointer )
+            value.DoNotEscapeUriAttributes                  = GetBool(new IntPtr(p + 0x060)); // 0x60 DoNotEscapeUriAttributes    ( ModelPrimitiveType bool bool bool Bool )
+            value.MergeCDataSections                        = GetBool(new IntPtr(p + 0x061)); // 0x61 MergeCDataSections          ( ModelPrimitiveType bool bool bool Bool )
+            value.MediaType                                 = GetString(new IntPtr(p + 0x068)); // 0x68 MediaType                   ( ModelPrimitiveType string string string String )
+            value.DocTypeSystem                             = GetString(new IntPtr(p + 0x070)); // 0x70 DocTypeSystem               ( ModelPrimitiveType string string string String )
+            value.DocTypePublic                             = GetString(new IntPtr(p + 0x078)); // 0x78 DocTypePublic               ( ModelPrimitiveType string string string String )
+            value.Standalone                                = (XmlStandalone)GetInt32(new IntPtr(p + 0x080)); // 0x80 Standalone                  ( ModelEnumType XmlStandalone XmlStandalone XmlStandalone Int32 )
+            value.AutoXmlDecl                               = GetBool(new IntPtr(p + 0x084)); // 0x84 AutoXmlDecl                 ( ModelPrimitiveType bool bool bool Bool )
+            value.IsReadOnly                                = GetBool(new IntPtr(p + 0x085)); // 0x85 IsReadOnly                  ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

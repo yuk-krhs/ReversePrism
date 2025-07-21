@@ -11,10 +11,10 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<GetMedalGashaReply> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MedalGashaStatusFieldNumber              int IL2CPP_TYPE_I4
-    // 018 MedalGashaStatus                         0001865EEDD0 ModelClassType MedalGashaStatus MedalGashaStatus MedalGashaStatus Pointer
+    // 018 MedalGashaStatus                         ModelClassType MedalGashaStatus MedalGashaStatus MedalGashaStatus Pointer
     // 000 BoxListFieldNumber                       int IL2CPP_TYPE_I4
     // 008 _repeated_boxList_codec                  FieldCodec`1<MedalGashaBoxStatus> IL2CPP_TYPE_GENERICINST
-    // 020 BoxList                                  000185CE5988 ModelClassListType RepeatedField`1<MedalGashaBoxStatus> RepeatedField`1<MedalGashaBoxStatus> List<MedalGashaBoxStatus> Pointer
+    // 020 BoxList                                  ModelClassListType RepeatedField`1<MedalGashaBoxStatus> RepeatedField`1<MedalGashaBoxStatus> List<MedalGashaBoxStatus> Pointer
     public partial class GetMedalGashaReply : DataModel
     {
         public MedalGashaStatus?                        MedalGashaStatus                        { get; set; }
@@ -28,8 +28,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetMedalGashaReply() { Pointer= p0 };
 
-            value.MedalGashaStatus                          = GetObject<MedalGashaStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.MedalGashaStatus.FromPointer); // 024662201C50 0x18 MedalGashaStatus            ( 0001865EEDD0 ModelClassType MedalGashaStatus MedalGashaStatus MedalGashaStatus Pointer )
-            value.BoxList                                   = GetObjectList<MedalGashaBoxStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.MedalGashaBoxStatus.FromPointer); // 024662201CB0 0x20 BoxList                     ( 000185CE5988 ModelClassListType RepeatedField`1<MedalGashaBoxStatus> RepeatedField`1<MedalGashaBoxStatus> List<MedalGashaBoxStatus> Pointer )
+            value.MedalGashaStatus                          = GetObject<MedalGashaStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.MedalGashaStatus.FromPointer); // 0x18 MedalGashaStatus            ( ModelClassType MedalGashaStatus MedalGashaStatus MedalGashaStatus Pointer )
+            value.BoxList                                   = GetObjectList<MedalGashaBoxStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.MedalGashaBoxStatus.FromPointer); // 0x20 BoxList                     ( ModelClassListType RepeatedField`1<MedalGashaBoxStatus> RepeatedField`1<MedalGashaBoxStatus> List<MedalGashaBoxStatus> Pointer )
 
             return value;
         }

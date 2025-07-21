@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CurNode                                  0001866ED960 ModelClassType DoubleLinkAxis DoubleLinkAxis DoubleLinkAxis Pointer
-    // 018 RootDepth                                0001865F2F90 ModelPrimitiveType int int int Int32
-    // 01C CurDepth                                 0001865F2F90 ModelPrimitiveType int int int Int32
-    // 020 IsMatch                                  000186595210 ModelPrimitiveType bool bool bool Bool
+    // 010 CurNode                                  ModelClassType DoubleLinkAxis DoubleLinkAxis DoubleLinkAxis Pointer
+    // 018 RootDepth                                ModelPrimitiveType int int int Int32
+    // 01C CurDepth                                 ModelPrimitiveType int int int Int32
+    // 020 IsMatch                                  ModelPrimitiveType bool bool bool Bool
     public partial class AxisElement : DataModel
     {
         public DoubleLinkAxis?                          CurNode                                 { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AxisElement() { Pointer= p0 };
 
-            value.CurNode                                   = GetObject<DoubleLinkAxis>(new IntPtr(p + 0x010), ReversePrism.DataModels.DoubleLinkAxis.FromPointer); // 02466753BFB8 0x10 CurNode                     ( 0001866ED960 ModelClassType DoubleLinkAxis DoubleLinkAxis DoubleLinkAxis Pointer )
-            value.RootDepth                                 = GetInt32(new IntPtr(p + 0x018)); // 02466753BFD8 0x18 RootDepth                   ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.CurDepth                                  = GetInt32(new IntPtr(p + 0x01C)); // 02466753BFF8 0x1C CurDepth                    ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.IsMatch                                   = GetBool(new IntPtr(p + 0x020)); // 02466753C018 0x20 IsMatch                     ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.CurNode                                   = GetObject<DoubleLinkAxis>(new IntPtr(p + 0x010), ReversePrism.DataModels.DoubleLinkAxis.FromPointer); // 0x10 CurNode                     ( ModelClassType DoubleLinkAxis DoubleLinkAxis DoubleLinkAxis Pointer )
+            value.RootDepth                                 = GetInt32(new IntPtr(p + 0x018)); // 0x18 RootDepth                   ( ModelPrimitiveType int int int Int32 )
+            value.CurDepth                                  = GetInt32(new IntPtr(p + 0x01C)); // 0x1C CurDepth                    ( ModelPrimitiveType int int int Int32 )
+            value.IsMatch                                   = GetBool(new IntPtr(p + 0x020)); // 0x20 IsMatch                     ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

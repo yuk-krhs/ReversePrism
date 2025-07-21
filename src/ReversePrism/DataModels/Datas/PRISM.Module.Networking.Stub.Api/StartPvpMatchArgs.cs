@@ -11,11 +11,11 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<StartPvpMatchArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 OpponentUserIdFieldNumber                int IL2CPP_TYPE_I4
-    // 018 OpponentUserId                           000186671910 ModelPrimitiveType string string string String
+    // 018 OpponentUserId                           ModelPrimitiveType string string string String
     // 000 DeviceTokenFieldNumber                   int IL2CPP_TYPE_I4
-    // 020 DeviceToken                              000186671910 ModelPrimitiveType string string string String
+    // 020 DeviceToken                              ModelPrimitiveType string string string String
     // 000 MstEventIdFieldNumber                    int IL2CPP_TYPE_I4
-    // 028 MstEventId                               0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 028 MstEventId                               ModelPrimitiveType int int int Int32
     public partial class StartPvpMatchArgs : DataModel
     {
         public string                                   OpponentUserId                          { get; set; }
@@ -30,9 +30,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StartPvpMatchArgs() { Pointer= p0 };
 
-            value.OpponentUserId                            = GetString(new IntPtr(p + 0x018)); // 0246626C70D0 0x18 OpponentUserId              ( 000186671910 ModelPrimitiveType string string string String )
-            value.DeviceToken                               = GetString(new IntPtr(p + 0x020)); // 0246626C7110 0x20 DeviceToken                 ( 000186671910 ModelPrimitiveType string string string String )
-            value.MstEventId                                = GetInt32(new IntPtr(p + 0x028)); // 0246626C7150 0x28 MstEventId                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.OpponentUserId                            = GetString(new IntPtr(p + 0x018)); // 0x18 OpponentUserId              ( ModelPrimitiveType string string string String )
+            value.DeviceToken                               = GetString(new IntPtr(p + 0x020)); // 0x20 DeviceToken                 ( ModelPrimitiveType string string string String )
+            value.MstEventId                                = GetInt32(new IntPtr(p + 0x028)); // 0x28 MstEventId                  ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

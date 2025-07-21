@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Ftype                                    0001866DC9E0 ModelEnumType FunctionType FunctionType FunctionType Int32
-    // 014 Minargs                                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 018 Maxargs                                  0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 020 ArgTypes                                 000185CB31F8 ModelEnumListType XPathResultType[] XPathResultType[] List<XPathResultType> Pointer
+    // 010 Ftype                                    ModelEnumType FunctionType FunctionType FunctionType Int32
+    // 014 Minargs                                  ModelPrimitiveType int int int Int32
+    // 018 Maxargs                                  ModelPrimitiveType int int int Int32
+    // 020 ArgTypes                                 ModelEnumListType XPathResultType[] XPathResultType[] List<XPathResultType> Pointer
     public partial class ParamInfo : DataModel
     {
         public FunctionType                             Ftype                                   { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ParamInfo() { Pointer= p0 };
 
-            value.Ftype                                     = (FunctionType)GetInt32(new IntPtr(p + 0x010)); // 0246676933F0 0x10 Ftype                       ( 0001866DC9E0 ModelEnumType FunctionType FunctionType FunctionType Int32 )
-            value.Minargs                                   = GetInt32(new IntPtr(p + 0x014)); // 024667693410 0x14 Minargs                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Maxargs                                   = GetInt32(new IntPtr(p + 0x018)); // 024667693430 0x18 Maxargs                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ArgTypes                                  = GetEnumList<XPathResultType>(new IntPtr(p + 0x020)); // 024667693450 0x20 ArgTypes                    ( 000185CB31F8 ModelEnumListType XPathResultType[] XPathResultType[] List<XPathResultType> Pointer )
+            value.Ftype                                     = (FunctionType)GetInt32(new IntPtr(p + 0x010)); // 0x10 Ftype                       ( ModelEnumType FunctionType FunctionType FunctionType Int32 )
+            value.Minargs                                   = GetInt32(new IntPtr(p + 0x014)); // 0x14 Minargs                     ( ModelPrimitiveType int int int Int32 )
+            value.Maxargs                                   = GetInt32(new IntPtr(p + 0x018)); // 0x18 Maxargs                     ( ModelPrimitiveType int int int Int32 )
+            value.ArgTypes                                  = GetEnumList<XPathResultType>(new IntPtr(p + 0x020)); // 0x20 ArgTypes                    ( ModelEnumListType XPathResultType[] XPathResultType[] List<XPathResultType> Pointer )
 
             return value;
         }

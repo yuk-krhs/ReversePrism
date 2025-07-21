@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 DelaySign                                0001865965D0 ModelPrimitiveType bool bool bool Bool
+    // 010 DelaySign                                ModelPrimitiveType bool bool bool Bool
     public partial class AssemblyDelaySignAttribute : DataModel
     {
         public bool                                     DelaySign                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AssemblyDelaySignAttribute() { Pointer= p0 };
 
-            value.DelaySign                                 = GetBool(new IntPtr(p + 0x010)); // 024666D38960 0x10 DelaySign                   ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.DelaySign                                 = GetBool(new IntPtr(p + 0x010)); // 0x10 DelaySign                   ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

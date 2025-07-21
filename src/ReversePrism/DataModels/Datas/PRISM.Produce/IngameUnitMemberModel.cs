@@ -8,15 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 PlayerModel                              0001866E5D10 ModelClassType IngamePlayerModel IngamePlayerModel IngamePlayerModel Pointer
-    // 018 EffectManager                            000186557830 ModelClassType ProduceInGameEffectManager ProduceInGameEffectManager ProduceInGameEffectManager Pointer
-    // 020 CurrentStatus                            0001865E6A80 ModelClassType IngamePlayerStatusModel IngamePlayerStatusModel IngamePlayerStatusModel Pointer
-    // 028 UnitID                                   0001865F4940 ModelPrimitiveType int int int Int32
-    // 02C IconID                                   0001865F4940 ModelPrimitiveType int int int Int32
-    // 030 MemberID                                 0001865F4940 ModelPrimitiveType int int int Int32
-    // 038 BaseStatus                               0001865E6A80 ModelClassType IngamePlayerStatusModel IngamePlayerStatusModel IngamePlayerStatusModel Pointer
-    // 040 CutInVoiceCueSheetID                     0001865F4940 ModelPrimitiveType int int int Int32
-    // 044 CutInVoiceCueID                          0001865F4940 ModelPrimitiveType int int int Int32
+    // 010 PlayerModel                              ModelClassType IngamePlayerModel IngamePlayerModel IngamePlayerModel Pointer
+    // 018 EffectManager                            ModelClassType ProduceInGameEffectManager ProduceInGameEffectManager ProduceInGameEffectManager Pointer
+    // 020 CurrentStatus                            ModelClassType IngamePlayerStatusModel IngamePlayerStatusModel IngamePlayerStatusModel Pointer
+    // 028 UnitID                                   ModelPrimitiveType int int int Int32
+    // 02C IconID                                   ModelPrimitiveType int int int Int32
+    // 030 MemberID                                 ModelPrimitiveType int int int Int32
+    // 038 BaseStatus                               ModelClassType IngamePlayerStatusModel IngamePlayerStatusModel IngamePlayerStatusModel Pointer
+    // 040 CutInVoiceCueSheetID                     ModelPrimitiveType int int int Int32
+    // 044 CutInVoiceCueID                          ModelPrimitiveType int int int Int32
     public partial class IngameUnitMemberModel : DataModel
     {
         public IngamePlayerModel?                       PlayerModel                             { get; set; }
@@ -37,15 +37,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IngameUnitMemberModel() { Pointer= p0 };
 
-            value.PlayerModel                               = GetObject<IngamePlayerModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.IngamePlayerModel.FromPointer); // 024665BCA670 0x10 PlayerModel                 ( 0001866E5D10 ModelClassType IngamePlayerModel IngamePlayerModel IngamePlayerModel Pointer )
-            value.EffectManager                             = GetObject<ProduceInGameEffectManager>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceInGameEffectManager.FromPointer); // 024665BCA690 0x18 EffectManager               ( 000186557830 ModelClassType ProduceInGameEffectManager ProduceInGameEffectManager ProduceInGameEffectManager Pointer )
-            value.CurrentStatus                             = GetObject<IngamePlayerStatusModel>(new IntPtr(p + 0x020), ReversePrism.DataModels.IngamePlayerStatusModel.FromPointer); // 024665BCA6B0 0x20 CurrentStatus               ( 0001865E6A80 ModelClassType IngamePlayerStatusModel IngamePlayerStatusModel IngamePlayerStatusModel Pointer )
-            value.UnitID                                    = GetInt32(new IntPtr(p + 0x028)); // 024665BCA6D0 0x28 UnitID                      ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.IconID                                    = GetInt32(new IntPtr(p + 0x02C)); // 024665BCA6F0 0x2C IconID                      ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.MemberID                                  = GetInt32(new IntPtr(p + 0x030)); // 024665BCA710 0x30 MemberID                    ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.BaseStatus                                = GetObject<IngamePlayerStatusModel>(new IntPtr(p + 0x038), ReversePrism.DataModels.IngamePlayerStatusModel.FromPointer); // 024665BCA730 0x38 BaseStatus                  ( 0001865E6A80 ModelClassType IngamePlayerStatusModel IngamePlayerStatusModel IngamePlayerStatusModel Pointer )
-            value.CutInVoiceCueSheetID                      = GetInt32(new IntPtr(p + 0x040)); // 024665BCA750 0x40 CutInVoiceCueSheetID        ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.CutInVoiceCueID                           = GetInt32(new IntPtr(p + 0x044)); // 024665BCA770 0x44 CutInVoiceCueID             ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.PlayerModel                               = GetObject<IngamePlayerModel>(new IntPtr(p + 0x010), ReversePrism.DataModels.IngamePlayerModel.FromPointer); // 0x10 PlayerModel                 ( ModelClassType IngamePlayerModel IngamePlayerModel IngamePlayerModel Pointer )
+            value.EffectManager                             = GetObject<ProduceInGameEffectManager>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProduceInGameEffectManager.FromPointer); // 0x18 EffectManager               ( ModelClassType ProduceInGameEffectManager ProduceInGameEffectManager ProduceInGameEffectManager Pointer )
+            value.CurrentStatus                             = GetObject<IngamePlayerStatusModel>(new IntPtr(p + 0x020), ReversePrism.DataModels.IngamePlayerStatusModel.FromPointer); // 0x20 CurrentStatus               ( ModelClassType IngamePlayerStatusModel IngamePlayerStatusModel IngamePlayerStatusModel Pointer )
+            value.UnitID                                    = GetInt32(new IntPtr(p + 0x028)); // 0x28 UnitID                      ( ModelPrimitiveType int int int Int32 )
+            value.IconID                                    = GetInt32(new IntPtr(p + 0x02C)); // 0x2C IconID                      ( ModelPrimitiveType int int int Int32 )
+            value.MemberID                                  = GetInt32(new IntPtr(p + 0x030)); // 0x30 MemberID                    ( ModelPrimitiveType int int int Int32 )
+            value.BaseStatus                                = GetObject<IngamePlayerStatusModel>(new IntPtr(p + 0x038), ReversePrism.DataModels.IngamePlayerStatusModel.FromPointer); // 0x38 BaseStatus                  ( ModelClassType IngamePlayerStatusModel IngamePlayerStatusModel IngamePlayerStatusModel Pointer )
+            value.CutInVoiceCueSheetID                      = GetInt32(new IntPtr(p + 0x040)); // 0x40 CutInVoiceCueSheetID        ( ModelPrimitiveType int int int Int32 )
+            value.CutInVoiceCueID                           = GetInt32(new IntPtr(p + 0x044)); // 0x44 CutInVoiceCueID             ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

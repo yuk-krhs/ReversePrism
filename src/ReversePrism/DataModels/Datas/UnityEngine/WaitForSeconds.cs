@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_Seconds                                000186665900 ModelPrimitiveType float float float Single
+    // 010 M_Seconds                                ModelPrimitiveType float float float Single
     public partial class WaitForSeconds : DataModel
     {
         public float                                    M_Seconds                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new WaitForSeconds() { Pointer= p0 };
 
-            value.M_Seconds                                 = GetSingle(new IntPtr(p + 0x010)); // 0245A24CAFA8 0x10 M_Seconds                   ( 000186665900 ModelPrimitiveType float float float Single )
+            value.M_Seconds                                 = GetSingle(new IntPtr(p + 0x010)); // 0x10 M_Seconds                   ( ModelPrimitiveType float float float Single )
 
             return value;
         }

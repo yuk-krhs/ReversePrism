@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Handler                                  000186616B60 ModelClassType MetricsHandler MetricsHandler MetricsHandler Pointer
+    // 010 Handler                                  ModelClassType MetricsHandler MetricsHandler MetricsHandler Pointer
     // 018 <PackageTags>k__BackingField             IDictionary`2<string, string> IL2CPP_TYPE_GENERICINST
     public partial class Metrics : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Metrics() { Pointer= p0 };
 
-            value.Handler                                   = GetObject<MetricsHandler>(new IntPtr(p + 0x010), ReversePrism.DataModels.MetricsHandler.FromPointer); // 0245A667BCB8 0x10 Handler                     ( 000186616B60 ModelClassType MetricsHandler MetricsHandler MetricsHandler Pointer )
+            value.Handler                                   = GetObject<MetricsHandler>(new IntPtr(p + 0x010), ReversePrism.DataModels.MetricsHandler.FromPointer); // 0x10 Handler                     ( ModelClassType MetricsHandler MetricsHandler MetricsHandler Pointer )
 
             return value;
         }

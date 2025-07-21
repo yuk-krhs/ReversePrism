@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 110 IsHandledByDraggable                     000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 110 IsHandledByDraggable                     ModelPrimitiveType bool bool bool Bool
     public partial class PointerMoveEvent : DataModel
     {
         public bool                                     IsHandledByDraggable                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PointerMoveEvent() { Pointer= p0 };
 
-            value.IsHandledByDraggable                      = GetBool(new IntPtr(p + 0x110)); // 0245A6773978 0x110 IsHandledByDraggable        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IsHandledByDraggable                      = GetBool(new IntPtr(p + 0x110)); // 0x110 IsHandledByDraggable        ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

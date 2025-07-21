@@ -18,8 +18,8 @@ namespace ReversePrism.DataModels
     // 058 queryResourceType                        PreparedSqliteExecuteScalarCommand`1<int> IL2CPP_TYPE_GENERICINST
     // 060 updateAssetInfo                          PreparedSqliteUpdateCommand`1<AssetInfoRow> IL2CPP_TYPE_GENERICINST
     // 068 updateCatalogInfo                        PreparedSqliteUpdateCommand`1<CatalogInfoRow> IL2CPP_TYPE_GENERICINST
-    // 070 DeleteAssetInfo                          000186777330 ModelClassType PreparedSqliteExecuteCommand PreparedSqliteExecuteCommand PreparedSqliteExecuteCommand Pointer
-    // 078 DeleteCatalogInfo                        000186777330 ModelClassType PreparedSqliteExecuteCommand PreparedSqliteExecuteCommand PreparedSqliteExecuteCommand Pointer
+    // 070 DeleteAssetInfo                          ModelClassType PreparedSqliteExecuteCommand PreparedSqliteExecuteCommand PreparedSqliteExecuteCommand Pointer
+    // 078 DeleteCatalogInfo                        ModelClassType PreparedSqliteExecuteCommand PreparedSqliteExecuteCommand PreparedSqliteExecuteCommand Pointer
     public partial class CatalogDB : DataModel
     {
         public PreparedSqliteExecuteCommand?            DeleteAssetInfo                         { get; set; }
@@ -33,8 +33,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CatalogDB() { Pointer= p0 };
 
-            value.DeleteAssetInfo                           = GetObject<PreparedSqliteExecuteCommand>(new IntPtr(p + 0x070), ReversePrism.DataModels.PreparedSqliteExecuteCommand.FromPointer); // 0245A3DE59C8 0x70 DeleteAssetInfo             ( 000186777330 ModelClassType PreparedSqliteExecuteCommand PreparedSqliteExecuteCommand PreparedSqliteExecuteCommand Pointer )
-            value.DeleteCatalogInfo                         = GetObject<PreparedSqliteExecuteCommand>(new IntPtr(p + 0x078), ReversePrism.DataModels.PreparedSqliteExecuteCommand.FromPointer); // 0245A3DE59E8 0x78 DeleteCatalogInfo           ( 000186777330 ModelClassType PreparedSqliteExecuteCommand PreparedSqliteExecuteCommand PreparedSqliteExecuteCommand Pointer )
+            value.DeleteAssetInfo                           = GetObject<PreparedSqliteExecuteCommand>(new IntPtr(p + 0x070), ReversePrism.DataModels.PreparedSqliteExecuteCommand.FromPointer); // 0x70 DeleteAssetInfo             ( ModelClassType PreparedSqliteExecuteCommand PreparedSqliteExecuteCommand PreparedSqliteExecuteCommand Pointer )
+            value.DeleteCatalogInfo                         = GetObject<PreparedSqliteExecuteCommand>(new IntPtr(p + 0x078), ReversePrism.DataModels.PreparedSqliteExecuteCommand.FromPointer); // 0x78 DeleteCatalogInfo           ( ModelClassType PreparedSqliteExecuteCommand PreparedSqliteExecuteCommand PreparedSqliteExecuteCommand Pointer )
 
             return value;
         }

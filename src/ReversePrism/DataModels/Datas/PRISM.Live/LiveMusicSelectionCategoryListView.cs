@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 090 SlideAnimation                           00018650BB70 ModelClassType SimpleSlideAnimation SimpleSlideAnimation SimpleSlideAnimation Pointer
+    // 090 SlideAnimation                           ModelClassType SimpleSlideAnimation SimpleSlideAnimation SimpleSlideAnimation Pointer
     public partial class LiveMusicSelectionCategoryListView : DataModel
     {
         public SimpleSlideAnimation?                    SlideAnimation                          { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveMusicSelectionCategoryListView() { Pointer= p0 };
 
-            value.SlideAnimation                            = GetObject<SimpleSlideAnimation>(new IntPtr(p + 0x090), ReversePrism.DataModels.SimpleSlideAnimation.FromPointer); // 0246651A8C40 0x90 SlideAnimation              ( 00018650BB70 ModelClassType SimpleSlideAnimation SimpleSlideAnimation SimpleSlideAnimation Pointer )
+            value.SlideAnimation                            = GetObject<SimpleSlideAnimation>(new IntPtr(p + 0x090), ReversePrism.DataModels.SimpleSlideAnimation.FromPointer); // 0x90 SlideAnimation              ( ModelClassType SimpleSlideAnimation SimpleSlideAnimation SimpleSlideAnimation Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Values                                   00018664F1C0 ModelClassType StandardValuesCollection StandardValuesCollection StandardValuesCollection Pointer
+    // 010 Values                                   ModelClassType StandardValuesCollection StandardValuesCollection StandardValuesCollection Pointer
     // 000 DefaultInvariantCultureString            string IL2CPP_TYPE_STRING
     public partial class CultureInfoConverter : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CultureInfoConverter() { Pointer= p0 };
 
-            value.Values                                    = GetObject<StandardValuesCollection>(new IntPtr(p + 0x010), ReversePrism.DataModels.StandardValuesCollection.FromPointer); // 024667B80548 0x10 Values                      ( 00018664F1C0 ModelClassType StandardValuesCollection StandardValuesCollection StandardValuesCollection Pointer )
+            value.Values                                    = GetObject<StandardValuesCollection>(new IntPtr(p + 0x010), ReversePrism.DataModels.StandardValuesCollection.FromPointer); // 0x10 Values                      ( ModelClassType StandardValuesCollection StandardValuesCollection StandardValuesCollection Pointer )
 
             return value;
         }

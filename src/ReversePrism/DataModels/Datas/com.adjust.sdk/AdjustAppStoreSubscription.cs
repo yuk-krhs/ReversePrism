@@ -8,15 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Price                                    000186671BA0 ModelPrimitiveType string string string String
-    // 018 Currency                                 000186671BA0 ModelPrimitiveType string string string String
-    // 020 TransactionId                            000186671BA0 ModelPrimitiveType string string string String
-    // 028 Receipt                                  000186671BA0 ModelPrimitiveType string string string String
-    // 030 BillingStore                             000186671BA0 ModelPrimitiveType string string string String
-    // 038 TransactionDate                          000186671BA0 ModelPrimitiveType string string string String
-    // 040 SalesRegion                              000186671BA0 ModelPrimitiveType string string string String
-    // 048 PartnerList                              000185D0D578 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
-    // 050 CallbackList                             000185D0D578 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
+    // 010 Price                                    ModelPrimitiveType string string string String
+    // 018 Currency                                 ModelPrimitiveType string string string String
+    // 020 TransactionId                            ModelPrimitiveType string string string String
+    // 028 Receipt                                  ModelPrimitiveType string string string String
+    // 030 BillingStore                             ModelPrimitiveType string string string String
+    // 038 TransactionDate                          ModelPrimitiveType string string string String
+    // 040 SalesRegion                              ModelPrimitiveType string string string String
+    // 048 PartnerList                              ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
+    // 050 CallbackList                             ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
     public partial class AdjustAppStoreSubscription : DataModel
     {
         public string                                   Price                                   { get; set; }
@@ -37,15 +37,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AdjustAppStoreSubscription() { Pointer= p0 };
 
-            value.Price                                     = GetString(new IntPtr(p + 0x010)); // 02466BB950F8 0x10 Price                       ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.Currency                                  = GetString(new IntPtr(p + 0x018)); // 02466BB95118 0x18 Currency                    ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.TransactionId                             = GetString(new IntPtr(p + 0x020)); // 02466BB95138 0x20 TransactionId               ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.Receipt                                   = GetString(new IntPtr(p + 0x028)); // 02466BB95158 0x28 Receipt                     ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.BillingStore                              = GetString(new IntPtr(p + 0x030)); // 02466BB95178 0x30 BillingStore                ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.TransactionDate                           = GetString(new IntPtr(p + 0x038)); // 02466BB95198 0x38 TransactionDate             ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.SalesRegion                               = GetString(new IntPtr(p + 0x040)); // 02466BB951B8 0x40 SalesRegion                 ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.PartnerList                               = GetStringList(new IntPtr(p + 0x048)); // 02466BB951D8 0x48 PartnerList                 ( 000185D0D578 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
-            value.CallbackList                              = GetStringList(new IntPtr(p + 0x050)); // 02466BB951F8 0x50 CallbackList                ( 000185D0D578 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.Price                                     = GetString(new IntPtr(p + 0x010)); // 0x10 Price                       ( ModelPrimitiveType string string string String )
+            value.Currency                                  = GetString(new IntPtr(p + 0x018)); // 0x18 Currency                    ( ModelPrimitiveType string string string String )
+            value.TransactionId                             = GetString(new IntPtr(p + 0x020)); // 0x20 TransactionId               ( ModelPrimitiveType string string string String )
+            value.Receipt                                   = GetString(new IntPtr(p + 0x028)); // 0x28 Receipt                     ( ModelPrimitiveType string string string String )
+            value.BillingStore                              = GetString(new IntPtr(p + 0x030)); // 0x30 BillingStore                ( ModelPrimitiveType string string string String )
+            value.TransactionDate                           = GetString(new IntPtr(p + 0x038)); // 0x38 TransactionDate             ( ModelPrimitiveType string string string String )
+            value.SalesRegion                               = GetString(new IntPtr(p + 0x040)); // 0x40 SalesRegion                 ( ModelPrimitiveType string string string String )
+            value.PartnerList                               = GetStringList(new IntPtr(p + 0x048)); // 0x48 PartnerList                 ( ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.CallbackList                              = GetStringList(new IntPtr(p + 0x050)); // 0x50 CallbackList                ( ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
 
             return value;
         }

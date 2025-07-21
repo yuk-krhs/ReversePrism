@@ -11,11 +11,11 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<Color> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 RedFieldNumber                           int IL2CPP_TYPE_I4
-    // 018 Red                                      0001866656B0 ModelPrimitiveType float float float Single
+    // 018 Red                                      ModelPrimitiveType float float float Single
     // 000 GreenFieldNumber                         int IL2CPP_TYPE_I4
-    // 01C Green                                    0001866656B0 ModelPrimitiveType float float float Single
+    // 01C Green                                    ModelPrimitiveType float float float Single
     // 000 BlueFieldNumber                          int IL2CPP_TYPE_I4
-    // 020 Blue                                     0001866656B0 ModelPrimitiveType float float float Single
+    // 020 Blue                                     ModelPrimitiveType float float float Single
     // 000 AlphaFieldNumber                         int IL2CPP_TYPE_I4
     // 008 _single_alpha_codec                      FieldCodec`1<Nullable`1<float>> IL2CPP_TYPE_GENERICINST
     // 024 alpha_                                   Nullable`1<float> IL2CPP_TYPE_GENERICINST
@@ -33,9 +33,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Color() { Pointer= p0 };
 
-            value.Red                                       = GetSingle(new IntPtr(p + 0x018)); // 02466A6D0DD0 0x18 Red                         ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.Green                                     = GetSingle(new IntPtr(p + 0x01C)); // 02466A6D0E10 0x1C Green                       ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.Blue                                      = GetSingle(new IntPtr(p + 0x020)); // 02466A6D0E50 0x20 Blue                        ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.Red                                       = GetSingle(new IntPtr(p + 0x018)); // 0x18 Red                         ( ModelPrimitiveType float float float Single )
+            value.Green                                     = GetSingle(new IntPtr(p + 0x01C)); // 0x1C Green                       ( ModelPrimitiveType float float float Single )
+            value.Blue                                      = GetSingle(new IntPtr(p + 0x020)); // 0x20 Blue                        ( ModelPrimitiveType float float float Single )
 
             return value;
         }

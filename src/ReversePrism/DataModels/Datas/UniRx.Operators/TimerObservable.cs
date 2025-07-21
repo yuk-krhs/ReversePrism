@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 018 dueTimeA                                 Nullable`1<DateTimeOffset> IL2CPP_TYPE_GENERICINST
     // 030 dueTimeB                                 Nullable`1<TimeSpan> IL2CPP_TYPE_GENERICINST
     // 040 period                                   Nullable`1<TimeSpan> IL2CPP_TYPE_GENERICINST
-    // 050 Scheduler                                000186629600 ModelClassType IScheduler IScheduler IScheduler Pointer
+    // 050 Scheduler                                ModelClassType IScheduler IScheduler IScheduler Pointer
     public partial class TimerObservable : DataModel
     {
         public IScheduler?                              Scheduler                               { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TimerObservable() { Pointer= p0 };
 
-            value.Scheduler                                 = GetObject<IScheduler>(new IntPtr(p + 0x050), ReversePrism.DataModels.IScheduler.FromPointer); // 0245A3C0E570 0x50 Scheduler                   ( 000186629600 ModelClassType IScheduler IScheduler IScheduler Pointer )
+            value.Scheduler                                 = GetObject<IScheduler>(new IntPtr(p + 0x050), ReversePrism.DataModels.IScheduler.FromPointer); // 0x50 Scheduler                   ( ModelClassType IScheduler IScheduler IScheduler Pointer )
 
             return value;
         }

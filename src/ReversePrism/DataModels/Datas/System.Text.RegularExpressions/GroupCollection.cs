@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Match                                    0001865DC990 ModelClassType Match Match Match Pointer
-    // 018 CaptureMap                               0001865DF1C0 ModelClassType Hashtable Hashtable Hashtable Pointer
-    // 020 Groups                                   000185B838B0 ModelClassListType Group[] Group[] List<Group> Pointer
+    // 010 Match                                    ModelClassType Match Match Match Pointer
+    // 018 CaptureMap                               ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 020 Groups                                   ModelClassListType Group[] Group[] List<Group> Pointer
     public partial class GroupCollection : DataModel
     {
         public Match?                                   Match                                   { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GroupCollection() { Pointer= p0 };
 
-            value.Match                                     = GetObject<Match>(new IntPtr(p + 0x010), ReversePrism.DataModels.Match.FromPointer); // 0245A6AFD958 0x10 Match                       ( 0001865DC990 ModelClassType Match Match Match Pointer )
-            value.CaptureMap                                = GetObject<Hashtable>(new IntPtr(p + 0x018), ReversePrism.DataModels.Hashtable.FromPointer); // 0245A6AFD978 0x18 CaptureMap                  ( 0001865DF1C0 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.Groups                                    = GetObjectList<Group>(new IntPtr(p + 0x020), ReversePrism.DataModels.Group.FromPointer); // 0245A6AFD998 0x20 Groups                      ( 000185B838B0 ModelClassListType Group[] Group[] List<Group> Pointer )
+            value.Match                                     = GetObject<Match>(new IntPtr(p + 0x010), ReversePrism.DataModels.Match.FromPointer); // 0x10 Match                       ( ModelClassType Match Match Match Pointer )
+            value.CaptureMap                                = GetObject<Hashtable>(new IntPtr(p + 0x018), ReversePrism.DataModels.Hashtable.FromPointer); // 0x18 CaptureMap                  ( ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.Groups                                    = GetObjectList<Group>(new IntPtr(p + 0x020), ReversePrism.DataModels.Group.FromPointer); // 0x20 Groups                      ( ModelClassListType Group[] Group[] List<Group> Pointer )
 
             return value;
         }

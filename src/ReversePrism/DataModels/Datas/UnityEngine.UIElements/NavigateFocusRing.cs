@@ -10,12 +10,12 @@ namespace ReversePrism.DataModels
 
     // 000 Left                                     ChangeDirection IL2CPP_TYPE_CLASS
     // 008 Right                                    ChangeDirection IL2CPP_TYPE_CLASS
-    // 010 Up                                       00018677A460 ModelClassType ChangeDirection ChangeDirection ChangeDirection Pointer
-    // 018 Down                                     00018677A460 ModelClassType ChangeDirection ChangeDirection ChangeDirection Pointer
-    // 020 Next                                     0001865AA400 ModelClassType FocusChangeDirection FocusChangeDirection FocusChangeDirection Pointer
-    // 028 Previous                                 0001865AA400 ModelClassType FocusChangeDirection FocusChangeDirection FocusChangeDirection Pointer
-    // 010 M_Root                                   0001866B34A0 ModelClassType VisualElement VisualElement VisualElement Pointer
-    // 018 M_Ring                                   00018652B0B0 ModelClassType VisualElementFocusRing VisualElementFocusRing VisualElementFocusRing Pointer
+    // 010 Up                                       ModelClassType ChangeDirection ChangeDirection ChangeDirection Pointer
+    // 018 Down                                     ModelClassType ChangeDirection ChangeDirection ChangeDirection Pointer
+    // 020 Next                                     ModelClassType FocusChangeDirection FocusChangeDirection FocusChangeDirection Pointer
+    // 028 Previous                                 ModelClassType FocusChangeDirection FocusChangeDirection FocusChangeDirection Pointer
+    // 010 M_Root                                   ModelClassType VisualElement VisualElement VisualElement Pointer
+    // 018 M_Ring                                   ModelClassType VisualElementFocusRing VisualElementFocusRing VisualElementFocusRing Pointer
     public partial class NavigateFocusRing : DataModel
     {
         public ChangeDirection?                         Up                                      { get; set; }
@@ -33,12 +33,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NavigateFocusRing() { Pointer= p0 };
 
-            value.Up                                        = GetObject<ChangeDirection>(new IntPtr(p + 0x010), ReversePrism.DataModels.ChangeDirection.FromPointer); // 0245A679DBF8 0x10 Up                          ( 00018677A460 ModelClassType ChangeDirection ChangeDirection ChangeDirection Pointer )
-            value.Down                                      = GetObject<ChangeDirection>(new IntPtr(p + 0x018), ReversePrism.DataModels.ChangeDirection.FromPointer); // 0245A679DC18 0x18 Down                        ( 00018677A460 ModelClassType ChangeDirection ChangeDirection ChangeDirection Pointer )
-            value.Next                                      = GetObject<FocusChangeDirection>(new IntPtr(p + 0x020), ReversePrism.DataModels.FocusChangeDirection.FromPointer); // 0245A679DC38 0x20 Next                        ( 0001865AA400 ModelClassType FocusChangeDirection FocusChangeDirection FocusChangeDirection Pointer )
-            value.Previous                                  = GetObject<FocusChangeDirection>(new IntPtr(p + 0x028), ReversePrism.DataModels.FocusChangeDirection.FromPointer); // 0245A679DC58 0x28 Previous                    ( 0001865AA400 ModelClassType FocusChangeDirection FocusChangeDirection FocusChangeDirection Pointer )
-            value.M_Root                                    = GetObject<VisualElement>(new IntPtr(p + 0x010), ReversePrism.DataModels.VisualElement.FromPointer); // 0245A679DC78 0x10 M_Root                      ( 0001866B34A0 ModelClassType VisualElement VisualElement VisualElement Pointer )
-            value.M_Ring                                    = GetObject<VisualElementFocusRing>(new IntPtr(p + 0x018), ReversePrism.DataModels.VisualElementFocusRing.FromPointer); // 0245A679DC98 0x18 M_Ring                      ( 00018652B0B0 ModelClassType VisualElementFocusRing VisualElementFocusRing VisualElementFocusRing Pointer )
+            value.Up                                        = GetObject<ChangeDirection>(new IntPtr(p + 0x010), ReversePrism.DataModels.ChangeDirection.FromPointer); // 0x10 Up                          ( ModelClassType ChangeDirection ChangeDirection ChangeDirection Pointer )
+            value.Down                                      = GetObject<ChangeDirection>(new IntPtr(p + 0x018), ReversePrism.DataModels.ChangeDirection.FromPointer); // 0x18 Down                        ( ModelClassType ChangeDirection ChangeDirection ChangeDirection Pointer )
+            value.Next                                      = GetObject<FocusChangeDirection>(new IntPtr(p + 0x020), ReversePrism.DataModels.FocusChangeDirection.FromPointer); // 0x20 Next                        ( ModelClassType FocusChangeDirection FocusChangeDirection FocusChangeDirection Pointer )
+            value.Previous                                  = GetObject<FocusChangeDirection>(new IntPtr(p + 0x028), ReversePrism.DataModels.FocusChangeDirection.FromPointer); // 0x28 Previous                    ( ModelClassType FocusChangeDirection FocusChangeDirection FocusChangeDirection Pointer )
+            value.M_Root                                    = GetObject<VisualElement>(new IntPtr(p + 0x010), ReversePrism.DataModels.VisualElement.FromPointer); // 0x10 M_Root                      ( ModelClassType VisualElement VisualElement VisualElement Pointer )
+            value.M_Ring                                    = GetObject<VisualElementFocusRing>(new IntPtr(p + 0x018), ReversePrism.DataModels.VisualElementFocusRing.FromPointer); // 0x18 M_Ring                      ( ModelClassType VisualElementFocusRing VisualElementFocusRing VisualElementFocusRing Pointer )
 
             return value;
         }

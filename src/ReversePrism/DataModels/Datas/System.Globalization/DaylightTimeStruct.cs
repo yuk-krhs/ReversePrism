@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Start                                    0001865BA3F0 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    // 018 End                                      0001865BA3F0 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    // 020 Delta                                    00018668B770 ModelEnumType TimeSpan TimeSpan TimeSpan Int32
+    // 010 Start                                    ModelPrimitiveType DateTime DateTime DateTime DateTime
+    // 018 End                                      ModelPrimitiveType DateTime DateTime DateTime DateTime
+    // 020 Delta                                    ModelEnumType TimeSpan TimeSpan TimeSpan Int32
     public partial class DaylightTimeStruct : DataModel
     {
         public DateTime                                 Start                                   { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DaylightTimeStruct() { Pointer= p0 };
 
-            value.Start                                     = GetDateTime(new IntPtr(p + 0x010)); // 0246669D9398 0x10 Start                       ( 0001865BA3F0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.End                                       = GetDateTime(new IntPtr(p + 0x018)); // 0246669D93B8 0x18 End                         ( 0001865BA3F0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.Delta                                     = (TimeSpan)GetInt32(new IntPtr(p + 0x020)); // 0246669D93D8 0x20 Delta                       ( 00018668B770 ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
+            value.Start                                     = GetDateTime(new IntPtr(p + 0x010)); // 0x10 Start                       ( ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.End                                       = GetDateTime(new IntPtr(p + 0x018)); // 0x18 End                         ( ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.Delta                                     = (TimeSpan)GetInt32(new IntPtr(p + 0x020)); // 0x20 Delta                       ( ModelEnumType TimeSpan TimeSpan TimeSpan Int32 )
 
             return value;
         }

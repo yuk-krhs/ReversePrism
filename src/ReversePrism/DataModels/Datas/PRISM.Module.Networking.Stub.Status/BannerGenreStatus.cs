@@ -11,9 +11,9 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<BannerGenreStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstBannerGenreIdFieldNumber              int IL2CPP_TYPE_I4
-    // 018 MstBannerGenreId                         0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MstBannerGenreId                         ModelPrimitiveType int int int Int32
     // 000 ResourceIdFieldNumber                    int IL2CPP_TYPE_I4
-    // 020 ResourceId                               000186671910 ModelPrimitiveType string string string String
+    // 020 ResourceId                               ModelPrimitiveType string string string String
     public partial class BannerGenreStatus : DataModel
     {
         public int                                      MstBannerGenreId                        { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BannerGenreStatus() { Pointer= p0 };
 
-            value.MstBannerGenreId                          = GetInt32(new IntPtr(p + 0x018)); // 024660B1EB88 0x18 MstBannerGenreId            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ResourceId                                = GetString(new IntPtr(p + 0x020)); // 024660B1EBC8 0x20 ResourceId                  ( 000186671910 ModelPrimitiveType string string string String )
+            value.MstBannerGenreId                          = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstBannerGenreId            ( ModelPrimitiveType int int int Int32 )
+            value.ResourceId                                = GetString(new IntPtr(p + 0x020)); // 0x20 ResourceId                  ( ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -9,12 +9,12 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 NoValue                                  <object> IL2CPP_TYPE_OBJECT
-    // 010 Instructions                             00018670EF50 ModelEnumType InstructionArray InstructionArray InstructionArray Int32
+    // 010 Instructions                             ModelEnumType InstructionArray InstructionArray InstructionArray Int32
     // 038 _objects                                 <object>[] IL2CPP_TYPE_SZARRAY
-    // 040 Labels                                   000185CA1E18 ModelEnumListType RuntimeLabel[] RuntimeLabel[] List<RuntimeLabel> Pointer
-    // 048 DebugInfos                               000185B79E80 ModelClassListType DebugInfo[] DebugInfo[] List<DebugInfo> Pointer
-    // 050 Name                                     000186672F10 ModelPrimitiveType string string string String
-    // 058 LocalCount                               0001865F4260 ModelPrimitiveType int int int Int32
+    // 040 Labels                                   ModelEnumListType RuntimeLabel[] RuntimeLabel[] List<RuntimeLabel> Pointer
+    // 048 DebugInfos                               ModelClassListType DebugInfo[] DebugInfo[] List<DebugInfo> Pointer
+    // 050 Name                                     ModelPrimitiveType string string string String
+    // 058 LocalCount                               ModelPrimitiveType int int int Int32
     // 060 <ClosureVariables>k__BackingField        Dictionary`2<ParameterExpression, LocalVariable> IL2CPP_TYPE_GENERICINST
     public partial class Interpreter : DataModel
     {
@@ -32,11 +32,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Interpreter() { Pointer= p0 };
 
-            value.Instructions                              = (InstructionArray)GetInt32(new IntPtr(p + 0x010)); // 02466A04A3D0 0x10 Instructions                ( 00018670EF50 ModelEnumType InstructionArray InstructionArray InstructionArray Int32 )
-            value.Labels                                    = GetEnumList<RuntimeLabel>(new IntPtr(p + 0x040)); // 02466A04A410 0x40 Labels                      ( 000185CA1E18 ModelEnumListType RuntimeLabel[] RuntimeLabel[] List<RuntimeLabel> Pointer )
-            value.DebugInfos                                = GetObjectList<DebugInfo>(new IntPtr(p + 0x048), ReversePrism.DataModels.DebugInfo.FromPointer); // 02466A04A430 0x48 DebugInfos                  ( 000185B79E80 ModelClassListType DebugInfo[] DebugInfo[] List<DebugInfo> Pointer )
-            value.Name                                      = GetString(new IntPtr(p + 0x050)); // 02466A04A450 0x50 Name                        ( 000186672F10 ModelPrimitiveType string string string String )
-            value.LocalCount                                = GetInt32(new IntPtr(p + 0x058)); // 02466A04A470 0x58 LocalCount                  ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Instructions                              = (InstructionArray)GetInt32(new IntPtr(p + 0x010)); // 0x10 Instructions                ( ModelEnumType InstructionArray InstructionArray InstructionArray Int32 )
+            value.Labels                                    = GetEnumList<RuntimeLabel>(new IntPtr(p + 0x040)); // 0x40 Labels                      ( ModelEnumListType RuntimeLabel[] RuntimeLabel[] List<RuntimeLabel> Pointer )
+            value.DebugInfos                                = GetObjectList<DebugInfo>(new IntPtr(p + 0x048), ReversePrism.DataModels.DebugInfo.FromPointer); // 0x48 DebugInfos                  ( ModelClassListType DebugInfo[] DebugInfo[] List<DebugInfo> Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x050)); // 0x50 Name                        ( ModelPrimitiveType string string string String )
+            value.LocalCount                                = GetInt32(new IntPtr(p + 0x058)); // 0x58 LocalCount                  ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

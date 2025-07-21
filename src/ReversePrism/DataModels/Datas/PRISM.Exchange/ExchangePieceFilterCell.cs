@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 UnitIconPanel                            00018651F170 ModelClassType ExchangeUnitIconPanel ExchangeUnitIconPanel ExchangeUnitIconPanel Pointer
-    // 028 UnitToggle                               000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer
-    // 030 UnitNameText                             0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 020 UnitIconPanel                            ModelClassType ExchangeUnitIconPanel ExchangeUnitIconPanel ExchangeUnitIconPanel Pointer
+    // 028 UnitToggle                               ModelClassType ToggleButton ToggleButton ToggleButton Pointer
+    // 030 UnitNameText                             ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
     // 038 charaIDToggles                           Dictionary`2<int, ToggleButton> IL2CPP_TYPE_GENERICINST
-    // 040 UnderLineObj                             0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
+    // 040 UnderLineObj                             ModelClassType GameObject GameObject GameObject Pointer
     public partial class ExchangePieceFilterCell : DataModel
     {
         public ExchangeUnitIconPanel?                   UnitIconPanel                           { get; set; }
@@ -28,10 +28,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ExchangePieceFilterCell() { Pointer= p0 };
 
-            value.UnitIconPanel                             = GetObject<ExchangeUnitIconPanel>(new IntPtr(p + 0x020), ReversePrism.DataModels.ExchangeUnitIconPanel.FromPointer); // 02466553F658 0x20 UnitIconPanel               ( 00018651F170 ModelClassType ExchangeUnitIconPanel ExchangeUnitIconPanel ExchangeUnitIconPanel Pointer )
-            value.UnitToggle                                = GetObject<ToggleButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.ToggleButton.FromPointer); // 02466553F678 0x28 UnitToggle                  ( 000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer )
-            value.UnitNameText                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466553F698 0x30 UnitNameText                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.UnderLineObj                              = GetObject<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 02466553F6D8 0x40 UnderLineObj                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.UnitIconPanel                             = GetObject<ExchangeUnitIconPanel>(new IntPtr(p + 0x020), ReversePrism.DataModels.ExchangeUnitIconPanel.FromPointer); // 0x20 UnitIconPanel               ( ModelClassType ExchangeUnitIconPanel ExchangeUnitIconPanel ExchangeUnitIconPanel Pointer )
+            value.UnitToggle                                = GetObject<ToggleButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.ToggleButton.FromPointer); // 0x28 UnitToggle                  ( ModelClassType ToggleButton ToggleButton ToggleButton Pointer )
+            value.UnitNameText                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x30 UnitNameText                ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.UnderLineObj                              = GetObject<GameObject>(new IntPtr(p + 0x040), ReversePrism.DataModels.GameObject.FromPointer); // 0x40 UnderLineObj                ( ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

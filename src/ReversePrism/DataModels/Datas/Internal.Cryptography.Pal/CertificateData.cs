@@ -8,22 +8,22 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 RawData                                  000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 018 SubjectPublicKeyInfo                     000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 020 Version                                  0001865F2F90 ModelPrimitiveType int int int Int32
-    // 028 SerialNumber                             000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 030 TbsSignature                             000186733490 ModelEnumType AlgorithmIdentifier AlgorithmIdentifier AlgorithmIdentifier Int32
-    // 040 Issuer                                   000186562810 ModelClassType X500DistinguishedName X500DistinguishedName X500DistinguishedName Pointer
-    // 048 NotBefore                                0001865B9320 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    // 050 NotAfter                                 0001865B9320 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    // 058 Subject                                  000186562810 ModelClassType X500DistinguishedName X500DistinguishedName X500DistinguishedName Pointer
-    // 060 PublicKeyAlgorithm                       000186733490 ModelEnumType AlgorithmIdentifier AlgorithmIdentifier AlgorithmIdentifier Int32
-    // 070 PublicKey                                000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 078 IssuerUniqueId                           000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 080 SubjectUniqueId                          000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 088 Extensions                               000185D1D308 ModelClassListType List`1<X509Extension> List`1<X509Extension> List<X509Extension> Pointer
-    // 090 SignatureAlgorithm                       000186733490 ModelEnumType AlgorithmIdentifier AlgorithmIdentifier AlgorithmIdentifier Int32
-    // 0A0 SignatureValue                           000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 010 RawData                                  ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 018 SubjectPublicKeyInfo                     ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 020 Version                                  ModelPrimitiveType int int int Int32
+    // 028 SerialNumber                             ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 030 TbsSignature                             ModelEnumType AlgorithmIdentifier AlgorithmIdentifier AlgorithmIdentifier Int32
+    // 040 Issuer                                   ModelClassType X500DistinguishedName X500DistinguishedName X500DistinguishedName Pointer
+    // 048 NotBefore                                ModelPrimitiveType DateTime DateTime DateTime DateTime
+    // 050 NotAfter                                 ModelPrimitiveType DateTime DateTime DateTime DateTime
+    // 058 Subject                                  ModelClassType X500DistinguishedName X500DistinguishedName X500DistinguishedName Pointer
+    // 060 PublicKeyAlgorithm                       ModelEnumType AlgorithmIdentifier AlgorithmIdentifier AlgorithmIdentifier Int32
+    // 070 PublicKey                                ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 078 IssuerUniqueId                           ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 080 SubjectUniqueId                          ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 088 Extensions                               ModelClassListType List`1<X509Extension> List`1<X509Extension> List<X509Extension> Pointer
+    // 090 SignatureAlgorithm                       ModelEnumType AlgorithmIdentifier AlgorithmIdentifier AlgorithmIdentifier Int32
+    // 0A0 SignatureValue                           ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
     public partial class CertificateData : DataModel
     {
         public List<sbyte>?                             RawData                                 { get; set; }
@@ -51,22 +51,22 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CertificateData() { Pointer= p0 };
 
-            value.RawData                                   = GetSByteList(new IntPtr(p + 0x010)); // 0246679A7DB8 0x10 RawData                     ( 000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.SubjectPublicKeyInfo                      = GetSByteList(new IntPtr(p + 0x018)); // 0246679A7DD8 0x18 SubjectPublicKeyInfo        ( 000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Version                                   = GetInt32(new IntPtr(p + 0x020)); // 0246679A7DF8 0x20 Version                     ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.SerialNumber                              = GetSByteList(new IntPtr(p + 0x028)); // 0246679A7E18 0x28 SerialNumber                ( 000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.TbsSignature                              = (AlgorithmIdentifier)GetInt32(new IntPtr(p + 0x030)); // 0246679A7E38 0x30 TbsSignature                ( 000186733490 ModelEnumType AlgorithmIdentifier AlgorithmIdentifier AlgorithmIdentifier Int32 )
-            value.Issuer                                    = GetObject<X500DistinguishedName>(new IntPtr(p + 0x040), ReversePrism.DataModels.X500DistinguishedName.FromPointer); // 0246679A7E58 0x40 Issuer                      ( 000186562810 ModelClassType X500DistinguishedName X500DistinguishedName X500DistinguishedName Pointer )
-            value.NotBefore                                 = GetDateTime(new IntPtr(p + 0x048)); // 0246679A7E78 0x48 NotBefore                   ( 0001865B9320 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.NotAfter                                  = GetDateTime(new IntPtr(p + 0x050)); // 0246679A7E98 0x50 NotAfter                    ( 0001865B9320 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.Subject                                   = GetObject<X500DistinguishedName>(new IntPtr(p + 0x058), ReversePrism.DataModels.X500DistinguishedName.FromPointer); // 0246679A7EB8 0x58 Subject                     ( 000186562810 ModelClassType X500DistinguishedName X500DistinguishedName X500DistinguishedName Pointer )
-            value.PublicKeyAlgorithm                        = (AlgorithmIdentifier)GetInt32(new IntPtr(p + 0x060)); // 0246679A7ED8 0x60 PublicKeyAlgorithm          ( 000186733490 ModelEnumType AlgorithmIdentifier AlgorithmIdentifier AlgorithmIdentifier Int32 )
-            value.PublicKey                                 = GetSByteList(new IntPtr(p + 0x070)); // 0246679A7EF8 0x70 PublicKey                   ( 000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.IssuerUniqueId                            = GetSByteList(new IntPtr(p + 0x078)); // 0246679A7F18 0x78 IssuerUniqueId              ( 000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.SubjectUniqueId                           = GetSByteList(new IntPtr(p + 0x080)); // 0246679A7F38 0x80 SubjectUniqueId             ( 000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Extensions                                = GetObjectList<X509Extension>(new IntPtr(p + 0x088), ReversePrism.DataModels.X509Extension.FromPointer); // 0246679A7F58 0x88 Extensions                  ( 000185D1D308 ModelClassListType List`1<X509Extension> List`1<X509Extension> List<X509Extension> Pointer )
-            value.SignatureAlgorithm                        = (AlgorithmIdentifier)GetInt32(new IntPtr(p + 0x090)); // 0246679A7F78 0x90 SignatureAlgorithm          ( 000186733490 ModelEnumType AlgorithmIdentifier AlgorithmIdentifier AlgorithmIdentifier Int32 )
-            value.SignatureValue                            = GetSByteList(new IntPtr(p + 0x0A0)); // 0246679A7F98 0xA0 SignatureValue              ( 000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.RawData                                   = GetSByteList(new IntPtr(p + 0x010)); // 0x10 RawData                     ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.SubjectPublicKeyInfo                      = GetSByteList(new IntPtr(p + 0x018)); // 0x18 SubjectPublicKeyInfo        ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Version                                   = GetInt32(new IntPtr(p + 0x020)); // 0x20 Version                     ( ModelPrimitiveType int int int Int32 )
+            value.SerialNumber                              = GetSByteList(new IntPtr(p + 0x028)); // 0x28 SerialNumber                ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.TbsSignature                              = (AlgorithmIdentifier)GetInt32(new IntPtr(p + 0x030)); // 0x30 TbsSignature                ( ModelEnumType AlgorithmIdentifier AlgorithmIdentifier AlgorithmIdentifier Int32 )
+            value.Issuer                                    = GetObject<X500DistinguishedName>(new IntPtr(p + 0x040), ReversePrism.DataModels.X500DistinguishedName.FromPointer); // 0x40 Issuer                      ( ModelClassType X500DistinguishedName X500DistinguishedName X500DistinguishedName Pointer )
+            value.NotBefore                                 = GetDateTime(new IntPtr(p + 0x048)); // 0x48 NotBefore                   ( ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.NotAfter                                  = GetDateTime(new IntPtr(p + 0x050)); // 0x50 NotAfter                    ( ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.Subject                                   = GetObject<X500DistinguishedName>(new IntPtr(p + 0x058), ReversePrism.DataModels.X500DistinguishedName.FromPointer); // 0x58 Subject                     ( ModelClassType X500DistinguishedName X500DistinguishedName X500DistinguishedName Pointer )
+            value.PublicKeyAlgorithm                        = (AlgorithmIdentifier)GetInt32(new IntPtr(p + 0x060)); // 0x60 PublicKeyAlgorithm          ( ModelEnumType AlgorithmIdentifier AlgorithmIdentifier AlgorithmIdentifier Int32 )
+            value.PublicKey                                 = GetSByteList(new IntPtr(p + 0x070)); // 0x70 PublicKey                   ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.IssuerUniqueId                            = GetSByteList(new IntPtr(p + 0x078)); // 0x78 IssuerUniqueId              ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.SubjectUniqueId                           = GetSByteList(new IntPtr(p + 0x080)); // 0x80 SubjectUniqueId             ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Extensions                                = GetObjectList<X509Extension>(new IntPtr(p + 0x088), ReversePrism.DataModels.X509Extension.FromPointer); // 0x88 Extensions                  ( ModelClassListType List`1<X509Extension> List`1<X509Extension> List<X509Extension> Pointer )
+            value.SignatureAlgorithm                        = (AlgorithmIdentifier)GetInt32(new IntPtr(p + 0x090)); // 0x90 SignatureAlgorithm          ( ModelEnumType AlgorithmIdentifier AlgorithmIdentifier AlgorithmIdentifier Int32 )
+            value.SignatureValue                            = GetSByteList(new IntPtr(p + 0x0A0)); // 0xA0 SignatureValue              ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
 
             return value;
         }

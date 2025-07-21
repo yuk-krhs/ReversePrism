@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_array                                  000185B7D5E0 ModelPrimitiveListType int[] int[] List<int> Pointer
-    // 018 M_length                                 0001865F36C0 ModelPrimitiveType int int int Int32
-    // 01C Version                                  0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 M_array                                  ModelPrimitiveListType int[] int[] List<int> Pointer
+    // 018 M_length                                 ModelPrimitiveType int int int Int32
+    // 01C Version                                  ModelPrimitiveType int int int Int32
     public partial class BitArrayView : DataModel
     {
         public List<int>?                               M_array                                 { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BitArrayView() { Pointer= p0 };
 
-            value.M_array                                   = GetInt32List(new IntPtr(p + 0x010)); // 02466AFDE9E0 0x10 M_array                     ( 000185B7D5E0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.M_length                                  = GetInt32(new IntPtr(p + 0x018)); // 02466AFDEA00 0x18 M_length                    ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Version                                   = GetInt32(new IntPtr(p + 0x01C)); // 02466AFDEA20 0x1C Version                     ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.M_array                                   = GetInt32List(new IntPtr(p + 0x010)); // 0x10 M_array                     ( ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.M_length                                  = GetInt32(new IntPtr(p + 0x018)); // 0x18 M_length                    ( ModelPrimitiveType int int int Int32 )
+            value.Version                                   = GetInt32(new IntPtr(p + 0x01C)); // 0x1C Version                     ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

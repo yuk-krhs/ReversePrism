@@ -8,17 +8,19 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Story                                    00018665DA10 ModelClassType IStoryStatus IStoryStatus IStoryStatus Pointer
-    // 018 ForceHideNewBadge                        0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 020 AdvScenarioInfo                          0001866EF790 ModelClassType IAdvScenarioInfo IAdvScenarioInfo IAdvScenarioInfo Pointer
-    // 028 SortId                                   0001865F4260 ModelPrimitiveType int int int Int32
-    // 030 MainTitle                                000186672F10 ModelPrimitiveType string string string String
-    // 038 SubTitle                                 000186672F10 ModelPrimitiveType string string string String
-    // 040 LockMessage                              000186672F10 ModelPrimitiveType string string string String
+    // 010 Story                                    ModelClassType IStoryStatus IStoryStatus IStoryStatus Pointer
+    // 018 ForceHideNewBadge                        ModelPrimitiveType bool bool bool Bool
+    // 019 IsEveryStoryReadNotionCell               ModelPrimitiveType bool bool bool Bool
+    // 020 AdvScenarioInfo                          ModelClassType IAdvScenarioInfo IAdvScenarioInfo IAdvScenarioInfo Pointer
+    // 028 SortId                                   ModelPrimitiveType int int int Int32
+    // 030 MainTitle                                ModelPrimitiveType string string string String
+    // 038 SubTitle                                 ModelPrimitiveType string string string String
+    // 040 LockMessage                              ModelPrimitiveType string string string String
     public partial class StoryLastCategoryCellData : DataModel
     {
         public IStoryStatus?                            Story                                   { get; set; }
         public bool                                     ForceHideNewBadge                       { get; set; }
+        public bool                                     IsEveryStoryReadNotionCell              { get; set; }
         public IAdvScenarioInfo?                        AdvScenarioInfo                         { get; set; }
         public int                                      SortId                                  { get; set; }
         public string                                   MainTitle                               { get; set; }
@@ -33,13 +35,14 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StoryLastCategoryCellData() { Pointer= p0 };
 
-            value.Story                                     = GetObject<IStoryStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IStoryStatus.FromPointer); // 024666827020 0x10 Story                       ( 00018665DA10 ModelClassType IStoryStatus IStoryStatus IStoryStatus Pointer )
-            value.ForceHideNewBadge                         = GetBool(new IntPtr(p + 0x018)); // 024666827040 0x18 ForceHideNewBadge           ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.AdvScenarioInfo                           = GetObject<IAdvScenarioInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.IAdvScenarioInfo.FromPointer); // 024666827060 0x20 AdvScenarioInfo             ( 0001866EF790 ModelClassType IAdvScenarioInfo IAdvScenarioInfo IAdvScenarioInfo Pointer )
-            value.SortId                                    = GetInt32(new IntPtr(p + 0x028)); // 024666827080 0x28 SortId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MainTitle                                 = GetString(new IntPtr(p + 0x030)); // 0246668270A0 0x30 MainTitle                   ( 000186672F10 ModelPrimitiveType string string string String )
-            value.SubTitle                                  = GetString(new IntPtr(p + 0x038)); // 0246668270C0 0x38 SubTitle                    ( 000186672F10 ModelPrimitiveType string string string String )
-            value.LockMessage                               = GetString(new IntPtr(p + 0x040)); // 0246668270E0 0x40 LockMessage                 ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Story                                     = GetObject<IStoryStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IStoryStatus.FromPointer); // 0x10 Story                       ( ModelClassType IStoryStatus IStoryStatus IStoryStatus Pointer )
+            value.ForceHideNewBadge                         = GetBool(new IntPtr(p + 0x018)); // 0x18 ForceHideNewBadge           ( ModelPrimitiveType bool bool bool Bool )
+            value.IsEveryStoryReadNotionCell                = GetBool(new IntPtr(p + 0x019)); // 0x19 IsEveryStoryReadNotionCell  ( ModelPrimitiveType bool bool bool Bool )
+            value.AdvScenarioInfo                           = GetObject<IAdvScenarioInfo>(new IntPtr(p + 0x020), ReversePrism.DataModels.IAdvScenarioInfo.FromPointer); // 0x20 AdvScenarioInfo             ( ModelClassType IAdvScenarioInfo IAdvScenarioInfo IAdvScenarioInfo Pointer )
+            value.SortId                                    = GetInt32(new IntPtr(p + 0x028)); // 0x28 SortId                      ( ModelPrimitiveType int int int Int32 )
+            value.MainTitle                                 = GetString(new IntPtr(p + 0x030)); // 0x30 MainTitle                   ( ModelPrimitiveType string string string String )
+            value.SubTitle                                  = GetString(new IntPtr(p + 0x038)); // 0x38 SubTitle                    ( ModelPrimitiveType string string string String )
+            value.LockMessage                               = GetString(new IntPtr(p + 0x040)); // 0x40 LockMessage                 ( ModelPrimitiveType string string string String )
 
             return value;
         }

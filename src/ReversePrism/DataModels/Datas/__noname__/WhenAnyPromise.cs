@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CompletedCount                           0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 CompletedCount                           ModelPrimitiveType int int int Int32
     // 018 core                                     UniTaskCompletionSourceCore`1<int> IL2CPP_TYPE_GENERICINST
     public partial class WhenAnyPromise : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new WhenAnyPromise() { Pointer= p0 };
 
-            value.CompletedCount                            = GetInt32(new IntPtr(p + 0x010)); // 024668D21830 0x10 CompletedCount              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.CompletedCount                            = GetInt32(new IntPtr(p + 0x010)); // 0x10 CompletedCount              ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

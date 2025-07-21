@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Start                                    0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 014 Size                                     0001866992B0 ModelPrimitiveType uint uint uint UInt32
+    // 010 Start                                    ModelPrimitiveType uint uint uint UInt32
+    // 014 Size                                     ModelPrimitiveType uint uint uint UInt32
     // 018 handle                                   <object> IL2CPP_TYPE_OBJECT
-    // 020 ShortLived                               000186595210 ModelPrimitiveType bool bool bool Bool
+    // 020 ShortLived                               ModelPrimitiveType bool bool bool Bool
     public partial class Alloc : DataModel
     {
         public uint                                     Start                                   { get; set; }
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Alloc() { Pointer= p0 };
 
-            value.Start                                     = GetUInt32(new IntPtr(p + 0x010)); // 0245A66A2408 0x10 Start                       ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.Size                                      = GetUInt32(new IntPtr(p + 0x014)); // 0245A66A2428 0x14 Size                        ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.ShortLived                                = GetBool(new IntPtr(p + 0x020)); // 0245A66A2468 0x20 ShortLived                  ( 000186595210 ModelPrimitiveType bool bool bool Bool )
+            value.Start                                     = GetUInt32(new IntPtr(p + 0x010)); // 0x10 Start                       ( ModelPrimitiveType uint uint uint UInt32 )
+            value.Size                                      = GetUInt32(new IntPtr(p + 0x014)); // 0x14 Size                        ( ModelPrimitiveType uint uint uint UInt32 )
+            value.ShortLived                                = GetBool(new IntPtr(p + 0x020)); // 0x20 ShortLived                  ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

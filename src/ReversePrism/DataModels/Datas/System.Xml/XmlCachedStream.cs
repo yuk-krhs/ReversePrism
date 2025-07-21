@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 050 Uri                                      0001866A4270 ModelClassType Uri Uri Uri Pointer
+    // 050 Uri                                      ModelClassType Uri Uri Uri Pointer
     public partial class XmlCachedStream : DataModel
     {
         public Uri?                                     Uri                                     { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlCachedStream() { Pointer= p0 };
 
-            value.Uri                                       = GetObject<Uri>(new IntPtr(p + 0x050), ReversePrism.DataModels.Uri.FromPointer); // 0246674FCCA8 0x50 Uri                         ( 0001866A4270 ModelClassType Uri Uri Uri Pointer )
+            value.Uri                                       = GetObject<Uri>(new IntPtr(p + 0x050), ReversePrism.DataModels.Uri.FromPointer); // 0x50 Uri                         ( ModelClassType Uri Uri Uri Pointer )
 
             return value;
         }

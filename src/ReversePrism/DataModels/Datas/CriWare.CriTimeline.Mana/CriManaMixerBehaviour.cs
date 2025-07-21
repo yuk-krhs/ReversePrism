@@ -8,20 +8,20 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_PlayableDirector                       00018674DCD0 ModelClassType PlayableDirector PlayableDirector PlayableDirector Pointer
-    // 018 M_clips                                  000185CABDB8 ModelClassListType TimelineClip[] TimelineClip[] List<TimelineClip> Pointer
-    // 020 M_boundMovieMaterial                     00018665AED0 ModelClassType CriManaMovieMaterialBase CriManaMovieMaterialBase CriManaMovieMaterialBase Pointer
+    // 010 M_PlayableDirector                       ModelClassType PlayableDirector PlayableDirector PlayableDirector Pointer
+    // 018 M_clips                                  ModelClassListType TimelineClip[] TimelineClip[] List<TimelineClip> Pointer
+    // 020 M_boundMovieMaterial                     ModelClassType CriManaMovieMaterialBase CriManaMovieMaterialBase CriManaMovieMaterialBase Pointer
     // 028 m_gcHandleList                           Dictionary`2<int, GCHandle> IL2CPP_TYPE_GENERICINST
-    // 030 M_frameSync                              000186595210 ModelPrimitiveType bool bool bool Bool
+    // 030 M_frameSync                              ModelPrimitiveType bool bool bool Bool
     // 000 cPreloadTimeSec                          double IL2CPP_TYPE_R8
     // 034 m_lastClipId                             Nullable`1<Guid> IL2CPP_TYPE_GENERICINST
-    // 048 StartTime                                0001865C2950 ModelPrimitiveType double double double Double
-    // 050 M_currentSeekingFrameTime                0001865C2950 ModelPrimitiveType double double double Double
-    // 058 M_originalAudioVolume                    0001866656B0 ModelPrimitiveType float float float Single
-    // 05C M_originalSubAudioVolume                 0001866656B0 ModelPrimitiveType float float float Single
-    // 060 M_originalExtraAudioVolume               0001866656B0 ModelPrimitiveType float float float Single
-    // 064 EnableTimelineScrubPlayback              000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 068 M_movieMixerState                        0001865639D0 ModelEnumType MovieMixerState MovieMixerState MovieMixerState Int32
+    // 048 StartTime                                ModelPrimitiveType double double double Double
+    // 050 M_currentSeekingFrameTime                ModelPrimitiveType double double double Double
+    // 058 M_originalAudioVolume                    ModelPrimitiveType float float float Single
+    // 05C M_originalSubAudioVolume                 ModelPrimitiveType float float float Single
+    // 060 M_originalExtraAudioVolume               ModelPrimitiveType float float float Single
+    // 064 EnableTimelineScrubPlayback              ModelPrimitiveType bool bool bool Bool
+    // 068 M_movieMixerState                        ModelEnumType MovieMixerState MovieMixerState MovieMixerState Int32
     public partial class CriManaMixerBehaviour : DataModel
     {
         public PlayableDirector?                        M_PlayableDirector                      { get; set; }
@@ -44,17 +44,17 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CriManaMixerBehaviour() { Pointer= p0 };
 
-            value.M_PlayableDirector                        = GetObject<PlayableDirector>(new IntPtr(p + 0x010), ReversePrism.DataModels.PlayableDirector.FromPointer); // 02466AD4C910 0x10 M_PlayableDirector          ( 00018674DCD0 ModelClassType PlayableDirector PlayableDirector PlayableDirector Pointer )
-            value.M_clips                                   = GetObjectList<TimelineClip>(new IntPtr(p + 0x018), ReversePrism.DataModels.TimelineClip.FromPointer); // 02466AD4C930 0x18 M_clips                     ( 000185CABDB8 ModelClassListType TimelineClip[] TimelineClip[] List<TimelineClip> Pointer )
-            value.M_boundMovieMaterial                      = GetObject<CriManaMovieMaterialBase>(new IntPtr(p + 0x020), ReversePrism.DataModels.CriManaMovieMaterialBase.FromPointer); // 02466AD4C950 0x20 M_boundMovieMaterial        ( 00018665AED0 ModelClassType CriManaMovieMaterialBase CriManaMovieMaterialBase CriManaMovieMaterialBase Pointer )
-            value.M_frameSync                               = GetBool(new IntPtr(p + 0x030)); // 02466AD4C990 0x30 M_frameSync                 ( 000186595210 ModelPrimitiveType bool bool bool Bool )
-            value.StartTime                                 = GetDouble(new IntPtr(p + 0x048)); // 02466AD4C9F0 0x48 StartTime                   ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.M_currentSeekingFrameTime                 = GetDouble(new IntPtr(p + 0x050)); // 02466AD4CA10 0x50 M_currentSeekingFrameTime   ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value.M_originalAudioVolume                     = GetSingle(new IntPtr(p + 0x058)); // 02466AD4CA30 0x58 M_originalAudioVolume       ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_originalSubAudioVolume                  = GetSingle(new IntPtr(p + 0x05C)); // 02466AD4CA50 0x5C M_originalSubAudioVolume    ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.M_originalExtraAudioVolume                = GetSingle(new IntPtr(p + 0x060)); // 02466AD4CA70 0x60 M_originalExtraAudioVolume  ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.EnableTimelineScrubPlayback               = GetBool(new IntPtr(p + 0x064)); // 02466AD4CA90 0x64 EnableTimelineScrubPlayback ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_movieMixerState                         = (MovieMixerState)GetInt32(new IntPtr(p + 0x068)); // 02466AD4CAB0 0x68 M_movieMixerState           ( 0001865639D0 ModelEnumType MovieMixerState MovieMixerState MovieMixerState Int32 )
+            value.M_PlayableDirector                        = GetObject<PlayableDirector>(new IntPtr(p + 0x010), ReversePrism.DataModels.PlayableDirector.FromPointer); // 0x10 M_PlayableDirector          ( ModelClassType PlayableDirector PlayableDirector PlayableDirector Pointer )
+            value.M_clips                                   = GetObjectList<TimelineClip>(new IntPtr(p + 0x018), ReversePrism.DataModels.TimelineClip.FromPointer); // 0x18 M_clips                     ( ModelClassListType TimelineClip[] TimelineClip[] List<TimelineClip> Pointer )
+            value.M_boundMovieMaterial                      = GetObject<CriManaMovieMaterialBase>(new IntPtr(p + 0x020), ReversePrism.DataModels.CriManaMovieMaterialBase.FromPointer); // 0x20 M_boundMovieMaterial        ( ModelClassType CriManaMovieMaterialBase CriManaMovieMaterialBase CriManaMovieMaterialBase Pointer )
+            value.M_frameSync                               = GetBool(new IntPtr(p + 0x030)); // 0x30 M_frameSync                 ( ModelPrimitiveType bool bool bool Bool )
+            value.StartTime                                 = GetDouble(new IntPtr(p + 0x048)); // 0x48 StartTime                   ( ModelPrimitiveType double double double Double )
+            value.M_currentSeekingFrameTime                 = GetDouble(new IntPtr(p + 0x050)); // 0x50 M_currentSeekingFrameTime   ( ModelPrimitiveType double double double Double )
+            value.M_originalAudioVolume                     = GetSingle(new IntPtr(p + 0x058)); // 0x58 M_originalAudioVolume       ( ModelPrimitiveType float float float Single )
+            value.M_originalSubAudioVolume                  = GetSingle(new IntPtr(p + 0x05C)); // 0x5C M_originalSubAudioVolume    ( ModelPrimitiveType float float float Single )
+            value.M_originalExtraAudioVolume                = GetSingle(new IntPtr(p + 0x060)); // 0x60 M_originalExtraAudioVolume  ( ModelPrimitiveType float float float Single )
+            value.EnableTimelineScrubPlayback               = GetBool(new IntPtr(p + 0x064)); // 0x64 EnableTimelineScrubPlayback ( ModelPrimitiveType bool bool bool Bool )
+            value.M_movieMixerState                         = (MovieMixerState)GetInt32(new IntPtr(p + 0x068)); // 0x68 M_movieMixerState           ( ModelEnumType MovieMixerState MovieMixerState MovieMixerState Int32 )
 
             return value;
         }

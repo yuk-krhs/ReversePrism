@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 MergeArrayHandling                       0001865FECE0 ModelEnumType MergeArrayHandling MergeArrayHandling MergeArrayHandling Int32
-    // 014 MergeNullValueHandling                   0001865FFB00 ModelEnumType MergeNullValueHandling MergeNullValueHandling MergeNullValueHandling Int32
-    // 018 PropertyNameComparison                   0001865BBBC0 ModelEnumType StringComparison StringComparison StringComparison Int32
+    // 010 MergeArrayHandling                       ModelEnumType MergeArrayHandling MergeArrayHandling MergeArrayHandling Int32
+    // 014 MergeNullValueHandling                   ModelEnumType MergeNullValueHandling MergeNullValueHandling MergeNullValueHandling Int32
+    // 018 PropertyNameComparison                   ModelEnumType StringComparison StringComparison StringComparison Int32
     public partial class JsonMergeSettings : DataModel
     {
         public MergeArrayHandling                       MergeArrayHandling                      { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JsonMergeSettings() { Pointer= p0 };
 
-            value.MergeArrayHandling                        = (MergeArrayHandling)GetInt32(new IntPtr(p + 0x010)); // 024668849108 0x10 MergeArrayHandling          ( 0001865FECE0 ModelEnumType MergeArrayHandling MergeArrayHandling MergeArrayHandling Int32 )
-            value.MergeNullValueHandling                    = (MergeNullValueHandling)GetInt32(new IntPtr(p + 0x014)); // 024668849128 0x14 MergeNullValueHandling      ( 0001865FFB00 ModelEnumType MergeNullValueHandling MergeNullValueHandling MergeNullValueHandling Int32 )
-            value.PropertyNameComparison                    = (StringComparison)GetInt32(new IntPtr(p + 0x018)); // 024668849148 0x18 PropertyNameComparison      ( 0001865BBBC0 ModelEnumType StringComparison StringComparison StringComparison Int32 )
+            value.MergeArrayHandling                        = (MergeArrayHandling)GetInt32(new IntPtr(p + 0x010)); // 0x10 MergeArrayHandling          ( ModelEnumType MergeArrayHandling MergeArrayHandling MergeArrayHandling Int32 )
+            value.MergeNullValueHandling                    = (MergeNullValueHandling)GetInt32(new IntPtr(p + 0x014)); // 0x14 MergeNullValueHandling      ( ModelEnumType MergeNullValueHandling MergeNullValueHandling MergeNullValueHandling Int32 )
+            value.PropertyNameComparison                    = (StringComparison)GetInt32(new IntPtr(p + 0x018)); // 0x18 PropertyNameComparison      ( ModelEnumType StringComparison StringComparison StringComparison Int32 )
 
             return value;
         }

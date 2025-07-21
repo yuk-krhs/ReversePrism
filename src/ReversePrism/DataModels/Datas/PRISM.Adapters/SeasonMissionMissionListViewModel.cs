@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 SeasonMission                            00018662D080 ModelClassType ISeasonMissionMissionStatus ISeasonMissionMissionStatus ISeasonMissionMissionStatus Pointer
+    // 010 SeasonMission                            ModelClassType ISeasonMissionMissionStatus ISeasonMissionMissionStatus ISeasonMissionMissionStatus Pointer
     public partial class SeasonMissionMissionListViewModel : DataModel
     {
         public ISeasonMissionMissionStatus?             SeasonMission                           { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SeasonMissionMissionListViewModel() { Pointer= p0 };
 
-            value.SeasonMission                             = GetObject<ISeasonMissionMissionStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.ISeasonMissionMissionStatus.FromPointer); // 02466672C0D0 0x10 SeasonMission               ( 00018662D080 ModelClassType ISeasonMissionMissionStatus ISeasonMissionMissionStatus ISeasonMissionMissionStatus Pointer )
+            value.SeasonMission                             = GetObject<ISeasonMissionMissionStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.ISeasonMissionMissionStatus.FromPointer); // 0x10 SeasonMission               ( ModelClassType ISeasonMissionMissionStatus ISeasonMissionMissionStatus ISeasonMissionMissionStatus Pointer )
 
             return value;
         }

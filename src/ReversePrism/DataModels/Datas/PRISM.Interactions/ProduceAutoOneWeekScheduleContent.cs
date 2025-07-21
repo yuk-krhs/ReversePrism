@@ -8,21 +8,22 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 ScheduleObject                           0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 028 ScheduleImage                            0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer
-    // 030 ScheduleLevelObject                      0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 038 ScheduleBonusLevelObject                 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 040 ScheduleLevelImage                       0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 048 ScheduleLevelText                        0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 050 ScheduleNameText                         0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 058 SupportBonusImageObject                  0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 060 RecommendImageObject                     0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 068 SupportCharacterAreaObject               0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 070 SupportCharacterSDIconContentList        000185D10348 ModelClassListType List`1<SupportCharacterSDIconContent> List`1<SupportCharacterSDIconContent> List<SupportCharacterSDIconContent> Pointer
-    // 078 FrameBlur                                0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 080 BgGradation                              0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 088 ScheduleLevelColorData                   00018657DC40 ModelClassType ProduceScheduleLevelColorData ProduceScheduleLevelColorData ProduceScheduleLevelColorData Pointer
-    // 090 FailureUI                                0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
+    // 020 ScheduleObject                           ModelClassType GameObject GameObject GameObject Pointer
+    // 028 ScheduleImage                            ModelClassType UIRawImage UIRawImage UIRawImage Pointer
+    // 030 ScheduleLevelObject                      ModelClassType GameObject GameObject GameObject Pointer
+    // 038 ScheduleBonusLevelObject                 ModelClassType GameObject GameObject GameObject Pointer
+    // 040 ScheduleLevelImage                       ModelClassType UIImage UIImage UIImage Pointer
+    // 048 ScheduleLevelText                        ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 050 ScheduleNameText                         ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 058 SupportBonusImageObject                  ModelClassType GameObject GameObject GameObject Pointer
+    // 060 AppearanceImageObject                    ModelClassType GameObject GameObject GameObject Pointer
+    // 068 RecommendImageObject                     ModelClassType GameObject GameObject GameObject Pointer
+    // 070 SupportCharacterAreaObject               ModelClassType GameObject GameObject GameObject Pointer
+    // 078 SupportCharacterSDIconContentList        ModelClassListType List`1<SupportCharacterSDIconContent> List`1<SupportCharacterSDIconContent> List<SupportCharacterSDIconContent> Pointer
+    // 080 FrameBlur                                ModelClassType UIImage UIImage UIImage Pointer
+    // 088 BgGradation                              ModelClassType UIImage UIImage UIImage Pointer
+    // 090 ScheduleLevelColorData                   ModelClassType ProduceScheduleLevelColorData ProduceScheduleLevelColorData ProduceScheduleLevelColorData Pointer
+    // 098 FailureUI                                ModelClassType GameObject GameObject GameObject Pointer
     public partial class ProduceAutoOneWeekScheduleContent : DataModel
     {
         public GameObject?                              ScheduleObject                          { get; set; }
@@ -33,6 +34,7 @@ namespace ReversePrism.DataModels
         public UITextMeshProUGUI?                       ScheduleLevelText                       { get; set; }
         public UITextMeshProUGUI?                       ScheduleNameText                        { get; set; }
         public GameObject?                              SupportBonusImageObject                 { get; set; }
+        public GameObject?                              AppearanceImageObject                   { get; set; }
         public GameObject?                              RecommendImageObject                    { get; set; }
         public GameObject?                              SupportCharacterAreaObject              { get; set; }
         public List<SupportCharacterSDIconContent>?     SupportCharacterSDIconContentList       { get; set; }
@@ -49,21 +51,22 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceAutoOneWeekScheduleContent() { Pointer= p0 };
 
-            value.ScheduleObject                            = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 02466A122618 0x20 ScheduleObject              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ScheduleImage                             = GetObject<UIRawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIRawImage.FromPointer); // 02466A122638 0x28 ScheduleImage               ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
-            value.ScheduleLevelObject                       = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 02466A122658 0x30 ScheduleLevelObject         ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ScheduleBonusLevelObject                  = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 02466A122678 0x38 ScheduleBonusLevelObject    ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ScheduleLevelImage                        = GetObject<UIImage>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIImage.FromPointer); // 02466A122698 0x40 ScheduleLevelImage          ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.ScheduleLevelText                         = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A1226B8 0x48 ScheduleLevelText           ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ScheduleNameText                          = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466A1226D8 0x50 ScheduleNameText            ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.SupportBonusImageObject                   = GetObject<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 02466A1226F8 0x58 SupportBonusImageObject     ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.RecommendImageObject                      = GetObject<GameObject>(new IntPtr(p + 0x060), ReversePrism.DataModels.GameObject.FromPointer); // 02466A122718 0x60 RecommendImageObject        ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.SupportCharacterAreaObject                = GetObject<GameObject>(new IntPtr(p + 0x068), ReversePrism.DataModels.GameObject.FromPointer); // 02466A122738 0x68 SupportCharacterAreaObject  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.SupportCharacterSDIconContentList         = GetObjectList<SupportCharacterSDIconContent>(new IntPtr(p + 0x070), ReversePrism.DataModels.SupportCharacterSDIconContent.FromPointer); // 02466A122758 0x70 SupportCharacterSDIconContentList ( 000185D10348 ModelClassListType List`1<SupportCharacterSDIconContent> List`1<SupportCharacterSDIconContent> List<SupportCharacterSDIconContent> Pointer )
-            value.FrameBlur                                 = GetObject<UIImage>(new IntPtr(p + 0x078), ReversePrism.DataModels.UIImage.FromPointer); // 02466A122778 0x78 FrameBlur                   ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.BgGradation                               = GetObject<UIImage>(new IntPtr(p + 0x080), ReversePrism.DataModels.UIImage.FromPointer); // 02466A122798 0x80 BgGradation                 ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.ScheduleLevelColorData                    = GetObject<ProduceScheduleLevelColorData>(new IntPtr(p + 0x088), ReversePrism.DataModels.ProduceScheduleLevelColorData.FromPointer); // 02466A1227B8 0x88 ScheduleLevelColorData      ( 00018657DC40 ModelClassType ProduceScheduleLevelColorData ProduceScheduleLevelColorData ProduceScheduleLevelColorData Pointer )
-            value.FailureUI                                 = GetObject<GameObject>(new IntPtr(p + 0x090), ReversePrism.DataModels.GameObject.FromPointer); // 02466A1227D8 0x90 FailureUI                   ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.ScheduleObject                            = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0x20 ScheduleObject              ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.ScheduleImage                             = GetObject<UIRawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIRawImage.FromPointer); // 0x28 ScheduleImage               ( ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
+            value.ScheduleLevelObject                       = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0x30 ScheduleLevelObject         ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.ScheduleBonusLevelObject                  = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0x38 ScheduleBonusLevelObject    ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.ScheduleLevelImage                        = GetObject<UIImage>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIImage.FromPointer); // 0x40 ScheduleLevelImage          ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.ScheduleLevelText                         = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x48 ScheduleLevelText           ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ScheduleNameText                          = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x050), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x50 ScheduleNameText            ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.SupportBonusImageObject                   = GetObject<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 0x58 SupportBonusImageObject     ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.AppearanceImageObject                     = GetObject<GameObject>(new IntPtr(p + 0x060), ReversePrism.DataModels.GameObject.FromPointer); // 0x60 AppearanceImageObject       ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.RecommendImageObject                      = GetObject<GameObject>(new IntPtr(p + 0x068), ReversePrism.DataModels.GameObject.FromPointer); // 0x68 RecommendImageObject        ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.SupportCharacterAreaObject                = GetObject<GameObject>(new IntPtr(p + 0x070), ReversePrism.DataModels.GameObject.FromPointer); // 0x70 SupportCharacterAreaObject  ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.SupportCharacterSDIconContentList         = GetObjectList<SupportCharacterSDIconContent>(new IntPtr(p + 0x078), ReversePrism.DataModels.SupportCharacterSDIconContent.FromPointer); // 0x78 SupportCharacterSDIconContentList ( ModelClassListType List`1<SupportCharacterSDIconContent> List`1<SupportCharacterSDIconContent> List<SupportCharacterSDIconContent> Pointer )
+            value.FrameBlur                                 = GetObject<UIImage>(new IntPtr(p + 0x080), ReversePrism.DataModels.UIImage.FromPointer); // 0x80 FrameBlur                   ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.BgGradation                               = GetObject<UIImage>(new IntPtr(p + 0x088), ReversePrism.DataModels.UIImage.FromPointer); // 0x88 BgGradation                 ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.ScheduleLevelColorData                    = GetObject<ProduceScheduleLevelColorData>(new IntPtr(p + 0x090), ReversePrism.DataModels.ProduceScheduleLevelColorData.FromPointer); // 0x90 ScheduleLevelColorData      ( ModelClassType ProduceScheduleLevelColorData ProduceScheduleLevelColorData ProduceScheduleLevelColorData Pointer )
+            value.FailureUI                                 = GetObject<GameObject>(new IntPtr(p + 0x098), ReversePrism.DataModels.GameObject.FromPointer); // 0x98 FailureUI                   ( ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

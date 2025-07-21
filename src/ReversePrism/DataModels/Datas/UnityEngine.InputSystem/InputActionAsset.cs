@@ -9,13 +9,13 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Extension                                string IL2CPP_TYPE_STRING
-    // 018 M_ActionMaps                             000185B8BD10 ModelClassListType InputActionMap[] InputActionMap[] List<InputActionMap> Pointer
-    // 020 M_ControlSchemes                         000185B8CA70 ModelEnumListType InputControlScheme[] InputControlScheme[] List<InputControlScheme> Pointer
-    // 028 M_SharedStateForAllMaps                  0001866F7680 ModelClassType InputActionState InputActionState InputActionState Pointer
+    // 018 M_ActionMaps                             ModelClassListType InputActionMap[] InputActionMap[] List<InputActionMap> Pointer
+    // 020 M_ControlSchemes                         ModelEnumListType InputControlScheme[] InputControlScheme[] List<InputControlScheme> Pointer
+    // 028 M_SharedStateForAllMaps                  ModelClassType InputActionState InputActionState InputActionState Pointer
     // 030 m_BindingMask                            Nullable`1<InputBinding> IL2CPP_TYPE_GENERICINST
-    // 090 M_ParameterOverridesCount                0001865F5530 ModelPrimitiveType int int int Int32
-    // 098 M_ParameterOverrides                     000185B85470 ModelEnumListType ParameterOverride[] ParameterOverride[] List<ParameterOverride> Pointer
-    // 0A0 M_Devices                                00018661ECB0 ModelEnumType DeviceArray DeviceArray DeviceArray Int32
+    // 090 M_ParameterOverridesCount                ModelPrimitiveType int int int Int32
+    // 098 M_ParameterOverrides                     ModelEnumListType ParameterOverride[] ParameterOverride[] List<ParameterOverride> Pointer
+    // 0A0 M_Devices                                ModelEnumType DeviceArray DeviceArray DeviceArray Int32
     public partial class InputActionAsset : DataModel
     {
         public List<InputActionMap>?                    M_ActionMaps                            { get; set; }
@@ -33,12 +33,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InputActionAsset() { Pointer= p0 };
 
-            value.M_ActionMaps                              = GetObjectList<InputActionMap>(new IntPtr(p + 0x018), ReversePrism.DataModels.InputActionMap.FromPointer); // 0246676AE748 0x18 M_ActionMaps                ( 000185B8BD10 ModelClassListType InputActionMap[] InputActionMap[] List<InputActionMap> Pointer )
-            value.M_ControlSchemes                          = GetEnumList<InputControlScheme>(new IntPtr(p + 0x020)); // 0246676AE768 0x20 M_ControlSchemes            ( 000185B8CA70 ModelEnumListType InputControlScheme[] InputControlScheme[] List<InputControlScheme> Pointer )
-            value.M_SharedStateForAllMaps                   = GetObject<InputActionState>(new IntPtr(p + 0x028), ReversePrism.DataModels.InputActionState.FromPointer); // 0246676AE788 0x28 M_SharedStateForAllMaps     ( 0001866F7680 ModelClassType InputActionState InputActionState InputActionState Pointer )
-            value.M_ParameterOverridesCount                 = GetInt32(new IntPtr(p + 0x090)); // 0246676AE7C8 0x90 M_ParameterOverridesCount   ( 0001865F5530 ModelPrimitiveType int int int Int32 )
-            value.M_ParameterOverrides                      = GetEnumList<ParameterOverride>(new IntPtr(p + 0x098)); // 0246676AE7E8 0x98 M_ParameterOverrides        ( 000185B85470 ModelEnumListType ParameterOverride[] ParameterOverride[] List<ParameterOverride> Pointer )
-            value.M_Devices                                 = (DeviceArray)GetInt32(new IntPtr(p + 0x0A0)); // 0246676AE808 0xA0 M_Devices                   ( 00018661ECB0 ModelEnumType DeviceArray DeviceArray DeviceArray Int32 )
+            value.M_ActionMaps                              = GetObjectList<InputActionMap>(new IntPtr(p + 0x018), ReversePrism.DataModels.InputActionMap.FromPointer); // 0x18 M_ActionMaps                ( ModelClassListType InputActionMap[] InputActionMap[] List<InputActionMap> Pointer )
+            value.M_ControlSchemes                          = GetEnumList<InputControlScheme>(new IntPtr(p + 0x020)); // 0x20 M_ControlSchemes            ( ModelEnumListType InputControlScheme[] InputControlScheme[] List<InputControlScheme> Pointer )
+            value.M_SharedStateForAllMaps                   = GetObject<InputActionState>(new IntPtr(p + 0x028), ReversePrism.DataModels.InputActionState.FromPointer); // 0x28 M_SharedStateForAllMaps     ( ModelClassType InputActionState InputActionState InputActionState Pointer )
+            value.M_ParameterOverridesCount                 = GetInt32(new IntPtr(p + 0x090)); // 0x90 M_ParameterOverridesCount   ( ModelPrimitiveType int int int Int32 )
+            value.M_ParameterOverrides                      = GetEnumList<ParameterOverride>(new IntPtr(p + 0x098)); // 0x98 M_ParameterOverrides        ( ModelEnumListType ParameterOverride[] ParameterOverride[] List<ParameterOverride> Pointer )
+            value.M_Devices                                 = (DeviceArray)GetInt32(new IntPtr(p + 0x0A0)); // 0xA0 M_Devices                   ( ModelEnumType DeviceArray DeviceArray DeviceArray Int32 )
 
             return value;
         }

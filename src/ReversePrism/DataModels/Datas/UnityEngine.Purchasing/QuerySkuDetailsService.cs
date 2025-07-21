@@ -8,13 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_BillingClient                          00018655AFC0 ModelClassType IGoogleBillingClient IGoogleBillingClient IGoogleBillingClient Pointer
-    // 018 M_GoogleCachedQuerySkuDetailsService     00018655B990 ModelClassType IGoogleCachedQuerySkuDetailsService IGoogleCachedQuerySkuDetailsService IGoogleCachedQuerySkuDetailsService Pointer
-    // 020 M_SkuDetailsConverter                    000186647E90 ModelClassType ISkuDetailsConverter ISkuDetailsConverter ISkuDetailsConverter Pointer
-    // 028 M_RetryPolicy                            00018661EC60 ModelClassType IRetryPolicy IRetryPolicy IRetryPolicy Pointer
-    // 030 M_GoogleProductCallback                  00018655FFB0 ModelClassType IGoogleProductCallback IGoogleProductCallback IGoogleProductCallback Pointer
-    // 038 M_Util                                   0001866905E0 ModelClassType IUtil IUtil IUtil Pointer
-    // 040 M_TelemetryDiagnostics                   00018666E030 ModelClassType ITelemetryDiagnostics ITelemetryDiagnostics ITelemetryDiagnostics Pointer
+    // 010 M_BillingClient                          ModelClassType IGoogleBillingClient IGoogleBillingClient IGoogleBillingClient Pointer
+    // 018 M_GoogleCachedQuerySkuDetailsService     ModelClassType IGoogleCachedQuerySkuDetailsService IGoogleCachedQuerySkuDetailsService IGoogleCachedQuerySkuDetailsService Pointer
+    // 020 M_SkuDetailsConverter                    ModelClassType ISkuDetailsConverter ISkuDetailsConverter ISkuDetailsConverter Pointer
+    // 028 M_RetryPolicy                            ModelClassType IRetryPolicy IRetryPolicy IRetryPolicy Pointer
+    // 030 M_GoogleProductCallback                  ModelClassType IGoogleProductCallback IGoogleProductCallback IGoogleProductCallback Pointer
+    // 038 M_Util                                   ModelClassType IUtil IUtil IUtil Pointer
+    // 040 M_TelemetryDiagnostics                   ModelClassType ITelemetryDiagnostics ITelemetryDiagnostics ITelemetryDiagnostics Pointer
     public partial class QuerySkuDetailsService : DataModel
     {
         public IGoogleBillingClient?                    M_BillingClient                         { get; set; }
@@ -33,13 +33,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new QuerySkuDetailsService() { Pointer= p0 };
 
-            value.M_BillingClient                           = GetObject<IGoogleBillingClient>(new IntPtr(p + 0x010), ReversePrism.DataModels.IGoogleBillingClient.FromPointer); // 0245A68CA6F8 0x10 M_BillingClient             ( 00018655AFC0 ModelClassType IGoogleBillingClient IGoogleBillingClient IGoogleBillingClient Pointer )
-            value.M_GoogleCachedQuerySkuDetailsService      = GetObject<IGoogleCachedQuerySkuDetailsService>(new IntPtr(p + 0x018), ReversePrism.DataModels.IGoogleCachedQuerySkuDetailsService.FromPointer); // 0245A68CA718 0x18 M_GoogleCachedQuerySkuDetailsService ( 00018655B990 ModelClassType IGoogleCachedQuerySkuDetailsService IGoogleCachedQuerySkuDetailsService IGoogleCachedQuerySkuDetailsService Pointer )
-            value.M_SkuDetailsConverter                     = GetObject<ISkuDetailsConverter>(new IntPtr(p + 0x020), ReversePrism.DataModels.ISkuDetailsConverter.FromPointer); // 0245A68CA738 0x20 M_SkuDetailsConverter       ( 000186647E90 ModelClassType ISkuDetailsConverter ISkuDetailsConverter ISkuDetailsConverter Pointer )
-            value.M_RetryPolicy                             = GetObject<IRetryPolicy>(new IntPtr(p + 0x028), ReversePrism.DataModels.IRetryPolicy.FromPointer); // 0245A68CA758 0x28 M_RetryPolicy               ( 00018661EC60 ModelClassType IRetryPolicy IRetryPolicy IRetryPolicy Pointer )
-            value.M_GoogleProductCallback                   = GetObject<IGoogleProductCallback>(new IntPtr(p + 0x030), ReversePrism.DataModels.IGoogleProductCallback.FromPointer); // 0245A68CA778 0x30 M_GoogleProductCallback     ( 00018655FFB0 ModelClassType IGoogleProductCallback IGoogleProductCallback IGoogleProductCallback Pointer )
-            value.M_Util                                    = GetObject<IUtil>(new IntPtr(p + 0x038), ReversePrism.DataModels.IUtil.FromPointer); // 0245A68CA798 0x38 M_Util                      ( 0001866905E0 ModelClassType IUtil IUtil IUtil Pointer )
-            value.M_TelemetryDiagnostics                    = GetObject<ITelemetryDiagnostics>(new IntPtr(p + 0x040), ReversePrism.DataModels.ITelemetryDiagnostics.FromPointer); // 0245A68CA7B8 0x40 M_TelemetryDiagnostics      ( 00018666E030 ModelClassType ITelemetryDiagnostics ITelemetryDiagnostics ITelemetryDiagnostics Pointer )
+            value.M_BillingClient                           = GetObject<IGoogleBillingClient>(new IntPtr(p + 0x010), ReversePrism.DataModels.IGoogleBillingClient.FromPointer); // 0x10 M_BillingClient             ( ModelClassType IGoogleBillingClient IGoogleBillingClient IGoogleBillingClient Pointer )
+            value.M_GoogleCachedQuerySkuDetailsService      = GetObject<IGoogleCachedQuerySkuDetailsService>(new IntPtr(p + 0x018), ReversePrism.DataModels.IGoogleCachedQuerySkuDetailsService.FromPointer); // 0x18 M_GoogleCachedQuerySkuDetailsService ( ModelClassType IGoogleCachedQuerySkuDetailsService IGoogleCachedQuerySkuDetailsService IGoogleCachedQuerySkuDetailsService Pointer )
+            value.M_SkuDetailsConverter                     = GetObject<ISkuDetailsConverter>(new IntPtr(p + 0x020), ReversePrism.DataModels.ISkuDetailsConverter.FromPointer); // 0x20 M_SkuDetailsConverter       ( ModelClassType ISkuDetailsConverter ISkuDetailsConverter ISkuDetailsConverter Pointer )
+            value.M_RetryPolicy                             = GetObject<IRetryPolicy>(new IntPtr(p + 0x028), ReversePrism.DataModels.IRetryPolicy.FromPointer); // 0x28 M_RetryPolicy               ( ModelClassType IRetryPolicy IRetryPolicy IRetryPolicy Pointer )
+            value.M_GoogleProductCallback                   = GetObject<IGoogleProductCallback>(new IntPtr(p + 0x030), ReversePrism.DataModels.IGoogleProductCallback.FromPointer); // 0x30 M_GoogleProductCallback     ( ModelClassType IGoogleProductCallback IGoogleProductCallback IGoogleProductCallback Pointer )
+            value.M_Util                                    = GetObject<IUtil>(new IntPtr(p + 0x038), ReversePrism.DataModels.IUtil.FromPointer); // 0x38 M_Util                      ( ModelClassType IUtil IUtil IUtil Pointer )
+            value.M_TelemetryDiagnostics                    = GetObject<ITelemetryDiagnostics>(new IntPtr(p + 0x040), ReversePrism.DataModels.ITelemetryDiagnostics.FromPointer); // 0x40 M_TelemetryDiagnostics      ( ModelClassType ITelemetryDiagnostics ITelemetryDiagnostics ITelemetryDiagnostics Pointer )
 
             return value;
         }

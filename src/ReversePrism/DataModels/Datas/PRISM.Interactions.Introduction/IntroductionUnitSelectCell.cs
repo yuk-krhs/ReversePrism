@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 040 UnitLogoImage                            0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 048 Title                                    0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 050 ButtonDisposable                         0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
-    // 058 Cts                                      0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
+    // 040 UnitLogoImage                            ModelClassType UIImage UIImage UIImage Pointer
+    // 048 Title                                    ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 050 ButtonDisposable                         ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 058 Cts                                      ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
     public partial class IntroductionUnitSelectCell : DataModel
     {
         public UIImage?                                 UnitLogoImage                           { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IntroductionUnitSelectCell() { Pointer= p0 };
 
-            value.UnitLogoImage                             = GetObject<UIImage>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIImage.FromPointer); // 02466BCDC680 0x40 UnitLogoImage               ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.Title                                     = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BCDC6A0 0x48 Title                       ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ButtonDisposable                          = GetObject<IDisposable>(new IntPtr(p + 0x050), ReversePrism.DataModels.IDisposable.FromPointer); // 02466BCDC6C0 0x50 ButtonDisposable            ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
-            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x058), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 02466BCDC6E0 0x58 Cts                         ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.UnitLogoImage                             = GetObject<UIImage>(new IntPtr(p + 0x040), ReversePrism.DataModels.UIImage.FromPointer); // 0x40 UnitLogoImage               ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.Title                                     = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x048), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x48 Title                       ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ButtonDisposable                          = GetObject<IDisposable>(new IntPtr(p + 0x050), ReversePrism.DataModels.IDisposable.FromPointer); // 0x50 ButtonDisposable            ( ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x058), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0x58 Cts                         ( ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
 
             return value;
         }

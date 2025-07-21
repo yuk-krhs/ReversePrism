@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 OnDestroyCallback                        000186679A00 ModelClassType Action Action Action Pointer
+    // 020 OnDestroyCallback                        ModelClassType Action Action Action Pointer
     public partial class LifecycleNotifier : DataModel
     {
         public Action?                                  OnDestroyCallback                       { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LifecycleNotifier() { Pointer= p0 };
 
-            value.OnDestroyCallback                         = GetObject<Action>(new IntPtr(p + 0x020), ReversePrism.DataModels.Action.FromPointer); // 0245A68DBC40 0x20 OnDestroyCallback           ( 000186679A00 ModelClassType Action Action Action Pointer )
+            value.OnDestroyCallback                         = GetObject<Action>(new IntPtr(p + 0x020), ReversePrism.DataModels.Action.FromPointer); // 0x20 OnDestroyCallback           ( ModelClassType Action Action Action Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 PurchasedProduct                         00018659E6D0 ModelClassType Product Product Product Pointer
+    // 010 PurchasedProduct                         ModelClassType Product Product Product Pointer
     public partial class PurchaseEventArgs : DataModel
     {
         public Product?                                 PurchasedProduct                        { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PurchaseEventArgs() { Pointer= p0 };
 
-            value.PurchasedProduct                          = GetObject<Product>(new IntPtr(p + 0x010), ReversePrism.DataModels.Product.FromPointer); // 0245A68F2450 0x10 PurchasedProduct            ( 00018659E6D0 ModelClassType Product Product Product Pointer )
+            value.PurchasedProduct                          = GetObject<Product>(new IntPtr(p + 0x010), ReversePrism.DataModels.Product.FromPointer); // 0x10 PurchasedProduct            ( ModelClassType Product Product Product Pointer )
 
             return value;
         }

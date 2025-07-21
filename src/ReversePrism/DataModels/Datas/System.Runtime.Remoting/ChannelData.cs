@@ -8,13 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Ref                                      000186671BA0 ModelPrimitiveType string string string String
-    // 018 Type                                     000186671BA0 ModelPrimitiveType string string string String
-    // 020 Id                                       000186671BA0 ModelPrimitiveType string string string String
-    // 028 DelayLoadAsClientChannel                 000186671BA0 ModelPrimitiveType string string string String
-    // 030 ServerProviders                          00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer
-    // 038 ClientProviders                          00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer
-    // 040 CustomProperties                         0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 010 Ref                                      ModelPrimitiveType string string string String
+    // 018 Type                                     ModelPrimitiveType string string string String
+    // 020 Id                                       ModelPrimitiveType string string string String
+    // 028 DelayLoadAsClientChannel                 ModelPrimitiveType string string string String
+    // 030 ServerProviders                          ModelClassType ArrayList ArrayList ArrayList Pointer
+    // 038 ClientProviders                          ModelClassType ArrayList ArrayList ArrayList Pointer
+    // 040 CustomProperties                         ModelClassType Hashtable Hashtable Hashtable Pointer
     public partial class ChannelData : DataModel
     {
         public string                                   Ref                                     { get; set; }
@@ -33,13 +33,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChannelData() { Pointer= p0 };
 
-            value.Ref                                       = GetString(new IntPtr(p + 0x010)); // 024666C2CCE0 0x10 Ref                         ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.Type                                      = GetString(new IntPtr(p + 0x018)); // 024666C2CD00 0x18 Type                        ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.Id                                        = GetString(new IntPtr(p + 0x020)); // 024666C2CD20 0x20 Id                          ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.DelayLoadAsClientChannel                  = GetString(new IntPtr(p + 0x028)); // 024666C2CD40 0x28 DelayLoadAsClientChannel    ( 000186671BA0 ModelPrimitiveType string string string String )
-            value.ServerProviders                           = GetObject<ArrayList>(new IntPtr(p + 0x030), ReversePrism.DataModels.ArrayList.FromPointer); // 024666C2CD60 0x30 ServerProviders             ( 00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer )
-            value.ClientProviders                           = GetObject<ArrayList>(new IntPtr(p + 0x038), ReversePrism.DataModels.ArrayList.FromPointer); // 024666C2CD80 0x38 ClientProviders             ( 00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer )
-            value.CustomProperties                          = GetObject<Hashtable>(new IntPtr(p + 0x040), ReversePrism.DataModels.Hashtable.FromPointer); // 024666C2CDA0 0x40 CustomProperties            ( 0001865DE360 ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.Ref                                       = GetString(new IntPtr(p + 0x010)); // 0x10 Ref                         ( ModelPrimitiveType string string string String )
+            value.Type                                      = GetString(new IntPtr(p + 0x018)); // 0x18 Type                        ( ModelPrimitiveType string string string String )
+            value.Id                                        = GetString(new IntPtr(p + 0x020)); // 0x20 Id                          ( ModelPrimitiveType string string string String )
+            value.DelayLoadAsClientChannel                  = GetString(new IntPtr(p + 0x028)); // 0x28 DelayLoadAsClientChannel    ( ModelPrimitiveType string string string String )
+            value.ServerProviders                           = GetObject<ArrayList>(new IntPtr(p + 0x030), ReversePrism.DataModels.ArrayList.FromPointer); // 0x30 ServerProviders             ( ModelClassType ArrayList ArrayList ArrayList Pointer )
+            value.ClientProviders                           = GetObject<ArrayList>(new IntPtr(p + 0x038), ReversePrism.DataModels.ArrayList.FromPointer); // 0x38 ClientProviders             ( ModelClassType ArrayList ArrayList ArrayList Pointer )
+            value.CustomProperties                          = GetObject<Hashtable>(new IntPtr(p + 0x040), ReversePrism.DataModels.Hashtable.FromPointer); // 0x40 CustomProperties            ( ModelClassType Hashtable Hashtable Hashtable Pointer )
 
             return value;
         }

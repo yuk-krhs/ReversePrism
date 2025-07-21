@@ -11,20 +11,20 @@ namespace ReversePrism.DataModels
     // 058 tlsContext                               IntPtr IL2CPP_TYPE_PTR
     // 060 requestedClientCertChain                 IntPtr IL2CPP_TYPE_PTR
     // 068 requestedClientKey                       IntPtr IL2CPP_TYPE_PTR
-    // 070 ReadCallback                             0001866AF700 ModelClassType unitytls_tlsctx_read_callback unitytls_tlsctx_read_callback unitytls_tlsctx_read_callback Pointer
-    // 078 WriteCallback                            0001866B00C0 ModelClassType unitytls_tlsctx_write_callback unitytls_tlsctx_write_callback unitytls_tlsctx_write_callback Pointer
-    // 080 CertificateCallback                      0001866AED30 ModelClassType unitytls_tlsctx_certificate_callback unitytls_tlsctx_certificate_callback unitytls_tlsctx_certificate_callback Pointer
-    // 088 VerifyCallback                           0001866B0850 ModelClassType unitytls_tlsctx_x509verify_callback unitytls_tlsctx_x509verify_callback unitytls_tlsctx_x509verify_callback Pointer
-    // 090 LocalClientCertificate                   0001866B7D80 ModelClassType X509Certificate X509Certificate X509Certificate Pointer
-    // 098 RemoteCertificate                        000186563D80 ModelClassType X509Certificate2 X509Certificate2 X509Certificate2 Pointer
-    // 0A0 Connectioninfo                           00018664C970 ModelClassType MonoTlsConnectionInfo MonoTlsConnectionInfo MonoTlsConnectionInfo Pointer
-    // 0A8 IsAuthenticated                          000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 0A9 HasContext                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 0AA ClosedGraceful                           000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 0B0 WriteBuffer                              000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 0B8 ReadBuffer                               000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 0C0 Handle                                   0001865D9120 ModelEnumType GCHandle GCHandle GCHandle Int32
-    // 0C8 LastException                            0001865CA820 ModelClassType Exception Exception Exception Pointer
+    // 070 ReadCallback                             ModelClassType unitytls_tlsctx_read_callback unitytls_tlsctx_read_callback unitytls_tlsctx_read_callback Pointer
+    // 078 WriteCallback                            ModelClassType unitytls_tlsctx_write_callback unitytls_tlsctx_write_callback unitytls_tlsctx_write_callback Pointer
+    // 080 CertificateCallback                      ModelClassType unitytls_tlsctx_certificate_callback unitytls_tlsctx_certificate_callback unitytls_tlsctx_certificate_callback Pointer
+    // 088 VerifyCallback                           ModelClassType unitytls_tlsctx_x509verify_callback unitytls_tlsctx_x509verify_callback unitytls_tlsctx_x509verify_callback Pointer
+    // 090 LocalClientCertificate                   ModelClassType X509Certificate X509Certificate X509Certificate Pointer
+    // 098 RemoteCertificate                        ModelClassType X509Certificate2 X509Certificate2 X509Certificate2 Pointer
+    // 0A0 Connectioninfo                           ModelClassType MonoTlsConnectionInfo MonoTlsConnectionInfo MonoTlsConnectionInfo Pointer
+    // 0A8 IsAuthenticated                          ModelPrimitiveType bool bool bool Bool
+    // 0A9 HasContext                               ModelPrimitiveType bool bool bool Bool
+    // 0AA ClosedGraceful                           ModelPrimitiveType bool bool bool Bool
+    // 0B0 WriteBuffer                              ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 0B8 ReadBuffer                               ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 0C0 Handle                                   ModelEnumType GCHandle GCHandle GCHandle Int32
+    // 0C8 LastException                            ModelClassType Exception Exception Exception Pointer
     public partial class UnityTlsContext : DataModel
     {
         public unitytls_tlsctx_read_callback?           ReadCallback                            { get; set; }
@@ -50,20 +50,20 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnityTlsContext() { Pointer= p0 };
 
-            value.ReadCallback                              = GetObject<unitytls_tlsctx_read_callback>(new IntPtr(p + 0x070), ReversePrism.DataModels.unitytls_tlsctx_read_callback.FromPointer); // 024667954F50 0x70 ReadCallback                ( 0001866AF700 ModelClassType unitytls_tlsctx_read_callback unitytls_tlsctx_read_callback unitytls_tlsctx_read_callback Pointer )
-            value.WriteCallback                             = GetObject<unitytls_tlsctx_write_callback>(new IntPtr(p + 0x078), ReversePrism.DataModels.unitytls_tlsctx_write_callback.FromPointer); // 024667954F70 0x78 WriteCallback               ( 0001866B00C0 ModelClassType unitytls_tlsctx_write_callback unitytls_tlsctx_write_callback unitytls_tlsctx_write_callback Pointer )
-            value.CertificateCallback                       = GetObject<unitytls_tlsctx_certificate_callback>(new IntPtr(p + 0x080), ReversePrism.DataModels.unitytls_tlsctx_certificate_callback.FromPointer); // 024667954F90 0x80 CertificateCallback         ( 0001866AED30 ModelClassType unitytls_tlsctx_certificate_callback unitytls_tlsctx_certificate_callback unitytls_tlsctx_certificate_callback Pointer )
-            value.VerifyCallback                            = GetObject<unitytls_tlsctx_x509verify_callback>(new IntPtr(p + 0x088), ReversePrism.DataModels.unitytls_tlsctx_x509verify_callback.FromPointer); // 024667954FB0 0x88 VerifyCallback              ( 0001866B0850 ModelClassType unitytls_tlsctx_x509verify_callback unitytls_tlsctx_x509verify_callback unitytls_tlsctx_x509verify_callback Pointer )
-            value.LocalClientCertificate                    = GetObject<X509Certificate>(new IntPtr(p + 0x090), ReversePrism.DataModels.X509Certificate.FromPointer); // 024667954FD0 0x90 LocalClientCertificate      ( 0001866B7D80 ModelClassType X509Certificate X509Certificate X509Certificate Pointer )
-            value.RemoteCertificate                         = GetObject<X509Certificate2>(new IntPtr(p + 0x098), ReversePrism.DataModels.X509Certificate2.FromPointer); // 024667954FF0 0x98 RemoteCertificate           ( 000186563D80 ModelClassType X509Certificate2 X509Certificate2 X509Certificate2 Pointer )
-            value.Connectioninfo                            = GetObject<MonoTlsConnectionInfo>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.MonoTlsConnectionInfo.FromPointer); // 024667955010 0xA0 Connectioninfo              ( 00018664C970 ModelClassType MonoTlsConnectionInfo MonoTlsConnectionInfo MonoTlsConnectionInfo Pointer )
-            value.IsAuthenticated                           = GetBool(new IntPtr(p + 0x0A8)); // 024667955030 0xA8 IsAuthenticated             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.HasContext                                = GetBool(new IntPtr(p + 0x0A9)); // 024667955050 0xA9 HasContext                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ClosedGraceful                            = GetBool(new IntPtr(p + 0x0AA)); // 024667955070 0xAA ClosedGraceful              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.WriteBuffer                               = GetSByteList(new IntPtr(p + 0x0B0)); // 024667955090 0xB0 WriteBuffer                 ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.ReadBuffer                                = GetSByteList(new IntPtr(p + 0x0B8)); // 0246679550B0 0xB8 ReadBuffer                  ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Handle                                    = (GCHandle)GetInt32(new IntPtr(p + 0x0C0)); // 0246679550D0 0xC0 Handle                      ( 0001865D9120 ModelEnumType GCHandle GCHandle GCHandle Int32 )
-            value.LastException                             = GetObject<Exception>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.Exception.FromPointer); // 0246679550F0 0xC8 LastException               ( 0001865CA820 ModelClassType Exception Exception Exception Pointer )
+            value.ReadCallback                              = GetObject<unitytls_tlsctx_read_callback>(new IntPtr(p + 0x070), ReversePrism.DataModels.unitytls_tlsctx_read_callback.FromPointer); // 0x70 ReadCallback                ( ModelClassType unitytls_tlsctx_read_callback unitytls_tlsctx_read_callback unitytls_tlsctx_read_callback Pointer )
+            value.WriteCallback                             = GetObject<unitytls_tlsctx_write_callback>(new IntPtr(p + 0x078), ReversePrism.DataModels.unitytls_tlsctx_write_callback.FromPointer); // 0x78 WriteCallback               ( ModelClassType unitytls_tlsctx_write_callback unitytls_tlsctx_write_callback unitytls_tlsctx_write_callback Pointer )
+            value.CertificateCallback                       = GetObject<unitytls_tlsctx_certificate_callback>(new IntPtr(p + 0x080), ReversePrism.DataModels.unitytls_tlsctx_certificate_callback.FromPointer); // 0x80 CertificateCallback         ( ModelClassType unitytls_tlsctx_certificate_callback unitytls_tlsctx_certificate_callback unitytls_tlsctx_certificate_callback Pointer )
+            value.VerifyCallback                            = GetObject<unitytls_tlsctx_x509verify_callback>(new IntPtr(p + 0x088), ReversePrism.DataModels.unitytls_tlsctx_x509verify_callback.FromPointer); // 0x88 VerifyCallback              ( ModelClassType unitytls_tlsctx_x509verify_callback unitytls_tlsctx_x509verify_callback unitytls_tlsctx_x509verify_callback Pointer )
+            value.LocalClientCertificate                    = GetObject<X509Certificate>(new IntPtr(p + 0x090), ReversePrism.DataModels.X509Certificate.FromPointer); // 0x90 LocalClientCertificate      ( ModelClassType X509Certificate X509Certificate X509Certificate Pointer )
+            value.RemoteCertificate                         = GetObject<X509Certificate2>(new IntPtr(p + 0x098), ReversePrism.DataModels.X509Certificate2.FromPointer); // 0x98 RemoteCertificate           ( ModelClassType X509Certificate2 X509Certificate2 X509Certificate2 Pointer )
+            value.Connectioninfo                            = GetObject<MonoTlsConnectionInfo>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.MonoTlsConnectionInfo.FromPointer); // 0xA0 Connectioninfo              ( ModelClassType MonoTlsConnectionInfo MonoTlsConnectionInfo MonoTlsConnectionInfo Pointer )
+            value.IsAuthenticated                           = GetBool(new IntPtr(p + 0x0A8)); // 0xA8 IsAuthenticated             ( ModelPrimitiveType bool bool bool Bool )
+            value.HasContext                                = GetBool(new IntPtr(p + 0x0A9)); // 0xA9 HasContext                  ( ModelPrimitiveType bool bool bool Bool )
+            value.ClosedGraceful                            = GetBool(new IntPtr(p + 0x0AA)); // 0xAA ClosedGraceful              ( ModelPrimitiveType bool bool bool Bool )
+            value.WriteBuffer                               = GetSByteList(new IntPtr(p + 0x0B0)); // 0xB0 WriteBuffer                 ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.ReadBuffer                                = GetSByteList(new IntPtr(p + 0x0B8)); // 0xB8 ReadBuffer                  ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Handle                                    = (GCHandle)GetInt32(new IntPtr(p + 0x0C0)); // 0xC0 Handle                      ( ModelEnumType GCHandle GCHandle GCHandle Int32 )
+            value.LastException                             = GetObject<Exception>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.Exception.FromPointer); // 0xC8 LastException               ( ModelClassType Exception Exception Exception Pointer )
 
             return value;
         }

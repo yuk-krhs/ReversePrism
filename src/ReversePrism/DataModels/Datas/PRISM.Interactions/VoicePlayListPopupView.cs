@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 GridView                                 00018654FF30 ModelClassType CategoryElementGridView CategoryElementGridView CategoryElementGridView Pointer
+    // 020 GridView                                 ModelClassType CategoryElementGridView CategoryElementGridView CategoryElementGridView Pointer
     // 028 onClick                                  Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 030 Vm                                       000186536610 ModelClassType VoicePlayListPopupViewModel VoicePlayListPopupViewModel VoicePlayListPopupViewModel Pointer
-    // 038 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
+    // 030 Vm                                       ModelClassType VoicePlayListPopupViewModel VoicePlayListPopupViewModel VoicePlayListPopupViewModel Pointer
+    // 038 Parent                                   ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
     public partial class VoicePlayListPopupView : DataModel
     {
         public CategoryElementGridView?                 GridView                                { get; set; }
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new VoicePlayListPopupView() { Pointer= p0 };
 
-            value.GridView                                  = GetObject<CategoryElementGridView>(new IntPtr(p + 0x020), ReversePrism.DataModels.CategoryElementGridView.FromPointer); // 02466A3A75B8 0x20 GridView                    ( 00018654FF30 ModelClassType CategoryElementGridView CategoryElementGridView CategoryElementGridView Pointer )
-            value.Vm                                        = GetObject<VoicePlayListPopupViewModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.VoicePlayListPopupViewModel.FromPointer); // 02466A3A75F8 0x30 Vm                          ( 000186536610 ModelClassType VoicePlayListPopupViewModel VoicePlayListPopupViewModel VoicePlayListPopupViewModel Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x038), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466A3A7618 0x38 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.GridView                                  = GetObject<CategoryElementGridView>(new IntPtr(p + 0x020), ReversePrism.DataModels.CategoryElementGridView.FromPointer); // 0x20 GridView                    ( ModelClassType CategoryElementGridView CategoryElementGridView CategoryElementGridView Pointer )
+            value.Vm                                        = GetObject<VoicePlayListPopupViewModel>(new IntPtr(p + 0x030), ReversePrism.DataModels.VoicePlayListPopupViewModel.FromPointer); // 0x30 Vm                          ( ModelClassType VoicePlayListPopupViewModel VoicePlayListPopupViewModel VoicePlayListPopupViewModel Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x038), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0x38 Parent                      ( ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

@@ -12,11 +12,11 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 RivalListFieldNumber                     int IL2CPP_TYPE_I4
     // 008 _repeated_rivalList_codec                FieldCodec`1<RivalStatus> IL2CPP_TYPE_GENERICINST
-    // 018 RivalList                                000185CEF118 ModelClassListType RepeatedField`1<RivalStatus> RepeatedField`1<RivalStatus> List<RivalStatus> Pointer
+    // 018 RivalList                                ModelClassListType RepeatedField`1<RivalStatus> RepeatedField`1<RivalStatus> List<RivalStatus> Pointer
     // 000 ProduceCardDeckFieldNumber               int IL2CPP_TYPE_I4
-    // 020 ProduceCardDeck                          000186536800 ModelClassType ProduceCardDeckStatus ProduceCardDeckStatus ProduceCardDeckStatus Pointer
+    // 020 ProduceCardDeck                          ModelClassType ProduceCardDeckStatus ProduceCardDeckStatus ProduceCardDeckStatus Pointer
     // 000 AppealCorrectionFieldNumber              int IL2CPP_TYPE_I4
-    // 028 AppealCorrection                         0001866CC8F0 ModelClassType AppealCorrectionStatus AppealCorrectionStatus AppealCorrectionStatus Pointer
+    // 028 AppealCorrection                         ModelClassType AppealCorrectionStatus AppealCorrectionStatus AppealCorrectionStatus Pointer
     public partial class RivalUnitStatus : DataModel
     {
         public List<RivalStatus>?                       RivalList                               { get; set; }
@@ -31,9 +31,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RivalUnitStatus() { Pointer= p0 };
 
-            value.RivalList                                 = GetObjectList<RivalStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.RivalStatus.FromPointer); // 0246610A9A68 0x18 RivalList                   ( 000185CEF118 ModelClassListType RepeatedField`1<RivalStatus> RepeatedField`1<RivalStatus> List<RivalStatus> Pointer )
-            value.ProduceCardDeck                           = GetObject<ProduceCardDeckStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceCardDeckStatus.FromPointer); // 0246610A9AA8 0x20 ProduceCardDeck             ( 000186536800 ModelClassType ProduceCardDeckStatus ProduceCardDeckStatus ProduceCardDeckStatus Pointer )
-            value.AppealCorrection                          = GetObject<AppealCorrectionStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.AppealCorrectionStatus.FromPointer); // 0246610A9AE8 0x28 AppealCorrection            ( 0001866CC8F0 ModelClassType AppealCorrectionStatus AppealCorrectionStatus AppealCorrectionStatus Pointer )
+            value.RivalList                                 = GetObjectList<RivalStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.RivalStatus.FromPointer); // 0x18 RivalList                   ( ModelClassListType RepeatedField`1<RivalStatus> RepeatedField`1<RivalStatus> List<RivalStatus> Pointer )
+            value.ProduceCardDeck                           = GetObject<ProduceCardDeckStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.ProduceCardDeckStatus.FromPointer); // 0x20 ProduceCardDeck             ( ModelClassType ProduceCardDeckStatus ProduceCardDeckStatus ProduceCardDeckStatus Pointer )
+            value.AppealCorrection                          = GetObject<AppealCorrectionStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.AppealCorrectionStatus.FromPointer); // 0x28 AppealCorrection            ( ModelClassType AppealCorrectionStatus AppealCorrectionStatus AppealCorrectionStatus Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Converter                                000186666D60 ModelClassType CultureInfoConverter CultureInfoConverter CultureInfoConverter Pointer
+    // 010 Converter                                ModelClassType CultureInfoConverter CultureInfoConverter CultureInfoConverter Pointer
     public partial class CultureComparer : DataModel
     {
         public CultureInfoConverter?                    Converter                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CultureComparer() { Pointer= p0 };
 
-            value.Converter                                 = GetObject<CultureInfoConverter>(new IntPtr(p + 0x010), ReversePrism.DataModels.CultureInfoConverter.FromPointer); // 024667B800F0 0x10 Converter                   ( 000186666D60 ModelClassType CultureInfoConverter CultureInfoConverter CultureInfoConverter Pointer )
+            value.Converter                                 = GetObject<CultureInfoConverter>(new IntPtr(p + 0x010), ReversePrism.DataModels.CultureInfoConverter.FromPointer); // 0x10 Converter                   ( ModelClassType CultureInfoConverter CultureInfoConverter CultureInfoConverter Pointer )
 
             return value;
         }

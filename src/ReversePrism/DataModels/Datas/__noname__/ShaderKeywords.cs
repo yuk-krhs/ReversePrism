@@ -13,9 +13,9 @@ namespace ReversePrism.DataModels
     // 000 HDR_COLORSPACE_CONVERSION_AND_ENCODING   string IL2CPP_TYPE_STRING
     // 000 HDR_INPUT                                string IL2CPP_TYPE_STRING
     // 000 HDRColorSpaceConversion                  ShaderKeyword IL2CPP_TYPE_VALUETYPE
-    // 010 HDREncoding                              00018674EA30 ModelEnumType ShaderKeyword ShaderKeyword ShaderKeyword Int32
-    // 020 HDRColorSpaceConversionAndEncoding       00018674EA30 ModelEnumType ShaderKeyword ShaderKeyword ShaderKeyword Int32
-    // 030 HDRInput                                 00018674EA30 ModelEnumType ShaderKeyword ShaderKeyword ShaderKeyword Int32
+    // 010 HDREncoding                              ModelEnumType ShaderKeyword ShaderKeyword ShaderKeyword Int32
+    // 020 HDRColorSpaceConversionAndEncoding       ModelEnumType ShaderKeyword ShaderKeyword ShaderKeyword Int32
+    // 030 HDRInput                                 ModelEnumType ShaderKeyword ShaderKeyword ShaderKeyword Int32
     public partial class ShaderKeywords : DataModel
     {
         public ShaderKeyword                            HDREncoding                             { get; set; }
@@ -30,9 +30,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ShaderKeywords() { Pointer= p0 };
 
-            value.HDREncoding                               = (ShaderKeyword)GetInt32(new IntPtr(p + 0x010)); // 024669321E30 0x10 HDREncoding                 ( 00018674EA30 ModelEnumType ShaderKeyword ShaderKeyword ShaderKeyword Int32 )
-            value.HDRColorSpaceConversionAndEncoding        = (ShaderKeyword)GetInt32(new IntPtr(p + 0x020)); // 024669321E50 0x20 HDRColorSpaceConversionAndEncoding ( 00018674EA30 ModelEnumType ShaderKeyword ShaderKeyword ShaderKeyword Int32 )
-            value.HDRInput                                  = (ShaderKeyword)GetInt32(new IntPtr(p + 0x030)); // 024669321E70 0x30 HDRInput                    ( 00018674EA30 ModelEnumType ShaderKeyword ShaderKeyword ShaderKeyword Int32 )
+            value.HDREncoding                               = (ShaderKeyword)GetInt32(new IntPtr(p + 0x010)); // 0x10 HDREncoding                 ( ModelEnumType ShaderKeyword ShaderKeyword ShaderKeyword Int32 )
+            value.HDRColorSpaceConversionAndEncoding        = (ShaderKeyword)GetInt32(new IntPtr(p + 0x020)); // 0x20 HDRColorSpaceConversionAndEncoding ( ModelEnumType ShaderKeyword ShaderKeyword ShaderKeyword Int32 )
+            value.HDRInput                                  = (ShaderKeyword)GetInt32(new IntPtr(p + 0x030)); // 0x30 HDRInput                    ( ModelEnumType ShaderKeyword ShaderKeyword ShaderKeyword Int32 )
 
             return value;
         }

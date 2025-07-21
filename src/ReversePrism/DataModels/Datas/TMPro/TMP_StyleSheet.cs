@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 M_StyleList                              000185D12F78 ModelClassListType List`1<TMP_Style> List`1<TMP_Style> List<TMP_Style> Pointer
+    // 018 M_StyleList                              ModelClassListType List`1<TMP_Style> List`1<TMP_Style> List<TMP_Style> Pointer
     // 020 m_StyleLookupDictionary                  Dictionary`2<int, TMP_Style> IL2CPP_TYPE_GENERICINST
     public partial class TMP_StyleSheet : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TMP_StyleSheet() { Pointer= p0 };
 
-            value.M_StyleList                               = GetObjectList<TMP_Style>(new IntPtr(p + 0x018), ReversePrism.DataModels.TMP_Style.FromPointer); // 0245A4185CE8 0x18 M_StyleList                 ( 000185D12F78 ModelClassListType List`1<TMP_Style> List`1<TMP_Style> List<TMP_Style> Pointer )
+            value.M_StyleList                               = GetObjectList<TMP_Style>(new IntPtr(p + 0x018), ReversePrism.DataModels.TMP_Style.FromPointer); // 0x18 M_StyleList                 ( ModelClassListType List`1<TMP_Style> List`1<TMP_Style> List<TMP_Style> Pointer )
 
             return value;
         }

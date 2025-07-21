@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 118 Analyzer                                 0001866544C0 ModelClassType CriLipsAnalyzer CriLipsAnalyzer CriLipsAnalyzer Pointer
-    // 120 Channel                                  000186698B70 ModelPrimitiveType uint uint uint UInt32
-    // 124 HasInitialized                           000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 118 Analyzer                                 ModelClassType CriLipsAnalyzer CriLipsAnalyzer CriLipsAnalyzer Pointer
+    // 120 Channel                                  ModelPrimitiveType uint uint uint UInt32
+    // 124 HasInitialized                           ModelPrimitiveType bool bool bool Bool
     public partial class CriLipsShapeForAnalyzer : DataModel
     {
         public CriLipsAnalyzer?                         Analyzer                                { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CriLipsShapeForAnalyzer() { Pointer= p0 };
 
-            value.Analyzer                                  = GetObject<CriLipsAnalyzer>(new IntPtr(p + 0x118), ReversePrism.DataModels.CriLipsAnalyzer.FromPointer); // 02466BC40970 0x118 Analyzer                    ( 0001866544C0 ModelClassType CriLipsAnalyzer CriLipsAnalyzer CriLipsAnalyzer Pointer )
-            value.Channel                                   = GetUInt32(new IntPtr(p + 0x120)); // 02466BC40990 0x120 Channel                     ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
-            value.HasInitialized                            = GetBool(new IntPtr(p + 0x124)); // 02466BC409B0 0x124 HasInitialized              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Analyzer                                  = GetObject<CriLipsAnalyzer>(new IntPtr(p + 0x118), ReversePrism.DataModels.CriLipsAnalyzer.FromPointer); // 0x118 Analyzer                    ( ModelClassType CriLipsAnalyzer CriLipsAnalyzer CriLipsAnalyzer Pointer )
+            value.Channel                                   = GetUInt32(new IntPtr(p + 0x120)); // 0x120 Channel                     ( ModelPrimitiveType uint uint uint UInt32 )
+            value.HasInitialized                            = GetBool(new IntPtr(p + 0x124)); // 0x124 HasInitialized              ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

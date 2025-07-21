@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ActivityId                               0001865DC380 ModelEnumType Guid Guid Guid Int32
+    // 010 ActivityId                               ModelEnumType Guid Guid Guid Int32
     public partial class EventTraceActivity : DataModel
     {
         public Guid                                     ActivityId                              { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EventTraceActivity() { Pointer= p0 };
 
-            value.ActivityId                                = (Guid)GetInt32(new IntPtr(p + 0x010)); // 024667E2D7B0 0x10 ActivityId                  ( 0001865DC380 ModelEnumType Guid Guid Guid Int32 )
+            value.ActivityId                                = (Guid)GetInt32(new IntPtr(p + 0x010)); // 0x10 ActivityId                  ( ModelEnumType Guid Guid Guid Int32 )
 
             return value;
         }

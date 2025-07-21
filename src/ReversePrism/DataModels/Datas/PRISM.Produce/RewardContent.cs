@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 RewardArea                               0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 028 RewardIcon                               0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer
-    // 030 RewardText                               0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 038 BlankUI                                  0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
+    // 020 RewardArea                               ModelClassType GameObject GameObject GameObject Pointer
+    // 028 RewardIcon                               ModelClassType UIRawImage UIRawImage UIRawImage Pointer
+    // 030 RewardText                               ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 038 BlankUI                                  ModelClassType GameObject GameObject GameObject Pointer
     public partial class RewardContent : DataModel
     {
         public GameObject?                              RewardArea                              { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RewardContent() { Pointer= p0 };
 
-            value.RewardArea                                = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 024665D90D30 0x20 RewardArea                  ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.RewardIcon                                = GetObject<UIRawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIRawImage.FromPointer); // 024665D90D50 0x28 RewardIcon                  ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
-            value.RewardText                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665D90D70 0x30 RewardText                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.BlankUI                                   = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 024665D90D90 0x38 BlankUI                     ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.RewardArea                                = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0x20 RewardArea                  ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.RewardIcon                                = GetObject<UIRawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIRawImage.FromPointer); // 0x28 RewardIcon                  ( ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
+            value.RewardText                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x30 RewardText                  ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.BlankUI                                   = GetObject<GameObject>(new IntPtr(p + 0x038), ReversePrism.DataModels.GameObject.FromPointer); // 0x38 BlankUI                     ( ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

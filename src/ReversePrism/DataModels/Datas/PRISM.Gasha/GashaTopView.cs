@@ -8,53 +8,54 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 GashaBannerCarousel                      0001865EFA20 ModelClassType GashaBannerCarousel GashaBannerCarousel GashaBannerCarousel Pointer
-    // 028 MoviePlayer                              000186658A40 ModelClassType MoviePlayer MoviePlayer MoviePlayer Pointer
-    // 030 GashaNamePlate                           0001866089D0 ModelClassType GashaNamePlateEx GashaNamePlateEx GashaNamePlateEx Pointer
-    // 038 TxtTokutei                               0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 040 BtnMoviesSwitch                          000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer
-    // 048 GoGashaButton                            0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 050 BtnTokutei                               000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer
-    // 058 ImgLogo                                  0001866CCDB0 ModelClassType Image Image Image Pointer
-    // 060 TxtLimit                                 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 068 BtnDetails                               000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer
-    // 070 BtnGashaRates                            000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer
-    // 078 BtnMembers                               000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer
-    // 080 BtnCostumes                              000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer
-    // 088 BtnOmake                                 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer
-    // 090 BtnHistory                               000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer
-    // 098 TxtMsg                                   0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 0A0 ImgBackground                            0001866CCDB0 ModelClassType Image Image Image Pointer
-    // 0A8 AspectRatioFitterBackground              0001866DD380 ModelClassType AspectRatioFitter AspectRatioFitter AspectRatioFitter Pointer
-    // 0B0 TraBack                                  0001866AA150 ModelClassType Transform Transform Transform Pointer
-    // 0B8 TraFront                                 0001866AA150 ModelClassType Transform Transform Transform Pointer
-    // 0C0 ImgCarouselTouch                         0001866CCDB0 ModelClassType Image Image Image Pointer
-    // 0C8 CanvasGroupMiddle                        000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
-    // 0D0 GoPrismGauge                             0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 0D8 TxtPrismGaugePoint                       0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 0E0 GaugeItemIcon                            0001865BC1A0 ModelClassType CmnItem CmnItem CmnItem Pointer
-    // 0E8 BtnPrismGauge                            000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer
-    // 0F0 GoPrismGaugeDone                         0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 0F8 GoExchangeRoot                           0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 100 BtnExchange                              000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer
-    // 108 TxtExchange                              0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 110 GoExchangebadge                          0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 118 GashaTokenAreas                          000185B81E10 ModelClassListType GashaTokenArea[] GashaTokenArea[] List<GashaTokenArea> Pointer
-    // 120 JewelArea                                0001865BBB90 ModelClassType CmnCurrentJewel CmnCurrentJewel CmnCurrentJewel Pointer
-    // 128 GashaStepListView                        00018661E9F0 ModelClassType GashaStepListView GashaStepListView GashaStepListView Pointer
-    // 130 GoBtns                                   000185CDD468 ModelClassListType List`1<GameObject> List`1<GameObject> List<GameObject> Pointer
-    // 138 CurrentGasha                             0001865D9930 ModelClassType Gasha Gasha Gasha Pointer
-    // 140 InitDisposables                          0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
-    // 148 SaleUpdateDisposables                    0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
-    // 150 BackBtnDisposable                        0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
-    // 158 ChangeGashaCts                           0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
-    // 160 ChangeBannerCts                          0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
-    // 168 CurrentBackgroundType                    00018672BEC0 ModelEnumType BackgroundType BackgroundType BackgroundType Int32
-    // 170 Cts                                      0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
-    // 178 LastSelectIndex                          0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 17C IsBackgroundReserve                      000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 180 GashaNewDic                              000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
-    // 188 UpdateTime                               0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 020 GashaBannerCarousel                      ModelClassType GashaBannerCarousel GashaBannerCarousel GashaBannerCarousel Pointer
+    // 028 MoviePlayer                              ModelClassType MoviePlayer MoviePlayer MoviePlayer Pointer
+    // 030 BackgroundSwipeButton                    ModelClassType SwipeButton SwipeButton SwipeButton Pointer
+    // 038 GashaNamePlate                           ModelClassType GashaNamePlateP GashaNamePlateP GashaNamePlateP Pointer
+    // 040 TxtTokutei                               ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 048 GoGashaButton                            ModelClassType GameObject GameObject GameObject Pointer
+    // 050 BtnTokutei                               ModelClassType ButtonBase ButtonBase ButtonBase Pointer
+    // 058 ImgLogo                                  ModelClassType Image Image Image Pointer
+    // 060 TxtLimit                                 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 068 BtnDetails                               ModelClassType ButtonBase ButtonBase ButtonBase Pointer
+    // 070 BtnGashaRates                            ModelClassType ButtonBase ButtonBase ButtonBase Pointer
+    // 078 BtnMembers                               ModelClassType ButtonBase ButtonBase ButtonBase Pointer
+    // 080 BtnCostumes                              ModelClassType ButtonBase ButtonBase ButtonBase Pointer
+    // 088 BtnOmake                                 ModelClassType ButtonBase ButtonBase ButtonBase Pointer
+    // 090 BtnHistory                               ModelClassType ButtonBase ButtonBase ButtonBase Pointer
+    // 098 TxtMsg                                   ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 0A0 ImgBackground                            ModelClassType Image Image Image Pointer
+    // 0A8 AspectRatioFitterBackground              ModelClassType AspectRatioFitter AspectRatioFitter AspectRatioFitter Pointer
+    // 0B0 ImgBackgroundNext                        ModelClassType Image Image Image Pointer
+    // 0B8 AspectRatioFitterBackgroundNext          ModelClassType AspectRatioFitter AspectRatioFitter AspectRatioFitter Pointer
+    // 0C0 ImgCarouselTouch                         ModelClassType Image Image Image Pointer
+    // 0C8 CanvasGroupMiddle                        ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
+    // 0D0 GoPrismGauge                             ModelClassType GameObject GameObject GameObject Pointer
+    // 0D8 TxtPrismGaugePoint                       ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 0E0 GaugeItemIcon                            ModelClassType RewardItem RewardItem RewardItem Pointer
+    // 0E8 BtnPrismGauge                            ModelClassType ButtonBase ButtonBase ButtonBase Pointer
+    // 0F0 GoPrismGaugeDone                         ModelClassType GameObject GameObject GameObject Pointer
+    // 0F8 GoExchangeRoot                           ModelClassType GameObject GameObject GameObject Pointer
+    // 100 BtnExchange                              ModelClassType ButtonBase ButtonBase ButtonBase Pointer
+    // 108 TxtExchange                              ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 110 GoExchangebadge                          ModelClassType GameObject GameObject GameObject Pointer
+    // 118 GashaTokenAreas                          ModelClassListType GashaTokenArea[] GashaTokenArea[] List<GashaTokenArea> Pointer
+    // 120 JewelArea                                ModelClassType CmnCurrentJewel CmnCurrentJewel CmnCurrentJewel Pointer
+    // 128 GashaStepListView                        ModelClassType GashaStepListView GashaStepListView GashaStepListView Pointer
+    // 130 GoBtns                                   ModelClassListType List`1<GameObject> List`1<GameObject> List<GameObject> Pointer
+    // 138 CurrentGasha                             ModelClassType Gasha Gasha Gasha Pointer
+    // 140 BackBtnDisposable                        ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 148 ChangeGashaCts                           ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
+    // 150 ChangeBannerCts                          ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
+    // 158 Cts                                      ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
+    // 160 LastSelectIndex                          ModelPrimitiveType int int int Int32
+    // 164 IsBackgroundReserve                      ModelPrimitiveType bool bool bool Bool
+    // 168 GashaNewDic                              ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer
+    // 170 BackgroundMovies                         ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 178 BackgroundMovieValues                    ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 180 BackgroundImages                         ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 188 PlayBackgroundIndex                      ModelPrimitiveType int int int Int32
+    // 18C UpdateTime                               ModelPrimitiveType int int int Int32
     // 190 <OnClickGasha>k__BackingField            Action`2<string, string> IL2CPP_TYPE_GENERICINST
     // 198 <OnChangeBanner>k__BackingField          Action`2<string, string> IL2CPP_TYPE_GENERICINST
     // 1A0 <OnNeedMemberData>k__BackingField        Func`2<string, UniTask`1<IGetGashaMemberReply>> IL2CPP_TYPE_GENERICINST
@@ -69,9 +70,9 @@ namespace ReversePrism.DataModels
     {
         public GashaBannerCarousel?                     GashaBannerCarousel                     { get; set; }
         public MoviePlayer?                             MoviePlayer                             { get; set; }
-        public GashaNamePlateEx?                        GashaNamePlate                          { get; set; }
+        public SwipeButton?                             BackgroundSwipeButton                   { get; set; }
+        public GashaNamePlateP?                         GashaNamePlate                          { get; set; }
         public UITextMeshProUGUI?                       TxtTokutei                              { get; set; }
-        public ButtonBase?                              BtnMoviesSwitch                         { get; set; }
         public GameObject?                              GoGashaButton                           { get; set; }
         public ButtonBase?                              BtnTokutei                              { get; set; }
         public Image?                                   ImgLogo                                 { get; set; }
@@ -85,13 +86,13 @@ namespace ReversePrism.DataModels
         public UITextMeshProUGUI?                       TxtMsg                                  { get; set; }
         public Image?                                   ImgBackground                           { get; set; }
         public AspectRatioFitter?                       AspectRatioFitterBackground             { get; set; }
-        public Transform?                               TraBack                                 { get; set; }
-        public Transform?                               TraFront                                { get; set; }
+        public Image?                                   ImgBackgroundNext                       { get; set; }
+        public AspectRatioFitter?                       AspectRatioFitterBackgroundNext         { get; set; }
         public Image?                                   ImgCarouselTouch                        { get; set; }
         public CanvasGroup?                             CanvasGroupMiddle                       { get; set; }
         public GameObject?                              GoPrismGauge                            { get; set; }
         public UITextMeshProUGUI?                       TxtPrismGaugePoint                      { get; set; }
-        public CmnItem?                                 GaugeItemIcon                           { get; set; }
+        public RewardItem?                              GaugeItemIcon                           { get; set; }
         public ButtonBase?                              BtnPrismGauge                           { get; set; }
         public GameObject?                              GoPrismGaugeDone                        { get; set; }
         public GameObject?                              GoExchangeRoot                          { get; set; }
@@ -103,16 +104,17 @@ namespace ReversePrism.DataModels
         public GashaStepListView?                       GashaStepListView                       { get; set; }
         public List<GameObject>?                        GoBtns                                  { get; set; }
         public Gasha?                                   CurrentGasha                            { get; set; }
-        public CompositeDisposable?                     InitDisposables                         { get; set; }
-        public CompositeDisposable?                     SaleUpdateDisposables                   { get; set; }
         public IDisposable?                             BackBtnDisposable                       { get; set; }
         public CancellationTokenSource?                 ChangeGashaCts                          { get; set; }
         public CancellationTokenSource?                 ChangeBannerCts                         { get; set; }
-        public BackgroundType                           CurrentBackgroundType                   { get; set; }
         public CancellationTokenSource?                 Cts                                     { get; set; }
         public int                                      LastSelectIndex                         { get; set; }
         public bool                                     IsBackgroundReserve                     { get; set; }
         public List<string>?                            GashaNewDic                             { get; set; }
+        public List<string>?                            BackgroundMovies                        { get; set; }
+        public List<string>?                            BackgroundMovieValues                   { get; set; }
+        public List<string>?                            BackgroundImages                        { get; set; }
+        public int                                      PlayBackgroundIndex                     { get; set; }
         public int                                      UpdateTime                              { get; set; }
 
         public static GashaTopView? FromPointer(IntPtr p0)
@@ -123,53 +125,54 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GashaTopView() { Pointer= p0 };
 
-            value.GashaBannerCarousel                       = GetObject<GashaBannerCarousel>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaBannerCarousel.FromPointer); // 0246653E6880 0x20 GashaBannerCarousel         ( 0001865EFA20 ModelClassType GashaBannerCarousel GashaBannerCarousel GashaBannerCarousel Pointer )
-            value.MoviePlayer                               = GetObject<MoviePlayer>(new IntPtr(p + 0x028), ReversePrism.DataModels.MoviePlayer.FromPointer); // 0246653E68A0 0x28 MoviePlayer                 ( 000186658A40 ModelClassType MoviePlayer MoviePlayer MoviePlayer Pointer )
-            value.GashaNamePlate                            = GetObject<GashaNamePlateEx>(new IntPtr(p + 0x030), ReversePrism.DataModels.GashaNamePlateEx.FromPointer); // 0246653E68C0 0x30 GashaNamePlate              ( 0001866089D0 ModelClassType GashaNamePlateEx GashaNamePlateEx GashaNamePlateEx Pointer )
-            value.TxtTokutei                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246653E68E0 0x38 TxtTokutei                  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.BtnMoviesSwitch                           = GetObject<ButtonBase>(new IntPtr(p + 0x040), ReversePrism.DataModels.ButtonBase.FromPointer); // 0246653E6900 0x40 BtnMoviesSwitch             ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.GoGashaButton                             = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 0246653E6920 0x48 GoGashaButton               ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.BtnTokutei                                = GetObject<ButtonBase>(new IntPtr(p + 0x050), ReversePrism.DataModels.ButtonBase.FromPointer); // 0246653E6940 0x50 BtnTokutei                  ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.ImgLogo                                   = GetObject<Image>(new IntPtr(p + 0x058), ReversePrism.DataModels.Image.FromPointer); // 0246653E6960 0x58 ImgLogo                     ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.TxtLimit                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x060), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246653E6980 0x60 TxtLimit                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.BtnDetails                                = GetObject<ButtonBase>(new IntPtr(p + 0x068), ReversePrism.DataModels.ButtonBase.FromPointer); // 0246653E69A0 0x68 BtnDetails                  ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.BtnGashaRates                             = GetObject<ButtonBase>(new IntPtr(p + 0x070), ReversePrism.DataModels.ButtonBase.FromPointer); // 0246653E69C0 0x70 BtnGashaRates               ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.BtnMembers                                = GetObject<ButtonBase>(new IntPtr(p + 0x078), ReversePrism.DataModels.ButtonBase.FromPointer); // 0246653E69E0 0x78 BtnMembers                  ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.BtnCostumes                               = GetObject<ButtonBase>(new IntPtr(p + 0x080), ReversePrism.DataModels.ButtonBase.FromPointer); // 0246653E6A00 0x80 BtnCostumes                 ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.BtnOmake                                  = GetObject<ButtonBase>(new IntPtr(p + 0x088), ReversePrism.DataModels.ButtonBase.FromPointer); // 0246653E6A20 0x88 BtnOmake                    ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.BtnHistory                                = GetObject<ButtonBase>(new IntPtr(p + 0x090), ReversePrism.DataModels.ButtonBase.FromPointer); // 0246653E6A40 0x90 BtnHistory                  ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.TxtMsg                                    = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x098), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246653E6A60 0x98 TxtMsg                      ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ImgBackground                             = GetObject<Image>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.Image.FromPointer); // 0246653E6A80 0xA0 ImgBackground               ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.AspectRatioFitterBackground               = GetObject<AspectRatioFitter>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.AspectRatioFitter.FromPointer); // 0246653E6AA0 0xA8 AspectRatioFitterBackground ( 0001866DD380 ModelClassType AspectRatioFitter AspectRatioFitter AspectRatioFitter Pointer )
-            value.TraBack                                   = GetObject<Transform>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.Transform.FromPointer); // 0246653E6AC0 0xB0 TraBack                     ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.TraFront                                  = GetObject<Transform>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.Transform.FromPointer); // 0246653E6AE0 0xB8 TraFront                    ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.ImgCarouselTouch                          = GetObject<Image>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.Image.FromPointer); // 0246653E6B00 0xC0 ImgCarouselTouch            ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.CanvasGroupMiddle                         = GetObject<CanvasGroup>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0246653E6B20 0xC8 CanvasGroupMiddle           ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.GoPrismGauge                              = GetObject<GameObject>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.GameObject.FromPointer); // 0246653E6B40 0xD0 GoPrismGauge                ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.TxtPrismGaugePoint                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x0D8), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246653E6B60 0xD8 TxtPrismGaugePoint          ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.GaugeItemIcon                             = GetObject<CmnItem>(new IntPtr(p + 0x0E0), ReversePrism.DataModels.CmnItem.FromPointer); // 0246653E6B80 0xE0 GaugeItemIcon               ( 0001865BC1A0 ModelClassType CmnItem CmnItem CmnItem Pointer )
-            value.BtnPrismGauge                             = GetObject<ButtonBase>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.ButtonBase.FromPointer); // 0246653E6BA0 0xE8 BtnPrismGauge               ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.GoPrismGaugeDone                          = GetObject<GameObject>(new IntPtr(p + 0x0F0), ReversePrism.DataModels.GameObject.FromPointer); // 0246653E6BC0 0xF0 GoPrismGaugeDone            ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.GoExchangeRoot                            = GetObject<GameObject>(new IntPtr(p + 0x0F8), ReversePrism.DataModels.GameObject.FromPointer); // 0246653E6BE0 0xF8 GoExchangeRoot              ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.BtnExchange                               = GetObject<ButtonBase>(new IntPtr(p + 0x100), ReversePrism.DataModels.ButtonBase.FromPointer); // 0246653E6C00 0x100 BtnExchange                 ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.TxtExchange                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x108), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0246653E6C20 0x108 TxtExchange                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.GoExchangebadge                           = GetObject<GameObject>(new IntPtr(p + 0x110), ReversePrism.DataModels.GameObject.FromPointer); // 0246653E6C40 0x110 GoExchangebadge             ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.GashaTokenAreas                           = GetObjectList<GashaTokenArea>(new IntPtr(p + 0x118), ReversePrism.DataModels.GashaTokenArea.FromPointer); // 0246653E6C60 0x118 GashaTokenAreas             ( 000185B81E10 ModelClassListType GashaTokenArea[] GashaTokenArea[] List<GashaTokenArea> Pointer )
-            value.JewelArea                                 = GetObject<CmnCurrentJewel>(new IntPtr(p + 0x120), ReversePrism.DataModels.CmnCurrentJewel.FromPointer); // 0246653E6C80 0x120 JewelArea                   ( 0001865BBB90 ModelClassType CmnCurrentJewel CmnCurrentJewel CmnCurrentJewel Pointer )
-            value.GashaStepListView                         = GetObject<GashaStepListView>(new IntPtr(p + 0x128), ReversePrism.DataModels.GashaStepListView.FromPointer); // 0246653E6CA0 0x128 GashaStepListView           ( 00018661E9F0 ModelClassType GashaStepListView GashaStepListView GashaStepListView Pointer )
-            value.GoBtns                                    = GetObjectList<GameObject>(new IntPtr(p + 0x130), ReversePrism.DataModels.GameObject.FromPointer); // 0246653E6CC0 0x130 GoBtns                      ( 000185CDD468 ModelClassListType List`1<GameObject> List`1<GameObject> List<GameObject> Pointer )
-            value.CurrentGasha                              = GetObject<Gasha>(new IntPtr(p + 0x138), ReversePrism.DataModels.Gasha.FromPointer); // 0246653E6CE0 0x138 CurrentGasha                ( 0001865D9930 ModelClassType Gasha Gasha Gasha Pointer )
-            value.InitDisposables                           = GetObject<CompositeDisposable>(new IntPtr(p + 0x140), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0246653E6D00 0x140 InitDisposables             ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
-            value.SaleUpdateDisposables                     = GetObject<CompositeDisposable>(new IntPtr(p + 0x148), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0246653E6D20 0x148 SaleUpdateDisposables       ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
-            value.BackBtnDisposable                         = GetObject<IDisposable>(new IntPtr(p + 0x150), ReversePrism.DataModels.IDisposable.FromPointer); // 0246653E6D40 0x150 BackBtnDisposable           ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
-            value.ChangeGashaCts                            = GetObject<CancellationTokenSource>(new IntPtr(p + 0x158), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0246653E6D60 0x158 ChangeGashaCts              ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
-            value.ChangeBannerCts                           = GetObject<CancellationTokenSource>(new IntPtr(p + 0x160), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0246653E6D80 0x160 ChangeBannerCts             ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
-            value.CurrentBackgroundType                     = (BackgroundType)GetInt32(new IntPtr(p + 0x168)); // 0246653E6DA0 0x168 CurrentBackgroundType       ( 00018672BEC0 ModelEnumType BackgroundType BackgroundType BackgroundType Int32 )
-            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x170), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0246653E6DC0 0x170 Cts                         ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
-            value.LastSelectIndex                           = GetInt32(new IntPtr(p + 0x178)); // 0246653E6DE0 0x178 LastSelectIndex             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsBackgroundReserve                       = GetBool(new IntPtr(p + 0x17C)); // 0246653E6E00 0x17C IsBackgroundReserve         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.GashaNewDic                               = GetStringList(new IntPtr(p + 0x180)); // 0246653E6E20 0x180 GashaNewDic                 ( 000185D0D518 ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
-            value.UpdateTime                                = GetInt32(new IntPtr(p + 0x188)); // 0246653E6E40 0x188 UpdateTime                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.GashaBannerCarousel                       = GetObject<GashaBannerCarousel>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaBannerCarousel.FromPointer); // 0x20 GashaBannerCarousel         ( ModelClassType GashaBannerCarousel GashaBannerCarousel GashaBannerCarousel Pointer )
+            value.MoviePlayer                               = GetObject<MoviePlayer>(new IntPtr(p + 0x028), ReversePrism.DataModels.MoviePlayer.FromPointer); // 0x28 MoviePlayer                 ( ModelClassType MoviePlayer MoviePlayer MoviePlayer Pointer )
+            value.BackgroundSwipeButton                     = GetObject<SwipeButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.SwipeButton.FromPointer); // 0x30 BackgroundSwipeButton       ( ModelClassType SwipeButton SwipeButton SwipeButton Pointer )
+            value.GashaNamePlate                            = GetObject<GashaNamePlateP>(new IntPtr(p + 0x038), ReversePrism.DataModels.GashaNamePlateP.FromPointer); // 0x38 GashaNamePlate              ( ModelClassType GashaNamePlateP GashaNamePlateP GashaNamePlateP Pointer )
+            value.TxtTokutei                                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x40 TxtTokutei                  ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.GoGashaButton                             = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 0x48 GoGashaButton               ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.BtnTokutei                                = GetObject<ButtonBase>(new IntPtr(p + 0x050), ReversePrism.DataModels.ButtonBase.FromPointer); // 0x50 BtnTokutei                  ( ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.ImgLogo                                   = GetObject<Image>(new IntPtr(p + 0x058), ReversePrism.DataModels.Image.FromPointer); // 0x58 ImgLogo                     ( ModelClassType Image Image Image Pointer )
+            value.TxtLimit                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x060), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x60 TxtLimit                    ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.BtnDetails                                = GetObject<ButtonBase>(new IntPtr(p + 0x068), ReversePrism.DataModels.ButtonBase.FromPointer); // 0x68 BtnDetails                  ( ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.BtnGashaRates                             = GetObject<ButtonBase>(new IntPtr(p + 0x070), ReversePrism.DataModels.ButtonBase.FromPointer); // 0x70 BtnGashaRates               ( ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.BtnMembers                                = GetObject<ButtonBase>(new IntPtr(p + 0x078), ReversePrism.DataModels.ButtonBase.FromPointer); // 0x78 BtnMembers                  ( ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.BtnCostumes                               = GetObject<ButtonBase>(new IntPtr(p + 0x080), ReversePrism.DataModels.ButtonBase.FromPointer); // 0x80 BtnCostumes                 ( ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.BtnOmake                                  = GetObject<ButtonBase>(new IntPtr(p + 0x088), ReversePrism.DataModels.ButtonBase.FromPointer); // 0x88 BtnOmake                    ( ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.BtnHistory                                = GetObject<ButtonBase>(new IntPtr(p + 0x090), ReversePrism.DataModels.ButtonBase.FromPointer); // 0x90 BtnHistory                  ( ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.TxtMsg                                    = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x098), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x98 TxtMsg                      ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ImgBackground                             = GetObject<Image>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.Image.FromPointer); // 0xA0 ImgBackground               ( ModelClassType Image Image Image Pointer )
+            value.AspectRatioFitterBackground               = GetObject<AspectRatioFitter>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.AspectRatioFitter.FromPointer); // 0xA8 AspectRatioFitterBackground ( ModelClassType AspectRatioFitter AspectRatioFitter AspectRatioFitter Pointer )
+            value.ImgBackgroundNext                         = GetObject<Image>(new IntPtr(p + 0x0B0), ReversePrism.DataModels.Image.FromPointer); // 0xB0 ImgBackgroundNext           ( ModelClassType Image Image Image Pointer )
+            value.AspectRatioFitterBackgroundNext           = GetObject<AspectRatioFitter>(new IntPtr(p + 0x0B8), ReversePrism.DataModels.AspectRatioFitter.FromPointer); // 0xB8 AspectRatioFitterBackgroundNext ( ModelClassType AspectRatioFitter AspectRatioFitter AspectRatioFitter Pointer )
+            value.ImgCarouselTouch                          = GetObject<Image>(new IntPtr(p + 0x0C0), ReversePrism.DataModels.Image.FromPointer); // 0xC0 ImgCarouselTouch            ( ModelClassType Image Image Image Pointer )
+            value.CanvasGroupMiddle                         = GetObject<CanvasGroup>(new IntPtr(p + 0x0C8), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0xC8 CanvasGroupMiddle           ( ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.GoPrismGauge                              = GetObject<GameObject>(new IntPtr(p + 0x0D0), ReversePrism.DataModels.GameObject.FromPointer); // 0xD0 GoPrismGauge                ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.TxtPrismGaugePoint                        = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x0D8), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0xD8 TxtPrismGaugePoint          ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.GaugeItemIcon                             = GetObject<RewardItem>(new IntPtr(p + 0x0E0), ReversePrism.DataModels.RewardItem.FromPointer); // 0xE0 GaugeItemIcon               ( ModelClassType RewardItem RewardItem RewardItem Pointer )
+            value.BtnPrismGauge                             = GetObject<ButtonBase>(new IntPtr(p + 0x0E8), ReversePrism.DataModels.ButtonBase.FromPointer); // 0xE8 BtnPrismGauge               ( ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.GoPrismGaugeDone                          = GetObject<GameObject>(new IntPtr(p + 0x0F0), ReversePrism.DataModels.GameObject.FromPointer); // 0xF0 GoPrismGaugeDone            ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.GoExchangeRoot                            = GetObject<GameObject>(new IntPtr(p + 0x0F8), ReversePrism.DataModels.GameObject.FromPointer); // 0xF8 GoExchangeRoot              ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.BtnExchange                               = GetObject<ButtonBase>(new IntPtr(p + 0x100), ReversePrism.DataModels.ButtonBase.FromPointer); // 0x100 BtnExchange                 ( ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.TxtExchange                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x108), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x108 TxtExchange                 ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.GoExchangebadge                           = GetObject<GameObject>(new IntPtr(p + 0x110), ReversePrism.DataModels.GameObject.FromPointer); // 0x110 GoExchangebadge             ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.GashaTokenAreas                           = GetObjectList<GashaTokenArea>(new IntPtr(p + 0x118), ReversePrism.DataModels.GashaTokenArea.FromPointer); // 0x118 GashaTokenAreas             ( ModelClassListType GashaTokenArea[] GashaTokenArea[] List<GashaTokenArea> Pointer )
+            value.JewelArea                                 = GetObject<CmnCurrentJewel>(new IntPtr(p + 0x120), ReversePrism.DataModels.CmnCurrentJewel.FromPointer); // 0x120 JewelArea                   ( ModelClassType CmnCurrentJewel CmnCurrentJewel CmnCurrentJewel Pointer )
+            value.GashaStepListView                         = GetObject<GashaStepListView>(new IntPtr(p + 0x128), ReversePrism.DataModels.GashaStepListView.FromPointer); // 0x128 GashaStepListView           ( ModelClassType GashaStepListView GashaStepListView GashaStepListView Pointer )
+            value.GoBtns                                    = GetObjectList<GameObject>(new IntPtr(p + 0x130), ReversePrism.DataModels.GameObject.FromPointer); // 0x130 GoBtns                      ( ModelClassListType List`1<GameObject> List`1<GameObject> List<GameObject> Pointer )
+            value.CurrentGasha                              = GetObject<Gasha>(new IntPtr(p + 0x138), ReversePrism.DataModels.Gasha.FromPointer); // 0x138 CurrentGasha                ( ModelClassType Gasha Gasha Gasha Pointer )
+            value.BackBtnDisposable                         = GetObject<IDisposable>(new IntPtr(p + 0x140), ReversePrism.DataModels.IDisposable.FromPointer); // 0x140 BackBtnDisposable           ( ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.ChangeGashaCts                            = GetObject<CancellationTokenSource>(new IntPtr(p + 0x148), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0x148 ChangeGashaCts              ( ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.ChangeBannerCts                           = GetObject<CancellationTokenSource>(new IntPtr(p + 0x150), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0x150 ChangeBannerCts             ( ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x158), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0x158 Cts                         ( ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.LastSelectIndex                           = GetInt32(new IntPtr(p + 0x160)); // 0x160 LastSelectIndex             ( ModelPrimitiveType int int int Int32 )
+            value.IsBackgroundReserve                       = GetBool(new IntPtr(p + 0x164)); // 0x164 IsBackgroundReserve         ( ModelPrimitiveType bool bool bool Bool )
+            value.GashaNewDic                               = GetStringList(new IntPtr(p + 0x168)); // 0x168 GashaNewDic                 ( ModelPrimitiveListType List`1<string> List`1<string> List<string> Pointer )
+            value.BackgroundMovies                          = GetStringList(new IntPtr(p + 0x170)); // 0x170 BackgroundMovies            ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.BackgroundMovieValues                     = GetStringList(new IntPtr(p + 0x178)); // 0x178 BackgroundMovieValues       ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.BackgroundImages                          = GetStringList(new IntPtr(p + 0x180)); // 0x180 BackgroundImages            ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.PlayBackgroundIndex                       = GetInt32(new IntPtr(p + 0x188)); // 0x188 PlayBackgroundIndex         ( ModelPrimitiveType int int int Int32 )
+            value.UpdateTime                                = GetInt32(new IntPtr(p + 0x18C)); // 0x18C UpdateTime                  ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

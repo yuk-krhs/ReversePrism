@@ -24,6 +24,10 @@ namespace ReversePrism.DataModels
         Audition,
         MiniLive,
         TalkShow,
+        ScriptReading,
+        CostumeFitting,
+        PublicRelations,
+        ActingPractice,
         Num,
     }
 }

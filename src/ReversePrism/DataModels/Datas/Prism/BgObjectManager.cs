@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 TimeOfDayTable                           000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 028 WeatherTable                             000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 030 SeasonTable                              000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 038 NatureEventTable                         000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 040 CultureEventTable                        000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 020 TimeOfDayTable                           ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 028 WeatherTable                             ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 030 SeasonTable                              ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 038 NatureEventTable                         ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 040 CultureEventTable                        ModelPrimitiveListType string[] string[] List<string> Pointer
     // 048 tables                                   string[][] IL2CPP_TYPE_SZARRAY
     public partial class BgObjectManager : DataModel
     {
@@ -30,11 +30,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BgObjectManager() { Pointer= p0 };
 
-            value.TimeOfDayTable                            = GetStringList(new IntPtr(p + 0x020)); // 0245A6B03A70 0x20 TimeOfDayTable              ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.WeatherTable                              = GetStringList(new IntPtr(p + 0x028)); // 0245A6B03A90 0x28 WeatherTable                ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.SeasonTable                               = GetStringList(new IntPtr(p + 0x030)); // 0245A6B03AB0 0x30 SeasonTable                 ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.NatureEventTable                          = GetStringList(new IntPtr(p + 0x038)); // 0245A6B03AD0 0x38 NatureEventTable            ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.CultureEventTable                         = GetStringList(new IntPtr(p + 0x040)); // 0245A6B03AF0 0x40 CultureEventTable           ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.TimeOfDayTable                            = GetStringList(new IntPtr(p + 0x020)); // 0x20 TimeOfDayTable              ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.WeatherTable                              = GetStringList(new IntPtr(p + 0x028)); // 0x28 WeatherTable                ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.SeasonTable                               = GetStringList(new IntPtr(p + 0x030)); // 0x30 SeasonTable                 ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.NatureEventTable                          = GetStringList(new IntPtr(p + 0x038)); // 0x38 NatureEventTable            ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.CultureEventTable                         = GetStringList(new IntPtr(p + 0x040)); // 0x40 CultureEventTable           ( ModelPrimitiveListType string[] string[] List<string> Pointer )
 
             return value;
         }

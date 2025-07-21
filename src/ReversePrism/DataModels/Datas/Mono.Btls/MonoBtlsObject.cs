@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Handle                                   00018673EEC0 ModelClassType MonoBtlsHandle MonoBtlsHandle MonoBtlsHandle Pointer
-    // 018 LastError                                0001865CA820 ModelClassType Exception Exception Exception Pointer
+    // 010 Handle                                   ModelClassType MonoBtlsHandle MonoBtlsHandle MonoBtlsHandle Pointer
+    // 018 LastError                                ModelClassType Exception Exception Exception Pointer
     public partial class MonoBtlsObject : DataModel
     {
         public MonoBtlsHandle?                          Handle                                  { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MonoBtlsObject() { Pointer= p0 };
 
-            value.Handle                                    = GetObject<MonoBtlsHandle>(new IntPtr(p + 0x010), ReversePrism.DataModels.MonoBtlsHandle.FromPointer); // 0246679A5D88 0x10 Handle                      ( 00018673EEC0 ModelClassType MonoBtlsHandle MonoBtlsHandle MonoBtlsHandle Pointer )
-            value.LastError                                 = GetObject<Exception>(new IntPtr(p + 0x018), ReversePrism.DataModels.Exception.FromPointer); // 0246679A5DA8 0x18 LastError                   ( 0001865CA820 ModelClassType Exception Exception Exception Pointer )
+            value.Handle                                    = GetObject<MonoBtlsHandle>(new IntPtr(p + 0x010), ReversePrism.DataModels.MonoBtlsHandle.FromPointer); // 0x10 Handle                      ( ModelClassType MonoBtlsHandle MonoBtlsHandle MonoBtlsHandle Pointer )
+            value.LastError                                 = GetObject<Exception>(new IntPtr(p + 0x018), ReversePrism.DataModels.Exception.FromPointer); // 0x18 LastError                   ( ModelClassType Exception Exception Exception Pointer )
 
             return value;
         }

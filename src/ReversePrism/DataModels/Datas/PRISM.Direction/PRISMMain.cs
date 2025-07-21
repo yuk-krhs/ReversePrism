@@ -8,16 +8,18 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 OverlayCanvasPrefab                      00018653FDA0 ModelClassType Canvas Canvas Canvas Pointer
-    // 028 OverlayCanvasBelowBlurCamera             0001865A1C90 ModelClassType Camera Camera Camera Pointer
-    // 030 OverlayCanvasAboveBlurCamera             0001865A1C90 ModelClassType Camera Camera Camera Pointer
-    // 038 LoadingCanvas                            00018659DCF0 ModelClassType LoadingCanvas LoadingCanvas LoadingCanvas Pointer
-    // 040 LoadingView                              0001865A0650 ModelClassType LoadingView LoadingView LoadingView Pointer
-    // 048 ConnectingView                           000186603050 ModelClassType ConnectingView ConnectingView ConnectingView Pointer
-    // 050 OverlayMask                              0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 058 CommonPopupReference                     0001865E8590 ModelClassType CommonPopupReference CommonPopupReference CommonPopupReference Pointer
-    // 060 ButtonGotoTypeReference                  0001865178C0 ModelClassType ButtonGotoTypeReference ButtonGotoTypeReference ButtonGotoTypeReference Pointer
-    // 068 CanvasManager                            0001866E1E10 ModelClassType UICanvasManager UICanvasManager UICanvasManager Pointer
+    // 020 OverlayCanvasPrefab                      ModelClassType Canvas Canvas Canvas Pointer
+    // 028 OverlayCanvasBelowBlurCamera             ModelClassType Camera Camera Camera Pointer
+    // 030 OverlayCanvasAboveBlurCamera             ModelClassType Camera Camera Camera Pointer
+    // 038 LoadingCanvas                            ModelClassType LoadingCanvas LoadingCanvas LoadingCanvas Pointer
+    // 040 LoadingView                              ModelClassType LoadingView LoadingView LoadingView Pointer
+    // 048 ConnectingView                           ModelClassType ConnectingView ConnectingView ConnectingView Pointer
+    // 050 OverlayMask                              ModelClassType GameObject GameObject GameObject Pointer
+    // 058 ButtonGotoTypeReference                  ModelClassType ButtonGotoTypeReference ButtonGotoTypeReference ButtonGotoTypeReference Pointer
+    // 060 CanvasManager                            ModelClassType UICanvasManager UICanvasManager UICanvasManager Pointer
+    // 000 DmmScreenWidth                           int IL2CPP_TYPE_I4
+    // 000 DmmScreenHeight                          int IL2CPP_TYPE_I4
+    // 000 NotFullScreenBorder                      float IL2CPP_TYPE_R4
     public partial class PRISMMain : DataModel
     {
         public Canvas?                                  OverlayCanvasPrefab                     { get; set; }
@@ -27,7 +29,6 @@ namespace ReversePrism.DataModels
         public LoadingView?                             LoadingView                             { get; set; }
         public ConnectingView?                          ConnectingView                          { get; set; }
         public GameObject?                              OverlayMask                             { get; set; }
-        public CommonPopupReference?                    CommonPopupReference                    { get; set; }
         public ButtonGotoTypeReference?                 ButtonGotoTypeReference                 { get; set; }
         public UICanvasManager?                         CanvasManager                           { get; set; }
 
@@ -39,16 +40,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PRISMMain() { Pointer= p0 };
 
-            value.OverlayCanvasPrefab                       = GetObject<Canvas>(new IntPtr(p + 0x020), ReversePrism.DataModels.Canvas.FromPointer); // 0245A1E9C9F8 0x20 OverlayCanvasPrefab         ( 00018653FDA0 ModelClassType Canvas Canvas Canvas Pointer )
-            value.OverlayCanvasBelowBlurCamera              = GetObject<Camera>(new IntPtr(p + 0x028), ReversePrism.DataModels.Camera.FromPointer); // 0245A1E9CA18 0x28 OverlayCanvasBelowBlurCamera ( 0001865A1C90 ModelClassType Camera Camera Camera Pointer )
-            value.OverlayCanvasAboveBlurCamera              = GetObject<Camera>(new IntPtr(p + 0x030), ReversePrism.DataModels.Camera.FromPointer); // 0245A1E9CA38 0x30 OverlayCanvasAboveBlurCamera ( 0001865A1C90 ModelClassType Camera Camera Camera Pointer )
-            value.LoadingCanvas                             = GetObject<LoadingCanvas>(new IntPtr(p + 0x038), ReversePrism.DataModels.LoadingCanvas.FromPointer); // 0245A1E9CA58 0x38 LoadingCanvas               ( 00018659DCF0 ModelClassType LoadingCanvas LoadingCanvas LoadingCanvas Pointer )
-            value.LoadingView                               = GetObject<LoadingView>(new IntPtr(p + 0x040), ReversePrism.DataModels.LoadingView.FromPointer); // 0245A1E9CA78 0x40 LoadingView                 ( 0001865A0650 ModelClassType LoadingView LoadingView LoadingView Pointer )
-            value.ConnectingView                            = GetObject<ConnectingView>(new IntPtr(p + 0x048), ReversePrism.DataModels.ConnectingView.FromPointer); // 0245A1E9CA98 0x48 ConnectingView              ( 000186603050 ModelClassType ConnectingView ConnectingView ConnectingView Pointer )
-            value.OverlayMask                               = GetObject<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 0245A1E9CAB8 0x50 OverlayMask                 ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.CommonPopupReference                      = GetObject<CommonPopupReference>(new IntPtr(p + 0x058), ReversePrism.DataModels.CommonPopupReference.FromPointer); // 0245A1E9CAD8 0x58 CommonPopupReference        ( 0001865E8590 ModelClassType CommonPopupReference CommonPopupReference CommonPopupReference Pointer )
-            value.ButtonGotoTypeReference                   = GetObject<ButtonGotoTypeReference>(new IntPtr(p + 0x060), ReversePrism.DataModels.ButtonGotoTypeReference.FromPointer); // 0245A1E9CAF8 0x60 ButtonGotoTypeReference     ( 0001865178C0 ModelClassType ButtonGotoTypeReference ButtonGotoTypeReference ButtonGotoTypeReference Pointer )
-            value.CanvasManager                             = GetObject<UICanvasManager>(new IntPtr(p + 0x068), ReversePrism.DataModels.UICanvasManager.FromPointer); // 0245A1E9CB18 0x68 CanvasManager               ( 0001866E1E10 ModelClassType UICanvasManager UICanvasManager UICanvasManager Pointer )
+            value.OverlayCanvasPrefab                       = GetObject<Canvas>(new IntPtr(p + 0x020), ReversePrism.DataModels.Canvas.FromPointer); // 0x20 OverlayCanvasPrefab         ( ModelClassType Canvas Canvas Canvas Pointer )
+            value.OverlayCanvasBelowBlurCamera              = GetObject<Camera>(new IntPtr(p + 0x028), ReversePrism.DataModels.Camera.FromPointer); // 0x28 OverlayCanvasBelowBlurCamera ( ModelClassType Camera Camera Camera Pointer )
+            value.OverlayCanvasAboveBlurCamera              = GetObject<Camera>(new IntPtr(p + 0x030), ReversePrism.DataModels.Camera.FromPointer); // 0x30 OverlayCanvasAboveBlurCamera ( ModelClassType Camera Camera Camera Pointer )
+            value.LoadingCanvas                             = GetObject<LoadingCanvas>(new IntPtr(p + 0x038), ReversePrism.DataModels.LoadingCanvas.FromPointer); // 0x38 LoadingCanvas               ( ModelClassType LoadingCanvas LoadingCanvas LoadingCanvas Pointer )
+            value.LoadingView                               = GetObject<LoadingView>(new IntPtr(p + 0x040), ReversePrism.DataModels.LoadingView.FromPointer); // 0x40 LoadingView                 ( ModelClassType LoadingView LoadingView LoadingView Pointer )
+            value.ConnectingView                            = GetObject<ConnectingView>(new IntPtr(p + 0x048), ReversePrism.DataModels.ConnectingView.FromPointer); // 0x48 ConnectingView              ( ModelClassType ConnectingView ConnectingView ConnectingView Pointer )
+            value.OverlayMask                               = GetObject<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 0x50 OverlayMask                 ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.ButtonGotoTypeReference                   = GetObject<ButtonGotoTypeReference>(new IntPtr(p + 0x058), ReversePrism.DataModels.ButtonGotoTypeReference.FromPointer); // 0x58 ButtonGotoTypeReference     ( ModelClassType ButtonGotoTypeReference ButtonGotoTypeReference ButtonGotoTypeReference Pointer )
+            value.CanvasManager                             = GetObject<UICanvasManager>(new IntPtr(p + 0x060), ReversePrism.DataModels.UICanvasManager.FromPointer); // 0x60 CanvasManager               ( ModelClassType UICanvasManager UICanvasManager UICanvasManager Pointer )
 
             return value;
         }

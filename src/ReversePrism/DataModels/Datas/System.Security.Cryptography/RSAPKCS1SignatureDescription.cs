@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 030 HashAlgorithm                            000186671910 ModelPrimitiveType string string string String
+    // 030 HashAlgorithm                            ModelPrimitiveType string string string String
     public partial class RSAPKCS1SignatureDescription : DataModel
     {
         public string                                   HashAlgorithm                           { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RSAPKCS1SignatureDescription() { Pointer= p0 };
 
-            value.HashAlgorithm                             = GetString(new IntPtr(p + 0x030)); // 024661931E70 0x30 HashAlgorithm               ( 000186671910 ModelPrimitiveType string string string String )
+            value.HashAlgorithm                             = GetString(new IntPtr(p + 0x030)); // 0x30 HashAlgorithm               ( ModelPrimitiveType string string string String )
 
             return value;
         }

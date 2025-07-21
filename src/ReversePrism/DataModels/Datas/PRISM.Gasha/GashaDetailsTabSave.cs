@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 GashaTabDatas                            000185D24368 ModelClassListType List`1<GashaTabData> List`1<GashaTabData> List<GashaTabData> Pointer
+    // 020 GashaTabDatas                            ModelClassListType List`1<GashaTabData> List`1<GashaTabData> List<GashaTabData> Pointer
     public partial class GashaDetailsTabSave : DataModel
     {
         public List<GashaTabData>?                      GashaTabDatas                           { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GashaDetailsTabSave() { Pointer= p0 };
 
-            value.GashaTabDatas                             = GetObjectList<GashaTabData>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaTabData.FromPointer); // 0245A3A7BE78 0x20 GashaTabDatas               ( 000185D24368 ModelClassListType List`1<GashaTabData> List`1<GashaTabData> List<GashaTabData> Pointer )
+            value.GashaTabDatas                             = GetObjectList<GashaTabData>(new IntPtr(p + 0x020), ReversePrism.DataModels.GashaTabData.FromPointer); // 0x20 GashaTabDatas               ( ModelClassListType List`1<GashaTabData> List`1<GashaTabData> List<GashaTabData> Pointer )
 
             return value;
         }

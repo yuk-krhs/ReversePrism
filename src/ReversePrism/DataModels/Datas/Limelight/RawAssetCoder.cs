@@ -9,9 +9,9 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // FFFFFFFF seedWorkBuffer                           sbyte[] IL2CPP_TYPE_SZARRAY
-    // 010 EncWorkBuf                               000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 018 Crypt                                    00018666AD90 ModelClassType AESCTRCrypt AESCTRCrypt AESCTRCrypt Pointer
-    // 020 Sha1                                     0001866AD5C0 ModelClassType SHA1 SHA1 SHA1 Pointer
+    // 010 EncWorkBuf                               ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 018 Crypt                                    ModelClassType AESCTRCrypt AESCTRCrypt AESCTRCrypt Pointer
+    // 020 Sha1                                     ModelClassType SHA1 SHA1 SHA1 Pointer
     public partial class RawAssetCoder : DataModel
     {
         public List<sbyte>?                             EncWorkBuf                              { get; set; }
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RawAssetCoder() { Pointer= p0 };
 
-            value.EncWorkBuf                                = GetSByteList(new IntPtr(p + 0x010)); // 0245A3E16B50 0x10 EncWorkBuf                  ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Crypt                                     = GetObject<AESCTRCrypt>(new IntPtr(p + 0x018), ReversePrism.DataModels.AESCTRCrypt.FromPointer); // 0245A3E16B70 0x18 Crypt                       ( 00018666AD90 ModelClassType AESCTRCrypt AESCTRCrypt AESCTRCrypt Pointer )
-            value.Sha1                                      = GetObject<SHA1>(new IntPtr(p + 0x020), ReversePrism.DataModels.SHA1.FromPointer); // 0245A3E16B90 0x20 Sha1                        ( 0001866AD5C0 ModelClassType SHA1 SHA1 SHA1 Pointer )
+            value.EncWorkBuf                                = GetSByteList(new IntPtr(p + 0x010)); // 0x10 EncWorkBuf                  ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Crypt                                     = GetObject<AESCTRCrypt>(new IntPtr(p + 0x018), ReversePrism.DataModels.AESCTRCrypt.FromPointer); // 0x18 Crypt                       ( ModelClassType AESCTRCrypt AESCTRCrypt AESCTRCrypt Pointer )
+            value.Sha1                                      = GetObject<SHA1>(new IntPtr(p + 0x020), ReversePrism.DataModels.SHA1.FromPointer); // 0x20 Sha1                        ( ModelClassType SHA1 SHA1 SHA1 Pointer )
 
             return value;
         }

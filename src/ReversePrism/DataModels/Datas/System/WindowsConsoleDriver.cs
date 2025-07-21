@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 010 inputHandle                              <int> IL2CPP_TYPE_I
     // 018 outputHandle                             <int> IL2CPP_TYPE_I
-    // 020 DefaultAttribute                         0001865F1060 ModelPrimitiveType short short short Int16
+    // 020 DefaultAttribute                         ModelPrimitiveType short short short Int16
     public partial class WindowsConsoleDriver : DataModel
     {
         public short                                    DefaultAttribute                        { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new WindowsConsoleDriver() { Pointer= p0 };
 
-            value.DefaultAttribute                          = GetInt16(new IntPtr(p + 0x020)); // 024666B20408 0x20 DefaultAttribute            ( 0001865F1060 ModelPrimitiveType short short short Int16 )
+            value.DefaultAttribute                          = GetInt16(new IntPtr(p + 0x020)); // 0x20 DefaultAttribute            ( ModelPrimitiveType short short short Int16 )
 
             return value;
         }

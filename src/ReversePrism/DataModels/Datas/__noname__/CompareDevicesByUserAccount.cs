@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 PlatformUserAccountHandle                0001867071D0 ModelEnumType InputUserAccountHandle InputUserAccountHandle InputUserAccountHandle Int32
+    // 010 PlatformUserAccountHandle                ModelEnumType InputUserAccountHandle InputUserAccountHandle InputUserAccountHandle Int32
     public partial class CompareDevicesByUserAccount : DataModel
     {
         public InputUserAccountHandle                   PlatformUserAccountHandle               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CompareDevicesByUserAccount() { Pointer= p0 };
 
-            value.PlatformUserAccountHandle                 = (InputUserAccountHandle)GetInt32(new IntPtr(p + 0x010)); // 0246677F0160 0x10 PlatformUserAccountHandle   ( 0001867071D0 ModelEnumType InputUserAccountHandle InputUserAccountHandle InputUserAccountHandle Int32 )
+            value.PlatformUserAccountHandle                 = (InputUserAccountHandle)GetInt32(new IntPtr(p + 0x010)); // 0x10 PlatformUserAccountHandle   ( ModelEnumType InputUserAccountHandle InputUserAccountHandle InputUserAccountHandle Int32 )
 
             return value;
         }

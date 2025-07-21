@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Json                                     0001866722E0 ModelPrimitiveType string string string String
-    // 018 Signature                                0001866722E0 ModelPrimitiveType string string string String
+    // 010 Json                                     ModelPrimitiveType string string string String
+    // 018 Signature                                ModelPrimitiveType string string string String
     public partial class GoogleReceipt : DataModel
     {
         public string                                   Json                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GoogleReceipt() { Pointer= p0 };
 
-            value.Json                                      = GetString(new IntPtr(p + 0x010)); // 0245A68F1D90 0x10 Json                        ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Signature                                 = GetString(new IntPtr(p + 0x018)); // 0245A68F1DB0 0x18 Signature                   ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.Json                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Json                        ( ModelPrimitiveType string string string String )
+            value.Signature                                 = GetString(new IntPtr(p + 0x018)); // 0x18 Signature                   ( ModelPrimitiveType string string string String )
 
             return value;
         }

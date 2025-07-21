@@ -8,13 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 060 Title                                    0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 068 SynopsisText                             0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 070 Thumbnail                                0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 078 VoAttributeGrayOutController             0001866EA450 ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer
-    // 080 DaAttributeGrayOutController             0001866EA450 ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer
-    // 088 ViAttributeGrayOutController             0001866EA450 ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer
-    // 090 DifficultyButtons                        000185B9CB30 ModelClassListType ProduceEpisodeEpisodeSelectDifficultyButton[] ProduceEpisodeEpisodeSelectDifficultyButton[] List<ProduceEpisodeEpisodeSelectDifficultyButton> Pointer
+    // 060 Title                                    ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 068 SynopsisText                             ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 070 Thumbnail                                ModelClassType UIImage UIImage UIImage Pointer
+    // 078 VoAttributeGrayOutController             ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer
+    // 080 DaAttributeGrayOutController             ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer
+    // 088 ViAttributeGrayOutController             ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer
+    // 090 DifficultyButtons                        ModelClassListType ProduceEpisodeEpisodeSelectDifficultyButton[] ProduceEpisodeEpisodeSelectDifficultyButton[] List<ProduceEpisodeEpisodeSelectDifficultyButton> Pointer
     public partial class ProducePreparationEpisodeDetailPopupContent : DataModel
     {
         public UITextMeshProUGUI?                       Title                                   { get; set; }
@@ -33,13 +33,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProducePreparationEpisodeDetailPopupContent() { Pointer= p0 };
 
-            value.Title                                     = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x060), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024664D66088 0x60 Title                       ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.SynopsisText                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x068), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024664D660A8 0x68 SynopsisText                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.Thumbnail                                 = GetObject<UIImage>(new IntPtr(p + 0x070), ReversePrism.DataModels.UIImage.FromPointer); // 024664D660C8 0x70 Thumbnail                   ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.VoAttributeGrayOutController              = GetObject<UIGrayOutController>(new IntPtr(p + 0x078), ReversePrism.DataModels.UIGrayOutController.FromPointer); // 024664D660E8 0x78 VoAttributeGrayOutController ( 0001866EA450 ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer )
-            value.DaAttributeGrayOutController              = GetObject<UIGrayOutController>(new IntPtr(p + 0x080), ReversePrism.DataModels.UIGrayOutController.FromPointer); // 024664D66108 0x80 DaAttributeGrayOutController ( 0001866EA450 ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer )
-            value.ViAttributeGrayOutController              = GetObject<UIGrayOutController>(new IntPtr(p + 0x088), ReversePrism.DataModels.UIGrayOutController.FromPointer); // 024664D66128 0x88 ViAttributeGrayOutController ( 0001866EA450 ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer )
-            value.DifficultyButtons                         = GetObjectList<ProduceEpisodeEpisodeSelectDifficultyButton>(new IntPtr(p + 0x090), ReversePrism.DataModels.ProduceEpisodeEpisodeSelectDifficultyButton.FromPointer); // 024664D66148 0x90 DifficultyButtons           ( 000185B9CB30 ModelClassListType ProduceEpisodeEpisodeSelectDifficultyButton[] ProduceEpisodeEpisodeSelectDifficultyButton[] List<ProduceEpisodeEpisodeSelectDifficultyButton> Pointer )
+            value.Title                                     = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x060), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x60 Title                       ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.SynopsisText                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x068), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x68 SynopsisText                ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Thumbnail                                 = GetObject<UIImage>(new IntPtr(p + 0x070), ReversePrism.DataModels.UIImage.FromPointer); // 0x70 Thumbnail                   ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.VoAttributeGrayOutController              = GetObject<UIGrayOutController>(new IntPtr(p + 0x078), ReversePrism.DataModels.UIGrayOutController.FromPointer); // 0x78 VoAttributeGrayOutController ( ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer )
+            value.DaAttributeGrayOutController              = GetObject<UIGrayOutController>(new IntPtr(p + 0x080), ReversePrism.DataModels.UIGrayOutController.FromPointer); // 0x80 DaAttributeGrayOutController ( ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer )
+            value.ViAttributeGrayOutController              = GetObject<UIGrayOutController>(new IntPtr(p + 0x088), ReversePrism.DataModels.UIGrayOutController.FromPointer); // 0x88 ViAttributeGrayOutController ( ModelClassType UIGrayOutController UIGrayOutController UIGrayOutController Pointer )
+            value.DifficultyButtons                         = GetObjectList<ProduceEpisodeEpisodeSelectDifficultyButton>(new IntPtr(p + 0x090), ReversePrism.DataModels.ProduceEpisodeEpisodeSelectDifficultyButton.FromPointer); // 0x90 DifficultyButtons           ( ModelClassListType ProduceEpisodeEpisodeSelectDifficultyButton[] ProduceEpisodeEpisodeSelectDifficultyButton[] List<ProduceEpisodeEpisodeSelectDifficultyButton> Pointer )
 
             return value;
         }

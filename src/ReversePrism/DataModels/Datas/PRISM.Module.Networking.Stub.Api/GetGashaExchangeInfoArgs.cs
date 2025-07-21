@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<GetGashaExchangeInfoArgs> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 GashaExchangeIdFieldNumber               int IL2CPP_TYPE_I4
-    // 018 GashaExchangeId                          000186671910 ModelPrimitiveType string string string String
+    // 018 GashaExchangeId                          ModelPrimitiveType string string string String
     public partial class GetGashaExchangeInfoArgs : DataModel
     {
         public string                                   GashaExchangeId                         { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetGashaExchangeInfoArgs() { Pointer= p0 };
 
-            value.GashaExchangeId                           = GetString(new IntPtr(p + 0x018)); // 02466199B418 0x18 GashaExchangeId             ( 000186671910 ModelPrimitiveType string string string String )
+            value.GashaExchangeId                           = GetString(new IntPtr(p + 0x018)); // 0x18 GashaExchangeId             ( ModelPrimitiveType string string string String )
 
             return value;
         }

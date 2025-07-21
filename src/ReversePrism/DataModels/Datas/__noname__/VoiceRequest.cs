@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CueSheet                                 0001866722E0 ModelPrimitiveType string string string String
-    // 018 CueName                                  0001866722E0 ModelPrimitiveType string string string String
-    // 020 Start                                    0001865C2E50 ModelPrimitiveType double double double Double
-    // 028 OffsetTime                               0001865C2E50 ModelPrimitiveType double double double Double
-    // 030 Volume                                   000186666050 ModelPrimitiveType float float float Single
-    // 034 Played                                   000186595960 ModelPrimitiveType bool bool bool Bool
+    // 010 CueSheet                                 ModelPrimitiveType string string string String
+    // 018 CueName                                  ModelPrimitiveType string string string String
+    // 020 Start                                    ModelPrimitiveType double double double Double
+    // 028 OffsetTime                               ModelPrimitiveType double double double Double
+    // 030 Volume                                   ModelPrimitiveType float float float Single
+    // 034 Played                                   ModelPrimitiveType bool bool bool Bool
     public partial class VoiceRequest : DataModel
     {
         public string                                   CueSheet                                { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new VoiceRequest() { Pointer= p0 };
 
-            value.CueSheet                                  = GetString(new IntPtr(p + 0x010)); // 024664DF7CB8 0x10 CueSheet                    ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.CueName                                   = GetString(new IntPtr(p + 0x018)); // 024664DF7CD8 0x18 CueName                     ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Start                                     = GetDouble(new IntPtr(p + 0x020)); // 024664DF7CF8 0x20 Start                       ( 0001865C2E50 ModelPrimitiveType double double double Double )
-            value.OffsetTime                                = GetDouble(new IntPtr(p + 0x028)); // 024664DF7D18 0x28 OffsetTime                  ( 0001865C2E50 ModelPrimitiveType double double double Double )
-            value.Volume                                    = GetSingle(new IntPtr(p + 0x030)); // 024664DF7D38 0x30 Volume                      ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Played                                    = GetBool(new IntPtr(p + 0x034)); // 024664DF7D58 0x34 Played                      ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.CueSheet                                  = GetString(new IntPtr(p + 0x010)); // 0x10 CueSheet                    ( ModelPrimitiveType string string string String )
+            value.CueName                                   = GetString(new IntPtr(p + 0x018)); // 0x18 CueName                     ( ModelPrimitiveType string string string String )
+            value.Start                                     = GetDouble(new IntPtr(p + 0x020)); // 0x20 Start                       ( ModelPrimitiveType double double double Double )
+            value.OffsetTime                                = GetDouble(new IntPtr(p + 0x028)); // 0x28 OffsetTime                  ( ModelPrimitiveType double double double Double )
+            value.Volume                                    = GetSingle(new IntPtr(p + 0x030)); // 0x30 Volume                      ( ModelPrimitiveType float float float Single )
+            value.Played                                    = GetBool(new IntPtr(p + 0x034)); // 0x34 Played                      ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -10,9 +10,9 @@ namespace ReversePrism.DataModels
 
     // 010 m_Vertices                               NativeSlice`1<Vertex> IL2CPP_TYPE_GENERICINST
     // 020 m_Indices                                NativeSlice`1<ushort> IL2CPP_TYPE_GENERICINST
-    // 030 M_UVRegion                               00018664F8A0 ModelEnumType Rect Rect Rect Int32
-    // 040 CurrentIndex                             0001865F2F90 ModelPrimitiveType int int int Int32
-    // 044 CurrentVertex                            0001865F2F90 ModelPrimitiveType int int int Int32
+    // 030 M_UVRegion                               ModelEnumType Rect Rect Rect Int32
+    // 040 CurrentIndex                             ModelPrimitiveType int int int Int32
+    // 044 CurrentVertex                            ModelPrimitiveType int int int Int32
     public partial class MeshWriteData : DataModel
     {
         public Rect                                     M_UVRegion                              { get; set; }
@@ -27,9 +27,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MeshWriteData() { Pointer= p0 };
 
-            value.M_UVRegion                                = (Rect)GetInt32(new IntPtr(p + 0x030)); // 0245A67A5E18 0x30 M_UVRegion                  ( 00018664F8A0 ModelEnumType Rect Rect Rect Int32 )
-            value.CurrentIndex                              = GetInt32(new IntPtr(p + 0x040)); // 0245A67A5E38 0x40 CurrentIndex                ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.CurrentVertex                             = GetInt32(new IntPtr(p + 0x044)); // 0245A67A5E58 0x44 CurrentVertex               ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.M_UVRegion                                = (Rect)GetInt32(new IntPtr(p + 0x030)); // 0x30 M_UVRegion                  ( ModelEnumType Rect Rect Rect Int32 )
+            value.CurrentIndex                              = GetInt32(new IntPtr(p + 0x040)); // 0x40 CurrentIndex                ( ModelPrimitiveType int int int Int32 )
+            value.CurrentVertex                             = GetInt32(new IntPtr(p + 0x044)); // 0x44 CurrentVertex               ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

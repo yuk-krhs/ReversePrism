@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Table                                    0001865B87B0 ModelClassType DataTable DataTable DataTable Pointer
-    // 018 Record                                   0001865F2F90 ModelPrimitiveType int int int Int32
+    // 010 Table                                    ModelClassType DataTable DataTable DataTable Pointer
+    // 018 Record                                   ModelPrimitiveType int int int Int32
     public partial class DataRowBuilder : DataModel
     {
         public DataTable?                               Table                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DataRowBuilder() { Pointer= p0 };
 
-            value.Table                                     = GetObject<DataTable>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataTable.FromPointer); // 024668936D40 0x10 Table                       ( 0001865B87B0 ModelClassType DataTable DataTable DataTable Pointer )
-            value.Record                                    = GetInt32(new IntPtr(p + 0x018)); // 024668936D60 0x18 Record                      ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
+            value.Table                                     = GetObject<DataTable>(new IntPtr(p + 0x010), ReversePrism.DataModels.DataTable.FromPointer); // 0x10 Table                       ( ModelClassType DataTable DataTable DataTable Pointer )
+            value.Record                                    = GetInt32(new IntPtr(p + 0x018)); // 0x18 Record                      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

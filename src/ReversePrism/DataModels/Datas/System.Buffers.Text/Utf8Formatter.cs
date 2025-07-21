@@ -10,8 +10,8 @@ namespace ReversePrism.DataModels
 
     // 000 DayAbbreviations                         uint[] IL2CPP_TYPE_SZARRAY
     // 008 DayAbbreviationsLowercase                uint[] IL2CPP_TYPE_SZARRAY
-    // 010 MonthAbbreviations                       000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer
-    // 018 MonthAbbreviationsLowercase              000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer
+    // 010 MonthAbbreviations                       ModelPrimitiveListType uint[] uint[] List<uint> Pointer
+    // 018 MonthAbbreviationsLowercase              ModelPrimitiveListType uint[] uint[] List<uint> Pointer
     public partial class Utf8Formatter : DataModel
     {
         public List<uint>?                              MonthAbbreviations                      { get; set; }
@@ -25,8 +25,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Utf8Formatter() { Pointer= p0 };
 
-            value.MonthAbbreviations                        = GetUInt32List(new IntPtr(p + 0x010)); // 024666E895A8 0x10 MonthAbbreviations          ( 000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
-            value.MonthAbbreviationsLowercase               = GetUInt32List(new IntPtr(p + 0x018)); // 024666E895C8 0x18 MonthAbbreviationsLowercase ( 000185B83E90 ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.MonthAbbreviations                        = GetUInt32List(new IntPtr(p + 0x010)); // 0x10 MonthAbbreviations          ( ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
+            value.MonthAbbreviationsLowercase               = GetUInt32List(new IntPtr(p + 0x018)); // 0x18 MonthAbbreviationsLowercase ( ModelPrimitiveListType uint[] uint[] List<uint> Pointer )
 
             return value;
         }

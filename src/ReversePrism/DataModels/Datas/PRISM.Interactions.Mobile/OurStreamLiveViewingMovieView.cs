@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 PlayStartDisposable                      0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
-    // 028 PlayEndDisposable                        0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
-    // 030 IsPlayStart                              000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 020 PlayStartDisposable                      ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 028 PlayEndDisposable                        ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 030 IsPlayStart                              ModelPrimitiveType bool bool bool Bool
     // 038 playEndSubject                           Subject`1<Unit> IL2CPP_TYPE_GENERICINST
     public partial class OurStreamLiveViewingMovieView : DataModel
     {
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new OurStreamLiveViewingMovieView() { Pointer= p0 };
 
-            value.PlayStartDisposable                       = GetObject<IDisposable>(new IntPtr(p + 0x020), ReversePrism.DataModels.IDisposable.FromPointer); // 02466B19E1B0 0x20 PlayStartDisposable         ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
-            value.PlayEndDisposable                         = GetObject<IDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.IDisposable.FromPointer); // 02466B19E1D0 0x28 PlayEndDisposable           ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
-            value.IsPlayStart                               = GetBool(new IntPtr(p + 0x030)); // 02466B19E1F0 0x30 IsPlayStart                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.PlayStartDisposable                       = GetObject<IDisposable>(new IntPtr(p + 0x020), ReversePrism.DataModels.IDisposable.FromPointer); // 0x20 PlayStartDisposable         ( ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.PlayEndDisposable                         = GetObject<IDisposable>(new IntPtr(p + 0x028), ReversePrism.DataModels.IDisposable.FromPointer); // 0x28 PlayEndDisposable           ( ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.IsPlayStart                               = GetBool(new IntPtr(p + 0x030)); // 0x30 IsPlayStart                 ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 UnitID                                   0001865F4940 ModelPrimitiveType int int int Int32
-    // 018 IdolSkill                                0001866E8430 ModelClassType IngameSkillModel IngameSkillModel IngameSkillModel Pointer
-    // 020 IconID                                   0001865F4940 ModelPrimitiveType int int int Int32
+    // 010 UnitID                                   ModelPrimitiveType int int int Int32
+    // 018 IdolSkill                                ModelClassType IngameSkillModel IngameSkillModel IngameSkillModel Pointer
+    // 020 IconID                                   ModelPrimitiveType int int int Int32
     public partial class IdolSkillContentViewModel : DataModel
     {
         public int                                      UnitID                                  { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IdolSkillContentViewModel() { Pointer= p0 };
 
-            value.UnitID                                    = GetInt32(new IntPtr(p + 0x010)); // 024665A38F00 0x10 UnitID                      ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.IdolSkill                                 = GetObject<IngameSkillModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.IngameSkillModel.FromPointer); // 024665A38F20 0x18 IdolSkill                   ( 0001866E8430 ModelClassType IngameSkillModel IngameSkillModel IngameSkillModel Pointer )
-            value.IconID                                    = GetInt32(new IntPtr(p + 0x020)); // 024665A38F40 0x20 IconID                      ( 0001865F4940 ModelPrimitiveType int int int Int32 )
+            value.UnitID                                    = GetInt32(new IntPtr(p + 0x010)); // 0x10 UnitID                      ( ModelPrimitiveType int int int Int32 )
+            value.IdolSkill                                 = GetObject<IngameSkillModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.IngameSkillModel.FromPointer); // 0x18 IdolSkill                   ( ModelClassType IngameSkillModel IngameSkillModel IngameSkillModel Pointer )
+            value.IconID                                    = GetInt32(new IntPtr(p + 0x020)); // 0x20 IconID                      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

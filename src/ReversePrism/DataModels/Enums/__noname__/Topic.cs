@@ -14,5 +14,7 @@ namespace ReversePrism.DataModels
         StartEvent,
         StartSeason,
         Bow,
+        StartStream,
+        BowImportant,
     }
 }

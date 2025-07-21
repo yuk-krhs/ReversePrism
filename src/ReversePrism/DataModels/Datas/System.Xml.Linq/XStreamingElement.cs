@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Name                                     00018657AE30 ModelClassType XName XName XName Pointer
+    // 010 Name                                     ModelClassType XName XName XName Pointer
     // 018 content                                  <object> IL2CPP_TYPE_OBJECT
     public partial class XStreamingElement : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XStreamingElement() { Pointer= p0 };
 
-            value.Name                                      = GetObject<XName>(new IntPtr(p + 0x010), ReversePrism.DataModels.XName.FromPointer); // 02466BCAEDF0 0x10 Name                        ( 00018657AE30 ModelClassType XName XName XName Pointer )
+            value.Name                                      = GetObject<XName>(new IntPtr(p + 0x010), ReversePrism.DataModels.XName.FromPointer); // 0x10 Name                        ( ModelClassType XName XName XName Pointer )
 
             return value;
         }

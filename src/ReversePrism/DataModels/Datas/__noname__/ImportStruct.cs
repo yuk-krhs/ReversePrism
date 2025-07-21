@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 StyleSheet                               0001865CDAA0 ModelClassType StyleSheet StyleSheet StyleSheet Pointer
-    // 018 MediaQueries                             000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 010 StyleSheet                               ModelClassType StyleSheet StyleSheet StyleSheet Pointer
+    // 018 MediaQueries                             ModelPrimitiveListType string[] string[] List<string> Pointer
     public partial class ImportStruct : DataModel
     {
         public StyleSheet?                              StyleSheet                              { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ImportStruct() { Pointer= p0 };
 
-            value.StyleSheet                                = GetObject<StyleSheet>(new IntPtr(p + 0x010), ReversePrism.DataModels.StyleSheet.FromPointer); // 0245A6804738 0x10 StyleSheet                  ( 0001865CDAA0 ModelClassType StyleSheet StyleSheet StyleSheet Pointer )
-            value.MediaQueries                              = GetStringList(new IntPtr(p + 0x018)); // 0245A6804758 0x18 MediaQueries                ( 000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.StyleSheet                                = GetObject<StyleSheet>(new IntPtr(p + 0x010), ReversePrism.DataModels.StyleSheet.FromPointer); // 0x10 StyleSheet                  ( ModelClassType StyleSheet StyleSheet StyleSheet Pointer )
+            value.MediaQueries                              = GetStringList(new IntPtr(p + 0x018)); // 0x18 MediaQueries                ( ModelPrimitiveListType string[] string[] List<string> Pointer )
 
             return value;
         }

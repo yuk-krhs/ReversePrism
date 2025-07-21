@@ -10,9 +10,9 @@ namespace ReversePrism.DataModels
 
     // 000 oid                                      string IL2CPP_TYPE_STRING
     // 000 friendlyName                             string IL2CPP_TYPE_STRING
-    // 028 SubjectKeyIdentifier                     000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 030 Ski                                      000186671910 ModelPrimitiveType string string string String
-    // 038 Status                                   0001866DC700 ModelEnumType AsnDecodeStatus AsnDecodeStatus AsnDecodeStatus Int32
+    // 028 SubjectKeyIdentifier                     ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 030 Ski                                      ModelPrimitiveType string string string String
+    // 038 Status                                   ModelEnumType AsnDecodeStatus AsnDecodeStatus AsnDecodeStatus Int32
     public partial class X509SubjectKeyIdentifierExtension : DataModel
     {
         public List<sbyte>?                             SubjectKeyIdentifier                    { get; set; }
@@ -27,9 +27,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new X509SubjectKeyIdentifierExtension() { Pointer= p0 };
 
-            value.SubjectKeyIdentifier                      = GetSByteList(new IntPtr(p + 0x028)); // 024667A467F0 0x28 SubjectKeyIdentifier        ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Ski                                       = GetString(new IntPtr(p + 0x030)); // 024667A46810 0x30 Ski                         ( 000186671910 ModelPrimitiveType string string string String )
-            value.Status                                    = (AsnDecodeStatus)GetInt32(new IntPtr(p + 0x038)); // 024667A46830 0x38 Status                      ( 0001866DC700 ModelEnumType AsnDecodeStatus AsnDecodeStatus AsnDecodeStatus Int32 )
+            value.SubjectKeyIdentifier                      = GetSByteList(new IntPtr(p + 0x028)); // 0x28 SubjectKeyIdentifier        ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Ski                                       = GetString(new IntPtr(p + 0x030)); // 0x30 Ski                         ( ModelPrimitiveType string string string String )
+            value.Status                                    = (AsnDecodeStatus)GetInt32(new IntPtr(p + 0x038)); // 0x38 Status                      ( ModelEnumType AsnDecodeStatus AsnDecodeStatus AsnDecodeStatus Int32 )
 
             return value;
         }

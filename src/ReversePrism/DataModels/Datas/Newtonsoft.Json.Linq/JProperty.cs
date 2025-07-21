@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 058 Content                                  000186658980 ModelClassType JPropertyList JPropertyList JPropertyList Pointer
-    // 060 Name                                     000186672F10 ModelPrimitiveType string string string String
+    // 058 Content                                  ModelClassType JPropertyList JPropertyList JPropertyList Pointer
+    // 060 Name                                     ModelPrimitiveType string string string String
     public partial class JProperty : DataModel
     {
         public JPropertyList?                           Content                                 { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JProperty() { Pointer= p0 };
 
-            value.Content                                   = GetObject<JPropertyList>(new IntPtr(p + 0x058), ReversePrism.DataModels.JPropertyList.FromPointer); // 024668832C28 0x58 Content                     ( 000186658980 ModelClassType JPropertyList JPropertyList JPropertyList Pointer )
-            value.Name                                      = GetString(new IntPtr(p + 0x060)); // 024668832C48 0x60 Name                        ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Content                                   = GetObject<JPropertyList>(new IntPtr(p + 0x058), ReversePrism.DataModels.JPropertyList.FromPointer); // 0x58 Content                     ( ModelClassType JPropertyList JPropertyList JPropertyList Pointer )
+            value.Name                                      = GetString(new IntPtr(p + 0x060)); // 0x60 Name                        ( ModelPrimitiveType string string string String )
 
             return value;
         }

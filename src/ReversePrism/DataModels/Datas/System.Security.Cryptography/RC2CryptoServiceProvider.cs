@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 050 M_use40bitSalt                           000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 050 M_use40bitSalt                           ModelPrimitiveType bool bool bool Bool
     // 000 s_legalKeySizes                          KeySizes[] IL2CPP_TYPE_SZARRAY
     public partial class RC2CryptoServiceProvider : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RC2CryptoServiceProvider() { Pointer= p0 };
 
-            value.M_use40bitSalt                            = GetBool(new IntPtr(p + 0x050)); // 02466192E298 0x50 M_use40bitSalt              ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_use40bitSalt                            = GetBool(new IntPtr(p + 0x050)); // 0x50 M_use40bitSalt              ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

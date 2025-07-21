@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 C0                                       0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32
-    // 02C R0                                       000186666050 ModelPrimitiveType float float float Single
-    // 030 C1                                       0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32
-    // 03C R1                                       000186666050 ModelPrimitiveType float float float Single
+    // 020 C0                                       ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 02C R0                                       ModelPrimitiveType float float float Single
+    // 030 C1                                       ModelEnumType Vector3 Vector3 Vector3 Int32
+    // 03C R1                                       ModelPrimitiveType float float float Single
     public partial class SwayBoneCollider : DataModel
     {
         public Vector3                                  C0                                      { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SwayBoneCollider() { Pointer= p0 };
 
-            value.C0                                        = (Vector3)GetInt32(new IntPtr(p + 0x020)); // 0245A69BBB10 0x20 C0                          ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.R0                                        = GetSingle(new IntPtr(p + 0x02C)); // 0245A69BBB30 0x2C R0                          ( 000186666050 ModelPrimitiveType float float float Single )
-            value.C1                                        = (Vector3)GetInt32(new IntPtr(p + 0x030)); // 0245A69BBB50 0x30 C1                          ( 0001866ABF40 ModelEnumType Vector3 Vector3 Vector3 Int32 )
-            value.R1                                        = GetSingle(new IntPtr(p + 0x03C)); // 0245A69BBB70 0x3C R1                          ( 000186666050 ModelPrimitiveType float float float Single )
+            value.C0                                        = (Vector3)GetInt32(new IntPtr(p + 0x020)); // 0x20 C0                          ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.R0                                        = GetSingle(new IntPtr(p + 0x02C)); // 0x2C R0                          ( ModelPrimitiveType float float float Single )
+            value.C1                                        = (Vector3)GetInt32(new IntPtr(p + 0x030)); // 0x30 C1                          ( ModelEnumType Vector3 Vector3 Vector3 Int32 )
+            value.R1                                        = GetSingle(new IntPtr(p + 0x03C)); // 0x3C R1                          ( ModelPrimitiveType float float float Single )
 
             return value;
         }

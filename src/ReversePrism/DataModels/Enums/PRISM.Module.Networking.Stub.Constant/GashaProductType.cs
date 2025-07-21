@@ -14,6 +14,7 @@ namespace ReversePrism.DataModels
         Normal,
         PickUp,
         Limited,
+        PickUpLimited,
         Num,
     }
 }

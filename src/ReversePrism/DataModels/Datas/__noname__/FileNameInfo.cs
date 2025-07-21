@@ -8,13 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 AllinFileName                            0001866722E0 ModelPrimitiveType string string string String
-    // 018 FaceFileName                             0001866722E0 ModelPrimitiveType string string string String
-    // 020 HairFileName                             0001866722E0 ModelPrimitiveType string string string String
-    // 028 HeadwearFileName                         0001866722E0 ModelPrimitiveType string string string String
-    // 030 DressFileName                            0001866722E0 ModelPrimitiveType string string string String
-    // 038 AccessoryFileName                        000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 040 FaceName                                 0001866722E0 ModelPrimitiveType string string string String
+    // 010 AllinFileName                            ModelPrimitiveType string string string String
+    // 018 FaceFileName                             ModelPrimitiveType string string string String
+    // 020 HairFileName                             ModelPrimitiveType string string string String
+    // 028 HeadwearFileName                         ModelPrimitiveType string string string String
+    // 030 DressFileName                            ModelPrimitiveType string string string String
+    // 038 AccessoryFileName                        ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 040 FaceName                                 ModelPrimitiveType string string string String
     public partial class FileNameInfo : DataModel
     {
         public string                                   AllinFileName                           { get; set; }
@@ -33,13 +33,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FileNameInfo() { Pointer= p0 };
 
-            value.AllinFileName                             = GetString(new IntPtr(p + 0x010)); // 0245A60C1940 0x10 AllinFileName               ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.FaceFileName                              = GetString(new IntPtr(p + 0x018)); // 0245A60C1960 0x18 FaceFileName                ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.HairFileName                              = GetString(new IntPtr(p + 0x020)); // 0245A60C1980 0x20 HairFileName                ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.HeadwearFileName                          = GetString(new IntPtr(p + 0x028)); // 0245A60C19A0 0x28 HeadwearFileName            ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.DressFileName                             = GetString(new IntPtr(p + 0x030)); // 0245A60C19C0 0x30 DressFileName               ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.AccessoryFileName                         = GetStringList(new IntPtr(p + 0x038)); // 0245A60C19E0 0x38 AccessoryFileName           ( 000185B81990 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.FaceName                                  = GetString(new IntPtr(p + 0x040)); // 0245A60C1A00 0x40 FaceName                    ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.AllinFileName                             = GetString(new IntPtr(p + 0x010)); // 0x10 AllinFileName               ( ModelPrimitiveType string string string String )
+            value.FaceFileName                              = GetString(new IntPtr(p + 0x018)); // 0x18 FaceFileName                ( ModelPrimitiveType string string string String )
+            value.HairFileName                              = GetString(new IntPtr(p + 0x020)); // 0x20 HairFileName                ( ModelPrimitiveType string string string String )
+            value.HeadwearFileName                          = GetString(new IntPtr(p + 0x028)); // 0x28 HeadwearFileName            ( ModelPrimitiveType string string string String )
+            value.DressFileName                             = GetString(new IntPtr(p + 0x030)); // 0x30 DressFileName               ( ModelPrimitiveType string string string String )
+            value.AccessoryFileName                         = GetStringList(new IntPtr(p + 0x038)); // 0x38 AccessoryFileName           ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.FaceName                                  = GetString(new IntPtr(p + 0x040)); // 0x40 FaceName                    ( ModelPrimitiveType string string string String )
 
             return value;
         }

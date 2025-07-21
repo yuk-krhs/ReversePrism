@@ -8,18 +8,18 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ActionStartIndex                         0001865F36C0 ModelPrimitiveType int int int Int32
-    // 014 ActionCount                              0001865F36C0 ModelPrimitiveType int int int Int32
-    // 018 ControlStartIndex                        0001865F36C0 ModelPrimitiveType int int int Int32
-    // 01C ControlCount                             0001865F36C0 ModelPrimitiveType int int int Int32
-    // 020 BindingStartIndex                        0001865F36C0 ModelPrimitiveType int int int Int32
-    // 024 BindingCount                             0001865F36C0 ModelPrimitiveType int int int Int32
-    // 028 InteractionStartIndex                    0001865F36C0 ModelPrimitiveType int int int Int32
-    // 02C InteractionCount                         0001865F36C0 ModelPrimitiveType int int int Int32
-    // 030 ProcessorStartIndex                      0001865F36C0 ModelPrimitiveType int int int Int32
-    // 034 ProcessorCount                           0001865F36C0 ModelPrimitiveType int int int Int32
-    // 038 CompositeStartIndex                      0001865F36C0 ModelPrimitiveType int int int Int32
-    // 03C CompositeCount                           0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 ActionStartIndex                         ModelPrimitiveType int int int Int32
+    // 014 ActionCount                              ModelPrimitiveType int int int Int32
+    // 018 ControlStartIndex                        ModelPrimitiveType int int int Int32
+    // 01C ControlCount                             ModelPrimitiveType int int int Int32
+    // 020 BindingStartIndex                        ModelPrimitiveType int int int Int32
+    // 024 BindingCount                             ModelPrimitiveType int int int Int32
+    // 028 InteractionStartIndex                    ModelPrimitiveType int int int Int32
+    // 02C InteractionCount                         ModelPrimitiveType int int int Int32
+    // 030 ProcessorStartIndex                      ModelPrimitiveType int int int Int32
+    // 034 ProcessorCount                           ModelPrimitiveType int int int Int32
+    // 038 CompositeStartIndex                      ModelPrimitiveType int int int Int32
+    // 03C CompositeCount                           ModelPrimitiveType int int int Int32
     public partial class ActionMapIndices : DataModel
     {
         public int                                      ActionStartIndex                        { get; set; }
@@ -43,18 +43,18 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ActionMapIndices() { Pointer= p0 };
 
-            value.ActionStartIndex                          = GetInt32(new IntPtr(p + 0x010)); // 0246676DC588 0x10 ActionStartIndex            ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.ActionCount                               = GetInt32(new IntPtr(p + 0x014)); // 0246676DC5A8 0x14 ActionCount                 ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.ControlStartIndex                         = GetInt32(new IntPtr(p + 0x018)); // 0246676DC5C8 0x18 ControlStartIndex           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.ControlCount                              = GetInt32(new IntPtr(p + 0x01C)); // 0246676DC5E8 0x1C ControlCount                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.BindingStartIndex                         = GetInt32(new IntPtr(p + 0x020)); // 0246676DC608 0x20 BindingStartIndex           ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.BindingCount                              = GetInt32(new IntPtr(p + 0x024)); // 0246676DC628 0x24 BindingCount                ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.InteractionStartIndex                     = GetInt32(new IntPtr(p + 0x028)); // 0246676DC648 0x28 InteractionStartIndex       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.InteractionCount                          = GetInt32(new IntPtr(p + 0x02C)); // 0246676DC668 0x2C InteractionCount            ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.ProcessorStartIndex                       = GetInt32(new IntPtr(p + 0x030)); // 0246676DC688 0x30 ProcessorStartIndex         ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.ProcessorCount                            = GetInt32(new IntPtr(p + 0x034)); // 0246676DC6A8 0x34 ProcessorCount              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.CompositeStartIndex                       = GetInt32(new IntPtr(p + 0x038)); // 0246676DC6C8 0x38 CompositeStartIndex         ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.CompositeCount                            = GetInt32(new IntPtr(p + 0x03C)); // 0246676DC6E8 0x3C CompositeCount              ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.ActionStartIndex                          = GetInt32(new IntPtr(p + 0x010)); // 0x10 ActionStartIndex            ( ModelPrimitiveType int int int Int32 )
+            value.ActionCount                               = GetInt32(new IntPtr(p + 0x014)); // 0x14 ActionCount                 ( ModelPrimitiveType int int int Int32 )
+            value.ControlStartIndex                         = GetInt32(new IntPtr(p + 0x018)); // 0x18 ControlStartIndex           ( ModelPrimitiveType int int int Int32 )
+            value.ControlCount                              = GetInt32(new IntPtr(p + 0x01C)); // 0x1C ControlCount                ( ModelPrimitiveType int int int Int32 )
+            value.BindingStartIndex                         = GetInt32(new IntPtr(p + 0x020)); // 0x20 BindingStartIndex           ( ModelPrimitiveType int int int Int32 )
+            value.BindingCount                              = GetInt32(new IntPtr(p + 0x024)); // 0x24 BindingCount                ( ModelPrimitiveType int int int Int32 )
+            value.InteractionStartIndex                     = GetInt32(new IntPtr(p + 0x028)); // 0x28 InteractionStartIndex       ( ModelPrimitiveType int int int Int32 )
+            value.InteractionCount                          = GetInt32(new IntPtr(p + 0x02C)); // 0x2C InteractionCount            ( ModelPrimitiveType int int int Int32 )
+            value.ProcessorStartIndex                       = GetInt32(new IntPtr(p + 0x030)); // 0x30 ProcessorStartIndex         ( ModelPrimitiveType int int int Int32 )
+            value.ProcessorCount                            = GetInt32(new IntPtr(p + 0x034)); // 0x34 ProcessorCount              ( ModelPrimitiveType int int int Int32 )
+            value.CompositeStartIndex                       = GetInt32(new IntPtr(p + 0x038)); // 0x38 CompositeStartIndex         ( ModelPrimitiveType int int int Int32 )
+            value.CompositeCount                            = GetInt32(new IntPtr(p + 0x03C)); // 0x3C CompositeCount              ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

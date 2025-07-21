@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_SourceTransform                        0001866AA150 ModelClassType Transform Transform Transform Pointer
-    // 018 M_Weight                                 0001866656B0 ModelPrimitiveType float float float Single
+    // 010 M_SourceTransform                        ModelClassType Transform Transform Transform Pointer
+    // 018 M_Weight                                 ModelPrimitiveType float float float Single
     public partial class ConstraintSource : DataModel
     {
         public Transform?                               M_SourceTransform                       { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ConstraintSource() { Pointer= p0 };
 
-            value.M_SourceTransform                         = GetObject<Transform>(new IntPtr(p + 0x010), ReversePrism.DataModels.Transform.FromPointer); // 0245A224AA30 0x10 M_SourceTransform           ( 0001866AA150 ModelClassType Transform Transform Transform Pointer )
-            value.M_Weight                                  = GetSingle(new IntPtr(p + 0x018)); // 0245A224AA50 0x18 M_Weight                    ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_SourceTransform                         = GetObject<Transform>(new IntPtr(p + 0x010), ReversePrism.DataModels.Transform.FromPointer); // 0x10 M_SourceTransform           ( ModelClassType Transform Transform Transform Pointer )
+            value.M_Weight                                  = GetSingle(new IntPtr(p + 0x018)); // 0x18 M_Weight                    ( ModelPrimitiveType float float float Single )
 
             return value;
         }

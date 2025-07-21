@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 EventStatus                              00018651E870 ModelClassType IGameEventStatus IGameEventStatus IGameEventStatus Pointer
-    // 018 EffectStatus                             0001866053B0 ModelClassType IPvpEventEffectStatus IPvpEventEffectStatus IPvpEventEffectStatus Pointer
-    // 020 Rank                                     0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 EventStatus                              ModelClassType IGameEventStatus IGameEventStatus IGameEventStatus Pointer
+    // 018 EffectStatus                             ModelClassType IPvpEventEffectStatus IPvpEventEffectStatus IPvpEventEffectStatus Pointer
+    // 020 Rank                                     ModelPrimitiveType int int int Int32
     public partial class PvpRankingArgument : DataModel
     {
         public IGameEventStatus?                        EventStatus                             { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PvpRankingArgument() { Pointer= p0 };
 
-            value.EventStatus                               = GetObject<IGameEventStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IGameEventStatus.FromPointer); // 0246666868F8 0x10 EventStatus                 ( 00018651E870 ModelClassType IGameEventStatus IGameEventStatus IGameEventStatus Pointer )
-            value.EffectStatus                              = GetObject<IPvpEventEffectStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IPvpEventEffectStatus.FromPointer); // 024666686918 0x18 EffectStatus                ( 0001866053B0 ModelClassType IPvpEventEffectStatus IPvpEventEffectStatus IPvpEventEffectStatus Pointer )
-            value.Rank                                      = GetInt32(new IntPtr(p + 0x020)); // 024666686938 0x20 Rank                        ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.EventStatus                               = GetObject<IGameEventStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IGameEventStatus.FromPointer); // 0x10 EventStatus                 ( ModelClassType IGameEventStatus IGameEventStatus IGameEventStatus Pointer )
+            value.EffectStatus                              = GetObject<IPvpEventEffectStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.IPvpEventEffectStatus.FromPointer); // 0x18 EffectStatus                ( ModelClassType IPvpEventEffectStatus IPvpEventEffectStatus IPvpEventEffectStatus Pointer )
+            value.Rank                                      = GetInt32(new IntPtr(p + 0x020)); // 0x20 Rank                        ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -11,49 +11,38 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<SongDifficultyLevelStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 DifficultyLevelFieldNumber               int IL2CPP_TYPE_I4
-    // 018 DifficultyLevel                          000186529820 ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32
-    // 000 SongLevelFieldNumber                     int IL2CPP_TYPE_I4
-    // 01C SongLevel                                0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 000 NotesFieldNumber                         int IL2CPP_TYPE_I4
-    // 020 Notes                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 000 ClearedFieldNumber                       int IL2CPP_TYPE_I4
-    // 024 Cleared                                  0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 DifficultyLevel                          ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32
     // 000 ComboRankFieldNumber                     int IL2CPP_TYPE_I4
-    // 028 ComboRank                                0001865DE690 ModelEnumType ComboRank ComboRank ComboRank Int32
+    // 01C ComboRank                                ModelEnumType ComboRank ComboRank ComboRank Int32
     // 000 ScoreRankFieldNumber                     int IL2CPP_TYPE_I4
-    // 02C ScoreRank                                0001866EDE40 ModelEnumType ScoreRank ScoreRank ScoreRank Int32
+    // 020 ScoreRank                                ModelEnumType ScoreRank ScoreRank ScoreRank Int32
     // 000 HighScoreFieldNumber                     int IL2CPP_TYPE_I4
-    // 030 HighScore                                0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 024 HighScore                                ModelPrimitiveType int int int Int32
     // 000 HighScoreRatingFieldNumber               int IL2CPP_TYPE_I4
-    // 034 HighScoreRating                          0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 028 HighScoreRating                          ModelPrimitiveType int int int Int32
     // 000 TechnicalScoreFieldNumber                int IL2CPP_TYPE_I4
-    // 038 TechnicalScore                           0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 02C TechnicalScore                           ModelPrimitiveType int int int Int32
     // 000 TechnicalRatingFieldNumber               int IL2CPP_TYPE_I4
-    // 03C TechnicalRating                          0001866656B0 ModelPrimitiveType float float float Single
+    // 030 TechnicalRating                          ModelPrimitiveType float float float Single
     // 000 IsFullComboFieldNumber                   int IL2CPP_TYPE_I4
-    // 040 IsFullCombo                              000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 034 IsFullCombo                              ModelPrimitiveType bool bool bool Bool
     // 000 IsAllGreatFieldNumber                    int IL2CPP_TYPE_I4
-    // 041 IsAllGreat                               000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 035 IsAllGreat                               ModelPrimitiveType bool bool bool Bool
     // 000 IsAllPerfectFieldNumber                  int IL2CPP_TYPE_I4
-    // 042 IsAllPerfect                             000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 000 ScoreRankListFieldNumber                 int IL2CPP_TYPE_I4
-    // 008 _repeated_scoreRankList_codec            FieldCodec`1<ScoreRankStatus> IL2CPP_TYPE_GENERICINST
-    // 048 ScoreRankList                            000185CEFF18 ModelClassListType RepeatedField`1<ScoreRankStatus> RepeatedField`1<ScoreRankStatus> List<ScoreRankStatus> Pointer
-    // 000 ComboRankListFieldNumber                 int IL2CPP_TYPE_I4
-    // 010 _repeated_comboRankList_codec            FieldCodec`1<ComboRankStatus> IL2CPP_TYPE_GENERICINST
-    // 050 ComboRankList                            000185CD22B8 ModelClassListType RepeatedField`1<ComboRankStatus> RepeatedField`1<ComboRankStatus> List<ComboRankStatus> Pointer
+    // 036 IsAllPerfect                             ModelPrimitiveType bool bool bool Bool
     // 000 IsClearedFieldNumber                     int IL2CPP_TYPE_I4
-    // 058 IsCleared                                000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 037 IsCleared                                ModelPrimitiveType bool bool bool Bool
     // 000 IsAutoLiveClearedFieldNumber             int IL2CPP_TYPE_I4
-    // 059 IsAutoLiveCleared                        000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 038 IsAutoLiveCleared                        ModelPrimitiveType bool bool bool Bool
     // 000 IsSkipLiveClearedFieldNumber             int IL2CPP_TYPE_I4
-    // 05A IsSkipLiveCleared                        000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 039 IsSkipLiveCleared                        ModelPrimitiveType bool bool bool Bool
+    // 000 ClearInfoFieldNumber                     int IL2CPP_TYPE_I4
+    // 03C ClearInfo                                ModelEnumType LiveClearInfo LiveClearInfo LiveClearInfo Int32
+    // 000 ComboFieldNumber                         int IL2CPP_TYPE_I4
+    // 040 Combo                                    ModelPrimitiveType int int int Int32
     public partial class SongDifficultyLevelStatus : DataModel
     {
         public SongDifficultyLevel                      DifficultyLevel                         { get; set; }
-        public int                                      SongLevel                               { get; set; }
-        public int                                      Notes                                   { get; set; }
-        public int                                      Cleared                                 { get; set; }
         public ComboRank                                ComboRank                               { get; set; }
         public ScoreRank                                ScoreRank                               { get; set; }
         public int                                      HighScore                               { get; set; }
@@ -63,11 +52,11 @@ namespace ReversePrism.DataModels
         public bool                                     IsFullCombo                             { get; set; }
         public bool                                     IsAllGreat                              { get; set; }
         public bool                                     IsAllPerfect                            { get; set; }
-        public List<ScoreRankStatus>?                   ScoreRankList                           { get; set; }
-        public List<ComboRankStatus>?                   ComboRankList                           { get; set; }
         public bool                                     IsCleared                               { get; set; }
         public bool                                     IsAutoLiveCleared                       { get; set; }
         public bool                                     IsSkipLiveCleared                       { get; set; }
+        public LiveClearInfo                            ClearInfo                               { get; set; }
+        public int                                      Combo                                   { get; set; }
 
         public static SongDifficultyLevelStatus? FromPointer(IntPtr p0)
         {
@@ -77,24 +66,21 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SongDifficultyLevelStatus() { Pointer= p0 };
 
-            value.DifficultyLevel                           = (SongDifficultyLevel)GetInt32(new IntPtr(p + 0x018)); // 0246612F8C10 0x18 DifficultyLevel             ( 000186529820 ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32 )
-            value.SongLevel                                 = GetInt32(new IntPtr(p + 0x01C)); // 0246612F8C50 0x1C SongLevel                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Notes                                     = GetInt32(new IntPtr(p + 0x020)); // 0246612F8C90 0x20 Notes                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Cleared                                   = GetInt32(new IntPtr(p + 0x024)); // 0246612F8CD0 0x24 Cleared                     ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ComboRank                                 = (ComboRank)GetInt32(new IntPtr(p + 0x028)); // 0246612F8D10 0x28 ComboRank                   ( 0001865DE690 ModelEnumType ComboRank ComboRank ComboRank Int32 )
-            value.ScoreRank                                 = (ScoreRank)GetInt32(new IntPtr(p + 0x02C)); // 0246612F8D50 0x2C ScoreRank                   ( 0001866EDE40 ModelEnumType ScoreRank ScoreRank ScoreRank Int32 )
-            value.HighScore                                 = GetInt32(new IntPtr(p + 0x030)); // 0246612F8D90 0x30 HighScore                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.HighScoreRating                           = GetInt32(new IntPtr(p + 0x034)); // 0246612F8DD0 0x34 HighScoreRating             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.TechnicalScore                            = GetInt32(new IntPtr(p + 0x038)); // 0246612F8E10 0x38 TechnicalScore              ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.TechnicalRating                           = GetSingle(new IntPtr(p + 0x03C)); // 0246612F8E50 0x3C TechnicalRating             ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.IsFullCombo                               = GetBool(new IntPtr(p + 0x040)); // 0246612F8E90 0x40 IsFullCombo                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsAllGreat                                = GetBool(new IntPtr(p + 0x041)); // 0246612F8ED0 0x41 IsAllGreat                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsAllPerfect                              = GetBool(new IntPtr(p + 0x042)); // 0246612F8F10 0x42 IsAllPerfect                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ScoreRankList                             = GetObjectList<ScoreRankStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.ScoreRankStatus.FromPointer); // 0246612F8F70 0x48 ScoreRankList               ( 000185CEFF18 ModelClassListType RepeatedField`1<ScoreRankStatus> RepeatedField`1<ScoreRankStatus> List<ScoreRankStatus> Pointer )
-            value.ComboRankList                             = GetObjectList<ComboRankStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.ComboRankStatus.FromPointer); // 0246612F8FD0 0x50 ComboRankList               ( 000185CD22B8 ModelClassListType RepeatedField`1<ComboRankStatus> RepeatedField`1<ComboRankStatus> List<ComboRankStatus> Pointer )
-            value.IsCleared                                 = GetBool(new IntPtr(p + 0x058)); // 0246612F9010 0x58 IsCleared                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsAutoLiveCleared                         = GetBool(new IntPtr(p + 0x059)); // 0246612F9050 0x59 IsAutoLiveCleared           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsSkipLiveCleared                         = GetBool(new IntPtr(p + 0x05A)); // 0246612F9090 0x5A IsSkipLiveCleared           ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.DifficultyLevel                           = (SongDifficultyLevel)GetInt32(new IntPtr(p + 0x018)); // 0x18 DifficultyLevel             ( ModelEnumType SongDifficultyLevel SongDifficultyLevel SongDifficultyLevel Int32 )
+            value.ComboRank                                 = (ComboRank)GetInt32(new IntPtr(p + 0x01C)); // 0x1C ComboRank                   ( ModelEnumType ComboRank ComboRank ComboRank Int32 )
+            value.ScoreRank                                 = (ScoreRank)GetInt32(new IntPtr(p + 0x020)); // 0x20 ScoreRank                   ( ModelEnumType ScoreRank ScoreRank ScoreRank Int32 )
+            value.HighScore                                 = GetInt32(new IntPtr(p + 0x024)); // 0x24 HighScore                   ( ModelPrimitiveType int int int Int32 )
+            value.HighScoreRating                           = GetInt32(new IntPtr(p + 0x028)); // 0x28 HighScoreRating             ( ModelPrimitiveType int int int Int32 )
+            value.TechnicalScore                            = GetInt32(new IntPtr(p + 0x02C)); // 0x2C TechnicalScore              ( ModelPrimitiveType int int int Int32 )
+            value.TechnicalRating                           = GetSingle(new IntPtr(p + 0x030)); // 0x30 TechnicalRating             ( ModelPrimitiveType float float float Single )
+            value.IsFullCombo                               = GetBool(new IntPtr(p + 0x034)); // 0x34 IsFullCombo                 ( ModelPrimitiveType bool bool bool Bool )
+            value.IsAllGreat                                = GetBool(new IntPtr(p + 0x035)); // 0x35 IsAllGreat                  ( ModelPrimitiveType bool bool bool Bool )
+            value.IsAllPerfect                              = GetBool(new IntPtr(p + 0x036)); // 0x36 IsAllPerfect                ( ModelPrimitiveType bool bool bool Bool )
+            value.IsCleared                                 = GetBool(new IntPtr(p + 0x037)); // 0x37 IsCleared                   ( ModelPrimitiveType bool bool bool Bool )
+            value.IsAutoLiveCleared                         = GetBool(new IntPtr(p + 0x038)); // 0x38 IsAutoLiveCleared           ( ModelPrimitiveType bool bool bool Bool )
+            value.IsSkipLiveCleared                         = GetBool(new IntPtr(p + 0x039)); // 0x39 IsSkipLiveCleared           ( ModelPrimitiveType bool bool bool Bool )
+            value.ClearInfo                                 = (LiveClearInfo)GetInt32(new IntPtr(p + 0x03C)); // 0x3C ClearInfo                   ( ModelEnumType LiveClearInfo LiveClearInfo LiveClearInfo Int32 )
+            value.Combo                                     = GetInt32(new IntPtr(p + 0x040)); // 0x40 Combo                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 TweenTimeLeft                            0001866656B0 ModelPrimitiveType float float float Single
+    // 020 TweenTimeLeft                            ModelPrimitiveType float float float Single
     public partial class Tween : DataModel
     {
         public float                                    TweenTimeLeft                           { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Tween() { Pointer= p0 };
 
-            value.TweenTimeLeft                             = GetSingle(new IntPtr(p + 0x020)); // 02466BCAC720 0x20 TweenTimeLeft               ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.TweenTimeLeft                             = GetSingle(new IntPtr(p + 0x020)); // 0x20 TweenTimeLeft               ( ModelPrimitiveType float float float Single )
 
             return value;
         }

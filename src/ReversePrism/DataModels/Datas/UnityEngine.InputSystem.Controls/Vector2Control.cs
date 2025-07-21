@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 110 X                                        000186730F50 ModelClassType AxisControl AxisControl AxisControl Pointer
-    // 118 Y                                        000186730F50 ModelClassType AxisControl AxisControl AxisControl Pointer
+    // 110 X                                        ModelClassType AxisControl AxisControl AxisControl Pointer
+    // 118 Y                                        ModelClassType AxisControl AxisControl AxisControl Pointer
     public partial class Vector2Control : DataModel
     {
         public AxisControl?                             X                                       { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Vector2Control() { Pointer= p0 };
 
-            value.X                                         = GetObject<AxisControl>(new IntPtr(p + 0x110), ReversePrism.DataModels.AxisControl.FromPointer); // 0245A338C7B8 0x110 X                           ( 000186730F50 ModelClassType AxisControl AxisControl AxisControl Pointer )
-            value.Y                                         = GetObject<AxisControl>(new IntPtr(p + 0x118), ReversePrism.DataModels.AxisControl.FromPointer); // 0245A338C7D8 0x118 Y                           ( 000186730F50 ModelClassType AxisControl AxisControl AxisControl Pointer )
+            value.X                                         = GetObject<AxisControl>(new IntPtr(p + 0x110), ReversePrism.DataModels.AxisControl.FromPointer); // 0x110 X                           ( ModelClassType AxisControl AxisControl AxisControl Pointer )
+            value.Y                                         = GetObject<AxisControl>(new IntPtr(p + 0x118), ReversePrism.DataModels.AxisControl.FromPointer); // 0x118 Y                           ( ModelClassType AxisControl AxisControl AxisControl Pointer )
 
             return value;
         }

@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Icon                                     0001866ABAC0 ModelClassType SCharaIconView SCharaIconView SCharaIconView Pointer
-    // 028 EmptyButton                              0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
+    // 020 Icon                                     ModelClassType SCharaIconView SCharaIconView SCharaIconView Pointer
+    // 028 EmptyButton                              ModelClassType UIButton UIButton UIButton Pointer
     public partial class ViewProducePreparationIdolSelectSupportCharaIcon : DataModel
     {
         public SCharaIconView?                          Icon                                    { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ViewProducePreparationIdolSelectSupportCharaIcon() { Pointer= p0 };
 
-            value.Icon                                      = GetObject<SCharaIconView>(new IntPtr(p + 0x020), ReversePrism.DataModels.SCharaIconView.FromPointer); // 024665AD7370 0x20 Icon                        ( 0001866ABAC0 ModelClassType SCharaIconView SCharaIconView SCharaIconView Pointer )
-            value.EmptyButton                               = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 024665AD7390 0x28 EmptyButton                 ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
+            value.Icon                                      = GetObject<SCharaIconView>(new IntPtr(p + 0x020), ReversePrism.DataModels.SCharaIconView.FromPointer); // 0x20 Icon                        ( ModelClassType SCharaIconView SCharaIconView SCharaIconView Pointer )
+            value.EmptyButton                               = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 0x28 EmptyButton                 ( ModelClassType UIButton UIButton UIButton Pointer )
 
             return value;
         }

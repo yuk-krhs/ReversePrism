@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 Writer                                   0001865D6BE0 ModelClassType XmlWriter XmlWriter XmlWriter Pointer
-    // 020 Depth                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 024 Prefix                                   0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 Writer                                   ModelClassType XmlWriter XmlWriter XmlWriter Pointer
+    // 020 Depth                                    ModelPrimitiveType int int int Int32
+    // 024 Prefix                                   ModelPrimitiveType int int int Int32
     public partial class XmlWrappedWriter : DataModel
     {
         public XmlWriter?                               Writer                                  { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlWrappedWriter() { Pointer= p0 };
 
-            value.Writer                                    = GetObject<XmlWriter>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlWriter.FromPointer); // 024667CBC3E8 0x18 Writer                      ( 0001865D6BE0 ModelClassType XmlWriter XmlWriter XmlWriter Pointer )
-            value.Depth                                     = GetInt32(new IntPtr(p + 0x020)); // 024667CBC408 0x20 Depth                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Prefix                                    = GetInt32(new IntPtr(p + 0x024)); // 024667CBC428 0x24 Prefix                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Writer                                    = GetObject<XmlWriter>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlWriter.FromPointer); // 0x18 Writer                      ( ModelClassType XmlWriter XmlWriter XmlWriter Pointer )
+            value.Depth                                     = GetInt32(new IntPtr(p + 0x020)); // 0x20 Depth                       ( ModelPrimitiveType int int int Int32 )
+            value.Prefix                                    = GetInt32(new IntPtr(p + 0x024)); // 0x24 Prefix                      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,16 +8,16 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 CallHandle                               00018652DD30 ModelClassType CallSafeHandle CallSafeHandle CallSafeHandle Pointer
-    // 020 Method                                   000186672F10 ModelPrimitiveType string string string String
-    // 028 Host                                     000186672F10 ModelPrimitiveType string string string String
-    // 030 Deadline                                 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    // 038 RequestHeaders                           00018660C830 ModelClassType Metadata Metadata Metadata Pointer
-    // 040 CancellationToken                        00018653D5A0 ModelEnumType CancellationToken CancellationToken CancellationToken Int32
-    // 048 ResponseTrailers                         00018660C830 ModelClassType Metadata Metadata Metadata Pointer
-    // 050 Status                                   0001865855D0 ModelEnumType Status Status Status Int32
-    // 068 ServerResponseStream                     000186638640 ModelClassType IServerResponseStream IServerResponseStream IServerResponseStream Pointer
-    // 070 LazyAuthContext                          00018671EE90 ModelClassType AuthContext AuthContext AuthContext Pointer
+    // 018 CallHandle                               ModelClassType CallSafeHandle CallSafeHandle CallSafeHandle Pointer
+    // 020 Method                                   ModelPrimitiveType string string string String
+    // 028 Host                                     ModelPrimitiveType string string string String
+    // 030 Deadline                                 ModelPrimitiveType DateTime DateTime DateTime DateTime
+    // 038 RequestHeaders                           ModelClassType Metadata Metadata Metadata Pointer
+    // 040 CancellationToken                        ModelEnumType CancellationToken CancellationToken CancellationToken Int32
+    // 048 ResponseTrailers                         ModelClassType Metadata Metadata Metadata Pointer
+    // 050 Status                                   ModelEnumType Status Status Status Int32
+    // 068 ServerResponseStream                     ModelClassType IServerResponseStream IServerResponseStream IServerResponseStream Pointer
+    // 070 LazyAuthContext                          ModelClassType AuthContext AuthContext AuthContext Pointer
     public partial class DefaultServerCallContext : DataModel
     {
         public CallSafeHandle?                          CallHandle                              { get; set; }
@@ -39,16 +39,16 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DefaultServerCallContext() { Pointer= p0 };
 
-            value.CallHandle                                = GetObject<CallSafeHandle>(new IntPtr(p + 0x018), ReversePrism.DataModels.CallSafeHandle.FromPointer); // 0246693B4268 0x18 CallHandle                  ( 00018652DD30 ModelClassType CallSafeHandle CallSafeHandle CallSafeHandle Pointer )
-            value.Method                                    = GetString(new IntPtr(p + 0x020)); // 0246693B4288 0x20 Method                      ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Host                                      = GetString(new IntPtr(p + 0x028)); // 0246693B42A8 0x28 Host                        ( 000186672F10 ModelPrimitiveType string string string String )
-            value.Deadline                                  = GetDateTime(new IntPtr(p + 0x030)); // 0246693B42C8 0x30 Deadline                    ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.RequestHeaders                            = GetObject<Metadata>(new IntPtr(p + 0x038), ReversePrism.DataModels.Metadata.FromPointer); // 0246693B42E8 0x38 RequestHeaders              ( 00018660C830 ModelClassType Metadata Metadata Metadata Pointer )
-            value.CancellationToken                         = (CancellationToken)GetInt32(new IntPtr(p + 0x040)); // 0246693B4308 0x40 CancellationToken           ( 00018653D5A0 ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
-            value.ResponseTrailers                          = GetObject<Metadata>(new IntPtr(p + 0x048), ReversePrism.DataModels.Metadata.FromPointer); // 0246693B4328 0x48 ResponseTrailers            ( 00018660C830 ModelClassType Metadata Metadata Metadata Pointer )
-            value.Status                                    = (Status)GetInt32(new IntPtr(p + 0x050)); // 0246693B4348 0x50 Status                      ( 0001865855D0 ModelEnumType Status Status Status Int32 )
-            value.ServerResponseStream                      = GetObject<IServerResponseStream>(new IntPtr(p + 0x068), ReversePrism.DataModels.IServerResponseStream.FromPointer); // 0246693B4368 0x68 ServerResponseStream        ( 000186638640 ModelClassType IServerResponseStream IServerResponseStream IServerResponseStream Pointer )
-            value.LazyAuthContext                           = GetObject<AuthContext>(new IntPtr(p + 0x070), ReversePrism.DataModels.AuthContext.FromPointer); // 0246693B4388 0x70 LazyAuthContext             ( 00018671EE90 ModelClassType AuthContext AuthContext AuthContext Pointer )
+            value.CallHandle                                = GetObject<CallSafeHandle>(new IntPtr(p + 0x018), ReversePrism.DataModels.CallSafeHandle.FromPointer); // 0x18 CallHandle                  ( ModelClassType CallSafeHandle CallSafeHandle CallSafeHandle Pointer )
+            value.Method                                    = GetString(new IntPtr(p + 0x020)); // 0x20 Method                      ( ModelPrimitiveType string string string String )
+            value.Host                                      = GetString(new IntPtr(p + 0x028)); // 0x28 Host                        ( ModelPrimitiveType string string string String )
+            value.Deadline                                  = GetDateTime(new IntPtr(p + 0x030)); // 0x30 Deadline                    ( ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.RequestHeaders                            = GetObject<Metadata>(new IntPtr(p + 0x038), ReversePrism.DataModels.Metadata.FromPointer); // 0x38 RequestHeaders              ( ModelClassType Metadata Metadata Metadata Pointer )
+            value.CancellationToken                         = (CancellationToken)GetInt32(new IntPtr(p + 0x040)); // 0x40 CancellationToken           ( ModelEnumType CancellationToken CancellationToken CancellationToken Int32 )
+            value.ResponseTrailers                          = GetObject<Metadata>(new IntPtr(p + 0x048), ReversePrism.DataModels.Metadata.FromPointer); // 0x48 ResponseTrailers            ( ModelClassType Metadata Metadata Metadata Pointer )
+            value.Status                                    = (Status)GetInt32(new IntPtr(p + 0x050)); // 0x50 Status                      ( ModelEnumType Status Status Status Int32 )
+            value.ServerResponseStream                      = GetObject<IServerResponseStream>(new IntPtr(p + 0x068), ReversePrism.DataModels.IServerResponseStream.FromPointer); // 0x68 ServerResponseStream        ( ModelClassType IServerResponseStream IServerResponseStream IServerResponseStream Pointer )
+            value.LazyAuthContext                           = GetObject<AuthContext>(new IntPtr(p + 0x070), ReversePrism.DataModels.AuthContext.FromPointer); // 0x70 LazyAuthContext             ( ModelClassType AuthContext AuthContext AuthContext Pointer )
 
             return value;
         }

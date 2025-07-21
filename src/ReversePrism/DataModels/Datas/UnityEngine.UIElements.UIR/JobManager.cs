@@ -11,8 +11,8 @@ namespace ReversePrism.DataModels
     // 010 m_NudgeJobs                              NativePagedList`1<NudgeJobData> IL2CPP_TYPE_GENERICINST
     // 018 m_ConvertMeshJobs                        NativePagedList`1<ConvertMeshJobData> IL2CPP_TYPE_GENERICINST
     // 020 m_CopyClosingMeshJobs                    NativePagedList`1<CopyClosingMeshJobData> IL2CPP_TYPE_GENERICINST
-    // 028 M_JobMerger                              00018674C260 ModelClassType JobMerger JobMerger JobMerger Pointer
-    // 030 Disposed                                 000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 028 M_JobMerger                              ModelClassType JobMerger JobMerger JobMerger Pointer
+    // 030 Disposed                                 ModelPrimitiveType bool bool bool Bool
     public partial class JobManager : DataModel
     {
         public JobMerger?                               M_JobMerger                             { get; set; }
@@ -26,8 +26,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JobManager() { Pointer= p0 };
 
-            value.M_JobMerger                               = GetObject<JobMerger>(new IntPtr(p + 0x028), ReversePrism.DataModels.JobMerger.FromPointer); // 0245A68260F8 0x28 M_JobMerger                 ( 00018674C260 ModelClassType JobMerger JobMerger JobMerger Pointer )
-            value.Disposed                                  = GetBool(new IntPtr(p + 0x030)); // 0245A6826118 0x30 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.M_JobMerger                               = GetObject<JobMerger>(new IntPtr(p + 0x028), ReversePrism.DataModels.JobMerger.FromPointer); // 0x28 M_JobMerger                 ( ModelClassType JobMerger JobMerger JobMerger Pointer )
+            value.Disposed                                  = GetBool(new IntPtr(p + 0x030)); // 0x30 Disposed                    ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 170 Attitude                                 0001865FB7A0 ModelClassType QuaternionControl QuaternionControl QuaternionControl Pointer
+    // 170 Attitude                                 ModelClassType QuaternionControl QuaternionControl QuaternionControl Pointer
     // 000 <current>k__BackingField                 AttitudeSensor IL2CPP_TYPE_CLASS
     public partial class AttitudeSensor : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AttitudeSensor() { Pointer= p0 };
 
-            value.Attitude                                  = GetObject<QuaternionControl>(new IntPtr(p + 0x170), ReversePrism.DataModels.QuaternionControl.FromPointer); // 0245A33B0DC8 0x170 Attitude                    ( 0001865FB7A0 ModelClassType QuaternionControl QuaternionControl QuaternionControl Pointer )
+            value.Attitude                                  = GetObject<QuaternionControl>(new IntPtr(p + 0x170), ReversePrism.DataModels.QuaternionControl.FromPointer); // 0x170 Attitude                    ( ModelClassType QuaternionControl QuaternionControl QuaternionControl Pointer )
 
             return value;
         }

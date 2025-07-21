@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Path                                     000186671910 ModelPrimitiveType string string string String
-    // 018 Length                                   0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 01C LeftIndexInPath                          0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 020 RightIndexInPath                         0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 028 Current                                  0001866F96B0 ModelEnumType ParsedPathComponent ParsedPathComponent ParsedPathComponent Int32
+    // 010 Path                                     ModelPrimitiveType string string string String
+    // 018 Length                                   ModelPrimitiveType int int int Int32
+    // 01C LeftIndexInPath                          ModelPrimitiveType int int int Int32
+    // 020 RightIndexInPath                         ModelPrimitiveType int int int Int32
+    // 028 Current                                  ModelEnumType ParsedPathComponent ParsedPathComponent ParsedPathComponent Int32
     public partial class PathParser : DataModel
     {
         public string                                   Path                                    { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PathParser() { Pointer= p0 };
 
-            value.Path                                      = GetString(new IntPtr(p + 0x010)); // 024667749570 0x10 Path                        ( 000186671910 ModelPrimitiveType string string string String )
-            value.Length                                    = GetInt32(new IntPtr(p + 0x018)); // 024667749590 0x18 Length                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.LeftIndexInPath                           = GetInt32(new IntPtr(p + 0x01C)); // 0246677495B0 0x1C LeftIndexInPath             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.RightIndexInPath                          = GetInt32(new IntPtr(p + 0x020)); // 0246677495D0 0x20 RightIndexInPath            ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Current                                   = (ParsedPathComponent)GetInt32(new IntPtr(p + 0x028)); // 0246677495F0 0x28 Current                     ( 0001866F96B0 ModelEnumType ParsedPathComponent ParsedPathComponent ParsedPathComponent Int32 )
+            value.Path                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Path                        ( ModelPrimitiveType string string string String )
+            value.Length                                    = GetInt32(new IntPtr(p + 0x018)); // 0x18 Length                      ( ModelPrimitiveType int int int Int32 )
+            value.LeftIndexInPath                           = GetInt32(new IntPtr(p + 0x01C)); // 0x1C LeftIndexInPath             ( ModelPrimitiveType int int int Int32 )
+            value.RightIndexInPath                          = GetInt32(new IntPtr(p + 0x020)); // 0x20 RightIndexInPath            ( ModelPrimitiveType int int int Int32 )
+            value.Current                                   = (ParsedPathComponent)GetInt32(new IntPtr(p + 0x028)); // 0x28 Current                     ( ModelEnumType ParsedPathComponent ParsedPathComponent ParsedPathComponent Int32 )
 
             return value;
         }

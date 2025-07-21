@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ErrorCode                                0001865DE380 ModelEnumType MatchResultErrorCode MatchResultErrorCode MatchResultErrorCode Int32
-    // 018 ErrorValue                               0001866722E0 ModelPrimitiveType string string string String
+    // 010 ErrorCode                                ModelEnumType MatchResultErrorCode MatchResultErrorCode MatchResultErrorCode Int32
+    // 018 ErrorValue                               ModelPrimitiveType string string string String
     public partial class MatchResult : DataModel
     {
         public MatchResultErrorCode                     ErrorCode                               { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MatchResult() { Pointer= p0 };
 
-            value.ErrorCode                                 = (MatchResultErrorCode)GetInt32(new IntPtr(p + 0x010)); // 0245A6848F70 0x10 ErrorCode                   ( 0001865DE380 ModelEnumType MatchResultErrorCode MatchResultErrorCode MatchResultErrorCode Int32 )
-            value.ErrorValue                                = GetString(new IntPtr(p + 0x018)); // 0245A6848F90 0x18 ErrorValue                  ( 0001866722E0 ModelPrimitiveType string string string String )
+            value.ErrorCode                                 = (MatchResultErrorCode)GetInt32(new IntPtr(p + 0x010)); // 0x10 ErrorCode                   ( ModelEnumType MatchResultErrorCode MatchResultErrorCode MatchResultErrorCode Int32 )
+            value.ErrorValue                                = GetString(new IntPtr(p + 0x018)); // 0x18 ErrorValue                  ( ModelPrimitiveType string string string String )
 
             return value;
         }

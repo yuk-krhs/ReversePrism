@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 038 AppId                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 03C UserId                                   0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 038 AppId                                    ModelPrimitiveType int int int Int32
+    // 03C UserId                                   ModelPrimitiveType int int int Int32
     public partial class ClientAccess : DataModel
     {
         public int                                      AppId                                   { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ClientAccess() { Pointer= p0 };
 
-            value.AppId                                     = GetInt32(new IntPtr(p + 0x038)); // 0245A4D95808 0x38 AppId                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UserId                                    = GetInt32(new IntPtr(p + 0x03C)); // 0245A4D95828 0x3C UserId                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.AppId                                     = GetInt32(new IntPtr(p + 0x038)); // 0x38 AppId                       ( ModelPrimitiveType int int int Int32 )
+            value.UserId                                    = GetInt32(new IntPtr(p + 0x03C)); // 0x3C UserId                      ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

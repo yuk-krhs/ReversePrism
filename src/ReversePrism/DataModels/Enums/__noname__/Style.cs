@@ -10,7 +10,13 @@ namespace ReversePrism.DataModels
 
     public enum Style
     {
-        Unspecified,
-        DeclarativeFriendly,
+        Cut,
+        EaseInOut,
+        EaseIn,
+        EaseOut,
+        HardIn,
+        HardOut,
+        Linear,
+        Custom,
     }
 }

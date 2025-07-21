@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 GoWhite                                  0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 028 GoBlue                                   0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 030 TxtVolues                                000185CAE588 ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer
-    // 038 IsHead                                   000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 020 GoWhite                                  ModelClassType GameObject GameObject GameObject Pointer
+    // 028 GoBlue                                   ModelClassType GameObject GameObject GameObject Pointer
+    // 030 TxtVolues                                ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer
+    // 038 IsHead                                   ModelPrimitiveType bool bool bool Bool
     public partial class TableRowContent : DataModel
     {
         public GameObject?                              GoWhite                                 { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TableRowContent() { Pointer= p0 };
 
-            value.GoWhite                                   = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 024664D44320 0x20 GoWhite                     ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.GoBlue                                    = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 024664D44340 0x28 GoBlue                      ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.TxtVolues                                 = GetObjectList<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024664D44360 0x30 TxtVolues                   ( 000185CAE588 ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer )
-            value.IsHead                                    = GetBool(new IntPtr(p + 0x038)); // 024664D44380 0x38 IsHead                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.GoWhite                                   = GetObject<GameObject>(new IntPtr(p + 0x020), ReversePrism.DataModels.GameObject.FromPointer); // 0x20 GoWhite                     ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.GoBlue                                    = GetObject<GameObject>(new IntPtr(p + 0x028), ReversePrism.DataModels.GameObject.FromPointer); // 0x28 GoBlue                      ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.TxtVolues                                 = GetObjectList<UITextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x30 TxtVolues                   ( ModelClassListType UITextMeshProUGUI[] UITextMeshProUGUI[] List<UITextMeshProUGUI> Pointer )
+            value.IsHead                                    = GetBool(new IntPtr(p + 0x038)); // 0x38 IsHead                      ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

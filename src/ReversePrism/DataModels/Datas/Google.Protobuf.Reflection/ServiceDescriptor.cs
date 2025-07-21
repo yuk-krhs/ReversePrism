@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 Proto                                    000186738240 ModelClassType ServiceDescriptorProto ServiceDescriptorProto ServiceDescriptorProto Pointer
-    // 030 methods                                  IList`1<MethodDescriptor> IL2CPP_TYPE_GENERICINST
+    // 028 Proto                                    ModelClassType ServiceDescriptorProto ServiceDescriptorProto ServiceDescriptorProto Pointer
+    // 030 <Methods>k__BackingField                 IList`1<MethodDescriptor> IL2CPP_TYPE_GENERICINST
     public partial class ServiceDescriptor : DataModel
     {
         public ServiceDescriptorProto?                  Proto                                   { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ServiceDescriptor() { Pointer= p0 };
 
-            value.Proto                                     = GetObject<ServiceDescriptorProto>(new IntPtr(p + 0x028), ReversePrism.DataModels.ServiceDescriptorProto.FromPointer); // 024660D00520 0x28 Proto                       ( 000186738240 ModelClassType ServiceDescriptorProto ServiceDescriptorProto ServiceDescriptorProto Pointer )
+            value.Proto                                     = GetObject<ServiceDescriptorProto>(new IntPtr(p + 0x028), ReversePrism.DataModels.ServiceDescriptorProto.FromPointer); // 0x28 Proto                       ( ModelClassType ServiceDescriptorProto ServiceDescriptorProto ServiceDescriptorProto Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 TypeName                                 000186671910 ModelPrimitiveType string string string String
+    // 010 TypeName                                 ModelPrimitiveType string string string String
     public partial class JumpViewSequence : DataModel
     {
         public string                                   TypeName                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new JumpViewSequence() { Pointer= p0 };
 
-            value.TypeName                                  = GetString(new IntPtr(p + 0x010)); // 02466BC97BA8 0x10 TypeName                    ( 000186671910 ModelPrimitiveType string string string String )
+            value.TypeName                                  = GetString(new IntPtr(p + 0x010)); // 0x10 TypeName                    ( ModelPrimitiveType string string string String )
 
             return value;
         }

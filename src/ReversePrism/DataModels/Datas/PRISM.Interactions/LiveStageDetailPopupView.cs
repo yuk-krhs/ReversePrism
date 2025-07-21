@@ -8,17 +8,17 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 MusicTypeIcon                            0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer
-    // 028 UnitBonusMessage                         0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 030 UnitBonusDetail                          0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 038 UnitBonusEachCharacterText               0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 040 UnitBonusTargetNumberText                0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 048 UnitBonusDetailSolo                      0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 050 FeaturedRewardScrollRect                 0001866F7FA0 ModelClassType ScrollRect ScrollRect ScrollRect Pointer
-    // 058 RareRewardScrollRect                     0001866F7FA0 ModelClassType ScrollRect ScrollRect ScrollRect Pointer
-    // 060 RewardItemBase                           00018667EAE0 ModelClassType RewardItem RewardItem RewardItem Pointer
+    // 020 MusicTypeIcon                            ModelClassType UIRawImage UIRawImage UIRawImage Pointer
+    // 028 UnitBonusMessage                         ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 030 UnitBonusDetail                          ModelClassType GameObject GameObject GameObject Pointer
+    // 038 UnitBonusEachCharacterText               ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 040 UnitBonusTargetNumberText                ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 048 UnitBonusDetailSolo                      ModelClassType GameObject GameObject GameObject Pointer
+    // 050 FeaturedRewardScrollRect                 ModelClassType ScrollRect ScrollRect ScrollRect Pointer
+    // 058 RareRewardScrollRect                     ModelClassType ScrollRect ScrollRect ScrollRect Pointer
+    // 060 RewardItemBase                           ModelClassType RewardItem RewardItem RewardItem Pointer
     // 068 onClick                                  Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 070 Parent                                   0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
+    // 070 Parent                                   ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer
     public partial class LiveStageDetailPopupView : DataModel
     {
         public UIRawImage?                              MusicTypeIcon                           { get; set; }
@@ -40,16 +40,16 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveStageDetailPopupView() { Pointer= p0 };
 
-            value.MusicTypeIcon                             = GetObject<UIRawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIRawImage.FromPointer); // 02466B48FEE0 0x20 MusicTypeIcon               ( 0001866EF910 ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
-            value.UnitBonusMessage                          = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B48FF00 0x28 UnitBonusMessage            ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.UnitBonusDetail                           = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 02466B48FF20 0x30 UnitBonusDetail             ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.UnitBonusEachCharacterText                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B48FF40 0x38 UnitBonusEachCharacterText  ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.UnitBonusTargetNumberText                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466B48FF60 0x40 UnitBonusTargetNumberText   ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.UnitBonusDetailSolo                       = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 02466B48FF80 0x48 UnitBonusDetailSolo         ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.FeaturedRewardScrollRect                  = GetObject<ScrollRect>(new IntPtr(p + 0x050), ReversePrism.DataModels.ScrollRect.FromPointer); // 02466B48FFA0 0x50 FeaturedRewardScrollRect    ( 0001866F7FA0 ModelClassType ScrollRect ScrollRect ScrollRect Pointer )
-            value.RareRewardScrollRect                      = GetObject<ScrollRect>(new IntPtr(p + 0x058), ReversePrism.DataModels.ScrollRect.FromPointer); // 02466B48FFC0 0x58 RareRewardScrollRect        ( 0001866F7FA0 ModelClassType ScrollRect ScrollRect ScrollRect Pointer )
-            value.RewardItemBase                            = GetObject<RewardItem>(new IntPtr(p + 0x060), ReversePrism.DataModels.RewardItem.FromPointer); // 02466B48FFE0 0x60 RewardItemBase              ( 00018667EAE0 ModelClassType RewardItem RewardItem RewardItem Pointer )
-            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x070), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 02466B490020 0x70 Parent                      ( 0001865DAC10 ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
+            value.MusicTypeIcon                             = GetObject<UIRawImage>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIRawImage.FromPointer); // 0x20 MusicTypeIcon               ( ModelClassType UIRawImage UIRawImage UIRawImage Pointer )
+            value.UnitBonusMessage                          = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x028), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x28 UnitBonusMessage            ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.UnitBonusDetail                           = GetObject<GameObject>(new IntPtr(p + 0x030), ReversePrism.DataModels.GameObject.FromPointer); // 0x30 UnitBonusDetail             ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.UnitBonusEachCharacterText                = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x038), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x38 UnitBonusEachCharacterText  ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.UnitBonusTargetNumberText                 = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x040), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x40 UnitBonusTargetNumberText   ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.UnitBonusDetailSolo                       = GetObject<GameObject>(new IntPtr(p + 0x048), ReversePrism.DataModels.GameObject.FromPointer); // 0x48 UnitBonusDetailSolo         ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.FeaturedRewardScrollRect                  = GetObject<ScrollRect>(new IntPtr(p + 0x050), ReversePrism.DataModels.ScrollRect.FromPointer); // 0x50 FeaturedRewardScrollRect    ( ModelClassType ScrollRect ScrollRect ScrollRect Pointer )
+            value.RareRewardScrollRect                      = GetObject<ScrollRect>(new IntPtr(p + 0x058), ReversePrism.DataModels.ScrollRect.FromPointer); // 0x58 RareRewardScrollRect        ( ModelClassType ScrollRect ScrollRect ScrollRect Pointer )
+            value.RewardItemBase                            = GetObject<RewardItem>(new IntPtr(p + 0x060), ReversePrism.DataModels.RewardItem.FromPointer); // 0x60 RewardItemBase              ( ModelClassType RewardItem RewardItem RewardItem Pointer )
+            value.Parent                                    = GetObject<IPopupFrameView>(new IntPtr(p + 0x070), ReversePrism.DataModels.IPopupFrameView.FromPointer); // 0x70 Parent                      ( ModelClassType IPopupFrameView IPopupFrameView IPopupFrameView Pointer )
 
             return value;
         }

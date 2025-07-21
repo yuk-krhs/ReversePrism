@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 090 InitResult                               0001865E7600 ModelEnumType InitResult InitResult InitResult Int32
+    // 090 InitResult                               ModelEnumType InitResult InitResult InitResult Int32
     public partial class InitializationException : DataModel
     {
         public InitResult                               InitResult                              { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new InitializationException() { Pointer= p0 };
 
-            value.InitResult                                = (InitResult)GetInt32(new IntPtr(p + 0x090)); // 02466B7D8ED0 0x90 InitResult                  ( 0001865E7600 ModelEnumType InitResult InitResult InitResult Int32 )
+            value.InitResult                                = (InitResult)GetInt32(new IntPtr(p + 0x090)); // 0x90 InitResult                  ( ModelEnumType InitResult InitResult InitResult Int32 )
 
             return value;
         }

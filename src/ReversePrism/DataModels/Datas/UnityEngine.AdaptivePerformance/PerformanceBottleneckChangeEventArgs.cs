@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 PerformanceBottleneck                    000186730BA0 ModelEnumType PerformanceBottleneck PerformanceBottleneck PerformanceBottleneck Int32
+    // 010 PerformanceBottleneck                    ModelEnumType PerformanceBottleneck PerformanceBottleneck PerformanceBottleneck Int32
     public partial class PerformanceBottleneckChangeEventArgs : DataModel
     {
         public PerformanceBottleneck                    PerformanceBottleneck                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PerformanceBottleneckChangeEventArgs() { Pointer= p0 };
 
-            value.PerformanceBottleneck                     = (PerformanceBottleneck)GetInt32(new IntPtr(p + 0x010)); // 02466B6F1450 0x10 PerformanceBottleneck       ( 000186730BA0 ModelEnumType PerformanceBottleneck PerformanceBottleneck PerformanceBottleneck Int32 )
+            value.PerformanceBottleneck                     = (PerformanceBottleneck)GetInt32(new IntPtr(p + 0x010)); // 0x10 PerformanceBottleneck       ( ModelEnumType PerformanceBottleneck PerformanceBottleneck PerformanceBottleneck Int32 )
 
             return value;
         }

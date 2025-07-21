@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 IsActive                                 0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 018 CellDataList                             000185CEF158 ModelClassListType IReadOnlyList`1<EtceteraListCellViewModel> IReadOnlyList`1<EtceteraListCellViewModel> List<EtceteraListCellViewModel> Pointer
+    // 010 IsActive                                 ModelPrimitiveType bool bool bool Bool
+    // 018 CellDataList                             ModelClassListType IReadOnlyList`1<EtceteraListCellViewModel> IReadOnlyList`1<EtceteraListCellViewModel> List<EtceteraListCellViewModel> Pointer
     public partial class EtceteraPopupViewModel : DataModel
     {
         public bool                                     IsActive                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EtceteraPopupViewModel() { Pointer= p0 };
 
-            value.IsActive                                  = GetBool(new IntPtr(p + 0x010)); // 024665F00B68 0x10 IsActive                    ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.CellDataList                              = GetObjectList<EtceteraListCellViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.EtceteraListCellViewModel.FromPointer); // 024665F00B88 0x18 CellDataList                ( 000185CEF158 ModelClassListType IReadOnlyList`1<EtceteraListCellViewModel> IReadOnlyList`1<EtceteraListCellViewModel> List<EtceteraListCellViewModel> Pointer )
+            value.IsActive                                  = GetBool(new IntPtr(p + 0x010)); // 0x10 IsActive                    ( ModelPrimitiveType bool bool bool Bool )
+            value.CellDataList                              = GetObjectList<EtceteraListCellViewModel>(new IntPtr(p + 0x018), ReversePrism.DataModels.EtceteraListCellViewModel.FromPointer); // 0x18 CellDataList                ( ModelClassListType IReadOnlyList`1<EtceteraListCellViewModel> IReadOnlyList`1<EtceteraListCellViewModel> List<EtceteraListCellViewModel> Pointer )
 
             return value;
         }

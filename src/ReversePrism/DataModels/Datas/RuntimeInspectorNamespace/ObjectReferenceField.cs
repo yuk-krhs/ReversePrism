@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 080 ReferencePickerArea                      000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
-    // 088 Input                                    00018675AFC0 ModelClassType PointerEventListener PointerEventListener PointerEventListener Pointer
-    // 090 InspectReferenceButton                   00018675AFC0 ModelClassType PointerEventListener PointerEventListener PointerEventListener Pointer
-    // 098 InspectReferenceImage                    0001866CCDB0 ModelClassType Image Image Image Pointer
-    // 0A0 Background                               0001866CD000 ModelClassType Image Image Image Pointer
-    // 0A8 ReferenceNameText                        000186631E10 ModelClassType Text Text Text Pointer
+    // 080 ReferencePickerArea                      ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 088 Input                                    ModelClassType PointerEventListener PointerEventListener PointerEventListener Pointer
+    // 090 InspectReferenceButton                   ModelClassType PointerEventListener PointerEventListener PointerEventListener Pointer
+    // 098 InspectReferenceImage                    ModelClassType Image Image Image Pointer
+    // 0A0 Background                               ModelClassType Image Image Image Pointer
+    // 0A8 ReferenceNameText                        ModelClassType Text Text Text Pointer
     public partial class ObjectReferenceField : DataModel
     {
         public RectTransform?                           ReferencePickerArea                     { get; set; }
@@ -31,12 +31,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ObjectReferenceField() { Pointer= p0 };
 
-            value.ReferencePickerArea                       = GetObject<RectTransform>(new IntPtr(p + 0x080), ReversePrism.DataModels.RectTransform.FromPointer); // 02466B2481C8 0x80 ReferencePickerArea         ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.Input                                     = GetObject<PointerEventListener>(new IntPtr(p + 0x088), ReversePrism.DataModels.PointerEventListener.FromPointer); // 02466B2481E8 0x88 Input                       ( 00018675AFC0 ModelClassType PointerEventListener PointerEventListener PointerEventListener Pointer )
-            value.InspectReferenceButton                    = GetObject<PointerEventListener>(new IntPtr(p + 0x090), ReversePrism.DataModels.PointerEventListener.FromPointer); // 02466B248208 0x90 InspectReferenceButton      ( 00018675AFC0 ModelClassType PointerEventListener PointerEventListener PointerEventListener Pointer )
-            value.InspectReferenceImage                     = GetObject<Image>(new IntPtr(p + 0x098), ReversePrism.DataModels.Image.FromPointer); // 02466B248228 0x98 InspectReferenceImage       ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.Background                                = GetObject<Image>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.Image.FromPointer); // 02466B248248 0xA0 Background                  ( 0001866CD000 ModelClassType Image Image Image Pointer )
-            value.ReferenceNameText                         = GetObject<Text>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.Text.FromPointer); // 02466B248268 0xA8 ReferenceNameText           ( 000186631E10 ModelClassType Text Text Text Pointer )
+            value.ReferencePickerArea                       = GetObject<RectTransform>(new IntPtr(p + 0x080), ReversePrism.DataModels.RectTransform.FromPointer); // 0x80 ReferencePickerArea         ( ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.Input                                     = GetObject<PointerEventListener>(new IntPtr(p + 0x088), ReversePrism.DataModels.PointerEventListener.FromPointer); // 0x88 Input                       ( ModelClassType PointerEventListener PointerEventListener PointerEventListener Pointer )
+            value.InspectReferenceButton                    = GetObject<PointerEventListener>(new IntPtr(p + 0x090), ReversePrism.DataModels.PointerEventListener.FromPointer); // 0x90 InspectReferenceButton      ( ModelClassType PointerEventListener PointerEventListener PointerEventListener Pointer )
+            value.InspectReferenceImage                     = GetObject<Image>(new IntPtr(p + 0x098), ReversePrism.DataModels.Image.FromPointer); // 0x98 InspectReferenceImage       ( ModelClassType Image Image Image Pointer )
+            value.Background                                = GetObject<Image>(new IntPtr(p + 0x0A0), ReversePrism.DataModels.Image.FromPointer); // 0xA0 Background                  ( ModelClassType Image Image Image Pointer )
+            value.ReferenceNameText                         = GetObject<Text>(new IntPtr(p + 0x0A8), ReversePrism.DataModels.Text.FromPointer); // 0xA8 ReferenceNameText           ( ModelClassType Text Text Text Pointer )
 
             return value;
         }

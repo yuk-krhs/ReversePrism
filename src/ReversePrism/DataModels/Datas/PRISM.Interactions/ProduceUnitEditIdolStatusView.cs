@@ -8,18 +8,18 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 IdolTapAreaViews                         000185B8AFA0 ModelClassListType IdolTapAreaView[] IdolTapAreaView[] List<IdolTapAreaView> Pointer
-    // 028 BtnRightArrow                            0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 030 BtnLeftArrow                             0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 038 IdolStatusSkillViews                     000185B8AEC0 ModelClassListType IdolStatusSkillView[] IdolStatusSkillView[] List<IdolStatusSkillView> Pointer
-    // 040 StatusOpenTarget                         000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer
-    // 048 StatusToggle                             000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer
-    // 050 StatusOpenIcon                           0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 058 StatusCloseIcon                          0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer
-    // 060 SwipeToggle                              0001865FCA50 ModelClassType SwipeToggle SwipeToggle SwipeToggle Pointer
+    // 020 IdolTapAreaViews                         ModelClassListType IdolTapAreaView[] IdolTapAreaView[] List<IdolTapAreaView> Pointer
+    // 028 BtnRightArrow                            ModelClassType UIButton UIButton UIButton Pointer
+    // 030 BtnLeftArrow                             ModelClassType UIButton UIButton UIButton Pointer
+    // 038 IdolStatusSkillViews                     ModelClassListType IdolStatusSkillView[] IdolStatusSkillView[] List<IdolStatusSkillView> Pointer
+    // 040 StatusOpenTarget                         ModelClassType RectTransform RectTransform RectTransform Pointer
+    // 048 StatusToggle                             ModelClassType ToggleButton ToggleButton ToggleButton Pointer
+    // 050 StatusOpenIcon                           ModelClassType UIImage UIImage UIImage Pointer
+    // 058 StatusCloseIcon                          ModelClassType UIImage UIImage UIImage Pointer
+    // 060 SwipeToggle                              ModelClassType SwipeToggle SwipeToggle SwipeToggle Pointer
     // 068 pageMove                                 Subject`1<bool> IL2CPP_TYPE_GENERICINST
     // 070 onSwipe                                  Subject`1<Unit> IL2CPP_TYPE_GENERICINST
-    // 078 IsStatusOpen                             000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 078 IsStatusOpen                             ModelPrimitiveType bool bool bool Bool
     // 080 <OnIdolTap>k__BackingField               IObservable`1<int> IL2CPP_TYPE_GENERICINST
     // 088 <OnIdolLongTap>k__BackingField           IObservable`1<int> IL2CPP_TYPE_GENERICINST
     // 090 <OnSkillIconOrder>k__BackingField        IObservable`1<int> IL2CPP_TYPE_GENERICINST
@@ -44,16 +44,16 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceUnitEditIdolStatusView() { Pointer= p0 };
 
-            value.IdolTapAreaViews                          = GetObjectList<IdolTapAreaView>(new IntPtr(p + 0x020), ReversePrism.DataModels.IdolTapAreaView.FromPointer); // 02466A3C3808 0x20 IdolTapAreaViews            ( 000185B8AFA0 ModelClassListType IdolTapAreaView[] IdolTapAreaView[] List<IdolTapAreaView> Pointer )
-            value.BtnRightArrow                             = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 02466A3C3828 0x28 BtnRightArrow               ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.BtnLeftArrow                              = GetObject<UIButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIButton.FromPointer); // 02466A3C3848 0x30 BtnLeftArrow                ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.IdolStatusSkillViews                      = GetObjectList<IdolStatusSkillView>(new IntPtr(p + 0x038), ReversePrism.DataModels.IdolStatusSkillView.FromPointer); // 02466A3C3868 0x38 IdolStatusSkillViews        ( 000185B8AEC0 ModelClassListType IdolStatusSkillView[] IdolStatusSkillView[] List<IdolStatusSkillView> Pointer )
-            value.StatusOpenTarget                          = GetObject<RectTransform>(new IntPtr(p + 0x040), ReversePrism.DataModels.RectTransform.FromPointer); // 02466A3C3888 0x40 StatusOpenTarget            ( 000186630450 ModelClassType RectTransform RectTransform RectTransform Pointer )
-            value.StatusToggle                              = GetObject<ToggleButton>(new IntPtr(p + 0x048), ReversePrism.DataModels.ToggleButton.FromPointer); // 02466A3C38A8 0x48 StatusToggle                ( 000186683C40 ModelClassType ToggleButton ToggleButton ToggleButton Pointer )
-            value.StatusOpenIcon                            = GetObject<UIImage>(new IntPtr(p + 0x050), ReversePrism.DataModels.UIImage.FromPointer); // 02466A3C38C8 0x50 StatusOpenIcon              ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.StatusCloseIcon                           = GetObject<UIImage>(new IntPtr(p + 0x058), ReversePrism.DataModels.UIImage.FromPointer); // 02466A3C38E8 0x58 StatusCloseIcon             ( 0001866EAE30 ModelClassType UIImage UIImage UIImage Pointer )
-            value.SwipeToggle                               = GetObject<SwipeToggle>(new IntPtr(p + 0x060), ReversePrism.DataModels.SwipeToggle.FromPointer); // 02466A3C3908 0x60 SwipeToggle                 ( 0001865FCA50 ModelClassType SwipeToggle SwipeToggle SwipeToggle Pointer )
-            value.IsStatusOpen                              = GetBool(new IntPtr(p + 0x078)); // 02466A3C3968 0x78 IsStatusOpen                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.IdolTapAreaViews                          = GetObjectList<IdolTapAreaView>(new IntPtr(p + 0x020), ReversePrism.DataModels.IdolTapAreaView.FromPointer); // 0x20 IdolTapAreaViews            ( ModelClassListType IdolTapAreaView[] IdolTapAreaView[] List<IdolTapAreaView> Pointer )
+            value.BtnRightArrow                             = GetObject<UIButton>(new IntPtr(p + 0x028), ReversePrism.DataModels.UIButton.FromPointer); // 0x28 BtnRightArrow               ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.BtnLeftArrow                              = GetObject<UIButton>(new IntPtr(p + 0x030), ReversePrism.DataModels.UIButton.FromPointer); // 0x30 BtnLeftArrow                ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.IdolStatusSkillViews                      = GetObjectList<IdolStatusSkillView>(new IntPtr(p + 0x038), ReversePrism.DataModels.IdolStatusSkillView.FromPointer); // 0x38 IdolStatusSkillViews        ( ModelClassListType IdolStatusSkillView[] IdolStatusSkillView[] List<IdolStatusSkillView> Pointer )
+            value.StatusOpenTarget                          = GetObject<RectTransform>(new IntPtr(p + 0x040), ReversePrism.DataModels.RectTransform.FromPointer); // 0x40 StatusOpenTarget            ( ModelClassType RectTransform RectTransform RectTransform Pointer )
+            value.StatusToggle                              = GetObject<ToggleButton>(new IntPtr(p + 0x048), ReversePrism.DataModels.ToggleButton.FromPointer); // 0x48 StatusToggle                ( ModelClassType ToggleButton ToggleButton ToggleButton Pointer )
+            value.StatusOpenIcon                            = GetObject<UIImage>(new IntPtr(p + 0x050), ReversePrism.DataModels.UIImage.FromPointer); // 0x50 StatusOpenIcon              ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.StatusCloseIcon                           = GetObject<UIImage>(new IntPtr(p + 0x058), ReversePrism.DataModels.UIImage.FromPointer); // 0x58 StatusCloseIcon             ( ModelClassType UIImage UIImage UIImage Pointer )
+            value.SwipeToggle                               = GetObject<SwipeToggle>(new IntPtr(p + 0x060), ReversePrism.DataModels.SwipeToggle.FromPointer); // 0x60 SwipeToggle                 ( ModelClassType SwipeToggle SwipeToggle SwipeToggle Pointer )
+            value.IsStatusOpen                              = GetBool(new IntPtr(p + 0x078)); // 0x78 IsStatusOpen                ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 List                                     000186589390 ModelClassType Array Array Array Pointer
-    // 018 Index                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 020 Id                                       000186671910 ModelPrimitiveType string string string String
+    // 010 List                                     ModelClassType Array Array Array Pointer
+    // 018 Index                                    ModelPrimitiveType int int int Int32
+    // 020 Id                                       ModelPrimitiveType string string string String
     public partial class CollectionItemFixup : DataModel
     {
         public Array?                                   List                                    { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CollectionItemFixup() { Pointer= p0 };
 
-            value.List                                      = GetObject<Array>(new IntPtr(p + 0x010), ReversePrism.DataModels.Array.FromPointer); // 0246675311A0 0x10 List                        ( 000186589390 ModelClassType Array Array Array Pointer )
-            value.Index                                     = GetInt32(new IntPtr(p + 0x018)); // 0246675311C0 0x18 Index                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Id                                        = GetString(new IntPtr(p + 0x020)); // 0246675311E0 0x20 Id                          ( 000186671910 ModelPrimitiveType string string string String )
+            value.List                                      = GetObject<Array>(new IntPtr(p + 0x010), ReversePrism.DataModels.Array.FromPointer); // 0x10 List                        ( ModelClassType Array Array Array Pointer )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x018)); // 0x18 Index                       ( ModelPrimitiveType int int int Int32 )
+            value.Id                                        = GetString(new IntPtr(p + 0x020)); // 0x20 Id                          ( ModelPrimitiveType string string string String )
 
             return value;
         }

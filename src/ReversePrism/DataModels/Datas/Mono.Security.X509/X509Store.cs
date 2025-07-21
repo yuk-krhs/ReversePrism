@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 StorePath                                000186671910 ModelPrimitiveType string string string String
-    // 018 Certificates                             0001865651A0 ModelClassType X509CertificateCollection X509CertificateCollection X509CertificateCollection Pointer
-    // 020 Crls                                     00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer
-    // 028 Crl                                      000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 029 NewFormat                                000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 StorePath                                ModelPrimitiveType string string string String
+    // 018 Certificates                             ModelClassType X509CertificateCollection X509CertificateCollection X509CertificateCollection Pointer
+    // 020 Crls                                     ModelClassType ArrayList ArrayList ArrayList Pointer
+    // 028 Crl                                      ModelPrimitiveType bool bool bool Bool
+    // 029 NewFormat                                ModelPrimitiveType bool bool bool Bool
     public partial class X509Store : DataModel
     {
         public string                                   StorePath                               { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new X509Store() { Pointer= p0 };
 
-            value.StorePath                                 = GetString(new IntPtr(p + 0x010)); // 024667A456B0 0x10 StorePath                   ( 000186671910 ModelPrimitiveType string string string String )
-            value.Certificates                              = GetObject<X509CertificateCollection>(new IntPtr(p + 0x018), ReversePrism.DataModels.X509CertificateCollection.FromPointer); // 024667A456D0 0x18 Certificates                ( 0001865651A0 ModelClassType X509CertificateCollection X509CertificateCollection X509CertificateCollection Pointer )
-            value.Crls                                      = GetObject<ArrayList>(new IntPtr(p + 0x020), ReversePrism.DataModels.ArrayList.FromPointer); // 024667A456F0 0x20 Crls                        ( 00018658A070 ModelClassType ArrayList ArrayList ArrayList Pointer )
-            value.Crl                                       = GetBool(new IntPtr(p + 0x028)); // 024667A45710 0x28 Crl                         ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.NewFormat                                 = GetBool(new IntPtr(p + 0x029)); // 024667A45730 0x29 NewFormat                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.StorePath                                 = GetString(new IntPtr(p + 0x010)); // 0x10 StorePath                   ( ModelPrimitiveType string string string String )
+            value.Certificates                              = GetObject<X509CertificateCollection>(new IntPtr(p + 0x018), ReversePrism.DataModels.X509CertificateCollection.FromPointer); // 0x18 Certificates                ( ModelClassType X509CertificateCollection X509CertificateCollection X509CertificateCollection Pointer )
+            value.Crls                                      = GetObject<ArrayList>(new IntPtr(p + 0x020), ReversePrism.DataModels.ArrayList.FromPointer); // 0x20 Crls                        ( ModelClassType ArrayList ArrayList ArrayList Pointer )
+            value.Crl                                       = GetBool(new IntPtr(p + 0x028)); // 0x28 Crl                         ( ModelPrimitiveType bool bool bool Bool )
+            value.NewFormat                                 = GetBool(new IntPtr(p + 0x029)); // 0x29 NewFormat                   ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

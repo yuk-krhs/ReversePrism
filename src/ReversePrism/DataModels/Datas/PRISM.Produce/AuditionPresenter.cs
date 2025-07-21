@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 070 AuditionPanel                            00018671B890 ModelClassType AuditionPanel AuditionPanel AuditionPanel Pointer
-    // 078 AuditionModel                            00018671B110 ModelClassType AuditionModel AuditionModel AuditionModel Pointer
-    // 080 CacheLessonAuditionSource                00018651C520 ModelClassType LessonAudition LessonAudition LessonAudition Pointer
+    // 080 AuditionPanel                            ModelClassType AuditionPanel AuditionPanel AuditionPanel Pointer
+    // 088 AuditionModel                            ModelClassType AuditionModel AuditionModel AuditionModel Pointer
+    // 090 CacheLessonAuditionSource                ModelClassType LessonAudition LessonAudition LessonAudition Pointer
     public partial class AuditionPresenter : DataModel
     {
         public AuditionPanel?                           AuditionPanel                           { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AuditionPresenter() { Pointer= p0 };
 
-            value.AuditionPanel                             = GetObject<AuditionPanel>(new IntPtr(p + 0x070), ReversePrism.DataModels.AuditionPanel.FromPointer); // 024665A0CF40 0x70 AuditionPanel               ( 00018671B890 ModelClassType AuditionPanel AuditionPanel AuditionPanel Pointer )
-            value.AuditionModel                             = GetObject<AuditionModel>(new IntPtr(p + 0x078), ReversePrism.DataModels.AuditionModel.FromPointer); // 024665A0CF60 0x78 AuditionModel               ( 00018671B110 ModelClassType AuditionModel AuditionModel AuditionModel Pointer )
-            value.CacheLessonAuditionSource                 = GetObject<LessonAudition>(new IntPtr(p + 0x080), ReversePrism.DataModels.LessonAudition.FromPointer); // 024665A0CF80 0x80 CacheLessonAuditionSource   ( 00018651C520 ModelClassType LessonAudition LessonAudition LessonAudition Pointer )
+            value.AuditionPanel                             = GetObject<AuditionPanel>(new IntPtr(p + 0x080), ReversePrism.DataModels.AuditionPanel.FromPointer); // 0x80 AuditionPanel               ( ModelClassType AuditionPanel AuditionPanel AuditionPanel Pointer )
+            value.AuditionModel                             = GetObject<AuditionModel>(new IntPtr(p + 0x088), ReversePrism.DataModels.AuditionModel.FromPointer); // 0x88 AuditionModel               ( ModelClassType AuditionModel AuditionModel AuditionModel Pointer )
+            value.CacheLessonAuditionSource                 = GetObject<LessonAudition>(new IntPtr(p + 0x090), ReversePrism.DataModels.LessonAudition.FromPointer); // 0x90 CacheLessonAuditionSource   ( ModelClassType LessonAudition LessonAudition LessonAudition Pointer )
 
             return value;
         }

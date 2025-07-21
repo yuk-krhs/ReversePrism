@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 FilterService                            000186686340 ModelClassType ITypeDescriptorFilterService ITypeDescriptorFilterService ITypeDescriptorFilterService Pointer
-    // 018 FilteredMembers                          0001867317B0 ModelClassType ICollection ICollection ICollection Pointer
+    // 010 FilterService                            ModelClassType ITypeDescriptorFilterService ITypeDescriptorFilterService ITypeDescriptorFilterService Pointer
+    // 018 FilteredMembers                          ModelClassType ICollection ICollection ICollection Pointer
     public partial class FilterCacheItem : DataModel
     {
         public ITypeDescriptorFilterService?            FilterService                           { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FilterCacheItem() { Pointer= p0 };
 
-            value.FilterService                             = GetObject<ITypeDescriptorFilterService>(new IntPtr(p + 0x010), ReversePrism.DataModels.ITypeDescriptorFilterService.FromPointer); // 024667BA44F0 0x10 FilterService               ( 000186686340 ModelClassType ITypeDescriptorFilterService ITypeDescriptorFilterService ITypeDescriptorFilterService Pointer )
-            value.FilteredMembers                           = GetObject<ICollection>(new IntPtr(p + 0x018), ReversePrism.DataModels.ICollection.FromPointer); // 024667BA4510 0x18 FilteredMembers             ( 0001867317B0 ModelClassType ICollection ICollection ICollection Pointer )
+            value.FilterService                             = GetObject<ITypeDescriptorFilterService>(new IntPtr(p + 0x010), ReversePrism.DataModels.ITypeDescriptorFilterService.FromPointer); // 0x10 FilterService               ( ModelClassType ITypeDescriptorFilterService ITypeDescriptorFilterService ITypeDescriptorFilterService Pointer )
+            value.FilteredMembers                           = GetObject<ICollection>(new IntPtr(p + 0x018), ReversePrism.DataModels.ICollection.FromPointer); // 0x18 FilteredMembers             ( ModelClassType ICollection ICollection ICollection Pointer )
 
             return value;
         }

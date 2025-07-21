@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Id                                       0001865F4260 ModelPrimitiveType int int int Int32
-    // 014 SortId                                   0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 HelpType                                 0001865F4260 ModelPrimitiveType int int int Int32
-    // 020 BeginDate                                0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    // 028 EndDate                                  0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime
+    // 010 Id                                       ModelPrimitiveType int int int Int32
+    // 014 SortId                                   ModelPrimitiveType int int int Int32
+    // 018 HelpType                                 ModelPrimitiveType int int int Int32
+    // 020 BeginDate                                ModelPrimitiveType DateTime DateTime DateTime DateTime
+    // 028 EndDate                                  ModelPrimitiveType DateTime DateTime DateTime DateTime
     public partial class MstHelpGroup : DataModel
     {
         public int                                      Id                                      { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MstHelpGroup() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A46242C0 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.SortId                                    = GetInt32(new IntPtr(p + 0x014)); // 0245A46242E0 0x14 SortId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.HelpType                                  = GetInt32(new IntPtr(p + 0x018)); // 0245A4624300 0x18 HelpType                    ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x020)); // 0245A4624320 0x20 BeginDate                   ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x028)); // 0245A4624340 0x28 EndDate                     ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0x10 Id                          ( ModelPrimitiveType int int int Int32 )
+            value.SortId                                    = GetInt32(new IntPtr(p + 0x014)); // 0x14 SortId                      ( ModelPrimitiveType int int int Int32 )
+            value.HelpType                                  = GetInt32(new IntPtr(p + 0x018)); // 0x18 HelpType                    ( ModelPrimitiveType int int int Int32 )
+            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x020)); // 0x20 BeginDate                   ( ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x028)); // 0x28 EndDate                     ( ModelPrimitiveType DateTime DateTime DateTime DateTime )
 
             return value;
         }

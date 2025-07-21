@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Data                                     000186696AE0 ModelPrimitiveType ushort ushort ushort UInt16
+    // 010 Data                                     ModelPrimitiveType ushort ushort ushort UInt16
     public partial class BitArray16 : DataModel
     {
         public ushort                                   Data                                    { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BitArray16() { Pointer= p0 };
 
-            value.Data                                      = GetUInt16(new IntPtr(p + 0x010)); // 0246692FFA18 0x10 Data                        ( 000186696AE0 ModelPrimitiveType ushort ushort ushort UInt16 )
+            value.Data                                      = GetUInt16(new IntPtr(p + 0x010)); // 0x10 Data                        ( ModelPrimitiveType ushort ushort ushort UInt16 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Token                                    000186671910 ModelPrimitiveType string string string String
+    // 010 Token                                    ModelPrimitiveType string string string String
     public partial class TokenReceivedEventArgs : DataModel
     {
         public string                                   Token                                   { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TokenReceivedEventArgs() { Pointer= p0 };
 
-            value.Token                                     = GetString(new IntPtr(p + 0x010)); // 02466BE0C760 0x10 Token                       ( 000186671910 ModelPrimitiveType string string string String )
+            value.Token                                     = GetString(new IntPtr(p + 0x010)); // 0x10 Token                       ( ModelPrimitiveType string string string String )
 
             return value;
         }

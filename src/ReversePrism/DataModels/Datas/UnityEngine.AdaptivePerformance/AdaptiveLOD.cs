@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 040 M_DefaultLodBias                         0001866656B0 ModelPrimitiveType float float float Single
+    // 040 M_DefaultLodBias                         ModelPrimitiveType float float float Single
     public partial class AdaptiveLOD : DataModel
     {
         public float                                    M_DefaultLodBias                        { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AdaptiveLOD() { Pointer= p0 };
 
-            value.M_DefaultLodBias                          = GetSingle(new IntPtr(p + 0x040)); // 02466B715D78 0x40 M_DefaultLodBias            ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.M_DefaultLodBias                          = GetSingle(new IntPtr(p + 0x040)); // 0x40 M_DefaultLodBias            ( ModelPrimitiveType float float float Single )
 
             return value;
         }

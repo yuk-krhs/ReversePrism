@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Options                                  000186528DF0 ModelClassType ExportOptions ExportOptions ExportOptions Pointer
-    // 018 Schemas                                  0001865BEE30 ModelClassType XmlSchemaSet XmlSchemaSet XmlSchemaSet Pointer
-    // 020 DataContractSet                          000186679430 ModelClassType DataContractSet DataContractSet DataContractSet Pointer
+    // 010 Options                                  ModelClassType ExportOptions ExportOptions ExportOptions Pointer
+    // 018 Schemas                                  ModelClassType XmlSchemaSet XmlSchemaSet XmlSchemaSet Pointer
+    // 020 DataContractSet                          ModelClassType DataContractSet DataContractSet DataContractSet Pointer
     public partial class XsdDataContractExporter : DataModel
     {
         public ExportOptions?                           Options                                 { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XsdDataContractExporter() { Pointer= p0 };
 
-            value.Options                                   = GetObject<ExportOptions>(new IntPtr(p + 0x010), ReversePrism.DataModels.ExportOptions.FromPointer); // 024667D0EE50 0x10 Options                     ( 000186528DF0 ModelClassType ExportOptions ExportOptions ExportOptions Pointer )
-            value.Schemas                                   = GetObject<XmlSchemaSet>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlSchemaSet.FromPointer); // 024667D0EE70 0x18 Schemas                     ( 0001865BEE30 ModelClassType XmlSchemaSet XmlSchemaSet XmlSchemaSet Pointer )
-            value.DataContractSet                           = GetObject<DataContractSet>(new IntPtr(p + 0x020), ReversePrism.DataModels.DataContractSet.FromPointer); // 024667D0EE90 0x20 DataContractSet             ( 000186679430 ModelClassType DataContractSet DataContractSet DataContractSet Pointer )
+            value.Options                                   = GetObject<ExportOptions>(new IntPtr(p + 0x010), ReversePrism.DataModels.ExportOptions.FromPointer); // 0x10 Options                     ( ModelClassType ExportOptions ExportOptions ExportOptions Pointer )
+            value.Schemas                                   = GetObject<XmlSchemaSet>(new IntPtr(p + 0x018), ReversePrism.DataModels.XmlSchemaSet.FromPointer); // 0x18 Schemas                     ( ModelClassType XmlSchemaSet XmlSchemaSet XmlSchemaSet Pointer )
+            value.DataContractSet                           = GetObject<DataContractSet>(new IntPtr(p + 0x020), ReversePrism.DataModels.DataContractSet.FromPointer); // 0x20 DataContractSet             ( ModelClassType DataContractSet DataContractSet DataContractSet Pointer )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Max                                      000186667B80 ModelPrimitiveType float float float Single
+    // 020 Max                                      ModelPrimitiveType float float float Single
     public partial class NoInterpMaxFloatParameter : DataModel
     {
         public float                                    Max                                     { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new NoInterpMaxFloatParameter() { Pointer= p0 };
 
-            value.Max                                       = GetSingle(new IntPtr(p + 0x020)); // 024669359968 0x20 Max                         ( 000186667B80 ModelPrimitiveType float float float Single )
+            value.Max                                       = GetSingle(new IntPtr(p + 0x020)); // 0x20 Max                         ( ModelPrimitiveType float float float Single )
 
             return value;
         }

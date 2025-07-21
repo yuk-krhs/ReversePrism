@@ -8,29 +8,36 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Canvas                                   00018653FDA0 ModelClassType Canvas Canvas Canvas Pointer
-    // 028 CanvasScale                              000186542610 ModelClassType CanvasScaler CanvasScaler CanvasScaler Pointer
-    // 030 FadeMat                                  000185B929A0 ModelClassListType Material[] Material[] List<Material> Pointer
-    // 038 White                                    000186685A20 ModelClassType Texture2D Texture2D Texture2D Pointer
-    // 040 Black                                    000186685A20 ModelClassType Texture2D Texture2D Texture2D Pointer
-    // 048 FadeImage                                000186685A20 ModelClassType Texture2D Texture2D Texture2D Pointer
-    // 050 FadeColor                                0001865AA8E0 ModelEnumType Color Color Color Int32
-    // 060 FadeType                                 000186735FD0 ModelEnumType FadeType FadeType FadeType Int32
-    // 064 LastFadeType                             000186735FD0 ModelEnumType FadeType FadeType FadeType Int32
-    // 068 EffectType                               000186735570 ModelEnumType EffectType EffectType EffectType Int32
-    // 06C Esing                                    0001866656B0 ModelPrimitiveType float float float Single
-    // 070 Img                                      000186613190 ModelClassType RawImage RawImage RawImage Pointer
-    // 078 Screen                                   0001866DDE50 ModelClassType DisposableRenderTexture DisposableRenderTexture DisposableRenderTexture Pointer
-    // 080 LastRatio                                0001866656B0 ModelPrimitiveType float float float Single
-    // 084 FrameUpdate                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 088 FadeCount                                0001866656B0 ModelPrimitiveType float float float Single
-    // 08C TimeScale                                0001866656B0 ModelPrimitiveType float float float Single
-    // 090 FadeOut                                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 091 ReverseFlag                              000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 092 IsFirst                                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 093 IsPause                                  000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 020 TmpRTId                                  ModelPrimitiveType int int int Int32
+    // 028 Canvas                                   ModelClassType Canvas Canvas Canvas Pointer
+    // 030 CanvasScale                              ModelClassType CanvasScaler CanvasScaler CanvasScaler Pointer
+    // 038 FadeMat                                  ModelClassListType Material[] Material[] List<Material> Pointer
+    // 040 White                                    ModelClassType Texture2D Texture2D Texture2D Pointer
+    // 048 Black                                    ModelClassType Texture2D Texture2D Texture2D Pointer
+    // 050 FadeImage                                ModelClassType Texture2D Texture2D Texture2D Pointer
+    // 058 FadeColor                                ModelEnumType Color Color Color Int32
+    // 068 CopyForDissolve                          ModelClassType Material Material Material Pointer
+    // 070 FadeType                                 ModelEnumType FadeType FadeType FadeType Int32
+    // 074 LastFadeType                             ModelEnumType FadeType FadeType FadeType Int32
+    // 078 EffectType                               ModelEnumType EffectType EffectType EffectType Int32
+    // 07C Esing                                    ModelPrimitiveType float float float Single
+    // 080 Img                                      ModelClassType RawImage RawImage RawImage Pointer
+    // 088 OneShotCapture                           ModelClassType ScreenEffectCapture ScreenEffectCapture ScreenEffectCapture Pointer
+    // 090 FrameBufferCapture                       ModelClassType ScreenEffectCapture ScreenEffectCapture ScreenEffectCapture Pointer
+    // 098 LastRatio                                ModelPrimitiveType float float float Single
+    // 09C FrameUpdate                              ModelPrimitiveType int int int Int32
+    // 0A0 IsCameraDisable                          ModelPrimitiveType bool bool bool Bool
+    // 0A1 IsExistSplitScreen                       ModelPrimitiveType bool bool bool Bool
+    // 0A2 IsNeedFrameBuffer                        ModelPrimitiveType bool bool bool Bool
+    // 0A4 FadeCount                                ModelPrimitiveType float float float Single
+    // 0A8 TimeScale                                ModelPrimitiveType float float float Single
+    // 0AC FadeOut                                  ModelPrimitiveType bool bool bool Bool
+    // 0AD ReverseFlag                              ModelPrimitiveType bool bool bool Bool
+    // 0AE IsFirst                                  ModelPrimitiveType bool bool bool Bool
+    // 0AF IsPause                                  ModelPrimitiveType bool bool bool Bool
     public partial class ScreenEffectEx : DataModel
     {
+        public int                                      TmpRTId                                 { get; set; }
         public Canvas?                                  Canvas                                  { get; set; }
         public CanvasScaler?                            CanvasScale                             { get; set; }
         public List<Material>?                          FadeMat                                 { get; set; }
@@ -38,14 +45,19 @@ namespace ReversePrism.DataModels
         public Texture2D?                               Black                                   { get; set; }
         public Texture2D?                               FadeImage                               { get; set; }
         public Color                                    FadeColor                               { get; set; }
+        public Material?                                CopyForDissolve                         { get; set; }
         public FadeType                                 FadeType                                { get; set; }
         public FadeType                                 LastFadeType                            { get; set; }
         public EffectType                               EffectType                              { get; set; }
         public float                                    Esing                                   { get; set; }
         public RawImage?                                Img                                     { get; set; }
-        public DisposableRenderTexture?                 Screen                                  { get; set; }
+        public ScreenEffectCapture?                     OneShotCapture                          { get; set; }
+        public ScreenEffectCapture?                     FrameBufferCapture                      { get; set; }
         public float                                    LastRatio                               { get; set; }
         public int                                      FrameUpdate                             { get; set; }
+        public bool                                     IsCameraDisable                         { get; set; }
+        public bool                                     IsExistSplitScreen                      { get; set; }
+        public bool                                     IsNeedFrameBuffer                       { get; set; }
         public float                                    FadeCount                               { get; set; }
         public float                                    TimeScale                               { get; set; }
         public bool                                     FadeOut                                 { get; set; }
@@ -61,27 +73,33 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ScreenEffectEx() { Pointer= p0 };
 
-            value.Canvas                                    = GetObject<Canvas>(new IntPtr(p + 0x020), ReversePrism.DataModels.Canvas.FromPointer); // 0245A695E8F8 0x20 Canvas                      ( 00018653FDA0 ModelClassType Canvas Canvas Canvas Pointer )
-            value.CanvasScale                               = GetObject<CanvasScaler>(new IntPtr(p + 0x028), ReversePrism.DataModels.CanvasScaler.FromPointer); // 0245A695E918 0x28 CanvasScale                 ( 000186542610 ModelClassType CanvasScaler CanvasScaler CanvasScaler Pointer )
-            value.FadeMat                                   = GetObjectList<Material>(new IntPtr(p + 0x030), ReversePrism.DataModels.Material.FromPointer); // 0245A695E938 0x30 FadeMat                     ( 000185B929A0 ModelClassListType Material[] Material[] List<Material> Pointer )
-            value.White                                     = GetObject<Texture2D>(new IntPtr(p + 0x038), ReversePrism.DataModels.Texture2D.FromPointer); // 0245A695E958 0x38 White                       ( 000186685A20 ModelClassType Texture2D Texture2D Texture2D Pointer )
-            value.Black                                     = GetObject<Texture2D>(new IntPtr(p + 0x040), ReversePrism.DataModels.Texture2D.FromPointer); // 0245A695E978 0x40 Black                       ( 000186685A20 ModelClassType Texture2D Texture2D Texture2D Pointer )
-            value.FadeImage                                 = GetObject<Texture2D>(new IntPtr(p + 0x048), ReversePrism.DataModels.Texture2D.FromPointer); // 0245A695E998 0x48 FadeImage                   ( 000186685A20 ModelClassType Texture2D Texture2D Texture2D Pointer )
-            value.FadeColor                                 = (Color)GetInt32(new IntPtr(p + 0x050)); // 0245A695E9B8 0x50 FadeColor                   ( 0001865AA8E0 ModelEnumType Color Color Color Int32 )
-            value.FadeType                                  = (FadeType)GetInt32(new IntPtr(p + 0x060)); // 0245A695E9D8 0x60 FadeType                    ( 000186735FD0 ModelEnumType FadeType FadeType FadeType Int32 )
-            value.LastFadeType                              = (FadeType)GetInt32(new IntPtr(p + 0x064)); // 0245A695E9F8 0x64 LastFadeType                ( 000186735FD0 ModelEnumType FadeType FadeType FadeType Int32 )
-            value.EffectType                                = (EffectType)GetInt32(new IntPtr(p + 0x068)); // 0245A695EA18 0x68 EffectType                  ( 000186735570 ModelEnumType EffectType EffectType EffectType Int32 )
-            value.Esing                                     = GetSingle(new IntPtr(p + 0x06C)); // 0245A695EA38 0x6C Esing                       ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.Img                                       = GetObject<RawImage>(new IntPtr(p + 0x070), ReversePrism.DataModels.RawImage.FromPointer); // 0245A695EA58 0x70 Img                         ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.Screen                                    = GetObject<DisposableRenderTexture>(new IntPtr(p + 0x078), ReversePrism.DataModels.DisposableRenderTexture.FromPointer); // 0245A695EA78 0x78 Screen                      ( 0001866DDE50 ModelClassType DisposableRenderTexture DisposableRenderTexture DisposableRenderTexture Pointer )
-            value.LastRatio                                 = GetSingle(new IntPtr(p + 0x080)); // 0245A695EA98 0x80 LastRatio                   ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.FrameUpdate                               = GetInt32(new IntPtr(p + 0x084)); // 0245A695EAB8 0x84 FrameUpdate                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.FadeCount                                 = GetSingle(new IntPtr(p + 0x088)); // 0245A695EAD8 0x88 FadeCount                   ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.TimeScale                                 = GetSingle(new IntPtr(p + 0x08C)); // 0245A695EAF8 0x8C TimeScale                   ( 0001866656B0 ModelPrimitiveType float float float Single )
-            value.FadeOut                                   = GetBool(new IntPtr(p + 0x090)); // 0245A695EB18 0x90 FadeOut                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ReverseFlag                               = GetBool(new IntPtr(p + 0x091)); // 0245A695EB38 0x91 ReverseFlag                 ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsFirst                                   = GetBool(new IntPtr(p + 0x092)); // 0245A695EB58 0x92 IsFirst                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsPause                                   = GetBool(new IntPtr(p + 0x093)); // 0245A695EB78 0x93 IsPause                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.TmpRTId                                   = GetInt32(new IntPtr(p + 0x020)); // 0x20 TmpRTId                     ( ModelPrimitiveType int int int Int32 )
+            value.Canvas                                    = GetObject<Canvas>(new IntPtr(p + 0x028), ReversePrism.DataModels.Canvas.FromPointer); // 0x28 Canvas                      ( ModelClassType Canvas Canvas Canvas Pointer )
+            value.CanvasScale                               = GetObject<CanvasScaler>(new IntPtr(p + 0x030), ReversePrism.DataModels.CanvasScaler.FromPointer); // 0x30 CanvasScale                 ( ModelClassType CanvasScaler CanvasScaler CanvasScaler Pointer )
+            value.FadeMat                                   = GetObjectList<Material>(new IntPtr(p + 0x038), ReversePrism.DataModels.Material.FromPointer); // 0x38 FadeMat                     ( ModelClassListType Material[] Material[] List<Material> Pointer )
+            value.White                                     = GetObject<Texture2D>(new IntPtr(p + 0x040), ReversePrism.DataModels.Texture2D.FromPointer); // 0x40 White                       ( ModelClassType Texture2D Texture2D Texture2D Pointer )
+            value.Black                                     = GetObject<Texture2D>(new IntPtr(p + 0x048), ReversePrism.DataModels.Texture2D.FromPointer); // 0x48 Black                       ( ModelClassType Texture2D Texture2D Texture2D Pointer )
+            value.FadeImage                                 = GetObject<Texture2D>(new IntPtr(p + 0x050), ReversePrism.DataModels.Texture2D.FromPointer); // 0x50 FadeImage                   ( ModelClassType Texture2D Texture2D Texture2D Pointer )
+            value.FadeColor                                 = (Color)GetInt32(new IntPtr(p + 0x058)); // 0x58 FadeColor                   ( ModelEnumType Color Color Color Int32 )
+            value.CopyForDissolve                           = GetObject<Material>(new IntPtr(p + 0x068), ReversePrism.DataModels.Material.FromPointer); // 0x68 CopyForDissolve             ( ModelClassType Material Material Material Pointer )
+            value.FadeType                                  = (FadeType)GetInt32(new IntPtr(p + 0x070)); // 0x70 FadeType                    ( ModelEnumType FadeType FadeType FadeType Int32 )
+            value.LastFadeType                              = (FadeType)GetInt32(new IntPtr(p + 0x074)); // 0x74 LastFadeType                ( ModelEnumType FadeType FadeType FadeType Int32 )
+            value.EffectType                                = (EffectType)GetInt32(new IntPtr(p + 0x078)); // 0x78 EffectType                  ( ModelEnumType EffectType EffectType EffectType Int32 )
+            value.Esing                                     = GetSingle(new IntPtr(p + 0x07C)); // 0x7C Esing                       ( ModelPrimitiveType float float float Single )
+            value.Img                                       = GetObject<RawImage>(new IntPtr(p + 0x080), ReversePrism.DataModels.RawImage.FromPointer); // 0x80 Img                         ( ModelClassType RawImage RawImage RawImage Pointer )
+            value.OneShotCapture                            = GetObject<ScreenEffectCapture>(new IntPtr(p + 0x088), ReversePrism.DataModels.ScreenEffectCapture.FromPointer); // 0x88 OneShotCapture              ( ModelClassType ScreenEffectCapture ScreenEffectCapture ScreenEffectCapture Pointer )
+            value.FrameBufferCapture                        = GetObject<ScreenEffectCapture>(new IntPtr(p + 0x090), ReversePrism.DataModels.ScreenEffectCapture.FromPointer); // 0x90 FrameBufferCapture          ( ModelClassType ScreenEffectCapture ScreenEffectCapture ScreenEffectCapture Pointer )
+            value.LastRatio                                 = GetSingle(new IntPtr(p + 0x098)); // 0x98 LastRatio                   ( ModelPrimitiveType float float float Single )
+            value.FrameUpdate                               = GetInt32(new IntPtr(p + 0x09C)); // 0x9C FrameUpdate                 ( ModelPrimitiveType int int int Int32 )
+            value.IsCameraDisable                           = GetBool(new IntPtr(p + 0x0A0)); // 0xA0 IsCameraDisable             ( ModelPrimitiveType bool bool bool Bool )
+            value.IsExistSplitScreen                        = GetBool(new IntPtr(p + 0x0A1)); // 0xA1 IsExistSplitScreen          ( ModelPrimitiveType bool bool bool Bool )
+            value.IsNeedFrameBuffer                         = GetBool(new IntPtr(p + 0x0A2)); // 0xA2 IsNeedFrameBuffer           ( ModelPrimitiveType bool bool bool Bool )
+            value.FadeCount                                 = GetSingle(new IntPtr(p + 0x0A4)); // 0xA4 FadeCount                   ( ModelPrimitiveType float float float Single )
+            value.TimeScale                                 = GetSingle(new IntPtr(p + 0x0A8)); // 0xA8 TimeScale                   ( ModelPrimitiveType float float float Single )
+            value.FadeOut                                   = GetBool(new IntPtr(p + 0x0AC)); // 0xAC FadeOut                     ( ModelPrimitiveType bool bool bool Bool )
+            value.ReverseFlag                               = GetBool(new IntPtr(p + 0x0AD)); // 0xAD ReverseFlag                 ( ModelPrimitiveType bool bool bool Bool )
+            value.IsFirst                                   = GetBool(new IntPtr(p + 0x0AE)); // 0xAE IsFirst                     ( ModelPrimitiveType bool bool bool Bool )
+            value.IsPause                                   = GetBool(new IntPtr(p + 0x0AF)); // 0xAF IsPause                     ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

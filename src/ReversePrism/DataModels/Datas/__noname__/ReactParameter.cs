@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Parameter                                0001867723C0 ModelEnumType Parameter Parameter Parameter Int32
-    // 03C Type                                     00018654CB70 ModelEnumType ReactType ReactType ReactType Int32
-    // 040 EnablePausingCue                         000186595960 ModelPrimitiveType bool bool bool Bool
+    // 010 Parameter                                ModelEnumType Parameter Parameter Parameter Int32
+    // 03C Type                                     ModelEnumType ReactType ReactType ReactType Int32
+    // 040 EnablePausingCue                         ModelPrimitiveType bool bool bool Bool
     public partial class ReactParameter : DataModel
     {
         public Parameter                                Parameter                               { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ReactParameter() { Pointer= p0 };
 
-            value.Parameter                                 = (Parameter)GetInt32(new IntPtr(p + 0x010)); // 02466ACD68B0 0x10 Parameter                   ( 0001867723C0 ModelEnumType Parameter Parameter Parameter Int32 )
-            value.Type                                      = (ReactType)GetInt32(new IntPtr(p + 0x03C)); // 02466ACD68D0 0x3C Type                        ( 00018654CB70 ModelEnumType ReactType ReactType ReactType Int32 )
-            value.EnablePausingCue                          = GetBool(new IntPtr(p + 0x040)); // 02466ACD68F0 0x40 EnablePausingCue            ( 000186595960 ModelPrimitiveType bool bool bool Bool )
+            value.Parameter                                 = (Parameter)GetInt32(new IntPtr(p + 0x010)); // 0x10 Parameter                   ( ModelEnumType Parameter Parameter Parameter Int32 )
+            value.Type                                      = (ReactType)GetInt32(new IntPtr(p + 0x03C)); // 0x3C Type                        ( ModelEnumType ReactType ReactType ReactType Int32 )
+            value.EnablePausingCue                          = GetBool(new IntPtr(p + 0x040)); // 0x40 EnablePausingCue            ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Str                                      000186672F10 ModelPrimitiveType string string string String
+    // 010 Str                                      ModelPrimitiveType string string string String
     // 018 marshaled_string                         <int> IL2CPP_TYPE_I
     public partial class SafeStringMarshal : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SafeStringMarshal() { Pointer= p0 };
 
-            value.Str                                       = GetString(new IntPtr(p + 0x010)); // 0246669A8318 0x10 Str                         ( 000186672F10 ModelPrimitiveType string string string String )
+            value.Str                                       = GetString(new IntPtr(p + 0x010)); // 0x10 Str                         ( ModelPrimitiveType string string string String )
 
             return value;
         }

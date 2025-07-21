@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 s_defaultValue                           DateTime IL2CPP_TYPE_VALUETYPE
-    // 050 Values                                   000185B7C210 ModelPrimitiveListType DateTime[] DateTime[] List<DateTime> Pointer
+    // 050 Values                                   ModelPrimitiveListType DateTime[] DateTime[] List<DateTime> Pointer
     public partial class DateTimeStorage : DataModel
     {
         public List<DateTime>?                          Values                                  { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DateTimeStorage() { Pointer= p0 };
 
-            value.Values                                    = GetDateTimeList(new IntPtr(p + 0x050)); // 024668A3A520 0x50 Values                      ( 000185B7C210 ModelPrimitiveListType DateTime[] DateTime[] List<DateTime> Pointer )
+            value.Values                                    = GetDateTimeList(new IntPtr(p + 0x050)); // 0x50 Values                      ( ModelPrimitiveListType DateTime[] DateTime[] List<DateTime> Pointer )
 
             return value;
         }

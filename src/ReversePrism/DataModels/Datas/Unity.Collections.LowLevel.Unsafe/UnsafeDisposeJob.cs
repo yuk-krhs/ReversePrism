@@ -9,7 +9,7 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 010 Ptr                                      IntPtr IL2CPP_TYPE_PTR
-    // 018 Allocator                                0001866996D0 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32
+    // 018 Allocator                                ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32
     public partial class UnsafeDisposeJob : DataModel
     {
         public AllocatorHandle                          Allocator                               { get; set; }
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new UnsafeDisposeJob() { Pointer= p0 };
 
-            value.Allocator                                 = (AllocatorHandle)GetInt32(new IntPtr(p + 0x018)); // 0246608B9150 0x18 Allocator                   ( 0001866996D0 ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32 )
+            value.Allocator                                 = (AllocatorHandle)GetInt32(new IntPtr(p + 0x018)); // 0x18 Allocator                   ( ModelEnumType AllocatorHandle AllocatorHandle AllocatorHandle Int32 )
 
             return value;
         }

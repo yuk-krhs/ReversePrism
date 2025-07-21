@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 Behaviour                                00018664FDC0 ModelClassType TextureColorBehaviour TextureColorBehaviour TextureColorBehaviour Pointer
+    // 018 Behaviour                                ModelClassType TextureColorBehaviour TextureColorBehaviour TextureColorBehaviour Pointer
     public partial class TextureColorClip : DataModel
     {
         public TextureColorBehaviour?                   Behaviour                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TextureColorClip() { Pointer= p0 };
 
-            value.Behaviour                                 = GetObject<TextureColorBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.TextureColorBehaviour.FromPointer); // 024664E75708 0x18 Behaviour                   ( 00018664FDC0 ModelClassType TextureColorBehaviour TextureColorBehaviour TextureColorBehaviour Pointer )
+            value.Behaviour                                 = GetObject<TextureColorBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.TextureColorBehaviour.FromPointer); // 0x18 Behaviour                   ( ModelClassType TextureColorBehaviour TextureColorBehaviour TextureColorBehaviour Pointer )
 
             return value;
         }

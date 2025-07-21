@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 ScheduleLevel                            0001865F4940 ModelPrimitiveType int int int Int32
-    // 020 ChallengeMission                         000186720230 ModelClassType IChallengeMissionStatus IChallengeMissionStatus IChallengeMissionStatus Pointer
-    // 028 ChallengeMissionTargetPIdol              00018657D8B0 ModelClassType IInProduceIdolStatus IInProduceIdolStatus IInProduceIdolStatus Pointer
-    // 030 ChallengeMissionUpParameter              000186713C30 ModelClassType IBuildUpParameterValueStatus IBuildUpParameterValueStatus IBuildUpParameterValueStatus Pointer
+    // 018 ScheduleLevel                            ModelPrimitiveType int int int Int32
+    // 020 ChallengeMission                         ModelClassType IChallengeMissionStatus IChallengeMissionStatus IChallengeMissionStatus Pointer
+    // 028 ChallengeMissionTargetPIdol              ModelClassType IInProduceIdolStatus IInProduceIdolStatus IInProduceIdolStatus Pointer
+    // 030 ChallengeMissionUpParameter              ModelClassType IBuildUpParameterValueStatus IBuildUpParameterValueStatus IBuildUpParameterValueStatus Pointer
     public partial class LessonViewModel : DataModel
     {
         public int                                      ScheduleLevel                           { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LessonViewModel() { Pointer= p0 };
 
-            value.ScheduleLevel                             = GetInt32(new IntPtr(p + 0x018)); // 024665C3E810 0x18 ScheduleLevel               ( 0001865F4940 ModelPrimitiveType int int int Int32 )
-            value.ChallengeMission                          = GetObject<IChallengeMissionStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IChallengeMissionStatus.FromPointer); // 024665C3E830 0x20 ChallengeMission            ( 000186720230 ModelClassType IChallengeMissionStatus IChallengeMissionStatus IChallengeMissionStatus Pointer )
-            value.ChallengeMissionTargetPIdol               = GetObject<IInProduceIdolStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.IInProduceIdolStatus.FromPointer); // 024665C3E850 0x28 ChallengeMissionTargetPIdol ( 00018657D8B0 ModelClassType IInProduceIdolStatus IInProduceIdolStatus IInProduceIdolStatus Pointer )
-            value.ChallengeMissionUpParameter               = GetObject<IBuildUpParameterValueStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.IBuildUpParameterValueStatus.FromPointer); // 024665C3E870 0x30 ChallengeMissionUpParameter ( 000186713C30 ModelClassType IBuildUpParameterValueStatus IBuildUpParameterValueStatus IBuildUpParameterValueStatus Pointer )
+            value.ScheduleLevel                             = GetInt32(new IntPtr(p + 0x018)); // 0x18 ScheduleLevel               ( ModelPrimitiveType int int int Int32 )
+            value.ChallengeMission                          = GetObject<IChallengeMissionStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IChallengeMissionStatus.FromPointer); // 0x20 ChallengeMission            ( ModelClassType IChallengeMissionStatus IChallengeMissionStatus IChallengeMissionStatus Pointer )
+            value.ChallengeMissionTargetPIdol               = GetObject<IInProduceIdolStatus>(new IntPtr(p + 0x028), ReversePrism.DataModels.IInProduceIdolStatus.FromPointer); // 0x28 ChallengeMissionTargetPIdol ( ModelClassType IInProduceIdolStatus IInProduceIdolStatus IInProduceIdolStatus Pointer )
+            value.ChallengeMissionUpParameter               = GetObject<IBuildUpParameterValueStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.IBuildUpParameterValueStatus.FromPointer); // 0x30 ChallengeMissionUpParameter ( ModelClassType IBuildUpParameterValueStatus IBuildUpParameterValueStatus IBuildUpParameterValueStatus Pointer )
 
             return value;
         }

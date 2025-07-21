@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Error                                    0001865C0390 ModelClassType INetworkError INetworkError INetworkError Pointer
-    // 018 Subscription                             0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer
-    // 020 Logger                                   00018669C140 ModelClassType NetworkLoggerBase NetworkLoggerBase NetworkLoggerBase Pointer
+    // 010 Error                                    ModelClassType INetworkError INetworkError INetworkError Pointer
+    // 018 Subscription                             ModelClassType IDisposable IDisposable IDisposable Pointer
+    // 020 Logger                                   ModelClassType NetworkLoggerBase NetworkLoggerBase NetworkLoggerBase Pointer
     // 028 callSubject                              Subject`1<bool> IL2CPP_TYPE_GENERICINST
     // 000 requestCount                             int IL2CPP_TYPE_I4
     // 008 lockObject                               <object> IL2CPP_TYPE_OBJECT
@@ -28,9 +28,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CallObserver() { Pointer= p0 };
 
-            value.Error                                     = GetObject<INetworkError>(new IntPtr(p + 0x010), ReversePrism.DataModels.INetworkError.FromPointer); // 0246605D3EE0 0x10 Error                       ( 0001865C0390 ModelClassType INetworkError INetworkError INetworkError Pointer )
-            value.Subscription                              = GetObject<IDisposable>(new IntPtr(p + 0x018), ReversePrism.DataModels.IDisposable.FromPointer); // 0246605D3F00 0x18 Subscription                ( 0001867532E0 ModelClassType IDisposable IDisposable IDisposable Pointer )
-            value.Logger                                    = GetObject<NetworkLoggerBase>(new IntPtr(p + 0x020), ReversePrism.DataModels.NetworkLoggerBase.FromPointer); // 0246605D3F20 0x20 Logger                      ( 00018669C140 ModelClassType NetworkLoggerBase NetworkLoggerBase NetworkLoggerBase Pointer )
+            value.Error                                     = GetObject<INetworkError>(new IntPtr(p + 0x010), ReversePrism.DataModels.INetworkError.FromPointer); // 0x10 Error                       ( ModelClassType INetworkError INetworkError INetworkError Pointer )
+            value.Subscription                              = GetObject<IDisposable>(new IntPtr(p + 0x018), ReversePrism.DataModels.IDisposable.FromPointer); // 0x18 Subscription                ( ModelClassType IDisposable IDisposable IDisposable Pointer )
+            value.Logger                                    = GetObject<NetworkLoggerBase>(new IntPtr(p + 0x020), ReversePrism.DataModels.NetworkLoggerBase.FromPointer); // 0x20 Logger                      ( ModelClassType NetworkLoggerBase NetworkLoggerBase NetworkLoggerBase Pointer )
 
             return value;
         }

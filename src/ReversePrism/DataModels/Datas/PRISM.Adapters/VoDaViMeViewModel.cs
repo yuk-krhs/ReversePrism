@@ -8,15 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Vo                                       0001865F4260 ModelPrimitiveType int int int Int32
-    // 014 VoAdditional                             0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 Da                                       0001865F4260 ModelPrimitiveType int int int Int32
-    // 01C DaAdditional                             0001865F4260 ModelPrimitiveType int int int Int32
-    // 020 Vi                                       0001865F4260 ModelPrimitiveType int int int Int32
-    // 024 ViAdditional                             0001865F4260 ModelPrimitiveType int int int Int32
-    // 028 Me                                       0001865F4260 ModelPrimitiveType int int int Int32
-    // 02C MeAdditional                             0001865F4260 ModelPrimitiveType int int int Int32
-    // 030 Cost                                     0001865F4260 ModelPrimitiveType int int int Int32
+    // 010 Vo                                       ModelPrimitiveType int int int Int32
+    // 014 VoAdditional                             ModelPrimitiveType int int int Int32
+    // 018 Da                                       ModelPrimitiveType int int int Int32
+    // 01C DaAdditional                             ModelPrimitiveType int int int Int32
+    // 020 Vi                                       ModelPrimitiveType int int int Int32
+    // 024 ViAdditional                             ModelPrimitiveType int int int Int32
+    // 028 Me                                       ModelPrimitiveType int int int Int32
+    // 02C MeAdditional                             ModelPrimitiveType int int int Int32
+    // 030 Cost                                     ModelPrimitiveType int int int Int32
     public partial class VoDaViMeViewModel : DataModel
     {
         public int                                      Vo                                      { get; set; }
@@ -37,15 +37,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new VoDaViMeViewModel() { Pointer= p0 };
 
-            value.Vo                                        = GetInt32(new IntPtr(p + 0x010)); // 024665F318C0 0x10 Vo                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.VoAdditional                              = GetInt32(new IntPtr(p + 0x014)); // 024665F318E0 0x14 VoAdditional                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Da                                        = GetInt32(new IntPtr(p + 0x018)); // 024665F31900 0x18 Da                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.DaAdditional                              = GetInt32(new IntPtr(p + 0x01C)); // 024665F31920 0x1C DaAdditional                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Vi                                        = GetInt32(new IntPtr(p + 0x020)); // 024665F31940 0x20 Vi                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.ViAdditional                              = GetInt32(new IntPtr(p + 0x024)); // 024665F31960 0x24 ViAdditional                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Me                                        = GetInt32(new IntPtr(p + 0x028)); // 024665F31980 0x28 Me                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MeAdditional                              = GetInt32(new IntPtr(p + 0x02C)); // 024665F319A0 0x2C MeAdditional                ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.Cost                                      = GetInt32(new IntPtr(p + 0x030)); // 024665F319C0 0x30 Cost                        ( 0001865F4260 ModelPrimitiveType int int int Int32 )
+            value.Vo                                        = GetInt32(new IntPtr(p + 0x010)); // 0x10 Vo                          ( ModelPrimitiveType int int int Int32 )
+            value.VoAdditional                              = GetInt32(new IntPtr(p + 0x014)); // 0x14 VoAdditional                ( ModelPrimitiveType int int int Int32 )
+            value.Da                                        = GetInt32(new IntPtr(p + 0x018)); // 0x18 Da                          ( ModelPrimitiveType int int int Int32 )
+            value.DaAdditional                              = GetInt32(new IntPtr(p + 0x01C)); // 0x1C DaAdditional                ( ModelPrimitiveType int int int Int32 )
+            value.Vi                                        = GetInt32(new IntPtr(p + 0x020)); // 0x20 Vi                          ( ModelPrimitiveType int int int Int32 )
+            value.ViAdditional                              = GetInt32(new IntPtr(p + 0x024)); // 0x24 ViAdditional                ( ModelPrimitiveType int int int Int32 )
+            value.Me                                        = GetInt32(new IntPtr(p + 0x028)); // 0x28 Me                          ( ModelPrimitiveType int int int Int32 )
+            value.MeAdditional                              = GetInt32(new IntPtr(p + 0x02C)); // 0x2C MeAdditional                ( ModelPrimitiveType int int int Int32 )
+            value.Cost                                      = GetInt32(new IntPtr(p + 0x030)); // 0x30 Cost                        ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

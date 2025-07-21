@@ -8,24 +8,24 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 RemoteCertificateValidationCallback      00018664B0B0 ModelClassType MonoRemoteCertificateValidationCallback MonoRemoteCertificateValidationCallback MonoRemoteCertificateValidationCallback Pointer
-    // 018 ClientCertificateSelectionCallback       000186649830 ModelClassType MonoLocalCertificateSelectionCallback MonoLocalCertificateSelectionCallback MonoLocalCertificateSelectionCallback Pointer
-    // 020 CertificateValidationTime                000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
-    // 030 TrustAnchors                             0001865656A0 ModelClassType X509CertificateCollection X509CertificateCollection X509CertificateCollection Pointer
+    // 010 RemoteCertificateValidationCallback      ModelClassType MonoRemoteCertificateValidationCallback MonoRemoteCertificateValidationCallback MonoRemoteCertificateValidationCallback Pointer
+    // 018 ClientCertificateSelectionCallback       ModelClassType MonoLocalCertificateSelectionCallback MonoLocalCertificateSelectionCallback MonoLocalCertificateSelectionCallback Pointer
+    // 020 CertificateValidationTime                ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
+    // 030 TrustAnchors                             ModelClassType X509CertificateCollection X509CertificateCollection X509CertificateCollection Pointer
     // 038 <UserSettings>k__BackingField            <object> IL2CPP_TYPE_OBJECT
-    // 040 CertificateSearchPaths                   000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 048 SendCloseNotify                          000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 050 ClientCertificateIssuers                 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer
-    // 058 DisallowUnauthenticatedCertificateRequest 000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 040 CertificateSearchPaths                   ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 048 SendCloseNotify                          ModelPrimitiveType bool bool bool Bool
+    // 050 ClientCertificateIssuers                 ModelPrimitiveListType string[] string[] List<string> Pointer
+    // 058 DisallowUnauthenticatedCertificateRequest ModelPrimitiveType bool bool bool Bool
     // 05C <EnabledProtocols>k__BackingField        Nullable`1<TlsProtocols> IL2CPP_TYPE_GENERICINST
-    // 068 EnabledCiphers                           000185B75300 ModelEnumListType CipherSuiteCode[] CipherSuiteCode[] List<CipherSuiteCode> Pointer
-    // 070 Cloned                                   000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 071 CheckCertName                            000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 072 CheckCertRevocationStatus                000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 068 EnabledCiphers                           ModelEnumListType CipherSuiteCode[] CipherSuiteCode[] List<CipherSuiteCode> Pointer
+    // 070 Cloned                                   ModelPrimitiveType bool bool bool Bool
+    // 071 CheckCertName                            ModelPrimitiveType bool bool bool Bool
+    // 072 CheckCertRevocationStatus                ModelPrimitiveType bool bool bool Bool
     // 073 useServicePointManagerCallback           Nullable`1<bool> IL2CPP_TYPE_GENERICINST
-    // 075 SkipSystemValidators                     000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 076 CallbackNeedsChain                       000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 078 CertificateValidator                     00018671B8B0 ModelClassType ICertificateValidator ICertificateValidator ICertificateValidator Pointer
+    // 075 SkipSystemValidators                     ModelPrimitiveType bool bool bool Bool
+    // 076 CallbackNeedsChain                       ModelPrimitiveType bool bool bool Bool
+    // 078 CertificateValidator                     ModelClassType ICertificateValidator ICertificateValidator ICertificateValidator Pointer
     // 000 defaultSettings                          MonoTlsSettings IL2CPP_TYPE_CLASS
     public partial class MonoTlsSettings : DataModel
     {
@@ -53,21 +53,21 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MonoTlsSettings() { Pointer= p0 };
 
-            value.RemoteCertificateValidationCallback       = GetObject<MonoRemoteCertificateValidationCallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.MonoRemoteCertificateValidationCallback.FromPointer); // 02466795BFC8 0x10 RemoteCertificateValidationCallback ( 00018664B0B0 ModelClassType MonoRemoteCertificateValidationCallback MonoRemoteCertificateValidationCallback MonoRemoteCertificateValidationCallback Pointer )
-            value.ClientCertificateSelectionCallback        = GetObject<MonoLocalCertificateSelectionCallback>(new IntPtr(p + 0x018), ReversePrism.DataModels.MonoLocalCertificateSelectionCallback.FromPointer); // 02466795BFE8 0x18 ClientCertificateSelectionCallback ( 000186649830 ModelClassType MonoLocalCertificateSelectionCallback MonoLocalCertificateSelectionCallback MonoLocalCertificateSelectionCallback Pointer )
-            value.CertificateValidationTime                 = GetDateTime(new IntPtr(p + 0x020)); // 02466795C008 0x20 CertificateValidationTime   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.TrustAnchors                              = GetObject<X509CertificateCollection>(new IntPtr(p + 0x030), ReversePrism.DataModels.X509CertificateCollection.FromPointer); // 02466795C028 0x30 TrustAnchors                ( 0001865656A0 ModelClassType X509CertificateCollection X509CertificateCollection X509CertificateCollection Pointer )
-            value.CertificateSearchPaths                    = GetStringList(new IntPtr(p + 0x040)); // 02466795C068 0x40 CertificateSearchPaths      ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.SendCloseNotify                           = GetBool(new IntPtr(p + 0x048)); // 02466795C088 0x48 SendCloseNotify             ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ClientCertificateIssuers                  = GetStringList(new IntPtr(p + 0x050)); // 02466795C0A8 0x50 ClientCertificateIssuers    ( 000185B815B0 ModelPrimitiveListType string[] string[] List<string> Pointer )
-            value.DisallowUnauthenticatedCertificateRequest = GetBool(new IntPtr(p + 0x058)); // 02466795C0C8 0x58 DisallowUnauthenticatedCertificateRequest ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.EnabledCiphers                            = GetEnumList<CipherSuiteCode>(new IntPtr(p + 0x068)); // 02466795C108 0x68 EnabledCiphers              ( 000185B75300 ModelEnumListType CipherSuiteCode[] CipherSuiteCode[] List<CipherSuiteCode> Pointer )
-            value.Cloned                                    = GetBool(new IntPtr(p + 0x070)); // 02466795C128 0x70 Cloned                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CheckCertName                             = GetBool(new IntPtr(p + 0x071)); // 02466795C148 0x71 CheckCertName               ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CheckCertRevocationStatus                 = GetBool(new IntPtr(p + 0x072)); // 02466795C168 0x72 CheckCertRevocationStatus   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.SkipSystemValidators                      = GetBool(new IntPtr(p + 0x075)); // 02466795C1A8 0x75 SkipSystemValidators        ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CallbackNeedsChain                        = GetBool(new IntPtr(p + 0x076)); // 02466795C1C8 0x76 CallbackNeedsChain          ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CertificateValidator                      = GetObject<ICertificateValidator>(new IntPtr(p + 0x078), ReversePrism.DataModels.ICertificateValidator.FromPointer); // 02466795C1E8 0x78 CertificateValidator        ( 00018671B8B0 ModelClassType ICertificateValidator ICertificateValidator ICertificateValidator Pointer )
+            value.RemoteCertificateValidationCallback       = GetObject<MonoRemoteCertificateValidationCallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.MonoRemoteCertificateValidationCallback.FromPointer); // 0x10 RemoteCertificateValidationCallback ( ModelClassType MonoRemoteCertificateValidationCallback MonoRemoteCertificateValidationCallback MonoRemoteCertificateValidationCallback Pointer )
+            value.ClientCertificateSelectionCallback        = GetObject<MonoLocalCertificateSelectionCallback>(new IntPtr(p + 0x018), ReversePrism.DataModels.MonoLocalCertificateSelectionCallback.FromPointer); // 0x18 ClientCertificateSelectionCallback ( ModelClassType MonoLocalCertificateSelectionCallback MonoLocalCertificateSelectionCallback MonoLocalCertificateSelectionCallback Pointer )
+            value.CertificateValidationTime                 = GetDateTime(new IntPtr(p + 0x020)); // 0x20 CertificateValidationTime   ( ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.TrustAnchors                              = GetObject<X509CertificateCollection>(new IntPtr(p + 0x030), ReversePrism.DataModels.X509CertificateCollection.FromPointer); // 0x30 TrustAnchors                ( ModelClassType X509CertificateCollection X509CertificateCollection X509CertificateCollection Pointer )
+            value.CertificateSearchPaths                    = GetStringList(new IntPtr(p + 0x040)); // 0x40 CertificateSearchPaths      ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.SendCloseNotify                           = GetBool(new IntPtr(p + 0x048)); // 0x48 SendCloseNotify             ( ModelPrimitiveType bool bool bool Bool )
+            value.ClientCertificateIssuers                  = GetStringList(new IntPtr(p + 0x050)); // 0x50 ClientCertificateIssuers    ( ModelPrimitiveListType string[] string[] List<string> Pointer )
+            value.DisallowUnauthenticatedCertificateRequest = GetBool(new IntPtr(p + 0x058)); // 0x58 DisallowUnauthenticatedCertificateRequest ( ModelPrimitiveType bool bool bool Bool )
+            value.EnabledCiphers                            = GetEnumList<CipherSuiteCode>(new IntPtr(p + 0x068)); // 0x68 EnabledCiphers              ( ModelEnumListType CipherSuiteCode[] CipherSuiteCode[] List<CipherSuiteCode> Pointer )
+            value.Cloned                                    = GetBool(new IntPtr(p + 0x070)); // 0x70 Cloned                      ( ModelPrimitiveType bool bool bool Bool )
+            value.CheckCertName                             = GetBool(new IntPtr(p + 0x071)); // 0x71 CheckCertName               ( ModelPrimitiveType bool bool bool Bool )
+            value.CheckCertRevocationStatus                 = GetBool(new IntPtr(p + 0x072)); // 0x72 CheckCertRevocationStatus   ( ModelPrimitiveType bool bool bool Bool )
+            value.SkipSystemValidators                      = GetBool(new IntPtr(p + 0x075)); // 0x75 SkipSystemValidators        ( ModelPrimitiveType bool bool bool Bool )
+            value.CallbackNeedsChain                        = GetBool(new IntPtr(p + 0x076)); // 0x76 CallbackNeedsChain          ( ModelPrimitiveType bool bool bool Bool )
+            value.CertificateValidator                      = GetObject<ICertificateValidator>(new IntPtr(p + 0x078), ReversePrism.DataModels.ICertificateValidator.FromPointer); // 0x78 CertificateValidator        ( ModelClassType ICertificateValidator ICertificateValidator ICertificateValidator Pointer )
 
             return value;
         }

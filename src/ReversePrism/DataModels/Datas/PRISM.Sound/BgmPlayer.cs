@@ -12,10 +12,10 @@ namespace ReversePrism.DataModels
     // 018 playSound                                Func`3<CriAtomSource, PlayParameters, CriAtomExPlayback> IL2CPP_TYPE_GENERICINST
     // 020 loadCueSheetAsync                        Func`3<string, CancellationToken, UniTask> IL2CPP_TYPE_GENERICINST
     // 028 unloadCueSheet                           Action`1<string> IL2CPP_TYPE_GENERICINST
-    // 030 PrevCueSheet                             000186671910 ModelPrimitiveType string string string String
-    // 038 CurrentCueSheet                          000186671910 ModelPrimitiveType string string string String
-    // 040 CurrentPlayInfo                          0001866FA390 ModelClassType BgmPlayInfo BgmPlayInfo BgmPlayInfo Pointer
-    // 048 BgmLoadCts                               0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
+    // 030 PrevCueSheet                             ModelPrimitiveType string string string String
+    // 038 CurrentCueSheet                          ModelPrimitiveType string string string String
+    // 040 CurrentPlayInfo                          ModelClassType BgmPlayInfo BgmPlayInfo BgmPlayInfo Pointer
+    // 048 BgmLoadCts                               ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
     // 050 ignoreCueSheetList                       HashSet`1<string> IL2CPP_TYPE_GENERICINST
     // 058 releaseCueSheetListOnNextPlay            HashSet`1<string> IL2CPP_TYPE_GENERICINST
     public partial class BgmPlayer : DataModel
@@ -33,10 +33,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BgmPlayer() { Pointer= p0 };
 
-            value.PrevCueSheet                              = GetString(new IntPtr(p + 0x030)); // 024661811E98 0x30 PrevCueSheet                ( 000186671910 ModelPrimitiveType string string string String )
-            value.CurrentCueSheet                           = GetString(new IntPtr(p + 0x038)); // 024661811EB8 0x38 CurrentCueSheet             ( 000186671910 ModelPrimitiveType string string string String )
-            value.CurrentPlayInfo                           = GetObject<BgmPlayInfo>(new IntPtr(p + 0x040), ReversePrism.DataModels.BgmPlayInfo.FromPointer); // 024661811ED8 0x40 CurrentPlayInfo             ( 0001866FA390 ModelClassType BgmPlayInfo BgmPlayInfo BgmPlayInfo Pointer )
-            value.BgmLoadCts                                = GetObject<CancellationTokenSource>(new IntPtr(p + 0x048), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 024661811EF8 0x48 BgmLoadCts                  ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.PrevCueSheet                              = GetString(new IntPtr(p + 0x030)); // 0x30 PrevCueSheet                ( ModelPrimitiveType string string string String )
+            value.CurrentCueSheet                           = GetString(new IntPtr(p + 0x038)); // 0x38 CurrentCueSheet             ( ModelPrimitiveType string string string String )
+            value.CurrentPlayInfo                           = GetObject<BgmPlayInfo>(new IntPtr(p + 0x040), ReversePrism.DataModels.BgmPlayInfo.FromPointer); // 0x40 CurrentPlayInfo             ( ModelClassType BgmPlayInfo BgmPlayInfo BgmPlayInfo Pointer )
+            value.BgmLoadCts                                = GetObject<CancellationTokenSource>(new IntPtr(p + 0x048), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0x48 BgmLoadCts                  ( ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
 
             return value;
         }

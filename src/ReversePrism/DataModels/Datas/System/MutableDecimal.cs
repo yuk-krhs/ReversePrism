@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Flags                                    0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 014 High                                     0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 018 Low                                      0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 01C Mid                                      0001866992B0 ModelPrimitiveType uint uint uint UInt32
+    // 010 Flags                                    ModelPrimitiveType uint uint uint UInt32
+    // 014 High                                     ModelPrimitiveType uint uint uint UInt32
+    // 018 Low                                      ModelPrimitiveType uint uint uint UInt32
+    // 01C Mid                                      ModelPrimitiveType uint uint uint UInt32
     public partial class MutableDecimal : DataModel
     {
         public uint                                     Flags                                   { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MutableDecimal() { Pointer= p0 };
 
-            value.Flags                                     = GetUInt32(new IntPtr(p + 0x010)); // 024666AA2638 0x10 Flags                       ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.High                                      = GetUInt32(new IntPtr(p + 0x014)); // 024666AA2658 0x14 High                        ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.Low                                       = GetUInt32(new IntPtr(p + 0x018)); // 024666AA2678 0x18 Low                         ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.Mid                                       = GetUInt32(new IntPtr(p + 0x01C)); // 024666AA2698 0x1C Mid                         ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
+            value.Flags                                     = GetUInt32(new IntPtr(p + 0x010)); // 0x10 Flags                       ( ModelPrimitiveType uint uint uint UInt32 )
+            value.High                                      = GetUInt32(new IntPtr(p + 0x014)); // 0x14 High                        ( ModelPrimitiveType uint uint uint UInt32 )
+            value.Low                                       = GetUInt32(new IntPtr(p + 0x018)); // 0x18 Low                         ( ModelPrimitiveType uint uint uint UInt32 )
+            value.Mid                                       = GetUInt32(new IntPtr(p + 0x01C)); // 0x1C Mid                         ( ModelPrimitiveType uint uint uint UInt32 )
 
             return value;
         }

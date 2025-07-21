@@ -8,13 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ObjectUri                                000186671E00 ModelPrimitiveType string string string String
-    // 018 ChannelSink                              0001865B0D10 ModelClassType IMessageSink IMessageSink IMessageSink Pointer
-    // 020 EnvoySink                                0001865B0D10 ModelClassType IMessageSink IMessageSink IMessageSink Pointer
-    // 028 ClientDynamicProperties                  000186710E70 ModelClassType DynamicPropertyCollection DynamicPropertyCollection DynamicPropertyCollection Pointer
-    // 030 ServerDynamicProperties                  000186710E70 ModelClassType DynamicPropertyCollection DynamicPropertyCollection DynamicPropertyCollection Pointer
-    // 038 ObjRef                                   0001866C5960 ModelClassType ObjRef ObjRef ObjRef Pointer
-    // 040 Disposed                                 000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 ObjectUri                                ModelPrimitiveType string string string String
+    // 018 ChannelSink                              ModelClassType IMessageSink IMessageSink IMessageSink Pointer
+    // 020 EnvoySink                                ModelClassType IMessageSink IMessageSink IMessageSink Pointer
+    // 028 ClientDynamicProperties                  ModelClassType DynamicPropertyCollection DynamicPropertyCollection DynamicPropertyCollection Pointer
+    // 030 ServerDynamicProperties                  ModelClassType DynamicPropertyCollection DynamicPropertyCollection DynamicPropertyCollection Pointer
+    // 038 ObjRef                                   ModelClassType ObjRef ObjRef ObjRef Pointer
+    // 040 Disposed                                 ModelPrimitiveType bool bool bool Bool
     public partial class Identity : DataModel
     {
         public string                                   ObjectUri                               { get; set; }
@@ -33,13 +33,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Identity() { Pointer= p0 };
 
-            value.ObjectUri                                 = GetString(new IntPtr(p + 0x010)); // 024666AC7458 0x10 ObjectUri                   ( 000186671E00 ModelPrimitiveType string string string String )
-            value.ChannelSink                               = GetObject<IMessageSink>(new IntPtr(p + 0x018), ReversePrism.DataModels.IMessageSink.FromPointer); // 024666AC7478 0x18 ChannelSink                 ( 0001865B0D10 ModelClassType IMessageSink IMessageSink IMessageSink Pointer )
-            value.EnvoySink                                 = GetObject<IMessageSink>(new IntPtr(p + 0x020), ReversePrism.DataModels.IMessageSink.FromPointer); // 024666AC7498 0x20 EnvoySink                   ( 0001865B0D10 ModelClassType IMessageSink IMessageSink IMessageSink Pointer )
-            value.ClientDynamicProperties                   = GetObject<DynamicPropertyCollection>(new IntPtr(p + 0x028), ReversePrism.DataModels.DynamicPropertyCollection.FromPointer); // 024666AC74B8 0x28 ClientDynamicProperties     ( 000186710E70 ModelClassType DynamicPropertyCollection DynamicPropertyCollection DynamicPropertyCollection Pointer )
-            value.ServerDynamicProperties                   = GetObject<DynamicPropertyCollection>(new IntPtr(p + 0x030), ReversePrism.DataModels.DynamicPropertyCollection.FromPointer); // 024666AC74D8 0x30 ServerDynamicProperties     ( 000186710E70 ModelClassType DynamicPropertyCollection DynamicPropertyCollection DynamicPropertyCollection Pointer )
-            value.ObjRef                                    = GetObject<ObjRef>(new IntPtr(p + 0x038), ReversePrism.DataModels.ObjRef.FromPointer); // 024666AC74F8 0x38 ObjRef                      ( 0001866C5960 ModelClassType ObjRef ObjRef ObjRef Pointer )
-            value.Disposed                                  = GetBool(new IntPtr(p + 0x040)); // 024666AC7518 0x40 Disposed                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ObjectUri                                 = GetString(new IntPtr(p + 0x010)); // 0x10 ObjectUri                   ( ModelPrimitiveType string string string String )
+            value.ChannelSink                               = GetObject<IMessageSink>(new IntPtr(p + 0x018), ReversePrism.DataModels.IMessageSink.FromPointer); // 0x18 ChannelSink                 ( ModelClassType IMessageSink IMessageSink IMessageSink Pointer )
+            value.EnvoySink                                 = GetObject<IMessageSink>(new IntPtr(p + 0x020), ReversePrism.DataModels.IMessageSink.FromPointer); // 0x20 EnvoySink                   ( ModelClassType IMessageSink IMessageSink IMessageSink Pointer )
+            value.ClientDynamicProperties                   = GetObject<DynamicPropertyCollection>(new IntPtr(p + 0x028), ReversePrism.DataModels.DynamicPropertyCollection.FromPointer); // 0x28 ClientDynamicProperties     ( ModelClassType DynamicPropertyCollection DynamicPropertyCollection DynamicPropertyCollection Pointer )
+            value.ServerDynamicProperties                   = GetObject<DynamicPropertyCollection>(new IntPtr(p + 0x030), ReversePrism.DataModels.DynamicPropertyCollection.FromPointer); // 0x30 ServerDynamicProperties     ( ModelClassType DynamicPropertyCollection DynamicPropertyCollection DynamicPropertyCollection Pointer )
+            value.ObjRef                                    = GetObject<ObjRef>(new IntPtr(p + 0x038), ReversePrism.DataModels.ObjRef.FromPointer); // 0x38 ObjRef                      ( ModelClassType ObjRef ObjRef ObjRef Pointer )
+            value.Disposed                                  = GetBool(new IntPtr(p + 0x040)); // 0x40 Disposed                    ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

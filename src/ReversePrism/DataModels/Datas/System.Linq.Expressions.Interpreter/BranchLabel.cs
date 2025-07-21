@@ -8,11 +8,11 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 TargetIndex                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 014 StackDepth                               0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 018 ContinuationStackDepth                   0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 020 ForwardBranchFixups                      000185CECF28 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer
-    // 028 LabelIndex                               0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 010 TargetIndex                              ModelPrimitiveType int int int Int32
+    // 014 StackDepth                               ModelPrimitiveType int int int Int32
+    // 018 ContinuationStackDepth                   ModelPrimitiveType int int int Int32
+    // 020 ForwardBranchFixups                      ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer
+    // 028 LabelIndex                               ModelPrimitiveType int int int Int32
     public partial class BranchLabel : DataModel
     {
         public int                                      TargetIndex                             { get; set; }
@@ -29,11 +29,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new BranchLabel() { Pointer= p0 };
 
-            value.TargetIndex                               = GetInt32(new IntPtr(p + 0x010)); // 024669FF7308 0x10 TargetIndex                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.StackDepth                                = GetInt32(new IntPtr(p + 0x014)); // 024669FF7328 0x14 StackDepth                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ContinuationStackDepth                    = GetInt32(new IntPtr(p + 0x018)); // 024669FF7348 0x18 ContinuationStackDepth      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.ForwardBranchFixups                       = GetInt32List(new IntPtr(p + 0x020)); // 024669FF7368 0x20 ForwardBranchFixups         ( 000185CECF28 ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
-            value.LabelIndex                                = GetInt32(new IntPtr(p + 0x028)); // 024669FF7388 0x28 LabelIndex                  ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.TargetIndex                               = GetInt32(new IntPtr(p + 0x010)); // 0x10 TargetIndex                 ( ModelPrimitiveType int int int Int32 )
+            value.StackDepth                                = GetInt32(new IntPtr(p + 0x014)); // 0x14 StackDepth                  ( ModelPrimitiveType int int int Int32 )
+            value.ContinuationStackDepth                    = GetInt32(new IntPtr(p + 0x018)); // 0x18 ContinuationStackDepth      ( ModelPrimitiveType int int int Int32 )
+            value.ForwardBranchFixups                       = GetInt32List(new IntPtr(p + 0x020)); // 0x20 ForwardBranchFixups         ( ModelPrimitiveListType List`1<int> List`1<int> List<int> Pointer )
+            value.LabelIndex                                = GetInt32(new IntPtr(p + 0x028)); // 0x28 LabelIndex                  ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

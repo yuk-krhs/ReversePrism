@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 Behaviour                                000186718B80 ModelClassType ParaffinBehaviour ParaffinBehaviour ParaffinBehaviour Pointer
+    // 018 Behaviour                                ModelClassType ParaffinBehaviour ParaffinBehaviour ParaffinBehaviour Pointer
     public partial class ParaffinClip : DataModel
     {
         public ParaffinBehaviour?                       Behaviour                               { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ParaffinClip() { Pointer= p0 };
 
-            value.Behaviour                                 = GetObject<ParaffinBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.ParaffinBehaviour.FromPointer); // 0246650D9250 0x18 Behaviour                   ( 000186718B80 ModelClassType ParaffinBehaviour ParaffinBehaviour ParaffinBehaviour Pointer )
+            value.Behaviour                                 = GetObject<ParaffinBehaviour>(new IntPtr(p + 0x018), ReversePrism.DataModels.ParaffinBehaviour.FromPointer); // 0x18 Behaviour                   ( ModelClassType ParaffinBehaviour ParaffinBehaviour ParaffinBehaviour Pointer )
 
             return value;
         }

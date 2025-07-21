@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 060 TagImage                                 0001866CCDB0 ModelClassType Image Image Image Pointer
-    // 068 BannerImage                              000186613190 ModelClassType RawImage RawImage RawImage Pointer
-    // 070 Cts                                      0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
+    // 060 TagImage                                 ModelClassType Image Image Image Pointer
+    // 068 BannerImage                              ModelClassType RawImage RawImage RawImage Pointer
+    // 070 Cts                                      ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer
     public partial class HomeBannerListViewCell : DataModel
     {
         public Image?                                   TagImage                                { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HomeBannerListViewCell() { Pointer= p0 };
 
-            value.TagImage                                  = GetObject<Image>(new IntPtr(p + 0x060), ReversePrism.DataModels.Image.FromPointer); // 0245A4F6B828 0x60 TagImage                    ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.BannerImage                               = GetObject<RawImage>(new IntPtr(p + 0x068), ReversePrism.DataModels.RawImage.FromPointer); // 0245A4F6B848 0x68 BannerImage                 ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x070), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0245A4F6B868 0x70 Cts                         ( 0001865A39A0 ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
+            value.TagImage                                  = GetObject<Image>(new IntPtr(p + 0x060), ReversePrism.DataModels.Image.FromPointer); // 0x60 TagImage                    ( ModelClassType Image Image Image Pointer )
+            value.BannerImage                               = GetObject<RawImage>(new IntPtr(p + 0x068), ReversePrism.DataModels.RawImage.FromPointer); // 0x68 BannerImage                 ( ModelClassType RawImage RawImage RawImage Pointer )
+            value.Cts                                       = GetObject<CancellationTokenSource>(new IntPtr(p + 0x070), ReversePrism.DataModels.CancellationTokenSource.FromPointer); // 0x70 Cts                         ( ModelClassType CancellationTokenSource CancellationTokenSource CancellationTokenSource Pointer )
 
             return value;
         }

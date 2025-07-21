@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ScrollPosition                           0001866656B0 ModelPrimitiveType float float float Single
+    // 010 ScrollPosition                           ModelPrimitiveType float float float Single
     public partial class CallTopParameter : DataModel
     {
         public float                                    ScrollPosition                          { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new CallTopParameter() { Pointer= p0 };
 
-            value.ScrollPosition                            = GetSingle(new IntPtr(p + 0x010)); // 0246668C2088 0x10 ScrollPosition              ( 0001866656B0 ModelPrimitiveType float float float Single )
+            value.ScrollPosition                            = GetSingle(new IntPtr(p + 0x010)); // 0x10 ScrollPosition              ( ModelPrimitiveType float float float Single )
 
             return value;
         }

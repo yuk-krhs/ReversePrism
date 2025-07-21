@@ -8,16 +8,16 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ValidDayText                             000186671910 ModelPrimitiveType string string string String
-    // 018 ValidityText                             000186671910 ModelPrimitiveType string string string String
-    // 020 MstItemId                                0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 028 CautionStr                               000186671910 ModelPrimitiveType string string string String
-    // 030 Price                                    0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 038 StoreLocalPriceString                    000186671910 ModelPrimitiveType string string string String
-    // 040 StoreItem                                00018665A9E0 ModelClassType IStoreItemStatus IStoreItemStatus IStoreItemStatus Pointer
-    // 048 ShopGroupTypeId                          0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 050 Product                                  0001865F9470 ModelClassType IProductStatus IProductStatus IProductStatus Pointer
-    // 058 IsExpireDate                             000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 ValidDayText                             ModelPrimitiveType string string string String
+    // 018 ValidityText                             ModelPrimitiveType string string string String
+    // 020 MstItemId                                ModelPrimitiveType int int int Int32
+    // 028 CautionStr                               ModelPrimitiveType string string string String
+    // 030 Price                                    ModelPrimitiveType int int int Int32
+    // 038 StoreLocalPriceString                    ModelPrimitiveType string string string String
+    // 040 StoreItem                                ModelClassType IStoreItemStatus IStoreItemStatus IStoreItemStatus Pointer
+    // 048 ShopGroupTypeId                          ModelPrimitiveType int int int Int32
+    // 050 Product                                  ModelClassType IProductStatus IProductStatus IProductStatus Pointer
+    // 058 IsExpireDate                             ModelPrimitiveType bool bool bool Bool
     public partial class ShopPassPurchaseConfirmContentViewModel : DataModel
     {
         public string                                   ValidDayText                            { get; set; }
@@ -39,16 +39,16 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ShopPassPurchaseConfirmContentViewModel() { Pointer= p0 };
 
-            value.ValidDayText                              = GetString(new IntPtr(p + 0x010)); // 0246667AB118 0x10 ValidDayText                ( 000186671910 ModelPrimitiveType string string string String )
-            value.ValidityText                              = GetString(new IntPtr(p + 0x018)); // 0246667AB138 0x18 ValidityText                ( 000186671910 ModelPrimitiveType string string string String )
-            value.MstItemId                                 = GetInt32(new IntPtr(p + 0x020)); // 0246667AB158 0x20 MstItemId                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.CautionStr                                = GetString(new IntPtr(p + 0x028)); // 0246667AB178 0x28 CautionStr                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.Price                                     = GetInt32(new IntPtr(p + 0x030)); // 0246667AB198 0x30 Price                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.StoreLocalPriceString                     = GetString(new IntPtr(p + 0x038)); // 0246667AB1B8 0x38 StoreLocalPriceString       ( 000186671910 ModelPrimitiveType string string string String )
-            value.StoreItem                                 = GetObject<IStoreItemStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.IStoreItemStatus.FromPointer); // 0246667AB1D8 0x40 StoreItem                   ( 00018665A9E0 ModelClassType IStoreItemStatus IStoreItemStatus IStoreItemStatus Pointer )
-            value.ShopGroupTypeId                           = GetInt32(new IntPtr(p + 0x048)); // 0246667AB1F8 0x48 ShopGroupTypeId             ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Product                                   = GetObject<IProductStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.IProductStatus.FromPointer); // 0246667AB218 0x50 Product                     ( 0001865F9470 ModelClassType IProductStatus IProductStatus IProductStatus Pointer )
-            value.IsExpireDate                              = GetBool(new IntPtr(p + 0x058)); // 0246667AB238 0x58 IsExpireDate                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.ValidDayText                              = GetString(new IntPtr(p + 0x010)); // 0x10 ValidDayText                ( ModelPrimitiveType string string string String )
+            value.ValidityText                              = GetString(new IntPtr(p + 0x018)); // 0x18 ValidityText                ( ModelPrimitiveType string string string String )
+            value.MstItemId                                 = GetInt32(new IntPtr(p + 0x020)); // 0x20 MstItemId                   ( ModelPrimitiveType int int int Int32 )
+            value.CautionStr                                = GetString(new IntPtr(p + 0x028)); // 0x28 CautionStr                  ( ModelPrimitiveType string string string String )
+            value.Price                                     = GetInt32(new IntPtr(p + 0x030)); // 0x30 Price                       ( ModelPrimitiveType int int int Int32 )
+            value.StoreLocalPriceString                     = GetString(new IntPtr(p + 0x038)); // 0x38 StoreLocalPriceString       ( ModelPrimitiveType string string string String )
+            value.StoreItem                                 = GetObject<IStoreItemStatus>(new IntPtr(p + 0x040), ReversePrism.DataModels.IStoreItemStatus.FromPointer); // 0x40 StoreItem                   ( ModelClassType IStoreItemStatus IStoreItemStatus IStoreItemStatus Pointer )
+            value.ShopGroupTypeId                           = GetInt32(new IntPtr(p + 0x048)); // 0x48 ShopGroupTypeId             ( ModelPrimitiveType int int int Int32 )
+            value.Product                                   = GetObject<IProductStatus>(new IntPtr(p + 0x050), ReversePrism.DataModels.IProductStatus.FromPointer); // 0x50 Product                     ( ModelClassType IProductStatus IProductStatus IProductStatus Pointer )
+            value.IsExpireDate                              = GetBool(new IntPtr(p + 0x058)); // 0x58 IsExpireDate                ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

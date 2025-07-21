@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Logger                                   00018654E610 ModelClassType CategorizedLogger CategorizedLogger CategorizedLogger Pointer
+    // 010 Logger                                   ModelClassType CategorizedLogger CategorizedLogger CategorizedLogger Pointer
     public partial class LimelightLogger : DataModel
     {
         public CategorizedLogger?                       Logger                                  { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LimelightLogger() { Pointer= p0 };
 
-            value.Logger                                    = GetObject<CategorizedLogger>(new IntPtr(p + 0x010), ReversePrism.DataModels.CategorizedLogger.FromPointer); // 0245A3C9CD28 0x10 Logger                      ( 00018654E610 ModelClassType CategorizedLogger CategorizedLogger CategorizedLogger Pointer )
+            value.Logger                                    = GetObject<CategorizedLogger>(new IntPtr(p + 0x010), ReversePrism.DataModels.CategorizedLogger.FromPointer); // 0x10 Logger                      ( ModelClassType CategorizedLogger CategorizedLogger CategorizedLogger Pointer )
 
             return value;
         }

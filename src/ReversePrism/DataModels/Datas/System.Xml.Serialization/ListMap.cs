@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ItemInfo                                 0001865CFBB0 ModelClassType XmlTypeMapElementInfoList XmlTypeMapElementInfoList XmlTypeMapElementInfoList Pointer
-    // 018 ChoiceMember                             000186671910 ModelPrimitiveType string string string String
+    // 010 ItemInfo                                 ModelClassType XmlTypeMapElementInfoList XmlTypeMapElementInfoList XmlTypeMapElementInfoList Pointer
+    // 018 ChoiceMember                             ModelPrimitiveType string string string String
     public partial class ListMap : DataModel
     {
         public XmlTypeMapElementInfoList?               ItemInfo                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ListMap() { Pointer= p0 };
 
-            value.ItemInfo                                  = GetObject<XmlTypeMapElementInfoList>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlTypeMapElementInfoList.FromPointer); // 024667539340 0x10 ItemInfo                    ( 0001865CFBB0 ModelClassType XmlTypeMapElementInfoList XmlTypeMapElementInfoList XmlTypeMapElementInfoList Pointer )
-            value.ChoiceMember                              = GetString(new IntPtr(p + 0x018)); // 024667539360 0x18 ChoiceMember                ( 000186671910 ModelPrimitiveType string string string String )
+            value.ItemInfo                                  = GetObject<XmlTypeMapElementInfoList>(new IntPtr(p + 0x010), ReversePrism.DataModels.XmlTypeMapElementInfoList.FromPointer); // 0x10 ItemInfo                    ( ModelClassType XmlTypeMapElementInfoList XmlTypeMapElementInfoList XmlTypeMapElementInfoList Pointer )
+            value.ChoiceMember                              = GetString(new IntPtr(p + 0x018)); // 0x18 ChoiceMember                ( ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -13,7 +13,6 @@ namespace ReversePrism.DataModels
     // 000 LaneLength                               float IL2CPP_TYPE_R4
     // 000 MinObjectVisibleTimeRate                 float IL2CPP_TYPE_R4
     // 000 MaxObjectVisibleTimeRate                 float IL2CPP_TYPE_R4
-    // 000 RESOURCE_TAG                             string IL2CPP_TYPE_STRING
     public partial class RhythmGameConstant : DataModel
     {
 

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Category                                 0001866736C0 ModelPrimitiveType string string string String
+    // 010 Category                                 ModelPrimitiveType string string string String
     public partial class MenuCategoryAttribute : DataModel
     {
         public string                                   Category                                { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MenuCategoryAttribute() { Pointer= p0 };
 
-            value.Category                                  = GetString(new IntPtr(p + 0x010)); // 02466B311438 0x10 Category                    ( 0001866736C0 ModelPrimitiveType string string string String )
+            value.Category                                  = GetString(new IntPtr(p + 0x010)); // 0x10 Category                    ( ModelPrimitiveType string string string String )
 
             return value;
         }

@@ -11,7 +11,7 @@ namespace ReversePrism.DataModels
     // 098 _charUnknown                             char IL2CPP_TYPE_CHAR
     // 09A _charUnknownHigh                         char IL2CPP_TYPE_CHAR
     // 09C _charUnknownLow                          char IL2CPP_TYPE_CHAR
-    // 0A0 Index                                    0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 0A0 Index                                    ModelPrimitiveType int int int Int32
     public partial class EncoderFallbackException : DataModel
     {
         public int                                      Index                                   { get; set; }
@@ -24,7 +24,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EncoderFallbackException() { Pointer= p0 };
 
-            value.Index                                     = GetInt32(new IntPtr(p + 0x0A0)); // 024666BDB5A0 0xA0 Index                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x0A0)); // 0xA0 Index                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

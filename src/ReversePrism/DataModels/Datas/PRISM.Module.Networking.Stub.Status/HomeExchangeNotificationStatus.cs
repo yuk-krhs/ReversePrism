@@ -11,10 +11,10 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<HomeExchangeNotificationStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 MstExchangeGroupIdFieldNumber            int IL2CPP_TYPE_I4
-    // 018 MstExchangeGroupId                       0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 MstExchangeGroupId                       ModelPrimitiveType int int int Int32
     // 000 MstExchangeProductIdListFieldNumber      int IL2CPP_TYPE_I4
     // 008 _repeated_mstExchangeProductIdList_codec FieldCodec`1<int> IL2CPP_TYPE_GENERICINST
-    // 020 MstExchangeProductIdList                 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer
+    // 020 MstExchangeProductIdList                 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer
     public partial class HomeExchangeNotificationStatus : DataModel
     {
         public int                                      MstExchangeGroupId                      { get; set; }
@@ -28,8 +28,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HomeExchangeNotificationStatus() { Pointer= p0 };
 
-            value.MstExchangeGroupId                        = GetInt32(new IntPtr(p + 0x018)); // 024662024330 0x18 MstExchangeGroupId          ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.MstExchangeProductIdList                  = GetInt32List(new IntPtr(p + 0x020)); // 024662024390 0x20 MstExchangeProductIdList    ( 000185CE1CE8 ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
+            value.MstExchangeGroupId                        = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstExchangeGroupId          ( ModelPrimitiveType int int int Int32 )
+            value.MstExchangeProductIdList                  = GetInt32List(new IntPtr(p + 0x020)); // 0x20 MstExchangeProductIdList    ( ModelPrimitiveListType RepeatedField`1<int> RepeatedField`1<int> List<int> Pointer )
 
             return value;
         }

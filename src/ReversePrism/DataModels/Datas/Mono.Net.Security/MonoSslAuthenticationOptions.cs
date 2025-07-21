@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 ServerCertSelectionDelegate              000186732740 ModelClassType ServerCertSelectionCallback ServerCertSelectionCallback ServerCertSelectionCallback Pointer
+    // 010 ServerCertSelectionDelegate              ModelClassType ServerCertSelectionCallback ServerCertSelectionCallback ServerCertSelectionCallback Pointer
     public partial class MonoSslAuthenticationOptions : DataModel
     {
         public ServerCertSelectionCallback?             ServerCertSelectionDelegate             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MonoSslAuthenticationOptions() { Pointer= p0 };
 
-            value.ServerCertSelectionDelegate               = GetObject<ServerCertSelectionCallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.ServerCertSelectionCallback.FromPointer); // 024667958EB0 0x10 ServerCertSelectionDelegate ( 000186732740 ModelClassType ServerCertSelectionCallback ServerCertSelectionCallback ServerCertSelectionCallback Pointer )
+            value.ServerCertSelectionDelegate               = GetObject<ServerCertSelectionCallback>(new IntPtr(p + 0x010), ReversePrism.DataModels.ServerCertSelectionCallback.FromPointer); // 0x10 ServerCertSelectionDelegate ( ModelClassType ServerCertSelectionCallback ServerCertSelectionCallback ServerCertSelectionCallback Pointer )
 
             return value;
         }

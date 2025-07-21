@@ -8,23 +8,19 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 TwestaArticle                            000186684100 ModelClassType ITwestaArticleStatus ITwestaArticleStatus ITwestaArticleStatus Pointer
-    // 018 ThumbnailId                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 020 UserName                                 000186671910 ModelPrimitiveType string string string String
-    // 028 BodyText                                 000186671910 ModelPrimitiveType string string string String
-    // 030 HasThumbnail                             000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 038 ThumbnailAssetKey                        000186671910 ModelPrimitiveType string string string String
-    // 040 IconAssetKey                             000186671910 ModelPrimitiveType string string string String
-    // 048 NeedsShowCommentCount                    000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 050 CommentCellDataList                      000185D178B8 ModelClassListType IReadOnlyList`1<TwestaCommentCellData> IReadOnlyList`1<TwestaCommentCellData> List<TwestaCommentCellData> Pointer
+    // 010 TwestaArticle                            ModelClassType ITwestaArticleStatus ITwestaArticleStatus ITwestaArticleStatus Pointer
+    // 018 UserName                                 ModelPrimitiveType string string string String
+    // 020 BodyText                                 ModelPrimitiveType string string string String
+    // 028 ThumbnailImageKeys                       ModelPrimitiveListType IReadOnlyList`1<string> IReadOnlyList`1<string> List<string> Pointer
+    // 030 IconAssetKey                             ModelPrimitiveType string string string String
+    // 038 NeedsShowCommentCount                    ModelPrimitiveType bool bool bool Bool
+    // 040 CommentCellDataList                      ModelClassListType IReadOnlyList`1<TwestaCommentCellData> IReadOnlyList`1<TwestaCommentCellData> List<TwestaCommentCellData> Pointer
     public partial class TwestaArticleCellDataForTop : DataModel
     {
         public ITwestaArticleStatus?                    TwestaArticle                           { get; set; }
-        public int                                      ThumbnailId                             { get; set; }
         public string                                   UserName                                { get; set; }
         public string                                   BodyText                                { get; set; }
-        public bool                                     HasThumbnail                            { get; set; }
-        public string                                   ThumbnailAssetKey                       { get; set; }
+        public List<string>?                            ThumbnailImageKeys                      { get; set; }
         public string                                   IconAssetKey                            { get; set; }
         public bool                                     NeedsShowCommentCount                   { get; set; }
         public List<TwestaCommentCellData>?             CommentCellDataList                     { get; set; }
@@ -37,15 +33,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TwestaArticleCellDataForTop() { Pointer= p0 };
 
-            value.TwestaArticle                             = GetObject<ITwestaArticleStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.ITwestaArticleStatus.FromPointer); // 024666960A40 0x10 TwestaArticle               ( 000186684100 ModelClassType ITwestaArticleStatus ITwestaArticleStatus ITwestaArticleStatus Pointer )
-            value.ThumbnailId                               = GetInt32(new IntPtr(p + 0x018)); // 024666960A60 0x18 ThumbnailId                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.UserName                                  = GetString(new IntPtr(p + 0x020)); // 024666960A80 0x20 UserName                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.BodyText                                  = GetString(new IntPtr(p + 0x028)); // 024666960AA0 0x28 BodyText                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.HasThumbnail                              = GetBool(new IntPtr(p + 0x030)); // 024666960AC0 0x30 HasThumbnail                ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.ThumbnailAssetKey                         = GetString(new IntPtr(p + 0x038)); // 024666960AE0 0x38 ThumbnailAssetKey           ( 000186671910 ModelPrimitiveType string string string String )
-            value.IconAssetKey                              = GetString(new IntPtr(p + 0x040)); // 024666960B00 0x40 IconAssetKey                ( 000186671910 ModelPrimitiveType string string string String )
-            value.NeedsShowCommentCount                     = GetBool(new IntPtr(p + 0x048)); // 024666960B20 0x48 NeedsShowCommentCount       ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.CommentCellDataList                       = GetObjectList<TwestaCommentCellData>(new IntPtr(p + 0x050), ReversePrism.DataModels.TwestaCommentCellData.FromPointer); // 024666960B40 0x50 CommentCellDataList         ( 000185D178B8 ModelClassListType IReadOnlyList`1<TwestaCommentCellData> IReadOnlyList`1<TwestaCommentCellData> List<TwestaCommentCellData> Pointer )
+            value.TwestaArticle                             = GetObject<ITwestaArticleStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.ITwestaArticleStatus.FromPointer); // 0x10 TwestaArticle               ( ModelClassType ITwestaArticleStatus ITwestaArticleStatus ITwestaArticleStatus Pointer )
+            value.UserName                                  = GetString(new IntPtr(p + 0x018)); // 0x18 UserName                    ( ModelPrimitiveType string string string String )
+            value.BodyText                                  = GetString(new IntPtr(p + 0x020)); // 0x20 BodyText                    ( ModelPrimitiveType string string string String )
+            value.ThumbnailImageKeys                        = GetStringList(new IntPtr(p + 0x028)); // 0x28 ThumbnailImageKeys          ( ModelPrimitiveListType IReadOnlyList`1<string> IReadOnlyList`1<string> List<string> Pointer )
+            value.IconAssetKey                              = GetString(new IntPtr(p + 0x030)); // 0x30 IconAssetKey                ( ModelPrimitiveType string string string String )
+            value.NeedsShowCommentCount                     = GetBool(new IntPtr(p + 0x038)); // 0x38 NeedsShowCommentCount       ( ModelPrimitiveType bool bool bool Bool )
+            value.CommentCellDataList                       = GetObjectList<TwestaCommentCellData>(new IntPtr(p + 0x040), ReversePrism.DataModels.TwestaCommentCellData.FromPointer); // 0x40 CommentCellDataList         ( ModelClassListType IReadOnlyList`1<TwestaCommentCellData> IReadOnlyList`1<TwestaCommentCellData> List<TwestaCommentCellData> Pointer )
 
             return value;
         }

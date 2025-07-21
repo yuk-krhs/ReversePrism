@@ -12,9 +12,11 @@ namespace ReversePrism.DataModels
     // 000 TopicStartEvent                          string IL2CPP_TYPE_STRING
     // 000 TopicStartSeason                         string IL2CPP_TYPE_STRING
     // 000 TopicBow                                 string IL2CPP_TYPE_STRING
+    // 000 TopicStartStream                         string IL2CPP_TYPE_STRING
+    // 000 TopicBowImportant                        string IL2CPP_TYPE_STRING
     // 000 MaxRetryCount                            int IL2CPP_TYPE_I4
-    // 010 MyToken                                  000186671910 ModelPrimitiveType string string string String
-    // 018 Disposables                              0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
+    // 010 MyToken                                  ModelPrimitiveType string string string String
+    // 018 Disposables                              ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer
     // 020 firebaseInitialized                      IObservable`1<Unit> IL2CPP_TYPE_GENERICINST
     public partial class FCMHandler : DataModel
     {
@@ -29,8 +31,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FCMHandler() { Pointer= p0 };
 
-            value.MyToken                                   = GetString(new IntPtr(p + 0x010)); // 02466BF808B0 0x10 MyToken                     ( 000186671910 ModelPrimitiveType string string string String )
-            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x018), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 02466BF808D0 0x18 Disposables                 ( 0001865F3230 ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
+            value.MyToken                                   = GetString(new IntPtr(p + 0x010)); // 0x10 MyToken                     ( ModelPrimitiveType string string string String )
+            value.Disposables                               = GetObject<CompositeDisposable>(new IntPtr(p + 0x018), ReversePrism.DataModels.CompositeDisposable.FromPointer); // 0x18 Disposables                 ( ModelClassType CompositeDisposable CompositeDisposable CompositeDisposable Pointer )
 
             return value;
         }

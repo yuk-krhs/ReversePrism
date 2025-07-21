@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CharaMotionType                          0001865F4260 ModelPrimitiveType int int int Int32
-    // 014 MotionType                               00018661B9A0 ModelEnumType SofaMotionType SofaMotionType SofaMotionType Int32
+    // 010 CharaMotionType                          ModelPrimitiveType int int int Int32
+    // 014 MotionType                               ModelEnumType SofaMotionType SofaMotionType SofaMotionType Int32
     public partial class HomeMotionViewModel : DataModel
     {
         public int                                      CharaMotionType                         { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new HomeMotionViewModel() { Pointer= p0 };
 
-            value.CharaMotionType                           = GetInt32(new IntPtr(p + 0x010)); // 024663175FE0 0x10 CharaMotionType             ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MotionType                                = (SofaMotionType)GetInt32(new IntPtr(p + 0x014)); // 024663176000 0x14 MotionType                  ( 00018661B9A0 ModelEnumType SofaMotionType SofaMotionType SofaMotionType Int32 )
+            value.CharaMotionType                           = GetInt32(new IntPtr(p + 0x010)); // 0x10 CharaMotionType             ( ModelPrimitiveType int int int Int32 )
+            value.MotionType                                = (SofaMotionType)GetInt32(new IntPtr(p + 0x014)); // 0x14 MotionType                  ( ModelEnumType SofaMotionType SofaMotionType SofaMotionType Int32 )
 
             return value;
         }

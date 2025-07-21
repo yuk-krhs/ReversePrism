@@ -8,7 +8,6 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 factory                                  OverlayViewFactory`1<IMusicRateOverlayView> IL2CPP_TYPE_GENERICINST
     public partial class MusicRateOverlayCallerImplement : DataModel
     {
 

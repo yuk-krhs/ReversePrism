@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 PreferredExtension                       000186672F10 ModelPrimitiveType string string string String
+    // 010 PreferredExtension                       ModelPrimitiveType string string string String
     // 018 <otherExtensions>k__BackingField         IEnumerable`1<string> IL2CPP_TYPE_GENERICINST
     public partial class AssetFileNameExtensionAttribute : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AssetFileNameExtensionAttribute() { Pointer= p0 };
 
-            value.PreferredExtension                        = GetString(new IntPtr(p + 0x010)); // 0245A692B0F0 0x10 PreferredExtension          ( 000186672F10 ModelPrimitiveType string string string String )
+            value.PreferredExtension                        = GetString(new IntPtr(p + 0x010)); // 0x10 PreferredExtension          ( ModelPrimitiveType string string string String )
 
             return value;
         }

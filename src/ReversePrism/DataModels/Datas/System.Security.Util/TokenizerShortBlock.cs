@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_block                                  000185B8D710 ModelPrimitiveListType short[] short[] List<short> Pointer
-    // 018 M_next                                   0001866893C0 ModelClassType TokenizerShortBlock TokenizerShortBlock TokenizerShortBlock Pointer
+    // 010 M_block                                  ModelPrimitiveListType short[] short[] List<short> Pointer
+    // 018 M_next                                   ModelClassType TokenizerShortBlock TokenizerShortBlock TokenizerShortBlock Pointer
     public partial class TokenizerShortBlock : DataModel
     {
         public List<short>?                             M_block                                 { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TokenizerShortBlock() { Pointer= p0 };
 
-            value.M_block                                   = GetInt16List(new IntPtr(p + 0x010)); // 024666BE2C20 0x10 M_block                     ( 000185B8D710 ModelPrimitiveListType short[] short[] List<short> Pointer )
-            value.M_next                                    = GetObject<TokenizerShortBlock>(new IntPtr(p + 0x018), ReversePrism.DataModels.TokenizerShortBlock.FromPointer); // 024666BE2C40 0x18 M_next                      ( 0001866893C0 ModelClassType TokenizerShortBlock TokenizerShortBlock TokenizerShortBlock Pointer )
+            value.M_block                                   = GetInt16List(new IntPtr(p + 0x010)); // 0x10 M_block                     ( ModelPrimitiveListType short[] short[] List<short> Pointer )
+            value.M_next                                    = GetObject<TokenizerShortBlock>(new IntPtr(p + 0x018), ReversePrism.DataModels.TokenizerShortBlock.FromPointer); // 0x18 M_next                      ( ModelClassType TokenizerShortBlock TokenizerShortBlock TokenizerShortBlock Pointer )
 
             return value;
         }

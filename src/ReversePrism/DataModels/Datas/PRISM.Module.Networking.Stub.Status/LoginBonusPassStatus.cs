@@ -8,16 +8,16 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 BeginDate                                000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
-    // 020 EndDate                                  000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
+    // 010 BeginDate                                ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
+    // 020 EndDate                                  ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime
     // 000 _parser                                  MessageParser`1<LoginBonusPassStatus> IL2CPP_TYPE_GENERICINST
     // 030 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 BeginDateFieldNumber                     int IL2CPP_TYPE_I4
-    // 038 _BeginDate                               000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
+    // 038 _BeginDate                               ModelClassType Timestamp Timestamp Timestamp Pointer
     // 000 EndDateFieldNumber                       int IL2CPP_TYPE_I4
-    // 040 _EndDate                                 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
+    // 040 _EndDate                                 ModelClassType Timestamp Timestamp Timestamp Pointer
     // 000 RewardFieldNumber                        int IL2CPP_TYPE_I4
-    // 048 Reward                                   0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer
+    // 048 Reward                                   ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer
     public partial class LoginBonusPassStatus : DataModel
     {
         public DateTime                                 BeginDate                               { get; set; }
@@ -34,11 +34,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LoginBonusPassStatus() { Pointer= p0 };
 
-            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 0246621D57C0 0x10 BeginDate                   ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 0246621D57E0 0x20 EndDate                     ( 000185D00A08 ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
-            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x038), ReversePrism.DataModels.Timestamp.FromPointer); // 0246621D5860 0x38 _BeginDate                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x040), ReversePrism.DataModels.Timestamp.FromPointer); // 0246621D58A0 0x40 _EndDate                    ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.Reward                                    = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0246621D58E0 0x48 Reward                      ( 0001865A6D10 ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
+            value.BeginDate                                 = GetDateTime(new IntPtr(p + 0x010)); // 0x10 BeginDate                   ( ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value.EndDate                                   = GetDateTime(new IntPtr(p + 0x020)); // 0x20 EndDate                     ( ModelPrimitiveType Nullable`1<DateTime> Nullable`1<DateTime> DateTime DateTime )
+            value._BeginDate                                = GetObject<Timestamp>(new IntPtr(p + 0x038), ReversePrism.DataModels.Timestamp.FromPointer); // 0x38 _BeginDate                  ( ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value._EndDate                                  = GetObject<Timestamp>(new IntPtr(p + 0x040), ReversePrism.DataModels.Timestamp.FromPointer); // 0x40 _EndDate                    ( ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.Reward                                    = GetObject<ProductWithAmountStatus>(new IntPtr(p + 0x048), ReversePrism.DataModels.ProductWithAmountStatus.FromPointer); // 0x48 Reward                      ( ModelClassType ProductWithAmountStatus ProductWithAmountStatus ProductWithAmountStatus Pointer )
             value.BeginDate                     = ToDateTime(value._BeginDate);
             value.EndDate                       = ToDateTime(value._EndDate);
 

@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Resp                                     000186673BB0 ModelClassType ResponseDescription ResponseDescription ResponseDescription Pointer
-    // 018 ValidThrough                             0001865F2F90 ModelPrimitiveType int int int Int32
-    // 020 Buffer                                   000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 028 Connection                               0001865E16C0 ModelClassType CommandStream CommandStream CommandStream Pointer
+    // 010 Resp                                     ModelClassType ResponseDescription ResponseDescription ResponseDescription Pointer
+    // 018 ValidThrough                             ModelPrimitiveType int int int Int32
+    // 020 Buffer                                   ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 028 Connection                               ModelClassType CommandStream CommandStream CommandStream Pointer
     public partial class ReceiveState : DataModel
     {
         public ResponseDescription?                     Resp                                    { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ReceiveState() { Pointer= p0 };
 
-            value.Resp                                      = GetObject<ResponseDescription>(new IntPtr(p + 0x010), ReversePrism.DataModels.ResponseDescription.FromPointer); // 024667A67160 0x10 Resp                        ( 000186673BB0 ModelClassType ResponseDescription ResponseDescription ResponseDescription Pointer )
-            value.ValidThrough                              = GetInt32(new IntPtr(p + 0x018)); // 024667A67180 0x18 ValidThrough                ( 0001865F2F90 ModelPrimitiveType int int int Int32 )
-            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x020)); // 024667A671A0 0x20 Buffer                      ( 000185B79950 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Connection                                = GetObject<CommandStream>(new IntPtr(p + 0x028), ReversePrism.DataModels.CommandStream.FromPointer); // 024667A671C0 0x28 Connection                  ( 0001865E16C0 ModelClassType CommandStream CommandStream CommandStream Pointer )
+            value.Resp                                      = GetObject<ResponseDescription>(new IntPtr(p + 0x010), ReversePrism.DataModels.ResponseDescription.FromPointer); // 0x10 Resp                        ( ModelClassType ResponseDescription ResponseDescription ResponseDescription Pointer )
+            value.ValidThrough                              = GetInt32(new IntPtr(p + 0x018)); // 0x18 ValidThrough                ( ModelPrimitiveType int int int Int32 )
+            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x020)); // 0x20 Buffer                      ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Connection                                = GetObject<CommandStream>(new IntPtr(p + 0x028), ReversePrism.DataModels.CommandStream.FromPointer); // 0x28 Connection                  ( ModelClassType CommandStream CommandStream CommandStream Pointer )
 
             return value;
         }

@@ -12,8 +12,8 @@ namespace ReversePrism.DataModels
     // 018 unitCounts                               Dictionary`2<int, int> IL2CPP_TYPE_GENERICINST
     // 020 idolBases                                Dictionary`2<int, IIdolBaseStatus> IL2CPP_TYPE_GENERICINST
     // 028 permanentDataPackage                     SavableJsonObject`1<ProduceUnitEditPermanentData> IL2CPP_TYPE_GENERICINST
-    // 030 CurrentProduceIdolUnit                   0001865EC3F0 ModelClassType IProduceIdolUnitStatus IProduceIdolUnitStatus IProduceIdolUnitStatus Pointer
-    // 038 ViewUnitIdols                            000185B9DDC0 ModelClassListType ProduceUnitEditIdolViewModel[] ProduceUnitEditIdolViewModel[] List<ProduceUnitEditIdolViewModel> Pointer
+    // 030 CurrentProduceIdolUnit                   ModelClassType IProduceIdolUnitStatus IProduceIdolUnitStatus IProduceIdolUnitStatus Pointer
+    // 038 ViewUnitIdols                            ModelClassListType ProduceUnitEditIdolViewModel[] ProduceUnitEditIdolViewModel[] List<ProduceUnitEditIdolViewModel> Pointer
     public partial class ProduceUnitEditViewModel : DataModel
     {
         public IProduceIdolUnitStatus?                  CurrentProduceIdolUnit                  { get; set; }
@@ -27,8 +27,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProduceUnitEditViewModel() { Pointer= p0 };
 
-            value.CurrentProduceIdolUnit                    = GetObject<IProduceIdolUnitStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.IProduceIdolUnitStatus.FromPointer); // 024666075038 0x30 CurrentProduceIdolUnit      ( 0001865EC3F0 ModelClassType IProduceIdolUnitStatus IProduceIdolUnitStatus IProduceIdolUnitStatus Pointer )
-            value.ViewUnitIdols                             = GetObjectList<ProduceUnitEditIdolViewModel>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProduceUnitEditIdolViewModel.FromPointer); // 024666075058 0x38 ViewUnitIdols               ( 000185B9DDC0 ModelClassListType ProduceUnitEditIdolViewModel[] ProduceUnitEditIdolViewModel[] List<ProduceUnitEditIdolViewModel> Pointer )
+            value.CurrentProduceIdolUnit                    = GetObject<IProduceIdolUnitStatus>(new IntPtr(p + 0x030), ReversePrism.DataModels.IProduceIdolUnitStatus.FromPointer); // 0x30 CurrentProduceIdolUnit      ( ModelClassType IProduceIdolUnitStatus IProduceIdolUnitStatus IProduceIdolUnitStatus Pointer )
+            value.ViewUnitIdols                             = GetObjectList<ProduceUnitEditIdolViewModel>(new IntPtr(p + 0x038), ReversePrism.DataModels.ProduceUnitEditIdolViewModel.FromPointer); // 0x38 ViewUnitIdols               ( ModelClassListType ProduceUnitEditIdolViewModel[] ProduceUnitEditIdolViewModel[] List<ProduceUnitEditIdolViewModel> Pointer )
 
             return value;
         }

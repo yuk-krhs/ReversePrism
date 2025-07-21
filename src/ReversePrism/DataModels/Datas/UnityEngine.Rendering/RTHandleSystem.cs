@@ -8,13 +8,13 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_HardwareDynamicResRequested            000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 010 M_HardwareDynamicResRequested            ModelPrimitiveType bool bool bool Bool
     // 018 m_AutoSizedRTs                           HashSet`1<RTHandle> IL2CPP_TYPE_GENERICINST
-    // 020 M_AutoSizedRTsArray                      000185C9FA38 ModelClassListType RTHandle[] RTHandle[] List<RTHandle> Pointer
+    // 020 M_AutoSizedRTsArray                      ModelClassListType RTHandle[] RTHandle[] List<RTHandle> Pointer
     // 028 m_ResizeOnDemandRTs                      HashSet`1<RTHandle> IL2CPP_TYPE_GENERICINST
-    // 030 M_RTHandleProperties                     00018664C1D0 ModelEnumType RTHandleProperties RTHandleProperties RTHandleProperties Int32
-    // 060 M_MaxWidths                              0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 064 M_MaxHeights                             0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 030 M_RTHandleProperties                     ModelEnumType RTHandleProperties RTHandleProperties RTHandleProperties Int32
+    // 060 M_MaxWidths                              ModelPrimitiveType int int int Int32
+    // 064 M_MaxHeights                             ModelPrimitiveType int int int Int32
     public partial class RTHandleSystem : DataModel
     {
         public bool                                     M_HardwareDynamicResRequested           { get; set; }
@@ -31,11 +31,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new RTHandleSystem() { Pointer= p0 };
 
-            value.M_HardwareDynamicResRequested             = GetBool(new IntPtr(p + 0x010)); // 024660AB6688 0x10 M_HardwareDynamicResRequested ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.M_AutoSizedRTsArray                       = GetObjectList<RTHandle>(new IntPtr(p + 0x020), ReversePrism.DataModels.RTHandle.FromPointer); // 024660AB66C8 0x20 M_AutoSizedRTsArray         ( 000185C9FA38 ModelClassListType RTHandle[] RTHandle[] List<RTHandle> Pointer )
-            value.M_RTHandleProperties                      = (RTHandleProperties)GetInt32(new IntPtr(p + 0x030)); // 024660AB6708 0x30 M_RTHandleProperties        ( 00018664C1D0 ModelEnumType RTHandleProperties RTHandleProperties RTHandleProperties Int32 )
-            value.M_MaxWidths                               = GetInt32(new IntPtr(p + 0x060)); // 024660AB6728 0x60 M_MaxWidths                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.M_MaxHeights                              = GetInt32(new IntPtr(p + 0x064)); // 024660AB6748 0x64 M_MaxHeights                ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.M_HardwareDynamicResRequested             = GetBool(new IntPtr(p + 0x010)); // 0x10 M_HardwareDynamicResRequested ( ModelPrimitiveType bool bool bool Bool )
+            value.M_AutoSizedRTsArray                       = GetObjectList<RTHandle>(new IntPtr(p + 0x020), ReversePrism.DataModels.RTHandle.FromPointer); // 0x20 M_AutoSizedRTsArray         ( ModelClassListType RTHandle[] RTHandle[] List<RTHandle> Pointer )
+            value.M_RTHandleProperties                      = (RTHandleProperties)GetInt32(new IntPtr(p + 0x030)); // 0x30 M_RTHandleProperties        ( ModelEnumType RTHandleProperties RTHandleProperties RTHandleProperties Int32 )
+            value.M_MaxWidths                               = GetInt32(new IntPtr(p + 0x060)); // 0x60 M_MaxWidths                 ( ModelPrimitiveType int int int Int32 )
+            value.M_MaxHeights                              = GetInt32(new IntPtr(p + 0x064)); // 0x64 M_MaxHeights                ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

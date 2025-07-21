@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 Proxied                                  000186670BE0 ModelClassType Stream Stream Stream Pointer
-    // 030 BytesLeft                                0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 028 Proxied                                  ModelClassType Stream Stream Stream Pointer
+    // 030 BytesLeft                                ModelPrimitiveType int int int Int32
     public partial class LimitedInputStream : DataModel
     {
         public Stream?                                  Proxied                                 { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LimitedInputStream() { Pointer= p0 };
 
-            value.Proxied                                   = GetObject<Stream>(new IntPtr(p + 0x028), ReversePrism.DataModels.Stream.FromPointer); // 02466A47FC38 0x28 Proxied                     ( 000186670BE0 ModelClassType Stream Stream Stream Pointer )
-            value.BytesLeft                                 = GetInt32(new IntPtr(p + 0x030)); // 02466A47FC58 0x30 BytesLeft                   ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Proxied                                   = GetObject<Stream>(new IntPtr(p + 0x028), ReversePrism.DataModels.Stream.FromPointer); // 0x28 Proxied                     ( ModelClassType Stream Stream Stream Pointer )
+            value.BytesLeft                                 = GetInt32(new IntPtr(p + 0x030)); // 0x30 BytesLeft                   ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 CacheFinishSpecialLessonReply            0001865143A0 ModelClassType IFinishSpecialLessonReply IFinishSpecialLessonReply IFinishSpecialLessonReply Pointer
+    // 010 CacheFinishSpecialLessonReply            ModelClassType IFinishSpecialLessonReply IFinishSpecialLessonReply IFinishSpecialLessonReply Pointer
     public partial class FinishSpecialLessonModel : DataModel
     {
         public IFinishSpecialLessonReply?               CacheFinishSpecialLessonReply           { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FinishSpecialLessonModel() { Pointer= p0 };
 
-            value.CacheFinishSpecialLessonReply             = GetObject<IFinishSpecialLessonReply>(new IntPtr(p + 0x010), ReversePrism.DataModels.IFinishSpecialLessonReply.FromPointer); // 02466661CC10 0x10 CacheFinishSpecialLessonReply ( 0001865143A0 ModelClassType IFinishSpecialLessonReply IFinishSpecialLessonReply IFinishSpecialLessonReply Pointer )
+            value.CacheFinishSpecialLessonReply             = GetObject<IFinishSpecialLessonReply>(new IntPtr(p + 0x010), ReversePrism.DataModels.IFinishSpecialLessonReply.FromPointer); // 0x10 CacheFinishSpecialLessonReply ( ModelClassType IFinishSpecialLessonReply IFinishSpecialLessonReply IFinishSpecialLessonReply Pointer )
 
             return value;
         }

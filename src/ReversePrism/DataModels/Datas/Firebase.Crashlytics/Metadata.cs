@@ -8,26 +8,26 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Uv                                       0001866722E0 ModelPrimitiveType string string string String
-    // 018 Idb                                      000186595960 ModelPrimitiveType bool bool bool Bool
-    // 020 Pt                                       0001866722E0 ModelPrimitiveType string string string String
-    // 028 Pc                                       0001865F36C0 ModelPrimitiveType int int int Int32
-    // 02C Pf                                       0001865F36C0 ModelPrimitiveType int int int Int32
-    // 030 Sms                                      0001865F36C0 ModelPrimitiveType int int int Int32
-    // 034 Gms                                      0001865F36C0 ModelPrimitiveType int int int Int32
-    // 038 Gdid                                     0001865F36C0 ModelPrimitiveType int int int Int32
-    // 03C Gdvid                                    0001865F36C0 ModelPrimitiveType int int int Int32
-    // 040 Gdn                                      0001866722E0 ModelPrimitiveType string string string String
-    // 048 Gdv                                      0001866722E0 ModelPrimitiveType string string string String
-    // 050 Gdver                                    0001866722E0 ModelPrimitiveType string string string String
-    // 058 Gdt                                      000186694F30 ModelEnumType GraphicsDeviceType GraphicsDeviceType GraphicsDeviceType Int32
-    // 05C Gsl                                      0001865F36C0 ModelPrimitiveType int int int Int32
-    // 060 Grtc                                     0001865F36C0 ModelPrimitiveType int int int Int32
-    // 064 Gcts                                     000186621720 ModelEnumType CopyTextureSupport CopyTextureSupport CopyTextureSupport Int32
-    // 068 Gmts                                     0001865F36C0 ModelPrimitiveType int int int Int32
-    // 070 Ss                                       0001866722E0 ModelPrimitiveType string string string String
-    // 078 Sdpi                                     000186666050 ModelPrimitiveType float float float Single
-    // 07C Srr                                      0001865F36C0 ModelPrimitiveType int int int Int32
+    // 010 Uv                                       ModelPrimitiveType string string string String
+    // 018 Idb                                      ModelPrimitiveType bool bool bool Bool
+    // 020 Pt                                       ModelPrimitiveType string string string String
+    // 028 Pc                                       ModelPrimitiveType int int int Int32
+    // 02C Pf                                       ModelPrimitiveType int int int Int32
+    // 030 Sms                                      ModelPrimitiveType int int int Int32
+    // 034 Gms                                      ModelPrimitiveType int int int Int32
+    // 038 Gdid                                     ModelPrimitiveType int int int Int32
+    // 03C Gdvid                                    ModelPrimitiveType int int int Int32
+    // 040 Gdn                                      ModelPrimitiveType string string string String
+    // 048 Gdv                                      ModelPrimitiveType string string string String
+    // 050 Gdver                                    ModelPrimitiveType string string string String
+    // 058 Gdt                                      ModelEnumType GraphicsDeviceType GraphicsDeviceType GraphicsDeviceType Int32
+    // 05C Gsl                                      ModelPrimitiveType int int int Int32
+    // 060 Grtc                                     ModelPrimitiveType int int int Int32
+    // 064 Gcts                                     ModelEnumType CopyTextureSupport CopyTextureSupport CopyTextureSupport Int32
+    // 068 Gmts                                     ModelPrimitiveType int int int Int32
+    // 070 Ss                                       ModelPrimitiveType string string string String
+    // 078 Sdpi                                     ModelPrimitiveType float float float Single
+    // 07C Srr                                      ModelPrimitiveType int int int Int32
     public partial class Metadata : DataModel
     {
         public string                                   Uv                                      { get; set; }
@@ -59,26 +59,26 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Metadata() { Pointer= p0 };
 
-            value.Uv                                        = GetString(new IntPtr(p + 0x010)); // 02466BCE0BC8 0x10 Uv                          ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Idb                                       = GetBool(new IntPtr(p + 0x018)); // 02466BCE0BE8 0x18 Idb                         ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Pt                                        = GetString(new IntPtr(p + 0x020)); // 02466BCE0C08 0x20 Pt                          ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Pc                                        = GetInt32(new IntPtr(p + 0x028)); // 02466BCE0C28 0x28 Pc                          ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Pf                                        = GetInt32(new IntPtr(p + 0x02C)); // 02466BCE0C48 0x2C Pf                          ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Sms                                       = GetInt32(new IntPtr(p + 0x030)); // 02466BCE0C68 0x30 Sms                         ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Gms                                       = GetInt32(new IntPtr(p + 0x034)); // 02466BCE0C88 0x34 Gms                         ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Gdid                                      = GetInt32(new IntPtr(p + 0x038)); // 02466BCE0CA8 0x38 Gdid                        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Gdvid                                     = GetInt32(new IntPtr(p + 0x03C)); // 02466BCE0CC8 0x3C Gdvid                       ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Gdn                                       = GetString(new IntPtr(p + 0x040)); // 02466BCE0CE8 0x40 Gdn                         ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Gdv                                       = GetString(new IntPtr(p + 0x048)); // 02466BCE0D08 0x48 Gdv                         ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Gdver                                     = GetString(new IntPtr(p + 0x050)); // 02466BCE0D28 0x50 Gdver                       ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Gdt                                       = (GraphicsDeviceType)GetInt32(new IntPtr(p + 0x058)); // 02466BCE0D48 0x58 Gdt                         ( 000186694F30 ModelEnumType GraphicsDeviceType GraphicsDeviceType GraphicsDeviceType Int32 )
-            value.Gsl                                       = GetInt32(new IntPtr(p + 0x05C)); // 02466BCE0D68 0x5C Gsl                         ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Grtc                                      = GetInt32(new IntPtr(p + 0x060)); // 02466BCE0D88 0x60 Grtc                        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Gcts                                      = (CopyTextureSupport)GetInt32(new IntPtr(p + 0x064)); // 02466BCE0DA8 0x64 Gcts                        ( 000186621720 ModelEnumType CopyTextureSupport CopyTextureSupport CopyTextureSupport Int32 )
-            value.Gmts                                      = GetInt32(new IntPtr(p + 0x068)); // 02466BCE0DC8 0x68 Gmts                        ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
-            value.Ss                                        = GetString(new IntPtr(p + 0x070)); // 02466BCE0DE8 0x70 Ss                          ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.Sdpi                                      = GetSingle(new IntPtr(p + 0x078)); // 02466BCE0E08 0x78 Sdpi                        ( 000186666050 ModelPrimitiveType float float float Single )
-            value.Srr                                       = GetInt32(new IntPtr(p + 0x07C)); // 02466BCE0E28 0x7C Srr                         ( 0001865F36C0 ModelPrimitiveType int int int Int32 )
+            value.Uv                                        = GetString(new IntPtr(p + 0x010)); // 0x10 Uv                          ( ModelPrimitiveType string string string String )
+            value.Idb                                       = GetBool(new IntPtr(p + 0x018)); // 0x18 Idb                         ( ModelPrimitiveType bool bool bool Bool )
+            value.Pt                                        = GetString(new IntPtr(p + 0x020)); // 0x20 Pt                          ( ModelPrimitiveType string string string String )
+            value.Pc                                        = GetInt32(new IntPtr(p + 0x028)); // 0x28 Pc                          ( ModelPrimitiveType int int int Int32 )
+            value.Pf                                        = GetInt32(new IntPtr(p + 0x02C)); // 0x2C Pf                          ( ModelPrimitiveType int int int Int32 )
+            value.Sms                                       = GetInt32(new IntPtr(p + 0x030)); // 0x30 Sms                         ( ModelPrimitiveType int int int Int32 )
+            value.Gms                                       = GetInt32(new IntPtr(p + 0x034)); // 0x34 Gms                         ( ModelPrimitiveType int int int Int32 )
+            value.Gdid                                      = GetInt32(new IntPtr(p + 0x038)); // 0x38 Gdid                        ( ModelPrimitiveType int int int Int32 )
+            value.Gdvid                                     = GetInt32(new IntPtr(p + 0x03C)); // 0x3C Gdvid                       ( ModelPrimitiveType int int int Int32 )
+            value.Gdn                                       = GetString(new IntPtr(p + 0x040)); // 0x40 Gdn                         ( ModelPrimitiveType string string string String )
+            value.Gdv                                       = GetString(new IntPtr(p + 0x048)); // 0x48 Gdv                         ( ModelPrimitiveType string string string String )
+            value.Gdver                                     = GetString(new IntPtr(p + 0x050)); // 0x50 Gdver                       ( ModelPrimitiveType string string string String )
+            value.Gdt                                       = (GraphicsDeviceType)GetInt32(new IntPtr(p + 0x058)); // 0x58 Gdt                         ( ModelEnumType GraphicsDeviceType GraphicsDeviceType GraphicsDeviceType Int32 )
+            value.Gsl                                       = GetInt32(new IntPtr(p + 0x05C)); // 0x5C Gsl                         ( ModelPrimitiveType int int int Int32 )
+            value.Grtc                                      = GetInt32(new IntPtr(p + 0x060)); // 0x60 Grtc                        ( ModelPrimitiveType int int int Int32 )
+            value.Gcts                                      = (CopyTextureSupport)GetInt32(new IntPtr(p + 0x064)); // 0x64 Gcts                        ( ModelEnumType CopyTextureSupport CopyTextureSupport CopyTextureSupport Int32 )
+            value.Gmts                                      = GetInt32(new IntPtr(p + 0x068)); // 0x68 Gmts                        ( ModelPrimitiveType int int int Int32 )
+            value.Ss                                        = GetString(new IntPtr(p + 0x070)); // 0x70 Ss                          ( ModelPrimitiveType string string string String )
+            value.Sdpi                                      = GetSingle(new IntPtr(p + 0x078)); // 0x78 Sdpi                        ( ModelPrimitiveType float float float Single )
+            value.Srr                                       = GetInt32(new IntPtr(p + 0x07C)); // 0x7C Srr                         ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

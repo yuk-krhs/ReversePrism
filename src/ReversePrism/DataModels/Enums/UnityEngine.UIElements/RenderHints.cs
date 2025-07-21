@@ -21,6 +21,7 @@ namespace ReversePrism.DataModels
         DirtyBoneTransform,
         DirtyClipWithScissors,
         DirtyMaskContainer,
+        DirtyDynamicColor,
         DirtyAll,
     }
 }

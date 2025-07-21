@@ -8,17 +8,17 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 040 ListButton                               000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer
-    // 048 UnknownButton                            000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer
-    // 050 GetButtonObject                          0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 058 ChallengeButtonObject                    0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 060 CloseButtonObject                        0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 068 MissionText                              0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 070 Gauge                                    0001866CCDB0 ModelClassType Image Image Image Pointer
-    // 078 ProgressText                             0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 080 RewardItemIcon                           000185CA1078 ModelClassListType RewardItemIcon[] RewardItemIcon[] List<RewardItemIcon> Pointer
-    // 088 CloseLayoutObject                        0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
-    // 090 ClearStampObject                         0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer
+    // 040 ListButton                               ModelClassType ButtonBase ButtonBase ButtonBase Pointer
+    // 048 UnknownButton                            ModelClassType ButtonBase ButtonBase ButtonBase Pointer
+    // 050 GetButtonObject                          ModelClassType GameObject GameObject GameObject Pointer
+    // 058 ChallengeButtonObject                    ModelClassType GameObject GameObject GameObject Pointer
+    // 060 CloseButtonObject                        ModelClassType GameObject GameObject GameObject Pointer
+    // 068 MissionText                              ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 070 Gauge                                    ModelClassType Image Image Image Pointer
+    // 078 ProgressText                             ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 080 RewardItemIcon                           ModelClassListType RewardItemIcon[] RewardItemIcon[] List<RewardItemIcon> Pointer
+    // 088 CloseLayoutObject                        ModelClassType GameObject GameObject GameObject Pointer
+    // 090 ClearStampObject                         ModelClassType GameObject GameObject GameObject Pointer
     public partial class SpecialMissionListViewCell : DataModel
     {
         public ButtonBase?                              ListButton                              { get; set; }
@@ -41,17 +41,17 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new SpecialMissionListViewCell() { Pointer= p0 };
 
-            value.ListButton                                = GetObject<ButtonBase>(new IntPtr(p + 0x040), ReversePrism.DataModels.ButtonBase.FromPointer); // 02466BDE0460 0x40 ListButton                  ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.UnknownButton                             = GetObject<ButtonBase>(new IntPtr(p + 0x048), ReversePrism.DataModels.ButtonBase.FromPointer); // 02466BDE0480 0x48 UnknownButton               ( 000186515660 ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
-            value.GetButtonObject                           = GetObject<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 02466BDE04A0 0x50 GetButtonObject             ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ChallengeButtonObject                     = GetObject<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 02466BDE04C0 0x58 ChallengeButtonObject       ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.CloseButtonObject                         = GetObject<GameObject>(new IntPtr(p + 0x060), ReversePrism.DataModels.GameObject.FromPointer); // 02466BDE04E0 0x60 CloseButtonObject           ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.MissionText                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x068), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BDE0500 0x68 MissionText                 ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.Gauge                                     = GetObject<Image>(new IntPtr(p + 0x070), ReversePrism.DataModels.Image.FromPointer); // 02466BDE0520 0x70 Gauge                       ( 0001866CCDB0 ModelClassType Image Image Image Pointer )
-            value.ProgressText                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x078), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 02466BDE0540 0x78 ProgressText                ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.RewardItemIcon                            = GetObjectList<RewardItemIcon>(new IntPtr(p + 0x080), ReversePrism.DataModels.RewardItemIcon.FromPointer); // 02466BDE0560 0x80 RewardItemIcon              ( 000185CA1078 ModelClassListType RewardItemIcon[] RewardItemIcon[] List<RewardItemIcon> Pointer )
-            value.CloseLayoutObject                         = GetObject<GameObject>(new IntPtr(p + 0x088), ReversePrism.DataModels.GameObject.FromPointer); // 02466BDE0580 0x88 CloseLayoutObject           ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
-            value.ClearStampObject                          = GetObject<GameObject>(new IntPtr(p + 0x090), ReversePrism.DataModels.GameObject.FromPointer); // 02466BDE05A0 0x90 ClearStampObject            ( 0001865D7D30 ModelClassType GameObject GameObject GameObject Pointer )
+            value.ListButton                                = GetObject<ButtonBase>(new IntPtr(p + 0x040), ReversePrism.DataModels.ButtonBase.FromPointer); // 0x40 ListButton                  ( ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.UnknownButton                             = GetObject<ButtonBase>(new IntPtr(p + 0x048), ReversePrism.DataModels.ButtonBase.FromPointer); // 0x48 UnknownButton               ( ModelClassType ButtonBase ButtonBase ButtonBase Pointer )
+            value.GetButtonObject                           = GetObject<GameObject>(new IntPtr(p + 0x050), ReversePrism.DataModels.GameObject.FromPointer); // 0x50 GetButtonObject             ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.ChallengeButtonObject                     = GetObject<GameObject>(new IntPtr(p + 0x058), ReversePrism.DataModels.GameObject.FromPointer); // 0x58 ChallengeButtonObject       ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.CloseButtonObject                         = GetObject<GameObject>(new IntPtr(p + 0x060), ReversePrism.DataModels.GameObject.FromPointer); // 0x60 CloseButtonObject           ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.MissionText                               = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x068), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x68 MissionText                 ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.Gauge                                     = GetObject<Image>(new IntPtr(p + 0x070), ReversePrism.DataModels.Image.FromPointer); // 0x70 Gauge                       ( ModelClassType Image Image Image Pointer )
+            value.ProgressText                              = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x078), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x78 ProgressText                ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.RewardItemIcon                            = GetObjectList<RewardItemIcon>(new IntPtr(p + 0x080), ReversePrism.DataModels.RewardItemIcon.FromPointer); // 0x80 RewardItemIcon              ( ModelClassListType RewardItemIcon[] RewardItemIcon[] List<RewardItemIcon> Pointer )
+            value.CloseLayoutObject                         = GetObject<GameObject>(new IntPtr(p + 0x088), ReversePrism.DataModels.GameObject.FromPointer); // 0x88 CloseLayoutObject           ( ModelClassType GameObject GameObject GameObject Pointer )
+            value.ClearStampObject                          = GetObject<GameObject>(new IntPtr(p + 0x090), ReversePrism.DataModels.GameObject.FromPointer); // 0x90 ClearStampObject            ( ModelClassType GameObject GameObject GameObject Pointer )
 
             return value;
         }

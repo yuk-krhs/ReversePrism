@@ -12,7 +12,7 @@ namespace ReversePrism.DataModels
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 SeasonStatusListFieldNumber              int IL2CPP_TYPE_I4
     // 008 _repeated_seasonStatusList_codec         FieldCodec`1<ProfileSeasonStatus> IL2CPP_TYPE_GENERICINST
-    // 018 SeasonStatusList                         000185CED288 ModelClassListType RepeatedField`1<ProfileSeasonStatus> RepeatedField`1<ProfileSeasonStatus> List<ProfileSeasonStatus> Pointer
+    // 018 SeasonStatusList                         ModelClassListType RepeatedField`1<ProfileSeasonStatus> RepeatedField`1<ProfileSeasonStatus> List<ProfileSeasonStatus> Pointer
     public partial class GetProducerSeasonInfoListReply : DataModel
     {
         public List<ProfileSeasonStatus>?               SeasonStatusList                        { get; set; }
@@ -25,7 +25,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetProducerSeasonInfoListReply() { Pointer= p0 };
 
-            value.SeasonStatusList                          = GetObjectList<ProfileSeasonStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProfileSeasonStatus.FromPointer); // 02466266E8F0 0x18 SeasonStatusList            ( 000185CED288 ModelClassListType RepeatedField`1<ProfileSeasonStatus> RepeatedField`1<ProfileSeasonStatus> List<ProfileSeasonStatus> Pointer )
+            value.SeasonStatusList                          = GetObjectList<ProfileSeasonStatus>(new IntPtr(p + 0x018), ReversePrism.DataModels.ProfileSeasonStatus.FromPointer); // 0x18 SeasonStatusList            ( ModelClassListType RepeatedField`1<ProfileSeasonStatus> RepeatedField`1<ProfileSeasonStatus> List<ProfileSeasonStatus> Pointer )
 
             return value;
         }

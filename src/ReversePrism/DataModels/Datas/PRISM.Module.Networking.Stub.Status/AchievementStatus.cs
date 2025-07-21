@@ -11,11 +11,11 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<AchievementStatus> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 AchievementIdFieldNumber                 int IL2CPP_TYPE_I4
-    // 018 AchievementId                            0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 AchievementId                            ModelPrimitiveType int int int Int32
     // 000 AchievementTypeFieldNumber               int IL2CPP_TYPE_I4
-    // 01C AchievementType                          000186678350 ModelEnumType AchievementType AchievementType AchievementType Int32
+    // 01C AchievementType                          ModelEnumType AchievementType AchievementType AchievementType Int32
     // 000 AchievementCategoryFieldNumber           int IL2CPP_TYPE_I4
-    // 020 AchievementCategory                      000186673420 ModelEnumType AchievementCategory AchievementCategory AchievementCategory Int32
+    // 020 AchievementCategory                      ModelEnumType AchievementCategory AchievementCategory AchievementCategory Int32
     public partial class AchievementStatus : DataModel
     {
         public int                                      AchievementId                           { get; set; }
@@ -30,9 +30,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new AchievementStatus() { Pointer= p0 };
 
-            value.AchievementId                             = GetInt32(new IntPtr(p + 0x018)); // 024660B18460 0x18 AchievementId               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.AchievementType                           = (AchievementType)GetInt32(new IntPtr(p + 0x01C)); // 024660B184A0 0x1C AchievementType             ( 000186678350 ModelEnumType AchievementType AchievementType AchievementType Int32 )
-            value.AchievementCategory                       = (AchievementCategory)GetInt32(new IntPtr(p + 0x020)); // 024660B184E0 0x20 AchievementCategory         ( 000186673420 ModelEnumType AchievementCategory AchievementCategory AchievementCategory Int32 )
+            value.AchievementId                             = GetInt32(new IntPtr(p + 0x018)); // 0x18 AchievementId               ( ModelPrimitiveType int int int Int32 )
+            value.AchievementType                           = (AchievementType)GetInt32(new IntPtr(p + 0x01C)); // 0x1C AchievementType             ( ModelEnumType AchievementType AchievementType AchievementType Int32 )
+            value.AchievementCategory                       = (AchievementCategory)GetInt32(new IntPtr(p + 0x020)); // 0x20 AchievementCategory         ( ModelEnumType AchievementCategory AchievementCategory AchievementCategory Int32 )
 
             return value;
         }

@@ -10,7 +10,7 @@ namespace ReversePrism.DataModels
 
     // 000 ReadNodesMethodName                      string IL2CPP_TYPE_STRING
     // 008 WriteNodesMethodName                     string IL2CPP_TYPE_STRING
-    // 010 AddDefaultSchemaMethodName               0001866727E0 ModelPrimitiveType string string string String
+    // 010 AddDefaultSchemaMethodName               ModelPrimitiveType string string string String
     public partial class XmlSerializableServices : DataModel
     {
         public string                                   AddDefaultSchemaMethodName              { get; set; }
@@ -23,7 +23,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new XmlSerializableServices() { Pointer= p0 };
 
-            value.AddDefaultSchemaMethodName                = GetString(new IntPtr(p + 0x010)); // 024667DDBC88 0x10 AddDefaultSchemaMethodName  ( 0001866727E0 ModelPrimitiveType string string string String )
+            value.AddDefaultSchemaMethodName                = GetString(new IntPtr(p + 0x010)); // 0x10 AddDefaultSchemaMethodName  ( ModelPrimitiveType string string string String )
 
             return value;
         }

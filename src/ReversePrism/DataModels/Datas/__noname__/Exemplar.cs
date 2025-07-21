@@ -11,12 +11,12 @@ namespace ReversePrism.DataModels
     // 000 _parser                                  MessageParser`1<Exemplar> IL2CPP_TYPE_GENERICINST
     // 010 _unknownFields                           UnknownFieldSet IL2CPP_TYPE_CLASS
     // 000 ValueFieldNumber                         int IL2CPP_TYPE_I4
-    // 018 Value                                    0001865C2950 ModelPrimitiveType double double double Double
+    // 018 Value                                    ModelPrimitiveType double double double Double
     // 000 TimestampFieldNumber                     int IL2CPP_TYPE_I4
-    // 020 _Timestamp                               000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer
+    // 020 _Timestamp                               ModelClassType Timestamp Timestamp Timestamp Pointer
     // 000 AttachmentsFieldNumber                   int IL2CPP_TYPE_I4
     // 008 _repeated_attachments_codec              FieldCodec`1<Any> IL2CPP_TYPE_GENERICINST
-    // 028 Attachments                              000185CCE428 ModelClassListType RepeatedField`1<Any> RepeatedField`1<Any> List<Any> Pointer
+    // 028 Attachments                              ModelClassListType RepeatedField`1<Any> RepeatedField`1<Any> List<Any> Pointer
     public partial class Exemplar : DataModel
     {
         public double                                   Value                                   { get; set; }
@@ -31,9 +31,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Exemplar() { Pointer= p0 };
 
-            value.Value                                     = GetDouble(new IntPtr(p + 0x018)); // 02466A810A88 0x18 Value                       ( 0001865C2950 ModelPrimitiveType double double double Double )
-            value._Timestamp                                = GetObject<Timestamp>(new IntPtr(p + 0x020), ReversePrism.DataModels.Timestamp.FromPointer); // 02466A810AC8 0x20 _Timestamp                  ( 000186675810 ModelClassType Timestamp Timestamp Timestamp Pointer )
-            value.Attachments                               = GetObjectList<Any>(new IntPtr(p + 0x028), ReversePrism.DataModels.Any.FromPointer); // 02466A810B28 0x28 Attachments                 ( 000185CCE428 ModelClassListType RepeatedField`1<Any> RepeatedField`1<Any> List<Any> Pointer )
+            value.Value                                     = GetDouble(new IntPtr(p + 0x018)); // 0x18 Value                       ( ModelPrimitiveType double double double Double )
+            value._Timestamp                                = GetObject<Timestamp>(new IntPtr(p + 0x020), ReversePrism.DataModels.Timestamp.FromPointer); // 0x20 _Timestamp                  ( ModelClassType Timestamp Timestamp Timestamp Pointer )
+            value.Attachments                               = GetObjectList<Any>(new IntPtr(p + 0x028), ReversePrism.DataModels.Any.FromPointer); // 0x28 Attachments                 ( ModelClassListType RepeatedField`1<Any> RepeatedField`1<Any> List<Any> Pointer )
 
             return value;
         }

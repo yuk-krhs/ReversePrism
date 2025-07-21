@@ -8,18 +8,20 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 MstProduceIdolId                         0001865F4260 ModelPrimitiveType int int int Int32
-    // 014 MstCharacterInfoId                       0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 SelectedMstIdolSkillId                   0001865F4260 ModelPrimitiveType int int int Int32
-    // 020 IdolSkillList                            000185B873D0 ModelClassListType IIdolSkillStatus[] IIdolSkillStatus[] List<IIdolSkillStatus> Pointer
-    // 028 EvolutionLevel                           0001865F4260 ModelPrimitiveType int int int Int32
-    // 02C IsProduce                                0001865965D0 ModelPrimitiveType bool bool bool Bool
+    // 010 MstProduceIdolId                         ModelPrimitiveType int int int Int32
+    // 014 MstCharacterInfoId                       ModelPrimitiveType int int int Int32
+    // 018 SelectedMstIdolSkillId                   ModelPrimitiveType int int int Int32
+    // 020 IdolSkillList                            ModelClassListType IIdolSkillStatus[] IIdolSkillStatus[] List<IIdolSkillStatus> Pointer
+    // 028 TargetMstIdolSkillId                     ModelPrimitiveType int int int Int32
+    // 02C EvolutionLevel                           ModelPrimitiveType int int int Int32
+    // 030 IsProduce                                ModelPrimitiveType bool bool bool Bool
     public partial class ProducePreparationIdolSkillSelectPopupViewModel : DataModel
     {
         public int                                      MstProduceIdolId                        { get; set; }
         public int                                      MstCharacterInfoId                      { get; set; }
         public int                                      SelectedMstIdolSkillId                  { get; set; }
         public List<IIdolSkillStatus>?                  IdolSkillList                           { get; set; }
+        public int                                      TargetMstIdolSkillId                    { get; set; }
         public int                                      EvolutionLevel                          { get; set; }
         public bool                                     IsProduce                               { get; set; }
 
@@ -31,12 +33,13 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ProducePreparationIdolSkillSelectPopupViewModel() { Pointer= p0 };
 
-            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x010)); // 024666088338 0x10 MstProduceIdolId            ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x014)); // 024666088358 0x14 MstCharacterInfoId          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.SelectedMstIdolSkillId                    = GetInt32(new IntPtr(p + 0x018)); // 024666088378 0x18 SelectedMstIdolSkillId      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.IdolSkillList                             = GetObjectList<IIdolSkillStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IIdolSkillStatus.FromPointer); // 024666088398 0x20 IdolSkillList               ( 000185B873D0 ModelClassListType IIdolSkillStatus[] IIdolSkillStatus[] List<IIdolSkillStatus> Pointer )
-            value.EvolutionLevel                            = GetInt32(new IntPtr(p + 0x028)); // 0246660883B8 0x28 EvolutionLevel              ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.IsProduce                                 = GetBool(new IntPtr(p + 0x02C)); // 0246660883D8 0x2C IsProduce                   ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
+            value.MstProduceIdolId                          = GetInt32(new IntPtr(p + 0x010)); // 0x10 MstProduceIdolId            ( ModelPrimitiveType int int int Int32 )
+            value.MstCharacterInfoId                        = GetInt32(new IntPtr(p + 0x014)); // 0x14 MstCharacterInfoId          ( ModelPrimitiveType int int int Int32 )
+            value.SelectedMstIdolSkillId                    = GetInt32(new IntPtr(p + 0x018)); // 0x18 SelectedMstIdolSkillId      ( ModelPrimitiveType int int int Int32 )
+            value.IdolSkillList                             = GetObjectList<IIdolSkillStatus>(new IntPtr(p + 0x020), ReversePrism.DataModels.IIdolSkillStatus.FromPointer); // 0x20 IdolSkillList               ( ModelClassListType IIdolSkillStatus[] IIdolSkillStatus[] List<IIdolSkillStatus> Pointer )
+            value.TargetMstIdolSkillId                      = GetInt32(new IntPtr(p + 0x028)); // 0x28 TargetMstIdolSkillId        ( ModelPrimitiveType int int int Int32 )
+            value.EvolutionLevel                            = GetInt32(new IntPtr(p + 0x02C)); // 0x2C EvolutionLevel              ( ModelPrimitiveType int int int Int32 )
+            value.IsProduce                                 = GetBool(new IntPtr(p + 0x030)); // 0x30 IsProduce                   ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Canvas                                   00018653FDA0 ModelClassType Canvas Canvas Canvas Pointer
-    // 028 LoadingView                              0001865A0650 ModelClassType LoadingView LoadingView LoadingView Pointer
-    // 030 ConnectingView                           000186603050 ModelClassType ConnectingView ConnectingView ConnectingView Pointer
+    // 020 Canvas                                   ModelClassType Canvas Canvas Canvas Pointer
+    // 028 LoadingView                              ModelClassType LoadingView LoadingView LoadingView Pointer
+    // 030 ConnectingView                           ModelClassType ConnectingView ConnectingView ConnectingView Pointer
     public partial class LoadingCanvas : DataModel
     {
         public Canvas?                                  Canvas                                  { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LoadingCanvas() { Pointer= p0 };
 
-            value.Canvas                                    = GetObject<Canvas>(new IntPtr(p + 0x020), ReversePrism.DataModels.Canvas.FromPointer); // 0245A1EA09F0 0x20 Canvas                      ( 00018653FDA0 ModelClassType Canvas Canvas Canvas Pointer )
-            value.LoadingView                               = GetObject<LoadingView>(new IntPtr(p + 0x028), ReversePrism.DataModels.LoadingView.FromPointer); // 0245A1EA0A10 0x28 LoadingView                 ( 0001865A0650 ModelClassType LoadingView LoadingView LoadingView Pointer )
-            value.ConnectingView                            = GetObject<ConnectingView>(new IntPtr(p + 0x030), ReversePrism.DataModels.ConnectingView.FromPointer); // 0245A1EA0A30 0x30 ConnectingView              ( 000186603050 ModelClassType ConnectingView ConnectingView ConnectingView Pointer )
+            value.Canvas                                    = GetObject<Canvas>(new IntPtr(p + 0x020), ReversePrism.DataModels.Canvas.FromPointer); // 0x20 Canvas                      ( ModelClassType Canvas Canvas Canvas Pointer )
+            value.LoadingView                               = GetObject<LoadingView>(new IntPtr(p + 0x028), ReversePrism.DataModels.LoadingView.FromPointer); // 0x28 LoadingView                 ( ModelClassType LoadingView LoadingView LoadingView Pointer )
+            value.ConnectingView                            = GetObject<ConnectingView>(new IntPtr(p + 0x030), ReversePrism.DataModels.ConnectingView.FromPointer); // 0x30 ConnectingView              ( ModelClassType ConnectingView ConnectingView ConnectingView Pointer )
 
             return value;
         }

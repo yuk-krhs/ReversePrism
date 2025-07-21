@@ -10,9 +10,9 @@ namespace ReversePrism.DataModels
 
     // 018 startLocation                            ExposedReference`1<Transform> IL2CPP_TYPE_GENERICINST
     // 028 endLocation                              ExposedReference`1<Transform> IL2CPP_TYPE_GENERICINST
-    // 038 ShouldTweenPosition                      000186595960 ModelPrimitiveType bool bool bool Bool
-    // 039 ShouldTweenRotation                      000186595960 ModelPrimitiveType bool bool bool Bool
-    // 040 Curve                                    000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer
+    // 038 ShouldTweenPosition                      ModelPrimitiveType bool bool bool Bool
+    // 039 ShouldTweenRotation                      ModelPrimitiveType bool bool bool Bool
+    // 040 Curve                                    ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer
     public partial class TweenClip : DataModel
     {
         public bool                                     ShouldTweenPosition                     { get; set; }
@@ -27,9 +27,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TweenClip() { Pointer= p0 };
 
-            value.ShouldTweenPosition                       = GetBool(new IntPtr(p + 0x038)); // 024664E8C050 0x38 ShouldTweenPosition         ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.ShouldTweenRotation                       = GetBool(new IntPtr(p + 0x039)); // 024664E8C070 0x39 ShouldTweenRotation         ( 000186595960 ModelPrimitiveType bool bool bool Bool )
-            value.Curve                                     = GetObject<AnimationCurve>(new IntPtr(p + 0x040), ReversePrism.DataModels.AnimationCurve.FromPointer); // 024664E8C090 0x40 Curve                       ( 000186586F10 ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
+            value.ShouldTweenPosition                       = GetBool(new IntPtr(p + 0x038)); // 0x38 ShouldTweenPosition         ( ModelPrimitiveType bool bool bool Bool )
+            value.ShouldTweenRotation                       = GetBool(new IntPtr(p + 0x039)); // 0x39 ShouldTweenRotation         ( ModelPrimitiveType bool bool bool Bool )
+            value.Curve                                     = GetObject<AnimationCurve>(new IntPtr(p + 0x040), ReversePrism.DataModels.AnimationCurve.FromPointer); // 0x40 Curve                       ( ModelClassType AnimationCurve AnimationCurve AnimationCurve Pointer )
 
             return value;
         }

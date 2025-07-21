@@ -8,10 +8,10 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 CellIdentifier                           0001866722E0 ModelPrimitiveType string string string String
-    // 028 CellIndex                                0001865F59B0 ModelPrimitiveType int int int Int32
-    // 02C DataIndex                                0001865F59B0 ModelPrimitiveType int int int Int32
-    // 030 Active                                   000186597BE0 ModelPrimitiveType bool bool bool Bool
+    // 020 CellIdentifier                           ModelPrimitiveType string string string String
+    // 028 CellIndex                                ModelPrimitiveType int int int Int32
+    // 02C DataIndex                                ModelPrimitiveType int int int Int32
+    // 030 Active                                   ModelPrimitiveType bool bool bool Bool
     public partial class EnhancedScrollerCellView : DataModel
     {
         public string                                   CellIdentifier                          { get; set; }
@@ -27,10 +27,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new EnhancedScrollerCellView() { Pointer= p0 };
 
-            value.CellIdentifier                            = GetString(new IntPtr(p + 0x020)); // 0245A263C028 0x20 CellIdentifier              ( 0001866722E0 ModelPrimitiveType string string string String )
-            value.CellIndex                                 = GetInt32(new IntPtr(p + 0x028)); // 0245A263C048 0x28 CellIndex                   ( 0001865F59B0 ModelPrimitiveType int int int Int32 )
-            value.DataIndex                                 = GetInt32(new IntPtr(p + 0x02C)); // 0245A263C068 0x2C DataIndex                   ( 0001865F59B0 ModelPrimitiveType int int int Int32 )
-            value.Active                                    = GetBool(new IntPtr(p + 0x030)); // 0245A263C088 0x30 Active                      ( 000186597BE0 ModelPrimitiveType bool bool bool Bool )
+            value.CellIdentifier                            = GetString(new IntPtr(p + 0x020)); // 0x20 CellIdentifier              ( ModelPrimitiveType string string string String )
+            value.CellIndex                                 = GetInt32(new IntPtr(p + 0x028)); // 0x28 CellIndex                   ( ModelPrimitiveType int int int Int32 )
+            value.DataIndex                                 = GetInt32(new IntPtr(p + 0x02C)); // 0x2C DataIndex                   ( ModelPrimitiveType int int int Int32 )
+            value.Active                                    = GetBool(new IntPtr(p + 0x030)); // 0x30 Active                      ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

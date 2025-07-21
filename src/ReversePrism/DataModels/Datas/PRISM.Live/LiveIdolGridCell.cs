@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 040 IconView                                 000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer
-    // 048 Canceller                                000186724470 ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32
+    // 040 IconView                                 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer
+    // 048 Canceller                                ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32
     public partial class LiveIdolGridCell : DataModel
     {
         public PFIdolIconView?                          IconView                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new LiveIdolGridCell() { Pointer= p0 };
 
-            value.IconView                                  = GetObject<PFIdolIconView>(new IntPtr(p + 0x040), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 0246653253F0 0x40 IconView                    ( 000186704160 ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
-            value.Canceller                                 = (AutoCancellationTokenSource)GetInt32(new IntPtr(p + 0x048)); // 024665325410 0x48 Canceller                   ( 000186724470 ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32 )
+            value.IconView                                  = GetObject<PFIdolIconView>(new IntPtr(p + 0x040), ReversePrism.DataModels.PFIdolIconView.FromPointer); // 0x40 IconView                    ( ModelClassType PFIdolIconView PFIdolIconView PFIdolIconView Pointer )
+            value.Canceller                                 = (AutoCancellationTokenSource)GetInt32(new IntPtr(p + 0x048)); // 0x48 Canceller                   ( ModelEnumType AutoCancellationTokenSource AutoCancellationTokenSource AutoCancellationTokenSource Int32 )
 
             return value;
         }

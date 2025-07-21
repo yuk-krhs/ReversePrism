@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Magic                                    000186698B70 ModelPrimitiveType uint uint uint UInt32
-    // 014 Code                                     0001866AD270 ModelEnumType unitytls_error_code unitytls_error_code unitytls_error_code Int32
-    // 018 Reserved                                 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64
+    // 010 Magic                                    ModelPrimitiveType uint uint uint UInt32
+    // 014 Code                                     ModelEnumType unitytls_error_code unitytls_error_code unitytls_error_code Int32
+    // 018 Reserved                                 ModelPrimitiveType ulong ulong ulong UInt64
     public partial class unitytls_errorstate : DataModel
     {
         public uint                                     Magic                                   { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new unitytls_errorstate() { Pointer= p0 };
 
-            value.Magic                                     = GetUInt32(new IntPtr(p + 0x010)); // 0246679516E0 0x10 Magic                       ( 000186698B70 ModelPrimitiveType uint uint uint UInt32 )
-            value.Code                                      = (unitytls_error_code)GetInt32(new IntPtr(p + 0x014)); // 024667951700 0x14 Code                        ( 0001866AD270 ModelEnumType unitytls_error_code unitytls_error_code unitytls_error_code Int32 )
-            value.Reserved                                  = GetUInt64(new IntPtr(p + 0x018)); // 024667951720 0x18 Reserved                    ( 00018669B890 ModelPrimitiveType ulong ulong ulong UInt64 )
+            value.Magic                                     = GetUInt32(new IntPtr(p + 0x010)); // 0x10 Magic                       ( ModelPrimitiveType uint uint uint UInt32 )
+            value.Code                                      = (unitytls_error_code)GetInt32(new IntPtr(p + 0x014)); // 0x14 Code                        ( ModelEnumType unitytls_error_code unitytls_error_code unitytls_error_code Int32 )
+            value.Reserved                                  = GetUInt64(new IntPtr(p + 0x018)); // 0x18 Reserved                    ( ModelPrimitiveType ulong ulong ulong UInt64 )
 
             return value;
         }

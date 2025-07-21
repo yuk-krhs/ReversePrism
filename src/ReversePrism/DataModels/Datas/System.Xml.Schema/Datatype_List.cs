@@ -8,8 +8,8 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 038 ItemType                                 000186687B60 ModelClassType DatatypeImplementation DatatypeImplementation DatatypeImplementation Pointer
-    // 040 MinListSize                              0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 038 ItemType                                 ModelClassType DatatypeImplementation DatatypeImplementation DatatypeImplementation Pointer
+    // 040 MinListSize                              ModelPrimitiveType int int int Int32
     public partial class Datatype_List : DataModel
     {
         public DatatypeImplementation?                  ItemType                                { get; set; }
@@ -23,8 +23,8 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new Datatype_List() { Pointer= p0 };
 
-            value.ItemType                                  = GetObject<DatatypeImplementation>(new IntPtr(p + 0x038), ReversePrism.DataModels.DatatypeImplementation.FromPointer); // 024667563320 0x38 ItemType                    ( 000186687B60 ModelClassType DatatypeImplementation DatatypeImplementation DatatypeImplementation Pointer )
-            value.MinListSize                               = GetInt32(new IntPtr(p + 0x040)); // 024667563340 0x40 MinListSize                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.ItemType                                  = GetObject<DatatypeImplementation>(new IntPtr(p + 0x038), ReversePrism.DataModels.DatatypeImplementation.FromPointer); // 0x38 ItemType                    ( ModelClassType DatatypeImplementation DatatypeImplementation DatatypeImplementation Pointer )
+            value.MinListSize                               = GetInt32(new IntPtr(p + 0x040)); // 0x40 MinListSize                 ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

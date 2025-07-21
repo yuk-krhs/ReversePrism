@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 170 _StepCounter                             000186715740 ModelClassType IntegerControl IntegerControl IntegerControl Pointer
+    // 170 _StepCounter                             ModelClassType IntegerControl IntegerControl IntegerControl Pointer
     // 000 <current>k__BackingField                 StepCounter IL2CPP_TYPE_CLASS
     public partial class StepCounter : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new StepCounter() { Pointer= p0 };
 
-            value._StepCounter                              = GetObject<IntegerControl>(new IntPtr(p + 0x170), ReversePrism.DataModels.IntegerControl.FromPointer); // 0245A33B2840 0x170 _StepCounter                ( 000186715740 ModelClassType IntegerControl IntegerControl IntegerControl Pointer )
+            value._StepCounter                              = GetObject<IntegerControl>(new IntPtr(p + 0x170), ReversePrism.DataModels.IntegerControl.FromPointer); // 0x170 _StepCounter                ( ModelClassType IntegerControl IntegerControl IntegerControl Pointer )
 
             return value;
         }

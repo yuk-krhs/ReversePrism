@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Operand                                  0001865CF210 ModelClassType Expression Expression Expression Pointer
+    // 010 Operand                                  ModelClassType Expression Expression Expression Pointer
     // 018 _hoistedVariables                        Dictionary`2<ParameterExpression, LocalVariable> IL2CPP_TYPE_GENERICINST
     public partial class QuoteInstruction : DataModel
     {
@@ -22,7 +22,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new QuoteInstruction() { Pointer= p0 };
 
-            value.Operand                                   = GetObject<Expression>(new IntPtr(p + 0x010), ReversePrism.DataModels.Expression.FromPointer); // 02466A0A8950 0x10 Operand                     ( 0001865CF210 ModelClassType Expression Expression Expression Pointer )
+            value.Operand                                   = GetObject<Expression>(new IntPtr(p + 0x010), ReversePrism.DataModels.Expression.FromPointer); // 0x10 Operand                     ( ModelClassType Expression Expression Expression Pointer )
 
             return value;
         }

@@ -9,10 +9,10 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 Type                                     int IL2CPP_TYPE_I4
-    // 010 BaseEvent                                0001866FCF10 ModelEnumType InputEvent InputEvent InputEvent Int32
-    // 024 StateFormat                              0001865BB6D0 ModelEnumType FourCC FourCC FourCC Int32
-    // 028 StateOffset                              0001866992B0 ModelPrimitiveType uint uint uint UInt32
-    // 02C StateData                                00018659CF40 ModelEnumType <stateData>e__FixedBuffer <stateData>e__FixedBuffer <stateData>e__FixedBuffer Int32
+    // 010 BaseEvent                                ModelEnumType InputEvent InputEvent InputEvent Int32
+    // 024 StateFormat                              ModelEnumType FourCC FourCC FourCC Int32
+    // 028 StateOffset                              ModelPrimitiveType uint uint uint UInt32
+    // 02C StateData                                ModelEnumType <stateData>e__FixedBuffer <stateData>e__FixedBuffer <stateData>e__FixedBuffer Int32
     public partial class DeltaStateEvent : DataModel
     {
         public InputEvent                               BaseEvent                               { get; set; }
@@ -28,10 +28,10 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DeltaStateEvent() { Pointer= p0 };
 
-            value.BaseEvent                                 = (InputEvent)GetInt32(new IntPtr(p + 0x010)); // 0246677145A8 0x10 BaseEvent                   ( 0001866FCF10 ModelEnumType InputEvent InputEvent InputEvent Int32 )
-            value.StateFormat                               = (FourCC)GetInt32(new IntPtr(p + 0x024)); // 0246677145C8 0x24 StateFormat                 ( 0001865BB6D0 ModelEnumType FourCC FourCC FourCC Int32 )
-            value.StateOffset                               = GetUInt32(new IntPtr(p + 0x028)); // 0246677145E8 0x28 StateOffset                 ( 0001866992B0 ModelPrimitiveType uint uint uint UInt32 )
-            value.StateData                                 = (<stateData>e__FixedBuffer)GetInt32(new IntPtr(p + 0x02C)); // 024667714608 0x2C StateData                   ( 00018659CF40 ModelEnumType <stateData>e__FixedBuffer <stateData>e__FixedBuffer <stateData>e__FixedBuffer Int32 )
+            value.BaseEvent                                 = (InputEvent)GetInt32(new IntPtr(p + 0x010)); // 0x10 BaseEvent                   ( ModelEnumType InputEvent InputEvent InputEvent Int32 )
+            value.StateFormat                               = (FourCC)GetInt32(new IntPtr(p + 0x024)); // 0x24 StateFormat                 ( ModelEnumType FourCC FourCC FourCC Int32 )
+            value.StateOffset                               = GetUInt32(new IntPtr(p + 0x028)); // 0x28 StateOffset                 ( ModelPrimitiveType uint uint uint UInt32 )
+            value.StateData                                 = (<stateData>e__FixedBuffer)GetInt32(new IntPtr(p + 0x02C)); // 0x2C StateData                   ( ModelEnumType <stateData>e__FixedBuffer <stateData>e__FixedBuffer <stateData>e__FixedBuffer Int32 )
 
             return value;
         }

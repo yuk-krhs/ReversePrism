@@ -8,15 +8,15 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 028 Buffer                                   000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
-    // 030 Origin                                   0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 034 Position                                 0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 038 Length                                   0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 03C Capacity                                 0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 040 Expandable                               000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 041 Writable                                 000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 042 Exposable                                000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 043 IsOpen                                   000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 028 Buffer                                   ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer
+    // 030 Origin                                   ModelPrimitiveType int int int Int32
+    // 034 Position                                 ModelPrimitiveType int int int Int32
+    // 038 Length                                   ModelPrimitiveType int int int Int32
+    // 03C Capacity                                 ModelPrimitiveType int int int Int32
+    // 040 Expandable                               ModelPrimitiveType bool bool bool Bool
+    // 041 Writable                                 ModelPrimitiveType bool bool bool Bool
+    // 042 Exposable                                ModelPrimitiveType bool bool bool Bool
+    // 043 IsOpen                                   ModelPrimitiveType bool bool bool Bool
     // 048 _lastReadTask                            Task`1<int> IL2CPP_TYPE_GENERICINST
     public partial class MemoryStream : DataModel
     {
@@ -38,15 +38,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MemoryStream() { Pointer= p0 };
 
-            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x028)); // 024661922040 0x28 Buffer                      ( 000185B79750 ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
-            value.Origin                                    = GetInt32(new IntPtr(p + 0x030)); // 024661922060 0x30 Origin                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Position                                  = GetInt32(new IntPtr(p + 0x034)); // 024661922080 0x34 Position                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Length                                    = GetInt32(new IntPtr(p + 0x038)); // 0246619220A0 0x38 Length                      ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Capacity                                  = GetInt32(new IntPtr(p + 0x03C)); // 0246619220C0 0x3C Capacity                    ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.Expandable                                = GetBool(new IntPtr(p + 0x040)); // 0246619220E0 0x40 Expandable                  ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Writable                                  = GetBool(new IntPtr(p + 0x041)); // 024661922100 0x41 Writable                    ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.Exposable                                 = GetBool(new IntPtr(p + 0x042)); // 024661922120 0x42 Exposable                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsOpen                                    = GetBool(new IntPtr(p + 0x043)); // 024661922140 0x43 IsOpen                      ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.Buffer                                    = GetSByteList(new IntPtr(p + 0x028)); // 0x28 Buffer                      ( ModelPrimitiveListType sbyte[] sbyte[] List<sbyte> Pointer )
+            value.Origin                                    = GetInt32(new IntPtr(p + 0x030)); // 0x30 Origin                      ( ModelPrimitiveType int int int Int32 )
+            value.Position                                  = GetInt32(new IntPtr(p + 0x034)); // 0x34 Position                    ( ModelPrimitiveType int int int Int32 )
+            value.Length                                    = GetInt32(new IntPtr(p + 0x038)); // 0x38 Length                      ( ModelPrimitiveType int int int Int32 )
+            value.Capacity                                  = GetInt32(new IntPtr(p + 0x03C)); // 0x3C Capacity                    ( ModelPrimitiveType int int int Int32 )
+            value.Expandable                                = GetBool(new IntPtr(p + 0x040)); // 0x40 Expandable                  ( ModelPrimitiveType bool bool bool Bool )
+            value.Writable                                  = GetBool(new IntPtr(p + 0x041)); // 0x41 Writable                    ( ModelPrimitiveType bool bool bool Bool )
+            value.Exposable                                 = GetBool(new IntPtr(p + 0x042)); // 0x42 Exposable                   ( ModelPrimitiveType bool bool bool Bool )
+            value.IsOpen                                    = GetBool(new IntPtr(p + 0x043)); // 0x43 IsOpen                      ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

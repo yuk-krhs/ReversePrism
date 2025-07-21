@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 M_GenericData                            0001865DF1C0 ModelClassType Hashtable Hashtable Hashtable Pointer
-    // 018 M_DraggedInfoLabel                       000186774D80 ModelClassType Label Label Label Pointer
-    // 020 M_VisualMode                             0001866F57F0 ModelEnumType DragVisualMode DragVisualMode DragVisualMode Int32
+    // 010 M_GenericData                            ModelClassType Hashtable Hashtable Hashtable Pointer
+    // 018 M_DraggedInfoLabel                       ModelClassType Label Label Label Pointer
+    // 020 M_VisualMode                             ModelEnumType DragVisualMode DragVisualMode DragVisualMode Int32
     // 028 m_UnityObjectReferences                  IEnumerable`1<Object> IL2CPP_TYPE_GENERICINST
     public partial class DefaultDragAndDropClient : DataModel
     {
@@ -26,9 +26,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new DefaultDragAndDropClient() { Pointer= p0 };
 
-            value.M_GenericData                             = GetObject<Hashtable>(new IntPtr(p + 0x010), ReversePrism.DataModels.Hashtable.FromPointer); // 0245A6715F38 0x10 M_GenericData               ( 0001865DF1C0 ModelClassType Hashtable Hashtable Hashtable Pointer )
-            value.M_DraggedInfoLabel                        = GetObject<Label>(new IntPtr(p + 0x018), ReversePrism.DataModels.Label.FromPointer); // 0245A6715F58 0x18 M_DraggedInfoLabel          ( 000186774D80 ModelClassType Label Label Label Pointer )
-            value.M_VisualMode                              = (DragVisualMode)GetInt32(new IntPtr(p + 0x020)); // 0245A6715F78 0x20 M_VisualMode                ( 0001866F57F0 ModelEnumType DragVisualMode DragVisualMode DragVisualMode Int32 )
+            value.M_GenericData                             = GetObject<Hashtable>(new IntPtr(p + 0x010), ReversePrism.DataModels.Hashtable.FromPointer); // 0x10 M_GenericData               ( ModelClassType Hashtable Hashtable Hashtable Pointer )
+            value.M_DraggedInfoLabel                        = GetObject<Label>(new IntPtr(p + 0x018), ReversePrism.DataModels.Label.FromPointer); // 0x18 M_DraggedInfoLabel          ( ModelClassType Label Label Label Pointer )
+            value.M_VisualMode                              = (DragVisualMode)GetInt32(new IntPtr(p + 0x020)); // 0x20 M_VisualMode                ( ModelEnumType DragVisualMode DragVisualMode DragVisualMode Int32 )
 
             return value;
         }

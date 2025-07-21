@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 BaseText                                 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 028 TextCamera                               0001865A1C90 ModelClassType Camera Camera Camera Pointer
-    // 030 MaterialModifiers                        000185B75F90 ModelClassListType ColorToUVChannelForTextMeshProUGUI[] ColorToUVChannelForTextMeshProUGUI[] List<ColorToUVChannelForTextMeshProUGUI> Pointer
+    // 020 BaseText                                 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 028 TextCamera                               ModelClassType Camera Camera Camera Pointer
+    // 030 MaterialModifiers                        ModelClassListType ColorToUVChannelForTextMeshProUGUI[] ColorToUVChannelForTextMeshProUGUI[] List<ColorToUVChannelForTextMeshProUGUI> Pointer
     public partial class TextureTemplate : DataModel
     {
         public UITextMeshProUGUI?                       BaseText                                { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new TextureTemplate() { Pointer= p0 };
 
-            value.BaseText                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0245A695EBA8 0x20 BaseText                    ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.TextCamera                                = GetObject<Camera>(new IntPtr(p + 0x028), ReversePrism.DataModels.Camera.FromPointer); // 0245A695EBC8 0x28 TextCamera                  ( 0001865A1C90 ModelClassType Camera Camera Camera Pointer )
-            value.MaterialModifiers                         = GetObjectList<ColorToUVChannelForTextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.ColorToUVChannelForTextMeshProUGUI.FromPointer); // 0245A695EBE8 0x30 MaterialModifiers           ( 000185B75F90 ModelClassListType ColorToUVChannelForTextMeshProUGUI[] ColorToUVChannelForTextMeshProUGUI[] List<ColorToUVChannelForTextMeshProUGUI> Pointer )
+            value.BaseText                                  = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x020), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x20 BaseText                    ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.TextCamera                                = GetObject<Camera>(new IntPtr(p + 0x028), ReversePrism.DataModels.Camera.FromPointer); // 0x28 TextCamera                  ( ModelClassType Camera Camera Camera Pointer )
+            value.MaterialModifiers                         = GetObjectList<ColorToUVChannelForTextMeshProUGUI>(new IntPtr(p + 0x030), ReversePrism.DataModels.ColorToUVChannelForTextMeshProUGUI.FromPointer); // 0x30 MaterialModifiers           ( ModelClassListType ColorToUVChannelForTextMeshProUGUI[] ColorToUVChannelForTextMeshProUGUI[] List<ColorToUVChannelForTextMeshProUGUI> Pointer )
 
             return value;
         }

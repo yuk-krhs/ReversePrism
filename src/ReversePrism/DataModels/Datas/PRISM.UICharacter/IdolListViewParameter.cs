@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 DefaultTab                               0001866B43B0 ModelEnumType IdolListTabType IdolListTabType IdolListTabType Int32
+    // 010 DefaultTab                               ModelEnumType IdolListTabType IdolListTabType IdolListTabType Int32
     public partial class IdolListViewParameter : DataModel
     {
         public IdolListTabType                          DefaultTab                              { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new IdolListViewParameter() { Pointer= p0 };
 
-            value.DefaultTab                                = (IdolListTabType)GetInt32(new IntPtr(p + 0x010)); // 024665E21690 0x10 DefaultTab                  ( 0001866B43B0 ModelEnumType IdolListTabType IdolListTabType IdolListTabType Int32 )
+            value.DefaultTab                                = (IdolListTabType)GetInt32(new IntPtr(p + 0x010)); // 0x10 DefaultTab                  ( ModelEnumType IdolListTabType IdolListTabType IdolListTabType Int32 )
 
             return value;
         }

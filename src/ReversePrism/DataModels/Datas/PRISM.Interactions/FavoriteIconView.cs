@@ -8,12 +8,12 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 020 Btn                                      0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 028 ImgIcon                                  000186613190 ModelClassType RawImage RawImage RawImage Pointer
-    // 030 CgText                                   000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
-    // 038 CgSelected                               000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
+    // 020 Btn                                      ModelClassType UIButton UIButton UIButton Pointer
+    // 028 ImgIcon                                  ModelClassType RawImage RawImage RawImage Pointer
+    // 030 CgText                                   ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
+    // 038 CgSelected                               ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer
     // 040 onClickSubject                           Subject`1<ValueTuple`2<int, GameObject>> IL2CPP_TYPE_GENERICINST
-    // 048 Index                                    0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 048 Index                                    ModelPrimitiveType int int int Int32
     // 050 <OnLongPress>k__BackingField             IObservable`1<ValueTuple`2<int, GameObject>> IL2CPP_TYPE_GENERICINST
     public partial class FavoriteIconView : DataModel
     {
@@ -31,11 +31,11 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new FavoriteIconView() { Pointer= p0 };
 
-            value.Btn                                       = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 02466A39C880 0x20 Btn                         ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.ImgIcon                                   = GetObject<RawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.RawImage.FromPointer); // 02466A39C8A0 0x28 ImgIcon                     ( 000186613190 ModelClassType RawImage RawImage RawImage Pointer )
-            value.CgText                                    = GetObject<CanvasGroup>(new IntPtr(p + 0x030), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466A39C8C0 0x30 CgText                      ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.CgSelected                                = GetObject<CanvasGroup>(new IntPtr(p + 0x038), ReversePrism.DataModels.CanvasGroup.FromPointer); // 02466A39C8E0 0x38 CgSelected                  ( 000186540EE0 ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
-            value.Index                                     = GetInt32(new IntPtr(p + 0x048)); // 02466A39C920 0x48 Index                       ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.Btn                                       = GetObject<UIButton>(new IntPtr(p + 0x020), ReversePrism.DataModels.UIButton.FromPointer); // 0x20 Btn                         ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.ImgIcon                                   = GetObject<RawImage>(new IntPtr(p + 0x028), ReversePrism.DataModels.RawImage.FromPointer); // 0x28 ImgIcon                     ( ModelClassType RawImage RawImage RawImage Pointer )
+            value.CgText                                    = GetObject<CanvasGroup>(new IntPtr(p + 0x030), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0x30 CgText                      ( ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.CgSelected                                = GetObject<CanvasGroup>(new IntPtr(p + 0x038), ReversePrism.DataModels.CanvasGroup.FromPointer); // 0x38 CgSelected                  ( ModelClassType CanvasGroup CanvasGroup CanvasGroup Pointer )
+            value.Index                                     = GetInt32(new IntPtr(p + 0x048)); // 0x48 Index                       ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

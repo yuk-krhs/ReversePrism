@@ -8,23 +8,21 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Id                                       0001865F4260 ModelPrimitiveType int int int Int32
-    // 014 ExtraStoryType                           0001865F4260 ModelPrimitiveType int int int Int32
-    // 018 EpisodeNumber                            0001865F4260 ModelPrimitiveType int int int Int32
-    // 01C MstExtraStorySubCategoryId               0001865F4260 ModelPrimitiveType int int int Int32
-    // 020 SortId                                   0001865F4260 ModelPrimitiveType int int int Int32
-    // 028 ScenarioId                               000186672F10 ModelPrimitiveType string string string String
-    // 030 MstCharacterInfoIdList                   000185B7D9E0 ModelPrimitiveListType int[] int[] List<int> Pointer
-    // 038 UnlockPremiseMstExtraStoryId             0001865F4260 ModelPrimitiveType int int int Int32
-    // 040 ReleaseDate                              0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    // 048 UnlockDate                               0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime
-    // 050 HasUnlockDate                            0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 054 PreviousMstExtraStoryId                  0001865F4260 ModelPrimitiveType int int int Int32
-    // 058 MstExtraStorySubCategory                 000186620620 ModelClassType MstExtraStorySubCategory MstExtraStorySubCategory MstExtraStorySubCategory Pointer
+    // 010 Id                                       ModelPrimitiveType int int int Int32
+    // 014 EpisodeNumber                            ModelPrimitiveType int int int Int32
+    // 018 MstExtraStorySubCategoryId               ModelPrimitiveType int int int Int32
+    // 01C SortId                                   ModelPrimitiveType int int int Int32
+    // 020 ScenarioId                               ModelPrimitiveType string string string String
+    // 028 MstCharacterInfoIdList                   ModelPrimitiveListType int[] int[] List<int> Pointer
+    // 030 UnlockPremiseMstExtraStoryId             ModelPrimitiveType int int int Int32
+    // 038 ReleaseDate                              ModelPrimitiveType DateTime DateTime DateTime DateTime
+    // 040 UnlockDate                               ModelPrimitiveType DateTime DateTime DateTime DateTime
+    // 048 HasUnlockDate                            ModelPrimitiveType bool bool bool Bool
+    // 04C PreviousMstExtraStoryId                  ModelPrimitiveType int int int Int32
+    // 050 MstExtraStorySubCategory                 ModelClassType MstExtraStorySubCategory MstExtraStorySubCategory MstExtraStorySubCategory Pointer
     public partial class MstExtraStory : DataModel
     {
         public int                                      Id                                      { get; set; }
-        public int                                      ExtraStoryType                          { get; set; }
         public int                                      EpisodeNumber                           { get; set; }
         public int                                      MstExtraStorySubCategoryId              { get; set; }
         public int                                      SortId                                  { get; set; }
@@ -45,19 +43,18 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MstExtraStory() { Pointer= p0 };
 
-            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0245A467BE38 0x10 Id                          ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.ExtraStoryType                            = GetInt32(new IntPtr(p + 0x014)); // 0245A467BE58 0x14 ExtraStoryType              ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.EpisodeNumber                             = GetInt32(new IntPtr(p + 0x018)); // 0245A467BE78 0x18 EpisodeNumber               ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstExtraStorySubCategoryId                = GetInt32(new IntPtr(p + 0x01C)); // 0245A467BE98 0x1C MstExtraStorySubCategoryId  ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.SortId                                    = GetInt32(new IntPtr(p + 0x020)); // 0245A467BEB8 0x20 SortId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.ScenarioId                                = GetString(new IntPtr(p + 0x028)); // 0245A467BED8 0x28 ScenarioId                  ( 000186672F10 ModelPrimitiveType string string string String )
-            value.MstCharacterInfoIdList                    = GetInt32List(new IntPtr(p + 0x030)); // 0245A467BEF8 0x30 MstCharacterInfoIdList      ( 000185B7D9E0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.UnlockPremiseMstExtraStoryId              = GetInt32(new IntPtr(p + 0x038)); // 0245A467BF18 0x38 UnlockPremiseMstExtraStoryId ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.ReleaseDate                               = GetDateTime(new IntPtr(p + 0x040)); // 0245A467BF38 0x40 ReleaseDate                 ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.UnlockDate                                = GetDateTime(new IntPtr(p + 0x048)); // 0245A467BF58 0x48 UnlockDate                  ( 0001865BA1C0 ModelPrimitiveType DateTime DateTime DateTime DateTime )
-            value.HasUnlockDate                             = GetBool(new IntPtr(p + 0x050)); // 0245A467BF78 0x50 HasUnlockDate               ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.PreviousMstExtraStoryId                   = GetInt32(new IntPtr(p + 0x054)); // 0245A467BF98 0x54 PreviousMstExtraStoryId     ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.MstExtraStorySubCategory                  = GetObject<MstExtraStorySubCategory>(new IntPtr(p + 0x058), ReversePrism.DataModels.MstExtraStorySubCategory.FromPointer); // 0245A467BFB8 0x58 MstExtraStorySubCategory    ( 000186620620 ModelClassType MstExtraStorySubCategory MstExtraStorySubCategory MstExtraStorySubCategory Pointer )
+            value.Id                                        = GetInt32(new IntPtr(p + 0x010)); // 0x10 Id                          ( ModelPrimitiveType int int int Int32 )
+            value.EpisodeNumber                             = GetInt32(new IntPtr(p + 0x014)); // 0x14 EpisodeNumber               ( ModelPrimitiveType int int int Int32 )
+            value.MstExtraStorySubCategoryId                = GetInt32(new IntPtr(p + 0x018)); // 0x18 MstExtraStorySubCategoryId  ( ModelPrimitiveType int int int Int32 )
+            value.SortId                                    = GetInt32(new IntPtr(p + 0x01C)); // 0x1C SortId                      ( ModelPrimitiveType int int int Int32 )
+            value.ScenarioId                                = GetString(new IntPtr(p + 0x020)); // 0x20 ScenarioId                  ( ModelPrimitiveType string string string String )
+            value.MstCharacterInfoIdList                    = GetInt32List(new IntPtr(p + 0x028)); // 0x28 MstCharacterInfoIdList      ( ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.UnlockPremiseMstExtraStoryId              = GetInt32(new IntPtr(p + 0x030)); // 0x30 UnlockPremiseMstExtraStoryId ( ModelPrimitiveType int int int Int32 )
+            value.ReleaseDate                               = GetDateTime(new IntPtr(p + 0x038)); // 0x38 ReleaseDate                 ( ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.UnlockDate                                = GetDateTime(new IntPtr(p + 0x040)); // 0x40 UnlockDate                  ( ModelPrimitiveType DateTime DateTime DateTime DateTime )
+            value.HasUnlockDate                             = GetBool(new IntPtr(p + 0x048)); // 0x48 HasUnlockDate               ( ModelPrimitiveType bool bool bool Bool )
+            value.PreviousMstExtraStoryId                   = GetInt32(new IntPtr(p + 0x04C)); // 0x4C PreviousMstExtraStoryId     ( ModelPrimitiveType int int int Int32 )
+            value.MstExtraStorySubCategory                  = GetObject<MstExtraStorySubCategory>(new IntPtr(p + 0x050), ReversePrism.DataModels.MstExtraStorySubCategory.FromPointer); // 0x50 MstExtraStorySubCategory    ( ModelClassType MstExtraStorySubCategory MstExtraStorySubCategory MstExtraStorySubCategory Pointer )
 
             return value;
         }

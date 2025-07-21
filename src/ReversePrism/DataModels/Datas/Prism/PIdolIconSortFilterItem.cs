@@ -8,7 +8,7 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 018 FilterValue                              0001865F2AF0 ModelPrimitiveType int int int Int32
+    // 018 FilterValue                              ModelPrimitiveType int int int Int32
     public partial class PIdolIconSortFilterItem : DataModel
     {
         public int                                      FilterValue                             { get; set; }
@@ -21,7 +21,7 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new PIdolIconSortFilterItem() { Pointer= p0 };
 
-            value.FilterValue                               = GetInt32(new IntPtr(p + 0x018)); // 024664CEEDB0 0x18 FilterValue                 ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
+            value.FilterValue                               = GetInt32(new IntPtr(p + 0x018)); // 0x18 FilterValue                 ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }

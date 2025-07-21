@@ -9,12 +9,12 @@ namespace ReversePrism.DataModels
     using static ModelMarshaler;
 
     // 000 AssetPath                                string IL2CPP_TYPE_STRING
-    // 060 SkillNodes                               000185CA8678 ModelClassListType SupportSkillNode[] SupportSkillNode[] List<SupportSkillNode> Pointer
-    // 068 NumText                                  0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
-    // 070 ConfirmSkillListButton                   0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer
-    // 078 SelectedIndex                            0001865F2AF0 ModelPrimitiveType int int int Int32
-    // 07C IsClose                                  000186594D10 ModelPrimitiveType bool bool bool Bool
-    // 07D IsMaxSlot                                000186594D10 ModelPrimitiveType bool bool bool Bool
+    // 060 SkillNodes                               ModelClassListType SupportSkillNode[] SupportSkillNode[] List<SupportSkillNode> Pointer
+    // 068 NumText                                  ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer
+    // 070 ConfirmSkillListButton                   ModelClassType UIButton UIButton UIButton Pointer
+    // 078 SelectedIndex                            ModelPrimitiveType int int int Int32
+    // 07C IsClose                                  ModelPrimitiveType bool bool bool Bool
+    // 07D IsMaxSlot                                ModelPrimitiveType bool bool bool Bool
     public partial class GetInheritanceSkillPopupContent : DataModel
     {
         public List<SupportSkillNode>?                  SkillNodes                              { get; set; }
@@ -32,12 +32,12 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new GetInheritanceSkillPopupContent() { Pointer= p0 };
 
-            value.SkillNodes                                = GetObjectList<SupportSkillNode>(new IntPtr(p + 0x060), ReversePrism.DataModels.SupportSkillNode.FromPointer); // 024665D29890 0x60 SkillNodes                  ( 000185CA8678 ModelClassListType SupportSkillNode[] SupportSkillNode[] List<SupportSkillNode> Pointer )
-            value.NumText                                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x068), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 024665D298B0 0x68 NumText                     ( 0001866F90E0 ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
-            value.ConfirmSkillListButton                    = GetObject<UIButton>(new IntPtr(p + 0x070), ReversePrism.DataModels.UIButton.FromPointer); // 024665D298D0 0x70 ConfirmSkillListButton      ( 0001866E0F30 ModelClassType UIButton UIButton UIButton Pointer )
-            value.SelectedIndex                             = GetInt32(new IntPtr(p + 0x078)); // 024665D298F0 0x78 SelectedIndex               ( 0001865F2AF0 ModelPrimitiveType int int int Int32 )
-            value.IsClose                                   = GetBool(new IntPtr(p + 0x07C)); // 024665D29910 0x7C IsClose                     ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
-            value.IsMaxSlot                                 = GetBool(new IntPtr(p + 0x07D)); // 024665D29930 0x7D IsMaxSlot                   ( 000186594D10 ModelPrimitiveType bool bool bool Bool )
+            value.SkillNodes                                = GetObjectList<SupportSkillNode>(new IntPtr(p + 0x060), ReversePrism.DataModels.SupportSkillNode.FromPointer); // 0x60 SkillNodes                  ( ModelClassListType SupportSkillNode[] SupportSkillNode[] List<SupportSkillNode> Pointer )
+            value.NumText                                   = GetObject<UITextMeshProUGUI>(new IntPtr(p + 0x068), ReversePrism.DataModels.UITextMeshProUGUI.FromPointer); // 0x68 NumText                     ( ModelClassType UITextMeshProUGUI UITextMeshProUGUI UITextMeshProUGUI Pointer )
+            value.ConfirmSkillListButton                    = GetObject<UIButton>(new IntPtr(p + 0x070), ReversePrism.DataModels.UIButton.FromPointer); // 0x70 ConfirmSkillListButton      ( ModelClassType UIButton UIButton UIButton Pointer )
+            value.SelectedIndex                             = GetInt32(new IntPtr(p + 0x078)); // 0x78 SelectedIndex               ( ModelPrimitiveType int int int Int32 )
+            value.IsClose                                   = GetBool(new IntPtr(p + 0x07C)); // 0x7C IsClose                     ( ModelPrimitiveType bool bool bool Bool )
+            value.IsMaxSlot                                 = GetBool(new IntPtr(p + 0x07D)); // 0x7D IsMaxSlot                   ( ModelPrimitiveType bool bool bool Bool )
 
             return value;
         }

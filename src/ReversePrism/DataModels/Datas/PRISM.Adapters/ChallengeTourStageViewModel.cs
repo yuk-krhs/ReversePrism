@@ -8,16 +8,16 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 StageStatus                              0001867270C0 ModelClassType IChallengeTourStageStatus IChallengeTourStageStatus IChallengeTourStageStatus Pointer
-    // 018 UnitId                                   0001865F4260 ModelPrimitiveType int int int Int32
-    // 01C IsLock                                   0001865965D0 ModelPrimitiveType bool bool bool Bool
-    // 020 RecommendationStatus                     0001865F4260 ModelPrimitiveType int int int Int32
-    // 028 RewardViewModels                         000185B74740 ModelClassListType ChallengeTourRewardViewModel[] ChallengeTourRewardViewModel[] List<ChallengeTourRewardViewModel> Pointer
+    // 010 StageStatus                              ModelClassType IChallengeTourStageStatus IChallengeTourStageStatus IChallengeTourStageStatus Pointer
+    // 018 UnitId                                   ModelPrimitiveType int int int Int32
+    // 01C IsLock                                   ModelPrimitiveType bool bool bool Bool
+    // 020 RecommendationStatus                     ModelPrimitiveType int int int Int32
+    // 028 RewardViewModels                         ModelClassListType ChallengeTourRewardViewModel[] ChallengeTourRewardViewModel[] List<ChallengeTourRewardViewModel> Pointer
     // 030 <EnemyProduceCards>k__BackingField       IEnumerable`1<IProduceCardStatus> IL2CPP_TYPE_GENERICINST
-    // 038 SilhouetteIds                            000185B7D9E0 ModelPrimitiveListType int[] int[] List<int> Pointer
-    // 040 EnemySkillModels                         000185B8B940 ModelClassListType IngameSkillModel[] IngameSkillModel[] List<IngameSkillModel> Pointer
-    // 048 EnemySkillDetailViewModels               000185B9C960 ModelClassListType ProduceEnemySkillDetailPopupViewModel[] ProduceEnemySkillDetailPopupViewModel[] List<ProduceEnemySkillDetailPopupViewModel> Pointer
-    // 050 Master                                   00018661B630 ModelClassType MstChallengeTourStage MstChallengeTourStage MstChallengeTourStage Pointer
+    // 038 SilhouetteIds                            ModelPrimitiveListType int[] int[] List<int> Pointer
+    // 040 EnemySkillModels                         ModelClassListType IngameSkillModel[] IngameSkillModel[] List<IngameSkillModel> Pointer
+    // 048 EnemySkillDetailViewModels               ModelClassListType ProduceEnemySkillDetailPopupViewModel[] ProduceEnemySkillDetailPopupViewModel[] List<ProduceEnemySkillDetailPopupViewModel> Pointer
+    // 050 Master                                   ModelClassType MstChallengeTourStage MstChallengeTourStage MstChallengeTourStage Pointer
     public partial class ChallengeTourStageViewModel : DataModel
     {
         public IChallengeTourStageStatus?               StageStatus                             { get; set; }
@@ -38,15 +38,15 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ChallengeTourStageViewModel() { Pointer= p0 };
 
-            value.StageStatus                               = GetObject<IChallengeTourStageStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IChallengeTourStageStatus.FromPointer); // 024666500138 0x10 StageStatus                 ( 0001867270C0 ModelClassType IChallengeTourStageStatus IChallengeTourStageStatus IChallengeTourStageStatus Pointer )
-            value.UnitId                                    = GetInt32(new IntPtr(p + 0x018)); // 024666500158 0x18 UnitId                      ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.IsLock                                    = GetBool(new IntPtr(p + 0x01C)); // 024666500178 0x1C IsLock                      ( 0001865965D0 ModelPrimitiveType bool bool bool Bool )
-            value.RecommendationStatus                      = GetInt32(new IntPtr(p + 0x020)); // 024666500198 0x20 RecommendationStatus        ( 0001865F4260 ModelPrimitiveType int int int Int32 )
-            value.RewardViewModels                          = GetObjectList<ChallengeTourRewardViewModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.ChallengeTourRewardViewModel.FromPointer); // 0246665001B8 0x28 RewardViewModels            ( 000185B74740 ModelClassListType ChallengeTourRewardViewModel[] ChallengeTourRewardViewModel[] List<ChallengeTourRewardViewModel> Pointer )
-            value.SilhouetteIds                             = GetInt32List(new IntPtr(p + 0x038)); // 0246665001F8 0x38 SilhouetteIds               ( 000185B7D9E0 ModelPrimitiveListType int[] int[] List<int> Pointer )
-            value.EnemySkillModels                          = GetObjectList<IngameSkillModel>(new IntPtr(p + 0x040), ReversePrism.DataModels.IngameSkillModel.FromPointer); // 024666500218 0x40 EnemySkillModels            ( 000185B8B940 ModelClassListType IngameSkillModel[] IngameSkillModel[] List<IngameSkillModel> Pointer )
-            value.EnemySkillDetailViewModels                = GetObjectList<ProduceEnemySkillDetailPopupViewModel>(new IntPtr(p + 0x048), ReversePrism.DataModels.ProduceEnemySkillDetailPopupViewModel.FromPointer); // 024666500238 0x48 EnemySkillDetailViewModels  ( 000185B9C960 ModelClassListType ProduceEnemySkillDetailPopupViewModel[] ProduceEnemySkillDetailPopupViewModel[] List<ProduceEnemySkillDetailPopupViewModel> Pointer )
-            value.Master                                    = GetObject<MstChallengeTourStage>(new IntPtr(p + 0x050), ReversePrism.DataModels.MstChallengeTourStage.FromPointer); // 024666500258 0x50 Master                      ( 00018661B630 ModelClassType MstChallengeTourStage MstChallengeTourStage MstChallengeTourStage Pointer )
+            value.StageStatus                               = GetObject<IChallengeTourStageStatus>(new IntPtr(p + 0x010), ReversePrism.DataModels.IChallengeTourStageStatus.FromPointer); // 0x10 StageStatus                 ( ModelClassType IChallengeTourStageStatus IChallengeTourStageStatus IChallengeTourStageStatus Pointer )
+            value.UnitId                                    = GetInt32(new IntPtr(p + 0x018)); // 0x18 UnitId                      ( ModelPrimitiveType int int int Int32 )
+            value.IsLock                                    = GetBool(new IntPtr(p + 0x01C)); // 0x1C IsLock                      ( ModelPrimitiveType bool bool bool Bool )
+            value.RecommendationStatus                      = GetInt32(new IntPtr(p + 0x020)); // 0x20 RecommendationStatus        ( ModelPrimitiveType int int int Int32 )
+            value.RewardViewModels                          = GetObjectList<ChallengeTourRewardViewModel>(new IntPtr(p + 0x028), ReversePrism.DataModels.ChallengeTourRewardViewModel.FromPointer); // 0x28 RewardViewModels            ( ModelClassListType ChallengeTourRewardViewModel[] ChallengeTourRewardViewModel[] List<ChallengeTourRewardViewModel> Pointer )
+            value.SilhouetteIds                             = GetInt32List(new IntPtr(p + 0x038)); // 0x38 SilhouetteIds               ( ModelPrimitiveListType int[] int[] List<int> Pointer )
+            value.EnemySkillModels                          = GetObjectList<IngameSkillModel>(new IntPtr(p + 0x040), ReversePrism.DataModels.IngameSkillModel.FromPointer); // 0x40 EnemySkillModels            ( ModelClassListType IngameSkillModel[] IngameSkillModel[] List<IngameSkillModel> Pointer )
+            value.EnemySkillDetailViewModels                = GetObjectList<ProduceEnemySkillDetailPopupViewModel>(new IntPtr(p + 0x048), ReversePrism.DataModels.ProduceEnemySkillDetailPopupViewModel.FromPointer); // 0x48 EnemySkillDetailViewModels  ( ModelClassListType ProduceEnemySkillDetailPopupViewModel[] ProduceEnemySkillDetailPopupViewModel[] List<ProduceEnemySkillDetailPopupViewModel> Pointer )
+            value.Master                                    = GetObject<MstChallengeTourStage>(new IntPtr(p + 0x050), ReversePrism.DataModels.MstChallengeTourStage.FromPointer); // 0x50 Master                      ( ModelClassType MstChallengeTourStage MstChallengeTourStage MstChallengeTourStage Pointer )
 
             return value;
         }

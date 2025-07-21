@@ -8,21 +8,21 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 MethodName                               000186671910 ModelPrimitiveType string string string String
-    // 018 Uri                                      000186671910 ModelPrimitiveType string string string String
-    // 020 TypeName                                 000186671910 ModelPrimitiveType string string string String
-    // 028 MethodBase                               000186612B80 ModelClassType MethodBase MethodBase MethodBase Pointer
+    // 010 MethodName                               ModelPrimitiveType string string string String
+    // 018 Uri                                      ModelPrimitiveType string string string String
+    // 020 TypeName                                 ModelPrimitiveType string string string String
+    // 028 MethodBase                               ModelClassType MethodBase MethodBase MethodBase Pointer
     // 030 _returnValue                             <object> IL2CPP_TYPE_OBJECT
-    // 038 Exception                                0001865CA820 ModelClassType Exception Exception Exception Pointer
-    // 040 MethodSignature                          000185B82C10 ModelClassListType Type[] Type[] List<Type> Pointer
-    // 048 InArgInfo                                0001866D3890 ModelClassType ArgInfo ArgInfo ArgInfo Pointer
+    // 038 Exception                                ModelClassType Exception Exception Exception Pointer
+    // 040 MethodSignature                          ModelClassListType Type[] Type[] List<Type> Pointer
+    // 048 InArgInfo                                ModelClassType ArgInfo ArgInfo ArgInfo Pointer
     // 050 _args                                    <object>[] IL2CPP_TYPE_SZARRAY
     // 058 _outArgs                                 <object>[] IL2CPP_TYPE_SZARRAY
-    // 060 CallMsg                                  0001865B2310 ModelClassType IMethodCallMessage IMethodCallMessage IMethodCallMessage Pointer
-    // 068 CallContext                              0001865B5810 ModelClassType LogicalCallContext LogicalCallContext LogicalCallContext Pointer
-    // 070 TargetIdentity                           0001866A3B00 ModelClassType Identity Identity Identity Pointer
-    // 078 ExternalProperties                       000186750460 ModelClassType IDictionary IDictionary IDictionary Pointer
-    // 080 InternalProperties                       000186750460 ModelClassType IDictionary IDictionary IDictionary Pointer
+    // 060 CallMsg                                  ModelClassType IMethodCallMessage IMethodCallMessage IMethodCallMessage Pointer
+    // 068 CallContext                              ModelClassType LogicalCallContext LogicalCallContext LogicalCallContext Pointer
+    // 070 TargetIdentity                           ModelClassType Identity Identity Identity Pointer
+    // 078 ExternalProperties                       ModelClassType IDictionary IDictionary IDictionary Pointer
+    // 080 InternalProperties                       ModelClassType IDictionary IDictionary IDictionary Pointer
     public partial class MethodResponse : DataModel
     {
         public string                                   MethodName                              { get; set; }
@@ -46,18 +46,18 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new MethodResponse() { Pointer= p0 };
 
-            value.MethodName                                = GetString(new IntPtr(p + 0x010)); // 024666C61348 0x10 MethodName                  ( 000186671910 ModelPrimitiveType string string string String )
-            value.Uri                                       = GetString(new IntPtr(p + 0x018)); // 024666C61368 0x18 Uri                         ( 000186671910 ModelPrimitiveType string string string String )
-            value.TypeName                                  = GetString(new IntPtr(p + 0x020)); // 024666C61388 0x20 TypeName                    ( 000186671910 ModelPrimitiveType string string string String )
-            value.MethodBase                                = GetObject<MethodBase>(new IntPtr(p + 0x028), ReversePrism.DataModels.MethodBase.FromPointer); // 024666C613A8 0x28 MethodBase                  ( 000186612B80 ModelClassType MethodBase MethodBase MethodBase Pointer )
-            value.Exception                                 = GetObject<Exception>(new IntPtr(p + 0x038), ReversePrism.DataModels.Exception.FromPointer); // 024666C613E8 0x38 Exception                   ( 0001865CA820 ModelClassType Exception Exception Exception Pointer )
-            value.MethodSignature                           = GetObjectList<Type>(new IntPtr(p + 0x040), ReversePrism.DataModels.Type.FromPointer); // 024666C61408 0x40 MethodSignature             ( 000185B82C10 ModelClassListType Type[] Type[] List<Type> Pointer )
-            value.InArgInfo                                 = GetObject<ArgInfo>(new IntPtr(p + 0x048), ReversePrism.DataModels.ArgInfo.FromPointer); // 024666C61428 0x48 InArgInfo                   ( 0001866D3890 ModelClassType ArgInfo ArgInfo ArgInfo Pointer )
-            value.CallMsg                                   = GetObject<IMethodCallMessage>(new IntPtr(p + 0x060), ReversePrism.DataModels.IMethodCallMessage.FromPointer); // 024666C61488 0x60 CallMsg                     ( 0001865B2310 ModelClassType IMethodCallMessage IMethodCallMessage IMethodCallMessage Pointer )
-            value.CallContext                               = GetObject<LogicalCallContext>(new IntPtr(p + 0x068), ReversePrism.DataModels.LogicalCallContext.FromPointer); // 024666C614A8 0x68 CallContext                 ( 0001865B5810 ModelClassType LogicalCallContext LogicalCallContext LogicalCallContext Pointer )
-            value.TargetIdentity                            = GetObject<Identity>(new IntPtr(p + 0x070), ReversePrism.DataModels.Identity.FromPointer); // 024666C614C8 0x70 TargetIdentity              ( 0001866A3B00 ModelClassType Identity Identity Identity Pointer )
-            value.ExternalProperties                        = GetObject<IDictionary>(new IntPtr(p + 0x078), ReversePrism.DataModels.IDictionary.FromPointer); // 024666C614E8 0x78 ExternalProperties          ( 000186750460 ModelClassType IDictionary IDictionary IDictionary Pointer )
-            value.InternalProperties                        = GetObject<IDictionary>(new IntPtr(p + 0x080), ReversePrism.DataModels.IDictionary.FromPointer); // 024666C61508 0x80 InternalProperties          ( 000186750460 ModelClassType IDictionary IDictionary IDictionary Pointer )
+            value.MethodName                                = GetString(new IntPtr(p + 0x010)); // 0x10 MethodName                  ( ModelPrimitiveType string string string String )
+            value.Uri                                       = GetString(new IntPtr(p + 0x018)); // 0x18 Uri                         ( ModelPrimitiveType string string string String )
+            value.TypeName                                  = GetString(new IntPtr(p + 0x020)); // 0x20 TypeName                    ( ModelPrimitiveType string string string String )
+            value.MethodBase                                = GetObject<MethodBase>(new IntPtr(p + 0x028), ReversePrism.DataModels.MethodBase.FromPointer); // 0x28 MethodBase                  ( ModelClassType MethodBase MethodBase MethodBase Pointer )
+            value.Exception                                 = GetObject<Exception>(new IntPtr(p + 0x038), ReversePrism.DataModels.Exception.FromPointer); // 0x38 Exception                   ( ModelClassType Exception Exception Exception Pointer )
+            value.MethodSignature                           = GetObjectList<Type>(new IntPtr(p + 0x040), ReversePrism.DataModels.Type.FromPointer); // 0x40 MethodSignature             ( ModelClassListType Type[] Type[] List<Type> Pointer )
+            value.InArgInfo                                 = GetObject<ArgInfo>(new IntPtr(p + 0x048), ReversePrism.DataModels.ArgInfo.FromPointer); // 0x48 InArgInfo                   ( ModelClassType ArgInfo ArgInfo ArgInfo Pointer )
+            value.CallMsg                                   = GetObject<IMethodCallMessage>(new IntPtr(p + 0x060), ReversePrism.DataModels.IMethodCallMessage.FromPointer); // 0x60 CallMsg                     ( ModelClassType IMethodCallMessage IMethodCallMessage IMethodCallMessage Pointer )
+            value.CallContext                               = GetObject<LogicalCallContext>(new IntPtr(p + 0x068), ReversePrism.DataModels.LogicalCallContext.FromPointer); // 0x68 CallContext                 ( ModelClassType LogicalCallContext LogicalCallContext LogicalCallContext Pointer )
+            value.TargetIdentity                            = GetObject<Identity>(new IntPtr(p + 0x070), ReversePrism.DataModels.Identity.FromPointer); // 0x70 TargetIdentity              ( ModelClassType Identity Identity Identity Pointer )
+            value.ExternalProperties                        = GetObject<IDictionary>(new IntPtr(p + 0x078), ReversePrism.DataModels.IDictionary.FromPointer); // 0x78 ExternalProperties          ( ModelClassType IDictionary IDictionary IDictionary Pointer )
+            value.InternalProperties                        = GetObject<IDictionary>(new IntPtr(p + 0x080), ReversePrism.DataModels.IDictionary.FromPointer); // 0x80 InternalProperties          ( ModelClassType IDictionary IDictionary IDictionary Pointer )
 
             return value;
         }

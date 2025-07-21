@@ -8,9 +8,9 @@ namespace ReversePrism.DataModels
 {
     using static ModelMarshaler;
 
-    // 010 Word                                     0001866731A0 ModelPrimitiveType string string string String
-    // 018 Token                                    00018668A420 ModelEnumType Tokens Tokens Tokens Int32
-    // 01C Op                                       0001865F44E0 ModelPrimitiveType int int int Int32
+    // 010 Word                                     ModelPrimitiveType string string string String
+    // 018 Token                                    ModelEnumType Tokens Tokens Tokens Int32
+    // 01C Op                                       ModelPrimitiveType int int int Int32
     public partial class ReservedWords : DataModel
     {
         public string                                   Word                                    { get; set; }
@@ -25,9 +25,9 @@ namespace ReversePrism.DataModels
             var p       = p0.ToInt64();
             var value   = new ReservedWords() { Pointer= p0 };
 
-            value.Word                                      = GetString(new IntPtr(p + 0x010)); // 024668995A28 0x10 Word                        ( 0001866731A0 ModelPrimitiveType string string string String )
-            value.Token                                     = (Tokens)GetInt32(new IntPtr(p + 0x018)); // 024668995A48 0x18 Token                       ( 00018668A420 ModelEnumType Tokens Tokens Tokens Int32 )
-            value.Op                                        = GetInt32(new IntPtr(p + 0x01C)); // 024668995A68 0x1C Op                          ( 0001865F44E0 ModelPrimitiveType int int int Int32 )
+            value.Word                                      = GetString(new IntPtr(p + 0x010)); // 0x10 Word                        ( ModelPrimitiveType string string string String )
+            value.Token                                     = (Tokens)GetInt32(new IntPtr(p + 0x018)); // 0x18 Token                       ( ModelEnumType Tokens Tokens Tokens Int32 )
+            value.Op                                        = GetInt32(new IntPtr(p + 0x01C)); // 0x1C Op                          ( ModelPrimitiveType int int int Int32 )
 
             return value;
         }
