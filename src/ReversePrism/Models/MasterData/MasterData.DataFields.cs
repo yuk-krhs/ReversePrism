@@ -129,6 +129,7 @@ namespace ReversePrism
         public SortedDictionary<int, MstSongOverrideOnStageIdolCount>?     SongOverrideOnStageIdolCounts;
         public SortedDictionary<int, MstSongPartsCharacter>?               SongPartsCharacters;
         public SortedDictionary<int, MstSongPositionExample>?              SongPositionExamples;
+        public List<MstSongSpecialStartVoice>?                             SongSpecialStartVoices;
         public SortedDictionary<int, MstSongType>?                         SongTypes;
         public SortedDictionary<int, MstSpecialMission>?                   SpecialMissions;
         public SortedDictionary<int, MstStarGrowth>?                       StarGrowths;
@@ -276,6 +277,7 @@ namespace ReversePrism
             Load(r, nameof(SongOverrideOnStageIdolCounts),      out SongOverrideOnStageIdolCounts);
             Load(r, nameof(SongPartsCharacters),                out SongPartsCharacters);
             Load(r, nameof(SongPositionExamples),               out SongPositionExamples);
+            Load(r, nameof(SongSpecialStartVoices),             out SongSpecialStartVoices);
             Load(r, nameof(SongTypes),                          out SongTypes);
             Load(r, nameof(SpecialMissions),                    out SpecialMissions);
             Load(r, nameof(StarGrowths),                        out StarGrowths);
